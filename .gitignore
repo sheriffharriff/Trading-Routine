@@ -1,0 +1,14 @@
+# Credentials never live in this repo. All six API keys come from environment
+# variables in the cloud runner. These entries exist so that an accidental local
+# .env can never be committed.
+.env
+.env.*
+*.pem
+*.key
+
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+.DS_Store
+Thumbs.db

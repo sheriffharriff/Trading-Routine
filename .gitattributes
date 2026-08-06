@@ -1,0 +1,15 @@
+# Normalise everything to LF in the repository.
+#
+# The routines run on Linux cloud workers while this checkout is on Windows.
+# Without this, files committed from Windows carry CRLF into the repo, and the
+# Python scripts and markdown the routines parse would arrive with mixed line
+# endings depending on which machine last touched them.
+* text=auto eol=lf
+
+# Python and markdown are always text, regardless of what git's heuristics guess
+# about any individual file.
+*.py   text eol=lf
+*.md   text eol=lf
+*.json text eol=lf
+*.yml  text eol=lf
+*.yaml text eol=lf
