@@ -10,7 +10,7 @@ The block below is parsed by `scripts/common.py` and gates real behavior
 `key: value` format exactly. Prose goes underneath.
 
 ```
-last_run: 2026-09-01 09:36 ET 2-market-open-execution
+last_run: 2026-09-01 12:35 ET 3-midday-management
 week_of: 2026-08-31
 new_positions_this_week: 0
 consecutive_closed_losses: 0
@@ -103,6 +103,10 @@ Anything the next run must not lose. Cleared once acted on.
   narrows the fault to Routine 1's schedule entry specifically rather than the scheduler as a
   whole. That is new information and worth acting on. **Do not clear this line until Routine 1
   fires exactly once on a weekday, at or near 08:00 ET.**
+  **Update 12:35 ET — Routine 3 also fired once, on time** (specified 12:30 ET, selftest clock
+  12:35 ET). Two routines have now fired exactly once at their specified times on the same day.
+  The scheduler is behaving; **the fault is in Routine 1's schedule entry alone.** A human
+  fixing this should look at that one cron entry and nothing else.
 
 - **Core sleeve still does not exist.** `core_established: false`, core 0.0% against a 70%
   target — outside the §2 65–75% band (`rebalance_needed: true`, `rebalance_delta: 70000.0`).
@@ -167,3 +171,19 @@ Anything the next run must not lose. Cleared once acted on.
   `TRADING_ENABLED` item has changed in character — from an anticipated consequence to an
   observed one — and the schedule item has gained the observation that Routine 2 fired correctly,
   which localises the fault to Routine 1.
+
+- **12:35 ET midday run (3-midday-management, first ever): nothing to manage, nothing done.**
+  Market open, `positions` returned `[]`, sleeves identical to the 09:36 open run (equity
+  $100,000.00, 100% cash). With zero open satellite positions, §5.1–5.4 had no input: no
+  invalidation to test, no timing window to expire, no entry or high-water mark to measure a stop
+  against. **No exits were taken and none should have been** — this is the important distinction
+  for the next reader, because "no exits" and "an exit that failed to fire" look identical in a
+  summary. No Perplexity queries were run; with no `invalidation` line in `positions.md` to check,
+  a news query would have been activity for its own sake. **Step 2 high-water repair had no
+  subject:** the trailing stop is not silently disabled, it is not yet armed, and it arms on the
+  day the first satellite position opens. Week rollover re-checked: ISO Monday of 2026-09-01 is
+  2026-08-31, matches `week_of`; `new_positions_this_week` stays 0 (0 of 3 used). Breaker
+  INACTIVE, `consecutive_closed_losses: 0` — unchanged, and unchangeable by this run, since only
+  a closed position moves the streak. **No ClickUp alert was raised and none was warranted:**
+  `TRADING_ENABLED: false` is a configured state already reported by the 09:36 run, not a new
+  incident, and re-alerting a standing condition is what the dedupe rules exist to prevent.
