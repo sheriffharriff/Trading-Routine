@@ -1,0 +1,119 @@
+name: Merge agent branches into main
+
+# Routine sessions run on a per-session branch and push their work there
+# (scripts/commit.py). This lands that work on main so the next run starts with
+# it, and cleans the branch up afterwards.
+#
+# Pushes made with GITHUB_TOKEN do not trigger workflows, so neither the push to
+# main nor the branch deletion below re-enters this workflow.
+
+on:
+  push:
+    branches:
+      - 'claude/**'
+
+permissions:
+  contents: write
+
+# The routines are not expected to overlap, but if two ever finish together this
+# turns a rejected push into a wait rather than a failed job.
+concurrency:
+  group: merge-agent-branches
+  cancel-in-progress: false
+
+jobs:
+  merge:
+    # Deleting a branch also fires a push event. There is nothing to merge from
+    # a ref that no longer exists.
+    if: github.event.deleted == false
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out main with full history
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Refuse branches that touch human-owned files
+        id: guard
+        env:
+          BRANCH: ${{ github.ref_name }}
+        run: |
+          set -euo pipefail
+          git fetch --no-tags origin "+refs/heads/$BRANCH:refs/remotes/origin/$BRANCH"
+
+          # Everything the branch would bring to main, not just the commits in
+          # this one push: a force-push or a push of more than 20 commits does
+          # not report the full picture in the event payload.
+          base=$(git merge-base HEAD "origin/$BRANCH")
+          touched=$(git diff --name-only "$base" "origin/$BRANCH" -- strategy.md control.md)
+
+          if [ -n "$touched" ]; then
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+            echo "::warning::$BRANCH changes human-owned files ($(echo "$touched" | tr '\n' ' ')); it was NOT merged into main."
+            {
+              echo "### Skipped: human-owned files changed"
+              echo
+              echo "\`$BRANCH\` changes files that only a human may land on main:"
+              echo
+              echo '```'
+              echo "$touched"
+              echo '```'
+              echo
+              echo "Nothing was merged and the branch was left in place. Review it by hand."
+            } >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Merge the branch into main
+        if: steps.guard.outputs.skip == 'false'
+        env:
+          BRANCH: ${{ github.ref_name }}
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+
+          # --no-ff keeps every commit the run made and gives the run a single
+          # visible boundary on main. Never --squash: the run history is the
+          # point of keeping these branches.
+          if ! git merge --no-ff --no-edit -m "Merge $BRANCH into main" "origin/$BRANCH"; then
+            git merge --abort || true
+            {
+              echo "### Merge conflict"
+              echo
+              echo "\`$BRANCH\` does not merge cleanly into main. The merge was aborted,"
+              echo "main was not pushed, and the branch was left in place."
+              echo
+              echo "Resolve it by hand:"
+              echo
+              echo '```'
+              echo "git fetch origin"
+              echo "git checkout main && git pull"
+              echo "git merge --no-ff origin/$BRANCH"
+              echo '```'
+            } >> "$GITHUB_STEP_SUMMARY"
+            echo "::error::$BRANCH conflicts with main. Merge aborted; resolve it by hand."
+            exit 1
+          fi
+
+      - name: Push main
+        if: steps.guard.outputs.skip == 'false'
+        env:
+          BRANCH: ${{ github.ref_name }}
+        run: |
+          set -euo pipefail
+          if ! git push origin HEAD:main; then
+            echo "::error::Could not push main. $BRANCH was left in place; nothing has been lost."
+            exit 1
+          fi
+
+      - name: Delete the merged branch from origin
+        if: steps.guard.outputs.skip == 'false'
+        env:
+          BRANCH: ${{ github.ref_name }}
+        run: |
+          set -euo pipefail
+          git push origin --delete "$BRANCH"
+          echo "Merged \`$BRANCH\` into main and deleted the branch." >> "$GITHUB_STEP_SUMMARY"
