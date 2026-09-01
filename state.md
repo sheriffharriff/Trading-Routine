@@ -10,7 +10,7 @@ The block below is parsed by `scripts/common.py` and gates real behavior
 `key: value` format exactly. Prose goes underneath.
 
 ```
-last_run: 2026-09-01 01:15 ET 1-premarket-research (second run of the day)
+last_run: 2026-09-01 08:56 ET 1-premarket-research (third run of the day)
 week_of: 2026-08-31
 new_positions_this_week: 0
 consecutive_closed_losses: 0
@@ -68,26 +68,30 @@ position list win, and the discrepancy goes in the journal.
 
 Anything the next run must not lose. Cleared once acted on.
 
-- **⚠ THE SCHEDULE IS WRONG, AND IT IS THE MOST ACTIONABLE ITEM HERE.** Routine 1 is specified
-  to run at **08:00 ET on weekdays**. It has now fired **twice on 2026-09-01, at 00:48 ET and
-  at 01:15 ET** — both roughly seven hours early, 27 minutes apart. (Times are Alpaca server
-  timestamps, not container clock, so this is not a timezone artifact locally: `alpaca.py clock`
-  returned `2026-09-01T01:15:35-04:00`.) Two independent faults, and they need separating:
-  **(a)** the trigger time is off by ~7 hours — consistent with a cron expression written in UTC
-  and interpreted as ET, or the reverse; **(b)** it fired *twice*, which a single misconfigured
-  time does not explain on its own.
-  **Why this is not cosmetic.** Research done at 01:00 ET is done against a stale tape: no
-  pre-market prints, no overnight-to-open gap, and a `move --sessions 5` window that still ends
-  at the *prior* session's close. Every priced-in check in `research_log.md` for 2026-09-01 was
-  computed on that basis. They are not wrong, but they are older than the 08:00 slot intends,
-  and the 09:35 run's `revalidate` step is doing more work than it was designed to.
-  A human has to fix the schedule — no run can fix it from inside. **Do not clear this line
-  until a Routine 1 run actually fires at 08:00 ET.**
+- **⚠ THE SCHEDULE IS STILL WRONG, AND IT IS STILL THE MOST ACTIONABLE ITEM HERE — BUT THE
+  DIAGNOSIS HAS CHANGED.** Routine 1 is specified to run at **08:00 ET on weekdays**. It has now
+  fired **three times on 2026-09-01: 00:48, 01:15 and 08:56 ET** (all Alpaca server timestamps,
+  so not a local-clock artifact). The two faults previously recorded need re-separating in light
+  of the third firing:
+  **(a) The ~7-hour offset did NOT repeat.** The 08:56 run landed 56 minutes after the intended
+  08:00 slot — late, but in the right part of the day and, importantly, **inside the pre-market
+  session**. So the "cron written in UTC, read as ET" hypothesis from the earlier runs does not
+  fit: a constant offset would have produced a third overnight firing. Something else caused the
+  two early ones. **Revise, do not inherit, that diagnosis.**
+  **(b) The duplicate firing DID repeat, and got worse** — two firings became three in a single
+  day. This is now clearly the primary fault and it is independent of the timing question.
+  **Why this is not cosmetic.** Each firing writes a full set of thesis IDs against a rolling news
+  window, so `research_log.md` accumulates entries at ~3x the intended rate and a later reader
+  cannot tell three runs of one day from three days of work without the funnel headers. It also
+  means `plan_today.md` is overwritten repeatedly before the 09:35 run consumes it.
+  A human has to fix the schedule — no run can fix it from inside. **Do not clear this line until
+  Routine 1 fires exactly once on a weekday, at or near 08:00 ET.** The 08:56 firing satisfies
+  the timing half and not the once-per-day half.
 
-- **Today's research is spread over two runs and five thesis IDs.** T-2026-09-01-01 (NOC),
-  -02 (LHX), -03 (RTX) came from the 00:48 run; -04 (MU), -05 (WDC) from the 01:15 run. All
-  five REJECTED. A reader scanning `research_log.md` should not mistake this for two days of
-  work — it is one news window examined twice.
+- **Today's research is spread over three runs and six thesis IDs.** T-2026-09-01-01 (NOC),
+  -02 (LHX), -03 (RTX) came from the 00:48 run; -04 (MU), -05 (WDC) from the 01:15 run;
+  -06 (AEP) from the 08:56 run. All six REJECTED. A reader scanning `research_log.md` should not
+  mistake this for three days of work — it is one rolling news window examined three times.
 
 - **Core sleeve still does not exist.** `core_established: false`, core 0.0% against a 70%
   target — outside the §2 65–75% band. A REBALANCE intent to buy $70,000 of VOO is written
@@ -101,7 +105,7 @@ Anything the next run must not lose. Cleared once acted on.
   reappearance as evidence that something failed — but it also should not let it go quiet.
   This is a human decision, and it is the single most consequential open item in the system.
 
-- **Week rollover: checked, none needed this run.** ISO Monday of 2026-09-01 (Tuesday) is
+- **Week rollover: checked again, none needed.** ISO Monday of 2026-09-01 (Tuesday) is
   2026-08-31, which already matches `week_of`. The 00:48 run advanced it from 2026-08-03.
   `new_positions_this_week` stays 0 — the §6 weekly cap is fully available (0 of 3 used).
 
@@ -144,3 +148,36 @@ Anything the next run must not lose. Cleared once acted on.
   If a later run rediscovers this event, read T-2026-09-01-04 before re-deriving it, and note
   that MU is **rejected, not queued**: re-run the priced-in check fresh and re-test the timing
   window from that day's date rather than inheriting either.
+
+- **The Anthropic / Lambda / Hut 8 datacentre deal is a live event, examined and deliberately
+  not traded.** Anthropic signed a reported $35B cloud agreement with Nvidia-backed Lambda for
+  ~350 MW at Hut 8's 1 GW Beacon Point campus in Nueces County, Texas, with Nvidia holding the
+  lease (WSJ/Reuters, 2026-08-31). Worked as T-2026-09-01-06. **Only one eligible second-order
+  name is tied to the project by any source: AEP**, via AEP Texas's interconnection agreement —
+  no electrical-equipment, cooling, EPC or land counterparty is named anywhere, and inventing
+  one would repeat the RTX failure. AEP was **rejected on §4.2 magnitude and §4.3 timing**: the
+  1 GW sits inside 45 GW of SB6-compliant load AEP Texas has *already contracted and guided
+  through 2030*, so it is ~2% of a disclosed pipeline and lands nowhere near a two-quarter
+  horizon. If a later run rediscovers this event, read T-2026-09-01-06 first — and note that a
+  cheaper AEP entry changes nothing, because the rejection is on timing, which a price move
+  cannot fix.
+
+- **⚠ NEW STANDING RULE, and the most transferable thing this run produced: verify the news is
+  new to the company's own disclosure.** Before treating a contract or announcement as a catalyst
+  for Company B, check whether B's management has already guided the pipeline that contract falls
+  inside. If it has, the deal is an *illustration* of existing guidance, not a change to it — and
+  the priced-in check will pass for exactly the wrong reason. This sits alongside the two rules
+  the earlier runs left: *screen on the mechanism before running filters* (from RTX), and
+  *verify what the company currently sells, post-spin* (from WDC).
+  **The three rules share one root cause, now visible across six candidates.** Four of the six
+  (NOC, LHX, WDC, AEP) passed the §4 priced-in check and failed on the thesis; one (MU) passed
+  the thesis and failed the filter. **The filter has not once been informative about the outcome.**
+  Treat a passing priced-in check as a veto that did not fire, never as encouragement. "Has not
+  moved" and "should have moved but didn't" are the same number and the filter cannot tell them
+  apart — three separate near-misses have now run through that exact gap.
+
+- **Cleared from carry-forward this run: nothing.** Every item above is still open. The two
+  process corrections the earlier runs left were *applied* in this run — the mechanism was
+  screened before the filters, and the candidate's current business was verified before it
+  entered the funnel — and they are folded into the standing-rule item above rather than kept
+  as separate lines.

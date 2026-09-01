@@ -56,6 +56,22 @@ re-derive it from price history, and it stays correct for positions closed month
 
 *(none — no positions have been opened yet)*
 
+**Reconciliation 2026-09-01 08:56 ET (1-premarket-research, third run of the day):** re-checked
+against live Alpaca from inside the pre-market session. `alpaca.py positions` returned `[]`;
+`alpaca.py sleeves` reports equity $100,000.00, cash $100,000.00, core 0.0%, satellite 0.0%
+(count 0), cash 100.0% — unchanged from both earlier runs today. This ledger is empty and
+**agrees with the broker.** No discrepancy.
+
+No §5 evaluation was possible or required: with no open positions there is no invalidation to
+test (5.1), no timing window to expire (5.2), and no entry or high-water mark to measure a stop
+against (5.3, 5.4). No `sell_rule_status` fields exist to update.
+
+The high-water backfill warning at the top of this file is **not** in play — there is no
+`highest_close` gap to backfill, because there is no position. It becomes live the day the first
+satellite position is opened, which under `TRADING_ENABLED: false` is not today.
+
+---
+
 **Reconciliation 2026-09-01 01:15 ET (1-premarket-research, second run of the day):** re-checked
 against live Alpaca. `alpaca.py positions` returned `[]`; `alpaca.py sleeves` reports equity
 $100,000.00, cash $100,000.00, core 0.0%, satellite 0.0% (count 0), cash 100.0% — identical to

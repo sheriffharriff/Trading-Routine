@@ -52,6 +52,153 @@ single most common way a plausible-sounding connection gets mistaken for an oppo
 
 ## Entries
 
+### 2026-09-01 (third run, 08:55 ET) — event survey (funnel, pre-thesis)
+
+**Read this header before reading the entry below.** This is the **third** `1-premarket-research`
+run for 2026-09-01, after 00:48 ET (`577ff28`) and 01:15 ET (`9d592dd`). Six thesis IDs now carry
+today's date across three runs against a rolling news window. That is a scheduling fault, not six
+days of research — see `state.md` → Carry forward.
+
+What is different about this run, and why it was worth doing: it fired at **08:55 ET, inside the
+pre-market session**, ~55 minutes after the intended 08:00 slot rather than ~7 hours before it.
+The two earlier runs did their priced-in checks at 01:00 with a `move --sessions 5` window ending
+at the prior session's close and no pre-market tape in existence. This one has both.
+
+**Re-checked, not re-litigated.** Per the carry-forward instruction, the PAC-3 MSE / THAAD ramp
+(T-…-01 NOC, -02 LHX, -03 RTX) and the memory-cost cycle (T-…-04 MU, -05 WDC) were **not** reworked.
+The overnight scan returned the PAC-3 story again — this time via a `thestreet.com` piece which adds
+that the Pentagon release carries **no dollar figure at all** and that funding depends on annual
+Congressional appropriations. That makes the §4.3 timing rejection stronger, not weaker. Nothing
+about the memory complex changed.
+
+Events already funnelled by the earlier runs and deliberately not reworked: SEC shareholder-proposal
+rulemaking, Chicago PMI, Treasury/IRS CFC regulations, US–Iran / oil, NVDA–MediaTek, FTC v. Amazon,
+California wildfire bill, SLB–Kelvion, ICE/Cboe–Hyperliquid. **Note on the last of these:** the
+California wildfire item resurfaced hard overnight — **EIX fell 23.07%** after the legislature
+rejected the cost-recovery proposal. The 00:48 run dropped it as "a negative catalyst with no clean
+long beneficiary" and that call stands: a 23% drawdown in a regulated utility is not a long
+opportunity in a §3 long-only book, and the obvious "buy the surviving utility" reflex is a
+precedent-risk trade, not a dollar path.
+
+Five items surfaced that the earlier funnels did not carry. Four were dropped pre-thesis:
+
+- **LG Energy Solution ⇄ Smackover Lithium (Standard Lithium + Equinor) offtake** — 8,000 t/yr of
+  US-produced lithium carbonate over 10 years, announced 2026-08-31. Dropped on **part 2 arithmetic,
+  before writing anything.** Standard Lithium is a development-stage junior far below the §3 $10B
+  floor. Equinor is the only eligible-sized party, and 8,000 t/yr at any plausible carbonate price
+  is order-$100M/yr gross against a revenue base near $100B — roughly **0.1%**, split with a JV
+  partner, over ten years. Two §4 tests fail simultaneously and neither is close.
+- **Graco completes Valco Melton acquisition, $447M cash.** Dropped at part 1, on the same reasoning
+  the 01:15 run applied to SLB–Kelvion: an acquisition rearranges the *acquirer's* segment mix and
+  does not change any third company's revenue or cost line. No Company B exists in an M&A close.
+- **SAIC beats and raises FY2027 guidance, +8%.** Dropped at part 1, and worth naming because it is
+  the most tempting shape in today's set. The reflex is "federal IT demand is strong → buy LDOS,
+  CACI, BAH." But SAIC's results do not *cause* anything to change at Leidos. It is a read-across
+  about a shared end-market — an information event, not a causal path — and §4 asks for a mechanism
+  by which Company B's economics change. "Company A's print implies Company B's print" is a
+  correlation dressed as a mechanism, and it is the easiest sentence in the world to write fluently.
+- **AstraZeneca Zegfrovy sNDA accepted; Protagonist MIMRYLO approved.** Dropped on §4.3. An sNDA
+  *acceptance* precedes any decision by months, and neither event names an affected competitor.
+  No timed dollar path inside two quarters.
+
+The fifth — **the Anthropic / Lambda / Hut 8 data-centre deal** — has genuine second-order structure
+and is worked as T-2026-09-01-06 below.
+
+**The event:** Anthropic signed a reported **$35B cloud-computing agreement with Lambda**, an
+Nvidia-backed cloud provider (WSJ and Reuters, 2026-08-31, sourced to people familiar rather than
+company release). The capacity — Reuters puts the initial project at **~350 MW** — sits in a data
+centre developed by **Hut 8** in **Nueces County, Texas**, with **Nvidia holding the lease**. Hut 8
+disclosed in July a 15-year lease to an "investment-grade customer" with a **$19.6B base-term
+contract value**; the FT subsequently identified Nvidia as the tenant of Hut 8's **1 GW Beacon Point
+campus**.
+
+This is a clean §4 shape on its face: a very large, dated, physically located commitment where the
+named parties are either private (Anthropic, Lambda) or already the headline (NVDA, HUT). The
+second-order question is who else gets paid to make 1 GW in Nueces County exist.
+
+**Screened on the mechanism first, per the standing process correction — and the screen came back
+almost empty.** Asked explicitly for companies a *source ties to this project*, rather than for
+plausible AI-datacentre suppliers, exactly one eligible name survived: **AEP**, via AEP Texas, which
+holds the interconnection agreement supplying Beacon Point's gigawatt. **No** source names an
+electrical-equipment, cooling, EPC or land counterparty. That absence is itself the useful result:
+the vendor list I could have written from general knowledge (switchgear, transformers, chillers)
+would have been entirely my own inference, which is the T-2026-09-01-03 (RTX) failure repeated.
+
+---
+
+### T-2026-09-01-06 — AEP — REJECTED
+**Company A / the news:** Anthropic's reported $35B cloud agreement with Nvidia-backed Lambda, for
+~350 MW of capacity at Hut 8's Beacon Point campus in Nueces County, Texas, with Nvidia as
+leaseholder (Reuters / WSJ, 2026-08-31).
+**Company B / the candidate:** American Electric Power — the only publicly traded US company any
+source ties to the project other than the named parties, via AEP Texas.
+
+**1. Mechanism (one sentence):**
+> The Beacon Point buildout causes American Electric Power's Texas transmission and distribution
+> revenue to rise because AEP Texas holds the interconnection agreement supplying the campus's
+> full gigawatt of utility capacity.
+
+One clause, no "and also," and the interconnection agreement is sourced rather than assumed. **Part 1
+passes** — and it is the only part that does.
+
+**2. Dollar path:** FAILED, though not in the obvious way. The *segment* clears the bar comfortably:
+Transmission & Distribution Companies is **55% of revenue** as of 2026-Q2, against FY2025 total
+revenue of **$21.88B** (Perplexity, citing a 10-K summary page and a KPI aggregator — both secondary;
+no source in the set breaks out AEP Texas in dollars at all). But §4.2 asks for the **magnitude of
+the change**, and that is where this dies. Beacon Point is **1 GW**. AEP Texas already has
+**45 GW of SB6-compliant contracted load additions through 2030**, disclosed by management on the
+Q2 2026 call, within a **56 GW** identified-load figure company-wide. This deal is roughly **2% of a
+pipeline the company has already put in its own guidance**, and regulated T&D revenue is set by rate
+cases, not by any single customer's contract. I cannot write a magnitude for this event that is both
+honest and material.
+
+**3. Timing window:** FAILED, decisively and independently. Management's own framing of the Texas
+data-centre load is "**through 2030**." The campus is under development; the Anthropic capacity is
+~350 MW of an eventual gigawatt. Nothing about *this contract* lands in an AEP reported quarter
+inside the §4.3 two-quarter horizon.
+
+**4. Invalidation:** (not reached — parts 2 and 3 both failed)
+
+**Hard filters:**
+- Priced-in (§4): moved **+0.38%** over last 5 sessions (121.98 → 122.44) → **pass**. Also
+  **−3.86% over 20 sessions** (127.36 → 122.44) → pass. Cleanly, in both windows.
+- Correlation (§4): no open positions → pass, vacuously
+- Universe (§3): stock, NASDAQ, tradable, fractionable; market cap **~$67–69B** (source: Perplexity
+  aggregating MarketBeat $67.59B on 2026-08-21, aistockwire $68.74B on 2026-08-19, a news item
+  $68.89B on 2026-08-17, Seeking Alpha $66.59B on 2026-08-04) → **pass**, far above the $10B floor
+
+**Outcome:** REJECTED on parts 2 and 3. A sound one-sentence mechanism attached to a company that
+has already told the market about the exposure, and that will not report it inside the horizon.
+
+**Why this entry earns its place, and the rule it produces.** This is the **third consecutive
+candidate** to clear the priced-in filter and die anyway, and the three failures are the same failure
+in different clothing. On **LHX** the mechanism was real but the price was trading on something else.
+On **WDC** the mechanism did not exist, because the company had sold the business. Here the mechanism
+is real, the company *is* exposed, and the exposure is **already in guidance**.
+
+That is a genuinely new variant and it is the sneakiest of the three. AEP has been telling investors
+about Texas data-centre load since the Q4 FY2025 call — 36 GW of LOAs then, 45 GW contracted through
+2030 by Q2 2026, 2025 retail sales +7.5% with C&I up nearly 10% "primarily from data centers in
+Indiana, Texas, and Ohio." A single named tenant arriving inside a pipeline the company has already
+quantified is **not new information about AEP**, and the stock's +0.38% five-session move is not the
+market overlooking something. It is the market correctly pricing an increment of about 2%.
+
+**Practical form, to sit alongside the "verify the business before running the screen" rule from
+T-2026-09-01-05: verify the news is new to the company's own disclosure.** Before treating a contract
+as a catalyst for Company B, check whether Company B's management has already guided the pipeline
+that contract falls inside. If it has, the individual deal is an illustration of existing guidance,
+not a change to it — and the priced-in check will pass for exactly the wrong reason. Three runs, three
+names, three passing priced-in checks, three rejections: **the filter has now been non-informative
+about the outcome in every case where I ran it.** It is a veto, not a signal, and I should stop
+reading a pass as encouragement.
+
+**One further mark against this candidate even had 2 and 3 passed.** The single sourced link is an
+interconnection agreement — a regulated utility connecting a customer, which is the thing it exists
+to do. §4 wants Company B's economics to *change*. A utility signing an interconnection is closer to
+a utility doing its job than to a windfall, and I should have weighted that earlier than I did.
+
+---
+
 ### 2026-09-01 (second run, 01:15 ET) — event survey (funnel, pre-thesis)
 
 **Read this header before reading the entries.** This is the **second** `1-premarket-research`
