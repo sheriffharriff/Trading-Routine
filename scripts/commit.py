@@ -36,6 +36,14 @@ def tracked_in_head(path):
     return c.git("cat-file", "-e", f"HEAD:{path}")[0] == 0
 
 
+def current_branch():
+    """The branch this run is on. Empty string if HEAD is detached."""
+    code, out, _ = c.git("rev-parse", "--abbrev-ref", "HEAD")
+    if code != 0 or out in ("", "HEAD"):
+        return ""
+    return out
+
+
 def staged_files():
     return [line.strip() for line in c.git("diff", "--cached", "--name-only")[1].splitlines()
             if line.strip()]
@@ -99,22 +107,32 @@ def do_commit(message):
 
 
 def do_push(routine, message, summary):
-    """Rebase onto main then push. One retry, then alert.
+    """Rebase onto the run's own branch then push. One retry, then alert.
+
+    The branch is whatever the run was started on -- routine sessions get a
+    per-session branch, not main -- so it is read from HEAD rather than named
+    here. A branch that does not exist on the remote yet is created by the push;
+    the pull before it simply finds nothing to rebase onto.
 
     Concurrency is not really expected -- the five routines never overlap -- but
     a rebase costs nothing and turns a rejected push into a resolved one.
     """
-    for attempt in (1, 2):
-        c.git("pull", "--rebase", "origin", "main")
-        code, out, err = c.git("push", "origin", "main")
-        if code == 0:
-            return True, out
-        last_error = err or out
-        if attempt == 1:
-            print(f"push failed, retrying once: {last_error}", flush=True)
+    branch = current_branch()
+    if not branch:
+        last_error = "HEAD is detached; there is no branch to push to"
+    else:
+        for attempt in (1, 2):
+            c.git("pull", "--rebase", "origin", branch)
+            code, out, err = c.git("push", "origin", branch)
+            if code == 0:
+                return True, out
+            last_error = err or out
+            if attempt == 1:
+                print(f"push failed, retrying once: {last_error}", flush=True)
 
+    target = f"`{branch}`" if branch else "its branch"
     detail = (
-        f"Routine `{routine}` could not push to `main` after two attempts. Everything it "
+        f"Routine `{routine}` could not push to {target}. Everything it "
         f"learned this run is committed locally in a container that is about to be "
         f"destroyed, so treat the content below as the only surviving copy.\n\n"
         f"**Commit message:** {message}\n\n"
@@ -126,7 +144,7 @@ def do_push(routine, message, summary):
     try:
         import clickup
         clickup.alert(key="push-failure",
-                      title="Push to main failed - run output at risk",
+                      title=f"Push to {branch or 'branch'} failed - run output at risk",
                       detail=detail, routine=routine)
     except BaseException:
         print("WARNING: the push-failure alert could not be posted to ClickUp either. "
