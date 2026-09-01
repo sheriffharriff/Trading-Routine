@@ -35,8 +35,19 @@ market_open_today: yes
 ```
 
 Market opens today 2026-09-01 at 09:30 ET (`alpaca.py clock`: `is_open: false`,
-`next_open: 2026-09-01T09:30:00-04:00`). Not a holiday — the run fired while the market was
-legitimately closed pre-open.
+`next_open: 2026-09-01T09:30:00-04:00`, timestamp `01:15 ET`). Not a holiday — the market is
+legitimately closed because it is one in the morning.
+
+**This plan was written by the second pre-market run of 2026-09-01.** The first ran at
+00:48 ET and committed `577ff28`; this one ran at 01:15 ET and supersedes it. The two agree
+on every intent — the substance below is unchanged. What changed is that a second research
+pass was made against the same news window, which added two rejected theses
+(T-2026-09-01-04 MU, -05 WDC) and **no** new buy intents.
+
+**Both runs fired ~7 hours before the routine's intended 08:00 ET slot.** The open run should
+not treat this plan as unusually fresh: the research behind it was done overnight, before any
+pre-market tape existed, so the `revalidate` lines below matter more than they usually would,
+not less.
 
 ---
 
@@ -63,21 +74,28 @@ day's research, but it is dated today regardless.
 
 ### BUY — none
 
-No buy intents. Three candidates were worked through the §4 filters and all three were
-rejected. Details in `research_log.md` (T-2026-09-01-01 through -03); the short version:
+No buy intents. **Five** candidates have now been worked through the §4 filters across today's
+two runs, and all five were rejected. Details in `research_log.md`; the short version:
 
 | Thesis | Ticker | Died at | Why |
 |---|---|---|---|
 | T-2026-09-01-01 | NOC | parts 2 and 3 | $3B over 7 years ≈ 1% of a $42B revenue base; affected segment unidentifiable from any source |
 | T-2026-09-01-02 | LHX | part 3 | Real $12B framework, but 2027+ revenue; and the stock is actually trading on a delayed missile-IPO overhang, not on interceptor demand |
 | T-2026-09-01-03 | RTX | part 1 | No source ties RTX to PAC-3/THAAD content in these agreements — the mechanism was my inference, not reporting |
+| T-2026-09-01-04 | MU | priced-in filter | Strongest thesis of the five — one-clause mechanism, DRAM is 76% of revenue, in-horizon — but +5.27% over 5 sessions and +15.6% over 20. Late. |
+| T-2026-09-01-05 | WDC | part 1 | Only name in the memory complex to clear the priced-in filter, and it cleared it because it sold the flash business in Feb 2025. HDD-only. Not exposed to the driver. |
 
-All three passed the priced-in check and all three passed §3. **Passing the hard filters is
-not a reason to buy** — it only means nothing had disqualified them yet. The four-part thesis
-is where they failed, which is the order §4 intends.
+The first three passed the priced-in check and failed the thesis. The last two invert it: MU
+passed the thesis and failed the filter. **Neither direction is a reason to buy** — a candidate
+has to survive both, and today none did.
 
-Note for the open run: NOC and LHX share one driver (the PAC-3 MSE / THAAD production ramp).
-If a future run revisits this event, §4's correlation rule permits at most one of them.
+Note for the open run: NOC and LHX share one driver (the PAC-3 MSE / THAAD production ramp);
+§4's correlation rule permits at most one of them, ever, at the same time. MU, STX and SNDK
+likewise share one driver (the memory price cycle) — three tickers, one bet.
+
+**Do not treat MU as a queued idea.** It is rejected, not deferred. If a later run rediscovers
+it, the priced-in check must be re-run fresh and the timing window re-tested from that day's
+date, not inherited from this entry.
 
 ### SELL — none
 

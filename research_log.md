@@ -52,7 +52,172 @@ single most common way a plausible-sounding connection gets mistaken for an oppo
 
 ## Entries
 
-### 2026-09-01 — event survey (funnel, pre-thesis)
+### 2026-09-01 (second run, 01:15 ET) — event survey (funnel, pre-thesis)
+
+**Read this header before reading the entries.** This is the **second** `1-premarket-research`
+run for 2026-09-01. The first committed at 00:48 ET (`577ff28`); this one fired at 01:15 ET,
+27 minutes later. Both fired roughly seven hours before the routine's intended 08:00 ET slot.
+That is a scheduling fault, not a research finding — see `state.md` → Carry forward.
+
+The consequence for this log: two funnel blocks and five thesis IDs carry today's date, from
+two runs against a near-identical news window. A later reader should not read `T-…-04` and
+`-05` as a second day's work. They are not.
+
+Re-ran the overnight scan (Perplexity, recency=day). It returned substantially the same event
+set as the 00:48 run — unsurprising at a 27-minute interval. Per the carry-forward instruction,
+the PAC-3 MSE / THAAD event was **not re-litigated**: T-2026-09-01-01 through -03 already
+settled it on §4.3 timing and §4.2 magnitude, and neither fact changes in 27 minutes.
+
+Events already funnelled by the 00:48 run and deliberately not reworked here: SEC
+shareholder-proposal rulemaking, Chicago PMI 47.1, Treasury/IRS CFC regulations, US–Iran /
+oil, NVDA–MediaTek $3.5B, FTC v. Amazon, California wildfire bill (PG&E, EIX).
+
+Three items surfaced that the 00:48 funnel did not carry. Two were dropped pre-thesis:
+
+- **SLB to acquire Kelvion for $3.4B cash** (data-centre cooling; swissinfo markets wrap,
+  2026-08-31 21:03 UTC). Dropped at part 1. An acquisition changes the *acquirer's* segment
+  mix; it does not change any third company's revenue or cost line, which is what §4 asks for.
+  The only reading with a real mechanism — a better-capitalised entrant in data-centre cooling
+  — points *against* the incumbent suppliers, and §3 leaves this strategy long-only. No
+  Company B exists here.
+- **ICE and Cboe fall on Hyperliquid/Payward perpetual-futures talks** (same wrap). A negative
+  catalyst on the named parties, with the beneficiary being a private company (Payward) and the
+  product being crypto derivatives — outside §3 twice over. Nothing long and eligible.
+
+The third — **Nvidia's gross-margin guidance** — had genuine second-order structure and is
+worked as T-2026-09-01-04 and -05 below.
+
+**The event:** Nvidia reported record revenue of **$96.2B** for the quarter ended 2026-07-31,
+and guided gross margin **down from 75% to 71–72% by fiscal Q4 2027**, attributing the
+compression explicitly to **rising memory-chip costs** (Gallagher weekly markets update,
+2026-08-31). This is the cleanest §4 shape available today: Company A has publicly named a
+**cost line** that is, by construction, somebody else's **revenue line**. The second-order
+question writes itself — who is collecting the money Nvidia says it is now paying?
+
+The answer is the DRAM/HBM/NAND suppliers. Screened on the mechanism first this time, per the
+process correction the 00:48 run left in carry forward, and only then filtered:
+
+| Ticker | 5-session move | §4 priced-in |
+|---|---|---|
+| MU | **+5.27%** (910.34 → 958.31) | FAIL |
+| SNDK | **+5.11%** (1491.835 → 1568.135) | FAIL |
+| STX | **+4.20%** (794.74 → 828.145) | FAIL |
+| WDC | +3.49% (435.30 → 450.495) | pass |
+
+Samsung and SK Hynix are Korea-listed and fail §3 without further work.
+
+**Three of the four are past the threshold, and the fourth cleared it by 0.51pp.** That
+pattern is the finding, and it is worth more than any of the individual entries: this is not
+a market that has failed to notice: NVDA itself is **+5.94%** over the same five sessions, and
+MU is **+15.6% over twenty**. By the time Company A is discussing the cost line on an earnings
+call, the trade in Company B is not early — it is consensus with a lag measured in weeks.
+
+---
+
+### T-2026-09-01-04 — MU — REJECTED
+**Company A / the news:** Nvidia's Q2 FY2027 report (quarter ended 2026-07-31): record revenue
+$96.2B, gross margin guided down from 75% to 71–72% by fiscal Q4 2027, attributed to rising
+memory-chip costs. (Gallagher weekly financial markets update, 2026-08-31.)
+**Company B / the candidate:** Micron Technology — the only US-listed pure-play DRAM/HBM/NAND
+supplier of scale.
+
+**1. Mechanism (one sentence):**
+> Nvidia's HBM and DRAM procurement at rising prices causes Micron's DRAM revenue to rise
+> because Micron supplies that memory and holds 63.2% of the global HBM market.
+
+One clause, no "and also." Part 1 passes cleanly — this is the strongest mechanism sentence
+written in either of today's runs.
+
+**2. Dollar path:** PASSES, comfortably. Micron FY2025 revenue ~**$37.4B**, of which **DRAM
+$31.3B (76%)** and NAND $9.9B (24%); disclosed **34.8% global DRAM revenue share and 63.2% HBM
+revenue share** for 2025 (Perplexity, citing an FY2025 results summary — secondary source, and
+I would want the 10-K before sizing a position on it). Far above the §4.2 10% floor. The
+affected segment is essentially the whole company.
+
+**3. Timing window:** PASSES. Memory is priced on short contract cycles and Micron reports
+quarterly; NVDA's own guidance places the cost pressure inside fiscal Q4 2027 (ending
+2027-01-31). Within the §4.3 two-quarter horizon.
+
+**4. Invalidation:** (not reached — the hard filter fires first, and §4 orders it that way)
+
+**Hard filters:**
+- Priced-in (§4): moved **+5.27%** over last 5 sessions (910.34 → 958.31) → **FAIL**. Also
+  **+15.6% over 20 sessions** (829.01 → 958.31). Not marginal, and not recent.
+- Correlation (§4): no open positions → pass, vacuously
+- Universe (§3): stock, well above the $10B floor → pass (figure not sourced; the trade is
+  already dead on the priced-in check and I am not going to source a number I cannot use)
+
+**Outcome:** REJECTED on the §4 priced-in filter. Skipped, per the rule.
+
+**This is the uncomfortable one, and I want it on the record properly.** All three thesis
+parts I reached are the strongest of any candidate in either run today — a one-clause
+mechanism with no strain in it, a segment that *is* the company rather than 1% of it, and a
+timing window inside the horizon. T-2026-09-01-01 (NOC) failed because $3B over seven years is
+a rounding error against a $42B base; nothing like that is wrong here. This one failed purely
+because I am late.
+
+The temptation §4 exists to catch is precisely this: three green parts create real pressure to
+find the filter negotiable — to argue 5.27% is "barely over," or that a 20-session window is
+not what the rule means, or that HBM has further to run. The rule says more than 4% over five
+sessions means you are late, and it does not have an exception for theses that are otherwise
+good. **A correct thesis discovered late is not an opportunity; it is a description of a move
+that already happened.** No trade.
+
+Worth carrying forward: the mechanism is sound and it is not a one-week story. If MU's
+five-session move mean-reverts below 4% while the memory cost cycle is still live, this
+becomes a legitimate candidate again — but at that point the timing window needs re-testing
+from scratch, because two more quarters will have moved and the horizon is measured from the
+day of entry, not from today.
+
+---
+
+### T-2026-09-01-05 — WDC — REJECTED
+**Company A / the news:** Same Nvidia margin guidance and memory-cost attribution, 2026-08-31.
+**Company B / the candidate:** Western Digital — the one name in the memory complex that
+cleared the §4 priced-in filter (+3.49% over five sessions).
+
+**1. Mechanism (one sentence):** COULD NOT BE WRITTEN HONESTLY. **Western Digital does not
+sell the product.** WDC's FY2026 10-K states that the Separation completed **2026-02-21**,
+with WD continuing the **HDD business** and Sandisk taking the **Flash business**. Post-spin
+WDC is hard-disk-drive only; its reportable segments are **Cloud (89% of revenue), Client (8%)
+and Consumer (3%)**. Nvidia's guidance is about DRAM and HBM. There is no revenue line inside
+WDC that rises because memory-chip prices rise, so the sentence cannot be written at all.
+
+**2–4:** Not attempted. Part 1 failed.
+
+**Hard filters:**
+- Priced-in (§4): moved **+3.49%** over last 5 sessions (435.30 → 450.495) → pass
+- Correlation (§4): no open positions → pass, vacuously
+- Universe (§3): stock, above the $10B floor → pass
+
+**Outcome:** REJECTED at part 1. WDC is not exposed to the driver.
+
+**Why this entry matters more than the rejection does.** I went looking for WDC *because* it
+was the only survivor of the priced-in screen — I had a filter result before I had a business,
+and a name that "passes while its peers are late" is an inviting shape. It reads like the
+market overlooking one member of a complex.
+
+It was nothing of the kind. **WDC lagged the memory complex because it is not in the memory
+complex.** It sold that business eighteen months ago. The filter did not find me an
+overlooked name; it found me a name whose price is set by nearline HDD demand, and I nearly
+built a memory thesis on top of it.
+
+That is a **different failure from T-2026-09-01-02 (LHX)**, and the pair is worth reading
+together. On LHX the mechanism was real but the price was trading on something else (a delayed
+Missile Solutions IPO). Here the mechanism does not exist at all. What the two share is the
+thing to watch for: **a passing priced-in check is not evidence of an opportunity.** It says
+only that the stock has not moved, and "has not moved" and "should have moved but didn't" are
+the same number. Establishing that the candidate is actually exposed to the driver is a
+separate question the filter never asks, and both of today's near-misses ran through exactly
+that gap.
+
+Practical form of the rule, for the next run: **verify the business before running the
+screen.** A one-line check of what the company currently sells — post-spin, post-divestiture —
+would have killed this candidate before it reached the funnel.
+
+---
+
+### 2026-09-01 (first run, 00:48 ET) — event survey (funnel, pre-thesis)
 
 Overnight scan (Perplexity, recency=day) surfaced eight events. Five were dropped before
 thesis stage and are recorded here so the funnel is visible, not just its output:
