@@ -56,6 +56,32 @@ re-derive it from price history, and it stays correct for positions closed month
 
 *(none — no positions have been opened yet)*
 
+**Reconciliation 2026-09-01 12:35 ET (3-midday-management — the first midday run in this repo's
+history):** selftest passed all five checks. Market confirmed open (`is_open: true`, timestamp
+12:35:21 ET, next close 16:00 ET). `alpaca.py positions` returned `[]`; `alpaca.py sleeves`
+reports equity $100,000.00, cash $100,000.00, core 0.0%, satellite 0.0% (count 0), cash 100.0%,
+`core_in_band: false`, `rebalance_delta: 70000.0` — unchanged from the 09:36 ET open run. This
+ledger is empty and **agrees with the broker.** No discrepancy.
+
+**Nothing to manage, and nothing was done.** Routine 3 is exits-only and may not open a position;
+with zero open satellite positions there was nothing to evaluate. §5.1 (no invalidation condition
+exists to test), §5.2 (no timing window to expire), §5.3 and §5.4 (no entry price and no
+high-water mark to measure against) all had empty input. No Perplexity invalidation queries were
+run, because there is no `invalidation` line in this file to check — running news queries with no
+position to defend would be manufacturing activity, which §4's honest-broker rule forbids.
+
+**Step 2 high-water repair: nothing to repair.** The `highest_close` staleness check has no
+subject — no position block exists, so no `(as of ...)` date can be stale and no `bars` backfill
+was needed. This is materially different from a backfill that was skipped: the trailing stop is
+not silently disabled, it is simply not yet armed. It becomes live the day the first satellite
+position is opened, which under `TRADING_ENABLED: false` cannot be today.
+
+**Read this next to the 09:36 note, not as new information.** The two runs saw an identical
+account three hours apart. The absence of a VOO core position is the dry-run intent recorded in
+`trade_log.md`, not a failed fill.
+
+---
+
 **Reconciliation 2026-09-01 09:36 ET (2-market-open-execution — the first open run in this repo's
 history):** checked against live Alpaca from inside regular trading hours (`clock`: `is_open:
 true`, timestamp 09:35:59 ET). `alpaca.py positions` returned `[]`; `alpaca.py sleeves` reports
