@@ -55,3 +55,14 @@ re-derive it from price history, and it stays correct for positions closed month
 ## Open positions
 
 *(none — no positions have been opened yet)*
+
+**Reconciliation 2026-09-01 (1-premarket-research):** checked against live Alpaca.
+`alpaca.py positions` returned `[]`; `alpaca.py sleeves` reports equity $100,000.00, cash
+$100,000.00, core 0.0%, satellite 0.0% (count 0), cash 100.0%. This ledger is also empty.
+**They agree — no discrepancy.** No §5 evaluation was possible or required: with no open
+positions there is no invalidation to test (5.1), no timing window to expire (5.2), and no
+entry or high-water mark to measure a stop against (5.3, 5.4). No `sell_rule_status` fields
+to update.
+
+The core sleeve is not tracked in this file by design (§5 exempts it), so the fact that core
+is 0% is a `plan_today.md` / `state.md` matter, not a gap here.
