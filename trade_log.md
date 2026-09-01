@@ -49,4 +49,25 @@ audit it later.
 
 ## Entries
 
-*(none yet)*
+*(none yet — no order has reached a terminal fill state)*
+
+---
+
+## Dry-run intents (NOT trades)
+
+Recorded separately and deliberately kept out of `## Entries` above, which is reserved for
+orders that actually reached a terminal state. A future reader looking for the missing VOO core
+position should find the reason here rather than infer a broken run.
+
+### 2026-09-01 — VOO core bootstrap — INTENT ONLY, NOT FILLED
+- routine:        2-market-open-execution (09:36 ET)
+- thesis_id:      core
+- intended:       BUY VOO, notional $70,000.00 (70% of $100,000.00 equity, §2 target)
+- command:        `python scripts/alpaca.py buy --symbol VOO --notional 70000 --core`
+- result:         `{"ok": true, "dry_run": true, "reason": "TRADING_ENABLED is not true in
+                  control.md"}` — exit 0, **no order submitted, no fill, no position**
+- reference:      VOO last trade 700.625 at 09:35:37 ET; bid/ask 700.04 / 700.67; prior close
+                  704.875 (2026-08-31), i.e. about −0.6% on the session open
+- asset check:    `tradable: true`, `fractionable: true`, ARCA, us_equity — eligible, §3 clear
+- effect:         none. `core_established` stays `false`; account remains 100% cash; the same
+                  intent regenerates tomorrow until a human sets `TRADING_ENABLED: true`.

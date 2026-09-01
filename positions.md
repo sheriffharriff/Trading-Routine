@@ -56,6 +56,25 @@ re-derive it from price history, and it stays correct for positions closed month
 
 *(none — no positions have been opened yet)*
 
+**Reconciliation 2026-09-01 09:36 ET (2-market-open-execution — the first open run in this repo's
+history):** checked against live Alpaca from inside regular trading hours (`clock`: `is_open:
+true`, timestamp 09:35:59 ET). `alpaca.py positions` returned `[]`; `alpaca.py sleeves` reports
+equity $100,000.00, cash $100,000.00, core 0.0%, satellite 0.0% (count 0), cash 100.0%,
+`core_in_band: false`, `rebalance_delta: 70000.0`. This ledger is empty and **agrees with the
+broker.** No discrepancy, so no reconciliation was required before placing orders.
+
+**Nothing was opened or closed.** The plan carried no BUY and no SELL intents — all six of
+today's theses were rejected pre-market — so §5.1–5.4 had nothing to evaluate and no new block
+was written. The §2 core bootstrap was attempted and returned `"dry_run": true`
+(`TRADING_ENABLED: false`); it would not have produced a block here in any case, since the core
+holding is deliberately not tracked in this file.
+
+The high-water backfill warning at the top of this file is **not** in play — there is no
+`highest_close` gap to backfill, because there is no position. It goes live the day the first
+satellite position is opened, which under `TRADING_ENABLED: false` cannot be today.
+
+---
+
 **Reconciliation 2026-09-01 08:56 ET (1-premarket-research, third run of the day):** re-checked
 against live Alpaca from inside the pre-market session. `alpaca.py positions` returned `[]`;
 `alpaca.py sleeves` reports equity $100,000.00, cash $100,000.00, core 0.0%, satellite 0.0%
