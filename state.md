@@ -10,7 +10,7 @@ The block below is parsed by `scripts/common.py` and gates real behavior
 `key: value` format exactly. Prose goes underneath.
 
 ```
-last_run: 2026-09-01 12:35 ET 3-midday-management
+last_run: 2026-09-01 16:16 ET 4-market-close-journal
 week_of: 2026-08-31
 new_positions_this_week: 0
 consecutive_closed_losses: 0
@@ -107,6 +107,12 @@ Anything the next run must not lose. Cleared once acted on.
   12:35 ET). Two routines have now fired exactly once at their specified times on the same day.
   The scheduler is behaving; **the fault is in Routine 1's schedule entry alone.** A human
   fixing this should look at that one cron entry and nothing else.
+  **Update 16:16 ET — Routine 4 also fired once, on time** (specified 16:15 ET, selftest clock
+  16:16 ET). **Three of the four routines that ran today fired exactly once at their specified
+  time; only Routine 1 did not.** With a full day's evidence the diagnosis is as narrow as it
+  can get: this is one bad cron entry, not a scheduler problem, and the ~7-hour-offset
+  hypothesis from the 00:48 run is dead (the 08:56 firing landed inside the pre-market session).
+  A human fixing this changes one schedule entry and nothing else.
 
 - **Core sleeve still does not exist.** `core_established: false`, core 0.0% against a 70%
   target — outside the §2 65–75% band (`rebalance_needed: true`, `rebalance_delta: 70000.0`).
@@ -169,8 +175,8 @@ Anything the next run must not lose. Cleared once acted on.
 
 - **Cleared from carry-forward this run: nothing.** Every item above is still open. The
   `TRADING_ENABLED` item has changed in character — from an anticipated consequence to an
-  observed one — and the schedule item has gained the observation that Routine 2 fired correctly,
-  which localises the fault to Routine 1.
+  observed one — and the schedule item has gained the observation that Routines 2, 3 and 4 all
+  fired correctly, which localises the fault to Routine 1.
 
 - **12:35 ET midday run (3-midday-management, first ever): nothing to manage, nothing done.**
   Market open, `positions` returned `[]`, sleeves identical to the 09:36 open run (equity
@@ -187,3 +193,50 @@ Anything the next run must not lose. Cleared once acted on.
   a closed position moves the streak. **No ClickUp alert was raised and none was warranted:**
   `TRADING_ENABLED: false` is a configured state already reported by the 09:36 run, not a new
   incident, and re-alerting a standing condition is what the dedupe rules exist to prevent.
+
+- **⚠ 16:16 ET close run: THE HIGH-WATER MARKS WERE NOT UPDATED, AND THAT IS CORRECT. DO NOT
+  BACKFILL.** This is the item most likely to be misread tomorrow, so it is stated first and
+  plainly. Routine 4's core job is to write each open satellite position's official close into
+  `highest_close` and refresh the `(as of ...)` date — every day, whether or not the value moved,
+  because a mark that is merely *not updated* is indistinguishable from one that is *current and
+  unchanged*, and the midday run decides whether to backfill from that date. **Today that job had
+  no subject: `positions.md` contains zero position blocks, so there is no `highest_close` field
+  to write and no date to stamp.** The §5.4 trailing stop is **not silently disabled — it is not
+  yet armed**, and it arms on the day the first satellite position opens. A future run must not
+  run a `bars` backfill against this: there is nothing to backfill. (For reference only, and
+  deliberately not recorded as a high-water mark anywhere: VOO closed 700.14 on 2026-09-01.)
+
+- **Market was open today and this was a normal post-close run — not a holiday skip.** `clock` at
+  16:16:22 ET: `is_open: false`, `next_open: 2026-09-02 09:30 ET`. Recording this because "closed
+  because the session ended" and "closed because it was a holiday" produce the same `is_open:
+  false` and lead to opposite handling.
+
+- **Day P&L is $0.00 (0.00%) because nothing was held, not because the book was flat.** Equity
+  $100,000.00, cash $100,000.00, unchanged across all four of today's runs (00:48 → 16:16 ET).
+  Since inception 0.0% (account opened 2026-08-06 at $100,000.00). **VOO closed 700.14 against
+  704.875, −0.67%** — so the missing core sleeve sat out a down day and avoided roughly 47bp on
+  the $70,000 that was never deployed. **Read this as luck, not as a reason to be relaxed about
+  the dry run.** The identical mechanism sits out up days at exactly the same rate, and §1 asks
+  this book to track and beat the index over twelve months.
+
+- **No orders exist in any state. Nothing is in limbo overnight.** `alpaca.py orders --status all`
+  returned `[]` at the close — not "all terminal", but *no orders at all*, which is what a full
+  dry-run day produces. The §7 unresolved-order check ran and found nothing to resolve or carry.
+
+- **Housekeeping re-confirmed at the close:** week rollover checked, none needed (ISO Monday of
+  2026-09-01 is 2026-08-31, matches `week_of`); `new_positions_this_week` stays 0, so the §6
+  weekly cap is fully available at 0 of 3. `consecutive_closed_losses: 0` confirmed against what
+  actually closed today — nothing closed, so the streak could not have moved, and the breaker
+  stays INACTIVE with `halt_triggered_at: none`. No circuit-breaker alert was raised and none was
+  warranted.
+
+- **Daily summary posted to ClickUp: task `86bbrna9n`** (https://app.clickup.com/t/86bbrna9n),
+  "2026-09-01 - Daily Trading Summary". It leads with the two human-only items
+  (`TRADING_ENABLED: false`, and Routine 1's schedule) and carries the full research breakdown.
+  `alerts.md` remains empty — zero incidents, nothing SYSTEMIC, nothing unresolved.
+
+- **First journal entry written** (`journal.md`, 2026-09-01). Its "what I nearly got wrong"
+  section is the one worth re-reading: the temptation to file the un-filled core bootstrap under
+  "no harm done" because the index happened to fall, and the pull to re-run MU's priced-in check
+  tomorrow hoping for a friendlier number. Both are inheritance-of-conclusion failures, and both
+  will feel like diligence at the moment they happen.

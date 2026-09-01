@@ -56,6 +56,31 @@ re-derive it from price history, and it stays correct for positions closed month
 
 *(none — no positions have been opened yet)*
 
+**High-water mark update 2026-09-01 16:16 ET (4-market-close-journal — the first close run in
+this repo's history):** selftest passed all five checks. Market **was open today and has since
+closed** (`clock`: `is_open: false` at 16:16:22 ET, `next_open: 2026-09-02 09:30 ET`) — this is
+a normal post-close run, **not a holiday skip**. `alpaca.py positions` returned `[]`;
+`alpaca.py sleeves` reports equity $100,000.00, cash $100,000.00, core 0.0%, satellite 0.0%
+(count 0), cash 100.0%, `core_in_band: false`, `rebalance_delta: 70000.0` — identical to the
+09:36 and 12:35 reads. This ledger is empty and **agrees with the broker.** No discrepancy.
+
+**Step 2 recorded no closes, and there were none to record.** The close routine's core job is to
+write today's official close into every open satellite position's `highest_close` and to refresh
+the `(as of ...)` date whether or not the value moved. There is no position block in this file,
+so there is no `highest_close` to compare against and no date to stamp. **A future run must read
+this as "current and empty", not as "the close run skipped its high-water pass"** — those two
+states are exactly what the `(as of ...)` date exists to distinguish, and with zero positions the
+distinction has no subject. **Do not backfill from `bars` tomorrow. There is nothing to backfill.**
+The §5.4 trailing stop is not silently disabled; it is not yet armed, and it arms on the day the
+first satellite position opens.
+
+For reference only, and deliberately **not** recorded as a high-water mark anywhere: VOO closed
+**700.14** on 2026-09-01 (`bars --days 2 --adjustment all`) against 704.875 on 2026-08-31,
+−0.67%. The core sleeve is not tracked in this file by design (§5 exempts it), so this figure is
+context for the journal, not ledger state.
+
+---
+
 **Reconciliation 2026-09-01 12:35 ET (3-midday-management — the first midday run in this repo's
 history):** selftest passed all five checks. Market confirmed open (`is_open: true`, timestamp
 12:35:21 ET, next close 16:00 ET). `alpaca.py positions` returned `[]`; `alpaca.py sleeves`
