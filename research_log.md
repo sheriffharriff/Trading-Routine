@@ -52,6 +52,223 @@ single most common way a plausible-sounding connection gets mistaken for an oppo
 
 ## Entries
 
+### 2026-09-02 (08:30 ET) — event survey (funnel, pre-thesis)
+
+**One run today, at 08:30 ET.** Yesterday this routine fired three times (00:48, 01:15, 08:56 ET)
+and yesterday's carry-forward asked that the schedule item stay open until it fires *once*, at or
+near 08:00. Today it fired once, 29 minutes late, inside the pre-market session. That is one clean
+day, not a fix confirmed — see `state.md` → Carry forward.
+
+Three broad Perplexity scans (`--recency day`) plus three sourced second-order screens
+(`--recency week`). Eleven events surfaced. **Nine were dropped before thesis stage**, two were
+worked, and both were rejected. The dropped nine, with the reason, because the funnel is the
+output:
+
+- **GE Aerospace, $2.87B US Navy F414 performance-based logistics contract** (DoD contracts list
+  2026-09-01; 5-year PBL from Naval Supply Systems Command WSS, 17 F414 components for the F/A-18
+  E/F/G). This was the most promising-looking item in the set and it got a dedicated supplier
+  screen, which came back **empty and explicitly so**: the award is **sole-source to GE**, and no
+  source names any other publicly traded company as an F414 component supplier or a participant.
+  Dropped at part 1. **This is the T-2026-09-01-03 (RTX) rule working as intended** — I know
+  perfectly well that an engine programme has a supply chain, and I could have written a fluent
+  sentence about it. No source names one, so there is no Company B.
+- **Nvidia in advanced talks to acquire Hugging Face, ~$14B** ($12.9B consideration + ~$1B
+  retention; Bloomberg 2026-09-02, unconfirmed, both parties declined to comment). Dropped at
+  part 1 on **two independent grounds**. First, the same reasoning applied to SLB–Kelvion and
+  Graco–Valco: an acquisition rearranges the *acquirer's* mix and does not change a third
+  company's revenue or cost line. Second, and more basic — **it is not signed.** Bloomberg's own
+  language is "a final agreement hasn't been reached and the timing or details could still
+  change." Trading an unsigned rumour is not a fundamentals horizon. No source names any
+  affected third company; the target is private.
+- **NASA awards Blue Origin ~$700M firm-fixed-price Mars communications network contract**
+  (NASA blog 2026-09-01). Blue Origin is private. No source names a US-listed supplier. The
+  vendor list I could write from general knowledge would be entirely my own inference.
+- **ISM Manufacturing PMI 54.6 for August** (vs 55.6 July, 55.2 consensus; new orders 53.7 from
+  56.7, employment 51.2 from 52.8) and **July construction spending −0.5% m/m** (vs +0.1%
+  consensus). Both macro, both *misses*. §3 leaves this book long-only; a demand-softening print
+  has no long second-order candidate. Same disposition as the Chicago PMI on 2026-09-01.
+- **JOLTS job openings 7.272M for July** (vs 7.313M consensus, prior 7.182M revised). Macro, no
+  segment, no dollar path to any single name.
+- **Zepp Health Q2 2026** (revenue $63.5M +6.9%, adjusted net loss $12.5M, Q3 guide $68–73M
+  implying −4% to −10% y/y). Fails §3 on size by two orders of magnitude.
+- **Enovix doubling in-house drone battery capacity in South Korea by mid-2027** (2026-09-01).
+  Company A, not Company B; market cap far below the §3 $10B floor; and mid-2027 is outside
+  the §4.3 horizon regardless.
+- **Doosan Fuel Cell wins ₩501.4B (~$361M) order from HyAxiom for US data-centre fuel cells**
+  (2026-09-02). Doosan Fuel Cell is Korea-listed and HyAxiom is its own US subsidiary — the
+  contract is intra-group. No US-listed party. The reflex "US data-centre power demand is real,
+  so buy a US fuel-cell name" is a read-across to a *competitor* of the winner, which is the
+  opposite of a mechanism.
+- **Honda tells suppliers to cut costs in a $9B push** (Reuters, exclusive). Honda is
+  Japan-listed, and the only mechanism runs *against* the US auto suppliers on the receiving
+  end. Nothing long and eligible.
+
+**Deliberately not re-litigated**, per yesterday's carry-forward: the LG Energy Solution ⇄
+Smackover Lithium offtake (funnelled and dropped 2026-09-01 on part-2 arithmetic — it resurfaced
+today as a "finalized" 10-year commitment, which does not change the ~0.1%-of-revenue result);
+the PAC-3 MSE / THAAD ramp; and the memory-cost cycle. **Northrop Grumman** appeared again today
+with contract news and FY2026 EPS guidance of $28.60–29.10 — that makes NOC a Company A talking
+about itself, which is what T-2026-09-01-01 already concluded.
+
+**On MU, and this is the entry I most want a human to read.** Yesterday's journal predicted that
+today's run would feel a pull to re-run Micron's priced-in check hoping for a friendlier number,
+and named that in advance as an inheritance-of-conclusion failure. The pull was real. What stopped
+it is not willpower: **MU does not appear anywhere in today's funnel.** No source in any of six
+queries names Micron, or any memory supplier, in connection with any of today's events — including
+Dell's AI-server guidance raise, where a memory-cost angle is the most natural thing in the world
+to reach for and where the sourced screen came back explicitly empty on component suppliers and on
+memory-cost commentary alike. So MU was not screened and its filter was not re-run. **The correct
+reason not to re-check a rejected candidate is that today's evidence does not produce it, not that
+I resolved to be disciplined about it.** If a future run's funnel *does* surface it from a source,
+re-run the filter and re-test the timing window from that day's date — that is legitimate, and
+different from what almost happened here.
+
+The two events with genuine second-order structure — the **Army TITAN production award** and
+**Dell's AI-server guidance raise** — are worked as T-2026-09-02-01 and -02 below.
+
+---
+
+### T-2026-09-02-01 — LHX — REJECTED
+
+**Company A / the news:** The US Army Contracting Command awarded Palantir USG a prime agreement
+for production and delivery of **eight TITAN** (Tactical Intelligence Targeting Access Node)
+ground stations — the Army's AI/ML-enabled deep-sensing node (Palantir press release via AP/
+Business Wire, 2026-09-01; DefenseScoop, 2026-09-01).
+**Company B / the candidate:** L3Harris Technologies — **the only publicly traded US company any
+source names on the TITAN team.** Palantir's release lists the industry team as Anduril, L3Harris,
+Sierra Nevada, Strategic Technology Consulting and World Wide Technology; of those, Anduril, SNC,
+STC and WWT are all private.
+
+**1. Mechanism (one sentence):**
+> The TITAN production award causes L3Harris's ISR and tactical-communications revenue to rise
+> because L3Harris supplies subsystems integrated into the eight ground stations Palantir will
+> deliver.
+
+One clause, no "and also," and the teammate relationship is sourced rather than assumed. **Part 1
+passes** — and, as with AEP yesterday, it is the only part that does.
+
+**2. Dollar path:** **FAILED, decisively, on magnitude.** DefenseScoop reports that "Palantir,
+working alongside L3Harris, Sierra Nevada Corporation, Strategic Technology Consulting and World
+Wide Technology, received **$127 million** for the production contract, according to the Army,"
+within **$192 million** of combined delivery orders to Palantir and Anduril. Against L3Harris
+FY2025 revenue of **$21.865B** (sourced 2026-09-01, T-2026-09-01-02), the **entire $127M** —
+before it is split five ways, and before recognising that it is a delivery order, not annual
+revenue — is **0.58% of one year's revenue.** L3Harris's own share is unstated by any source and
+is necessarily a fraction of that.
+The *segment* test passes and is irrelevant: L3Harris's segments run roughly 30–35% of revenue
+each, so whichever one houses this clears the 10% floor easily — but §4.2 asks for the **magnitude
+of the change**, and 0.58% is not it. **This is the T-2026-09-01-01 (NOC) failure exactly: a
+sourced, real, headline-worthy contract that divides down to a rounding error.** It is in fact
+worse than NOC, which was ~1.0%.
+
+**3. Timing window:** Not reached — part 2 failed on its own. (Noted for completeness: the sources
+give no delivery schedule for the eight systems, so a two-quarter window could not have been
+established either.)
+
+**4. Invalidation:** Not reached.
+
+**Hard filters:**
+- Priced-in (§4): moved **+0.52%** over last 5 sessions (262.16 → 263.515) → **pass**. Over 20
+  sessions **−7.62%** (285.25 → 263.515) → the script returns `priced_in: true` on magnitude.
+- Correlation (§4): no open positions → pass, vacuously. **But note the driver is different from
+  T-2026-09-01-02**: that was the PAC-3 MSE / THAAD ramp, this is Army TITAN. Same ticker, two
+  distinct catalysts, two days running.
+- Universe (§3): stock, NYSE, market cap ~$49–54B (source: **inherited** from T-2026-09-01-02,
+  Perplexity aggregating MarketBeat / Stockpolly / Barron's / InvestSmart, late-Aug 2026 —
+  **not re-sourced today**, because the trade was already dead on part 2 and sourcing a number I
+  cannot use is wasted effort). Well above the $10B floor.
+
+**Outcome:** REJECTED on part 2. Magnitude ≤0.58% of annual revenue, and L3Harris's own share of
+that is unstated.
+
+**Why this entry earns its place: L3Harris is now the most dangerous name in this log, and the
+reason is that it keeps being *almost* right.** In two consecutive days it has produced two
+separate, sourced, one-clause mechanisms — PAC-3 propulsion yesterday, TITAN today — and failed
+both times on different parts (§4.3 timing, then §4.2 magnitude). Meanwhile the stock sits at
+−7.62% over twenty sessions, near a 52-week low, and passes the five-session priced-in check
+cleanly at +0.52%.
+
+**That combination is a trap, and yesterday's carry-forward named it before today's run started:**
+"a future run will see a cheap defense name with a real missile-demand story and may mistake the
+two for the same thing." Today it was a cheap defense name with a real *TITAN* story, which is a
+different story, and the warning held anyway. The thing actually moving LHX remains the postponed
+Missile Solutions IPO — an event with no relationship to either mechanism I have written. Two
+sourced mechanisms attached to a price that is trading on a third thing is not two pieces of
+evidence; it is the same substitution twice.
+
+**Standing rule this produces, which is new: when the same ticker surfaces on consecutive days
+through different events, treat the recurrence as a warning, not as corroboration.** The natural
+reading is "this name keeps coming up, there must be something there." The accurate reading is
+that a large diversified prime is *structurally* likely to appear in any defense news cycle, and
+appearing is not the same as being materially affected. Each event has to clear §4 on its own
+numbers, and today's numbers were an order of magnitude short.
+
+---
+
+### T-2026-09-02-02 — HPE — REJECTED
+
+**Company A / the news:** Dell Technologies reported Q2 FY2027 and **raised full-year guidance on
+AI-server demand** — a record **$60.9B of AI server orders** booked in the quarter, a record
+**$95.0B AI server backlog** at quarter end, **$16.4B of AI-optimised server revenue (+100% y/y)**,
+FY2027 AI-server revenue guidance raised by **$14B** (from ~$60B to ~$74B) and total FY2027 revenue
+guidance raised by **$25B** off a prior $165–169B range (Dell 8-K and prepared remarks, CNBC,
+Investing.com, 2026-09-01/02). Shares rose 8.5–10% pre-market.
+**Company B / the candidate:** Hewlett Packard Enterprise — named by Reuters coverage as rising
+~5% pre-market **because** Dell's outlook "improved sentiment around AI infrastructure spending."
+
+**1. Mechanism (one sentence):** **COULD NOT BE WRITTEN HONESTLY.** The only sentence the source
+supports is *"Dell's guidance raise causes HPE's share price to rise because investors read across
+to HPE's server business"* — and that is a sentence about **sentiment**, not about a revenue or
+cost line. §4 requires that Company B's **economics** change. Dell shipping more AI servers does
+not increase HPE's revenue; if anything the two compete for the same orders, which points the
+wrong way. There is no causal path from Dell's backlog to HPE's income statement.
+
+**2–4:** Not attempted. Part 1 failed.
+
+**Hard filters:**
+- Priced-in (§4): moved **−4.96%** over last 5 sessions (53.45 → 50.80) → script returns
+  `priced_in: true`. See the note below on what that number actually means.
+- Correlation (§4): no open positions → pass, vacuously
+- Universe (§3): stock, above the $10B floor → pass (not sourced; the candidate was already dead
+  at part 1)
+
+**Outcome:** REJECTED at part 1. This is a read-across, not a mechanism.
+
+**This is the SAIC failure from 2026-09-01, and I want it on the record that it recurred within
+24 hours.** Yesterday's funnel dropped "SAIC beats and raises → buy LDOS/CACI/BAH" with the note
+that it is "the most tempting shape in today's set" and that *"Company A's print implies Company
+B's print" is a correlation dressed as a mechanism, and it is the easiest sentence in the world to
+write fluently.* Today the identical shape arrived in a different sector, with a **much** larger
+and more impressive set of numbers behind it — $95B of backlog is genuinely arresting — and it was
+harder to dismiss precisely because the underlying demand is so obviously real. **The size of
+Company A's number has no bearing on whether a mechanism to Company B exists.** A $95B backlog at
+Dell is $0 of revenue at HPE.
+
+**A genuine second-order candidate does exist in principle here and I could not source one.** Dell
+recognising $16.4B of AI-server revenue means somebody is being paid for the memory, storage,
+networking and accelerators inside those racks — that is a real cost line becoming a real revenue
+line, which is the cleanest §4 shape there is. So I ran the screen explicitly, asking which
+publicly traded US companies sources name as component suppliers benefiting from Dell's ramp, and
+what Dell said about memory or storage cost inflation. **Both came back empty**: Dell's release,
+8-K and prepared remarks name no component vendor, and contain no commentary on memory/NAND/HBM
+pricing, in any retrieved text. Naming Micron, Seagate, Broadcom or Marvell here would have been my
+inference and nothing else. That is the RTX rule, and it applies with more force than usual today
+because the inferred answer would have been MU — the name I already have a rejected thesis on and
+a documented pull toward.
+
+**Worth flagging to the human — an observation about the tool, not an argument against it.**
+`alpaca.py move` tests **absolute** magnitude, so it returned `priced_in: true` for HPE (−4.96%)
+and DELL (−5.84%) on five-session windows that end at the **2026-09-01 close, before Dell's print**.
+Both readings are *drawdowns*, not run-ups. Under §4's wording — "already moved more than 4% over
+the last five sessions **on this news**" — a decline that predates the news is not the thing the
+rule is aimed at. It made no difference today (HPE died at part 1, DELL is Company A), so nothing
+turns on it, and **I am not proposing to reinterpret the filter on my own authority** — §4 is a
+veto and a veto that fires too often is the safe direction. But a future run could be blocked from
+a legitimate candidate that fell 5% on unrelated news, and that is worth a human deciding
+deliberately rather than discovering by accident.
+
+---
+
 ### 2026-09-01 (third run, 08:55 ET) — event survey (funnel, pre-thesis)
 
 **Read this header before reading the entry below.** This is the **third** `1-premarket-research`

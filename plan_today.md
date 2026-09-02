@@ -29,26 +29,22 @@ better. Core and rebalance actions are exempt from the gate because neither depe
 day's research.
 
 ```
-plan_date: 2026-09-01
+plan_date: 2026-09-02
 generated_by: 1-premarket-research
 market_open_today: yes
 ```
 
-Market opens today 2026-09-01 at 09:30 ET (`alpaca.py clock`: `is_open: false`,
-`next_open: 2026-09-01T09:30:00-04:00`, timestamp `08:56 ET`). Not a holiday — the market is
-closed because it is pre-market.
+Market opens today 2026-09-02 at 09:30 ET (`alpaca.py clock`: `is_open: false`,
+`next_open: 2026-09-02T09:30:00-04:00`, timestamp `08:30:11 ET`). **Not a holiday** — the market
+is closed because it is pre-market, and `next_open` is today.
 
-**This plan is written by the third pre-market run of 2026-09-01 and supersedes both earlier
-ones** (00:48 ET → `577ff28`, 01:15 ET → `9d592dd`). All three agree on every intent; the
-substance below is unchanged from the first run. What this run adds is one more rejected
-thesis (T-2026-09-01-06, AEP) and — more usefully — **research done from inside the
-pre-market session rather than at one in the morning**. The earlier runs' priced-in checks
-were computed with no pre-market tape in existence. These were not.
+**One pre-market run today, at 08:30 ET**, against three yesterday. This plan supersedes nothing;
+there is no earlier run today to reconcile against.
 
-**Tape context the earlier runs could not see:** index futures are lower to start September,
-oil is up (~+1.9% Brent), and **VOO is quoted 700.58 / 700.68 pre-market against a 704.875
-close — about −0.6%.** That matters for the rebalance intent below, not for any research
-conclusion.
+**Tape context:** at 08:30 ET no pre-market quote had printed for VOO — `latestQuote` still
+carried yesterday's 16:00 ET close stamp with a wide 679.52 / 721.61 book, which is a stale
+after-hours spread and **must not be used as a reference price**. VOO's last actual trade is the
+2026-09-01 close at **700.14**, down from 704.875 on 08-31 (−0.67%) and from 707.18 on 08-28.
 
 ---
 
@@ -59,58 +55,64 @@ conclusion.
 - current_core_pct:  0.0%   (target 70%, §2 band 65–75% — outside the band)
 - action:            BUY VOO to establish the core sleeve at 70% of account value
 - notional:          $70,000.00
-- account_equity:    $100,000.00 (100% cash, no positions — `alpaca.py sleeves`, 08:56 ET)
+- account_equity:    $100,000.00 (100% cash, no positions — `alpaca.py sleeves`, 08:30 ET:
+                     `core_in_band: false`, `rebalance_needed: true`, `rebalance_delta: 70000.0`)
 - command:           `python scripts/alpaca.py buy --symbol VOO --notional 70000 --core`
-- reference_price:   VOO closed 704.875 on 2026-08-31; **pre-market bid/ask 700.58 / 700.68 at
-                     12:48 UTC (08:48 ET)**, i.e. roughly −0.6% from the close. Tradable,
-                     fractionable, ARCA. No priced-in check applies — §4 hard filters govern
-                     satellite catalyst trades, not the permanent core sleeve (§2).
+- reference_price:   VOO last trade **700.14** (2026-09-01 close). Asset check at 08:30 ET:
+                     `tradable: true`, `fractionable: true`, ARCA, us_equity, status active —
+                     §3 clear. No priced-in check applies: §4's hard filters govern satellite
+                     catalyst trades, not the permanent core sleeve (§2).
 - revalidate:        Re-read `alpaca.py sleeves` at the open. If `core_established` is still
-                     `false` and `core.pct` is still 0.0, proceed. Size to **70% of live
-                     equity at the open**, not to the $70,000 written here — if equity has
-                     moved, the target moves with it. Confirm VOO is still `tradable: true`
-                     before submitting.
+                     `false` and `core.pct` is still 0.0, proceed. Size to **70% of live equity
+                     at the open**, not to the $70,000 written here — if equity has moved, the
+                     target moves with it. Confirm VOO is still `tradable: true` before
+                     submitting. **Do not use the pre-market `latestQuote` spread recorded
+                     above as a price reference** — pull a fresh quote at 09:35.
 
-**This intent is exempt from the `plan_date` staleness gate** and does not depend on the
-day's research, but it is dated today regardless.
+**⚠ Step 3's bootstrap and Step 7's rebalance are the SAME $70,000 VOO buy on this account, not
+two actions. Do not submit both.** `core_established: false` and core 0.0% describe one condition
+with one remedy.
+
+**This intent is exempt from the `plan_date` staleness gate** and does not depend on the day's
+research, but it is dated today regardless.
 
 ### BUY — none
 
-No buy intents. **Six** candidates have now been worked through the §4 filters across today's
-three runs, and all six were rejected. Details in `research_log.md`; the short version:
+No buy intents. Two candidates were worked through §4 today and both were rejected. Details in
+`research_log.md`; the short version:
 
 | Thesis | Ticker | Died at | Why |
 |---|---|---|---|
-| T-2026-09-01-01 | NOC | parts 2 and 3 | $3B over 7 years ≈ 1% of a $42B revenue base; affected segment unidentifiable from any source |
-| T-2026-09-01-02 | LHX | part 3 | Real $12B framework, but 2027+ revenue; and the stock is actually trading on a delayed missile-IPO overhang, not on interceptor demand |
-| T-2026-09-01-03 | RTX | part 1 | No source ties RTX to PAC-3/THAAD content in these agreements — the mechanism was my inference, not reporting |
-| T-2026-09-01-04 | MU | priced-in filter | Strongest thesis of the six — one-clause mechanism, DRAM is 76% of revenue, in-horizon — but +5.27% over 5 sessions and +15.6% over 20. Late. |
-| T-2026-09-01-05 | WDC | part 1 | Only name in the memory complex to clear the priced-in filter, and it cleared it because it sold the flash business in Feb 2026. HDD-only. Not exposed to the driver. |
-| T-2026-09-01-06 | AEP | parts 2 and 3 | Real, sourced interconnection exposure to the Hut 8 / Nvidia / Lambda Beacon Point campus — but 1 GW inside 45 GW of load AEP has **already guided through 2030**. ~2% of a disclosed pipeline, and outside the two-quarter horizon. |
+| T-2026-09-02-01 | LHX | part 2 | Only publicly traded US name on the Army TITAN team, sourced. But the whole production award is **$127M across a five-partner team** against $21.865B FY2025 revenue — **≤0.58%**, and L3Harris's own share is unstated. Worse than NOC's ~1.0%. |
+| T-2026-09-02-02 | HPE | part 1 | Rose ~5% because Dell's AI-server guidance raise "improved sentiment." That is a read-across, not a mechanism — Dell shipping more servers does not raise HPE's revenue. The SAIC failure from 2026-09-01, recurring within 24 hours. |
 
-**The pattern across the six is worth more than any individual entry.** Four of them
-(NOC, LHX, WDC, AEP) *passed* the priced-in check and failed on the thesis. One (MU) passed
-the thesis and failed the filter. **The filter has not once been informative about the
-outcome.** It is a veto, not a signal — a pass says only that the stock has not moved, and
-"has not moved" and "should have moved but didn't" are the same number. A candidate has to
-survive both the filter and the thesis, and today none did.
+Nine further events were dropped before thesis stage — GE's $2.87B F414 award (**sole-source, no
+Company B, confirmed by a dedicated screen**), the unsigned Nvidia/Hugging Face rumour, NASA/Blue
+Origin, ISM PMI, construction spending, JOLTS, Zepp Health, Enovix, Doosan Fuel Cell and Honda.
+The funnel is written out in `research_log.md`.
 
 Notes for the open run, carried so nothing is re-derived at 09:35:
 
-- **NOC and LHX share one driver** (the PAC-3 MSE / THAAD ramp); §4's correlation rule permits
-  at most one of them, ever, at the same time.
-- **MU, STX and SNDK share one driver** (the memory price cycle) — three tickers, one bet.
-- **Do not treat MU as a queued idea.** It is rejected, not deferred. If a later run
-  rediscovers it, the priced-in check must be re-run fresh and the timing window re-tested
-  from that day's date, not inherited.
-- **Do not treat AEP as a queued idea either**, and for a different reason: it fails on
-  timing and magnitude, which re-running a filter cannot fix. A better AEP entry point does
-  not make a 2030 revenue ramp fit a two-quarter horizon.
+- **Nothing here is queued or deferred.** Both of today's candidates are rejected outright. LHX
+  fails on magnitude and HPE on the absence of a mechanism; neither is a number that a better
+  entry price repairs.
+- **LHX has now surfaced on two consecutive days through two different drivers** (PAC-3 MSE /
+  THAAD yesterday, Army TITAN today) and failed on two different parts. Treat a recurrence as a
+  warning, not corroboration — a large diversified prime appears in every defense news cycle,
+  and appearing is not being materially affected. The stock is still trading on the postponed
+  Missile Solutions IPO, which is neither of those mechanisms.
+- **MU did not enter today's funnel and its filter was not re-run.** No source in six queries
+  named it. Do not reach for it at the open on the strength of Dell's AI-server numbers — the
+  component-supplier screen came back explicitly empty, and naming a memory vendor would be
+  inference.
+- **NOC and LHX share the PAC-3 driver; MU, STX and SNDK share the memory-cycle driver.** §4's
+  correlation rule permits at most one of each group at a time, if either ever becomes live.
 
 ### SELL — none
 
-No open satellite positions. `positions.md` and `alpaca.py positions` agree — both empty
-(`[]`, checked 08:56 ET). §5.1–5.4 have nothing to evaluate against.
+No open satellite positions. `positions.md` and `alpaca.py positions` agree — both empty (`[]`,
+checked 08:30 ET). §5.1–5.4 have nothing to evaluate against: no invalidation condition exists to
+test, no timing window to expire, and no entry or high-water mark to measure a stop against.
 
 ---
 
@@ -125,6 +127,15 @@ tomorrow. That is the configured behavior, not a fault — but it means the §1 
 (beat the S&P over a rolling 12 months) is currently being pursued from an all-cash book
 that cannot track the index in either direction. Only the human can change it, in
 `control.md`. Log the intent as an intent, never as a fill.
+
+**Day two of this condition.** The 2026-09-01 open run executed the identical intent and got back
+`{"ok": true, "dry_run": true, "reason": "TRADING_ENABLED is not true in control.md"}`, exit 0, no
+order submitted — recorded under `trade_log.md` → *Dry-run intents*. Yesterday VOO fell 0.67% and
+the un-deployed core sleeve happened to sit out a down day. **That was luck and is not a reason to
+be relaxed:** the same mechanism sits out up days at exactly the same rate. `control.md` itself
+describes the dry run as a way to "watch the system think for a week before it touches the
+account," so this is a deliberate human setting on its second day, not an incident — do not raise
+an alert for it.
 
 ---
 
