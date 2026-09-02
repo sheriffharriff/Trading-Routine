@@ -40,6 +40,85 @@ anything where the honest-broker rule (§4) did real work>
 
 ## Entries
 
+### 2026-09-02 (Wednesday)
+
+**Account:** total $100,000.00 | day P&L +0.00 (0.00%) | since inception 0.0%
+**Sleeves:** core 0.0% | satellite 0.0% | cash 100.0%   (§2 band 65–75% — **outside, rebalance due**)
+**Breaker:** INACTIVE (0 consecutive closed losses)
+**Week:** 0/3 new positions (week_of 2026-08-31, no rollover — ISO Monday of today is 2026-08-31)
+
+**Traded:** nothing — one dry-run intent (VOO core bootstrap), no order submitted, no fill
+**Researched:** 2 theses — 0 accepted, 2 rejected (LHX at part 2, HPE at part 1)
+**Positions near a sell rule:** none — there are no positions
+
+**What happened:**
+
+The second full day, and the account has not moved: equity $100,000.00, `last_equity`
+$100,000.00, day P&L exactly $0.00. That zero is not a flat book, it is an **empty** one —
+100% cash, ten runs across two trading days, every one of them reading `positions: []`.
+
+Three runs fired today and each did the right thing with nothing. Pre-market (08:30 ET — one
+run, on time, against three yesterday) worked two candidates through §4 and rejected both:
+**LHX** on the Army TITAN production award, which died on §4.2 magnitude — $127M spread across
+a five-partner team against $21.865B of FY2025 revenue, ≤0.58%, and L3Harris's own share of it
+unstated; and **HPE**, which died at part 1 because the only sentence the sources support is
+about sentiment ("Dell's guidance raise improved sentiment around AI infrastructure") and §4
+requires Company B's *economics* to change. Nine further events were dropped before thesis
+stage. The open run submitted the §2 core bootstrap once, got `"dry_run": true`, and did not
+re-submit it at Step 7 — Step 3's bootstrap and Step 7's rebalance are the same $70,000 buy on
+this account. Midday had no §5 subject and correctly ran no Perplexity query.
+
+This run's own job list came up almost entirely empty, and the empties are the report:
+`orders --status all` returned `[]`, so **nothing is in limbo overnight** (§7). Nothing closed,
+so `consecutive_closed_losses` stays 0 and the breaker cannot have tripped. The ISO Monday of
+2026-09-02 is 2026-08-31, which matches `week_of`, so no rollover; the §6 weekly cap sits fully
+available at 0 of 3. **And Step 2 — the invisible job this whole run exists for — had no
+subject:** no position block means no `highest_close` and no `(as of ...)` date to stamp. The
+§5.4 trailing stop is not silently disabled, it is *not yet armed*.
+
+The number worth writing down: **VOO closed 703.34 today against 700.14, +0.457%.** Had the
+core bootstrap filled at yesterday's 09:36 reference of 700.625, $70,000 would be $70,271 now —
+about **+$271, +0.39%**, foregone across two dry-run days.
+
+**What I got wrong or nearly got wrong:**
+
+The real near-miss is in this run, not in a thesis, and it is about Step 2. Ten consecutive runs
+have found nothing to do there, and I noticed the pull to treat the high-water pass as ceremony —
+to record "nothing to update" quickly and spend the effort on the parts of the run with visible
+output. That is precisely backwards. The pass is invisible when it works and invisible when it is
+skipped, and the day it first matters is the day *after* the first position opens, when ten runs
+of habit will say there is nothing there. I also caught myself about to write "high-water marks
+updated" in the run output because the routine's Output section asks for that line. **The true
+statement is that there were no marks to update, which is a different fact**, and writing the
+first would have been a small false report of exactly the kind this file exists to catch.
+
+Second, on the dry-run arithmetic. Yesterday's entry recorded the −0.67% down day the un-deployed
+sleeve sat out and called it luck rather than a saving. Today the up day arrived and there is a
+symmetric temptation to now present $271 as *the cost of the dry run* — a concrete number that
+argues my preferred conclusion. It is not evidence either. Two sessions is noise in both
+directions, and if I only reach for the tape when it points at the answer I already hold, I am
+doing the same thing in the opposite sign. **The argument against an all-cash book is structural,
+not empirical:** §1 asks this account to beat the S&P over a rolling twelve months, and a book
+holding no index cannot track it up or down. That was true on the down day too, when the number
+flattered the delay.
+
+Third, and smaller: the two rejections today were both correct, but neither was *close*. LHX
+failed by a factor of about seventeen against the 10%-of-revenue bar, and HPE could not produce a
+one-clause mechanism at all. There is no near-miss to report there, and I am not going to
+manufacture one to fill the section.
+
+**For the next run:**
+
+- **The high-water marks were not updated today, and that is correct, not a gap.** No satellite
+  positions exist, so there is nothing to backfill from `bars`. Do not read this as a skipped
+  close run.
+- Core is 0.0% against a 70% target — outside the §2 band. **A rebalance is due at tomorrow's
+  open, and it is the same $70,000 VOO buy as the bootstrap, submitted once.**
+- `TRADING_ENABLED: false` — day three. The same intent regenerates tomorrow. Only a human can
+  change this, in `control.md`.
+- Routine 1 fired once today at 08:30 ET. **Tomorrow (2026-09-03) is the second clean weekday that
+  clears the schedule carry-forward** — one Routine 1 run at or near 08:00 ET clears it.
+
 ### 2026-09-01 (Tuesday)
 
 **Account:** total $100,000.00 | day P&L +0.00 (0.00%) | since inception 0.0%

@@ -56,6 +56,39 @@ re-derive it from price history, and it stays correct for positions closed month
 
 *(none — no positions have been opened yet)*
 
+**High-water mark update 2026-09-02 16:15 ET (4-market-close-journal):** selftest passed all five
+checks (`trading_enabled: false`). Market **was open today and has since closed** — `clock` at
+16:15:36 ET returns `is_open: false` with `next_open: 2026-09-03T09:30:00-04:00`. This is a normal
+post-close run, **not a holiday skip**. `alpaca.py positions` returned `[]`; `alpaca.py sleeves`
+reports equity $100,000.00, cash $100,000.00, core 0.0%, satellite 0.0% (count 0), cash 100.0%,
+`core_in_band: false`, `rebalance_needed: true`, `rebalance_delta: 70000.0` — unchanged from the
+08:30, 09:36 and 12:35 ET reads today and from every run since 2026-09-01 00:48 ET. This ledger is
+empty and **agrees with the broker.** No discrepancy.
+
+**Step 2 recorded no closes, and there were none to record — this is "current and empty", not a
+skipped high-water pass.** The close routine's whole invisible job is to write today's official
+close into every open satellite position's `highest_close` and to refresh the `(as of ...)` date
+whether or not the value moved. There is no position block in this file, so there is no
+`highest_close` to compare against and no date to stamp. **Do not backfill from `bars` tomorrow —
+there is nothing to backfill.** The §5.4 trailing stop is **not silently disabled; it is not yet
+armed**, and it arms on the day the first satellite position opens, which under
+`TRADING_ENABLED: false` cannot be today. Ten runs across two trading days have now each recorded
+this distinction rather than assuming it carried, because a mark that is merely *not updated* and a
+mark that is *current and unchanged* look identical in a summary — and here there is no mark at all.
+
+For reference only, and deliberately **not** recorded as a high-water mark anywhere: VOO closed
+**703.34** on 2026-09-02 (`bars --days 3 --adjustment all`) against 700.14 on 09-01, **+0.457%**.
+The core sleeve is not tracked in this file by design (§5 exempts it), so this figure is journal
+context, not ledger state — but note the direction: today the un-deployed sleeve sat out an **up**
+day, which is the other half of yesterday's −0.67% and the reason yesterday's "no harm done" was
+never a safe reading.
+
+**No exit should have executed and did not.** No §5 rule had a subject, so no `sell` was attempted
+and the dry run suppressed nothing. `alpaca.py orders --status all` returned `[]` — no order exists
+in any state, terminal or otherwise, so nothing is carried into tomorrow in limbo (§7).
+
+---
+
 **Reconciliation 2026-09-02 12:35 ET (3-midday-management):** selftest passed all five checks
 (`trading_enabled: false`). Market confirmed **open** — `clock` at 12:35:31 ET returns
 `is_open: true`, next close 16:00 ET. `alpaca.py positions` returned `[]`; `alpaca.py sleeves`
