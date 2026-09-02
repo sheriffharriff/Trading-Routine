@@ -10,7 +10,7 @@ The block below is parsed by `scripts/common.py` and gates real behavior
 `key: value` format exactly. Prose goes underneath.
 
 ```
-last_run: 2026-09-02 09:36 ET 2-market-open-execution
+last_run: 2026-09-02 12:35 ET 3-midday-management
 week_of: 2026-08-31
 new_positions_this_week: 0
 consecutive_closed_losses: 0
@@ -69,6 +69,15 @@ position list win, and the discrepancy goes in the journal.
 Anything the next run must not lose. Cleared once acted on.
 
 
+- **MIDDAY 2026-09-02 12:35 ET: nothing to manage, and that is the correct outcome, not a skip.**
+  `positions` returned `[]` for the eighth consecutive run; Routine 3 is exits-only and cannot open
+  anything, so with zero satellite positions §5.1–5.4 had empty input and the run ended without a
+  Perplexity call or an order. **Nothing should have executed and did not** — no rule triggered, so
+  the `TRADING_ENABLED: false` dry run suppressed no exit. The dry run is currently costing this
+  account *entries* (the VOO core bootstrap), never exits, and it will keep costing only entries
+  until a satellite position exists to be stopped out of. Routine 3 fired **on time and once**
+  (12:35 ET, spec 12:30 ET) — the schedule item below concerns Routine 1 only and is unaffected.
+
 - **⚠ `TRADING_ENABLED: false` — day three, and this run is the one that makes the cost concrete.**
   The account is still 100% cash and the core sleeve still does not exist. Only a human can close
   this, in `control.md`. Read it as **configured behaviour, not a fault**: `control.md` describes
@@ -102,12 +111,13 @@ Anything the next run must not lose. Cleared once acted on.
   Routine 1 run at or near 08:00 ET, clear this line. The ~7-hour-offset theory from the 00:48 run
   stays dead.
 
-- **Week rollover: checked, none needed.** ISO Monday of 2026-09-02 (Wednesday) is 2026-08-31,
-  which matches `week_of`. `new_positions_this_week` stays 0 — the §6 weekly cap is fully available
-  at 0 of 3, and nothing this run consumed any of it. Breaker INACTIVE,
-  `consecutive_closed_losses: 0`, `halt_triggered_at: none`; only a closed position can move the
-  streak and nothing has closed. `HALT_CLEARED_AT: none` in `control.md`, correct and irrelevant
-  while no halt exists.
+- **Week rollover: re-checked at 12:35 ET, none needed.** ISO Monday of 2026-09-02 (Wednesday) is
+  2026-08-31, which matches `week_of`. `new_positions_this_week` stays 0 — the §6 weekly cap is
+  fully available at 0 of 3, and Routine 3 cannot consume it in any case. Breaker INACTIVE,
+  `consecutive_closed_losses: 0`, `halt_triggered_at: none`; only a **closed** position can move
+  the streak, and nothing has ever opened, so the streak is untouched and the breaker cannot trip
+  from this run. `HALT_CLEARED_AT: none` in `control.md`, correct and irrelevant while no halt
+  exists. No `clickup.py alert` was raised and none was warranted.
 
 - **The staleness gate PASSED today, and that is worth recording because it is the first time it
   was a live test.** `plan_today.md` carried `plan_date: 2026-09-02` against an ET date of
@@ -200,9 +210,11 @@ Anything the next run must not lose. Cleared once acted on.
 - **The §5.4 trailing stop is not armed, and `positions.md` needs no backfill.** Zero position
   blocks means zero `highest_close` fields, so there is nothing for a `bars` backfill to repair.
   The trailing stop arms on the day the first satellite position opens, which under
-  `TRADING_ENABLED: false` cannot be today. Six consecutive runs have now recorded this
+  `TRADING_ENABLED: false` cannot be today. **Seven** consecutive runs have now recorded this
   distinction rather than assuming it carried, because "current and empty" and "the high-water pass
-  was skipped" look identical in a summary.
+  was skipped" look identical in a summary. Note that today's midday run is the one whose Step 2
+  exists specifically to catch a stale mark — it checked, found no subject, and passed; that is a
+  live test of the gate, not a bypass of it.
 
 - **`alerts.md` remains empty — zero incidents, nothing SYSTEMIC, nothing unresolved.** No alert
   was raised this run and none was warranted. The two standing conditions (`TRADING_ENABLED: false`
@@ -210,5 +222,8 @@ Anything the next run must not lose. Cleared once acted on.
   `86bbrna9n` on 2026-09-01; re-alerting a standing condition is exactly what the dedupe rules
   exist to prevent.
 
-- **Cleared from carry-forward this run: nothing.** The schedule item now has one clean Routine 1
-  day behind it and a stated test for tomorrow. Everything else stands.
+- **Cleared from carry-forward this run: nothing.** The schedule item still has one clean Routine 1
+  day behind it and its test is tomorrow, 2026-09-03 — Routine 3's own on-time firing today says
+  nothing about it either way. Everything else stands. The research items below (LHX, MU, HPE, the
+  four standing rules, the live events already examined) are carried untouched: Routine 3 is
+  exits-only and did no research, so it has no grounds to revise or retire any of them.

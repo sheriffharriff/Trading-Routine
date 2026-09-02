@@ -56,6 +56,40 @@ re-derive it from price history, and it stays correct for positions closed month
 
 *(none — no positions have been opened yet)*
 
+**Reconciliation 2026-09-02 12:35 ET (3-midday-management):** selftest passed all five checks
+(`trading_enabled: false`). Market confirmed **open** — `clock` at 12:35:31 ET returns
+`is_open: true`, next close 16:00 ET. `alpaca.py positions` returned `[]`; `alpaca.py sleeves`
+reports equity $100,000.00, cash $100,000.00, core 0.0%, satellite 0.0% (count 0), cash 100.0%,
+`core_in_band: false`, `rebalance_needed: true`, `rebalance_delta: 70000.0` — unchanged from the
+08:30 ET pre-market and 09:36 ET open reads today, and from every run since 2026-09-01 00:48 ET.
+This ledger is empty and **agrees with the broker.** No discrepancy.
+
+**Nothing to manage, and nothing was done.** Routine 3 is exits-only and may not open a position.
+With zero open satellite positions, §5.1 (no `invalidation` line exists to test), §5.2 (no
+`timing_window` to expire), §5.3 and §5.4 (no `entry_price` and no `highest_close` to measure
+against) all had empty input. **No Perplexity invalidation queries were run** — with no position
+to defend, a news query would be manufacturing activity, which §4's honest-broker rule forbids.
+The routine's own Step 1 says so directly: no open satellite positions means note it and exit,
+not go looking for something to do.
+
+**Step 2 high-water repair: nothing to repair, and this is the seventh consecutive run to record
+the distinction rather than assume it carried.** The `highest_close` staleness check has no
+subject — no position block exists, so no `(as of ...)` date can be stale and no `bars` backfill
+was needed. This is materially different from a backfill that was skipped: the §5.4 trailing stop
+is **not silently disabled, it is not yet armed**, and it arms on the day the first satellite
+position opens, which under `TRADING_ENABLED: false` cannot be today. "Current and empty" and "the
+high-water pass was skipped" are exactly what the `(as of ...)` date exists to tell apart.
+
+**No exit should have executed and did not.** Step 4's dry-run warning — an intended exit blocked
+by `TRADING_ENABLED: false` — has no subject either: no rule triggered, so no `sell` was
+attempted, so nothing was suppressed. The dry run is costing this account entries (the VOO core
+bootstrap, three days running), not exits.
+
+For reference only, and deliberately **not** recorded as a high-water mark anywhere: VOO's prior
+close is 700.14 (2026-09-01) and it traded 700.555 at the 09:36 ET open, about +0.06%.
+
+---
+
 **Reconciliation 2026-09-02 09:36 ET (2-market-open-execution):** selftest passed all five checks.
 Market confirmed **open** — `clock` at 09:36:14 ET returns `is_open: true`, next close 16:00 ET.
 `alpaca.py positions` returned `[]`; `alpaca.py sleeves` reports equity $100,000.00, cash
