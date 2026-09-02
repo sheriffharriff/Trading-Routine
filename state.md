@@ -10,7 +10,7 @@ The block below is parsed by `scripts/common.py` and gates real behavior
 `key: value` format exactly. Prose goes underneath.
 
 ```
-last_run: 2026-09-02 12:35 ET 3-midday-management
+last_run: 2026-09-02 16:15 ET 4-market-close-journal
 week_of: 2026-08-31
 new_positions_this_week: 0
 consecutive_closed_losses: 0
@@ -69,68 +69,74 @@ position list win, and the discrepancy goes in the journal.
 Anything the next run must not lose. Cleared once acted on.
 
 
-- **MIDDAY 2026-09-02 12:35 ET: nothing to manage, and that is the correct outcome, not a skip.**
-  `positions` returned `[]` for the eighth consecutive run; Routine 3 is exits-only and cannot open
-  anything, so with zero satellite positions §5.1–5.4 had empty input and the run ended without a
-  Perplexity call or an order. **Nothing should have executed and did not** — no rule triggered, so
-  the `TRADING_ENABLED: false` dry run suppressed no exit. The dry run is currently costing this
-  account *entries* (the VOO core bootstrap), never exits, and it will keep costing only entries
-  until a satellite position exists to be stopped out of. Routine 3 fired **on time and once**
-  (12:35 ET, spec 12:30 ET) — the schedule item below concerns Routine 1 only and is unaffected.
+- **CLOSE 2026-09-02 16:15 ET: the day is complete and nothing is unresolved.** Market was open and
+  closed normally (`is_open: false`, `next_open: 2026-09-03 09:30 ET`) — a normal post-close run,
+  **not a holiday skip**. Equity $100,000.00, `last_equity` $100,000.00, day P&L exactly $0.00
+  (0.00%), since inception 0.0%. `positions` returned `[]` for the tenth consecutive run. Journal
+  entry written for 2026-09-02; ClickUp daily summary posted as task **`86bbtvf94`**.
+  **`alpaca.py orders --status all` returned `[]` — no order exists in any state, so nothing is
+  carried into tomorrow in limbo (§7).** Nothing closed today, so `consecutive_closed_losses` stays
+  0 and the breaker could not have tripped.
 
-- **⚠ `TRADING_ENABLED: false` — day three, and this run is the one that makes the cost concrete.**
-  The account is still 100% cash and the core sleeve still does not exist. Only a human can close
-  this, in `control.md`. Read it as **configured behaviour, not a fault**: `control.md` describes
-  the dry run in its own words as a way to "watch the system think for a week before it touches the
-  account," and today is day three of that week. The 09:36 ET open run submitted the §2 bootstrap
-  exactly as planned and got `{"ok": true, "dry_run": true, "reason": "TRADING_ENABLED is not true
-  in control.md"}`, exit 0, no order — logged under `trade_log.md` → *Dry-run intents*, not as a
-  fill. **Do not raise a ClickUp alert for this and do not let a run treat the reappearing intent
-  as a bug.** What is new today is the arithmetic: VOO closed 700.14 on 09-01 and traded 700.555 at
-  the open today, so across two dry-run days the index is roughly flat (−0.67%, then +0.06%) and
-  the un-deployed sleeve has neither gained nor lost much by sitting out. **That near-zero is
-  coincidence, not evidence the delay is cheap** — the same mechanism that sat out yesterday's
-  down day sits out every up day at exactly the same rate, and §1 asks this book to beat the S&P
-  over a rolling twelve months, which an all-cash book cannot track in either direction.
+- **⚠ THE HIGH-WATER PASS RAN AND HAD NO SUBJECT — do not backfill tomorrow.** This is the close
+  run's invisible job and the reason the routine exists, so it is recorded explicitly rather than
+  left to inference: zero position blocks means zero `highest_close` fields and zero `(as of ...)`
+  dates, so there was nothing to write and nothing to stamp. **The §5.4 trailing stop is not
+  silently disabled — it is not yet armed**, and it arms the day the first satellite position
+  opens. A `bars` backfill has no input; running one would repair nothing. **Ten runs across two
+  trading days have each recorded this distinction rather than assume it carried.** Note also the
+  near-miss logged in today's journal: after ten empty runs the pass starts to feel ceremonial, and
+  the first day it actually matters is the day *after* the first fill, when ten runs of habit will
+  say there is nothing there. Read the emptiness as verified, not as skipped.
+
+- **⚠ `TRADING_ENABLED: false` — day three, and today is the day the cost stopped being
+  hypothetical.** The account is still 100% cash and the core sleeve still does not exist. Only a
+  human can close this, in `control.md`. Read it as **configured behaviour, not a fault**:
+  `control.md` describes the dry run in its own words as a way to "watch the system think for a
+  week before it touches the account," and today is day three of that week. The 09:36 ET open run
+  submitted the §2 bootstrap exactly as planned and got `{"ok": true, "dry_run": true, "reason":
+  "TRADING_ENABLED is not true in control.md"}`, exit 0, no order — logged under `trade_log.md` →
+  *Dry-run intents*, not as a fill. **Do not raise a ClickUp alert for this and do not let a run
+  treat the reappearing intent as a bug.** The arithmetic, updated with today's close: **VOO closed
+  703.34, +0.457% on the day**; against the 700.625 reference of the first intended bootstrap
+  (2026-09-01 09:36 ET), $70,000 would now be **$70,271 — about +$271 (+0.39%) foregone**.
+  **That number is not evidence either, and a future run must not cite it as though it were.**
+  Yesterday the same sleeve "outperformed" by sitting out a −0.67% day. Two sessions is noise in
+  both directions; the argument against an all-cash book is **structural** — §1 asks this account
+  to beat the S&P over a rolling twelve months and a book holding no index cannot track it up or
+  down — and that was equally true on the day the tape flattered the delay.
 
 - **Core sleeve still does not exist, and the bootstrap and the rebalance are ONE action.**
   `core_established: false`, core 0.0% against a 70% target — outside the §2 65–75% band
   (`core_in_band: false`, `rebalance_needed: true`, `rebalance_delta: 70000.0`, unchanged across
-  all six runs since 2026-09-01 00:48 ET). Step 3's bootstrap and Step 7's rebalance are **the
-  same $70,000 VOO buy** on this account. Today's run submitted it **once** and explicitly did not
-  re-submit it at Step 7; the next run must do the same. Do not clear this line until a VOO fill is
-  verified in `trade_log.md` → *Entries*.
+  all six runs since 2026-09-01 00:48 ET, and again at the 16:15 ET close). Step 3's bootstrap and
+  Step 7's rebalance are **the same $70,000 VOO buy** on this account. Today's open run submitted it
+  **once** and explicitly did not re-submit it at Step 7; tomorrow's run must do the same. Do not
+  clear this line until a VOO fill is verified in `trade_log.md` → *Entries*. **Size to 70% of live
+  equity at the open, not to the $70,000 written here** — if equity has moved, the target moves.
 
-- **SCHEDULE: two clean days, ready to clear on the next one.** Routine 1 is specified for 08:00 ET
-  weekdays; it fired three times on 2026-09-01 (00:48, 01:15, 08:56 ET) and **once on 2026-09-02,
-  at 08:30 ET** — 30 minutes late but singular. Routine 2 has now fired **once, on time, on both
-  weekdays** (09:36 ET on 09-01 and again 09:36 ET today), which is what it is specified to do; the
-  fault was always localised to Routine 1's own schedule entry and remains so. The standing
-  instruction was to clear this after a second consecutive weekday of a single near-08:00 firing.
-  **Today is Routine 1's first clean day; tomorrow is the test.** If 2026-09-03 produces exactly one
-  Routine 1 run at or near 08:00 ET, clear this line. The ~7-hour-offset theory from the 00:48 run
-  stays dead.
+- **SCHEDULE: one clean Routine 1 day behind it — tomorrow, 2026-09-03, is the test that clears
+  it.** Routine 1 is specified for 08:00 ET weekdays; it fired three times on 2026-09-01 (00:48,
+  01:15, 08:56 ET) and **once on 2026-09-02, at 08:30 ET** — 30 minutes late but singular. Routines
+  2, 3 and 4 have each now fired **once, on time, on both weekdays** (09:36 / 12:35 / 16:15 ET
+  today), which is what they are specified to do; the fault was always localised to Routine 1's own
+  schedule entry and remains so. **If 2026-09-03 produces exactly one Routine 1 run at or near
+  08:00 ET, clear this line.** The ~7-hour-offset theory from the 00:48 run stays dead.
 
-- **Week rollover: re-checked at 12:35 ET, none needed.** ISO Monday of 2026-09-02 (Wednesday) is
+- **Week rollover: re-checked at the close, none needed.** ISO Monday of 2026-09-02 (Wednesday) is
   2026-08-31, which matches `week_of`. `new_positions_this_week` stays 0 — the §6 weekly cap is
-  fully available at 0 of 3, and Routine 3 cannot consume it in any case. Breaker INACTIVE,
-  `consecutive_closed_losses: 0`, `halt_triggered_at: none`; only a **closed** position can move
-  the streak, and nothing has ever opened, so the streak is untouched and the breaker cannot trip
-  from this run. `HALT_CLEARED_AT: none` in `control.md`, correct and irrelevant while no halt
-  exists. No `clickup.py alert` was raised and none was warranted.
+  fully available at 0 of 3. Breaker INACTIVE, `consecutive_closed_losses: 0`,
+  `halt_triggered_at: none`; only a **closed** position can move the streak, nothing has ever
+  opened, so the streak is untouched and the breaker could not trip from this run.
+  `HALT_CLEARED_AT: none` in `control.md`, correct and irrelevant while no halt exists. No
+  `clickup.py alert` was raised and none was warranted. **Note for tomorrow: 2026-09-07 is the
+  next week boundary, not this one** — the reset must be checked against ISO Monday every run and
+  not inherited from this line.
 
-- **The staleness gate PASSED today, and that is worth recording because it is the first time it
-  was a live test.** `plan_today.md` carried `plan_date: 2026-09-02` against an ET date of
-  2026-09-02, so the plan was today's and its intents were executable. No stale-plan alert was
-  raised and none was warranted. A future run must still re-read `plan_date` rather than assume
-  this outcome — the gate is only useful if it is checked on the day it would fire.
-
-- **Steps 4, 5 and 6 had genuinely empty input — not skipped, empty.** The plan carried **no SELL
-  intents** (no open satellite positions exist, so §5.1–5.4 have no subject) and **no BUY intents**
-  (both of today's theses were rejected pre-market). No `alpaca.py move` re-validation was run,
-  because there was no BUY intent to re-validate; that is the correct reason for its absence, not
-  an omission. Nothing was logged to `research_log.md` this run for the same reason — a skip is
-  only logged against a thesis that reached the open as an intent, and neither of today's did.
+- **The `plan_today.md` staleness gate is a live check, not a formality.** It passed today
+  (`plan_date: 2026-09-02` against an ET date of 2026-09-02). Tomorrow's open run must **re-read
+  `plan_date` against its own date** rather than inherit that outcome — the gate is only useful on
+  the day it would fire, and today's plan becomes stale at midnight.
 
 - **⚠ LHX REMAINS THE MOST DANGEROUS NAME IN THIS LOG, and the reason is that it keeps being almost
   right.** It has surfaced on two consecutive days through **two different, separately sourced
@@ -207,23 +213,17 @@ Anything the next run must not lose. Cleared once acted on.
   2026-09-01, produced by three runs against one rolling news window. **A reader scanning
   `research_log.md` should not read eight IDs as eight days of work.**
 
-- **The §5.4 trailing stop is not armed, and `positions.md` needs no backfill.** Zero position
-  blocks means zero `highest_close` fields, so there is nothing for a `bars` backfill to repair.
-  The trailing stop arms on the day the first satellite position opens, which under
-  `TRADING_ENABLED: false` cannot be today. **Seven** consecutive runs have now recorded this
-  distinction rather than assuming it carried, because "current and empty" and "the high-water pass
-  was skipped" look identical in a summary. Note that today's midday run is the one whose Step 2
-  exists specifically to catch a stale mark — it checked, found no subject, and passed; that is a
-  live test of the gate, not a bypass of it.
+- **`alerts.md` remains empty — zero incidents, nothing SYSTEMIC, nothing unresolved.** Selftest
+  passed all five checks. No alert was raised this run and none was warranted. The two standing
+  conditions (`TRADING_ENABLED: false` and Routine 1's schedule) are known human-owned items
+  already reported via ClickUp task `86bbrna9n` on 2026-09-01; re-alerting a standing condition is
+  exactly what the dedupe rules exist to prevent.
 
-- **`alerts.md` remains empty — zero incidents, nothing SYSTEMIC, nothing unresolved.** No alert
-  was raised this run and none was warranted. The two standing conditions (`TRADING_ENABLED: false`
-  and Routine 1's schedule) are known human-owned items already reported via ClickUp task
-  `86bbrna9n` on 2026-09-01; re-alerting a standing condition is exactly what the dedupe rules
-  exist to prevent.
-
-- **Cleared from carry-forward this run: nothing.** The schedule item still has one clean Routine 1
-  day behind it and its test is tomorrow, 2026-09-03 — Routine 3's own on-time firing today says
-  nothing about it either way. Everything else stands. The research items below (LHX, MU, HPE, the
-  four standing rules, the live events already examined) are carried untouched: Routine 3 is
-  exits-only and did no research, so it has no grounds to revise or retire any of them.
+- **Cleared from carry-forward this run: the two open-run process notes** (Steps 4–6 having empty
+  input, and the one-time record of the staleness gate's first live test) — both were about how
+  2026-09-02's open run behaved, both were acted on, and neither tells tomorrow anything it will
+  not re-derive. The staleness gate survives above as a standing instruction rather than a report.
+  **The schedule item is deliberately NOT cleared** — today was Routine 1's first clean day and its
+  test is tomorrow. Everything else stands. The research items below (LHX, MU, HPE, the four
+  standing rules, the live events already examined) are carried untouched: this run did no research
+  and has no grounds to revise or retire any of them.
