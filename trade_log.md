@@ -59,6 +59,30 @@ Recorded separately and deliberately kept out of `## Entries` above, which is re
 orders that actually reached a terminal state. A future reader looking for the missing VOO core
 position should find the reason here rather than infer a broken run.
 
+### 2026-09-02 — VOO core bootstrap — INTENT ONLY, NOT FILLED
+- routine:        2-market-open-execution (09:36 ET)
+- thesis_id:      core
+- intended:       BUY VOO, notional $70,000.00 (70% of $100,000.00 live equity, §2 target)
+- command:        `python scripts/alpaca.py buy --symbol VOO --notional 70000 --core`
+- result:         `{"ok": true, "dry_run": true, "reason": "TRADING_ENABLED is not true in
+                  control.md"}` — exit 0, **no order submitted, no fill, no position**
+- reference:      VOO last trade 700.555 at 09:36:15 ET; bid/ask 700.15 / 700.71 (a live,
+                  40x40, 56-cent regular-hours book — not the stale 679.52 / 721.61
+                  after-hours spread the 08:30 pre-market run correctly refused to use);
+                  prior close 700.14 (2026-09-01), i.e. about +0.06% on the session
+- asset check:    `tradable: true`, `fractionable: true`, ARCA, us_equity, status active —
+                  eligible, §3 clear
+- sizing:         re-derived from live equity at the open per the plan's `revalidate` line,
+                  not copied from the $70,000 written pre-market. Live equity was still
+                  $100,000.00, so the two numbers coincide — the figure was re-derived, not
+                  merely reused.
+- effect:         none. `core_established` stays `false`; account remains 100% cash; the same
+                  intent regenerates tomorrow until a human sets `TRADING_ENABLED: true`.
+- **submitted once, not twice.** Step 3's bootstrap and Step 7's rebalance are the same
+                  $70,000 VOO buy on this account (`core_established: false` **and** core 0.0%
+                  against a 70% target are one condition with one remedy). Step 7 was
+                  evaluated and deliberately not submitted as a second order.
+
 ### 2026-09-01 — VOO core bootstrap — INTENT ONLY, NOT FILLED
 - routine:        2-market-open-execution (09:36 ET)
 - thesis_id:      core

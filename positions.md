@@ -56,6 +56,34 @@ re-derive it from price history, and it stays correct for positions closed month
 
 *(none — no positions have been opened yet)*
 
+**Reconciliation 2026-09-02 09:36 ET (2-market-open-execution):** selftest passed all five checks.
+Market confirmed **open** — `clock` at 09:36:14 ET returns `is_open: true`, next close 16:00 ET.
+`alpaca.py positions` returned `[]`; `alpaca.py sleeves` reports equity $100,000.00, cash
+$100,000.00, core 0.0%, satellite 0.0% (count 0), cash 100.0%, `core_in_band: false`,
+`rebalance_needed: true`, `rebalance_delta: 70000.0` — unchanged from the 08:30 ET pre-market read
+and from every run since 2026-09-01 00:48 ET. This ledger is empty and **agrees with the broker.**
+No discrepancy, so no reconciliation was required before placing orders.
+
+**Nothing was opened or closed, and no block was written.** The plan carried no BUY and no SELL
+intents — both of today's theses were rejected pre-market — so Step 4 and Step 5 had empty input
+and §5.1–5.4 had nothing to evaluate. The §2 core bootstrap was submitted and returned
+`"dry_run": true` (`TRADING_ENABLED: false`); it would not have produced a block here in any case,
+since the core holding is deliberately not tracked in this file (§5 exempts it).
+
+**Do not backfill from `bars`.** The high-water warning at the top of this file is still not in
+play — the §5.4 trailing stop is **not silently disabled, it is not yet armed**, and it arms on
+the day the first satellite position opens. Under `TRADING_ENABLED: false` that cannot be today.
+This is the fifth consecutive run to record the distinction rather than assume it carried, because
+"current and empty" and "the high-water pass was skipped" are exactly what the `(as of ...)` date
+exists to tell apart, and with zero position blocks the distinction has no subject.
+
+For reference only, and deliberately **not** recorded as a high-water mark anywhere: VOO traded
+**700.555** at 09:36:15 ET against its 700.14 close of 2026-09-01, about +0.06%. Unlike the 08:30
+read, the regular-hours book was live and tight (700.15 / 700.71, 40x40) — the stale after-hours
+spread the pre-market run flagged had cleared by the open, as expected.
+
+---
+
 **Reconciliation 2026-09-02 08:30 ET (1-premarket-research):** selftest passed all five checks.
 Market **is open today** — `clock` at 08:30:11 ET returns `is_open: false` with
 `next_open: 2026-09-02T09:30:00-04:00`, i.e. closed because it is pre-market, **not a holiday**.
