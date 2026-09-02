@@ -56,6 +56,37 @@ re-derive it from price history, and it stays correct for positions closed month
 
 *(none — no positions have been opened yet)*
 
+**Reconciliation 2026-09-02 08:30 ET (1-premarket-research):** selftest passed all five checks.
+Market **is open today** — `clock` at 08:30:11 ET returns `is_open: false` with
+`next_open: 2026-09-02T09:30:00-04:00`, i.e. closed because it is pre-market, **not a holiday**.
+`alpaca.py positions` returned `[]`; `alpaca.py sleeves` reports equity $100,000.00, cash
+$100,000.00, core 0.0%, satellite 0.0% (count 0), cash 100.0%, `core_in_band: false`,
+`rebalance_needed: true`, `rebalance_delta: 70000.0` — identical to all four runs on 2026-09-01.
+This ledger is empty and **agrees with the broker.** No discrepancy, so Step 1's reconciliation
+requirement is satisfied and research proceeded on a ledger known to be correct.
+
+**No `sell_rule_status` fields were updated, because there are none to update.** Step 4 asks for
+each open position's distance to the §5.3 hard stop (−7% from entry) and the §5.4 trailing stop
+(−10% from `highest_close`). With zero position blocks in this file there is no entry price, no
+high-water mark, and no invalidation line to check — §5.1 through §5.4 all have empty input. **No
+Perplexity invalidation queries were run**, deliberately: with no `invalidation` line to defend, a
+news query on a name I do not hold would be activity for its own sake, which §4's honest-broker
+rule forbids.
+
+**Do not backfill from `bars`.** The high-water warning at the top of this file is still not in
+play — the §5.4 trailing stop is **not silently disabled, it is not yet armed**, and it arms on
+the day the first satellite position opens. Under `TRADING_ENABLED: false` that cannot be today.
+This is the fourth consecutive run to record that distinction, and it is recorded again rather
+than assumed carried, because "current and empty" and "the high-water pass was skipped" are
+exactly what the `(as of ...)` date exists to tell apart.
+
+For reference only, and deliberately **not** recorded as a high-water mark anywhere: VOO's last
+trade is the **700.14** close of 2026-09-01. At 08:30 ET no pre-market quote had printed — the
+`latestQuote` field still carried yesterday's 16:00 ET stamp with a stale 679.52 / 721.61
+after-hours book, which is not a usable reference price and was not used as one.
+
+---
+
 **High-water mark update 2026-09-01 16:16 ET (4-market-close-journal — the first close run in
 this repo's history):** selftest passed all five checks. Market **was open today and has since
 closed** (`clock`: `is_open: false` at 16:16:22 ET, `next_open: 2026-09-02 09:30 ET`) — this is
