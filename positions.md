@@ -56,6 +56,41 @@ re-derive it from price history, and it stays correct for positions closed month
 
 *(none — no **satellite** positions have been opened yet. Core VOO exists and is deliberately not tracked here, per the top-of-file rules and today's fill note below.)*
 
+**High-water mark update 2026-09-03 16:15 ET (4-market-close-journal):** selftest passed all
+five checks (`trading_enabled: true`). Market **was open today and has since closed** —
+`clock` at 16:15:42 ET returns `is_open: false`, `next_open: 2026-09-04 09:30 ET`. This is a
+normal post-close run, **not a holiday skip**. `alpaca.py positions` returns **one row, VOO**
+(99.046311231 @ avg_entry 706.74, current 710.45, market_value $70,367.45, unrealized_pl
++$367.46, +0.525%); `alpaca.py sleeves` reports equity **$100,367.46**, cash $30,000.01, core
+**70.11%**, satellite **0.0% (count 0)**, cash 29.89%, `core_in_band: true`,
+`rebalance_needed: false`, `rebalance_delta: −110.23`.
+
+**Step 2 recorded no closes, and there were none to record — the ledger is *current and
+empty*, not stale.** The close routine's core job is to write today's official close into
+every open **satellite** position's `highest_close` and to refresh the `(as of ...)` date
+whether or not the value moved. **There is no satellite position block in this file, so there
+is no `highest_close` to compare against and no `(as of ...)` date to stamp.** A future run
+must read this as *"the high-water pass ran and had no subject"*, **not** as *"the close run
+skipped its high-water pass"* — distinguishing those two is the entire purpose of the date
+field, and with zero satellite positions the distinction has no subject to attach to.
+**Do not backfill from `bars` tomorrow. There is nothing to backfill.** The §5.4 trailing stop
+is not silently disabled; it is **not yet armed**, and it arms on the day the first satellite
+position opens. **Today's core fill did not arm it** — §5 exempts core from all four sell
+rules, so VOO deliberately has no thesis, no timing window and no `highest_close`.
+
+**Satellite blocks (zero) checked against satellite Alpaca positions (zero) — they agree. No
+discrepancy.** The raw ledger reads *(none)* while the raw broker returns one VOO row; that is
+the expected steady state now that core exists, not a mismatch. Every reconciliation must
+compare **satellite to satellite**, never raw ledger to raw broker.
+
+For reference only, and deliberately **not** recorded as a high-water mark anywhere: VOO closed
+**710.70** on 2026-09-03 (`bars --days 3 --adjustment all`) against 703.34 on 09-02 and 700.14
+on 09-01 — **+1.047% on the session**. The position snapshot marks at 710.45 (last trade at
+16:15 ET) rather than the 710.70 official close, a $24.76 difference across 99.046 shares; the
+account figures below and in the journal use the broker's 710.45 mark, which is what `equity`
+is computed from. The core sleeve is not tracked in this file by design (§5 exempts it), so
+this figure is context for the journal, not ledger state.
+
 **Reconciliation 2026-09-03 12:35 ET (3-midday-management):** selftest passed all five checks
 (`trading_enabled: true`). Market confirmed **open** — `clock` at 12:35:13 ET returns
 `is_open: true`, next close 16:00 ET. `alpaca.py positions` returns **one row, VOO**
