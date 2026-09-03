@@ -40,6 +40,124 @@ anything where the honest-broker rule (§4) did real work>
 
 ## Entries
 
+### 2026-09-03 (Thursday)
+
+**Account:** total $100,367.46 | day P&L +367.46 (+0.37%) | since inception +0.37%
+**Sleeves:** core 70.11% | satellite 0.0% | cash 29.89%   (§2 band 65–75% — **in band, no rebalance due**)
+**Breaker:** INACTIVE (0 consecutive closed losses)
+**Week:** 0/3 new positions (week_of 2026-08-31, no rollover — ISO Monday of today is 2026-08-31)
+
+**Traded:** VOO — one fill, the §2 core bootstrap, $70,000 notional at 706.74. No satellite trades.
+**Researched:** 1 thesis — 0 accepted, 1 rejected (LITE at the §4 priced-in filter, −7.35% / 5 sessions)
+**Positions near a sell rule:** none. The only holding is core, and §5 exempts core from all four rules.
+
+**What happened:**
+
+**The first real fill in this repo's history landed at 09:36:21 ET.** BUY VOO,
+99.046311231 shares at 706.74, $70,000.00 notional, order `d177d8f0`, polled to
+`"status": "filled", "terminal": true` before anything was written down. Three previous open
+runs submitted this identical order into `TRADING_ENABLED: false` and got `"dry_run": true`
+back; the human flipped the flag at 00:08 ET today and the fourth attempt was real. The
+account went from 100% cash to core 70.11% / cash 29.89% in a single order, inside §2's
+65–75% band on the first try, and `core_established` is now `true` — the bootstrap path is
+closed permanently.
+
+The market cooperated: **VOO closed 710.70, +1.047% on the session**, its best day of the
+three this account has been awake for. The fill at 706.74 was +0.483% off the prior close, a
+normal open bar, and the day's close is 0.56% above it. Equity finished **$100,367.46**
+against `last_equity` $100,000.00 — day P&L **+$367.46, +0.367%**, all of it the VOO mark,
+which is also the entire since-inception return. Held in cash the whole day, the account would
+have returned exactly zero; the day's gain is the direct consequence of stopping being 100%
+cash, three sessions later than the strategy would have liked and on the human's schedule
+rather than the agent's.
+
+One number is worth flagging because it will recur: the broker marks the position at
+**710.45** (last trade at 16:15 ET), not the **710.70** official close. Across 99.046 shares
+that is $24.76 — equity would read $100,392.22 on the official close instead of $100,367.46,
+day P&L +0.39% instead of +0.37%. Every account figure in this entry uses the broker's mark,
+because that is what `equity` is computed from. Once a satellite position exists, `bars`
+(official close) is what feeds `highest_close` and the snapshot mark is what feeds P&L, and
+they will not agree. That is fine as long as nobody mixes them inside a single §5.4 comparison.
+
+Research produced one worked candidate and no trade. **T-2026-09-03-01 (Lumentum)** was
+rejected on the §4 priced-in filter and it is the most interesting rejection in the log so far,
+covered below. Eleven further events were dropped before thesis stage — Broadcom's weak
+guidance (dedicated screen came back empty; no Company B, and wrong direction for a long-only
+book), the Google adtech no-divestiture ruling (only Alphabet named; a status-quo ruling moves
+no third party's revenue line), FuelCell's Texas reservation (Company A, sub-$10B, private
+counterparties), KBR/NOAA, Studsvik, Uber's layoffs, BioLargo (OTCQX, §3-ineligible), and the
+macro misses.
+
+The housekeeping came up empty in the good way. `orders --status all` returns exactly one
+order, the VOO fill, terminal — **nothing is in limbo overnight** (§7). Nothing closed, so
+`consecutive_closed_losses` stays 0 and the breaker cannot have moved. ISO Monday of today is
+2026-08-31, matching `week_of`, so no rollover; the §6 weekly cap sits fully available at 0 of
+3, and **the core buy does not count against it** — §6 caps satellite positions. `alerts.md`
+is still empty. Selftest passed all five checks.
+
+**And Step 2 — the invisible job this run exists for — had no subject again.** Zero satellite
+positions means no `highest_close` to write and no `(as of ...)` date to stamp. Today is the
+first close run where that sentence needs a caveat: **the core fill did not arm the trailing
+stop.** It is easy to read "the account now holds something" as "the high-water machinery is
+live," and it is not. §5 exempts core from all four sell rules, so VOO is deliberately absent
+from `positions.md` — no thesis, no timing window, no high-water mark. §5.4 arms on the day
+the first *satellite* position opens, and not before.
+
+**What I got wrong or nearly got wrong:**
+
+**The near-miss is the shape of the day, and it is a pull rather than an error.** Today was the
+first day this account could actually transact. The single worked candidate produced what is
+plainly the best-sourced part-1 mechanism this log has generated — Morgan Stanley naming
+Lumentum as a **pump-laser** supplier to a Ciena that is explicitly "supply-constrained…
+particularly pump lasers," off a quarter that grew 37% and raised guidance, with LITE's own
+pump-laser shipments up 80%+ y/y. One clause, a named supplier relationship from a source
+rather than an assumed supply chain, cost-line-becomes-revenue-line. And it was rejected on a
+filter that arguably was not aimed at it: `move --sessions 5` tests **absolute** magnitude, so
+LITE's **−7.35%** reads `priced_in: true` even though a *decline* is close to the opposite of
+"the market has already paid for this news." Ciena itself is −12.25% over the same window on a
+beat-and-raise, which makes the drawdown look like the Broadcom-driven AI-optics selloff rather
+than anyone pricing in Ciena's Q3.
+
+The honest part: on a day with a live account and a clean story, "the rule does not mean what
+it says here" was an available sentence, and it would have been the most fluent thing to write.
+The pre-market run did not write it and neither will this one. §4 is a veto; a veto that
+over-fires is the safe direction; and the fix is a human editing §4 or `alpaca.py move`, not a
+run deciding at 08:00 that a rule is out of scope for the one candidate it just fell in love
+with. What is worth saying is that **the cost is now concrete rather than hypothetical** — the
+2026-09-02 log predicted this exact failure mode a day before it happened, and the human should
+decide it deliberately rather than let it keep firing silently. **LITE is not "wait for a
+better entry":** it failed for having already fallen, so a further decline makes the reading
+worse. There is no price at which today's rejection flips.
+
+Second, smaller: the priced-in scoreboard now reads **seven candidates passed the filter and
+failed the thesis; two passed the thesis and failed the filter (MU, LITE).** The filter has
+never once been informative in the direction people expect. The temptation that follows is to
+start treating a *passing* priced-in check as encouragement — "the market hasn't noticed yet."
+It is not. "Has not moved" and "should have moved but didn't" are the same number, and this
+scoreboard is an argument about the filter's calibration, not a license to weight its output.
+
+Third, and the one I would have missed if the fill had gone differently: I nearly reported the
+day's numbers off VOO's 710.70 official close because that is the number `bars` hands you and
+it is the number that goes into a high-water mark. The broker computes equity off 710.45. The
+gap is $24.76 today and irrelevant, but the habit of grabbing whichever price the previous
+command printed is exactly how a §5.4 trailing-stop comparison ends up mixing an official close
+against an intraday mark and firing 0.03% early or late.
+
+**For the next run:**
+
+- **Do not re-run the core bootstrap.** `core_established: true`; the path is closed. Core
+  only moves again if drift takes it outside 65–75%. At the close it is 70.11%,
+  `rebalance_delta: −110.23` — nowhere near an edge, and the delta's sign flip since the fill
+  is just VOO up on the session, not drift worth acting on.
+- **The §5.4 trailing stop is still not armed, and the core fill did not arm it.** Fourteenth
+  consecutive run recording the distinction rather than assuming it carried.
+- **`positions.md` legitimately disagrees with the raw broker** — ledger *(none)*, broker one
+  VOO row. Compare satellite-to-satellite, never raw-to-raw, or a correct ledger reads as broken.
+- **LITE / the priced-in filter is a decision waiting on the human**, per above. And do not
+  reach for COHR, CIEN, AVGO, CSCO, AAOI, GLW, APH, NOK, ERIC or ANET on the Ciena story — the
+  screen named **only** Lumentum. Every other name is an ecosystem read-through, which is the
+  RTX failure exactly.
+
 ### 2026-09-02 (Wednesday)
 
 **Account:** total $100,000.00 | day P&L +0.00 (0.00%) | since inception 0.0%
