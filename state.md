@@ -115,13 +115,7 @@ Anything the next run must not lose. Cleared once acted on.
   clear this line until a VOO fill is verified in `trade_log.md` → *Entries*. **Size to 70% of live
   equity at the open, not to the $70,000 written here** — if equity has moved, the target moves.
 
-- **SCHEDULE: one clean Routine 1 day behind it — tomorrow, 2026-09-03, is the test that clears
-  it.** Routine 1 is specified for 08:00 ET weekdays; it fired three times on 2026-09-01 (00:48,
-  01:15, 08:56 ET) and **once on 2026-09-02, at 08:30 ET** — 30 minutes late but singular. Routines
-  2, 3 and 4 have each now fired **once, on time, on both weekdays** (09:36 / 12:35 / 16:15 ET
-  today), which is what they are specified to do; the fault was always localised to Routine 1's own
-  schedule entry and remains so. **If 2026-09-03 produces exactly one Routine 1 run at or near
-  08:00 ET, clear this line.** The ~7-hour-offset theory from the 00:48 run stays dead.
+
 
 - **Week rollover: re-checked at the close, none needed.** ISO Monday of 2026-09-02 (Wednesday) is
   2026-08-31, which matches `week_of`. `new_positions_this_week` stays 0 — the §6 weekly cap is
@@ -214,8 +208,8 @@ Anything the next run must not lose. Cleared once acted on.
   `research_log.md` should not read eight IDs as eight days of work.**
 
 - **`alerts.md` remains empty — zero incidents, nothing SYSTEMIC, nothing unresolved.** Selftest
-  passed all five checks. No alert was raised this run and none was warranted. The two standing
-  conditions (`TRADING_ENABLED: false` and Routine 1's schedule) are known human-owned items
+  passed all five checks. No alert was raised this run and none was warranted. The standing
+  condition (`TRADING_ENABLED: false`) is a known human-owned item
   already reported via ClickUp task `86bbrna9n` on 2026-09-01; re-alerting a standing condition is
   exactly what the dedupe rules exist to prevent.
 
