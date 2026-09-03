@@ -14,7 +14,7 @@ is where you change things day to day without touching it.
 The block below is parsed by `scripts/common.py`. Keep the `KEY: value` format exactly.
 
 ```
-TRADING_ENABLED: false
+TRADING_ENABLED: true
 HALT_CLEARED_AT: none
 ```
 
