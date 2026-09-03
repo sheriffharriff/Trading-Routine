@@ -54,7 +54,42 @@ re-derive it from price history, and it stays correct for positions closed month
 
 ## Open positions
 
-*(none — no positions have been opened yet)*
+*(none — no **satellite** positions have been opened yet. Core VOO exists and is deliberately not tracked here, per the top-of-file rules and today's fill note below.)*
+
+**Reconciliation 2026-09-03 09:36 ET (2-market-open-execution — the first fill in this repo's
+history):** selftest passed all five checks (`trading_enabled: true`). Market confirmed **open** —
+`clock` at 09:36:07 ET returns `is_open: true`, next close 16:00 ET. Pre-trade: `alpaca.py
+positions` returned `[]`, `alpaca.py sleeves` reported equity $100,000.00, cash $100,000.00, core
+0.0%, cash 100.0%, `core_in_band: false`, `rebalance_needed: true`, `rebalance_delta: 70000.0` —
+one condition with one remedy, as pre-noted.
+
+**BUY VOO 99.046311231 @ $706.74, notional $70,000.00** — order
+`d177d8f0-cd0c-41bf-95c1-4772318265fd`, filled at 09:36:21 ET, verified terminal before writing.
+Post-trade: `alpaca.py positions` returns one VOO row (99.046311231 shares, avg_entry 706.74,
+market_value $69,983.15, unrealized_pl −$16.84, −0.024% intraday); `alpaca.py sleeves` reports
+equity $99,983.16, cash $30,000.01, **core 69.99%**, satellite 0.0%, cash 30.01%,
+`core_in_band: true`, `rebalance_needed: false`, `rebalance_delta: 5.06`.
+
+**This ledger is deliberately still empty and the broker now shows one row. That is not a
+discrepancy.** The core holding is **not** tracked in this file by design — §5 exempts it from
+all four sell rules, so there is no thesis state, no timing window and no `highest_close` to
+keep. `state.md` records the fill; `trade_log.md` → *Entries* carries the audit record. **Every
+future reconciliation note must check satellite blocks against satellite Alpaca positions**, not
+the raw ledger against the raw broker — the first run that does the raw comparison will read this
+as broken. This is the mismatch the pre-market notes flagged in advance, and it is now the live
+state.
+
+**§5 evaluation: still empty input.** Zero satellite blocks means §5.1–5.4 have nothing to test.
+No `sell_rule_status` fields were updated, because there are none to update. The §5.4 trailing
+stop remains **not silently disabled, not yet armed** — it arms on the day the first *satellite*
+position opens, and today's core fill is not that day.
+
+**Do not backfill from `bars` tomorrow.** There is nothing to backfill. Twelve consecutive runs
+have now each recorded this distinction rather than assume it carried; the state is the same
+today, one day into a live account, as it was before trading was enabled. Only the first
+satellite fill changes it.
+
+---
 
 **Reconciliation 2026-09-03 08:27 ET (1-premarket-research):** selftest passed all five checks,
 and for the first time in this repo's history it reports **`trading_enabled: true`** with

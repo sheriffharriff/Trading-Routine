@@ -49,7 +49,29 @@ audit it later.
 
 ## Entries
 
-*(none yet — no order has reached a terminal fill state)*
+### 2026-09-03 09:36 ET — BUY — VOO — filled
+- thesis_id:      core
+- order_id:       d177d8f0-cd0c-41bf-95c1-4772318265fd
+- qty:            99.046311231
+- fill_price:     706.74
+- notional:       70000.00
+- pct_of_account: 70.0% (at entry, against $100,000.00 pre-trade equity)
+- routine:        2-market-open-execution
+- asset_type:     etf
+- market_cap:     n/a — VOO is the designated core sleeve ticker; §3 stock market-cap floor
+                  does not apply and `alpaca.py buy --core` does not require it. ADV is well
+                  above the §3 500k-shares ETF threshold (VOO trades in the millions daily).
+- market_cap_src: n/a (core sleeve, ETF — §3 checks ADV, not market cap)
+- notes:          **First real fill in this repo's history.** Bootstrapped the §2 core sleeve
+                  from 0% to 70% in a single order — Step 3's bootstrap and Step 7's rebalance
+                  are the same order on this account, so this fill satisfies both. Verified
+                  terminal (`"status": "filled", "terminal": true`) before writing this entry.
+                  Post-fill sleeves check: core 69.99%, cash 30.01%, `core_in_band: true`,
+                  `rebalance_needed: false`, `rebalance_delta: 5.06` (residual from fractional
+                  share rounding against a moving mark, well inside §2's 65–75% band). Live
+                  equity was $100,000.00 at the open, so the plan's $70,000 notional was also
+                  70% of live equity — no size-to-equity adjustment needed. Fill price 706.74
+                  is +0.483% from VOO's 703.41 prior close, i.e. a normal open bar.
 
 ---
 
