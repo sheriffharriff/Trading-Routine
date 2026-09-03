@@ -52,6 +52,147 @@ single most common way a plausible-sounding connection gets mistaken for an oppo
 
 ## Entries
 
+### 2026-09-03 (08:27 ET) — event survey (funnel, pre-thesis)
+
+**First run under `TRADING_ENABLED: true`.** The human set it in `control.md` at 21:08 PT on
+2026-09-02 (commit `1005b1e`, "Enable trading"), i.e. 00:08 ET today. Every prior run in this
+repo's history researched under a dry run. **That changes nothing about §4** — the filters and
+the honest-broker rule are identical whether or not an order can reach the broker — but it is
+worth recording that the first live day produced no BUY intent, because the pressure to
+inaugurate a live account with a trade is exactly the pressure §4 exists to resist.
+
+Four Perplexity scans: two broad (`--recency day`), two sourced second-order screens
+(`--recency week`). Roughly a dozen events surfaced. **Eleven were dropped before thesis
+stage**, one was worked, and it was rejected. The dropped items, with reasons:
+
+- **Broadcom fiscal Q3: beat on revenue and EPS ($29.59B vs $29.36B; adj. EPS $3.32 vs $3.24)
+  but weak forward guidance** (CNBC 2026-09-02). Dropped at part 1 after a **dedicated screen
+  came back explicitly empty**: no source names any publicly traded US company whose revenue or
+  costs change because of Broadcom's guidance. It is also the wrong direction — §3 leaves this
+  book long-only, and a weak-guidance print has no long second-order candidate. The tempting
+  move is "AVGO guides soft, so a competitor is taking the share" — that names no source and is
+  the read-across failure in its purest form.
+- **Federal judge rules Google need not divest its adtech business / AdX** (Reuters, NYT,
+  Forbes, AdExchanger, 2026-09-02). Dropped at part 1 on two grounds. First, the sourced screen
+  names **only Alphabet** — no source names any other public company whose revenue or costs the
+  ruling changes; "competitors," "publishers" and "advertisers" appear only generically.
+  Second, and more fundamental: **a ruling that preserves the status quo does not change
+  anyone's revenue line.** The mechanism available for a rival (Trade Desk, Magnite, PubMatic)
+  runs *against* it — they lose an upside they never had — and §4 needs an improvement, not a
+  withheld harm. Alphabet itself is Company A.
+- **FuelCell Energy: first Capacity Reservation Agreement with a major data-centre operator for
+  a planned 75 MW Texas project, plus a capital-equipment agreement with Fit Energy for up to
+  380 MW across four phases** (FCEL Q3 FY2026 release, 2026-09-02). Dropped at §3 and part 1.
+  FCEL is Company A and is far below the $10B floor; the sourced screen confirms the
+  counterparties are **Fit Energy (not US-listed) and an unnamed "major colocation data centre
+  operator."** There is no Company B. The reflex here is to jump from "data-centre power demand
+  is real" to a large US power or turbine name, which no source connects to this agreement.
+- **Dell Q2 FY2027 / the $25B guidance raise.** Already worked and rejected yesterday as
+  T-2026-09-02-02 (HPE, part 1 — read-across, not mechanism). It resurfaced in today's window
+  because the news cycle is still rolling; **deliberately not re-litigated.** The component
+  screen that came back empty yesterday was not re-run, and MU was not re-checked — consistent
+  with the standing rule, **today's funnel does not produce it from any source.**
+- **Uber cuts ~3,300 jobs (10% of global workforce)** in a restructuring toward ride-share,
+  delivery and robotaxi. An internal cost action at Company A. No source names a third company
+  whose revenue or costs move; a staffing cut does not become another firm's revenue line.
+- **KBR wins a NOAA National Weather Service single-award follow-on, $1.1B ceiling over five
+  years, Sept 2026–Aug 2031** (Zacks, 2026-09-02). Company A. No source names a subcontractor,
+  and a five-year ceiling is not a two-quarter revenue event (§4.3) even for KBR itself.
+- **Studsvik / GE Vernova Hitachi / Samsung C&T commit to advancing a 1.2 GW nuclear project in
+  Sweden** (PR Newswire, 2026-09-03). "Commit to advancing" is not an order, the project is
+  non-US, and nuclear construction is years from reported results — outside §4.3 by a wide
+  margin.
+- **Ciena's own print** — the source event for the one worked thesis below. Ciena is Company A.
+- **BioLargo / Clyra Medical reseller agreement with Spartan Medical for ViaCLYR** (2026-09-03).
+  BioLargo is **OTCQX** — explicitly ineligible under §3 — and no dollar value or term is
+  disclosed. Spartan Medical is private.
+- **PharmaEssentia BESREMi FDA approval for essential thrombocythemia** (2026-08-31).
+  Not US-listed, and the approval predates this window.
+- **Macro: ADP private payrolls +38k for August** (vs 47k consensus, prior 46k revised),
+  **ISM manufacturing 54.6**, **July construction spending −0.5% m/m**. All three are misses,
+  all three are macro with no segment and no dollar path to a single name, and a long-only book
+  has no second-order candidate in a softening print. The ISM and construction figures are the
+  **same releases already funnelled and dropped on 2026-09-02** — they are listed again only
+  because they reappeared in today's `--recency day` window, not because they were reconsidered.
+
+**Tesla's Cybercab event in Austin was scheduled for today** and is pre-event coverage only —
+no contract, approval or capacity announcement exists in any retrieved text. Nothing to work.
+
+The one event with genuine second-order structure — **Ciena's fiscal Q3 and guidance raise** —
+is worked as T-2026-09-03-01 below.
+
+---
+
+### T-2026-09-03-01 — LITE — REJECTED
+
+**Company A / the news:** Ciena reported fiscal Q3 2026 revenue of **$1.67B, up 37% y/y**, with
+adjusted EPS of **$2.11, up 215% y/y**, raised FY2026 revenue guidance to **$6.42B ± $50M** and
+guided fiscal Q4 to **$1.75B ± $50M** (Ciena investor release / Business Wire, 2026-09-02). Its
+**Optical Networking portfolio was $1,191.3M, 71.3% of Q3 revenue**, up from $815.5M and 66.9%
+a year earlier — the growth is concentrated in coherent optical transport and data-centre
+interconnect.
+**Company B / the candidate:** Lumentum Holdings — named by Morgan Stanley commentary (via
+TheStreet) as **one of Ciena's key suppliers**, specifically of the **pump lasers** Ciena uses
+in its networking hardware. The same source describes Ciena as **"supply-constrained because
+demand is outrunning its ability to source optical components, particularly pump lasers,"** and
+reports Lumentum's pump-laser shipments **up more than 80% y/y last quarter with plans to
+increase volumes roughly fourfold over the coming quarters.**
+
+**Hard filters — applied before the thesis, per §4, and this is where it ended:**
+
+- **Priced-in (§4): FAIL.** `alpaca.py move --symbol LITE --sessions 5` returns
+  **−7.35%** (939.45 → 870.415), `priced_in: true`, `verdict: "LATE - skip per strategy.md
+  section 4"`. Over 20 sessions **+5.44%** (825.49 → 870.415), also `priced_in: true`.
+- Correlation (§4): no open positions → pass, vacuously. Driver would be **AI/data-centre
+  optical interconnect demand** — a driver nothing in this book currently carries.
+- Universe (§3): stock, NASDAQ, `tradable: true`, `fractionable: true`, status active — clear
+  on venue and class. **Market cap deliberately not sourced.** The candidate was already dead
+  on the filter, and sourcing a number that cannot be used is wasted effort — the same
+  disposition as T-2026-09-02-01.
+
+**1. Mechanism (one sentence):** *not written as a live thesis — the filter had already vetoed
+the trade.* Recorded here only so the human can see what was given up:
+> Ciena's optical-networking ramp causes Lumentum's optical-components revenue to rise because
+> Lumentum supplies the pump lasers Ciena is supply-constrained on.
+
+One clause, no "and also," a **named** supplier relationship from a source rather than an
+assumed supply chain, and a cost-line-becomes-revenue-line shape. **This is the cleanest part 1
+this log has produced.** Parts 2–4 were **not** attempted: §4 requires the filters first, and
+constructing the dollar path after the veto had fired would be building the story I was already
+looking for permission to keep.
+
+**Outcome:** REJECTED on the §4 priced-in filter, −7.35% over five sessions.
+
+**⚠ This is the case the 2026-09-02 log flagged in advance, and it has now actually cost
+something — the human needs to decide it deliberately.** Yesterday's entry observed that
+`alpaca.py move` tests **absolute** magnitude, so a stock that has *fallen* more than 4%
+returns `priced_in: true`, and noted that "a future run could be blocked from a legitimate
+candidate that fell 5% on unrelated news." That is precisely what happened here. LITE is
+**down** 7.35%; so is Ciena itself, **−12.25%** over the same five sessions, on a quarter that
+beat and raised. The five-session window brackets Broadcom's weak guidance and a broad AI-optics
+drawdown, so the decline is very unlikely to be the market pricing in Ciena's Q3.
+
+**I have not reinterpreted the filter, and no future run should either.** §4 is a veto; a veto
+that fires too often is the safe direction; and "has fallen 7%" is a perfectly good reason for
+an agent with my failure modes to stay out of a name it just constructed an attractive story
+about. But the cost is now concrete rather than hypothetical, and the fix — if there is one —
+is a human editing §4 or the script, not a run deciding at 08:00 that the rule does not mean
+what it says.
+
+**The scoreboard this extends:** across nine worked candidates, seven passed the priced-in check
+and failed the thesis (NOC, LHX×2, WDC, AEP, RTX, and HPE which died at part 1), and **two now
+passed the thesis and failed the filter — MU and LITE.** The filter has still never been
+informative about the outcome in the direction people expect it to be. Treat a passing
+priced-in check as a veto that did not fire, never as encouragement.
+
+**One more thing worth saying plainly.** Today was the first day this account could actually
+transact, and the single worked candidate produced the best-sourced mechanism in the log and
+was rejected anyway, on a rule that arguably was not aimed at it. That is the system working.
+A first live day that opened a satellite position on a name whose filter said "LATE" would have
+been a worse outcome than a first live day that bought only the index.
+
+---
+
 ### 2026-09-02 (08:30 ET) — event survey (funnel, pre-thesis)
 
 **One run today, at 08:30 ET.** Yesterday this routine fired three times (00:48, 01:15, 08:56 ET)

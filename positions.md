@@ -56,6 +56,46 @@ re-derive it from price history, and it stays correct for positions closed month
 
 *(none — no positions have been opened yet)*
 
+**Reconciliation 2026-09-03 08:27 ET (1-premarket-research):** selftest passed all five checks,
+and for the first time in this repo's history it reports **`trading_enabled: true`** with
+`"control.md ok - LIVE (paper account)"`. Market **is open today** — `clock` at 08:27:45 ET
+returns `is_open: false` with `next_open: 2026-09-03T09:30:00-04:00`, i.e. closed because it is
+pre-market, **not a holiday**. `alpaca.py positions` returned `[]`; `alpaca.py sleeves` reports
+equity $100,000.00, cash $100,000.00, core 0.0%, satellite 0.0% (count 0), cash 100.0%,
+`core_in_band: false`, `rebalance_needed: true`, `rebalance_delta: 70000.0` — unchanged from every
+run since 2026-09-01 00:48 ET. This ledger is empty and **agrees with the broker.** No
+discrepancy, so Step 1's reconciliation requirement is satisfied and research proceeded on a
+ledger known to be correct.
+
+**No `sell_rule_status` fields were updated, because there are none to update.** Step 4 asks for
+each open position's distance to the §5.3 hard stop (−7% from entry) and the §5.4 trailing stop
+(−10% from `highest_close`). With zero position blocks there is no entry price, no high-water
+mark and no invalidation line — §5.1 through §5.4 all have empty input. **No Perplexity
+invalidation queries were run**, deliberately: with no `invalidation` line to defend, a news
+query on a name I do not hold would be activity for its own sake, which §4's honest-broker rule
+forbids.
+
+**Do not backfill from `bars`.** The high-water warning at the top of this file is still not in
+play — the §5.4 trailing stop is **not silently disabled; it is not yet armed**, and it arms on
+the day the first satellite position opens. This is the eleventh consecutive run to record the
+distinction rather than assume it carried, because "current and empty" and "the high-water pass
+was skipped" are exactly what the `(as of ...)` date exists to tell apart.
+
+**⚠ Today's core buy will NOT create a block in this file, and a future run must not read its
+absence as a missing entry.** Trading went live overnight and the 09:35 run is expected to fill
+a real ~$70,000 VOO order. The core holding is **deliberately not tracked here** — §5 exempts it
+from all four sell rules, so it has no thesis state, no timing window and no high-water mark to
+keep. After today this ledger should still read *(none)* while `alpaca.py positions` returns one
+VOO row. **That is not a discrepancy.** It is the one case where this file and the broker
+legitimately disagree, and it is worth stating now, before it happens, because every prior
+reconciliation note in this file asserted that an empty ledger and an empty broker agreeing was
+the thing being checked.
+
+For reference only, and deliberately **not** recorded as a high-water mark anywhere: VOO's last
+trade is the **703.34** close of 2026-09-02, up 0.457% from 700.14 on 09-01.
+
+---
+
 **High-water mark update 2026-09-02 16:15 ET (4-market-close-journal):** selftest passed all five
 checks (`trading_enabled: false`). Market **was open today and has since closed** — `clock` at
 16:15:36 ET returns `is_open: false` with `next_open: 2026-09-03T09:30:00-04:00`. This is a normal
