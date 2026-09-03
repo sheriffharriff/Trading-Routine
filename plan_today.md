@@ -29,113 +29,130 @@ better. Core and rebalance actions are exempt from the gate because neither depe
 day's research.
 
 ```
-plan_date: 2026-09-02
+plan_date: 2026-09-03
 generated_by: 1-premarket-research
 market_open_today: yes
 ```
 
-Market opens today 2026-09-02 at 09:30 ET (`alpaca.py clock`: `is_open: false`,
-`next_open: 2026-09-02T09:30:00-04:00`, timestamp `08:30:11 ET`). **Not a holiday** — the market
+Market opens today 2026-09-03 at 09:30 ET (`alpaca.py clock`: `is_open: false`,
+`next_open: 2026-09-03T09:30:00-04:00`, timestamp `08:27:45 ET`). **Not a holiday** — the market
 is closed because it is pre-market, and `next_open` is today.
 
-**One pre-market run today, at 08:30 ET**, against three yesterday. This plan supersedes nothing;
-there is no earlier run today to reconcile against.
+**One pre-market run today, at 08:27 ET.** This plan supersedes nothing; there is no earlier run
+today to reconcile against.
 
-**Tape context:** at 08:30 ET no pre-market quote had printed for VOO — `latestQuote` still
-carried yesterday's 16:00 ET close stamp with a wide 679.52 / 721.61 book, which is a stale
-after-hours spread and **must not be used as a reference price**. VOO's last actual trade is the
-2026-09-01 close at **700.14**, down from 704.875 on 08-31 (−0.67%) and from 707.18 on 08-28.
+**Tape context:** VOO's last actual trade is the **2026-09-02 close at 703.34**, up from 700.14
+on 09-01 (+0.457%) and against 704.875 on 08-31. As on previous pre-market runs, do not use the
+`latestQuote` spread before the bell as a reference price — pull a fresh quote at 09:35.
+
+---
+
+## ⚠ READ FIRST — trading is live as of today
+
+**`TRADING_ENABLED: true` in `control.md`.** The human set it at 21:08 PT on 2026-09-02
+(commit `1005b1e`, "Enable trading") — 00:08 ET today. The selftest at 08:27 ET confirms it:
+`"control": "control.md ok - LIVE (paper account)"`, `"trading_enabled": true`.
+
+**Every run in this repo's history before today was a dry run. This one is not.** The
+REBALANCE intent below will place a **real $70,000 order** against the paper account, not
+print an intent and return `"dry_run": true`. Three previous open runs submitted this same
+bootstrap and got nothing back; **do not pattern-match on that.** The correct expectation at
+09:35 is a filled order, a `trade_log.md` → *Entries* row, and `core_established: true`.
+
+**Anything in `state.md`'s carry-forward or in `trade_log.md` → *Dry-run intents* that says
+`TRADING_ENABLED: false` is stale as of today** and describes 2026-09-01 and 09-02 only. The
+carry-forward has been rewritten this run; the trade-log dry-run section is history and is
+deliberately left standing as history.
 
 ---
 
 ## Intents
 
-### REBALANCE — core (this is the first-run bootstrap, and it is the whole plan)
+### REBALANCE — core (the bootstrap, and it is the whole plan)
 
 - current_core_pct:  0.0%   (target 70%, §2 band 65–75% — outside the band)
 - action:            BUY VOO to establish the core sleeve at 70% of account value
 - notional:          $70,000.00
-- account_equity:    $100,000.00 (100% cash, no positions — `alpaca.py sleeves`, 08:30 ET:
+- account_equity:    $100,000.00 (100% cash, no positions — `alpaca.py sleeves`, 08:27 ET:
                      `core_in_band: false`, `rebalance_needed: true`, `rebalance_delta: 70000.0`)
 - command:           `python scripts/alpaca.py buy --symbol VOO --notional 70000 --core`
-- reference_price:   VOO last trade **700.14** (2026-09-01 close). Asset check at 08:30 ET:
+- reference_price:   VOO last trade **703.34** (2026-09-02 close). Asset check at 08:27 ET:
                      `tradable: true`, `fractionable: true`, ARCA, us_equity, status active —
                      §3 clear. No priced-in check applies: §4's hard filters govern satellite
                      catalyst trades, not the permanent core sleeve (§2).
 - revalidate:        Re-read `alpaca.py sleeves` at the open. If `core_established` is still
-                     `false` and `core.pct` is still 0.0, proceed. Size to **70% of live equity
+                     `false` and `core.pct` is still 0.0, proceed. **Size to 70% of live equity
                      at the open**, not to the $70,000 written here — if equity has moved, the
                      target moves with it. Confirm VOO is still `tradable: true` before
-                     submitting. **Do not use the pre-market `latestQuote` spread recorded
-                     above as a price reference** — pull a fresh quote at 09:35.
+                     submitting.
+- verify:            **This is the part that is new today.** `buy` polls to a terminal state.
+                     If `"terminal": false`, do **not** write a fill — re-check with
+                     `alpaca.py order --id <id>` and log what is actually there (§7). Only
+                     write `trade_log.md` → *Entries* and flip `core_established: true` once a
+                     fill is confirmed.
 
 **⚠ Step 3's bootstrap and Step 7's rebalance are the SAME $70,000 VOO buy on this account, not
-two actions. Do not submit both.** `core_established: false` and core 0.0% describe one condition
-with one remedy.
+two actions. Do not submit both.** `core_established: false` and core 0.0% against a 70% target
+describe one condition with one remedy. Three previous open runs each correctly submitted this
+once; today it costs real money to get wrong.
 
 **This intent is exempt from the `plan_date` staleness gate** and does not depend on the day's
 research, but it is dated today regardless.
 
 ### BUY — none
 
-No buy intents. Two candidates were worked through §4 today and both were rejected. Details in
-`research_log.md`; the short version:
+No buy intents. One candidate was worked through §4 today and was rejected.
 
 | Thesis | Ticker | Died at | Why |
 |---|---|---|---|
-| T-2026-09-02-01 | LHX | part 2 | Only publicly traded US name on the Army TITAN team, sourced. But the whole production award is **$127M across a five-partner team** against $21.865B FY2025 revenue — **≤0.58%**, and L3Harris's own share is unstated. Worse than NOC's ~1.0%. |
-| T-2026-09-02-02 | HPE | part 1 | Rose ~5% because Dell's AI-server guidance raise "improved sentiment." That is a read-across, not a mechanism — Dell shipping more servers does not raise HPE's revenue. The SAIC failure from 2026-09-01, recurring within 24 hours. |
+| T-2026-09-03-01 | LITE | §4 priced-in filter | Morgan Stanley names Lumentum as a key **pump-laser** supplier to a Ciena that is explicitly "supply-constrained… particularly pump lasers," off a Q3 that grew 37% and raised guidance. Best-sourced part 1 in this log. But `move --sessions 5` returns **−7.35%**, `priced_in: true`. §4 is a veto and it fired. |
 
-Nine further events were dropped before thesis stage — GE's $2.87B F414 award (**sole-source, no
-Company B, confirmed by a dedicated screen**), the unsigned Nvidia/Hugging Face rumour, NASA/Blue
-Origin, ISM PMI, construction spending, JOLTS, Zepp Health, Enovix, Doosan Fuel Cell and Honda.
-The funnel is written out in `research_log.md`.
+Eleven further events were dropped before thesis stage — Broadcom's weak guidance (**dedicated
+screen empty; no Company B, and wrong direction for a long-only book**), the Google adtech
+no-divestiture ruling (**only Alphabet named; a status-quo ruling changes no one's revenue
+line**), FuelCell Energy's 75 MW Texas reservation and 380 MW Fit Energy agreement (**FCEL is
+Company A and sub-$10B; counterparties private or unnamed**), Uber's 3,300 layoffs, KBR/NOAA,
+Studsvik/GE Vernova Hitachi's Swedish nuclear commitment, BioLargo (**OTCQX, §3-ineligible**),
+PharmaEssentia, and the ADP / ISM / construction-spending macro misses. The funnel is written
+out in full in `research_log.md`.
 
 Notes for the open run, carried so nothing is re-derived at 09:35:
 
-- **Nothing here is queued or deferred.** Both of today's candidates are rejected outright. LHX
-  fails on magnitude and HPE on the absence of a mechanism; neither is a number that a better
-  entry price repairs.
-- **LHX has now surfaced on two consecutive days through two different drivers** (PAC-3 MSE /
-  THAAD yesterday, Army TITAN today) and failed on two different parts. Treat a recurrence as a
-  warning, not corroboration — a large diversified prime appears in every defense news cycle,
-  and appearing is not being materially affected. The stock is still trading on the postponed
-  Missile Solutions IPO, which is neither of those mechanisms.
-- **MU did not enter today's funnel and its filter was not re-run.** No source in six queries
-  named it. Do not reach for it at the open on the strength of Dell's AI-server numbers — the
-  component-supplier screen came back explicitly empty, and naming a memory vendor would be
-  inference.
-- **NOC and LHX share the PAC-3 driver; MU, STX and SNDK share the memory-cycle driver.** §4's
-  correlation rule permits at most one of each group at a time, if either ever becomes live.
+- **Nothing here is queued or deferred, and LITE specifically is not a "wait for a better
+  entry."** It failed because it had **already fallen** 7.35%; a further decline makes the
+  filter reading worse, not better. There is no price at which today's rejection flips.
+- **⚠ Do not reach for LITE, COHR, CIEN or any AI-optics name at the bell.** The screen named
+  **only** Lumentum as a sourced Ciena supplier. Coherent, Cisco, Broadcom, AAOI, Corning,
+  Amphenol, Nokia, Ericsson and Arista appear in the retrieved material purely as ecosystem
+  read-throughs, with **no sourced supplier relationship to Ciena** — buying one of those
+  would be the RTX failure exactly.
+- **Do not reach for MU.** It did not enter today's funnel, no source named it, and its filter
+  was not re-run. This is the second consecutive day recording that the reason is *absence of
+  evidence today*, not resolve.
+- **A live account is not a reason to open something.** Today is the first day an order can
+  reach the broker. §4's honest-broker rule is unchanged by that fact, and the correct output
+  of most research runs is still no trade.
 
 ### SELL — none
 
 No open satellite positions. `positions.md` and `alpaca.py positions` agree — both empty (`[]`,
-checked 08:30 ET). §5.1–5.4 have nothing to evaluate against: no invalidation condition exists to
+checked 08:27 ET). §5.1–5.4 have nothing to evaluate against: no invalidation condition exists to
 test, no timing window to expire, and no entry or high-water mark to measure a stop against.
 
 ---
 
-## Standing flag for the open run
+## Standing flags for the open run
 
-`TRADING_ENABLED: false` in `control.md`. Every order below will be a **dry run** —
-`alpaca.py buy` will print the intended order, return `"dry_run": true`, and submit nothing.
-
-**This includes the core bootstrap.** The account will remain 100% cash after the open run,
-`core_established` stays `false`, and this same REBALANCE intent will be regenerated
-tomorrow. That is the configured behavior, not a fault — but it means the §1 objective
-(beat the S&P over a rolling 12 months) is currently being pursued from an all-cash book
-that cannot track the index in either direction. Only the human can change it, in
-`control.md`. Log the intent as an intent, never as a fill.
-
-**Day two of this condition.** The 2026-09-01 open run executed the identical intent and got back
-`{"ok": true, "dry_run": true, "reason": "TRADING_ENABLED is not true in control.md"}`, exit 0, no
-order submitted — recorded under `trade_log.md` → *Dry-run intents*. Yesterday VOO fell 0.67% and
-the un-deployed core sleeve happened to sit out a down day. **That was luck and is not a reason to
-be relaxed:** the same mechanism sits out up days at exactly the same rate. `control.md` itself
-describes the dry run as a way to "watch the system think for a week before it touches the
-account," so this is a deliberate human setting on its second day, not an incident — do not raise
-an alert for it.
+- **The §5.4 trailing stop is not yet armed** — not disabled, not skipped. It arms the day the
+  first satellite position opens. Today's core buy does **not** arm it: the core sleeve is
+  exempt from §5 entirely and is deliberately not tracked in `positions.md`.
+- **The §6 weekly cap is fully available at 0 of 3.** Week rollover was checked this run: ISO
+  Monday of 2026-09-03 (Thursday) is **2026-08-31**, which matches `week_of` — no reset was due.
+  The next boundary is **2026-09-07**, not today.
+- **Circuit breaker INACTIVE**, `consecutive_closed_losses: 0`, `halt_triggered_at: none`,
+  `HALT_CLEARED_AT: none`. Nothing has ever closed, so the streak cannot have moved.
+- **`alerts.md` is empty — zero incidents, nothing SYSTEMIC.** Selftest passed all five checks
+  at 08:27 ET.
 
 ---
 
