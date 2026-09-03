@@ -48,4 +48,7 @@ Free-text instructions for the agent. It reads these every run and must honor th
 They sit below `strategy.md` in priority — these can restrict what the agent does, never
 permit something the strategy forbids.
 
+Manual "Run now" invocations appear in run logs and are indistinguishable
+from scheduled runs. Do not diagnose schedule faults from run timestamps.
+
 - (none)
