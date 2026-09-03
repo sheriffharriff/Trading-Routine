@@ -56,6 +56,48 @@ re-derive it from price history, and it stays correct for positions closed month
 
 *(none — no **satellite** positions have been opened yet. Core VOO exists and is deliberately not tracked here, per the top-of-file rules and today's fill note below.)*
 
+**Reconciliation 2026-09-03 12:35 ET (3-midday-management):** selftest passed all five checks
+(`trading_enabled: true`). Market confirmed **open** — `clock` at 12:35:13 ET returns
+`is_open: true`, next close 16:00 ET. `alpaca.py positions` returns **one row, VOO**
+(99.046311231 shares, avg_entry 706.74, current 710.09, market_value $70,331.80, unrealized_pl
++$331.81, +0.474%); `alpaca.py sleeves` reports equity **$100,331.81**, cash $30,000.01, core
+**70.1%**, satellite **0.0% (count 0)**, cash 29.9%, `core_in_band: true`,
+`rebalance_needed: false`, `rebalance_delta: −99.53`.
+
+**Satellite blocks (zero) checked against satellite Alpaca positions (zero) — they agree. No
+discrepancy.** This is the comparison the 09:36 carry-forward instructed, and it is the first run
+to perform it in the post-fill world: the raw ledger reads *(none)* while the raw broker returns
+one row, and that is **not** a mismatch — the core holding is exempt from all four §5 rules and is
+deliberately untracked here. A run that compares raw-to-raw will read a correct ledger as broken.
+
+**Nothing to manage, and nothing was done.** Routine 3 is exits-only and may not open a position.
+With zero open **satellite** positions, §5.1 (no `invalidation` line exists to test), §5.2 (no
+`timing_window` to expire), §5.3 and §5.4 (no `entry_price` and no `highest_close` to measure
+against) all had empty input. **No Perplexity invalidation queries were run** — with no position
+to defend, a news query would be manufacturing activity, which §4's honest-broker rule forbids,
+and Step 1 of this routine says so directly: no open satellite positions means note it and exit,
+not go looking for something to do. **The core was excluded from the working list before §5 was
+evaluated, not after** (§5: core is never sold on news).
+
+**Step 2 high-water repair: nothing to repair, and this is the thirteenth consecutive run to
+record the distinction rather than assume it carried.** The `highest_close` staleness check has no
+subject — no satellite block exists, so no `(as of ...)` date can be stale and no `bars` backfill
+was needed. **Do not backfill from `bars`. There is nothing to backfill.** The §5.4 trailing stop
+is **not silently disabled; it is not yet armed** — it arms the day the first *satellite* position
+opens, and yesterday's core fill was not that day. "Current and empty" and "the high-water pass was
+skipped" are exactly what the `(as of ...)` date exists to tell apart; with zero satellite blocks
+the distinction has no subject.
+
+**No exit should have executed and did not.** No §5 rule had a subject, so no `sell` was attempted
+and nothing was suppressed. `TRADING_ENABLED` is now `true`, so the dry-run suppression path that
+shaped the first three days is no longer in play — had a stop fired, it would have executed.
+
+For reference only, and deliberately **not** recorded as a high-water mark anywhere: VOO traded
+**710.09** at 12:35 ET against its 703.41 close of 2026-09-02, **+0.95%** on the session. The core
+sleeve is now deployed, so unlike every prior run this move is being captured rather than sat out.
+
+---
+
 **Reconciliation 2026-09-03 09:36 ET (2-market-open-execution — the first fill in this repo's
 history):** selftest passed all five checks (`trading_enabled: true`). Market confirmed **open** —
 `clock` at 09:36:07 ET returns `is_open: true`, next close 16:00 ET. Pre-trade: `alpaca.py
