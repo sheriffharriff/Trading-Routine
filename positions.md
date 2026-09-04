@@ -54,7 +54,36 @@ re-derive it from price history, and it stays correct for positions closed month
 
 ## Open positions
 
-*(none — no **satellite** positions have been opened yet. Core VOO exists and is deliberately not tracked here, per the top-of-file rules and today's fill note below.)*
+*(none — no **satellite** positions have been opened yet. Core VOO exists and is deliberately not tracked here, per the top-of-file rules and the fill note further down.)*
+
+**Reconciliation 2026-09-04 08:27 ET (1-premarket-research):** selftest passed all five checks
+(`trading_enabled: true`, LIVE paper account). Market is **closed because it is pre-market, not
+a holiday** — `clock` at 08:27:46 ET returns `is_open: false` with `next_open` **today** at
+09:30 ET. `alpaca.py positions` returns **one row, VOO** (99.046311231 shares, avg_entry 706.74,
+current 710.94, market_value $70,415.98, unrealized_pl **+$415.99, +0.594%**, `lastday_price`
+710.72); `alpaca.py sleeves` reports equity **$100,415.98**, cash $30,000.00, core **70.12%**,
+satellite **0.0% (count 0)**, cash 29.88%, `core_in_band: true`, `rebalance_needed: false`,
+`rebalance_delta: −124.80`.
+
+**Satellite blocks (zero) checked against satellite Alpaca positions (zero) — they agree. No
+discrepancy.** The raw ledger reads *(none)* while the raw broker returns one VOO row; that is
+the expected steady state now that core exists. Compare **satellite to satellite**, never raw
+ledger to raw broker, or a correct ledger reads as broken.
+
+**`sell_rule_status` — nothing to update, because there is nothing to update it on.** Step 4 of
+the pre-market routine ran in full and had no subject:
+
+| §5 rule | Status | Why there is no distance to report |
+|---|---|---|
+| 5.1 thesis invalidation | **no subject** | No position block exists, so no `invalidation` line exists to test. No Perplexity news check was run on any holding, because there is no holding to check. |
+| 5.2 time stop | **no subject** | No `timing_window` and no deadline to have passed. |
+| 5.3 hard stop (−7% from entry) | **no subject** | No satellite `entry_price` to measure from. |
+| 5.4 trailing stop (−10% from `highest_close`) | **NOT ARMED, not disabled** | No `highest_close` exists. It arms the day the first **satellite** position opens. |
+
+**The core VOO holding is exempt from all four rules (§5) and does not get a block here**, so
+its +0.594% unrealized gain is not a `sell_rule_status` line and never will be. **Do not backfill
+a `highest_close` from `bars` — there is nothing to backfill.** This is the fifteenth consecutive
+run recording the armed/not-armed distinction explicitly rather than assuming it carried.
 
 **High-water mark update 2026-09-03 16:15 ET (4-market-close-journal):** selftest passed all
 five checks (`trading_enabled: true`). Market **was open today and has since closed** —
