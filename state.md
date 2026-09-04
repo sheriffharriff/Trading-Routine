@@ -10,8 +10,8 @@ The block below is parsed by `scripts/common.py` and gates real behavior
 `key: value` format exactly. Prose goes underneath.
 
 ```
-last_run: 2026-09-04 16:16 ET 4-market-close-journal
-week_of: 2026-08-31
+last_run: 2026-09-04 16:46 ET 5-friday-weekly-review
+week_of: 2026-09-07
 new_positions_this_week: 0
 consecutive_closed_losses: 0
 circuit_breaker: INACTIVE
@@ -74,12 +74,49 @@ Anything the next run must not lose. Cleared once acted on.
   has rung, not that the day was a holiday. **A run firing Monday should log a holiday skip and
   exit successfully; that is not a fault and is not a missed close run.**
 
-- **⚠ TUESDAY'S RUN OWES A WEEK ROLLOVER, AND IT IS THE FIRST ONE THIS REPO HAS EVER DONE.** ISO
-  Monday of 2026-09-08 is **2026-09-07**, which differs from `week_of: 2026-08-31`. Reset
-  `new_positions_this_week` to **0** and set `week_of: 2026-09-07`. **The reset is due even
-  though the boundary Monday is a holiday** — the anchor is the ISO Monday, not the first
-  session — and it deliberately does not depend on the Friday review having run. Whichever
-  routine fires first on Tuesday does it.
+- **✅ THE WEEK ROLLOVER IS DONE — the Friday review performed it at 16:46, and it was the first
+  one this repo has ever done.** `week_of` is now **2026-09-07** (ISO Monday of the week
+  containing Tuesday 2026-09-08) and `new_positions_this_week` is **0**. **Tuesday's run does not
+  owe it any more.** Tuesday should still run its own rollover comparison as normal, find the
+  anchors already match, and correctly do nothing — that is the check working, not a skipped step.
+  The reset was correct even though 2026-09-07 is a holiday: the anchor is the ISO Monday, not the
+  first session. Weekly cap stands at **0 of 3** for the week beginning 2026-09-07.
+
+- **⚠ THE FIRST WEEKLY REVIEW IS WRITTEN AND THE §1 ANSWER IS NEGATIVE: the satellite sleeve is
+  −0.42% behind the same capital in VOO since inception (−$127 on $30,000), entirely because it
+  held cash for all four sessions.** Idle satellite cash is counted at 0% *inside* the measurement,
+  not beside it. Core +0.158% (fill 706.74 → close 707.86); its −0.485% divergence from VOO over
+  the same window is the **09-03 entry gap (+0.483% above the prior close), not tracking error and
+  never skill** — **future reviews must measure the core from the 706.74 fill, not from the 09-02
+  close**, or they will re-report a permanent one-time level offset as drift every week. Account
+  since inception **+0.111%** vs VOO **+0.423%**, excess **−0.313%**.
+
+- **⚠ THE WEEK-ANCHORED ACCOUNT NUMBER READS +0.015% EXCESS AND IT IS NOT OUTPERFORMANCE.**
+  Anchoring to the 08-28 close puts VOO's 09-01 −0.67% down day inside the window that the book
+  was 100% cash for. **Anchor to 08-31 (the first operating day) and the honest number is
+  −0.313%.** A future run that quotes the +0.015% has picked the anchor that flatters it.
+
+- **⚠ RECURRING ERROR NAMED IN THE WEEKLY REVIEW: THE REASSURING FRAMING, THREE OF FOUR DAYS
+  (09-01, 09-02, 09-04) — and it recurred a fourth time inside the review itself.** It has now
+  appeared in three different book structures — 100% cash, dry-run counterfactual, 70/30 invested
+  — which means it is **not a slip but the sentence this agent produces by default whenever
+  partial exposure and a down day coincide.** Every run should expect to generate it and expect to
+  delete it. It was caught each time before reaching a summary; keep that record intact.
+
+- **⚠ REJECT SCOREBOARD OPENED — 6 of 10 rejects beat VOO, 4 lagged, mean excess −0.16%. The split
+  is the finding, not the headline.** The 8 names rejected on the four-part thesis or §3 average
+  **−0.97%** excess (the thesis test is selecting correctly); the 2 rejected by the §4 priced-in
+  filter — **MU +5.49%, LITE +0.62%** — average **+3.06%** and are **the same two candidates that
+  passed the four-part thesis.** The filter is currently vetoing the thesis test's own winners.
+  **MU and LITE are two different findings and must never be merged into one:** MU failed on a real
+  +5.27% run-up (the rule working as designed and costing money — acceptable, change nothing),
+  LITE failed on a **−7.35% drawdown** read as `priced_in: true` (the open question for the human).
+  **1–3 sessions is noise and 10 names is not a sample — this is a tally being opened, not
+  evidence. A future review must not quote it as a result.**
+
+- **Six of ten rejects running without us is the HEALTHY reading, not a failure.** A rejection rate
+  that is never wrong would mean the filters are too loose. Do not respond to this scoreboard by
+  tightening §4, and do not respond to it by loosening §4 either.
 
 - **Close-run high-water pass: EXECUTED IN FULL, working list EMPTY. Nothing was recorded and
   that is correct.** Zero satellite positions, so `positions.md` has no `highest_close` field to
@@ -245,9 +282,35 @@ Anything the next run must not lose. Cleared once acted on.
   same names recur.
 
 - **Today's ClickUp daily summary: task `86bbv6npm`** — https://app.clickup.com/t/86bbv6npm
+  **Today's ClickUp WEEKLY REVIEW: task `86bbv75bz`** — https://app.clickup.com/t/86bbv75bz
+  (deliberately a separate task from the daily, per the Friday routine)
 
-- **The week closed with zero satellite activity: four runs today (08:27, 09:36, 12:35, 16:16),
-  each of which correctly did nothing.** `5-weekly-review` (Friday) is the only run left today
-  and starts from core **70.03% in band**, **zero satellite positions**, weekly cap **0 of 3**,
-  trailing stop **unarmed**, `alerts.md` empty, and **zero trades to review**. **Do not read the
-  accumulation of quiet runs as pressure to find something.**
+- **MONTHLY ARCHIVE ROLLOVER: CHECKED AND NOT DUE — first time this check has ever run.** Every
+  entry in `research_log.md`, `trade_log.md` and `journal.md` is dated **2026-09**; nothing
+  predates the current month, so nothing moved and **no archive index line was written.**
+  `archive/` still holds only its README. The next rollover is due at the first Friday review of
+  **October 2026**, which will be the first one that actually moves files.
+
+- **⚠ ALL FOUR §5 SELL RULES ARE UNTESTED CODE PATHS, NOT PROVEN ONES.** Zero positions have ever
+  closed, so §5.1 invalidation, §5.2 time stop, §5.3 hard stop and §5.4 trailing stop have never
+  been evaluated against a real subject. The weekly review has no read on which exit rules fire or
+  whether timing windows are written too optimistically — **those questions need closed trades and
+  there are none.** Four days of "no exits" recorded the absence of a subject, not four clean bills
+  of health.
+
+- **THE WEEK IS CLOSED. All five runs fired (08:27, 09:36, 12:35, 16:16, 16:46) and every one of
+  them correctly did nothing to the book.** The weekly review is written, posted and committed;
+  **no runs remain this week and the next is Tuesday 2026-09-08.** State at close of week: core
+  **70.03% in band**, satellite **0.0% / zero positions**, cash 29.97%, weekly cap **0 of 3** for
+  the new week, trailing stop **unarmed**, breaker **INACTIVE**, `alerts.md` **empty**.
+  **Do not read the accumulation of quiet runs as pressure to find something on Tuesday.** The
+  review's finding is that the individual no-trade decisions were right and the structure is a
+  question for the human — **not that the agent should lower the §4 bar.** It will not.
+
+- **⚠ THREE ITEMS ARE WITH THE HUMAN, IN THE WEEKLY REVIEW AND IN ClickUp `86bbv75bz`.** (1) The §4
+  priced-in filter reads a **drawdown** as priced-in (LITE) — third consecutive day flagged, now
+  with a scoreboard entry; needs a §4 edit, an `alpaca.py move` change, or an explicit decision to
+  leave it, any of which closes the item. (2) The satellite sleeve is **structurally undeployed** —
+  ten theses, zero positions, −$127 vs benchmark in four sessions; either the 30% target or the
+  four-part strictness may need to move. (3) The core's **−0.485% divergence is the entry gap**,
+  flagged so no future run mistakes it for drift. **None of the three is the agent's to decide.**
