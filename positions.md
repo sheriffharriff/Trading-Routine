@@ -56,6 +56,43 @@ re-derive it from price history, and it stays correct for positions closed month
 
 *(none — no **satellite** positions have been opened yet. Core VOO exists and is deliberately not tracked here, per the top-of-file rules and the fill note further down.)*
 
+**Reconciliation 2026-09-04 12:35 ET (3-midday-management):** selftest passed all five checks
+(`trading_enabled: true`, LIVE paper account). Market confirmed **open** — `clock` at 12:35:02
+ET returns `is_open: true`, next close 16:00 ET today, next open Monday 2026-09-08 09:30 ET.
+`alpaca.py positions` returns **one row, VOO** (99.046311231 shares, avg_entry 706.74, current
+708.67, market_value $70,191.15, unrealized_pl **+$191.16, +0.273%**, `lastday_price` 710.72,
+intraday **−0.288%**); `alpaca.py sleeves` reports equity **$100,191.15**, cash $30,000.00, core
+**70.06%**, satellite **0.0% (count 0)**, cash 29.94%, `core_in_band: true`,
+`rebalance_needed: false`, `rebalance_delta: −57.34`.
+
+**Satellite blocks (zero) checked against satellite Alpaca positions (zero) — they agree. No
+discrepancy.** Compare **satellite to satellite**, never raw ledger to raw broker.
+
+**Step 2 (high-water repair): no subject.** There is no open satellite position, therefore no
+`highest_close` field and no `(as of ...)` date to test for staleness. **Nothing was backfilled
+from `bars`, and nothing should have been** — the staleness check is a check on position blocks,
+and there are none. The §5.4 trailing stop is **NOT ARMED, not disabled**; it arms the day the
+first satellite position opens. Seventeenth consecutive run recording this.
+
+**Step 3 (sell rules): evaluated in full against an empty working list.** §5.1 has no
+invalidation condition to test, §5.2 no `timing_window` to expire, §5.3 no `entry_price` and
+§5.4 no `highest_close` to measure against. **Core VOO was excluded by §5, not overlooked** — it
+is exempt from all four rules and is never sold on news, so it was removed from the working list
+before evaluation, as the routine requires. VOO's −0.288% session move is therefore not a §5
+input of any kind.
+
+**Step 4 (execute exits): zero exits, zero orders, zero dry-run intents.** Nothing triggered
+because nothing could. `consecutive_closed_losses` stays **0** and the circuit breaker stays
+**INACTIVE** — only a *closed* position moves the streak, and nothing has ever closed. No
+ClickUp alert was due or raised.
+
+**This run opened nothing and could not have.** Routine 3 is exits-only by construction; the
+29.94% idle cash ($30,000.00) is not a midday opportunity and was not treated as one. New
+positions route through pre-market research and the 09:35 execution run, which already ran today
+and correctly placed no orders.
+
+---
+
 **Reconciliation 2026-09-04 09:36 ET (2-market-open-execution):** selftest passed all five
 checks (`trading_enabled: true`, LIVE paper account). Market confirmed **open** — `clock` at
 09:36:14 ET returns `is_open: true`, next close 16:00 ET. `alpaca.py positions` returns **one
