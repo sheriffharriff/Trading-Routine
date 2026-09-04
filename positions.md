@@ -56,6 +56,48 @@ re-derive it from price history, and it stays correct for positions closed month
 
 *(none — no **satellite** positions have been opened yet. Core VOO exists and is deliberately not tracked here, per the top-of-file rules and the fill note further down.)*
 
+**Reconciliation 2026-09-04 16:16 ET (4-market-close-journal) — HIGH-WATER PASS, NOTHING TO
+RECORD:** selftest passed all five checks (`trading_enabled: true`, LIVE paper account).
+`clock` at 16:16:10 ET returns `is_open: false` **because the bell has rung, not because the
+day was a holiday** — the session ran 09:30–16:00 today and `next_open` is
+**2026-09-08 09:30 ET**, i.e. Tuesday, because **Monday 2026-09-07 is Labor Day.**
+`alpaca.py positions` returns **one row, VOO** (99.046311231 shares, avg_entry 706.74, broker
+mark 707.59, market_value $70,084.18, unrealized_pl **+$84.19, +0.12%**, `lastday_price`
+710.72, `change_today` **−0.44%**); `alpaca.py sleeves` reports equity **$100,084.18**, cash
+$30,000.00, core **70.03%**, satellite **0.0% (count 0)**, cash 29.97%, `core_in_band: true`,
+`rebalance_needed: false`, `rebalance_delta: −25.25`.
+
+**Satellite blocks (zero) checked against satellite Alpaca positions (zero) — they agree. No
+discrepancy.** Compare **satellite to satellite**, never raw ledger to raw broker.
+
+**Step 2 — record the closes: executed in full, and its working list was empty.** This is the
+run whose whole job is to stamp today's official close into every open satellite position's
+`highest_close` and to refresh the `(as of ...)` date **whether or not the value moved**. It
+had **no position to stamp**: there is no `highest_close` field anywhere in this file's
+`## Open positions` section and no `(as of ...)` date to advance. So the field the §5.4
+trailing stop depends on was **not left stale — it does not exist yet.**
+
+**⚠ Read this distinction precisely, because the whole design of Step 2 rests on it.** The
+routine stamps the date every day so that a *current, unchanged* mark cannot be confused with
+a *skipped* one. That machinery presupposes a mark. Today there is none, which is a **third**
+state: not current, not stale, **absent**. The midday backfill trigger keys on a stale date,
+and an absent field cannot be stale — so **the next run must not backfill from `bars`. There
+is nothing to backfill.** This is the eighteenth consecutive run recording it.
+
+**§5.4 is NOT ARMED, and is not silently disabled.** It arms the day the first *satellite*
+position opens. §5 exempts core from all four sell rules, so VOO is deliberately absent from
+this ledger — no thesis, no timing window, no `highest_close`. VOO's official close today was
+**707.86** (`bars --adjustment all`, 09-04) against **710.70** on 09-03, **−0.40%**, and that
+number was **deliberately not written anywhere as a high-water mark** — recording a core close
+into this file would fabricate a trailing stop on a position §5 exempts.
+
+**⚠ The two-price rule bit again today, in the direction worth noting.** The broker mark
+(**707.59**) drives `equity` and the +$84.19 unrealized P&L above; the official close
+(**707.86**) is what would feed `highest_close`. On 99.046311231 shares the gap is **$26.75**
+of unrealized P&L — small, but it is the *first* time the two have been compared at the close
+rather than intraday, and the ordering (official close **above** the broker mark) is the
+reverse of what an intraday fade would suggest. **Never mix them inside one §5.4 comparison.**
+
 **Reconciliation 2026-09-04 12:35 ET (3-midday-management):** selftest passed all five checks
 (`trading_enabled: true`, LIVE paper account). Market confirmed **open** — `clock` at 12:35:02
 ET returns `is_open: true`, next close 16:00 ET today, next open Monday 2026-09-08 09:30 ET.

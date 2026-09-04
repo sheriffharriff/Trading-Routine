@@ -10,7 +10,7 @@ The block below is parsed by `scripts/common.py` and gates real behavior
 `key: value` format exactly. Prose goes underneath.
 
 ```
-last_run: 2026-09-04 12:35 ET 3-midday-management
+last_run: 2026-09-04 16:16 ET 4-market-close-journal
 week_of: 2026-08-31
 new_positions_this_week: 0
 consecutive_closed_losses: 0
@@ -18,9 +18,9 @@ circuit_breaker: INACTIVE
 halt_triggered_at: none
 core_established: true
 core_ticker: VOO
-core_pct: 70.06
+core_pct: 70.03
 satellite_pct: 0.0
-cash_pct: 29.94
+cash_pct: 29.97
 open_thesis_ids: none
 ```
 
@@ -68,84 +68,100 @@ position list win, and the discrepancy goes in the journal.
 
 Anything the next run must not lose. Cleared once acted on.
 
+- **⚠ THE NEXT TRADING SESSION IS TUESDAY 2026-09-08. MONDAY 2026-09-07 IS LABOR DAY.** `clock`
+  at 16:16 ET today returns `is_open: false` with `next_open: 2026-09-08T09:30:00-04:00`. Today
+  itself was a **normal full session, 09:30–16:00 ET** — the closed flag at 16:16 means the bell
+  has rung, not that the day was a holiday. **A run firing Monday should log a holiday skip and
+  exit successfully; that is not a fault and is not a missed close run.**
 
-- **The 12:35 ET midday run took NO EXITS, and the reason is that it had no subject — not that
-  it judged the positions safe.** Zero open satellite positions, so §5.1–5.4 were evaluated
-  against an empty working list. **Nothing was close to triggering, because nothing exists to
-  trigger.** Any future reader comparing runs should note the difference between "all four rules
-  checked and none breached" and this, which is "no position to check."
+- **⚠ TUESDAY'S RUN OWES A WEEK ROLLOVER, AND IT IS THE FIRST ONE THIS REPO HAS EVER DONE.** ISO
+  Monday of 2026-09-08 is **2026-09-07**, which differs from `week_of: 2026-08-31`. Reset
+  `new_positions_this_week` to **0** and set `week_of: 2026-09-07`. **The reset is due even
+  though the boundary Monday is a holiday** — the anchor is the ISO Monday, not the first
+  session — and it deliberately does not depend on the Friday review having run. Whichever
+  routine fires first on Tuesday does it.
 
-- **⚠ NOTHING SHOULD HAVE EXECUTED AND DID NOT.** This is the line the routine says to lead with,
-  and it is clean: no stop was pending, no dry-run intent was suppressed (`TRADING_ENABLED: true`,
-  LIVE paper), no order came back non-terminal, no fill went unlogged. `trade_log.md` was not
-  appended to and correctly so.
+- **Close-run high-water pass: EXECUTED IN FULL, working list EMPTY. Nothing was recorded and
+  that is correct.** Zero satellite positions, so `positions.md` has no `highest_close` field to
+  stamp and no `(as of ...)` date to advance. **This is a third state, distinct from both
+  "current" and "stale": ABSENT.** The midday backfill trigger keys on a stale date and an
+  absent field cannot be stale — **so do NOT backfill from `bars`. There is nothing to
+  backfill.** Eighteenth consecutive run recording this.
 
-- **Routine 3 is exits-only and the idle cash was not treated as an opening.** 29.94% cash
-  ($30,000.00) sat uninvested at midday with the breaker INACTIVE and the weekly cap at **0 of 3**
-  — i.e. a new position was *permitted* by every gate and was still not opened, because this run
-  is structurally forbidden from opening one. §2 is explicit that uninvested satellite cash is
-  fine. Do not read the cash level in this snapshot as a backlog.
+- **§5.4 trailing stop still NOT ARMED — not silently disabled.** §5 exempts core from all four
+  sell rules, so VOO is deliberately absent from `positions.md`: no thesis, no timing window, no
+  `highest_close`. **§5.4 arms the day the first *satellite* position opens.** VOO's official
+  close today was **707.86** and was **deliberately not written as a high-water mark anywhere** —
+  doing so would fabricate a trailing stop on a position §5 exempts. **Do not record it.**
 
-- **Sleeve read 12:35 ET: equity $100,191.15, cash $30,000.00, core VOO 70.06%, satellite 0.0%
-  (count 0), cash 29.94%.** `core_in_band: true`, `rebalance_needed: false`,
-  `rebalance_delta: −57.34` — 0.06% of equity, deep inside the §2 65–75% band. VOO marks
-  **708.67** against `lastday_price` 710.72 (intraday **−0.288%**, a wider fade than the −0.038%
-  seen at 09:36), unrealized **+$191.16 (+0.273%)** on 99.046311231 shares at avg_entry 706.74.
-  **Rebalancing is a market-open action (§2) and was not this run's to take in any case.**
+- **⚠ THE TWO-PRICE TRAP WENT LIVE TODAY, AND THE ORDERING WAS THE REVERSE OF THE INTRADAY
+  PATTERN.** `alpaca.py positions` runs first and hands back `current_price` **707.59**, which at
+  16:16 looks exactly like a closing price. The official close from `bars --adjustment all` is
+  **707.86** — the official close sat **ABOVE** the broker mark, unlike the intraday fades seen
+  all week. On 99.046311231 shares the gap is **$26.75** of unrealized P&L. It cost nothing today
+  because core has no `highest_close`. **The day a satellite position exists, that shortcut
+  writes a wrong high-water mark — which does not error, does not look stale, and silently moves
+  the §5.4 stop to a level nobody chose. Always pull `bars` for the close. Never mix the two
+  inside one §5.4 comparison.**
 
-- **⚠ Two VOO prices exist and they are not interchangeable.** The broker mark (710.45 at the
-  open here) drives `equity` and P&L; `bars --adjustment all` returns the official close
-  (**710.70** for 09-03) and that is what would feed `highest_close`. **Never mix them inside
-  one §5.4 comparison.**
+- **Close sleeve read 16:16 ET: equity $100,084.18, cash $30,000.00, core VOO 70.03%, satellite
+  0.0% (count 0), cash 29.97%.** `core_in_band: true`, `rebalance_needed: false`,
+  `rebalance_delta: −25.25` — 0.03% of equity, deep inside the §2 65–75% band. **No rebalance is
+  due Tuesday.** Day P&L **−$310.01 (−0.31%)** against `last_equity` 100,394.19; since inception
+  **+$84.18 (+0.08%)**. VOO unrealized **+$84.19 (+0.12%)** on 99.046311231 shares at avg entry
+  706.74.
 
-- **The §5.4 trailing stop is still NOT ARMED — seventeenth consecutive run recording it.** §5
-  exempts core from all four sell rules, so VOO is deliberately absent from `positions.md`: no
-  thesis, no timing window, no `highest_close`. **§5.4 arms the day the first *satellite*
-  position opens.** The midday exit pass ran in full and had **no subject**. **Do not backfill
-  anything from `bars`. There is nothing to backfill** — the Step 2 high-water repair is a check
-  on position blocks, and there are none. No close run has been "missed"; the field it maintains
-  does not yet exist.
+- **⚠ The book fell −0.31% against VOO's −0.40% and THIS IS NOT OUTPERFORMANCE.** It is 70%
+  exposure capturing 70% of a down move, and it runs identically in reverse on every up day. The
+  09-01 journal caught the same reassuring framing when the book was 100% cash; **it recurred
+  today in a different structure, which means it is not a one-off slip but a framing that will be
+  produced every time the market falls.** Do not let a future summary write it as skill.
+
+- **⚠ FLAGGED TO THE HUMAN, NEW TODAY AND UNRESOLVED: the structure points away from §1.** Four
+  days of individually-correct no-trade decisions leave the satellite sleeve undeployed, making
+  the book functionally a 70% index tracker with a 30% cash drag. §2 permits the cash and §4 says
+  most runs should end in no trade — **both rules were followed** — but a 70/30 cash book cannot
+  beat the S&P over a rolling 12 months (§1) in a rising market, only in a falling one. **The
+  agent must NOT respond by lowering the §4 bar.** This is a strategy-level question for the
+  human and went out in today's ClickUp summary.
+
+- **NO TRADES, NO FILLS, NOTHING CLOSED, NOTHING IN LIMBO.** `orders --status all` returns
+  exactly one order in the account's entire history — the 09-03 core VOO buy `d177d8f0`,
+  `status: filled`, terminal. **Nothing from today needs resolving into `trade_log.md`**, which
+  matters more than usual because the next session is four days away. `trade_log.md` was
+  correctly not appended to. Loss streak stays 0 — **nothing has ever closed**, so the §6 streak
+  cannot have moved and no circuit-breaker alert was due.
 
 - **⚠ `positions.md` legitimately disagrees with the raw broker, and this is the normal steady
   state.** Ledger reads *(none)*; `alpaca.py positions` returns one VOO row. **Not a
-  discrepancy** — compare **satellite blocks to satellite Alpaca positions**, never raw ledger
-  to raw broker, or a correct ledger reads as broken. Reconciled again at 12:35: zero satellite
-  blocks against zero satellite positions, they agree. Keep carrying this until the first
-  satellite position exists.
+  discrepancy** — compare **satellite blocks to satellite Alpaca positions**, never raw ledger to
+  raw broker, or a correct ledger reads as broken. Reconciled again at 16:16: zero against zero,
+  they agree. Keep carrying this until the first satellite position exists.
 
-- **Week rollover re-checked at midday: none due.** ISO Monday of 2026-09-04 (Friday) is
-  **2026-08-31**, matching `week_of`. `new_positions_this_week` stays **0 of 3**. Breaker
-  INACTIVE, `consecutive_closed_losses: 0`, `halt_triggered_at: none`, `HALT_CLEARED_AT: none`;
-  only a **closed** position can move the streak and nothing has ever closed. **Next week
-  boundary: Monday 2026-09-07 — the reset belongs to Monday's run, not to today's Friday
-  review.**
-
-- **⚠ THE DAY'S REAL FINDING: three separate second-order screens came back EXPLICITLY EMPTY.**
-  Not "the candidate failed a filter" — *no source named a publicly traded US Company B at
-  all*, on any of: **Lululemon's −18% guidance cut** (the two named share-takers, **Alo Yoga
+- **⚠ THE DAY'S REAL RESEARCH FINDING: three separate second-order screens came back EXPLICITLY
+  EMPTY.** Not "the candidate failed a filter" — *no source named a publicly traded US Company B
+  at all*, on any of: **Lululemon's −18% guidance cut** (the two named share-takers, **Alo Yoga
   and Vuori, are private**), **Snowflake's beat-and-raise** (+16.55%, no named supplier or
-  partner), and **the grid/transformer capacity cluster** (Eaton $242M, Siemens >$200M,
-  Southwire $256M, HSP US >$60M, Niagara $71M — no named US-listed supplier to any of the
-  five). When the sourced answer is repeatedly "none identified," the honest read is that the
-  day's news had no second-order structure.
+  partner), and **the grid/transformer capacity cluster** (Eaton $242M, Siemens >$200M, Southwire
+  $256M, HSP US >$60M, Niagara $71M — no named US-listed supplier to any of the five). When the
+  sourced answer is repeatedly "none identified," the honest read is that the day's news had no
+  second-order structure.
 
-- **⚠ NEW STANDING RULE, and it is the most valuable thing this run produced: a
-  MARKET-STRUCTURE FACT IS NOT A SUPPLIER RELATIONSHIP.** T-2026-09-04-01 (CLF) reached
-  candidate status on one sourced phrase — *"the only domestic producer of grain-oriented
-  electrical steel."* That phrase does most of the work of a mechanism sentence without being
-  one: it implies inevitability while saying **nothing about whether these buyers buy from this
-  seller**. GOES is imported at scale, which is exactly why the sole-domestic-producer line
-  gets written. "Sole producer," "dominant share," "the only company that makes X" are facts
-  about an **industry**, not about a **transaction**. This is the RTX failure wearing a
-  disguise designed to feel like it removes the need to check. **Recognise the phrase; do not
-  re-derive the lesson.**
+- **⚠ STANDING RULE (v): A MARKET-STRUCTURE FACT IS NOT A SUPPLIER RELATIONSHIP.**
+  T-2026-09-04-01 (CLF) reached candidate status on one sourced phrase — *"the only domestic
+  producer of grain-oriented electrical steel."* That phrase does most of the work of a mechanism
+  sentence without being one: it implies inevitability while saying **nothing about whether these
+  buyers buy from this seller**. GOES is imported at scale, which is exactly why the
+  sole-domestic-producer line gets written. "Sole producer," "dominant share," "the only company
+  that makes X" are facts about an **industry**, not about a **transaction**. This is the RTX
+  failure wearing a disguise designed to feel like it removes the need to check. **Recognise the
+  phrase; do not re-derive the lesson.**
 
 - **CLF is dead four ways and there is no price at which it revives.** T-2026-09-04-01 failed
   part 1 (no sourced supplier link to any of the five projects), part 2 (**Cliffs discloses no
   GOES or electrical-steel revenue breakdown anywhere** in the 10-K/10-Q), part 3 (the projects
-  are capital builds completing **2028**, not two-quarter revenue), and **§3 — market cap
-  $7.01B as of 2026-09-04** (StrongBuyAnalytics; corroborated by MarketBeat $6.99B on 09-02 and
-  $7.05B in August), **below the $10B floor**, so `alpaca.py buy` would have refused it. The
+  are capital builds completing **2028**, not two-quarter revenue), and **§3 — market cap $7.01B
+  as of 2026-09-04**, **below the $10B floor**, so `alpaca.py buy` would have refused it. The
   priced-in check was **deliberately not run** — the mechanism failed first and §4 orders the
   filters before the thesis, per the RTX process note.
 
@@ -156,10 +172,8 @@ Anything the next run must not lose. Cleared once acted on.
   most fluent sentence available on today's tape and is the RTX failure exactly.
 
 - **The "Company A's print implies Company B's print" failure did not recur, and it was actively
-  screened for — third consecutive day.** Lululemon was the obvious vehicle ("LULU guides down,
-  so a peer is taking share") and the dedicated screen came back explicitly empty. Prior
-  instances on record: SAIC → LDOS/CACI/BAH (09-01), Dell → HPE (09-02), Broadcom → competitors
-  (09-03). **Expect the shape again.**
+  screened for — fourth consecutive day.** Prior instances on record: SAIC → LDOS/CACI/BAH
+  (09-01), Dell → HPE (09-02), Broadcom → competitors (09-03). **Expect the shape again.**
 
 - **The §3 universe filter is now doing more work in this log than the priced-in filter ever
   has.** Four of the last dozen rejections were US-listing or market-cap failures on names that
@@ -174,70 +188,66 @@ Anything the next run must not lose. Cleared once acted on.
   `move --sessions 5` returned **−7.35%**, `priced_in: true` — **a drawdown, not a run-up**. **No
   run has reinterpreted the filter and none should**; the fix is a human editing §4 or
   `alpaca.py move`, not a run deciding the rule does not mean what it says. **There is no price
-  at which the rejection flips** — it failed for having already fallen. Flagged to the human in
-  the 09-03 ClickUp summary and re-flagged today.
+  at which the rejection flips** — it failed for having already fallen. Re-flagged in today's
+  ClickUp summary for the second consecutive day.
 
 - **⚠ Do not reach for COHR, CIEN, AVGO, CSCO, AAOI, GLW, APH, NOK, ERIC or ANET on the Ciena
   story.** The sourced screen named **only Lumentum**. If AI-optics ever becomes a live driver,
   **LITE, COHR and CIEN would share it** and §4's correlation rule permits at most one.
 
 - **LITE, MU and LHX: not re-checked, and the reason is absence of evidence, not resolve.** None
-  appeared in today's funnel; their filters were **not** re-run. Third consecutive day recording
+  appeared in today's funnel; their filters were **not** re-run. Fourth consecutive day recording
   this. If a future funnel surfaces one **from a source**, re-run the filter and re-test the
   timing window **from that day's date** — legitimate, and different from inheriting a
   conclusion.
 
-- **⚠ FOUR EARLIER STANDING RULES, sharing one root cause, now joined by the fifth above.**
-  (i) *Screen on the mechanism before running filters* (RTX — a filter is not a substitute for a
-  sourced candidate). (ii) *Verify what the company currently sells, post-spin* (WDC).
-  (iii) *Verify the news is new to the company's own disclosure* (AEP). (iv) *A recurring ticker
-  is a warning, not corroboration* (LHX). (v) *A market-structure fact is not a supplier
-  relationship* (CLF, new today).
+- **⚠ FIVE STANDING RULES, sharing one root cause.** (i) *Screen on the mechanism before running
+  filters* (RTX — a filter is not a substitute for a sourced candidate). (ii) *Verify what the
+  company currently sells, post-spin* (WDC). (iii) *Verify the news is new to the company's own
+  disclosure* (AEP). (iv) *A recurring ticker is a warning, not corroboration* (LHX). (v) *A
+  market-structure fact is not a supplier relationship* (CLF).
 
-- **Live events examined and deliberately not traded — do not re-derive these.** From today:
-  (a) **Lululemon guidance cut**, (b) **Snowflake beat/raise**, (c) **the grid capacity
-  cluster** — all three above; (d) **Ionis ZANVASTRO FDA approval** — only partner is
-  **Italy-listed Recordati** (§3), William Blair models **$295M peak *global*** sales against
-  ~€2.3B revenue (§4.2), and ex-US filings are **expected 2027** (§4.3); (e) **Nscale–Figure
-  $3.5B compute** — both private; (f) **Cipla/Qilu Keytruda biosimilar** — non-US parties, and
-  the mechanism runs **against** Merck in a long-only book; (g) **LG Energy Solution / Smackover
-  Lithium 10-year** — Korea-listed buyer, US parent Standard Lithium far below the floor;
-  (h) **AEVEX, Curia, Calumet, UpSolv/NexKemia, Unusual Machines/Altana, Modular Medical** — all
-  private or sub-floor with no named counterparty; (i) **Caltrain five-year consultant
-  agreement** — **the consultant's name is blank in the source document**; (j) **the TTM
-  Technologies Syracuse UHDI plant** — **June 2026, three months stale**, not a catalyst in this
-  window; (k) **macro: ISM services 55.4 with input prices highest since Oct 2022, claims 206k,
-  August payrolls due today (consensus +56k), Waller's dovish remarks** — no segment, no dollar
-  path, and a rising-input-cost print has no long second-order candidate here.
+- **Live events examined and deliberately not traded — do not re-derive these.** From 09-04:
+  (a) **Lululemon guidance cut**, (b) **Snowflake beat/raise**, (c) **the grid capacity cluster**
+  — all three above; (d) **Ionis ZANVASTRO FDA approval** — only partner is **Italy-listed
+  Recordati** (§3), William Blair models **$295M peak *global*** sales against ~€2.3B revenue
+  (§4.2), ex-US filings **expected 2027** (§4.3); (e) **Nscale–Figure $3.5B compute** — both
+  private; (f) **Cipla/Qilu Keytruda biosimilar** — non-US parties, and the mechanism runs
+  **against** Merck in a long-only book; (g) **LG Energy Solution / Smackover Lithium 10-year** —
+  Korea-listed buyer, US parent Standard Lithium far below the floor; (h) **AEVEX, Curia,
+  Calumet, UpSolv/NexKemia, Unusual Machines/Altana, Modular Medical** — all private or sub-floor
+  with no named counterparty; (i) **Caltrain five-year consultant agreement** — **the
+  consultant's name is blank in the source document**; (j) **the TTM Technologies Syracuse UHDI
+  plant** — **June 2026, three months stale**; (k) **macro: ISM services 55.4 with input prices
+  highest since Oct 2022, claims 206k, August payrolls, Waller's dovish remarks** — no segment,
+  no dollar path.
 
 - **"Nvidia acquires Hugging Face for $13B" resurfaced in the `--recency day` window and was NOT
   reconsidered.** Already rejected on prior runs as unsigned talks; it is now reported as a deal
-  but thinly sourced (a news-brief summary, not a filing) and **closes in 2027**, outside §4.3
-  by itself. Listed only because it reappeared.
+  but thinly sourced (a news-brief summary, not a filing) and **closes in 2027**, outside §4.3 by
+  itself. Listed only because it reappeared.
 
 - **Ten thesis IDs now carry a 2026-09-0x date across four days**; six of them are from
   2026-09-01, produced by three runs against one rolling news window. **A reader scanning
   `research_log.md` should not read ten IDs as ten days of work.**
 
-- **`alerts.md` remains empty — zero incidents, nothing SYSTEMIC, nothing unresolved.** Selftest
-  passed all five checks this run too. No alert raised and none warranted. No circuit-breaker
-  alert was due — nothing has ever closed, so the streak cannot have moved.
+- **`alerts.md` remains empty — zero incidents, nothing SYSTEMIC, nothing unresolved.** The
+  selftest passed all five checks on all four of today's runs.
 
-- **Cleared from carry-forward this run:** the 09:36 sleeve snapshot (superseded by the 12:35
-  read above) and the "the 09:35 run executed an empty plan, nothing is in limbo" note — carried
-  once so the midday run would not go hunting for unresolved orders, now confirmed and spent.
-  All research carry-forward is retained because the funnel is rolling and the same names recur.
+- **⚠ `plan_today.md` is consumed and spent.** Its `plan_date` stays **2026-09-04** until the next
+  pre-market run overwrites it. **No later run may re-execute it** — it was executed at 09:36 with
+  an empty intent list. Plan versus outcome: the plan said *do nothing*, and nothing is what
+  happened, on all three of BUY, SELL and REBALANCE.
 
-- **⚠ `plan_today.md` is consumed and spent.** Its `plan_date` stays **2026-09-04** until the
-  next pre-market run overwrites it. **No later run today may re-execute it** — it was executed
-  at 09:36 with an empty intent list, and this midday run correctly did not re-read it for
-  entries. The staleness gate protects the *next* trading day's open, not repeat reads within
-  the same day.
+- **Cleared from carry-forward this run:** the 12:35 midday sleeve snapshot and the midday
+  "no exits, no subject" note — both superseded by the 16:16 close read above, which carries the
+  same distinction. All research carry-forward is retained because the funnel is rolling and the
+  same names recur.
 
-- **Next runs today are 4-market-close-journal and 5-weekly-review (Friday).** Both start with
-  core at **70.06% in band**, **zero satellite positions**, the weekly cap at **0 of 3**, the
-  trailing stop **still unarmed**, `alerts.md` empty, and **zero trades to journal or review** —
-  the week closes with no satellite activity at all. The close run has **no `highest_close`
-  maintenance to perform**, because no position exists to maintain it on. **This is now three
-  runs today (08:27, 09:36, 12:35) that have each correctly done nothing; the close and weekly
-  runs should not read that accumulation as pressure to find something.**
+- **Today's ClickUp daily summary: task `86bbv6npm`** — https://app.clickup.com/t/86bbv6npm
+
+- **The week closed with zero satellite activity: four runs today (08:27, 09:36, 12:35, 16:16),
+  each of which correctly did nothing.** `5-weekly-review` (Friday) is the only run left today
+  and starts from core **70.03% in band**, **zero satellite positions**, weekly cap **0 of 3**,
+  trailing stop **unarmed**, `alerts.md` empty, and **zero trades to review**. **Do not read the
+  accumulation of quiet runs as pressure to find something.**
