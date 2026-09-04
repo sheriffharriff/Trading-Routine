@@ -52,6 +52,171 @@ single most common way a plausible-sounding connection gets mistaken for an oppo
 
 ## Entries
 
+### 2026-09-04 (08:27 ET) — event survey (funnel, pre-thesis)
+
+Four Perplexity scans: two broad (`--recency day`), two sourced second-order screens
+(`--recency week`), plus one universe check. Roughly fifteen items surfaced. **Fourteen were
+dropped before thesis stage**, one reached candidate status with a ticker attached, and it was
+rejected three separate ways. **No BUY intent today.**
+
+The shape of the day is worth stating before the list, because it is the finding: **three
+separate second-order screens came back explicitly empty.** Not "the candidate failed a filter"
+— *no source named a publicly traded US Company B at all.* That happened on the Lululemon
+guidance cut, on the Snowflake beat, and on the grid-equipment capacity cluster. When the
+sourced answer is repeatedly "none identified," the honest read is that the day's news had no
+second-order structure, not that I looked in the wrong place.
+
+The dropped items, with reasons:
+
+- **Lululemon cuts full-year guidance for a second straight quarter; stock −18%** (Reuters
+  2026-09-03/04). The largest single-name move in the window and the obvious vehicle for a
+  share-shift thesis. **Dedicated screen came back explicitly empty**: no source identifies any
+  publicly traded US company as gaining share. The two names sources *do* cite as taking share
+  — **Alo Yoga and Vuori — are both privately held** and fail §3 outright. Reuters says only
+  that the incoming CEO must win back shoppers from "newer rivals," naming none. The tempting
+  move is "LULU guides down, so NKE / DECK / ONON / Gap's Athleta is taking the share" — that
+  names no source and is **the read-across failure in its purest form**. Screened for
+  deliberately, per the standing carry-forward; came back empty for the third consecutive day
+  the screen has been run.
+- **Snowflake fiscal Q2 beat and guidance raise** (adj. EPS $0.62 vs $0.45; revenue $1.55B vs
+  $1.48B, +35% y/y; FY2027 product revenue guidance raised to $6.07B from $5.84B; stock
+  +16.55%). Dropped at part 1 after a **dedicated screen came back explicitly empty**: no
+  source names a publicly traded US supplier or partner whose revenue rises as a direct result
+  of Snowflake's consumption growth. The available inference — "Snowflake's compute runs on the
+  hyperscalers" — is both unsourced and immaterial: Snowflake's entire cost of revenue is a
+  rounding error against AMZN/MSFT/GOOGL, so part 2 fails even if part 1 were sourced.
+- **Ionis: FDA approves ZANVASTRO (zilganersen) for Alexander disease** (2026-09-03), the first
+  and only approved treatment. IONS is Company A and self-commercialises in the US. The only
+  named second-order party is **Recordati S.p.A. — Italy-listed, fails §3's US-listed test**,
+  which holds ex-US rights under a June 2026 deal ($30M upfront, tiered royalties to the
+  mid-20% range). It would fail two more ways regardless: William Blair models **$295M peak
+  *global*** sales against Recordati revenue of roughly €2.3B (**well under the §4.2 10%
+  floor**), and Recordati's European and Japanese submissions are **expected in 2027** — no
+  reported revenue inside two quarters (§4.3). No CDMO or drug-substance supplier is named by
+  any source.
+- **Nscale–Figure multi-year compute partnership, $3.5B** (2026-09-04) — the only item in the
+  window with both a named counterparty and a dollar figure. **Both companies are private.** No
+  US-listed second-order name is identified by any source.
+- **Grid/electrical capacity cluster: Eaton $242M (North Little Rock, doubling enclosure
+  capacity), Siemens >$200M (two new US plants), Southwire $256M (Starkville MS), HSP US >$60M
+  (Charlotte NC bushings), Niagara Power Transformer $71M (Cheektowaga NY, 90→140 units/yr)**.
+  The most concrete capacity announcements of the day. Eaton is Company A announcing its own
+  capex; Siemens is not US-listed; Southwire, HSP US and Niagara are private. Worked as
+  T-2026-09-04-01 below on the one US-listed supplier name that surfaced.
+- **AEVEX Corp doubles Tampa manufacturing capacity** (2026-09-03) — private defense company,
+  no supplier or partner named, no capex or revenue figure.
+- **Curia Global $200M Albuquerque fill-finish expansion** (2026-09-03) — private CDMO. No drug
+  sponsors, no glass or component suppliers named, capex and capacity metrics only.
+- **Calumet Electronics UHDI PCB facility, Michigan** (2026-09-03) — Calumet is private. The
+  same article references **TTM Technologies'** Syracuse UHDI plant, but that opened in **June
+  2026** — three months stale, not a catalyst in this window, and no contract value or guidance
+  change attaches to it.
+- **Cipla USA / Qilu Pharmaceutical exclusive licence for a Keytruda biosimilar (QL2107)**
+  (Reuters 2026-09-03). Cipla is India-listed, Qilu is Chinese and private. The only US-listed
+  party is **Merck, and the mechanism runs against it** — a biosimilar entrant is a negative for
+  the originator, and §3 leaves this book long-only. Financial terms undisclosed; biosimilar
+  launch timing is years out regardless.
+- **LG Energy Solution / Smackover Lithium 10-year lithium feedstock agreement** (2026-09-04).
+  LGES is Korea-listed. Smackover Lithium is a JV whose US-listed parent, Standard Lithium, is
+  far below the §3 $10B floor. No tonnage, pricing or contract value disclosed.
+- **UpSolv / NexKemia long-term recycled polystyrene supply agreement** (2026-09-03) — both
+  private, no volumes, pricing or term disclosed.
+- **Unusual Machines / Altana supply-chain-intelligence partnership** (2026-09-03) — UMAC is far
+  below the §3 floor, Altana is private, no financial terms.
+- **Caltrain JPB five-year on-call environmental services agreement** (2026-09-03) — the
+  consultant's name is **left blank in the source document** and no dollar value is given. There
+  is no candidate here to name.
+- **Modular Medical FDA clearance, Pivot patch pump software** (2026-09-04) — sub-$10B, no
+  supplier or partner named, no contract value or guidance change.
+- **Macro: ISM services 55.4 (from 54.1), new orders at a 3.5-year high, input prices highest
+  since October 2022; jobless claims 206k; August payrolls consensus +56k with the report due
+  today; Fed Governor Waller's remarks easing rate-hike fears.** All macro, no segment, no
+  dollar path to a single name. The ISM input-price detail is an *inflation* signal, and this
+  book has no long second-order candidate in a rising-input-cost print.
+- **"Nvidia to acquire Hugging Face for $13B, closing 2027"** reappeared in the `--recency day`
+  window. **Already rejected on prior runs** as unsigned talks; the item is now reported as a
+  deal but is thinly sourced (a news-brief summary, not a filing) and **closes in 2027**, which
+  is outside §4.3 by itself. Listed only because it resurfaced, not because it was
+  reconsidered. Not re-litigated.
+
+**Nothing from the standing watch-list re-entered the funnel.** LITE, MU and LHX were not
+surfaced by any of today's scans and their filters were **not** re-run. As on previous runs, the
+reason is *absence of evidence today*, not resolve — if a future funnel surfaces one from a
+source, the filter gets re-run and the timing window re-tested from that day's date.
+
+---
+
+### T-2026-09-04-01 — CLF — REJECTED
+
+**Company A / the news:** A cluster of US electrical-equipment capacity expansions reported
+2026-09-03/04: **Eaton $242M** in North Little Rock AR to double electrical-enclosure capacity;
+**Siemens >$200M** for new plants in Pendergrass GA and Grand Prairie TX; **Southwire $256M** in
+Starkville MS; **HSP US (Trench Group) >$60M** transformer-bushing plant in Charlotte NC;
+**Niagara Power Transformer $71M** in Cheektowaga NY, lifting output from 90 to 140 transformers
+a year, **completing by 2028** (renewableenergyworld.com; g-enews summary).
+**Company B / the candidate:** Cleveland-Cliffs — surfaced because a broad industry source
+states it is **the only domestic producer of grain-oriented electrical steel (GOES)**, the
+material every one of those transformer lines consumes.
+
+**1. Mechanism (one sentence):** **COULD NOT BE WRITTEN HONESTLY.** The sentence I wanted was
+*"the US transformer capacity buildout causes Cleveland-Cliffs' electrical steel revenue to rise
+because Cliffs is the only domestic GOES producer."* **No retrieved source ties Cleveland-Cliffs
+to any of these five projects, or to any named transformer manufacturer as a supplier.** The
+sourced claim is a *market-structure* fact — sole domestic producer — not a supplier
+relationship. Being the only domestic producer of an input does not establish that a given
+buyer buys domestically; GOES is imported at scale, which is precisely why the sole-domestic-
+producer line gets written in the first place. To get from the sourced fact to the mechanism I
+have to supply the link myself, and **that is the RTX failure exactly** (T-2026-09-01-03), where
+I knew Raytheon builds Patriot radar and no source connected it to the actual procurement.
+
+**2. Dollar path:** **ALSO FAILS, independently.** Perplexity searching CLF's most recent 10-K
+and 10-Q found **no disclosed revenue or dollar breakdown for GOES or the electrical steel
+product line at all.** Cliffs does not report it separately. §4.2 requires a segment I can name
+and a magnitude I can size against total revenue; I have neither, and I am not going to assume a
+share because it would clear the 10% bar. This is the same wall T-2026-09-01-01 (NOC) hit.
+
+**3. Timing window:** **ALSO FAILS.** These are *capital projects*, not orders. Niagara's
+expansion "completes by 2028"; the Eaton, Siemens and Southwire plants are multi-year builds.
+Steel purchased to equip and then run a plant that finishes in 2028 does not appear in a
+supplier's reported results inside two quarters. §4.3 rules it out on its face.
+
+**4. Invalidation:** not reached — parts 1, 2 and 3 all failed.
+
+**Hard filters:**
+- **Universe (§3): FAILS.** Market cap **$7.01B as of 2026-09-04** (StrongBuyAnalytics, dated
+  point estimate; corroborated by MarketBeat at $6.99B on 09-02 and $7.05B in August, and by
+  GuruFocus/MarketScreener in the mid-$6B to low-$7B range through August). **Below the $10B
+  floor.** `alpaca.py buy` would have refused the order.
+- **Priced-in (§4): not run, deliberately.** The mechanism failed first and §4 orders the
+  filters before the thesis. Running `move` on a name with no sourced mechanism is what the RTX
+  process note told the next run not to repeat.
+- **Correlation (§4):** no open positions → passes vacuously.
+
+**Outcome:** REJECTED four ways — part 1 (no sourced supplier relationship), part 2 (segment not
+disclosed anywhere), part 3 (2028 capital projects, not two-quarter revenue), and §3 (market cap
+$7.01B, below the floor).
+
+**Why this entry is worth its length despite dying so comprehensively.** It is the only name all
+day that reached candidate status, and the way it got there is the thing to watch. The screen
+did not hand me a supplier; it handed me **a monopoly fact** — "the only domestic producer" —
+and that phrase does most of the work of a mechanism sentence without being one. It implies
+inevitability. It is very close to the shape of a real second-order thesis and contains none of
+the content, because it says nothing about whether *these* buyers buy from *this* seller.
+
+The useful generalisation, and it is new: **a market-structure fact is not a supplier
+relationship.** "Sole domestic producer," "dominant share," "the only company that makes X" are
+all facts about an industry, not about a transaction. The RTX rule (verify the link is sourced,
+don't supply it yourself) catches this, but only if I notice that I *am* supplying it — and a
+sole-producer claim is designed to feel like it removes the need to check. Recording it as its
+own failure mode so a future run recognises the phrase rather than re-deriving the lesson.
+
+Also worth noting: **the §3 check killed it independently and would have killed it at the
+script.** Four of my last dozen rejections have been US-listing or market-cap failures on names
+that reached me through a mechanism screen. The universe filter is doing more work in this log
+than the priced-in filter ever has.
+
+---
+
 ### 2026-09-03 (08:27 ET) — event survey (funnel, pre-thesis)
 
 **First run under `TRADING_ENABLED: true`.** The human set it in `control.md` at 21:08 PT on
