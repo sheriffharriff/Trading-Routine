@@ -10,7 +10,7 @@ The block below is parsed by `scripts/common.py` and gates real behavior
 `key: value` format exactly. Prose goes underneath.
 
 ```
-last_run: 2026-09-04 08:27 ET 1-premarket-research
+last_run: 2026-09-04 09:36 ET 2-market-open-execution
 week_of: 2026-08-31
 new_positions_this_week: 0
 consecutive_closed_losses: 0
@@ -18,9 +18,9 @@ circuit_breaker: INACTIVE
 halt_triggered_at: none
 core_established: true
 core_ticker: VOO
-core_pct: 70.12
+core_pct: 70.11
 satellite_pct: 0.0
-cash_pct: 29.88
+cash_pct: 29.89
 open_thesis_ids: none
 ```
 
@@ -69,49 +69,50 @@ position list win, and the discrepancy goes in the journal.
 Anything the next run must not lose. Cleared once acted on.
 
 
-- **This run produced NO plan intents at all — no BUY, no SELL, no REBALANCE — and that is the
-  finished output, not an unfinished one.** `plan_today.md` is dated **2026-09-04** and says so
-  explicitly. The 09:35 run should read it, confirm core is in band, and do nothing. **Core is
-  established (`core_established: true`); the bootstrap path is closed permanently — do not
-  re-run it.**
+- **The 09:36 ET market-open run placed NO ORDERS, and that is the plan executed, not the plan
+  skipped.** `plan_today.md` was dated **2026-09-04** — it **passed the staleness gate**, was
+  read, and its entire content was *do nothing*. No BUY intents, no SELL intents, no rebalance.
+  **Nothing is in limbo: zero orders were submitted, so there is nothing for the close run to
+  verify or reconcile.** Distinguish this from a stale-plan run, which skips intents it cannot
+  vouch for — this run had none to skip.
 
-- **⚠ New positions were fully permitted this run and nothing was blocked.** Breaker INACTIVE,
-  weekly cap **0 of 3**, satellite sleeve **empty with 29.88% cash ($30,000.00)**, no
-  restricting note in `control.md`. **The research simply did not produce an eligible
-  candidate.** This distinction matters for anyone reading `research_log.md` later: today's
-  empty output is a §4 result, not a §6 constraint.
+- **⚠ New positions remained fully permitted at the bell and nothing was blocked.** Breaker
+  INACTIVE, weekly cap **0 of 3**, satellite sleeve **empty with 29.89% cash ($30,000.00)**, no
+  restricting note in `control.md`, `TRADING_ENABLED: true` (LIVE paper, not dry-run). **The
+  08:27 research simply produced no eligible candidate.** Today's empty output is a §4 result,
+  not a §6 constraint — that distinction matters to anyone reading the logs later.
 
-- **Sleeve read 08:27 ET: equity $100,415.98, cash $30,000.00, core VOO 70.12%, satellite 0.0%
-  (count 0), cash 29.88%.** `core_in_band: true`, `rebalance_needed: false`,
-  `rebalance_delta: −124.80`. **No rebalance is due** — the delta is 0.12% of equity and is
-  VOO's overnight mark moving, not drift. §2 rebalances at the **band edge** (65–75%), never to
-  the exact 70% target. VOO marks at **710.94** against `lastday_price` 710.72, unrealized
-  **+$415.99 (+0.594%)** on 99.046311231 shares at avg_entry 706.74.
+- **Sleeve read 09:36 ET: equity $100,367.45, cash $30,000.00, core VOO 70.11%, satellite 0.0%
+  (count 0), cash 29.89%.** `core_in_band: true`, `rebalance_needed: false`,
+  `rebalance_delta: −110.24`. **Step 7 ran and correctly did nothing** — the delta is 0.11% of
+  equity, well inside the §2 65–75% band, and §2 rebalances at the **band edge**, never to the
+  exact 70% target. VOO marks **710.45** against `lastday_price` 710.72 (intraday **−0.038%**),
+  unrealized **+$367.46 (+0.525%)** on 99.046311231 shares at avg_entry 706.74.
 
-- **⚠ Two VOO prices exist and they are not interchangeable.** The broker mark (710.94 here)
-  drives `equity` and P&L; `bars --adjustment all` returns the official close (**710.70** for
-  09-03) and that is what would feed `highest_close`. **Never mix them inside one §5.4
-  comparison.**
+- **⚠ Two VOO prices exist and they are not interchangeable.** The broker mark (710.45 at the
+  open here) drives `equity` and P&L; `bars --adjustment all` returns the official close
+  (**710.70** for 09-03) and that is what would feed `highest_close`. **Never mix them inside
+  one §5.4 comparison.**
 
-- **The §5.4 trailing stop is still NOT ARMED — fifteenth consecutive run recording it.** §5
+- **The §5.4 trailing stop is still NOT ARMED — sixteenth consecutive run recording it.** §5
   exempts core from all four sell rules, so VOO is deliberately absent from `positions.md`: no
   thesis, no timing window, no `highest_close`. **§5.4 arms the day the first *satellite*
-  position opens.** Step 4's sell-rule pass ran in full this run and had **no subject** — that
-  is now written out as a table in `positions.md` under the 08:27 reconciliation. **Do not
+  position opens.** Step 4's exit pass ran in full this run and had **no subject**. **Do not
   backfill anything from `bars`. There is nothing to backfill.**
 
 - **⚠ `positions.md` legitimately disagrees with the raw broker, and this is the normal steady
   state.** Ledger reads *(none)*; `alpaca.py positions` returns one VOO row. **Not a
   discrepancy** — compare **satellite blocks to satellite Alpaca positions**, never raw ledger
-  to raw broker, or a correct ledger reads as broken. Keep carrying this until the first
+  to raw broker, or a correct ledger reads as broken. Reconciled again at 09:36: zero satellite
+  blocks against zero satellite positions, they agree. Keep carrying this until the first
   satellite position exists.
 
-- **Week rollover checked: none due.** ISO Monday of 2026-09-04 (Friday) is **2026-08-31**,
-  matching `week_of`. `new_positions_this_week` stays **0 of 3**. Breaker INACTIVE,
-  `consecutive_closed_losses: 0`, `halt_triggered_at: none`, `HALT_CLEARED_AT: none`; only a
-  **closed** position can move the streak and nothing has ever closed. **Next week boundary:
-  Monday 2026-09-07 — the Friday review runs today, and the reset belongs to Monday's run, not
-  to it.**
+- **Week rollover checked at the open: none due.** ISO Monday of 2026-09-04 (Friday) is
+  **2026-08-31**, matching `week_of`. `new_positions_this_week` stays **0 of 3**. Breaker
+  INACTIVE, `consecutive_closed_losses: 0`, `halt_triggered_at: none`, `HALT_CLEARED_AT: none`;
+  only a **closed** position can move the streak and nothing has ever closed. **Next week
+  boundary: Monday 2026-09-07 — the reset belongs to Monday's run, not to today's Friday
+  review.**
 
 - **⚠ THE DAY'S REAL FINDING: three separate second-order screens came back EXPLICITLY EMPTY.**
   Not "the candidate failed a filter" — *no source named a publicly traded US Company B at
@@ -216,14 +217,18 @@ Anything the next run must not lose. Cleared once acted on.
   passed all five checks this run. No alert raised and none warranted. No circuit-breaker alert
   was due — nothing has ever closed, so the streak cannot have moved.
 
-- **Cleared from carry-forward this run:** the 2026-09-03 core-fill establishment note (acted on
-  and superseded — `core_established: true` is now simply state), the 09-03 close snapshot
-  (superseded by today's 08:27 sleeve read), and the "no orders in limbo overnight" note
-  (nothing has been submitted since). All research carry-forward is retained because the funnel
-  is rolling and the same names recur.
+- **Cleared from carry-forward this run:** the 08:27 sleeve snapshot (superseded by the 09:36
+  read above) and the "the 09:35 run should read the plan and do nothing" instruction — **acted
+  on, and it is now history rather than a pending item**. All research carry-forward is retained
+  because the funnel is rolling and the same names recur.
 
-- **Next run is today's 09:35 ET market-open (2-market-open-execution).** It starts with core at
-  **70.12% in band**, **zero satellite positions**, the weekly cap at **0 of 3**, the trailing
-  stop **still unarmed**, and a plan dated **2026-09-04** whose entire content is *do nothing*.
-  **Today is Friday — the weekly review (5-weekly-review) also runs, and it will be reviewing a
-  week with zero satellite trades.**
+- **⚠ `plan_today.md` has now been consumed and is spent.** Its `plan_date` stays **2026-09-04**
+  until the next pre-market run overwrites it. **Any later run today must not re-execute it** —
+  it was executed at 09:36 and its intent list was empty. The staleness gate protects the *next*
+  trading day's open, not repeat reads within the same day.
+
+- **Next runs today are 4-market-close-journal and 5-weekly-review (Friday).** Both start with
+  core at **70.11% in band**, **zero satellite positions**, the weekly cap at **0 of 3**, the
+  trailing stop **still unarmed**, `alerts.md` empty, and **zero trades to journal or review** —
+  the week closes with no satellite activity at all. The close run has **no `highest_close`
+  maintenance to perform**, because no position exists to maintain it on.

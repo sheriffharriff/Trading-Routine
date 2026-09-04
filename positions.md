@@ -56,6 +56,35 @@ re-derive it from price history, and it stays correct for positions closed month
 
 *(none — no **satellite** positions have been opened yet. Core VOO exists and is deliberately not tracked here, per the top-of-file rules and the fill note further down.)*
 
+**Reconciliation 2026-09-04 09:36 ET (2-market-open-execution):** selftest passed all five
+checks (`trading_enabled: true`, LIVE paper account). Market confirmed **open** — `clock` at
+09:36:14 ET returns `is_open: true`, next close 16:00 ET. `alpaca.py positions` returns **one
+row, VOO** (99.046311231 shares, avg_entry 706.74, current 710.45, market_value $70,367.45,
+unrealized_pl +$367.46, +0.525%, `lastday_price` 710.72, intraday −0.038%); `alpaca.py sleeves`
+reports equity **$100,367.45**, cash $30,000.00, core **70.11%**, satellite **0.0% (count 0)**,
+cash 29.89%, `core_in_band: true`, `rebalance_needed: false`, `rebalance_delta: −110.24`.
+
+**Satellite blocks (zero) checked against satellite Alpaca positions (zero) — they agree. No
+discrepancy**, and the reconciliation was completed **before** the execution steps, per the
+routine's requirement not to trade on top of a ledger known to be wrong. Compare **satellite to
+satellite**, never raw ledger to raw broker.
+
+**No orders were placed, and this file is unchanged as a result.** `plan_today.md` was dated
+**2026-09-04** and **passed the staleness gate** — it was read and executed, and its entire
+content was *do nothing*: no BUY intents, no SELL intents, no rebalance. Step 3 (core bootstrap)
+was skipped because `core_established: true`; Step 4 (exits) had **no subject** — the §5 pass
+ran in full against zero satellite blocks; Steps 5–6 (re-validation and buys) had **no intent to
+re-validate**, so no `move --sessions 5` priced-in check was run on anything; Step 7 found core
+**in band at 70.11%** and correctly did nothing, the −$110.24 delta being 0.11% of equity and
+VOO's mark moving rather than drift — §2 rebalances at the **band edge** (65–75%), never to the
+exact 70% target. **Zero orders reached the broker, so nothing is in a non-terminal state and
+there is nothing for the close run to verify.** New positions were fully permitted throughout:
+breaker INACTIVE, weekly cap **0 of 3**, satellite sleeve empty with 29.89% cash, no restricting
+note in `control.md`. **Nothing was blocked — the 08:27 research produced no eligible
+candidate**, which is a §4 outcome, not a §6 constraint. The §5.4 trailing stop remains **NOT
+ARMED, not disabled** — sixteenth consecutive run recording the distinction. **Do not backfill a
+`highest_close` from `bars`. There is nothing to backfill.**
+
 **Reconciliation 2026-09-04 08:27 ET (1-premarket-research):** selftest passed all five checks
 (`trading_enabled: true`, LIVE paper account). Market is **closed because it is pre-market, not
 a holiday** — `clock` at 08:27:46 ET returns `is_open: false` with `next_open` **today** at
