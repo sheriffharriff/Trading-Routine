@@ -40,6 +40,103 @@ anything where the honest-broker rule (§4) did real work>
 
 ## Entries
 
+### 2026-09-04 (Friday)
+
+**Account:** total $100,084.18 | day P&L −310.01 (−0.31%) | since inception +0.08%
+**Sleeves:** core 70.03% | satellite 0.0% | cash 29.97%   (§2 band 65–75% — in band, no rebalance due)
+**Breaker:** INACTIVE (`consecutive_closed_losses: 0`, `halt_triggered_at: none`)
+**Week:** 0/3 new positions
+
+**Traded:** nothing — no orders submitted, no fills, nothing closed
+**Researched:** 1 thesis — 0 accepted, 1 rejected (T-2026-09-04-01, CLF), plus 14 items dropped pre-thesis
+**Positions near a sell rule:** none — zero satellite positions; §5 exempts core VOO entirely
+
+**What happened:**
+
+Four runs fired on time (08:27 pre-market, 09:36 open, 12:35 midday, 16:16 close) and the book
+did not move a share. The pre-market run worked one candidate to ticker stage — **CLF**, on the
+cluster of announced US transformer-capacity builds — and killed it four separate ways: no
+sourced supplier link to any of the five projects, no disclosed electrical-steel revenue line
+anywhere in the 10-K/10-Q, projects completing **2028** rather than inside two quarters, and a
+**$7.01B market cap against the §3 $10B floor**, which `alpaca.py buy` would have refused on its
+own. Fourteen further items died before thesis stage; the three that matter are the ones where a
+dedicated sourced screen came back **explicitly empty** — Lululemon's −18% guidance cut (the two
+named share-takers, Alo Yoga and Vuori, are private), Snowflake's +16.55% beat-and-raise (no
+named US-listed supplier), and the grid cluster itself. That is not "the candidate failed a
+filter." That is the day's news having no second-order structure to find, three times over.
+
+The open run executed an empty intent list. The midday run took no exits and — the distinction
+the carry-forward has been insisting on all week — **did so because it had no subject, not
+because it judged four sell rules safe.** This close run had no fills to log and no high-water
+marks to write.
+
+The number: **VOO closed 707.86 against 710.70, −0.40%.** The book fell −0.31%. Those two
+figures are not a comparison anybody should feel good about; see below.
+
+Housekeeping came back clean on every count. Week rollover: ISO Monday of 2026-09-04 is
+**2026-08-31**, matching `week_of` — no reset due, cap stays 0 of 3. Loss streak still 0 because
+**nothing has ever closed**, so the breaker cannot have moved. `orders --status all` returns
+exactly one order in the account's history — the 09-03 VOO core buy, `status: filled`, terminal
+— so there is nothing in limbo overnight, which matters more than usual tonight because the next
+session is **four days away: Monday 2026-09-07 is Labor Day and `next_open` is Tuesday
+2026-09-08 09:30 ET.** `alerts.md` is empty.
+
+**What I got wrong or nearly got wrong:**
+
+**The one that would actually have cost something.** `alpaca.py positions` runs before the bars
+call and hands you a field called `current_price` — **707.59** at 16:16 — and at this hour that
+number looks exactly like a closing price. The official close from `bars --adjustment all` is
+**707.86**. I had 707.59 in hand and the shape of the next step in my head before I pulled the
+bar. Today the gap is $26.75 of unrealized P&L on a core position that has no `highest_close` at
+all, so it cost nothing. **The day a satellite position exists, that same shortcut writes a
+wrong high-water mark into `positions.md`, and a wrong high-water mark is invisible** — it does
+not error, it does not look stale, it just moves the §5.4 trailing stop to a level nobody chose.
+The carry-forward has been warning that the two prices are not interchangeable; today is the
+first time I can report the trap being live rather than theoretical, and note that at the close
+the official price sat **above** the broker mark, the reverse of the intraday fade.
+
+**The framing I reached for and had to take back out.** Drafting the summary above, the sentence
+that arrived first was that the book fell 0.31% against the index's 0.40% — that it held up
+better. It did not. It is 70% invested, so it captured 70% of a down move; that is arithmetic,
+not judgment, and it runs identically in reverse on every up day. The 09-01 entry caught the
+same reassuring framing when the book was 100% cash. **That it recurred four days later, in a
+different structure, with the same pull, says the framing is not a one-off slip but something I
+will produce every time the market falls.**
+
+**The thing I want a human to look at.** Every individual rejection this week was right, and I
+would make each one again. But the cumulative position after four days is that the satellite
+sleeve has never been deployed, so the book is functionally a 70% index tracker with a 30% cash
+drag. §2 explicitly permits uninvested satellite cash and I am not treating this as a rule
+breach or as a backlog. It is still worth stating plainly: **a 70/30 cash book cannot beat the
+S&P over a rolling 12 months (§1) in a rising market — it can only beat it in a falling one.**
+Honest no-trade days are the correct output of §4 and a 30% permanent cash allocation is the
+correct output of §2, and the two together quietly point away from §1. I do not think the fix is
+for me to lower the bar, and I am explicitly not going to. It is a strategy-level question and
+it belongs with the human.
+
+Nothing else was close to wrong. The funnel discipline held, the "Company A's print implies
+Company B's print" shape was screened for and did not recur for the fourth straight day, and no
+ecosystem read-through got talked into a thesis.
+
+**For the next run:**
+
+- **⚠ The next trading session is Tuesday 2026-09-08. Monday 2026-09-07 is Labor Day** —
+  `clock` at 16:16 today gives `next_open: 2026-09-08T09:30:00-04:00`. A run firing Monday
+  should log a holiday skip, not hunt for a fault.
+- **⚠ Tuesday's run owes a week rollover.** ISO Monday of 2026-09-08 is **2026-09-07**, which
+  differs from `week_of: 2026-08-31`. Reset `new_positions_this_week` to 0 and set
+  `week_of: 2026-09-07`. The reset is due even though the boundary Monday is a holiday, and it
+  does not depend on the Friday review having run.
+- **The high-water marks were not updated today, and that is correct, not a gap.** Zero
+  satellite positions means no `highest_close` field exists and no `(as of ...)` date exists to
+  refresh. §5.4 is **not armed — not silently disabled.** **Do not backfill from `bars`; there
+  is nothing to backfill.**
+- **Do not record VOO's 707.86 close as a high-water mark.** Core is exempt from all four §5
+  rules and is deliberately absent from `positions.md`.
+- All research carry-forward stands: CLF is dead four ways at any price, the five standing rules
+  hold, and LITE remains flagged to the human over the priced-in filter's drawdown reading — no
+  run should reinterpret that filter unilaterally.
+
 ### 2026-09-03 (Thursday)
 
 **Account:** total $100,367.46 | day P&L +367.46 (+0.37%) | since inception +0.37%
