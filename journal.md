@@ -40,6 +40,96 @@ anything where the honest-broker rule (§4) did real work>
 
 ## Entries
 
+### 2026-09-07 (Monday) — NO SESSION. MARKET HOLIDAY (Labor Day).
+
+**Account:** total $100,125.78 | day P&L n/a — no session | since inception +0.13%
+**Sleeves:** core 70.04% | satellite 0.0% | cash 29.96%   (§2 band 65–75%)
+**Breaker:** INACTIVE
+**Week:** 0/3 new positions
+
+**Traded:** nothing — the market was shut all day
+**Researched:** 0 theses — the funnel was never opened
+**Positions near a sell rule:** none — zero satellite positions exist
+
+**What happened:**
+
+Nothing happened, and this entry exists so that a reader can tell the difference between a
+day with no session and a day this system failed to run. The 16:15 close run fired, passed
+the selftest on all five checks, and stopped at the routine's market-closed branch. **No
+ClickUp daily summary was posted, deliberately** — the routine forbids publishing a summary
+for a day that did not happen, and a summary reporting "day P&L 0.00%" would be a fabricated
+flat session rather than an absent one.
+
+The holiday was confirmed two ways rather than assumed from the calendar. `clock` returned
+`is_open: false` with `next_open: 2026-09-08T09:30:00-04:00` — **tomorrow, not later today,
+which is what separates a holiday from the ordinary post-16:00 closed state**, since at 16:15
+on a normal weekday `is_open` is also false. Independently, `bars --symbol VOO --days 6
+--adjustment all` returns its most recent bar dated **2026-09-04**: there is no 09-07 session
+bar to read a close from. The account agrees — `balance_asof: 2026-09-04`, `last_equity`
+$100,125.78 against equity $100,125.78, `change_today: 0`.
+
+**The high-water marks were not updated, and today that is correct twice over.** There was no
+close to record, and there is no satellite position to record one against — `positions.md`
+open-positions reads *(none)* and `alpaca.py positions` returns exactly one row, VOO core.
+Zero satellite against zero satellite: those agree. **Core VOO was deliberately not given a
+high-water mark.** §5 exempts core from all four sell rules, so stamping today's carried-forward
+708.01 anywhere in the ledger would fabricate a §5.4 trailing stop on a position that must
+never carry one. §5.4 is **not armed and not disabled** — it arms the day the first satellite
+position opens.
+
+Housekeeping came back clean. Week anchor `week_of` is already **2026-09-07**, today's own ISO
+Monday, so nothing was reset and the cap stands at 0 of 3 — the check working, not a skipped
+step. `orders --status all` returns one order in the account's entire history, the 09-03 core
+VOO buy `d177d8f0`, `status: filled` and terminal: **nothing in limbo overnight**, which
+matters more than usual with the next session a day away. Nothing has ever closed, so the §6
+loss streak cannot have moved; it stays 0 and no breaker alert was due. `alerts.md` is empty.
+
+**What I got wrong or nearly got wrong:**
+
+One real item, and it is about this system rather than about the market.
+
+**The memory files are being appended to where they are supposed to be cleared, and it has
+gone far enough to work against the thing they exist for.** `state.md` reached 405 lines and
+`positions.md` 42KB — the great majority of both being restatements of *the same fact*, that
+there are no satellite positions and therefore nothing to backfill. The carry-forward block
+carried an item reading "Nineteenth consecutive run recording this," and the four runs that
+fired today each added their own narration of the identical holiday skip. `state.md` defines
+carry-forward as "anything the next run must not lose, **cleared once acted on**." Those
+holiday-skip notes were acted on the moment the next run read them; they were not cleared.
+
+I nearly did it again. The first draft of this run's state update was a fifth narration of
+the same skip appended below the other four, and it took a deliberate decision to instead
+collapse them into one line and delete the superseded sleeve snapshots. **The pull is real
+and it is structural, not a slip:** every run is rewarded for demonstrating that it checked
+something, and a deleted note looks like a check that did not happen. What makes it harmful
+rather than merely untidy is that this repo's entire continuity mechanism is the next run
+reading these files, so padding them with restatements of a null result raises the odds that
+a genuinely live item — the LITE priced-in flag, the standing rules, the undeployed-sleeve
+question — gets skimmed past. I trimmed the acted-on holiday notes and kept every live
+research item intact. **This is flagged for the human because a future run will feel the same
+pull.**
+
+Nothing else was close to wrong. There was no trading decision to get wrong today: no thesis
+was written, no filter was run, no order was submitted, and no §5 rule had a subject to
+evaluate against. I am not going to manufacture a second item.
+
+**For the next run:**
+
+- **The high-water marks are not stale — they are ABSENT, which is a third state.** Do not
+  backfill from `bars` tomorrow. There is no `highest_close` field and no `(as of ...)` date
+  anywhere in `positions.md`, because there is no satellite position; the staleness trigger
+  keys on a date and an absent field cannot be stale. **Do not manufacture a mark on core VOO
+  to give the step something to do.**
+- **Tuesday 2026-09-08 is the first live session of this week** (`next_open` 09:30 ET). It gets
+  a full pre-market run, a real plan, and the first genuine close-run high-water pass of the
+  week if a position is opened.
+- `plan_today.md` still reads `plan_date: 2026-09-04` and that is inert, not a fault — the
+  holiday run does not write a plan. Tuesday's 08:00 pre-market run overwrites it. **Do not
+  execute it.**
+- **The Friday funnel has not aged out, but it has not been re-screened either.** A name
+  rejected on a Friday fact needs its filters re-run **from Tuesday's date** if it resurfaces
+  from a source, not inherited from Friday's conclusion.
+
 ### 2026-09-04 (Friday)
 
 **Account:** total $100,084.18 | day P&L −310.01 (−0.31%) | since inception +0.08%
