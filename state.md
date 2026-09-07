@@ -10,7 +10,7 @@ The block below is parsed by `scripts/common.py` and gates real behavior
 `key: value` format exactly. Prose goes underneath.
 
 ```
-last_run: 2026-09-07 08:29 ET 1-premarket-research (HOLIDAY SKIP — Labor Day, no research, no plan)
+last_run: 2026-09-07 09:36 ET 2-market-open-execution (HOLIDAY SKIP — market closed, no orders placed)
 week_of: 2026-09-07
 new_positions_this_week: 0
 consecutive_closed_losses: 0
@@ -67,6 +67,46 @@ position list win, and the discrepancy goes in the journal.
 ## Carry forward
 
 Anything the next run must not lose. Cleared once acted on.
+
+- **✅ THE 09:35 MARKET-OPEN RUN ALSO FIRED ON THE HOLIDAY AND CORRECTLY PLACED NOTHING.** At 09:36 ET
+  the selftest passed all five checks (`trading_enabled: true`, LIVE paper account), `alpaca.py clock`
+  returned `is_open: false` with `next_open: 2026-09-08T09:30:00-04:00`, and the run stopped at Step 1
+  as the routine directs — **log the skip, commit, exit successfully.** **Zero orders were submitted:
+  no buy, no sell, no core bootstrap, no rebalance.** §7 forbids trading when the market is closed, so
+  this is not a run that found nothing to do — **it is a run that was never permitted to act.** Two
+  runs fired today (08:29 pre-market, 09:36 market-open) and both were holiday skips; the 12:35, 16:16
+  scheduled runs will be the same. **This is the first market-open holiday skip this repo has performed.**
+
+- **⚠ THE STALE-PLAN GATE (Step 2) WAS DELIBERATELY NOT TRIGGERED, AND NO `stale-plan` ALERT WAS
+  POSTED.** `plan_today.md` still reads `plan_date: 2026-09-04`, which is not today — but the market
+  closed check at Step 1 precedes the staleness gate and exits the run before it. **Posting the alert
+  here would have been a false alarm:** the gate exists to catch a pre-market run that failed, was
+  skipped, or crashed on a *trading* day. Today's pre-market run did exactly what the holiday path
+  tells it to do, which is to not write a plan. **A future holiday market-open run must reach the same
+  conclusion: closed market first, staleness gate never evaluated, no alert.** The stale date is still
+  not a fault and is still overwritten by Tuesday's 08:00 pre-market run.
+
+- **Market-open sleeve read 2026-09-07 09:36 ET: equity $100,125.78, cash $30,000.00, core VOO 70.04%,
+  satellite 0.0% (count 0), cash 29.96%.** Identical to the 08:29 holiday read, to the cent — **nothing
+  moved between the two runs because the market is shut, which is confirmation the reads are consistent,
+  not a second independent data point.** `core_in_band: true`, `rebalance_needed: false`,
+  `rebalance_delta: −37.73` (0.04% of equity). **Step 7 rebalance is exempt from the staleness gate but
+  was not due anyway, and could not have been placed with the market closed regardless.**
+
+- **⚠ THE TWO-PRICE TRAP, HOLIDAY EDITION: the broker's carried-forward mark is NOT Friday's official
+  close.** `alpaca.py positions` reads `current_price` **708.01** = `lastday_price` **708.01**,
+  `change_today: 0`. The official 09-04 close from `bars --adjustment all` was **707.86** — the two
+  differ by **$0.15/share, $14.86** across 99.046311231 shares. **On a holiday the broker mark is not
+  even a stale quote of the last session's official close; it is a third number.** Cost nothing today
+  (core has no `highest_close` and §5 exempts it), but the rule stands unchanged: **always pull `bars`
+  for a close, never a `positions` field.**
+
+- **Reconciled again at 09:36 and they agree: `positions.md` open-positions section reads *(none)*,
+  `alpaca.py positions` returns exactly one row and it is VOO core — zero satellite against zero
+  satellite.** Weekly cap re-checked: `week_of` **2026-09-07** matches today's ISO Monday, so nothing
+  was reset and `new_positions_this_week` stays **0 of 3** — **the check working, not a skipped step.**
+  Breaker **INACTIVE**, streak **0**, `core_established: true` so the Step 3 bootstrap path stayed
+  closed, `open_thesis_ids: none`, `alerts.md` **empty**.
 
 - **✅ MONDAY 2026-09-07 WAS THE LABOR DAY HOLIDAY SKIP, AND IT EXECUTED CORRECTLY.** The 08:29 ET
   pre-market run fired, passed the selftest on all five checks, read `clock` (`is_open: false`,
