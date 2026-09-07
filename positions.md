@@ -56,6 +56,26 @@ re-derive it from price history, and it stays correct for positions closed month
 
 *(none — no **satellite** positions have been opened yet. Core VOO exists and is deliberately not tracked here, per the top-of-file rules and the fill note further down.)*
 
+**Reconciliation 2026-09-07 12:35 ET (3-midday-management) — HOLIDAY SKIP, NO §5 EVALUATION,
+NO BACKFILL:** selftest passed all five checks (`trading_enabled: true`, LIVE paper account).
+`clock` returns `is_open: false` with `next_open: 2026-09-08 09:30 ET` — **Labor Day**, so the
+routine's market-closed exit applies. Independently, `alpaca.py positions` returns **one row,
+VOO core** (99.046311231 shares, avg_entry 706.74, broker mark **708.01** = `lastday_price`,
+`change_today: 0` — a holiday carry-forward, **not a live quote**), and `alpaca.py sleeves`
+reports equity **$100,125.78**, cash $30,000.00, core **70.04%**, satellite **0.0% (count 0)**,
+cash 29.96%, `core_in_band: true`, `rebalance_needed: false`, `rebalance_delta: −37.73`.
+Identical to the 08:29 and 09:36 holiday reads to the cent — **consistency because the market
+is shut, not three independent data points.**
+
+**Satellite blocks (zero) checked against satellite Alpaca positions (zero) — they agree.**
+**Step 2 high-water backfill was not run and none was due:** with no satellite block there is
+no `highest_close` and no `(as of ...)` date, so the staleness trigger has nothing to key on.
+**Core VOO was deliberately NOT given a high-water mark** — §5 exempts core, and stamping one
+would fabricate a §5.4 trailing stop on a position that must never carry one. **Steps 3–5 had
+an empty working list: no §5.1 Perplexity invalidation query was issued, no §5.2 deadline
+existed, and §5.3/§5.4 had no entry or high-water mark to measure against. Nothing should have
+executed and nothing did.**
+
 **Reconciliation 2026-09-04 16:16 ET (4-market-close-journal) — HIGH-WATER PASS, NOTHING TO
 RECORD:** selftest passed all five checks (`trading_enabled: true`, LIVE paper account).
 `clock` at 16:16:10 ET returns `is_open: false` **because the bell has rung, not because the

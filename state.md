@@ -10,7 +10,7 @@ The block below is parsed by `scripts/common.py` and gates real behavior
 `key: value` format exactly. Prose goes underneath.
 
 ```
-last_run: 2026-09-07 09:36 ET 2-market-open-execution (HOLIDAY SKIP — market closed, no orders placed)
+last_run: 2026-09-07 12:35 ET 3-midday-management (HOLIDAY SKIP — market closed, zero satellite positions, no exits placed)
 week_of: 2026-09-07
 new_positions_this_week: 0
 consecutive_closed_losses: 0
@@ -67,6 +67,29 @@ position list win, and the discrepancy goes in the journal.
 ## Carry forward
 
 Anything the next run must not lose. Cleared once acted on.
+
+- **✅ THE 12:30 MIDDAY-MANAGEMENT RUN ALSO FIRED ON THE HOLIDAY AND CORRECTLY PLACED NOTHING.** At
+  12:35 ET the selftest passed all five checks (`trading_enabled: true`, LIVE paper account), and the
+  run hit **both** of the routine's exit conditions at once: `clock` returned `is_open: false`
+  (`next_open: 2026-09-08T09:30:00-04:00`), **and** `positions` returned zero satellite rows. **Either
+  one alone ends the run; today they agreed.** No sell order was submitted, no §5 rule was evaluated
+  against anything, and no high-water backfill was performed. **Three runs have now fired today (08:29
+  pre-market, 09:36 market-open, 12:35 midday) and all three were holiday skips; the 16:16 close run
+  will be the fourth.** This is the first midday holiday skip this repo has performed.
+
+- **⚠ THE MIDDAY BACKFILL (Step 2) WAS DELIBERATELY NOT RUN, AND THAT IS NOT A SKIPPED STEP.** The
+  Step 2 trigger keys on a **stale** `(as of ...)` date on `highest_close`. With zero satellite
+  positions there is no `highest_close` field anywhere in `positions.md` — the ABSENT state, not the
+  stale one — so there is nothing to compare a date against and nothing to backfill from `bars`.
+  **A future midday run must not manufacture a high-water mark for core VOO to give Step 2 something
+  to do: §5 exempts core from all four sell rules, and stamping a mark on it would fabricate a §5.4
+  trailing stop on a position that must never have one.** Nineteenth consecutive run recording this.
+
+- **⚠ NOTHING SHOULD HAVE EXECUTED AND DID NOT — the run's lead line is genuinely empty.** The routine
+  says to lead with anything that should have fired and didn't. There is no such item: no position was
+  held, so no §5.1 invalidation query was issued, no §5.2 deadline existed to pass, and §5.3/§5.4 had
+  no entry or high-water mark to measure from. **`TRADING_ENABLED` is `true`, so this is not a
+  suppressed-stop situation either — no `dry_run` intent was generated because no exit was triggered.**
 
 - **✅ THE 09:35 MARKET-OPEN RUN ALSO FIRED ON THE HOLIDAY AND CORRECTLY PLACED NOTHING.** At 09:36 ET
   the selftest passed all five checks (`trading_enabled: true`, LIVE paper account), `alpaca.py clock`
