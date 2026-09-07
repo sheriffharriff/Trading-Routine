@@ -1057,3 +1057,23 @@ and LHX, before confirming RTX had any documented PAC-3/THAAD content. §4 says 
 hard filters before writing a thesis, but the filters are not a substitute for having a
 candidate — I screened a name into the funnel on a hunch. It failed anyway, so nothing turned
 on it, but the ordering was wrong and the next run should not repeat it.
+
+---
+
+## 2026-09-07 (Monday) — NO RESEARCH RUN. MARKET HOLIDAY (Labor Day).
+
+**Not a quiet day. The funnel was never opened.**
+
+The 08:29 ET pre-market run passed the selftest on all five checks (Alpaca, Perplexity,
+ClickUp, env, control — `trading_enabled: true`, LIVE paper account), read `clock`, found
+`is_open: false` with `next_open: 2026-09-08T09:30:00-04:00`, and stopped at Step 2 of the
+routine as instructed. **Next open being tomorrow rather than today at 09:30 is what
+distinguishes a holiday from an ordinary 08:00 pre-market hour.**
+
+**Zero Perplexity queries were issued. No candidate was screened, no filter was run, no
+thesis was written or rejected.** This marker exists so that the absence of `T-2026-09-07-NN`
+entries is not read as a legitimate research day that found nothing worth buying. Those two
+things look identical in this file, and the routine is explicit that the difference has to be
+made loud at the time because nothing later will make it visible.
+
+No thesis IDs are consumed by this date. The next entries will be `T-2026-09-08-NN`.

@@ -10,7 +10,7 @@ The block below is parsed by `scripts/common.py` and gates real behavior
 `key: value` format exactly. Prose goes underneath.
 
 ```
-last_run: 2026-09-04 16:46 ET 5-friday-weekly-review
+last_run: 2026-09-07 08:29 ET 1-premarket-research (HOLIDAY SKIP — Labor Day, no research, no plan)
 week_of: 2026-09-07
 new_positions_this_week: 0
 consecutive_closed_losses: 0
@@ -18,9 +18,9 @@ circuit_breaker: INACTIVE
 halt_triggered_at: none
 core_established: true
 core_ticker: VOO
-core_pct: 70.03
+core_pct: 70.04
 satellite_pct: 0.0
-cash_pct: 29.97
+cash_pct: 29.96
 open_thesis_ids: none
 ```
 
@@ -68,19 +68,28 @@ position list win, and the discrepancy goes in the journal.
 
 Anything the next run must not lose. Cleared once acted on.
 
-- **⚠ THE NEXT TRADING SESSION IS TUESDAY 2026-09-08. MONDAY 2026-09-07 IS LABOR DAY.** `clock`
-  at 16:16 ET today returns `is_open: false` with `next_open: 2026-09-08T09:30:00-04:00`. Today
-  itself was a **normal full session, 09:30–16:00 ET** — the closed flag at 16:16 means the bell
-  has rung, not that the day was a holiday. **A run firing Monday should log a holiday skip and
-  exit successfully; that is not a fault and is not a missed close run.**
+- **✅ MONDAY 2026-09-07 WAS THE LABOR DAY HOLIDAY SKIP, AND IT EXECUTED CORRECTLY.** The 08:29 ET
+  pre-market run fired, passed the selftest on all five checks, read `clock` (`is_open: false`,
+  `next_open: 2026-09-08T09:30:00-04:00` — **next open is tomorrow, not today, which is what
+  distinguishes a holiday from a normal 08:00 pre-market hour**), and stopped at Step 2 as the
+  routine directs. **No research was run, no Perplexity query was issued, no thesis was written,
+  and `plan_today.md` was deliberately NOT overwritten.** A reader must not read the absent
+  09-07 research entries as a quiet day that found nothing — **the funnel was never opened.**
+  **This is the first holiday skip this repo has ever performed.** The prediction the Friday run
+  wrote down was correct in every detail.
 
-- **✅ THE WEEK ROLLOVER IS DONE — the Friday review performed it at 16:46, and it was the first
-  one this repo has ever done.** `week_of` is now **2026-09-07** (ISO Monday of the week
-  containing Tuesday 2026-09-08) and `new_positions_this_week` is **0**. **Tuesday's run does not
-  owe it any more.** Tuesday should still run its own rollover comparison as normal, find the
-  anchors already match, and correctly do nothing — that is the check working, not a skipped step.
-  The reset was correct even though 2026-09-07 is a holiday: the anchor is the ISO Monday, not the
-  first session. Weekly cap stands at **0 of 3** for the week beginning 2026-09-07.
+- **⚠ `plan_today.md` STILL CARRIES `plan_date: 2026-09-04` AND THAT IS DELIBERATE.** The holiday
+  run does not write a plan, so the spent Friday plan stays in place until **Tuesday's 08:00
+  pre-market run overwrites it**. It is inert: there is no market-open run on a holiday, and
+  Tuesday's open run would refuse a plan not dated 2026-09-08 anyway. **Do not treat the stale
+  date as a fault, and do not execute that plan.**
+
+- **✅ THE WEEK ROLLOVER IS DONE AND WAS RE-CHECKED ON THE HOLIDAY RUN — the anchors matched and
+  nothing was reset, which is the check working, not a skipped step.** `week_of` is **2026-09-07**
+  (today's own ISO Monday) and `new_positions_this_week` is **0**. The Friday review performed the
+  original reset at 16:46 and it was correct even though 2026-09-07 is a holiday: **the anchor is
+  the ISO Monday, not the first session.** Weekly cap stands at **0 of 3** for the week beginning
+  2026-09-07. **Tuesday's run should also find the anchors matching and correctly do nothing.**
 
 - **⚠ THE FIRST WEEKLY REVIEW IS WRITTEN AND THE §1 ANSWER IS NEGATIVE: the satellite sleeve is
   −0.42% behind the same capital in VOO since inception (−$127 on $30,000), entirely because it
@@ -141,7 +150,16 @@ Anything the next run must not lose. Cleared once acted on.
   the §5.4 stop to a level nobody chose. Always pull `bars` for the close. Never mix the two
   inside one §5.4 comparison.**
 
-- **Close sleeve read 16:16 ET: equity $100,084.18, cash $30,000.00, core VOO 70.03%, satellite
+- **Holiday sleeve read 2026-09-07 08:29 ET: equity $100,125.78, cash $30,000.00, core VOO 70.04%,
+  satellite 0.0% (count 0), cash 29.96%.** `core_in_band: true`, `rebalance_needed: false`,
+  `rebalance_delta: −37.73` — 0.04% of equity, deep inside the §2 65–75% band. **No REBALANCE
+  intent was queued and none is due Tuesday.** VOO unrealized **+$125.79 (+0.18%)** on
+  99.046311231 shares at avg entry 706.74. **`change_today` is 0 and `current_price` equals
+  `lastday_price` (708.01) because the market is shut — on a holiday the broker mark is simply
+  Friday's close carried forward, NOT a live quote. Do not read it as a session move.**
+
+- **Close sleeve read 2026-09-04 16:16 ET (superseded by the line above, kept for the day's
+  record): equity $100,084.18, cash $30,000.00, core VOO 70.03%, satellite
   0.0% (count 0), cash 29.97%.** `core_in_band: true`, `rebalance_needed: false`,
   `rebalance_delta: −25.25` — 0.03% of equity, deep inside the §2 65–75% band. **No rebalance is
   due Tuesday.** Day P&L **−$310.01 (−0.31%)** against `last_equity` 100,394.19; since inception
@@ -172,8 +190,10 @@ Anything the next run must not lose. Cleared once acted on.
 - **⚠ `positions.md` legitimately disagrees with the raw broker, and this is the normal steady
   state.** Ledger reads *(none)*; `alpaca.py positions` returns one VOO row. **Not a
   discrepancy** — compare **satellite blocks to satellite Alpaca positions**, never raw ledger to
-  raw broker, or a correct ledger reads as broken. Reconciled again at 16:16: zero against zero,
-  they agree. Keep carrying this until the first satellite position exists.
+  raw broker, or a correct ledger reads as broken. **Reconciled again on the holiday run at 08:29:
+  `positions.md` open-positions section reads *(none)*, `alpaca.py positions` returns exactly one
+  row and it is VOO — zero satellite against zero satellite, they agree.** Keep carrying this
+  until the first satellite position exists.
 
 - **⚠ THE DAY'S REAL RESEARCH FINDING: three separate second-order screens came back EXPLICITLY
   EMPTY.** Not "the candidate failed a filter" — *no source named a publicly traded US Company B
@@ -276,10 +296,15 @@ Anything the next run must not lose. Cleared once acted on.
   an empty intent list. Plan versus outcome: the plan said *do nothing*, and nothing is what
   happened, on all three of BUY, SELL and REBALANCE.
 
-- **Cleared from carry-forward this run:** the 12:35 midday sleeve snapshot and the midday
-  "no exits, no subject" note — both superseded by the 16:16 close read above, which carries the
-  same distinction. All research carry-forward is retained because the funnel is rolling and the
-  same names recur.
+- **Cleared from carry-forward on the 09-07 holiday run: nothing.** The whole research block is
+  retained deliberately. **A holiday skip does not age out the funnel** — the last live news read
+  was Friday 09-04, so every "do not reach for X" and every standing rule below is exactly as
+  fresh on Tuesday as it was on Friday. **The one thing Tuesday must NOT do is treat these
+  Friday rejects as already-screened for Tuesday's tape: the `--recency day` window will have
+  moved on, and a name rejected Friday on a Friday fact may need its filters re-run from
+  Tuesday's date if it resurfaces from a source.**
+  (Previously cleared on 09-04: the 12:35 midday sleeve snapshot and the midday "no exits, no
+  subject" note, both superseded by the 16:16 close read.)
 
 - **Today's ClickUp daily summary: task `86bbv6npm`** — https://app.clickup.com/t/86bbv6npm
   **Today's ClickUp WEEKLY REVIEW: task `86bbv75bz`** — https://app.clickup.com/t/86bbv75bz
@@ -298,11 +323,12 @@ Anything the next run must not lose. Cleared once acted on.
   there are none.** Four days of "no exits" recorded the absence of a subject, not four clean bills
   of health.
 
-- **THE WEEK IS CLOSED. All five runs fired (08:27, 09:36, 12:35, 16:16, 16:46) and every one of
-  them correctly did nothing to the book.** The weekly review is written, posted and committed;
-  **no runs remain this week and the next is Tuesday 2026-09-08.** State at close of week: core
-  **70.03% in band**, satellite **0.0% / zero positions**, cash 29.97%, weekly cap **0 of 3** for
-  the new week, trailing stop **unarmed**, breaker **INACTIVE**, `alerts.md` **empty**.
+- **THE WEEK ENDING 2026-09-04 IS CLOSED. All five runs fired (08:27, 09:36, 12:35, 16:16, 16:46)
+  and every one of them correctly did nothing to the book.** The weekly review is written, posted
+  and committed. **The new week began with today's holiday skip; the first live session is Tuesday
+  2026-09-08.** State carried into it: core **70.04% in band**, satellite **0.0% / zero
+  positions**, cash 29.96%, weekly cap **0 of 3**, trailing stop **unarmed**, breaker
+  **INACTIVE**, `alerts.md` **empty**.
   **Do not read the accumulation of quiet runs as pressure to find something on Tuesday.** The
   review's finding is that the individual no-trade decisions were right and the structure is a
   question for the human — **not that the agent should lower the §4 bar.** It will not.
