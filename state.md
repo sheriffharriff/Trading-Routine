@@ -10,7 +10,7 @@ The block below is parsed by `scripts/common.py` and gates real behavior
 `key: value` format exactly. Prose goes underneath.
 
 ```
-last_run: 2026-09-08 08:24 ET 1-premarket-research (four theses written, all four REJECTED; no BUY/SELL/REBALANCE intent; plan_today.md dated 2026-09-08)
+last_run: 2026-09-08 09:35 ET 2-market-open-execution (plan fresh, zero intents to execute; no orders placed; core in band at 70.00%; nothing in limbo)
 week_of: 2026-09-07
 new_positions_this_week: 0
 consecutive_closed_losses: 0
@@ -18,9 +18,9 @@ circuit_breaker: INACTIVE
 halt_triggered_at: none
 core_established: true
 core_ticker: VOO
-core_pct: 69.98
+core_pct: 70.0
 satellite_pct: 0.0
-cash_pct: 30.02
+cash_pct: 30.01
 open_thesis_ids: none
 ```
 
@@ -68,33 +68,33 @@ position list win, and the discrepancy goes in the journal.
 
 Anything the next run must not lose. Cleared once acted on.
 
-- **TUESDAY 2026-09-08 IS A NORMAL SESSION AND THE PRE-MARKET RUN COMPLETED IN FULL.** Selftest
-  passed all five checks (`trading_enabled: true`, LIVE paper account, equity $99,930.66).
-  `clock` 08:24:02 ET: `is_open: false`, `next_open` **09:30 today**, `next_close` 16:00 today —
-  **pre-market, not a holiday.** Reconciled: satellite blocks (zero) against satellite Alpaca
-  positions (zero), they agree. **Week rollover checked: ISO Monday of 09-08 is 2026-09-07,
-  matches `week_of` — no reset due.** Cap **0 of 3**, breaker **INACTIVE**, `alerts.md` **empty**.
-  **Four theses written, all four rejected. Zero orders. No REBALANCE.**
-  *(This replaces the four-run Labor Day holiday-skip narration, the 09-04 sleeve snapshots and
-  the "plan_today.md still reads 09-04" note — all acted on, all now cleared. `plan_today.md` is
-  dated **2026-09-08** and is live for today's open run.)*
+- **THE 09-08 OPEN RUN EXECUTED THE PLAN IN FULL, AND THE PLAN WAS "DO NOTHING."** Selftest
+  passed all five checks (`trading_enabled: true`, LIVE paper account, equity $99,975.23).
+  `clock` 09:35:47 ET: **`is_open: true`** — the session is live, this was not a closed-market
+  skip. **Staleness gate PASSED:** `plan_date: 2026-09-08` equals today ET, so the plan's intents
+  were executable — and there were **zero of them** (no BUY, no SELL, no REBALANCE). *A fresh
+  plan with nothing in it is a different outcome from a stale plan whose intents were refused;
+  no `stale-plan` alert was due and none was posted.* Step 3 skipped (`core_established: true`).
+  **Zero orders submitted, nothing in limbo, cap still 0 of 3, breaker INACTIVE, `alerts.md`
+  empty.** *(This replaces the pre-market run's own narration — acted on, now cleared.)*
 
-- **⚠ THE COLLAPSE INSTRUCTION FROM 09-07 WAS ACTED ON, AND IT SHOULD BE ACTED ON AGAIN.**
-  `positions.md` was **604 lines / 42KB** and is now **162**; sixteen per-run reconciliation
-  blocks restating one null fact were collapsed into a single archive note that preserves every
-  load-bearing fact (the 09-03 VOO fill, the 706.74 measurement baseline, the satellite-to-
-  satellite comparison rule, §5.4 unarmed, §5 untested). **Nothing live was discarded.** The pull
-  to append is structural — a run is rewarded for showing it checked something, and a deleted
-  note looks like a check that never happened. **A future run will feel it too; collapse, do not
-  append.**
+- **⚠ COLLAPSE, DO NOT APPEND — ACTED ON TWICE NOW, AND DUE AGAIN NEXT RUN.** `positions.md` ran
+  to **604 lines / 42KB** before the 09-07 collapse, was cut to 162, and this run collapsed the
+  09-08 pre-market and 09-04 close blocks into the single current reconciliation. Every
+  load-bearing fact is preserved (the 09-03 VOO fill, the 706.74 measurement baseline, the
+  satellite-to-satellite comparison rule, §5.4 unarmed, §5 untested); **nothing live was
+  discarded.** The pull to append is structural — a run is rewarded for showing it checked
+  something, and a deleted note looks like a check that never happened. **A future run will feel
+  it too.**
 
-- **⚠ THE CORE'S MARK WENT NEGATIVE FOR THE FIRST TIME AND IT MEANS NOTHING PROCEDURALLY.**
-  `unrealized_pl` **−$69.33 (−0.099%)** against the 706.74 fill; broker mark 706.04 vs
-  `lastday_price` 708.01. **§5 exempts core from all four sell rules** — this is not a stop, not
-  a trigger, and not a reason to touch the position. Expect the first run that sees a red core
-  to feel a pull toward action; there is none. `rebalance_delta` **+$20.80 (0.02% of equity)**,
-  sign-flipped from Monday's −$37.73 and the closest to target the core has ever sat. §2
-  rebalances at the **band edge**, not to the target.
+- **⚠ THE CORE'S MARK IS RED AND IT MEANS NOTHING PROCEDURALLY.** At the bell: broker mark
+  **706.53** vs the 706.74 fill, `unrealized_pl` **−$20.80 (−0.03%)**, `change_today` −0.209%
+  against `lastday_price` 708.01. It went negative for the first time at the 09-08 pre-market
+  read (−$69.33) and has stayed there. **§5 exempts core from all four sell rules** — not a stop,
+  not a trigger, not a reason to touch the position. Expect a run seeing a red core to feel a
+  pull toward action; there is none. `rebalance_delta` **+$3.81 — 0.004% of equity, core at
+  70.00% exactly**, the closest to target it has ever sat. §2 rebalances at the **band edge**
+  (65/75), not to the target.
 
 - **⚠ THE HIGH-WATER MARKS ARE ABSENT, NOT STALE — A THIRD STATE.** No satellite position exists,
   so `positions.md` has **no `highest_close` and no `(as of ...)` date**. The midday backfill
@@ -225,5 +225,6 @@ Anything the next run must not lose. Cleared once acted on.
   first Friday review of **October 2026**.
 
 - **Friday's ClickUp tasks, for reference:** daily summary `86bbv6npm`, weekly review
-  `86bbv75bz`. **No ClickUp task was created by this run** — the pre-market routine does not post
-  one.
+  `86bbv75bz`. **No ClickUp task was created by the 09-08 pre-market or open runs** — neither
+  routine posts one, and no alert condition (stale plan, breaker, push failure, selftest abort)
+  arose in either.
