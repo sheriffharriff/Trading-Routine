@@ -10,7 +10,7 @@ The block below is parsed by `scripts/common.py` and gates real behavior
 `key: value` format exactly. Prose goes underneath.
 
 ```
-last_run: 2026-09-08 09:35 ET 2-market-open-execution (plan fresh, zero intents to execute; no orders placed; core in band at 70.00%; nothing in limbo)
+last_run: 2026-09-08 12:35 ET 3-midday-management (market open; zero satellite positions, so no §5 evaluation and no backfill were due; no orders placed; core in band at 69.96%; nothing in limbo)
 week_of: 2026-09-07
 new_positions_this_week: 0
 consecutive_closed_losses: 0
@@ -18,9 +18,9 @@ circuit_breaker: INACTIVE
 halt_triggered_at: none
 core_established: true
 core_ticker: VOO
-core_pct: 70.0
+core_pct: 69.96
 satellite_pct: 0.0
-cash_pct: 30.01
+cash_pct: 30.04
 open_thesis_ids: none
 ```
 
@@ -68,15 +68,16 @@ position list win, and the discrepancy goes in the journal.
 
 Anything the next run must not lose. Cleared once acted on.
 
-- **THE 09-08 OPEN RUN EXECUTED THE PLAN IN FULL, AND THE PLAN WAS "DO NOTHING."** Selftest
-  passed all five checks (`trading_enabled: true`, LIVE paper account, equity $99,975.23).
-  `clock` 09:35:47 ET: **`is_open: true`** — the session is live, this was not a closed-market
-  skip. **Staleness gate PASSED:** `plan_date: 2026-09-08` equals today ET, so the plan's intents
-  were executable — and there were **zero of them** (no BUY, no SELL, no REBALANCE). *A fresh
-  plan with nothing in it is a different outcome from a stale plan whose intents were refused;
-  no `stale-plan` alert was due and none was posted.* Step 3 skipped (`core_established: true`).
-  **Zero orders submitted, nothing in limbo, cap still 0 of 3, breaker INACTIVE, `alerts.md`
-  empty.** *(This replaces the pre-market run's own narration — acted on, now cleared.)*
+- **THE 09-08 MIDDAY RUN HAD NO SUBJECT, AND THAT IS THE WHOLE RESULT.** Selftest passed all five
+  checks (`trading_enabled: true`, LIVE paper account, equity $99,854.39). `clock` 12:34:59 ET:
+  **`is_open: true`**. **Zero satellite positions**, so the routine's entire job — §5.1–§5.4 —
+  had nothing to evaluate, and its Step 1 instruction is explicit: *note it, commit, exit; do not
+  go looking for something to do.* No exit, no backfill, no order, nothing in limbo. Week anchor
+  `2026-09-07` still matches today's Monday, so `new_positions_this_week` was **not** reset and
+  stays 0 of 3; breaker INACTIVE; `alerts.md` empty. **This routine may not open a position under
+  any circumstance** — new entries go through pre-market research and the 09:35 run so that every
+  buy sleeps on a written thesis. *(This replaces the 09-08 open run's narration — acted on, now
+  cleared.)*
 
 - **⚠ COLLAPSE, DO NOT APPEND — ACTED ON TWICE NOW, AND DUE AGAIN NEXT RUN.** `positions.md` ran
   to **604 lines / 42KB** before the 09-07 collapse, was cut to 162, and this run collapsed the
@@ -87,14 +88,15 @@ Anything the next run must not lose. Cleared once acted on.
   something, and a deleted note looks like a check that never happened. **A future run will feel
   it too.**
 
-- **⚠ THE CORE'S MARK IS RED AND IT MEANS NOTHING PROCEDURALLY.** At the bell: broker mark
-  **706.53** vs the 706.74 fill, `unrealized_pl` **−$20.80 (−0.03%)**, `change_today` −0.209%
-  against `lastday_price` 708.01. It went negative for the first time at the 09-08 pre-market
-  read (−$69.33) and has stayed there. **§5 exempts core from all four sell rules** — not a stop,
-  not a trigger, not a reason to touch the position. Expect a run seeing a red core to feel a
-  pull toward action; there is none. `rebalance_delta` **+$3.81 — 0.004% of equity, core at
-  70.00% exactly**, the closest to target it has ever sat. §2 rebalances at the **band edge**
-  (65/75), not to the target.
+- **⚠ THE CORE'S MARK IS RED, DEEPENING, AND IT STILL MEANS NOTHING PROCEDURALLY.** Midday: broker
+  mark **705.26** vs the 706.74 fill, `unrealized_pl` **−$146.59 (−0.209%)**, `change_today`
+  −0.388% against `lastday_price` 708.01 — it went negative at the 09-08 pre-market read
+  (−$69.33), was −$20.80 at the bell, and has widened through the session. **§5 exempts core from
+  all four sell rules** — not a stop, not a trigger, not a reason to touch the position. Expect a
+  run seeing a red and widening core to feel a pull toward action; there is none, and the pull
+  gets stronger as the number grows. `rebalance_delta` **+$43.98 — 0.044% of equity, core at
+  69.96%**. §2 rebalances at the **band edge** (65/75), not to the target: 69.96% is not a
+  rebalance, and neither was 70.00%.
 
 - **⚠ THE HIGH-WATER MARKS ARE ABSENT, NOT STALE — A THIRD STATE.** No satellite position exists,
   so `positions.md` has **no `highest_close` and no `(as of ...)` date**. The midday backfill
