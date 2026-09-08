@@ -29,28 +29,31 @@ better. Core and rebalance actions are exempt from the gate because neither depe
 day's research.
 
 ```
-plan_date: 2026-09-04
+plan_date: 2026-09-08
 generated_by: 1-premarket-research
 market_open_today: yes
 ```
 
-Market opens today 2026-09-04 at 09:30 ET (`alpaca.py clock`: `is_open: false`,
-`next_open: 2026-09-04T09:30:00-04:00`, timestamp `08:27:46 ET`). **Not a holiday** — the market
-is closed because it is pre-market, and `next_open` is today.
+Market opens today 2026-09-08 at 09:30 ET (`alpaca.py clock` at 08:24:02 ET: `is_open:
+false`, `next_open: 2026-09-08T09:30:00-04:00`, `next_close: 2026-09-08T16:00:00-04:00`).
+**Not a holiday** — the market is closed because it is pre-market and `next_open` is *today*.
+**This is the first live session of the week**; Monday 2026-09-07 was Labor Day.
 
-**One pre-market run today, at 08:27 ET.** Selftest passed all five checks
-(`trading_enabled: true`, LIVE paper account).
+**One pre-market run today, at 08:24 ET.** Selftest passed all five checks
+(`trading_enabled: true`, LIVE paper account, equity $99,930.66).
 
-**Tape context:** VOO's broker mark is **710.94** (`lastday_price` 710.72). The official
-`bars --adjustment all` close for 09-03 was **710.70**; the two are not interchangeable and
-neither is a pre-market execution reference. Pull a fresh quote at 09:35.
+**Tape context:** VOO's broker mark is **706.04** (`lastday_price` **708.01**,
+`change_today` −0.278%). Neither number is an execution reference — **pull a fresh quote at
+09:35.** The core position shows `unrealized_pl` **−$69.33 (−0.099%)** against the 706.74
+fill, its first negative mark; that is a price move, not an error.
 
 ---
 
 ## The whole plan in one line
 
 **Do nothing.** No BUY, no SELL, no REBALANCE. Core is in band, there are no satellite
-positions to manage, and the day's research produced no eligible candidate.
+positions to manage, and four candidates were researched to a full thesis entry and all four
+were rejected.
 
 ---
 
@@ -58,50 +61,57 @@ positions to manage, and the day's research produced no eligible candidate.
 
 ### BUY — none
 
-No buy intents. New positions were fully permitted this run — breaker INACTIVE, weekly cap at
-**0 of 3**, satellite sleeve **empty with 29.88% cash**, no restricting note in `control.md`.
-Nothing was blocked. **The research simply did not produce an eligible candidate.**
+No buy intents. New positions were **fully permitted** this run — breaker INACTIVE, weekly cap
+at **0 of 3**, satellite sleeve **empty with 30.02% cash**, no restricting note in `control.md`.
+**Nothing was blocked. The research did not produce an eligible candidate.**
 
-One candidate reached ticker stage and was rejected four ways:
+Four candidates reached ticker stage with a full `research_log.md` entry:
 
 | Thesis | Ticker | Died at | Why |
 |---|---|---|---|
-| T-2026-09-04-01 | CLF | part 1, part 2, part 3 **and** §3 | Surfaced as "the only domestic producer of GOES" against a cluster of US transformer capacity expansions (Eaton, Siemens, Southwire, HSP US, Niagara). **No source ties Cliffs to any of those projects** — a sole-producer fact is market structure, not a supplier relationship. Electrical-steel revenue is **not disclosed anywhere** in the 10-K/10-Q. The projects complete **2028**. And market cap is **$7.01B, below the §3 $10B floor** — `alpaca.py buy` would have refused it. |
+| T-2026-09-08-01 | CAT | parts 2 and 3 | Named vendor of the gas gensets at Anthropic/Nscale's 460 MW West Virginia campus — a genuinely sourced link. But the site services **late 2027**, CAT lead times run **into late 2028**, and one 460 MW order is **under 1% of a $32.2B segment** sitting inside a **$72B backlog**. CAT has **already guided** to data-center power demand — the customer's name is new, the demand is not. |
+| T-2026-09-08-02 | AVGO | part 1 (structure) | **Broadcom is Company A**, the named TPU supplier in the story. And the Google/Broadcom 5 GW agreement is from **May 2026**, re-reported 09-06. |
+| T-2026-09-08-03 | MDT | part 2 | Medtronic **does not disclose neuromodulation or SCS revenue**. Finest grain is a $2.7B/qtr Neuroscience segment bundling unrelated businesses. Part 2 not writable without guessing. Part 1 also unsourced. |
+| T-2026-09-08-04 | ABT | part 2 | Same, worse — no SCS line disclosed, and any plausible figure is **low single-digit % of ~$45B revenue, under the §4.2 10% floor**. |
 
-**Fourteen further items were dropped before thesis stage.** The three that matter, because all
-three are cases where a dedicated sourced screen came back **explicitly empty**:
+**The AI-compute complex had already moved before this run reached it.** Every name with a
+sourced link to the week's dominant story failed the §4 priced-in check outright:
 
-- **Lululemon −18% on a second consecutive guidance cut.** No source names a publicly traded US
-  company gaining share. The two names sources do cite — **Alo Yoga and Vuori — are private**.
-- **Snowflake beat and raise, +16.55%.** No source names a US-listed supplier or partner whose
-  revenue rises with Snowflake consumption.
-- **The grid/transformer capacity cluster.** No source names a US-listed supplier to any of the
-  five announced projects.
+| Ticker | 5-session move | Verdict |
+|---|---|---|
+| IREN | **+26.08%** | LATE |
+| BE | **+20.04%** | LATE |
+| HUT | **+17.79%** | LATE |
 
-The rest: Ionis' ZANVASTRO approval (only partner is **Italy-listed Recordati**; $295M peak
-*global* sales, ex-US filings **in 2027**), Nscale–Figure $3.5B (**both private**), AEVEX, Curia,
-Calumet (**private**; the TTM reference is a **June 2026** facility, three months stale),
-Cipla/Qilu (non-US, and the mechanism runs **against** Merck in a long-only book), LG Energy
-Solution / Smackover Lithium (Korea-listed buyer, sub-floor US parent), UpSolv/NexKemia,
-Unusual Machines/Altana, the Caltrain contract (**consultant's name is blank in the source**),
-Modular Medical, and the ISM / claims / payrolls / Waller macro items. Full funnel in
-`research_log.md`.
+Roughly twenty further items were dropped before thesis stage — full funnel in
+`research_log.md`. Notes for the open run, carried so nothing is re-derived at 09:35:
 
-Notes for the open run, carried so nothing is re-derived at 09:35:
-
-- **Nothing here is queued, deferred, or waiting for a better entry.** CLF is not a "watch for
-  a dip" — it fails §3 on market cap, which no price move fixes in the right direction, and it
-  had no sourced mechanism to begin with.
-- **⚠ Do not reach for NKE, DECK, ONON, UAA, GPS/Athleta or any athletic-apparel name on the
-  Lululemon story.** The screen named **only private companies** as share-takers. Every listed
-  peer is an ecosystem read-through with no sourced connection — that is the RTX failure, and
-  it is the single most fluent sentence available on the tape today.
-- **⚠ Do not reach for a hyperscaler on the Snowflake story**, and do not reach for ETN, PWR,
-  GEV, HUBB, NVT, AMRC or any grid name on the capacity cluster. Same reason: no sourced
-  supplier relationship, and Eaton is Company A announcing its own capex.
+- **⚠ The "$517 billion / 14.8 GW Anthropic compute contracts" headline is NOT a new event.**
+  It is *The Information*'s **09-06 aggregation of eleven months of previously announced deals**
+  (Amazon and Google/Broadcom from May; the $30B Azure commitment, the SpaceX Colossus lease and
+  the Lambda commitment all reported 09-02). It will still be circulating at the bell and it
+  will still look new, because the *articles* are new. **Do not treat it as a catalyst.**
+- **⚠ Do not reach for AMZN, GOOGL, MSFT or NVDA on it.** They are the **headline counterparties**
+  named in the story, which is the one thing §4 says explicitly not to chase.
+- **⚠ HUT is not a "watch for a dip."** It had a real sourced mechanism — Yahoo Finance names
+  Hut 8 as the developer of the 350 MW Texas site hosting Lambda's Anthropic capacity — and it
+  was lost to **timing, +17.79% in five sessions**. That is a different failure from the usual
+  unsourced one, and it does not become a buy at a lower price today.
+- **⚠ Nscale, Firmus, Lambda, Fluidstack and SpaceX are all private (§3).** The Nscale West
+  Virginia deal is the only genuinely new contract in the window and there is no listed way to
+  express it that survives §4.
+- **⚠ The BSX recall breaks TODAY, pre-market — the priced-in numbers on MDT (+3.26%) and ABT
+  (−3.69%) cover five sessions that contain NONE of this news.** Those passes are not
+  clearance; the filter is measuring a window that predates the event. Both are rejected on
+  part 2 regardless, and **§4's correlation rule would permit at most one of them** in any case.
+  **Do not revisit either at the bell because the tape moves on the recall.**
+- **⚠ Do not short, and do not reach for BSX itself.** The mechanism runs *against* Boston
+  Scientific, and this is a long-only book.
+- **The August payrolls print (+162k vs +56k), the ~58% September hike probability, PPI
+  Thursday and CPI Friday are macro with no segment and no dollar path.** No intent attaches to
+  any of them. They are **not** a reason to act at the open.
 - **Do not reach for LITE, MU or LHX.** None entered today's funnel, no source named them, and
-  their filters were not re-run. Third consecutive day recording that this is *absence of
-  evidence*, not resolve.
+  their filters were not re-run. **Absence of evidence, not resolve** — fourth consecutive day.
 - **A quiet day is not a reason to lower the bar at the bell.** §4: the correct output of most
   research runs is no trade.
 
@@ -111,15 +121,17 @@ No open satellite positions. `positions.md` and `alpaca.py positions` agree — 
 *(none)* and the broker returns exactly one row, **VOO, which is core and exempt from §5
 entirely**. Compare satellite blocks to satellite positions, not raw ledger to raw broker.
 §5.1–5.4 have nothing to evaluate: no invalidation condition to test, no timing window to
-expire, no entry price or high-water mark to measure a stop against.
+expire, no entry price or high-water mark to measure a stop against. **No §5.1 Perplexity
+invalidation query was issued and none was due — there is no position to check news against.**
 
 ### REBALANCE — none
 
-- current_core_pct:  **70.12%** (target 70%, §2 band 65–75% — **inside the band**)
-- `alpaca.py sleeves` 08:27 ET: `core_in_band: true`, `rebalance_needed: false`,
-  `rebalance_delta: −124.80`
-- action: **none.** The −$124.80 delta is 0.12% of equity and is VOO's overnight mark moving,
-  not drift. §2 rebalances at the band edge, not to the exact target.
+- current_core_pct: **69.98%** (target 70%, §2 band 65–75% — **inside the band**)
+- `alpaca.py sleeves` 08:24 ET: `core_in_band: true`, `rebalance_needed: false`,
+  `rebalance_delta: +20.80`
+- action: **none.** The +$20.80 delta is **0.02% of equity** — the closest to target the core
+  has sat since it was established, and it is VOO's overnight mark moving, not drift. §2
+  rebalances at the band edge, not to the exact target.
 - **⚠ `core_established: true`. The bootstrap path is closed permanently — do not re-run it.**
 
 ---
@@ -129,15 +141,15 @@ expire, no entry price or high-water mark to measure a stop against.
 - **The §5.4 trailing stop is not yet armed** — not disabled, not skipped. It arms the day the
   first *satellite* position opens. The core VOO holding does **not** arm it: core is exempt
   from §5 entirely and is deliberately absent from `positions.md`.
-- **The §6 weekly cap is fully available at 0 of 3.** Week rollover checked this run: ISO Monday
-  of 2026-09-04 (Friday) is **2026-08-31**, which matches `week_of` — no reset was due. **Next
-  boundary is Monday 2026-09-07.**
+- **The §6 weekly cap is fully available at 0 of 3.** Week rollover checked this run: the ISO
+  Monday of 2026-09-08 (Tuesday) is **2026-09-07**, which matches `week_of` — **no reset was
+  due**. Next boundary is Monday 2026-09-14.
 - **Circuit breaker INACTIVE**, `consecutive_closed_losses: 0`, `halt_triggered_at: none`,
   `HALT_CLEARED_AT: none`. Nothing has ever closed, so the streak cannot have moved.
 - **`alerts.md` is empty — zero incidents, nothing SYSTEMIC.** Selftest passed all five checks
-  at 08:27 ET.
-- **August payrolls print this morning** (consensus +56k, unemployment 4.1%). It is a macro
-  release with no intent attached to it in this plan. It is **not** a reason to act at the open.
+  at 08:24 ET.
+- **⚠ Two-price trap.** Use `bars --adjustment all` for any official close and a fresh `quote`
+  for execution. Never a `positions` field for either.
 
 ---
 

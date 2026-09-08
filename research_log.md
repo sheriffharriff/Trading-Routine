@@ -52,6 +52,257 @@ single most common way a plausible-sounding connection gets mistaken for an oppo
 
 ## Entries
 
+### 2026-09-08 (08:24 ET) — event survey (funnel, pre-thesis)
+
+First live session after the Labor Day weekend, so the window screened is **Friday's close
+through Tuesday pre-market (Sept 4–8)**, not one overnight. Four Perplexity scans: two broad
+(`--recency day`), two sourced second-order screens (`--recency week`), plus one segment/universe
+check. **Four candidates reached ticker stage with a thesis entry; all four rejected. No BUY
+intent today.**
+
+**The shape of the day, stated before the list because it is the finding: the tape had already
+moved.** The dominant story was AI compute capacity, and every name with a sourced link to it
+failed the §4 priced-in check by a wide margin — **HUT +17.79%, IREN +26.08%, BE +20.04% over
+five sessions**, against a 4% threshold. Not one of the three was a marginal call. The second
+finding is narrower and more useful: **the headline number of the week is not a new event.** The
+"$517 billion / 14.8 GW of Anthropic compute contracts" figure that led Sunday and Monday's
+coverage is, per every source that carries it (Chosun Biz 09-07, Seoul Economic Daily 09-07 and
+09-08, The Decoder 09-07), an **aggregation by *The Information* on 09-06 of deals signed over
+the preceding eleven months** — Amazon and Google/Broadcom from May, the $30B Azure commitment
+and the SpaceX Colossus lease reported 09-02, Lambda 09-02. **A re-aggregation of old
+announcements arrives in the `--recency day` window looking exactly like a new event.** That is
+standing rule (iii) — *verify the news is new to the company's own disclosure* — appearing in a
+form the recency filter cannot catch, because the *article* is genuinely new.
+
+Items dropped before thesis stage, with reasons:
+
+- **Anthropic $517B / 14.8 GW compute contracts** (The Information via multiple outlets, 09-06
+  to 09-08). Aggregation, not an announcement — see above. The named counterparties (**AMZN,
+  GOOGL, MSFT, NVDA**) are the headline names in the story, not second-order beneficiaries, and
+  each deal was announced months ago.
+- **Anthropic–Nscale Monarch Compute Campus, Mason County WV** — $45B over six years, 460 MW,
+  first reported **09-04**. **The one genuinely new contract in the window.** Nscale is a
+  private British company (§3). Screened for named US-listed suppliers → produced **CAT**, which
+  got a full thesis below.
+- **Anthropic–Lambda / Hut 8 (HUT)**, 350 MW Texas site. Hut 8 is explicitly named by Yahoo
+  Finance as the **developer** of the site — a genuinely sourced relationship, not a
+  read-through. **Died on the priced-in check: +17.79% over five sessions.** Reported 09-02, so
+  it was already two sessions stale when it reached this funnel. **Recording that this one had a
+  real mechanism and was lost to timing, not to weak sourcing** — that is a different failure
+  from the usual one and worth separating in the log.
+- **IREN Sweetwater 2 GW ERCOT conditional base-load status** (09-08). IREN is Company A
+  announcing its own project. **+26.08% over five sessions.** No US-listed supplier named.
+- **OpenAI–Firmus, two Malaysian data centers, >900 MW contracted** (09-08). **Firmus is
+  private**; the sites are in Malaysia; Nvidia appears only as an investor in Firmus, which is
+  not a supply relationship to these sites.
+- **Bloom Energy / Oracle 1.2 GW (up to 2.8 GW)** capacity contract, surfaced in a 09-06
+  article. **Both parties US-listed and named — the rarest thing in this funnel — and it was
+  still dropped**, because the source describes an existing partnership's progress and **does
+  not date the contract announcement inside the window**. BE is also **+20.04%** over five
+  sessions. Standing rule (iii) again.
+- **August payrolls +162k vs +56k consensus; unemployment ~4.1%; September hike probability
+  ~58%; $14.5B Treasury buyback launched 09-07; August PPI Thursday and CPI Friday; FOMC
+  09-15/16.** Macro. No segment, no dollar path, no §4 mechanism. This is the single largest
+  price-moving item in the window and it is **not actionable under this strategy** — noting that
+  explicitly, because "the payrolls print was strong so cyclicals benefit" is the macro-shaped
+  version of the read-across failure.
+- **Boston Scientific Class I recall + guidance cut** (09-08). Real second-order structure —
+  screened properly, produced MDT and ABT theses below.
+- **Agilent Q3 beat and FY26 raise; ABM Industries FY26 targets raised** (both 09-08). Each is
+  Company A reporting its own results. No named counterparty whose economics change.
+- **Adobe CEO transition (Narayen → Chakravarthy); NHTSA opens Cybercab investigation; LULU Q2
+  revenue miss; DOCU EPS beat** (09-08). Governance, regulatory-investigation and own-results
+  items with no sourced second-order counterparty. **LULU is the fourth consecutive session this
+  name has appeared and the fourth it has been dropped** — the athletic-apparel share-shift
+  sentence remains the most fluent unsourced sentence available on this tape.
+- **Novartis HARBOR Phase III update** (09-08) — **not US-listed** (§3), and the snippet does
+  not even state whether the readout was positive.
+- **Eli Lilly Mounjaro cardiovascular-risk indication** — surfaced in a 09-08 article, but **no
+  source in the set dates the FDA decision inside the window**. Company A in any case.
+- **Modular Medical PBM contract, Lifecore/global pharma CDMO transfer, AsiaStrategy credit
+  facility** — in all three the **counterparty is unnamed in the source**. Same defect as the
+  09-04 Caltrain item, three times in one window.
+- **FingerMotion/Lyken/BlueFlare** (non-binding MOU, explicitly no definitive agreement),
+  **Tamboran/Liberty Energy** (ASX-listed announcer, 09-02), **HMM/Vale** (Korean and Brazilian).
+  §3 or out of window.
+
+---
+
+### T-2026-09-08-01 — CAT — REJECTED
+**Company A / the news:** Anthropic committed **$45B over six years for 460 MW** at **Nscale's
+Monarch Compute Campus**, Mason County, West Virginia, first reported **2026-09-04**. Sources
+describing the site state it will run on an **on-site microgrid of Caterpillar natural gas
+generator sets and fast-response turbines plus battery storage**, rather than a conventional
+grid interconnection, with **service beginning late 2027**.
+**Company B / the candidate:** Caterpillar Inc. (CAT) — named explicitly as the equipment vendor
+for that site, not inferred from industry position.
+
+**1. Mechanism (one sentence):**
+> Anthropic's Nscale Monarch campus building a 460 MW on-site gas microgrid causes Caterpillar's
+> Power & Energy segment revenue to rise because the campus buys its prime-power generator sets
+> and turbines directly from Caterpillar.
+
+Part 1 is writable in one clause with no "and also", and — unusually for this log — it rests on
+a **named vendor at a named site**, not on a market-structure fact. This is the CLF/RTX failure
+mode *not* recurring. It is the strongest part 1 written since T-2026-09-03-01.
+
+**2. Dollar path:** Segment is **Power & Energy** (formerly Energy & Transportation): **$32.2B
+of $67.6B FY25 revenue, ~47.6% of total** — comfortably above the §4.2 10% floor. **But the
+floor is not the test that matters here.** 460 MW of gensets is on the order of a few hundred
+million dollars of equipment spread over a multi-year build, against a segment doing $32.2B a
+year and a **company backlog of $72B, up 92% year over year**, of which 59% delivers inside
+twelve months. One site is **well under 1% of the segment**. A material segment carrying an
+immaterial order is not a dollar path. **FAILS.**
+
+**3. Timing window:** Site service begins **late 2027**. Caterpillar states lead times for gas
+reciprocating engines and turbines extend into **late 2028 and beyond**. Two quarters from today
+is results reported around April 2027. **Nothing from this site lands inside the §4.3 horizon.
+FAILS, and unambiguously.**
+
+**4. Invalidation:** Not reached. Parts 2 and 3 already fail; writing part 4 would be
+constructing the rest of a thesis that is already dead.
+
+**Hard filters:**
+- Priced-in (§4): moved **+1.77%** over last 5 sessions → **pass**
+- Correlation (§4): zero open satellite positions; no driver to collide with → **pass**
+- Universe (§3): stock, NYSE, market cap **~$364–374B** (source: Perplexity, citing ad-hoc-news
+  09-01 $364.11B and 09-03 $366.34B, MarketScreener 09-05 $374.1B, Trefis 09-03 $364.3B) →
+  **pass**
+
+**Outcome:** **REJECTED at parts 2 and 3.** And the reason underneath both is the one worth
+recording: **Caterpillar has already told the market this is happening.** On the Q2 2026 call
+management said it "continue[s] to anticipate full year growth in power generation for both Cat
+reciprocating engines and Solar Turbines driven by increasing energy demand to support data
+center build-out," called data centers "a primary driver" for Power & Energy, restarted the
+10 MW gas engine platform for ~1.5 GW of capacity, and repurposed a 250,000 sq ft facility in
+Wamego, Kansas for data-center power products. **The Monarch order is one line inside a backlog
+the market has already been guided to.** What is new here is the customer's name, not the
+demand — which is standing rule (iii) exactly. **This candidate cleared every mechanical filter
+and had the best-sourced mechanism of the day; it still fails, and the filters are not what
+caught it.** Note for a future run: the thing that made CAT attractive — a real named vendor at
+a real named site — is also what makes it useless, because a company this size discloses that
+demand in aggregate long before any single site matters.
+
+---
+
+### T-2026-09-08-02 — AVGO — REJECTED
+**Company A / the news:** The Information's 09-06 compilation of Anthropic's compute contracts,
+within which **Google and Broadcom are named as jointly contributing ~5 GW of TPU capacity**.
+**Company B / the candidate:** Broadcom Inc. (AVGO).
+
+**1. Mechanism (one sentence):** **Cannot be written in the required form.** The required
+sentence is "[event] causes Company B's revenue line to improve because [causal path]" — but
+Broadcom **is** the named supplier in the event. It is Company A, not Company B. Writing this as
+a second-order thesis would mean claiming that a story about Broadcom's own contract is news
+about someone else's economics. **FAILS at part 1 on structure.**
+
+**2–4:** Not reached.
+
+**Hard filters:**
+- Priced-in (§4): moved **−2.96%** over last 5 sessions → **pass** (the only AI-complex name
+  besides CAT to clear it)
+- Correlation (§4): no open positions → pass
+- Universe (§3): not reached; no sourced market-cap figure was pulled, since the thesis died at
+  part 1
+
+**Outcome:** **REJECTED at part 1.** Logged rather than dropped silently because it is the one
+name in the AI complex that passed the priced-in filter, which makes it exactly the candidate a
+run under pressure to produce something would reach for. Two independent reasons it is not a
+trade: **it is the headline name, and the underlying Google/Broadcom TPU agreement is from
+May 2026** — re-reported on 09-06, not announced then. §4: "you are not chasing the headline
+name."
+
+---
+
+### T-2026-09-08-03 — MDT — REJECTED
+**Company A / the news:** **Boston Scientific**, 2026-09-08, warned it is **unlikely to meet the
+Q3 and full-year 2026 net sales growth and adjusted EPS guidance it issued on 2026-07-29**,
+alongside an **FDA Class I recall of Infinion CX spinal cord stimulator leads** — fracture risk,
+**1,081 serious injuries** reported as of 2026-05-27, no deaths — requiring **immediate
+withdrawal of all unused inventory** from point of sale. The recall covers **unused leads only
+and does not require explanting implanted leads**.
+**Company B / the candidate:** Medtronic plc (MDT), named by market-research sources as one of
+three companies dominating spinal cord stimulation, with the Intellis and Inceptiv platforms.
+
+**1. Mechanism (one sentence):**
+> Boston Scientific's withdrawal of unused Infinion CX leads causes Medtronic's neuromodulation
+> revenue to rise because implanting physicians must substitute a competitor's SCS lead for new
+> procedures.
+
+The sentence is structurally clean. **The sourcing under it is not: no source in the set states
+that Medtronic gains share because of this recall.** The competitor list comes from a general
+August 2026 SCS market report that predates the recall. **This is the Lululemon shape — a
+share-shift story where the beneficiary is my inference and not anyone's reporting** — and it is
+more seductive here than with Lululemon, because SCS is a genuine three-to-four-player market
+where substitution really is close to mechanical. **A narrow market makes the inference feel
+like a deduction. It is still an inference.**
+
+**2. Dollar path:** **Not writable. This is the decisive failure.** Medtronic **does not
+disclose neuromodulation or spinal-cord-stimulation revenue at all.** The finest disclosed grain
+is the **Neuroscience segment at $2.7B for Q1 FY27 (~$10.8B annualized against ~$34B total)**,
+and that segment bundles Cranial & Spinal Technologies and other businesses alongside
+neuromodulation. SCS is an unquantified fraction of an unquantified sub-line. **I could not
+state the segment magnitude or its share of total revenue without guessing at it** — and the
+piece I would have to guess is the whole of part 2. **FAILS.**
+
+**3. Timing window:** Would plausibly be inside two quarters, since substitution in new implant
+procedures begins immediately. **Not reached — part 2 already failed.**
+
+**4. Invalidation:** Not reached.
+
+**Hard filters:**
+- Priced-in (§4): moved **+3.26%** over last 5 sessions → pass, **but see the caveat below**
+- Correlation (§4): no open positions → pass
+- Universe (§3): stock, market cap **~$120.5B** (source: Perplexity citing Business Quant metrics
+  page dated 09-04) → pass
+
+**⚠ The priced-in figure here is measuring the wrong window and a future run must not read it as
+clearance.** The recall broke **this morning, pre-market**. The five sessions `move` covers end
+Friday and contain **none** of this news. A pass on a filter whose whole purpose is to detect
+that the market has already reacted is meaningless when the market has not yet opened on the
+event. **Recording this because the number looks like a pass and is not one.**
+
+**Outcome:** **REJECTED at part 2**, with part 1 unsourced. "I could not write part 2 without
+guessing at the segment size" is the literal example the log template gives, and it is the
+honest answer here.
+
+---
+
+### T-2026-09-08-04 — ABT — REJECTED
+**Company A / the news:** As T-2026-09-08-03 — Boston Scientific's Infinion CX Class I recall
+and 2026 guidance withdrawal, 2026-09-08.
+**Company B / the candidate:** Abbott Laboratories (ABT), named among the SCS leaders via its
+Proclaim platform (St. Jude heritage), which received an expanded approval in May 2026.
+
+**1. Mechanism (one sentence):** Same construction as MDT, same defect — **no source names
+Abbott as gaining share from this recall.**
+
+**2. Dollar path:** **Not writable, and fails worse than MDT.** Abbott **discloses no
+neuromodulation or SCS revenue line**. Against total company revenue of roughly $45B across
+diagnostics, cardiovascular, diabetes care, nutrition and devices, any plausible SCS figure is
+**low single-digit percent at most — under the §4.2 10% floor** — and I cannot source even that.
+**FAILS.**
+
+**3–4:** Not reached.
+
+**Hard filters:**
+- Priced-in (§4): moved **−3.69%** over last 5 sessions → pass, **subject to the same caveat as
+  MDT — this window predates the news entirely**
+- Correlation (§4): no open positions → pass. **Note: had MDT and ABT both somehow survived,
+  §4's correlation rule permits at most one — they share the identical driver.**
+- Universe (§3): stock, market cap **~$187.4B** (source: Perplexity citing Business Quant metrics
+  page dated 09-04) → pass
+
+**Outcome:** **REJECTED at part 2.** Also worth stating plainly: **the recall covers unused
+leads only and does not require removal of implanted devices**, so the addressable shift is new
+implant procedures using one specific lead — a subset of one product line of one segment of a
+company doing $45B a year. **Even a correct thesis here would be immaterial to the buyer.** The
+name that would actually be levered to this is a pure-play SCS company; the obvious one,
+**Nevro (NVRO), returned `not enough bar history` from `alpaca.py move`** — no usable data, and
+it would have failed the §3 $10B floor regardless.
+
+---
+
 ### 2026-09-04 (08:27 ET) — event survey (funnel, pre-thesis)
 
 Four Perplexity scans: two broad (`--recency day`), two sourced second-order screens
