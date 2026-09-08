@@ -56,89 +56,56 @@ re-derive it from price history, and it stays correct for positions closed month
 
 *(none — no **satellite** positions have been opened yet. Core VOO exists and is deliberately not tracked here, per the top-of-file rules and the fill note further down.)*
 
-**Reconciliation 2026-09-08 08:24 ET (1-premarket-research) — RECONCILED, NO §5 EVALUATION
-DUE, NOTHING TO BACKFILL:** selftest passed all five checks (`trading_enabled: true`, LIVE paper
-account). Market **opens today** — `clock` at 08:24:02 ET returns `is_open: false` with
-`next_open: 2026-09-08 09:30 ET` and `next_close: 2026-09-08 16:00 ET`, i.e. **pre-market on a
-normal session day, not a holiday**; Monday 09-07 was Labor Day and this is the week's first
-live session. `alpaca.py positions` returns **one row, VOO core** (99.046311231 shares,
-avg_entry 706.74, broker mark **706.04**, `lastday_price` 708.01, `change_today` **−0.278%**,
-unrealized_pl **−$69.33, −0.099%**). `alpaca.py sleeves`: equity **$99,930.66**, cash
-$30,000.00, core **69.98%**, satellite **0.0% (count 0)**, cash 30.02%, `core_in_band: true`,
-`rebalance_needed: false`, `rebalance_delta: +20.80`.
+**Reconciliation 2026-09-08 09:35 ET (2-market-open-execution) — RECONCILED, NO ORDERS, NO §5
+EVALUATION DUE, NOTHING TO BACKFILL:** selftest passed all five checks (`trading_enabled: true`,
+LIVE paper account, equity $99,975.23). **`clock` at 09:35:47 ET returns `is_open: true`** —
+the session is live and this was a real execution window, not a closed-market skip.
+`alpaca.py positions` returns **one row, VOO core** (99.046311231 shares, avg_entry 706.74,
+market_value $69,979.19, broker mark **706.53**, `lastday_price` 708.01, `change_today`
+**−0.209%**, unrealized_pl **−$20.80, −0.03%**). `alpaca.py sleeves`: equity **$99,975.72**,
+cash $30,000.00, core **70.00%**, satellite **0.0% (count 0)**, cash 30.01%,
+`core_in_band: true`, `rebalance_needed: false`, `rebalance_delta: +3.81`.
 
 **Satellite blocks (zero) checked against satellite Alpaca positions (zero) — they agree.** No
-discrepancy, and no research was done on top of a doubtful ledger.
+discrepancy, and no order was placed on top of a doubtful ledger. Compare **satellite to
+satellite**, never raw ledger to raw broker.
 
-**Two things changed from the holiday reads and both are ordinary price movement, not faults.**
-(1) The core's mark is **below** the 706.74 fill for the first time — `unrealized_pl` is
-**−$69.33** where every prior run recorded a gain. That is a −0.099% move on a position §5
-exempts from all four sell rules; **it is not a stop of any kind and there is no action.**
-(2) `rebalance_delta` is **+$20.80**, sign-flipped from the −$37.73 carried out of Monday, and
-at 0.02% of equity it is the closest to the 70% target the core has ever sat. §2 rebalances at
-the **band edge**, not to the exact target — **no REBALANCE intent was queued.**
+**The staleness gate passed and there was still nothing to execute — two different things.**
+`plan_date: 2026-09-08` equals today ET, so today's intents were fully executable; the plan
+simply contained **none** (four theses researched pre-market, all four rejected). That is a
+no-trade day under §4, **not** a stale-plan refusal: **no `stale-plan` alert was due and none
+was posted.** Step 3 was skipped on `core_established: true` — the bootstrap path is closed
+permanently. **Zero orders submitted this run, so nothing can be in a non-terminal state.**
+
+**No REBALANCE.** Core sits at **70.00%** against a 65–75% band; `rebalance_delta` is **+$3.81**,
+0.004% of equity and the closest to target the core has ever been. §2 rebalances at the **band
+edge**, not to the exact target.
 
 **No §5 rule was evaluated and none was due.** Zero satellite blocks means §5.1 has no
-invalidation condition to test (**no Perplexity news query was issued against a holding, because
-there is no holding**), §5.2 no deadline, and §5.3/§5.4 no entry price or high-water mark to
-measure against. **No `sell_rule_status` field was updated because none exists.**
+invalidation condition to test, §5.2 no deadline, §5.3/§5.4 no entry price or high-water mark.
+**No `sell_rule_status` field was updated because none exists.**
 
 **No high-water backfill was run and none was due.** There is still **no `highest_close` field
 and no `(as of ...)` date anywhere** in this section, so the staleness trigger has nothing to key
 on. **Absent is not stale — do not backfill from `bars`.** Core VOO was again deliberately not
 given a mark: stamping one would fabricate a §5.4 trailing stop on a position §5 exempts.
-**§5.4 remains NOT ARMED, not disabled.**
+**§5.4 remains NOT ARMED, not disabled** — it arms the day the first *satellite* position opens.
+
+**⚠ The two-price trap, carried forward because the day it matters there will be a position.**
+Use `bars --adjustment all` for any official close and a fresh `quote` for execution — never a
+`positions` field for either. Seen in three shapes: intraday fades; the 09-04 close where the
+official **707.86** sat *above* the broker mark **707.59** (a $26.75 gap on 99.046311231 shares,
+the reverse of what an intraday fade suggests); and on the holiday a third number entirely
+(`current_price` = `lastday_price` = 708.01 against Friday's official 707.86). Today's mark
+**706.53** is likewise not a close and was written nowhere as one.
 
 ---
 
-**Reconciliation 2026-09-04 16:16 ET (4-market-close-journal) — HIGH-WATER PASS, NOTHING TO
-RECORD:** selftest passed all five checks (`trading_enabled: true`, LIVE paper account).
-`clock` at 16:16:10 ET returns `is_open: false` **because the bell has rung, not because the
-day was a holiday** — the session ran 09:30–16:00 today and `next_open` is
-**2026-09-08 09:30 ET**, i.e. Tuesday, because **Monday 2026-09-07 is Labor Day.**
-`alpaca.py positions` returns **one row, VOO** (99.046311231 shares, avg_entry 706.74, broker
-mark 707.59, market_value $70,084.18, unrealized_pl **+$84.19, +0.12%**, `lastday_price`
-710.72, `change_today` **−0.44%**); `alpaca.py sleeves` reports equity **$100,084.18**, cash
-$30,000.00, core **70.03%**, satellite **0.0% (count 0)**, cash 29.97%, `core_in_band: true`,
-`rebalance_needed: false`, `rebalance_delta: −25.25`.
-
-**Satellite blocks (zero) checked against satellite Alpaca positions (zero) — they agree. No
-discrepancy.** Compare **satellite to satellite**, never raw ledger to raw broker.
-
-**Step 2 — record the closes: executed in full, and its working list was empty.** This is the
-run whose whole job is to stamp today's official close into every open satellite position's
-`highest_close` and to refresh the `(as of ...)` date **whether or not the value moved**. It
-had **no position to stamp**: there is no `highest_close` field anywhere in this file's
-`## Open positions` section and no `(as of ...)` date to advance. So the field the §5.4
-trailing stop depends on was **not left stale — it does not exist yet.**
-
-**⚠ Read this distinction precisely, because the whole design of Step 2 rests on it.** The
-routine stamps the date every day so that a *current, unchanged* mark cannot be confused with
-a *skipped* one. That machinery presupposes a mark. Today there is none, which is a **third**
-state: not current, not stale, **absent**. The midday backfill trigger keys on a stale date,
-and an absent field cannot be stale — so **the next run must not backfill from `bars`. There
-is nothing to backfill.** This is the eighteenth consecutive run recording it.
-
-**§5.4 is NOT ARMED, and is not silently disabled.** It arms the day the first *satellite*
-position opens. §5 exempts core from all four sell rules, so VOO is deliberately absent from
-this ledger — no thesis, no timing window, no `highest_close`. VOO's official close today was
-**707.86** (`bars --adjustment all`, 09-04) against **710.70** on 09-03, **−0.40%**, and that
-number was **deliberately not written anywhere as a high-water mark** — recording a core close
-into this file would fabricate a trailing stop on a position §5 exempts.
-
-**⚠ The two-price rule bit again today, in the direction worth noting.** The broker mark
-(**707.59**) drives `equity` and the +$84.19 unrealized P&L above; the official close
-(**707.86**) is what would feed `highest_close`. On 99.046311231 shares the gap is **$26.75**
-of unrealized P&L — small, but it is the *first* time the two have been compared at the close
-rather than intraday, and the ordering (official close **above** the broker mark) is the
-reverse of what an intraday fade would suggest. **Never mix them inside one §5.4 comparison.**
-
----
-
-**⚠ EARLIER PER-RUN RECONCILIATIONS (2026-09-01 through 2026-09-04 12:35) HAVE BEEN COLLAPSED,
-DELIBERATELY.** Fourteen blocks spanning 09-01 to 09-04 each recorded the same null result —
-zero satellite blocks checked against zero satellite Alpaca positions, agreeing; no §5 rule
-evaluated; no high-water mark to stamp; no backfill due. `state.md` flags this accumulation as
+**⚠ EARLIER PER-RUN RECONCILIATIONS (2026-09-01 through 2026-09-08 08:24) HAVE BEEN COLLAPSED,
+DELIBERATELY.** Sixteen blocks spanning 09-01 to the 09-08 pre-market run each recorded the same
+null result — zero satellite blocks checked against zero satellite Alpaca positions, agreeing; no
+§5 rule evaluated; no high-water mark to stamp; no backfill due. `state.md` flags this
+accumulation as
 actively harmful rather than untidy: this repo's only continuity mechanism is the next run
 *reading* these files, and padding them with restatements of one null fact raises the odds that
 a genuinely live item gets skimmed. Carry-forward is defined as **cleared once acted on**, and
