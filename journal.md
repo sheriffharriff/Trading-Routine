@@ -40,6 +40,94 @@ anything where the honest-broker rule (§4) did real work>
 
 ## Entries
 
+### 2026-09-08 (Tuesday)
+
+**Account:** total $99,721.67 | day P&L −$404.11 (−0.40%) | since inception −0.28%
+**Sleeves:** core 69.92% | satellite 0.0% | cash 30.08%   (§2 band 65–75%)
+**Breaker:** INACTIVE
+**Week:** 0/3 new positions
+
+**Traded:** nothing — no order was submitted in either direction
+**Researched:** 4 theses — 0 accepted, 4 rejected (CAT, AVGO, MDT, ABT)
+**Positions near a sell rule:** none — zero satellite positions exist; core is §5-exempt
+
+**What happened:**
+
+The first live session of the week, and the book did nothing because there was nothing it was
+permitted to do that was also worth doing. Four candidates reached a full `research_log.md`
+entry at the 08:24 pre-market run and all four died on the four-part thesis, not on a limit:
+the breaker was INACTIVE, the weekly cap sat at 0 of 3, and 30% of the account was in cash. **No
+trade was blocked. The research did not produce an eligible candidate**, which §4 says is the
+expected output and not a failure.
+
+VOO closed **704.16** (official, `bars --adjustment all`) against Friday's **707.86**, −0.52%.
+Equity fell to **$99,721.67** from a `last_equity` of $100,125.78 — **−$404.11, −0.40%** — and
+the core's unrealized mark went to **−$278.32, −0.398%** against the 706.74 fill. That is the
+core's fourth consecutive session of widening red, and it remains procedurally meaningless:
+**§5 exempts core from all four sell rules**, so there is no stop, no trigger and no action. The
+number is now large enough to feel like one. It is not.
+
+**The high-water pass — the invisible job this run exists for — ran and correctly wrote
+nothing.** There is no satellite position, therefore no `highest_close` and no `(as of ...)`
+date to advance. This is worth being precise about because the routine's own framing is that a
+mark which is merely *not updated* is indistinguishable from one that is *current and unchanged*:
+today there is a third state, **absent**, and it is distinguishable from both, because the field
+does not exist rather than holding a stale date. I did not stamp a mark on core VOO to give the
+step a subject — that would fabricate a §5.4 trailing stop on the one position that must never
+carry one. **§5.4 is not armed and not disabled; it arms on the first satellite fill.**
+
+Housekeeping clean. Week anchor `week_of` is 2026-09-07, which *is* today's ISO Monday, so no
+reset was due and the cap stands at 0 of 3 — the check firing, not a skipped step. `orders
+--status all` returns one order in the account's entire history, the 09-03 core buy `d177d8f0`,
+`status: filled`, terminal: **nothing in limbo overnight.** Nothing has ever closed, so the §6
+loss streak cannot have moved; it stays 0 and no breaker alert was due. `alerts.md` is empty.
+`sleeves` reports `core_in_band: true`, `rebalance_needed: false`, `rebalance_delta: +$83.50` —
+0.08% of equity, and §2 rebalances at the **band edge**, not to the target. No rebalance is due
+tomorrow.
+
+**What I got wrong or nearly got wrong:**
+
+**I wrote the reassuring sentence again.** The first draft of the account paragraph above read
+that the book fell −0.40% while VOO fell −0.52% — the framing `state.md` has flagged as this
+agent's default output whenever partial exposure and a down day coincide, previously caught on
+09-01, 09-02, 09-04 and in the weekly review. It is arithmetic, not skill: **70% exposure
+captures about 70% of a move and does so identically in reverse on every up day**, and quoting
+it in a summary would invite a reader to think the 30% cash drag was a decision that paid. It is
+the same cash drag that is the open structural question. Deleted, and recorded here rather than
+silently fixed, because the useful datum is that it regenerates unprompted on a fifth occasion
+across four different book structures. **The next red day will invite it again.**
+
+**A real one, new today: the two-price trap has a fourth shape, and this time it moved a number
+I was about to publish.** The broker's `lastday_price` is **708.01**; Friday's official close is
+**707.86**. `last_equity` is struck off the broker figure, so the day P&L the account reports —
+**−$404.11** — is measured from a baseline $0.15/share above the official one. Priced off
+official closes the day's move is **−$366.47 (−0.366%)**, a $37.63 difference. Neither number is
+wrong; they answer different questions, and I had been treating "the day's P&L" as though it had
+one answer. It does not matter today because no §5 rule keys on it. **It will matter the first
+day a high-water mark exists,** and the failure mode there is the dangerous kind: writing 703.93
+(the broker mark) or 708.01 (`lastday_price`) instead of 704.16 (the official close) produces a
+§5.4 stop at a level nobody chose, that does not error and does not look stale.
+
+**One near-miss on the research, inherited rather than committed.** Reading back today's four
+rejects, CAT is the one with pull — it is the best-sourced mechanism since LITE (a *named* vendor
+at a *named* site) and it failed on timing and materiality, not on sourcing. The temptation is to
+file it as "right idea, wrong entry" and wait for the deadline to come closer. That reading is
+wrong: **CAT has already guided to data-center power demand** on its Q2 call, so the customer's
+name is new and the demand is not — the thesis was never going to show up as a surprise in
+reported results. I am recording that I re-derived the pull, not just the conclusion.
+
+**For the next run:**
+
+- **The high-water marks are ABSENT, not stale — do not backfill from `bars`.** No
+  `highest_close` and no `(as of ...)` date exists anywhere in `positions.md`. **Do not stamp a
+  mark on core VOO to give the step a subject.**
+- **The close run fired and did its Step 2 job today.** Tomorrow's midday run has no gap to
+  backfill and should not infer one from the absence of a date.
+- **Use `bars --adjustment all` for any close.** Today: official **704.16**, broker mark 703.93,
+  `lastday_price` 708.01, official prior close 707.86 — four numbers, one of which is the close.
+- **No rebalance due.** Core 69.92%, delta +$83.50 (0.08% of equity), well inside the 65–75% band.
+- Nothing is in limbo; the account's whole order history is still the single 09-03 core fill.
+
 ### 2026-09-07 (Monday) — NO SESSION. MARKET HOLIDAY (Labor Day).
 
 **Account:** total $100,125.78 | day P&L n/a — no session | since inception +0.13%
