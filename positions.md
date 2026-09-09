@@ -56,67 +56,60 @@ re-derive it from price history, and it stays correct for positions closed month
 
 *(none — no **satellite** positions have been opened yet. Core VOO exists and is deliberately not tracked here, per the top-of-file rules and the fill note further down.)*
 
-**Reconciliation 2026-09-09 09:36 ET (2-market-open-execution) — RECONCILED. NO SATELLITE POSITION
-EXISTS; NO ORDER WAS PLACED; NO §5 RULE HAD A SUBJECT AND NO HIGH-WATER MARK WAS DUE.** *(This
-block replaces the 09-09 08:26 pre-market reconciliation, which was read and acted on by this run
-and carries nothing this one does not.)* Selftest passed all five checks (`trading_enabled: true`,
-LIVE paper account, equity $99,539.92). **`clock` at 09:36:24 ET returns `is_open: true`** — the
-market is open and this run was eligible to trade.
+**Reconciliation 2026-09-09 12:35 ET (3-midday-management) — RECONCILED. NO SATELLITE POSITION
+EXISTS; THERE WAS NOTHING TO MANAGE; NO EXIT WAS TAKEN AND NONE WAS DUE.** *(This block replaces
+the 09-09 09:36 market-open reconciliation, which was read and acted on by this run and carries
+nothing this one does not.)* Selftest passed all five checks (`trading_enabled: true`, LIVE paper
+account, equity $99,385.90). **`clock` at 12:35:19 ET returns `is_open: true`.**
 
-**The staleness gate passed and was not tripped.** `plan_today.md` carries `plan_date:
-2026-09-09`, equal to today's ET date, so the pre-market handoff was intact and its intents were
-eligible for execution. **There were none: no BUY, no SELL, no REBALANCE.** No stale-plan alert
-was due and none was posted. **Zero orders were placed this run**, so nothing is non-terminal and
-the account's entire order history is still the single 09-03 core fill.
+**This routine is exits-only and it opened nothing — correctly, because it may not.** A midday
+entry would route around the pre-market research and 09:35 execution path that forces every buy to
+sleep on a written thesis. **There was also nothing to route around: zero satellite positions.**
 
 `alpaca.py positions` returns **one row, VOO core** (99.046311231 shares, avg_entry 706.74,
-market_value $69,530.51, broker mark **702.00**, `lastday_price` 704.07, `change_today`
-**−0.294%**, unrealized_pl **−$469.48, −0.671%**). `alpaca.py sleeves`: equity **$99,537.94**,
-cash $30,000.00, core **69.86%**, satellite **0.0% (count 0)**, cash 30.14%,
-`core_in_band: true`, `rebalance_needed: false`, `rebalance_delta: +138.62`.
+market_value $69,389.86, broker mark **700.58**, `lastday_price` 704.07, `change_today`
+**−0.496%**, unrealized_pl **−$610.13, −0.872%**). `alpaca.py sleeves`: equity **$99,389.86**,
+cash $30,000.00, core **69.82%**, satellite **0.0% (count 0)**, cash 30.18%,
+`core_in_band: true`, `rebalance_needed: false`, `rebalance_delta: +183.04`.
 
 **Satellite blocks (zero) checked against satellite Alpaca positions (zero) — they agree.**
 Compare **satellite to satellite**, never raw ledger to raw broker.
 
-**§2 rebalance (Step 7) was evaluated and correctly did nothing.** 69.86% sits inside the 65–75%
-band. The +$138.62 delta is **0.14% of equity** — VOO's mark moving, not drift. §2 rebalances at
-the **band edge**, not to the exact target; 69.86% is not a rebalance, and neither were 69.84%,
-69.92%, 69.96% or 69.98%. **`core_established: true`, so the §3 bootstrap path was skipped and
-remains permanently closed — do not re-run it.**
+**Step 2 (high-water repair) had no subject and was correctly skipped.** The marks are **ABSENT,
+not stale** — there is no `highest_close` and no `(as of ...)` date to compare against the last
+trading day, because there is no position block to carry one. **The backfill trigger keys on a
+stale date and an absent field cannot be stale: no `bars` call was due and none was made.** Core
+VOO was again deliberately not given a mark — stamping one would fabricate a §5.4 trailing stop on
+the one position §5 exempts from all four rules. **§5.4 remains NOT ARMED, not disabled.**
 
-**§4/§5 both correctly evaluated nothing.** No SELL intent existed to re-confirm (Step 4) and no
-BUY intent existed to re-validate (Step 5) — **no `move --sessions 5` call was due, because a
-re-validation needs an intent to re-validate.** There is no thesis to test for invalidation
-(§5.1), no timing window to expire (§5.2), and no entry price or high-water mark to measure a stop
-against (§5.3/§5.4). `sell_rule_status` is therefore absent rather than blank: there is no
-position block to carry the field.
+**Step 3 (§5.1–§5.4) had no subject either.** No thesis to test for invalidation (§5.1) — **no
+`perplexity.py` call was due, because an invalidation check needs an invalidation condition to
+check**; no timing window to expire (§5.2); no entry price to measure −7% against (§5.3); no
+high-water mark to measure −10% against (§5.4). `sell_rule_status` is absent rather than blank.
+**Step 4 executed no exits and Step 5 had no held position to re-status.**
 
-**The high-water marks remain ABSENT, not stale, and not un-updated** — a third state the midday
-backfill trigger cannot key on, since it tests a date. **Do not backfill from `bars`.** Core VOO
-was again deliberately not given a mark: stamping one would fabricate a §5.4 trailing stop on the
-one position §5 exempts from all four rules. **§5.4 remains NOT ARMED, not disabled** — it arms
-the day the first *satellite* position opens, and no day since the 09-03 core fill has been that
-day.
+**§2 rebalance is not this routine's job and was not performed.** Noted only for the next run:
+69.82% sits inside the 65–75% band, and the +$183.04 delta is **0.18% of equity** — VOO's mark
+moving, not drift.
 
 **⚠ The two-price trap.** Use `bars --adjustment all` for any official close and a fresh `quote`
 for execution — never a `positions` field for either. This run had **no execution and no close to
 record**, so neither number was needed and neither was taken from `positions`. The live mark
-**702.00 is not a close** and is written nowhere as one; yesterday's official close remains
-**704.16**, against a broker `lastday_price` of **704.07**. Five shapes of this gap are on record
-(09-04 official 707.86 *above* broker mark 707.59; the holiday's third number 708.01; 09-08 where
-a $0.15/share stale baseline moved reported day P&L by $38; today's 9-cent ordinary-direction
-gap). **The gap is small today, which is exactly when the shortcut gets taken.**
+**700.58 is not a close** and is written nowhere as one; yesterday's official close remains
+**704.16**, against a broker `lastday_price` of **704.07**.
 
-**⚠ The core's mark is red for a sixth straight session and it still means nothing procedurally.**
-The progression is **−$20.80 → −$69.33 → −$146.59 → −$278.32 → −$539.56 → −$469.48 (−0.671%)** —
-note it **narrowed** today, which is no more meaningful than the widening was. **§5 exempts core
-from all four sell rules** — not a stop, not a trigger, not a reason to touch the position. **The
-pull toward action grows with the number; there is no action.**
+**⚠ The core's mark is red intraday for a sixth straight session and it still means nothing
+procedurally — and this is the routine where that pull is strongest.** The session progression
+is **−$20.80 → −$69.33 → −$146.59 → −$278.32 → −$539.56 → −$469.48 → −$610.13 (−0.872%)**: it
+narrowed at the open and has since widened, which is no more meaningful than either move alone.
+**§5 exempts core from all four sell rules.** A routine whose entire job is executing exits, on a
+day with no satellite position and a visibly red core, is exactly the setup in which core gets
+sold "as a stop." **It is not a stop. There is no action.**
 
 ---
 
-**⚠ EARLIER PER-RUN RECONCILIATIONS (2026-09-01 through 2026-09-09 08:26) HAVE BEEN COLLAPSED,
-DELIBERATELY.** Eighteen blocks spanning 09-01 to the 09-09 pre-market run each recorded the same
+**⚠ EARLIER PER-RUN RECONCILIATIONS (2026-09-01 through 2026-09-09 09:36) HAVE BEEN COLLAPSED,
+DELIBERATELY.** Nineteen blocks spanning 09-01 to the 09-09 market-open run each recorded the same
 null result — zero satellite blocks checked against zero satellite Alpaca positions, agreeing; no
 §5 rule evaluated; no high-water mark to stamp; no backfill due. `state.md` flags this
 accumulation as
