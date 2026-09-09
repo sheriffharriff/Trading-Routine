@@ -10,7 +10,7 @@ The block below is parsed by `scripts/common.py` and gates real behavior
 `key: value` format exactly. Prose goes underneath.
 
 ```
-last_run: 2026-09-09 12:35 ET 3-midday-management (market OPEN; ZERO satellite positions so there was nothing to manage — no §5 rule had a subject, no high-water mark existed to repair, no invalidation query was due, no exit was taken and none was due; exits-only routine opened nothing, correctly; zero orders placed, nothing in limbo; week anchor 2026-09-07 unchanged, no cap reset due; breaker INACTIVE, weekly count 0 of 3)
+last_run: 2026-09-09 16:16 ET 4-market-close-journal (session ENDED normally, not a holiday; equity 99433.45, day P&L -302.09 / -0.30%, since inception -0.57%; NO high-water mark was written and NONE was owed - zero satellite positions means the marks are ABSENT, not stale, and NO BACKFILL IS DUE; VOO official close 700.805 recorded in positions.md for the record only, deliberately NOT stamped on core; §5.4 still NOT ARMED; zero trades today, 5 theses all rejected; orders --status all shows only the terminal 09-03 core fill, nothing in limbo; week anchor 2026-09-07 unchanged, no cap reset due; breaker INACTIVE, weekly count 0 of 3; sleeves in band, no rebalance due tomorrow; journal written, ClickUp summary 86bbxtn1a)
 week_of: 2026-09-07
 new_positions_this_week: 0
 consecutive_closed_losses: 0
@@ -18,9 +18,9 @@ circuit_breaker: INACTIVE
 halt_triggered_at: none
 core_established: true
 core_ticker: VOO
-core_pct: 69.82
+core_pct: 69.83
 satellite_pct: 0.0
-cash_pct: 30.18
+cash_pct: 30.17
 open_thesis_ids: none
 ```
 
@@ -68,29 +68,32 @@ position list win, and the discrepancy goes in the journal.
 
 Anything the next run must not lose. Cleared once acted on.
 
-- **THE 09-09 MIDDAY RUN HAD NOTHING TO MANAGE AND CORRECTLY DID NOTHING. IT IS EXITS-ONLY AND IT
-  OPENED NOTHING.** Selftest passed all five checks at 12:35 ET (`trading_enabled: true`, LIVE
-  paper, equity **$99,385.90**). `clock` 12:35:19 ET: **`is_open: true`**. **Zero satellite
-  positions, so every step past the read had no subject:** no `highest_close` to repair (Step 2),
-  no invalidation condition to query (§5.1 — **no `perplexity.py` call was due**), no timing window
-  (§5.2), no entry price (§5.3), no high-water mark (§5.4), no exit to execute (Step 4), no held
-  position to re-status (Step 5). **Zero orders placed — nothing is in limbo and the account's
-  order history is still the single 09-03 core fill.** Sleeves at midday: core **69.82%**,
-  satellite **0.0% (count 0)**, cash 30.18%, `core_in_band: true`, `rebalance_needed: false`,
-  `rebalance_delta: +183.04` (0.18% of equity) — **and rebalancing is not this routine's job
-  anyway.** Week anchor `2026-09-07` still matches today's ISO Monday (Wednesday 09-09), so **no
-  cap reset was due**: **0 of 3** used. Breaker INACTIVE. *(This replaces the market-open note —
-  read and acted on, now cleared.)*
+- **⚠ THE 09-09 CLOSE RUN WROTE NO HIGH-WATER MARK AND NONE WAS OWED. DO NOT BACKFILL.** This is the
+  run whose headline job is Step 2, so read this carefully before concluding it was skipped: **there
+  is no satellite position, therefore no `highest_close` field and no `(as of ...)` date exists in
+  `positions.md` to advance.** The marks are **ABSENT — a third state, distinct from both "current
+  and unchanged" and "stale."** The midday backfill trigger keys on a **stale date**, and an absent
+  field cannot be stale. **Core VOO was deliberately not given a mark**: stamping today's close on it
+  would fabricate a §5.4 trailing stop on the one position §5 exempts from all four rules. **§5.4
+  remains NOT ARMED — not disabled, not skipped.** Selftest passed all five checks at 16:16 ET
+  (`trading_enabled: true`, LIVE paper, equity **$99,433.45**). `clock` 16:16:14 ET: `is_open:
+  false`, `next_open: 2026-09-10 09:30 ET` — **a normal session that ended, not a holiday.**
+  **Day P&L −$302.09 (−0.30%); since inception −$566.55 (−0.57%)** — all of it the core's unrealized
+  mark, since nothing has ever been realized. **VOO official close today: 700.805** (`bars
+  --adjustment all`), vs 704.16 on 09-08, **−0.48%**. Sleeves: core **69.83%**, satellite **0.0%
+  (count 0)**, cash 30.17%, `rebalance_delta: +169.97` (**0.17% of equity — no rebalance due
+  tomorrow**). Week anchor `2026-09-07` matches today's ISO Monday, **no cap reset was due, 0 of 3
+  used.** Breaker INACTIVE. Journal entry written; ClickUp summary **`86bbxtn1a`**. *(This replaces
+  the midday note — read and acted on, now cleared.)*
 
-- **⚠ COLLAPSE, DO NOT APPEND — ACTED ON SIX TIMES NOW, AND DUE AGAIN NEXT RUN.**
+- **⚠ COLLAPSE, DO NOT APPEND — ACTED ON SEVEN TIMES NOW, AND DUE AGAIN NEXT RUN.**
   `positions.md` ran to **604 lines / 42KB** before the 09-07 collapse, was cut to 162, and has
-  since been held to a **single current reconciliation block** — this run folded the 09-09
-  market-open block into the midday block, exactly as the five runs before it did. Every
-  load-bearing fact is preserved (the 09-03 VOO fill, the 706.74 measurement baseline, the
-  satellite-to-satellite comparison rule, §5.4 unarmed, §5 untested); **nothing live was
-  discarded.** The pull to append is structural — a run is rewarded for showing it checked
-  something, and a deleted note looks like a check that never happened. **A future run will feel
-  it too.**
+  since been held to a **single current reconciliation block** — this run folded the 09-09 midday
+  block into the close block, exactly as the six runs before it did. Every load-bearing fact is
+  preserved (the 09-03 VOO fill, the 706.74 measurement baseline, the satellite-to-satellite
+  comparison rule, §5.4 unarmed, §5 untested); **nothing live was discarded.** The pull to append is
+  structural — a run is rewarded for showing it checked something, and a deleted note looks like a
+  check that never happened. **A future run will feel it too.**
 
 - **⚠ NEW AND WITH THE HUMAN — THE §4 PRICED-IN FILTER HAS A SECOND DEFECT SHAPE, THE MIRROR OF
   THE LITE ONE, AND IT SURFACED ON A LIVE CANDIDATE TODAY.** QCOM (T-2026-09-09-01) rose **+3.15%
@@ -190,17 +193,19 @@ Anything the next run must not lose. Cleared once acted on.
   one finding:** MU failed on a real +5.27% run-up (the rule working as designed and costing money —
   change nothing), LITE on a drawdown (the open question). **Six of ten rejects running without us
   is the HEALTHY reading.** **Do not tighten §4 in response, and do not loosen it.** *(Not updated
-  this run — the 09-08 rejects have one session of elapsed window and today's have none.)*
+  this run — the 09-08 rejects have two sessions of elapsed window and today's five have none.)*
 
-- **⚠ THE REASSURING FRAMING — EXPECT TO GENERATE IT AND EXPECT TO DELETE IT.** "The book fell
-  −0.31% against VOO's −0.40%" is **70% exposure capturing 70% of a down move**, and it runs
-  identically in reverse on every up day. Appeared 09-01, 09-02, 09-04, inside the weekly review,
-  and a fifth time in the 09-08 close run's first draft — **not a slip but the sentence this agent
-  produces by default whenever partial exposure and a down day coincide.** Caught and deleted every
-  time; keep that record intact. **The core's mark is red for a sixth straight session and widened
-  intraday (−$469.48 / −0.671% at 09:36 → −$610.13 / −0.872% at 12:35 on 09-09, VOO trading 700.58
-  against the 706.74 fill) — the next red day is the next invitation.** Related: anchor the week to
-  **08-31, the first operating day**.
+- **⚠ THE REASSURING FRAMING — EXPECT TO GENERATE IT AND EXPECT TO DELETE IT. IT FIRED AGAIN TODAY,
+  EXACTLY WHERE THIS NOTE PREDICTED.** Today's numbers were **book −0.303% vs VOO −0.477%**, and the
+  sentence assembled itself before the second number finished computing. It is **not a result**: it
+  is **69.83% exposure capturing 69.83% of a down move**, and it runs identically in reverse on the
+  first green day. Appeared 09-01, 09-02, 09-04, inside the weekly review, in the 09-08 close run's
+  first draft, and now a **sixth** time on 09-09 — **not a slip but the sentence this agent produces
+  by default whenever partial exposure and a down day coincide.** Caught and deleted every time;
+  keep that record intact. **The prediction in the previous version of this note — "the next red day
+  is the next invitation" — was correct, which is why the note stays.** The core closed at
+  **−$566.54 / −0.809%** against the 706.74 fill. Related: anchor the week to **08-31, the first
+  operating day**.
 
 - **Do not reach for MU or LHX.** Neither entered today's funnel, no source named them, and their
   filters were not re-run — **absence of evidence, not resolve.** Sixth consecutive day. **LITE is
@@ -221,15 +226,15 @@ Anything the next run must not lose. Cleared once acted on.
   `bars`.** **Do not stamp a mark on core VOO to give the step a subject:** that would fabricate a
   §5.4 trailing stop on a position that must never carry one.
 
-- **⚠ THE TWO-PRICE TRAP — A FIFTH SHAPE, AND THE PLAINEST YET.** Always pull `bars --adjustment
-  all` for a close and a fresh `quote` for execution; **never a `positions` field for either.**
-  Today the broker's `lastday_price` is **704.07** while yesterday's official close was **704.16** —
-  a 9-cent gap in the ordinary direction, after four larger and stranger ones (09-04 official
+- **⚠ THE TWO-PRICE TRAP — A SIXTH SHAPE, AND NOW THREE NUMBERS FOR ONE DAY.** Always pull `bars
+  --adjustment all` for a close and a fresh `quote` for execution; **never a `positions` field for
+  either.** At today's close: official close **700.805**, broker `current_price` **701.02**, and
+  `lastday_price` **704.07** against yesterday's official **704.16**. Prior shapes: 09-04 official
   707.86 *above* broker mark 707.59; the holiday's third number 708.01; and 09-08, where a
-  $0.15/share stale baseline moved reported day P&L by $38). **The gap is small today, which is
-  exactly when the shortcut gets taken.** The day a satellite position exists, that shortcut writes
-  a wrong high-water mark that does not error, does not look stale, and silently moves the §5.4
-  stop to a level nobody chose.
+  $0.15/share stale baseline moved reported day P&L by $38. **The gaps are small, which is exactly
+  when the shortcut gets taken.** The day a satellite position exists, that shortcut writes a wrong
+  high-water mark that does not error, does not look stale, and silently moves the §5.4 stop to a
+  level nobody chose.
 
 - **NO TRADES, NO FILLS, NOTHING IN LIMBO.** The account's entire order history is the one 09-03
   core VOO buy `d177d8f0-cd0c-41bf-95c1-4772318265fd`, **BUY VOO 99.046311231 @ $706.74, notional
@@ -240,7 +245,11 @@ Anything the next run must not lose. Cleared once acted on.
   `journal.md` is dated **2026-09**; `archive/` holds only its README. Next rollover is the first
   Friday review of **October 2026**.
 
-- **ClickUp tasks, for reference:** 09-08 daily summary **`86bbwuc17`**; Friday's daily summary
-  `86bbv6npm` and weekly review `86bbv75bz`. **No ClickUp task was created by this run** — the
-  pre-market routine does not post one, and no alert condition (stale plan, breaker, push failure,
-  selftest abort) arose.
+- **ClickUp tasks, for reference:** **09-09 daily summary `86bbxtn1a` (created by this run)**;
+  09-08 daily summary `86bbwuc17`; Friday's daily summary `86bbv6npm` and weekly review
+  `86bbv75bz`. **No alert task was created** — no alert condition (breaker, push failure, selftest
+  abort, guard violation) arose, and `alerts.md` remains empty.
+
+- **⚠ FRIDAY 09-11 IS A WEEKLY-REVIEW DAY AND AUGUST CPI LANDS THE SAME MORNING.** The review must
+  not quote the reject scoreboard as a result (see the scoreboard note above), and CPI is macro with
+  no segment and no dollar path — **not a §4 mechanism in either direction.**
