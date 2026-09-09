@@ -10,7 +10,7 @@ The block below is parsed by `scripts/common.py` and gates real behavior
 `key: value` format exactly. Prose goes underneath.
 
 ```
-last_run: 2026-09-09 09:36 ET 2-market-open-execution (market OPEN; plan_today.md plan_date 2026-09-09 = today, staleness gate PASSED, not tripped; plan carried no BUY, no SELL, no REBALANCE so nothing was executed; core_established already true so no bootstrap; core in band at 69.86%, no rebalance; zero orders placed, nothing in limbo; week anchor 2026-09-07 unchanged, no cap reset due; breaker INACTIVE, weekly count 0 of 3)
+last_run: 2026-09-09 12:35 ET 3-midday-management (market OPEN; ZERO satellite positions so there was nothing to manage — no §5 rule had a subject, no high-water mark existed to repair, no invalidation query was due, no exit was taken and none was due; exits-only routine opened nothing, correctly; zero orders placed, nothing in limbo; week anchor 2026-09-07 unchanged, no cap reset due; breaker INACTIVE, weekly count 0 of 3)
 week_of: 2026-09-07
 new_positions_this_week: 0
 consecutive_closed_losses: 0
@@ -18,9 +18,9 @@ circuit_breaker: INACTIVE
 halt_triggered_at: none
 core_established: true
 core_ticker: VOO
-core_pct: 69.86
+core_pct: 69.82
 satellite_pct: 0.0
-cash_pct: 30.14
+cash_pct: 30.18
 open_thesis_ids: none
 ```
 
@@ -68,24 +68,25 @@ position list win, and the discrepancy goes in the journal.
 
 Anything the next run must not lose. Cleared once acted on.
 
-- **THE 09-09 OPEN RUN EXECUTED THE 09-09 PLAN AND THE PLAN SAID DO NOTHING. THE STALENESS GATE
-  PASSED — IT DID NOT TRIP, AND NO STALE-PLAN ALERT WAS DUE OR POSTED.** `plan_date: 2026-09-09`
-  compared equal to today's ET date, so the pre-market handoff was intact and its intents were
-  eligible to run; there simply were none. Selftest passed all five checks at 09:36 ET
-  (`trading_enabled: true`, LIVE paper, equity **$99,537.94**). `clock` 09:36:24 ET: **`is_open:
-  true`**. **Zero orders were placed — buy, sell or core — so nothing is in limbo and the account's
-  order history is still the single 09-03 core fill.** Sleeves at the open: core **69.86%**,
-  satellite **0.0% (count 0)**, cash 30.14%, `core_in_band: true`, `rebalance_needed: false`,
-  `rebalance_delta: +138.62` (0.14% of equity) — **no §2 rebalance.** `core_established: true`, so
-  the §3 bootstrap path was skipped and stays closed. Week anchor `2026-09-07` still matches
-  today's ISO Monday (Wednesday 09-09), so **no cap reset was due**: **0 of 3** used. Breaker
-  INACTIVE. *(This replaces the pre-market handoff note — read and acted on, now cleared.)*
+- **THE 09-09 MIDDAY RUN HAD NOTHING TO MANAGE AND CORRECTLY DID NOTHING. IT IS EXITS-ONLY AND IT
+  OPENED NOTHING.** Selftest passed all five checks at 12:35 ET (`trading_enabled: true`, LIVE
+  paper, equity **$99,385.90**). `clock` 12:35:19 ET: **`is_open: true`**. **Zero satellite
+  positions, so every step past the read had no subject:** no `highest_close` to repair (Step 2),
+  no invalidation condition to query (§5.1 — **no `perplexity.py` call was due**), no timing window
+  (§5.2), no entry price (§5.3), no high-water mark (§5.4), no exit to execute (Step 4), no held
+  position to re-status (Step 5). **Zero orders placed — nothing is in limbo and the account's
+  order history is still the single 09-03 core fill.** Sleeves at midday: core **69.82%**,
+  satellite **0.0% (count 0)**, cash 30.18%, `core_in_band: true`, `rebalance_needed: false`,
+  `rebalance_delta: +183.04` (0.18% of equity) — **and rebalancing is not this routine's job
+  anyway.** Week anchor `2026-09-07` still matches today's ISO Monday (Wednesday 09-09), so **no
+  cap reset was due**: **0 of 3** used. Breaker INACTIVE. *(This replaces the market-open note —
+  read and acted on, now cleared.)*
 
-- **⚠ COLLAPSE, DO NOT APPEND — ACTED ON FIVE TIMES NOW, AND DUE AGAIN NEXT RUN.**
+- **⚠ COLLAPSE, DO NOT APPEND — ACTED ON SIX TIMES NOW, AND DUE AGAIN NEXT RUN.**
   `positions.md` ran to **604 lines / 42KB** before the 09-07 collapse, was cut to 162, and has
   since been held to a **single current reconciliation block** — this run folded the 09-09
-  pre-market block into the open block, exactly as the four runs before it did. Every load-bearing
-  fact is preserved (the 09-03 VOO fill, the 706.74 measurement baseline, the
+  market-open block into the midday block, exactly as the five runs before it did. Every
+  load-bearing fact is preserved (the 09-03 VOO fill, the 706.74 measurement baseline, the
   satellite-to-satellite comparison rule, §5.4 unarmed, §5 untested); **nothing live was
   discarded.** The pull to append is structural — a run is rewarded for showing it checked
   something, and a deleted note looks like a check that never happened. **A future run will feel
@@ -196,9 +197,10 @@ Anything the next run must not lose. Cleared once acted on.
   identically in reverse on every up day. Appeared 09-01, 09-02, 09-04, inside the weekly review,
   and a fifth time in the 09-08 close run's first draft — **not a slip but the sentence this agent
   produces by default whenever partial exposure and a down day coincide.** Caught and deleted every
-  time; keep that record intact. **The core's mark is red for a sixth straight session
-  (−$469.48, −0.671% at 09:36 on 09-09, VOO trading 702.00 against the 706.74 fill) — the next red
-  day is the next invitation.** Related: anchor the week to **08-31, the first operating day**.
+  time; keep that record intact. **The core's mark is red for a sixth straight session and widened
+  intraday (−$469.48 / −0.671% at 09:36 → −$610.13 / −0.872% at 12:35 on 09-09, VOO trading 700.58
+  against the 706.74 fill) — the next red day is the next invitation.** Related: anchor the week to
+  **08-31, the first operating day**.
 
 - **Do not reach for MU or LHX.** Neither entered today's funnel, no source named them, and their
   filters were not re-run — **absence of evidence, not resolve.** Sixth consecutive day. **LITE is
