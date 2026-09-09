@@ -52,6 +52,260 @@ single most common way a plausible-sounding connection gets mistaken for an oppo
 
 ## Entries
 
+### 2026-09-09 (08:26 ET) — event survey (funnel, pre-thesis)
+
+Selftest passed all five checks (`trading_enabled: true`, LIVE paper account, equity
+$99,460.43). Window screened: **Tuesday's close through Wednesday pre-market (Sept 8–9)**.
+Six Perplexity scans (two broad `--recency day`, four sourced second-order screens
+`--recency week`), plus fourteen `move --sessions 5` checks. **Five candidates reached ticker
+stage; all five rejected. No BUY intent today.**
+
+**The shape of the day, stated first because it is the finding: for once the funnel produced a
+genuinely new, well-sourced, US-listed-to-US-listed event — two of them — and the second-order
+layer still did not survive.** Both 09-08 announcements are real, dated inside the window, and
+confirmed against the companies' own disclosure rather than an aggregator:
+
+- **Qualcomm–Amazon multi-generation custom AI silicon + 1.6T optical interconnect.** Qualcomm
+  press release **09-08** plus an 8-K the same day: warrant for **25M QCOM shares at $161.26**
+  expiring 2036, vesting against purchases of **up to $60B** of Qualcomm product; Reuters ties it
+  to a **$15B data-center revenue target by 2029**. Verified as new to Qualcomm's own disclosure —
+  it builds on the 06-24-2026 Investor Day roadmap but is not a restatement of it. **Standing rule
+  (iii) satisfied, for the first time this month on an AI-capex item.**
+- **Verizon–Corning fiber supply agreement.** Corning press release **09-08**: **80+ million
+  miles** of high-density optical fiber and connectivity solutions, **2027–2032**,
+  "multi-billion dollar" with terms undisclosed. Both parties US-listed and named.
+
+**And the second-order surface of both was still empty.** That is the useful result, and it has
+a specific cause each time, worth separating:
+
+1. **On Qualcomm–Amazon, the value that would have flowed to an outside supplier is in-house.**
+   The 1.6T optical piece traces to **Alphawave SerDes and optical DSP IP that Qualcomm already
+   owns** (acquired 2025) — confirmed by a Qualcomm executive at the Goldman Sachs conference:
+   *"our custom silicon engagement includes Alphawave SerDes, and they have optical connectivity
+   products that are also a part of the Amazon agreement."* **I had begun constructing the
+   optical-component-supplier thesis before finding this** — Coherent, Lumentum, Fabrinet, Credo
+   were on the list and the sentence was half-written. The in-house sourcing is what killed it,
+   not the filters. Recording that in the order it actually happened.
+2. **On Verizon–Corning, Company B is the announcement.** Corning *is* the named beneficiary, and
+   it moved **+11.63%** over five sessions. There is no third party left to be early to.
+
+Items dropped before thesis stage, with reasons:
+
+- **Crude oil near $100/bbl** (Brent, 09-08) on US–Iran escalation, attacks on Iranian tankers
+  and Saudi energy sites, Strait of Hormuz risk. **Macro/geopolitical, not a §4 mechanism.** The
+  only names reporting attaches are **PBR, EC, YPF, VIST** — all foreign issuers (§3), and all of
+  them first-order commodity exposure, which is a bet on the war headline rather than on a
+  company whose economics changed. The driver is also reversible on a single headline: the same
+  day's Irish Times piece runs *"oil nears $100 as Iran says Hormuz deal with Oman is close."*
+  A thesis whose invalidation could arrive by press conference tomorrow is not a two-quarter
+  fundamentals thesis. **Not written up as a thesis — recorded here so the omission is not read
+  as an oversight.** Logged as T-2026-09-09-05 below for the §3 record.
+- **August payrolls +162k vs ~56k consensus, unemployment 4.1%, participation 61.6%; September
+  hike odds ~58.4%; 10-year ~4.8%, 30-year ~5.3%; August CPI Friday 09-11.** Macro. No segment,
+  no dollar path. Same disposition as 09-08 and for the same reason.
+- **Independence Realty Trust / Centerspace $8.1B apartment-REIT merger** (WSJ, 09-09). Both
+  parties are the transaction; no third company's revenue or costs change. Rate-sensitive sector
+  facing a **rising** 10-year — the read-across, if anything, runs the wrong way for a long book.
+- **Sysco mid-term EPS growth target raised to 9–11% from 6–8%, plus a $500M AI target** (09-09).
+  Company A guiding on its own results. The "$500M AI target" invites a supplier read-across and
+  **the source does not name a single vendor** — the unnamed-counterparty defect that appeared
+  three times on 09-08.
+- **Caleres FY26 GAAP EPS guidance raised to $2.80–2.95 from $1.44–1.69** (09-09). Own results;
+  **CAL is far below the §3 $10B floor** in any case.
+- **DOE loan of up to $1.9B to restart NextEra's Duane Arnold nuclear plant** (09-08). NextEra is
+  Company A. No US-listed supplier is named for the restart scope, and a 2020-shuttered plant
+  restart is multi-year — outside §4.3 before any thesis is attempted.
+- **NLC India 200 MW wind award; Johnson Matthey H1 results** (09-08/09). Not US-listed (§3).
+- **Core & Main Q2 earnings preview** (09-09) — analyst estimates, not an event.
+
+**Carry-forward closed: the BSX/MDT/ABT item does not reopen, and the reason matters.** `state.md`
+correctly flagged that from **09-09 the five-session window finally contains the 09-08 Boston
+Scientific recall**, and it now does: **MDT +1.90% (`priced_in: false`, "passes")**, ABT −4.37%,
+BSX −6.84%. **This changes nothing, because MDT and ABT were rejected on part 2 — neither company
+discloses neuromodulation or SCS revenue at a grain that lets a dollar path be written — and a
+new price window does not create a disclosure that does not exist.** Re-running the filter and
+treating a "pass" as a reason to revisit would be looking for permission to revive a thesis that
+died on a different test. Filters re-run for the record only; **no thesis re-opened.**
+
+---
+
+### T-2026-09-09-01 — QCOM — REJECTED
+**Company A / the news:** Qualcomm and Amazon announced a multi-generation collaboration for
+custom AI inference silicon and 1.6T optical connectivity for AWS data centers — Qualcomm press
+release and 8-K, **2026-09-08**; warrant for 25M shares at $161.26 vesting against up to $60B of
+purchases (Reuters, CNBC, 09-08).
+**Company B / the candidate:** Qualcomm itself.
+
+**1. Mechanism (one sentence):**
+> The Amazon agreement causes Qualcomm's data-center segment revenue to improve because Amazon
+> has committed to purchase up to $60B of Qualcomm silicon against a vesting warrant.
+
+**2. Dollar path:** Data-center/AI infrastructure. Reuters cites a **$15B data-center revenue
+target by 2029** against FY25 total revenue of roughly $44B — comfortably over the §4.2 10% floor,
+though Qualcomm does not yet report this as a standalone segment with a disclosed share.
+**3. Timing window:** Management commentary points to revenue beginning in the **December 2026
+quarter** → within two quarters. Passes §4.3.
+**4. Invalidation:** Qualcomm's Q1 FY27 (December quarter) results show no data-center revenue
+line or disclose data-center revenue below $200M.
+
+**Hard filters:**
+- Priced-in (§4): **+2.70%** over last 5 sessions (169.51 → 174.08) → **technically passes**
+- Correlation (§4): no open satellite positions, no drivers to collide with → pass
+- Universe (§3): us_equity, NASDAQ, market cap ~$190B → pass
+
+**Outcome: REJECTED — §4, "you are not chasing the headline name."** Every part of the thesis is
+writable and all three hard filters pass, which is exactly why this entry exists. **Qualcomm is
+Company A.** The strategy is *"news breaks about Company A; you look for Company B."* A thesis
+whose Company B and Company A are the same company is not a second-order thesis; it is buying the
+press release, and §4 forbids it independently of how good the numbers look.
+
+**⚠ And the priced-in filter is actively misleading here — a new defect shape, the mirror of the
+LITE one.** QCOM closed **+3.15% on the event day itself** (168.76 → 174.08) after **gapping to
+180.46 and touching 183.44 intraday, i.e. +8.7%**, then fading all day. Because the preceding four
+sessions drifted *down*, the net five-session move is only **+2.70%** and the filter returns
+`priced_in: false`. **A filter whose purpose is to detect that the market already reacted returned
+"passes" on a stock that rose 9% on the news six hours ago.** A prior drawdown can absorb an event
+pop and hide it. This is the same root cause the human already has flagged for LITE — *the filter
+measures a price window, not a relationship to an event* — arriving from the opposite direction.
+**The agent does not reinterpret the filter; this goes to the human with the other two.** It cost
+nothing today because §4's headline-name rule rejected the name anyway, but on a genuine
+second-order candidate it would have waved through a stock that had already moved.
+
+---
+
+### T-2026-09-09-02 — FN / COHR / LITE / CRDO — REJECTED
+**Company A / the news:** Qualcomm–Amazon 1.6T optical interconnect component of the 09-08
+agreement.
+**Company B / the candidate:** Optical component and module makers — Fabrinet (contract
+manufacturer), Coherent, Lumentum, Credo.
+
+**1. Mechanism (one sentence):**
+> The Qualcomm–Amazon 1.6T optical interconnect build-out causes Fabrinet's optical
+> communications revenue to improve because Fabrinet contract-manufactures the transceiver
+> modules that Qualcomm's optical DSPs ship inside — **and** Amazon will source those modules
+> externally, **and** Fabrinet will win a share of them.
+
+**2. Dollar path:** **Could not be written.** No source quantifies any module volume attributable
+to this agreement, and Amazon's existing 1.6T optics purchasing continues regardless of it, so the
+*incremental* revenue is not separable from the baseline.
+**3. Timing window:** Alphawave 1.6T mass production is cited as 2026–2027; module-level
+attribution later and undated. Not establishable.
+**4. Invalidation:** Not reached.
+
+**Hard filters:** run for the record, after the mechanism had already failed —
+- Priced-in (§4): **COHR +8.64%**, **LITE +7.01%**, **CRDO −25.74%** → all `priced_in: true`;
+  **FN +0.83%** → passes. Fabrinet is us_equity, NYSE, ~$15B → §3 clear.
+- Correlation (§4): no open satellite positions → pass
+
+**Outcome: REJECTED — part 1, and part 2 independently.** The mechanism sentence needs **two**
+"and" clauses to stand up, which §4 names as the exact signature of a link too weak to trade.
+Underneath that: **no source connects any of these four companies to this agreement**, and the
+1.6T optical work traces to **Alphawave IP Qualcomm owns outright** — so the piece of the deal I
+was reaching toward as a supplier opportunity is precisely the piece Qualcomm internalised. That
+Fabrinet is the dominant optical contract manufacturer is a **fact about an industry, not a
+transaction** — standing rule (v), the CLF failure mode, third appearance in seven sessions.
+
+**Honest note: FN was the one that survived the filters, and that is what made it dangerous.**
++0.83% over five sessions on a day the optical complex ran reads as "the market hasn't noticed
+yet." It is at least as likely to mean there is nothing to notice. **A clean priced-in number is
+not corroboration of a mechanism that has none.**
+
+---
+
+### T-2026-09-09-03 — GLW — REJECTED
+**Company A / the news:** Verizon–Corning multi-year, multi-billion-dollar supply agreement for
+**80+ million miles** of high-density optical fiber, **2027–2032** — Corning press release,
+**2026-09-08**.
+**Company B / the candidate:** Corning.
+
+**1. Mechanism (one sentence):**
+> Verizon's 80M-mile fiber commitment causes Corning's Optical Communications revenue to improve
+> because Verizon has contracted to buy that fiber from Corning through 2032.
+
+**2. Dollar path:** Optical Communications is Corning's largest segment — roughly a third of total
+revenue — so §4.2 materiality is not the problem. **The contract value is undisclosed**
+("multi-billion dollar" is the only quantifier any source carries), so the magnitude cannot be
+sized.
+**3. Timing window:** Supply runs **2027–2032**. Nothing lands in reported results within two
+quarters → **fails §4.3** on its own.
+**4. Invalidation:** Would have been: Corning's Q1 2027 Optical Communications revenue flat or
+down year-over-year.
+
+**Hard filters:**
+- Priced-in (§4): **+11.63%** over last 5 sessions (148.70 → 166.00) → **FAIL, `priced_in: true`**
+- Correlation (§4): no open satellite positions → pass
+- Universe (§3): us_equity, NYSE, market cap ~$140B → pass
+
+**Outcome: REJECTED — §4 priced-in (+11.63%), part 3 (2027–2032 is beyond two quarters), and §4's
+headline-name rule.** Three independent failures. Corning is a **named party to the announcement**,
+not a second-order beneficiary of it — the same disqualification as QCOM above, and the market
+priced it the same session. **This is the cleanest rejection of the run and required no judgment.**
+
+---
+
+### T-2026-09-09-04 — MTZ — REJECTED
+**Company A / the news:** As T-2026-09-09-03 — Verizon's 2027–2032 fiber deployment.
+**Company B / the candidate:** MasTec — specialty engineering and construction contractor for
+telecom networks. (Dycom and Quanta screened alongside.)
+
+**1. Mechanism (one sentence):**
+> Verizon's 80M-mile fiber deployment causes MasTec's Communications segment revenue to improve
+> because Verizon outsources fiber engineering and installation to specialty contractors — **and**
+> MasTec is among Verizon's contractors, **and** MasTec wins a material share of this program.
+
+**2. Dollar path:** **Could not be written.** No source discloses Verizon's share of MasTec
+revenue; the Communications segment does not break out customer concentration in anything I could
+source. Without that, the segment share of total revenue cannot be tied to this program at all.
+**3. Timing window:** Fiber supply begins **2027**; construction awards follow. Two quarters from
+today ends at Q1 2027 results → **fails §4.3**.
+**4. Invalidation:** Not reached.
+
+**Hard filters:**
+- Priced-in (§4): **MTZ +2.64%** → passes. (**DY +4.11%** → `priced_in: true`; **PWR +5.32%** →
+  `priced_in: true`.)
+- Correlation (§4): no open satellite positions → pass
+- Universe (§3): us_equity, NYSE, market cap **~$19.4B** (source: Perplexity, citing
+  companiesmarketcap.com and an industry market-cap table dated 09-03-2026) → pass
+
+**Outcome: REJECTED — parts 1, 2 and 3, all three.** **No reporting names any construction
+contractor for this program** — the Verizon and Corning releases describe a *fiber supply*
+agreement and nothing else. MasTec being one of the largest US telecom contractors is again an
+**industry fact, not a transaction** (standing rule (v)). The timing failure is the **CAT failure
+mode exactly**: a real, named, well-sourced event whose effect on the candidate lands well beyond
+the two-quarter horizon.
+
+**⚠ This is the third time in seven sessions that the funnel has produced a candidate that passed
+every hard filter and died on the four-part thesis** (CAT 09-08, MTZ today, and FN above on the
+mechanism alone). **The filters are not what is stopping this book from trading — the thesis test
+is**, and specifically parts 2 and 3. Recording the pattern rather than the instance, because it
+is the one the human needs to see: the funnel keeps finding events that are genuinely new and
+genuinely large, whose benefit to any tradeable second-order name is either **unquantifiable** or
+**arrives in 2027**.
+
+---
+
+### T-2026-09-09-05 — PBR / EC / YPF / VIST — REJECTED
+**Company A / the news:** Brent crude near **$100/bbl** (09-08) on US–Iran escalation, attacks on
+Iranian tankers and Saudi energy sites, and Strait of Hormuz transit risk.
+**Company B / the candidate:** The upstream producers reporting attaches to the move.
+
+**1. Mechanism (one sentence):** Not attempted as a second-order link — higher crude lifts a
+producer's realized price, which is **first-order commodity exposure**, not a case of one
+company's economics changing because of another's news.
+
+**Hard filters:**
+- Universe (§3): **PBR, EC, YPF, VIST are all foreign issuers** (Brazil, Colombia, Argentina,
+  Mexico) → **FAIL**. No US-listed producer was named by any source in the set.
+- Priced-in (§4): not run — §3 already disqualifies.
+
+**Outcome: REJECTED — §3 universe, and no §4 mechanism exists to test.** Logged so that the
+largest price-moving story of the window is visibly present in the funnel and visibly disposed of.
+**A commodity-price bet driven by a geopolitical headline that can reverse at a press conference
+is not a two-quarter fundamentals thesis**, and the strategy has no rule that would have caught
+it after entry except the −7% hard stop.
+
+---
+
 ### 2026-09-08 (08:24 ET) — event survey (funnel, pre-thesis)
 
 First live session after the Labor Day weekend, so the window screened is **Friday's close
