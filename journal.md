@@ -40,6 +40,97 @@ anything where the honest-broker rule (§4) did real work>
 
 ## Entries
 
+### 2026-09-09 (Wednesday)
+
+**Account:** total $99,433.45 | day P&L −$302.09 (−0.30%) | since inception −0.57%
+**Sleeves:** core 69.83% | satellite 0.0% | cash 30.17%   (§2 band 65–75%)
+**Breaker:** INACTIVE
+**Week:** 0/3 new positions
+
+**Traded:** nothing — no order was submitted in either direction, at any run today
+**Researched:** 5 theses — 0 accepted, 5 rejected (QCOM; FN/COHR/LITE/CRDO; GLW; MTZ; PBR/EC/YPF/VIST)
+**Positions near a sell rule:** none — zero satellite positions exist; core VOO is §5-exempt
+
+**What happened:**
+
+A full three-run trading day that produced no order. The 08:26 pre-market run put five candidates
+through a complete `research_log.md` entry and rejected all five; the 09:35 open run had an empty
+intent list and executed it; the 12:35 midday run is exits-only and had no position to exit. Every
+one of those was the correct output, and none of them was a limit binding: the breaker was
+INACTIVE all day, the weekly cap sat at **0 of 3**, and 30% of the account was in settled cash.
+**Nothing was blocked. The research did not produce an eligible candidate.**
+
+Two genuinely new, well-sourced, US-listed-to-US-listed events came through the funnel — the
+Qualcomm–Amazon custom-silicon and 1.6T optical announcement (Qualcomm press release + 8-K, 09-08,
+warrant 25M sh @ $161.26 against up to $60B of purchases) and Verizon–Corning fiber supply (Corning
+press release, 09-08, 80M+ miles, 2027–2032). Both were confirmed against company disclosure rather
+than an aggregator, which is standing rule (iii) satisfied for the first time this month on an
+AI-capex item. Both still died at the second-order layer, for reasons worth keeping separate:
+on Qualcomm–Amazon the value an outside supplier would capture is **in-house** (the optical work
+traces to Alphawave SerDes/DSP IP Qualcomm already owns), and on Verizon–Corning **Company B is the
+announcement** — Corning is the named beneficiary and rose +11.63%. QCOM, AMZN, GLW and VZ are all
+headline names under §4 and none of them becomes a buy at a different price.
+
+The market itself was down: VOO closed **700.805** (`adjustment=all`) against 704.16 on 09-08,
+−0.48% on the session. The core's mark is negative again — **−$566.54 (−0.809%)** against the
+706.74 fill — and that number carries no procedural weight whatsoever, because §5 exempts core from
+all four sell rules. There is no action attached to it at any price.
+
+**Step 2, the whole point of this run, had no subject and I did not manufacture one.** There is no
+satellite position, therefore no `highest_close` and no `(as of ...)` date in `positions.md` to
+advance. The marks are **absent, not stale** — a third state that the midday backfill trigger, which
+keys on a stale date, cannot and should not fire on. I deliberately did not stamp today's 700.805
+close onto core VOO to give the step something to do: that would fabricate a §5.4 trailing stop on
+the one position that must never carry one. **§5.4 remains NOT ARMED, not disabled, not skipped.**
+
+Housekeeping was clean. The ISO Monday of today (Wednesday 2026-09-09) is **2026-09-07**, which
+matches `week_of` — no cap reset was due, next boundary Monday 09-14. `orders --status all` returns
+exactly one row, the 09-03 core fill, `status: filled` and terminal: **nothing is in limbo
+overnight.** Loss streak is 0 because nothing has ever closed, so the §6 streak cannot have moved
+and no circuit-breaker alert is due. `alerts.md` is empty. Sleeves are in band at 69.83% with a
++$169.97 rebalance delta — **0.17% of equity, which is VOO's mark moving, not drift.** No rebalance
+is due tomorrow.
+
+**What I got wrong or nearly got wrong:**
+
+**I generated the reassuring framing again, and this is the sixth time it has been caught.** The
+arithmetic was sitting right there in today's numbers: the book fell −0.303% while VOO fell
+−0.477%, and the sentence "the book outperformed on a down day" assembled itself before I had
+finished computing the second number. It is not a result. It is **69.83% exposure capturing 69.83%
+of a down move**, and it runs identically in reverse the first green day. What is worth recording is
+that the carry-forward predicted this exact occurrence — "the next red day is the next invitation" —
+and the prediction was correct. The note is doing real work; keep it.
+
+**The second near-miss is the one I want the human to see, because it is specific to this routine.**
+For a moment I framed today's Step 2 as "the high-water marks were not updated." That phrasing is
+wrong in a way that would have been expensive: *not updated* is the language of a skipped
+maintenance step, and the next run reading it would reasonably go looking for a backfill. The
+correct statement is that there was **no mark to update**, which is a different fact with a
+different remedy — none. The routine prompt itself distinguishes a mark that is current-and-unchanged
+from one that is merely stale, and this repo needs a third label for absent. I have written it that
+way everywhere, but the pull toward the maintenance-shaped sentence was real and it came from
+wanting the run's headline job to have visibly happened.
+
+**Third, smaller:** with a red core and an empty satellite sleeve, the close run is exactly the
+setup in which "we should have something on" turns into lowering the §4 bar tomorrow. Five rejects
+today makes twenty-three theses and zero positions. I want to be precise about what that is and is
+not: it is a real, open question that belongs to the human (item 3 in their queue), and it is
+**not** grounds for the agent to soften a filter. §4's honest-broker rule says the correct output of
+most research runs is no trade. Twenty-three of twenty-three is a lot of "most", and that tension is
+the human's to resolve, not mine to resolve by drifting.
+
+**For the next run:**
+
+- **Step 2 was not skipped and no backfill is owed.** No satellite position exists, so no
+  `highest_close` was written. Do not backfill from `bars`; an absent field cannot be stale.
+- The §4 priced-in filter's **second defect shape** (QCOM: an event-day pop absorbed by a prior
+  drawdown reads as `priced_in: false`) is new today and is with the human. **Do not reinterpret the
+  filter in either direction.**
+- Today's official VOO close is **700.805**, broker `current_price` **701.02**, `lastday_price`
+  **704.07**. Three numbers for one day again — the two-price trap is live every single session.
+
+---
+
 ### 2026-09-08 (Tuesday)
 
 **Account:** total $99,721.67 | day P&L −$404.11 (−0.40%) | since inception −0.28%
