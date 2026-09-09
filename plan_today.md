@@ -29,30 +29,30 @@ better. Core and rebalance actions are exempt from the gate because neither depe
 day's research.
 
 ```
-plan_date: 2026-09-08
+plan_date: 2026-09-09
 generated_by: 1-premarket-research
 market_open_today: yes
 ```
 
-Market opens today 2026-09-08 at 09:30 ET (`alpaca.py clock` at 08:24:02 ET: `is_open:
-false`, `next_open: 2026-09-08T09:30:00-04:00`, `next_close: 2026-09-08T16:00:00-04:00`).
+Market opens today 2026-09-09 at 09:30 ET (`alpaca.py clock` at 08:26:53 ET: `is_open:
+false`, `next_open: 2026-09-09T09:30:00-04:00`, `next_close: 2026-09-09T16:00:00-04:00`).
 **Not a holiday** — the market is closed because it is pre-market and `next_open` is *today*.
-**This is the first live session of the week**; Monday 2026-09-07 was Labor Day.
 
-**One pre-market run today, at 08:24 ET.** Selftest passed all five checks
-(`trading_enabled: true`, LIVE paper account, equity $99,930.66).
+**One pre-market run today, at 08:26 ET.** Selftest passed all five checks
+(`trading_enabled: true`, LIVE paper account, equity **$99,460.43**).
 
-**Tape context:** VOO's broker mark is **706.04** (`lastday_price` **708.01**,
-`change_today` −0.278%). Neither number is an execution reference — **pull a fresh quote at
-09:35.** The core position shows `unrealized_pl` **−$69.33 (−0.099%)** against the 706.74
-fill, its first negative mark; that is a price move, not an error.
+**Tape context:** VOO's broker mark is **701.29** (`lastday_price` **704.07**,
+`change_today` −0.395%). Neither number is an execution reference — **pull a fresh quote at
+09:35.** The core position shows `unrealized_pl` **−$539.56 (−0.771%)** against the 706.74
+fill, its fifth consecutive negative mark. That is a price move, not an error, and **§5
+exempts core from all four sell rules** — there is no action attached to it at any number.
 
 ---
 
 ## The whole plan in one line
 
 **Do nothing.** No BUY, no SELL, no REBALANCE. Core is in band, there are no satellite
-positions to manage, and four candidates were researched to a full thesis entry and all four
+positions to manage, and five candidates were researched to a full thesis entry and all five
 were rejected.
 
 ---
@@ -62,56 +62,58 @@ were rejected.
 ### BUY — none
 
 No buy intents. New positions were **fully permitted** this run — breaker INACTIVE, weekly cap
-at **0 of 3**, satellite sleeve **empty with 30.02% cash**, no restricting note in `control.md`.
+at **0 of 3**, satellite sleeve **empty with 30.16% cash**, no restricting note in `control.md`.
 **Nothing was blocked. The research did not produce an eligible candidate.**
 
-Four candidates reached ticker stage with a full `research_log.md` entry:
+Five candidates reached ticker stage with a full `research_log.md` entry:
 
 | Thesis | Ticker | Died at | Why |
 |---|---|---|---|
-| T-2026-09-08-01 | CAT | parts 2 and 3 | Named vendor of the gas gensets at Anthropic/Nscale's 460 MW West Virginia campus — a genuinely sourced link. But the site services **late 2027**, CAT lead times run **into late 2028**, and one 460 MW order is **under 1% of a $32.2B segment** sitting inside a **$72B backlog**. CAT has **already guided** to data-center power demand — the customer's name is new, the demand is not. |
-| T-2026-09-08-02 | AVGO | part 1 (structure) | **Broadcom is Company A**, the named TPU supplier in the story. And the Google/Broadcom 5 GW agreement is from **May 2026**, re-reported 09-06. |
-| T-2026-09-08-03 | MDT | part 2 | Medtronic **does not disclose neuromodulation or SCS revenue**. Finest grain is a $2.7B/qtr Neuroscience segment bundling unrelated businesses. Part 2 not writable without guessing. Part 1 also unsourced. |
-| T-2026-09-08-04 | ABT | part 2 | Same, worse — no SCS line disclosed, and any plausible figure is **low single-digit % of ~$45B revenue, under the §4.2 10% floor**. |
+| T-2026-09-09-01 | QCOM | §4 headline name | Every thesis part writable, all three filters pass — and **Qualcomm is Company A**. Buying the press release is not a second-order trade. |
+| T-2026-09-09-02 | FN / COHR / LITE / CRDO | part 1, and part 2 | The 1.6T optical piece traces to **Alphawave IP Qualcomm already owns** — the supplier opportunity is the part Qualcomm internalised. No source names any of the four. Mechanism needs two "and" clauses. |
+| T-2026-09-09-03 | GLW | §4 priced-in, part 3, headline name | **+11.63%** in five sessions; supply runs **2027–2032**; and Corning is a **named party** to the announcement. Three independent failures. |
+| T-2026-09-09-04 | MTZ | parts 1, 2 and 3 | **No reporting names any construction contractor** for Verizon's fiber build. Verizon's share of MasTec revenue is undisclosed. Work begins **2027** — beyond two quarters. |
+| T-2026-09-09-05 | PBR / EC / YPF / VIST | §3 universe | All foreign issuers. No US-listed producer was named by any source, and crude exposure is **first-order** anyway. |
 
-**The AI-compute complex had already moved before this run reached it.** Every name with a
-sourced link to the week's dominant story failed the §4 priced-in check outright:
+**Two genuinely new, well-sourced, US-listed events came through the funnel today and neither
+produced a tradeable second-order name.** Both are confirmed against company disclosure, not an
+aggregator — standing rule (iii) satisfied for the first time this month on an AI-capex item:
 
-| Ticker | 5-session move | Verdict |
+| Event | Date | Confirmed by |
 |---|---|---|
-| IREN | **+26.08%** | LATE |
-| BE | **+20.04%** | LATE |
-| HUT | **+17.79%** | LATE |
+| Qualcomm–Amazon custom AI silicon + 1.6T optical | **09-08** | Qualcomm press release + 8-K; warrant 25M sh @ $161.26 vs up to **$60B** of purchases |
+| Verizon–Corning fiber supply, **80M+ miles**, 2027–2032 | **09-08** | Corning press release; "multi-billion dollar," terms undisclosed |
 
-Roughly twenty further items were dropped before thesis stage — full funnel in
-`research_log.md`. Notes for the open run, carried so nothing is re-derived at 09:35:
+Notes for the open run, carried so nothing is re-derived at 09:35:
 
-- **⚠ The "$517 billion / 14.8 GW Anthropic compute contracts" headline is NOT a new event.**
-  It is *The Information*'s **09-06 aggregation of eleven months of previously announced deals**
-  (Amazon and Google/Broadcom from May; the $30B Azure commitment, the SpaceX Colossus lease and
-  the Lambda commitment all reported 09-02). It will still be circulating at the bell and it
-  will still look new, because the *articles* are new. **Do not treat it as a catalyst.**
-- **⚠ Do not reach for AMZN, GOOGL, MSFT or NVDA on it.** They are the **headline counterparties**
-  named in the story, which is the one thing §4 says explicitly not to chase.
-- **⚠ HUT is not a "watch for a dip."** It had a real sourced mechanism — Yahoo Finance names
-  Hut 8 as the developer of the 350 MW Texas site hosting Lambda's Anthropic capacity — and it
-  was lost to **timing, +17.79% in five sessions**. That is a different failure from the usual
-  unsourced one, and it does not become a buy at a lower price today.
-- **⚠ Nscale, Firmus, Lambda, Fluidstack and SpaceX are all private (§3).** The Nscale West
-  Virginia deal is the only genuinely new contract in the window and there is no listed way to
-  express it that survives §4.
-- **⚠ The BSX recall breaks TODAY, pre-market — the priced-in numbers on MDT (+3.26%) and ABT
-  (−3.69%) cover five sessions that contain NONE of this news.** Those passes are not
-  clearance; the filter is measuring a window that predates the event. Both are rejected on
-  part 2 regardless, and **§4's correlation rule would permit at most one of them** in any case.
-  **Do not revisit either at the bell because the tape moves on the recall.**
-- **⚠ Do not short, and do not reach for BSX itself.** The mechanism runs *against* Boston
-  Scientific, and this is a long-only book.
-- **The August payrolls print (+162k vs +56k), the ~58% September hike probability, PPI
-  Thursday and CPI Friday are macro with no segment and no dollar path.** No intent attaches to
-  any of them. They are **not** a reason to act at the open.
-- **Do not reach for LITE, MU or LHX.** None entered today's funnel, no source named them, and
-  their filters were not re-run. **Absence of evidence, not resolve** — fourth consecutive day.
+- **⚠ Do not reach for QCOM at the bell, and be ready for it to look cheap.** It **gapped to
+  180.46 and touched 183.44 (+8.7%) on 09-08, then faded to close at 174.08 (+3.15%)**. A stock
+  that gave back most of an event pop is the most inviting thing on this tape. **It is still the
+  headline name (§4).** The rejection does not flip at a lower price.
+- **⚠ The §4 priced-in filter returns `false` for QCOM (+2.70% over five sessions) and that
+  number is misleading.** Four drifting-down sessions absorbed a 9% event-day pop. **This is a
+  new defect shape — the mirror of the LITE one — and it is with the human. Do not reinterpret
+  the filter, and do not treat its "pass" as clearance for QCOM or anything else today.**
+- **⚠ Do not reach for AMZN or VZ either.** Both are named counterparties in the two events —
+  the one thing §4 says explicitly not to chase.
+- **⚠ FN (Fabrinet) passed the priced-in check at +0.83% and that is not corroboration.** Its
+  mechanism had no source at all. A clean filter number on an unsourced mechanism is the shape
+  to distrust, not the shape to act on.
+- **⚠ The BSX/MDT/ABT item does not reopen today.** The five-session window now genuinely
+  contains the 09-08 recall — **MDT +1.90%, now `priced_in: false`, "passes."** It changes
+  nothing: **both were rejected on part 2**, because neither company discloses SCS or
+  neuromodulation revenue at a grain that permits a dollar path, and a new price window does not
+  create a disclosure. Filters re-run for the record only. **Do not read that "pass" as an
+  opening.**
+- **The macro tape is loud and none of it is actionable.** Brent near **$100** on US–Iran
+  escalation and Hormuz risk; August payrolls **+162k vs ~56k consensus**; September hike odds
+  **~58.4%**; 10-year **~4.8%**; **August CPI Friday 09-11**. No segment, no dollar path, no §4
+  mechanism. **Not a reason to act at the open in either direction.**
+- **Do not reach for LITE, MU or LHX.** LITE surfaced today only inside the rejected optical
+  sweep (T-2026-09-09-02) and died with it at **+7.01%, `priced_in: true`** — that is a fresh
+  rejection on its own filter, not a revival and not a resolution of the open human question.
+  MU and LHX did not enter the funnel at all. **Absence of evidence, not resolve** — sixth
+  consecutive day.
 - **A quiet day is not a reason to lower the bar at the bell.** §4: the correct output of most
   research runs is no trade.
 
@@ -126,12 +128,12 @@ invalidation query was issued and none was due — there is no position to check
 
 ### REBALANCE — none
 
-- current_core_pct: **69.98%** (target 70%, §2 band 65–75% — **inside the band**)
-- `alpaca.py sleeves` 08:24 ET: `core_in_band: true`, `rebalance_needed: false`,
-  `rebalance_delta: +20.80`
-- action: **none.** The +$20.80 delta is **0.02% of equity** — the closest to target the core
-  has sat since it was established, and it is VOO's overnight mark moving, not drift. §2
-  rebalances at the band edge, not to the exact target.
+- current_core_pct: **69.84%** (target 70%, §2 band 65–75% — **inside the band**)
+- `alpaca.py sleeves` 08:26 ET: `core_in_band: true`, `rebalance_needed: false`,
+  `rebalance_delta: +161.88`
+- action: **none.** The +$161.88 delta is **0.16% of equity** — VOO's overnight mark moving, not
+  drift. §2 rebalances at the **band edge** (65/75), not to the exact target. 69.84% is not a
+  rebalance, and neither were 69.92%, 69.96% or 69.98%.
 - **⚠ `core_established: true`. The bootstrap path is closed permanently — do not re-run it.**
 
 ---
@@ -142,14 +144,15 @@ invalidation query was issued and none was due — there is no position to check
   first *satellite* position opens. The core VOO holding does **not** arm it: core is exempt
   from §5 entirely and is deliberately absent from `positions.md`.
 - **The §6 weekly cap is fully available at 0 of 3.** Week rollover checked this run: the ISO
-  Monday of 2026-09-08 (Tuesday) is **2026-09-07**, which matches `week_of` — **no reset was
+  Monday of 2026-09-09 (Wednesday) is **2026-09-07**, which matches `week_of` — **no reset was
   due**. Next boundary is Monday 2026-09-14.
 - **Circuit breaker INACTIVE**, `consecutive_closed_losses: 0`, `halt_triggered_at: none`,
   `HALT_CLEARED_AT: none`. Nothing has ever closed, so the streak cannot have moved.
 - **`alerts.md` is empty — zero incidents, nothing SYSTEMIC.** Selftest passed all five checks
-  at 08:24 ET.
+  at 08:26 ET.
 - **⚠ Two-price trap.** Use `bars --adjustment all` for any official close and a fresh `quote`
-  for execution. Never a `positions` field for either.
+  for execution. Never a `positions` field for either. Today's shapes already differ: broker mark
+  **701.29**, `lastday_price` **704.07**, against yesterday's official close **704.16**.
 
 ---
 
