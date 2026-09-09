@@ -56,28 +56,40 @@ re-derive it from price history, and it stays correct for positions closed month
 
 *(none — no **satellite** positions have been opened yet. Core VOO exists and is deliberately not tracked here, per the top-of-file rules and the fill note further down.)*
 
-**Reconciliation 2026-09-09 08:26 ET (1-premarket-research) — RECONCILED. NO SATELLITE POSITION
-EXISTS; NO §5 RULE HAD A SUBJECT AND NO HIGH-WATER MARK WAS DUE.** *(This block replaces the
-09-08 16:15 close reconciliation, which was acted on and carries nothing this one does not.)*
-Selftest passed all five checks (`trading_enabled: true`, LIVE paper account, equity
-$99,460.43). **`clock` at 08:26:53 ET returns `is_open: false` with `next_open:
-2026-09-09T09:30`** — the ordinary pre-market closed state, **not a holiday**: `next_open` is
-*today*.
+**Reconciliation 2026-09-09 09:36 ET (2-market-open-execution) — RECONCILED. NO SATELLITE POSITION
+EXISTS; NO ORDER WAS PLACED; NO §5 RULE HAD A SUBJECT AND NO HIGH-WATER MARK WAS DUE.** *(This
+block replaces the 09-09 08:26 pre-market reconciliation, which was read and acted on by this run
+and carries nothing this one does not.)* Selftest passed all five checks (`trading_enabled: true`,
+LIVE paper account, equity $99,539.92). **`clock` at 09:36:24 ET returns `is_open: true`** — the
+market is open and this run was eligible to trade.
+
+**The staleness gate passed and was not tripped.** `plan_today.md` carries `plan_date:
+2026-09-09`, equal to today's ET date, so the pre-market handoff was intact and its intents were
+eligible for execution. **There were none: no BUY, no SELL, no REBALANCE.** No stale-plan alert
+was due and none was posted. **Zero orders were placed this run**, so nothing is non-terminal and
+the account's entire order history is still the single 09-03 core fill.
 
 `alpaca.py positions` returns **one row, VOO core** (99.046311231 shares, avg_entry 706.74,
-market_value $69,460.43, broker mark **701.2924**, `lastday_price` 704.07, `change_today`
-**−0.395%**, unrealized_pl **−$539.56, −0.771%**). `alpaca.py sleeves`: equity **$99,460.43**,
-cash $30,000.00, core **69.84%**, satellite **0.0% (count 0)**, cash 30.16%,
-`core_in_band: true`, `rebalance_needed: false`, `rebalance_delta: +161.88`.
+market_value $69,530.51, broker mark **702.00**, `lastday_price` 704.07, `change_today`
+**−0.294%**, unrealized_pl **−$469.48, −0.671%**). `alpaca.py sleeves`: equity **$99,537.94**,
+cash $30,000.00, core **69.86%**, satellite **0.0% (count 0)**, cash 30.14%,
+`core_in_band: true`, `rebalance_needed: false`, `rebalance_delta: +138.62`.
 
 **Satellite blocks (zero) checked against satellite Alpaca positions (zero) — they agree.**
 Compare **satellite to satellite**, never raw ledger to raw broker.
 
-**§5 review (Step 4) executed and correctly evaluated nothing.** There is no thesis to test for
-invalidation (§5.1), no timing window to expire (§5.2), and no entry price or high-water mark to
-measure a stop against (§5.3/§5.4). **No §5.1 Perplexity invalidation query was issued and none
-was due** — a news check needs a position to check news *about*. `sell_rule_status` is therefore
-absent rather than blank: there is no position block to carry the field.
+**§2 rebalance (Step 7) was evaluated and correctly did nothing.** 69.86% sits inside the 65–75%
+band. The +$138.62 delta is **0.14% of equity** — VOO's mark moving, not drift. §2 rebalances at
+the **band edge**, not to the exact target; 69.86% is not a rebalance, and neither were 69.84%,
+69.92%, 69.96% or 69.98%. **`core_established: true`, so the §3 bootstrap path was skipped and
+remains permanently closed — do not re-run it.**
+
+**§4/§5 both correctly evaluated nothing.** No SELL intent existed to re-confirm (Step 4) and no
+BUY intent existed to re-validate (Step 5) — **no `move --sessions 5` call was due, because a
+re-validation needs an intent to re-validate.** There is no thesis to test for invalidation
+(§5.1), no timing window to expire (§5.2), and no entry price or high-water mark to measure a stop
+against (§5.3/§5.4). `sell_rule_status` is therefore absent rather than blank: there is no
+position block to carry the field.
 
 **The high-water marks remain ABSENT, not stale, and not un-updated** — a third state the midday
 backfill trigger cannot key on, since it tests a date. **Do not backfill from `bars`.** Core VOO
@@ -86,24 +98,25 @@ one position §5 exempts from all four rules. **§5.4 remains NOT ARMED, not dis
 the day the first *satellite* position opens, and no day since the 09-03 core fill has been that
 day.
 
-**⚠ The two-price trap — a fifth shape, and it is the plainest one yet.** Use `bars --adjustment
-all` for any official close and a fresh `quote` for execution — never a `positions` field for
-either. **Today the broker's `lastday_price` is 704.07 while yesterday's official close was
-704.16** — a 9-cent gap in the ordinary direction, after four days of larger and stranger ones
-(the 09-04 close where official 707.86 sat *above* the broker mark 707.59; the holiday's third
-number 708.01; the 09-08 case where a $0.15/share stale baseline moved reported day P&L by $38).
-Today's mark **701.29 is not a close** and was written nowhere as one. **The gap is small today,
-which is exactly when the shortcut gets taken.**
+**⚠ The two-price trap.** Use `bars --adjustment all` for any official close and a fresh `quote`
+for execution — never a `positions` field for either. This run had **no execution and no close to
+record**, so neither number was needed and neither was taken from `positions`. The live mark
+**702.00 is not a close** and is written nowhere as one; yesterday's official close remains
+**704.16**, against a broker `lastday_price` of **704.07**. Five shapes of this gap are on record
+(09-04 official 707.86 *above* broker mark 707.59; the holiday's third number 708.01; 09-08 where
+a $0.15/share stale baseline moved reported day P&L by $38; today's 9-cent ordinary-direction
+gap). **The gap is small today, which is exactly when the shortcut gets taken.**
 
-**⚠ The core's mark is red for a fifth straight session and it still means nothing procedurally.**
-The progression is **−$20.80 → −$69.33 → −$146.59 → −$278.32 → −$539.56 (−0.771%)**. **§5 exempts
-core from all four sell rules** — not a stop, not a trigger, not a reason to touch the position.
-**The pull toward action grows with the number; there is no action.**
+**⚠ The core's mark is red for a sixth straight session and it still means nothing procedurally.**
+The progression is **−$20.80 → −$69.33 → −$146.59 → −$278.32 → −$539.56 → −$469.48 (−0.671%)** —
+note it **narrowed** today, which is no more meaningful than the widening was. **§5 exempts core
+from all four sell rules** — not a stop, not a trigger, not a reason to touch the position. **The
+pull toward action grows with the number; there is no action.**
 
 ---
 
-**⚠ EARLIER PER-RUN RECONCILIATIONS (2026-09-01 through 2026-09-08 08:24) HAVE BEEN COLLAPSED,
-DELIBERATELY.** Sixteen blocks spanning 09-01 to the 09-08 pre-market run each recorded the same
+**⚠ EARLIER PER-RUN RECONCILIATIONS (2026-09-01 through 2026-09-09 08:26) HAVE BEEN COLLAPSED,
+DELIBERATELY.** Eighteen blocks spanning 09-01 to the 09-09 pre-market run each recorded the same
 null result — zero satellite blocks checked against zero satellite Alpaca positions, agreeing; no
 §5 rule evaluated; no high-water mark to stamp; no backfill due. `state.md` flags this
 accumulation as
