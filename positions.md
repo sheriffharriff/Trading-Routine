@@ -56,90 +56,80 @@ re-derive it from price history, and it stays correct for positions closed month
 
 *(none — no **satellite** positions have been opened yet. Core VOO exists and is deliberately not tracked here, per the top-of-file rules and the fill note further down.)*
 
-**Reconciliation 2026-09-10 09:36 ET (2-market-open-execution) — RECONCILED ON A LIVE TAPE. NO
-SATELLITE POSITION EXISTS, SO THERE IS NO HIGH-WATER MARK AND NO §5 RULE HAS A SUBJECT. ZERO ORDERS
-WERE PLACED THIS RUN.** *(This block replaces the 09-10 08:23 pre-market reconciliation, which was
-read and acted on by this run and carries nothing this one does not. Collapse, do not append —
-ninth consecutive run.)* Selftest passed all five checks (`trading_enabled: true`, LIVE paper
-account, equity $99,042.71). **`clock` at 09:36:24 ET returns `is_open: true`, `next_close:
-2026-09-10T16:00 ET` — the market was OPEN and this run executed against a live tape, not a dry
-run.**
-
-**The staleness gate PASSED.** `plan_date: 2026-09-10` equals today's ET date, so the 08:23 plan was
-fresh and its intents were executable. **No stale-plan alert was due and none was posted.** The plan
-was a **do-nothing plan** — no BUY, no SELL, no REBALANCE — so nothing was executed because there
-was nothing to execute, *not* because the gate blocked anything. **These two outcomes look identical
-in a one-line summary and are completely different; the distinction is why `plan_date` is checked
-before the intent list is read.**
+**Reconciliation 2026-09-10 12:34 ET (3-midday-management) — RECONCILED ON A LIVE TAPE. NO
+SATELLITE POSITION EXISTS, SO THERE IS NOTHING TO MANAGE: NO HIGH-WATER MARK TO REPAIR, NO §5 RULE
+WITH A SUBJECT, NO EXIT TAKEN. ZERO ORDERS WERE PLACED.** *(This block replaces the 09-10 09:36
+open reconciliation, which was read and acted on by this run and carries nothing this one does not.
+Collapse, do not append — tenth consecutive run.)* Selftest passed all five checks
+(`trading_enabled: true`, LIVE paper account, equity $98,986.75). **`clock` at 12:34:49 ET returns
+`is_open: true`, `next_close: 2026-09-10T16:00 ET` — the market was OPEN and this run reconciled
+against a live tape, not a dry run and not a closed-market skip.**
 
 `alpaca.py positions` returns **one row, VOO core** (99.046311231 shares, avg_entry 706.74,
-market_value $69,047.13, broker `current_price` **697.1197**, `lastday_price` 700.87,
-`change_today` **−0.535%**, unrealized_pl **−$952.86, −1.361%**). `alpaca.py sleeves`: equity
-**$99,042.71**, cash $30,000.00, core **69.71%**, satellite **0.0% (count 0)**, cash 30.29%,
-`core_in_band: true`, `rebalance_needed: false`, `rebalance_delta: +287.19`.
+market_value $68,986.75, broker `current_price` **696.51**, `lastday_price` 700.87, `change_today`
+**−0.622%**, unrealized_pl **−$1,013.24, −1.447%**). `alpaca.py sleeves`: equity **$98,986.75**,
+cash $30,000.00, core **69.69%**, satellite **0.0% (count 0)**, cash 30.31%, `core_in_band: true`,
+`rebalance_needed: false`, `rebalance_delta: +303.98`.
 
 **Satellite blocks (zero) checked against satellite Alpaca positions (zero) — they agree.**
 Compare **satellite to satellite**, never raw ledger to raw broker.
 
-**Step 3 (core bootstrap) was skipped, correctly and permanently.** `core_established: true`, so the
-`--core` bootstrap path is closed. It was not re-run and must never be — re-running it would put a
-second 70%-of-equity VOO order on a book that already holds one.
+**⚠ THIS RUN IS EXITS-ONLY AND OPENED NOTHING — the rule that was most exposed today.** The midday
+routine may not open a position; new positions go through pre-market research and the 09:35
+execution run, always, because that path is what forces every buy to sleep on a written thesis.
+**The setup at 12:34 was the maximally tempting one:** breaker clear, weekly cap 0 of 3, **30.31% of
+the book in cash**, a core red for an eighth session, and a run whose whole output is "nothing to
+do." **The six names rejected at 08:23 — LMT, GFS, MPWR, EQT, LEU, the sponsor banks — were sitting
+in the log with prices four hours stale, and re-pricing any of them here would have routed a new
+idea through the one door built to stop exactly that.** None was re-priced. **No `move` call, no
+Perplexity query, no quote was pulled for a candidate.** A midday entry does not read as a rule
+breach in a one-line summary; it reads as initiative.
 
-**Steps 5–6 made zero `move --sessions 5` calls, and none was due.** There was no BUY intent, so
-there was no candidate whose priced-in status could be re-checked. **That is the absence of a
-subject, not a skipped filter** — the same distinction the high-water field draws below. Equally,
-**no rejected candidate from the 08:23 funnel was re-priced at the bell.** Re-running LMT, GFS, EQT,
-LEU or the sponsor banks against fresh quotes to see whether one had become buyable overnight would
-be generating an idea at execution time, which this routine exists to prevent.
+**⚠ THE HIGH-WATER FIELD IS ABSENT, NOT STALE, AND NO BACKFILL WAS OWED — checked against the
+actual trigger, not assumed.** Step 2 compares the `(as of ...)` date on `highest_close` to the last
+trading day. There is **no `highest_close` and no `(as of ...)` date anywhere in this file**, because
+there is no satellite position block to carry one — **an absent field has no date, so it cannot be
+behind.** The marks are **ABSENT: a third state, distinct from both "current and unchanged" and
+"stale."** **No `bars` call was due for a high-water purpose and none was made for one.** Core VOO
+was again deliberately not given a mark — stamping one would fabricate a §5.4 trailing stop on the
+one position §5 exempts from all four rules. **§5.4 remains NOT ARMED, not disabled, not skipped.**
+**The failure this step exists to catch is still ahead of us:** the day a satellite position exists
+and a close run is missed, the mark goes stale while every field still reads present and plausible,
+and the trailing stop silently stops existing.
 
-**⚠ THE HIGH-WATER FIELD IS ABSENT, NOT STALE, AND NO BACKFILL IS OWED.** There is no
-`highest_close` and no `(as of ...)` date anywhere in this file, because there is no satellite
-position block to carry one. The marks are **ABSENT — a third state, distinct from both "current
-and unchanged" and "stale."** The backfill trigger keys on a **stale date**, and an absent field
-cannot be stale: **no `bars` call was due for a high-water purpose and none was made for one.**
-Core VOO was again deliberately not given a mark — stamping one would fabricate a §5.4 trailing
-stop on the one position §5 exempts from all four rules. **§5.4 remains NOT ARMED, not disabled,
-not skipped.**
-
-**Step 4 (§5.1–§5.4) had no subject.** No thesis to test for invalidation (§5.1); no timing window
+**Step 3 (§5.1–§5.4) had no subject.** No thesis to test for invalidation (§5.1); no timing window
 to expire (§5.2); no entry price to measure −7% against (§5.3); no high-water mark to measure −10%
 against (§5.4). `sell_rule_status` is **absent rather than blank** — there is no position block to
-carry the field. **No §5.1 Perplexity invalidation query was issued and none was due**, since
-there is no holding to check news against.
+carry the field. **No §5.1 Perplexity invalidation query was issued and none was due**, since there
+is no holding to check news against. **Step 4 executed no exits because none triggered — not
+because an exit was suppressed.** Nothing should have fired and did not.
 
-**Yesterday's official close, carried for reference and NOT as a high-water mark:** VOO **700.805**
-(`bars --adjustment all`, 2026-09-09), against **704.16** on 09-08 — **−0.48% on that session.**
-**No `bars` call was made at the open and none was due** — `voo_close_at_entry` is captured only
-when a satellite position is opened, and none was.
+**⚠ The two-price trap, still live at midday.** Broker `current_price` **696.51** at 12:34,
+`lastday_price` **700.87**, against 09-09's official close **700.805** — the broker's "last day"
+figure is **6.5 cents above** the official close it purports to be, unchanged from this morning and
+from the bell. Always pull `bars --adjustment all` for a close and a fresh `quote` for execution —
+**never a `positions` field for either.** The day a satellite position exists, that shortcut writes
+a wrong high-water mark that does not error, does not look stale, and silently moves the §5.4 stop
+to a level nobody chose.
 
-**⚠ The two-price trap, still live at the bell and now showing a third number for the same day.**
-Broker `current_price` **697.1197** at 09:36, `lastday_price` **700.87**, against yesterday's
-official close **700.805** — the broker's "last day" figure is **6.5 cents above** the official
-close it purports to be, unchanged from this morning. Always pull `bars --adjustment all` for a
-close and a fresh `quote` for execution — **never a `positions` field for either.** The day a
-satellite position exists, that shortcut writes a wrong high-water mark that does not error, does
-not look stale, and silently moves the §5.4 stop to a level nobody chose.
+**§2 rebalance: NOT DUE, and not this routine's call in any case.** 69.69% sits well inside the
+65–75% band; `core_in_band: true`, `rebalance_needed: false`, and the +$303.98 delta is **0.31% of
+equity** — VOO's mark moving, not drift. §2 rebalances at the **band edge** (65/75), not to the
+exact target, and §2 places the rebalance at the **next market-open run**, not at midday.
 
-**§2 rebalance (Step 7): NOT DUE, evaluated and declined.** 69.71% sits well inside the 65–75% band;
-`core_in_band: true`, `rebalance_needed: false`, and the +$287.19 delta is **0.29% of equity** —
-VOO's mark moving, not drift. §2 rebalances at the **band edge** (65/75), not to the exact target.
-69.71% is not a rebalance, and neither were 69.78%, 69.83%, 69.84%, 69.92%, 69.96% or 69.98%.
-**Step 7 is exempt from the staleness gate and was still evaluated on its own terms; it simply
-returned no action.**
-
-**⚠ The core's mark has now been negative seven sessions running and is through −1.3%. It still
-means nothing procedurally.** −$952.86 (−1.361%) against the 706.74 fill, with **−0.535% of that
-coming today**. **§5 exempts core from all four sell rules.** A round number is not a threshold, and
-there is no §5.3 or §5.4 on this position to cross. **A bell with no satellite position, 30% cash, a
-clear breaker, an empty weekly cap and a core through −1.3% is precisely the setup in which core
-gets sold "as a stop," or in which the §4 bar gets lowered at 09:35 to put *something* on.** Both
-were available this morning and neither was taken. **It is not a stop, available capacity is not a
-mandate, and a quiet run is not a reason to lower the bar. There is no action.**
+**⚠ The core's mark has now been negative eight sessions running and is through −1.4%. It still
+means nothing procedurally.** −$1,013.24 (−1.447%) against the 706.74 fill, with **−0.622% of that
+coming today**, and the loss crossing $1,000 for the first time. **§5 exempts core from all four
+sell rules.** A round number is not a threshold — not −1.4%, and not $1,000 — and there is no §5.3
+or §5.4 on this position to cross. **A midday run whose only holding is a core through −1.4%, on a
+book with 30% cash and a clear breaker, is precisely the setup in which core gets sold "as a stop"
+by a routine whose entire vocabulary today is selling.** It was available and was not taken. **It is
+not a stop, available capacity is not a mandate, and a quiet run is not a reason to act.**
 
 ---
 
-**⚠ EARLIER PER-RUN RECONCILIATIONS (2026-09-01 through 2026-09-10 08:23) HAVE BEEN COLLAPSED,
-DELIBERATELY.** Twenty-two blocks spanning 09-01 to the 09-10 pre-market run each recorded the same
+**⚠ EARLIER PER-RUN RECONCILIATIONS (2026-09-01 through 2026-09-10 09:36) HAVE BEEN COLLAPSED,
+DELIBERATELY.** Twenty-three blocks spanning 09-01 to the 09-10 open run each recorded the same
 null result — zero satellite blocks checked against zero satellite Alpaca positions, agreeing; no
 §5 rule evaluated; no high-water mark to stamp; no backfill due. `state.md` flags this
 accumulation as

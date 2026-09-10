@@ -10,7 +10,7 @@ The block below is parsed by `scripts/common.py` and gates real behavior
 `key: value` format exactly. Prose goes underneath.
 
 ```
-last_run: 2026-09-10 09:36 ET 2-market-open-execution (selftest PASSED all five checks, trading_enabled true, LIVE paper; clock is_open TRUE at 09:36:24 ET, next_close 16:00 ET - market OPEN, executed against a live tape; STALENESS GATE PASSED - plan_date 2026-09-10 equals today ET, plan is fresh, NO stale-plan alert due and none posted; plan was a DO-NOTHING plan - zero BUY intents, zero SELL intents, zero REBALANCE; ZERO ORDERS PLACED THIS RUN, nothing submitted, nothing in limbo; Step 3 core bootstrap SKIPPED - core_established already true, that path is closed permanently; Step 4 exits had NO SUBJECT - zero satellite positions, §5.1-5.4 not evaluated; Step 5/6 had NO BUY INTENT to re-validate - zero `move` calls made and none was due, no candidate existed to price-check; equity 99042.71, core VOO unrealized -952.86 / -1.361% against the 706.74 fill, SEVENTH straight negative mark and now through -1.3%, NO ACTION - §5 exempts core; ledger reconciled - zero satellite blocks vs zero satellite Alpaca positions, they AGREE; high-water marks ABSENT not stale, no backfill owed, §5.4 still NOT ARMED; week anchor 2026-09-07 matches today's ISO Monday, no cap reset due; breaker INACTIVE, weekly count 0 of 3; Step 7 core 69.71% in band, rebalance_needed false, rebalance_delta +287.19 = 0.29% of equity, NO REBALANCE)
+last_run: 2026-09-10 12:34 ET 3-midday-management (selftest PASSED all five checks, trading_enabled true, LIVE paper, equity 98986.75; clock is_open TRUE at 12:34:49 ET, next_close 16:00 ET - market OPEN, live tape; ZERO OPEN SATELLITE POSITIONS, so this run EXITED AT STEP 1 by design - "nothing to manage, note it, commit, exit"; ZERO ORDERS PLACED, nothing submitted, nothing in limbo; Step 2 high-water repair had NO SUBJECT - marks are ABSENT not stale, no `(as of ...)` date exists to be behind the last trading day, NO `bars` CALL WAS DUE AND NONE WAS MADE, and core VOO was deliberately NOT stamped with a mark; Step 3 §5.1-5.4 had NO SUBJECT - no thesis to invalidate, no window to expire, no entry to measure -7% against, no high-water to measure -10% against, and NO Perplexity §5.1 query was issued because none was due; Step 4 exits: NONE TRIGGERED, none executed; Step 5 had no position block to refresh; THIS RUN IS EXITS-ONLY AND OPENED NOTHING - no candidate was screened, no reject re-priced; core VOO unrealized -1013.24 / -1.447% against the 706.74 fill, EIGHTH straight negative mark and now through -1.4%, NO ACTION - §5 exempts core from all four rules; ledger reconciled - zero satellite blocks vs zero satellite Alpaca positions, they AGREE; week anchor 2026-09-07 matches today's ISO Monday, no cap reset due; breaker INACTIVE, weekly count 0 of 3; core 69.69% in band, rebalance_needed false, rebalance_delta +303.98 = 0.31% of equity - and a midday rebalance is NOT this routine's call in any case)
 week_of: 2026-09-07
 new_positions_this_week: 0
 consecutive_closed_losses: 0
@@ -18,9 +18,9 @@ circuit_breaker: INACTIVE
 halt_triggered_at: none
 core_established: true
 core_ticker: VOO
-core_pct: 69.71
+core_pct: 69.69
 satellite_pct: 0.0
-cash_pct: 30.29
+cash_pct: 30.31
 open_thesis_ids: none
 ```
 
@@ -68,36 +68,33 @@ position list win, and the discrepancy goes in the journal.
 
 Anything the next run must not lose. Cleared once acted on.
 
-- **⚠ THE 09-10 OPEN RAN AGAINST A FRESH PLAN AND PLACED ZERO ORDERS. NOTHING BLOCKED IT, AND
-  NOTHING FAILED.** *(This bullet replaces the 09-10 pre-market block, which this run read and acted
-  on in full; nothing live is dropped.)* Selftest passed all five checks at **09:36 ET**
-  (`trading_enabled: true`, LIVE paper, equity **$99,042.71**). `clock` 09:36:24 ET: **`is_open:
-  true`**, `next_close: 16:00 ET` — **the market was open and this was a live tape, not a dry
-  run.** **The staleness gate PASSED:** `plan_date: 2026-09-10` equals today's ET date, so the plan
-  was fresh, **no stale-plan alert was due and none was posted.** The plan itself was a
-  **do-nothing plan** — zero BUY intents, zero SELL intents, no rebalance — so the execution
-  routine had nothing to execute. **Step 3 skipped** (`core_established: true`, bootstrap closed
-  permanently). **Step 4 had no subject** — zero satellite positions, §5.1–5.4 not evaluated.
-  **Steps 5–6 had no intent to re-validate: zero `move --sessions 5` calls were made and none was
-  due**, because there was no candidate to price-check — *that is the absence of a subject, not a
-  skipped check.* **Step 7: core 69.71%, `core_in_band: true`, `rebalance_needed: false`,
-  `rebalance_delta: +287.19` = 0.29% of equity — no rebalance.** Ledger reconciled: **zero
-  satellite blocks vs zero satellite Alpaca positions, they agree.** Week anchor `2026-09-07`
-  matches today's ISO Monday, **no cap reset due.** Breaker INACTIVE, weekly cap **0 of 3**,
-  satellite sleeve **empty with 30.29% cash**, `control.md` notes empty — **new positions were
-  fully permitted at the bell and none was opened, because the 08:23 research produced no eligible
-  candidate.** That is §4 working, not a gate firing.
+- **⚠ THE 09-10 MIDDAY RUN HAD NOTHING TO MANAGE AND CORRECTLY DID NOTHING. NOTHING BLOCKED IT AND
+  NOTHING FAILED.** *(This bullet replaces the two 09-10 open/pre-market bullets, both read and
+  acted on in full by this run; nothing live is dropped.)* Selftest passed all five checks at
+  **12:34 ET** (`trading_enabled: true`, LIVE paper, equity **$98,986.75**). `clock` 12:34:49 ET:
+  **`is_open: true`**, `next_close: 16:00 ET` — **live tape, not a dry run and not a closed-market
+  skip.** `positions` returns **one row, VOO core** — **zero satellite positions**, so the routine's
+  own Step 1 exit applies: *there is nothing to manage; note it, commit, exit, and do not go looking
+  for something to do.* **Every downstream step lacked a subject, and that is not the same as a
+  skipped step:** no `highest_close` to repair (Step 2), no thesis / window / entry / high-water to
+  test §5.1–§5.4 against (Step 3), nothing triggered and nothing executed (Step 4), no position
+  block to refresh (Step 5). Ledger reconciled **satellite-to-satellite: zero blocks vs zero
+  satellite Alpaca rows, they agree.** Week anchor `2026-09-07` matches today's ISO Monday — **no
+  cap reset due.** Breaker INACTIVE, weekly cap **0 of 3**, satellite sleeve **empty with 30.31%
+  cash**, `control.md` notes empty. Earlier today: 08:23 wrote six theses and rejected all six;
+  09:36 executed that do-nothing plan against a fresh `plan_date` and placed zero orders. **A
+  morning with no thesis is a morning with no buy — that is §4 working, not a gate firing.**
 
-- **⚠ THE PRE-MARKET / OPEN SPLIT DID EXACTLY WHAT IT IS FOR TODAY, IN ITS QUIETEST FORM.** Six
-  theses were written at 08:23 and all six rejected; at 09:35 there was consequently nothing to
-  buy. **A run with no buy intent is the split working, not the split idling** — the gap exists so
-  that a buy must sleep on a written thesis, and the corollary is that a morning with no thesis is
-  a morning with no buy, *even though the breaker was clear, the cap was empty and 30% of the book
-  was in cash.* **The pressure at 09:35 is to treat available capacity as a mandate.** It is not
-  one: §2 explicitly permits uninvested satellite cash and forbids forcing a trade to stay fully
-  invested. **No candidate was reconsidered at the bell, no reject was re-priced, and no `move`
-  call was run to see whether one had become buyable overnight** — doing that would be generating
-  an idea at execution time, which is the one thing this routine must never do.
+- **⚠ THE MIDDAY RUN IS EXITS-ONLY, AND THAT IS THE RULE MOST EXPOSED ON A DAY LIKE THIS ONE.**
+  This routine **may not open a position**, by its own terms — new positions go through pre-market
+  research and the 09:35 execution run, always, because that path is what forces every buy to sleep
+  on a written thesis. **The setup at 12:34 was the maximally tempting one:** breaker clear, weekly
+  cap empty at 0 of 3, **30.31% of the book in cash**, a core that is red for an eighth session, and
+  a run whose entire output is "nothing to do." **Six named rejects from this morning were sitting
+  in the log with fresh prices four hours old, and re-pricing any of them here would have been
+  generating an idea at execution time through the one door built to prevent it.** None was
+  re-priced, no `move` call was made, no Perplexity query was issued. **A midday entry does not look
+  like a rule breach in a one-line summary — it looks like initiative.**
 
 - **⚠ COLLAPSE, DO NOT APPEND — ACTED ON NINE TIMES NOW, AND DUE AGAIN NEXT RUN.**
   `positions.md` ran to **604 lines / 42KB** before the 09-07 collapse, was cut to 162, and has
@@ -255,14 +252,19 @@ Anything the next run must not lose. Cleared once acted on.
 
 - **⚠ ALL FOUR §5 SELL RULES ARE UNTESTED CODE PATHS, NOT PROVEN ONES.** Zero positions have ever
   closed, so §5.1–§5.4 have never been evaluated against a real subject. **Eight days of "no exits"
-  recorded the absence of a subject, not eight clean bills of health.** §5.4 is **NOT ARMED, not
-  disabled** — it arms the day the first *satellite* position opens.
+  — now including a dedicated midday management run that reviewed zero positions — recorded the
+  absence of a subject, not eight clean bills of health.** §5.4 is **NOT ARMED, not disabled** — it
+  arms the day the first *satellite* position opens.
 
-- **⚠ THE HIGH-WATER MARKS ARE ABSENT, NOT STALE — A THIRD STATE.** No satellite position exists,
-  so `positions.md` has **no `highest_close` and no `(as of ...)` date**. The midday backfill
-  trigger keys on a **stale date**, and an absent field cannot be stale — **do NOT backfill from
-  `bars`.** **Do not stamp a mark on core VOO to give the step a subject:** that would fabricate a
-  §5.4 trailing stop on a position that must never carry one.
+- **⚠ THE HIGH-WATER MARKS ARE ABSENT, NOT STALE — A THIRD STATE, AND THE MIDDAY RUN CONFIRMED IT
+  AGAINST THE ACTUAL TRIGGER.** No satellite position exists, so `positions.md` has **no
+  `highest_close` and no `(as of ...)` date**. The Step 2 backfill trigger compares an `(as of ...)`
+  date to the last trading day; **an absent field has no date to compare, so it cannot be behind —
+  no `bars` call was due and none was made for a high-water purpose.** **Do not stamp a mark on core
+  VOO to give the step a subject:** that would fabricate a §5.4 trailing stop on the one position §5
+  exempts from all four rules. **The genuine version of this failure is still ahead of us** — the
+  day a satellite position exists and a close run is missed, the stale mark silently disables §5.4
+  while every field still reads present and plausible.
 
 - **⚠ THE TWO-PRICE TRAP — A SEVENTH SHAPE.** Always pull `bars --adjustment all` for a close and a
   fresh `quote` for execution; **never a `positions` field for either.** At 09-10 pre-market: broker
