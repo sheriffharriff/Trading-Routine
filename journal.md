@@ -40,6 +40,100 @@ anything where the honest-broker rule (§4) did real work>
 
 ## Entries
 
+### 2026-09-10 (Thursday)
+
+**Account:** total $99,063.85 | day P&L −$354.74 (−0.36%) | since inception −0.94%
+**Sleeves:** core 69.72% | satellite 0.0% | cash 30.28%   (§2 band 65–75%)
+**Breaker:** INACTIVE
+**Week:** 0/3 new positions
+
+**Traded:** nothing — zero orders submitted at any of the three runs today
+**Researched:** 6 theses — 0 accepted, 6 rejected
+**Positions near a sell rule:** none — no satellite position exists, so §5.1–§5.4 have no
+subject. Core VOO is exempt from all four (§5).
+
+**What happened:**
+
+A full trading day, three runs, and not a single order in either direction. The 08:23
+pre-market run took four genuinely new dated commercial events through the funnel and wrote
+six full thesis entries; all six were rejected. The 09:36 open run executed that do-nothing
+plan against a fresh `plan_date` and placed nothing. The 12:34 midday run found zero
+satellite positions and exited at its own Step 1 by design. This close run is the fourth,
+and it opened nothing either — it cannot.
+
+VOO closed at **696.69** (`bars --adjustment all`), down **−0.5872%** from 09-09's official
+700.805. The core's unrealized loss is now **−$936.14 (−1.337%)** on the broker's mark
+against the 706.74 fill, a **ninth consecutive negative session**. There is no action
+attached to that at any number: §5 exempts core from all four sell rules, and the divergence
+from VOO itself is still the one-time 09-03 entry gap (fill +0.483% above the prior close),
+not tracking error and never skill.
+
+**Step 2 had no subject, and that is a third state — not a skip.** There is no satellite
+position, so `positions.md` carries no `highest_close` and no `(as of ...)` date. The
+backfill trigger compares that date against the last trading day; an absent field has no date
+and therefore cannot be behind. **No `bars` call was due for a high-water purpose and none was
+made for one.** The VOO bar above was pulled to price the day's P&L honestly, not to stamp a
+mark — stamping one on core would fabricate a §5.4 trailing stop on the single position §5
+exempts from everything. **§5.4 is NOT ARMED, not disabled, not skipped.** It arms on the
+first satellite fill.
+
+Housekeeping came back clean and I checked it rather than assumed it. Week anchor 2026-09-07
+equals today's ISO Monday — no cap reset due, count holds at 0 of 3. Nothing has ever closed
+in this account, so `consecutive_closed_losses` cannot move off 0 and no circuit-breaker alert
+is owed. `orders --status all` returns exactly one row for the account's entire history — the
+09-03 core VOO buy, `status: filled`, terminal. **Nothing is in limbo overnight**, which is
+the §7 condition this step exists to catch. Sleeves: core 69.72%, well inside the 65–75%
+band, `rebalance_needed: false`, delta +$280.84 = 0.28% of equity. **No rebalance is due
+tomorrow.**
+
+**What I got wrong or nearly got wrong:**
+
+**The reassuring sentence arrived exactly where the carry-forward said it would, and this
+time I could kill it with arithmetic instead of discipline.** The book fell −0.3568% while
+VOO fell −0.5872%, and the draft sentence — *"the book outperformed the index"* — wrote
+itself. It is false twice over. First, ~70% exposure to a −0.5872% move is **−0.4094%** by
+construction; there is no skill in the gap, only a cash weighting §2 mandates and that runs
+identically in reverse on the first green day. Second, and this is new: the remaining ~5bp of
+apparent outperformance **is a measurement artifact, not a return.** Both ends of the broker's
+day P&L are broker marks. Priced on official closes the book was **−$407.58 / −0.4100%** — i.e.
+almost exactly the 70%-of-index figure — against the broker's reported **−$354.74 / −0.3568%**.
+**The entire residual "outperformance" is $52.84 of two-price gap.** This is the ninth
+invitation; caught and deleted every time, and the record stays intact.
+
+**The two-price trap widened by an order of magnitude today and I nearly logged the small
+version.** Yesterday the gap was 6.5 cents (broker `lastday_price` 700.87 vs official 700.805).
+Today the broker's `current_price` is **697.2885** against an official close of **696.69** —
+**59.85 cents, roughly ten times larger.** My first pass at the day's numbers used the broker
+field, because it was already in the `positions` output and pulling a bar felt like ceremony
+for a position I cannot sell anyway. On core that error is cosmetic. **On a satellite position
+it writes a `highest_close` that is 60 cents too high, does not error, does not read as stale,
+and moves the §5.4 stop about 0.09% to a level nobody chose.** The rule survives contact:
+`bars --adjustment all` for a close, a fresh `quote` for execution, **never a `positions`
+field for either.**
+
+**The genuinely uncomfortable one: nothing was close to a trade today, and the honest reason
+is not that the market was quiet.** Six theses died at six different places — an unnamed
+supplier chain (LMT), a named party already up 4.53% (GFS), a segment 0.14% the size of the
+relevant revenue line (EQT), a $3.4B market cap against a $10B floor (LEU), four sponsor banks
+all below the floor on a read-across that is *negative* on a long-only book (TBBK/CASH/GDOT/CCB),
+and a source that simply left the beneficiary blank (Bayer/Neste). That is §4 working. But it
+is the **thirtieth-odd thesis against zero positions**, and the thing I keep having to not do
+is treat that ratio as evidence the bar is too high. It is not the agent's call. The bar is in
+`strategy.md`, the human owns it, and the correct response to a month of empty funnels is to
+report the emptiness clearly — which is item (3) in the standing list of things with the human.
+
+**For the next run:**
+
+Tomorrow is **Friday 09-11 — weekly review day**, and August CPI lands the same morning. Two
+hard constraints on that review: it **must not quote the reject scoreboard as a result** (ten
+names over a few sessions is noise, not a sample), and it will be the first review to weigh a
+full week of six-a-day rejection counts against zero positions — the honest framing is that §4
+was applied as written, not that it needs moving. **Oracle and Adobe reported after today's
+close and Macy's reported this morning**; none of the three was in today's pre-market funnel,
+which is a sequencing fact rather than an oversight. **Oracle carries the AI-capex read-across
+surface and the 09-11 pre-market run should screen it directly rather than assume a later run
+already has.**
+
 ### 2026-09-09 (Wednesday)
 
 **Account:** total $99,433.45 | day P&L −$302.09 (−0.30%) | since inception −0.57%
