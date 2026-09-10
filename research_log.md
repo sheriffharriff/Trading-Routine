@@ -52,6 +52,341 @@ single most common way a plausible-sounding connection gets mistaken for an oppo
 
 ## Entries
 
+### 2026-09-10 (08:23 ET) — event survey (funnel, pre-thesis)
+
+Selftest passed all five checks (`trading_enabled: true`, LIVE paper account, equity
+**$99,266.82**). Window screened: **Wednesday's close through Thursday pre-market (Sept 9–10)**.
+Four Perplexity scans (two broad `--recency day`, two sourced second-order screens
+`--recency week`), one universe/segment check, plus five `move --sessions 5` checks. **Six
+candidates reached ticker stage; all six rejected. No BUY intent today.**
+
+**The shape of the day, stated first because it is the finding: the funnel produced four
+genuinely new, dated, sourced commercial events, and the second-order layer failed each time for
+a *different* reason — and for the first time this month one of those reasons was arithmetic
+rather than an absent disclosure.** That distinction matters, so it is stated up front:
+
+- **T-2026-09-10-03 (EQT) is the first rejection in this log where part 2 failed on a number I
+  could actually compute rather than on a number nobody publishes.** Ignitis is committing to
+  **one ~1 TWh LNG cargo per year** — about **3.4 Bcf** — against EQT sales volume of **634 Bcfe
+  in Q2 2026 alone** (Zacks, 09-07). That is roughly **0.14% of annual volume**, against §4.2's
+  **10%** floor. Not "undisclosed," not "unquantifiable" — **quantified, and two orders of
+  magnitude too small.** Every previous part-2 rejection in this log died because the company
+  does not break the segment out. This one died because the segment is real, disclosed, and the
+  event is trivial next to it.
+
+The four events, and where each second-order branch died:
+
+- **Lockheed Martin — ~$1.08B in DoD awards, 09-09.** $825,975,480 modification (P00020) to
+  FA8682-24-C-B001 for **JASSM/LRASM large lot procurement**, plus **$257,278,109** for **MK 48
+  MOD 7 heavyweight torpedo** components (DoD daily contracts list, 09-09; Investing.com same
+  day). **The supplier screen came back empty**: no published source names *any* US-listed
+  company other than Lockheed as a supplier or subcontractor on either program. Torpedo work
+  share is disclosed only at Lockheed's own facility level — **Liverpool NY 57%, Clearwater FL
+  37%, Braintree MA 6%**. The unnamed-counterparty defect, fourth appearance in eight sessions.
+- **Monolithic Power Systems — GlobalFoundries long-term manufacturing agreement, 09-09.**
+  MPWR's process technology deployed at GF's **300mm Singapore fab**, volume production **early
+  2027**. GFS is a **named party**, not a second-order beneficiary — the Corning failure mode of
+  09-09 repeating exactly one day later.
+- **Ignitis — EQT subsidiary LNG purchase agreement, 09-10.** 10 cargoes, one per year,
+  **2027–2036**, Henry Hub/TTF-linked, still subject to Lithuanian national-security review. See
+  the arithmetic above.
+- **Centrus Energy — Radiant Industries HALEU supply, 09-09.** Multi-year, prepayments,
+  deliveries **"before the end of the current decade."** Radiant is private; Centrus is the
+  named beneficiary; **LEU is ~$3.4–3.8B, below the §3 $10B floor.**
+
+Items dropped before thesis stage, with reasons:
+
+- **August PPI released this morning, August CPI tomorrow (09-11); 10-year at 4.85%, the highest
+  since November 2023; 30-year auction today; Treasury buyback of up to $6B of 10–20yr paper;
+  mortgage rates 6.85%, highest in over a year; MBA refinance index at its lowest since May 2025;
+  September hike odds ~59%.** Macro. No segment, no dollar path, no §4 mechanism. **Same
+  disposition as 09-08 and 09-09 and for the same reason.** The rates move has an obvious
+  read-across to homebuilders and mortgage REITs and it runs the **wrong way** for a long book,
+  which is not a reason to write it up as a short — this strategy has no short.
+- **Alcoa prices $2.6B senior notes to fund ~$3.1B cash consideration for South32 bauxite/alumina
+  assets** (8-K, 09-09). **Financing for a *previously announced* acquisition** — standing rule
+  (iii), not new to the company's own disclosure. Dropped before any ticker work.
+- **Argan raises quarterly dividend 40% to $0.70** (09-09). Firm-specific capital return, no
+  second-order surface, and ARGN is far below the §3 floor.
+- **NASA on-ramps Relativity Space's Terran R to Launch Services II** (announced 09-09).
+  Relativity is **private**. The read-across to listed launch providers is **competitive
+  dilution, not benefit** — the wrong sign for a long book.
+- **Samsung Biologics signs ₩350.8B (~$262M) CMO agreement through 2033** (regulatory filing,
+  09-10). Samsung Biologics is **Korea-listed** (§3), and the counterparty is **explicitly
+  undisclosed** under confidentiality provisions. There is no Company B to identify.
+- **Chime to acquire Stride Bank for $590M cash** (09-09) — see T-2026-09-10-05.
+- **Bayer–Neste winter canola feedstock agreement** (09-09) — see T-2026-09-10-06.
+- **B. Braun sodium chloride injection recall** — dated **09-03**, outside the window, and
+  B. Braun is private. No listed competitor or distributor is named by the notice.
+- **Oracle and Adobe report after today's close; Macy's this morning.** **Not events yet.**
+  Recorded so tomorrow's run knows they landed *after* this survey closed rather than being
+  missed by it. Oracle's print in particular is the one with an AI-capex read-across surface.
+
+**⚠ A note on the priced-in filter, added to the human's existing queue rather than as a new
+item.** **LMT returned −3.61%, `priced_in: false`, "passes the priced-in check" — on the same
+day it was awarded $1.08B.** It passes because the *magnitude* of a 3.61% **decline** sits inside
+a 4% band. Another 0.4% of drawdown and the filter would have rejected a stock **for falling**,
+which is the LITE shape exactly (open human question #1). This is not a third defect shape — it
+is the **same** shape, caught 0.4% from firing, and it is worth one line because it shows how
+narrow the margin was. **No run reinterprets the filter.** It cost nothing here: §4's
+headline-name rule rejected LMT independently.
+
+---
+
+### T-2026-09-10-01 — LMT — REJECTED
+**Company A / the news:** The US Department of Defense awarded Lockheed Martin ~**$1.08B** across
+two contract actions on **2026-09-09** — an **$825,975,480** modification (P00020) to
+FA8682-24-C-B001 for **JASSM and LRASM Large Lot procurement** (Lockheed Martin Missiles and Fire
+Control, Orlando FL), and a **$257,278,109** modification to N00024-23-C-6411 for production,
+spares, support material, engineering support and hardware repair of **MK 48 MOD 7 Heavyweight
+Torpedo** components (Liverpool NY). Source: DoD daily contracts list for Sept 9 2026
+(war.gov/News/Contracts), summarized same day by Investing.com.
+**Company B / the candidate:** Lockheed Martin itself, in the absence of any identifiable
+supplier.
+
+**1. Mechanism (one sentence):**
+> The DoD's large-lot missile award causes Lockheed Martin's Missiles and Fire Control segment
+> revenue to improve because the department has contracted to buy that quantity of JASSM, LRASM
+> and MK 48 hardware from Lockheed.
+
+**2. Dollar path:** Missiles and Fire Control. ~$1.08B of contract actions against a company
+whose annual revenue runs in the seventies of billions — the segment clears §4.2 comfortably,
+but the **award is a fraction of a percent of revenue and is a modification to existing
+contracts**, so the *incremental* figure is not separable from an already-booked baseline.
+**3. Timing window:** Large-lot missile procurement delivers over years, not quarters. Not
+establishable inside two quarters.
+**4. Invalidation:** Not reached.
+
+**Hard filters:**
+- Priced-in (§4): **−3.61%** over last 5 sessions (544.45 → 524.77) → `priced_in: false`,
+  "passes" — **and see the caveat in the survey above; it passes by 0.4%, for falling**
+- Correlation (§4): no open satellite positions, no drivers to collide with → pass
+- Universe (§3): us_equity, NYSE, market cap **~$121–124B** (source: Perplexity, citing Yahoo
+  Finance intraday $123.738B and companiesmarketcap.com $123.73B, which cites Nasdaq $123.74B as
+  of 09-08; MarketBeat/CNBC/Barron's cluster $121.0–121.2B) → pass
+
+**Outcome: REJECTED — §4, "you are not chasing the headline name," and part 3 independently.**
+**Lockheed is Company A.** The whole point of §4 is to find the company whose economics change
+*because of* someone else's news, and I ran that screen properly: **a dedicated Perplexity query
+asking for named, sourced, US-listed suppliers or subcontractors on JASSM, LRASM and MK 48
+returned nothing** — the only work-share disclosure available is Lockheed's own facility split
+(Liverpool 57% / Clearwater 37% / Braintree 6%), which is a fact about **Lockheed's internal
+plants**, not about a supplier.
+
+**⚠ And this is where the pull was, so it is recorded.** I know from general knowledge that
+missile programs have solid-rocket-motor, seeker and energetics suppliers, and a name suggests
+itself immediately. **Naming one here would be standing rule (v) — a fact about an industry
+dressed up as a transaction — compounded by rule (iv), since that name is a recurring one in this
+log.** No source ties any public company to *these awards*. A supplier relationship I can recall
+but not source is not a supplier relationship I can trade. **Nothing was reached for.** The
+related **Nitradyn $581M IMX-104 facility award** in the same DoD release was checked for the same
+reason and dropped: Nitradyn is private and no listed energetics supplier is named.
+
+---
+
+### T-2026-09-10-02 — GFS — REJECTED
+**Company A / the news:** Monolithic Power Systems and GlobalFoundries announced a **long-term
+manufacturing agreement** to deploy MPWR's process technology at GlobalFoundries' **300mm fab in
+Singapore**, with **volume production expected in early 2027** (Investing.com, **2026-09-09**;
+carried in corporate-news summaries 09-10).
+**Company B / the candidate:** GlobalFoundries — the fab that will do the manufacturing.
+
+**1. Mechanism (one sentence):**
+> The Monolithic Power agreement causes GlobalFoundries' foundry revenue to improve because
+> Monolithic Power will pay GlobalFoundries to manufacture its power-management silicon at the
+> Singapore 300mm fab.
+
+**2. Dollar path:** Foundry services, GlobalFoundries' entire business. **The magnitude cannot be
+sized: no contract value, no wafer volumes, no minimum-volume or take-or-pay terms are
+disclosed by any source.** The relationship is certain; the number does not exist.
+**3. Timing window:** **Volume production expected early 2027** → first meaningful revenue lands
+in FY2027, beyond two quarters from today. **Fails §4.3.**
+**4. Invalidation:** Would have been: GlobalFoundries' Q1 2027 results show no incremental
+Singapore 300mm volume, or the agreement is disclosed as terminated.
+
+**Hard filters:**
+- Priced-in (§4): **+4.53%** over last 5 sessions (43.945 → 45.935) → **FAIL, `priced_in: true`,
+  "LATE - skip"**
+- Correlation (§4): no open satellite positions → pass
+- Universe (§3): us_equity, Nasdaq, market cap **~$24.4–25.3B** (source: Perplexity, citing
+  MarketBeat $24.81B on 09-08, Macroaxis $24.43B, GuruFocus $24.74–25.28B early Sept) → pass
+
+**Outcome: REJECTED — §4 priced-in (+4.53%), part 3 (early 2027), and §4's headline-name rule.
+Three independent failures.** **GlobalFoundries is a named party to the announcement**, not a
+third company that happens to benefit from it — the identical disqualification to GLW yesterday,
+one day later, in a different sector. Worth noting because it arrived looking different: the
+*coverage* is MPWR-centric ("Monolithic Power stock heads into the open after the GlobalFoundries
+deal"), so the beneficiary reads like a discovery rather than like the other half of a press
+release. **It is the other half of a press release.** The priced-in number then confirmed it
+independently — **+4.53% is a marginal failure, 0.53 points past the threshold, and marginal is
+still failed.** No judgment was applied to soften it.
+
+The third-party branch was considered and dropped without a ticker: semiconductor equipment or
+materials suppliers into a Singapore 300mm line. **No source names one, and deploying an existing
+process at an existing fab does not imply new tool purchases.** Standing rule (v).
+
+---
+
+### T-2026-09-10-03 — EQT — REJECTED
+**Company A / the news:** **UAB Ignitis** (Lithuanian state energy group, not US-listed) will
+enter a **long-term LNG purchase agreement for 2027–2036** with a subsidiary of **EQT
+Corporation**, following a tender called 2026-08-25. **10 cargoes, one per year, each ~1 TWh**,
+priced against **Henry Hub and TTF**. Completion is subject to review by Lithuania's Commission
+for the Coordination of the Protection of Objects Important to National Security and to the
+supplier's corporate approvals. Source: Ignitis material-event notice, reported by Yahoo Finance
+Energy, **2026-09-10**.
+**Company B / the candidate:** EQT Corporation — the US gas producer on the sell side of a
+purchase commitment made by a foreign buyer.
+
+**1. Mechanism (one sentence):**
+> Ignitis's ten-year purchase commitment causes EQT's contracted LNG sales revenue to improve
+> because Ignitis has agreed to buy one cargo per year from an EQT subsidiary from 2027 through
+> 2036.
+
+That sentence is clean, single-clause, and true. **The thesis dies on the next two parts, and it
+is worth being explicit that it dies on size rather than on story.**
+
+**2. Dollar path:** LNG / marketed gas sales. **~1 TWh per cargo ≈ 3.4 Bcf per year.** Against
+EQT's **634 Bcfe of sales volume in Q2 2026 alone** (Zacks, 09-07), one annual cargo is roughly
+**0.5% of a single quarter and ~0.14% of annual volume**. Vendor-reported FY2025 revenue sits in
+an **$8.2–9.1B** band (Macroaxis $9.07B, QW Research $8.64B, Investing.com ~$8.18B — they
+disagree, which is itself a reason not to lean on any one of them). **§4.2 requires the affected
+line to be at least 10% of total revenue. This is off by roughly two orders of magnitude.
+REJECTED on part 2.**
+**3. Timing window:** Deliveries run **2027–2036**, and the deal is **not yet executed** —
+Lithuanian national-security review and corporate approvals are outstanding. Nothing lands in
+reported results within two quarters. **Fails §4.3 independently.**
+**4. Invalidation:** Not reached — parts 2 and 3 both failed first.
+
+**Hard filters:** run for the record, after the thesis had already failed —
+- Priced-in (§4): **−1.72%** over last 5 sessions (55.585 → 54.63) → `priced_in: false`, "passes"
+- Correlation (§4): no open satellite positions → pass
+- Universe (§3): us_equity, NYSE, market cap **~$34.5B** (source: Perplexity, citing MarketBeat
+  $34.47B and StockMarketCap.io $34.51B, early Sept 2026) → pass
+
+**Outcome: REJECTED — part 2 on magnitude, part 3 on timing.** **This is the cleanest rejection
+this log has produced, and the reason is that the numbers existed.** EQT passed every hard filter
+— price, correlation, universe — and produced a one-sentence mechanism that needs no "and"
+clause. On the pattern of the last two weeks, that is exactly the profile that has been surviving
+to the point where it takes judgment to kill. **It did not take judgment. It took division.**
+
+**Honest note, because this is the useful part.** A ten-year LNG offtake agreement with a
+sovereign-linked European buyer *sounds* material, and the words "long-term," "2027–2036" and
+"Henry Hub-linked" all carry weight that the volume does not. **I had the shape of a favourable
+write-up in mind before I converted TWh to Bcf.** The conversion is what ended it. **The general
+lesson is worth more than the instance: when a source describes a contract in units the company
+does not report in — TWh against Bcfe, miles of fiber against segment dollars — convert first and
+write second.** That ordering is what §4 means by applying the filters before constructing the
+story, and it applies to part 2 just as much as to the price filters.
+
+---
+
+### T-2026-09-10-04 — LEU — REJECTED
+**Company A / the news:** **Centrus Energy** announced a **multi-year contract with Radiant
+Industries** to supply **US-origin HALEU** for Radiant's **Kaleidos microreactors**, with
+**customer prepayments** supporting Centrus's domestic enrichment build-out and deliveries
+**"expected to begin before the end of the current decade."** Source: Centrus announcement via
+TipRanks, **2026-09-09**.
+**Company B / the candidate:** Centrus Energy.
+
+**1. Mechanism (one sentence):**
+> The Radiant contract causes Centrus's HALEU revenue to improve because Radiant has committed to
+> buy enrichment output from Centrus and is prepaying against it.
+
+**2. Dollar path:** **Cannot be written. No contract value, no volumes, no prepayment amount is
+disclosed by any source.**
+**3. Timing window:** Deliveries **"before the end of the current decade"** — i.e. by 2029/2030.
+**Fails §4.3 by years, not by quarters.**
+**4. Invalidation:** Not reached.
+
+**Hard filters:**
+- Priced-in (§4): **+7.76%** over last 5 sessions (168.37 → 181.44) → **FAIL, `priced_in: true`,
+  "LATE - skip"**
+- Correlation (§4): no open satellite positions → pass
+- Universe (§3): us_equity, NYSE American, market cap **~$3.4–3.78B** (source: Perplexity, citing
+  MarketBeat $3.78B on 09-08 and CNN Markets $3.40B) → **FAIL, below the $10B floor**
+
+**Outcome: REJECTED — §3 universe (below the $10B floor), §4 priced-in (+7.76%), part 2
+(unquantifiable), part 3 (end of decade). Four independent failures, and §3 alone would have
+been enough.** Centrus is also the **announcing party and named beneficiary** — Radiant is
+private, so there is no second-order surface here at all: the only listed company in the
+transaction is the one issuing the press release. Logged in full rather than dropped in a line
+because HALEU and microreactors are exactly the kind of story that reads as an early-innings
+theme, and **a §3 floor breach is not a judgment call that a good story can outweigh.**
+
+---
+
+### T-2026-09-10-05 — TBBK / CASH / GDOT / CCB — REJECTED
+**Company A / the news:** **Chime Financial (Nasdaq: CHYM)** agreed on **2026-09-09** to acquire
+its long-time partner bank **Stride Bank, N.A. for $590M in cash**, converting the fintech into a
+chartered bank; Stride will be renamed Chime Bank and become a wholly-owned subsidiary.
+**Company B / the candidate:** The listed banking-as-a-service sponsor banks whose business model
+is exactly the arrangement Chime is exiting — The Bancorp, Pathward, Green Dot, Coastal Financial.
+
+**1. Mechanism (one sentence):** Not written as a *buy* mechanism, and the reason is the sign.
+Chime internalising its charter **removes** sponsor-bank economics from the market and is
+**negative** for the group — the read-across runs the wrong way for a long-only book. The market
+agrees: **TBBK set a new 52-week low on 09-10**, and a French-language wire item explicitly
+frames it as *"Bancorp shares fall as its partner Chime prepares to buy Stride Bank."*
+
+**Hard filters:**
+- Universe (§3): **all four are far below the $10B floor.** **TBBK ~$2.0–2.8B** (MarketBeat
+  $2.04B at the 52-week low 09-10; $2.73B on 09-05; GuruFocus $2.72B), **CASH ~$1.68–1.89B**
+  (MarketBeat $1.72–1.73B; AltIndex $1.68B on 09-09), **GDOT ~$0.76B** (TrendMatrix),
+  **CCB ~$0.70–0.80B** (MarketBeat $725.2M on 09-10; Morningstar $711.7M; Macroaxis $704.7M).
+  Source for all: Perplexity, citing the vendors named. → **FAIL, categorically**
+- Priced-in (§4): not run — §3 already disqualifies the entire group.
+
+**Outcome: REJECTED — §3 universe, on every candidate in the set, and the mechanism points the
+wrong way regardless.** This is the second time in two sessions that a well-sourced,
+correctly-identified second-order effect has been **real, immediate and untradeable**: the effect
+is visible in the tape (TBBK at a 52-week low the day after the announcement), the causal chain is
+short and needs no "and" clause, and **every affected company sits below the §3 floor while the
+sign is negative and this book has no short.** Logged so the disposal is visible rather than
+silent — **identifying a second-order effect correctly and being unable to act on it is a
+different outcome from finding nothing, and the log should distinguish them.**
+
+Noted and not pursued: **CCB fell ~43% around 09-04/09-07 on "banking services issues" and is
+under a securities-fraud investigation** (GlobeNewswire, 09-04 and 09-07). That surfaced in the
+market-cap search, not in today's news window; it is **outside this window**, it is a distressed
+single name below the §3 floor, and **a stock that has fallen 43% is not a second-order catalyst.**
+
+---
+
+### T-2026-09-10-06 — (no ticker) — REJECTED
+**Company A / the news:** **Bayer** and **Neste** finalized a commercial agreement, announced
+**2026-09-09** (Bayer press release), to jointly scale Bayer's **newgold® winter canola** in the
+**Southern Great Plains of the US** as feedstock for **renewable diesel and sustainable aviation
+fuel**. High-protein meal by-product to be sold into dairy, beef, poultry and swine feed markets.
+**Bayer aims to launch newgold® hybrids in fall 2027.** No volumes, acreage or financial terms
+disclosed; one round-up states plainly that **"financial terms and a start date were not
+disclosed."**
+**Company B / the candidate:** **None could be identified.** This was screened specifically
+*because* both named parties are foreign issuers (Bayer: Frankfurt; Neste: Nasdaq Helsinki) —
+which is the structural shape §4 wants, since the headline names are ineligible and any
+beneficiary would by construction be a third party.
+
+**1. Mechanism (one sentence):** Not written — **there is no Company B to write it about.** A
+dedicated Perplexity screen asking which US-listed companies sources tie to *this specific
+agreement* returned: no US-listed company named as a revenue beneficiary, as a cost-exposed
+party, or as a member of the **"newgold® network"** of value-chain partners, whose identities
+Bayer explicitly does not disclose.
+**3. Timing window:** Even setting Company B aside — **hybrid launch is fall 2027**, and feedstock
+deliveries follow the launch. **Fails §4.3 outright.**
+
+**Hard filters:** none run. **No ticker reached the stage of needing one.**
+
+**Outcome: REJECTED — no Company B exists in any source, and part 3 fails independently.** The
+screen was worth running and the null result is worth recording: **this is the one event in
+today's window with the right *structure* for a second-order trade — foreign headline names, a
+US-domiciled physical supply chain, a named crop and a named region — and it still has no
+tradeable name attached.** The temptation here is specific and was declined: US crop processors
+and renewable-diesel refiners are obvious candidates to *guess* at, and the phrase "additional
+value chain partners" is an open invitation to fill it in. **Bayer deliberately did not name
+them. Filling in a blank the source left blank is not research.** Standing rule (v).
+
+---
+
 ### 2026-09-09 (08:26 ET) — event survey (funnel, pre-thesis)
 
 Selftest passed all five checks (`trading_enabled: true`, LIVE paper account, equity
