@@ -56,64 +56,66 @@ re-derive it from price history, and it stays correct for positions closed month
 
 *(none — no **satellite** positions have been opened yet. Core VOO exists and is deliberately not tracked here, per the top-of-file rules and the fill note further down.)*
 
-**Reconciliation 2026-09-10 16:15 ET (4-market-close-journal) — CLOSING RECONCILIATION FOR A REAL
-TRADING DAY. NO SATELLITE POSITION EXISTS, SO NO HIGH-WATER MARK WAS WRITTEN AND NONE WAS DUE. ZERO
-ORDERS WERE PLACED TODAY AT ANY RUN.** *(This block replaces the 09-10 12:34 midday reconciliation,
-which was read and acted on in full by this run and carries nothing this one does not. Collapse, do
-not append — eleventh consecutive run.)* Selftest passed all five checks (`trading_enabled: true`,
-LIVE paper account, equity $99,060.04 at 16:15). **`clock` at 16:15:49 ET returns `is_open: false`
-with `next_open: 2026-09-11T09:30 ET` — the market is closed because the bell has rung, NOT because
-today was a holiday. Today was a full trading session and this is a post-close run.**
+**Reconciliation 2026-09-11 08:20 ET (1-premarket-research) — PRE-MARKET RECONCILIATION ON A REGULAR
+TRADING DAY. NO SATELLITE POSITION EXISTS. NO HIGH-WATER MARK WAS DUE OR WRITTEN.** *(This block
+replaces the 09-10 16:15 close reconciliation, which was read in full by this run and carries
+nothing this one does not. Collapse, do not append — twelfth consecutive run.)* Selftest passed all
+five checks (`trading_enabled: true`, LIVE paper account, equity $99,456.23). **`clock` at 08:19:54
+ET returns `is_open: false` with `next_open: 2026-09-11T09:30 ET` — the market is closed because it
+is PRE-MARKET, NOT because today is a holiday. `next_open` is *today*, which is how the two are
+told apart.**
 
 `alpaca.py positions` returns **one row, VOO core** (99.046311231 shares, avg_entry 706.74,
-market_value $69,063.85, broker `current_price` **697.2885**, `lastday_price` 700.87, `change_today`
-**−0.511%**, unrealized_pl **−$936.14, −1.337%**). `alpaca.py sleeves`: equity **$99,063.85**, cash
-$30,000.00, core **69.72%**, satellite **0.0% (count 0)**, cash 30.28%, `core_in_band: true`,
-`rebalance_needed: false`, `rebalance_delta: +280.84`.
+market_value $69,456.23, broker `current_price` **701.25**, `lastday_price` 696.65, `change_today`
+**+0.66%**, unrealized_pl **−$543.76, −0.777%**). `alpaca.py sleeves`: equity **$99,456.23**, cash
+$30,000.00, core **69.84%**, satellite **0.0% (count 0)**, cash 30.16%, `core_in_band: true`,
+`rebalance_needed: false`, `rebalance_delta: +163.14`.
 
 **Satellite blocks (zero) checked against satellite Alpaca positions (zero) — they agree.**
 Compare **satellite to satellite**, never raw ledger to raw broker.
 
-**⚠ THE HIGH-WATER FIELD IS ABSENT, NOT STALE, AND NO MARK WAS WRITTEN — checked against the actual
-trigger, not assumed.** Step 2 writes today's official close into every open **satellite** position's
-`highest_close` and re-stamps the `(as of ...)` date whether or not the value moves. There is **no
-satellite position block in this file**, so there is **no `highest_close` and no `(as of ...)` date**
-to write or to stamp. The marks are **ABSENT: a third state, distinct from both "current and
-unchanged" and "stale."** **No `bars` call was due for a high-water purpose.** A VOO bar *was* pulled
-this run — to price the day's P&L honestly against an official close — and **core VOO was again
-deliberately not given a mark**, because stamping one would fabricate a §5.4 trailing stop on the one
-position §5 exempts from all four rules. **§5.4 remains NOT ARMED, not disabled, not skipped.** It
-arms on the first *satellite* fill. **The failure this step exists to catch is still ahead of us:**
-the day a satellite position exists and a close run is missed, the mark goes stale while every field
-still reads present and plausible, and the trailing stop silently stops existing.
+**⚠ THE HIGH-WATER FIELD IS ABSENT, NOT STALE — checked against the actual trigger, not assumed.**
+The backfill rule at the top of this file fires when a `highest_close` is **behind the last trading
+day**. There is **no satellite position block in this file**, so there is **no `highest_close` and
+no `(as of ...)` date** to be behind anything. The marks are **ABSENT: a third state, distinct from
+both "current and unchanged" and "stale."** An absent field carries no date, so the backfill trigger
+cannot fire. **No `bars` call was due for a high-water purpose and none was made for one.** (A
+`bars --adjustment all` call *was* made this run — for **AVAV**, to check whether a +1.20% five-
+session reading was describing a quiet tape or a round-tripped +12.9% intraday spike. It was the
+latter. That is research, not high-water maintenance.) **Core VOO was again deliberately not given a
+mark**, because stamping one would fabricate a §5.4 trailing stop on the one position §5 exempts
+from all four rules. **§5.4 remains NOT ARMED, not disabled, not skipped.** It arms on the first
+*satellite* fill.
 
-**§5.1–§5.4 had no subject at the close.** No thesis to test for invalidation (§5.1); no timing
+**§5.1–§5.4 have no subject this morning.** No thesis to test for invalidation (§5.1); no timing
 window to expire (§5.2); no entry price to measure −7% against (§5.3); no high-water mark to measure
 −10% against (§5.4). `sell_rule_status` is **absent rather than blank** — there is no position block
-to carry the field. **All four remain untested code paths; nothing has ever closed in this account.**
+to carry the field. **No §5.1 Perplexity invalidation query was issued and none was due.** **All
+four remain untested code paths; nothing has ever closed in this account.**
 
-**⚠ THE TWO-PRICE TRAP WIDENED BY ROUGHLY TEN TIMES TODAY.** Today's **official close is 696.69**
-(`bars --adjustment all`). The broker's `current_price` at 16:15 is **697.2885** — **59.85 cents
-above** the official close, against a 6.5-cent gap yesterday (`lastday_price` 700.87 vs official
-700.805). Priced on official closes the book was **−$407.58 / −0.4100%** today; the broker reports
-**−$354.74 / −0.3568%** — **a $52.84 difference in reported day P&L, both ends being broker marks.**
-On core this is cosmetic. **On a satellite position the same shortcut writes a `highest_close` about
-60 cents too high, which does not error, does not read as stale, and silently moves the §5.4 stop
-~0.09% to a level nobody chose.** Always `bars --adjustment all` for a close and a fresh `quote` for
-execution — **never a `positions` field for either.**
+**⚠ THE TWO-PRICE GAP COLLAPSED THIS MORNING, AND THAT IS THE POINT.** Yesterday's official close
+was **696.69** (`bars --adjustment all`); this morning's `lastday_price` is **696.65** — a **4-cent**
+gap, against the **59.85-cent** gap between the official close and the broker mark at last night's
+16:15 run. **The gap is not a stable offset that could be corrected for; it was ~6.5 cents on 09-09,
+~60 cents at the 09-10 close, and ~4 cents now.** On core this is cosmetic. **On a satellite position
+the same shortcut writes a `highest_close` wrong by an amount that changes day to day, which does not
+error, does not read as stale, and silently moves the §5.4 stop to a level nobody chose.** Always
+`bars --adjustment all` for a close and a fresh `quote` for execution — **never a `positions` field
+for either.**
 
-**§2 rebalance: NOT DUE TOMORROW.** 69.72% sits well inside the 65–75% band; `core_in_band: true`,
-`rebalance_needed: false`, and the +$280.84 delta is **0.28% of equity** — VOO's mark moving, not
+**§2 rebalance: NOT DUE TODAY.** 69.84% sits well inside the 65–75% band; `core_in_band: true`,
+`rebalance_needed: false`, and the +$163.14 delta is **0.16% of equity** — VOO's mark moving, not
 drift. §2 rebalances at the **band edge** (65/75), not to the exact target.
 
-**⚠ The core's mark has now been negative nine sessions running. It still means nothing
-procedurally.** −$936.14 (−1.337%) against the 706.74 fill on the broker mark, or **−$995.42
-(−1.422%) priced on today's official close** — the two-price gap again, and the official-close figure
-is the truer one. **§5 exempts core from all four sell rules.** A round number is not a threshold and
-there is no §5.3 or §5.4 on this position to cross. **A book whose only holding is a core red for
-nine sessions, sitting on 30% cash with a clear breaker and an empty weekly cap, is precisely the
-setup in which the §4 bar gets quietly lowered to put *something* on.** It was not lowered. Six
-theses were written today and all six were rejected on their own filters.
+**⚠ The core's mark is still negative but is up $455.61 on this morning's indication, after nine
+consecutive negative closes. It means nothing procedurally in either direction.** −$543.76 (−0.777%)
+against the 706.74 fill. **§5 exempts core from all four sell rules.** A round number is not a
+threshold, there is no §5.3 or §5.4 on this position to cross, and **a green mark is not a result any
+more than the nine red ones were.** **A book whose only holding is core, sitting on 30% cash with a
+clear breaker and an empty weekly cap, is precisely the setup in which the §4 bar gets quietly
+lowered to put *something* on.** It was not lowered. **Five theses were written today and all five
+were rejected on their own filters — including the largest second-order surface this log has ever
+screened, Oracle's $664B RPO print, which produced no Company B at all.**
 
 ---
 

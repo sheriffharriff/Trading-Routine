@@ -52,7 +52,320 @@ single most common way a plausible-sounding connection gets mistaken for an oppo
 
 ## Entries
 
-### 2026-09-10 (08:23 ET) — event survey (funnel, pre-thesis)
+### 2026-09-11 (08:20 ET) — event survey (funnel, pre-thesis)
+
+Selftest passed all five checks (`trading_enabled: true`, LIVE paper account, equity
+**$99,456.23**). Window screened: **Thursday's close through Friday pre-market (Sept 10–11)**.
+Four Perplexity scans (two broad `--recency day`, two sourced second-order screens), plus three
+`move --sessions 5` checks and one `bars` pull. **Five candidates reached ticker stage; all five
+rejected. No BUY intent today.**
+
+**The shape of the day: the single biggest event of the week — Oracle's FQ1 2027 print — was
+screened directly, as yesterday's carry-forward required, and its second-order branch died three
+separate ways at once.** That is stated first because the pull to find *something* in a $664B RPO
+number is the strongest this month:
+
+- **No US-listed company discloses Oracle as a named customer with a quantified revenue share.** A
+  dedicated screen asking for exactly that returned **"No verified companies found."**
+- **The FY27 capex guidance was *maintained*, not raised** — $90–95B total, ≤$70B net cash, the
+  same range already guided. **Standing rule (iii): not new to the company's own disclosure.**
+- **Management said the new bookings do not spend money inside this strategy's horizon.** The call
+  is quoted as saying the vast majority of the >$30B of Q1 AI bookings were **prepay or
+  bring-your-own-hardware**, "will not require incremental capital from Oracle," and **will not
+  affect capex or revenue until fiscal 2028 or beyond** — past §4.3's two-quarter limit.
+
+The events screened, and where each second-order branch died:
+
+- **Oracle FQ1 2027, reported 09-10 after the close.** Revenue **$19.3B (+30%)**; **OCI $7.4B,
+  +121%**; **RPO $664B, +$209B YoY and +$26B QoQ**, including **>$30B of new AI cloud contracts**;
+  **850 MW of AI capacity and >300,000 GPUs delivered** in the quarter; FY27 capex **$90–95B**
+  (Oracle IR release and 8-K, 09-10; call transcripts). See T-2026-09-11-01.
+- **Palantir — $192M US Army production award for eight TITAN ground stations.** Fully
+  allocated: **$127M Palantir, $65M Anduril** (private). See T-2026-09-11-02.
+- **AeroVironment — $464.8M US Army E-HEL award for 30 kW LOCUST X3 counter-UAS lasers**, the
+  first US production contract for a high-energy laser weapon. See T-2026-09-11-03.
+- **Standard Lithium / LG Energy Solution — binding take-or-pay offtake, 8,000 t/yr of battery-
+  quality lithium carbonate for 10 years** from the South West Arkansas project (6-K, 09-10). See
+  T-2026-09-11-04.
+- **Macy's FQ2 2026, reported 09-10 morning.** Adjusted EPS **$0.63** vs ~$0.35 consensus, helped
+  by **$116M of IEEPA tariff refunds** ($84M pre-tax net, $0.23/share). See T-2026-09-11-05.
+
+Items dropped before thesis stage, with reasons:
+
+- **⚠ "Nvidia's $30B investment in Intel," "Nvidia acquires Hugging Face," "Google's first
+  nuclear deal / $1.9B loan to restart an Iowa reactor," "Microsoft to triple cloud capacity by
+  2032."** All four come from **one secondary aggregator briefing dated 09-11** that cites other
+  outlets rather than any primary document. **A dedicated verification query found no SEC filing,
+  no company press release and no major-press coverage for any of them.** Events of that size
+  would produce primary disclosure; its absence is the finding. **Dropped before any ticker work
+  — this is standing rule (iii) in a new costume: not a re-aggregation of old news but an
+  unsourced claim, and the recency filter passes it just as readily.** If any of these is real it
+  will arrive with a filing attached, and *that* is the day it enters the funnel.
+- **August PPI +5.4% YoY (09-10), above the 5.3% consensus; core PPI +4.6%; August CPI released
+  this morning; September hike odds rose to ~72% from ~61% into the 09-15/16 FOMC; jobless claims
+  206k.** Macro. **No segment, no dollar path, no §4 mechanism.** Same disposition as 09-08,
+  09-09 and 09-10, and for the same reason. Fourth consecutive day.
+- **Adobe — softer Q4 revenue guidance (09-10 after the close).** Adobe is Company A and the sign
+  is **negative**; the read-across to competitors is competitive inference, not a transaction.
+  **This book has no short.**
+- **Blackstone to acquire Flow Control Holdings**, a data-center liquid-cooling components maker
+  (09-11). **The target is private and Blackstone is the acquirer — Company A on both ends.** The
+  only second-order surface is "listed cooling names are therefore worth more," which is
+  **standing rule (v)**: a fact about an industry dressed as a transaction. No ticker work done.
+- **GrafTech ↔ Antora Energy, carbon materials for thermal batteries** (09-11). GrafTech is the
+  named party and is **far below the §3 $10B floor**; Antora is private. **No value, volume or
+  timeline disclosed** — part 2 could not be written even if the universe check passed.
+- **Axogen's $200M acquisition of BioCircuit Technologies** (09-11). AXGN is below the §3 floor
+  and the target is private.
+- **Redwood Trust prices an upsized $185M convertible note offering** (09-11). Financing, not a
+  commercial event. No second-order surface.
+- **Corning ↔ Verizon, >80 million miles of optical fiber, 2027–2032.** Announced **09-08** —
+  **outside the window and already disposed of** in the 09-09 funnel (GLW and VZ are the named
+  counterparties; MTZ died on parts 1/2/3, FN on an unsourced mechanism). A source re-surfacing it
+  on 09-10 does not make it new. **Not reopened.**
+- **OpenAI ↔ Firmus, multi-year AI compute capacity from two Malaysian sites** (09-08). Both
+  parties **private**, and outside the window.
+- **Shell Energy North America buys Hunlock Creek (169 MW) and sells RISEC interests to
+  Constellation for $715M** (09-10). Asset M&A, not a supply or offtake contract; the listed
+  entity on one side is a **foreign issuer** and on the other a subsidiary LLC.
+- **A US-backed tin refiner agreeing to buy up to 100% of an Australian miner's supply**
+  (Bloomberg, 09-10). **Neither party named in any accessible source**, and the listed tin names
+  are far below the §3 floor. Dropped before ticker work.
+- **Kroger reports before the bell this morning; VinFast and Rent the Runway the same session.**
+  **Not events yet at survey time.** Recorded so Monday's run knows they landed *after* this
+  survey closed rather than being missed by it — the same sequencing note Oracle got yesterday,
+  which is the note that made today's Oracle screen happen.
+
+**⚠ A note on the priced-in filter — the defect the human is already holding fired twice today,
+in both of its known shapes, on the same morning.** No run reinterprets the filter; this is
+evidence for the open question, not a reason to touch §4.
+
+- **Shape (1), the LITE shape — the filter rejects a stock for falling. It did not merely come
+  close this time; it fired.** `move --sessions 5` on **LHX returns −4.47%, `priced_in: true`,
+  "LATE - skip per strategy.md section 4."** LITE fired at −7.35% on 09-03; LMT came within 0.4%
+  of firing at −3.61% on 09-10; **LHX crossed it today.** It cost nothing — LHX was already dead
+  on part 2 arithmetic (see T-2026-09-11-02) — but **the filter's stated reason for skipping LHX
+  is that it fell 4.47%.**
+- **Shape (2), the QCOM shape — an event-day move absorbed before the filter reads it, and today
+  it was absorbed *inside a single session*.** **AVAV traded as high as 159.23 on 09-10 and closed
+  at 147.06** (`bars --adjustment all`), a **+12.9% intraday event move that round-tripped to
+  +4.4% on the day** — and the five-session read is **+1.20%, `priced_in: false`, "passes."** The
+  09-09 QCOM instance had a prior drawdown doing the absorbing; **here the same session did it.**
+  Same root cause, third instance, **not a new item for the human's queue.**
+
+---
+
+### T-2026-09-11-01 — (no ticker) — REJECTED
+**Company A / the news:** **Oracle (ORCL) fiscal Q1 2027, reported 2026-09-10 after the close.**
+Total revenue **$19.3B, +30% YoY**; **OCI revenue $7.4B, +121% YoY**, accelerating from +93% in
+Q4; **RPO $664B, up $209B YoY and $26B sequentially**, including **>$30B of new AI cloud contracts
+booked in the quarter**; **850 MW of AI capacity and more than 300,000 GPUs delivered to customers
+since the end of Q4** (~3x all of Q4, 73% of last fiscal year's total); **FY2027 capex guidance
+$90–95B** with net cash capex **≤$70B**; Q1 capex **$28B**, net cash capex $18B, FCF **−$5B**; a
+**$20B equity issuance** completed in Q1. Sources: Oracle IR press release and 8-K dated 09-10;
+multiple independent earnings-call transcripts for the capex and GPU figures.
+
+**Company B / the candidate:** **None could be identified.** This entry exists because yesterday's
+carry-forward instructed this run to screen Oracle's print directly rather than assume a later run
+would, and the honest output of that screen is a name that does not exist.
+
+**1. Mechanism (one sentence):**
+> **Not written.** No Company B survived to be named, so there is no revenue or cost line to put
+> in the sentence. Writing one would require choosing a supplier myself — **standing rule (v)**.
+
+**2. Dollar path:** not reached.
+**3. Timing window:** not reached — and it is worth recording that it would have failed anyway.
+Oracle's own call says the **vast majority of the >$30B of new bookings are prepay or
+bring-your-own-hardware**, "will not require incremental capital from Oracle," and **will not
+affect capex or revenue until fiscal 2028 or beyond**. §4.3 caps the horizon at **two quarters**.
+**4. Invalidation:** not reached.
+
+**Hard filters:**
+- Priced-in (§4): **not applicable to a candidate that does not exist.** For the record, **ORCL
+  itself returns +5.06% over five sessions, `priced_in: true`** — and ORCL is **Company A**, so
+  §4's headline-name rule rejects it independently of the number.
+- Correlation (§4): no open satellite positions; nothing to check against.
+- Universe (§3): not reached.
+
+**Outcome:** **REJECTED — three independent failures, any one of them sufficient.**
+**(i) No Company B.** A screen asking specifically which US-listed companies have *themselves*
+disclosed Oracle as a named customer with a quantified revenue share returned **"No verified
+companies found."** Oracle's own materials name **no hardware supplier, no colocation partner and
+no data-center developer** anywhere in the release, the 8-K or the retrievable call text, despite
+extensive discussion of megawatts, GPUs and capex. **The unnamed-counterparty defect — fifth
+appearance in nine sessions, and the largest event it has ever eaten.**
+**(ii) Standing rule (iii).** The **$90–95B capex guidance was maintained, not raised.** The
+sentence in the transcripts is *"We continue to anticipate $90 to $95 billion."* A reiterated
+number is not new to the company's own disclosure and cannot be the news in a second-order thesis.
+**(iii) Part 3, on Oracle's own words.** The genuinely new item — the $30B of Q1 bookings — is
+structured to spend **no** incremental Oracle capital and to touch results in **FY2028 or later**.
+**The biggest number in the release is the one furthest outside this strategy's horizon.**
+
+**⚠ The thing worth writing down is how hard this one pulled.** A $664B RPO, 850 MW and 300,000
+GPUs is the most vivid second-order surface this log has ever screened, and the temptation is not
+to invent a fake mechanism — it is to name a *real* supplier from memory, note that it obviously
+sells into hyperscale AI buildouts, and call the disclosure gap a technicality. **The names arrive
+unprompted and they are plausible. That is exactly the limitation §4 warns about, and the absence
+of any company willing to put Oracle's name and a number in its own filing is the whole answer.**
+
+---
+
+### T-2026-09-11-02 — LHX — REJECTED
+**Company A / the news:** **Palantir Technologies won a $192M US Army production contract for
+eight TITAN (Tactical Intelligence Targeting Access Node) ground stations** — four Advanced and
+four Basic systems, delivered over 18 months. Multiple sources, 09-10.
+**Company B / the candidate:** **L3Harris Technologies (LHX)**, named across sources as a company
+involved in the TITAN program.
+
+**1. Mechanism (one sentence):**
+> The Army's TITAN production award causes L3Harris's Space & Airborne Systems revenue to
+> increase because L3Harris supplies subsystems into the eight ground stations Palantir
+> integrates.
+
+The sentence is single-clause and reads cleanly. **It is also, on the numbers below, describing
+money that does not exist.**
+
+**2. Dollar path: FAILED, on arithmetic that closes the question completely.**
+**The $192M award is fully allocated by the sources: $127M to Palantir and $65M to Anduril
+Industries (private).** $127M + $65M = **$192M — the whole award.** L3Harris, Sierra Nevada,
+Strategic Technology Consulting and World Wide Technology are named as **involved in the
+program**, but **no source discloses any dollar value to any of them, and there is no residual
+left in this award to disclose.** Against L3Harris revenue of roughly $21B/yr, even the entire
+$65M non-Palantir share would be **~0.3%** — against §4.2's **10%** floor, and that share is
+already spoken for by a private company.
+**3. Timing window:** 18-month delivery — **past the two-quarter limit** even if part 2 had held.
+**4. Invalidation:** not reached.
+
+**Hard filters:**
+- Priced-in (§4): `move --sessions 5` = **−4.47%, `priced_in: true`, "LATE - skip."** **The filter
+  rejects LHX for having fallen 4.47%** — open human question #1, firing for real. **It changed
+  nothing here: part 2 had already killed the thesis on arithmetic.**
+- Correlation (§4): no open positions to check against.
+- Universe (§3): LHX is US-listed and above the $10B floor — **the only test it passes.**
+
+**Outcome:** **REJECTED on part 2.** The award has no unallocated dollars in it, and a named
+program participant with **$0 disclosed from this contract** is not a dollar path.
+
+**⚠ This is the name the last nine days of carry-forward specifically warned about, and it is
+worth recording exactly how it resolved.** `state.md` has flagged LHX for a week as "the
+specifically invited name" — the one memory offers whenever a defense award has an unfilled
+supplier chain, a case of **standing rule (iv)** (a recurring ticker is a warning, not
+corroboration) compounded by **rule (v)**. **Today it arrived properly: a published source named
+it, so re-running its filters was legitimate rather than an inherited conclusion.** And it died
+anyway, on a number — **not on the warning, not on discipline, but because $127M + $65M = $192M
+and there is nothing left.** That is a better outcome than avoiding the name, because it is
+auditable. **Note carefully what did *not* happen: Anduril's $65M is real second-order money and
+Anduril is private, which is the third time this month the identifiable beneficiary was not
+listed.**
+
+---
+
+### T-2026-09-11-03 — (no ticker) — REJECTED
+**Company A / the news:** **AeroVironment (AVAV) received a $464.8M US Army contract under the
+Enduring High-Energy Laser (E-HEL) program for 30 kW LOCUST X3 counter-UAS laser weapon systems** —
+reported as the **first production contract for a high-energy laser weapon in US military
+history**. Sources dated 09-07 through 09-10; carried into 09-10 earnings-day coverage alongside
+AVAV's FQ1 print (record **$1.5B funded backlog**, FY27 revenue guidance **maintained** at
+$2.125–2.225B, FCF **−$36M** on capacity investment).
+**Company B / the candidate:** **None. No supplier is named by any source.**
+
+**1. Mechanism (one sentence):** **Not written — there is no Company B to put in it.**
+**2. Dollar path:** not reached.
+**3. Timing window:** not reached.
+**4. Invalidation:** not reached.
+
+**Hard filters:**
+- Priced-in (§4): **AVAV returns +1.20% over five sessions, `priced_in: false`, "passes"** — and
+  **AVAV is Company A**, the awarded party, so §4's headline-name rule rejects it regardless. See
+  the survey note above on how that +1.20% was produced: a **+12.9% intraday spike to 159.23 that
+  round-tripped to a 147.06 close.**
+- Correlation (§4): no open positions.
+- Universe (§3): not reached.
+
+**Outcome:** **REJECTED — no Company B.** A dedicated screen for the **laser source, beam director
+or power subsystem** supplier returned, explicitly, that **no published source names any other
+company** and **no dollar amount is broken out below AeroVironment's own $464.8M.**
+
+**⚠ A 30 kW directed-energy weapon has a short and famous supplier list, and every name on it is
+arriving unprompted right now.** Naming one would be **standing rule (v)** — a fact about the
+directed-energy industry presented as a transaction — and this is the **fourth** time this month
+the same reflex has had to be refused (JASSM/LRASM, MK 48, GF's Singapore fab, Bayer's withheld
+"newgold® network" partners). **The source left the blank. Filling in a blank the source left
+blank is not research.**
+
+---
+
+### T-2026-09-11-04 — SLI — REJECTED
+**Company A / the news:** **Standard Lithium (SLI) signed a binding take-or-pay offtake agreement
+with LG Energy Solution** for **8,000 tonnes/yr of battery-quality lithium carbonate over 10
+years** (80,000 t total) from the **Smackover Lithium South West Arkansas project**, whose initial
+phase is designed for **22,500 t/yr** nameplate. With the previously announced Trafigura offtake,
+roughly **90% of targeted offtake volume** is now covered. 6-K and Korean press, **09-10**.
+**Company B / the candidate:** **SLI itself was screened, and no second-order US-listed name
+exists.**
+
+**1. Mechanism (one sentence):** cannot be written for a Company B, because there is none —
+LG Energy Solution is the counterparty and is **Korea-listed**; the JV partner is a **foreign
+issuer**; Trafigura is **private**. Any read-across to US-listed lithium producers is **"lithium
+offtake demand is firm," a fact about a commodity market, not a transaction** — standing rule (v).
+**2. Dollar path:** **not computable even for SLI.** No contract value is disclosed by any source,
+and deriving one requires assuming a lithium price. **The source publishes volume, not dollars.**
+**3. Timing window: FAILED outright.** The 10-year term runs **from the start of commercial
+production**, which has not begun. **Nothing reaches reported results inside two quarters.**
+**4. Invalidation:** not reached.
+
+**Hard filters:**
+- Priced-in (§4): **not run — no `move` call was made and none was due.** §3 and part 3 had already
+  closed the candidate, and §4 is explicit that the hard filters exist to kill candidates *before*
+  a thesis is constructed, not to generate numbers for rejected ones.
+- Correlation (§4): no open positions.
+- Universe (§3): **FAILED. SLI is roughly $1B** — far below the **$10B floor.** LG Energy Solution
+  is **not US-listed** (§3).
+
+**Outcome:** **REJECTED on §3 and part 3.** A genuinely new, dated, binding, volume-specified
+commercial agreement — **and the only listed party to it is a tenth of the size this strategy may
+buy, with first revenue years away.** **§3 is a floor, not a preference.**
+
+---
+
+### T-2026-09-11-05 — M — REJECTED
+**Company A / the news:** **Macy's (M) fiscal Q2 2026, reported 2026-09-10 before the open.** Net
+sales **$4.9B, +1.1%**; comparable sales **+2.7%** (Macy's nameplate +1.1%, Bloomingdale's
+**+11.3%**, Bluemercury +6.2%); adjusted EPS **$0.63** against roughly **$0.35** consensus; adjusted
+EBITDA **$457M (9% of revenue, from 7.5%)**; FY26 net sales guidance raised to **$21.68–21.83B**.
+**$116M of IEEPA tariff-refund proceeds** ($98M in-quarter, $18M after), a **$84M pre-tax net
+benefit worth $0.23/share** and **180bp of the 41.5% gross margin**; **ex-refund adjusted EPS
+$0.40, +14% YoY.** The stock **fell** on the print.
+**Company B / the candidate:** screened for a named supplier, brand partner or landlord with
+quantified impact. **None disclosed.**
+
+**1. Mechanism (one sentence): FAILED, and this is the interesting rejection of the day.**
+The tempting sentence is *"the IEEPA tariff-refund ruling causes other import-heavy US retailers'
+cost of goods to fall, because they paid the same tariffs Macy's is being refunded."* **That is
+not a §4 mechanism.** §4 requires that **news about Company A changes Company B's economics.**
+Macy's receiving $116M **does not cause any other company to receive anything** — both companies
+are downstream of the *same* trade-law ruling. **That is shared exposure to a common cause, which
+is a correlation, not a causal path.** And any company actually receiving refunds discloses them
+**itself**, in its own results, which makes it **first-order for that company** and not news
+Macy's print carries.
+**2. Dollar path:** not reached. **Macy's names no publicly traded supplier, brand partner or
+landlord with a quantified impact anywhere in the release or call summaries** — the only quantified
+external factor is the trade-law refund itself.
+**3. Timing window:** not reached.
+**4. Invalidation:** not reached.
+
+**Hard filters:**
+- Priced-in (§4): **not run and not due** — no Company B reached the filter stage.
+- Correlation (§4): no open positions.
+- Universe (§3): not reached.
+
+**Outcome:** **REJECTED on part 1.** **A shared cause is not a mechanism.** Worth recording as a
+distinct failure shape: every other part-1 rejection in this log died because no counterparty was
+named. **This one had a perfectly real, quantified, dated economic event with obvious read-across
+— and the read-across runs through a statute, not through a transaction.** The distinction is easy
+to lose precisely because the sentence sounds causal when said aloud.
+
+---
 
 Selftest passed all five checks (`trading_enabled: true`, LIVE paper account, equity
 **$99,266.82**). Window screened: **Wednesday's close through Thursday pre-market (Sept 9–10)**.
