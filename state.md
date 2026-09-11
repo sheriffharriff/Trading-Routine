@@ -10,7 +10,7 @@ The block below is parsed by `scripts/common.py` and gates real behavior
 `key: value` format exactly. Prose goes underneath.
 
 ```
-last_run: 2026-09-11 08:20 ET 1-premarket-research (selftest PASSED all five checks, trading_enabled true, LIVE paper, equity 99456.23; clock is_open FALSE at 08:19:54 ET with next_open 2026-09-11 09:30 ET - CLOSED BECAUSE IT IS PRE-MARKET, NOT A HOLIDAY, next_open is TODAY which is how the two are told apart, so a full trading session is ahead; NO ORDERS - this routine places none by design; RESEARCH TODAY 5 theses, 0 ACCEPTED, 5 REJECTED (T-2026-09-11-01 Oracle read-across no-ticker, -02 LHX, -03 LOCUST X3 no-ticker, -04 SLI, -05 M); plan_today.md rewritten with plan_date 2026-09-11, NO BUY / NO SELL / NO REBALANCE intents; ORACLE FQ1 2027 WAS SCREENED DIRECTLY as yesterday's carry-forward required - RPO 664B +209B YoY, OCI +121% to 7.4B, 850MW and 300k+ GPUs delivered, FY27 capex 90-95B - and it produced NO COMPANY B for three independent reasons: no US-listed company discloses Oracle as a quantified customer, the capex guidance was MAINTAINED not raised (rule iii), and Oracle's own call says the new bookings are prepay/BYOH and do not touch capex or revenue until FY2028+ (past §4.3's two quarters); LHX died on ARITHMETIC - the 192M TITAN award is fully allocated 127M Palantir + 65M Anduril (private), leaving 0 disclosed for LHX - which closes the nine-day carry-forward warning about LHX properly, on a number rather than on discipline; PRICED-IN FILTER DEFECT FIRED IN BOTH KNOWN SHAPES TODAY - LHX priced_in TRUE at -4.47% i.e. skipped FOR FALLING (shape 1, after LITE -7.35% fired and LMT -3.61% came 0.4% short), and AVAV priced_in FALSE at +1.20% after a +12.9% intraday spike to 159.23 round-tripped to a 147.06 close (shape 2, absorbed INSIDE one session); NEITHER COST ANYTHING and NO RUN REINTERPRETS THE FILTER - evidence for the human's open questions 1 and 2, not new items; §5.1-5.4 had NO SUBJECT - no thesis to invalidate, no window to expire, no entry to measure -7% against, no high-water to measure -10% against, no §5.1 Perplexity query due; high-water marks ABSENT not stale, no backfill due, core VOO again deliberately NOT stamped; ledger reconciled - zero satellite blocks vs zero satellite Alpaca positions, they AGREE; week anchor 2026-09-07 matches today's ISO Monday, NO cap reset due, next boundary Monday 2026-09-14; consecutive_closed_losses stays 0 - NOTHING HAS EVER CLOSED; breaker INACTIVE, weekly count 0 of 3, NEW POSITIONS WERE FULLY PERMITTED AND NOTHING WAS BLOCKED - the research simply produced no eligible candidate; core 69.84% in band, rebalance_needed false, rebalance_delta +163.14 = 0.16% of equity, NO REBALANCE DUE; core VOO unrealized -543.76 / -0.777%, up 455.61 on this morning's indication after nine consecutive negative closes, NO ACTION in either direction - §5 exempts core from all four rules; two-price gap COLLAPSED to 4 cents this morning (official close 696.69 vs lastday_price 696.65) from 59.85 cents last night - the gap is NOT a stable correctable offset; alerts.md empty, no ClickUp task created and none was due from this routine)
+last_run: 2026-09-11 09:36 ET 2-market-open-execution (selftest PASSED all five checks at 09:36 ET, trading_enabled true, LIVE paper, equity 99728.60; clock is_open TRUE at 09:36:29 ET with next_close 2026-09-11 16:00 ET - market OPEN, a regular session; ZERO ORDERS PLACED - not because anything was blocked but because today's plan contains no intent of any kind; STALENESS GATE PASSED - plan_date 2026-09-11 equals today's ET date, so the plan was executable and its contents, not its age, are why nothing happened; STEP 3 SKIPPED - core_established true, the bootstrap path is closed permanently; STEP 4 NO SELL INTENTS and no satellite position exists to sell, §5.1-5.4 again had NO SUBJECT; STEP 5/6 NO BUY INTENTS - the pre-market run researched 5 theses and rejected all 5, so there was nothing to re-validate, NO alpaca.py move call was due or made, and the weekly cap 0 of 3 was never approached; STEP 7 NO REBALANCE - sleeves at 09:36 read core 69.92%, core_in_band true, rebalance_needed false, rebalance_delta +82.20 = 0.08% of equity, well inside the §2 65-75% band; LEDGER RECONCILED AT THE OPEN - zero satellite blocks vs zero satellite Alpaca rows, they AGREE, broker returns exactly one row and it is core VOO; week anchor 2026-09-07 matches today's ISO Monday, NO cap reset due, next boundary Monday 2026-09-14; consecutive_closed_losses stays 0 - NOTHING HAS EVER CLOSED; breaker INACTIVE, NEW POSITIONS WERE FULLY PERMITTED AND NOTHING WAS GATED; core VOO unrealized -273.38 / -0.391% against the 706.74 fill, intraday +725.99 / +1.05% on the session, NO ACTION in either direction - §5 exempts core from all four rules and a green tape is not a reason to act any more than a red one was; high-water marks ABSENT not stale, no backfill due, core VOO again deliberately NOT stamped, §5.4 still NOT ARMED; alerts.md empty, no stale-plan alert due, no ClickUp task created and none was due from this routine)
 week_of: 2026-09-07
 new_positions_this_week: 0
 consecutive_closed_losses: 0
@@ -18,9 +18,9 @@ circuit_breaker: INACTIVE
 halt_triggered_at: none
 core_established: true
 core_ticker: VOO
-core_pct: 69.84
+core_pct: 69.92
 satellite_pct: 0.0
-cash_pct: 30.16
+cash_pct: 30.08
 open_thesis_ids: none
 ```
 
@@ -68,19 +68,33 @@ position list win, and the discrepancy goes in the journal.
 
 Anything the next run must not lose. Cleared once acted on.
 
-- **⚠ 09-11 PRE-MARKET IS DONE: FIVE THESES, ZERO ACCEPTED, A DO-NOTHING PLAN DATED TODAY, AND
-  NOTHING BLOCKED.** *(This bullet replaces the two 09-10 close-run bullets — the day-closed-out
-  summary and the high-water/absent-mark note — both read in full by this run; nothing live is
-  dropped, and the absent-mark reasoning is restated in the §5.4 bullet below where it belongs.)*
-  Selftest passed all five checks at **08:19 ET** (`trading_enabled: true`, LIVE paper, equity
-  **$99,456.23**). `clock` 08:19:54: **`is_open: false`, `next_open: 2026-09-11 09:30 ET` — closed
-  because it is PRE-MARKET, not a holiday; `next_open` is *today*.** `plan_today.md` rewritten with
-  **`plan_date: 2026-09-11`** and **no BUY, no SELL, no REBALANCE**. Ledger reconciled
-  **satellite-to-satellite: zero blocks vs zero satellite Alpaca rows, they agree.** Week anchor
-  `2026-09-07` matches today's ISO Monday — **no cap reset due**; next boundary **Monday 09-14**.
-  Breaker INACTIVE, weekly cap **0 of 3**, satellite sleeve **empty with 30.16% cash**,
-  `control.md` notes empty, `alerts.md` empty. **New positions were FULLY PERMITTED. Nothing was
-  gated. The research produced no eligible candidate — that is §4 working, not a rule firing.**
+- **⚠ 09-11 MARKET OPEN IS DONE: ZERO ORDERS, AND THE REASON IS AN EMPTY PLAN, NOT A BLOCKED ONE.**
+  *(This bullet replaces the 09-11 pre-market bullet, read in full by this run; nothing live is
+  dropped.)* Selftest passed all five checks at **09:36 ET** (`trading_enabled: true`, LIVE paper,
+  equity **$99,728.60**). `clock` 09:36:29: **`is_open: true`, `next_close: 16:00 ET` — a regular
+  open session.** **The staleness gate PASSED: `plan_date: 2026-09-11` equals today's ET date**, so
+  the plan was fully executable and **its contents, not its age, are why nothing happened** — no
+  stale-plan alert was due and none was posted. Step 3 skipped (`core_established: true`). Step 4:
+  no SELL intents, no satellite position to sell. Steps 5–6: **no BUY intents, so no `move`
+  re-validation was due and none was made** — there was nothing to re-validate. Step 7: **core
+  69.92%, `core_in_band: true`, `rebalance_needed: false`, delta +$82.20 = 0.08% of equity — no
+  rebalance.** Ledger reconciled **satellite-to-satellite: zero blocks vs zero satellite Alpaca
+  rows, they agree**; the broker's one row is core VOO. Week anchor `2026-09-07` matches today's ISO
+  Monday — **no cap reset due**; next boundary **Monday 09-14**. Breaker INACTIVE, weekly cap
+  **0 of 3**, satellite sleeve **empty with 30.08% cash**, `control.md` notes empty, `alerts.md`
+  empty. **New positions were FULLY PERMITTED at the bell. Nothing was gated. A run that places no
+  order because the research found nothing is §4 working, not a rule firing** — and **the open run
+  is explicitly forbidden from generating an idea to fill the gap.**
+
+- **⚠ THE GREEN-TAPE MIRROR IMAGE ARRIVED, EXACTLY AS PREDICTED — AND IT CHANGES NOTHING.** VOO
+  opened up: core mark **703.98**, **intraday +$725.99 / +1.05%**, and the unrealized loss against
+  the **706.74 fill** narrowed to **−$273.38 / −0.391%** from −$543.76 at 08:20. **This is the day
+  the "we lagged the index" inversion of the reassuring sentence becomes available**, and it is
+  wrong for the same two reasons the falling version was: ~0.70 exposure returns ~70% of an index
+  move **by construction**, and both ends of the broker's day P&L are broker marks. **§5 exempts
+  core from all four sell rules — there is no action attached to the core at any number, in either
+  direction.** The paired danger is the live one: **an empty satellite sleeve on a green open is
+  the exact setup that produces the urge to put *something* on.** Nothing was put on.
 
 - **⚠ THE ORACLE SCREEN HAPPENED *ONLY* BECAUSE YESTERDAY'S RUN WROTE A SEQUENCING NOTE. KEEP
   WRITING THEM.** The 09-10 close run recorded that Oracle, Adobe and Macy's had landed *after* the
@@ -214,12 +228,13 @@ Anything the next run must not lose. Cleared once acted on.
   mandates, **and it runs identically in reverse on a green day**; **(2)** the residual is a
   **measurement artifact** — both ends of the broker's day P&L are broker marks (on 09-10 the entire
   ~5bp residual was **$52.84** of two-price gap). **The refutation works on any day: substitute the
-  day's exposure and index move.** **⚠ VOO is indicated UP this morning and the core mark is +$455.61
-  on the session, which means today the sentence arrives inverted — "the book rose less than the
-  index" / "we lagged" — and it is wrong for exactly the same reason.** The paired impulse is the
-  dangerous one: **an empty satellite sleeve is the setup that produces both this sentence and the
-  urge to lower the §4 bar to put *something* on.** Neither is a reason to act. Anchor the week to
-  **08-31, the first operating day**.
+  day's exposure and index move.** **⚠ THE INVERSION IS NO LONGER A PREDICTION — VOO opened green
+  (+1.05% on the core mark at 09:36), so today's close run and this afternoon's weekly review will
+  meet the sentence as "the book rose less than the index" / "we lagged," and it is wrong for
+  exactly the same two reasons.** The paired impulse is the dangerous one: **an empty satellite
+  sleeve is the setup that produces both this sentence and the urge to lower the §4 bar to put
+  *something* on.** Neither is a reason to act. Anchor the week to **08-31, the first operating
+  day**.
 
 - **⚠ ALL FOUR §5 SELL RULES ARE UNTESTED CODE PATHS, NOT PROVEN ONES — AND §5.4 IS NOT ARMED.**
   Zero positions have ever closed, so §5.1–§5.4 have never been evaluated against a real subject.
@@ -234,10 +249,10 @@ Anything the next run must not lose. Cleared once acted on.
   catch is still ahead of us:** the day a satellite position exists and a close run is missed, the
   mark goes stale while every field still reads present and plausible.
 
-- **⚠ COLLAPSE, DO NOT APPEND — ACTED ON TWELVE TIMES NOW, AND DUE AGAIN NEXT RUN.** `positions.md`
+- **⚠ COLLAPSE, DO NOT APPEND — ACTED ON THIRTEEN TIMES NOW, AND DUE AGAIN NEXT RUN.** `positions.md`
   ran to **604 lines / 42KB** before the 09-07 collapse, was cut to 162, and has since been held to
-  a **single current reconciliation block** — this run folded the 09-10 close block into today's
-  pre-market block, and this carry-forward list was rewritten rather than extended. Every
+  a **single current reconciliation block** — this run folded today's pre-market block into the
+  open-run block, and this carry-forward list was rewritten rather than extended. Every
   load-bearing fact is preserved; **nothing live was discarded.** The pull to append is structural —
   a run is rewarded for showing it checked something, and a deleted note looks like a check that
   never happened. **A future run will feel it too.**
