@@ -40,6 +40,123 @@ anything where the honest-broker rule (§4) did real work>
 
 ## Entries
 
+### 2026-09-11 (Friday)
+
+**Account:** total $99,591.92 | day P&L +$591.31 (+0.60%) | since inception −0.41%
+**Sleeves:** core 69.88% | satellite 0.0% | cash 30.12%   (§2 band 65–75%)
+**Breaker:** INACTIVE
+**Week:** 0/3 new positions
+
+**Traded:** nothing — zero orders submitted at any of the three runs today
+**Researched:** 5 theses — 0 accepted, 5 rejected
+**Positions near a sell rule:** none, and the reason is that there is **no subject**. Zero
+satellite positions exist, so §5.1–§5.4 had nothing to evaluate for the twelfth consecutive
+day. Core VOO is exempt from all four (§5).
+
+**High-water marks:** **NONE WRITTEN — and that is the correct outcome, not a skipped step.**
+Step 2 is this routine's load-bearing job, and it had no subject: there are no satellite
+blocks in `positions.md`, therefore no `highest_close` and no `(as of ...)` date to stamp.
+The marks are **ABSENT** — a third state, distinct from both "current and unchanged" and
+"stale." Core VOO was deliberately **not** stamped; doing so would fabricate a §5.4 trailing
+stop on the one position §5 exempts. **§5.4 remains NOT ARMED.** It arms on the first
+*satellite* fill.
+
+**What happened:**
+
+A green close after nine mostly-red sessions, and the third full trading day this week that
+ended with the account doing nothing on purpose. VOO closed at **702.52** (`bars
+--adjustment all`) against a **696.69** prior close, **+0.84%** on the day. The book gained
+**$591.31 (+0.597%)**, every cent of it the core position's mark; cash did what cash does.
+Equity finished at **$99,591.92**, still **−0.41%** since inception, with the core carrying
+**−$408.07 (−0.58%)** against the 706.74 fill.
+
+The morning's pre-market run put five candidates through a full `research_log.md` entry and
+rejected all five: the Oracle FQ1 read-across (no Company B exists — a dedicated screen for
+US-listed firms disclosing Oracle as a quantified customer returned nothing, and the $90–95B
+capex guidance was *maintained*, not raised), LHX (dead on arithmetic — $127M Palantir +
+$65M Anduril = the entire $192M TITAN award, $0 left for any other named participant), the
+LOCUST X3 supply chain (no source names any supplier), SLI (~$1B against the §3 $10B floor),
+and M (the tariff-refund read-across runs through a statute, not a transaction). The 09:36
+open run executed that do-nothing plan. The 12:34 midday run found no subject for §5 and
+also found **Alpaca half down** — `clock` returning 500 on four attempts, `quote` and `bars`
+returning 504.
+
+**That outage is over.** This run probed the data plane by hand rather than inferring its
+health from a green selftest, as yesterday's carry-forward required: `clock` **200**
+(`is_open: false`, `next_open` Monday 09-14 09:30 ET), `bars --adjustment all` **200**,
+`quote` **200**. So the close was read from the correct source today. Had a satellite
+position existed, its mark **could** have been stamped this afternoon — which is the one
+thing the midday run could not have promised.
+
+Order book: one row in the account's entire history, the 09-03 core VOO fill, `status:
+filled`, terminal. **Nothing in limbo overnight**, so §7's warning had no occasion to fire
+and `trade_log.md` was correctly left unappended. Loss streak stays 0 because nothing has
+ever closed; breaker INACTIVE; weekly cap untouched at 0 of 3, with the ISO Monday
+(**2026-09-07**) matching `week_of`, so no reset was due. Next boundary Monday 09-14.
+`alerts.md` remains empty.
+
+**What I got wrong or nearly got wrong:**
+
+**1. I found the two-price defect's actual mechanism, and it is not drift — it is a quote
+midpoint.** Six days of carry-forward have flagged that the broker's price and the official
+close differ by an unstable amount (6.5c on 09-09, **59.85c** on 09-10, 4c this morning),
+and every note treated the instability as unexplained. Today it resolves exactly: broker
+`current_price` is **702.62**, and the latest quote is **702.59 / 702.65** — the midpoint is
+**702.62 to the cent**. The official close is **702.52**, the last trade printed at 15:59:57
+ET. The broker mark is not a bad close, it is **not a close at all**; it is a live bid/ask
+midpoint that keeps moving after the bell, which is precisely why the gap has no stable size.
+That also explains the 59.85c reading on 09-10 without appealing to anything mysterious. The
+practical consequence is unchanged but now sharp-edged: **the moment a satellite position
+exists, a `highest_close` taken from a `positions` field records an after-hours quote
+midpoint, and the §5.4 stop moves with nothing reading as wrong.** Always `bars --adjustment
+all`.
+
+**2. The near-miss that would have manufactured a result: mixing the two price sources.** The
+predicted inverted framing arrived on schedule — "the book rose less than the index" (VOO
++0.84%, book +0.60%) — and the refutation is *exact* on broker terms: core weight at
+yesterday's close was **69.697%**, the broker move was **+0.857%**, and 0.857 × 0.69697 =
+**0.5973%**, which is the day's return to four decimal places. **Residual: zero.** But if I
+had taken the index leg from the official closes (+0.8368%) while leaving the book leg on
+broker marks, the same arithmetic yields a **+0.0141pp residual — about $14 of "excess
+return" that does not exist.** I nearly wrote the mixed version, because the official close
+is the number I had just been at pains to source correctly. **On a day with a satellite
+position this is how a two-price artifact gets written down as skill.** Both legs from the
+same source, or the comparison means nothing.
+
+**3. The temptation to report Step 2 as done.** This routine's own prompt says the high-water
+update is the job that matters most and fails invisibly. That framing creates real pressure
+to produce evidence of having performed it — and the nearest available way to do that was to
+stamp core VOO's 702.52 close into `positions.md` and call the machinery exercised. That
+would be a fabricated §5.4 stop on the one position §5 exempts from every sell rule. Nothing
+was stamped. **Twelve days in, §5.4 has still never run against a real subject, and today
+tested the data path, not the rule.**
+
+**4. Not a near-miss, stated plainly so it is not mistaken for one:** thirty-one theses and
+zero positions, on a green day, with an empty sleeve, a clear breaker and a fully available
+0-of-3 weekly cap. Nothing was gated. §4 says most research runs should end in no trade and
+five rejections today were each on a stated, auditable reason. **The honest reading is that
+the rule was applied as written — and the §1 objective still has to be met by something.**
+That tension belongs to the human (open item 3), and the wrong response to it is lowering the
+§4 bar, which this run did not do.
+
+**For the next run:**
+
+- **The Alpaca outage is RESOLVED** — `clock`, `bars` and `quote` all returned 200 at 16:16
+  ET. But **open item (6) survives it**: the selftest still does not probe either endpoint,
+  so a green pre-flight still certifies nothing about the data plane. Probe by hand.
+- **The two-price gap is a quote midpoint** (proof above). This supersedes six days of
+  "unstable offset" notes — it is not an offset, and it never will be.
+- **Monday 09-14 is a week boundary.** `new_positions_this_week` resets to 0 and `week_of`
+  becomes 2026-09-14 — and it is already 0, so the reset changes nothing this time.
+- **Kroger, VinFast and Rent the Runway reported at or after this morning's survey.** They
+  are **Monday's material** and Monday's pre-market run must screen them **directly**, not
+  assume a later run did. Today's Oracle screen only happened because yesterday's run wrote
+  that instruction down.
+- **The 16:45 weekly review has not run yet.** It must not quote the reject scoreboard as a
+  result, and it must carry the refuted-with-arithmetic version of the book-vs-index
+  sentence — including finding #2 above, since a weekly review is the single most likely
+  place for a mixed-source residual to be presented as outperformance.
+
 ### 2026-09-10 (Thursday)
 
 **Account:** total $99,063.85 | day P&L −$354.74 (−0.36%) | since inception −0.94%
