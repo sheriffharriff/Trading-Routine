@@ -29,31 +29,30 @@ better. Core and rebalance actions are exempt from the gate because neither depe
 day's research.
 
 ```
-plan_date: 2026-09-11
+plan_date: 2026-09-14
 generated_by: 1-premarket-research
 market_open_today: yes
 ```
 
-Market opens today 2026-09-11 at 09:30 ET (`alpaca.py clock` at 08:19:54 ET: `is_open:
-false`, `next_open: 2026-09-11T09:30:00-04:00`, `next_close: 2026-09-11T16:00:00-04:00`).
+Market opens today 2026-09-14 at 09:30 ET (`alpaca.py clock` at 08:22:50 ET: `is_open:
+false`, `next_open: 2026-09-14T09:30:00-04:00`, `next_close: 2026-09-14T16:00:00-04:00`).
 **Not a holiday** — the market is closed because it is pre-market and `next_open` is *today*.
 
-**One pre-market run today, at 08:20 ET.** Selftest passed all five checks
-(`trading_enabled: true`, LIVE paper account, equity **$99,456.23**).
+**One pre-market run today, at 08:22 ET.** Selftest passed all five checks
+(`trading_enabled: true`, LIVE paper account, equity **$99,134.33**).
 
-**Tape context:** VOO's broker mark is **701.25** (`lastday_price` **696.65**, `change_today`
-**+0.66%**). Neither number is an execution reference — **pull a fresh quote at 09:35.** The
-core position shows `unrealized_pl` **−$543.76 (−0.777%)** against the 706.74 fill. That is
-still negative, but note the direction: **the mark is up $455.61 on the session's indication
-after nine straight negative closes.** §5 exempts core from all four sell rules — **there is
-no action attached to it at any number, in either direction.**
+**Tape context:** VOO's broker mark is **698.04** (`lastday_price` **702.56**, `change_today`
+**−0.64%**). Neither number is an execution reference — **pull a fresh quote at 09:35.** The
+core position shows `unrealized_pl` **−$861.70 (−1.231%)** against the 706.74 fill, its widest
+of the run so far. §5 exempts core from all four sell rules — **there is no action attached to
+it at any number, in either direction, and a −1.2% mark is not a signal to do something.**
 
 ---
 
 ## The whole plan in one line
 
 **Do nothing.** No BUY, no SELL, no REBALANCE. Core is in band, there are no satellite
-positions to manage, and five candidates were researched to a full thesis entry and all five
+positions to manage, and three candidates were researched to a full thesis entry and all three
 were rejected.
 
 ---
@@ -63,79 +62,84 @@ were rejected.
 ### BUY — none
 
 No buy intents. New positions were **fully permitted** this run — breaker INACTIVE, weekly cap
-at **0 of 3**, satellite sleeve **empty with 30.16% cash**, no restricting note in `control.md`.
-**Nothing was blocked. The research did not produce an eligible candidate.**
+at **0 of 3** (fresh week), satellite sleeve **empty with 30.26% cash**, no restricting note in
+`control.md`. **Nothing was blocked. The research did not produce an eligible candidate.**
 
-Five candidates reached ticker stage with a full `research_log.md` entry:
+Three candidates reached ticker stage with a full `research_log.md` entry:
 
 | Thesis | Ticker | Died at | Why |
 |---|---|---|---|
-| T-2026-09-11-01 | (no ticker) — Oracle read-across | no Company B, rule (iii), part 3 | **No US-listed company discloses Oracle as a quantified customer** — a dedicated screen returned "no verified companies found." The **$90–95B FY27 capex guidance was maintained, not raised**. Oracle's own call says the new bookings are prepay/BYOH and **do not touch capex or revenue until FY2028+**. |
-| T-2026-09-11-02 | LHX | part 2 (arithmetic), part 3 | The **$192M TITAN award is fully allocated: $127M Palantir + $65M Anduril (private) = $192M.** LHX is named as a program participant with **$0 disclosed from this award**. 18-month delivery. |
-| T-2026-09-11-03 | (no ticker) — LOCUST X3 supply chain | no Company B | **No published source names any supplier** of the laser source, beam director or power subsystem, and no dollar is broken out below AVAV's own $464.8M. |
-| T-2026-09-11-04 | SLI | §3 universe, part 3 | **SLI is ~$1B against a $10B floor**; LG Energy Solution is Korea-listed. The 10-year offtake runs **from the start of commercial production**, which has not begun. |
-| T-2026-09-11-05 | M | part 1 | The tariff-refund read-across runs through a **statute, not a transaction** — Macy's receiving $116M causes no other company to receive anything. **Shared exposure to a common cause is a correlation, not a mechanism.** |
+| T-2026-09-14-01 | BWXT | part 1 (rule v), part 3 | HII's **$336M CVN 82 long-lead award** names **no subcontractor** — a dedicated screen returned *"no public source names a subcontractor or supplier receiving a portion of this specific award."* "BWXT is the sole naval reactor builder" is an **industry fact, not a transaction**. Undefinitized advance procurement for a next-decade carrier also fails the two-quarter horizon. |
+| T-2026-09-14-02 | (packaged food) | part 1 | Kroger's **ID-sales guidance cut (1.0–2.0% → 0.2–0.8%)** and a supplier's soft volumes are both downstream of the **same grocery consumer**. Kroger guiding lower causes no supplier to receive less. **Shared cause, not a mechanism** — the Macy's shape from 09-11. |
+| T-2026-09-14-03 | CART | part 2 | Kroger named **Instacart** as a partner on the call — a real named counterparty — but **no dollar figure exists anywhere**: not in the release, the 8-K, the IR summary or the call coverage. Neither magnitude nor segment share can be written without inventing both. |
 
-**The headline event of the week was screened directly, as yesterday's carry-forward required.**
-Oracle's FQ1 2027 (09-10 after the close) is the largest second-order surface this log has ever
-processed — **RPO $664B (+$209B YoY), OCI +121% to $7.4B, 850 MW and >300,000 GPUs delivered in
-one quarter, FY27 capex $90–95B** — and it produced **no Company B at all**, for three
-independent reasons stated in the table. **That sequencing note yesterday is the only reason this
-screen happened; keep writing them.**
+**The three earnings the Friday review assigned to this run were screened directly, not
+assumed.** **Kroger** produced the two theses above. **Rent the Runway** (FQ2 revenue $97.7M) is
+**two orders of magnitude below the §3 $10B floor** as a candidate and named no quantified
+counterparty as Company A. **VinFast** had **no fresh earnings in the window** — the recent items
+are guidance/estimates and operational updates, and it is a foreign issuer besides. **That
+sequencing note is the only reason this screen happened; keep writing them.**
 
 Notes for the open run, carried so nothing is re-derived at 09:35:
 
-- **⚠ Do not reach for an Oracle supplier at the bell, and expect the names to arrive
-  unprompted.** The screen asking which US-listed companies have *themselves* named Oracle as a
-  customer with a quantified revenue share returned **"No verified companies found."** Oracle's
-  release, its 8-K and the retrievable call text name **no hardware supplier, no colocation
-  partner, no data-center developer** — while discussing megawatts, GPUs and $90B+ of capex at
-  length. **The plausible name you can think of is standing rule (v), and it will feel like a
-  technicality rather than a rule. It is not.** **ORCL itself is `priced_in: true` at +5.06% and
-  is Company A twice over.**
-- **⚠ Do not reach for LHX — and read *why* before deciding it is settled.** A source named it
-  today, so its filters were legitimately re-run rather than inherited. **It died on arithmetic:
-  $127M + $65M = the entire $192M award, leaving nothing for any other participant.** The
-  rejection does not flip at a different price. **Anduril's $65M is the real second-order money
-  here and Anduril is private** — the third time this month the identifiable beneficiary was not
-  listed.
-- **⚠ LHX also returned `priced_in: true` at −4.47%, i.e. the filter's stated reason to skip it is
-  that it fell.** That is open human question #1 **firing for real**, after LITE (−7.35%) and LMT
-  (−3.61%, 0.4% short). **It cost nothing today — part 2 had already killed the thesis. No run
-  reinterprets the filter.**
-- **⚠ Do not fill in the LOCUST X3 / E-HEL supplier chain from memory.** A dedicated screen
-  returned **no named supplier at all**. A 30 kW directed-energy weapon has a short, famous
-  vendor list and every name on it will suggest itself; naming one is **standing rule (v)**,
-  fourth instance this month. **AVAV passes the priced-in check at +1.20% and is Company A** — the
-  awarded party — so §4's headline-name rule rejects it regardless of the number.
-- **⚠ Distrust the +1.20% on AVAV as a description of what happened.** `bars --adjustment all`:
-  **09-10 high 159.23, close 147.06** — a **+12.9% intraday event move that round-tripped**, read
-  by the five-session filter as a quiet +1.20%. Same shape as the 09-09 QCOM case, except the
-  absorbing happened **inside one session**. **Evidence for the human's open question #2, not a
-  new item and not a reason to act.**
-- **⚠ Four headline claims circulating this morning have no primary source and must not be traded
-  on:** "Nvidia invests $30B in Intel," "Nvidia acquires Hugging Face," "Google's first nuclear
-  deal / $1.9B loan to restart an Iowa reactor," "Microsoft to triple cloud capacity by 2032."
-  **All four trace to a single secondary aggregator briefing; a verification query found no
-  filing, no press release and no major-press coverage for any of them.** If one is real it will
-  arrive with a document attached, and that is the day it enters the funnel.
-- **The macro tape is loud and none of it is actionable.** **August PPI +5.4% YoY (09-10) vs 5.3%
-  expected; core PPI +4.6%; August CPI this morning; September hike odds up to ~72% from ~61%**
-  into the 09-15/16 FOMC; jobless claims 206k. **No segment, no dollar path, no §4 mechanism in
-  either direction.** Fourth consecutive day with the same disposition. **A CPI print this morning
-  is not a reason to act at 09:35** — and if it moves the tape hard, that is a price move, not a
-  thesis.
-- **Do not reach for MU.** It did not enter today's funnel, no source named it, and its filters
-  were **not** re-run — **absence of evidence, not resolve.** Tenth consecutive day.
-- **Do not reopen yesterday's rejects: LMT, GFS, EQT, LEU, TBBK/CASH/GDOT/CCB.** All still
-  rejected, none becomes a buy at a different price. **EQT remains the tempting one — a clean
-  filter sheet that died on size (~0.14% of volume against a 10% floor).**
-- **Do not reopen QCOM, AMZN, GLW, VZ, MTZ, FN, COHR, LITE, CRDO, MRVL, DY, PWR, BSX, MDT or
-  ABT.** Disposed of on 09-08/09-09 and **not revived by the Corning–Verizon item resurfacing in
-  a 09-10 article** — that deal was announced **09-08** and is outside the window.
+- **⚠ THE FUNNEL WAS THIN BECAUSE IT WAS A WEEKEND, AND THAT IS STRUCTURAL — NOT A QUIET NEWS
+  DAY TO COMPENSATE FOR.** Both broad scans came back explicitly empty on company events: the
+  first reported *"the available evidence is thin for company-specific corporate events"*; the
+  weekend-filings sweep for 09-12 and 09-13 returned *"nothing qualifies based on the sources
+  gathered."* **§4 needs a dated transaction between two named parties, and US companies do not
+  file 8-Ks on Saturday and Sunday.** A Monday pre-market run screens **one business day plus two
+  empty ones**, and this recurs every Monday. **Expect it; do not lower the bar at the bell to
+  make up for it.**
+- **⚠ Do not reach for BWXT at the open, and expect the name to feel obvious.** A 30-year-old
+  sole-source position in naval nuclear propulsion is exactly the kind of fact that reads like a
+  supplier relationship. **The source announced the deal and left the counterparty blank.
+  Filling in a blank the source left blank is not research** — standing rule (v), **fifth
+  instance this month.** It also returned **`priced_in: true` at −6.30%**, but note the ordering:
+  **parts 1 and 3 had already killed it before the filter ran.**
+- **⚠ CART is the near-miss of the run and the most interesting rejection to carry.** After eleven
+  sessions of *"the source withheld the counterparty,"* **a source finally named one** — and the
+  thesis still died one test later for want of a number. **That is a different failure from rule
+  (v) and must not be filed with it.** §4 needs a named counterparty **and** a quantified
+  exposure; this run produced a clean example of each arriving without the other. **A partnership
+  with no size disclosed is not a dollar path.** CART also returned **`priced_in: true` at
+  −5.79%** — again *after* part 2 had already killed it.
+- **⚠ THE PRICED-IN DRAWDOWN DEFECT FIRED TWICE TODAY (CART −5.79%, BWXT −6.30%) — ITS DENSEST
+  SHOWING, AND IT COST NOTHING.** Five instances now (LITE −7.35%, LMT −3.61% near-miss, LHX
+  −4.47%, plus today's two). **Both of today's candidates were already dead on the four-part
+  thesis when the filter reached them.** The expensive instances are the ones that arrive
+  **alive** — LITE passed the four-part thesis, was killed by a drawdown, and is **+10.58% vs
+  VOO** since. **Do not let a double-fire inflate the estimated cost of this defect, and do not
+  reinterpret the filter: that is a human editing §4 or `alpaca.py move`.**
+- **⚠ Do not read the Kroger cut as a short thesis or as a macro signal.** §4 is a long-only
+  second-order rule; a guidance cut at Company A with no named, sized counterparty is **not a
+  trade in either direction.**
+- **⚠ THE LOUDEST STORY OF THE WEEK IS NOT A CANDIDATE, IN EITHER DIRECTION.** August CPI landed
+  09-11 (headline **+0.4% m/m / +3.4% y/y**, core **+0.3% m/m / +2.4% y/y**) and the **FOMC
+  decision lands 09-16/17, inside this week.** No Company A, no segment, no dollar path — it is
+  the whole tape moving, which is what §4 exists to refuse. **If it moves prices hard at the
+  open, that is a price move, not a thesis.** *(One source priced ~87% odds of a 25bp **increase**,
+  contradicting every other framing in the same result set. Unresolved and not worth resolving —
+  untradeable under §4 either way.)*
+- **⚠ Four headline claims from 09-11 still have no primary source and must not be traded on:**
+  "Nvidia invests $30B in Intel," "Nvidia acquires Hugging Face," "Google's first nuclear deal /
+  $1.9B loan to restart an Iowa reactor," "Microsoft to triple cloud capacity by 2032." **None
+  appeared in any filing over the weekend.** If one is real it will arrive with a document
+  attached, and that is the day it enters the funnel.
+- **Do not reopen the disposed rejects.** **ORCL** (Company A twice over, `priced_in: true` at
+  +5.06%, and the screen for a named Oracle customer returned "no verified companies found");
+  **LHX** (dead on arithmetic: $127M Palantir + $65M Anduril = the entire $192M award); **AVAV**
+  (the awarded party, and its +1.20% is a round-tripped +12.9% spike); **SLI** (~$1B against the
+  $10B floor); **M** (a statute, not a transaction); and **LMT, GFS, EQT, LEU, TBBK, CASH, GDOT,
+  CCB, QCOM, AMZN, GLW, VZ, MTZ, FN, COHR, LITE, CRDO, MRVL, DY, PWR, BSX, MDT, ABT.** **None
+  becomes a buy at a different price.**
+- **Do not reach for MU.** It has not entered the funnel for **twelve consecutive days**, no
+  source has named it, and its filters were **not** re-run — **absence of evidence, not resolve.**
+  If it resurfaces *from a source*, re-run its filters and re-test the timing window from that
+  day's date.
 - **A quiet day is not a reason to lower the bar at the bell.** §4: the correct output of most
-  research runs is no trade. **Thirty-one theses, zero positions — and today the single largest
-  event available was screened properly and still produced nothing.** That is the rule working.
+  research runs is no trade. **Thirty-three theses, zero positions.** That number is the strongest
+  argument available for loosening the rule and it is **not** the agent's argument to make — §2
+  permits the cash, §4 says most runs end in no trade, and **both rules were followed.**
 
 ### SELL — none
 
@@ -148,12 +152,13 @@ invalidation query was issued and none was due — there is no position to check
 
 ### REBALANCE — none
 
-- current_core_pct: **69.84%** (target 70%, §2 band 65–75% — **inside the band**)
-- `alpaca.py sleeves` 08:20 ET: `core_in_band: true`, `rebalance_needed: false`,
-  `rebalance_delta: +163.14`
-- action: **none.** The +$163.14 delta is **0.16% of equity** — VOO's overnight mark moving, not
-  drift. §2 rebalances at the **band edge** (65/75), not to the exact target. 69.84% is not a
-  rebalance, and neither were 69.72%, 69.78%, 69.83%, 69.92%, 69.96% or 69.98%.
+- current_core_pct: **69.74%** (target 70%, §2 band 65–75% — **inside the band**)
+- `alpaca.py sleeves` 08:22 ET: `core_in_band: true`, `rebalance_needed: false`,
+  `rebalance_delta: +258.52`
+- action: **none.** The +$258.52 delta is **0.26% of equity** — VOO's overnight mark moving, not
+  drift. §2 rebalances at the **band edge** (65/75), not to the exact target. 69.74% is not a
+  rebalance, and neither were 69.72%, 69.78%, 69.83%, 69.84%, 69.88%, 69.92%, 69.96% or 69.98%.
+  **Nine consecutive runs inside a 0.26-point range; the core is not drifting.**
 - **⚠ `core_established: true`. The bootstrap path is closed permanently — do not re-run it.**
 
 ---
@@ -164,22 +169,25 @@ invalidation query was issued and none was due — there is no position to check
   first *satellite* position opens. The core VOO holding does **not** arm it: core is exempt
   from §5 entirely and is deliberately absent from `positions.md`.
 - **The §6 weekly cap is fully available at 0 of 3.** Week rollover checked this run: the ISO
-  Monday of 2026-09-11 (Friday) is **2026-09-07**, which matches `week_of` — **no reset was
-  due**. Next boundary is Monday 2026-09-14.
+  Monday of 2026-09-14 is **2026-09-14**, which matches `week_of` — **no reset was due, because
+  the Friday review already performed it.** That is the housekeeping rule working as designed,
+  not a skipped step. Next boundary is Monday 2026-09-21.
 - **Circuit breaker INACTIVE**, `consecutive_closed_losses: 0`, `halt_triggered_at: none`,
   `HALT_CLEARED_AT: none`. Nothing has ever closed, so the streak cannot have moved.
 - **`alerts.md` is empty — zero incidents, nothing SYSTEMIC.** Selftest passed all five checks
-  at 08:19 ET.
-- **⚠ Two-price trap.** Use `bars --adjustment all` for any official close and a fresh `quote`
-  for execution. Never a `positions` field for either. Today's numbers already differ: broker
-  mark **701.25** against `lastday_price` **696.65**, versus yesterday's official close
-  **696.69** — a **4-cent** gap this morning against **59.85 cents** at last night's close. **The
-  gap is not stable from day to day, which is the whole reason the shortcut is unsafe.**
-- **⚠ Today is Friday 09-11 — a weekly-review day.** The 16:15 review **must not quote the reject
-  scoreboard as a result**; ten names over a few sessions is noise, not a sample. It will also be
-  the first review to weigh **a full week of five-and-six-a-day rejection counts against zero
-  positions** — the honest framing is that §4 was applied as written, **not that the bar needs
-  moving.**
+  at 08:22 ET.
+- **⚠ Two-price trap — SOLVED, and the answer is a quote midpoint, not an offset.** The broker
+  mark is a **live bid/ask midpoint** that keeps moving after the bell; that is why the gap
+  (6.5c, 59.85c, 4c on successive days) never had a stable size and never will. **Do not
+  re-derive this and do not re-open it as a mystery.** Use `bars --adjustment all` for any
+  official close and a fresh `quote` for execution. **Never a `positions` field for either.**
+  Cosmetic on core; **load-bearing the moment a satellite position exists**, because a
+  `highest_close` read from a `positions` field would record an after-hours midpoint and
+  silently move the §5.4 stop.
+- **⚠ `selftest.py` does not probe `clock` or market data.** A green pre-flight certifies nothing
+  about the data plane — it passed all five checks on 09-11 while `clock` was 500 and
+  `quote`/`bars` were 504. **Probe by hand before relying on a price. Whether the selftest should
+  change is a human's call, not a run's.**
 
 ---
 
