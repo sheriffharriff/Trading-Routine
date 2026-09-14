@@ -40,6 +40,102 @@ anything where the honest-broker rule (§4) did real work>
 
 ## Entries
 
+### 2026-09-14 (Monday)
+
+**Account:** total $99,251.20 broker / **$99,268.04 on the official close** | day P&L
+**−$313.98 (−0.315%)** both legs official (−$334.78 / −0.336% on Alpaca's own broker-mark
+basis) | since inception **−0.73%** official / −0.75% broker
+**Sleeves:** core 69.77% | satellite 0.0% | cash 30.23%   (§2 band 65–75%)
+**Breaker:** INACTIVE
+**Week:** 0/3 new positions — week anchor 2026-09-14 matches `week_of`, no reset due
+
+**Traded:** nothing — zero orders submitted at any of the three runs today
+**Researched:** 3 theses — 0 accepted, 3 rejected (T-2026-09-14-01 BWXT, -02 packaged
+food/grocery suppliers, -03 CART)
+**Positions near a sell rule:** none, and the reason is **no subject** — zero satellite
+positions, fifteenth consecutive session. Core VOO is exempt from all four (§5).
+
+**High-water marks:** **NONE WRITTEN, AND THAT IS THE CORRECT OUTCOME OF STEP 2, NOT A
+SKIPPED STEP.** There are no satellite blocks in `positions.md`, therefore no `highest_close`
+and no `(as of ...)` date to stamp or re-date. The marks are **ABSENT** — a third state,
+distinct from both "current and unchanged" and "stale," and the one state that carries no
+date for tomorrow's midday backfill trigger to read. Core VOO was deliberately **not**
+stamped: doing so would fabricate a §5.4 trailing stop on the one position §5 exempts from
+every sell rule. **§5.4 remains NOT ARMED. It arms on the first *satellite* fill.**
+
+**What happened:**
+
+A red close on a quiet Monday, and the fourth full trading day in a row that ended with the
+account doing nothing on purpose. VOO closed at **699.35** (`bars --adjustment all`) against
+Friday's **702.52** — **−0.451%** on the session, giving back most of Friday's +0.84%. The
+book lost **$313.98 (−0.315%)**, every cent of it the core position's mark; the 30% cash did
+what cash does. Equity finished at **$99,268.04** on official closes, **−0.73%** since
+inception, with the core carrying **−$731.95 (−1.046%)** against its 706.74 fill.
+
+The −0.315% against VOO's −0.451% is **0.70 exposure to an index move being 70% of it, by
+construction** — not defense, not skill, and it runs identically in reverse on a green day.
+Recording it because the standing refutation in `state.md` exists precisely so a favorable
+sign on a red day does not get written up as the strategy working.
+
+Three runs fired today and each produced the only outcome available to it. The **08:22
+pre-market** run screened the weekend plus Friday's post-survey earnings and wrote three full
+theses, rejecting all three — BWXT at part 1 on standing rule (v) (HII's $336M CVN 82
+long-lead award names no subcontractor; "BWXT is the sole naval reactor builder" is an
+industry fact, not a transaction) and again at part 3 on the two-quarter horizon; the
+packaged-food read-across at part 1 as shared cause rather than mechanism; CART at part 2
+for want of any dollar figure. The **09:35 open** run found a plan that was **fresh and
+empty** — `plan_date` matched, the staleness gate did not fire, Steps 4–6 were reached with
+full authority and had no intents to act on. The **12:34 midday** run reviewed zero satellite
+positions and had no §5 subject. Nothing was blocked anywhere: breaker INACTIVE, weekly cap
+0 of 3, `control.md` Notes empty, 30% idle cash. **The research did not produce an eligible
+candidate. That is §4 working, not the system stalling.**
+
+Core stayed in band all day — 69.72% at the open, 69.82% at midday, **69.77%** now, the
+twelfth consecutive run inside a 0.26-point range. `rebalance_needed: false`,
+`rebalance_delta: +224.64`, **0.23% of equity**. §2 rebalances at the **band edge (65/75)**,
+not to the exact target. **No rebalance is due tomorrow.**
+
+**What I got wrong or nearly got wrong:**
+
+The honest near-miss today was **CART, and it was a near-miss in an unfamiliar direction.**
+For eleven sessions this funnel's binding constraint has been *"the source named the
+transaction and withheld the counterparty."* Today a source finally named one — Kroger naming
+Instacart on its FQ2 call — and I noticed myself treating the named counterparty as though it
+were most of the work. It is not. The thesis died one test later at part 2, because no dollar
+figure for the Kroger–Instacart relationship exists in the release, the 8-K, the IR summary
+or the call coverage, and neither the magnitude nor the segment share can be written without
+inventing both. **The pull was to size it anyway** — an "incremental prescription basket" is
+easy to put a plausible number on, and a fabricated number would have carried the thesis
+straight past §4.2's 10%-of-revenue test into a trade. A named counterparty and a quantified
+exposure are **two separate requirements**, and today produced a clean example of each
+arriving without the other.
+
+Second, smaller: I had to check myself on the **priced-in drawdown defect** firing twice in
+one run (CART −5.79%, BWXT −6.30%). The temptation there is not to reinterpret the filter —
+that is a human's call on §4 or `alpaca.py move` — but to let a **double-fire** read as
+evidence of mounting cost. It is not. Both candidates were **already dead on the four-part
+thesis** before the filter ran, so today's two instances cost **zero**. The expensive instance
+remains LITE, which passed the four-part thesis, was killed by a drawdown, and is +10.58% vs
+VOO since. Merging the tally of *instances* with the tally of *damage* would overstate the
+case for a change that is not mine to make.
+
+Third, the thing I will name rather than defend: **fifteen sessions, thirty-three theses,
+zero satellite positions, 30% of the book in cash.** Every individual rejection today was
+correct under the rules and I would make each one again. But §1 asks this account to beat the
+S&P over a rolling 12 months, and a 70/30 cash book does not do that in a rising market. The
+pressure this creates is exactly the pressure §4's honest-broker rule exists to resist, and
+the wrong response — lowering the bar on a Monday because the funnel has been dry — is the
+one that would look like progress. It stays with the human as open item (3).
+
+**For the next run:**
+
+Nothing is pending and nothing is in limbo. The account's entire order history remains **one
+row** (the 09-03 core fill, terminal). High-water marks are **absent, not stale** — no
+backfill is due tomorrow, and the absence of a date is what says so. The FOMC decision lands
+**09-16/17, inside this week**: it is the whole tape moving, with no Company A, no segment
+and no dollar path, and §4 refuses it in both directions. A Tuesday funnel screens one full
+business day, so the Monday thinness note does not apply tomorrow.
+
 ### 2026-09-11 (Friday)
 
 **Account:** total $99,591.92 | day P&L +$591.31 (+0.60%) | since inception −0.41%
