@@ -10,9 +10,10 @@ The block below is parsed by `scripts/common.py` and gates real behavior
 `key: value` format exactly. Prose goes underneath.
 
 ```
-last_run: 2026-09-14 09:35 ET 2-market-open-execution (selftest PASSED all five checks at 09:35 ET, trading_enabled true, LIVE paper, equity 99086.78 at selftest / 99087.77 at sleeves; MARKET OPEN - clock is_open TRUE at 09:35:43, next_close 2026-09-14 16:00 ET; ZERO ORDERS PLACED AND NOTHING WAS BLOCKED FROM PLACING ONE - the plan was FRESH and EMPTY, which is a different outcome from a stale-plan skip and must not be recorded as one; STALENESS GATE PASSED - plan_date 2026-09-14 MATCHES today's ET date, generated_by 1-premarket-research, so the §2 gate did NOT fire, NO stale-plan alert was due and none was posted, and Steps 4/5/6 were reached with full authority and simply had no intents to act on; STEP 3 SKIPPED - core_established true, bootstrap path permanently closed; STEP 4 NO SELL INTENTS and no satellite position to write one against; STEP 5/6 NO BUY INTENTS - zero `alpaca.py move` re-validation calls were issued and NONE WAS DUE, because re-validation has a subject only when an intent exists; the 08:00 run rejected all three of its candidates (BWXT rule (v) + part 3, packaged-food shared-cause at part 1, CART part 2 for want of a dollar figure) so nothing reached the bell; STEP 7 NO REBALANCE - sleeves core 69.72%, satellite 0.0% count 0, cash 30.28%, core_in_band true, rebalance_needed false, rebalance_delta +273.67 = 0.28% of equity, and §2 rebalances at the BAND EDGE 65/75 not to the exact target - TENTH consecutive run inside a 0.26-point range, the core is NOT drifting; LEDGER RECONCILED BEFORE ANY EXECUTION STEP - zero satellite blocks vs zero satellite Alpaca rows, they AGREE, the single VOO row is core and exempt; core unrealized -912.22 / -1.303% from the 706.74 fill, WIDER THAN THIS MORNING'S -1.231% AND STILL CARRYING NO ACTION AT ANY NUMBER - §5 exempts core; week anchor 2026-09-14 MATCHES week_of, no reset due, next boundary Monday 2026-09-21; weekly cap UNTOUCHED at 0 of 3; breaker INACTIVE, consecutive_closed_losses 0, nothing has ever closed; alerts.md EMPTY, zero open, zero SYSTEMIC; no ClickUp alert of any key was due this run)
+last_run: 2026-09-14 12:34 ET 3-midday-management (selftest PASSED all five checks at 12:34 ET, trading_enabled true, LIVE paper, equity 99388.87; MARKET OPEN - clock is_open TRUE at 12:34:46, next_close 2026-09-14 16:00 ET, verified by hand and NOT inherited from the 09:35 run; NO SATELLITE POSITION EXISTS, SO THERE WAS NOTHING TO MANAGE - the routine's entire subject is open satellite positions and there are zero, fourteenth consecutive session; STEP 2 HIGH-WATER REPAIR HAD NOTHING TO REPAIR - no satellite block means no highest_close and no (as of ...) date, so the backfill trigger CANNOT FIRE and no bars call was due for a high-water purpose; MARKS ARE ABSENT, NOT STALE - a third state distinct from "current and unchanged"; STEP 3 §5.1-§5.4 ALL HAD NO SUBJECT - no invalidation line to read verbatim, no timing_window to expire, no entry_price for -7%, no highest_close for -10%; ZERO perplexity.py invalidation queries issued and NONE WAS DUE; STEP 4 NO EXITS EXECUTED AND NONE WAS TRIGGERED - this is the absence of a subject, not a clean bill of health; NOTHING SHOULD HAVE EXECUTED AND FAILED TO - no dry-run intent, no "terminal": false, nothing suppressed; STEP 5 NOTHING TO UPDATE - no held position to refresh sell_rule_status on; EXITS-ONLY RUN AND NO POSITION WAS OPENED - 30.18% idle cash and an INACTIVE breaker are NOT an opportunity this routine may act on, new positions route through pre-market research plus the 09:35 execution run ALWAYS; LEDGER RECONCILED - zero satellite blocks vs zero satellite Alpaca rows, they AGREE, the single VOO row is core and exempt; sleeves core 69.82%, satellite 0.0% count 0, cash 30.18%, core_in_band true, rebalance_needed false, rebalance_delta +183.33 = 0.18% of equity, ELEVENTH consecutive run inside a 0.26-point range - and a rebalance was not this routine's to place in any case; core unrealized -611.12 / -0.873% from the 706.74 fill, RECOVERED from 09:35's -1.303% and carrying exactly the same NO ACTION that the widening carried - §5 exempts core; week anchor 2026-09-14 MATCHES week_of, no reset due, next boundary Monday 2026-09-21; weekly cap UNTOUCHED at 0 of 3; breaker INACTIVE, consecutive_closed_losses 0, nothing has ever closed; alerts.md EMPTY, zero open, zero SYSTEMIC; no ClickUp alert of any key was due this run)
 
-prior_run: 2026-09-14 08:22 ET 1-premarket-research (selftest PASSED all five checks, trading_enabled true, equity 99134.33; NO TRADING IN THAT RUN by design; ⚠ THE WEEKEND WAS THE RUN'S CENTRAL FINDING AND IT IS STRUCTURAL, NOT A QUIET NEWS DAY - both broad scans came back EXPLICITLY EMPTY on company events ("the available evidence is thin for company-specific corporate events"; the 09-12/09-13 filings sweep returned "nothing qualifies based on the sources gathered"), because §4 needs a dated transaction between two NAMED parties and US companies do not file 8-Ks on Saturday or Sunday, so EVERY Monday pre-market run screens one business day plus two empty ones; RESEARCH 3 theses, 0 accepted 3 rejected: T-2026-09-14-01 BWXT (HII's 336M CVN 82 long-lead award names NO subcontractor - rule (v) FIFTH instance, plus a part-3 two-quarter failure), T-2026-09-14-02 packaged food (Kroger's ID-sales guidance CUT and a supplier's soft volumes are both downstream of the SAME consumer - shared cause, not a mechanism), T-2026-09-14-03 CART (Kroger NAMED Instacart on the call - a real counterparty after eleven sessions of blanks - and the thesis still died at part 2 because NO dollar figure exists anywhere); THE THREE ASSIGNED EARNINGS WERE SCREENED DIRECTLY, NOT ASSUMED - Kroger produced both theses above, Rent the Runway FQ2 revenue 97.7M is below the §3 10B floor, VinFast had NO fresh earnings in the window and is a foreign issuer; THE PRICED-IN DRAWDOWN DEFECT FIRED TWICE (CART -5.79%, BWXT -6.30%) BUT COST NOTHING - both were already dead on the four-part thesis when the filter reached them; MACRO LOUD AND UNTRADEABLE - August CPI, FOMC 09-16/17 inside this week; plan_today.md written with plan_date 2026-09-14 and NO intents of any kind)
+prior_run: 2026-09-14 09:35 ET 2-market-open-execution (selftest PASSED all five checks at 09:35 ET, trading_enabled true, LIVE paper, equity 99086.78 at selftest / 99087.77 at sleeves; MARKET OPEN - clock is_open TRUE at 09:35:43, next_close 2026-09-14 16:00 ET; ZERO ORDERS PLACED AND NOTHING WAS BLOCKED FROM PLACING ONE - the plan was FRESH and EMPTY, which is a different outcome from a stale-plan skip and must not be recorded as one; STALENESS GATE PASSED - plan_date 2026-09-14 MATCHES today's ET date, generated_by 1-premarket-research, so the §2 gate did NOT fire, NO stale-plan alert was due and none was posted, and Steps 4/5/6 were reached with full authority and simply had no intents to act on; STEP 3 SKIPPED - core_established true, bootstrap path permanently closed; STEP 4 NO SELL INTENTS and no satellite position to write one against; STEP 5/6 NO BUY INTENTS - zero `alpaca.py move` re-validation calls were issued and NONE WAS DUE, because re-validation has a subject only when an intent exists; the 08:00 run rejected all three of its candidates (BWXT rule (v) + part 3, packaged-food shared-cause at part 1, CART part 2 for want of a dollar figure) so nothing reached the bell; STEP 7 NO REBALANCE - sleeves core 69.72%, satellite 0.0% count 0, cash 30.28%, core_in_band true, rebalance_needed false, rebalance_delta +273.67 = 0.28% of equity, and §2 rebalances at the BAND EDGE 65/75 not to the exact target - TENTH consecutive run inside a 0.26-point range, the core is NOT drifting; LEDGER RECONCILED BEFORE ANY EXECUTION STEP - zero satellite blocks vs zero satellite Alpaca rows, they AGREE, the single VOO row is core and exempt; core unrealized -912.22 / -1.303% from the 706.74 fill, WIDER THAN THIS MORNING'S -1.231% AND STILL CARRYING NO ACTION AT ANY NUMBER - §5 exempts core; week anchor 2026-09-14 MATCHES week_of, no reset due, next boundary Monday 2026-09-21; weekly cap UNTOUCHED at 0 of 3; breaker INACTIVE, consecutive_closed_losses 0, nothing has ever closed; alerts.md EMPTY, zero open, zero SYSTEMIC; no ClickUp alert of any key was due this run)
+
 week_of: 2026-09-14
 new_positions_this_week: 0
 consecutive_closed_losses: 0
@@ -20,9 +21,9 @@ circuit_breaker: INACTIVE
 halt_triggered_at: none
 core_established: true
 core_ticker: VOO
-core_pct: 69.72
+core_pct: 69.82
 satellite_pct: 0.0
-cash_pct: 30.28
+cash_pct: 30.18
 open_thesis_ids: none
 ```
 
@@ -160,14 +161,28 @@ Anything the next run must not lose. Cleared once acted on.
 
 - **⚠ ALL FOUR §5 SELL RULES REMAIN UNTESTED CODE PATHS, AND §5.4 IS STILL NOT ARMED.** Nothing has
   ever closed in this account, so §5.1–§5.4 have never been evaluated against a real subject.
-  **Thirteen sessions of "no exits" recorded the absence of a subject, not thirteen clean bills of
+  **Fourteen sessions of "no exits" recorded the absence of a subject, not fourteen clean bills of
   health.** **The high-water marks are ABSENT, not stale — a third state, distinct from "current
   and unchanged."** An absent field carries **no date**, so the backfill trigger cannot fire and
   no `bars` call is due for a high-water purpose. **Core VOO is deliberately never stamped** —
   doing so would fabricate a §5.4 stop on the one position §5 exempts. **§5.4 arms on the first
   *satellite* fill.** **The failure this exists to catch is still ahead of us** — the day a
   satellite position exists and a close run is missed *or* the data plane is down at 16:00, the
-  mark goes stale while every field still reads present and plausible.
+  mark goes stale while every field still reads present and plausible. **The 09-14 midday run is
+  the first time the dedicated high-water REPAIR step (routine 3, Step 2) ran at all, and it found
+  nothing to repair — which tests the "no subject" branch and nothing else. The repair path itself
+  is as untested as the four rules it protects.**
+
+- **⚠ ROUTINE 3 IS EXITS-ONLY, AND AN EMPTY SLEEVE WITH 30% CASH IS EXACTLY WHEN THAT CONSTRAINT
+  BITES.** The 12:34 midday run reviewed **zero** satellite positions, had **no** §5 subject, and
+  placed **no** order — the only outcome available to it. **A breaker reading INACTIVE, a weekly cap
+  at 0 of 3 and 30.18% idle cash are not an opportunity this routine may act on**, and carry-forward
+  item (3) below (the structurally undeployed sleeve) must **never** be read as licence for a midday
+  entry. **New positions route through pre-market research plus the 09:35 execution run, always** —
+  that path is what forces every buy to sleep on a written thesis, and a midday entry would route
+  around it rather than satisfy it. **This run exists so an 11am stop breach is acted on at lunch
+  rather than at the close; with nothing held, it has no work, and having no work is the correct
+  outcome, not a gap to fill.**
 
 - **⚠ THE TWO-PRICE DEFECT IS SOLVED — IT IS A QUOTE MIDPOINT, NOT AN OFFSET. DO NOT RE-OPEN IT AS
   A MYSTERY.** Six days of notes called the broker/official gap an *unstable offset* (**6.5c**
@@ -263,10 +278,11 @@ Anything the next run must not lose. Cleared once acted on.
   reconciliation compares satellite blocks to satellite Alpaca positions**; a run comparing raw
   ledger to raw broker will read a correct ledger as broken.
 
-- **⚠ COLLAPSE, DO NOT APPEND — ACTED ON SEVENTEEN TIMES NOW, AND DUE AGAIN NEXT RUN.**
+- **⚠ COLLAPSE, DO NOT APPEND — ACTED ON EIGHTEEN TIMES NOW, AND DUE AGAIN NEXT RUN.**
   `positions.md` ran to **604 lines / 42KB** before the 09-07 collapse and has since been held to a
-  **single current reconciliation block** — this run replaced the 09-14 08:23 pre-market block
-  rather than adding a second one for the same day. **Every load-bearing fact is preserved; nothing
+  **single current reconciliation block** — this run replaced the 09-14 09:35 market-open block
+  rather than adding a **third** one for 09-14, and the superseded `prior_run` line for the 08:22
+  pre-market run was dropped from the fenced block rather than left to accumulate as a third slot. **Every load-bearing fact is preserved; nothing
   live was discarded.** **The pull to append is structural** — a run is rewarded for showing it
   checked something, and a deleted note looks like a check that never happened. **A future run will
   feel it too, and two blocks for one date is the easiest version of the mistake to make.**
