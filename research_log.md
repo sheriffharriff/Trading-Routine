@@ -52,7 +52,160 @@ single most common way a plausible-sounding connection gets mistaken for an oppo
 
 ## Entries
 
-### 2026-09-11 (08:20 ET) — event survey (funnel, pre-thesis)
+### 2026-09-14 (08:23 ET) — event survey (funnel, pre-thesis)
+
+Selftest passed all five checks (`trading_enabled: true`, LIVE paper account, equity
+**$99,134.33**). Window screened: **Friday's close through Monday pre-market (Sept 11–14)** — a
+**weekend window**, which is the material fact about this run. Four Perplexity scans (two broad
+`--recency day`, two sourced second-order screens including the mandated earnings screen), plus
+three `move --sessions 5` checks. **Three candidates reached ticker stage; all three rejected. No
+BUY intent today.**
+
+**⚠ THE WEEKEND IS THE FINDING, AND IT IS A STRUCTURAL ONE RATHER THAN A QUIET NEWS DAY.** Both
+broad scans came back explicitly empty on company events: the first found *"the available evidence
+is thin for company-specific corporate events"* and surfaced **only macro** (August CPI, headline
++0.4% m/m / +3.4% y/y, core +0.3% m/m / +2.4% y/y, and FOMC **09-15/16**); the weekend-filings sweep
+returned *"nothing qualifies based on the sources gathered"* for 09-12 and 09-13. **§4 needs a dated
+transaction between two named parties. US companies do not file 8-Ks on Saturday and Sunday.** A
+Monday pre-market run is therefore screening **one business day (Friday) plus two empty ones**, and
+this will recur every Monday. It is not a reason to lower the bar — it is a reason to expect Monday
+to be the thinnest funnel of the week and to say so rather than compensate.
+
+**⚠ THE MACRO IS NOT A §4 MECHANISM IN EITHER DIRECTION, AND THE FRIDAY REVIEW SAID SO IN ADVANCE.**
+CPI landed 09-11 and the FOMC decision lands **09-16/17, inside this week**. It has no Company A, no
+segment, and no dollar path — it is the whole tape moving, which is precisely what §4 is built to
+refuse. **Recorded so a later run does not mistake "the biggest story of the week" for a candidate.**
+*(One source in the scan priced ~87% odds of a **25bp increase** this week, which contradicts every
+other framing in the same result set. Not resolved and not worth resolving — it is untradeable under
+§4 whichever way it reads, and chasing it would be research this run cannot act on.)*
+
+---
+
+### T-2026-09-14-01 — BWXT — REJECTED
+**Company A / the news:** HII (Huntington Ingalls) press release, **2026-09-11**: awarded a **$336M
+undefinitized contract** from the **U.S. Navy** to begin advanced procurement of **long-lead-time
+propulsion plant materials** for aircraft carrier **CVN 82** at Newport News Shipbuilding. This was
+the **only** item in the entire weekend sweep carrying both named parties and a dollar figure.
+**Company B / the candidate:** BWX Technologies (BWXT) — the naval nuclear reactor builder.
+
+**1. Mechanism (one sentence):**
+> The CVN 82 long-lead award causes BWXT's Naval Nuclear Reactors revenue line to improve because
+> carrier propulsion plant material procurement flows to the reactor component supplier.
+
+**2. Dollar path:** Not written. The $336M is HII's award, not BWXT's; **no portion of it has been
+publicly attributed to any supplier**, so there is no magnitude to put against BWXT's segment.
+**3. Timing window:** Not written. An *undefinitized* advance-procurement award for a carrier whose
+construction is next decade does not have a two-quarter revenue path (§4.3).
+**4. Invalidation:** Not reached.
+
+**Hard filters:**
+- Priced-in (§4): moved **−6.30%** over last 5 sessions (160.28 → 150.18) → **FAIL** (`priced_in: true`)
+- Correlation (§4): zero open satellite positions, no driver to collide with → pass (vacuous)
+- Universe (§3): **not reached** — no market cap was sourced, because the thesis died two tests earlier
+
+**Outcome:** **REJECTED at part 1 — standing rule (v), the fifth instance this month.** A dedicated
+query asking whether HII, the Navy, or anyone else had **named a subcontractor on this specific
+award** returned: *"No public source in the gathered evidence names a subcontractor or supplier
+receiving a portion of this specific CVN 82 award."* The temptation here is unusually strong and
+worth naming: **"BWXT is the sole manufacturer of naval nuclear reactors" is a fact about an
+industry, not a transaction.** The source announced the deal and left the counterparty blank;
+**filling in a blank the source left blank is not research.** It would also have died at part 3 on
+the two-quarter horizon regardless of the supplier question. **Note the ordering: it failed parts 1
+and 3 before the priced-in filter was run** — see the defect note below.
+
+---
+
+### T-2026-09-14-02 — (packaged food / grocery suppliers) — REJECTED
+**Company A / the news:** **Kroger (KR) FQ2 2026, reported 2026-09-11.** Sales **$34.6B** (+2.1%),
+adjusted EPS **$1.09** vs $1.04, e-commerce **+20%**, retail media profit **+24%**. **The event is
+the guidance cut:** full-year identical sales ex-fuel **lowered from 1.0–2.0% to 0.2–0.8%**, with
+FY adjusted EPS **reaffirmed** at $5.10–5.30. Management attributes it to first-half results, macro,
+IRA headwinds (~138–140bp) and a Cyclospora outbreak (~35bp).
+**Company B / the candidate:** the packaged-food and consumer-staples suppliers selling through
+Kroger.
+
+**1. Mechanism (one sentence):**
+> Kroger's lowered identical-sales guidance causes packaged-food suppliers' US retail revenue to
+> decline because volumes through the second-largest US grocer fall with it.
+
+**2. Dollar path:** Not written — and this is the second failure, not the first. Kroger discloses no
+per-vendor volume, so no supplier's segment exposure can be sized from this release.
+**3. Timing window:** Not reached.
+**4. Invalidation:** Not reached.
+
+**Hard filters:**
+- Priced-in (§4): KR itself moved **−0.03%** over 5 sessions (58.48 → 58.46) → passes, **and is
+  irrelevant** — KR is Company A here, never the candidate
+- Correlation (§4): no open positions → pass (vacuous)
+- Universe (§3): not reached
+
+**Outcome:** **REJECTED at part 1 — this is the Macy's shape (T-2026-09-11-05) arriving four days
+later in a different costume, and it is worth recording that it was recognised rather than
+re-derived.** Kroger's soft ID sales and a supplier's soft volumes are **both downstream of the same
+US grocery consumer**; Kroger guiding lower does not *cause* anything to happen to General Mills.
+That is **shared cause, not a causal path** — correlation dressed as a mechanism, exactly the
+distinction §4 part 1 exists to enforce. There is a second, independent reason it is not a §4 trade:
+any supplier actually seeing softer volumes **discloses that itself**, which makes it **first-order
+for that company**. **Also rejected without being written up: the read-across to other grocers.**
+"Kroger's ID sales were soft, so Albertsons' are too" is an inference about **information**, not
+economics — the shape that rejected Dell→HPE (T-2026-09-02-02), correctly and expensively.
+
+---
+
+### T-2026-09-14-03 — CART — REJECTED
+**Company A / the news:** On the same Kroger FQ2 call, management described **"a new delivery
+partnership with Instacart for combined prescription and grocery orders across nearly all
+banners."** A **named counterparty** — the thing this funnel has been short of for eleven sessions.
+**Company B / the candidate:** Maplebear / Instacart (CART).
+
+**1. Mechanism (one sentence):**
+> Kroger extending its Instacart partnership to combined prescription-and-grocery orders across
+> nearly all banners causes CART's transaction revenue to improve because each combined order is an
+> incremental fulfilled basket CART is paid on.
+
+**2. Dollar path:** **THIS IS WHERE IT DIES.** No dollar figure is attached to Instacart anywhere in
+the release, the 8-K, the IR summary or the call coverage — the scan states plainly that **"no
+specific external supplier, vendor or technology partner is named with an associated dollar
+figure."** Kroger does not disclose what it pays Instacart; Instacart does not break out Kroger.
+Neither the **magnitude** nor the **segment share of total revenue** can be written without
+inventing both, and §4.2's 10%-of-revenue test cannot even be attempted. **Kroger was already an
+Instacart partner** — the incremental item is *prescription* orders bolted onto an existing
+relationship, which is the smallest possible reading of an unquantified expansion.
+**3. Timing window:** Not reached.
+**4. Invalidation:** Not reached.
+
+**Hard filters:**
+- Priced-in (§4): moved **−5.79%** over last 5 sessions (51.715 → 48.72) → **FAIL** (`priced_in: true`)
+- Correlation (§4): no open positions → pass (vacuous)
+- Universe (§3): **not reached** — no market cap sourced, the thesis died at part 2
+
+**Outcome:** **REJECTED at part 2 — no dollar path, and no path to obtaining one.** This is the
+near-miss of the run and deserves to be said plainly: after eleven sessions of "the source withheld
+the counterparty," **a source finally named one** — and the thesis still died, one test later, for
+want of a number. **That is a different failure from rule (v) and should not be filed with it.**
+The §4 funnel needs a named counterparty **and** a quantified exposure; this run has now produced a
+clean example of each arriving without the other. **A partnership announcement with no size
+disclosed is not a dollar path, and a run that sizes it anyway has fabricated the only number that
+matters.**
+
+---
+
+### 2026-09-14 (08:24 ET) — ⚠ THE PRICED-IN DRAWDOWN DEFECT FIRED TWICE TODAY AND COST NOTHING. RECORD BOTH HALVES.
+
+**Open item (1)** — the §4 priced-in filter reading a **drawdown** as "priced in" — fired **twice in
+a single run**, its densest showing yet: **CART −5.79%** and **BWXT −6.30%**, both returning
+`priced_in: true, verdict: LATE - skip`. That is now **five instances** (LITE −7.35%, LMT −3.61%
+near-miss, LHX −4.47%, and today's two). **The filter was applied as written and both candidates
+were skipped. No run may reinterpret it — that is a human editing §4 or `alpaca.py move`.**
+
+**But the second half matters more and is the reason this is not today's headline:** *neither
+rejection was load-bearing.* **BWXT had already failed parts 1 and 3; CART had already failed part
+2.** The filter arrived at two candidates that were **already dead on the four-part thesis**, so
+today the defect cost **zero** — unlike LITE, which passed the four-part thesis, was killed by a
+drawdown, and is **+10.58% vs VOO** since. **Do not let today's double-fire inflate the estimated
+cost of this defect; the expensive instances are the ones that reached the filter alive.** Recording
+the distinction because the tally of *instances* and the tally of *damage* are different numbers, and
+a future review that merges them will overstate the case for a change it is not the agent's to make.
 
 Selftest passed all five checks (`trading_enabled: true`, LIVE paper account, equity
 **$99,456.23**). Window screened: **Thursday's close through Friday pre-market (Sept 10–11)**.
