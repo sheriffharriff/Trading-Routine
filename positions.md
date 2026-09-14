@@ -56,57 +56,56 @@ re-derive it from price history, and it stays correct for positions closed month
 
 *(none — no **satellite** positions have been opened yet. Core VOO exists and is deliberately not tracked here, per the top-of-file rules and the fill note further down.)*
 
-**Reconciliation 2026-09-14 09:35 ET (2-market-open-execution) — LEDGER AGREES WITH THE BROKER;
+**Reconciliation 2026-09-14 12:34 ET (3-midday-management) — LEDGER AGREES WITH THE BROKER;
 STILL NO SATELLITE SUBJECT, FOURTEENTH CONSECUTIVE SESSION.**
-*(This block **replaces** the 09-14 08:23 pre-market reconciliation, read in full by this run —
-**one block per date, not one per run.** **Collapse, do not append — seventeenth consecutive
+*(This block **replaces** the 09-14 09:35 market-open reconciliation, read in full by this run —
+**one block per date, not one per run.** **Collapse, do not append — eighteenth consecutive
 run.**)*
-Selftest passed all five checks at **09:35 ET** (`trading_enabled: true`, LIVE paper account, equity
-$99,086.78). `clock` **`is_open: true`**, `next_close` 2026-09-14T16:00:00-04:00 — **the market was
-verified open by hand before any execution step, not inferred from the pre-market run's
-`next_open`.**
+Selftest passed all five checks at **12:34 ET** (`trading_enabled: true`, LIVE paper account, equity
+$99,388.87). `clock` **`is_open: true`**, `next_close` 2026-09-14T16:00:00-04:00 — **the market was
+verified open by hand, not inferred from the open run's reading three hours earlier.**
 
-**Satellite blocks (zero) checked against satellite Alpaca positions (zero) — they agree**, and the
-check was made **before** Steps 4–7, never after. Compare **satellite to satellite**, never raw
-ledger to raw broker. `alpaca.py positions` returns **one row, VOO core** (99.046311231 shares,
-avg_entry 706.74, market_value $69,087.77, broker `current_price` **697.53**, `lastday_price` 702.56,
-unrealized_pl **−$912.22, −1.303%**, unrealized_intraday_pl **−$498.20, −0.716%**).
-`alpaca.py sleeves`: equity **$99,087.77**, cash $30,000.00, core **69.72%**, satellite **0.0%
-(count 0)**, cash 30.28%, `core_in_band: true`, `rebalance_needed: false`, `rebalance_delta:
-+273.67` — **0.28% of equity. NO REBALANCE WAS DUE**, and §2 rebalances at the **band edge (65/75)**,
-not to the exact target. **Tenth consecutive run inside a 0.26-point range (69.72–69.98).**
+**Satellite blocks (zero) checked against satellite Alpaca positions (zero) — they agree.** Compare
+**satellite to satellite**, never raw ledger to raw broker. `alpaca.py positions` returns **one row,
+VOO core** (99.046311231 shares, avg_entry 706.74, market_value $69,388.87, broker `current_price`
+**700.57**, `lastday_price` 702.56, unrealized_pl **−$611.12, −0.873%**, unrealized_intraday_pl
+**−$197.10, −0.283%**). `alpaca.py sleeves`: equity **$99,388.87**, cash $30,000.00, core **69.82%**,
+satellite **0.0% (count 0)**, cash 30.18%, `core_in_band: true`, `rebalance_needed: false`,
+`rebalance_delta: +183.33` — **0.18% of equity. NO REBALANCE WAS DUE**, and §2 rebalances at the
+**band edge (65/75)**, not to the exact target. **Eleventh consecutive run inside a 0.26-point range
+(69.72–69.98).** **This routine could not have rebalanced in any case — it is exits-only.**
 
-**⚠ THE CORE IS NOW −1.303%, WIDER THAN THIS MORNING'S −1.231%, AND IT CARRIES NO ACTION AT ANY
-NUMBER IN EITHER DIRECTION.** §5 exempts core from all four sell rules. **Measured from the 706.74
-fill, not from an inception anchor** — the 09-03 fill landed +0.483% above the prior close and that
-permanent entry gap, not tracking error and never skill, is the whole of the core's reported
-divergence from VOO. **Tracking error was measured at 0.0000% on 09-11 and nothing here reopens it.**
-**A widening core mark is not a reason to rebalance: §2's trigger is the sleeve percentage, which is
-69.72% and inside the band.**
+**⚠ THE CORE RECOVERED FROM −1.303% AT 09:35 TO −0.873% NOW, AND THAT CARRIES NO ACTION IN EITHER
+DIRECTION — the same non-action a widening mark carried this morning.** §5 exempts core from all four
+sell rules. **Measured from the 706.74 fill, not from an inception anchor** — the 09-03 fill landed
++0.483% above the prior close and that permanent entry gap, not tracking error and never skill, is
+the whole of the core's reported divergence from VOO. **Tracking error was measured at 0.0000% on
+09-11 and nothing here reopens it.** **A moving core mark is never a rebalance trigger: §2's trigger
+is the sleeve percentage, which is 69.82% and inside the band.**
 
-**⚠ ZERO ORDERS PLACED — AND THE REASON MATTERS, BECAUSE TWO DIFFERENT RUNS PRODUCE THIS SAME
-LINE.** The **staleness gate PASSED**: `plan_date: 2026-09-14` **matched today's ET date**, so the
-gate **did not fire**, **no stale-plan alert was due and none was posted**, and Steps 4–6 were
-reached **with full authority**. **Nothing was blocked** — breaker INACTIVE, weekly cap **0 of 3**,
-satellite sleeve empty with 30.28% cash, `control.md` Notes empty. **The plan simply carried no
-intents**, because the 08:22 run rejected all three of its candidates before the bell. **Zero
-`alpaca.py move` re-validation calls were issued and none was due** — re-validation has a subject
-only when an intent exists. **Step 3 was skipped on `core_established: true`; the bootstrap path is
-permanently closed.**
+**⚠ ZERO ORDERS PLACED, AND FOR THIS ROUTINE THAT IS THE ONLY POSSIBLE OUTCOME OF AN EMPTY SLEEVE.**
+Routine 3 is **exits-only — it may not open a position under any circumstance**, so 30.18% idle cash
+and a green breaker are **not** an opportunity this run was entitled to act on. New positions route
+through pre-market research and the 09:35 execution run, always; a midday entry would bypass the
+requirement that every buy sleep on a written thesis. **Nothing was blocked** — breaker INACTIVE,
+weekly cap **0 of 3**, `control.md` Notes empty. **There was simply no sell subject.**
 
 **§5.1–§5.4 HAD NO SUBJECT — fourteenth consecutive session, and it is not a clean bill of health.**
 No thesis to test for invalidation (§5.1); no `timing_window` to expire (§5.2); no `entry_price` to
 measure −7% against (§5.3); no high-water mark to measure −10% against (§5.4). **Nothing was near
 triggering because nothing exists to trigger.** `sell_rule_status` is **absent rather than blank** —
-a third state, distinct from both "current and unchanged" and "stale." **All four remain untested
-code paths; nothing has ever closed in this account**, which is why `consecutive_closed_losses`
-cannot have moved and **no circuit-breaker alert was due.**
+a third state, distinct from both "current and unchanged" and "stale." **Zero `perplexity.py` §5.1
+invalidation queries were issued and none was due** — an invalidation check has a subject only when
+an `invalidation` line exists to read verbatim. **All four remain untested code paths; nothing has
+ever closed in this account**, which is why `consecutive_closed_losses` cannot have moved and **no
+circuit-breaker alert was due.**
 
-**HIGH-WATER MARKS: ABSENT, NOT STALE — AND NO BACKFILL IS DUE.** There is no satellite block, so
-there is no `highest_close` and no `(as of ...)` date to advance or to compare against the last
-trading day. **The backfill trigger cannot fire.** **Core VOO is deliberately never stamped** —
-stamping it would fabricate a §5.4 trailing stop on the one position §5 exempts from every sell
-rule. **§5.4 remains NOT ARMED; it arms on the first *satellite* fill.**
+**HIGH-WATER MARKS: ABSENT, NOT STALE — AND NO BACKFILL IS DUE.** Step 2 is the reason this routine
+exists at midday, and **it had nothing to repair**: there is no satellite block, so there is no
+`highest_close` and no `(as of ...)` date to compare against the last trading day. **The backfill
+trigger cannot fire, and no `bars` call was due for a high-water purpose.** **Core VOO is
+deliberately never stamped** — stamping it would fabricate a §5.4 trailing stop on the one position
+§5 exempts from every sell rule. **§5.4 remains NOT ARMED; it arms on the first *satellite* fill.**
 
 **NOTHING IS IN LIMBO.** The account's entire order history remains **one row**, the 09-03 core
 fill, `status: filled`, terminal. **No `"terminal": false` case has ever arisen**, so §7's
@@ -118,15 +117,16 @@ data-plane outage is resolved** — every endpoint answered 200 at the 09-11 clo
 but **open item (6) survives it**, because `selftest.py` still does not probe `clock` or market data
 and a green pre-flight therefore certifies nothing about the data plane. (2) **The two-price defect
 is SOLVED and it is a live quote midpoint, not an offset** — which is why the gap (6.5c, 59.85c, 4c
-on successive days) never had a stable size. **Today's `current_price` 698.04 against `lastday_price`
-702.56 is a pre-market midpoint, not a close.** Always `bars --adjustment all` for a close, a fresh
-`quote` for execution, **never a `positions` field for either.** Cosmetic on core; **load-bearing
-the moment a satellite position exists.**
+on successive days) never had a stable size. **Today's `current_price` 700.57 against `lastday_price`
+702.56 is a live intraday midpoint, not a close, and at 12:34 ET no close for 09-14 exists yet at
+all.** Always `bars --adjustment all` for a close, a fresh `quote` for execution, **never a
+`positions` field for either.** Cosmetic on core; **load-bearing the moment a satellite position
+exists.**
 
 ---
 
-**⚠ EARLIER PER-RUN RECONCILIATIONS (2026-09-01 through 2026-09-14 08:23) HAVE BEEN COLLAPSED,
-DELIBERATELY.** Twenty-six blocks spanning 09-01 to this morning's pre-market run each recorded the same
+**⚠ EARLIER PER-RUN RECONCILIATIONS (2026-09-01 through 2026-09-14 09:35) HAVE BEEN COLLAPSED,
+DELIBERATELY.** Twenty-seven blocks spanning 09-01 to this morning's market-open run each recorded the same
 null result — zero satellite blocks checked against zero satellite Alpaca positions, agreeing; no
 §5 rule evaluated; no high-water mark to stamp; no backfill due. `state.md` flags this
 accumulation as
@@ -153,7 +153,7 @@ those blocks carried are preserved here:
   of "no exits" entries recorded the absence of a subject, not clean bills of health.
 - **The two-price defect is SOLVED and it is a live quote midpoint, not an offset** — which is why
   the broker/official gap (6.5c, 59.85c, 4c on successive days) never had a stable size and never
-  will. Today's `current_price` 697.53 against `lastday_price` 702.56 is an **intraday midpoint,
+  will. Today's `current_price` 700.57 against `lastday_price` 702.56 is an **intraday midpoint,
   not a close.** Always `bars --adjustment all` for a close, a fresh `quote` for execution, **never
   a `positions` field for either.** Cosmetic on core; **load-bearing the moment a satellite
   position exists**, because a `highest_close` read from a `positions` field records an after-hours
