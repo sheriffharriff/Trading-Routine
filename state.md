@@ -10,9 +10,9 @@ The block below is parsed by `scripts/common.py` and gates real behavior
 `key: value` format exactly. Prose goes underneath.
 
 ```
-last_run: 2026-09-14 08:22 ET 1-premarket-research (selftest PASSED all five checks at 08:22 ET, trading_enabled true, LIVE paper, equity 99134.33 at selftest / 99138.29 at sleeves; MARKET IS OPEN TODAY, NOT A HOLIDAY - clock is_open false at 08:22 because it is PRE-MARKET, next_open 2026-09-14 09:30 ET i.e. TODAY, next_close 16:00 ET; NO TRADING IN THIS RUN by design; ⚠ THE WEEKEND IS THE RUN'S CENTRAL FINDING AND IT IS STRUCTURAL, NOT A QUIET NEWS DAY - both broad scans came back EXPLICITLY EMPTY on company events ("the available evidence is thin for company-specific corporate events"; the 09-12/09-13 filings sweep returned "nothing qualifies based on the sources gathered"), because §4 needs a dated transaction between two NAMED parties and US companies do not file 8-Ks on Saturday or Sunday, so EVERY Monday pre-market run screens one business day plus two empty ones - expect it, do not compensate by lowering the bar; RESEARCH 3 theses today, 0 accepted 3 rejected: T-2026-09-14-01 BWXT (HII's 336M CVN 82 long-lead award names NO subcontractor - dedicated query returned "no public source names a subcontractor or supplier receiving a portion of this specific award" - rule (v) FIFTH instance, plus a part-3 two-quarter failure), T-2026-09-14-02 packaged food (Kroger's ID-sales guidance CUT 1.0-2.0% -> 0.2-0.8% and a supplier's soft volumes are both downstream of the SAME consumer - shared cause, not a mechanism, the Macy's shape from 09-11 recognised rather than re-derived), T-2026-09-14-03 CART (Kroger NAMED Instacart on the call - a real counterparty after eleven sessions of blanks - and the thesis still died at part 2 because NO dollar figure exists anywhere in the release, 8-K, IR summary or call coverage); THE THREE ASSIGNED EARNINGS WERE SCREENED DIRECTLY, NOT ASSUMED - Kroger produced both theses above, Rent the Runway FQ2 revenue 97.7M is two orders of magnitude below the §3 10B floor, VinFast had NO fresh earnings in the window and is a foreign issuer; ⚠ THE PRICED-IN DRAWDOWN DEFECT FIRED TWICE - CART -5.79% and BWXT -6.30% both priced_in true, its densest showing (five instances now) - BUT IT COST NOTHING because BOTH were already dead on the four-part thesis when the filter reached them, unlike LITE which passed the thesis, died on a drawdown and is +10.58% vs VOO since; do NOT let a double-fire inflate the defect's estimated cost and do NOT reinterpret the filter; MACRO IS LOUD AND UNTRADEABLE - August CPI headline +0.4% m/m / +3.4% y/y, core +0.3% m/m / +2.4% y/y, FOMC 09-16/17 INSIDE THIS WEEK: no Company A, no segment, no dollar path, not a §4 mechanism in EITHER direction; sleeves core 69.74%, satellite 0.0% count 0, cash 30.26%, core_in_band true, rebalance_needed false, rebalance_delta +258.52 = 0.26% of equity - NO REBALANCE DUE; LEDGER RECONCILED - zero satellite blocks vs zero satellite Alpaca rows, they AGREE; core unrealized -861.70 / -1.231% from the 706.74 fill, its widest of the run, NO ACTION - §5 exempts core at any number; week anchor 2026-09-14 MATCHES week_of, no reset due because Friday's review already performed it - that is the housekeeping rule working, not a skipped step, next boundary Monday 2026-09-21; breaker INACTIVE, consecutive_closed_losses 0, nothing has ever closed; alerts.md EMPTY, zero open, zero SYSTEMIC; plan_today.md rewritten with plan_date 2026-09-14 and NO intents of any kind)
+last_run: 2026-09-14 09:35 ET 2-market-open-execution (selftest PASSED all five checks at 09:35 ET, trading_enabled true, LIVE paper, equity 99086.78 at selftest / 99087.77 at sleeves; MARKET OPEN - clock is_open TRUE at 09:35:43, next_close 2026-09-14 16:00 ET; ZERO ORDERS PLACED AND NOTHING WAS BLOCKED FROM PLACING ONE - the plan was FRESH and EMPTY, which is a different outcome from a stale-plan skip and must not be recorded as one; STALENESS GATE PASSED - plan_date 2026-09-14 MATCHES today's ET date, generated_by 1-premarket-research, so the §2 gate did NOT fire, NO stale-plan alert was due and none was posted, and Steps 4/5/6 were reached with full authority and simply had no intents to act on; STEP 3 SKIPPED - core_established true, bootstrap path permanently closed; STEP 4 NO SELL INTENTS and no satellite position to write one against; STEP 5/6 NO BUY INTENTS - zero `alpaca.py move` re-validation calls were issued and NONE WAS DUE, because re-validation has a subject only when an intent exists; the 08:00 run rejected all three of its candidates (BWXT rule (v) + part 3, packaged-food shared-cause at part 1, CART part 2 for want of a dollar figure) so nothing reached the bell; STEP 7 NO REBALANCE - sleeves core 69.72%, satellite 0.0% count 0, cash 30.28%, core_in_band true, rebalance_needed false, rebalance_delta +273.67 = 0.28% of equity, and §2 rebalances at the BAND EDGE 65/75 not to the exact target - TENTH consecutive run inside a 0.26-point range, the core is NOT drifting; LEDGER RECONCILED BEFORE ANY EXECUTION STEP - zero satellite blocks vs zero satellite Alpaca rows, they AGREE, the single VOO row is core and exempt; core unrealized -912.22 / -1.303% from the 706.74 fill, WIDER THAN THIS MORNING'S -1.231% AND STILL CARRYING NO ACTION AT ANY NUMBER - §5 exempts core; week anchor 2026-09-14 MATCHES week_of, no reset due, next boundary Monday 2026-09-21; weekly cap UNTOUCHED at 0 of 3; breaker INACTIVE, consecutive_closed_losses 0, nothing has ever closed; alerts.md EMPTY, zero open, zero SYSTEMIC; no ClickUp alert of any key was due this run)
 
-prior_run: 2026-09-11 16:46 ET 5-friday-weekly-review (selftest PASSED, trading_enabled true, equity 99591.92; the §1 answer is NOT the number that looks like it - satellite sleeve 0.00% vs VOO -0.7544% on the week = +0.75pp "ahead" WITHOUT THE SLEEVE DOING ANYTHING, the entire swing is VOO falling, and the honest read is the ROLLING 12-MONTH one: VOO 12M +17.59% against a sleeve holding 30,000 cash, so a permanently idle sleeve gives up ~17.6pp on sleeve capital / ~5.3pp on the account - a PROJECTION of the current structure, not a measurement; EXPECT THIS NUMBER TO BE POSITIVE WHENEVER THE WEEK IS RED AND EXPECT TO REFUTE IT EVERY TIME; core tracking error measured at ZERO from the 706.74 fill - that instruction is DISCHARGED; account week -0.5283% vs VOO -0.7544%, the apparent +0.2261pp excess refuted EXACTLY by core weight 70.0332% x -0.7544%, residual ZERO; since-inception account -0.4180% vs VOO -0.3341% = -0.0839pp BEHIND, the honest column; both legs from bars --adjustment all throughout; 20 theses written that week, 0 accepted; 30 since inception, 0 accepted; reject scoreboard 33 measurements, 9 beat VOO, mean -0.51%, and week 1's ten REVERSED from 6-of-10 to 3-of-10 once the window lengthened - a tally, not evidence; HOUSEKEEPING week_of 2026-09-07 -> 2026-09-14 and new_positions_this_week -> 0; monthly archive rollover NOT DUE, next is the first Friday review of October)
+prior_run: 2026-09-14 08:22 ET 1-premarket-research (selftest PASSED all five checks, trading_enabled true, equity 99134.33; NO TRADING IN THAT RUN by design; ⚠ THE WEEKEND WAS THE RUN'S CENTRAL FINDING AND IT IS STRUCTURAL, NOT A QUIET NEWS DAY - both broad scans came back EXPLICITLY EMPTY on company events ("the available evidence is thin for company-specific corporate events"; the 09-12/09-13 filings sweep returned "nothing qualifies based on the sources gathered"), because §4 needs a dated transaction between two NAMED parties and US companies do not file 8-Ks on Saturday or Sunday, so EVERY Monday pre-market run screens one business day plus two empty ones; RESEARCH 3 theses, 0 accepted 3 rejected: T-2026-09-14-01 BWXT (HII's 336M CVN 82 long-lead award names NO subcontractor - rule (v) FIFTH instance, plus a part-3 two-quarter failure), T-2026-09-14-02 packaged food (Kroger's ID-sales guidance CUT and a supplier's soft volumes are both downstream of the SAME consumer - shared cause, not a mechanism), T-2026-09-14-03 CART (Kroger NAMED Instacart on the call - a real counterparty after eleven sessions of blanks - and the thesis still died at part 2 because NO dollar figure exists anywhere); THE THREE ASSIGNED EARNINGS WERE SCREENED DIRECTLY, NOT ASSUMED - Kroger produced both theses above, Rent the Runway FQ2 revenue 97.7M is below the §3 10B floor, VinFast had NO fresh earnings in the window and is a foreign issuer; THE PRICED-IN DRAWDOWN DEFECT FIRED TWICE (CART -5.79%, BWXT -6.30%) BUT COST NOTHING - both were already dead on the four-part thesis when the filter reached them; MACRO LOUD AND UNTRADEABLE - August CPI, FOMC 09-16/17 inside this week; plan_today.md written with plan_date 2026-09-14 and NO intents of any kind)
 week_of: 2026-09-14
 new_positions_this_week: 0
 consecutive_closed_losses: 0
@@ -20,9 +20,9 @@ circuit_breaker: INACTIVE
 halt_triggered_at: none
 core_established: true
 core_ticker: VOO
-core_pct: 69.74
+core_pct: 69.72
 satellite_pct: 0.0
-cash_pct: 30.26
+cash_pct: 30.28
 open_thesis_ids: none
 ```
 
@@ -69,6 +69,17 @@ position list win, and the discrepancy goes in the journal.
 ## Carry forward
 
 Anything the next run must not lose. Cleared once acted on.
+
+- **⚠ AN EMPTY PLAN THAT IS FRESH AND A PLAN THAT IS STALE PRODUCE THE SAME ZERO ORDERS AND ARE NOT
+  THE SAME RUN. TODAY WAS THE FIRST — RECORD IT AS THE FIRST.** The 09:35 open run found
+  `plan_date: 2026-09-14`, **matching today's ET date**, so the Step 2 staleness gate **did not
+  fire**: no stale-plan alert was due, none was posted, and Steps 4–6 were reached **with full
+  authority and simply had no intents to act on**. **Nothing was blocked** — breaker INACTIVE,
+  weekly cap 0 of 3, satellite sleeve empty with 30.28% cash, `control.md` Notes empty. **Zero
+  `alpaca.py move` re-validation calls were issued and none was due**, because re-validation has a
+  subject only when an intent exists; **that is an absent check, not a skipped one.** The gate has
+  still **never fired in this account's history**, so its alert path remains **untested code**, and
+  a future run must not read thirteen quiet opens as evidence that it works.
 
 - **⚠ MONDAY'S FUNNEL IS THIN BECAUSE OF THE CALENDAR, NOT BECAUSE THE NEWS WAS QUIET — AND THIS
   RECURS EVERY WEEK.** Both broad scans this morning came back **explicitly empty on company
@@ -252,13 +263,13 @@ Anything the next run must not lose. Cleared once acted on.
   reconciliation compares satellite blocks to satellite Alpaca positions**; a run comparing raw
   ledger to raw broker will read a correct ledger as broken.
 
-- **⚠ COLLAPSE, DO NOT APPEND — ACTED ON SIXTEEN TIMES NOW, AND DUE AGAIN NEXT RUN.**
+- **⚠ COLLAPSE, DO NOT APPEND — ACTED ON SEVENTEEN TIMES NOW, AND DUE AGAIN NEXT RUN.**
   `positions.md` ran to **604 lines / 42KB** before the 09-07 collapse and has since been held to a
-  **single current reconciliation block** — this run replaced the 09-11 close block and folded its
-  two live facts (the resolved outage, the solved two-price defect) into one line each. **Every
-  load-bearing fact is preserved; nothing live was discarded.** **The pull to append is
-  structural** — a run is rewarded for showing it checked something, and a deleted note looks like
-  a check that never happened. **A future run will feel it too.**
+  **single current reconciliation block** — this run replaced the 09-14 08:23 pre-market block
+  rather than adding a second one for the same day. **Every load-bearing fact is preserved; nothing
+  live was discarded.** **The pull to append is structural** — a run is rewarded for showing it
+  checked something, and a deleted note looks like a check that never happened. **A future run will
+  feel it too, and two blocks for one date is the easiest version of the mistake to make.**
 
 - **MONTHLY ARCHIVE ROLLOVER: NOT DUE.** Every entry in `research_log.md`, `trade_log.md` and
   `journal.md` is dated **2026-09**; nothing predates the current month. **Next rollover is the
@@ -268,10 +279,13 @@ Anything the next run must not lose. Cleared once acted on.
   starts skimming is how a system quietly stops knowing what it holds.**
 
 - **⚠ COUNTERS, STATED SO THEY DO NOT DRIFT.** **33 theses since inception, 0 accepted** — 30
-  through 09-11 (6+2+1+1 on 09-01/02/03/04, 4+5+6+5 on 09-08/09/10/11) plus **3 today**. **3 this
-  week** (the week beginning 2026-09-14). A counter already drifted once (31 vs the auditable 30)
-  and was corrected on 09-11; **in a repo whose only memory is these files, a counter that drifts
-  unremarked is how a larger one starts.**
+  through 09-11 (6+2+1+1 on 09-01/02/03/04, 4+5+6+5 on 09-08/09/10/11) plus **3 on 09-14**. **3 this
+  week** (the week beginning 2026-09-14). **The 09-14 open run wrote no thesis and consumed no ID —
+  an execution routine does not research (§4 by way of the routine prompt), so the count is
+  unchanged by it, not stalled.** A counter already drifted once (31 vs the auditable 30) and was
+  corrected on 09-11; **in a repo whose only memory is these files, a counter that drifts unremarked
+  is how a larger one starts.** **Positions opened: still zero. `new_positions_this_week` stayed at
+  0 of 3 because nothing was placed, not because the cap bound.**
 
 - **ClickUp tasks, for reference:** **09-11 weekly review `86bbzgbg3`**; 09-11 daily summary
   `86bbzfm12`; 09-10 `86bbyr8vp`; 09-09 `86bbxtn1a`; 09-08 `86bbwuc17`; 09-04 daily summary
