@@ -40,6 +40,123 @@ anything where the honest-broker rule (§4) did real work>
 
 ## Entries
 
+### 2026-09-15 (Tuesday)
+
+**Account:** total **$98,964.96 on official closes** / $99,025.37 broker | day P&L
+**−$303.08 (−0.305%)** both legs official (−$237.72 / −0.240% on Alpaca's broker-mark basis —
+**do not mix the two, see below**) | since inception **−1.035%** official / −0.975% broker
+**Sleeves:** core 69.69% | satellite 0.0% | cash 30.31%   (§2 band 65–75%)
+**Breaker:** INACTIVE
+**Week:** 0/3 new positions — ISO Monday of 2026-09-15 is 2026-09-14, which matches `week_of`;
+no reset due, next boundary Monday 2026-09-21
+
+**Traded:** nothing — zero orders submitted at any of today's four runs
+**Researched:** 3 theses — 0 accepted, 3 rejected (T-2026-09-15-01 CRWV, -02 no-ticker
+LMT/BA defence awards, -03 no-ticker Sempra/Petrobras LNG SPA)
+**Positions near a sell rule:** none, and the reason is **no subject** — zero satellite
+positions, **seventeenth consecutive session**. Core VOO is exempt from all four (§5).
+
+**High-water marks:** **NONE WRITTEN, AND THAT IS STEP 2 COMPLETING CORRECTLY RATHER THAN
+BEING SKIPPED.** `positions.md` holds no satellite block, so there is no `highest_close` to
+raise and no `(as of ...)` date to re-stamp. The marks are **ABSENT** — a third state,
+distinct from both "current and unchanged" and "stale," and the only one that carries no date
+for tomorrow's midday backfill trigger to read. **Zero `bars` calls were issued for a
+high-water purpose and none was due.** Core VOO was deliberately **not** stamped. **§5.4
+remains NOT ARMED; it arms on the first *satellite* fill.** **Every close run in this
+account's history has exercised the RECORDING step against an empty sleeve — the "no subject"
+branch, and nothing else, has ever run.**
+
+**What happened:**
+
+A second consecutive red session and the fifth straight full trading day the account spent
+doing nothing on purpose. VOO closed at **696.29** (`bars --adjustment all`) against
+yesterday's **699.35** — **−0.438%** on the session, on the day the FOMC's two-day meeting
+opened. The book lost **$303.08 (−0.305%)**, every cent of it the core mark; the 30% cash did
+what cash does. Equity finished at **$98,964.96** on official closes, **−1.035%** since
+inception, with core carrying **−$1,035.03 (−1.479%)** against its 706.74 fill. That
+unrealized number is a price and not a signal: §5 exempts core from all four sell rules, and
+the figure §2 actually triggers on — 69.69% — is comfortably inside the 65–75% band.
+**No rebalance is due tomorrow.** The delta to an exact 70% is **$310.51, 0.31% of equity**,
+and §2 rebalances at the **band edge**, not to the target.
+
+The research funnel ran on a full business day and still produced nothing §4 can use, which
+is the finding rather than the disappointment. The 09-14 carry-forward had said in writing
+that a thin Monday funnel is a property of the weekend and that **a thin Tuesday funnel would
+not have that excuse.** Today was that Tuesday. The event set was genuinely richer than
+Monday's — LMT's $1.2B PrSM Increment 2 award plus an $8.4B Increment 1 production
+modification, Boeing's $13.4B KC-46 ceiling increase to $19.1B, a 20-year 0.8 Mtpa
+Sempra–Petrobras LNG SPA, BCE's ~$52B / 1.2 GW Regina AI hub MOU. **The events were there;
+the quantified counterparties were not.** Three separate screens came back with the same
+answer in different words: no public source names a subcontractor, supplier or teammate with
+a dollar figure attached. §4's binding constraint in this account is **disclosure practice** —
+not news volume, not thesis quality, and not the calendar. Today removed the last alternative
+explanation.
+
+The other three runs did what their scopes allow and no more. The 09:36 open run found a
+**fresh** plan (`plan_date` 2026-09-15 matched the ET date) carrying zero intents — an empty
+fresh plan and a stale plan produce the same zero orders and are not the same run, and the
+difference is invisible in the order count. The 12:35 midday run ended at Step 1 by its own
+prompt's instruction: no open satellite positions means note it, commit and exit, and do not
+go looking for something to do. It read 30.31% idle cash, a breaker reading INACTIVE and a
+weekly cap at 0 of 3, and opened nothing. That is the scope rule working under the exact
+conditions that make it tempting to bend.
+
+Housekeeping is clean. The account's entire order history remains **one row** — the 09-03
+core VOO fill, `status: filled`, terminal — re-verified by hand against `orders --status all`
+this run. **Nothing is in limbo overnight**, which is what §7 warns about. `trade_log.md` was
+correctly left unappended: a run with no fill writes no trade entry. `consecutive_closed_losses`
+stays at **0** because nothing has ever closed in this account, so the §6 streak could not have
+moved and no circuit-breaker alert was due. `alerts.md` is empty — zero open, zero SYSTEMIC.
+
+**What I got wrong or nearly got wrong:**
+
+**1. Step 2's instruction is written in the imperative and its subject does not exist, and the
+pull was to satisfy the sentence rather than the rule.** The routine says to record today's
+closing prices into the high-water marks, and there is exactly one position in the account
+with a close to record. Writing VOO's 696.29 into `positions.md` would have made the file look
+maintained and cost nothing visible — and it would have **fabricated a §5.4 trailing stop on
+the one position §5 exempts from every sell rule**, on a day the core is already −1.48% from
+its fill. The correct output of a step whose subject is absent is nothing, and "nothing"
+recorded as nothing is not the same as a step skipped. This is the most likely way this
+routine breaks on some future run, and it will not feel like a violation when it happens —
+it will feel like tidiness.
+
+**2. The mixed-source artifact was live today and it flattered the book by about $65.** The
+broker reports equity **$99,025.37** and a day change of **−0.240%**; official closes give
+**$98,964.96** and **−0.305%**. Set the broker's −0.240% against VOO's official −0.438% and
+the book reads as beating the index by 0.198pp on a red day. It did not. A 69.7%-exposed book
+should lose **0.697 × 0.438% = 0.305%** by construction, which is exactly what the
+official-close legs say. The whole of the apparent outperformance is a **16:16 quote midpoint
+being compared against a 16:00 official close** — the broker mark is not a close at all and
+keeps moving after the bell. Both legs from the same source or the comparison means nothing.
+Noting it because this is the first day it produced a *positive-looking* number rather than a
+cosmetic one, and a positive-looking artifact is much harder to throw away than a negative one.
+
+**3. A close run always reads `is_open: false`, and this routine has a holiday branch that
+triggers on exactly that.** `clock` returned `is_open: false` at 16:16:02 — because the bell
+rang sixteen minutes ago, not because the market never opened. A run that pattern-matched on
+that flag would have taken the "market was closed today" path, skipped the daily summary for a
+day that did happen, and left no trace distinguishable from a genuine holiday. What separates
+them is `next_open` — **2026-09-16 09:30**, tomorrow, not today — plus the midday run's
+recorded `is_open: true` at 12:34:55. **Read the next_open date, not the boolean.** Nothing was
+lost today, but the failure mode is silent and the first real holiday will arrive without
+warning.
+
+**For the next run:**
+
+- **The FOMC decides tomorrow (09-16/17) and it is not a candidate in either direction.** No
+  Company A, no segment, no dollar path — it is the whole tape moving, which is what §4 exists
+  to refuse. If it moves prices hard, that is a price move and not a thesis, and a core mark
+  that moves with it carries no action because §5 exempts core.
+- **Nothing is pending for tomorrow's pre-market run.** No unscreened earnings accumulated —
+  neither the open run nor the close run screens earnings, so nothing can pile up between
+  pre-market runs.
+- **No rebalance is due.** Core 69.69%, sixteenth consecutive run inside a 0.29-point range.
+- **The marks remain ABSENT, not stale.** No backfill is due at tomorrow's midday run, and the
+  missing date is what says so.
+
+---
+
 ### 2026-09-14 (Monday)
 
 **Account:** total $99,251.20 broker / **$99,268.04 on the official close** | day P&L
