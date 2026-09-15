@@ -52,6 +52,176 @@ single most common way a plausible-sounding connection gets mistaken for an oppo
 
 ## Entries
 
+### 2026-09-15 (08:16 ET) — event survey (funnel, pre-thesis)
+
+Selftest passed all five checks (`trading_enabled: true`, LIVE paper account, equity
+**$99,192.76**). Window screened: **Monday's session through Tuesday pre-market (Sept 14–15)** —
+**a full business day**, which is the material contrast with yesterday. Five Perplexity scans
+(two broad `--recency day`, three sourced second-order screens), plus one `move --sessions 5`
+and one `asset` check. **Three candidates reached ticker or named-candidate stage; all three
+rejected. No BUY intent today.**
+
+**⚠ YESTERDAY'S WEEKEND EXCUSE IS SPENT, AND THE FUNNEL STILL PRODUCED NOTHING — THAT IS THE
+FINDING.** The 09-14 carry-forward said explicitly that a thin Monday funnel is a property of the
+calendar and that *"a thin Tuesday funnel would NOT have this excuse."* **Today is that Tuesday.**
+The window covered a full business day of filings and awards, and the scans returned a genuinely
+richer event set than Monday's — **Lockheed's $1.2B PrSM Increment 2 award plus an $8.4B
+Increment 1 production modification, Boeing's $13.4B KC-46 ceiling increase to $19.1B through
+April 2035, a 20-year 0.8 Mtpa Sempra–Petrobras LNG SPA, BCE's ~$52B / 1.2 GW Regina AI hub
+expansion, Abbott's $385M formula settlement, a $7.7B Baldwin take-private.** **The events were
+there. The second-order counterparties were not.** Three separate screens asking who receives a
+*quantified* portion returned, in order: *"no public source names any subcontractor, supplier or
+teammate with a specific dollar figure"*; *"I could not verify any US-listed company with market
+cap above $10 billion that discloses a quantified revenue exposure"*; and *"no such announcement
+is clearly documented in the sources reviewed."* **§4's binding constraint is not news volume and
+it is not thesis quality — it is that public disclosure names transactions and withholds the
+counterparty's number.** Recorded plainly because today removes the one alternative explanation
+available yesterday.
+
+**⚠ A GOVERNMENT CONTRACTS PAGE LISTING SEVERAL COMPANIES UNDER ONE HEADING IS NOT A SUPPLIER
+BREAKDOWN — NEW TRAP, AND IT NEARLY WORKED.** One tracking summary listed **Boeing, Blue Halo,
+Olin Winchester, Rolls-Royce Solutions America and J&J Contractors** under the KC-46 heading
+alongside **three dollar figures ($13,400,000,000; $99,832,117; $788,361,894)**. Read quickly,
+that looks exactly like a prime-plus-subcontractor allocation. **It is the DoD daily contracts
+digest: unrelated awards published the same day, grouped by date rather than by program.** The
+source itself *"does not explicitly map each dollar figure to a specific company."* **This is
+standing rule (v) wearing a table instead of a sentence, and a table is more persuasive than a
+sentence.** Recognise the layout; do not re-derive the disappointment.
+
+**⚠ THE FOMC MEETING BEGINS TODAY AND CONCLUDES TOMORROW. STILL NOT A CANDIDATE.** August CPI
+(headline **+0.4% m/m / +3.4% y/y**, core **+0.3% m/m / +2.4% y/y**) and the University of
+Michigan preliminary September confidence print at **47.8, down from 51.7** are the loudest items
+on the tape. **No Company A, no segment, no dollar path.** Fifth consecutive day this disposition
+is recorded, and the 09-14 carry-forward predicted today's and tomorrow's funnels would be crowded
+with macro framing and yield nothing §4 can use. **It did. That is the note working, not a quiet
+market.**
+
+---
+
+### T-2026-09-15-01 — CRWV — REJECTED
+**Company A / the news:** **BCE / Bell Canada and the Government of Saskatchewan, 2026-09-14** —
+an MOU to expand Bell's Regina AI data centre development to a **1.2 GW AI infrastructure hub**,
+with **more than $50B (province: $52B) of total capital investment**, adding **up to 900 MW** on
+top of **300 MW already under contract to CoreWeave Inc. and Cerebras Systems Inc.** (Bloomberg,
+Canadian Press, 09-14).
+**Company B / the candidate:** CoreWeave (CRWV) — named in the announcement as an existing
+contracted compute provider at the site.
+
+**1. Mechanism (one sentence):**
+> Bell's expansion of the Regina AI hub to 1.2 GW causes CoreWeave's contracted capacity revenue
+> to improve because CoreWeave is the named compute provider at that site — **and also** would
+> presumably be allocated some share of the new 900 MW.
+
+**2. Dollar path:** Not written. **The $50–52B is the project total.** No source allocates any
+portion of it to CoreWeave, to Cerebras, or to any named supplier. CoreWeave's **300 MW is the
+pre-existing contract**, not new business created by this announcement.
+**3. Timing window:** Not written. A 1.2 GW buildout under an **MOU with a provincial government**
+does not produce reported revenue inside two quarters (§4.3).
+**4. Invalidation:** Not reached.
+
+**Hard filters (run before the thesis, per §4):**
+- Priced-in (§4): moved **−7.12%** over last 5 sessions (89.335 → 82.97) → **FAIL**
+  (`priced_in: true`, *"LATE - skip per strategy.md section 4"*)
+- Correlation (§4): zero open satellite positions, no `driver` to collide with → pass (vacuous)
+- Universe (§3): `asset_type: stock`, NASDAQ, `us_equity`, `tradable: true`, `fractionable: true`,
+  status active — **eligible on class.** Market cap **not sourced**, because the thesis died at
+  part 1; the §3 floor check was therefore **not completed**, not passed.
+
+**Outcome:** **REJECTED at part 1 — and the mechanism sentence above is left in deliberately with
+its "and also" visible, because that clause is the whole rejection.** §4 states that a mechanism
+needing a second clause is too weak, and here the second clause carries the entire economic
+claim: the announcement allocates **none** of the new 900 MW to CoreWeave. The genuinely new item
+is an **MOU between a Canadian telecom and a provincial government**; CoreWeave's 300 MW is
+**prior business being re-reported as context.** Standing rule (iii) — *verify the news is new to
+the company's own disclosure* — catches it independently. **This is the CART shape from 09-14
+arriving one day later in a bigger costume: a named counterparty inside a loudly quantified
+project, where the quantity attaches to the project and not to the counterparty.** The number was
+never missing; it was **the wrong number**, and a $52B headline makes that much harder to see than
+Kroger's silence did.
+
+---
+
+### T-2026-09-15-02 — (no ticker) — REJECTED
+**Company A / the news:** Two US defence awards dated **2026-09-14**. (a) **US Army → Lockheed
+Martin**, **~$1.211B** cost-plus-fixed-fee / firm-fixed-price IDIQ for **Precision Strike Missile
+Increment 2 Early Operational Capability**, completion **2031-09-13**, *"one bid solicited, one
+received"*; plus an **$8.4B modification** for **PrSM Increment 1 production**, ordering period
+extended **through 2032**. (b) **US Air Force → Boeing**, a **$13.4B ceiling increase** on the
+KC-46 Pegasus Combat Capability contract (**$5.7B → $19.1B**), scope widened to **FMS support for
+Japan, Israel and additional partners**, work through **April 2035**, principally Seattle.
+**Company B / the candidate:** any supplier or teammate on either program.
+
+**1. Mechanism (one sentence):** Not written — **no Company B exists to write it about.**
+
+**2. Dollar path:** Not reached.
+**3. Timing window:** Not reached — and it would have failed anyway. A 2031 completion date, an
+ordering period running to 2032 and work through April 2035 are all far outside §4.3's
+**two-quarter** horizon.
+**4. Invalidation:** Not reached.
+
+**Hard filters:**
+- Priced-in (§4): **not run — and this is an absent check, not a skipped one.** LMT and BA are
+  **Company A**, never the candidate; there was no Company B ticker to test.
+- Correlation (§4): no open positions → pass (vacuous)
+- Universe (§3): not reached
+
+**Outcome:** **REJECTED at part 1 — standing rule (v), and the largest dollar figures the funnel
+has ever refused.** Two dedicated screens were run. The first asked whether any public source
+names a subcontractor, supplier or teammate receiving a disclosed portion of either award:
+*"no specific subcontractor, supplier or teammate is named, and no portion of the ~$1.21 billion
+award is broken out by company"*; for the KC-46, only Boeing and the overall ceiling increase are
+discussed. The second inverted the direction — asking which **$10B+ US-listed companies disclose
+in their own filings** a quantified revenue exposure to KC-46, the 767 line or PrSM — and returned
+*"I could not verify any."* **Both directions, nothing.** The temptation here is the same one BWXT
+produced on 09-14 and it scales with the headline: **$8.4B and $13.4B feel like they must be
+visible in somebody's segment revenue.** They are not visible in anybody's **disclosure**, and
+§4.2 needs a disclosed figure, not a plausible one. **The one source that appeared to give a
+breakdown was the DoD daily contracts digest grouping unrelated same-day awards — see the trap
+note above.** **The source left the blank; filling it in is not research.** Sixth instance of
+rule (v) this month.
+
+---
+
+### T-2026-09-15-03 — (no ticker) — REJECTED
+**Company A / the news:** **Sempra Infrastructure ↔ Petrobras, press release 2026-09-14** — a
+**20-year sales and purchase agreement for approximately 0.8 Mtpa of LNG**, sourced from
+*"Sempra Infrastructure's contracted liquefaction capacity at the **Port Arthur LNG Phase 2
+project**, currently under construction in Jefferson County, Texas."* **Both parties named, volume
+and tenor disclosed** — the cleanest two-party transaction in the window.
+**Company B / the candidate:** an EPC contractor, equipment supplier or feedgas supplier to Port
+Arthur LNG Phase 2.
+
+**1. Mechanism (one sentence):** Not written — **no Company B was ever named.**
+
+**2. Dollar path:** Not reached. **No contract value is disclosed at all** — the release gives
+volume and tenor, not dollars, and attaches no figure to any supplier.
+**3. Timing window:** **THIS IS THE CLEANEST KILL IN THE ENTRY, AND IT IS INDEPENDENT OF
+EVERYTHING ELSE.** Port Arthur LNG **Phase 2** (trains 3 and 4) is guided to commercial operation
+in **2030 and 2031**. Phase 1 is late 2027 / early 2028. **First delivery under this SPA is four
+to five years out.** §4.3 caps the horizon at **two quarters**. **Nothing about this contract
+reaches a reported income statement inside this strategy's window** — not Sempra's, and not any
+supplier's.
+**4. Invalidation:** Not reached.
+
+**Hard filters:**
+- Priced-in (§4): **not run — absent, not skipped.** Sempra is Company A; no Company B ticker
+  existed to test.
+- Correlation (§4): no open positions → pass (vacuous)
+- Universe (§3): not reached
+
+**Outcome:** **REJECTED at part 3, and separately at part 1.** A dedicated screen asked whether
+the announcement or any related filing names a US-listed EPC contractor, equipment supplier or
+feedgas supplier with a dollar figure: **no EPC named, no equipment supplier named, no feedgas
+supplier named, no dollar figures of any kind.** So part 1 has no subject — rule (v) again. **But
+part 3 is the more useful rejection to record, because it would hold even if a supplier were named
+tomorrow with a number attached.** A 20-year offtake from a plant that starts producing in 2030 is
+a **fine business event and a category error as a swing thesis.** **Note this shape: long-dated
+infrastructure offtakes will keep entering this funnel looking like ideal §4 material — two named
+parties, a disclosed volume, a binding contract — and they will keep dying on the calendar.
+Screen the timing window early on anything whose subject is under construction.**
+
+---
+
 ### 2026-09-14 (08:23 ET) — event survey (funnel, pre-thesis)
 
 Selftest passed all five checks (`trading_enabled: true`, LIVE paper account, equity
