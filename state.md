@@ -10,9 +10,9 @@ The block below is parsed by `scripts/common.py` and gates real behavior
 `key: value` format exactly. Prose goes underneath.
 
 ```
-last_run: 2026-09-15 08:15 ET 1-premarket-research (selftest PASSED all five checks at 08:15 ET, trading_enabled true, LIVE paper, equity 99192.76; PRE-MARKET NOT A HOLIDAY - clock is_open FALSE at 08:15:43 but next_open is 2026-09-15T09:30 TODAY and next_close 16:00 today, so the holiday branch did NOT apply and a full plan WAS due; STEP 1 LEDGER RECONCILED - zero satellite blocks vs zero satellite Alpaca rows, they AGREE, the single VOO row is core and exempt, compare satellite-to-satellite never raw-to-raw; sleeves equity 99192.76, cash 30000.00, core 69.76%, satellite 0.0% count 0, cash 30.24%, core_in_band true, rebalance_needed false, rebalance_delta +242.17 = 0.24% of equity, THIRTEENTH consecutive run inside a 0.26-point range, NO REBALANCE INTENT WRITTEN and Section 2 rebalances at the BAND EDGE 65/75 not to the exact target; core unrealized -807.23 / -1.153% from the 706.74 fill on a PRE-MARKET MIDPOINT 698.59, carries NO ACTION in either direction, Section 5 exempts core; STEP 3 HOUSEKEEPING - ISO Monday of 2026-09-15 is 2026-09-14 which MATCHES week_of, NO RESET DUE, next boundary Monday 2026-09-21; weekly cap UNTOUCHED at 0 of 3; breaker INACTIVE, halt_triggered_at none, HALT_CLEARED_AT none, loss streak 0 because NOTHING HAS EVER CLOSED; STEP 4 HAD NO SUBJECT - zero satellite positions so 5.1-5.4 were not evaluable, ZERO perplexity invalidation queries issued and NONE WAS DUE, an ABSENT check not a skipped one, sell_rule_status ABSENT not blank; STEP 5 RESEARCH FULLY PERMITTED AND RAN - five Perplexity scans (two broad --recency day, three sourced second-order screens) plus one move --sessions 5 and one asset check; THREE theses written T-2026-09-15-01 CRWV (died part 1, the and-also clause), -02 no-ticker LMT PrSM 1.2B + 8.4B and BA KC-46 13.4B (died part 1, rule v, sixth instance), -03 no-ticker Sempra/Petrobras 20-yr 0.8 Mtpa LNG SPA (died part 3, Port Arthur Phase 2 COD 2030-31 vs a two-quarter cap); ZERO ACCEPTED, NO BUY INTENT; NOTHING WAS BLOCKED - the research did not produce an eligible candidate, it was not prevented from producing one; STEP 6 plan_today.md OVERWRITTEN with plan_date 2026-09-15 and no BUY/SELL/REBALANCE intents; alerts.md EMPTY, zero open, zero SYSTEMIC)
+last_run: 2026-09-15 09:36 ET 2-market-open-execution (selftest PASSED all five checks at 09:35 ET, trading_enabled true, LIVE paper, equity 99135.81; MARKET OPEN - clock is_open TRUE at 09:36:14, next_close 2026-09-15T16:00, so no holiday/closed skip; STEP 2 STALENESS GATE DID NOT FIRE - plan_date 2026-09-15 MATCHES the ET date 2026-09-15, the plan is FRESH, all intents carried full authority, NO stale-plan alert was due and none was posted, and the gate's alert path REMAINS UNTESTED CODE in this account after sixteen quiet opens; THE PLAN WAS EMPTY, NOT STALE - those are different runs producing the same zero orders; STEP 1 LEDGER RECONCILED - zero satellite blocks vs zero satellite Alpaca rows, they AGREE, the single VOO row is core and exempt, compare satellite-to-satellite never raw-to-raw; sleeves equity 99144.23, cash 30000.00, core 69.74%, satellite 0.0% count 0, cash 30.26%, core_in_band true, rebalance_needed false, rebalance_delta +256.73 = 0.26% of equity; STEP 3 BOOTSTRAP SKIPPED - core_established already true, that path is closed permanently; STEP 4 NO SELL INTENTS AND NO SUBJECT - zero satellite positions so 5.1-5.4 were not evaluable, loss streak UNMOVED at 0 because nothing closed, no circuit-breaker alert due; STEP 5 ZERO move --sessions 5 RE-VALIDATION CALLS ISSUED AND NONE WAS DUE - re-validation has a subject only when a BUY intent exists, an ABSENT check not a skipped one; STEP 6 NO BUYS PLACED, weekly cap UNTOUCHED at 0 of 3, open_thesis_ids still none; STEP 7 NO REBALANCE - 69.74% is inside the 65-75 band and Section 2 rebalances at the BAND EDGE not to the exact target, FOURTEENTH consecutive run inside a 0.26-point range 69.72-69.98; ZERO ORDERS SUBMITTED THIS RUN, trade_log.md correctly left unappended; breaker INACTIVE, halt_triggered_at none, HALT_CLEARED_AT none; alerts.md EMPTY, zero open, zero SYSTEMIC)
 
-prior_run: 2026-09-14 16:16 ET 4-market-close-journal (selftest PASSED all five checks, trading_enabled true, LIVE paper, equity 99266.06 at selftest / 99251.20 at account; SESSION OVER at 16:16, not a holiday - 09-14 was a full trading day; day's numbers BOTH LEGS OFFICIAL - VOO closed 699.35 vs 702.52 Friday = -0.451%, book -313.98 / -0.315%, equity 99268.04 official, since inception -0.73% from 100000.00; THE BOOK FELL LESS THAN THE INDEX BECAUSE ~0.70 EXPOSURE TAKES ~70% OF AN INDEX MOVE BY CONSTRUCTION - not defense, not skill, runs identically in reverse; sleeves core 69.77%, satellite 0.0%, cash 30.23%; NOTHING CLOSED so no realized P&L; high-water recording had NO SUBJECT and therefore COMPLETED CORRECTLY; orders --status all returns ONE ROW, the 09-03 core fill, filled, terminal; journal.md appended; ClickUp daily summary task 86bc0hw64; ledger reconciled, breaker INACTIVE, cap 0 of 3, alerts.md EMPTY)
+prior_run: 2026-09-15 08:15 ET 1-premarket-research (selftest PASSED all five checks at 08:15 ET, trading_enabled true, LIVE paper, equity 99192.76; PRE-MARKET NOT A HOLIDAY - clock is_open FALSE at 08:15:43 but next_open is 2026-09-15T09:30 TODAY and next_close 16:00 today, so the holiday branch did NOT apply and a full plan WAS due; STEP 1 LEDGER RECONCILED - zero satellite blocks vs zero satellite Alpaca rows, they AGREE, the single VOO row is core and exempt, compare satellite-to-satellite never raw-to-raw; sleeves equity 99192.76, cash 30000.00, core 69.76%, satellite 0.0% count 0, cash 30.24%, core_in_band true, rebalance_needed false, rebalance_delta +242.17 = 0.24% of equity, THIRTEENTH consecutive run inside a 0.26-point range, NO REBALANCE INTENT WRITTEN and Section 2 rebalances at the BAND EDGE 65/75 not to the exact target; core unrealized -807.23 / -1.153% from the 706.74 fill on a PRE-MARKET MIDPOINT 698.59, carries NO ACTION in either direction, Section 5 exempts core; STEP 3 HOUSEKEEPING - ISO Monday of 2026-09-15 is 2026-09-14 which MATCHES week_of, NO RESET DUE, next boundary Monday 2026-09-21; weekly cap UNTOUCHED at 0 of 3; breaker INACTIVE, halt_triggered_at none, HALT_CLEARED_AT none, loss streak 0 because NOTHING HAS EVER CLOSED; STEP 4 HAD NO SUBJECT - zero satellite positions so 5.1-5.4 were not evaluable, ZERO perplexity invalidation queries issued and NONE WAS DUE, an ABSENT check not a skipped one, sell_rule_status ABSENT not blank; STEP 5 RESEARCH FULLY PERMITTED AND RAN - five Perplexity scans (two broad --recency day, three sourced second-order screens) plus one move --sessions 5 and one asset check; THREE theses written T-2026-09-15-01 CRWV (died part 1, the and-also clause), -02 no-ticker LMT PrSM 1.2B + 8.4B and BA KC-46 13.4B (died part 1, rule v, sixth instance), -03 no-ticker Sempra/Petrobras 20-yr 0.8 Mtpa LNG SPA (died part 3, Port Arthur Phase 2 COD 2030-31 vs a two-quarter cap); ZERO ACCEPTED, NO BUY INTENT; NOTHING WAS BLOCKED - the research did not produce an eligible candidate, it was not prevented from producing one; STEP 6 plan_today.md OVERWRITTEN with plan_date 2026-09-15 and no BUY/SELL/REBALANCE intents; alerts.md EMPTY, zero open, zero SYSTEMIC)
 
 week_of: 2026-09-14
 new_positions_this_week: 0
@@ -21,9 +21,9 @@ circuit_breaker: INACTIVE
 halt_triggered_at: none
 core_established: true
 core_ticker: VOO
-core_pct: 69.76
+core_pct: 69.74
 satellite_pct: 0.0
-cash_pct: 30.24
+cash_pct: 30.26
 open_thesis_ids: none
 ```
 
@@ -191,13 +191,16 @@ Anything the next run must not lose. Cleared once acted on.
   nothing else.**
 
 - **⚠ AN EMPTY PLAN THAT IS FRESH AND A PLAN THAT IS STALE PRODUCE THE SAME ZERO ORDERS AND ARE NOT
-  THE SAME RUN.** `plan_today.md` was overwritten with **`plan_date: 2026-09-15`**, which will match
-  the ET date at 09:35, so the staleness gate should **not** fire and **no alert is due**. Steps 4–6
-  will be reached **with full authority and no intents to act on**. **Zero `alpaca.py move`
-  re-validation calls are due** — re-validation has a subject only when an intent exists; **an
-  absent check, not a skipped one.** **The gate has never fired in this account's history, so its
-  alert path remains untested code**, and a future run must not read fifteen quiet opens as evidence
-  that it works.
+  THE SAME RUN — DISCHARGED 09-15 09:36, AND THE PREDICTION HELD EXACTLY.** The pre-market run wrote
+  **`plan_date: 2026-09-15`**; the open run read it against the ET date **2026-09-15**, they
+  **matched**, and the gate **did not fire**. **No stale-plan alert was due and none was posted.**
+  Steps 4–6 were reached **with full authority and no intents to act on** — that is the whole
+  difference from a stale run, and **it is invisible in the order count.** **Zero `alpaca.py move`
+  re-validation calls were issued and none was due** — re-validation has a subject only when a BUY
+  intent exists; **an absent check, not a skipped one.** **The gate has now been exercised sixteen
+  times and has never fired, so its alert path REMAINS UNTESTED CODE**; a future run must not read
+  sixteen quiet opens as evidence that it works. **The way to know the gate is sound is to read it,
+  not to count the days it stayed silent.**
 
 - **⚠ EVERY ROUTINE'S SCOPE BINDS HARDEST ON AN EMPTY SLEEVE WITH 30% CASH.** **Routine 1 places no
   orders by design** — it researches and writes a plan; **routine 3 is exits-only**; **routine 4
@@ -337,7 +340,9 @@ Anything the next run must not lose. Cleared once acted on.
   A counter already drifted once (31 vs the auditable 30) and was corrected on 09-11; **in a repo
   whose only memory is these files, a counter that drifts unremarked is how a larger one starts.**
   **Positions opened: still zero. `new_positions_this_week` stayed at 0 of 3 because nothing was
-  placed, not because the cap bound. Trading days with the sleeve empty: sixteen.**
+  placed, not because the cap bound. Trading days with the sleeve empty: seventeen** (the 09-15
+  open run is the seventeenth session and it placed **zero orders** — the count advances on
+  sessions, not on runs).
 
 - **ClickUp tasks, for reference:** **09-14 daily summary `86bc0hw64`**; **09-11 weekly review
   `86bbzgbg3`**; 09-11 daily summary `86bbzfm12`; 09-10 `86bbyr8vp`; 09-09 `86bbxtn1a`; 09-08

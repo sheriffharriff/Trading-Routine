@@ -56,76 +56,86 @@ re-derive it from price history, and it stays correct for positions closed month
 
 *(none — no **satellite** positions have been opened yet. Core VOO exists and is deliberately not tracked here, per the top-of-file rules and the fill note further down.)*
 
-**Reconciliation 2026-09-15 08:15 ET (1-premarket-research) — LEDGER AGREES WITH THE BROKER;
-STILL NO SATELLITE SUBJECT, SIXTEENTH CONSECUTIVE SESSION.**
-*(This block **replaces** the 09-14 16:16 close reconciliation, read in full by this run —
-**one block per date, not one per run.** **Collapse, do not append — twentieth consecutive
+**Reconciliation 2026-09-15 09:36 ET (2-market-open-execution) — LEDGER AGREES WITH THE BROKER;
+STILL NO SATELLITE SUBJECT, SEVENTEENTH CONSECUTIVE SESSION.**
+*(This block **replaces** the 09-15 08:15 pre-market reconciliation, read in full by this run —
+**one block per date, not one per run.** **Collapse, do not append — twenty-first consecutive
 run.**)*
-Selftest passed all five checks at **08:15 ET** (`trading_enabled: true`, LIVE paper account, equity
-$99,192.76). `clock` **`is_open: false`**, `next_open` 2026-09-15T09:30:00-04:00 — **`next_open` is
-TODAY, so this is pre-market, NOT a holiday skip.** `next_close` 2026-09-15T16:00:00-04:00.
+Selftest passed all five checks at **09:35 ET** (`trading_enabled: true`, LIVE paper account, equity
+$99,135.81). `clock` **`is_open: true`** at 09:36:14, `next_close` 2026-09-15T16:00:00-04:00 —
+**the market is open; no closed-market skip and no holiday branch.**
+
+**⚠ THE STALENESS GATE DID NOT FIRE, AND THAT IS A FINDING RATHER THAN A NON-EVENT.**
+`plan_today.md` carried **`plan_date: 2026-09-15`** against an ET date of **2026-09-15** — they
+match, the plan is **FRESH**, and every intent in it carried **full authority**. **No stale-plan
+alert was due and none was posted.** The plan held **no BUY, no SELL and no REBALANCE intent**, so
+this run placed **zero orders** — **the same order count a stale plan would have produced, arrived
+at for the opposite reason.** **An empty plan executed with full authority is not a skipped plan,
+and nothing downstream distinguishes them except this note.**
 
 **Satellite blocks (zero) checked against satellite Alpaca positions (zero) — they agree.** Compare
 **satellite to satellite**, never raw ledger to raw broker. `alpaca.py positions` returns **one row,
-VOO core** (99.046311231 shares, avg_entry 706.74, market_value $69,192.76, broker `current_price`
-**698.59**, `lastday_price` 699.30, unrealized_pl **−$807.23, −1.153%**, unrealized_intraday_pl
-**−$70.32, −0.102%**). `alpaca.py sleeves`: equity **$99,192.76**, cash $30,000.00, core **69.76%**,
-satellite **0.0% (count 0)**, cash 30.24%, `core_in_band: true`, `rebalance_needed: false`,
-`rebalance_delta: +242.17` — **0.24% of equity. NO REBALANCE IS DUE AT THE OPEN**, and §2 rebalances
-at the **band edge (65/75)**, not to the exact target. **Thirteenth consecutive run inside a
-0.26-point range (69.72–69.98).**
+VOO core** (99.046311231 shares, avg_entry 706.74, market_value $69,144.23, broker `current_price`
+**698.10**, `lastday_price` 699.30, unrealized_pl **−$855.76, −1.223%**, unrealized_intraday_pl
+**−$118.86, −0.172%**). `alpaca.py sleeves`: equity **$99,144.23**, cash $30,000.00, core **69.74%**,
+satellite **0.0% (count 0)**, cash 30.26%, `core_in_band: true`, `rebalance_needed: false`,
+`rebalance_delta: +256.73` — **0.26% of equity. NO REBALANCE WAS PLACED**, and §2 rebalances at the
+**band edge (65/75)**, not to the exact target. **Fourteenth consecutive run inside a 0.26-point
+range (69.72–69.98).**
 
-**⚠ THE CORE MARK IS A PRE-MARKET MIDPOINT AND CARRIES NO ACTION IN EITHER DIRECTION.** §5 exempts
+**⚠ THE CORE MARK CARRIES NO ACTION IN EITHER DIRECTION AND IS NOT A REBALANCE TRIGGER.** §5 exempts
 core from all four sell rules. **Measured from the 706.74 fill, not from an inception anchor** — the
 09-03 fill landed +0.483% above the prior close and that permanent entry gap, not tracking error and
-never skill, is the whole of the core's reported divergence from VOO. **Tracking error was measured
-at 0.0000% on 09-11 and nothing here reopens it.** **A moving core mark is never a rebalance
-trigger: §2's trigger is the sleeve percentage, which is 69.76% and inside the band.**
+never skill, is the whole of the core's reported divergence from VOO. **§2's trigger is the sleeve
+percentage, which is 69.74% and inside the band** — a core mark drifting with the tape is not drift
+in the sense §2 means, and today's −1.223% unrealized is a price, not a signal.
 
-**⚠ THIS ROUTINE PLACES NO ORDERS BY DESIGN — and nothing was blocked either.** Routine 1 researches
-and writes a plan; the 09:35 run executes it. **New positions were fully permitted this run**:
-breaker INACTIVE, weekly cap **0 of 3**, satellite sleeve empty with 30.24% cash, `control.md` Notes
-empty. **Three candidates reached a full thesis entry (T-2026-09-15-01 CRWV, -02 and -03) and all
-three were rejected** — at parts 1, 1 and 3 respectively. **The research did not produce an eligible
-candidate; it was not prevented from producing one.**
+**⚠ STEP 3 BOOTSTRAP WAS SKIPPED BECAUSE `core_established: true` — THE PATH IS CLOSED
+PERMANENTLY.** It ran once, on 09-03, and does not run again. A future run finding this field true
+must not re-derive the 70% buy.
 
-**§5.1–§5.4 HAD NO SUBJECT — sixteenth consecutive session, and it is not a clean bill of health.**
-No thesis to test for invalidation (§5.1); no `timing_window` to expire (§5.2); no `entry_price` to
+**§5.1–§5.4 HAD NO SUBJECT — seventeenth consecutive session, and it is not a clean bill of
+health.** The plan carried **no SELL intent** and there was no position to write one against: no
+thesis to test for invalidation (§5.1); no `timing_window` to expire (§5.2); no `entry_price` to
 measure −7% against (§5.3); no high-water mark to measure −10% against (§5.4). **Nothing was near
 triggering because nothing exists to trigger.** `sell_rule_status` is **absent rather than blank** —
-a third state, distinct from both "current and unchanged" and "stale." **Zero §5.1 Perplexity
-invalidation queries were issued and none was due** — an absent check, not a skipped one. **All four
-remain untested code paths; nothing has ever closed in this account**, which is why
-`consecutive_closed_losses` cannot have moved and **no circuit-breaker alert was due.**
+a third state, distinct from both "current and unchanged" and "stale." **All four remain untested
+code paths; nothing has ever closed in this account**, which is why `consecutive_closed_losses`
+cannot have moved and **no circuit-breaker alert was due.**
+
+**⚠ ZERO `alpaca.py move --sessions 5` RE-VALIDATION CALLS WERE ISSUED, AND NONE WAS DUE.** Step 5
+re-validates **BUY intents**; with no BUY intent there is no subject. **An absent check, not a
+skipped one** — a future run must not read "no `move` calls at the open" as a corner cut. The same
+holds for the correlation re-read (no open `driver` to compare against) and the thesis-presence
+check (no thesis ID to look up).
 
 **HIGH-WATER MARKS: STILL ABSENT, AND THAT IS THE CORRECT STATE, NOT A GAP.** There is no satellite
 block, so there is no `highest_close` to carry and no `(as of ...)` date to re-stamp. **The marks are
-ABSENT — a third state, and the only one that carries no date**, which is exactly what tells today's
-midday run that no backfill is due. **Core VOO is deliberately never stamped** — stamping it would
-fabricate a §5.4 trailing stop on the one position §5 exempts from every sell rule. **§5.4 remains
-NOT ARMED; it arms on the first *satellite* fill.**
+ABSENT — a third state, and the only one that carries no date**, which is what tells the midday run
+that no backfill is due. **Core VOO is deliberately never stamped** — stamping it would fabricate a
+§5.4 trailing stop on the one position §5 exempts from every sell rule. **§5.4 remains NOT ARMED; it
+arms on the first *satellite* fill.**
 
-**NOTHING IS IN LIMBO.** The account's entire order history is **one row**, the 09-03 core fill,
-`status: filled`, terminal. **No `"terminal": false` case has ever arisen**, so `trade_log.md` is
-correctly left unappended — **a run with no fill writes no trade entry.**
+**NOTHING IS IN LIMBO.** This run submitted **no orders at all**, so no `"terminal": false` case
+could arise and **`trade_log.md` was correctly left unappended — a run with no fill writes no trade
+entry.** The account's entire order history remains **one row**, the 09-03 core fill,
+`status: filled`, terminal.
 
 **Two facts carried forward from 09-11, settled and not to be re-derived:** (1) **the Alpaca
-data-plane outage is resolved** — every endpoint answered 200 at the 09-11 close, and `clock`,
-`account`, `positions`, `sleeves`, `orders` and `bars` all answered cleanly this run, probed by
-hand; but **open item (6) survives it**, because `selftest.py` still does not probe `clock` or market
-data and a green pre-flight therefore certifies nothing about the data plane. (2) **The two-price
-defect is SOLVED and it is a live quote midpoint, not an offset** — which is why the gap (6.5c,
-59.85c, 4c on successive days) never had a stable size. **Today's broker `current_price` 699.18
-against the official close 699.35 is a 17c after-hours midpoint on that same mechanism.** Always
-`bars --adjustment all` for a close, a fresh `quote` for execution, **never a `positions` field for
-either.** Cosmetic on core; **load-bearing the moment a satellite position exists**, because a
-`highest_close` stamped from a `positions` field at 16:16 would record an after-hours midpoint and
-silently move the §5.4 stop.
+data-plane outage is resolved** — `clock`, `positions` and `sleeves` all answered cleanly this run,
+probed by hand; but **open item (6) survives it**, because `selftest.py` still does not probe
+`clock` or market data and a green pre-flight therefore certifies nothing about the data plane.
+(2) **The two-price defect is SOLVED and it is a live quote midpoint, not an offset** — which is why
+the gap never had a stable size. **This run's broker `current_price` 698.10 is an intraday midpoint,
+not a close**, and it was used for nothing but reporting. Always `bars --adjustment all` for a close,
+a fresh `quote` for execution, **never a `positions` field for either.** Cosmetic on core;
+**load-bearing the moment a satellite position exists**, because a `highest_close` stamped from a
+`positions` field would record a midpoint and silently move the §5.4 stop.
 
 ---
 
-**⚠ EARLIER PER-RUN RECONCILIATIONS (2026-09-01 through 2026-09-14 16:16) HAVE BEEN COLLAPSED,
-DELIBERATELY.** Twenty-eight blocks spanning 09-01 to yesterday's close run each recorded the same
+**⚠ EARLIER PER-RUN RECONCILIATIONS (2026-09-01 through 2026-09-15 08:15) HAVE BEEN COLLAPSED,
+DELIBERATELY.** Twenty-nine blocks spanning 09-01 to this morning's pre-market run each recorded the same
 null result — zero satellite blocks checked against zero satellite Alpaca positions, agreeing; no
 §5 rule evaluated; no high-water mark to stamp; no backfill due. `state.md` flags this
 accumulation as
