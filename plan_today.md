@@ -29,23 +29,23 @@ better. Core and rebalance actions are exempt from the gate because neither depe
 day's research.
 
 ```
-plan_date: 2026-09-14
+plan_date: 2026-09-15
 generated_by: 1-premarket-research
 market_open_today: yes
 ```
 
-Market opens today 2026-09-14 at 09:30 ET (`alpaca.py clock` at 08:22:50 ET: `is_open:
-false`, `next_open: 2026-09-14T09:30:00-04:00`, `next_close: 2026-09-14T16:00:00-04:00`).
+Market opens today 2026-09-15 at 09:30 ET (`alpaca.py clock` at 08:15:43 ET: `is_open:
+false`, `next_open: 2026-09-15T09:30:00-04:00`, `next_close: 2026-09-15T16:00:00-04:00`).
 **Not a holiday** — the market is closed because it is pre-market and `next_open` is *today*.
 
-**One pre-market run today, at 08:22 ET.** Selftest passed all five checks
-(`trading_enabled: true`, LIVE paper account, equity **$99,134.33**).
+**One pre-market run today, at 08:15 ET.** Selftest passed all five checks
+(`trading_enabled: true`, LIVE paper account, equity **$99,192.76**).
 
-**Tape context:** VOO's broker mark is **698.04** (`lastday_price` **702.56**, `change_today`
-**−0.64%**). Neither number is an execution reference — **pull a fresh quote at 09:35.** The
-core position shows `unrealized_pl` **−$861.70 (−1.231%)** against the 706.74 fill, its widest
-of the run so far. §5 exempts core from all four sell rules — **there is no action attached to
-it at any number, in either direction, and a −1.2% mark is not a signal to do something.**
+**Tape context:** VOO's broker mark is **698.59** (`lastday_price` **699.30**, `change_today`
+**−0.10%**). Neither number is an execution reference — **pull a fresh quote at 09:35.** The
+core position shows `unrealized_pl` **−$807.23 (−1.153%)** against the 706.74 fill. §5 exempts
+core from all four sell rules — **there is no action attached to it at any number, in either
+direction.**
 
 ---
 
@@ -62,84 +62,91 @@ were rejected.
 ### BUY — none
 
 No buy intents. New positions were **fully permitted** this run — breaker INACTIVE, weekly cap
-at **0 of 3** (fresh week), satellite sleeve **empty with 30.26% cash**, no restricting note in
-`control.md`. **Nothing was blocked. The research did not produce an eligible candidate.**
+at **0 of 3**, satellite sleeve **empty with 30.24% cash**, no restricting note in `control.md`.
+**Nothing was blocked. The research did not produce an eligible candidate.**
 
-Three candidates reached ticker stage with a full `research_log.md` entry:
+Three candidates reached a full `research_log.md` entry:
 
-| Thesis | Ticker | Died at | Why |
+| Thesis | Candidate | Died at | Why |
 |---|---|---|---|
-| T-2026-09-14-01 | BWXT | part 1 (rule v), part 3 | HII's **$336M CVN 82 long-lead award** names **no subcontractor** — a dedicated screen returned *"no public source names a subcontractor or supplier receiving a portion of this specific award."* "BWXT is the sole naval reactor builder" is an **industry fact, not a transaction**. Undefinitized advance procurement for a next-decade carrier also fails the two-quarter horizon. |
-| T-2026-09-14-02 | (packaged food) | part 1 | Kroger's **ID-sales guidance cut (1.0–2.0% → 0.2–0.8%)** and a supplier's soft volumes are both downstream of the **same grocery consumer**. Kroger guiding lower causes no supplier to receive less. **Shared cause, not a mechanism** — the Macy's shape from 09-11. |
-| T-2026-09-14-03 | CART | part 2 | Kroger named **Instacart** as a partner on the call — a real named counterparty — but **no dollar figure exists anywhere**: not in the release, the 8-K, the IR summary or the call coverage. Neither magnitude nor segment share can be written without inventing both. |
-
-**The three earnings the Friday review assigned to this run were screened directly, not
-assumed.** **Kroger** produced the two theses above. **Rent the Runway** (FQ2 revenue $97.7M) is
-**two orders of magnitude below the §3 $10B floor** as a candidate and named no quantified
-counterparty as Company A. **VinFast** had **no fresh earnings in the window** — the recent items
-are guidance/estimates and operational updates, and it is a foreign issuer besides. **That
-sequencing note is the only reason this screen happened; keep writing them.**
+| T-2026-09-15-01 | CRWV | part 1 (also 2, 3) | BCE's **$52B / 1.2 GW Regina AI hub** MOU names CoreWeave — but the **300 MW is the pre-existing contract** and **none of the new 900 MW is allocated to anyone.** The mechanism sentence needs an "and also" to carry the economic claim. |
+| T-2026-09-15-02 | (no ticker) | part 1 (rule v) | **LMT $1.2B PrSM Inc 2 + $8.4B Inc 1 mod; BA $13.4B KC-46 ceiling increase.** Two screens, both directions: *"no subcontractor, supplier or teammate is named"* and *"I could not verify any"* $10B+ company self-disclosing quantified KC-46/767/PrSM exposure. |
+| T-2026-09-15-03 | (no ticker) | part 3 (also 1) | **Sempra ↔ Petrobras, 20-yr / 0.8 Mtpa LNG SPA** — sourced from **Port Arthur Phase 2, COD 2030–2031.** First delivery is 4–5 years out against §4.3's two-quarter cap. No supplier named, no dollar value disclosed. |
 
 Notes for the open run, carried so nothing is re-derived at 09:35:
 
-- **⚠ THE FUNNEL WAS THIN BECAUSE IT WAS A WEEKEND, AND THAT IS STRUCTURAL — NOT A QUIET NEWS
-  DAY TO COMPENSATE FOR.** Both broad scans came back explicitly empty on company events: the
-  first reported *"the available evidence is thin for company-specific corporate events"*; the
-  weekend-filings sweep for 09-12 and 09-13 returned *"nothing qualifies based on the sources
-  gathered."* **§4 needs a dated transaction between two named parties, and US companies do not
-  file 8-Ks on Saturday and Sunday.** A Monday pre-market run screens **one business day plus two
-  empty ones**, and this recurs every Monday. **Expect it; do not lower the bar at the bell to
-  make up for it.**
-- **⚠ Do not reach for BWXT at the open, and expect the name to feel obvious.** A 30-year-old
-  sole-source position in naval nuclear propulsion is exactly the kind of fact that reads like a
-  supplier relationship. **The source announced the deal and left the counterparty blank.
-  Filling in a blank the source left blank is not research** — standing rule (v), **fifth
-  instance this month.** It also returned **`priced_in: true` at −6.30%**, but note the ordering:
-  **parts 1 and 3 had already killed it before the filter ran.**
-- **⚠ CART is the near-miss of the run and the most interesting rejection to carry.** After eleven
-  sessions of *"the source withheld the counterparty,"* **a source finally named one** — and the
-  thesis still died one test later for want of a number. **That is a different failure from rule
-  (v) and must not be filed with it.** §4 needs a named counterparty **and** a quantified
-  exposure; this run produced a clean example of each arriving without the other. **A partnership
-  with no size disclosed is not a dollar path.** CART also returned **`priced_in: true` at
-  −5.79%** — again *after* part 2 had already killed it.
-- **⚠ THE PRICED-IN DRAWDOWN DEFECT FIRED TWICE TODAY (CART −5.79%, BWXT −6.30%) — ITS DENSEST
-  SHOWING, AND IT COST NOTHING.** Five instances now (LITE −7.35%, LMT −3.61% near-miss, LHX
-  −4.47%, plus today's two). **Both of today's candidates were already dead on the four-part
-  thesis when the filter reached them.** The expensive instances are the ones that arrive
-  **alive** — LITE passed the four-part thesis, was killed by a drawdown, and is **+10.58% vs
-  VOO** since. **Do not let a double-fire inflate the estimated cost of this defect, and do not
-  reinterpret the filter: that is a human editing §4 or `alpaca.py move`.**
-- **⚠ Do not read the Kroger cut as a short thesis or as a macro signal.** §4 is a long-only
-  second-order rule; a guidance cut at Company A with no named, sized counterparty is **not a
-  trade in either direction.**
-- **⚠ THE LOUDEST STORY OF THE WEEK IS NOT A CANDIDATE, IN EITHER DIRECTION.** August CPI landed
-  09-11 (headline **+0.4% m/m / +3.4% y/y**, core **+0.3% m/m / +2.4% y/y**) and the **FOMC
-  decision lands 09-16/17, inside this week.** No Company A, no segment, no dollar path — it is
-  the whole tape moving, which is what §4 exists to refuse. **If it moves prices hard at the
-  open, that is a price move, not a thesis.** *(One source priced ~87% odds of a 25bp **increase**,
-  contradicting every other framing in the same result set. Unresolved and not worth resolving —
-  untradeable under §4 either way.)*
-- **⚠ Four headline claims from 09-11 still have no primary source and must not be traded on:**
-  "Nvidia invests $30B in Intel," "Nvidia acquires Hugging Face," "Google's first nuclear deal /
-  $1.9B loan to restart an Iowa reactor," "Microsoft to triple cloud capacity by 2032." **None
-  appeared in any filing over the weekend.** If one is real it will arrive with a document
-  attached, and that is the day it enters the funnel.
-- **Do not reopen the disposed rejects.** **ORCL** (Company A twice over, `priced_in: true` at
-  +5.06%, and the screen for a named Oracle customer returned "no verified companies found");
-  **LHX** (dead on arithmetic: $127M Palantir + $65M Anduril = the entire $192M award); **AVAV**
-  (the awarded party, and its +1.20% is a round-tripped +12.9% spike); **SLI** (~$1B against the
-  $10B floor); **M** (a statute, not a transaction); and **LMT, GFS, EQT, LEU, TBBK, CASH, GDOT,
-  CCB, QCOM, AMZN, GLW, VZ, MTZ, FN, COHR, LITE, CRDO, MRVL, DY, PWR, BSX, MDT, ABT.** **None
-  becomes a buy at a different price.**
-- **Do not reach for MU.** It has not entered the funnel for **twelve consecutive days**, no
-  source has named it, and its filters were **not** re-run — **absence of evidence, not resolve.**
-  If it resurfaces *from a source*, re-run its filters and re-test the timing window from that
-  day's date.
+- **⚠ YESTERDAY'S WEEKEND EXCUSE IS SPENT AND THE ANSWER IS STILL NO — THAT IS TODAY'S FINDING.**
+  The 09-14 carry-forward said in writing that *"a thin Tuesday funnel would NOT have this
+  excuse."* **This is that Tuesday**, it screened a full business day, and the event set was
+  genuinely richer: **$8.4B, $13.4B, $52B, a 20-year LNG SPA, a $7.7B take-private.** **The events
+  were there; the quantified counterparties were not.** Three screens returned, verbatim: *"no
+  public source names any subcontractor, supplier or teammate with a specific dollar figure"*;
+  *"I could not verify any US-listed company with market cap above $10 billion that discloses a
+  quantified revenue exposure"*; *"no such announcement is clearly documented."* **§4's binding
+  constraint is disclosure practice, not news volume and not thesis quality.**
+- **⚠ NEW TRAP — A DOD DAILY CONTRACTS DIGEST IS NOT A SUPPLIER BREAKDOWN, AND IT LOOKS EXACTLY
+  LIKE ONE.** A tracking summary listed **Boeing, Blue Halo, Olin Winchester, Rolls-Royce
+  Solutions America and J&J Contractors** under the KC-46 heading with **three dollar figures**
+  ($13.4B; $99,832,117; $788,361,894) and **no mapping between them.** Those are unrelated awards
+  grouped by publication date. **Standing rule (v) wearing a table instead of a sentence — and a
+  table is more persuasive than a sentence.** Recognise the layout; do not re-derive it.
+- **⚠ CRWV IS THE NEAR-MISS AND THE MOST USEFUL REJECTION TO CARRY. Do not reach for it at the
+  open.** It is the CART shape from 09-14 in a bigger costume: **a named counterparty inside a
+  loudly quantified project, where the quantity attaches to the project and not to the
+  counterparty.** The number was never missing — it was **the wrong number**, and a $52B headline
+  makes that far harder to see than Kroger's silence did. CoreWeave's **300 MW is prior business
+  re-reported as context** (standing rule (iii), independently fatal). It also returned
+  **`priced_in: true` at −7.12%**, but **note the ordering: part 1 had already killed it.**
+- **⚠ THE PRICED-IN DRAWDOWN DEFECT FIRED AGAIN — SIXTH INSTANCE, AND AGAIN IT COST NOTHING.**
+  **CRWV −7.12%** joins LITE −7.35%, LMT −3.61% (near-miss), LHX −4.47%, CART −5.79%, BWXT −6.30%.
+  **CRWV was already dead at part 1 when the filter reached it**, so today adds an instance and
+  **zero damage**. **Keep the two tallies separate** — the expensive instances are the ones that
+  arrive **alive**, and LITE is still the only one: it passed the four-part thesis, was killed by
+  a drawdown, and is **+10.58% vs VOO** since. **No run reinterprets the filter; that is a human
+  editing §4 or `alpaca.py move`.**
+- **⚠ SCREEN THE TIMING WINDOW EARLY ON ANYTHING WHOSE SUBJECT IS UNDER CONSTRUCTION.** The
+  Sempra–Petrobras SPA is the ideal-looking §4 input — two named parties, disclosed volume, a
+  binding 20-year contract — and it dies on the **calendar**, four to five years before first
+  delivery. **Long-dated infrastructure offtakes will keep entering this funnel looking perfect.**
+  Part 3 kills them faster than part 1 does, and that rejection survives a supplier being named
+  later.
+- **⚠ THE FOMC BEGINS TODAY AND DECIDES TOMORROW. NOT A CANDIDATE IN EITHER DIRECTION.** August
+  CPI (headline **+0.4% m/m / +3.4% y/y**, core **+0.3% m/m / +2.4% y/y**) and UMich preliminary
+  September confidence at **47.8, down from 51.7**, are the loudest items on the tape and have
+  **no Company A, no segment, no dollar path.** **If it moves prices hard at the open or into
+  tomorrow's decision, that is a price move, not a thesis**, and a core mark that moves with it
+  carries no action because §5 exempts core.
+- **⚠ Do not read the negatives as shorts.** Abbott's **$385M** formula settlement, Dave &
+  Buster's FQ2 miss ($544.1M rev vs $556.8M consensus; adj. EBITDA $98.9M vs $120.4M; −$0.27 adj.
+  EPS vs +$0.18 expected), the UMich drop. **This book has no short**, and §4 is a long-only
+  second-order rule.
+- **Financing is not a commercial event, and this window was full of it.** Amazon's **£4.25B**
+  sterling notes closing (8-K, Item 8.01, 09-14), Sysco's **12.3M shares at $81**, Williams'
+  **$2.75B** bond sale, Redwood's convertible, Enova withdrawing its Grasshopper applications,
+  Trilogy Metals' **$17.8M** DoW equity investment. **None has a second-order surface.** Dropped
+  before ticker work.
+- **Also dropped before thesis stage:** **NextEra/Dominion** — a **$67B** merger already announced,
+  with a **$1B/yr-for-5-years Virginia supplier program** offered contingent on approval and
+  **no individual supplier named**; regulatory progress on a known deal is not a new transaction.
+  **Williams / NESE** — the Third Circuit vacated New Jersey's water-quality certification for the
+  **$1B** pipeline on **09-08**, outside the window, and the read-across to other Northeast
+  midstream runs through a **court ruling, not a transaction** — the Macy's statute shape.
+  **Baldwin Group take-private, $7.7B** — the acquirer (DFO Management) is private and the target
+  is being removed from the market; Company A on both ends. **D-Wave / Commerce CHIPS up to
+  $100M** and **COnovate / DOE $1.25M** — awarded parties, i.e. Company A, and the latter private.
+- **Do not reopen the disposed rejects.** **BWXT** and **CART** (09-14); **ORCL**, **LHX**,
+  **AVAV**, **SLI**, **M**, and **LMT, GFS, EQT, LEU, TBBK, CASH, GDOT, CCB, QCOM, AMZN, GLW, VZ,
+  MTZ, FN, COHR, LITE, CRDO, MRVL, DY, PWR, BSX, MDT, ABT.** **None becomes a buy at a different
+  price.** **LMT and ABT are on that list and both resurfaced in today's news as Company A** —
+  that is not a reason to re-run their filters.
+- **Do not reach for MU.** **Thirteen consecutive days** out of the funnel, no source has named
+  it, filters **not** re-run — **absence of evidence, not resolve.** If it resurfaces *from a
+  source*, re-run its filters and re-test the timing window from that day's date.
 - **A quiet day is not a reason to lower the bar at the bell.** §4: the correct output of most
-  research runs is no trade. **Thirty-three theses, zero positions.** That number is the strongest
-  argument available for loosening the rule and it is **not** the agent's argument to make — §2
-  permits the cash, §4 says most runs end in no trade, and **both rules were followed.**
+  research runs is no trade. **Thirty-six theses, zero positions, sixteen sessions.** That number
+  is the strongest argument available for loosening the rule and it is **not the agent's argument
+  to make** — §2 permits the cash, §4 says most runs end in no trade, and **both rules were
+  followed.**
 
 ### SELL — none
 
@@ -148,17 +155,17 @@ No open satellite positions. `positions.md` and `alpaca.py positions` agree — 
 entirely**. Compare satellite blocks to satellite positions, not raw ledger to raw broker.
 §5.1–5.4 have nothing to evaluate: no invalidation condition to test, no timing window to
 expire, no entry price or high-water mark to measure a stop against. **No §5.1 Perplexity
-invalidation query was issued and none was due — there is no position to check news against.**
+invalidation query was issued and none was due — there is no position to check news against.
+An absent check, not a skipped one.**
 
 ### REBALANCE — none
 
-- current_core_pct: **69.74%** (target 70%, §2 band 65–75% — **inside the band**)
-- `alpaca.py sleeves` 08:22 ET: `core_in_band: true`, `rebalance_needed: false`,
-  `rebalance_delta: +258.52`
-- action: **none.** The +$258.52 delta is **0.26% of equity** — VOO's overnight mark moving, not
-  drift. §2 rebalances at the **band edge** (65/75), not to the exact target. 69.74% is not a
-  rebalance, and neither were 69.72%, 69.78%, 69.83%, 69.84%, 69.88%, 69.92%, 69.96% or 69.98%.
-  **Nine consecutive runs inside a 0.26-point range; the core is not drifting.**
+- current_core_pct: **69.76%** (target 70%, §2 band 65–75% — **inside the band**)
+- `alpaca.py sleeves` 08:15 ET: `core_in_band: true`, `rebalance_needed: false`,
+  `rebalance_delta: +242.17`
+- action: **none.** The +$242.17 delta is **0.24% of equity** — VOO's overnight mark moving, not
+  drift. §2 rebalances at the **band edge** (65/75), not to the exact target. **Thirteenth
+  consecutive run inside a 0.26-point range (69.72–69.98); the core is not drifting.**
 - **⚠ `core_established: true`. The bootstrap path is closed permanently — do not re-run it.**
 
 ---
@@ -169,16 +176,22 @@ invalidation query was issued and none was due — there is no position to check
   first *satellite* position opens. The core VOO holding does **not** arm it: core is exempt
   from §5 entirely and is deliberately absent from `positions.md`.
 - **The §6 weekly cap is fully available at 0 of 3.** Week rollover checked this run: the ISO
-  Monday of 2026-09-14 is **2026-09-14**, which matches `week_of` — **no reset was due, because
-  the Friday review already performed it.** That is the housekeeping rule working as designed,
-  not a skipped step. Next boundary is Monday 2026-09-21.
+  Monday of 2026-09-15 is **2026-09-14**, which matches `week_of` — **no reset was due.** Next
+  boundary is Monday 2026-09-21.
 - **Circuit breaker INACTIVE**, `consecutive_closed_losses: 0`, `halt_triggered_at: none`,
   `HALT_CLEARED_AT: none`. Nothing has ever closed, so the streak cannot have moved.
 - **`alerts.md` is empty — zero incidents, nothing SYSTEMIC.** Selftest passed all five checks
-  at 08:22 ET.
+  at 08:15 ET.
+- **⚠ AN EMPTY PLAN THAT IS FRESH IS NOT THE SAME RUN AS A PLAN THAT IS STALE, THOUGH BOTH
+  PRODUCE ZERO ORDERS.** This plan is dated **2026-09-15** and will match the ET date at 09:35,
+  so the staleness gate should **not** fire and **no alert is due**. Steps 4–6 will be reached
+  with **full authority and no intents to act on**. **Zero `alpaca.py move` re-validation calls
+  are due** — re-validation has a subject only when an intent exists. **The gate has never fired
+  in this account's history; its alert path is untested code, and fifteen quiet opens are not
+  evidence that it works.**
 - **⚠ Two-price trap — SOLVED, and the answer is a quote midpoint, not an offset.** The broker
   mark is a **live bid/ask midpoint** that keeps moving after the bell; that is why the gap
-  (6.5c, 59.85c, 4c on successive days) never had a stable size and never will. **Do not
+  (6.5c, 59.85c, 4c, 17c on successive days) never had a stable size and never will. **Do not
   re-derive this and do not re-open it as a mystery.** Use `bars --adjustment all` for any
   official close and a fresh `quote` for execution. **Never a `positions` field for either.**
   Cosmetic on core; **load-bearing the moment a satellite position exists**, because a
@@ -218,8 +231,7 @@ invalidation query was issued and none was due — there is no position to check
 
 ## No-trade days
 
-An empty intent list is the expected output most days. §4: *"The correct output of most
-research runs is no trade. A run that finds nothing worth buying is a successful run."*
-When there is nothing to do, write that plainly here with the reasoning — do not pad the
-list to look productive. The rejected candidates still go in `research_log.md`, which is
-where the value of a quiet day actually lives.
+A plan with no intents is a complete plan, not a failed run. §4 is explicit that the correct
+output of most research runs is no trade, and padding this file to look busy is the failure
+mode it exists to prevent. Say plainly what was considered and why it was rejected, and leave
+the intent sections empty.
