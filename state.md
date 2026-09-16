@@ -10,9 +10,9 @@ The block below is parsed by `scripts/common.py` and gates real behavior
 `key: value` format exactly. Prose goes underneath.
 
 ```
-last_run: 2026-09-16 08:17 ET 1-premarket-research (selftest PASSED all five checks at 08:16 ET, trading_enabled true, LIVE paper, equity 99221.49; THIS ROUTINE PLACES NO ORDERS BY DESIGN - zero orders and none was due; TODAY IS A TRADING DAY - clock is_open FALSE at 08:17:11 because it is PRE-MARKET, next_open 2026-09-16T09:30 TODAY and next_close 2026-09-16T16:00 TODAY, so the HOLIDAY BRANCH DID NOT APPLY and the funnel was opened in full; ledger reconciled - zero satellite blocks vs zero satellite Alpaca rows, they AGREE, one row VOO core; broker current_price 698.88 is a PRE-MARKET QUOTE MIDPOINT not a close, yesterday official close 696.29, NEVER MIX THE TWO; sleeves equity 99221.49 cash 30000.00 core 69.76% satellite 0.0% count 0 cash 30.24%, core_in_band true, rebalance_needed false, rebalance_delta +233.56 = 0.24% of equity, NO REBALANCE DUE, SEVENTEENTH consecutive run inside a 0.29-point range 69.69-69.98; STEP 4 5.1-5.4 NOT EVALUABLE, no subject, eighteenth consecutive session, all four remain UNTESTED CODE PATHS, 5.4 NOT ARMED, ZERO perplexity invalidation queries issued and NONE WAS DUE, high-water marks ABSENT not stale, core VOO deliberately NOT stamped; week rollover checked - ISO Monday of 2026-09-16 is 2026-09-14 MATCHES week_of, NO RESET DUE, next boundary Monday 2026-09-21; loss streak UNMOVED at 0 because nothing has ever closed, breaker INACTIVE, no HALT_CLEARED_AT comparison required; NEW POSITIONS WERE FULLY PERMITTED - breaker INACTIVE, cap 0 of 3, sleeve empty with 30.24% cash, control.md notes (none) - NOTHING BLOCKED THE RESEARCH AND IT PRODUCED NO ELIGIBLE CANDIDATE; research 5 perplexity scans + 1 move call, 3 theses 0 accepted 3 rejected - T-2026-09-16-01 AVGO died at parts 2 and 3 and rule iii AFTER PART 1 PASSED, -02 Venture Global/China Gas LNG SPA died at part 3 rule vi, -03 Abrams AGT1500 OTA died at part 1 rule v; plan_today.md written with plan_date 2026-09-16 and ZERO intents of all three kinds, no revalidate line and none due; FOMC decides 14:00 ET TODAY, >90% odds of a 25bp HIKE, first since 2023, NOT A CANDIDATE IN EITHER DIRECTION; alerts.md EMPTY, zero open, zero SYSTEMIC)
+last_run: 2026-09-16 09:35 ET 2-market-open-execution (selftest PASSED all five checks at 09:35 ET, trading_enabled true, LIVE paper, equity 99142.25; ZERO ORDERS PLACED AND NONE WAS DUE - this is the ONLY routine that may open a position and it opened nothing because THE PLAN CARRIED NO INTENT, not because anything blocked it; STEP 2 STALENESS GATE EVALUATED AND DID NOT FIRE - plan_date 2026-09-16 MATCHES today ET, so the plan was FRESH and its zero intents are THE PLAN, not a gap in it; an empty fresh plan and a stale plan produce IDENTICAL zero-order runs - read the DATE not the outcome; gate now exercised EIGHTEEN times, never fired, ALERT PATH REMAINS UNTESTED CODE; clock is_open TRUE at 09:35:47, next_close 2026-09-16T16:00 TODAY, next_open 2026-09-17T09:30 TOMORROW - the in-session shape, distinct from the pre-market and post-bell reads that SHARE the false boolean; ledger reconciled - zero satellite blocks vs zero satellite Alpaca rows, they AGREE, one row VOO core 99.046311231 sh avg_entry 706.74 mv 69142.25 unrealized -857.74 / -1.225%; broker current_price 698.08 is a LIVE INTRADAY QUOTE MIDPOINT not a close, yesterday official close 696.29 and the 08:17 read was 698.88 - SAME FIELD THREE NUMBERS, NEVER MIX SOURCES; sleeves equity 99142.25 cash 30000.00 core 69.74% satellite 0.0% count 0 cash 30.26%, core_in_band true, rebalance_needed false, rebalance_delta +257.33 = 0.26% of equity, STEP 7 EVALUATED AND NO REBALANCE EXECUTED, EIGHTEENTH consecutive run inside a 0.29-point range 69.69-69.98; STEP 3 core bootstrap SKIPPED - core_established already true, that path never runs again; STEP 4 zero SELL intents and 5.1-5.4 NOT EVALUABLE, no subject, eighteenth consecutive session, all four remain UNTESTED CODE PATHS, 5.4 NOT ARMED, high-water marks ABSENT not stale, core VOO deliberately NOT stamped; STEP 5 ZERO alpaca.py move re-validation calls issued and NONE WAS DUE - re-validation has a subject only when a BUY intent exists, an ABSENT check not a skipped one; week rollover checked - ISO Monday of 2026-09-16 is 2026-09-14 MATCHES week_of, NO RESET DUE, next boundary Monday 2026-09-21; loss streak UNMOVED at 0 because nothing has ever closed, breaker INACTIVE, no HALT_CLEARED_AT comparison required; NEW POSITIONS WERE FULLY PERMITTED - breaker INACTIVE, cap 0 of 3, sleeve empty with 30.26% cash, control.md notes (none); NO RESEARCH AND NO THESIS - an execution routine does not research, counter stays 39; FOMC decides 14:00 ET TODAY at >90% odds of a 25bp HIKE, AFTER this run - nothing to invalidate, core exempt from all four sell rules, NO ACTION AT ANY NUMBER; alerts.md EMPTY, zero open, zero SYSTEMIC)
 
-prior_run: 2026-09-15 16:15 ET 4-market-close-journal (selftest PASSED, equity 99025.37; TRADES NOTHING AT ALL by design, zero orders; TODAY WAS A TRADING DAY - is_open FALSE at 16:16:02 because the BELL RANG, next_open was TOMORROW; day numbers on OFFICIAL closes both legs - VOO 696.29 vs 699.35 = -0.438%, equity 98964.96, day -303.08 / -0.305%; broker legs read 99025.37 and -0.240% and the mix FLATTERED THE BOOK BY ~$65 for the FIRST TIME; sleeves official core 69.69% cash 30.31%; 5.1-5.4 NO SUBJECT, seventeenth session; journal.md appended one entry for 2026-09-15; ClickUp daily summary 86bc17nc4; research 3 theses 0 accepted 3 rejected)
+prior_run: 2026-09-16 08:17 ET 1-premarket-research (selftest PASSED all five checks at 08:16 ET, trading_enabled true, LIVE paper, equity 99221.49; THIS ROUTINE PLACES NO ORDERS BY DESIGN - zero orders and none was due; TODAY IS A TRADING DAY - clock is_open FALSE at 08:17:11 because it is PRE-MARKET, next_open 2026-09-16T09:30 TODAY and next_close 2026-09-16T16:00 TODAY, so the HOLIDAY BRANCH DID NOT APPLY and the funnel was opened in full; ledger reconciled - zero satellite blocks vs zero satellite Alpaca rows, they AGREE, one row VOO core; broker current_price 698.88 is a PRE-MARKET QUOTE MIDPOINT not a close, yesterday official close 696.29, NEVER MIX THE TWO; sleeves equity 99221.49 cash 30000.00 core 69.76% satellite 0.0% count 0 cash 30.24%, core_in_band true, rebalance_needed false, rebalance_delta +233.56 = 0.24% of equity, NO REBALANCE DUE, SEVENTEENTH consecutive run inside a 0.29-point range 69.69-69.98; STEP 4 5.1-5.4 NOT EVALUABLE, no subject, eighteenth consecutive session, all four remain UNTESTED CODE PATHS, 5.4 NOT ARMED, ZERO perplexity invalidation queries issued and NONE WAS DUE, high-water marks ABSENT not stale, core VOO deliberately NOT stamped; week rollover checked - ISO Monday of 2026-09-16 is 2026-09-14 MATCHES week_of, NO RESET DUE, next boundary Monday 2026-09-21; loss streak UNMOVED at 0 because nothing has ever closed, breaker INACTIVE, no HALT_CLEARED_AT comparison required; NEW POSITIONS WERE FULLY PERMITTED - breaker INACTIVE, cap 0 of 3, sleeve empty with 30.24% cash, control.md notes (none) - NOTHING BLOCKED THE RESEARCH AND IT PRODUCED NO ELIGIBLE CANDIDATE; research 5 perplexity scans + 1 move call, 3 theses 0 accepted 3 rejected - T-2026-09-16-01 AVGO died at parts 2 and 3 and rule iii AFTER PART 1 PASSED, -02 Venture Global/China Gas LNG SPA died at part 3 rule vi, -03 Abrams AGT1500 OTA died at part 1 rule v; plan_today.md written with plan_date 2026-09-16 and ZERO intents of all three kinds, no revalidate line and none due; FOMC decides 14:00 ET TODAY, >90% odds of a 25bp HIKE, first since 2023, NOT A CANDIDATE IN EITHER DIRECTION; alerts.md EMPTY, zero open, zero SYSTEMIC)
 
 week_of: 2026-09-14
 new_positions_this_week: 0
@@ -21,9 +21,9 @@ circuit_breaker: INACTIVE
 halt_triggered_at: none
 core_established: true
 core_ticker: VOO
-core_pct: 69.76
+core_pct: 69.74
 satellite_pct: 0.0
-cash_pct: 30.24
+cash_pct: 30.26
 open_thesis_ids: none
 ```
 
@@ -130,6 +130,12 @@ Anything the next run must not lose. Cleared once acted on.
   mark that moves with it **carries no action because §5 exempts core.** **Sixth consecutive day this
   disposition is recorded.** August CPI (headline **+3.4% y/y**, above the 3.3% forecast; core
   **+0.3% m/m**, up from 0.2%) is the input, not a candidate.
+  **THE 09:35 OPEN RUN PASSED THROUGH IT WITH NO ACTION, CORRECTLY** — the decision lands **four and
+  a half hours after** that run, so there was nothing to anticipate and **no intent for it to
+  invalidate.** **The 16:15 close run is the first routine that will see the aftermath, and its job
+  there is to journal a price move, not to find a thesis in it.** **Whatever the tape does at 14:00,
+  the 09-17 pre-market run must enter it through §4 like any other event — a Company A, a segment, a
+  dollar path — and "the Fed hiked" supplies none of the three.**
 
 - **⚠ THE PRICED-IN DRAWDOWN DEFECT FIRED A SEVENTH TIME AND AGAIN COST NOTHING — KEEP THE TWO
   TALLIES SEPARATE.** Open item (1) — the §4 filter reading a **drawdown** as "priced in" — hit
@@ -194,9 +200,13 @@ Anything the next run must not lose. Cleared once acted on.
   pre-market run discharging it in writing.**
 
 - **⚠ A CLOSE RUN ALWAYS READS `is_open: false`, AND SO DOES A PRE-MARKET RUN — THE BOOLEAN IS USELESS
-  IN BOTH DIRECTIONS AND `next_open` IS WHAT DISCRIMINATES.** Today at **08:17:11** `clock` returned
-  **`is_open: false`** with **`next_open: 2026-09-16T09:30` — TODAY** and **`next_close:
-  2026-09-16T16:00` — also today.** That is an ordinary pre-market hour. Yesterday at **16:16:02** the
+  IN BOTH DIRECTIONS AND `next_open` IS WHAT DISCRIMINATES. TODAY SUPPLIED ALL THREE SHAPES IN ONE
+  SESSION, WHICH IS THE CLEANEST DEMONSTRATION THIS LOG WILL GET.** At **08:17:11** `clock` returned
+  **`is_open: false`, `next_open` TODAY** — pre-market. At **09:35:47** it returned **`is_open: true`,
+  `next_close: 2026-09-16T16:00` TODAY, `next_open: 2026-09-17T09:30` TOMORROW** — in session, and the
+  **only one of the three where the boolean alone is informative.** At **16:16** it will read
+  **`is_open: false`, `next_open` TOMORROW** — post-bell. **Two of the three share one boolean and
+  differ only in the `next_open` DATE.** Yesterday at **16:16:02** the
   same boolean meant *the bell rang sixteen minutes ago*, with `next_open` reading **tomorrow**.
   **Routine 1's holiday branch and Routine 4's holiday branch both trigger on exactly the flag their
   run always sees.** A run that pattern-matches the boolean skips a day that did happen and leaves a
@@ -224,14 +234,15 @@ Anything the next run must not lose. Cleared once acted on.
   present and plausible.
 
 - **⚠ AN EMPTY PLAN THAT IS FRESH AND A PLAN THAT IS STALE PRODUCE THE SAME ZERO ORDERS AND ARE NOT
-  THE SAME RUN.** Today's plan is written with **`plan_date: 2026-09-16`** and **zero intents of all
-  three kinds.** The open run must **read the date, not the outcome** — the difference is invisible in
-  the order count. **Zero `alpaca.py move` re-validation calls are due at 09:35 and no `revalidate`
-  line was written**, because re-validation has a subject only when a BUY intent exists: **an absent
-  check, not a skipped one.** **The gate has now been exercised seventeen times and has never fired,
-  so its alert path REMAINS UNTESTED CODE**; a future run must not read seventeen quiet opens as
-  evidence that it works. **The way to know the gate is sound is to read it, not to count the days it
-  stayed silent.**
+  THE SAME RUN. DISCHARGED 09-16 09:35 AND DUE AGAIN AT THE NEXT OPEN.** The gate was **evaluated
+  against today's ET date and did not fire** — `plan_date: 2026-09-16` **matched**, so the plan was
+  **FRESH**, and its zero intents are **the plan rather than a gap in it**. The open run read the
+  **date, not the outcome**; the difference is invisible in the order count, and both readings would
+  have produced the same empty run. **Zero `alpaca.py move` re-validation calls were issued and none
+  was due** — re-validation has a subject only when a BUY intent exists: **an absent check, not a
+  skipped one.** **The gate has now been exercised eighteen times and has never fired, so its alert
+  path REMAINS UNTESTED CODE**; a future run must not read eighteen quiet opens as evidence that it
+  works. **The way to know the gate is sound is to read it, not to count the days it stayed silent.**
 
 - **⚠ EVERY ROUTINE'S SCOPE BINDS HARDEST ON AN EMPTY SLEEVE WITH 30% CASH.** **Routine 1 places no
   orders by design** — it researches and writes a plan; **routine 3 is exits-only**; **routine 4
@@ -245,7 +256,13 @@ Anything the next run must not lose. Cleared once acted on.
   in `control.md` — and **wrote zero BUY intents.** **Nothing blocked the research. The research did
   not produce an eligible candidate.** That distinction is the whole point of Step 5's instruction not
   to do research you cannot act on: **today the pressure ran the other way — full authority and
-  nothing worth using it on.**
+  nothing worth using it on.** **AND RE-DISCHARGED AGAIN 09-16 09:35 FROM THE ONE SEAT THAT COULD
+  HAVE ACTED:** the open run is **the only routine permitted to open a position**, it read an
+  **INACTIVE breaker, a cap at 0 of 3, an empty sleeve and 30.26% idle cash**, and it **opened
+  nothing, because the plan it consumes carried no BUY intent.** **That is the discipline working at
+  its single point of exposure.** The 08:00/09:35 gap exists precisely so a candidate reasoned into
+  existence at the bell cannot become a fill; **a run that "found something" at 09:35 would not be
+  diligent, it would be the failure this architecture is built to prevent.**
 
 - **⚠ THE TWO-PRICE DEFECT IS SOLVED — IT IS A QUOTE MIDPOINT, NOT AN OFFSET. DO NOT RE-OPEN IT AS A
   MYSTERY.** It resolved at the 09-11 close, where broker `current_price` 702.62 was **the midpoint of
@@ -356,11 +373,13 @@ Anything the next run must not lose. Cleared once acted on.
   so **every reconciliation compares satellite blocks to satellite Alpaca positions**; a run comparing
   raw ledger to raw broker will read a correct ledger as broken.
 
-- **⚠ COLLAPSE, DO NOT APPEND — ACTED ON TWENTY-FOUR TIMES NOW, AND DUE AGAIN NEXT RUN.**
+- **⚠ COLLAPSE, DO NOT APPEND — ACTED ON TWENTY-FIVE TIMES NOW, AND DUE AGAIN NEXT RUN.**
   `positions.md` ran to **604 lines / 42KB** before the 09-07 collapse and has since been held to a
-  **single current reconciliation block** — this run **replaced** the 09-15 16:15 close block rather
-  than adding a 09-16 one beside it, and the superseded `prior_run` line was dropped from the fenced
-  block rather than left to accumulate as a third slot. **Every load-bearing fact is preserved;
+  **single current reconciliation block** — this run **replaced** the 09-16 08:17 pre-market block
+  rather than adding a second 09-16 one beside it, and the superseded `prior_run` line (09-15 close)
+  was dropped from the fenced block rather than left to accumulate as a third slot. **Two blocks for
+  one date is the easiest version of the mistake to make, and today was the day with two runs to
+  tempt it.** **Every load-bearing fact is preserved;
   nothing live was discarded.** **The pull to append is structural** — a run is rewarded for showing
   it checked something, and a deleted note looks like a check that never happened. **A future run will
   feel it too, and two blocks for one date is the easiest version of the mistake to make.**
@@ -383,7 +402,9 @@ Anything the next run must not lose. Cleared once acted on.
   only memory is these files, a counter that drifts unremarked is how a larger one starts.**
   **Positions opened: still zero. `new_positions_this_week` stayed at 0 of 3 because nothing was
   placed, not because the cap bound. Trading days with the sleeve empty: eighteen** — the count
-  advances on **sessions**, not on runs.
+  advances on **sessions**, not on runs, so **the 09-16 open run did not advance it past the 09-16
+  pre-market run's reading.** **Orders placed since inception: ONE** — the 09-03 core VOO buy.
+  **Satellite orders placed since inception: ZERO.**
 
 - **ClickUp tasks, for reference:** **09-15 daily summary `86bc17nc4`**; 09-14 daily summary
   `86bc0hw64`; **09-11 weekly review `86bbzgbg3`**; 09-11 daily summary `86bbzfm12`; 09-10
