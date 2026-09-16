@@ -40,7 +40,116 @@ anything where the honest-broker rule (§4) did real work>
 
 ## Entries
 
-### 2026-09-15 (Tuesday)
+### 2026-09-16 (Wednesday)
+
+**Account:** total **$98,660.39 on official closes** / $98,658.80 broker | day P&L
+**−$304.57 (−0.308%)** both legs official (−$297.24 / −0.300% on Alpaca's broker-mark basis —
+**do not mix the two**) | since inception **−1.340%** official / −1.341% broker
+**Sleeves:** core 69.59% | satellite 0.0% | cash 30.41%   (§2 band 65–75%)
+**Breaker:** INACTIVE
+**Week:** 0/3 new positions — ISO Monday of 2026-09-16 is 2026-09-14, which matches `week_of`;
+no reset due, next boundary Monday 2026-09-21
+**Trading day:** yes. `clock` at 16:16:10 read `is_open: false` with `next_open`
+**2026-09-17** — post-bell, not a holiday. **Read the date, not the boolean.**
+
+**Traded:** nothing — zero orders at all four of today's runs. `orders --status all` returns
+**one row for the account's entire history**, the 09-03 core VOO buy, `status: filled`,
+terminal. **Nothing is in limbo overnight** (§7).
+**Researched:** 3 theses — 0 accepted, 3 rejected, all written by the 08:17 pre-market run
+(T-2026-09-16-01 AVGO, -02 no-ticker Venture Global/China Gas LNG SPA, -03 no-ticker
+Army/NAMC Abrams AGT1500 OTA). **This run wrote none and consumed no ID** — a journaling
+routine does not research. Inception total stays **39, zero accepted**; **9 this week**.
+**Positions near a sell rule:** none, and the reason is **no subject** — zero satellite
+positions, **eighteenth consecutive session** (the count advances on sessions, not on runs —
+today's four runs are one increment). Core VOO is exempt from all four (§5).
+
+**High-water marks:** **NONE WRITTEN, AND THAT IS STEP 2 COMPLETING CORRECTLY RATHER THAN
+BEING SKIPPED.** `positions.md` holds no satellite block, so there is no `highest_close` to
+raise and no `(as of ...)` date to refresh. **Zero `alpaca.py bars` calls were issued for a
+high-water purpose** (the VOO bars below were pulled to price the book, not to stamp a mark).
+**ABSENT is a third state, distinct from "current and unchanged" and from "stale," and it is
+the only one carrying no date** — that missing date is what tells tomorrow's midday run no
+backfill is due. **§5.4 is not silently disabled; it is not yet armed.** It arms on the first
+*satellite* fill.
+
+**What happened:**
+
+The FOMC raised the target range 25bp to **3.75%–4.00%**, unanimous **12–0** — the first US
+rate increase since 2023 — and the projections point to another before year-end. I verified
+the decision rather than inheriting the plan's ">90% odds" framing; a probability is not a
+fact, and that distinction costs nothing on a day it resolves the expected way.
+
+The tape did what the log said it would do, which is to say it moved and carried no action.
+VOO closed **693.215 against 696.29**, **−0.442%** on official closes. The interesting number
+is not the close but the shape: an intraday range of **689.095–699.99**, **1.58%** of the low,
+against **0.53%** yesterday and **0.68%** Monday — roughly triple the recent daily range, on
+**60,712** bars-reported volume against 57,260 and 53,791. The low sat **−1.03%** below the
+prior close and the last hour took about six tenths of it back. That is the whole of today's
+new price information, and it is a price move, not a thesis.
+
+The book lost **$304.57 (−0.308%)**, which is 69.59% exposure multiplied by the index's
+−0.442% and nothing else: **0.6959 × −0.4416% = −0.3073%**, matching the official day P&L to
+within a rounding tick. Core is **−1.914% from the 706.74 fill**; VOO is **−1.914% from the
+same price**. **Tracking error 0.0000%**, the same result proven on 09-11 — the entry gap remains
+the entire divergence, exactly as item (4) of the carry-forward says, and measuring from the
+fill is what keeps proving it.
+
+Sleeves ended core **69.59%**, cash **30.41%**, `core_in_band: true`, `rebalance_needed:
+false`, `rebalance_delta: +$402.36` = **0.41% of equity**. §2 rebalances at the **band edge
+(65/75)**, not to the exact target, so **no rebalance is due tomorrow** and the market-open
+run should not manufacture one. This is the **twentieth consecutive run inside a 0.39-point
+band (69.59–69.98)**, and today's reading is the lowest of the twenty — a drifting core mark
+on an unchanged share count, not a position being reduced.
+
+Housekeeping cleared with nothing to do: week anchor matches `week_of`, the loss streak stays
+at **0 because nothing has ever closed** (so the §6 streak cannot move and no breaker alert is
+due), `open_thesis_ids` stays none, and `alerts.md` is empty — zero open, zero SYSTEMIC.
+
+**What I got wrong or nearly got wrong:**
+
+**The day handed me a flattering artifact in a new costume, and this one survives the defence
+I already had written down.** The book fell 0.308% while the index fell 0.442%: 13bp of
+"outperformance," on a day the Fed hiked, with 30.4% in cash. The carry-forward's version of
+this trap is a **mixed-source** comparison — broker day change against an official close —
+and I checked for that first and it is not what happened here. **Both legs today are
+official.** The outperformance is real arithmetic and still means nothing: it is **underexposure,
+not skill**, and it will reverse with the same mechanical reliability on the first green day.
+**The defence against the mixed-source version is arithmetic; the defence against this version
+is refusing to let a correct number answer a question it was not asked.** §1 asks whether this
+book beats the S&P over twelve months, and a 30% cash position has a known, negative answer to
+that in a rising market. Recording it as a second distinct shape, because the first defence
+does not catch it.
+
+**Second: Step 2's sentence is imperative and its subject does not exist, and the pull to
+satisfy it by stamping core VOO's 693.215 close is still there.** Refused again. It would
+fabricate a §5.4 trailing stop on the one position §5 exempts from all four sell rules, and —
+the part worth writing down — **it would not feel like a violation, it would feel like
+tidiness.** Today it had a fresh accomplice: I had already pulled VOO bars to price the book,
+so the close was sitting in the terminal output with nothing to do. Having the number in hand
+is not a reason to write it into a ledger that has no row for it.
+
+**Third, the FOMC pull, which was weaker than I expected and worth noting for that reason.**
+A hike, a wide range and a heavy tape is exactly the kind of day that invites reverse-engineering
+a Company A. It did not get far, because §4 needs a transaction, a segment and a dollar path,
+and "the Fed hiked" supplies none of the three — but the honest version is that the reason it
+did not get far is that **this run is not permitted to research**, not that I proved the
+temptation would have failed on its merits. **Tomorrow's pre-market run is where that gets
+tested**, and it must enter any rate-driven candidate through §4 like any other event.
+
+**For the next run:**
+
+- **The high-water marks were not updated today, and that is correct, not a gap.** No satellite
+  block exists, so there is no `highest_close` and no date to refresh. **Do not backfill —
+  there is nothing to backfill.** The first satellite fill arms §5.4 and converts this step
+  from absent to load-bearing on the same day.
+- **No rebalance is due at tomorrow's open.** Core 69.59% is inside the 65–75% band; the
+  $402.36 delta is 0.41% of equity and §2 acts at the band edge, not at the target.
+- **The FOMC is now in the past tense.** 3.75%–4.00%, 12–0, another hike signalled for this
+  year. It is an input to the environment, **not a Company A**. A rate-sensitive name arriving
+  tomorrow gets screened on mechanism, segment share, timing window and invalidation, same as
+  anything else.
+- **Nothing is pending and nothing accumulated.** One order in account history, terminal; no
+  unscreened earnings item carried across 09-14/15/16; `alerts.md` empty.
 
 **Account:** total **$98,964.96 on official closes** / $99,025.37 broker | day P&L
 **−$303.08 (−0.305%)** both legs official (−$237.72 / −0.240% on Alpaca's broker-mark basis —
