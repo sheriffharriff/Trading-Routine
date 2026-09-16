@@ -56,32 +56,41 @@ re-derive it from price history, and it stays correct for positions closed month
 
 *(none — no **satellite** positions have been opened yet. Core VOO exists and is deliberately not tracked here, per the top-of-file rules and the fill note further down.)*
 
-**Reconciliation 2026-09-16 08:17 ET (1-premarket-research) — LEDGER AGREES WITH THE BROKER;
-NO SATELLITE SUBJECT EXISTS, EIGHTEENTH CONSECUTIVE SESSION. THIS ROUTINE PLACES NO ORDERS BY
-DESIGN.**
-*(This block **replaces** the 09-15 16:15 close reconciliation, read in full by this run —
-**one block per date, not one per run.** **Collapse, do not append — twenty-fourth consecutive
+**Reconciliation 2026-09-16 09:35 ET (2-market-open-execution) — LEDGER AGREES WITH THE BROKER;
+NO SATELLITE SUBJECT EXISTS, EIGHTEENTH CONSECUTIVE SESSION. ZERO ORDERS PLACED AND NONE WAS DUE.**
+*(This block **replaces** the 09-16 08:17 pre-market reconciliation, read in full by this run —
+**one block per date, not one per run.** **Collapse, do not append — twenty-fifth consecutive
 run.**)*
-Selftest passed all five checks at **08:16 ET** (`trading_enabled: true`, LIVE paper account, equity
-$99,221.49). **Routine 1 researches and writes a plan; it places no orders at all.**
+Selftest passed all five checks at **09:35 ET** (`trading_enabled: true`, LIVE paper account, equity
+$99,142.25).
 
-**⚠ TODAY IS A TRADING DAY AND `clock` READ `is_open: false` AT 08:17:11 BECAUSE IT IS PRE-MARKET,
-NOT BECAUSE THE MARKET IS SHUT.** `next_open` is **2026-09-16T09:30:00-04:00 — TODAY**, and
-`next_close` is **2026-09-16T16:00:00-04:00 — also today.** **That is what separates an ordinary
-08:00 hour from a holiday**, and it is the same discrimination the close routine needs in the
-opposite direction. **Read the next_open date, not the boolean.** The holiday branch did not apply
-and the research funnel was opened in full.
+**⚠ THE PLAN WAS FRESH, NOT STALE, AND THE DIFFERENCE IS INVISIBLE IN THE ORDER COUNT.**
+`plan_today.md` reads **`plan_date: 2026-09-16`**, which **matches today's ET date** — the Step 2
+staleness gate was evaluated and **did not fire**. The plan carried **zero BUY, zero SELL and zero
+REBALANCE intents**, so this run placed no orders **because the plan said to place none**, not
+because a gate blocked it. **An empty fresh plan and a stale plan produce identical zero-order runs
+and are not the same run.** **The gate has now been exercised eighteen times and has never fired —
+its alert path REMAINS UNTESTED CODE.** Eighteen quiet opens are not evidence the gate works; the
+way to know is to read it.
+
+**⚠ `clock` READ `is_open: TRUE` AT 09:35:47 — the first reading this month that is not the
+ambiguous `false`.** `next_close` **2026-09-16T16:00 — today**; `next_open` **2026-09-17T09:30 —
+tomorrow**, which is the shape an *in-session* read has. The pre-market run five hours earlier saw
+`is_open: false` with `next_open` **today**; the close run will see `is_open: false` with `next_open`
+**tomorrow**. **Three different run positions, two of which share one boolean. Read the next_open
+date, not the boolean.**
 
 **Satellite blocks (zero) checked against satellite Alpaca positions (zero) — they agree.** Compare
 **satellite to satellite**, never raw ledger to raw broker. `alpaca.py positions` returns **one row,
-VOO core** (99.046311231 shares, avg_entry 706.74, market_value $69,221.49, cost_basis $69,999.99,
-broker `current_price` **698.88**, `lastday_price` 696.20, unrealized_pl **−$778.50 / −1.112%**,
-`change_today` +0.385%). **`current_price` 698.88 is a PRE-MARKET QUOTE MIDPOINT, not a close** —
-yesterday's official close was **696.29**. The two are different sources and must never be mixed in
-one comparison. `alpaca.py sleeves`: equity **$99,221.49**, cash **$30,000.00**, core **69.76%**,
-satellite **0.0% (count 0)**, cash **30.24%**, `core_in_band: true`, `rebalance_needed: false`,
-`rebalance_delta: +233.56`. **NO REBALANCE IS DUE** — §2 rebalances at the **band edge (65/75)**,
-not to the exact target; the delta is **0.24% of equity.** **Seventeenth consecutive run inside a
+VOO core** (99.046311231 shares, avg_entry 706.74, market_value $69,142.25, cost_basis $69,999.99,
+broker `current_price` **698.08**, `lastday_price` 696.20, unrealized_pl **−$857.74 / −1.225%**,
+`change_today` +0.27%). **`current_price` 698.08 is a LIVE INTRADAY QUOTE MIDPOINT, not a close** —
+yesterday's official close was **696.29**, and the pre-market run's 698.88 was a third number again
+from the same field four hours earlier. **Never mix the two sources in one comparison.**
+`alpaca.py sleeves`: equity **$99,142.25**, cash **$30,000.00**, core **69.74%**, satellite
+**0.0% (count 0)**, cash **30.26%**, `core_in_band: true`, `rebalance_needed: false`,
+`rebalance_delta: +257.33`. **NO REBALANCE IS DUE** — §2 rebalances at the **band edge (65/75)**,
+not to the exact target; the delta is **0.26% of equity.** **Eighteenth consecutive run inside a
 0.29-point range (69.69–69.98).**
 
 **§5.1–§5.4 HAD NO SUBJECT — eighteenth consecutive session, and it is not a clean bill of
@@ -89,26 +98,26 @@ health.** No thesis to test for invalidation (§5.1); no `timing_window` to expi
 `entry_price` to measure −7% against (§5.3); no `highest_close` to measure −10% against (§5.4).
 **Nothing was near triggering because nothing exists to trigger.** `sell_rule_status` is **absent
 rather than blank.** **All four remain untested code paths and §5.4 is still NOT ARMED — it arms on
-the first *satellite* fill.** **ZERO Perplexity invalidation queries were issued and none was due:**
-§5.1 reads an `invalidation` line that does not exist, so an absent check, not a skipped one. **The
-high-water marks are ABSENT — a third state, distinct from "current and unchanged", and the only
-one carrying no date.** That missing date is precisely what tells the midday run no backfill is due.
-**Core VOO is deliberately NOT stamped**; writing a close into this file for core would fabricate a
-§5.4 trailing stop on the one position §5 exempts from all four sell rules, and it would look like
-tidiness while doing it.
+the first *satellite* fill.** **The high-water marks are ABSENT — a third state, distinct from
+"current and unchanged", and the only one carrying no date.** That missing date is precisely what
+tells the midday run no backfill is due. **Core VOO is deliberately NOT stamped**; writing a close
+into this file for core would fabricate a §5.4 trailing stop on the one position §5 exempts from all
+four sell rules, and it would look like tidiness while doing it.
 
 **HOUSEKEEPING — ALL THREE CHECKS RAN.** **Week rollover:** the ISO Monday of 2026-09-16
 (Wednesday) is **2026-09-14**, which **matches `week_of`** — no reset due, next boundary Monday
 2026-09-21. **Circuit breaker:** **INACTIVE**, `halt_triggered_at: none`; `consecutive_closed_losses`
 stays at **0** because nothing has ever closed in this account, so the §6 streak cannot move and no
-`HALT_CLEARED_AT` comparison was required. **Sleeve drift:** core **69.76%**, inside the 65–75%
-band — **no REBALANCE intent queued.**
+`HALT_CLEARED_AT` comparison was required. **Sleeve drift:** core **69.74%**, inside the 65–75%
+band — **no rebalance executed at Step 7.**
 
-**NEW POSITIONS WERE FULLY PERMITTED AND NONE WAS PLANNED.** Breaker INACTIVE, weekly cap **0 of 3**,
-satellite sleeve **empty with 30.24% cash**, `control.md` notes **(none)**. **Nothing blocked the
-research; the research did not produce an eligible candidate.** Three theses written
-(T-2026-09-16-01 AVGO, -02 Venture Global/China Gas, -03 Abrams AGT1500 OTA), **all three rejected**,
-zero BUY intents in `plan_today.md`.
+**NEW POSITIONS WERE FULLY PERMITTED AND NONE WAS DUE.** Breaker INACTIVE, weekly cap **0 of 3**,
+satellite sleeve **empty with 30.26% cash**, `control.md` notes **(none)**. **Nothing blocked this
+run; the plan it consumes contained no BUY intent.** **Zero `alpaca.py move` re-validation calls
+were issued and none was due** — re-validation has a subject only when a BUY intent exists, so it is
+an **absent check, not a skipped one.** **This is the only run that may open a position, and the
+30.26% idle cash it sees is not an opportunity it may act on** — a buy not researched before the
+bell does not get made after it.
 
 ---
 
