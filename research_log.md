@@ -52,6 +52,217 @@ single most common way a plausible-sounding connection gets mistaken for an oppo
 
 ## Entries
 
+### 2026-09-16 (08:17 ET) — event survey (funnel, pre-thesis)
+
+Selftest passed all five checks (`trading_enabled: true`, LIVE paper account, equity
+**$99,221.49**). Window screened: **Tuesday's session through Wednesday pre-market (Sept 15–16)** —
+a full business day. Five Perplexity scans (two broad `--recency day`, one second-order disclosure
+screen, one earnings screen, one sourced award screen), plus one `move --sessions 5`. **Three
+candidates reached thesis stage; all three rejected. No BUY intent today.**
+
+**⚠ THE FUNNEL'S FAILURE MODE CHANGED TODAY, AND THE NEW ONE IS WORSE. FOR THE FIRST TIME IN THREE
+DAYS THE PROBLEM WAS NOT THAT THE COUNTERPARTY WAS UNNAMED — IT IS THAT THE NAMED COUNTERPARTY HAS
+ALREADY DISCLOSED THE PROGRAM ITSELF.** 09-14 and 09-15 both died on *"the source names the
+transaction and withholds the counterparty's number."* **Today produced a candidate with a name,
+a program and a public earnings-call reference: Broadcom, named across multiple sources as Meta's
+MTIA design partner, discussing MTIA production shipments on its own Q3 2026 call.** That is the
+funnel finally clearing its usual obstacle — **and the candidate died anyway, at parts 2 and 3 and
+at standing rule (iii).** Broadcom quantifies **nothing Meta-specific** (every dollar figure in the
+result set is either aggregate AI revenue or a third-party blog's synthesis), and its own disclosed
+MTIA calendar runs **"deliveries through 2027, gigawatt deployment through 2028"** — outside §4.3's
+two quarters by a year or more. **Record this precisely: the constraint is not only that sources
+withhold counterparty numbers. It is also that when a counterparty IS named and DOES discuss the
+program, the discussion is roadmap and volume, not segment revenue — which §4.2 cannot use either.**
+**Two distinct disclosure failures, not one. A review that merges them will mis-diagnose what a
+human could change.**
+
+**⚠ NEW SUB-SHAPE OF STANDING RULE (v), AND IT IS THE MOST MISLEADING FORM THE BIG NUMBER HAS TAKEN:
+A CEILING IS NOT REVENUE, AND THIS ONE IS 212× THE MONEY ACTUALLY OBLIGATED.** The Army's M1 Abrams
+AGT1500 engine OTA carries a **$2,500,000,000 ceiling** — and **$11,831,430** of FY26 RDT&E funds
+actually obligated at award, completion **March 2029**. The headline and the cash differ by a factor
+of **212**. Every previous rule (v) instance was a real award whose *allocation* was missing; **this
+one's headline number is not an allocation at all, it is an authorization limit that may never be
+spent.** **Read the obligated figure, not the ceiling.** Seventh instance of rule (v) this month and
+the first where the trap is inside the number rather than beside it.
+
+**⚠ THE AWARDEE WAS NOT EVEN A COMPANY, AND I ALMOST SUPPLIED ONE FROM MEMORY.** The Abrams OTA went
+to the **National Advanced Mobility Consortium** — a consortium, so there is no Company A either.
+I know the AGT1500 is a Honeywell engine, and the pull to screen **HON** into the funnel on that
+familiarity was immediate. **The dedicated screen returned that no reviewed source names General
+Dynamics, Honeywell "or others" in connection with this specific OTA, and attaches no dollar figure
+to any company.** This is **T-2026-09-01-03 (RTX) exactly** — a fluent, correct-sounding industry
+fact standing in for a sourced transaction — and it is the second time this log has caught itself
+about to do it. **Knowing who makes the part is not knowing who was paid.**
+
+**⚠ THE FOMC DECIDES AT 14:00 ET TODAY AND IT IS STILL NOT A CANDIDATE — BUT THE 09-14 AMBIGUITY HAS
+RESOLVED, AND IT RESOLVED TOWARD THE UNUSUAL READING.** Futures are pricing **better than 90% odds of
+a 25bp HIKE — the first US rate increase since 2023** — with Chair **Kevin Warsh** holding a press
+conference after. The 09-14 note flagged one source at ~87% odds of an *increase* as contradicting
+every other framing and deliberately did not chase it. **It was not an outlier; it was early.**
+Recorded because the log should show which unresolved item resolved and which way. **It changes
+nothing operationally: no Company A, no segment, no dollar path — it is the whole tape moving, which
+is exactly what §4 exists to refuse.** **Sixth consecutive day this disposition is recorded.**
+
+**Dropped before thesis stage, with reasons, so their absence is not read as an oversight:**
+- **JPM guiding Q3 trading and IB fees UP while BAC warns on the same lines, with WFC saying NIM
+  will beat.** Tempting because it is a genuine, dated, two-company contrast. **But the trade it
+  suggests is buying JPM on JPM's own guidance — first-order, Company A, not §4 at all.** Extending
+  it to other banks is the **"a shared cause is not a mechanism"** trap (fourth instance): their
+  results and a peer's are both downstream of the **same rate environment**, and any bank actually
+  affected discloses it itself.
+- **Centene reaffirming FY26 guidance (GAAP EPS >$3.11, adj. >$4.80).** A **reaffirmation of July 28
+  guidance** — standing rule (iii), nothing new to the company's own disclosure. First-order besides.
+- **Medtronic FDA clearance (LigaSure RAS Maryland jaw for the Hugo system).** MDT's own clearance,
+  no dollar figure, no counterparty. Company A. MDT is already a disposed reject.
+- **Axon's $1.0B 0% convertible notes due 2031.** A financing. No counterparty economics change.
+- **General Mills — SCREENED AND FOUND NOT TO EXIST.** The first broad scan surfaced a MarketBeat
+  auto-alert reading *"GIS expected to release earnings on Wednesday."* **It does not report until
+  ~Sept 23**, and its FY27 guidance of $3.00–$3.20 was **affirmed Sept 8**, not changed. **An
+  earnings-calendar alert is not an earnings event**, and this one was worded to read like one.
+
+---
+
+### T-2026-09-16-01 — AVGO — REJECTED
+**Company A / the news:** **Meta Platforms, reported 2026-09-15/16** — Meta plans to begin deploying
+a **new in-house AI accelerator (MTIA)** in its data centers during **the first half of 2027**.
+**Company B / the candidate:** Broadcom (AVGO), named across multiple sources as Meta's **design
+partner** on MTIA (fabrication at TSMC).
+
+**1. Mechanism (one sentence):**
+> Meta's H1-2027 MTIA deployment causes Broadcom's custom AI accelerator (XPU) revenue to rise
+> because Broadcom designs the MTIA silicon Meta is deploying.
+
+**One clause, no "and also." Part 1 PASSES** — and it is the first part-1 pass the funnel has
+produced in three sessions. **That is exactly why the entry continues rather than stopping.**
+
+**2. Dollar path: FAILED.** **No Meta-specific figure exists in Broadcom's own disclosure.** The
+screen asked specifically for figures the company itself has disclosed, and returned that no
+US-listed company above $10B has disclosed a quantified revenue exposure to Meta's custom silicon.
+Broadcom's Q3 2026 call references **"production shipments of their custom MTIA accelerator"** and
+**"multiple generations of MTIA XPUs"** — **operational roadmap, not revenue.** The only dollar
+figure in the entire result set, **"$20B+ 2026 AI revenue,"** is a **third-party blog's synthesized
+estimate of Broadcom's TOTAL AI revenue**, not a Broadcom-quoted Meta-only number, and §4.2 needs
+the segment share, which cannot be computed from an aggregate a company never published. **"Tens of
+billions" of Meta chip purchases from Nvidia and AMD is journalism about Meta's GPU buying, and
+GPUs are the thing MTIA exists to displace** — it is not this mechanism's number in any direction.
+
+**3. Timing window: FAILED INDEPENDENTLY.** Meta's own stated deployment is **H1 2027**. Broadcom's
+own stated calendar is **deliveries through 2027 and gigawatt-scale deployment through 2028.**
+Measured from 2026-09-16, **every one of those dates is beyond two quarters** (§4.3 horizon ends
+~2027-03-16, and "H1 2027" is at best its far edge with revenue recognised later). **Standing rule
+(vi), applied early and second, as it is meant to be.**
+
+**4. Invalidation:** Not reached — parts 2 and 3 both failed.
+
+**Hard filters (run before the thesis, per §4):**
+- Priced-in (§4): moved **−7.97%** over last 5 sessions (368.665 → 339.30) → **FAIL**
+  (`priced_in: true`, *"LATE - skip per strategy.md section 4"*)
+- Correlation (§4): **zero open satellite positions, no `driver` to collide with** → pass (vacuous)
+- Universe (§3): stock, US-listed, well above the $10B floor. **Market cap not separately sourced,
+  because the thesis was already dead at parts 2 and 3** — the §3 floor check is therefore **not
+  completed rather than passed**, and no figure is recorded that a later run could mistake for one.
+
+**Outcome:** **REJECTED at part 2, independently at part 3, and independently again at standing
+rule (iii).** Rule (iii) — *verify the news is new to the company's own disclosure* — is the cleanest
+of the three: **Broadcom discussed MTIA on its own Q3 2026 earnings call, including the 2027–2028
+calendar.** Meta saying it will deploy in H1 2027 is **a customer restating a roadmap the supplier
+already published.** There is no new information for a second-order trade to be early to.
+
+**⚠ SEVENTH INSTANCE OF THE PRICED-IN DRAWDOWN DEFECT, AND IT COST NOTHING — KEEP THE TALLIES
+SEPARATE.** The §4 filter read AVGO's **−7.97% drawdown** as "priced in / LATE." Instances now:
+**LITE −7.35%, LMT −3.61% near-miss, LHX −4.47%, CART −5.79%, BWXT −6.30%, CRWV −7.12%, AVGO
+−7.97%.** **The filter was applied exactly as written and AVGO was skipped; no run may reinterpret
+it — that is a human editing §4 or `alpaca.py move`.** **But AVGO was already dead at parts 2 and 3
+before the filter was consulted, so today adds an instance and ZERO damage.** **LITE remains the
+only instance that reached the filter ALIVE.** A review counting seven instances as seven costs
+will overstate a case that rests on one.
+
+---
+
+### T-2026-09-16-02 — (no ticker) — REJECTED
+**Company A / the news:** **Venture Global, Inc. (NYSE: VG) ↔ China Gas Holdings (0384.HK), press
+release 2026-09-16** — a new **20-year LNG Sales and Purchase Agreement for 0.5 Mtpa, starting in
+2030**, bringing China Gas's total long-term offtake from Venture Global to **2.5 Mtpa under 20-year
+SPAs**. Both parties named, volume and tenor disclosed; **no dollar value disclosed at all.**
+**Company B / the candidate:** an EPC contractor, equipment supplier or feedgas supplier to the
+Venture Global liquefaction capacity serving the SPA.
+
+**1. Mechanism (one sentence):** Not written — **and deliberately not attempted.**
+
+**2. Dollar path:** Not reached.
+**3. Timing window: FAILED, AND THIS IS THE ENTIRE ENTRY.** **The source itself states deliveries
+start in 2030.** That is **roughly three years and three months beyond §4.3's two-quarter cap.**
+**4. Invalidation:** Not reached.
+
+**Hard filters:**
+- Priced-in (§4): **not run — an absent check, not a skipped one.** VG is Company A; no Company B
+  ticker was ever reached.
+- Correlation (§4): no open positions → pass (vacuous)
+- Universe (§3): not reached
+
+**Outcome:** **REJECTED at part 3 — and this is standing rule (vi) discharging ONE DAY after it was
+written, on a different company, a different counterparty and a different project.** Rule (vi) was
+created 09-15 by the **Sempra ↔ Petrobras** SPA (20-year, 0.8 Mtpa, Port Arthur Phase 2, COD
+2030–2031). **Today's is the same instrument, the same industry, the same tenor and the same decade
+of first delivery, from an entirely different seller.** The rule did what it was written to do:
+**the timing window was screened first, the candidate died in one step, and no Perplexity call was
+spent hunting a Company B that could not have qualified anyway.** **Long-dated LNG offtakes are not
+an occasional visitor to this funnel — they are a recurring feature of it, and part 3 kills them
+faster and more durably than part 1 does.** (Note also that **Sempra/Petrobras resurfaced in today's
+scan as fresh commentary**; it is the same 09-11/09-14 agreement being re-covered, already rejected
+as T-2026-09-15-03, and **re-coverage is not a new event.** Standing rule (iii).)
+
+---
+
+### T-2026-09-16-03 — (no ticker) — REJECTED
+**Company A / the news:** **US Army → National Advanced Mobility Consortium (NAMC), announced
+2026-09-14/16** — an **Other Transaction Agreement with a $2,500,000,000 ceiling** to enhance the
+**AGT1500 gas turbine engine** supporting the M1 Abrams fleet. **$11,831,430** in FY2026 RDT&E funds
+obligated at award. Work in Ann Arbor, Michigan; completion **2029-03-14**; Army Contracting
+Command–Detroit Arsenal.
+**Company B / the candidate:** any publicly traded participant, subcontractor or engine supplier
+under the OTA.
+
+**1. Mechanism (one sentence):** Not written — **no Company B exists to write it about, and neither
+does a Company A.**
+
+**2. Dollar path:** Not reached.
+**3. Timing window:** Not reached — **and it would have failed twice over.** Completion is
+**March 2029**, and the money actually obligated is **$11.8M**, which is not material to any $10B+
+company's segment in any quarter.
+**4. Invalidation:** Not reached.
+
+**Hard filters:**
+- Priced-in (§4): **not run — an absent check, not a skipped one.** There was no candidate ticker
+  to test. **HON was NOT screened, and that is the point of the entry** (below).
+- Correlation (§4): no open positions → pass (vacuous)
+- Universe (§3): not reached
+
+**Outcome:** **REJECTED at part 1 — standing rule (v), seventh instance this month, in two new
+costumes at once.**
+
+**Costume one: the awardee is a consortium, not a company.** NAMC is *"a consortium organization
+rather than a specific publicly traded defense prime."* The dedicated screen found that **no
+reviewed source names any member company, subcontractor or engine supplier under this OTA, and no
+source breaks the $2.5B down by company.** There is no Company A to look past, let alone a Company B.
+
+**Costume two, and the more dangerous one: the headline is a CEILING.** **$2.5B authorized against
+$11.8M obligated — a factor of 212.** Previous rule (v) instances were real awards with a missing
+allocation; here **the number itself is not money that has changed hands and may never be.** **Read
+the obligated figure. The ceiling is an authorization limit wearing the costume of a contract value.**
+
+**⚠ AND THE REASON THIS ENTRY EXISTS AT ALL: I KNEW THE ANSWER AND IT WAS NOT SOURCED.** The AGT1500
+is a Honeywell engine. That fact arrived instantly, unbidden and correct, and it would have made a
+fluent mechanism sentence. **The screen was run specifically to test it, and it returned that no
+reviewed source names Honeywell — or General Dynamics, or "others" — in connection with this OTA,
+and attaches no dollar figure to any of them.** **This is T-2026-09-01-03 (RTX) repeating exactly:
+a true industry fact volunteering itself as a sourced transaction.** It is the second time this log
+has caught it and the first time it was caught *before* a ticker entered the funnel rather than
+after. **Knowing who makes the part is not knowing who was paid, and the gap between those two is
+invisible from the inside.**
+
+---
+
 ### 2026-09-15 (08:16 ET) — event survey (funnel, pre-thesis)
 
 Selftest passed all five checks (`trading_enabled: true`, LIVE paper account, equity
