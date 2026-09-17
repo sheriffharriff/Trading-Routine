@@ -56,87 +56,79 @@ re-derive it from price history, and it stays correct for positions closed month
 
 *(none — no **satellite** positions have been opened yet. Core VOO exists and is deliberately not tracked here, per the top-of-file rules and the fill note further down.)*
 
-**Reconciliation 2026-09-16 16:16 ET (4-market-close-journal) — LEDGER AGREES WITH THE BROKER;
-NO SATELLITE SUBJECT EXISTS, EIGHTEENTH CONSECUTIVE SESSION. NO HIGH-WATER MARK WAS WRITTEN AND
+**Reconciliation 2026-09-17 08:11 ET (1-premarket-research) — LEDGER AGREES WITH THE BROKER;
+NO SATELLITE SUBJECT EXISTS, NINETEENTH CONSECUTIVE SESSION. NO HIGH-WATER MARK WAS WRITTEN AND
 NONE WAS DUE.**
-*(This block **replaces** the 09-16 12:35 midday reconciliation, read in full by this run —
-**one block per date, not one per run.** **Collapse, do not append — twenty-seventh consecutive
-run.** Today had four runs to tempt four blocks; it has one.)*
-Selftest passed all five checks at **16:16 ET** (`trading_enabled: true`, LIVE paper account, equity
-$98,658.80).
+*(This block **replaces** the 09-16 16:16 close reconciliation, read in full by this run —
+**one block per date, not one per run.** **Collapse, do not append — twenty-eighth consecutive
+run.**)*
+Selftest passed all five checks at **08:11 ET** (`trading_enabled: true`, LIVE paper account, equity
+$99,376.99).
 
-**⚠ THIS RUN TRADES NOTHING AT ALL, AND THE 30.41% IDLE CASH IT SEES IS NOT AN OPPORTUNITY.**
-Routine 4 places no orders of any kind — it records closes and journals. **Nothing here was blocked
-by a guardrail; the run is scoped so the question never arises.**
+**⚠ THIS RUN PLACES NO ORDERS BY DESIGN, AND THE 30.19% IDLE CASH IT SEES IS NOT AN OPPORTUNITY.**
+Routine 1 researches and writes a plan; the 09:35 run executes. **Nothing here was blocked by a
+guardrail — new positions were FULLY PERMITTED this run and the research produced no eligible
+candidate.** That distinction is the whole point of Step 5.
 
-**`clock` READ `is_open: false` AT 16:16:10 WITH `next_open` 2026-09-17T09:30 — TOMORROW. That is
-the POST-BELL shape, not a holiday.** Today supplied all four: pre-market (08:17, `false`/next_open
-**today**), opening bell (09:35, `true`), mid-session (12:35, `true`) and this post-bell read
-(`false`/next_open **tomorrow**). **Two of the four share one boolean and differ only in the
-`next_open` DATE.** **Read the date, not the boolean** — the holiday branch of this routine triggers
-on exactly the flag this run always sees, and the first real holiday will arrive without warning.
+**`clock` READ `is_open: false` AT 08:11:40 WITH `next_open` 2026-09-17T09:30 — TODAY. That is the
+PRE-MARKET shape, not a holiday.** The boolean is identical to the post-bell read sixteen hours
+earlier, which carried `next_open` **tomorrow**. **Read the DATE, not the boolean** — this routine's
+holiday branch triggers on exactly the flag it always sees, and the first real holiday will arrive
+without warning.
 
 **Satellite blocks (zero) checked against satellite Alpaca positions (zero) — they agree.** Compare
 **satellite to satellite**, never raw ledger to raw broker. `alpaca.py positions` returns **one row,
-VOO core** (99.046311231 shares, avg_entry 706.74, market_value $68,658.80, cost_basis $69,999.99,
-broker `current_price` **693.199**, `lastday_price` 696.20, unrealized_pl **−$1,341.19 / −1.916%**,
-`change_today` −0.431%). **`current_price` 693.199 is a LIVE QUOTE MIDPOINT, not a close** — today's
-official close from `bars --adjustment all` is **693.215**, and the same field read 698.88
-pre-market, 698.08 at the bell and 698.41 at midday. **Four reads of one field on one day, four
-numbers. Never mix the two sources in one comparison.** `alpaca.py sleeves`: equity **$98,658.80**,
-cash **$30,000.00**, core **69.59%**, satellite **0.0% (count 0)**, cash **30.41%**, `core_in_band:
-true`, `rebalance_needed: false`, `rebalance_delta: +402.36` = **0.41% of equity**. **NO REBALANCE IS
-DUE TOMORROW, and this routine could not execute one in any case** — §2 rebalances at the **band edge
-(65/75)** and at the **market-open** run. **Twentieth consecutive run inside a 0.39-point range
-(69.59–69.98)**, today's being the lowest of the twenty: a drifting core mark on an unchanged share
-count, not a position being reduced.
+VOO core** (99.046311231 shares, avg_entry 706.74, market_value $69,376.99, cost_basis $69,999.99,
+broker `current_price` **700.45**, `lastday_price` 693.24, unrealized_pl **−$623.00 / −0.89%**,
+`change_today` +1.04%). **`current_price` 700.45 is a LIVE PRE-MARKET QUOTE MIDPOINT, not a close** —
+yesterday's official close from `bars --adjustment all` was **693.215**, and `lastday_price` reads
+**693.24**, a third number again. **Never mix the two sources in one comparison.** `alpaca.py
+sleeves`: equity **$99,376.99**, cash **$30,000.00**, core **69.81%**, satellite **0.0% (count 0)**,
+cash **30.19%**, `core_in_band: true`, `rebalance_needed: false`, `rebalance_delta: +186.90` =
+**0.19% of equity — the smallest delta recorded so far.** **NO REBALANCE IS DUE AT THE OPEN** — §2
+rebalances at the **band edge (65/75)**, not to the exact target. **Twenty-first consecutive run
+inside a 0.39-point range (69.59–69.98)**: a drifting core mark on an unchanged share count, not a
+position being added to or reduced.
 
-**STEP 2 — THE CLOSES WERE NOT RECORDED BECAUSE THERE IS NOTHING TO RECORD THEM AGAINST, AND THAT IS
-A READING, NOT AN ASSUMPTION.** Step 2 writes every open **satellite** position's official close into
-`highest_close` and refreshes the `(as of ...)` date **whether or not the value moves**, so that
-tomorrow's midday run can tell a *current* mark from a *stale* one. **There is no `highest_close`
-field in this file at all**, because there is no satellite block to carry one.
-**ABSENT is a third state, distinct from "current and unchanged" and from "stale" — and it is the
-only one carrying no date.** The missing date is exactly what discharges both this step and
-tomorrow's backfill check: a stale mark silently disables §5.4, an absent mark means §5.4 **has never
-been armed**. **Zero `alpaca.py bars` calls were issued for a high-water purpose** — the VOO bars
-this run pulled priced the book and stamped nothing. **Core VOO is deliberately NOT stamped, and
-today it had an accomplice**: its 693.215 close was already sitting in this run's terminal output
-with nothing to do. Writing it into this file would fabricate a §5.4 trailing stop on the one
-position §5 exempts from all four sell rules, and **it would not feel like a violation — it would
-feel like tidiness.** Refused again.
-
-**§5.1–§5.4 HAD NO SUBJECT — eighteenth consecutive session, and it is not a clean bill of
+**STEP 4 — §5.1–§5.4 HAD NO SUBJECT, nineteenth consecutive session, and it is not a clean bill of
 health.** No thesis to test for invalidation (§5.1) and **zero Perplexity invalidation queries were
-issued — an absent check, not a skipped one**; no `timing_window` to expire (§5.2); no `entry_price`
-to measure −7% against (§5.3); no `highest_close` to measure −10% against (§5.4). **Nothing was near
-triggering because nothing exists to trigger.** `sell_rule_status` is **absent rather than blank**,
-and there is no "closest to a stop" line to write because there is no distribution to take a minimum
-over. **All four remain untested code paths.** **This routine executed no orders of any kind — none
-is permitted here.** **The most important line this run can produce — a stop that should have fired
-and did not — DOES NOT EXIST TODAY, and that is because there is no position, not because every stop
-was checked and passed.**
+issued — an ABSENT check, not a skipped one**, because §5.1 reads an `invalidation` line that does
+not exist; no `timing_window` to expire (§5.2); no `entry_price` to measure −7% against (§5.3); no
+`highest_close` to measure −10% against (§5.4). **Nothing was near triggering because nothing exists
+to trigger.** `sell_rule_status` is **absent rather than blank**, and there is no "closest to a stop"
+line to write because there is no distribution to take a minimum over. **All four remain untested
+code paths and §5.4 has never been armed** — it arms on the first *satellite* fill.
 
-**UNRESOLVED ORDERS — CHECKED, NONE.** `alpaca.py orders --status all` returns **one row for the
-account's entire history**: the 09-03 core VOO buy `d177d8f0-cd0c-41bf-95c1-4772318265fd`,
-`status: filled`, `filled_at` 2026-09-03T13:36:21Z, terminal. **No order from today exists to sit in
-limbo overnight**, and no `"terminal": false` case has ever arisen (§7).
+**NO HIGH-WATER MARK WAS WRITTEN AND NONE WAS DUE — READ, NOT ASSUMED.** **There is no
+`highest_close` field in this file at all**, because there is no satellite block to carry one.
+**ABSENT is a third state, distinct from "current and unchanged" and from "stale" — and it is the
+only one carrying no date.** The missing date is exactly what discharges the midday backfill check.
+**Zero `alpaca.py bars` calls were issued for a high-water purpose.** This run *did* pull GNRC bars —
+**for a §4 priced-in audit, not a §5.4 purpose** — and **core VOO was again deliberately NOT
+stamped.** Writing a close into this file for the one position §5 exempts from all four sell rules
+would fabricate a §5.4 stop; **it would not feel like a violation, it would feel like tidiness.**
+Refused again.
 
-**HOUSEKEEPING — ALL THREE CHECKS RAN.** **Week rollover:** the ISO Monday of 2026-09-16
-(Wednesday) is **2026-09-14**, which **matches `week_of`** — no reset due, next boundary Monday
+**HOUSEKEEPING — ALL THREE CHECKS RAN.** **Week rollover:** the ISO Monday of 2026-09-17
+(Thursday) is **2026-09-14**, which **matches `week_of`** — no reset due, next boundary Monday
 2026-09-21. **Circuit breaker:** **INACTIVE**, `halt_triggered_at: none`; `consecutive_closed_losses`
 stays at **0** because nothing has ever closed in this account, so the §6 streak cannot move, no
 `HALT_CLEARED_AT` comparison was required and **no circuit-breaker alert was due.** **Sleeve drift:**
-core **69.59%**, inside the 65–75% band. `open_thesis_ids` stays **none** — nothing to remove.
+core **69.81%**, inside the 65–75% band. `open_thesis_ids` stays **none** — nothing to add or remove;
+all three of today's theses were rejected.
 
-**⚠ THE FOMC RESOLVED AT 14:00 ET TODAY: +25bp TO 3.75%–4.00%, UNANIMOUS 12–0, THE FIRST US HIKE
-SINCE 2023, WITH ANOTHER SIGNALLED FOR THIS YEAR.** Verified this run rather than inherited from the
-plan's ">90% odds" — a probability is not a fact. **VOO closed −0.442% (693.215 from 696.29) on an
-intraday range of 689.095–699.99, about 1.58% of the low against 0.53% yesterday and 0.68% Monday.**
-**It is a price move, not a thesis**, there was no satellite thesis for it to invalidate, and **core
-is exempt from all four §5 sell rules**, so the mark carries no exit at any number. **The FOMC is now
-an input to the environment, not a Company A** — a rate-sensitive candidate arriving tomorrow enters
-through §4 like anything else: mechanism, segment share, timing window, invalidation.
+**⚠ NEW OPEN ITEM (7) FOUND THIS RUN: `alpaca.py move` CANNOT SEE AN AFTER-HOURS EVENT, AND THE
+09:35 RE-VALIDATION INHERITS THE SAME BLINDNESS.** `move --symbol GNRC --sessions 5` returned
+**186.55 → 175.19, −6.09%, `priced_in: true`** the morning after GNRC reportedly surged after the
+bell on the Amazon supply agreement (**reports range +18% to over +40%; none is verifiable from our
+data plane**). `bars` confirms the last official close is **175.19**; `quote` shows the last print
+**175.19 at 15:59:57 ET**, a stale 16:00:05 bid of **165.23**, and **no ask at all.** **The
+five-session window ends at the last official close, so a candidate whose news breaks AFTER the close
+is measured against prices that predate the news — and the gap does not enter `bars` until tonight's
+close prints.** **Open item (1) causes MISSED trades; this one would cause a trade TAKEN at exactly
+the price the filter exists to refuse.** **Cost today: zero** — there are no BUY intents and GNRC is
+the named counterparty in the announcement, i.e. first-order and outside §4 at any price. **No run
+may reinterpret the filter; that is a human editing §4 or the script.**
 
 ---
 

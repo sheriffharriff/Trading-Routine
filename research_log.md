@@ -52,6 +52,250 @@ single most common way a plausible-sounding connection gets mistaken for an oppo
 
 ## Entries
 
+### 2026-09-17 (08:11 ET) — event survey (funnel, pre-thesis)
+
+Selftest passed all five checks (`trading_enabled: true`, LIVE paper account, equity
+**$99,376.99**). Window screened: **Wednesday's session through Thursday pre-market (Sept 16–17)** —
+a full business day. Five Perplexity scans (two broad `--recency day`, one supplier-disclosure
+screen, one earnings/guidance screen, one "named beneficiary" screen), plus one `move --sessions 5`,
+one `bars` and one `quote`. **Three candidates reached thesis stage; all three rejected. No BUY
+intent today.**
+
+**⚠ THE FUNNEL FINALLY GOT THE EVENT IT HAS BEEN ASKING FOR — A NAMED BUYER, A NAMED SELLER, AN
+8-K, AND A DOLLAR FIGURE — AND IT STILL PRODUCED NOTHING, FOR A REASON NEITHER OF THE TWO KNOWN
+DISCLOSURE FAILURES COVERS.** The **Amazon ↔ Generac** long-term generator supply agreement
+(8-K filed **2026-09-16**: **~$2.4B of initial deliveries expected in 2027–2028**, aggregate payments
+**up to $8B**, plus a warrant to Amazon.com NV Investment Holdings for **1,693,745 GNRC shares at
+$200.9266**, **307,954 vested immediately**, exercisable through **September 2033**) is the
+best-sourced transaction this log has seen: both parties named, the figure in a filing, the date
+unambiguous, and **no prior disclosure** — Generac used an 8-K precisely because it was new.
+**The two known failure modes did not fire. A third one did: the supply chain behind the named
+beneficiary is INTERNAL.** Generac is described in the sources as operating **"a vertically
+integrated business model, producing core components, including engines, alternators, batteries,
+electronic controls, and steel enclosures."** **There is no Company B to find because Generac makes
+the parts.** **Record this as a THIRD distinct shape, not a variant of the other two** — the first
+two are failures of *disclosure* that a human could widen the evidence bar to address; **this one is
+a fact about the industry that no evidence standard would change.**
+
+**⚠ THE ONE NAMED SUPPLIER IS NOT US-LISTED, AND I DID NOT SUPPLY A US ONE FROM MEMORY.** The
+dedicated supplier screen returned exactly one name: **Weichai Power, via its wholly owned subsidiary
+Baudouin**, described by analyst commentary as *"a key large-engine supplier to Generac."* Weichai
+trades in **Shenzhen (002338) and Hong Kong (02338)** — **§3 excludes it outright**, and **no source
+attaches any dollar figure to Weichai's sales to Generac** in any case, so it would have died at
+part 2 even if it were eligible. **The screen also returned, unprompted, the sentence that matters
+most here:** that Cummins, Caterpillar or a US switchgear maker *might* supply Generac is **"a general
+industry possibility, but no retrieved source actually names them."** **That is the Honeywell/AGT1500
+trap from yesterday and the RTX trap from 09-01, arriving for a third time — and this time the tool
+flagged it before I could.** **Knowing who plausibly makes the part is still not knowing who was paid.**
+
+**⚠ A NEW AND MORE DANGEROUS PRICED-IN DEFECT: `move` IS STRUCTURALLY BLIND TO AN AFTER-HOURS EVENT,
+AND TODAY IT PRODUCED A CONFIDENT WRONG READING ON THE ONE NAME EVERY SOURCE WAS DISCUSSING.**
+`move --symbol GNRC --sessions 5` returned **186.55 → 175.19, −6.09%, `priced_in: true`,
+"LATE - skip"** — a **drawdown** reading, on a stock that news sources report **surged after the bell
+on 09-16** on this very announcement (reported magnitudes range from **+18% to over +40%**;
+**I cannot verify any of them**). `bars` confirms the last official close is **175.19 (09-16)**, and
+`quote` shows the last print as **175.19 at 15:59:57 ET** with a stale 16:00:05 ET bid of 165.23 and
+**no ask at all** — **the entire move is invisible in every Alpaca field available to this agent.**
+**The five-session window ends at the last official close, so when news breaks AFTER the close, the
+priced-in filter is evaluating a price history that predates the news.** **This is the inverse of
+open item (2) and it is worse:** the drawdown defect (open item 1) causes **missed** trades, whereas
+this one would let a candidate **pass** the filter precisely because the filter cannot see the move —
+and **the 09:35 re-validation would pass it again for the same reason**, because the gap does not
+enter `bars` until the 09-17 close prints. **Today it cost nothing: GNRC is the counterparty named in
+the announcement, i.e. Company A's direct beneficiary and first-order, so it was never a §4 candidate
+at any price.** **Logged as new open item (7). No run may reinterpret the filter — that is a human
+editing §4 or `alpaca.py move`.**
+
+**⚠ THE "NAMED BENEFICIARY" SWEEP RETURNED SEVEN FEDERAL AWARDS AND EVERY SINGLE ONE IS THE AWARDED
+PARTY — PLUS RULE (v)'s CEILING SUB-SHAPE IN SIX OF THEM ON ITS SECOND DAY.** CACI **$1.5B ceiling**
+(company *expects to book* **$1.2B** — its own estimate, not a contractual figure), S&K Aerospace
+**$4.3B IDIQ ceiling** (private), Amentum **$150M ceiling** (completion **September 2031**), DCS
+**$85M ceiling** (private), AEVEX **"up to $92.2M"**, Conti Kight JV **$74.9M** (private JV), Kyndryl
+(**no dollar value at all**). **Every one is Company A.** **No source names a subcontractor or
+supplier under any of them, and none attaches a dollar figure to one.** **The ceiling sub-shape of
+rule (v) was written yesterday off a single award and is already the DEFAULT form in which federal
+dollar figures arrive** — six of seven today. **Read the obligated or expected-booked figure, not
+the ceiling.**
+
+**⚠ TWO PERPLEXITY RESULTS CONTRADICTED EACH OTHER ON WHETHER AEVEX IS EVEN LISTED, AND THE
+CONTRADICTION IS THE FINDING.** The second broad scan said available context *"does not clearly
+establish that AEVEX Corp is US-listed"*; the named-beneficiary sweep reported the snippet as
+carrying *"NYSE: AVEX"*. **Both came from the same tool on the same morning.** It changes nothing
+operationally — AEVEX is the **awardee** and the figure is a **ceiling**, so it is dead twice over
+before listing status matters — **but a run that had needed the answer would have had two and no way
+to choose.** **A listing status read off a news snippet is not a §3 check; `alpaca.py asset` is.**
+
+**Dropped before thesis stage, with reasons, so their absence is not read as an oversight:**
+- **Ford raised FY26 adjusted EBIT guidance to $10–11B (+$1B at the midpoint)**, adj. FCF $6–7B,
+  capex unchanged $9.5–10.5B, and expects **$500M in 2026 of the $1.3B IRA reimbursement booked in
+  Q1.** **First-order — buying F on Ford's own guidance is Company A, not §4.** No supplier or
+  customer is named with a figure; the drivers quoted are *"strong pricing and mix."*
+- **Lululemon** (FY26 revenue cut to $10.35–10.5B, EPS to $9.48–9.73) and **Norwegian Cruise Line**
+  (FY26 adj. EPS cut to ~$1.50, adj. EBITDA ~$2.5B). **Both are consolidated guidance cuts with no
+  counterparty named at all** — first-order, and nothing for a Company B to attach to.
+- **Philip Morris raised FY26 diluted EPS "for currency only."** **A translation adjustment is not an
+  operational change** — no volume, no price, no segment, no counterparty.
+- **Ameren "FY26 EPS guidance $5.25–5.45", Five Below "FY26 guidance 9.830–10.310 EPS", DaVita
+  "$14.10–15.20".** **All three arrived as MarketBeat/analyst instant-alerts stating guidance
+  *issuance*, with no prior figure to compare against and no source saying anything CHANGED.** **This
+  is the General Mills trap from 09-16 repeating, three times in one morning** — an alert worded to
+  read like an event. Rule (iii).
+- **Subaru ↔ onsemi (ON)** technology engagement for onsemi's Embedded Power Platform. **The source
+  itself states: "The engagement does not represent a supply agreement or production commitment. No
+  financial terms were disclosed."** The one item all morning where a named counterparty pairing was
+  killed **by its own press release**.
+- **Charter / Cox, $34.5B.** **Closed in LATE AUGUST**; what is dated 09-17 is a **customer-branding
+  integration story**. Rule (iii) — re-coverage is not a new event.
+- **Union Pacific / Norfolk Southern** — *"more than 500 customers back the combination."* A
+  support statement. **No transaction value, no new dollar figure, nothing disclosed that changes
+  anyone's economics.**
+- **Illinois American Water (AWK) bought the City of Venice wastewater system for $770,000.** Real,
+  dated, both parties named, and **immaterial by four orders of magnitude** against §4.2's 10%-of-
+  revenue bar. **A correctly-sourced transaction can still be too small to be an event.**
+- **Medtronic's LigaSure RAS / Hugo FDA clearance** resurfaced again — **the same item dropped on
+  09-16**, MDT is already a disposed reject, and there is still no dollar figure and no counterparty.
+- **Robinson Pharma's "Above and Beyond" supplier award from Bausch + Lomb** and **Powerus named one
+  of 21 industry participants in Falcon Peak 26.2.** Both name a beneficiary; **neither carries any
+  money**, and both companies are private.
+
+**The FOMC is now past tense and did not enter the funnel.** +25bp to **3.75–4.00%** on 09-16,
+unanimous, first US hike since 2023, one more signalled; the September projections show 2026 GDP
+**2.3%** (from 2.2%), PCE **3.7%** (from 3.6%), unemployment **4.1%** (from 4.3%), with the 10-year
+reported at **5.03%**. **It supplies no Company A, no segment and no dollar path** — it is the whole
+tape moving, which is what §4 exists to refuse. **Seventh consecutive day this disposition is
+recorded, and the first on which it is a settled fact rather than a probability.**
+
+---
+
+### T-2026-09-17-01 — (no ticker) — REJECTED
+**Company A / the news:** **Amazon.com.** Generac Holdings filed an **8-K on 2026-09-16** disclosing a
+**long-term supply agreement** to provide **backup power generators for Amazon data centers**, with
+**initial deliveries expected to total ~$2.4 billion across 2027 and 2028** and **aggregate payments
+of up to $8 billion** over the life of the relationship, alongside a **Transaction Agreement** issuing
+Amazon.com NV Investment Holdings LLC a **warrant for up to 1,693,745 GNRC shares at $200.9266**
+(**307,954 vested immediately**, remainder vesting in tranches against cumulative payments toward the
+$8B figure, **exercisable through September 2033**). Reuters, Bloomberg, CNBC and the filing summary
+all carry the same figures. **New to Generac's own disclosure** — an 8-K reporting a material event,
+with no source referencing any prior filing or call naming Amazon as this customer. **Rule (iii)
+checked and PASSED, which is rare enough to state explicitly.**
+**Company B / the candidate:** **None could be identified.** The §4 question is whose economics change
+because Generac must now build $2.4B of data-center gensets. **GNRC itself is the counterparty named
+in the announcement — the direct, first-order beneficiary — and is therefore not a §4 candidate at
+any price.**
+
+**1. Mechanism (one sentence):**
+> **CANNOT BE WRITTEN.** There is no sourced Company B to place in the sentence.
+
+**2. Dollar path:** Not reached — no Company B.
+**3. Timing window:** Not reached, **and it would have failed independently.** The filing's own
+language is **"initial deliveries expected to total $2.4 billion in 2027 and 2028."** Two quarters
+from today ends around **2027-03-31**; a supplier's own recognition would trail the deliveries
+further still. **Standing rule (vi), third consecutive session.**
+**4. Invalidation:** Not reached — no thesis to invalidate.
+
+**Hard filters:**
+- Priced-in (§4): **GNRC moved −6.09% over the last 5 sessions → `priced_in: true`, "LATE - skip".**
+  **The reading is real and it is also structurally blind** — the window ends at the **09-16 official
+  close of 175.19**, and the reported after-hours surge on this news is **absent from every Alpaca
+  field**. Recorded as new open item (7). **Not applied to any candidate, because there is none.**
+- Correlation (§4): **drivers of open positions checked — there are zero open satellite positions, so
+  the check has no subject and passes vacuously.** Stated rather than skipped.
+- Universe (§3): **the only supplier any source names is Weichai Power (Shenzhen 002338 / HK 02338),
+  via Baudouin — NOT US-LISTED. §3 FAIL.** No `alpaca.py asset` call was made and none was due: §3
+  excludes a non-US listing before tradability is a question.
+
+**Outcome:** **REJECTED at part 1 — no US-listed Company B exists in the sources.** Three independent
+reasons, and the order matters: **(a)** the one named supplier is foreign-listed and carries **no
+dollar figure tied to Generac** in any case; **(b)** Generac is **vertically integrated**, producing
+its own **engines, alternators, batteries, electronic controls and steel enclosures** — so the
+missing Company B is a **structural fact, not a gap in the reporting**, and no widening of the
+evidence bar would produce one; **(c)** the delivery calendar is **2027–2028**, past §4.3 regardless.
+**This is the most fully-disclosed event this log has processed and it still yields no trade.** The
+honest reading is that **a well-sourced transaction is necessary and nowhere near sufficient** — the
+supply chain has to be external and public before §4 has anything to work with.
+
+---
+
+### T-2026-09-17-02 — (no ticker) — REJECTED
+**Company A / the news:** **Fluence Energy (FLNC).** On **2026-09-16** Fluence **cut FY2026 guidance**:
+revenue to **~$2.4B** from a prior midpoint of **~$3.0B**, and Adjusted EBITDA to a loss of **~$200M**
+from a prior midpoint loss of **~$10M**. Management attributes the **~$600M revenue reduction** to
+**~$450M of production delays** at its **Houston contract manufacturing facility** (construction and
+automation problems ramping battery-enclosure output), **~$65M of penalties largely tied to late
+delivery**, and **~$85M of logistics impacts**; one account puts the bottom-line hit at **$190M**,
+of which **$130M is combined penalties and revenue pushed into fiscal 2027**. A genuine, dated,
+quantified guidance change — not a reaffirmation.
+**Company B / the candidate:** **None could be identified.** Two second-order reads were screened and
+both came back empty.
+
+**1. Mechanism (one sentence):**
+> **CANNOT BE WRITTEN.** Neither candidate survives into the sentence.
+
+**2. Dollar path:** Not reached. The money is quantified precisely **on Fluence's side of the ledger
+and nowhere else** — $450M, $65M, $85M, $130M all describe what Fluence loses, and **not one dollar
+is attributed to a named recipient.**
+**3. Timing window:** Not reached — no Company B.
+**4. Invalidation:** Not reached — no thesis to invalidate.
+
+**Hard filters:** **NOT RUN, and not because they were skipped** — §4 requires them *before* a thesis,
+and there was never a ticker to apply them to. Stating this so a later reader does not read their
+absence as an omission.
+
+**Outcome:** **REJECTED at part 1, on both available readings.**
+**(a) The contract manufacturer is the obvious Company B and NO SOURCE NAMES IT.** Every account
+refers only to *"the contract manufacturer"* or *"the Houston contract manufacturing facility,"* and
+one even reports that *"the contract manufacturer had already implemented corrective actions"* —
+**discussing its behaviour while withholding its identity.** This is the familiar failure shape, back
+after a one-day absence, **and in its sharpest form yet: the counterparty is not merely unnamed, it is
+actively described.** The **penalized customers** are likewise unnamed; the $65M exists only in
+aggregate.
+**(b) The other reading — "competitors capture the share Fluence cannot deliver" — is the shared-cause
+trap, fifth instance.** A share shift through a market is **not a transaction**, no source names a
+gaining competitor, and **no source attaches a dollar figure to one.** Perplexity returned this
+unprompted and correctly: any such mapping *"would go beyond the evidence and would be speculative."*
+**The temptation here was real and worth recording: a precisely quantified $600M hole invites you to
+assume the money went somewhere nameable. It does not have to have gone anywhere.**
+
+---
+
+### T-2026-09-17-03 — (no ticker) — REJECTED
+**Company A / the news:** **The 2026-09-16/17 federal award cluster.** Seven awards surfaced by the
+named-beneficiary sweep: **CACI International (NYSE: CACI)** — USCENTCOM information-advantage and
+irregular-warfare support, **$1.5B ceiling**, one-year base plus four options, company **expects to
+book $1.2B**; **S&K Aerospace LLC** — **$4.3B IDIQ**, Parts and Repair Ordering System Seven;
+**Amentum Holdings (NYSE: AMTM)** — **$150M ceiling** IDIQ, survivability test stand for the USAF
+704th Test Group at Holloman AFB, **completion September 2031**; **DCS** — **$85M ceiling** IDIQ,
+AFRL VOLARE; **AEVEX Corp** — **up to $92.2M** over three years, DoW TRMC SkyRange; **Conti Kight JV**
+— **$74.9M** firm-fixed-price, B-21 RF hangar at Whiteman AFB; **Kyndryl (NYSE: KD)** — 10-year NASPO
+ValuePoint vehicle, **no dollar value disclosed**.
+**Company B / the candidate:** **None. Every named party is the awardee.**
+
+**1. Mechanism (one sentence):**
+> **CANNOT BE WRITTEN.** Every sentence available would take the form *"the Army awarded X, therefore
+> X's revenue improves"* — which is **first-order and describes Company A**, not §4.
+
+**2. Dollar path:** Not reached — no Company B. **And the figures themselves are mostly unusable:
+six of the seven are CEILINGS or "up to" amounts**, which standing rule (v) now covers explicitly.
+CACI's **$1.2B expected booked** is the only figure in the set with any commitment behind it, and it
+is **the company's own estimate**, not a contractual number.
+**3. Timing window:** Not reached. **Amentum's runs to September 2031** and CACI's base year plus four
+options is a five-year vehicle — **both far outside §4.3 even for the awardee.**
+**4. Invalidation:** Not reached.
+
+**Hard filters:** **NOT RUN — no candidate.** **No `move` call was spent on CACI, AMTM or KD**, and
+none was due: §4 filters are for Company B, and screening the awardee would have been running a
+filter on the wrong company. **Standing rule (i): screen on the mechanism before running filters.**
+
+**Outcome:** **REJECTED at part 1 — awardee is Company A; no supplier or subcontractor is named under
+any of the seven awards, and none carries a dollar figure.** This is the **LMT / BA / AVAV / LHX /
+BWXT / NAMC-Abrams shape for the seventh time**, and the cluster form makes the point better than any
+single award did: **seven awards in one morning, $6.3B of headline value, and not one identifiable
+Company B.** **Federal contract news reliably supplies a named party and a large number, and
+reliably fails the one test §4 actually asks** — which is why it keeps reaching this log and keeps
+dying here. **Recognise the shape on sight; do not re-derive it award by award.**
+
+---
+
 ### 2026-09-16 (08:17 ET) — event survey (funnel, pre-thesis)
 
 Selftest passed all five checks (`trading_enabled: true`, LIVE paper account, equity
