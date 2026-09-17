@@ -56,106 +56,90 @@ re-derive it from price history, and it stays correct for positions closed month
 
 *(none — no **satellite** positions have been opened yet. Core VOO exists and is deliberately not tracked here, per the top-of-file rules and the fill note further down.)*
 
-**Reconciliation 2026-09-17 09:35 ET (2-market-open-execution) — LEDGER AGREES WITH THE BROKER;
-ZERO ORDERS PLACED FROM THE ONE SEAT THAT COULD HAVE PLACED THEM. NO HIGH-WATER MARK WAS WRITTEN
-AND NONE WAS DUE.**
-*(This block **replaces** the 09-17 08:11 pre-market reconciliation, read in full by this run —
-**one block per date, not one per run.** **Collapse, do not append — twenty-ninth consecutive
+**Reconciliation 2026-09-17 12:35 ET (3-midday-management) — LEDGER AGREES WITH THE BROKER;
+NOTHING TO MANAGE. NO EXIT EVALUATED, NO HIGH-WATER MARK BACKFILLED, AND NEITHER WAS DUE.**
+*(This block **replaces** the 09-17 09:35 market-open reconciliation, read in full by this run —
+**one block per date, not one per run.** **Collapse, do not append — thirtieth consecutive
 run.**)*
-Selftest passed all five checks at **09:35 ET** (`trading_enabled: true`, LIVE paper account, equity
-$99,319.54 at pre-flight).
+Selftest passed all five checks at **12:34 ET** (`trading_enabled: true`, LIVE paper account, equity
+$99,383.43 at pre-flight).
 
-**⚠ THIS IS THE ONLY ROUTINE PERMITTED TO OPEN A POSITION, AND IT OPENED NOTHING.** It read an
-**INACTIVE breaker**, a weekly cap at **0 of 3**, an **empty satellite sleeve**, **30.21% idle cash**
-and **no restricting note in `control.md`** — full authority — and placed **zero orders, because the
-plan it consumes carries no BUY intent.** **Nothing was blocked by a guardrail.** The 08:00/09:35 gap
-exists precisely so a candidate reasoned into existence at the bell cannot become a fill; a run that
-"found something" at 09:35 would not be diligent, it would be the failure this architecture is built
-to prevent.
+**⚠ THIS ROUTINE IS EXITS-ONLY AND IT HAD NO SUBJECT.** §5.1–§5.4 are evaluated per **open satellite
+position**, and there are **zero**. The run is not permitted to open anything, so an empty sleeve
+leaves it with **literally nothing to do** — which is the correct outcome, not a degraded one. **No
+search for something to manage was performed and none was warranted.**
 
-**`clock` READ `is_open: true` AT 09:35:56 WITH `next_close` 2026-09-17T16:00 TODAY AND `next_open`
-2026-09-18T09:30 TOMORROW — the IN-SESSION shape, and the ONLY one of the three daily shapes where
-the boolean alone is informative.** The pre-market read sixteen hours after the prior bell and the
-post-bell read tonight will both carry `is_open: false` and differ only in the `next_open` **date**.
-**Read the DATE, not the boolean.**
+**`clock` READ `is_open: true` AT 12:35:02** with `next_close` **2026-09-17T16:00 TODAY** and
+`next_open` **2026-09-18T09:30 TOMORROW** — the IN-SESSION shape, the only one of the three daily
+shapes where the boolean alone is informative. **Read the DATE, not the boolean.**
 
 **Satellite blocks (zero) checked against satellite Alpaca positions (zero) — they agree.** Compare
 **satellite to satellite**, never raw ledger to raw broker. `alpaca.py positions` returns **one row,
 VOO core** (99.046311231 shares — **unchanged, no order has touched it since 09-03**, avg_entry
-706.74, market_value $69,308.65, cost_basis $69,999.99, broker `current_price` **699.76**,
-`lastday_price` **693.24**, unrealized_pl **−$691.34 / −0.988%**, `change_today` **+0.941%**).
-**`current_price` 699.76 is a LIVE IN-SESSION MARK, not a close** — yesterday's official close is
-**693.215** and `lastday_price` reads **693.24**, a third number again. **Never mix the two sources
-in one comparison.** `alpaca.py sleeves`: equity **$99,307.66**, cash **$30,000.00**, core
-**$69,307.66 = 69.79%**, satellite **0.0% (count 0)**, cash **30.21%**, `core_in_band: true`,
-`rebalance_needed: false`, `rebalance_delta: +207.71` = **0.21% of equity.** **NO REBALANCE WAS DUE
-AND NONE WAS PLACED** — §2 rebalances at the **band edge (65/75)**, not to the exact target.
-**Twenty-second consecutive run inside a 0.39-point range (69.59–69.98)**: a drifting core mark on an
-unchanged share count, not a position being added to or reduced.
+706.74, market_value $69,387.88, cost_basis $69,999.99, broker `current_price` **700.56**,
+`lastday_price` **693.24**, unrealized_pl **−$612.11 / −0.874%**, `change_today` **+1.056%**).
+**`current_price` 700.56 is a LIVE IN-SESSION MARK, not a close** — do not mix it with a `bars`
+close. `alpaca.py sleeves`: equity **$99,387.88**, cash **$30,000.00**, core **$69,387.88 = 69.82%**,
+satellite **0.0% (count 0)**, cash **30.18%**, `core_in_band: true`, `rebalance_needed: false`,
+`rebalance_delta: +183.63` = **0.18% of equity.** **NO REBALANCE WAS DUE, AND THIS ROUTINE COULD NOT
+HAVE PLACED ONE ANYWAY** — §2 rebalances at the **next market-open run**, at the **band edge
+(65/75)**, not to the exact target. **Twenty-third consecutive run inside a 0.39-point range
+(69.59–69.98)**: a drifting core mark on an unchanged share count.
 
-**⚠ A FOURTH NUMBER APPEARED THIS RUN AND IT IS THE SAME MECHANISM, NOT A NEW DEFECT.** `sleeves`
-reported core **$69,307.656284** and `positions`, called about a second later, reported market_value
-**$69,308.646747** — **99 cents apart on an identical share count.** Both are **live intraday marks
-pulled at different instants**, which is exactly what the solved two-price finding predicts. **It is
-not a reconciliation break and must not be logged as one.** It is, however, the clearest preview yet
-of why a `highest_close` must never be read from a `positions` field: **two calls one second apart
-disagree, so a §5.4 stop set from either is set from noise.**
-
-**STEP 4 — §5.1–§5.4 HAD NO SUBJECT. The plan carried ZERO SELL intents and there was nothing to
-re-confirm against current prices.** Still the **nineteenth** session with an empty sleeve — the
-count advances on **sessions, not runs**, and this run shares 09-17 with the pre-market run that
-already advanced it. No thesis to test for invalidation (§5.1); no `timing_window` to expire (§5.2);
-no `entry_price` to measure −7% against (§5.3); no `highest_close` to measure −10% against (§5.4).
-**Nothing was near triggering because nothing exists to trigger.** `sell_rule_status` is **absent
-rather than blank.** **All four remain untested code paths and §5.4 has never been armed** — it arms
-on the first *satellite* fill. **The loss streak could not move: no position closed, so §6's counter
-has no event to count.**
-
-**NO HIGH-WATER MARK WAS WRITTEN AND NONE WAS DUE — READ, NOT ASSUMED.** **There is no
-`highest_close` field in this file at all**, because there is no satellite block to carry one.
-**ABSENT is a third state, distinct from "current and unchanged" and from "stale" — and it is the
-only one carrying no date.** The missing date is exactly what discharges the midday backfill check.
-**Zero `alpaca.py bars` calls were issued this run for any purpose**, and **core VOO was again
-deliberately NOT stamped.** Writing a close into this file for the one position §5 exempts from all
-four sell rules would fabricate a §5.4 stop; **it would not feel like a violation, it would feel like
+**STEP 2 — THE HIGH-WATER BACKFILL CHECK RAN AND DISCHARGED ON AN ABSENT FIELD, NOT A CURRENT ONE.**
+The check compares each position's `highest_close (as of ...)` date against the last trading day.
+**There is no `highest_close` field in this file at all**, because there is no satellite block to
+carry one. **ABSENT is a third state, distinct from "current and unchanged" and from "stale" — and it
+is the only one carrying no date.** The missing date is exactly what discharges the check. **Zero
+`alpaca.py bars` calls were issued this run for any purpose**, and **core VOO was again deliberately
+NOT stamped**: writing a close into this file for the one position §5 exempts from all four sell
+rules would fabricate a §5.4 stop. **It would not feel like a violation, it would feel like
 tidiness.** Refused again.
+
+**STEP 3 — §5.1–§5.4 HAD NO SUBJECT, AND THE ORDERED EVALUATION NEVER STARTED.** No thesis to test
+for invalidation (§5.1) and **zero `perplexity.py` invalidation queries were issued — an ABSENT
+check, not a skipped one**; no `timing_window` to expire (§5.2); no `entry_price` to measure −7%
+against (§5.3); no `highest_close` to measure −10% against (§5.4). **Nothing was near triggering
+because nothing exists to trigger.** `sell_rule_status` is **absent rather than blank.** Still the
+**nineteenth** session with an empty sleeve — the count advances on **sessions, not runs**, and this
+run shares 09-17 with the two runs that preceded it today. **All four remain untested code paths and
+§5.4 has never been armed** — it arms on the first *satellite* fill.
+
+**STEP 4 — ZERO SELL ORDERS. Not one `alpaca.py sell` call was made, so no order-verification path
+was exercised and no `terminal: false` or `dry_run: true` case arose.** **Nothing should have
+executed and failed to** — the most important line this run could have carried is the one it does not
+need. **The loss streak could not move: no position closed, so §6's counter has no event to count.**
 
 **HOUSEKEEPING — ALL THREE CHECKS RAN.** **Week rollover:** the ISO Monday of 2026-09-17
 (Thursday) is **2026-09-14**, which **matches `week_of`** — no reset due, next boundary Monday
 2026-09-21. **Circuit breaker:** **INACTIVE**, `halt_triggered_at: none`; `consecutive_closed_losses`
 stays at **0** because nothing has ever closed in this account, so the §6 streak cannot move, no
 `HALT_CLEARED_AT` comparison was required and **no circuit-breaker alert was due.** **Sleeve drift:**
-core **69.79%**, inside the 65–75% band. `open_thesis_ids` stays **none** — nothing to add or remove;
-all three of today's theses were rejected before the bell.
+core **69.82%**, inside the 65–75% band. `open_thesis_ids` stays **none** — nothing to add or remove;
+all three of today's theses were rejected before the bell and this run opened nothing.
 
-**⚠ OPEN ITEM (7) — `alpaca.py move` CANNOT SEE AN AFTER-HOURS EVENT, AND THIS RUN IS THE ONE WHOSE
-RE-VALIDATION STEP INHERITS THAT BLINDNESS. IT COST NOTHING TODAY FOR A REASON THAT WILL NOT ALWAYS
-HOLD.** The pre-market run found `move --symbol GNRC --sessions 5` returning **186.55 → 175.19,
-−6.09%, `priced_in: true`** the morning after GNRC reportedly surged after the bell on the Amazon
-supply agreement. **The five-session window ends at the last official close, so a candidate whose
-news breaks AFTER the close is measured against prices that predate the news — and the gap does not
-enter `bars` until tonight's close prints, meaning a 09:35 re-validation would have passed such a
-candidate for the same wrong reason.** **Today's cost is zero only because there were no BUY intents
-to re-validate** — the defect was never given a subject, which is **not** the same as the defect
-being contained. **Open item (1) causes MISSED trades; this one would cause a trade TAKEN at exactly
-the price the filter exists to refuse.** **No run may reinterpret the filter; that is a human editing
-§4 or the script.**
+**⚠ OPEN ITEM (7) REMAINS OPEN AND THIS RUN DID NOT TOUCH IT — `alpaca.py move` IS BLIND TO AN
+AFTER-HOURS EVENT.** The pre-market run found `move --symbol GNRC --sessions 5` returning **186.55 →
+175.19, −6.09%, `priced_in: true`** the morning after GNRC reportedly surged after the bell on the
+Amazon supply agreement, because **the five-session window ends at the last official close.** **It is
+a BUY-path defect and this routine has no buy path**, so it had no bearing here and **no measurement
+was taken to "document" it.** Tonight's close is what finally admits the gap into `bars`. **No run
+may reinterpret the filter; that is a human editing §4 or the script.**
 
-**⚠ GNRC WAS NOT LOOKED AT, AND THE REFUSAL IS THE ENTRY WORTH KEEPING.** The plan named it as the
-one ticker likely to be loudest on the tape this morning and instructed this run not to look. **Zero
-`move`, `quote`, `bars` or `asset` calls were made on it.** There was a live pull toward pulling its
-open "just to document open item (7)'s magnitude for the human" — a diagnostic, not a trade
-consideration, and genuinely zero-risk on its own terms. **It was refused anyway, because the
-habit it would establish is *looking at the loud ticker at 09:35*, and that habit is the exact
-failure this 08:00/09:35 architecture exists to prevent.** GNRC is the **named counterparty** in the
-Amazon announcement — **first-order, outside §4 at any price** — so no reading of it could have
-produced an action. **The pre-market run already documented the defect with the same data. A second
-measurement adds nothing and normalises the wrong reflex.**
+**⚠ GNRC WAS NOT LOOKED AT AGAIN, AND THE SECOND REFUSAL IS THE ENTRY WORTH KEEPING.** **Zero `move`,
+`quote`, `bars` or `asset` calls were made on it this run.** The pull is now recurring: at 09:35 it
+was "just to document the defect"; at 12:35 it would have been "just to see how it settled." **Both
+are the same reflex — looking at the loud ticker — and the empty sleeve means there was no §5 subject
+that could have justified a single price call on ANY ticker.** GNRC is the **named counterparty** in
+the Amazon announcement — **first-order, outside §4 at any price** — and this run **cannot open a
+position under any circumstance**, so no reading of it could have produced an action. **A midday run
+with nothing to manage is meant to be short. Filling it with lookups is how an exits-only seat
+quietly turns into a scouting seat.**
 
 ---
 
-**⚠ EARLIER PER-RUN RECONCILIATIONS (2026-09-01 through 2026-09-15 12:35) HAVE BEEN COLLAPSED,
-DELIBERATELY.** Thirty-one blocks spanning 09-01 to today's midday run each recorded the same
+**⚠ EARLIER PER-RUN RECONCILIATIONS (2026-09-01 through 2026-09-17 09:35) HAVE BEEN COLLAPSED,
+DELIBERATELY.** Thirty-two blocks spanning 09-01 to this morning's open run each recorded the same
 null result — zero satellite blocks checked against zero satellite Alpaca positions, agreeing; no
 §5 rule evaluated; no high-water mark to stamp; no backfill due. `state.md` flags this
 accumulation as
