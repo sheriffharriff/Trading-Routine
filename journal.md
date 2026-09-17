@@ -40,6 +40,144 @@ anything where the honest-broker rule (§4) did real work>
 
 ## Entries
 
+### 2026-09-17 (Thursday)
+
+**Account:** total **$99,428.49 on official closes** / $99,389.86 broker | day P&L
+**+$768.10 (+0.779%)** both legs official (+$726.99 / +0.737% on Alpaca's broker-mark basis —
+**do not mix the two**) | since inception **−0.572%** official / −0.610% broker
+**Sleeves:** core 69.83% | satellite 0.0% | cash 30.17%   (§2 band 65–75%)
+**Breaker:** INACTIVE
+**Week:** 0/3 new positions — ISO Monday of 2026-09-17 is 2026-09-14, which matches `week_of`;
+no reset due, next boundary Monday 2026-09-21
+**Trading day:** yes. `clock` at 16:16:29 read `is_open: false` with `next_open`
+**2026-09-18** — post-bell, not a holiday. **Read the date, not the boolean.**
+
+**Traded:** nothing — zero orders at all three of today's runs. `orders --status all` returns
+**one row for the account's entire history**, the 09-03 core VOO buy, `status: filled`,
+terminal. **Nothing is in limbo overnight** (§7).
+**Researched:** 3 theses — 0 accepted, 3 rejected, all written by the 08:11 pre-market run
+(T-2026-09-17-01 no-ticker Amazon/Generac 8-K, -02 no-ticker Fluence guidance cut, -03
+no-ticker seven federal awards). **This run wrote none and consumed no ID** — a journaling
+routine does not research. **42 theses since inception, 0 accepted; 12 this week.**
+**Positions near a sell rule:** **none, and the reason is no subject** — zero satellite
+positions, **nineteenth consecutive session** (the count advances on sessions, not runs, and
+today's pre-market run already advanced it). Core VOO is exempt from all four (§5).
+
+**High-water marks:** **NONE WRITTEN, AND THAT IS STEP 2 COMPLETING CORRECTLY RATHER THAN
+BEING SKIPPED.** `positions.md` holds no satellite block, so there is no `highest_close` to
+raise and no `(as of ...)` date to re-stamp. The marks are **ABSENT** — a third state, distinct
+from both "current and unchanged" and "stale," and the only one carrying no date for tomorrow's
+midday backfill trigger to read. **Core VOO was deliberately not stamped.** **§5.4 remains NOT
+ARMED; it arms on the first *satellite* fill.**
+
+**What happened:**
+
+**The book made money and lagged the index, and that is the 09-16 note's prediction arriving on
+schedule.** VOO closed **700.97** from 693.215, **+1.1187%**, on a quiet range (698.65–701.695,
+about 0.43% of the low against yesterday's 1.58%) and lower volume — the FOMC session's width
+did not carry into the day after it. The book returned **+0.779%**. The gap is **34bp of
+UNDERperformance**, and it is not a judgment call: **0.6959 × 1.1187% = 0.7785%**, i.e.
+yesterday's core weight times the index move, to a rounding tick. 09-16 recorded 13bp of
+apparent *out*performance from exactly the same arithmetic and wrote that it "reverses with the
+same mechanical reliability on the first green day." **Today is that green day and it reversed.
+Same mechanism, opposite sign, one session apart** — which is the cleanest available proof that
+neither number was ever about skill. **30% cash is the whole story in both directions.**
+
+**Nothing else moved, because there is nothing else to move.** Zero satellite positions,
+zero orders, zero fills, zero exits. The core is unchanged at 99.046311231 shares — no order
+has touched it since 09-03 — and its unrealized **−$571.50 / −0.816%** measured from the 706.74
+fill is **exactly** VOO's 706.74 → 700.97 move over the same window. **Tracking error 0.0000%,
+for the fourth time it has been checked.** The core's entire reported divergence is the 09-03
+entry gap (+0.483% above that day's prior close). That is a settled question; it should stop
+being re-opened.
+
+**Sleeves: core 69.83%, cash 30.17%, satellite 0.0%.** In band, **no rebalance due at
+tomorrow's open** — the delta is **+$171.45 on official closes, 0.17% of equity**, the smallest
+recorded in this range, and §2 acts at the **band edge (65/75)**, not at the target. This is the
+**twenty-fourth consecutive run inside a 0.39-point range (69.59–69.98)**.
+
+**Housekeeping was clean.** Week rollover checked and not due. Loss streak **0** — nothing has
+ever closed, so §6's counter has no event to count and no `HALT_CLEARED_AT` comparison was
+required. Breaker **INACTIVE**, no alert due. `alerts.md` empty. One order in account history,
+terminal — **nothing unresolved to carry overnight.**
+
+**What I got wrong or nearly got wrong:**
+
+**First, and it is the real finding of the day: I found a deleted journal header, and the run
+that deleted it was a close run doing exactly what I was about to do.** Commit **`5fe9e4c`**
+(the 09-16 close run) inserted its entry at the top of this file and, in the same commit,
+**deleted the line `### 2026-09-15 (Tuesday)` — its only deletion.** The 09-15 entry's body
+survived intact but was left with no header, glued onto the end of 09-16's "For the next run"
+list. **The result is a full trading day's judgment that is invisible to any scan of this
+file's headers and reads as part of the following day.** I only caught it because I listed the
+entry headers to find the template and noticed 09-15 missing between 09-16 and 09-14 — **not
+because anything flagged it.** Nothing did. Nothing could: `commit.py` guards `strategy.md` and
+`control.md`, not the shape of an append-only file.
+
+**Why this is worse than a formatting slip.** This repo's only continuity is the next run
+*reading* these files. An entry that a header scan cannot see is, for practical purposes, an
+entry that was not written — and the loss is **silent and permanent-looking**: `journal.md`
+still has the right byte count, the right month, no gap in the dates if you read it linearly,
+and a run that trusted the headers would have concluded 09-15 was never journaled. **This is
+the same failure shape the high-water discipline exists to prevent** — a field that is missing
+but every surface still reads present and plausible — arriving in the one file nobody thought
+to check it in. **I restored the header rather than rewriting anything**, and noted inline where
+it went and which commit took it.
+
+**And the uncomfortable part: I was one edit away from repeating it.** I append at the top of
+`## Entries`, which means my insert point is immediately above `### 2026-09-16 (Wednesday)` —
+the exact position, in the exact file, where the same deletion happens. I had just finished
+reading the evidence of it when I made my own edit. **The defence that worked was anchoring the
+edit on `## Entries` plus the 09-16 header and putting both back verbatim, rather than
+replacing a block that happened to start there.** A future close run should assume this hazard
+is structural, not a one-off: **the top-of-file insert is the dangerous edit in this repo, and
+it looks completely routine while you are making it.**
+
+**Second, the Step 2 pull arrived again, with the same accomplice, and it was refused again.**
+Step 2 is written in the imperative and its subject does not exist. I had already pulled VOO
+bars to price the book, so **700.97 was sitting in my terminal output with nothing to do** —
+the 09-16 entry predicted precisely this ("next time the number will already be on screen
+again"), and it was right. Writing it into `positions.md` would fabricate a §5.4 trailing stop
+on the one position §5 exempts from all four sell rules. **It still does not feel like a
+violation; it feels like tidiness.** The prediction landing verbatim is worth more than the
+refusal itself — **it means this pull is a standing feature of the routine, not a mood.**
+
+**Third, a smaller one, honestly reported: the green day made the "structurally undeployed
+sleeve" note easier to read than it should be.** Carry-forward item (3) says a 70/30 cash book
+cannot beat the S&P over a rolling 12 months in a rising market. Today the book made $768 and
+the pull was to let a positive dollar figure soften that sentence. **It should not: today is
+the day the cost of the cash is visible as a number — 34bp — and a green day is when that
+argument is strongest, not weakest.** Nothing about it licenses this run, or any run, to lower
+the §4 bar; **it is a note for the human, and it stays one.**
+
+**Nothing else was close to wrong.** GNRC was not looked at — zero `move`/`quote`/`bars`/`asset`
+calls on it for the third consecutive run today — and this seat has no buy path for it to
+matter to.
+
+**For the next run:**
+
+- **⚠ A CLOSE RUN DELETED A PRIOR DAY'S JOURNAL HEADER ON 09-16 AND NOTHING CAUGHT IT FOR A
+  DAY.** Restored 09-17. **The top-of-`## Entries` insert is the dangerous edit in this repo.**
+  Anchor on `## Entries` **plus** the existing top header, put both back verbatim, and after
+  writing, **list the `###` headers and confirm every trading day since the last archive
+  rollover has exactly one.** That check costs one command and is the only thing that would
+  have caught this.
+- **The high-water marks were not updated today, and that is correct, not a gap.** No satellite
+  block exists, so there is no `highest_close` and no date to refresh. **Do not backfill —
+  there is nothing to backfill.** The first satellite fill arms §5.4 and converts this step from
+  absent to load-bearing on the same day.
+- **No rebalance is due at tomorrow's open.** Core 69.83%, delta $171.45 = 0.17% of equity, and
+  §2 acts at the band edge, not the target.
+- **The underexposure arithmetic has now been demonstrated in both signs one session apart** —
+  −13bp "outperformance" 09-16, +34bp underperformance 09-17, both exactly weight × index move.
+  **Neither is skill. Do not let either answer §1's twelve-month question.**
+- **Tomorrow is Friday: the weekly review runs** and owes the 09-21 pre-market run a written
+  hand-off. **General Mills still does not report until ~Sept 23** — carry it.
+- **Nothing is pending and nothing accumulated.** One order in account history, terminal; no
+  unscreened earnings item carried across 09-14 through 09-17; `alerts.md` empty.
+
+---
+
 ### 2026-09-16 (Wednesday)
 
 **Account:** total **$98,660.39 on official closes** / $98,658.80 broker | day P&L
@@ -150,6 +288,14 @@ tested**, and it must enter any rate-driven candidate through §4 like any other
   anything else.
 - **Nothing is pending and nothing accumulated.** One order in account history, terminal; no
   unscreened earnings item carried across 09-14/15/16; `alerts.md` empty.
+
+---
+
+### 2026-09-15 (Tuesday)
+
+*(Header restored 2026-09-17 by the close run. It was deleted — not by the run that wrote this
+entry, which wrote it correctly in `e371648`, but by the 09-16 close run in `5fe9e4c`, whose
+only deletion was this one line. The entry body below was never touched. See the 09-17 entry.)*
 
 **Account:** total **$98,964.96 on official closes** / $99,025.37 broker | day P&L
 **−$303.08 (−0.305%)** both legs official (−$237.72 / −0.240% on Alpaca's broker-mark basis —

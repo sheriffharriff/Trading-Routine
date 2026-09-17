@@ -10,9 +10,9 @@ The block below is parsed by `scripts/common.py` and gates real behavior
 `key: value` format exactly. Prose goes underneath.
 
 ```
-last_run: 2026-09-17 12:35 ET 3-midday-management (selftest PASSED all five checks at 12:34 ET, trading_enabled true, LIVE paper, equity 99383.43; EXITS-ONLY ROUTINE WITH NO SUBJECT - zero open satellite positions, so §5.1-5.4 were not evaluable and the run is permitted to open nothing, meaning the correct output was a short run and a commit, NOT a search for something to do; clock is_open TRUE at 12:35:02 with next_close TODAY 16:00 and next_open 2026-09-18 TOMORROW, the IN-SESSION shape; ledger reconciled - zero satellite blocks vs zero satellite Alpaca rows, they AGREE, one row VOO core 99.046311231 sh UNCHANGED since 09-03, avg_entry 706.74 mv 69387.88 unrealized -612.11 / -0.874% change_today +1.056%, current_price 700.56 is a LIVE IN-SESSION MARK not a close; sleeves equity 99387.88 cash 30000.00 core 69.82% satellite 0.0% count 0 cash 30.18%, core_in_band true, rebalance_needed false, rebalance_delta +183.63 = 0.18% of equity, NO REBALANCE DUE and this routine COULD NOT HAVE PLACED ONE ANYWAY (§2 rebalances at the next market-OPEN run, at the band edge 65/75), TWENTY-THIRD consecutive run inside a 0.39-point range 69.59-69.98; STEP 2 HIGH-WATER BACKFILL CHECK RAN AND DISCHARGED ON AN ABSENT FIELD - no highest_close exists in positions.md at all, ABSENT is a THIRD state distinct from current-and-unchanged and from stale and it is the ONLY one carrying no date, and the missing date is exactly what discharges the check; ZERO alpaca.py bars calls this run for ANY purpose, CORE VOO DELIBERATELY NOT STAMPED - would FABRICATE a 5.4 stop on the one position §5 exempts, REFUSED AGAIN; STEP 3 - ZERO perplexity invalidation queries, an ABSENT check not a skipped one, no thesis for 5.1, no timing_window for 5.2, no entry_price for 5.3, no highest_close for 5.4, sell_rule_status ABSENT rather than blank, NOTHING NEAR TRIGGERING BECAUSE NOTHING EXISTS TO TRIGGER, all four remain UNTESTED CODE PATHS, 5.4 NOT ARMED (it arms on the first SATELLITE fill), still the NINETEENTH session with an empty sleeve (count advances on SESSIONS not RUNS, three runs shared 09-17); STEP 4 ZERO alpaca.py sell CALLS - no order-verification path exercised, no terminal:false and no dry_run:true case arose, NOTHING SHOULD HAVE EXECUTED AND FAILED TO, which is the one line this run did not need to carry; loss streak UNMOVED at 0 because nothing closed, breaker INACTIVE, no HALT_CLEARED_AT comparison required, NO circuit-breaker alert due; week rollover checked - ISO Monday of 2026-09-17 is 2026-09-14 MATCHES week_of, NO RESET DUE, next boundary Monday 2026-09-21; new_positions_this_week stays 0 of 3 - this routine cannot open a position, so the cap was never consulted let alone binding; open_thesis_ids stays none; NO RESEARCH AND NO THESIS WRITTEN, counter stays 42 with 12 this week; GNRC NOT LOOKED AT FOR THE SECOND TIME TODAY - zero move/quote/bars/asset calls, the pull has now recurred across two runs and both refusals are the entry worth keeping; alerts.md EMPTY, zero open, zero SYSTEMIC)
+last_run: 2026-09-17 16:16 ET 4-market-close-journal (selftest PASSED all five checks at 16:16 ET, trading_enabled true, LIVE paper, equity 99404.72 at pre-flight; TRADING DAY CONFIRMED NOT A HOLIDAY - clock is_open FALSE at 16:16:29 with next_open 2026-09-18 TOMORROW and next_close 2026-09-18T16:00, the POST-BELL shape, confirmed not predicted, and a close run and a pre-market run BOTH read is_open false so only the next_open DATE discriminates; STEP 2 HAD NO SUBJECT AND THAT IS NOT THE SAME AS BEING SKIPPED - zero satellite positions, so there is NO highest_close field in positions.md at all, ABSENT is a THIRD state distinct from current-and-unchanged and from stale and it is the ONLY one carrying no date, and that missing date is exactly what tells tomorrow's midday run no backfill is due, 5.4 STILL NOT ARMED (it arms on the first SATELLITE fill); CORE VOO DELIBERATELY NOT STAMPED AND THE 09-16 PREDICTION LANDED VERBATIM - this run pulled VOO bars to PRICE THE BOOK so today's official close 700.97 was sitting in terminal output with nothing to do, writing it here would FABRICATE a 5.4 stop on the one position §5 exempts, REFUSED, it feels like tidiness not like a violation, and the prediction arriving one day later means the pull is a STANDING FEATURE not a mood; DAY P&L +768.10 / +0.779% BOTH LEGS OFFICIAL (equity 99428.49 official vs 98660.39 yesterday) against +726.99 / +0.737% on broker marks (99389.86 vs last_equity 98662.86) - DO NOT MIX, broker current_price 700.58 is an AFTER-HOURS QUOTE MIDPOINT and the official close is 700.97, 39 cents away; SINCE INCEPTION -0.572% official / -0.610% broker; VOO 693.215 -> 700.97 = +1.1187% on a NARROW range 698.65-701.695 (~0.43% of the low vs yesterday's 1.58%) and LOWER volume 47563 vs 60725 - the FOMC session's width did not carry into the day after it; THE BOOK LAGGED THE INDEX BY 34bp AND IT IS ARITHMETIC NOT JUDGMENT - 0.6959 x 1.1187% = 0.7785%, yesterday's core weight times the index move to a rounding tick, and 09-16's 13bp of apparent OUTperformance came from the IDENTICAL calculation and was predicted to reverse on the first green day: IT DID, ONE SESSION LATER, same mechanism opposite sign, which is the cleanest proof available that NEITHER number was ever skill; core unchanged 99.046311231 sh since 09-03, on official closes 69428.49, unrealized -571.50 / -0.816% which is EXACTLY VOO 706.74 -> 700.97, TRACKING ERROR 0.0000% on the FOURTH check; sleeves broker equity 99389.86 cash 30000.00 core 69389.86 = 69.82% satellite 0.0% count 0 cash 30.18% core_in_band true rebalance_needed false rebalance_delta +183.04, ON OFFICIAL CLOSES equity 99428.49 core 69428.49 = 69.83% cash 30.17% delta +171.45 = 0.17% of equity THE SMALLEST RECORDED IN THIS RANGE, NO REBALANCE DUE AT TOMORROW'S OPEN (§2 acts at the BAND EDGE 65/75 not at the target), TWENTY-FOURTH consecutive run inside a 0.39-point range 69.59-69.98; ZERO TRADES at all four of today's runs, orders --status all returns ONE ROW for the account's entire history (09-03 core VOO buy, filled, terminal), NOTHING IN LIMBO OVERNIGHT per §7, NO order from today exists to resolve because none was placed, trade_log.md correctly left unappended; 5.1-5.4 had NO SUBJECT and the ordered evaluation never started, sell_rule_status ABSENT rather than blank, still the NINETEENTH session with an empty sleeve (count advances on SESSIONS not RUNS, four runs shared 09-17), all four remain UNTESTED CODE PATHS; week rollover checked - ISO Monday of 2026-09-17 is 2026-09-14 MATCHES week_of, NO RESET DUE, next boundary Monday 2026-09-21; loss streak UNMOVED at 0 because nothing has ever closed, breaker INACTIVE, no HALT_CLEARED_AT comparison required, NO circuit-breaker alert due; new_positions_this_week stays 0 of 3; open_thesis_ids stays none - all three of today's theses were rejected before the bell; NO RESEARCH AND NO THESIS WRITTEN - a journaling routine does not research, counter stays 42 since inception with 12 this week, 0 accepted; GNRC NOT LOOKED AT FOR THE THIRD CONSECUTIVE RUN TODAY - zero move/quote/bars/asset calls, and TONIGHT'S CLOSE IS THE FIRST THAT COULD ADMIT THE AFTER-HOURS GAP INTO bars, which makes "just check what it did" the most plausible costume yet and the one with the LEAST justification from a seat that trades nothing at all; ⚠ FOUND AND REPAIRED A SILENTLY DELETED JOURNAL HEADER - commit 5fe9e4c (the 09-16 CLOSE RUN) deleted "### 2026-09-15 (Tuesday)" from journal.md while inserting its own entry above it and that was its ONLY deletion, leaving a full trading day's entry headerless and glued to 09-16's, INVISIBLE TO ANY HEADER SCAN; header restored with an inline note, body untouched, all THIRTEEN September sessions verified to carry exactly one header each; journal.md entry written, ClickUp daily summary posted as 86bc2nff1; alerts.md EMPTY, zero open, zero SYSTEMIC)
 
-prior_run: 2026-09-17 09:35 ET 2-market-open-execution (selftest PASSED all five checks at 09:35 ET, trading_enabled true, LIVE paper, equity 99319.54; ZERO ORDERS PLACED FROM THE ONLY ROUTINE PERMITTED TO OPEN A POSITION - full authority, breaker INACTIVE, cap 0 of 3, empty sleeve, 30.21% idle cash, no restricting note - and the plan carried NO BUY INTENT, so nothing was placed and NOTHING WAS BLOCKED; clock is_open TRUE at 09:35:56 with next_close TODAY 16:00 and next_open 2026-09-18 TOMORROW - the IN-SESSION shape, the ONLY one of the three daily shapes where the boolean alone is informative, the other two both read false and differ only in the next_open DATE; STALENESS GATE EVALUATED AGAINST TODAY'S ET DATE AND DID NOT FIRE - plan_date 2026-09-17 MATCHED, the empty plan is FRESH and its zero intents ARE the plan rather than a gap in it; the gate has now been exercised NINETEEN times and has NEVER fired, so its alert path REMAINS UNTESTED CODE and nineteen quiet opens are not evidence it works; ledger reconciled - zero satellite blocks vs zero satellite Alpaca rows, they AGREE, one row VOO core 99.046311231 sh UNCHANGED since 09-03, avg_entry 706.74 mv 69308.65 unrealized -691.34 / -0.988% change_today +0.941%; broker current_price 699.76 is a LIVE IN-SESSION MARK not a close, yesterday's official close 693.215 and lastday_price 693.24 is a THIRD number - NEVER MIX SOURCES; NEW THIS RUN - a FOURTH number, sleeves core 69307.656284 vs positions market_value 69308.646747 on an IDENTICAL share count, 99 CENTS APART, two live marks pulled a second apart - the SOLVED two-price mechanism, NOT a reconciliation break, and the clearest preview yet of why a highest_close must never come from a positions field; sleeves equity 99307.66 cash 30000.00 core 69.79% satellite 0.0% count 0 cash 30.21%, core_in_band true, rebalance_needed false, rebalance_delta +207.71 = 0.21% of equity, NO REBALANCE DUE AND NONE PLACED (band edge 65/75), TWENTY-SECOND consecutive run inside a 0.39-point range 69.59-69.98; STEP 3 SKIPPED - core_established already true, the bootstrap path is permanently disabled; STEP 4 ZERO SELL INTENTS and 5.1-5.4 NOT EVALUABLE, no subject, STILL THE NINETEENTH session (the count advances on SESSIONS not RUNS and the pre-market run already advanced it today), all four remain UNTESTED CODE PATHS, 5.4 NOT ARMED; STEPS 5 AND 6 HAD NO SUBJECT - zero BUY intents means ZERO alpaca.py move re-validation calls were due, an ABSENT check not a skipped one; NO HIGH-WATER MARK WRITTEN AND NONE DUE, no highest_close field at all, ZERO bars calls this run for ANY purpose, CORE VOO DELIBERATELY NOT STAMPED - would FABRICATE a 5.4 stop on the one position 5 exempts, REFUSED; GNRC WAS NOT LOOKED AT - zero move/quote/bars/asset calls on it; the pull was to pull its open 'just to document open item (7) for the human', a genuinely zero-risk diagnostic, and it was REFUSED because the habit it establishes is LOOKING AT THE LOUD TICKER AT 09:35, which is the exact failure this architecture prevents; week rollover checked - ISO Monday of 2026-09-17 is 2026-09-14 MATCHES week_of, NO RESET DUE, next boundary Monday 2026-09-21; loss streak UNMOVED at 0 because nothing closed, breaker INACTIVE, no HALT_CLEARED_AT comparison required, NO circuit-breaker alert due; new_positions_this_week stays 0 of 3 because nothing was placed, NOT because the cap bound; open_thesis_ids stays none, all three of today's theses were rejected before the bell; NO RESEARCH AND NO THESIS WRITTEN - an execution routine does not research, counter stays 42 with 12 this week; alerts.md EMPTY, zero open, zero SYSTEMIC)
+prior_run: 2026-09-17 12:35 ET 3-midday-management (selftest PASSED all five checks at 12:34 ET, trading_enabled true, LIVE paper, equity 99383.43; EXITS-ONLY ROUTINE WITH NO SUBJECT - zero open satellite positions, so §5.1-5.4 were not evaluable and the run is permitted to open nothing, meaning the correct output was a short run and a commit, NOT a search for something to do; clock is_open TRUE at 12:35:02 with next_close TODAY 16:00 and next_open 2026-09-18 TOMORROW, the IN-SESSION shape; ledger reconciled - zero satellite blocks vs zero satellite Alpaca rows, they AGREE, one row VOO core 99.046311231 sh UNCHANGED since 09-03, avg_entry 706.74 mv 69387.88 unrealized -612.11 / -0.874% change_today +1.056%, current_price 700.56 is a LIVE IN-SESSION MARK not a close; sleeves equity 99387.88 cash 30000.00 core 69.82% satellite 0.0% count 0 cash 30.18%, core_in_band true, rebalance_needed false, rebalance_delta +183.63 = 0.18% of equity, NO REBALANCE DUE and this routine COULD NOT HAVE PLACED ONE ANYWAY (§2 rebalances at the next market-OPEN run, at the band edge 65/75), TWENTY-THIRD consecutive run inside a 0.39-point range 69.59-69.98; STEP 2 HIGH-WATER BACKFILL CHECK RAN AND DISCHARGED ON AN ABSENT FIELD - no highest_close exists in positions.md at all, ABSENT is a THIRD state distinct from current-and-unchanged and from stale and it is the ONLY one carrying no date, and the missing date is exactly what discharges the check; ZERO alpaca.py bars calls this run for ANY purpose, CORE VOO DELIBERATELY NOT STAMPED - would FABRICATE a 5.4 stop on the one position §5 exempts, REFUSED AGAIN; STEP 3 - ZERO perplexity invalidation queries, an ABSENT check not a skipped one, no thesis for 5.1, no timing_window for 5.2, no entry_price for 5.3, no highest_close for 5.4, sell_rule_status ABSENT rather than blank, NOTHING NEAR TRIGGERING BECAUSE NOTHING EXISTS TO TRIGGER, all four remain UNTESTED CODE PATHS, 5.4 NOT ARMED (it arms on the first SATELLITE fill), still the NINETEENTH session with an empty sleeve (count advances on SESSIONS not RUNS, three runs shared 09-17); STEP 4 ZERO alpaca.py sell CALLS - no order-verification path exercised, no terminal:false and no dry_run:true case arose, NOTHING SHOULD HAVE EXECUTED AND FAILED TO, which is the one line this run did not need to carry; loss streak UNMOVED at 0 because nothing closed, breaker INACTIVE, no HALT_CLEARED_AT comparison required, NO circuit-breaker alert due; week rollover checked - ISO Monday of 2026-09-17 is 2026-09-14 MATCHES week_of, NO RESET DUE, next boundary Monday 2026-09-21; new_positions_this_week stays 0 of 3 - this routine cannot open a position, so the cap was never consulted let alone binding; open_thesis_ids stays none; NO RESEARCH AND NO THESIS WRITTEN, counter stays 42 with 12 this week; GNRC NOT LOOKED AT FOR THE SECOND TIME TODAY - zero move/quote/bars/asset calls, the pull has now recurred across two runs and both refusals are the entry worth keeping; alerts.md EMPTY, zero open, zero SYSTEMIC)
 
 week_of: 2026-09-14
 new_positions_this_week: 0
@@ -21,9 +21,9 @@ circuit_breaker: INACTIVE
 halt_triggered_at: none
 core_established: true
 core_ticker: VOO
-core_pct: 69.82
+core_pct: 69.83
 satellite_pct: 0.0
-cash_pct: 30.18
+cash_pct: 30.17
 open_thesis_ids: none
 ```
 
@@ -70,6 +70,40 @@ position list win, and the discrepancy goes in the journal.
 ## Carry forward
 
 Anything the next run must not lose. Cleared once acted on.
+
+- **⚠ A CLOSE RUN SILENTLY DELETED A PRIOR DAY'S JOURNAL HEADER, NOTHING CAUGHT IT FOR A DAY, AND
+  THE EDIT THAT DID IT IS THE EDIT EVERY CLOSE RUN MAKES. THIS IS THE HEADLINE OF 09-17's CLOSE
+  AND IT IS A MEMORY-INTEGRITY FINDING, NOT A FORMATTING ONE.** Commit **`5fe9e4c`** (the **09-16
+  close run**) inserted its entry at the top of `journal.md` and in the same commit **deleted the
+  line `### 2026-09-15 (Tuesday)` — its ONLY deletion.** The 09-15 body survived intact but was
+  left **headerless and glued onto the end of 09-16's "For the next run" list**, so a full trading
+  day's judgment became **invisible to any scan of the file's headers and reads as part of the
+  following day.** **RESTORED 09-17** with an inline note naming the commit; the body was not
+  touched; **all thirteen September sessions verified to carry exactly one `###` header each**
+  (09-01/02/03/04, the 09-07 holiday entry, 09-08/09/10/11, 09-14/15/16/17). **Why it matters more
+  than it looks:** the loss was **silent and looked like nothing was wrong** — right byte count,
+  right month, no visible gap read linearly — which is **the same failure shape the high-water
+  discipline exists to prevent**, arriving in the one file nobody thought to check it in. **It was
+  found by accident** (listing headers to locate the template) and **nothing flagged it; nothing
+  could** — `commit.py` guards `strategy.md` and `control.md`, not the shape of an append-only
+  file. **THE HAZARD IS STRUCTURAL: the top-of-`## Entries` insert is the dangerous edit in this
+  repo, it sits immediately above the previous day's header, and it looks completely routine while
+  you are making it.** Today's run was **one edit away from repeating it** and the defence that
+  worked was **anchoring on `## Entries` PLUS the existing top header and putting both back
+  verbatim**, rather than replacing a block that happens to start there. **STANDING CHECK, CHEAP
+  AND MANDATORY: after writing the journal, list the `###` headers and confirm one per trading day
+  since the last archive rollover.** One command. It is the only thing that would have caught this.
+
+- **⚠ THE UNDEREXPOSURE ARITHMETIC HAS NOW BEEN DEMONSTRATED IN BOTH SIGNS, ONE SESSION APART, AND
+  THE PREDICTION WAS MADE BEFORE THE FACT.** 09-16: the book fell **0.308%** against VOO's
+  **0.442%** — 13bp of apparent **OUT**performance, written up as **69.59% exposure × the index
+  move and nothing else**, with the explicit prediction that it "reverses with the same mechanical
+  reliability on the first green day." **09-17 IS THAT GREEN DAY AND IT REVERSED.** VOO **+1.1187%**
+  (693.215 → 700.97), book **+0.779%**, i.e. **34bp of UNDERperformance**, and **0.6959 × 1.1187% =
+  0.7785%** reproduces it to a rounding tick. **Same mechanism, opposite sign, one session apart —
+  the cleanest available proof that neither number was ever skill.** **Do not let either answer
+  §1's twelve-month question**, and note the asymmetry in how they feel: the favourable one is
+  harder to discard, which is exactly why it was written down first.
 
 - **⚠ THE FUNNEL RECEIVED ITS BEST-EVER INPUT ON 09-17 AND STILL PRODUCED NOTHING — AND THE REASON IS
   A THIRD DISTINCT SHAPE, NOT A VARIANT OF THE OTHER TWO. THIS IS THE HEADLINE OF 09-17 AND IT
@@ -490,19 +524,21 @@ Anything the next run must not lose. Cleared once acted on.
   so **every reconciliation compares satellite blocks to satellite Alpaca positions**; a run comparing
   raw ledger to raw broker will read a correct ledger as broken.
 
-- **⚠ COLLAPSE, DO NOT APPEND — ACTED ON THIRTY TIMES NOW, AND DUE AGAIN NEXT RUN.**
+- **⚠ COLLAPSE, DO NOT APPEND — ACTED ON THIRTY-ONE TIMES NOW, AND DUE AGAIN NEXT RUN.**
   `positions.md` ran to **604 lines / 42KB** before the 09-07 collapse and has since been held to a
-  **single current reconciliation block** — this run **replaced** the 09-17 09:35 market-open block
-  rather than adding a third 09-17 one beside it, and the superseded `prior_run` line (09-17
-  pre-market) was dropped from the fenced block rather than left to accumulate as a third slot.
-  **Today is the strongest case the rule has faced yet: THREE runs, ONE date**, and the file still
-  carries exactly one 09-17 block. **Two blocks for one date is the easiest version of the mistake to
-  make, and by the third run of a day the pull is at its strongest.** **Every load-bearing fact is preserved;
-  nothing live was discarded.** **The pull to append is structural** — a run is rewarded for showing
-  it checked something, and a deleted note looks like a check that never happened. **A future run will
-  feel it too, and two blocks for one date is the easiest version of the mistake to make.**
-  **`journal.md` is the deliberate exception: it is append-only by design, one entry per trading day,
-  and is now ~75KB — it rolls over monthly with the other logs, never by collapsing.**
+  **single current reconciliation block** — this run **replaced** the 09-17 12:35 midday block
+  rather than adding a fourth 09-17 one beside it, and the superseded `prior_run` line (09-17
+  open run) was dropped from the fenced block rather than left to accumulate as a third slot.
+  **Today is the strongest case the rule has faced yet: FOUR runs, ONE date**, and the file still
+  carries exactly one 09-17 block. **Every load-bearing fact is preserved; nothing live was
+  discarded.** **The pull to append is structural** — a run is rewarded for showing it checked
+  something, and a deleted note looks like a check that never happened.
+  **⚠ AND NOW THE COUNTERWEIGHT, WHICH 09-17 SUPPLIED THE HARD WAY: `journal.md` IS THE DELIBERATE
+  EXCEPTION AND A CLOSE RUN ALREADY VIOLATED IT ONCE.** It is **append-only by design, one entry per
+  trading day, now ~88KB**, and it rolls over monthly with the other logs, **never by collapsing.**
+  The 09-16 close run deleted a prior day's header there (see the headline note above). **Collapse
+  discipline belongs to `positions.md` and to the fenced block. It must never be carried into
+  `journal.md`, and a close run that finds itself tidying that file is making the 09-16 mistake.**
 
 - **MONTHLY ARCHIVE ROLLOVER: NOT DUE.** Every entry in `research_log.md`, `trade_log.md` and
   `journal.md` is dated **2026-09**; nothing predates the current month. **Next rollover is the first
@@ -550,10 +586,13 @@ Anything the next run must not lose. Cleared once acted on.
   had nothing to manage.** **Orders placed since inception: ONE** — the 09-03 core VOO buy; **the
   09-17 open run added none, so the number is unchanged and `trade_log.md` was correctly left
   unappended: a run with no fill writes no trade entry.** **Satellite orders placed since inception:
-  ZERO.** **Market-open runs that placed nothing: every one since 09-03.** **Daily journal entries written: one per trading
-  day, 09-16's included; 09-17's is due at tonight's close run.**
+  ZERO.** **Market-open runs that placed nothing: every one since 09-03.** **Daily journal entries written:
+  THIRTEEN, one per September trading day through 09-17 inclusive — AUDITED THIS RUN by listing the
+  `###` headers, which is how the missing 09-15 header was found. Do not take the count on trust
+  again; re-run the listing.** **Close runs completed: one per trading day; 09-17's is this one.**
 
-- **ClickUp tasks, for reference:** **09-16 daily summary `86bc1y9mr`**; 09-15 daily summary
+- **ClickUp tasks, for reference:** **09-17 daily summary `86bc2nff1`** (carries the journal-header
+  finding under "Needs a human"); 09-16 daily summary `86bc1y9mr`; 09-15 daily summary
   `86bc17nc4`; 09-14 daily summary
   `86bc0hw64`; **09-11 weekly review `86bbzgbg3`**; 09-11 daily summary `86bbzfm12`; 09-10
   `86bbyr8vp`; 09-09 `86bbxtn1a`; 09-08 `86bbwuc17`; 09-04 daily summary `86bbv6npm` and weekly review
