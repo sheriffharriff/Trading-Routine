@@ -56,6 +56,604 @@ If the same failure appears three weeks running, say so plainly and name it.>
 
 ## Reviews
 
+### Week ending 2026-09-18
+
+*Posted to ClickUp as task `86bc3bzz6` — https://app.clickup.com/t/86bc3bzz6 — separate from the
+daily summaries.*
+
+**Breaker: INACTIVE.** No halt, `halt_triggered_at: none`, `consecutive_closed_losses: 0`, weekly cap
+**0 of 3** used. Nothing was gated this week; nothing was blocked from trading.
+
+**Third weekly review in this repo's history.** The book has now operated **13 sessions**
+(2026-09-01 → 2026-09-18), **5 of them this week**. Theses written since inception: **46**. Theses
+accepted: **0**. **The satellite sleeve has never held a position and has never placed an order.**
+The account's entire order history remains one row: the 09-03 core VOO buy.
+
+---
+
+#### The §1 answer, first — and the sign on the short windows is the opposite of the answer
+
+**No. The satellite sleeve is not beating what the same capital would have done in VOO, and on the
+window §1 actually specifies it is not close.**
+
+§1 sets a **rolling 12-month** test. Over the trailing 12 months VOO's total return is **+16.55%**.
+The satellite sleeve returned **0.00%**, because it has been $30,000 in cash for every session of its
+existence. A sleeve at 0% against a benchmark at +16.55% has an excess of **−16.55pp**. The account
+is 13 sessions old and cannot fill a 12-month window with its own history — but **the benchmark leg
+of the §1 test does not require the account to be old enough**, and it is the leg that answers the
+question.
+
+**The short windows say "ahead," and they say it for the third week running, and they are still not
+an answer.** This week the sleeve is **+0.095pp** ahead of VOO; since inception **+0.430pp** ahead.
+Both are real arithmetic. Both are **0% exposure to a market that fell**, which is a number the
+sleeve produces automatically on every red week and gives back on every green one. The two previous
+reviews each named this framing and each predicted it would recur. **It recurred, in this exact row,
+for the third time.** It is recorded here as a property of the measurement, not as performance.
+
+**The structural cost, stated as a number:** a satellite sleeve parked in cash at the §2 target
+weight gives up **0.30 × 16.55% ≈ 4.97pp of account return** over a rolling 12-month window against
+a benchmark that returns what VOO has returned. That is the honest size of the thing this review has
+now reported three weeks in a row.
+
+---
+
+#### The three numbers
+
+**Both legs of every comparison below come from official closes (`bars --adjustment all`).** Never a
+`positions` field, never `equity − last_equity` — see Recurring Errors §2, which this week stopped
+being a theoretical concern and produced a reported number that was wrong by $106.
+
+Official-close equity today: **$99,515.65** (99.046311231 × 701.85 + $30,000 cash). The broker
+reports **$99,644.41**. The $128.76 difference is the two-price artifact, not a discrepancy to
+investigate.
+
+##### 1. Core return — tracking, not skill
+
+| | Value |
+|---|---|
+| Fill (2026-09-03) | **706.74** |
+| VOO close 2026-09-18 | **701.85** |
+| **Core return from the fill** | **−0.692%** |
+| **Core divergence from VOO over the same window** | **0.0000%** |
+
+The core sleeve **is** VOO, so measured from its own fill it tracks the benchmark exactly. The
+**−0.48% entry gap** — the 09-03 order filled +0.4834% above the 09-02 close of 703.34, on a day VOO
+gapped up — is a permanent level offset that appears whenever the core is anchored to a close rather
+than to its fill. **It is not tracking error and it is not skill.** Third review in which this is
+restated, and it remains the only reason the core ever looks different from the index.
+
+Core weight on official closes: **69.85%** (broker basis 69.89%). Inside the §2 65–75% band; no
+rebalance due, and §2 acts at the band edge in any case.
+
+##### 2. Satellite return
+
+| | Value |
+|---|---|
+| Realized P&L on everything closed | **$0.00** — nothing has ever closed |
+| Unrealized P&L on everything open | **$0.00** — nothing is open |
+| Capital allocated to the sleeve | **$30,000** (30.15% of equity on closes) |
+| **Satellite return** | **0.0000%** |
+
+Zero positions for the **twentieth consecutive session**. Every dollar of the sleeve has been idle
+for its whole life: **13 sessions since inception, 11 since the core fill funded the 70/30 split.**
+
+##### 3. Satellite versus the same capital in VOO — the number that answers §1
+
+The dollar-weighting is trivial this week and the reason it is trivial is the finding: **there are
+no positions to weight.** Per the routine, idle satellite cash enters the measurement at **0%
+return** with **weight 1.00**, because choosing not to deploy is a decision the strategy made and its
+cost belongs inside the number. With no position rows, the dollar-weighted excess collapses to
+exactly **minus VOO's total return over the window**.
+
+| Window | Elapsed | Satellite | VOO (total return) | **Dollar-weighted excess** |
+|---|---|---|---|---|
+| Week | 5 sessions | 0.00% | **−0.095%** | **+0.095pp** |
+| Since inception | 13 sessions | 0.00% | **−0.430%** | **+0.430pp** |
+| 1 month | account has 13 sessions — **VOO leg only** | 0.00% | **−0.509%** | **+0.509pp** |
+| 3 months | account has 13 sessions — **VOO leg only** | 0.00% | **+2.291%** | **−2.291pp** |
+| **12 months (rolling)** | account has 13 sessions — **VOO leg only** | 0.00% | **+16.552%** | **−16.552pp** |
+
+**Nothing above is annualized.** The account is thirteen sessions old; the 1M, 3M and 12M rows carry
+the benchmark leg over its true window against a sleeve that was flat for all of it, and the elapsed
+period is stated rather than scaled.
+
+**Read the sign changes down that column.** The same undeployed sleeve reads **+0.51pp** over one
+month and **−16.55pp** over twelve, and the only thing that changed is which window was chosen.
+**The window §1 names is the 12-month one.**
+
+##### The account as a whole, for completeness
+
+| | Week | 1M | 3M | 12M (rolling) | Since inception |
+|---|---|---|---|---|---|
+| Account | **−0.067%** | n/a (13 sessions) | n/a | n/a | **−0.484%** |
+| VOO (total return) | **−0.095%** | −0.509% | +2.291% | **+16.552%** | **−0.430%** |
+| Excess | **+0.029pp** | — | — | — | **−0.055pp** |
+
+**The week's +0.029pp is 30% cash in a down week and nothing else** — 0.6985 × (−0.095%) = −0.066%,
+which is the account's return to the basis point. **Since inception the account is −0.055pp behind
+the index despite holding 30% cash through a period in which the index fell**, and that residual is
+the 09-03 entry gap working through the core weight. Neither number is skill in either direction.
+
+**Sleeves (official closes):** core **69.85%** | satellite **0.0%** (count 0) | cash **30.15%**
+**Breaker:** INACTIVE
+
+---
+
+#### Trades closed this week
+
+**None.** The table is empty for the **third consecutive week**, and nothing has ever been closed in
+this account.
+
+| Ticker | Thesis | Held | Exit rule | P&L | Excess vs VOO |
+|---|---|---|---|---|---|
+| — | — | — | — | — | — |
+
+**Which exit rules are firing: none — and the distinction this review is asked to draw cannot be
+drawn.** The routine asks whether every exit is the −7% hard stop (a system discovering its theses
+are wrong at a fixed price), whether time stops dominate (timing windows written too optimistically),
+or whether invalidations fire (the rule working as designed). **All three questions require exits to
+have happened.**
+
+§5.1 has no thesis to invalidate, §5.2 no `timing_window` to expire, §5.3 no `entry_price` to measure
+−7% against, §5.4 no `highest_close` to measure −10% against. **`sell_rule_status` is absent, not
+blank.** All four remain **untested code paths after 20 sessions**, and §5.4 has never been armed —
+it arms on the first *satellite* fill, which the 09-03 core buy was not.
+
+**Twenty sessions of "no exits" is the absence of a subject, not a clean bill of health**, and a
+future review must not read the string of empty tables as evidence the sell rules work.
+
+---
+
+#### Thesis scoreboard — including rejects
+
+**This week: 16 theses written, 0 accepted, 16 rejected.** Acceptance rate **0%**.
+**Since inception: 46 theses, 0 accepted, 46 rejected.** Acceptance rate **0%**, third week running.
+
+Of accepted theses now closed: **n/a — there are none.** How many reached their timing window with
+the predicted business change, how many were invalidated, how many stopped out: **zero, zero, zero,
+and the denominator is zero.** This section cannot begin to do its job until the sleeve fires once.
+
+##### Where the 16 died
+
+Counted by **primary** failure point — the test the log records the thesis dying at first. Several
+died independently at two or three.
+
+| Failure point | n | Names |
+|---|---|---|
+| **Part 1 — no Company B, or the mechanism needs a second clause** | **9** | BWXT, packaged food, CRWV, Lennar, and 5 unnamed |
+| Part 2 — magnitude / segment share unquantifiable | 4 | CART, AVGO, GFS/MRVL, BLK |
+| Part 3 — timing beyond two quarters | 3 | LEU, and 2 unnamed |
+
+**Part 1 is still the dominant failure point — 9 of 16 — and the constraint behind it is unchanged
+from the first two weeks:** the source names the transaction and no US-listed Company B appears
+anywhere in it. **Standing rule (v) alone accounted for three of the nine and the log calls the
+09-16 one its "seventh instance this month."**
+
+**What is new is a second, distinct constraint sitting one test further down.** Four times this
+week — Kroger↔Instacart (09-14), and on Friday GF↔Marvell, Centrus↔Antares and TotalEnergies↔GIP —
+**both parties were named in the source and the number was withheld.** *"Financial terms were not
+disclosed."* Part 1 passes; part 2 cannot be written without inventing the magnitude.
+
+**That is the week's structural finding, and it is a correction to an implication of the first two
+reviews rather than a reversal of them.** Anonymity is still the larger constraint. But those reviews
+treated the unnamed counterparty as *the* binding constraint, which carries the suggestion that
+naming one gets you a thesis. **It does not** — four times this week the source named both parties
+and the thesis died anyway.
+
+##### Rejected theses — what happened to them since
+
+Measured from the close each rejection was made against, to the 09-18 close, against VOO total return
+over the **identical** window. **Both legs from `alpaca.py move`**, whose VOO output was verified
+this run to match `bars --adjustment all` to the cent at all eleven session counts. No mixed-source
+comparison anywhere below.
+
+| Ticker | Rejected | Sess | Name | VOO | **Excess** | Rejection reason |
+|---|---|---|---|---|---|---|
+| **HPE** | 09-02 | 11 | **+17.43%** | −0.21% | **+17.64%** | part 1 — read-across |
+| **LITE** | 09-03 | 10 | **+10.00%** | −1.25% | **+11.25%** | **priced-in veto (−7.35% drawdown)** |
+| **MU** | 09-01 | 12 | **+8.81%** | +0.24% | **+8.57%** | **priced-in veto (+5.27% run-up)** |
+| CRDO | 09-09 | 7 | +4.83% | +0.15% | **+4.68%** | parts 1/2 |
+| COHR | 09-09 | 7 | +4.51% | +0.15% | **+4.36%** | parts 1/2 |
+| AVGO | 09-16 | 2 | +5.40% | +1.25% | +4.15% | part 2 |
+| GFS | 09-10 | 6 | +4.06% | +0.74% | **+3.32%** | priced-in +4.53% / p3 / headline |
+| CLF | 09-04 | 9 | −0.04% | −0.85% | +0.81% | thesis + §3 |
+| QCOM | 09-09 | 7 | +0.91% | +0.15% | +0.76% | §4 headline name |
+| LHX | 09-11 | 5 | +0.64% | −0.10% | +0.74% | priced-in (−4.47% drawdown) |
+| M | 09-11 | 5 | +0.18% | −0.10% | +0.28% | part 1 — shared cause |
+| YPF | 09-09 | 7 | +0.37% | +0.15% | +0.22% | §3 |
+| MDT | 09-08 | 8 | −0.29% | −0.33% | +0.04% | part 2 |
+| LMT | 09-10 | 6 | +0.67% | +0.74% | −0.07% | headline name / p3 |
+| CRWV | 09-15 | 3 | +0.40% | +0.80% | −0.40% | part 1 — "and also" clause *(priced-in also failed, on a −7.12% **drawdown**)* |
+| PBR | 09-09 | 7 | −0.60% | +0.15% | −0.75% | §3 |
+| TBBK | 09-10 | 6 | −0.13% | +0.74% | −0.87% | §3 |
+| BWXT | 09-14 | 4 | −0.74% | +0.36% | −1.10% | part 1 — rule (v), no named supplier |
+| NOC | 09-01 | 12 | −1.03% | +0.24% | −1.27% | part 2 — ~1% of revenue |
+| GDOT | 09-10 | 6 | −0.60% | +0.74% | −1.34% | §3 |
+| CAT | 09-08 | 8 | −1.71% | −0.33% | −1.38% | parts 2/3 |
+| EC | 09-09 | 7 | −1.43% | +0.15% | −1.58% | §3 |
+| WDC | 09-01 | 12 | −1.95% | +0.24% | −2.19% | part 1 — post-spin |
+| ABT | 09-08 | 8 | −2.85% | −0.33% | −2.52% | part 2 |
+| AVGO | 09-08 | 8 | −2.96% | −0.33% | −2.63% | part 1 |
+| AEP | 09-01 | 12 | −2.46% | +0.24% | −2.70% | parts 2+3 |
+| VIST | 09-09 | 7 | −3.18% | +0.15% | −3.33% | §3 |
+| CASH | 09-10 | 6 | −3.55% | +0.74% | −4.29% | §3 |
+| LHX | 09-02 | 11 | −4.93% | −0.21% | −4.72% | part 2 |
+| SLI | 09-11 | 5 | −4.92% | −0.10% | −4.82% | §3 |
+| CCB | 09-10 | 6 | −4.28% | +0.74% | −5.02% | §3 |
+| RTX | 09-01 | 12 | −5.43% | +0.24% | −5.67% | part 1 — own inference |
+| LITE | 09-09 | 7 | −5.71% | +0.15% | −5.86% | parts 1/2 *(second rejection)* |
+| LHX | 09-01 | 12 | −5.75% | +0.24% | −5.99% | part 3 |
+| FN | 09-09 | 7 | −7.16% | +0.15% | −7.31% | parts 1/2 |
+| **CART** | 09-14 | 4 | −8.36% | +0.36% | **−8.72%** | part 2 — no dollar figure |
+| EQT | 09-10 | 6 | −9.04% | +0.74% | −9.78% | part 2 — 0.14% of volume |
+| MTZ | 09-09 | 7 | −10.89% | +0.15% | −11.04% | parts 1/2/3 |
+| GLW | 09-09 | 7 | −10.90% | +0.15% | −11.05% | priced-in +11.63% / p3 |
+| **LEU** | 09-10 | 6 | −12.42% | +0.74% | **−13.16%** | §3 / priced-in / p2 |
+
+**13 of 40 beat VOO; 27 lagged. Mean excess −1.57%, median −1.34%.**
+
+Today's four rejects (GFS/MRVL, LEU, BLK, and one unnamed) have **zero elapsed sessions** and are not
+on the board. **AVGO's 2-session row and CRWV's 3-session row are not measurements either** — they
+are logged so a future review re-measures them rather than quoting them.
+
+**The board moved in two directions at once this week, and the two must not be merged.** Last week:
+9 of 33 beat VOO, mean **−0.51%**. This week: 13 of 40 beat, mean **−1.57%**. **More names ran
+without us and the average reject did worse** — the distribution widened at both ends as windows
+lengthened. Neither the count nor the mean is the headline; the widening is.
+
+By cohort, as windows lengthen:
+
+| Cohort | n | Beat VOO | Mean excess |
+|---|---|---|---|
+| Week 1 rejects (9–12 sessions) | 10 | 4 | **+1.57%** |
+| Week 2 rejects (5–8 sessions) | 26 | 8 | **−2.78%** |
+| Week 3 rejects (2–4 sessions) | 4 | 1 | −1.52% |
+
+##### Rejects that went on to work — right for the right reason, right for the wrong reason
+
+**The top three excesses on the board are unchanged from last week and are still the same two
+findings, which must stay separate:**
+
+- **HPE (+17.64%) — rejected correctly by the rule, unprofitably in hindsight.** T-2026-09-02-02 was
+  a Dell→HPE *read-across*: Dell's print implies HPE's will be good. §4 requires news about Company A
+  to change Company B's **economics**; a read-across is an inference about **information**. It died
+  at part 1 and it should have. HPE's own earnings then landed and the stock ran. **The thesis's
+  underlying prediction came true for a reason the thesis correctly identified as not a §4
+  mechanism.** The read-across screen is right and it has now cost ~18pp on one name. **Both
+  statements survive; neither is grounds to loosen it.** Note it has given back 2.2pp since last
+  week — the bill is real but it is also still moving.
+- **LITE (+11.25%) and MU (+8.57%) — the priced-in filter vetoing its own winners, third week
+  running.** These two remain the **first- and third-largest positive excesses on a 40-name board**,
+  and they are **the only two candidates in the repo's history that passed the four-part thesis and
+  were then killed by the priced-in filter.** They are still not the same finding: **MU** failed on
+  a genuine **+5.27% five-session run-up** — the rule doing exactly what it was written to do,
+  costing money, nothing to change. **LITE** failed on a **−7.35% drawdown** read as
+  `priced_in: true`, because `move` tests absolute magnitude. **A decline is close to the opposite of
+  "the market has already paid for this news."** That is the rule doing something nobody designed,
+  it is open human item (1), and it is now three weeks old with the largest single excess attached.
+- **The drawdown defect fired again this week, and this time it is in the current cohort: CRWV,
+  09-15, `priced_in: true` on a −7.12% five-session *fall* (89.335 → 82.97).** It cost nothing —
+  the thesis died independently at part 1 on an "and also" clause, and CRWV is −0.40% against VOO
+  since. **But the filter's verdict was reached on a decline for at least the sixth time**
+  (LITE −7.35%, LMT −3.61%, LHX −4.47%, CRWV −7.12% among them), and the only reason this instance
+  is free is that another test happened to catch the name first.
+
+##### Rejects that went nowhere — the filters did their job, and say so
+
+**27 of 40 lagged the index, mean excess on the losers deeply negative.** The four-part test keeps
+selecting correctly in aggregate: **LEU (−13.16%)**, GLW (−11.05%), MTZ (−11.04%), EQT (−9.78%) and
+CART (−8.72%) are the five worst names on the board and every one of them died on parts 1–3 or §3.
+
+**Two are worth naming specifically:**
+
+- **LEU was rejected twice, six sessions apart, and was right both times.** Rejected 09-10 on
+  §3/priced-in/part 2 and now **−13.16%** against VOO; re-rejected **today** on part 3 (HALEU
+  deliveries *"before the end of the decade"*, far outside §4's two-quarter ceiling). A recurring
+  ticker is a warning, not corroboration — standing rule (iv) — and here the warning was correct.
+- **CART is the week's most instructive *correct* rejection**, because it is the one that nearly got
+  through. Kroger named Instacart on its FQ2 call — the first time in eleven sessions a source named
+  the counterparty — and the 09-14 journal records the pull to treat that as most of the work and
+  **size the "incremental prescription basket" anyway**. No dollar figure existed in the release, the
+  8-K, the IR summary or the call coverage. A fabricated number would have carried the thesis past
+  §4.2's 10%-of-revenue test into a trade. **CART is −8.72% against VOO since.** The invented number
+  would have bought a loss.
+
+##### Is the rejection rate ever wrong?
+
+**Yes — thirteen times out of forty, and three of them expensively.** The routine's warning is that a
+rejection rate which is never wrong means the filters are too loose. **That failure mode is not
+present**: names run without us regularly, three ran a long way, and the board has now reversed on
+itself once (week 1's cohort) and widened once (this week).
+
+**This is still a tally, not a result, and no future review may quote it as one.** Forty
+measurements over two to twelve sessions is not a sample. It is recorded because the human has a live
+question about the priced-in filter and this tally is the only evidence that will ever exist for it.
+
+**Priced-in filter, cumulative:** it has now been run on far more candidates that were later rejected
+on other grounds than it has been decisive on. **It has still never once been informative in the
+direction people expect.** A passing priced-in check is a veto that did not fire, never
+encouragement — "has not moved" and "should have moved but didn't" produce the same number.
+
+---
+
+#### Recurring errors
+
+##### 1. The reassuring framing — **THIRD WEEK RUNNING. NAMED, AND THE DEFENCE HAS NOW FAILED TWICE.**
+
+Named in week 1, named again in week 2 with a prediction that it would recur. **It recurred on every
+session of this week and in this review's own headline row.**
+
+| | The sentence that arrived first | How it was killed |
+|---|---|---|
+| 09-15 | broker −0.240% vs VOO official −0.438% → "beat the index by 0.198pp" | mixed-source; official legs give −0.305% = 0.697 × 0.438% |
+| 09-16 | "book −0.308% vs VOO −0.442%", **both legs official** | underexposure, not skill — arithmetic defence does not catch this one |
+| 09-17 | green day, book +$768 → "the cash drag note reads better today" | the cash cost is *most* visible on a green day, not least |
+| 09-18 | "book −0.067% vs VOO −0.095% on the week" | 2.9bp = 30% cash in a down week, by construction |
+| **This review** | **"satellite +0.43pp since inception"** | **0% exposure to a −0.43% period, weight 1.00** |
+
+**What is new in week 3 is that the arithmetic defence is now known to be insufficient, and it failed
+in a second way.** Week 2's version was a **mixed-source** artifact, killable by taking both legs
+from official closes. **09-16 produced the same flattering sentence with both legs already official**
+— a correct number answering a question nobody asked. And **09-17 found a third route entirely**: no
+comparison at all, just a positive dollar figure making a structural criticism easier to live with.
+
+**Three weeks, three distinct mechanisms, one output.** The defence cannot be arithmetic and cannot be
+vigilance; the only thing that has actually worked is a standing rule that the 12-month row is the
+one §1 asks about, and that every favourable short-window number gets refuted in writing. **Expect
+this row to be positive on every red week from here, and expect to refute it every time.**
+
+##### 2. Broker marks versus official closes — **THIRD WEEK RUNNING, AND THIS WEEK IT ESCALATED FROM COSMETIC TO LOAD-BEARING. THE PREVIOUS TWO REVIEWS UNDER-RATED IT.**
+
+Week 1 logged an unexplained gap. Week 2 solved the mechanism — the broker's `current_price` is a
+**live bid/ask midpoint that keeps moving after the bell**, not a close, which is why the gap never
+had a stable size — and filed the exposure as *"cosmetic on core, load-bearing the moment a satellite
+position exists."*
+
+**That framing was wrong, and 09-18 proved it.** The 09-18 close run **very nearly reported the day's
+P&L as +$193.14 / +0.194%. The true close-to-close figure is +$87.16 / +0.0877%** — the broker's
+number was **more than double the real move**, and it would have led the ClickUp summary.
+
+The mechanism, because it is worse than a stale field:
+
+- `last_equity` = **99,434.4356** = exactly **99.046311231 × 701.03 + 30,000** — the **stale
+  midpoint** `lastday_price` carried for all four calls that day, **not** 09-17's official close of
+  **700.97**.
+- `unrealized_intraday_pl` = **+193.14** = 99.046311231 × (702.98 − 701.03) — built off the **same**
+  wrong baseline.
+- **Both legs are wrong, in the same direction, and they reconcile perfectly against each other.**
+  No consistency check internal to the broker's own fields can ever detect this. **Only an external
+  close can.**
+
+**It was load-bearing with no satellite position involved at all**, in the one number a run reports
+first. And the honest note from the close run on *why* it was caught: **not vigilance** — the repo
+already forces closes through `bars --adjustment all`, so 701.85 and 700.97 were already on screen
+demanding reconciliation. **Absent that standing rule the broker's number would have been quoted
+without a second thought, because it is labelled with exactly the words you are looking for.**
+
+**Standing rule, new this week and now in force: never `equity − last_equity` as a day's P&L, never
+`unrealized_intraday_pl`. Close-to-close from `bars --adjustment all`, always.** `current_price`
+702.98 against a 701.85 close is also **$1.13 — the widest gap recorded** — which is exactly how much
+a `highest_close` would have been overstated by, and how far a §5.4 stop would have silently moved,
+had there been a position. **Open human item (5) must be re-rated: it is not cosmetic.**
+
+##### 3. The unnamed second-order counterparty — **THIRD WEEK RUNNING, AND IT HAS A SECOND HEAD**
+
+Weeks 1 and 2 established the binding constraint on §4: **companies announce the transaction and
+withhold the counterparty**, eight-plus instances, so part 1 has no Company B to name and the honest
+output is no trade. Filling in a blank the source left blank is not research — standing rule (v).
+
+**This week the constraint acquired a second, distinct form one test further down.** Four times —
+Kroger↔Instacart (09-14), GF↔Marvell, Centrus↔Antares and TotalEnergies↔GIP (all three on 09-18) —
+**both parties were named in the source and the number was withheld.** *"Financial terms were not
+disclosed."* Part 1 passes; **part 2 cannot be written without inventing the magnitude, the segment
+share, or both.**
+
+**Anonymity is still the larger of the two** — 9 of this week's 16 theses died at part 1, against 4
+at part 2. The correction this week forces is to an *implication* of the previous reviews rather
+than to their count: naming the constraint "the unnamed counterparty" suggests that a named one gets
+you a thesis. **Four times this week the source named both parties and the thesis died anyway.**
+
+**BLK (09-18) is the cleanest specimen the log has produced.** Part 1 passed in a single clause with
+no second clause needed — the thing §4 is hardest to satisfy on — and the release even carried a
+number: **$1.8B**. It died at part 2 anyway, because **the $1.8B is capital going in, not revenue
+coming out**, and converting one to the other required inventing a fee rate. The close journal
+records this as the only reject of the day with real pull, **and part 1 passing cleanly is precisely
+what the honest-broker rule warns is always available.**
+
+**Stated as a strategy-level fact, not a complaint: §4 asks for two things public disclosure supplies
+rarely — a named beneficiary and a quantified segment — and this week established that supplying the
+first does not get you the second.** That is a better answer to "46 theses, zero positions" than "the
+bar is too high," and it points at something a human could actually change. **The agent has not
+adjusted §4 and will not.**
+
+##### 4. The satellite sleeve has never been deployed — **THIRD WEEK RUNNING. NAMED.**
+
+**13 sessions. 46 theses. 0 positions. 0 satellite orders. 0 exits. Nothing was gated at any point:**
+breaker INACTIVE, weekly cap 0 of 3 every week, sleeve empty, `TRADING_ENABLED: true` since 09-03.
+**§2 explicitly permits uninvested satellite cash and §4 says the correct output of most research
+runs is no trade. Both rules were followed and no rule was breached in any of the three weeks.**
+
+What the cumulative result *is*, stated without euphemism: **a 70% index tracker with a 30% cash
+drag, plus a research process that has produced 226KB of rejected theses and no trade.** The
+measurement section puts the number on it — **~4.97pp of account return given up per rolling 12
+months** at VOO's current 12-month return.
+
+**This is raised for the third time and it is not a call to lower the §4 bar.** The daily journals
+record the agent noticing the pull toward lowering it on 09-09, 09-10, 09-11 and again on 09-17, and
+refusing each time. **A weekly file is where a structural question belongs, and three weeks is the
+point at which it stops being an observation and becomes the thing the human most needs to decide.**
+
+##### 5. **NEW — an append-only file silently lost a day, and nothing in the system could detect it**
+
+Not a trading error, and it belongs here because of its *shape*.
+
+Commit **`5fe9e4c`** (the 09-16 close run) inserted its journal entry at the top of `journal.md` and,
+in the same commit, **deleted the line `### 2026-09-15 (Tuesday)` — its only deletion.** The 09-15
+body survived intact but was left headerless, glued to the end of 09-16's "For the next run" list.
+**A full trading day's judgment became invisible to any scan of the file's headers and read as part
+of the following day.** The 09-17 run caught it only by listing headers to find the template and
+noticing 09-15 missing. **Nothing flagged it. Nothing could** — `commit.py` guards `strategy.md` and
+`control.md`, not the *shape* of an append-only file. The header was restored, not rewritten.
+
+**This is the same failure shape the high-water discipline exists to prevent** — a field that is
+missing while every surface still reads present and plausible — arriving in the one file nobody
+thought to check it in. Byte count fine, month fine, no visible gap reading linearly.
+
+**And the 09-17 run was one edit away from repeating it**: appends go at the top of `## Entries`,
+immediately above the previous day's header, which is the exact position in the exact file where the
+deletion happened. **The top-of-file insert is the dangerous edit in this repo and it looks
+completely routine while you are making it.** Treat as structural, not a one-off: anchor the edit on
+`## Entries` plus the existing header, put both back verbatim, never replace a block that happens to
+start there.
+
+##### 6. **The temptation series — four consecutive Step 2 refusals, seven consecutive GNRC refusals, and the pattern is the finding**
+
+Two standing pulls recurred every single session this week and were refused every time. Neither is an
+error. **The finding is the rate at which new justifications arrive.**
+
+- **Step 2 of the close routine is written in the imperative and its subject does not exist.** There
+  are no satellite positions, so there are no `highest_close` marks to stamp — but there is exactly
+  one close available, core VOO's. Writing it would **fabricate a §5.4 trailing stop on the one
+  position §5 exempts from all four sell rules.** Refused **09-15, 09-16, 09-17, 09-18**. On three
+  of those four the number was **already in the terminal output**, pulled to price the book — what
+  the journals call "the pull arriving with an accomplice." The 09-16 entry predicted this would
+  happen again and the 09-17 entry records the prediction landing verbatim. **Every entry says the
+  same thing about how it feels: it would not feel like breaking §5, it would feel like completing
+  Step 2.**
+- **GNRC has not been looked at for seven consecutive runs, under seven distinct rationales, with no
+  repeats**: diligence, curiosity, tidiness, completeness, zero-marginal-cost, self-audit, and — on
+  Friday — **proxy-procurement** (*"the weekly review runs in an hour and will want the number"*).
+  **That last one is the first that does not claim the number for itself, which is what makes it the
+  easiest to say yes to.** It fails on a fact independent of its wording: **this review measures
+  positions held against VOO; GNRC is not held and never was; there is no row to put it in.**
+  Confirmed from this seat — **no GNRC row exists in this review, and none was wanted.** GNRC is the
+  named counterparty in the Amazon announcement, **first-order and outside §4 at any price.**
+
+The close journal's own conclusion is the right one and is promoted here: **"I do not think I am
+getting better at resisting this; I think the supply of plausible framings is simply not running
+out."** Seven refusals under seven rationales is not evidence of a robust agent — **it is evidence
+that the defence has to be structural rather than a matter of catching it each time.**
+
+##### 7. Standing rules — six, still one root cause
+
+(i) Screen on the mechanism before running filters. (ii) Verify what the company currently sells,
+post-spin. (iii) Verify the news is new to the company's own disclosure. (iv) A recurring ticker is a
+warning, not corroboration. (v) A market-structure fact is not a supplier relationship. (vi) A shared
+cause is not a mechanism.
+
+**All six remain the same failure: supplying the causal link yourself, then finding a source merely
+adjacent to it.**
+
+**Rule (vi) — a shared cause is not a mechanism — was the week's workhorse and fired three times on
+three different companies.** The **packaged-food** reject (09-14) is explicitly logged as "the Macy's
+shape arriving four days later in a different costume, **recognised rather than re-derived**"; a
+09-16 reject is logged as rule (vi) discharging **one day after it was written**; and the **Lennar**
+reject (09-18) died because Lennar's weakness and its suppliers' weakness are both downstream of the
+**same mortgage rate** — a macro variable, not a transaction. **A rule written one week and catching
+three names the next is the clearest evidence in this repo that the logs are doing their job.**
+
+**Rule (v) — a market-structure fact is not a supplier relationship — had the wider week**, at three
+instances including one the log calls its seventh this month, in two new costumes at once (an
+awardee that is a **consortium** rather than a company).
+
+**Last week predicted a seventh variant in a new disguise. It did not arrive** — the week's genuinely
+new material was at part 2 (named parties, withheld numbers), not part 1. **The useful response
+remains recognising the shape, not writing a seventh rule.**
+
+##### Nothing that stopped recurring
+
+For completeness, since a review that only lists what recurs is not measuring: **no item named in
+weeks 1 or 2 was resolved this week.** Items 1, 2, 3 and 4 above are all in their third week. Item 2
+got worse. The only thing that closed is week 2's open question about the broker/official
+mechanism — **that was solved in week 2 and stayed solved**; what escalated is its consequence.
+
+---
+
+#### Housekeeping
+
+- **Weekly counter reset: DONE.** `new_positions_this_week` → **0** (was already 0 — nothing was
+  opened this week, or any week), `week_of` → **2026-09-21** (ISO Monday of next week). Monday's runs
+  will re-check, find the anchors match, and correctly do nothing.
+- **Monthly archive rollover: NOT DUE.** Every **entry** in `research_log.md`, `trade_log.md` and
+  `journal.md` is dated **2026-09**; nothing predates the current month, so nothing moves and no
+  archive index line is written. (`research_log.md` contains earlier dates — 2026-02-21, 2026-05-27,
+  2026-07-29 and others — but every one of them is a **date cited inside a thesis body**, not an
+  entry date. Checked by header, not by grep.) `archive/` still holds only its README. **Next
+  rollover is the first Friday review of October 2026 — 2026-10-02.**
+- **⚠ The rollover is now the most urgent piece of maintenance in the repo, and this is the second
+  week it has been flagged.** `research_log.md` is **3,257 lines / 226KB**, up from ~2,200 lines /
+  151KB last Friday — **+75KB in one week on 16 theses.** `journal.md` is **1,477 lines / 102KB**;
+  `state.md` is **849 lines / 88KB**. The five memory files total **477KB**. Every run is instructed
+  to read these in full. **At the current growth rate the October rollover is not tidying — it is the
+  difference between a run that reads its memory and a run that skims it, and skimming the trade log
+  is how a system quietly stops knowing what it holds.** A human may want to move it forward rather
+  than wait for 2026-10-02.
+- **Alert hygiene: `alerts.md` is EMPTY.** Zero open incidents, zero SYSTEMIC, zero resolved. No
+  `push-failure`, no `guard-violation`, no `selftest-abort`, no `circuit-breaker` in the repo's
+  history. **No guard violation has ever occurred, so no routine prompt is steering the agent at a
+  protected file** — the systemic-prompt-bug case this section exists to surface does not apply.
+  `selftest.py` passed all five checks on **every run of this week**, including this one at 16:45 ET.
+- **One incident this week did NOT produce an alert, correctly, and is recorded here instead:** the
+  `journal.md` header deletion in commit `5fe9e4c` (Recurring Errors §5). It is not one of the four
+  alertable categories, it was detected and repaired within one session, and no data was lost. **It
+  is nonetheless the most interesting operational event of the week**, because it is the only known
+  case of this repo's continuity mechanism silently losing a day.
+- **Hand-off to the 2026-09-21 pre-market run** (next session Monday 09:30 ET, confirmed from
+  `clock`):
+  - **General Mills (~Sept 23) is carried for a fourth time.** Screen it or carry it explicitly — an
+    item carried silently is indistinguishable from one forgotten.
+  - **No unscreened event has accumulated 09-14 through 09-18.** Every survey item was worked.
+  - **Expect an eighth GNRC framing.** It is first-order and outside §4 at any price.
+  - **No high-water backfill is due.** The absence of an `(as of ...)` stamp is the absence of a
+    *mark*, not a close run that failed. Step 2 ran on 09-18 and had no operand.
+
+---
+
+#### For the human
+
+Six open items. **None is the agent's to decide, and no run has reinterpreted any rule while
+waiting.** Items 1, 3 and 5 changed this week.
+
+1. **The §4 priced-in filter reads a drawdown as "priced in."** Third week open, and the cost is now
+   the largest single number on the reject board: **LITE, rejected at a −7.35% drawdown, is +11.25%
+   against VOO over ten sessions.** It fired again this week on **CRWV (−7.12%, `priced_in: true` on
+   a fall)**, making **six-plus** instances; that one cost nothing only because part 1 caught the
+   name first. **LITE and MU must not be merged**: MU failed on a
+   genuine run-up (the rule working as designed, costing money, nothing to change); LITE failed on a
+   fall (the rule doing something nobody designed). Fix is a human editing §4 or `alpaca.py move` —
+   **or an explicit decision to leave it, which is a perfectly good answer and would close the
+   item.**
+2. **The same filter reads an event move absorbed before it looks as "passes."** QCOM (+2.70% net
+   after a +8.7% intraday event move) and AVAV (+1.20% after a +12.9% intraday round-trip inside one
+   session). Same root cause as (1), opposite direction. Unchanged.
+3. **The satellite sleeve is structurally undeployed — 46 theses, 0 positions, 13 sessions.** Third
+   week raised. **New this week: §4's binding constraint has a second head.** It is not thesis
+   quality and it is no longer only anonymity — **sources now routinely name both parties and
+   withhold the number**, killing theses at part 2 rather than part 1 (four instances this week). The
+   question for a human is whether the 30% target moves, whether the four-part strictness moves, or
+   whether the acceptable evidence for a **quantified** segment widens. **The cost of leaving it is
+   ~4.97pp of account return per rolling 12 months.**
+4. **The core's divergence from VOO is the 09-03 entry gap, not tracking error.** Measured from the
+   706.74 fill the core tracks VOO to **0.0000%**. The −0.69% that appears from an inception anchor
+   is a permanent level offset. No action; keep measuring it from the fill.
+5. **The broker/official price gap is NOT cosmetic — RE-RATE THIS ITEM.** Two reviews filed it as
+   harmless until a satellite position exists. **On 09-18 it put a wrong number — off by $106, more
+   than 2× the true move — into the day's reported P&L with no satellite position involved.** Both
+   broker legs are anchored on a stale `lastday_price` and reconcile against each other, so nothing
+   internal can catch it. A standing rule is now in force (never `equity − last_equity`, never
+   `unrealized_intraday_pl`). **Whether the tooling should refuse to serve those fields at all is a
+   human's call.**
+6. **`selftest.py` certifies a healthy system without probing the two endpoints every routine depends
+   on to price anything.** It passed all five checks at 12:34 on 09-11 while `clock` returned **500**
+   and `quote`/`bars` returned **504**. The endpoints recovered on their own; **the blind spot did
+   not.** Unchanged.
+
+**And the one-line version of everything above:** the system is following every rule it was given,
+writing down what it rejects with unusual honesty, and **has not bought anything in three weeks.**
+The rules are working. Whether the rules can ever produce a trade is now the question.
+
+---
+
 ### Week ending 2026-09-11
 
 **Breaker: INACTIVE.** No halt, `halt_triggered_at: none`, weekly cap **0 of 3** used. Nothing was
