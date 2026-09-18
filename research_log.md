@@ -52,6 +52,253 @@ single most common way a plausible-sounding connection gets mistaken for an oppo
 
 ## Entries
 
+### 2026-09-18 (08:16 ET) — event survey (funnel, pre-thesis)
+
+Selftest passed all five checks (`trading_enabled: true`, LIVE paper account, equity
+**$99,426.51**). Window screened: **Thursday's session through Friday pre-market (Sept 17–18)** —
+a full business day. Four Perplexity scans (two broad `--recency day`, one earnings/guidance
+screen, one second-order supplier screen, plus one more on the third candidate). **Four candidates
+reached thesis stage; all four rejected. No BUY intent today.**
+
+**⚠ THE HEADLINE OF 09-18: THE WINDOW PRODUCED *THREE* SEPARATE NAMED-BOTH-PARTIES TRANSACTIONS AND
+EVERY ONE OF THEM WITHHELD THE NUMBER. THIS IS THE FIRST DAY THE FUNNEL'S FIRST FAILURE SHAPE
+ARRIVED IN TRIPLICATE.** GlobalFoundries ↔ Marvell (SiGe capacity, Burlington VT), Centrus ↔ Antares
+Nuclear (multi-year HALEU), and TotalEnergies ↔ GIP ($1.8B capital contribution) are all real,
+primary-sourced transactions with both sides named. **Two of the three state "financial terms were
+not disclosed" in so many words**, and the third discloses a capital contribution rather than a
+revenue figure. **Part 2 could not be written for any of them.** Carry-forward item (3) names three
+distinct binding constraints; **today is the first form — the source withholds the counterparty's
+number — and it fired three times in one morning**, which is the same clustering shape 09-17 recorded
+for the MarketBeat guidance-ISSUANCE alerts. **Recognise the cluster; do not re-derive it deal by
+deal.**
+
+**⚠ THE SECOND-ORDER SCREENS CAME BACK EMPTY *BY NAME*, NOT BY JUDGMENT — AND THE TOOL SAID SO
+EXPLICITLY FOR A SECOND CONSECUTIVE SESSION.** On GF/Marvell: *"No other publicly traded U.S. company
+is named in connection with this specific agreement... Any further mapping of industry participants
+to this deal would be speculative."* On Centrus/Piketon: the specialised suppliers of vacuum systems,
+compressors, valves and control systems are *"general industry possibilities and are not tied to
+Centrus's Piketon facility by the cited sources."* **That is the "I know who makes the part" trap
+being flagged by the tool before I could reach for it — fourth instance, after RTX (09-01),
+Abrams/Honeywell (09-16) and Generac (09-17).** **Knowing who plausibly makes the part is still not
+knowing who was paid.**
+
+**⚠ ZERO `alpaca.py move` CALLS THIS RUN, AND THAT IS AN ABSENT CHECK RATHER THAN A SKIPPED ONE.**
+§4 orders the hard filters **before** the thesis, and the priced-in filter's subject is a *second-order
+candidate ticker*. **No candidate reached that stage**: GFS, MRVL, LEU and LEN are all **signatories
+or the reporting company itself**, i.e. first-order, and screening the named party is running a
+filter on the wrong company (standing rule (i)). **A `move` call on any of them would have produced a
+number with nothing to decide.**
+
+**⚠ GNRC REFUSED FOR A FOURTH CONSECUTIVE RUN, AND TODAY'S VERSION OF THE PULL IS THE STRONGEST AND
+THE EMPTIEST.** Today is the first pre-market run whose `bars` history **contains** the 09-16
+after-hours gap (reported as **+29.9% on the session**), so `move --symbol GNRC --sessions 5` would
+now return a large positive number and `priced_in: true`. **That reading would not measure open item
+(7); it would be the filter working correctly one session late** — and the defect, the one-session
+blind window between an after-hours event and the next official close, was **already measured on
+09-17** (186.55 → 175.19, −6.09%, `priced_in: true`, on the morning after the surge). **There is no
+number left to collect.** Zero `move`/`quote`/`bars`/`asset` calls on GNRC. **The carry-forward
+predicted the next instance would arrive wearing diligence; it arrived wearing completeness, which is
+a better costume, and it is still the same reflex.**
+
+**Dropped before thesis stage, each with a named reason.** **Fluence Energy's FY26 cut** resurfaced
+with the old/new figures ($3.0B → ~$2.4B revenue midpoint; −$10M → −$200M adj. EBITDA) — **this is
+the same cut processed yesterday as T-2026-09-17-02**, re-covered, standing rule (iii). **ADM** raised
+2026 adj. EPS from $4.15–4.70 to $5.15–5.60 — a genuine change, **first-order on its own results, no
+counterparty named**. **UnitedHealth** raised 2026 adj. EPS to $19.50–20.00 with **no prior figure
+stated** and no counterparty. **Philip Morris** — the **currency-only** raise, already disposed
+09-17. **Labcorp ($18.10–18.55 EPS, $14.7–14.8B revenue), Nucor (Q3 $5.55–5.65) and Steel Dynamics
+(Q3 $5.34–5.38)** all arrived as **MarketBeat/PR guidance-ISSUANCE items compared to *consensus*, not
+to a prior company figure** — **the General Mills trap for the fourth, fifth and sixth time this
+week**, rule (iii). *(Nucor's coverage also carried two irreconcilable ranges, $5.55–5.65 and
+$3.30–3.60, in the same scan — a reminder that a secondary aggregator can be internally inconsistent
+inside one morning.)* **Lockheed Martin ↔ Pentagon AIM-260 JATM production framework (Sept 17)** —
+**the awarded party, no dollar figure at all, no supplier named**: rule (i) plus the rule (v) ceiling
+shape with the ceiling left blank. **Vicor** — announced a licensing deal with an **unnamed OEM** and
+its own New Hampshire fab expansion; **no counterparty exists to screen**, and it is Company A on its
+own announcement. **Southwest Airlines** *reiterated* Q3 EPS — rule (iii). **Myriad Genetics** cut FY26
+revenue guidance with **no figures in any retrieved source**. **Emera** is Canadian-listed (§3).
+**Aeluma** explicitly declines to guide. **Aethlon Medical / North Immunology** and an **SEC tokenized-
+stock "innovation exemption"** both surfaced with the source itself calling the evidence too thin to
+characterise. **First Breach ↔ SAS Ammo** (three-year ammunition supply, both named) and **Oribiotech ↔
+an unnamed biopharma** (10-year, up to $120M) — **private counterparties, and the second does not name
+its buyer at all.**
+
+**Hand-off discharged and re-armed.** The 09-17 pre-market run passed **General Mills (~Sept 23
+report date)** forward; **it still has not reported, so it carries forward again.** Nothing else
+accumulated overnight — the open and close runs do not screen earnings, so pre-market-to-pre-market
+remains the only channel. **Today is Friday: the weekly review runs after the close and owes the
+09-21 pre-market run a written hand-off.**
+
+---
+
+### T-2026-09-18-01 — GFS / MRVL — REJECTED
+**Company A / the news:** **Marvell Technology (MRVL)** and **GlobalFoundries (GFS)** announced an
+**expanded multi-year agreement** on **2026-09-17** to increase **silicon germanium (SiGe)** capacity
+at GF's **Burlington, Vermont** fab, for next-generation optical connectivity — pluggable optical
+transceivers, Near-Packaged Optics (NPO) and Co-Packaged Optics (CPO) — in AI and cloud data centres.
+*(Source: GlobalFoundries press release 2026-09-17, `investors.gf.com`; Reuters 2026-09-17.)*
+**Company B / the candidate:** **none could be identified.** Considered: GlobalFoundries itself as the
+capacity provider, and separately any US-listed supplier to the Burlington expansion or any optical-
+module maker downstream of Marvell's SiGe parts.
+
+**1. Mechanism (one sentence):**
+> Marvell's expanded multi-year capacity commitment causes GlobalFoundries' SiGe foundry revenue at
+> Burlington to rise because Marvell is contractually taking more wafers from that fab.
+
+**2. Dollar path:** **CANNOT BE WRITTEN.** **No source discloses a contract value, a wafer volume, or
+any quantified capacity increase.** The press release, Reuters and every secondary summary describe
+the expansion only as *"multi-year"* and *"significant capacity"*; one market commentary states
+flatly that **"financial terms were not disclosed."** Neither company allocated any share of segment
+revenue to the agreement. **There is no segment share to test against the 10% floor because there is
+no numerator.**
+**3. Timing window:** unstated. *"Multi-year"* and *"next-generation"* optics (NPO/CPO) point past two
+quarters, but this was not reached — part 2 failed first.
+**4. Invalidation:** not written; the thesis did not survive to part 4.
+
+**Hard filters:**
+- Priced-in (§4): **not run — no eligible candidate ticker.** GFS and MRVL are both **signatories**,
+  so a `move` call on either would be a filter on the wrong company (standing rule (i)).
+- Correlation (§4): **vacuously passes** — zero open satellite positions, so no `driver` to collide with.
+- Universe (§3): not reached.
+
+**Outcome:** **REJECTED at part 2**, and independently **at the §4 premise**. Two failures, recorded
+as two. *(a)* **The dollar path does not exist in any source** — this is the funnel's first failure
+shape (the transaction is real and the number is withheld), arriving on the best-sourced deal of the
+day. *(b)* **The only two companies any source names are the two parties to the agreement**, and §4 is
+explicit that the strategy is not to chase the headline name. **GFS is in the identical position GNRC
+was in on 09-17: a named counterparty, i.e. first-order and outside §4 at any price.** The dedicated
+second-order screen returned the finding verbatim: *"No other publicly traded U.S. company is named by
+any source as a direct counterparty or having direct revenue or cost exposure to this specific
+agreement."* **This is the most attractive item of the week and it still has no Company B. Do not
+reach for GFS or MRVL on a later day at a different price — neither the price nor the absence of a
+number is what killed it.**
+
+---
+
+### T-2026-09-18-02 — LEU — REJECTED
+**Company A / the news:** **Centrus Energy (LEU)** and **Antares Nuclear** signed a **multi-year HALEU
+supply contract** announced **2026-09-17**, including **prepayments from Antares** to fund expansion of
+Centrus's HALEU production. Deliveries are described as beginning **"before the end of the decade /
+prior to 2030."** *(Source: Centrus press release via Seeking Alpha / StockTitan 2026-09-17; NucNet.)*
+**Company B / the candidate:** any **US-listed supplier of equipment to Centrus's American Centrifuge
+Plant at Piketon, Ohio**, whose order book grows as the prepayments fund the expansion.
+
+**1. Mechanism (one sentence):**
+> Antares's prepayment-funded HALEU expansion causes a Piketon equipment supplier's order revenue to
+> rise because Centrus must buy centrifuge-plant hardware to add the capacity it has been paid for.
+
+**2. Dollar path:** **CANNOT BE WRITTEN.** **No source names a single US-listed supplier to Piketon**,
+and **no supplier-specific dollar figure exists anywhere in the retrieved material.** The only figure
+attached to Piketon at all is the **$900M DOE task order** — a **government contract with Centrus's own
+subsidiary**, not a vendor contract, and therefore the wrong direction entirely.
+**3. Timing window:** **FAILS.** Deliveries begin **before 2030** — **more than three years out, and
+§4 part 3 caps the horizon at two quarters.** *(Standing rule (vi): screen the timing window early on
+anything whose subject is under construction. It killed this in one step, before either of the two
+research calls that followed would have been needed.)*
+**4. Invalidation:** not written; the thesis did not survive to part 4.
+
+**Hard filters:**
+- Priced-in (§4): **not run — no eligible candidate ticker.** LEU is the **named seller**, i.e.
+  first-order; it is also a disposed reject from 09-10.
+- Correlation (§4): **vacuously passes** — zero open satellite positions.
+- Universe (§3): **Antares Nuclear is not publicly traded** — no ticker or listing appears in any
+  source, and it is described only as a private microreactor developer. It is ineligible in any case.
+
+**Outcome:** **REJECTED at part 3 first, then part 2.** **Part 3 is the load-bearing rejection and it
+is the cheapest one available** — pre-2030 first delivery is outside the strategy's horizon no matter
+who the supplier turns out to be, **and that rejection survives a supplier being named later, which
+part 2's would not.** **This is the fourth consecutive session in which rule (vi) has fired**
+(Sempra/Petrobras 09-15, Venture Global/China Gas 09-16, Amazon/Generac 09-17, Centrus/Antares 09-18);
+**long-dated energy offtake is a standing feature of this funnel, not a visitor.** Secondary finding
+worth keeping: **Centrus operates proprietary "American Centrifuge" technology through a wholly owned
+subsidiary**, which puts it **near the Generac vertical-integration shape (standing rule (vii))** —
+though, unlike Generac, **no source establishes the in-house/procured split**, so this is **absence of
+a source, not a verdict**, and it is recorded as the weaker of the two grounds.
+
+---
+
+### T-2026-09-18-03 — (no ticker) — REJECTED
+**Company A / the news:** **Lennar (LEN)** reported Q3 FY2026 (quarter ended 2026-08-31) on
+**2026-09-17**: **adjusted EPS $1.23** vs **$1.29** consensus, **revenue $8.05B** vs **$8.31B**
+expected and **$8.81B** a year earlier, and **cut its annual home-delivery guidance**, attributing it
+to **higher mortgage rates and affordability**. *(Source: Lennar Q3 2026 release via PR Newswire /
+StockTitan; Q3 earnings call transcript 2026-09-17.)*
+**Company B / the candidate:** a **building-products supplier, title insurer or land developer** with
+disclosed revenue exposure to Lennar.
+
+**1. Mechanism (one sentence):**
+> Lennar's delivery-guidance cut causes a named building-products supplier's revenue to **fall**
+> because Lennar buys fewer units from it — *and also*, separately, higher mortgage rates pressure
+> every other builder that supplier sells to.
+
+**2. Dollar path:** **CANNOT BE WRITTEN.** The dedicated screen for filings that **name Lennar as a
+customer and quantify the exposure** returned **nothing**: no customer-concentration table, no risk-
+factor text, no segment disclosure at any building-products supplier, title insurer or land developer.
+The tool was explicit that asserting *"Company X gets Y% of revenue from Lennar"* would be speculation.
+**3. Timing window:** not reached.
+**4. Invalidation:** not written.
+
+**Hard filters:**
+- Priced-in (§4): **not run — no candidate ticker was ever produced to run it on.**
+- Correlation (§4): **vacuously passes** — zero open satellite positions.
+- Universe (§3): not reached.
+
+**Outcome:** **REJECTED at part 1, before part 2 could even be attempted.** **The mechanism sentence
+needs the "and also" clause to make sense, and §4 says that is the answer.** The reason it needs one is
+diagnostic: **Lennar's weakness and its suppliers' weakness are both downstream of the same mortgage
+rate, which is a macro variable, not a transaction** — **the sixth "shared cause is not a mechanism"
+instance** (after Macy's/IEEPA 09-11, Kroger 09-14, Williams NESE 09-08, JPM/BAC/WFC 09-16 and Fluence
+09-17). **A third, independent failure sits underneath both:** the only available read-across is
+**negative**, and this is a **long-only book** (§3 forbids inverse and derivative instruments), so even
+a perfectly-sourced version of this thesis would be **unactionable**. **Note the honest ordering: the
+long-only objection is the one I noticed first and it is the weakest of the three, because it says
+nothing about whether the reasoning was sound. The mechanism failure is the real finding.**
+
+---
+
+### T-2026-09-18-04 — BLK — REJECTED
+**Company A / the news:** **TotalEnergies** announced a **partnership agreement with Global
+Infrastructure Partners (GIP)** on **2026-09-18** covering **African oil and gas infrastructure
+assets**, including a **US$1.8B capital contribution** from GIP. *(Source: Business Wire press release
+2026-09-18, distributed via FT markets.)*
+**Company B / the candidate:** **BlackRock (BLK)**, which owns GIP, on the theory that committed
+capital newly deployed into the partnership begins earning management fees.
+
+**1. Mechanism (one sentence):**
+> GIP's $1.8B capital contribution to the TotalEnergies partnership causes BlackRock's infrastructure
+> fee revenue to rise because newly deployed committed capital begins earning management fees.
+
+**2. Dollar path:** **CANNOT BE WRITTEN.** **No source states that BlackRock books any incremental
+revenue from this transaction, names the affected segment, or attaches a fee rate.** The **$1.8B is a
+capital contribution — money GIP pays in, not revenue it earns** — and whether any of it converts into
+fee income, at what rate, and on what schedule is **not disclosed anywhere.** **I could not size the
+segment without inventing a fee assumption, so I did not write part 2.**
+**3. Timing window:** not reached.
+**4. Invalidation:** not written.
+
+**Hard filters:**
+- Priced-in (§4): **not run.** Part 2 failed first, and §4 orders the filters before the thesis
+  precisely so a candidate is not carried to a price check it has no business reaching.
+- Correlation (§4): **vacuously passes** — zero open satellite positions.
+- Universe (§3): **BLK is US-listed and far above the $10B floor** — the only filter this candidate
+  would have passed. *(TotalEnergies is a French issuer trading in the US as an ADR; as Company A that
+  is not disqualifying, but it is noted.)*
+
+**Outcome:** **REJECTED at part 2.** **This entry exists because it is the day's only quantified
+named-both-parties transaction that is not already a disposed reject, and it deserved to be tested
+rather than waved away on size.** **The trap here is specific and worth naming: a headline dollar
+figure attached to the WRONG SIDE OF THE LEDGER.** $1.8B is large, real and sourced — and it is
+**capital going out, not revenue coming in.** **A figure's presence is not the same as the figure part
+2 asks for**, which is the mirror image of the 09-17 Fluence finding (*a precisely quantified loss
+invites the assumption that the money went somewhere nameable*). **Standing rule candidate: read which
+direction the disclosed dollar figure moves before treating it as a dollar path.** Even setting the
+disclosure gap aside, $1.8B of newly committed capital against BlackRock's AUM base is **orders of
+magnitude below the §4 10%-of-revenue floor** — but **that arithmetic is not why this was rejected**,
+and a future run should not record it as though it were, because **the rejection has to hold on the
+absence of a disclosed segment figure alone.**
+
+---
+
 ### 2026-09-17 (08:11 ET) — event survey (funnel, pre-thesis)
 
 Selftest passed all five checks (`trading_enabled: true`, LIVE paper account, equity

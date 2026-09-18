@@ -29,31 +29,32 @@ better. Core and rebalance actions are exempt from the gate because neither depe
 day's research.
 
 ```
-plan_date: 2026-09-17
+plan_date: 2026-09-18
 generated_by: 1-premarket-research
 market_open_today: yes
 ```
 
-Market opens today 2026-09-17 at 09:30 ET (`alpaca.py clock` at 08:11:40 ET: `is_open:
-false`, `next_open: 2026-09-17T09:30:00-04:00`, `next_close: 2026-09-17T16:00:00-04:00`).
+Market opens today 2026-09-18 at 09:30 ET (`alpaca.py clock` at 08:16:15 ET: `is_open:
+false`, `next_open: 2026-09-18T09:30:00-04:00`, `next_close: 2026-09-18T16:00:00-04:00`).
 **Not a holiday** — the market is closed because it is pre-market and `next_open` is *today*.
 **Read the date, not the boolean.**
 
-**One pre-market run today, at 08:11 ET.** Selftest passed all five checks
-(`trading_enabled: true`, LIVE paper account, equity **$99,376.99**).
+**One pre-market run today, at 08:16 ET.** Selftest passed all five checks
+(`trading_enabled: true`, LIVE paper account, equity **$99,426.51**).
 
-**Tape context:** VOO's broker mark is **700.45** (`lastday_price` **693.24**, `change_today`
-**+1.04%**). Neither number is an execution reference — **pull a fresh quote at 09:35.** The
-core position shows `unrealized_pl` **−$623.00 (−0.89%)** against the 706.74 fill. §5 exempts
-core from all four sell rules — **there is no action attached to it at any number, in either
-direction.**
+**Tape context:** VOO's broker mark is **700.90** (`lastday_price` **701.03**, `change_today`
+**−0.019%**). **Neither number is an execution reference, and `lastday_price` 701.03 is NOT
+yesterday's official close of 700.97** — it is six cents away, the same live-midpoint mechanism
+this log has now documented five times. **Pull a fresh quote at 09:35.** The core position shows
+`unrealized_pl` **−$578.43 (−0.826%)** against the 706.74 fill. §5 exempts core from all four sell
+rules — **there is no action attached to it at any number, in either direction.**
 
 ---
 
 ## The whole plan in one line
 
 **Do nothing.** No BUY, no SELL, no REBALANCE. Core is in band, there are no satellite
-positions to manage, and three candidates were researched to a full thesis entry and all three
+positions to manage, and four candidates were researched to a full thesis entry and all four
 were rejected.
 
 ---
@@ -63,125 +64,138 @@ were rejected.
 ### BUY — none
 
 No buy intents. New positions were **fully permitted** this run — breaker INACTIVE, weekly cap
-at **0 of 3**, satellite sleeve **empty with 30.19% cash**, no restricting note in `control.md`.
+at **0 of 3**, satellite sleeve **empty with 30.17% cash**, no restricting note in `control.md`.
 **Nothing was blocked. The research did not produce an eligible candidate.**
 
 **No `revalidate` line is written, and none is due.** Re-validation has a subject only when a BUY
 intent exists. **Zero `alpaca.py move` calls are due at 09:35 — an absent check, not a skipped one.**
 
-Three candidates reached a full `research_log.md` entry:
+Four candidates reached a full `research_log.md` entry:
 
 | Thesis | Candidate | Died at | Why |
 |---|---|---|---|
-| T-2026-09-17-01 | (no ticker) | part 1, plus §3 and part 3 | **Amazon ↔ Generac 8-K, 09-16: ~$2.4B of generator deliveries expected 2027–2028, up to $8B aggregate, plus a 1,693,745-share warrant at $200.9266.** The best-sourced event this log has seen — **and there is no Company B.** The only named supplier is **Weichai/Baudouin, Shenzhen- and HK-listed (§3 FAIL)**, with no dollar figure tied to Generac; **Generac is vertically integrated**, making its own engines, alternators, controls and enclosures; and deliveries are **2027–2028**, past §4.3. **GNRC itself is the named counterparty — first-order, not a §4 candidate at any price.** |
-| T-2026-09-17-02 | (no ticker) | part 1 | **Fluence Energy cut FY26 guidance 09-16: revenue ~$3.0B → ~$2.4B, adj. EBITDA −$10M → −$200M**, from **~$450M of delays at its Houston contract manufacturing facility** plus **~$65M of late-delivery penalties**. **The contract manufacturer is never named** — one source even reports its corrective actions while withholding its identity. The penalized customers are unnamed too. The alternative read, *"competitors take the share,"* is the **shared-cause trap (5th instance)**. |
-| T-2026-09-17-03 | (no ticker) | part 1 (rule v, rule i) | **Seven federal awards, 09-16/17, $6.3B of headline value: CACI $1.5B ceiling ($1.2B expected booked), S&K Aerospace $4.3B IDIQ, Amentum $150M ceiling (completion 2031), DCS $85M, AEVEX up to $92.2M, Conti Kight JV $74.9M, Kyndryl no value.** **Every named party is the awardee — Company A.** No subcontractor is named under any of them; **six of seven figures are ceilings.** |
+| T-2026-09-18-01 | GFS / MRVL | part 2, and independently the §4 premise | **GlobalFoundries ↔ Marvell expanded multi-year SiGe capacity agreement, 09-17, Burlington VT, for NPO/CPO optical connectivity.** **No dollar value, no wafer volume, no quantified capacity increase in any source** — one commentary says flatly *"financial terms were not disclosed."* **Part 2 has no numerator.** Separately, **the only two companies any source names are the two signatories**; the dedicated second-order screen returned *"No other publicly traded U.S. company is named... as a direct counterparty or having direct revenue or cost exposure to this specific agreement."* **GFS is in GNRC's exact position from 09-17 — a named counterparty, first-order, outside §4 at any price.** |
+| T-2026-09-18-02 | LEU | part 3 first, then part 2 | **Centrus ↔ Antares Nuclear multi-year HALEU supply contract, 09-17, with prepayments funding expansion.** **Deliveries begin "before the end of the decade / prior to 2030"** — **§4 part 3 caps the horizon at two quarters**, so rule (vi) killed it in one step. Then: **financial terms not disclosed**, **Antares is not publicly traded**, and **no source names any US-listed supplier to Piketon** — the only Piketon figure anywhere is a **$900M DOE task order with Centrus's own subsidiary**, i.e. the wrong direction. |
+| T-2026-09-18-03 | (no ticker) | part 1 | **Lennar Q3 FY26, 09-17: adj. EPS $1.23 vs $1.29, revenue $8.05B vs $8.31B expected and $8.81B a year ago, annual delivery guidance cut on mortgage rates and affordability.** The mechanism sentence **needs an "and also" clause**, because Lennar's weakness and its suppliers' weakness are both downstream of **the same mortgage rate — a macro variable, not a transaction.** **Sixth shared-cause instance.** The screen for filings naming Lennar as a customer **with a quantified share returned nothing at all.** Also **negative-direction on a long-only book**, which is the weakest of the three objections and the one noticed first. |
+| T-2026-09-18-04 | BLK | part 2 | **TotalEnergies ↔ Global Infrastructure Partners partnership, 09-18, African oil and gas infrastructure, US$1.8B capital contribution** (Business Wire). **Part 1 passes cleanly in one clause** — and part 2 dies because **the $1.8B is capital going OUT, not revenue coming IN.** **No source states BlackRock books any incremental revenue, names the segment, or gives a fee rate.** Sizing it would have required inventing a fee assumption. |
 
 Notes for the open run, carried so nothing is re-derived at 09:35:
 
-- **⚠ `alpaca.py move` IS STRUCTURALLY BLIND TO AN AFTER-HOURS EVENT, AND THAT MATTERS TO YOUR
-  RE-VALIDATION STEP SPECIFICALLY — NEW OPEN ITEM (7).** `move --symbol GNRC --sessions 5` returned
-  **186.55 → 175.19, −6.09%, `priced_in: true`** this morning, on the one name every source was
-  discussing, **the morning after it reportedly surged after the bell on the Amazon deal** (reports
-  range **+18% to over +40%**; **none is verifiable from our data plane**). `bars` confirms the last
-  official close is **175.19**; `quote` shows the last print **175.19 at 15:59:57 ET**, a stale
-  16:00:05 bid of **165.23** and **no ask at all**. **The five-session window ends at the last
-  official close, so a candidate whose news breaks AFTER the close is measured against prices that
-  predate the news.** **Your 09:35 re-validation inherits this exactly** — the gap does not enter
-  `bars` until tonight's close prints, so a re-validation would pass such a candidate for the same
-  wrong reason the pre-market check did. **Nothing is at risk today: there are no BUY intents, and
-  GNRC is first-order.** **Do not reinterpret the filter — that is a human editing §4 or the script.**
+- **⚠ THREE NAMED-BOTH-PARTIES TRANSACTIONS IN ONE WINDOW AND ALL THREE WITHHELD THE NUMBER.**
+  GF↔Marvell, Centrus↔Antares and TotalEnergies↔GIP are all real, primary-sourced deals with both
+  sides named. **Two say "financial terms were not disclosed" in so many words; the third discloses a
+  capital contribution rather than a revenue figure.** **Part 2 could not be written for any of them.**
+  This is carry-forward item (3)'s **first** binding form — the source withholds the counterparty's
+  number — **firing three times in one morning.** **Recognise the cluster; do not re-derive it deal by
+  deal.**
 
-- **⚠ THE FUNNEL GOT ITS BEST-EVER INPUT AND STILL PRODUCED NOTHING, FOR A THIRD DISTINCT REASON.**
-  09-14/09-15 died on *"the source names the transaction and withholds the counterparty's number."*
-  09-16 died on *"the counterparty is named, does disclose, and discloses roadmap not segment
-  revenue."* **09-17's Amazon/Generac died because the supply chain is INTERNAL — Generac makes its
-  own engines, alternators, batteries, controls and enclosures.** **File it as a third shape, not a
-  variant.** The first two are disclosure failures a human could address by widening the evidence
-  bar; **this one is a fact about the company that no evidence standard would change.**
+- **⚠ GNRC IS STILL NOT YOURS TO LOOK AT, AND TODAY THE PULL IS THE STRONGEST AND THE EMPTIEST YET.**
+  Today is the first run whose `bars` history **contains** the 09-16 after-hours gap (**reported
+  +29.9% on the 09-17 session**), so `move --symbol GNRC --sessions 5` would now return a large
+  positive number and `priced_in: true`. **That is not a measurement of open item (7) — it is the
+  filter working correctly one session late.** The defect itself was **already measured on 09-17**
+  (186.55 → 175.19, −6.09%, `priced_in: true`). **There is no number left to collect.** This run made
+  **zero** `move`/`quote`/`bars`/`asset` calls on GNRC — fourth consecutive refusal. **The previous
+  costume was diligence; today's is completeness. Expect a new one.**
 
-- **⚠ THE "I KNOW WHO MAKES THE PART" TRAP ARRIVED A THIRD TIME AND THE TOOL CAUGHT IT FIRST.** The
-  supplier screen volunteered that Cummins, Caterpillar or a US switchgear maker supplying Generac is
-  **"a general industry possibility, but no retrieved source actually names them."** **That is RTX
-  (09-01) and the Abrams/Honeywell screen (09-16) repeating.** **No US-listed Generac supplier was
-  screened, and that is absence of a source, not a verdict on any name.**
+- **⚠ OPEN ITEM (7) IS UNCHANGED AND COSTS NOTHING AGAIN TODAY — BUT ONLY BECAUSE IT HAS NO SUBJECT.**
+  `alpaca.py move`'s five-session window **ends at the last official close**, so a candidate whose news
+  breaks after the bell is measured against prices that predate the news, **and your 09:35
+  re-validation inherits this exactly.** **Zero BUY intents today means zero exposure — that is an
+  absence of exposure, not a mitigation.** **Do not reinterpret the filter; that is a human editing §4
+  or the script.**
 
-- **⚠ RULE (v)'s CEILING SUB-SHAPE IS ONE DAY OLD AND IS ALREADY THE DEFAULT FORM.** Six of seven
-  federal figures today are ceilings or "up to" amounts. **CACI's $1.2B "expected to book" is the
-  only figure with commitment behind it, and it is the company's own estimate, not a contract term.**
+- **⚠ THE "I KNOW WHO MAKES THE PART" TRAP ARRIVED A FOURTH TIME, AND THE TOOL CAUGHT IT FIRST AGAIN.**
+  The Centrus screen volunteered that vacuum systems, compressors, valves and control-system vendors
+  are **"general industry possibilities and are not tied to Centrus's Piketon facility by the cited
+  sources,"** and the GF/Marvell screen said mapping optics vendors to that deal **"would be
+  speculative."** **After RTX (09-01), Abrams/Honeywell (09-16) and Generac (09-17).** **No US-listed
+  supplier was screened for either deal — absence of a source, not a verdict on any name.**
 
-- **⚠ THREE MARKETBEAT-STYLE "GUIDANCE" ALERTS IN ONE MORNING — THE GENERAL MILLS TRAP, TRIPLED.**
-  **Ameren $5.25–5.45, Five Below $9.830–10.310, DaVita $14.10–15.20** all arrived as instant-alerts
-  stating guidance **issuance**, with **no prior figure and no source saying anything changed.**
-  Rule (iii). **An alert worded to read like an event is still not an event.**
+- **⚠ THE MARKETBEAT GUIDANCE-ISSUANCE TRAP TRIPLED AGAIN — FOURTH, FIFTH AND SIXTH INSTANCES THIS
+  WEEK.** **Labcorp ($18.10–18.55 EPS, $14.7–14.8B revenue), Nucor (Q3 $5.55–5.65) and Steel Dynamics
+  (Q3 $5.34–5.38)** all arrived as instant-alerts comparing new guidance to **consensus**, never to a
+  **prior company figure**. Rule (iii). *(Nucor's coverage carried two irreconcilable ranges —
+  $5.55–5.65 and $3.30–3.60 — inside the same scan. **A secondary aggregator can be internally
+  inconsistent in one morning.**)*
 
-- **⚠ TWO PERPLEXITY RESULTS DISAGREED ON WHETHER AEVEX IS LISTED AT ALL** (one said listing status
-  is not established, the other reported "NYSE: AVEX"). Immaterial today — AEVEX is the awardee and
-  the figure is a ceiling — but **a listing status read off a news snippet is not a §3 check.**
-  **`alpaca.py asset` is.**
+- **⚠ A NEW TRAP WORTH A STANDING RULE: READ WHICH DIRECTION THE DISCLOSED DOLLAR FIGURE MOVES.**
+  TotalEnergies/GIP's **$1.8B is a capital contribution — money paid in, not earned.** **A figure's
+  presence is not the same as the figure part 2 asks for.** This is the mirror image of 09-17's
+  Fluence finding, where a precisely quantified **loss** invited the assumption that the money went
+  somewhere nameable.
 
-- **Dropped before thesis stage, with reasons:** **Ford** raised FY26 adj. EBIT guidance to
-  **$10–11B (+$1B at midpoint)** — **first-order, Company A**, no counterparty named. **Lululemon**
-  and **Norwegian Cruise Line** — consolidated guidance cuts, **no counterparty at all**. **Philip
-  Morris** — EPS raised **"for currency only"**, a translation adjustment, not an operational change.
-  **Subaru ↔ onsemi** — the release itself says *"does not represent a supply agreement or production
-  commitment. No financial terms were disclosed."* **Charter/Cox $34.5B** — **closed in late August**;
-  the 09-17 item is a branding-integration story, rule (iii). **Union Pacific/Norfolk Southern** — a
-  customer-support statement, no figure. **Illinois American Water / City of Venice, $770,000** —
-  correctly sourced and **immaterial by four orders of magnitude**. **Medtronic LigaSure/Hugo** — the
-  same item dropped 09-16, already a disposed reject. **Robinson Pharma, Powerus** — named, private,
-  no money attached.
+- **Dropped before thesis stage, with reasons:** **Fluence Energy's FY26 cut** ($3.0B → ~$2.4B revenue
+  midpoint; −$10M → −$200M adj. EBITDA) is **the same cut processed yesterday as T-2026-09-17-02**,
+  re-covered — rule (iii). **ADM** raised 2026 adj. EPS **$4.15–4.70 → $5.15–5.60**: a genuine change,
+  **first-order, no counterparty named.** **UnitedHealth** raised 2026 adj. EPS to **$19.50–20.00**
+  with **no prior figure stated.** **Philip Morris** — the **currency-only** raise, disposed 09-17.
+  **Lockheed Martin ↔ Pentagon AIM-260 JATM production framework (09-17)** — **the awarded party, no
+  dollar figure at all, no supplier named**: rule (i) plus the rule (v) ceiling shape with the ceiling
+  left blank. **Vicor** — licensing deal with an **unnamed OEM** plus its own NH fab expansion; **no
+  counterparty exists to screen.** **Southwest** *reiterated* Q3 EPS. **Myriad Genetics** cut FY26
+  guidance with **no figures in any source.** **Emera** is Canadian-listed (§3). **Aeluma** declines
+  to guide. **Aethlon/North Immunology** and an **SEC tokenized-stock "innovation exemption"** —
+  the source itself called the evidence too thin. **First Breach ↔ SAS Ammo** and **Oribiotech ↔ an
+  unnamed biopharma (up to $120M)** — **private counterparties**, and the second does not name its
+  buyer.
 
-- **The FOMC is settled and did not enter the funnel.** +25bp to **3.75–4.00%** on 09-16, unanimous,
-  first US hike since 2023, one more signalled; projections 2026 GDP **2.3%**, PCE **3.7%**,
-  unemployment **4.1%**; 10-year reported at **5.03%**. **No Company A, no segment, no dollar path.**
-  **It is an input to the environment, and VOO's +1.04% pre-market mark is a price move, not a
-  thesis.**
+- **The FOMC remains settled and did not enter the funnel.** +25bp to **3.75–4.00%** on 09-16; major
+  banks lifted prime **6.75% → 7.00%** effective 09-17. **That is an environment input with no Company
+  A, no segment and no dollar path** — and a read-across from it to any bank is the **shared-cause
+  trap**, because a bank actually affected discloses it itself and is first-order for that bank.
 
 ### SELL — none
 
-**No open satellite positions.** §5.1–§5.4 have no subject for the **nineteenth consecutive
+**No open satellite positions.** §5.1–§5.4 have no subject for the **twentieth consecutive
 session**. `sell_rule_status` is **absent, not blank** — there is no thesis to invalidate, no
 `timing_window` to expire, no `entry_price` to measure −7% against, and no `highest_close` to
 measure −10% against. **Nothing is near triggering because nothing exists to trigger.** All four
-remain **untested code paths**, and nineteen sessions of "no exits" record the absence of a
-subject, not nineteen clean bills of health.
+remain **untested code paths**, and twenty sessions of "no exits" record the absence of a
+subject, not twenty clean bills of health.
 
 **Zero Perplexity invalidation queries were issued this run and none was due** — §5.1 reads an
-`invalidation` line that does not exist.
+`invalidation` line that does not exist. **§5.4 is still NOT ARMED; it arms on the first satellite
+fill.**
 
 ### REBALANCE — none
 
-**Core is in band and no rebalance is due.** `alpaca.py sleeves` at 08:11 ET: equity
-**$99,376.99**, cash **$30,000.00**, core **$69,376.99 = 69.81%**, satellite **0.0% (count 0)**,
-cash **30.19%**, `core_in_band: true`, `rebalance_needed: false`, `rebalance_delta: +186.90`.
+**Core is in band and no rebalance is due.** `alpaca.py sleeves` at 08:16 ET: equity
+**$99,421.56**, cash **$30,000.00**, core **$69,421.56 = 69.83%**, satellite **0.0% (count 0)**,
+cash **30.17%**, `core_in_band: true`, `rebalance_needed: false`, `rebalance_delta: +173.53`.
 
-§2 rebalances at the **band edge (65/75)**, **not to the exact 70% target.** The $186.90 delta is
-**0.19% of equity** and is not an action — **the smallest delta recorded in this range so far.**
-**Twenty-first consecutive run inside a 0.39-point range (69.59–69.98).**
+§2 rebalances at the **band edge (65/75)**, **not to the exact 70% target.** The $173.53 delta is
+**0.17% of equity** and is not an action. **Twenty-fifth consecutive run inside a 0.39-point range
+(69.59–69.98).**
 
 ---
 
 ## What the open run should actually do
 
-1. **Check `plan_date` against today's ET date.** It reads **2026-09-17**. If today is not that
+1. **Check `plan_date` against today's ET date.** It reads **2026-09-18**. If today is not that
    date, this plan is stale — log it, alert, and skip to the core/rebalance section.
 2. **Execute nothing.** There are no BUY, SELL or REBALANCE intents, and **that is the plan, not a
    gap in it.**
-3. **Do not go looking for something to do.** 30.19% idle cash, an INACTIVE breaker and a weekly
+3. **Do not go looking for something to do.** 30.17% idle cash, an INACTIVE breaker and a weekly
    cap at **0 of 3** are **not an opportunity this run may act on.** New positions route through
    pre-market research plus this execution run, always — a position opened at 09:35 without a plan
    entry would route around the discipline rather than satisfy it.
 4. **Verify the empty plan is FRESH, not stale.** An empty plan that is current and a plan that is
    out of date **produce identical zero-order runs and are not the same run.** The difference is
    invisible in the order count, so read the date rather than the outcome. **The stale-plan gate
-   has now been exercised eighteen times and has never fired — its alert path REMAINS UNTESTED
-   CODE.** Eighteen quiet opens are not evidence the gate works.
+   has now been exercised twenty times and has never fired — its alert path REMAINS UNTESTED
+   CODE.** Twenty quiet opens are not evidence the gate works. **The first morning it fires will be
+   a morning when this pre-market run failed — i.e. exactly the morning you have no fresh notes to
+   lean on. Read Step 2 then; do not recall it.**
 5. **Pull a fresh quote for anything you price.** The broker's `current_price` is a **live
-   bid/ask midpoint**, not a close — 700.45 this morning against yesterday's official 693.215 is
-   that mechanism in pre-market. `bars --adjustment all` for a close, a fresh `quote` for
-   execution, **never a `positions` field for either.**
-6. **GNRC is not yours to look at.** It will likely gap hard at the open on the Amazon deal. **It is
-   the named counterparty in that announcement — Company A's direct beneficiary, first-order, and
-   outside §4 at any price.** It is **not in this plan**, and a name moving on the tape is not an
-   intent. **Do not let the one loud ticker of the morning become a trade at 09:35.**
+   bid/ask midpoint**, not a close. **This morning supplies the cleanest example yet:
+   `lastday_price` reads 701.03 while yesterday's official close was 700.97** — six cents apart,
+   and the field is *named* for the prior day. `bars --adjustment all` for a close, a fresh `quote`
+   for execution, **never a `positions` field for either.**
+6. **GNRC is not yours to look at, and today the excuse is better than yesterday's.** Its gap is now
+   inside `bars`, so a `move` call would finally return a "sensible" number. **That number measures
+   nothing** — see the note above. **It is the named counterparty in the Amazon announcement,
+   first-order, outside §4 at any price, and it is not in this plan.**
+7. **Today is Friday.** The weekly review runs after the close and owes the **09-21 pre-market run**
+   a written hand-off. **General Mills (~Sept 23 report) is carried forward again** — it still has
+   not reported.

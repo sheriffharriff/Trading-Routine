@@ -10,9 +10,9 @@ The block below is parsed by `scripts/common.py` and gates real behavior
 `key: value` format exactly. Prose goes underneath.
 
 ```
-last_run: 2026-09-17 16:16 ET 4-market-close-journal (selftest PASSED all five checks at 16:16 ET, trading_enabled true, LIVE paper, equity 99404.72 at pre-flight; TRADING DAY CONFIRMED NOT A HOLIDAY - clock is_open FALSE at 16:16:29 with next_open 2026-09-18 TOMORROW and next_close 2026-09-18T16:00, the POST-BELL shape, confirmed not predicted, and a close run and a pre-market run BOTH read is_open false so only the next_open DATE discriminates; STEP 2 HAD NO SUBJECT AND THAT IS NOT THE SAME AS BEING SKIPPED - zero satellite positions, so there is NO highest_close field in positions.md at all, ABSENT is a THIRD state distinct from current-and-unchanged and from stale and it is the ONLY one carrying no date, and that missing date is exactly what tells tomorrow's midday run no backfill is due, 5.4 STILL NOT ARMED (it arms on the first SATELLITE fill); CORE VOO DELIBERATELY NOT STAMPED AND THE 09-16 PREDICTION LANDED VERBATIM - this run pulled VOO bars to PRICE THE BOOK so today's official close 700.97 was sitting in terminal output with nothing to do, writing it here would FABRICATE a 5.4 stop on the one position §5 exempts, REFUSED, it feels like tidiness not like a violation, and the prediction arriving one day later means the pull is a STANDING FEATURE not a mood; DAY P&L +768.10 / +0.779% BOTH LEGS OFFICIAL (equity 99428.49 official vs 98660.39 yesterday) against +726.99 / +0.737% on broker marks (99389.86 vs last_equity 98662.86) - DO NOT MIX, broker current_price 700.58 is an AFTER-HOURS QUOTE MIDPOINT and the official close is 700.97, 39 cents away; SINCE INCEPTION -0.572% official / -0.610% broker; VOO 693.215 -> 700.97 = +1.1187% on a NARROW range 698.65-701.695 (~0.43% of the low vs yesterday's 1.58%) and LOWER volume 47563 vs 60725 - the FOMC session's width did not carry into the day after it; THE BOOK LAGGED THE INDEX BY 34bp AND IT IS ARITHMETIC NOT JUDGMENT - 0.6959 x 1.1187% = 0.7785%, yesterday's core weight times the index move to a rounding tick, and 09-16's 13bp of apparent OUTperformance came from the IDENTICAL calculation and was predicted to reverse on the first green day: IT DID, ONE SESSION LATER, same mechanism opposite sign, which is the cleanest proof available that NEITHER number was ever skill; core unchanged 99.046311231 sh since 09-03, on official closes 69428.49, unrealized -571.50 / -0.816% which is EXACTLY VOO 706.74 -> 700.97, TRACKING ERROR 0.0000% on the FOURTH check; sleeves broker equity 99389.86 cash 30000.00 core 69389.86 = 69.82% satellite 0.0% count 0 cash 30.18% core_in_band true rebalance_needed false rebalance_delta +183.04, ON OFFICIAL CLOSES equity 99428.49 core 69428.49 = 69.83% cash 30.17% delta +171.45 = 0.17% of equity THE SMALLEST RECORDED IN THIS RANGE, NO REBALANCE DUE AT TOMORROW'S OPEN (§2 acts at the BAND EDGE 65/75 not at the target), TWENTY-FOURTH consecutive run inside a 0.39-point range 69.59-69.98; ZERO TRADES at all four of today's runs, orders --status all returns ONE ROW for the account's entire history (09-03 core VOO buy, filled, terminal), NOTHING IN LIMBO OVERNIGHT per §7, NO order from today exists to resolve because none was placed, trade_log.md correctly left unappended; 5.1-5.4 had NO SUBJECT and the ordered evaluation never started, sell_rule_status ABSENT rather than blank, still the NINETEENTH session with an empty sleeve (count advances on SESSIONS not RUNS, four runs shared 09-17), all four remain UNTESTED CODE PATHS; week rollover checked - ISO Monday of 2026-09-17 is 2026-09-14 MATCHES week_of, NO RESET DUE, next boundary Monday 2026-09-21; loss streak UNMOVED at 0 because nothing has ever closed, breaker INACTIVE, no HALT_CLEARED_AT comparison required, NO circuit-breaker alert due; new_positions_this_week stays 0 of 3; open_thesis_ids stays none - all three of today's theses were rejected before the bell; NO RESEARCH AND NO THESIS WRITTEN - a journaling routine does not research, counter stays 42 since inception with 12 this week, 0 accepted; GNRC NOT LOOKED AT FOR THE THIRD CONSECUTIVE RUN TODAY - zero move/quote/bars/asset calls, and TONIGHT'S CLOSE IS THE FIRST THAT COULD ADMIT THE AFTER-HOURS GAP INTO bars, which makes "just check what it did" the most plausible costume yet and the one with the LEAST justification from a seat that trades nothing at all; ⚠ FOUND AND REPAIRED A SILENTLY DELETED JOURNAL HEADER - commit 5fe9e4c (the 09-16 CLOSE RUN) deleted "### 2026-09-15 (Tuesday)" from journal.md while inserting its own entry above it and that was its ONLY deletion, leaving a full trading day's entry headerless and glued to 09-16's, INVISIBLE TO ANY HEADER SCAN; header restored with an inline note, body untouched, all THIRTEEN September sessions verified to carry exactly one header each; journal.md entry written, ClickUp daily summary posted as 86bc2nff1; alerts.md EMPTY, zero open, zero SYSTEMIC)
+last_run: 2026-09-18 08:16 ET 1-premarket-research (selftest PASSED all five checks at 08:15 ET, trading_enabled true, LIVE paper, equity 99426.51 at pre-flight; PRE-MARKET NOT A HOLIDAY - clock is_open FALSE at 08:16:15 with next_open 2026-09-18T09:30 TODAY and next_close 2026-09-18T16:00, the PRE-MARKET shape, and a pre-market run and a close run BOTH read is_open false so only the next_open DATE discriminates; TODAY IS FRIDAY, the weekly review runs after the close and owes the 09-21 pre-market run a written hand-off; ledger reconciled - zero satellite blocks vs zero satellite Alpaca rows, they AGREE, one row VOO core 99.046311231 sh UNCHANGED since 09-03, avg_entry 706.74 mv 69421.56 unrealized -578.43 / -0.826% change_today -0.019%; ⚠ lastday_price READ 701.03 WHILE YESTERDAY'S OFFICIAL CLOSE WAS 700.97 - six cents apart in a field NAMED for the prior day, the cleanest instance yet of the live-midpoint mechanism and the FIFTH documented, cosmetic on core and LOAD-BEARING the moment a satellite position exists; sleeves equity 99421.56 cash 30000.00 core 69421.56 = 69.83% satellite 0.0% count 0 cash 30.17% core_in_band true rebalance_needed false rebalance_delta +173.53 = 0.17% of equity, NO REBALANCE DUE AT TODAY'S OPEN (§2 acts at the BAND EDGE 65/75 not at the target), TWENTY-FIFTH consecutive run inside a 0.39-point range 69.59-69.98; week rollover checked - ISO Monday of 2026-09-18 (Friday) is 2026-09-14 MATCHES week_of, NO RESET DUE, next boundary Monday 2026-09-21; loss streak UNMOVED at 0 because nothing has ever closed, breaker INACTIVE, no HALT_CLEARED_AT comparison required, NO circuit-breaker alert due; 5.1-5.4 had NO SUBJECT and the ordered evaluation never started, sell_rule_status ABSENT rather than blank, ZERO perplexity invalidation queries and none due (an ABSENT check not a skipped one), TWENTIETH session with an empty sleeve (count advances on SESSIONS not RUNS, this is the first read of 09-18), all four remain UNTESTED CODE PATHS, 5.4 STILL NOT ARMED; CORE VOO DELIBERATELY NOT STAMPED and this run did not even HAVE the number - ZERO alpaca.py bars calls for any purpose, so unlike 09-16 and 09-17 no close was sitting in terminal output with nothing to do; NEW POSITIONS FULLY PERMITTED AND ZERO BUY INTENTS WRITTEN - breaker INACTIVE, cap 0 of 3, empty sleeve, 30.17% idle cash, no restricting note in control.md, NOTHING BLOCKED THE RESEARCH, the research did not produce an eligible candidate; FOUR THESES WRITTEN, FOUR REJECTED, counter now 46 since inception with 16 this week, 0 accepted - T-2026-09-18-01 GFS/MRVL (part 2 plus the §4 first-order premise), -02 LEU (part 3 then part 2), -03 no-ticker LEN read-across (part 1), -04 BLK (part 2); ⚠ HEADLINE - THREE NAMED-BOTH-PARTIES TRANSACTIONS IN ONE WINDOW AND ALL THREE WITHHELD THE NUMBER (GlobalFoundries↔Marvell SiGe Burlington VT, Centrus↔Antares HALEU, TotalEnergies↔GIP $1.8B), two saying 'financial terms were not disclosed' in so many words and the third disclosing capital IN rather than revenue, so part 2 could not be written for ANY of them - carry-forward item (3)'s FIRST binding form firing THREE TIMES IN ONE MORNING; ZERO alpaca.py move CALLS and none due - no candidate reached second-order ticker stage, GFS/MRVL/LEU/LEN are all signatories or the reporting company itself and screening the named party is running a filter on the WRONG company (rule i); GNRC NOT LOOKED AT FOR THE FOURTH CONSECUTIVE RUN - zero move/quote/bars/asset calls, and today's pull was the STRONGEST AND EMPTIEST yet because the 09-16 gap is NOW INSIDE bars so move would return a large positive number and priced_in true, WHICH WOULD BE THE FILTER WORKING CORRECTLY ONE SESSION LATE rather than a measurement of open item (7), already measured 09-17 - THERE IS NO NUMBER LEFT TO COLLECT, yesterday's costume was diligence and today's was completeness; plan_today.md rewritten with plan_date 2026-09-18 and ZERO intents of all three kinds; alerts.md EMPTY, zero open, zero SYSTEMIC)
 
-prior_run: 2026-09-17 12:35 ET 3-midday-management (selftest PASSED all five checks at 12:34 ET, trading_enabled true, LIVE paper, equity 99383.43; EXITS-ONLY ROUTINE WITH NO SUBJECT - zero open satellite positions, so §5.1-5.4 were not evaluable and the run is permitted to open nothing, meaning the correct output was a short run and a commit, NOT a search for something to do; clock is_open TRUE at 12:35:02 with next_close TODAY 16:00 and next_open 2026-09-18 TOMORROW, the IN-SESSION shape; ledger reconciled - zero satellite blocks vs zero satellite Alpaca rows, they AGREE, one row VOO core 99.046311231 sh UNCHANGED since 09-03, avg_entry 706.74 mv 69387.88 unrealized -612.11 / -0.874% change_today +1.056%, current_price 700.56 is a LIVE IN-SESSION MARK not a close; sleeves equity 99387.88 cash 30000.00 core 69.82% satellite 0.0% count 0 cash 30.18%, core_in_band true, rebalance_needed false, rebalance_delta +183.63 = 0.18% of equity, NO REBALANCE DUE and this routine COULD NOT HAVE PLACED ONE ANYWAY (§2 rebalances at the next market-OPEN run, at the band edge 65/75), TWENTY-THIRD consecutive run inside a 0.39-point range 69.59-69.98; STEP 2 HIGH-WATER BACKFILL CHECK RAN AND DISCHARGED ON AN ABSENT FIELD - no highest_close exists in positions.md at all, ABSENT is a THIRD state distinct from current-and-unchanged and from stale and it is the ONLY one carrying no date, and the missing date is exactly what discharges the check; ZERO alpaca.py bars calls this run for ANY purpose, CORE VOO DELIBERATELY NOT STAMPED - would FABRICATE a 5.4 stop on the one position §5 exempts, REFUSED AGAIN; STEP 3 - ZERO perplexity invalidation queries, an ABSENT check not a skipped one, no thesis for 5.1, no timing_window for 5.2, no entry_price for 5.3, no highest_close for 5.4, sell_rule_status ABSENT rather than blank, NOTHING NEAR TRIGGERING BECAUSE NOTHING EXISTS TO TRIGGER, all four remain UNTESTED CODE PATHS, 5.4 NOT ARMED (it arms on the first SATELLITE fill), still the NINETEENTH session with an empty sleeve (count advances on SESSIONS not RUNS, three runs shared 09-17); STEP 4 ZERO alpaca.py sell CALLS - no order-verification path exercised, no terminal:false and no dry_run:true case arose, NOTHING SHOULD HAVE EXECUTED AND FAILED TO, which is the one line this run did not need to carry; loss streak UNMOVED at 0 because nothing closed, breaker INACTIVE, no HALT_CLEARED_AT comparison required, NO circuit-breaker alert due; week rollover checked - ISO Monday of 2026-09-17 is 2026-09-14 MATCHES week_of, NO RESET DUE, next boundary Monday 2026-09-21; new_positions_this_week stays 0 of 3 - this routine cannot open a position, so the cap was never consulted let alone binding; open_thesis_ids stays none; NO RESEARCH AND NO THESIS WRITTEN, counter stays 42 with 12 this week; GNRC NOT LOOKED AT FOR THE SECOND TIME TODAY - zero move/quote/bars/asset calls, the pull has now recurred across two runs and both refusals are the entry worth keeping; alerts.md EMPTY, zero open, zero SYSTEMIC)
+prior_run: 2026-09-17 16:16 ET 4-market-close-journal (selftest PASSED all five checks at 16:16 ET, trading_enabled true, LIVE paper, equity 99404.72 at pre-flight; TRADING DAY CONFIRMED NOT A HOLIDAY - clock is_open FALSE at 16:16:29 with next_open 2026-09-18 TOMORROW and next_close 2026-09-18T16:00, the POST-BELL shape, confirmed not predicted, and a close run and a pre-market run BOTH read is_open false so only the next_open DATE discriminates; STEP 2 HAD NO SUBJECT AND THAT IS NOT THE SAME AS BEING SKIPPED - zero satellite positions, so there is NO highest_close field in positions.md at all, ABSENT is a THIRD state distinct from current-and-unchanged and from stale and it is the ONLY one carrying no date, and that missing date is exactly what tells tomorrow's midday run no backfill is due, 5.4 STILL NOT ARMED (it arms on the first SATELLITE fill); CORE VOO DELIBERATELY NOT STAMPED AND THE 09-16 PREDICTION LANDED VERBATIM - this run pulled VOO bars to PRICE THE BOOK so today's official close 700.97 was sitting in terminal output with nothing to do, writing it here would FABRICATE a 5.4 stop on the one position §5 exempts, REFUSED, it feels like tidiness not like a violation, and the prediction arriving one day later means the pull is a STANDING FEATURE not a mood; DAY P&L +768.10 / +0.779% BOTH LEGS OFFICIAL (equity 99428.49 official vs 98660.39 yesterday) against +726.99 / +0.737% on broker marks (99389.86 vs last_equity 98662.86) - DO NOT MIX, broker current_price 700.58 is an AFTER-HOURS QUOTE MIDPOINT and the official close is 700.97, 39 cents away; SINCE INCEPTION -0.572% official / -0.610% broker; VOO 693.215 -> 700.97 = +1.1187% on a NARROW range 698.65-701.695 (~0.43% of the low vs yesterday's 1.58%) and LOWER volume 47563 vs 60725 - the FOMC session's width did not carry into the day after it; THE BOOK LAGGED THE INDEX BY 34bp AND IT IS ARITHMETIC NOT JUDGMENT - 0.6959 x 1.1187% = 0.7785%, yesterday's core weight times the index move to a rounding tick, and 09-16's 13bp of apparent OUTperformance came from the IDENTICAL calculation and was predicted to reverse on the first green day: IT DID, ONE SESSION LATER, same mechanism opposite sign, which is the cleanest proof available that NEITHER number was ever skill; core unchanged 99.046311231 sh since 09-03, on official closes 69428.49, unrealized -571.50 / -0.816% which is EXACTLY VOO 706.74 -> 700.97, TRACKING ERROR 0.0000% on the FOURTH check; sleeves broker equity 99389.86 cash 30000.00 core 69389.86 = 69.82% satellite 0.0% count 0 cash 30.18% core_in_band true rebalance_needed false rebalance_delta +183.04, ON OFFICIAL CLOSES equity 99428.49 core 69428.49 = 69.83% cash 30.17% delta +171.45 = 0.17% of equity THE SMALLEST RECORDED IN THIS RANGE, NO REBALANCE DUE AT TOMORROW'S OPEN (§2 acts at the BAND EDGE 65/75 not at the target), TWENTY-FOURTH consecutive run inside a 0.39-point range 69.59-69.98; ZERO TRADES at all four of today's runs, orders --status all returns ONE ROW for the account's entire history (09-03 core VOO buy, filled, terminal), NOTHING IN LIMBO OVERNIGHT per §7, NO order from today exists to resolve because none was placed, trade_log.md correctly left unappended; 5.1-5.4 had NO SUBJECT and the ordered evaluation never started, sell_rule_status ABSENT rather than blank, still the NINETEENTH session with an empty sleeve (count advances on SESSIONS not RUNS, four runs shared 09-17), all four remain UNTESTED CODE PATHS; week rollover checked - ISO Monday of 2026-09-17 is 2026-09-14 MATCHES week_of, NO RESET DUE, next boundary Monday 2026-09-21; loss streak UNMOVED at 0 because nothing has ever closed, breaker INACTIVE, no HALT_CLEARED_AT comparison required, NO circuit-breaker alert due; new_positions_this_week stays 0 of 3; open_thesis_ids stays none - all three of today's theses were rejected before the bell; NO RESEARCH AND NO THESIS WRITTEN - a journaling routine does not research, counter stays 42 since inception with 12 this week, 0 accepted; GNRC NOT LOOKED AT FOR THE THIRD CONSECUTIVE RUN TODAY - zero move/quote/bars/asset calls, and TONIGHT'S CLOSE IS THE FIRST THAT COULD ADMIT THE AFTER-HOURS GAP INTO bars, which makes "just check what it did" the most plausible costume yet and the one with the LEAST justification from a seat that trades nothing at all; ⚠ FOUND AND REPAIRED A SILENTLY DELETED JOURNAL HEADER - commit 5fe9e4c (the 09-16 CLOSE RUN) deleted "### 2026-09-15 (Tuesday)" from journal.md while inserting its own entry above it and that was its ONLY deletion, leaving a full trading day's entry headerless and glued to 09-16's, INVISIBLE TO ANY HEADER SCAN; header restored with an inline note, body untouched, all THIRTEEN September sessions verified to carry exactly one header each; journal.md entry written, ClickUp daily summary posted as 86bc2nff1; alerts.md EMPTY, zero open, zero SYSTEMIC)
 
 week_of: 2026-09-14
 new_positions_this_week: 0
@@ -70,6 +70,57 @@ position list win, and the discrepancy goes in the journal.
 ## Carry forward
 
 Anything the next run must not lose. Cleared once acted on.
+
+- **⚠ THE HEADLINE OF 09-18, AND IT REPLACES 09-17's: THREE SEPARATE NAMED-BOTH-PARTIES TRANSACTIONS
+  ARRIVED IN ONE WINDOW AND EVERY ONE OF THEM WITHHELD THE NUMBER. THE FUNNEL'S FIRST FAILURE SHAPE
+  HAS NOW FIRED IN TRIPLICATE, WHICH IS A CLUSTER, NOT THREE COINCIDENCES.** **(a) GlobalFoundries ↔
+  Marvell** — expanded multi-year SiGe capacity agreement at Burlington VT for NPO/CPO optical
+  connectivity (**GF press release 09-17, Reuters 09-17**): **no dollar value, no wafer volume, no
+  quantified capacity increase**, and one commentary states flatly *"financial terms were not
+  disclosed."* **(b) Centrus ↔ Antares Nuclear** — multi-year HALEU supply contract with prepayments
+  (**09-17**): **"financial terms were not disclosed,"** no volume, **Antares not publicly traded.**
+  **(c) TotalEnergies ↔ GIP** — African oil and gas infrastructure partnership, **US$1.8B capital
+  contribution** (**Business Wire 09-18**): a figure exists, **but it is capital going IN, not revenue
+  coming OUT.** **Part 2 could not be written for any of the three.** **Why this is the entry worth
+  keeping:** carry-forward item (3) names three distinct binding constraints on the funnel, and
+  09-15/09-16/09-17 each demonstrated a *different* one on a *different* day. **09-18 is the first day
+  a single constraint accounted for the entire output.** **Recognise the cluster on sight rather than
+  re-deriving it deal by deal** — the same lesson 09-17 recorded for the MarketBeat guidance-issuance
+  alerts and 09-16 for the federal ceiling awards.
+
+- **⚠ NEW STANDING RULE (viii), WRITTEN 09-18: *READ WHICH DIRECTION THE DISCLOSED DOLLAR FIGURE
+  MOVES BEFORE TREATING IT AS A DOLLAR PATH.*** TotalEnergies/GIP's **$1.8B is a capital
+  contribution — money GIP pays in, not revenue it earns.** It is large, real, sourced and primary,
+  and it **satisfies none of part 2**, which asks for a **segment revenue** figure at Company B.
+  **A figure's presence is not the same as the figure part 2 asks for.** This is the **mirror image of
+  09-17's Fluence finding**, where a precisely quantified **loss** invited the assumption that the
+  money went somewhere nameable. **Both traps work by supplying a number that feels like it discharges
+  part 2 and does not.** T-2026-09-18-04 (BLK) is the worked example: **part 1 passed cleanly in one
+  clause** and the thesis still died, **and it died on the absent segment figure, NOT on size** — a
+  future run must not re-record it as a size rejection, because the size arithmetic was never the
+  ground.
+
+- **⚠ GNRC REFUSED A FOURTH CONSECUTIVE TIME, AND 09-18's VERSION OF THE PULL IS THE STRONGEST AND THE
+  EMPTIEST — WHICH IS EXACTLY WHY IT IS THE ONE WORTH RECORDING.** Today was the first run whose
+  `bars` history **contained** the 09-16 after-hours gap (**reported +29.9% on the 09-17 session**), so
+  `move --symbol GNRC --sessions 5` would finally have returned a large positive number and
+  `priced_in: true`. **That reading would not measure open item (7). It would be the filter working
+  correctly one session late.** The defect — the one-session blind window between an after-hours event
+  and the next official close — **was already measured on 09-17** (186.55 → 175.19, **−6.09%**,
+  `priced_in: true`, on the morning after the surge). **There is no number left to collect, and
+  "completeness" is just the newest wrapper.** **Zero `move`/`quote`/`bars`/`asset` calls, four runs
+  running.** **The costumes so far: diligence (09-17 09:35), curiosity (09-17 12:35), tidiness
+  (09-17 16:16), completeness (09-18 08:16). Expect a fifth. The pattern is the finding, not any
+  single instance.**
+
+- **⚠ `lastday_price` READ 701.03 WHILE THE OFFICIAL 09-17 CLOSE WAS 700.97 — SIX CENTS, AND THIS IS
+  THE SHARPEST INSTANCE OF THE TWO-PRICE DEFECT THE LOG WILL GET.** Every prior instance involved
+  `current_price`, a field nobody would mistake for a close. **This one is a field literally named for
+  the prior day and it still is not that day's close** — it is a live midpoint carried over. **Fifth
+  documented instance.** Cosmetic on core; **load-bearing the moment a satellite position exists**,
+  because a `highest_close` read from it silently moves the §5.4 stop. **`bars --adjustment all` for a
+  close, a fresh `quote` for execution, never a `positions` field for either — and the field's NAME is
+  not evidence about what it holds.**
 
 - **⚠ A CLOSE RUN SILENTLY DELETED A PRIOR DAY'S JOURNAL HEADER, NOTHING CAUGHT IT FOR A DAY, AND
   THE EDIT THAT DID IT IS THE EDIT EVERY CLOSE RUN MAKES. THIS IS THE HEADLINE OF 09-17's CLOSE
@@ -149,6 +200,14 @@ Anything the next run must not lose. Cleared once acted on.
   Weichai Power via Baudouin, listed in Shenzhen (002338) and Hong Kong (02338) — §3 excludes it
   outright, and no source attaches a dollar figure to its Generac sales in any case.**
   **Knowing who plausibly makes the part is still not knowing who was paid.**
+  **⚠ FOURTH INSTANCE 09-18, AND THE TOOL CAUGHT IT FIRST AGAIN — TWICE IN ONE RUN.** The Centrus
+  screen volunteered that vacuum systems, compressors, valves and control-system vendors are
+  **"general industry possibilities and are not tied to Centrus's Piketon facility by the cited
+  sources,"** and the GF/Marvell screen said mapping optics vendors to that deal **"would be
+  speculative."** **No US-listed supplier was screened for either deal, and no filters were run on
+  one — absence of a source, not a verdict on any name.** **That the tool now flags this before I
+  reach for it, on consecutive days, is worth noting as a genuine mitigation — and it is not one the
+  system owns, because it depends on how the question happens to be phrased.**
 
 - **⚠ RULE (v)'s CEILING SUB-SHAPE IS ONE DAY OLD AND IS ALREADY THE DEFAULT FORM IN WHICH FEDERAL
   DOLLARS ARRIVE.** Written 09-16 off the Abrams OTA (**$2.5B ceiling vs $11.8M obligated — 212×**);
@@ -238,6 +297,29 @@ Anything the next run must not lose. Cleared once acted on.
   the plan carries a BUY intent on a name whose news broke after the prior close.** Prior context in ClickUp `86bbv75bz`, last week's in
   `86bbzgbg3`.
 
+- **⚠ FOURTEEN ITEMS WERE DROPPED BEFORE THESIS STAGE ON 09-18 AND EACH HAS A NAMED REASON — THEIR
+  ABSENCE FROM THE THESIS IDS IS NOT AN OVERSIGHT.** **Fluence's FY26 cut** resurfaced with old/new
+  figures ($3.0B → ~$2.4B revenue midpoint; −$10M → −$200M adj. EBITDA) — **the same cut processed
+  09-17 as T-2026-09-17-02**, re-covered, rule (iii). **ADM** raised 2026 adj. EPS **$4.15–4.70 →
+  $5.15–5.60** — a genuine change, **first-order, no counterparty named**. **UnitedHealth** raised 2026
+  adj. EPS to **$19.50–20.00** with **no prior figure stated**. **Philip Morris** — the **currency-only**
+  raise, disposed 09-17. **Labcorp ($18.10–18.55 EPS, $14.7–14.8B revenue), Nucor (Q3 $5.55–5.65) and
+  Steel Dynamics (Q3 $5.34–5.38)** — all **guidance-ISSUANCE alerts compared to CONSENSUS, never to a
+  prior company figure**: **the General Mills trap for the fourth, fifth and sixth time this week**,
+  rule (iii). *(Nucor's coverage carried two irreconcilable ranges, **$5.55–5.65 and $3.30–3.60**, in
+  the same scan — **a secondary aggregator can be internally inconsistent inside one morning**, which
+  is a new and cheap reason to distrust one.)* **Lockheed Martin ↔ Pentagon AIM-260 JATM production
+  framework (09-17)** — **the awarded party, no dollar figure at all, no supplier named**: rule (i)
+  plus the rule (v) ceiling shape **with the ceiling left blank**. **Vicor** — licensing deal with an
+  **unnamed OEM** plus its own NH fab expansion; **no counterparty exists to screen**. **Southwest**
+  *reiterated* Q3 EPS. **Myriad Genetics** cut FY26 guidance with **no figures in any retrieved
+  source**. **Emera** is Canadian-listed (§3). **Aeluma** explicitly declines to guide.
+  **Aethlon/North Immunology** and an **SEC tokenized-stock "innovation exemption"** — **the source
+  itself called its own evidence too thin**, which is worth noting as the rare case where the tool
+  refuses before the filter has to. **First Breach ↔ SAS Ammo** (three-year ammunition supply, both
+  named) and **Oribiotech ↔ an unnamed biopharma** (10-year, up to $120M) — **private counterparties**,
+  and the second **does not name its buyer at all**.
+
 - **⚠ ELEVEN ITEMS WERE DROPPED BEFORE THESIS STAGE ON 09-17 AND EACH HAS A NAMED REASON — THEIR
   ABSENCE FROM THE THESIS IDS IS NOT AN OVERSIGHT.** **Ford raised FY26 adj. EBIT guidance to
   $10–11B (+$1B at midpoint)**, adj. FCF $6–7B, capex unchanged $9.5–10.5B, **$500M in 2026 of the
@@ -260,17 +342,19 @@ Anything the next run must not lose. Cleared once acted on.
   supplier award and Powerus in Falcon Peak 26.2** — named beneficiaries, **no money attached**,
   both private.
 
-- **⚠ NOTHING IS PENDING FOR THE NEXT PRE-MARKET RUN, AND NOTHING CAN PILE UP BETWEEN THEM.** No
-  unscreened item has accumulated across 09-14 through 09-17. **Neither the open run nor the close
-  run screens earnings**, so the only hand-off channel is pre-market run to pre-market run, plus the
-  Friday review. **09-17's earnings screen found four genuine guidance changes in the 09-16/17
-  window — Fluence (cut, became T-2026-09-17-02), Ford (raise), Lululemon (cut), Norwegian (cut) —
-  and three MarketBeat guidance-ISSUANCE alerts that are not events at all** (Ameren, Five Below,
-  DaVita). **General Mills still does not report until ~Sept 23 — carry it to the next pre-market
-  run.** **TOMORROW IS FRIDAY: the weekly review runs and owes the 09-21 pre-market run a written
-  hand-off.** **The 09-17 open run adds nothing to this channel — an execution routine does not
-  screen earnings and did not research, so the hand-off is unchanged, not empty.** **Keep the Friday review writing it and keep the next pre-market run discharging it in
-  writing.**
+- **⚠ THE HAND-OFF WAS DISCHARGED IN WRITING ON 09-18 AND RE-ARMED WITH ONE ITEM. NOTHING ELSE IS
+  PENDING, AND NOTHING CAN PILE UP BETWEEN PRE-MARKET RUNS.** No unscreened item has accumulated
+  across 09-14 through 09-18. **Neither the open run nor the close run screens earnings**, so the only
+  hand-off channel is pre-market run to pre-market run, plus the Friday review. **09-18's earnings
+  screen found two genuine guidance changes in the 09-17/18 window — ADM (raise, $4.15–4.70 →
+  $5.15–5.60) and Fluence (the SAME cut already processed 09-17, i.e. re-coverage, not a second
+  event) — plus three MarketBeat/PR guidance-ISSUANCE items that are not events at all** (Labcorp,
+  Nucor, Steel Dynamics). **⚠ CARRIED AGAIN: General Mills still has not reported (~Sept 23). It has
+  now been carried across two pre-market runs; the 09-21 run must check whether it has reported and
+  either screen it or carry it a third time — an item carried silently is indistinguishable from one
+  forgotten.** **TODAY IS FRIDAY: the weekly review runs after the close and owes the 09-21
+  pre-market run a written hand-off.** **Keep the Friday review writing it and keep the next
+  pre-market run discharging it in writing.**
 
 - **⚠ A CLOSE RUN ALWAYS READS `is_open: false`, AND SO DOES A PRE-MARKET RUN — THE BOOLEAN IS USELESS
   IN BOTH DIRECTIONS AND `next_open` IS WHAT DISCRIMINATES. TODAY SUPPLIED ALL THREE SHAPES IN ONE
@@ -325,7 +409,17 @@ Anything the next run must not lose. Cleared once acted on.
   run failed — i.e. exactly the morning when the open run has no fresh notes to lean on and the
   untested alert path runs for the first time. Read Step 2 then, do not recall it.**
 
-- **⚠ EVERY ROUTINE'S SCOPE BINDS HARDEST ON AN EMPTY SLEEVE WITH 30% CASH.** **Routine 1 places no
+- **⚠ EVERY ROUTINE'S SCOPE BINDS HARDEST ON AN EMPTY SLEEVE WITH 30% CASH.**
+  **⚠ RE-DISCHARGED 09-18 08:16, AND THE TEST IS GETTING EASIER TO PASS — WHICH IS ITSELF THE THING TO
+  WATCH.** New positions were **fully permitted** — breaker INACTIVE, cap **0 of 3**, empty sleeve,
+  **30.17% idle cash**, no restricting note — and the run wrote **zero BUY intents** off **four full
+  theses**. **The honest reading of the streak: five consecutive pre-market runs have found full
+  authority and used none of it, and the sixth refusal costs less effort than the first did.** **That
+  is the discipline working, and it is also how a research seat quietly becomes one that has stopped
+  expecting to find anything** — the two are indistinguishable from outside, because both produce an
+  empty plan. **The defence is not to lower the §4 bar. It is to keep naming which specific part
+  failed, so a human can see whether the funnel is filtering or idling.**
+  **Routine 1 places no
   orders by design** — it researches and writes a plan; **routine 3 is exits-only**; **routine 4
   trades nothing at all.** **A breaker reading INACTIVE, a weekly cap at 0 of 3 and 30.24% idle cash
   are not an opportunity any of them may act on**, and carry-forward item (3) above (the structurally
@@ -399,6 +493,23 @@ Anything the next run must not lose. Cleared once acted on.
   number answer a question it was not asked.** §1 asks about twelve months, and 30% cash has a known
   negative answer to that in a rising market.
 
+- **⚠ DO NOT REACH FOR THESE — 09-18's additions, ahead of the older list below.** **GFS and MRVL** —
+  **both signatories** to the SiGe capacity agreement, i.e. **first-order and outside §4 at any
+  price**, and the deal discloses **no dollar value, no wafer volume and no capacity figure**. **This
+  was the most attractive item of the week and it still has no Company B**; neither the price nor the
+  missing number is what killed it, so **it does not become a buy on a later day at a different
+  price.** **LEU** — the **named seller** on the Antares HALEU contract, first-order, **already a
+  disposed reject from 09-10**, and the deal's **pre-2030 first delivery is outside §4 part 3 no
+  matter who the supplier turns out to be.** **LEN** — Company A on its own quarter, and the only
+  read-across runs through **the mortgage rate, a macro variable rather than a transaction**; it is
+  also **negative-direction on a long-only book.** **BLK** — part 1 passed and part 2 could not be
+  written; **the $1.8B is capital IN, not revenue OUT**, and **the rejection is the absent segment
+  figure, not size.** **TTE** — Company A on the GIP partnership, and a French issuer. **ADM, UNH** —
+  first-order on their own guidance. **LH, NUE, STLD** — guidance-ISSUANCE alerts against consensus,
+  rule (iii). **LMT** — the **awarded party** on the AIM-260 framework, for the second time this
+  month, with **no dollar figure and no supplier named.** **VICR** — its OEM counterparty is unnamed,
+  so there is nothing to screen. **None of these becomes a buy at a different price.**
+
 - **⚠ DO NOT REACH FOR THESE — the disposed rejects and the trap in each.** **GNRC** — 09-17's, and
   the one most likely to be reached for, because it will be the loudest ticker on the tape: it is the
   **named counterparty in the Amazon announcement**, i.e. **first-order, Company A's direct
@@ -446,14 +557,17 @@ Anything the next run must not lose. Cleared once acted on.
   **Unlike rules (iii) and (vi), which kill a candidate, this one saves a research call on a
   candidate that was never going to exist.**
 
-- **⚠ SIX STANDING RULES, ONE ROOT CAUSE** *(now seven — see (vii) above)*. (i) *Screen on the mechanism before running filters*
+- **⚠ SIX STANDING RULES, ONE ROOT CAUSE** *(now **eight** — see (vii) and (viii) above)*. (i) *Screen on the mechanism before running filters*
   (RTX). (ii) *Verify what the company currently sells, post-spin* (WDC). (iii) *Verify the news is
   new to the company's own disclosure* (AEP, CAT, the $517B aggregation, Alcoa/South32, Oracle's
   maintained capex guidance, the four unsourced headlines, CoreWeave's 300 MW re-reported as context,
   **and on 09-16: Broadcom's own Q3 2026 call already carrying MTIA, Centene's reaffirmation of July
   28 guidance, and Sempra/Petrobras re-covered as though fresh; and on 09-17: Charter/Cox re-covered
   five weeks after closing, plus THREE MarketBeat guidance-ISSUANCE alerts (Ameren, Five Below,
-  DaVita) in one morning**). **09-17 also produced the first clean rule (iii) PASS — Amazon/Generac,
+  DaVita) in one morning; **and on 09-18: Fluence's FY26 cut re-covered a day later as though fresh,
+  plus THREE MORE guidance-ISSUANCE items (Labcorp, Nucor, Steel Dynamics) compared to CONSENSUS
+  rather than to any prior company figure — the fourth, fifth and sixth instances of that costume this
+  week**). **09-17 also produced the first clean rule (iii) PASS — Amazon/Generac,
   an 8-K with no prior disclosure — which is worth noting precisely because the rule usually kills.**
   (iv) *A recurring ticker is a warning, not corroboration* (LHX — resolved 09-11 on a number).
   (v) *A market-structure fact is not a supplier relationship* — "sole producer," "dominant share,"
@@ -462,7 +576,10 @@ Anything the next run must not lose. Cleared once acted on.
   awards in one morning.** Earlier costumes: a **TABLE** (the DoD daily contracts digest, 09-15), a
   **CONSORTIUM AWARDEE** (Abrams, 09-16) and a sentence. (vi) *Screen the timing window early on
   anything whose subject is under construction* (Sempra/Petrobras 09-15, **Venture Global/China Gas
-  09-16**, **Amazon/Generac 09-17 — deliveries 2027–2028, third consecutive session**). **The source
+  09-16**, **Amazon/Generac 09-17 — deliveries 2027–2028**, **Centrus/Antares 09-18 — first delivery
+  before 2030, FOURTH consecutive session; long-dated energy offtake is a standing feature of this
+  funnel, not a visitor, and part 3 killed it in ONE step before either follow-up screen was needed**).
+  **The source
   left the blank. Filling in a blank the source left blank is not research.** **Recognise the phrase;
   do not re-derive it.**
 
@@ -476,6 +593,17 @@ Anything the next run must not lose. Cleared once acted on.
   not have to have gone anywhere.** *(Fluence's other failure is the ordinary one: the contract
   manufacturer is never named, and one source reports its corrective actions while withholding its
   identity — **the counterparty is not merely unnamed, it is actively described.**)*
+  **⚠ SIXTH INSTANCE 09-18 — LENNAR, AND IT IS THE PLAINEST OF THE SIX.** Lennar's Q3 miss and
+  delivery-guidance cut (**adj. EPS $1.23 vs $1.29; revenue $8.05B vs $8.31B expected and $8.81B a
+  year ago**) is attributed to **higher mortgage rates and affordability**, and the read-across to any
+  building-products supplier runs through **the same mortgage rate — a macro variable, not a
+  transaction.** **The mechanism sentence required an "and also" clause, and §4 says that is the
+  answer.** The screen for filings that **name Lennar as a customer and quantify the exposure**
+  returned **nothing at all** — no concentration table, no risk-factor text, no segment disclosure.
+  **A third objection sits underneath: the only available read is NEGATIVE and this is a long-only
+  book, so even a perfectly-sourced version would be unactionable.** **Recorded in the order they were
+  found, deliberately: the long-only objection came first and is the WEAKEST of the three, because it
+  says nothing about whether the reasoning was sound.**
 
 - **⚠ A SHARED CAUSE IS NOT A MECHANISM — FOURTH INSTANCE 09-16.** Macy's FQ2 (09-11) was the first:
   $116M of IEEPA tariff refunds, where *"the ruling lowers other import-heavy retailers' COGS too"*
@@ -570,26 +698,27 @@ Anything the next run must not lose. Cleared once acted on.
   exits-only seat quietly becomes a scouting seat — and the scouting would be happening at the one
   time of day the 08:00/09:35 architecture exists to keep it away from.
 
-- **⚠ COUNTERS, STATED SO THEY DO NOT DRIFT.** **42 theses since inception, 0 accepted** — 30 through
+- **⚠ COUNTERS, STATED SO THEY DO NOT DRIFT.** **46 theses since inception, 0 accepted** — 30 through
   09-11 (6+2+1+1 on 09-01/02/03/04, 4+5+6+5 on 09-08/09/10/11) plus **3 on 09-14** plus **3 on 09-15**
-  plus **3 on 09-16** plus **3 on 09-17**. **12 this week** (the week beginning 2026-09-14). **Neither
+  plus **3 on 09-16** plus **3 on 09-17** plus **4 on 09-18**. **16 this week** (the week beginning
+  2026-09-14). **Trading days with the sleeve empty: TWENTY** — 09-18's pre-market run is the first
+  read of a new session and advanced it by one; **later runs today share this session and must NOT
+  advance it again.** **Neither
   an open run nor a close run writes a thesis or consumes an ID** — an execution routine and a
   journaling routine do not research (§4 by way of the routine prompts), so the count is unchanged by
   them, not stalled. A counter already drifted once (31 vs the auditable 30) and was corrected on
   09-11; **in a repo whose only memory is these files, a counter that drifts unremarked is how a
   larger one starts.**
-  **Positions opened: still zero. `new_positions_this_week` stayed at 0 of 3 because nothing was
-  placed, not because the cap bound. Trading days with the sleeve empty: nineteen** — the count
-  advances on **sessions**, not on runs; **09-17's pre-market run is the first read of a new session
-  and advanced it by one, and the 09:35 run shares that session and must NOT advance it again.**
-  **Satellite exits executed since inception: ZERO, across nineteen midday management runs that each
-  had nothing to manage.** **Orders placed since inception: ONE** — the 09-03 core VOO buy; **the
-  09-17 open run added none, so the number is unchanged and `trade_log.md` was correctly left
-  unappended: a run with no fill writes no trade entry.** **Satellite orders placed since inception:
-  ZERO.** **Market-open runs that placed nothing: every one since 09-03.** **Daily journal entries written:
-  THIRTEEN, one per September trading day through 09-17 inclusive — AUDITED THIS RUN by listing the
-  `###` headers, which is how the missing 09-15 header was found. Do not take the count on trust
-  again; re-run the listing.** **Close runs completed: one per trading day; 09-17's is this one.**
+  **Positions opened: still zero. `new_positions_this_week` stays at 0 of 3 because nothing was
+  placed, not because the cap bound.** **Satellite exits executed since inception: ZERO, across
+  nineteen midday management runs that each had nothing to manage.** **Orders placed since inception:
+  ONE** — the 09-03 core VOO buy; **the 09-18 pre-market run places none by design, so the number is
+  unchanged and `trade_log.md` is correctly left unappended: a run with no fill writes no trade
+  entry.** **Satellite orders placed since inception: ZERO.** **Market-open runs that placed nothing:
+  every one since 09-03.** **Daily journal entries written: THIRTEEN, one per September trading day
+  through 09-17 inclusive — audited 09-17 by listing the `###` headers, which is how the missing 09-15
+  header was found. Do not take the count on trust; re-run the listing.** **Close runs completed: one
+  per trading day through 09-17; 09-18's is still ahead.**
 
 - **ClickUp tasks, for reference:** **09-17 daily summary `86bc2nff1`** (carries the journal-header
   finding under "Needs a human"); 09-16 daily summary `86bc1y9mr`; 09-15 daily summary
