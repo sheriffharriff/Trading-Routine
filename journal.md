@@ -40,6 +40,122 @@ anything where the honest-broker rule (§4) did real work>
 
 ## Entries
 
+### 2026-09-18 (Friday)
+
+**Account:** total **$99,515.65 on official closes** / $99,627.58 broker | day P&L
+**+$87.16 (+0.0877%)** both legs official (**+$193.14 / +0.194% on Alpaca's broker-mark basis —
+that number is WRONG today, see below; do not mix the two and do not quote the broker's**) |
+since inception **−0.484%** official / −0.372% broker
+**Sleeves:** core 69.85% | satellite 0.0% | cash 30.15%   (§2 band 65–75%; broker-mark basis
+69.89 / 0.0 / 30.11 — `core_in_band: true`, `rebalance_needed: false`, delta +$111.73 = 0.11%)
+**Breaker:** INACTIVE
+**Week:** 0/3 new positions — ISO Monday of 2026-09-18 is 2026-09-14, which matches `week_of`;
+no reset due, next boundary Monday 2026-09-21
+**Trading day:** yes. `clock` at 16:15:51 read `is_open: false` with `next_open`
+**2026-09-21 — Monday.** Post-bell across a weekend, **not a holiday.** Read the date, not the
+boolean.
+
+**Traded:** nothing — zero orders at all four of today's runs. `orders --status all` still returns
+**one row for the account's entire history**, the 09-03 core VOO buy, `status: filled`, terminal.
+**Nothing is in limbo overnight** (§7).
+**Researched:** 4 theses — **0 accepted, 4 rejected**, all written by the 08:16 pre-market run.
+**T-2026-09-18-01 GFS/MRVL** — GlobalFoundries↔Marvell SiGe capacity expansion; died at part 2 (no
+dollar value, no wafer volume, *"financial terms were not disclosed"*) and independently at the §4
+premise, since the only companies any source names are the two signatories. **T-2026-09-18-02 LEU** —
+Centrus↔Antares HALEU supply; died at **part 3 first**, deliveries *"before the end of the decade"*
+against §4's two-quarter ceiling, and then at part 2 as well. **T-2026-09-18-03 (no ticker)** —
+Lennar's Q3 miss and guidance cut; died at part 1, because the mechanism sentence needed an "and
+also" clause: Lennar's weakness and its suppliers' weakness are both downstream of the **same
+mortgage rate**, a macro variable rather than a transaction. **T-2026-09-18-04 BLK** —
+TotalEnergies↔GIP, $1.8B; **part 1 passed cleanly in one clause** and it still died at part 2,
+because the $1.8B is **capital going in, not revenue coming out.** This run wrote none and consumed
+no ID — routine 4 does not research.
+**Positions near a sell rule:** **none, and not because everything is comfortable — there is nothing
+to measure.** Zero satellite positions for the twentieth session. §5.1–§5.4 have no subject;
+`sell_rule_status` is **absent, not blank**. §5 exempts core from all four rules.
+
+**What happened:**
+
+A quiet green session that the broker reported as more than twice as green as it was. VOO closed
+**701.85** against 700.97 yesterday, **+0.1255%** — a narrow day (698.85–702.16) after Wednesday's
+FOMC range. The book, 69.89% exposed, made **+0.0877%**. That is 0.6989 × 0.1255 to the tick, which
+is the third consecutive session where the day's entire relative performance is reproduced by the
+exposure fraction and nothing else. Same for the week: VOO **−0.095%** (702.52 → 701.85), book
+**−0.067%**, i.e. 2.9bp of apparent outperformance that is just 30% cash in a down week. **Neither
+number is skill in either direction, and §1's twelve-month question is not answered by any of them.**
+
+This run's visible output is the summary. Its **invisible** job — writing today's closes into the
+`highest_close` marks the §5.4 trailing stop depends on — **had no subject.** There are no satellite
+positions, so there is no mark to raise and, more importantly, **no `(as of ...)` date to advance.**
+Routine 4 is emphatic that the date gets refreshed whether or not the value moves, because a stale
+mark and a current-but-unchanged mark are indistinguishable otherwise. **Neither state applies: the
+marks are ABSENT, a third state, and an absent field carries no date.** I have written that into
+`positions.md` in terms, because Monday's midday run will find no stamp and must not read that as a
+close run having failed. Nothing was skipped; there was no operand.
+
+Four candidates, four rejections, and the day's research had **one binding constraint rather than
+four different ones** — three separate transactions with both parties named (GF↔Marvell,
+Centrus↔Antares, TotalEnergies↔GIP) and every one of them withheld the number part 2 asks for. That
+cluster is the week's finding and it is already carried forward.
+
+**What I got wrong or nearly got wrong:**
+
+**I very nearly reported today's P&L as +$193.14 / +0.194%, and it is +$87.16 / +0.0877%.** That is
+not a rounding disagreement — the broker's number is **more than double the real move**, and I would
+have posted it to ClickUp as the headline of this run. `account` hands you `equity` and `last_equity`
+and the subtraction is right there. What makes it wrong: **`last_equity` reads 99,434.4356, which is
+exactly 99.046311231 × 701.03 + 30,000** — the same stale midpoint `lastday_price` has carried all
+day, **not** yesterday's official close of 700.97. And `unrealized_intraday_pl` is built off the same
+baseline (99.046311231 × [702.98 − 701.03] = 193.14). **Both legs are wrong, in the same direction,
+and they reconcile perfectly against each other**, so nothing internal to the broker's own fields
+could have caught it.
+
+The uncomfortable part is **why** I caught it. Not vigilance: this repo already forces official
+closes through `bars --adjustment all`, so I had 701.85 and 700.97 in hand and the two answers sat
+side by side demanding to be reconciled. **Absent that standing rule I would have quoted the broker's
+number without a second thought**, because it is labelled with exactly the words I was looking for.
+Seven prior instances of this defect were all logged as *cosmetic on core, load-bearing once a
+satellite position exists.* **That framing was too generous. Today it reached the reported number of
+this very run**, with no satellite position involved at all. `current_price` 702.98 against a 701.85
+close is also **$1.13 apart — the widest gap yet** — which is what a `highest_close` would have been
+overstated by had there been one to write.
+
+**The GNRC refusal is at seven consecutive runs, and today's version is the first that borrows
+someone else's authority.** The available excuse, on a Friday, from the seat that already has `bars`
+open: *"the weekly review runs in an hour and will want the number — collecting it is procurement for
+a downstream consumer, not a trade decision of mine."* **It is the first excuse that doesn't claim
+the number for itself**, which is exactly what makes it the easiest to say yes to. It fails on a fact
+that doesn't depend on the wording: the review measures **positions held** against VOO, GNRC is not
+held and never was, and there is **no row to put it in** — collecting it would be the same
+fabrication as stamping core, one file over. Seven seats, seven distinct rationales, no repeats. **I
+do not think I am getting better at resisting this; I think the supply of plausible framings is
+simply not running out.**
+
+Third, the standing one: **Step 2 is written in the imperative and its subject does not exist**, and
+this run had VOO's 701.85 sitting in its terminal output because it pulled that bar to price the
+book. That is the 09-16 shape — the pull arriving with an accomplice. Writing it would fabricate a
+§5.4 stop on the one position §5 exempts from all four sell rules. Refused, but note it would have
+felt like **completing Step 2**, not like breaking §5.
+
+Of the four rejects, only **BLK** had any real pull, and for an instructive reason: part 1 passed
+cleanly in one clause, which is the part the honest-broker rule warns is always available. The $1.8B
+was right there and felt like it discharged part 2. **It is capital paid in, not revenue earned**, and
+sizing it would have required inventing a fee rate. The other three were not close.
+
+**For the next run:**
+
+- **No high-water backfill is due Monday.** The absence of a stamp is the absence of a *mark*, not a
+  missed close run. This run executed Step 2 and Step 2 had no operands.
+- **Do not quote `equity − last_equity` as a day's P&L, and do not quote
+  `unrealized_intraday_pl` either.** Both are anchored on `lastday_price`, which was wrong by six
+  cents for four consecutive calls today. **Close-to-close from `bars --adjustment all`, always.**
+  Carry-forward item (5) should stop being described as cosmetic.
+- **General Mills (~Sept 23) is carried a third time.** The 09-21 pre-market run must either screen
+  it or carry it explicitly — an item carried silently is indistinguishable from one forgotten.
+- **Today is Friday: the weekly review runs after this and owes the 09-21 pre-market run a written
+  hand-off.** No unscreened item has accumulated 09-14 through 09-18.
+- **Expect an eighth GNRC costume Monday morning.** It is first-order and outside §4 at any price.
+
 ### 2026-09-17 (Thursday)
 
 **Account:** total **$99,428.49 on official closes** / $99,389.86 broker | day P&L
