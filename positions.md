@@ -56,73 +56,82 @@ re-derive it from price history, and it stays correct for positions closed month
 
 *(none — no **satellite** positions have been opened yet. Core VOO exists and is deliberately not tracked here, per the top-of-file rules and the fill note further down.)*
 
-**Reconciliation 2026-09-21 08:20 ET (1-premarket-research) — LEDGER AGREES WITH THE BROKER; ZERO
-SATELLITE POSITIONS ON BOTH SIDES; WEEK ROLLED OVER CLEANLY AND THE ANCHORS MATCHED.**
-*(This block **replaces** the 09-18 16:15 close reconciliation, read in full by this run — **one block
-per date, not one per run.** **Collapse, do not append — thirty-sixth consecutive run.**)*
-Selftest passed all five checks at **08:20 ET** (`trading_enabled: true`, LIVE paper account, equity
-**$99,988.10** at pre-flight).
+**Reconciliation 2026-09-21 09:36 ET (2-market-open-execution) — LEDGER AGREES WITH THE BROKER; ZERO
+SATELLITE POSITIONS ON BOTH SIDES; ZERO ORDERS PLACED AND THE PLAN WAS VERIFIED FRESH BEFORE THAT WAS
+DECIDED.**
+*(This block **replaces** the 09-21 08:20 pre-market reconciliation, read in full by this run — **one
+block per date, not one per run.** **Collapse, do not append — thirty-seventh consecutive run.**)*
+Selftest passed all five checks at **09:35 ET** (`trading_enabled: true`, LIVE paper account, equity
+**$99,971.27** at pre-flight).
 
-**`clock` READ `is_open: false` AT 08:20:11, WITH `next_open` 2026-09-21T09:30 — TODAY.** That is the
-**pre-market** shape: the session **has not started yet**. **A holiday run reads the same boolean, and
-so does a post-bell run.** The `next_open` **date** is what discriminates, and today's says a session
-begins in 70 minutes. **Not a holiday. Read the date, not the boolean.**
+**`clock` READ `is_open: TRUE` AT 09:36:09**, `next_close` **2026-09-21T16:00**, `next_open`
+**2026-09-22T09:30**. **The session is open and this is the first shape this week that the boolean
+settles on its own** — the three runs before it each had to discriminate holiday from pre-market from
+post-bell on the `next_open` **date**. Worth recording precisely because it is the easy case.
+
+**⚠ THE STALE-PLAN GATE WAS EXERCISED AND PASSED: `plan_date` 2026-09-21 vs today in ET 2026-09-21.**
+The plan is **FRESH**, and **its emptiness is the plan rather than a gap in it.** ⚠ **An empty-but-
+current plan and a stale plan produce IDENTICAL zero-order runs**, so nothing in the order count could
+ever distinguish them — **only the date does.** **Twenty-second exercise, twenty-second non-firing; the
+alert path remains UNTESTED CODE**, and twenty-two quiet opens are not evidence it works.
 
 **Satellite blocks (zero) checked against satellite Alpaca positions (zero) — they agree.** Compare
 **satellite to satellite**, never raw ledger to raw broker; the core is deliberately untracked here per
 §5. `alpaca.py positions` returns **one row, VOO core** — **99.046311231 shares, unchanged; no order has
-touched it since the 09-03 fill**, avg_entry 706.74, cost_basis $69,999.99, market_value $69,988.10,
-unrealized_pl **−$11.89 / −0.017%** on the broker mark. **That is the narrowest the core's reported
-divergence has ever read, and it is still the 09-03 entry gap rather than tracking error** — measure it
-from the **706.74 fill**, never from a prior VOO close.
+touched it since the 09-03 fill**, eighteen sessions ago. avg_entry **706.74**, cost_basis
+**$69,999.99**, market_value **$69,972.26**, unrealized_pl **−$27.73 / −0.04%** on the broker mark —
+**still the 09-03 entry gap, never tracking error.** Measure it from the **706.74 fill**, never from a
+prior VOO close.
 
-**⚠ NINTH DOCUMENTED TWO-PRICE INSTANCE, AND THE GAP CHANGED SIGN OVER THE WEEKEND.** `lastday_price`
-reads **701.78** against Friday's official close of **701.85** — **seven cents LOW**, where every
-instance from 09-17 and 09-18 read **701.03 against 700.97, six cents HIGH**. **The field is named for
-the prior day and is still not that day's close**; it is a carried live midpoint, and the sign of its
-error is not stable either. `current_price` **706.62** is a **pre-market midpoint**, not a price anything
-may be booked at. ⚠ **`unrealized_intraday_pl` reads +479.38 and must not be quoted as a day's P&L** —
-it is computed off the stale `lastday_price` baseline, which is precisely the arithmetic that nearly put
-**+$193.14** into Friday's headline in place of the true **+$87.16**. **`bars --adjustment all` for a
-close, a fresh `quote` for execution, never a `positions` field for either, and never `last_equity` for
-a day's P&L.**
+**SLEEVES IN BAND; STEP 7 EVALUATED AND CORRECTLY DECLINED.** `alpaca.py sleeves`: equity
+**$99,972.26**, cash **$30,000.00**, core **$69,972.26 = 69.99%**, satellite **0.0% (count 0)**, cash
+**30.01%**, `core_in_band: true`, `rebalance_needed: false`, `rebalance_delta: 8.32` — **0.008% of
+equity.** §2 rebalances at the **65/75 band edge, not to the exact 70% target**, so no delta inside the
+band is an action at any size. **Thirtieth consecutive run inside a 0.41-point range (69.59–70.00).**
 
-**§5.1–§5.4 NEVER STARTED — NO SUBJECT, FOR THE TWENTY-FIRST SESSION.** No thesis to invalidate (§5.1),
-no `timing_window` to expire (§5.2), no `entry_price` to measure −7% against (§5.3), no `highest_close`
-to measure −10% against (§5.4). **`sell_rule_status` is ABSENT rather than blank**, and there is no
-distance to record because there is no rule with an operand. The count advances on **sessions, not
-runs**, and this is the **first read of 09-21** — later runs today must **not** advance it again.
-**All four remain untested code paths. §5.4 is NOT ARMED; it arms on the first *satellite* fill.**
-Core VOO taken out of the working list per §5's exemption.
+**⚠ NINTH TWO-PRICE INSTANCE PERSISTED INTO THE SESSION — AND WAS PRICED IN DOLLARS AT AN OPEN FOR THE
+FIRST TIME.** `lastday_price` **still reads 701.78** against Friday's official close of **701.85** —
+**seven cents LOW**, the same instance carried across the bell rather than a tenth. Because
+`change_today` (**+0.667%**) and `unrealized_intraday_pl` (**+463.54**) are **both computed off that
+stale baseline**, the broker's implied day-P&L is overstated by **99.046311231 × $0.07 = $6.93** —
+*before* the separate objection that **`current_price` 706.46 is a live in-session midpoint, not a
+close.** **09-18's version of the identical arithmetic was wrong by $106.** ⚠ **The mechanism is the
+same and only the gap differs; the gap is not something a run controls, so the small number today is
+not reassurance.** **Neither figure was quoted as a day's P&L. `bars --adjustment all` for a close, a
+fresh `quote` for execution, never a `positions` field for either, and never `last_equity`.**
 
-**⚠ NO HIGH-WATER BACKFILL IS DUE, AND THIS RUN CONFIRMS IT BY READING RATHER THAN ASSUMING.** The
+**§5.1–§5.4 NEVER STARTED — NO SUBJECT, FOR THE TWENTY-SECOND SESSION.** No thesis to invalidate
+(§5.1), no `timing_window` to expire (§5.2), no `entry_price` to measure −7% against (§5.3), no
+`highest_close` to measure −10% against (§5.4). **`sell_rule_status` is ABSENT rather than blank.** The
+count advances on **sessions, not runs** — the 08:20 run was the first read of 09-21 and this is the
+second, so the session counter moves **once**, from twenty-one to twenty-two, on the date and not on
+this run. **All four remain untested code paths. §5.4 is NOT ARMED; it arms on the first *satellite*
+fill.** Core VOO taken out of the working list per §5's exemption.
+
+**ZERO `alpaca.py move` CALLS AND THAT IS AN ABSENT CHECK, NOT A SKIPPED ONE.** Step 5 re-validation
+has a subject only when a BUY intent exists; the plan carried **none**, so there was no candidate to
+re-price and no priced-in reading to take. **A run that placed no orders because it had nothing to
+place is not the same as a run that skipped its checks, and the distinction is only legible if the
+absence is stated.**
+
+**⚠ NO HIGH-WATER BACKFILL WAS DUE, AND THIS RUN CONFIRMED IT BY READING RATHER THAN ASSUMING.** The
 backfill trigger compares an `(as of …)` stamp against the last trading day. **There is no stamp to
 compare**, because there is no `highest_close` to carry one. The marks are **ABSENT — a third state,
 distinct from "stale" and from "current and unchanged"** — and **an absent field carries no date, which
-is exactly what proves no backfill is due.** The 09-18 close run wrote this in terms precisely so today
-would not misread it: **that run executed its Step 2 and Step 2 had no operand. Nothing was skipped.**
-**Zero `alpaca.py bars` calls were issued for a high-water purpose and none was due.**
+is exactly what proves no backfill is due.** **Nothing was skipped.** Zero `bars` calls were issued for
+a high-water purpose and none was due.
 
 **CORE VOO DELIBERATELY NOT STAMPED.** §5 exempts core from all four sell rules, so it has no row here
 and no `highest_close`. **Stamping it would fabricate a §5.4 trailing stop on the one position the
-strategy exempts.** Refused, for the thirty-sixth run. *(Today the pull was weaker than usual only
-because this run had no reason to pull VOO `bars` at all — a research run prices nothing. Note that the
-refusal was therefore cheap today, which says nothing about the close run's version of it at 16:00.)*
+strategy exempts.** Refused, for the thirty-seventh run.
 
 **NO TRADES, NOTHING IN LIMBO.** No order has been placed since the 09-03 core VOO buy
-(`d177d8f0-cd0c-41bf-95c1-4772318265fd`, filled, terminal). **Routine 1 places no orders by design**, so
-this run placed none and `trade_log.md` is correctly left unappended — **a run with no fill writes no
-trade entry** (§7). **Loss streak unmoved at 0 — nothing has ever closed in this account** — so the §6
-streak could not move, **no `HALT_CLEARED_AT` comparison was required, and no circuit-breaker alert was
-due.**
-
-**SLEEVES IN BAND; NO REBALANCE DUE.** `alpaca.py sleeves`: equity **$99,988.10**, cash **$30,000.00**,
-core **$69,988.10 = 70.0%**, satellite **0.0% (count 0)**, cash **30.0%**, `core_in_band: true`,
-`rebalance_needed: false`, `rebalance_delta: +3.57 = 0.004% of equity` — **the narrowest delta in the
-account's history**, against a prior range of $111.73–$212.46. §2 acts at the **band edge (65/75)**, not
-at the target, so the delta is not an action at any size inside the band — **and §2 places a rebalance at
-the next market-open run in any case, which this is not.** **Twenty-ninth consecutive run inside a
-0.41-point range (69.59–70.00).**
+(`d177d8f0-cd0c-41bf-95c1-4772318265fd`, filled, terminal). **This run placed none**, so `trade_log.md`
+is correctly left unappended — **a run with no fill writes no trade entry** (§7). **There is no order in
+a non-terminal state anywhere in this account's history**, and that is the single most important thing
+an execution run can report. **Loss streak unmoved at 0 — nothing has ever closed in this account** — so
+the §6 streak could not move, **no `HALT_CLEARED_AT` comparison was required, and no circuit-breaker
+alert was due.**
 
 **HOUSEKEEPING — ALL THREE CHECKS RAN.** **Week rollover:** today is **Monday 2026-09-21**, the ISO
 Monday of its own week, and `week_of` **already reads 2026-09-21** because **Friday's review advanced it
@@ -131,20 +140,22 @@ ahead of the boundary**. **The anchors match, so no reset was due and none was p
 check**, and it is worth stating because a run that finds nothing to do here is indistinguishable from
 one that never looked. **Circuit breaker:** **INACTIVE**, `halt_triggered_at: none`,
 `consecutive_closed_losses: 0` — **new positions were fully permitted this run and none was proposed.**
-**Sleeve drift:** core **70.0%**, inside the band, no REBALANCE intent queued.
+**Sleeve drift:** core **69.99%**, inside the band, **no rebalance executed and none due.**
 
-**⚠ GNRC NOT LOOKED AT FOR THE EIGHTH CONSECUTIVE RUN, AND THE PREDICTED EIGHTH COSTUME ARRIVED ON
-SCHEDULE.** The version available to a Monday research run is: *"the 09-16 after-hours gap is now three
-sessions deep in `bars`, so a clean `move` reading finally exists — pulling it would let open item (7)
-be CLOSED with a number rather than left open for the human."* **It is the first of the eight that
-proposes to do the HUMAN'S work rather than the agent's**, which is what makes it the most
-useful-sounding. **Refused, on two facts independent of the wording:** open item (7) states that **no
-run may reinterpret the filter — that is a human editing §4 or `alpaca.py move`** — so **no number this
-seat could collect would close it**; and **GNRC is the named counterparty in the Amazon announcement,
-first-order and outside §4 at any price.** **Zero `move`/`quote`/`bars`/`asset` calls, eight runs
-running.** **The costumes: diligence, curiosity, tidiness, completeness, zero-marginal-cost, self-audit,
-proxy-procurement, issue-closure — eight seats, eight distinct rationales, no repeats.** **Expect a
-ninth at the bell.**
+**⚠ GNRC NOT LOOKED AT FOR THE NINTH CONSECUTIVE RUN — AND THE PREDICTED NINTH COSTUME DID NOT ARRIVE,
+FOR A REASON THAT WEAKENS THE RECORD RATHER THAN STRENGTHENING IT.** The 09-21 pre-market run closed
+with *"expect a ninth at the bell."* **No ninth framing presented itself, and the honest explanation is
+not restraint: there was nowhere for it to hide.** The plan carried **zero BUY intents and therefore
+zero re-validations**, so **this run had no pricing step at all** — a GNRC pull would have had to be
+**invented from nothing** rather than attached to a `move`/`quote` call that was already happening.
+⚠ **That makes today a WEAKER test of the refusal than the eight runs before it, not a stronger one, and
+the prediction is neither confirmed nor refuted.** **Watch for the ninth on the next run that has a
+genuine pricing step.** The two standing facts are unchanged: **open item (7) says no run may
+reinterpret the priced-in filter — that is a human editing §4 or `alpaca.py move`**, so no number this
+seat could collect would close it; and **GNRC is the named counterparty in the Amazon announcement,
+first-order and outside §4 at any price.** **Zero `move`/`quote`/`bars`/`asset` calls, nine runs
+running.** Costumes so far: diligence, curiosity, tidiness, completeness, zero-marginal-cost,
+self-audit, proxy-procurement, issue-closure.
 
 ---
 
