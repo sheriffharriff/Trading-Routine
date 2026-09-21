@@ -52,6 +52,269 @@ single most common way a plausible-sounding connection gets mistaken for an oppo
 
 ## Entries
 
+### 2026-09-21 (08:20 ET) — event survey (funnel, pre-thesis)
+
+Selftest passed all five checks (`trading_enabled: true`, LIVE paper account, equity
+**$99,988.10**). Window screened: **Friday's close through Monday pre-market (Sept 18–21)** — a
+**weekend**, i.e. three calendar days but only one session of new price information. Five Perplexity
+scans (two broad `--recency day`, three targeted `--recency week` screens). **Three candidates
+reached thesis stage; all three rejected. No BUY intent today.**
+
+**⚠ THE HEADLINE OF 09-21: THE WINDOW'S BEST-SHAPED ITEM IS A REAL DELIVERY BETWEEN TWO NAMED
+US-LISTED COMPANIES — AND IT IS *ALSO* FIVE WEEKS OLD. RULE (iii) AND THE MISSING-NUMBER SHAPE KILLED
+THE SAME CANDIDATE INDEPENDENTLY, AND THE DATE WAS THE CHEAPER OF THE TWO KILLS.** The Monday scan
+surfaced *"General Motors begins supplying parts for Patriot missiles"* as a **September 21** item.
+The dedicated screen returned the actual chronology: the **production contract was signed August 6,
+2026**, the **first batch was delivered August 28, 2026**, and **Reuters carried it on September 17**.
+**The "September 21" framing is a fourth-hand re-report of a five-week-old contract and a
+three-week-old delivery.** **This is standing rule (iii) arriving in its newest costume yet — not a
+guidance-issuance alert, not a re-covered SPA, but a genuine transaction whose *delivery milestone*
+is recycled as though the milestone were the news.** Note which check caught it: **one screen asking
+for the contract's own dates**, not a judgment about the mechanism. **Ask a transaction when it
+happened before asking who it helps.**
+
+**⚠ THE WEEKEND WINDOW IS NOT A THIN-NEWS EXCUSE, AND THIS RUN WILL NOT USE IT AS ONE.** Three
+calendar days produced **one** transaction with both parties named and **zero** with a disclosed
+figure. The second broad scan — written specifically to demand a named customer, a named supplier
+**and** a disclosed value, and to exclude "terms not disclosed" and bare ceilings — returned **three
+items, none usable**: **BEML ↔ NHSRCL** (₹5,400 crore, Mumbai–Ahmedabad rail) and **Welspun
+Enterprises ↔ Ahmedabad Municipal Corporation** (₹3,512.4M, sewer rehabilitation) are **Indian-listed
+and fail §3 outright**, and the **US Army ↔ Skyeton Inc.** award (**"over $10 million"**, contract
+W58RGZ-26-F-A026) names a **private North Las Vegas company** with **no precise obligated figure**.
+**A screen built to find exactly what part 2 needs found nothing that clears §3.** That is a result
+about the window, not about the effort spent on it.
+
+**⚠ THE PRICED-IN FILTER PASSED A CANDIDATE ON A 3.95% *FALL*, FIVE BASIS POINTS INSIDE THE
+THRESHOLD — OPEN ITEM (1)'s NEAR-MISS SHAPE FOR THE SECOND TIME.** `move --symbol GM --sessions 5`
+returned **85.59 → 82.21, −3.95%, `priced_in: false`, "passes the priced-in check."** **The verdict is
+correct and the reasoning behind it is not about this news at all.** The filter compares the
+*magnitude* of a five-session move against 4%; GM **fell**, and it cleared only because the fall was
+**0.05 percentage points too small to trip the wire.** **Had GM fallen 4.1% the filter would have
+returned "LATE — skip" on a stock that had gone DOWN.** This is the **LMT −3.61% near-miss (09-11)
+repeating**, and it belongs with the eight instances of open item (1) already logged. **Recorded
+because the filter's pass is not evidence the filter worked** — it is evidence that a drawdown of the
+wrong size is indistinguishable from an unmoved price, which is the defect, not a verdict.
+
+**⚠ GNRC NOT LOOKED AT FOR THE EIGHTH CONSECUTIVE RUN — AND THE PREDICTED EIGHTH COSTUME ARRIVED, AS
+THE 09-18 REVIEW SAID IT WOULD. IT IS THE FIRST ONE THAT PROPOSES TO *CLOSE A HUMAN'S OPEN ITEM*.**
+The version available to a Monday research run is: *"the 09-16 after-hours gap is now three sessions
+deep in `bars`, so a clean `move` reading finally exists — pulling it would let open item (7) be
+closed with a number instead of left open."* **That is the first excuse that offers to do the human's
+work rather than the agent's**, and it is the most useful-sounding of the eight. **Refused, on two
+facts that do not depend on the wording:** open item (7) says in terms that **no run may reinterpret
+the filter — that is a human editing §4 or `alpaca.py move`** — so there is no number this seat could
+collect that would close it; and **GNRC is the named counterparty in the Amazon announcement,
+first-order and outside §4 at any price.** **Zero `move`/`quote`/`bars`/`asset` calls, eight runs
+running.** **The costumes: diligence, curiosity, tidiness, completeness, zero-marginal-cost,
+self-audit, proxy-procurement, and now issue-closure — eight seats, eight distinct rationales, no
+repeats.** **The 09-18 review's reading holds and today confirms it: the supply of plausible framings
+is not running out, so the defence cannot be vigilance.**
+
+**⚠ THE CARRIED GENERAL MILLS ITEM IS DISCHARGED IN WRITING, AND THE ANSWER IS THAT IT IS STILL NOT AN
+EVENT.** Carried across **four** pre-market runs and screened today rather than carried silently.
+**General Mills has NOT reported** — Q1 FY2027 is scheduled for **September 23**, with consensus
+**$0.72 EPS** (down from **$0.86** a year earlier) and **~$4.34B revenue**, and every figure in
+circulation is an **analyst expectation**. The only company statement since is that on **September 8
+it AFFIRMED FY2027 adjusted EPS guidance of $3.00–$3.20** — **an affirmation, which is standing rule
+(iii)**, the same shape as Centene's (09-16) and Southwest's (09-18). **There is nothing to screen
+until the 23rd.** **Carried once more, explicitly, to the 09-23 pre-market run — which is the run
+that will have an actual print to work with.**
+
+**Dropped before thesis stage, each with a named reason — their absence from the thesis IDs is not an
+oversight.** **Nucor's Q3 $5.55–5.65 guidance** is the **same item disposed on 09-18**, re-covered
+Monday with a −6.08% share-price move attached; rule (iii), and it is already on the do-not-reach
+list. **Nordson** (FQ3 adj. EPS **$3.25** vs **$3.09** consensus, +19.0% y/y; FY26 sales lifted to
+**$3,035–3,075M**, adj. EPS to **$11.80–12.00**) is **first-order on its own quarter with no
+counterparty named anywhere**, and the coverage gives **no prior company figure** to measure the
+"lift" against. **Baker Hughes / Chart Industries ($13.6B)** is dated **September 9** — **outside the
+window**, rule (iii). **Eli Lilly** — Erste Group raised its FY2026 EPS estimate to **$36.45 from
+$36.35**; that is an **analyst estimate, not a company guidance change**, and Lilly's own
+**$35.50–36.50** range is unchanged. **Capricorn Energy / DNO** (US$5.214/share scheme) is **UK-listed**,
+§3. **Fed Vice Chair Bowman's September 18 SVB speech** and the **September 15–21 enforcement digest**
+(10 material actions, none targeting sponsor-bank/BaaS) are **regulatory commentary with no
+transaction, no segment and no dollar path.** **US equity funds' fourth consecutive week of net
+outflows** (week ended 09-18, attributed to crude, inflation and rate-hike expectations) is an
+**environment input, not a Company A** — the same status the FOMC hike has carried since 09-16.
+**The 09-18/19 data calendar** (MBA mortgage rate, EIA inventories, initial jobless claims off a prior
+**196,000**, Q2 current account) is **a schedule, not an event.**
+
+---
+
+### T-2026-09-21-01 — GM — REJECTED
+**Company A / the news:** **Lockheed Martin's PAC-3 MSE interceptor production ramp** for the Patriot
+air and missile defence system. **GM Defense signed a formal production contract on 2026-08-06** to
+supply **housing components / castings** for the interceptor, and **delivered the first batch on
+2026-08-28** — 22 days later (Inside Defense; Reuters 2026-09-17; Defense Daily; Detroit Free Press;
+Bloomberg 2026-09-17). Multiple outlets describe it as GM's entry into the Patriot supply chain and
+its first missile-component work of this kind since WWII.
+**Company B / the candidate:** **General Motors (GM)** — the supplier, i.e. genuinely second-order to
+Lockheed's production ramp.
+
+**1. Mechanism (one sentence):**
+> Lockheed Martin's PAC-3 MSE production ramp causes General Motors' GM Defense segment revenue to
+> increase because GM Defense now manufactures and ships the interceptor housing castings under a
+> signed production contract.
+
+**PART 1 PASSES, CLEANLY AND IN ONE CLAUSE.** No "and also". This is a **transaction**, not a shared
+cause, not a market-structure fact, not a read-across: a contract was signed, parts were cast, parts
+were delivered, and money moves from a named buyer to a named seller. **It is the best part-1 pass
+this log has produced since BLK on 09-18, and a better-evidenced one.**
+
+**2. Dollar path:** **CANNOT BE WRITTEN. THIS IS WHERE THE THESIS DIES.** Three independent sources
+record an explicit refusal to disclose: Inside Defense — *"The companies did not disclose the value or
+quantity of the order"*; a **GM spokesman (Jim Cain)** stating **the value of the deal and the specific
+deliverables will not be disclosed**; and a second outlet quoting GM declining **"because of its
+proprietary nature."** A defence-industry publication adds that **neither company has said what portion
+of the missile the housings represent or how many units GM will supply**, and that **the number of
+casings, the contract value, the scrap rate and the receiving-inspection results are all undisclosed,
+so the size of the first batch cannot be estimated.** **No contract term or multi-year value is stated
+anywhere.** **And the denominator fails too, independently of the numerator:** no source gives
+**GM Defense's revenue** in dollars or **any percentage of GM's consolidated revenue** attributable to
+defence — the sources say only that GM Defense is *"a targeted area of revenue growth."* **§4 part 2
+sets a 10%-of-revenue floor. GM's consolidated revenue is in the high tens of billions per quarter, and
+GM Defense is a small subsidiary supplying castings for one component of one interceptor. There is no
+honest reading on which this clears 10%** — and saying so does not require the figure the sources
+withhold, which is the only reason this paragraph can be written at all.
+**3. Timing window:** **Not reached.** The thesis is already dead at part 2. *(For the record, and
+without treating it as a pass: first deliveries have already occurred, so the timing would plausibly
+have been inside the two-quarter horizon. **Noting it is not the same as clearing it, and it changes
+nothing.**)*
+**4. Invalidation:** **Not reached** — and it could not have been written in observable form, because
+an invalidation condition for this thesis would have to reference a **GM Defense segment line that GM
+does not report.** **A thesis whose invalidation cannot be observed in a filing is not invalidable,
+which is a second, structural reason this one could never have been carried.**
+
+**Hard filters** *(run before the thesis, per §4 — and the mechanised ones were run first)*:
+- **Priced-in (§4):** moved **−3.95%** over the last 5 sessions (**85.59 → 82.21**), threshold 4.0%,
+  `priced_in: false` → **pass**. ⚠ **This is a PASS ON A FALL, five basis points inside the wire** —
+  see the near-miss note above. **The pass is not evidence about whether the news is priced in.**
+- **Correlation (§4):** **pass, vacuously.** Every `driver` field in `positions.md` was read; **there
+  are zero open satellite positions**, so there is no driver to collide with. **A vacuous pass is not
+  a clean one — it is the absence of a test**, and it will stop being vacuous on the first fill.
+- **Universe (§3):** `asset` returns **us_equity, NYSE, status active, tradable, fractionable** →
+  **pass** on asset class. **Market cap NOT sourced, deliberately.** GM is unambiguously a
+  multi-tens-of-billions issuer and clears the $10B floor, **but §3's figure requirement exists to make
+  a BUY auditable, and no BUY exists.** **Sourcing a number nothing depends on would put an
+  unaudited figure in the log wearing the costume of a completed check.** *(A fifth Perplexity call was
+  available and was not spent.)*
+
+**Outcome:** **REJECTED at part 2.** The mechanism is real, the parties are named, the transaction is
+documented in a signed production contract and a physical delivery, and **part 2 has neither a
+numerator (the contract value and volume are expressly withheld by both parties) nor a denominator
+(GM does not break out defence revenue).** **And independently: the event is not new.** The contract
+dates to **August 6**, the delivery to **August 28**, and the first wire coverage to **September 17** —
+so the "September 21" item is **re-coverage under standing rule (iii)**, and would have killed the
+candidate on its own at a cost of one screen. **⚠ Record this as the sharpest specimen yet of the
+constraint in carry-forward item (3): this is the FIRST time both parties were named, the transaction
+was primary-sourced, the product physically shipped, AND the mechanism sentence passed in one clause —
+and part 2 still could not be written, because non-disclosure was a deliberate commercial choice by
+both sides rather than a gap in the reporting.** **No better-sourced version of this candidate will
+ever arrive, because the missing number is not missing by accident.** **GM does not become a buy at a
+different price, and the −3.95% is not the reason.**
+
+---
+
+### T-2026-09-21-02 — BE — REJECTED
+**Company A / the news:** **Brookfield Asset Management expanded its AI data-centre power financing
+framework with Bloom Energy from US$5B to up to US$25B** (The Tech Capital 2026-09-21; StockMinded
+2026-09-17; Bloom's own company materials 2026-09-16). BMO's Ameet Thakkar characterises it as *"up to
+$25B in financing to deploy Bloom's solid oxide fuel cell powered generation solution"*, and notes
+**$6.4B of project financing in process** for data centres sponsored by Meta and others.
+**Company B / the candidate:** **None could be identified.** Screened as **Bloom Energy (BE)** for the
+record, which is the problem — see the outcome.
+
+**1. Mechanism (one sentence):**
+> Brookfield's expanded financing framework causes Bloom Energy's product and service revenue to
+> increase because financed data-centre operators buy Bloom's solid oxide fuel cell systems.
+
+**⚠ THE SENTENCE IS WRITABLE AND IT DESCRIBES A FIRST-ORDER TRADE.** **Bloom is a signatory.** Buying
+the named party to its own announcement is **Company A, outside §4 at any price** — the same
+disqualification as GFS/MRVL (09-18), LEU (09-18), GNRC (09-17) and LMT/BA before them. **§4's whole
+premise is the company that is *not* in the headline.**
+
+**2. Dollar path:** **CANNOT BE WRITTEN, AND THE SOURCES SAY WHY IN THEIR OWN WORDS.** **The $25B is
+financing capacity, not revenue, and it is not even capital paid to Bloom** — it is a project-finance
+shelf that third-party sponsors may draw on. A report on Bloom's own September 16 materials states
+that **the $25B "describes a project-financing framework; Bloom's reported revenue will depend on
+projects that are ultimately funded, built and accepted."** A second research note says the figure
+**"indicates a financing capacity, not firm orders or revenue already secured by Bloom."** **No source
+discloses revenue, order volume, unit count, or megawatts committed to Bloom under this framework.**
+The one GW figure in circulation — an **Oracle-related 1.2 GW agreement against a 2.8 GW framework
+cap** — is **explicitly not tied to the Brookfield programme by the source**, and the source separately
+warns that **the GW ceiling is a framework cap, not firm orders.**
+**3. Timing window:** **Not reached.** Revenue recognition depends on projects *"funded, built and
+accepted"* — a sequence with no stated date, and on its face well beyond two quarters.
+**4. Invalidation:** **Not reached.**
+
+**Hard filters:** **NOT RUN, AND NONE WAS DUE.** §4 orders the filters before the thesis, and the
+filter's subject is a **second-order candidate ticker**. **Bloom is a signatory**, so a `move` call on
+BE would be running the priced-in filter on Company A — **standing rule (i), screening the wrong
+company.** **No second-order candidate ever existed to filter.** **Zero `move`/`quote`/`asset` calls
+were spent on this item.**
+
+**Outcome:** **REJECTED — three independent kills, and it is worth keeping all three.** **(a)** Bloom
+is the **named party**: first-order, outside §4. **(b)** **Standing rule (viii) fires for the second
+time in three sessions, and this is the purer instance.** Rule (viii) was written 09-18 off
+TotalEnergies/GIP, where **$1.8B was capital paid IN rather than revenue earned OUT.** Here the
+**$25B is one step further from part 2 than that**: it is **neither revenue nor capital received — it
+is a financing ceiling available to somebody else entirely**, and it may never be drawn. **A very
+large number, prominently placed, describing money that is not Bloom's and may not exist.** **And two
+independent sources pre-emptively warn against exactly the misreading part 2 invites, which is the
+first time the tooling has volunteered that correction on a dollar figure rather than on a supplier
+name.** **(c)** **No US-listed supplier is named in connection with the framework by any source**, so
+the second-order hunt has no subject — and per **standing rule (vii)** none was attempted. **⚠ Note
+the direction of travel on rule (viii): 09-18's trap supplied capital-in; today's supplies
+capacity-that-may-never-be-drawn. Both are large, real, sourced figures that satisfy none of part 2.
+The rule should be read as covering any disclosed figure that is not SEGMENT REVENUE AT COMPANY B,
+not merely "capital in".**
+
+---
+
+### T-2026-09-21-03 — BG — REJECTED
+**Company A / the news:** **Bunge Global (BG) raised full-year 2026 adjusted EPS guidance to
+$9.25–$9.75 from $9.00–$9.50** on stronger Q2 oilseed processing (Zacks 2026-09-21). Segment detail in
+the coverage: **Soybean Processing & Refining adj. EBIT +46.4% y/y to $445M**; **Softseed Processing &
+Refining adj. EBIT $14M → $255M**; soybean volumes **9,304 → 11,524 kt**; softseed volumes **+79.3% to
+3,490 kt** on added capacity in Argentina, Canada and Europe. Q2 adj. EPS **$2.00, +52.7% y/y**.
+**Company B / the candidate:** **Other oilseed crushers — ADM the obvious one.**
+
+**1. Mechanism (one sentence):**
+> Bunge's stronger crush results cause ADM's oilseed segment revenue to improve because... **the
+> sentence cannot be completed without a second clause**, and the second clause is *"and also ADM
+> crushes soybeans into the same margin environment."*
+
+**⚠ PART 1 FAILS, AND IT FAILS IN THE SINGLE MOST FAMILIAR WAY THIS LOG RECORDS.** **Bunge's crush
+margins and ADM's crush margins are both downstream of the same soybean/vegetable-oil spread** — a
+**market**, not a transaction. **Bunge's results do not cause ADM's; they are jointly caused.**
+**SEVENTH shared-cause instance**, after Macy's/IEEPA tariffs (09-11), Kroger's consumer (09-14),
+the Williams NESE ruling (09-08), JPM/BAC/WFC and the rate environment (09-16), Fluence's $600M hole
+(09-17) and Lennar's mortgage rate (09-18).
+
+**2. Dollar path:** **Not reached** — but the screen was run anyway, and its answer is the useful part.
+Asked directly whether any source names a **publicly traded US counterparty whose segment revenue
+changes, with a disclosed figure**, the screen returned: **none.** Every figure in the coverage is
+**Bunge's own segment data**; the integration narrative is about **Viterra synergies (~$350M of cost
+synergies)**, again at Bunge's own level. The **only** cross-company material is explicit
+sector commentary: one article says ADM and Bunge **"earn a spread, not a price"** and reports both on
+**record crush margins**. **The source states the shared cause in so many words.**
+**3. Timing window:** Not reached. **4. Invalidation:** Not reached.
+
+**Hard filters:** **NOT RUN, AND NONE WAS DUE** — **standing rule (i): screen on the mechanism before
+running filters.** The mechanism failed, so no `move` call was spent on ADM. **Zero
+`move`/`quote`/`asset` calls on this item.**
+
+**Outcome:** **REJECTED at part 1 — a shared cause is not a mechanism.** **⚠ And the trap here has a
+sharpened edge worth recording: ADM's own guidance raise ($4.15–4.70 → $5.15–5.60) was disposed on
+09-18 as first-order, and it is cited in today's coverage SIDE BY SIDE with Bunge's as evidence of the
+same margin environment.** **Two companies moving the same way on the same input reads as
+corroboration and is the opposite** — it is the clearest possible statement that the input is a market
+variable. **This is the JPM/BAC/WFC finding (09-16) inverted: there, a DIVERGENCE between two named
+companies sounded causal; here, a CONVERGENCE does.** **Both are the same shared cause wearing
+opposite signs, and the convergent version is the more seductive of the two, because agreement looks
+like evidence.** **Neither BG nor ADM becomes a buy at a different price.**
+
+---
+
 ### 2026-09-18 (08:16 ET) — event survey (funnel, pre-thesis)
 
 Selftest passed all five checks (`trading_enabled: true`, LIVE paper account, equity
