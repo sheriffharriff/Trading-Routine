@@ -40,6 +40,164 @@ anything where the honest-broker rule (§4) did real work>
 
 ## Entries
 
+### 2026-09-21 (Monday)
+
+**Account:** total **$100,596.25 on official closes** / $100,574.46 broker mark | day P&L
+**+$1,080.60 (+1.0859%)**, both legs official (**the broker's own arithmetic says +$1,065.74 and is
+wrong by $14.86 today — see below; do not mix the two and do not quote the broker's**) | since
+inception **+0.596%**
+**Sleeves:** core 70.178% | satellite 0.0% | cash 29.822%   (§2 band 65–75%; broker-mark basis
+70.17 / 0.0 / 29.83 — `core_in_band: true`, `rebalance_needed: false`, delta −$172.34)
+**Breaker:** INACTIVE
+**Week:** 0/3 new positions — today **is** the ISO Monday of its own week and `week_of` already read
+2026-09-21, advanced by Friday's review ahead of the boundary; anchors matched, no reset due
+**Trading day:** yes — a full session, traded through by three earlier runs. `clock` at 16:16:02 read
+`is_open: false` with `next_open` **2026-09-22**, i.e. a **post-bell** shape, not a holiday. The
+boolean is identical in both cases; only the date discriminates.
+
+**Traded:** nothing — zero orders at all four of today's runs. `orders --status all` still returns
+**one row for the account's entire history**, the 09-03 core VOO buy, `status: filled`, terminal.
+**Nothing is in limbo overnight** (§7).
+**Researched:** 3 theses — **0 accepted, 3 rejected**, all written by the 08:20 pre-market run.
+**T-2026-09-21-01 GM** — Lockheed Martin ↔ GM Defense, PAC-3 MSE interceptor housing castings. **Part 1
+passed cleanly in one clause** — a signed production contract (08-06) and a physical first delivery
+(08-28), both parties named and US-listed — and it **still died at part 2**, because **both sides
+expressly refused to disclose**: Inside Defense, *"the companies did not disclose the value or
+quantity"*; GM spokesman Jim Cain, value and deliverables *"proprietary"*. **And the denominator fails
+independently — GM reports no defence segment revenue at all**, so §4's 10% floor cannot be tested even
+in principle. It died a second time on dates: the contract is five weeks old and the "news" was a
+re-report. **T-2026-09-21-02 BE** — Brookfield ↔ Bloom Energy, $5B→$25B AI data-centre financing
+framework; died at the premise (**Bloom is a signatory — first-order**) and again at part 2, because
+**$25B is a financing ceiling available to somebody else and may never be drawn** — Bloom's own
+materials say reported revenue *"will depend on projects that are ultimately funded, built and
+accepted."* **T-2026-09-21-03 BG** — Bunge's FY26 adj. EPS raise to $9.25–9.75 on stronger crush; died
+at part 1, because the read-across to ADM needs an *"and also"* clause: **both are downstream of the
+same crush spread, a market variable rather than a transaction.**
+**Positions near a sell rule:** none — **no satellite positions exist.** §5.1–§5.4 had no subject for
+the twenty-third consecutive session, `sell_rule_status` is **absent rather than blank**, and all four
+remain **untested code paths**. §5.4 is **not armed**; it arms on the first satellite fill.
+
+**What happened:**
+
+The market had its biggest day of this account's short life and the account, being 30% in cash,
+collected about seven-tenths of it. VOO closed **712.76** against Friday's **701.85** — **+1.5545%**,
+comfortably the largest single session in the twelve the core has existed for. The core's 99.046311231
+shares carried **+$1,080.60** into equity, which is both the largest dollar day and the largest
+percentage day the account has recorded. Equity closed at **$100,596.25**, the **highest official-close
+mark since inception**, and the first close above $100,000 in ten sessions — the account had been
+underwater since 09-08 and bottomed at **−1.340%** on 09-16.
+
+Nothing was bought and nothing was sold, and none of that was for want of permission. The breaker is
+**INACTIVE**, the weekly cap sits at **0 of 3**, the satellite sleeve is empty with **29.8% idle cash**,
+and `control.md` carries no restricting note. **Full authority, none used** — the pre-market run
+researched three candidates to a complete `research_log.md` entry and rejected all three, so there was
+nothing in `plan_today.md` for the 09:35 run to execute, nothing for the midday run to exit, and
+nothing for this run to record but the closes. That is §4's honest-broker rule landing as designed.
+
+**Step 2 — the part of this run that matters — executed and had no operand.** Zero open satellite
+positions means zero `highest_close` fields to raise and zero `(as of …)` stamps to advance. I want
+that stated rather than implied, because a missing stamp and a skipped Step 2 look identical from the
+file: **the marks are ABSENT, a third state distinct from "stale" and from "current-and-unchanged",
+and an absent field carries no date to refresh.** No high-water `bars` call was issued and none was
+due. Core VOO was **deliberately not stamped**, for the thirty-ninth run.
+
+The one substantive finding is a price-data one, and it settles a question the midday run left open.
+That run flagged its `current_price` of **711.78** as suspect on the grounds that **711.78 − 701.78 was
+exactly $10.000**, with the intraday P&L and `change_today` both derived from the same round number,
+and asked this run to check it against an official close. **It was right to be suspicious: the official
+close is 712.76, so 711.78 was never a close.** But the sharper finding is the one nobody predicted —
+at **16:16, sixteen minutes after the bell**, `positions` still returns `current_price` **712.54**,
+**22 cents below** the official close. **There is no post-bell grace period after which a `positions`
+field becomes a close.** A close run that took the obvious shortcut would have written a `highest_close`
+22 cents light, which biases a §5.4 trailing stop downward on every mark it touches.
+
+And both known defects fired at once today, in **opposite directions**. The stale `lastday_price`
+(701.78 against Friday's official 701.85, now on its **fourth read of the same instance** — 08:20,
+09:36, 12:35 and post-bell) **overstates** the day by $6.93; the midpoint close **understates** it by
+$21.79. Net, the broker's implied day P&L of **$1,065.74** sits **$14.86 below** the true
+close-to-close **$1,080.60**. **Every prior instance had the broker overstating.** Today it understated,
+which is the useful part: **the direction of the error is not predictable**, the two legs reconcile
+perfectly against each other, and no check internal to the broker's own fields could ever surface
+either one.
+
+Sleeves ended at **core 70.178% / satellite 0.0% / cash 29.822%** on official closes, core *above* the
+70% target by **$178.87**. §2 rebalances at the 65/75 band edge and not to the target, so **no
+rebalance is due tomorrow** — and it is worth noticing that a +1.55% session moved the core allocation
+by less than two tenths of a point. The band is nowhere near threatened. Housekeeping was clean: week
+anchors matched, loss streak unmoved at 0 (nothing has ever closed in this account), no
+`HALT_CLEARED_AT` comparison required, no order in a non-terminal state anywhere in the account's
+history, `alerts.md` empty.
+
+**What I got wrong or nearly got wrong:**
+
+**I nearly published an inherited superlative that is false, and I only caught it by accident.**
+`state.md` handed me, as settled fact from the midday run, that the core's mark was *"POSITIVE FOR THE
+FIRST TIME IN THIS ACCOUNT'S HISTORY."* I had already drafted today's entry around that framing — first
+close above the fill, first time above inception — when a 20-day `bars` pull I ran for a different
+reason showed **VOO closed at 710.70 on 09-03 and 707.86 on 09-04, both above the 706.74 fill**, and
+equity closed at **$100,392.21 and $100,110.92** on those days, both above inception. **Today is the
+third close above the fill and the twelfth session, not the first of anything** — though at **+$6.02**
+it is the widest above-fill gap so far. The midday claim was probably true of the narrow thing it
+actually measured (the broker's `unrealized_pl` field, at run times) and false of the thing its wording
+asserted. ⚠ **The lesson is not about VOO. A superlative inherited from a previous run's carry-forward
+is not a checked fact, and superlatives are the cheapest claim to write and the most expensive to
+verify** — this file and `state.md` are thick with "first", "widest", "narrowest", "in thirty-one
+runs", and **I should assume the next one I am handed is wrong until I have pulled the series.** I got
+lucky today; the check was a by-product, not vigilance.
+
+**The GNRC pull arrived in its strongest costume yet, and this is the first refusal in three runs that
+actually proves anything.** The last two runs issued no price calls at all, so declining cost nothing
+and tested nothing — I said as much in Friday's and today's midday notes. **This run ran
+`bars --symbol VOO` twice.** The data plane was open, the command was already being typed, and
+`--symbol GNRC` was one flag away from free. That is the ninth costume — *"the call is already
+open"* — and it is the most honest version of the pull yet, because for once the marginal cost really
+was zero. **It changes nothing.** GNRC is the **named counterparty** in the Amazon announcement,
+first-order and outside §4 at any price, and open item (7) is resolved by a human editing §4 or
+`alpaca.py move`, **not by a number I collect.** Free is not the same as permitted.
+
+**The close run is where the urge to stamp the core is strongest, and today was its best day for it.**
+I was already holding VOO's official close for the P&L arithmetic. Writing it into a `highest_close`
+would have cost one line, looked like tidiness, and — on the highest close the account has ever seen —
+seeded a **fabricated §5.4 trailing stop on the one position §5 explicitly exempts**, at the worst
+possible mark. Refused, but I want it on record that the temptation is structurally strongest in
+*this* routine, not the others, precisely because this is the routine that legitimately has the number.
+
+**And the uncomfortable one, which is about the strategy rather than the plumbing.** Today felt like a
+good day — biggest dollar gain on record, back above water, a green headline for the ClickUp summary.
+**It was the account's worst day of relative performance since the core was established.** Against §1's
+actual benchmark the account returned **+1.0859% versus VOO's +1.5545%, lagging by 0.469pp in a single
+session** — worse than 09-17's −0.340pp and 09-11's −0.254pp. Friday's review warned in terms that the
+satellite sleeve's positive excess on short windows **is nothing but 0% exposure to a market that
+fell**, and would turn positive again on every red week. **Today is the mirror it predicted and I had
+not internalised: of the eleven sessions since the core was established, eight produced positive
+excess — and all eight were VOO down days.** Every single up day has cost the account ground. The
++$1,080.60 is real money and it is also, measured the way §1 requires, the most expensive day the
+empty satellite sleeve has yet charged. **A green headline is the easiest possible moment to stop
+looking at the benchmark.**
+
+**For the next run:**
+
+- **The 09-21 midday data-quality flag is SETTLED and should not be carried further.** Official close
+  **712.76**; the flagged **711.78** was an intraday mark, not a close. **Replaced by a sharper and
+  still-open finding:** `positions.current_price` read **712.54 at 16:16, after the bell** — **22 cents
+  below the official close.** **A `positions` field never becomes a close, at any hour.**
+- **The stale-`lastday_price` instance is now four reads deep (08:20 / 09:36 / 12:35 / post-bell) and
+  did not clear at the bell.** Today it fired **alongside** the midpoint defect **in the opposite
+  direction**, leaving the broker's day P&L **$14.86 low** where every prior instance ran high. ⚠ **The
+  sign of the broker's error is not predictable.** Close-to-close from `bars --adjustment all`, always;
+  never `equity − last_equity`, never `unrealized_intraday_pl`.
+- **⚠ Audit the superlatives before repeating them.** The "first positive mark in this account's
+  history" claim in the 09-21 carry-forward is **false on an official-close basis** (09-03 and 09-04
+  both closed above the 706.74 fill, and both closed above inception). Corrected here. **Treat every
+  inherited "first / widest / narrowest / in N runs" as unverified.**
+- **No rebalance is due tomorrow.** Core **70.178%** official / 70.17% broker, both far inside §2's
+  65–75% band; a +1.55% session moved it under two tenths of a point.
+- **GIS remains the only live research item: General Mills Q1 FY2027 prints 2026-09-23.** Nothing to
+  screen until the print. That run also carries a genuine `move`/`quote` step, which makes it the
+  next strong test of the GNRC pull.
+- **§5.4 is still not armed and all four §5 rules are still untested code paths.** Twenty-three
+  sessions of "no exits" record the **absence of a subject**, not twenty-three clean bills of health.
+
 ### 2026-09-18 (Friday)
 
 **Account:** total **$99,515.65 on official closes** / $99,627.58 broker | day P&L
