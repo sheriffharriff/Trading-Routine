@@ -56,100 +56,115 @@ re-derive it from price history, and it stays correct for positions closed month
 
 *(none — no **satellite** positions have been opened yet. Core VOO exists and is deliberately not tracked here, per the top-of-file rules and the fill note further down.)*
 
-**Reconciliation 2026-09-22 08:15 ET (1-premarket-research) — LEDGER AGREES WITH THE BROKER; ZERO
-SATELLITE POSITIONS ON BOTH SIDES; NO HIGH-WATER MARK WAS WRITTEN AND NONE WAS DUE.**
-*(This block **replaces** the 09-21 16:16 close reconciliation, read in full by this run — **one block
-per date, not one per run.** **Collapse, do not append — fortieth consecutive run.**)*
-Selftest passed all five checks at **08:15 ET** (`trading_enabled: true`, LIVE paper account, equity
-**$100,649.73** at pre-flight).
+**Reconciliation 2026-09-22 (1-premarket-research 08:15 ET, then 2-market-open-execution 09:36 ET) —
+LEDGER AGREES WITH THE BROKER; ZERO SATELLITE POSITIONS ON BOTH SIDES; NO ORDER PLACED AT EITHER RUN;
+NO HIGH-WATER MARK WAS WRITTEN AND NONE WAS DUE.**
+*(This block **replaces** the 09-22 08:15 pre-market block rather than sitting beside it — **one block
+per date, not one per run.** **Collapse, do not append — forty-first consecutive run.**)*
+Both runs' selftests passed all five checks (`trading_enabled: true`, LIVE paper account); equity read
+**$100,649.73** at 08:15 and **$100,742.84** at 09:35 pre-flight.
 
-**`clock` READ `is_open: FALSE` AT 08:15:26**, `next_open` **2026-09-22T09:30**, `next_close`
-**2026-09-22T16:00**. ⚠ **This is the PRE-MARKET shape, NOT a holiday, and the boolean cannot tell you
-which** — `next_open` points at **today**. Yesterday's close run read the *identical* boolean with
-`next_open` pointing at **tomorrow**. **Read the date, not the boolean.** Today is a normal trading
-session; the market opens in seventy-five minutes.
+**`clock` READ `is_open: TRUE` AT 09:36:04**, `next_close` **2026-09-22T16:00**, `next_open`
+**2026-09-23T09:30**. ⚠ **This is the INTRADAY shape — the one case of the three where the boolean
+alone is sufficient.** The pre-market run seventy-five minutes earlier read `is_open: FALSE` with
+`next_open` pointing at **today**; yesterday's close run read the *same* FALSE with `next_open`
+pointing at **tomorrow**; a holiday reads FALSE with `next_open` past the holiday and **no bar for
+today**. **Only in the TRUE case does the boolean settle it. In the FALSE case, read the date.**
 
 **Satellite blocks (zero) checked against satellite Alpaca positions (zero) — they agree.** Compare
 **satellite to satellite**, never raw ledger to raw broker; the core is deliberately untracked here per
 §5. `alpaca.py positions` returns **one row, VOO core** — **99.046311231 shares, unchanged; no order
-has touched it since the 09-03 fill**, nineteen sessions ago, avg_entry **706.74**, cost_basis
-**$69,999.99**, market_value **$70,649.73**.
+has touched it since the 09-03 fill**, twenty sessions ago, avg_entry **706.74**, cost_basis
+**$69,999.99**, market_value **$70,739.87** at 09:36.
 
-**§5.1–§5.4 NEVER STARTED — NO SUBJECT, FOR THE TWENTY-FOURTH SESSION.** No thesis to invalidate
-(§5.1), no `timing_window` to expire (§5.2), no `entry_price` to measure −7% against (§5.3), no
-`highest_close` to measure −10% against (§5.4). **`sell_rule_status` is ABSENT rather than blank.**
-**All four remain untested code paths.** Core VOO taken out of the working list per §5's exemption.
-**Zero Perplexity invalidation queries were issued and none was due** — §5.1 reads an `invalidation`
-line that does not exist. **§5.4 is still NOT ARMED; it arms on the first *satellite* fill.**
+**THE PLAN WAS FRESH AND IT WAS EMPTY, AND THOSE ARE TWO SEPARATE FINDINGS.** `plan_date` read
+**2026-09-22** against an ET date of **2026-09-22** — **match**. The plan carried **no BUY, no SELL and
+no REBALANCE intent**, so this run submitted **zero orders**. ⚠ **A fresh empty plan and a stale plan
+produce an identical zero-order run**, which is why the gate is decided on the **date** and never on the
+outcome. **The §2 staleness gate has now been exercised twenty-four times and has never fired — its
+alert path remains UNTESTED CODE.** Twenty-four quiet opens are not evidence that it works, and the
+first morning it fires will by construction be a morning when the pre-market run failed, i.e. the one
+morning with no fresh notes to lean on. **Read the routine's Step 2 then; do not recall it.**
+
+**ZERO `alpaca.py move` CALLS WERE DUE — AN ABSENT CHECK, NOT A SKIPPED ONE.** §4 re-validation has a
+subject only when a BUY intent exists. No intent, no candidate, no five-session move to price. The same
+holds for the §6 weekly-cap, satellite-capacity, correlation and thesis-present re-checks in Step 5:
+**each was read and each had no operand.**
+
+**STEP 3 BOOTSTRAP IS PERMANENTLY CLOSED.** `core_established: true` since the 09-03 fill. The
+`--core` path was not invoked at any point this run.
+
+**§5.1–§5.4 NEVER STARTED — NO SUBJECT, FOR THE TWENTY-FIFTH SESSION.** No thesis to invalidate (§5.1),
+no `timing_window` to expire (§5.2), no `entry_price` to measure −7% against (§5.3), no `highest_close`
+to measure −10% against (§5.4). **`sell_rule_status` is ABSENT rather than blank.** **All four remain
+untested code paths.** **§5.4 is still NOT ARMED; it arms on the first *satellite* fill**, and the
+09-03 core fill was not it. Core VOO taken out of the working list per §5's exemption.
 
 **⚠ NO HIGH-WATER BACKFILL IS DUE, AND THE MISSING STAMP IS NOT EVIDENCE OF A FAILED CLOSE RUN.** The
-09-21 close run **executed its Step 2 and Step 2 had no operand**, exactly as it recorded. The marks
-are **ABSENT — a third state, distinct from "stale" and from "current-and-unchanged"** — and **an
-absent field carries no `(as of …)` date to compare against.** That is precisely what proves no
-backfill is owed. **Nothing was skipped.**
+marks are **ABSENT — a third state, distinct from "stale" and from "current-and-unchanged"** — and **an
+absent field carries no `(as of …)` date to compare against.** That is precisely what proves no backfill
+is owed. **Nothing was skipped.**
 
-**CORE VOO DELIBERATELY NOT STAMPED — FORTIETH RUN.** §5 exempts core from all four sell rules. This
-run pulled `bars --symbol VOO --days 5 --adjustment all` for the official-close arithmetic, so it held
-a clean close (**712.76**) in hand and writing it into a `highest_close` would have cost one line and
-looked like tidiness. **Refused.** A `highest_close` on VOO would **fabricate a §5.4 trailing stop on
-the one position the strategy exempts**, seeded at the highest mark the account has ever recorded.
+**CORE VOO DELIBERATELY NOT STAMPED — FORTY-FIRST RUN.** §5 exempts core from all four sell rules. A
+`highest_close` on VOO would **fabricate a §5.4 trailing stop on the one position the strategy exempts.**
+Refused. **Measure the core from the 706.74 fill and from an official close, never from a `positions`
+field.**
 
-**⚠ THE TWO-PRICE DEFECT HAS A NEW INSTANCE AND THE SIGN HAS FLIPPED — SECOND CONSECUTIVE DAY, OPPOSITE
-DIRECTION.** `lastday_price` reads **712.78** against yesterday's official close of **712.76** — **two
-cents HIGH**. The previous instance ran **seven cents LOW** (701.78 vs 701.85) and was read **four
-times** across 09-21 (08:20, 09:36, 12:35, 16:16). ⚠ **That instance DID clear at the session
-boundary** — this is a fresh one built on the new day's close, not the old one persisting — ⚠ **but it
-did not clear into correctness.** Combined with the 09-21 post-bell finding that `current_price` read
-**712.54** against an official **712.76** *sixteen minutes after the close*, the record now shows the
-broker's error running **low four times, then high**, on consecutive days. **The direction of the
-broker's error is not predictable and must never be assumed.** Only an external close settles it.
-**`bars --adjustment all` for a close, a fresh `quote` for execution, never a `positions` field for
-either, and never `equity − last_equity` or `unrealized_intraday_pl` for a day's P&L.**
+**⚠ THE BROKER'S `current_price` AT 09:36 IS A LIVE MIDPOINT AND IS NOT A CLOSE — 714.21.** It sits
+**$1.45 above** yesterday's official close of **712.76** and **$1.43 above** `lastday_price` **712.78**,
+which is itself **two cents HIGH** against that official close — the **same flipped-sign instance the
+pre-market run logged, persisting through the session as expected**, since `lastday_price` only rebuilds
+at a session boundary. ⚠ **The run took no price from a `positions` field and needed none:** with no
+order to place there was **no execution reference to pull** and **no close to record**. The standing
+rule is unchanged — **`bars --adjustment all` for a close, a fresh `quote` for execution, never a
+`positions` field for either, and never `equity − last_equity` or `unrealized_intraday_pl` for a day's
+P&L.**
 
-**SLEEVES IN BAND ON BOTH BASES; CORE IS ABOVE TARGET FOR THE THIRD RUN RUNNING; NO REBALANCE IS DUE.**
-Broker-mark basis at 08:15: equity **$100,649.73**, cash **$30,000.00**, core **$70,649.73 = 70.19%**,
-satellite **0.0% (count 0)**, cash **29.81%**, `core_in_band: true`, `rebalance_needed: false`,
-`rebalance_delta: −194.92`. Official-close basis (712.76 × 99.046311231): core **$70,596.25**, equity
-**$100,596.25**, core **70.178%**, cash **29.822%**. **Both bases agree and both put core on the same
-side of target.** §2 rebalances at the **65/75 band edge, not to the exact 70% target**, so **no delta
-inside the band is an action at any size**, in either direction. Rebalance is a market-open step in any
-case and not this run's to take.
+**SLEEVES IN BAND; CORE ABOVE TARGET FOR THE FOURTH RUN RUNNING; NO REBALANCE WAS DUE OR TAKEN.**
+`alpaca.py sleeves` at 09:36: equity **$100,738.88**, cash **$30,000.00**, core **$70,738.88 = 70.22%**,
+satellite **0.0% (count 0)**, cash **29.78%**, `core_in_band: true`, `rebalance_needed: false`,
+`rebalance_delta: −221.66`. ⚠ **Step 7 is the one step of this routine that is exempt from the staleness
+gate and it was evaluated on its own merits, not skipped along with the empty plan.** §2 rebalances at
+the **65/75 band edge, not to the exact 70% target**, so **no delta inside the band is an action at any
+size, in either direction** — the −$221.66 is **0.22% of equity**, against a band edge **4.78 points**
+away. **Thirty-second consecutive run inside a 0.63-point range (69.59–70.22).**
 
 **NO TRADES, NOTHING IN LIMBO.** No order has been placed since the 09-03 core VOO buy
 (`d177d8f0-cd0c-41bf-95c1-4772318265fd`, `status: filled`, terminal) — **one row for the account's
-entire history.** This run placed none, so `trade_log.md` is correctly left unappended — **a run with
-no fill writes no trade entry** (§7). **There is no order in a non-terminal state anywhere in this
+entire history.** This run placed none, so `trade_log.md` is correctly left unappended — **a run with no
+fill writes no trade entry** (§7). **There is no order in a non-terminal state anywhere in this
 account's history.** **Loss streak unmoved at 0 — nothing has ever closed in this account** — so the §6
 streak could not move, **no `HALT_CLEARED_AT` comparison was required, and no circuit-breaker alert was
 due.** Breaker **INACTIVE**, `halt_triggered_at: none`.
 
 **HOUSEKEEPING — WEEK ROLLOVER CHECKED, ANCHORS MATCHED, NO RESET DUE.** Today is **Tuesday
-2026-09-22**; its ISO Monday is **2026-09-21**, and `week_of` already reads **2026-09-21**. **Fifth
+2026-09-22**; its ISO Monday is **2026-09-21**, and `week_of` already reads **2026-09-21**. **Sixth
 consecutive run to find the reset already done** — `new_positions_this_week` stays **0 of 3**. Next
 boundary **Monday 2026-09-28**. **That is the mechanism working as designed, not a skipped check.**
 
-**⚠ GNRC NOT LOOKED AT FOR THE TWELFTH CONSECUTIVE RUN — AND TODAY WAS A STRONG TEST.** This run issued
-**`move --symbol ACN`** and **`bars --symbol VOO`**: the data plane was open and a `--symbol GNRC` was
-one flag on a command already being typed. **The tenth costume arrived as *"you are already screening a
-candidate's five-session move, so screening one more costs nothing"* — the zero-marginal-cost costume
-wearing a LIVE FUNNEL as its cover, which is the most plausible version yet. Refused.** The
+**⚠ 29.78% IDLE CASH, AN INACTIVE BREAKER AND A WEEKLY CAP AT 0 OF 3 ARE NOT AN OPPORTUNITY THIS RUN
+MAY ACT ON.** Every permission was open and the constraint was **the absence of an eligible candidate**,
+which is not a constraint this routine is allowed to relieve. New positions route through pre-market
+research **and then** this execution run, always: **a position opened at 09:35 without a plan entry
+would route around the discipline rather than satisfy it.** The plan's own instruction — *"do not go
+looking for something to do"* — was honoured. **Zero exploratory research calls were issued at the
+open.**
+
+**⚠ GNRC NOT LOOKED AT FOR THE THIRTEENTH CONSECUTIVE RUN.** This run issued **no `move`, `quote`,
+`bars` or `asset` call on any symbol at all**, which makes today's refusal the cheapest in the series
+and therefore **the weakest evidence in it** — there was no open data plane for a costume to ride. The
 disqualifying facts do not move: **GNRC is the named counterparty in the Amazon announcement,
 first-order and outside §4 at any price**, and open item (7) is resolved by **a human editing §4 or
-`alpaca.py move`**, not by a number this seat collects. **Zero `move`/`quote`/`bars`/`asset` calls on
-GNRC, twelve runs running.** Costumes so far: diligence, curiosity, tidiness, completeness,
-zero-marginal-cost, self-audit, proxy-procurement, issue-closure, call-already-open,
-screen-already-running.
+`alpaca.py move`**, not by a number this seat collects. Costumes so far: diligence, curiosity,
+tidiness, completeness, zero-marginal-cost, self-audit, proxy-procurement, issue-closure,
+call-already-open, screen-already-running. **Expect an eleventh on a run that has a reason to touch the
+data plane.**
 
-**RESEARCH — 5 THESES, 0 ACCEPTED, 5 REJECTED.** T-2026-09-22-01 (Paramount/WBD settlement) died at
-**part 2** — the mandated ~$300M/yr of production spend has a payer and **no named payee**, rule (v).
-T-2026-09-22-02 (**ACN**) died at the **premise** (signatory, first-order), again at **part 2** (<1% of
-revenue on the most generous reading) and again at **part 3** (five years). T-2026-09-22-03 (Nscale's
-$103B book) died at **part 3** in one step (2GW by 2028, 8GW by 2031) and at the premise, and is a
-**rule (iii) re-report** besides. T-2026-09-22-04 (**Vicor's** licensees) died at **part 1** — *"four
-leading OEMs and hyperscalers"*, **not one named**. T-2026-09-22-05 (GPC/ORLY/LKQ off the **AutoZone**
-print) died at **part 1** — a competitor's print is a shared cause, the sentence needs an *"and also"*.
-⚠ **Eighth instance of open item (1): `move --symbol ACN` returned `priced_in: true` on a −4.58%
-FALL.** That is **not** why ACN was rejected, and is recorded that way deliberately.
+**RESEARCH — NONE WAS DUE AT THIS RUN AND NONE WAS DONE.** This routine does not generate ideas; the
+gap between 08:15 and 09:35 is deliberate. The pre-market run's five rejections
+(T-2026-09-22-01 through -05: Paramount/WBD, **ACN**, Nscale, **Vicor**, GPC/ORLY/LKQ off the AutoZone
+print) stand as written in `research_log.md` and **no skip needed logging against any of them** — a
+§4 priced-in skip is logged only against a thesis that reached a BUY intent, and **none did.**
 ---
 
 **⚠ EARLIER PER-RUN RECONCILIATIONS (2026-09-01 through 2026-09-18 08:16) HAVE BEEN COLLAPSED,
