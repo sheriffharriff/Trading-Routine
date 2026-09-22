@@ -40,6 +40,150 @@ anything where the honest-broker rule (§4) did real work>
 
 ## Entries
 
+### 2026-09-22 (Tuesday)
+
+**Account:** total **$100,589.32 on official closes** / $100,606.05 broker mark | day P&L
+**−$6.93 (−0.0069%)**, both legs official — ⚠ **the broker's own arithmetic says +$7.82, i.e. UP, on a
+day the tape was DOWN. That is a SIGN error, not a rounding error. See below; do not quote the
+broker's** | since inception **+0.589%**
+**Sleeves:** core 70.176% | satellite 0.0% | cash 29.824%   (§2 band 65–75%; broker-mark basis
+70.18 / 0.0 / 29.82 — `core_in_band: true`, `rebalance_needed: false`, delta −$181.82)
+**Breaker:** INACTIVE
+**Week:** 0/3 new positions — ISO Monday of today is 2026-09-21 and `week_of` already read 2026-09-21;
+anchors matched, no reset due, eighth consecutive run to find it already done
+**Trading day:** yes — a full session, traded through by four runs. `clock` at 16:15:55 read
+`is_open: false` with `next_open` **2026-09-23**, the **post-bell** shape. The boolean is identical on
+a holiday; only the date discriminates — and the third discriminator was checked directly, **a VOO
+daily bar for 2026-09-22 exists**, so a session happened and the summary is owed.
+
+**Traded:** nothing — zero orders at all four runs. `orders --status all` still returns **one row for
+the account's entire history**, the 09-03 core VOO buy, `status: filled`, terminal. **Nothing is in
+limbo overnight** (§7).
+**Researched:** 5 theses — **0 accepted, 5 rejected**, all written by the 08:15 pre-market run.
+**T-2026-09-22-01** Paramount/WBD antitrust settlement — died at **part 2**: the mandated ~$300M/yr of
+US production spend has **a payer and no named payee**, so the dollar path had no subject to land on.
+**T-2026-09-22-02 ACN** on the Anthropic/Accenture $2B initiative — died at the **premise**: Accenture
+is a **signatory**, i.e. Company A, first-order and outside §4 at any price; and independently at
+**part 2** (~$400M/yr against >$60B revenue, **under 1% against the 10% floor**) and again at **part
+3** (a five-year program). **T-2026-09-22-03** Nscale's ~$103B pre-IPO contract book — died at **part
+3 in one step**: the contracts run to 2033 and some are ten months old, far outside the two-quarter
+horizon, and no candidate was ever named by any source. **T-2026-09-22-04 Vicor** — see below.
+**T-2026-09-22-05 GPC/ORLY/LKQ** off the AutoZone print — died at **part 1**: the honest sentence needs
+an "and also", which makes it a **shared cause, not a mechanism**. Eighth shared-cause instance, and a
+new sub-shape — a **competitor's print** rather than a customer's or a supplier's.
+**Positions near a sell rule:** **none, and that is the absence of a subject rather than a clean bill
+of health.** There are no satellite positions, so §5.1–§5.4 had **nothing to evaluate** for the
+twenty-sixth session and all four remain **untested code paths**. Core VOO is exempt from all four.
+
+**What happened:**
+Nothing, on purpose, for the whole session — and the plan said so in advance. The 08:15 pre-market run
+screened five candidates, rejected all five, and wrote `plan_today.md` with **zero BUY, zero SELL and
+zero REBALANCE intents**; the 09:36 open run found the plan **fresh** (`plan_date` matched, the
+staleness gate exercised for the twenty-fourth time without firing) and **empty**, and submitted
+nothing; the 12:40 midday run found no satellite positions to manage and stopped there; this run found
+the same. **Plan and outcome match exactly.** The tape did almost nothing either: VOO closed **712.69**
+against **712.76**, down **7 cents, −0.0098%**, on a day whose intraday range was 711.99–714.225 — so
+the core sleeve gave back **$6.93** and the account's entire day is that number. Core unrealized sits
+at **+$589.33, +0.842%** from the 706.74 fill.
+
+The invisible job of this run — writing today's closes into `highest_close` — **had no operand**, and I
+want that recorded precisely rather than as "done" or as "skipped". Step 2 iterates over open
+**satellite** positions; there are zero; so zero marks were written and **zero were due**. The marks
+are **ABSENT**, which is a third state distinct from *stale* and from *current-and-unchanged*, and an
+absent field carries no `(as of …)` date for tomorrow's midday run to compare against. **That is
+exactly what proves no backfill is owed.** §5.4 has never been armed — it arms on the first
+**satellite** fill, and the 09-03 core fill was not one.
+
+Sleeves are in band and **no rebalance is due tomorrow**: core **70.18%** against a 70% target, inside
+the 65–75% band with the nearer edge **4.82 points** away. The overshoot is **0.18% of equity**, and §2
+rebalances at the band edge, not to the exact target, so no delta inside the band is an action at any
+size. Thirty-fourth consecutive run inside a 0.63-point range.
+
+**What I got wrong or nearly got wrong:**
+**The broker told me the day was up, and it was down.** `equity − last_equity` reads **+$7.82**. The
+official close-to-close is **−$6.93**. Both legs of the broker's figure are defective at once:
+`current_price` **712.859** is an **after-hours midpoint** sitting 16.9 cents above the official close,
+and `lastday_price` **712.78** is the **two-cents-high** stale value that has persisted all session
+because that field only rebuilds at a session boundary. Two small errors in opposite directions,
+compounding into **a flipped sign on a day small enough for a 17-cent artifact to outweigh the real
+move**. The standing rule against `equity − last_equity` has been in these files for weeks and I had
+read it this morning; what I had not appreciated until I did the arithmetic is that it is not a
+precision rule. **On a flat day it is a direction rule.** Every prior instance of this defect was
+logged as a magnitude discrepancy — 6.5c, 59.85c, 4c — and that framing quietly implied the error was
+cosmetic. It is not.
+
+**And the same artifact would have corrupted a §5.4 stop today, which is the first time that risk has
+been anything but theoretical.** The ledger header warns that a `highest_close` read from a `positions`
+field records an after-hours midpoint and silently moves the trailing stop. Today that would have been
+**712.859 instead of 712.69 — 17 cents of free room handed to the position, in its favour, invisibly.**
+I had no satellite position for it to happen to, so this cost nothing. It is worth writing down
+precisely *because* it cost nothing: the first day it matters will be a day I am also doing something
+else, and I would rather have met this arithmetic on a quiet Tuesday.
+
+**The pull inside an empty Step 2 is to find a row to write to.** The close run is the one holding a
+fresh official close with nowhere to put it, and VOO is sitting right there with a perfectly good
+712.69. Stamping it would **fabricate a §5.4 trailing stop on the one position §5 exempts from all four
+sell rules** — a stop that could eventually fire and sell core on a drawdown, which §7 forbids outright.
+Refused for the forty-third run. The honest note is that this refusal is now close to automatic, and
+automatic is not the same as sound; it stays in the journal so the reasoning is re-read rather than
+re-flexed.
+
+**GNRC, fifteenth consecutive refusal — and today's is the first one that was not free.** The open and
+midday runs made **no data call on any symbol at all**, so their refusals proved nothing: there was no
+open data plane for a costume to ride. This run **opened the data plane deliberately** to fetch VOO's
+close, and a `bars --symbol GNRC` alongside it would have cost one call and arrived wearing two
+costumes already on the list — "the call is already open" and "zero marginal cost". It was not made.
+But the honest reading is **weaker than it looks**: the pull was mild rather than strenuous, and not
+because of virtue — **this routine has no research step for the number to land in**, so the costume had
+nowhere to go even if worn. The refusal that will actually test this is **tomorrow's GIS pre-market
+screen**, which both touches the data plane and has somewhere to put a number.
+
+**I caught a stale count I was about to repeat into a human-facing summary.** The carry-forward has
+carried *"49 theses, zero positions, ever"* as settled fact — it is the single number the whole
+"structurally undeployed" open item rests on. I recounted it from source rather than copying it, and
+**it is wrong: 54, not 49.** 49 was correct through 09-21; this morning's pre-market run wrote five
+more, and the midday run carried the old figure forward unchanged. Nothing connects the run that adds
+to a series to the run that copies the summary of it forward — **that is the whole mechanism, and it
+means every inherited tally in these files is stale by default rather than by accident.** The error
+ran in the direction that *understates* the problem, which is the direction least likely to prompt
+anyone to check. The files already carry a standing rule to audit inherited superlatives, written
+after a false "first time in this account's history" survived three runs; **that one was caught by
+accident, as a by-product of a `bars` pull run for another reason. This one was caught on purpose,
+which is the first time the rule has actually done work rather than just described a past mistake.**
+I am noting it without much satisfaction: the rule was there, and I still only checked because the
+number was going into the ClickUp summary tonight.
+
+**The rejection I keep thinking about is Vicor, and it is the one with no defect in it.**
+T-2026-09-22-04 was the only item in today's funnel where the *event* was clean: Vicor raised its own
+Q3 sequential revenue-growth guide from "nearly 10%" to "more than 20%", citing royalties from a newly
+licensed power-delivery technology. That is a company revising **its own prior figure** — not an
+analyst estimate, not an affirmation — with the dollar direction **up and inbound**, which is rare in
+this funnel and is why it was screened at all. It still produced nothing, because the licensees are
+described only as *"four leading OEMs and hyperscalers"* and **the one field that would make it
+tradable is the field the source withholds: who is paying.** That is the same defect that killed
+Paramount/WBD this morning — **a payer and no named payee** — and I notice it is now the modal failure
+in this strategy rather than a one-off. The §4 discipline held in both cases, and I do not think either
+should have been traded. But **the temptation here is not to soften a filter; it is to guess the
+payee** — to reason from "four leading OEMs and hyperscalers" to a plausible ticker and then write a
+mechanism sentence around it. That sentence would read perfectly well. It would also be an invented
+subject, which is precisely what §4's honest-broker rule says I will always be able to produce. Worth
+naming now, because it is a failure mode that arrives **looking like diligence rather than like a
+shortcut**, and it will arrive again the next time a clean event withholds its counterparty.
+
+**For the next run:**
+**GIS prints tomorrow, 2026-09-23 — the item this carry-forward exists for, and it has been carried
+six sessions.** General Mills Q1 FY2027: consensus **$0.72 EPS** (vs $0.86 a year earlier) on **~$4.34B**,
+and **every figure now in circulation is an analyst expectation**; the company's only statement is the
+**September 8 affirmation** of FY27 adj. EPS $3.00–$3.20, which is an affirmation and dies to standing
+rule (iii). **Nothing was screenable until the print; tomorrow it is.** The open and midday runs both
+correctly declined to touch it — neither generates ideas, and routine 3 is exits-only — but **tomorrow's
+pre-market run has no such excuse and must not let it slide again.**
+**No high-water backfill is owed** — the marks are absent, not stale; see above.
+**Do not read tomorrow's day-P&L off the broker.** `bars --adjustment all` for a close, a fresh `quote`
+for execution, never a `positions` field for either.
+
+---
+
 ### 2026-09-21 (Monday)
 
 **Account:** total **$100,596.25 on official closes** / $100,574.46 broker mark | day P&L
