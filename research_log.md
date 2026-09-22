@@ -52,6 +52,280 @@ single most common way a plausible-sounding connection gets mistaken for an oppo
 
 ## Entries
 
+### 2026-09-22 (08:15 ET) — event survey (funnel, pre-thesis)
+
+Selftest passed all five checks (`trading_enabled: true`, LIVE paper account, equity
+**$100,649.73**). Window screened: **Monday's close through Tuesday pre-market (Sept 21–22)** — one
+full session of new price information. Five Perplexity scans (four broad/targeted `--recency day`,
+one `--recency week` second-order screen). **Five candidates reached a full thesis entry;
+ALL FIVE WERE REJECTED.**
+
+**⚠ THE LOUDEST THING ON THE TAPE WAS NOT AN EVENT.** The Nasdaq closed at a record on 09-21 with
+**AMD +10% (crossing $1T market cap for the first time), Intel +12.1–12.2%, Arm +17.0–17.2%** and the
+Philadelphia Semiconductor Index **+4.3%**. Two separate Perplexity scans were run specifically to
+find the transaction underneath it. **There is not one.** Reporting attributes the move to *"renewed
+AI optimism"* and, in one account, to **Meta's Muse AI consumer-agent launch** — described in that
+same source as *"an investor-demand narrative rather than a disclosed AMD, Intel, or Arm contract."*
+⚠ **A three-name double-digit session with no named counterparty and no disclosed figure is a
+SENTIMENT move, and there is no Company A in it to run §4 against.** All three names are also
+priced-in past any reading of the §4 threshold several times over. **Recorded here rather than given
+a thesis ID precisely because the pull to find a "second-order AI winner" on a day like this is the
+strongest the funnel produces, and the honest answer is that the first order does not exist yet.**
+
+**Dropped before thesis stage, with reasons:**
+
+- **Applied Materials — $5B India investment, announced 09-22.** **AMAT is the announcing party
+  (first-order)**, the money is **capital paid OUT** (standing rule (viii)), and the commitment runs
+  **"over the next decade"** — **part 3 kills it in one step** (standing rule (vi)). The recipients of
+  the spend are Indian construction and research counterparties, **§3-ineligible**, and none is named.
+- **New Era Energy & Digital ↔ a Vistra affiliate — 20-year PPA for a Texas data-centre phase.**
+  **VST is a signatory (first-order)**, the term is **20 years** (part 3), and the reporting states
+  **no dollar value was disclosed** — no numerator at all.
+- **Navitas ↔ Magnachip — $5M equity investment**, 1,461,988 shares at $3.42, closing ~09-24. **Both
+  parties are far below the §3 $10B floor**, and $5M is not a dollar path at any company's scale.
+- **Telix Pharmaceuticals ↔ ITM — reported $1.65B acquisition.** Telix is **not US-domiciled common
+  stock in the §3 sense** and **ITM is private**; no US-listed second-order party is named.
+- **Priority Technology — ~$1.6B go-private proposal.** **Below the §3 cap floor**, and a take-private
+  bid changes no other company's segment revenue.
+- **HealthEquity (EPS $1.24 vs $1.19), Lamb Weston (beat by ~$0.244), American Electric Power (Q2
+  operating EPS $1.36 vs $1.48 consensus)** — earnings prints compared **to consensus**, with no
+  named counterparty and no cross-company transaction. **AEP's item is additionally suspect**: a *Q2*
+  operating result surfacing as 09-21/22 news is the **rule (iii) re-report shape**, and it was not
+  pursued.
+- **FOMC +25bp to 3.75–4.00%, the Musalem/Williams/Jefferson/Barkin speech calendar, the 09-22 ADP
+  and Richmond Fed releases, US–China AI-dialogue talks, the Gates Foundation language-data
+  coalition, oil sliding below $100** — **environment inputs, diplomatic proposals and schedules, not
+  a Company A.** The FOMC hike is already on the disposed list; **it does not become an event by
+  being re-reported.**
+- **General Mills — CARRIED FORWARD UNTOUCHED, AND CORRECTLY SO.** GIS **has still not reported**;
+  Q1 FY2027 is due **2026-09-23**, tomorrow. Consensus **$0.72** (vs **$0.86** a year ago) on
+  **~$4.34B** — **every figure in circulation is an analyst expectation**, and the company's only
+  statement remains the **September 8 affirmation** of FY27 adj. EPS $3.00–$3.20, which is an
+  **affirmation (standing rule (iii))**. **Nothing to screen until the print.** Carried explicitly to
+  the **09-23 pre-market run**.
+
+---
+
+### T-2026-09-22-01 — (no ticker reached) — REJECTED
+**Company A / the news:** California AG **Rob Bonta** and a **12-state coalition** settled their
+antitrust challenge to **Paramount Skydance's acquisition of Warner Bros. Discovery**, announced
+**2026-09-21** (Reuters, LA Times, Politico, NBC, AP). Court-enforceable, five-year term, **still
+requires final approval by a judge**. Transaction value is reported **inconsistently — ~$81B (AP,
+ABC7) vs ~$110–111B (Reuters, CBS, NBC, LA Times)** and no source explains the discrepancy.
+Settlement obligations include: **30 films released annually for two years, then 32 annually for
+three**; **~$30M penalty per missed film**; **US production spending up ~$300M annually / ~$1.5B over
+five years**; separate cable-distribution negotiations for five years; independent editorial
+oversight of CBS News and CNN; both studio lots maintained. Paramount CEO **David Ellison** reportedly
+wanted to close **~two weeks** after 09-21, and Paramount owes WBD shareholders **$7M/day from
+October 1** if it has not closed.
+**Company B / the candidate:** The intended candidate was a **US-listed theatrical exhibitor or
+production-services supplier** — the parties who receive the mandated ~$300M/yr of incremental
+production spend and the 30–32 mandated annual releases.
+
+**1. Mechanism (one sentence):** *Would have been:* "A court-enforceable settlement requiring
+Paramount to spend ~$300M more per year on US production and release 30–32 films annually causes
+[Company B]'s [production-services or exhibition revenue line] to rise because that spend and those
+release slots are contractually guaranteed rather than discretionary." **The sentence is writable.
+The candidate is not.**
+
+**2. Dollar path:** ⚠ **UNWRITABLE, AND THIS IS WHERE IT DIES.** The screen was built to ask exactly
+this question and returned, in the source's own words: *"No source in the gathered results identifies
+a publicly traded U.S. supplier, distributor, exhibitor, advertising company, technology provider, or
+labor-services company with a quantified direct revenue or cost exposure to closing."* The only
+US-listed names any source attached to the event were **Netflix and Disney — as COMPETITORS**, which
+the same source flags as *"competitive exposure, not identified merger-related revenue or cost
+exposure."* **There is no segment, no magnitude and no percentage-of-revenue, because there is no
+named Company B.**
+**3. Timing window:** Not reached. Would have failed anyway on the structure of the obligation — the
+release and spend commitments run **five years**, and the settlement is **not yet approved by a
+judge**, so even the start date is unfixed. §4 stops at two quarters.
+**4. Invalidation:** Not reached.
+
+**Hard filters:**
+- Priced-in (§4): **not run — there is no ticker to run it on.** An absent check, not a skipped one.
+- Correlation (§4): no open positions to check against (satellite sleeve empty). Vacuously passes.
+- Universe (§3): **not reached.** *(Noted for anyone revisiting: the obvious exhibitor pure-plays are
+  small-caps and would need the §3 $10B floor tested explicitly before any of them counts as a
+  candidate. No market-cap figure was pulled, because part 2 failed first and pulling one would have
+  been building the case backwards.)*
+
+**Outcome:** REJECTED at **part 2**, on **standing rule (v)** in its purest form. This was the
+**best-sourced and most consequential corporate event in the window** — a real transaction, a real
+regulatory decision, named parties, disclosed dollar obligations, a near-term closing date — and it
+**still does not produce a Company B**, because ⚠ **the mandated spend has a payer and no named
+payee.** The settlement says money will be spent; it does not say to whom. **The source left the
+blank, and filling it in is not research.** Writing "exhibitors benefit" would have been an
+**industry** claim dressed as a **transaction**, which is the eighth instance of rule (v) this month.
+
+---
+
+### T-2026-09-22-02 — ACN (Accenture) — REJECTED
+**Company A / the news:** **Anthropic and Accenture** announced a **$2 billion, five-year AI-safety
+initiative** on **2026-09-22** — "embedded evaluation" for frontier models, led by **Accenture's
+Faculty unit**, with independent evaluators given employee-level access inside Anthropic for
+alignment testing and red-teaming.
+**Company B / the candidate:** **Accenture (ACN)** itself.
+
+**1. Mechanism (one sentence):** ⚠ **THE PREMISE FAILS BEFORE THE SENTENCE DOES. Accenture is a
+SIGNATORY to this agreement — it is Company A, not Company B.** §4 is a second-order strategy: the
+named party to the announcement is first-order and outside it at any price. This is the **Bloom
+Energy shape from 09-21 and the Marvell/GlobalFoundries shape before it**, and it is now frequent
+enough that it should be the **first** question asked of a candidate, not a later one.
+
+**2. Dollar path:** ⚠ **FAILS INDEPENDENTLY, AND BY AN ORDER OF MAGNITUDE.** Taking the **most
+generous possible reading** — that the entire $2B is revenue to Accenture — that is **~$400M per
+year** against total company revenue comfortably above **$60B**, i.e. **well under 1%**, against §4's
+**10% of revenue** floor. **And the generous reading is not available:** the source states plainly
+that it *"does not disclose how the $2 billion would be divided between Anthropic and Accenture,
+whether it represents cash spending, in-kind services, or a contractual ceiling."* ⚠ **Standing rule
+(viii), read broadly: a disclosed figure that is not SEGMENT REVENUE AT COMPANY B is not a dollar
+path.** A joint-initiative headline number is one further step removed than even Bloom's financing
+ceiling — it is not identified as accruing to either party.
+**3. Timing window:** **Five years**, explicitly. Outside §4's two-quarter horizon even if parts 1
+and 2 had survived. **Three independent kills.**
+**4. Invalidation:** Not reached.
+
+**Hard filters:**
+- Priced-in (§4): `move --symbol ACN --sessions 5` → **195.04 → 186.10, −4.58%, `priced_in: true`,
+  verdict "LATE - skip"**. ⚠ **THIS VERDICT IS AN ARTEFACT AND IS NOT THE REASON FOR THE REJECTION —
+  SEE BELOW.**
+- Correlation (§4): no open positions (satellite sleeve empty). Vacuously passes.
+- Universe (§3): US-listed common stock, market cap far above the $10B floor → would pass.
+
+**Outcome:** REJECTED at the **premise** (signatory, first-order), and **independently at part 2**
+(<1% of revenue on the most generous reading, and the figure is not identified as revenue to anyone)
+and **at part 3** (five years).
+
+⚠ **EIGHTH INSTANCE OF OPEN ITEM (1) — THE §4 PRICED-IN FILTER READ A 4.58% *FALL* AS "LATE, SKIP".**
+ACN went **DOWN** 4.58% over five sessions and the filter returned `priced_in: true`. **A stock that
+fell cannot have priced in good news that broke today.** This is the defect the human has been
+carrying as open item (1) for seven prior instances plus two near-misses (LMT −3.61% on 09-11,
+GM −3.95% on 09-21). ⚠ **It is recorded here deliberately as NOT the reason for the rejection** —
+ACN dies three times over on the thesis itself, and if a future run reads this entry as "rejected
+because priced-in," it will have inherited a false fact. **A FAIL on a fall is not evidence the
+filter worked, in exactly the same way a PASS on a fall is not.** There is no price at which this
+rejection flips; the fix is **a human editing §4 or `alpaca.py move`**, and no number this seat
+collects can close it.
+
+---
+
+### T-2026-09-22-03 — (no ticker reached) — REJECTED
+**Company A / the news:** **Nscale's contract book was disclosed at ~$103B ahead of its US IPO**
+(reported 09-21/22): **Microsoft ~$43.8B** for AI-computing capacity, signed in multiple
+arrangements from **late 2025 through 2033**, and **Anthropic ~$44.6B**, signed **August 2026** — the
+two together **~$88.4B, about 85%** of the book. The Anthropic capacity sits at Nscale's **Monarch
+Compute Campus, West Virginia**: **~2GW operational by 2028**, expanding toward **~8GW by 2031**.
+**Company B / the candidate:** A US-listed supplier to the Monarch build — turbines, switchgear,
+transformers, cooling, on-site generation.
+
+**1. Mechanism (one sentence):** Not reached in a form worth recording. **The candidate was never
+named by any source**, so the sentence would have had to begin by inventing its own subject.
+
+**2. Dollar path:** Not reached.
+**3. Timing window:** ⚠ **THIS IS THE ONE-STEP KILL AND IT WAS RUN FIRST, PER STANDING RULE (vi).**
+**2GW by 2028; 8GW by 2031.** §4 part 3 stops at **two quarters**. **Nothing about this build lands
+in a reported result inside the horizon**, so no amount of supplier research could produce a tradable
+thesis. **Long-dated infrastructure offtake is a standing feature of this funnel, not a visitor** —
+Sempra/Petrobras, Venture Global/China Gas, Amazon/Generac, Centrus/Antares, and now this.
+**4. Invalidation:** Not reached.
+
+**Hard filters:**
+- Priced-in (§4): **not run — no ticker.** ⚠ **Deliberately not run.** Pulling `move` on a basket of
+  guessed-at electrical-equipment names would have been **manufacturing a candidate list to justify
+  a screen**, which is the reverse of §4's ordering. *(This is the same discipline the RTX process
+  note of 09-01 was written about.)*
+- Correlation (§4): no open positions. Vacuously passes.
+- Universe (§3): **Nscale is privately held (pre-IPO, UK-domiciled) and Anthropic is private.**
+  **Microsoft is a signatory — first-order.** Nothing in the announcement is both US-listed and
+  second-order.
+
+**Outcome:** REJECTED at **part 3** in a single step, and **at the premise** besides. ⚠ **A second,
+cheaper kill was also available and is worth recording for its shape: this is a RULE (iii) ITEM.**
+The $103B "news" is an **IPO-prospectus disclosure of contracts signed in late 2025 and August 2026**
+— up to ten months old — surfaced as a September 22 headline. **Ask a transaction when it happened
+before asking who it helps.** The **09-21 GM/Lockheed delivery-milestone costume** and this
+**pre-IPO-book costume** are the same rule firing twice in two sessions.
+
+---
+
+### T-2026-09-22-04 — (no ticker reached) — REJECTED
+**Company A / the news:** **Vicor Corporation raised Q3 2026 sequential revenue-growth guidance from
+"nearly 10%" to "more than 20%"** on **2026-09-21**, citing royalties from a **recently announced
+non-exclusive licence of its Vertical Power Delivery (VPD) technology**. ⚠ **This item PASSES
+standing rule (iii) cleanly** — it is a company revising **its own prior company figure**, not an
+analyst estimate and not an affirmation, and the direction of the dollar figure is **up and inbound**
+(standing rule (viii) satisfied). **That is rare in this funnel and is why it was screened at all.**
+**Company B / the candidate:** The **licensees paying the royalties** — a US-listed OEM or
+hyperscaler whose AI-server power architecture now runs on licensed VPD.
+
+**1. Mechanism (one sentence):** ⚠ **UNWRITABLE FOR WANT OF A SUBJECT.** Source reporting says
+**"four leading OEMs and hyperscalers"** hold licences and a separate note says **"a leading AI
+original equipment manufacturer"** — ⚠ **not one of them is named, in any source retrieved.**
+
+**2–4:** Not attempted. Part 1 failed.
+
+**Hard filters:**
+- Priced-in (§4): **not run.** There is no ticker; and Vicor itself is the first-order name.
+- Correlation (§4): no open positions. Vacuously passes.
+- Universe (§3): **Vicor is far below the $10B market-cap floor**, so even the first-order name is
+  §3-ineligible. The unnamed licensees cannot be tested at all.
+
+**Outcome:** REJECTED at **part 1**, on **standing rule (v)** — *"four leading OEMs and hyperscalers"*
+is a **market-structure fact**, not a transaction with a named counterparty. ⚠ **This is the single
+most instructive rejection of the day and it should not be filed as a routine one.** Every other
+candidate this morning failed on horizon, size, or being first-order — **defects in the event.** This
+one had a **genuinely new, genuinely company-sourced, genuinely near-term, direction-correct
+disclosure** (a Q3 guide, i.e. **inside one quarter**, which is as good as part 3 ever gets here) and
+it still produced nothing, **because the one field that would make it tradable — who is paying — is
+the field the source withholds as a commercial confidentiality choice.** ⚠ **That is the FIRST of the
+four known forms of the binding constraint recorded in open item (3), and 09-21's GM entry had
+tentatively retired the hope attached to it.** Today restores the point in a cleaner example: the
+constraint is **not** that this funnel sees thin news, and **not** that the horizon is always long.
+**It is that counterparty identity is routinely the one thing not disclosed.**
+
+---
+
+### T-2026-09-22-05 — (GPC / ORLY / LKQ considered) — REJECTED
+**Company A / the news:** **AutoZone reported fiscal Q4 2026 on 2026-09-22** (16 weeks to Aug 29):
+**net sales $6.595B vs ~$6.69–6.71B consensus (a miss of ~$95–115M)**, **diluted EPS $56.05 vs $54.30
+consensus (a beat of $1.75, +3.2%)**, net income **$931.6M**, gross margin **53.3%**, operating profit
+**~$1.3B**, same-store sales **+1.5%**, FY26 EPS **$152.55**. **No new formal guidance and no new
+commercial agreement was disclosed.**
+**Company B / the candidate:** **Genuine Parts (GPC), O'Reilly (ORLY), LKQ** — a read-across from
+AutoZone's same-store-sales and revenue trend to the rest of the automotive aftermarket.
+
+**1. Mechanism (one sentence):** ⚠ **CANNOT BE WRITTEN WITHOUT AN "AND ALSO", WHICH IS THE TEST.**
+The honest sentence is: *"AutoZone's +1.5% same-store sales indicate the aftermarket demand
+environment, **and also** GPC/ORLY/LKQ sell into that same environment, **and therefore** their
+comparable lines should behave similarly."* ⚠ **That is a SHARED CAUSE, not a mechanism.** AutoZone
+buying less does not change what O'Reilly sells; both are downstream of the same US
+vehicle-parc/miles-driven/pricing environment. ⚠ **AutoZone is not a customer, supplier or
+counterparty of any of them — it is a COMPETITOR**, which makes the link weaker still than the crush-
+spread cases.
+
+**2–4:** Not attempted. Part 1 failed.
+
+**Hard filters:**
+- Priced-in (§4): **not run.** ⚠ **Deliberately.** Running `move` on three tickers would have put a
+  price screen in front of a mechanism that does not exist, and a clean `priced_in: false` on any of
+  them would have created pressure to go back and rescue part 1. **§4 says filters come before the
+  thesis; it does not say filters substitute for a candidate.**
+- Correlation (§4): no open positions. Vacuously passes.
+- Universe (§3): GPC and ORLY are above the $10B floor; not reached.
+
+**Outcome:** REJECTED at **part 1** — the **eighth shared-cause instance**, and a new sub-shape worth
+naming. ⚠ **09-16's finding was that a DIVERGENCE between two named companies sounds causal
+(JPM/BAC/WFC); 09-21's was that a CONVERGENCE does too (Bunge/ADM). Today's is that a COMPETITOR'S
+PRINT is the same trap wearing the most respectable costume of the three** — a real, audited,
+company-disclosed number about a named company, released this morning, which tells you about an
+**industry** and about **nothing that happened between two parties.** ⚠ **The giveaway is unchanged
+and it is the only test needed: the sentence required an "and also".** Additionally, the direction
+here is **mixed to negative** (a revenue miss against consensus), so even the read-across, had it
+been legitimate, would not have supported a BUY.
+
+---
+
+
 ### 2026-09-21 (08:20 ET) — event survey (funnel, pre-thesis)
 
 Selftest passed all five checks (`trading_enabled: true`, LIVE paper account, equity
