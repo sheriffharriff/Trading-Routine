@@ -40,6 +40,124 @@ anything where the honest-broker rule (§4) did real work>
 
 ## Entries
 
+### 2026-09-23 (Wednesday)
+
+**Account:** total **$100,053.48 on official closes** / $100,055.46 broker mark | day P&L
+**−$535.84 (−0.533%)**, both legs official | since inception **+0.053%** (+$53.48)
+**Sleeves:** core 70.016% | satellite 0.0% | cash 29.984%   (§2 band 65–75%; broker-mark basis
+70.02 / 0.0 / 29.98 — `core_in_band: true`, `rebalance_needed: false`, delta −$16.63)
+**Breaker:** INACTIVE
+**Week:** 0/3 new positions — today is Wednesday 2026-09-23, ISO Monday **2026-09-21**, and `week_of`
+already read 2026-09-21; anchors matched, no reset due, **twelfth consecutive run** to find it already
+done. Next boundary Monday 2026-09-28.
+**Trading day:** yes — a full session. `clock` at 16:16:15 reads `is_open: false` with `next_open`
+**2026-09-24**, the **post-bell** shape. The boolean is identical on a holiday; only the date
+discriminates — and the third discriminator was checked directly: **a VOO daily bar for 2026-09-23
+exists** (o 712.13, h 712.38, l 706.395, c 707.28, n 3,960), so a session happened and the summary is
+owed.
+
+**Traded:** nothing — zero orders. `orders --status all` still returns **one row for the account's
+entire history**, the 09-03 core VOO buy, `status: filled`, terminal. **Nothing is in limbo overnight**
+and §7 has no instance to carry.
+**Researched:** 6 theses today — **0 accepted, 6 rejected** (T-2026-09-23-01 GIS, -02 LH, -03 CNC/MOH/OSCR,
+-04 ELMT, -05 LHX, -06 GFS). All six were written pre-market at 08:20; routine 4 wrote none.
+**Positions near a sell rule:** **none — there are no satellite positions.** §5 exempts core VOO, so
+the sell-rule table has no rows, not zero-distance rows.
+
+**What happened:**
+
+VOO closed **707.28**, down **$5.41 (−0.759%)** from 712.69. On 99.046311231 shares that is
+**−$535.84** on the day, and it takes the account from +0.589% since inception to **+0.053%** — very
+nearly flat, giving back most of Monday's +1.554% in a single session.
+
+⚠ **Grounded, not inherited: today is the largest single-day decline, in both dollars and percent,
+since the core was established on 09-03.** I pulled the 25-session close series rather than asserting
+it — the post-fill down days run −0.400%, −0.523%, −0.476%, −0.587%, −0.451%, −0.438%, −0.442%,
+−0.010%, and then today's −0.759%. (Over the full 25-session window 08-20's −0.847% is larger, but the
+account held nothing then, so it is not a drawdown this book experienced.)
+
+**⚠ STEP 2 — THE HIGH-WATER MARKS. THIS IS THE JOB THIS ROUTINE EXISTS FOR AND IT HAD NO SUBJECT FOR
+THE TWENTY-NINTH SESSION.** `positions.md` carries **zero satellite blocks**; `alpaca.py positions`
+returns **one row, core VOO**, unchanged since the 09-03 fill. `highest_close` is therefore **ABSENT —
+the third state, carrying no `(as of ...)` date at all** — and that absence is exactly what proves no
+mark was owed and none went stale. **Zero `bars` calls were due for a high-water mark and none was
+made for one.** The one `bars --adjustment all` call this run made was for the **core close**, to
+compute the day's P&L honestly — a different purpose entirely, and core is not a §5.4 subject.
+
+**Sleeves.** `sleeves` reports equity $100,055.46, core $70,055.46 = **70.02%**, satellite **$0 = 0.0%
+(count 0)**, cash $30,000.00 = **29.98%**, `core_in_band: true`, `rebalance_needed: false`,
+`rebalance_delta: −$16.63`. ⚠ **No rebalance is due tomorrow.** §2 rebalances at the **65/75 band edge**,
+not to the exact 70% target, so no delta inside the band is an action at any size — and at 70.02% the
+core sits **4.98 points** from the nearest edge, the tightest it has been to target in the whole series.
+**Thirty-eighth consecutive run inside a 0.63-point range (69.59–70.22).**
+
+**Housekeeping.** Week rollover checked and not due (above). `consecutive_closed_losses` stays **0** —
+**nothing has ever closed in this account**, so the streak is not "confirmed at 0 after today's closes",
+it has never had an input. Breaker **INACTIVE**, `halt_triggered_at` **none**, so no `HALT_CLEARED_AT`
+comparison was required and **no circuit-breaker alert was due**. `open_thesis_ids` stays `none`.
+`alerts.md` is empty — zero open incidents, zero SYSTEMIC.
+
+**Two-price defect — a THIRD post-bell instance, and it reconciles exactly.** At 16:16 `current_price`
+reads **707.30** against the official **707.28** — **2 cents HIGH**. `lastday_price` reads **712.78**
+for the **fourth time today** (08:20, 09:36, 12:44, 16:16), still **nine cents high** against 712.69,
+still never having rebuilt. The broker therefore computes `equity − last_equity` = **−$542.77** where
+the true close-to-close is **−$535.84**, overstating the decline by **$6.93**. ⚠ **That $6.93
+decomposes perfectly: 99.046311231 × $0.09 (stale baseline) − 99.046311231 × $0.02 (high midpoint) =
+$8.91 − $1.98 = $6.93.** Both legs defective at once, in opposite directions, reconciling against each
+other — which is precisely why **no check internal to the broker's own fields can ever surface either.**
+**Neither field was used in any figure above.**
+
+**What I got wrong or nearly got wrong:**
+
+**1. The standing day-P&L rule felt unnecessary today, and that is the most dangerous form it takes.**
+Yesterday the defect was a **sign error** — the broker said +$7.82 on a day the tape was −$6.93. Today
+it is $6.93 of noise on a real move of −$535.84: **1.3% of the headline, invisible in the rounding.**
+⚠ **A reader of today's numbers alone would conclude the rule is pedantry.** The rule's value is
+**inversely proportional to the size of the real move**, so it looks worthless on exactly the days it
+costs nothing to follow, and matters on exactly the days nobody re-derives it. I followed it, and I am
+recording that it bought me nothing today, because the honest version of this note is not "the rule
+saved me again."
+
+**2. The pressure to lower the §4 bar is now measurable, and today supplied its best argument yet.**
+Recounted from source, not inherited: `research_log.md` holds **61 `### T-` headings, one of which is
+the template, so 60 real theses, no duplicate IDs — and 0 accepted, ever.** Sixty consecutive
+rejections, an empty satellite sleeve, **29.98% idle cash**, a weekly cap unused at 0 of 3, an INACTIVE
+breaker, and an account that is now **+0.053% since inception** — flat, after giving back a −0.533%
+day. ⚠ **Every one of those facts is an argument that the filter is too tight, and not one of them is
+evidence about any individual thesis.** The correct reading is §4's own: a run that finds nothing is a
+successful run, and a flat account is what "no trade" *looks* like — it is not a verdict on the rule
+that produced it. I record the pull because naming it is the only defence against acting on it, and
+because **tomorrow's pre-market run will read this file with the same cash sitting idle and one more
+day of flat performance behind it.**
+
+**3. A near-miss on the framing of Step 2, caught while writing it.** My first draft of the sleeves
+paragraph reached for "high-water marks updated — nothing moved," which is *true of a book with
+positions whose closes did not exceed their marks* and **false here, where there are no marks at all.**
+Those two states are the exact pair this routine's Step 2 exists to keep distinct, and the wrong one is
+the more natural sentence. ⚠ **The distinction is free today and stops being free the moment a
+satellite fill lands** — at which point a mark silently not written reads identically to a mark
+correctly unchanged, and only the `(as of ...)` date separates them.
+
+**4. Nothing else was close.** No thesis was talked into existence at this run — routine 4 writes no
+theses and this one wrote none. No §5 rule was softened, because none had an operand. §5.1–§5.4 remain
+**untested code paths for the twenty-ninth consecutive session, and §5.4 is still NOT ARMED** — it arms
+on the first **satellite** fill, and the 09-03 core fill was not one.
+
+**For the next run:**
+
+- **High-water marks were NOT updated, and nothing was skipped.** There are no satellite positions, so
+  there is no mark to carry a date. **Do not backfill — there is nothing to backfill.** The midday
+  staleness check reads a date that does not exist; that is the ABSENT state, not a stale one.
+- **No rebalance is due.** Core 70.02%, delta −$16.63, band edge 4.98 points away.
+- **Do not rehabilitate any of today's six rejections.** None becomes eligible at a different price:
+  GIS has no second party, LH and CNC have no beneficiary in a long-only book, ELMT is a ~$634M
+  microcap, LHX and GFS have no allocated figure.
+- **`lastday_price` will read 712.78 again tomorrow morning unless it finally rebuilds.** It has now
+  carried that value across **two** session boundaries and four reads in one day. Against today's
+  official close of **707.28**, a field still reading 712.78 tomorrow would be **$5.50 wrong**. Use
+  `bars --adjustment all` for any close, a fresh `quote` for any execution reference.
+- **Today's official close for VOO is 707.28.** Yesterday's was 712.69, Monday's 712.76.
+
 ### 2026-09-22 (Tuesday)
 
 **Account:** total **$100,589.32 on official closes** / $100,606.05 broker mark | day P&L

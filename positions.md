@@ -56,11 +56,54 @@ re-derive it from price history, and it stays correct for positions closed month
 
 *(none — no **satellite** positions have been opened yet. Core VOO exists and is deliberately not tracked here, per the top-of-file rules and the fill note further down.)*
 
-**Reconciliation 2026-09-23 — ALL THREE RUNS SO FAR (1-premarket 08:20, 2-open 09:36, 3-midday
-12:44 ET). LEDGER AGREES WITH THE BROKER AT ALL THREE; ZERO SATELLITE POSITIONS ON BOTH SIDES;
+**Reconciliation 2026-09-23 — ALL FOUR RUNS (1-premarket 08:20, 2-open 09:36, 3-midday 12:44,
+4-close 16:16 ET). LEDGER AGREES WITH THE BROKER AT ALL FOUR; ZERO SATELLITE POSITIONS ON BOTH SIDES;
 NO ORDER PLACED AT ANY; NO HIGH-WATER MARK WAS WRITTEN AND NONE WAS DUE; NO §5 RULE HAD A SUBJECT.**
-*(**One block per date, not one per run** — the open and midday runs each **updated this block in
-place** rather than adding a second. **Collapse, do not append — forty-sixth consecutive run.**)*
+*(**One block per date, not one per run** — the open, midday and close runs each **updated this block
+in place** rather than adding a second. **Collapse, do not append — forty-seventh consecutive run.**)*
+
+---
+
+**THE 16:16 CLOSE RUN — THE HIGH-WATER STEP THIS ROUTINE EXISTS FOR, AND IT HAD NO SUBJECT.**
+
+Selftest passed all five checks (`trading_enabled: true`, LIVE paper); pre-flight equity **$100,055.46**.
+`clock` at **16:16:15** reads **`is_open: false`** with `next_open` **2026-09-24T09:30** — the
+**post-bell** shape. The boolean is identical on a holiday; only the date discriminates, and the third
+discriminator was checked directly: **a VOO daily bar for 2026-09-23 exists** (c **707.28**, n 3,960),
+so a real session happened.
+
+**⚠ STEP 2 WAS A NO-OP FOR THE TWENTY-NINTH SESSION, AND THAT IS NOT THE SAME AS PASSING.** This file
+carries **zero satellite blocks**; `alpaca.py positions` returns **one row, core VOO**, 99.046311231
+shares, avg_entry 706.74, cost_basis 69,999.99, market_value 70,055.46 — unchanged since the 09-03 fill.
+`highest_close` is **ABSENT — the third state, carrying no `(as of ...)` date at all** — which is exactly
+what proves no mark was owed and none went stale. ⚠ **Zero `bars` calls were due FOR A HIGH-WATER MARK
+and none was made for one.** The single `bars --adjustment all` call this run issued was for the **core
+close**, to compute the day's P&L without touching a broker field — a different purpose, and core is
+not a §5.4 subject. **§5.4 remains NOT ARMED**; it arms on the first **satellite** fill, and the 09-03
+core fill was not one.
+
+**⚠ THE SENTENCE THIS STEP MUST NOT WRITE — CAUGHT IN DRAFT.** "High-water marks updated, nothing
+moved" is true of a book whose closes did not exceed their marks and **false here, where there are no
+marks.** Those two states are the precise pair Step 2 exists to keep apart, and the wrong one is the
+more natural sentence. The distinction is **free today and stops being free the moment a satellite fill
+lands** — after that, a mark silently not written reads identically to a mark correctly unchanged, and
+only the `(as of ...)` date separates them.
+
+**NOTHING CLOSED, NOTHING IS IN LIMBO.** `orders --status all` returns **one row for the account's
+entire history** — the 09-03 core VOO buy, `status: filled`, terminal. No order has ever reached a
+non-terminal state here, so nothing carries overnight per §7 and `trade_log.md` was correctly left
+unappended. `consecutive_closed_losses` stays **0** — it has never had an input.
+
+**TWO-PRICE DEFECT — THIRD POST-BELL INSTANCE, AND IT RECONCILES EXACTLY.** `current_price` **707.30**
+against the official **707.28** — **2 cents HIGH**. `lastday_price` **712.78** for the **fourth time
+today** (08:20, 09:36, 12:44, 16:16), still **nine cents high** against 712.69, still never rebuilt. The
+broker's `equity − last_equity` is **−$542.77** where the true close-to-close is **−$535.84**;
+⚠ **the $6.93 gap decomposes perfectly — 99.046311231 × $0.09 (stale baseline) − 99.046311231 × $0.02
+(high midpoint) = $8.91 − $1.98 = $6.93.** Both legs wrong at once in opposite directions, reconciling
+against each other, which is why **no check internal to the broker's fields can surface either.**
+**Neither field was used in any figure this run reported.** ⚠ **Post-bell record now runs 22c LOW
+(09-21), 16.9c HIGH (09-22), 2c HIGH (09-23) — same routine, same minute of the day, no predictable
+sign and no correctable offset.**
 
 ---
 
