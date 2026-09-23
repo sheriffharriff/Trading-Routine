@@ -56,11 +56,69 @@ re-derive it from price history, and it stays correct for positions closed month
 
 *(none — no **satellite** positions have been opened yet. Core VOO exists and is deliberately not tracked here, per the top-of-file rules and the fill note further down.)*
 
-**Reconciliation 2026-09-23 — BOTH RUNS SO FAR (1-premarket 08:20, 2-open 09:36 ET). LEDGER AGREES
-WITH THE BROKER AT BOTH; ZERO SATELLITE POSITIONS ON BOTH SIDES; NO ORDER PLACED AT EITHER; NO
-HIGH-WATER MARK WAS WRITTEN AND NONE WAS DUE; NO §5 RULE HAD A SUBJECT.**
-*(**One block per date, not one per run** — the open run **updated this block in place** rather than
-adding a second. **Collapse, do not append — forty-fifth consecutive run.**)*
+**Reconciliation 2026-09-23 — ALL THREE RUNS SO FAR (1-premarket 08:20, 2-open 09:36, 3-midday
+12:44 ET). LEDGER AGREES WITH THE BROKER AT ALL THREE; ZERO SATELLITE POSITIONS ON BOTH SIDES;
+NO ORDER PLACED AT ANY; NO HIGH-WATER MARK WAS WRITTEN AND NONE WAS DUE; NO §5 RULE HAD A SUBJECT.**
+*(**One block per date, not one per run** — the open and midday runs each **updated this block in
+place** rather than adding a second. **Collapse, do not append — forty-sixth consecutive run.**)*
+
+---
+
+**THE 12:44 MIDDAY RUN — THE §5.4 BACKFILL STEP HAD NO SUBJECT, AND THAT IS NOT THE SAME AS PASSING.**
+
+Selftest passed all five checks (`trading_enabled: true`, LIVE paper); pre-flight equity **$100,095.07**,
+`sleeves` equity **$100,085.07** moments later. `clock` at **12:44:41** reads **`is_open: TRUE`**,
+`next_close` **2026-09-23T16:00** — the unambiguous shape, mid-session.
+
+**⚠ STEP 2 IS THE REASON THIS ROUTINE EXISTS, AND IT WAS A NO-OP FOR THE TWENTY-EIGHTH SESSION.** The
+routine's own framing is that a missed close run leaves `highest_close` stale, silently disabling the
+§5.4 trailing stop while every other check still passes. **There was nothing to check.** `positions.md`
+carries **zero satellite blocks**, so `highest_close` is **ABSENT — the third state, carrying no
+`(as of ...)` date at all** — which is precisely what proves no backfill was owed. **Zero `bars` calls
+were due and zero were made.** ⚠ **A staleness check with no field to read is an ABSENT check, not a
+clean one, and the ABSENT state is the only one that can be distinguished from a stale one without
+reading a date.** The moment a satellite fill lands, this step acquires a subject and the distinction
+stops being free.
+
+**⚠ STEP 3 HAD NO OPERAND — ALL FOUR §5 RULES ITERATE OVER OPEN SATELLITE POSITIONS AND THERE ARE
+ZERO.** §5.1 has no `invalidation` string to falsify because none has ever been written, so **zero
+`perplexity.py` news calls were due on that path and zero were made** — this run issued **no research
+call of any kind**, and routine 3 has no research step for one to land in. §5.2 has no `timing_window`,
+§5.3 no `entry_price`, §5.4 no `highest_close`. **Twenty-eighth session with §5.1–§5.4 never started;
+§5.4 remains NOT ARMED.** The string of "no exits" lines across this account's history records **the
+absence of a subject, not four rules returning clean** — they remain untested code paths.
+
+**STEP 4 — ZERO EXITS, ZERO ORDERS OF ANY KIND.** No `sell` was submitted, so there was no
+`"terminal": false` to chase and no `"dry_run": true` to flag. ⚠ **The loudest line this routine can
+produce — a stop that should have fired and did not — HAS NO INSTANCE HERE, and the reason is that
+nothing could fire, not that everything was checked and held.** `consecutive_closed_losses` stays **0**,
+nothing has ever closed, breaker **INACTIVE**, `halt_triggered_at` **none**, so **no `HALT_CLEARED_AT`
+comparison was required and no circuit-breaker alert was due.** `open_thesis_ids` stays `none` — no
+thesis ID to strike.
+
+**STEP 5 HAD NOTHING TO REFRESH.** `sell_rule_status` is **ABSENT rather than blank** on a file with no
+position blocks. Writing a distance-to-rule line here would require inventing an entry price.
+
+**⚠ THE MIDDAY RUN MAY NOT OPEN A POSITION, AND THE CONDITIONS THAT MAKE THAT TEMPTING WERE ALL
+PRESENT.** Satellite sleeve **0.0%**, cash **29.97%**, weekly cap **0 of 3 unused**, breaker INACTIVE,
+no restricting note in `control.md`. **Idle capital is not an opportunity this seat may act on**: the
+routine is exits-only by construction, and a midday entry would route around the pre-market thesis and
+the 09:35 execution path, which is the discipline rather than an obstacle to it. **Nothing was bought.**
+
+**TWO-PRICE DEFECT — `lastday_price` READS 712.78 FOR THE THIRD TIME TODAY.** The identical stale value
+at 08:20, 09:36 and now 12:44, **nine cents high** against the official 712.69. `current_price` **707.655**
+is a live midpoint, not a close. The broker reports `change_today` **−0.00719** and
+`unrealized_intraday_pl` **−507.61**, both computed off the stale 712.78 baseline; **707.655 against the
+official 712.69 is −0.706%**, so the broker **overstates today's decline by about 1.3 basis points**.
+⚠ **Neither field was used nor carried into any figure in this run.** Cosmetic on core, which §5 exempts;
+**load-bearing the day a satellite position exists.** Always `bars --adjustment all` for a close.
+
+**GNRC NOT LOOKED AT — EIGHTEENTH REFUSAL, AND A FREE ONE.** This run made `clock`, `positions` and
+`sleeves` calls only and issued **no `quote`, `bars`, `move` or `asset` call on any symbol**, so the
+symbol data plane was **shut** and no costume had a vehicle. **Reported honestly: a refusal on a run
+that could not have used the number is weaker evidence than one on a run that could.** The
+disqualifying facts are unchanged — **GNRC is the named counterparty in the Amazon announcement,
+first-order, outside §4 at any price.**
 
 ---
 
