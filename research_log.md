@@ -52,6 +52,352 @@ single most common way a plausible-sounding connection gets mistaken for an oppo
 
 ## Entries
 
+### 2026-09-23 (08:20 ET) — event survey (funnel, pre-thesis)
+
+Selftest passed all five checks (`trading_enabled: true`, LIVE paper account, equity
+**$100,504.14**). Window screened: **Tuesday's close through Wednesday pre-market (Sept 22–23)** —
+one full session. **Six Perplexity scans** (five `--recency day`, one `--recency week` second-order
+screen). **Six candidates reached a full thesis entry; ALL SIX WERE REJECTED.**
+
+**⚠ THE SIX-SESSION CARRY ITEM IS DISCHARGED: GENERAL MILLS REPORTED THIS MORNING, IT WAS SCREENED,
+AND IT PRODUCED NOTHING.** T-2026-09-23-01 below. The item had been carried since 09-17 on the
+explicit grounds that *"nothing was screenable until the print; tomorrow it is."* The print arrived,
+the screen ran, and **the reason it produced nothing is not the reason the carry-forward anticipated**
+— the carry note expected a rule (iii) fight over the Sept 8 affirmation, and the real kill is
+simpler and earlier: **an own-results earnings print contains no transaction, so there is no Company A
+in it and no Company B to find.** ⚠ **Recorded precisely because a six-session wait creates a standing
+expectation that the awaited event will be tradable. It was not, and the waiting did not make it so.**
+
+**⚠ THE CLEANEST NEGATIVE RESULT OF THE DAY IS ELMET/TUNGSTEN WEST, AND IT FAILS ON §3 RATHER THAN ON
+DISCLOSURE.** T-2026-09-23-04. Open item (3) has spent three weeks documenting a binding constraint
+made of **withheld counterparty identity** — four known forms, all about what a source refuses to say.
+**This event withholds nothing:** both parties named, the tonnage named (>1,000 t/yr contained WO₃),
+the value named (**>$230M/yr, ~£1.4B over eight years**), the term named. It still produces no trade,
+and the reason is **structural, not evidentiary**: the buyer is a **$634M US microcap** and the seller
+is **AIM-listed**. ⚠ **This is the first fully-disclosed event in some time where the §3 universe floor
+is the first thing standing in the way rather than a missing field** — decision-relevant for open item
+(3), because it is evidence that **widening the evidence bar would not have caught this one either.**
+*(It fails part 3 as well — an eight-year offtake, rule (vi) — so it is not a §3-only rejection. Do
+not re-record it as one.)*
+
+**⚠ TWO PRICED-IN READINGS TODAY, BOTH ON FALLS, AND THEY LAND ON OPPOSITE SIDES OF THE WIRE.**
+`move --symbol CNC` returned **−6.44% → `priced_in: true`, "LATE — skip"** — the **NINTH instance** of
+open item (1), a drawdown read as priced-in. `move --symbol LH` returned **−3.83% → `priced_in: false`,
+"passes"** — the **THIRD near-miss** of the same defect, clearing only because its *fall* was **17 basis
+points** too small (after LMT −3.61% on 09-11 and GM −3.95% on 09-21, five basis points inside).
+⚠ **NEITHER READING IS THE REASON FOR ITS REJECTION, and both are recorded here deliberately so that no
+later run inherits "rejected because priced-in" as a fact.** CNC dies at part 1 and part 2; LH dies at
+the premise and part 3. **A FAIL on a fall is not evidence the filter worked, and neither is a PASS.**
+
+**Dropped before thesis stage, with reasons:**
+
+- **Nth Cycle / Glencore — binding term sheet, black-mass supply and offtake, >$1B over 10 years,
+  ~24,000 t/yr.** A real two-party transaction with a disclosed value. **Nth Cycle is private**
+  (preparing a future listing) and **Glencore is LSE-listed** — **§3 kills both parties outright**, and
+  the **10-year** term kills part 3 independently (rule (vi)). **Only a term sheet**, with definitive
+  agreements targeted for end-2026.
+- **Zeo Energy (ZEO) / Ewyze Corp — cooperation agreement on off-grid power and data-centre projects,
+  09-22; ZEO +41.1%.** ⚠ **The single largest single-name move on the tape, and there is no number in
+  it.** The announcement discloses **no contract value, no committed capacity, no timing and no
+  revenue-recognition schedule** — part 2 unwritable. ZEO is a **microcap, far below the §3 floor**, and
+  Ewyze is not identified as US-listed. ⚠ **A 41% move is not a dollar path; it is the market's opinion
+  of one.**
+- **V2X Systems — US Air Force undefinitized contract action, not-to-exceed ~$232M, ~$116M obligated,
+  work through mid-July 2027.** V2X is the **named awardee — first-order**, and its market cap is far
+  below the §3 floor. The source states plainly that it **"does not identify specific publicly traded
+  suppliers affected beyond V2X"** — standing rule (v), the blank the source left.
+- **Boeing / SPEEA labour contract, 09-23** — the union recommended acceptance. **No dollar value, no
+  wage terms, no ratification outcome.** Part 2 unwritable, and it is a **cost** line in any case
+  (rule (viii)).
+- **MiMedx — Georgia federal judge vacated FDA's biological-product classification, 09-22.** MiMedx is
+  a **microcap below the §3 floor**, and the retrieved reporting identifies **no second-order public
+  company at all**. A regulatory reclassification with no named beneficiary is not a Company A event.
+- **Federal Circuit / NIIT foreign tax credit; Michigan antitrust suit against four oil companies
+  dismissed 09-23** — in both cases the sources establish **no second-order company and no disclosed
+  figure**. The oil-company defendants are **not even named** in the retrieved snippet.
+- **The Fed's September +25bp to a first hike since July 2023, Q4 PCE 3.7% / core 3.4% / GDP 2.3% /
+  unemployment 4.1%, Richmond Fed manufacturing −2 from 4, weekly ADP +20,000.** **Environment inputs
+  and a data calendar, not a Company A.** Already on the disposed list; re-confirmed, not re-litigated.
+- **"SK Hynix eyeing Intel's Ohio site — why Micron should pay attention."** ⚠ **A headline built
+  entirely out of the word "eyeing."** No transaction, no parties in agreement, no figure. **Micron is
+  attached by a commentator, not by a counterparty.** This is standing rule (v) in its purest form.
+
+---
+
+### T-2026-09-23-01 — GIS (General Mills) — REJECTED
+**Company A / the news:** **General Mills reported fiscal Q1 2027 on 2026-09-23** (quarter ended
+2026-08-30; 8-K filed same day). Adjusted diluted EPS **$0.75** (down 13% cc) vs consensus **$0.72**;
+reported diluted EPS **$0.74**, down 67% y/y; net sales **$4.39B**, down 3% y/y, *"primarily reflecting
+the prior-year U.S. yogurt divestiture"*, vs consensus **$4.34B**; **organic net sales FLAT**; adjusted
+operating profit **$634M**, down 11% cc; net earnings **$397M**, down 67% y/y. Full-year FY27 guidance
+**REAFFIRMED** unchanged: adj. EPS **$3.00–$3.20**, organic net sales **−1.5% to +0.5%**, adj. operating
+profit **−8% to −13% cc**, FCF conversion **~95%**. *(Sources: Business Wire release 2026-09-22/23,
+Investing.com Q1 FY27 slides coverage, TradingView, Quiver.)*
+**Company B / the candidate:** ⚠ **NONE EXISTS. That is the finding, and it is the whole entry.**
+
+**1. Mechanism (one sentence):**
+> ⚠ **UNWRITABLE — there is no Company A→B link to write, because there is no transaction.** An
+> own-results earnings print discloses **what a company earned**, not **what it agreed with somebody
+> else**. §4's shape requires an event *between two parties*; a quarterly print has one party.
+
+**2. Dollar path:** ⚠ **Not reached — but screened anyway, and the screen is the useful part.** A
+dedicated `--recency week` second-order scan asked for **named, disclosed, contractual** GIS suppliers,
+co-manufacturers, packaging or ingredient vendors with a GIS revenue-share figure. It returned
+**nothing**, in terms worth quoting: *"Any list of companies such as packaging producers,
+agricultural-input companies, logistics providers, or food manufacturers would be an inference based on
+industry exposure rather than a disclosed General Mills-specific contractual relationship, and
+therefore has been excluded."* ⚠ **The one named counterparty the screen did surface is WALMART at 22%
+of GIS FY2026 consolidated net sales — and it fails on DIRECTION and on MAGNITUDE at once.** Walmart is
+GIS's **customer**, not its supplier, so the causal arrow points the wrong way; and 22% of GIS's ~$19B
+is **~$4.2B against Walmart's ~$700B of revenue — well under 1%**, against a 10% floor.
+**3. Timing window:** ⚠ **Not reached.** *(Had a candidate existed, the print is already reported, so
+the window would have been favourable. It is worth being explicit that the timing was the one part that
+would have passed — the rejection is not a horizon rejection.)*
+**4. Invalidation:** ⚠ **Not reached.** No thesis, nothing to invalidate.
+
+**Hard filters:**
+- Priced-in (§4): ⚠ **NOT RUN, DELIBERATELY, AND THE OMISSION IS THE POINT.** GIS is **Company A** —
+  the headline name §4 explicitly says not to chase. `move --symbol GIS` would have collected a number
+  with **no candidate to apply it to**, which is the GNRC shape wearing a live-funnel costume. **An
+  absent check, not a skipped one.**
+- Correlation (§4): vacuously passes — **zero open satellite positions**, so no `driver` field exists
+  to collide with. **Recorded as vacuous, not as a pass.**
+- Universe (§3): **not the binding constraint.** GIS is US-listed common stock and comfortably above
+  the $10B floor; the cap was **not sourced**, because the thesis died at part 1 and quoting an
+  unsourced figure would put an unchecked number into the audit trail.
+
+**Outcome:** **REJECTED at part 1 — the premise.** ⚠ **The six-session carry item is now DISCHARGED and
+must not be re-carried.** Note carefully **which** kill fired: the carry-forward flagged the Sept 8
+FY27 affirmation under standing rule (iii) and expected that to be the fight. **It never became the
+fight.** Rule (iii) is a test of whether news is *new to the company's own disclosure*, and a quarterly
+print **is** new company disclosure — it would have **passed** rule (iii) cleanly. The thesis dies one
+step earlier, at the premise: **there is no second party.** ⚠ **A reaffirmed outlook alongside a beat
+against consensus is the most ordinary object in this funnel, and six sessions of anticipation did not
+convert it into an event.** *(Separately and consistently with rule (iii): the **reaffirmation** of
+$3.00–$3.20 is not news either — it restates the September 8 figure verbatim, the Centene and Southwest
+shape.)*
+
+---
+
+### T-2026-09-23-02 — LH (Labcorp Holdings) — REJECTED
+**Company A / the news:** **CMS released preliminary Clinical Laboratory Fee Schedule payment rates for
+2027–2029 under PAMA on 2026-09-21**, reported as **~15% reimbursement cuts**. Labcorp filed an 8-K and
+stated the proposed rates rest on data it considers *"unrepresentative of the broader commercial
+laboratory market"* and would impose *"steep annual payment cuts"* threatening access to laboratory
+services — while **maintaining its 2026–2029 growth outlook.** LH and DGX both fell on the news
+(*"Premarket movers: Quest, Labcorp hit by CMS cuts"*).
+**Company B / the candidate:** **Labcorp (LH)**, taken as the second-order name on the theory that a
+regulator's rate action is the "event" and the labs are the exposed parties.
+
+**1. Mechanism (one sentence):**
+> ⚠ **UNWRITABLE IN THE REQUIRED DIRECTION.** The only sentence available is *"CMS cutting lab
+> reimbursement ~15% causes Labcorp's diagnostics segment revenue to **DETERIORATE**"* — and §4 buys
+> Company B because its economics **improve**. There is no company in this event whose economics
+> improve; the enrollees' dollars are **removed from the system**, not redirected to a competitor.
+
+**2. Dollar path:** ⚠ **Not reached in the buy direction.** *(For the record, the magnitude is real and
+disclosed — ~15% against a fee schedule — which is more than most candidates in this log manage. It is
+disclosed in the wrong sign.)*
+**3. Timing window:** ⚠ **FAILS INDEPENDENTLY, AND THIS IS THE KILL THAT NEEDS NO ARGUMENT.** The rates
+are **PRELIMINARY** and apply to **CY2027–2029**. Nothing lands in reported results inside **two
+quarters**, and the schedule is not even final — a comment period stands between the proposal and the
+rates. **Standing rule (vi), one step.**
+**4. Invalidation:** ⚠ **Not reached.**
+
+**Hard filters:**
+- Priced-in (§4): moved **−3.83%** over the last 5 sessions (323.83 → 311.42) → **`priced_in: false`,
+  "passes the priced-in check"**. ⚠ **RECORDED AS **NOT** THE REASON FOR THIS REJECTION.** This is the
+  **THIRD near-miss** of open item (1)/(2): a candidate clearing the filter only because its **FALL**
+  was fractionally too small — **17 basis points inside the wire**, after LMT (−3.61%, 09-11) and GM
+  (−3.95%, five basis points, 09-21). **The filter measured a drawdown and called it "not late."**
+- Correlation (§4): vacuously passes — zero open satellite positions, no `driver` to collide with.
+- Universe (§3): stock, market cap **$25.266B** (source: **Yahoo Finance quote page via Perplexity,
+  2026-09-23**; corroborating September snapshots $25.19B–$26.32B from MarketBeat and ~$26.0B from
+  ad-hoc-news). → **passes.** ⚠ **§3 is not the binding constraint here and must not be recorded as
+  the rejection.**
+
+**Outcome:** **REJECTED at the premise and, independently and decisively, at part 3.** ⚠ **THE PREMISE
+FAILURE IS THE ONE WORTH INHERITING: A REGULATOR IS NOT A COMPANY A.** CMS setting a fee schedule is
+the same object as **the FOMC's +25bp**, already on the disposed list — **an environment input, not a
+transaction between two parties.** It is more seductive than the FOMC because it is **sector-specific
+and carries a number**, which makes it *feel* like a corporate event. It is not one. ⚠ **And the
+direction disqualifies it regardless: this is a long-only book, and a 15% rate cut has no
+beneficiary.** Any "who wins when labs get squeezed?" answer — hospital outreach labs, point-of-care
+testing — requires an **"and also"** clause and names no counterparty. **Part 1's one-sentence test
+catches it.**
+
+---
+
+### T-2026-09-23-03 — CNC (Centene) / MOH / OSCR — REJECTED
+**Company A / the news:** **The administration halted ACA marketplace enrollment for more than 760,000
+enrollees on 2026-09-22**, saying they had been fraudulently enrolled, and estimated **$2.2B** in
+taxpayer savings; a related Reuters item reports **315,000 Obamacare policies cancelled last month.**
+Reporting names **Oscar Health and other marketplace insurers** as affected.
+**Company B / the candidate:** **Centene (CNC)** primarily, with **Molina (MOH)** and **Oscar Health
+(OSCR)** as the alternates on the same event.
+
+**1. Mechanism (one sentence):**
+> ⚠ **UNWRITABLE IN THE BUY DIRECTION, for the same structural reason as T-2026-09-23-02.** Removing
+> 760,000 enrollees **reduces** marketplace insurers' premium revenue. The only way to make this a buy
+> is the argument that fraudulent enrollees carried above-average loss ratios, **so removing them lifts
+> margin** — ⚠ **and that sentence needs an "and also" the moment it is written**, because it requires
+> assuming both the enrollees' risk profile *and* that the margin gain exceeds the revenue loss.
+> **Neither is disclosed anywhere.** **Part 1's one-sentence test is exactly the instrument for this.**
+
+**2. Dollar path:** ⚠ **FAILS OUTRIGHT — the retrieved sources state it in terms.** The reporting *"does
+not quantify the revenue or membership impact"* for Oscar or for any other named insurer. **760,000 is
+an industry-wide figure with no per-company allocation**, and **$2.2B is a TAXPAYER SAVING — money the
+government does not pay out.** ⚠ **Standing rule (viii), read broadly: a disclosed figure that is not
+segment revenue at Company B fails part 2.** This is the TotalEnergies/GIP and Brookfield/Bloom shape —
+a large, real, sourced, prominently-placed number that **is not a dollar path.**
+**3. Timing window:** ⚠ **Not reached.** *(Would likely have passed — cancellations are already in
+effect.)*
+**4. Invalidation:** ⚠ **Not reached.**
+
+**Hard filters:**
+- Priced-in (§4): CNC moved **−6.44%** over the last 5 sessions (67.645 → 63.29) → **`priced_in: true`,
+  "LATE — skip per strategy.md section 4"**. ⚠ **RECORDED DELIBERATELY AS **NOT** THE REASON FOR THIS
+  REJECTION.** This is the **NINTH instance** of open item (1): **the §4 priced-in filter reading a
+  DRAWDOWN as priced-in.** CNC fell 6.4% and the filter called it *late*. ⚠ **There is no price at which
+  this rejection flips** — it dies at parts 1 and 2 — **so do not let a future run inherit the
+  `priced_in: true` as the cause.**
+- Correlation (§4): vacuously passes — zero open satellite positions.
+- Universe (§3): **OSCR fails** (microcap, well below the $10B floor). CNC and MOH were **not
+  cap-sourced**, because the thesis died at parts 1 and 2 and an unsourced figure does not belong in the
+  audit trail. **§3 is not the binding constraint.**
+
+**Outcome:** **REJECTED at part 1 and, independently, at part 2.** ⚠ **A GOVERNMENT POLICY ACTION IS NOT
+A COMPANY A — SECOND INSTANCE TODAY, AFTER CMS.** Two of today's six theses die on the same premise, on
+the same morning, from two different agencies. **That is the pattern of the day and it is worth more
+than either entry alone:** a policy action **feels** like an event because it is dated, sourced,
+quantified and market-moving — and it still has **one party**, which is one short of what §4 requires.
+⚠ **And note what the two have in common beyond that: BOTH ARE CUTS.** A long-only book cannot trade a
+withdrawal of money from a sector unless some named party receives it, and in both cases **nobody does
+— the money simply stops being spent.**
+
+---
+
+### T-2026-09-23-04 — ELMT (The Elmet Group) / Tungsten West — REJECTED
+**Company A / the news:** **Tungsten West plc (AIM: TUN) signed an eight-year binding supply and
+offtake agreement with The Elmet Group Co. (Nasdaq: ELMT) on 2026-09-22/23** for tungsten concentrate
+from the **Hemerdon Mine** in Devon. **Elmet takes >1,000 metric tonnes per year of contained WO₃**,
+reported as **>$230M annually** at then-current ammonium paratungstate prices and **~£1.4B over the
+eight-year term** at prevailing prices and FX. Tungsten West shares rose ~10%. ELMT filed an 8-K.
+**Company B / the candidate:** **ELMT** as the US-listed leg.
+
+**1. Mechanism (one sentence):** ⚠ **Writable — and it is the wrong sign.**
+> The Hemerdon offtake causes **Elmet's raw-material COST line to be fixed for eight years** because it
+> is the **buyer** paying **>$230M/yr** for concentrate.
+⚠ **Standing rule (viii): read which direction the disclosed dollar figure moves.** The **>$230M/yr is
+REVENUE to Tungsten West and COST to Elmet.** The party for whom this figure is revenue is **AIM-listed
+and §3-ineligible**; the party this seat could buy is **paying it out.**
+
+**2. Dollar path:** ⚠ **Fully disclosed, and that is what makes this entry worth keeping.** Tonnage
+(>1,000 t/yr WO₃), annual value (>$230M), total (~£1.4B), term (8 years) — **nothing is withheld.**
+⚠ **It still fails, because the disclosure is at the wrong company.**
+**3. Timing window:** ⚠ **FAILS — EIGHT YEARS.** Standing rule (vi): screen the timing window early on
+anything long-dated. **One step, and it would have killed this even if §3 had not.**
+**4. Invalidation:** ⚠ **Not reached.**
+
+**Hard filters:**
+- Priced-in (§4): ⚠ **NOT RUN, and correctly so.** §3 disqualifies the ticker outright, and a `move` on
+  a §3-ineligible symbol is a number with **nowhere to go.**
+- Correlation (§4): vacuously passes — zero open satellite positions.
+- Universe (§3): ⚠ **FAILS, AND IT IS THE FIRST FILTER TO FIRE.** **ELMT market cap ~$634.18M**
+  (source: **MarketBeat via Perplexity, 2026-09-23**; a second data source on the same date reads
+  **$664.93M**, the spread being intraday price/timestamp) — **against a $10B floor, it is short by more
+  than an order of magnitude.** **Tungsten West is AIM-listed (UK) — not US-listed common stock, §3
+  ineligible outright.**
+
+**Outcome:** **REJECTED at §3, and independently at part 3.** ⚠ **THE REASON THIS ENTRY MATTERS IS WHAT
+IT SAYS ABOUT OPEN ITEM (3).** That item has spent three weeks cataloguing a binding constraint made
+entirely of **withheld counterparty identity** — four forms, all about what sources refuse to say — and
+has been tracking whether **a human widening the evidence bar** would help. ⚠ **This event withholds
+NOTHING: both parties named, tonnage named, annual value named, total value named, term named. It is
+the best-disclosed transaction to enter this funnel in some time, and it produces no trade anyway.**
+The obstruction is **structural** — the counterparties are simply **too small and not US-listed** —
+which is a constraint **no evidence bar can relieve**. ⚠ **File this as evidence that widening the
+disclosure bar is NOT the whole answer to the empty sleeve.** *(Do not re-record this as a §3-only
+rejection: the eight-year term kills part 3 regardless, so a $50B version of Elmet would still not be a
+trade.)*
+
+---
+
+### T-2026-09-23-05 — LHX (L3Harris Technologies) — REJECTED
+**Company A / the news:** **The US Navy's Naval Air Warfare Center Weapons Division (China Lake) signed
+a multi-year agreement with L3Harris on 2026-09-23** to manufacture critical Tomahawk missile
+components, described as deepening a ~30-year relationship and increasing Tomahawk production.
+**Company B / the candidate:** **LHX** as the named contractor; then, as the genuine second-order
+attempt, **L3Harris's component suppliers**.
+
+**1. Mechanism (one sentence):**
+> ⚠ **UNWRITABLE AT THE SECOND ORDER — the supplier list does not exist in the source.** The only
+> writable sentence makes **LHX itself** the beneficiary, and **LHX is the named contractor —
+> first-order, outside §4 at any price**, the Bloom Energy / Accenture / GlobalFoundries shape.
+
+**2. Dollar path:** ⚠ **FAILS — NO CONTRACT VALUE IS DISCLOSED.** The source reports a *"multi-year
+agreement"* to manufacture *"critical components"* and **states no value, no start date, no end date
+and no scope detail.** ⚠ **A separate seven-year, $22.9B Raytheon Tomahawk contract appears in the same
+search — and it was awarded in AUGUST, outside the news window, and is a different agreement.** ⚠ **DO
+NOT LET THE $22.9B MIGRATE INTO THIS ENTRY: it belongs to another contractor, another month and another
+contract, and it is exactly the number a reader would reach for to fill the blank this one leaves.**
+**3. Timing window:** ⚠ **Not reached** — "multi-year" with no start date is not a window.
+**4. Invalidation:** ⚠ **Not reached.**
+
+**Hard filters:**
+- Priced-in (§4): ⚠ **NOT RUN.** LHX is first-order; the number would have nowhere to go.
+- Correlation (§4): vacuously passes — zero open satellite positions.
+- Universe (§3): LHX is US-listed common stock, comfortably above the floor; **cap NOT sourced** — the
+  thesis died at part 2 and an unsourced figure does not belong in the audit trail. **Not the binding
+  constraint.**
+
+**Outcome:** **REJECTED at part 2 (no disclosed value) and at the premise (first-order).** ⚠ **STANDING
+RULE (iv) FIRES HERE: LHX IS A RECURRING TICKER IN THIS LOG, AND THAT IS A WARNING, NOT CORROBORATION.**
+Its previous appearance was resolved on 09-11 **on a number**; this one has **no number at all**, which
+is the weaker case, not the stronger one. ⚠ **And standing rule (v) blocks the second-order route: "who
+supplies L3Harris with Tomahawk components?" is a question about an INDUSTRY, and the source names not
+one supplier.** **The source left the blank; filling it in is not research.**
+
+---
+
+### T-2026-09-23-06 — GFS (GlobalFoundries) — REJECTED
+**Company A / the news:** **Quantinuum secured a $100M CHIPS Act award from the US Department of
+Commerce, announced 2026-09-23**, to scale domestic quantum-semiconductor manufacturing, with
+**GlobalFoundries and Monarch Quantum named as operational partners.**
+**Company B / the candidate:** **GFS**, as the US-listed partner to a privately-held awardee.
+
+**1. Mechanism (one sentence):**
+> ⚠ **UNWRITABLE.** *"A $100M federal award to Quantinuum causes GlobalFoundries' foundry segment
+> revenue to rise"* requires **an amount, a term and a recognition path**, and **the source supplies
+> none of the three** — it *"did not specify how the funding would be allocated between them"*, and
+> **GFS is a NAMED PARTNER in the award, which makes it first-order.**
+
+**2. Dollar path:** ⚠ **FAILS TWICE OVER.** (a) **$100M is FEDERAL FUNDING TO A THIRD PARTY, not segment
+revenue at GFS** — **standing rule (viii) read broadly**, the Brookfield/Bloom shape. (b) **Even on the
+most generous possible reading — the whole $100M landing at GFS as revenue — it is roughly 1.5% of GFS's
+annual revenue, against a 10% floor.** ⚠ **The generous reading is not available anyway, because the
+allocation is undisclosed.**
+**3. Timing window:** ⚠ **Not reached** — the source gives **no delivery schedule and no
+revenue-recognition timeframe**, only that the initiative *"supports expansion and diversification of
+the domestic supply chain."*
+**4. Invalidation:** ⚠ **Not reached.**
+
+**Hard filters:**
+- Priced-in (§4): ⚠ **NOT RUN.** GFS is a named party; the number would have nowhere to go.
+- Correlation (§4): vacuously passes — zero open satellite positions.
+- Universe (§3): GFS is US-listed and above the floor; **cap NOT sourced**, thesis died at part 2.
+- ⚠ **Prior-reject check:** **GFS is already on the disposed-rejects list** (09-22, the GFS/MRVL capacity
+  agreement, *"financial terms were not disclosed"*). **This is a genuinely different event and was
+  screened on its own merits, not waved through or waved away on the prior entry.** It fails for the
+  **same underlying reason** — a signatory to an announcement carrying no allocated figure.
+
+**Outcome:** **REJECTED at part 2, and at the premise.** ⚠ **THE INSTRUCTIVE PART IS THE REPEAT: GFS
+arrived twice in two sessions, on two unrelated announcements, and died both times on an UNALLOCATED
+HEADLINE NUMBER.** Standing rule (iv) — a recurring ticker is a warning. ⚠ **Two different events
+producing the same defect in the same name is evidence about how GFS is COVERED, not about GFS.**
+
+---
+
 ### 2026-09-22 (08:15 ET) — event survey (funnel, pre-thesis)
 
 Selftest passed all five checks (`trading_enabled: true`, LIVE paper account, equity
