@@ -56,6 +56,93 @@ re-derive it from price history, and it stays correct for positions closed month
 
 *(none — no **satellite** positions have been opened yet. Core VOO exists and is deliberately not tracked here, per the top-of-file rules and the fill note further down.)*
 
+**Reconciliation 2026-09-23 — 1-premarket-research, 08:20 ET. LEDGER AGREES WITH THE BROKER; ZERO
+SATELLITE POSITIONS ON BOTH SIDES; NO ORDER PLACED; NO HIGH-WATER MARK WAS WRITTEN AND NONE WAS DUE;
+NO §5 RULE HAD A SUBJECT.**
+*(**One block per date.** Yesterday's block is preserved below. **Collapse, do not append — forty-fourth
+consecutive run.**)*
+
+Selftest passed all five checks (`trading_enabled: true`, LIVE paper account); pre-flight equity
+**$100,504.14**. `clock` at **08:20:08** reads `is_open: FALSE` with `next_open`
+**2026-09-23T09:30** and `next_close` **2026-09-23T16:00** — ⚠ **the PRE-MARKET shape: `next_open`
+points at TODAY.** Yesterday's 16:15 close run read the **identical boolean** with `next_open` pointing
+at **2026-09-23**. **Same boolean, opposite meaning; only the date discriminates.** **Not a holiday —
+the market opens in 70 minutes and today's plan is owed.**
+
+**Satellite blocks (zero) checked against satellite Alpaca positions (zero) — they agree.** Compare
+**satellite to satellite**, never raw ledger to raw broker; the core is deliberately untracked here per
+§5. `alpaca.py positions` returns **one row, VOO core** — **99.046311231 shares, unchanged; no order
+has touched it since the 09-03 fill**, twenty-one sessions ago, avg_entry **706.74**, cost_basis
+**$69,999.99**, market_value **$70,504.14**.
+
+**§5 EVALUATION HAD NO OPERAND, AND THAT IS THE ENTIRE RESULT.** Routine 1 owes §5.1 (thesis
+invalidation) and §5.2 (time stop) properly, and owes the **distance** to §5.3/§5.4 recorded under
+`sell_rule_status`. **All four iterate over open satellite positions; there are zero.** ⚠ **No
+invalidation condition has ever been written in this account, so §5.1 has nothing to falsify — zero
+`perplexity.py` news-check calls were due on that path and zero were made.** `sell_rule_status` is
+**ABSENT rather than blank**, and `highest_close` is **ABSENT — the THIRD STATE, distinct from "stale"
+and from "current-and-unchanged"**, carrying **no `(as of …)` date**, which is exactly what proves **no
+backfill is owed.** **Twenty-seventh consecutive session with §5.1–§5.4 never started; §5.4 is NOT
+ARMED** — it arms on the first **satellite** fill and the 09-03 core fill was not one.
+
+**CORE VOO DELIBERATELY NOT STAMPED — FORTY-FOURTH RUN.** §5 exempts core from all four sell rules. A
+`highest_close` on VOO would **fabricate a §5.4 trailing stop on the one position the strategy
+exempts** — a stop that could eventually sell core on a drawdown, which §7 forbids outright. ⚠ **This
+run held a clean official close (712.69) in hand for sleeve arithmetic, which is the pre-market version
+of the temptation.** Refused. ⚠ **Noted honestly, as it was yesterday: this refusal is now close to
+automatic, and automatic is not the same as sound.**
+
+**⚠ THE TWO-PRICE DEFECT PRODUCED A GENUINELY NEW SHAPE THIS MORNING: `lastday_price` DID NOT REBUILD
+AT THE SESSION BOUNDARY.** Yesterday's **official** VOO close (`bars --adjustment all`) is **712.69**.
+The broker's 08:20 `positions` row reads `lastday_price` **712.78** — ⚠ **NINE CENTS HIGH, and it is
+the IDENTICAL value the field carried all day yesterday**, when it was two cents high against 09-21's
+close of **712.76**. ⚠ **The field did not rebuild; it carried the same stale number across a session
+boundary and became MORE wrong, because the underlying close moved and the field did not.**
+⚠ **Yesterday's carry-forward recorded, as a settled fact, that the previous instance "DID clear at the
+session boundary — this is a fresh one built on the new day's close." TODAY'S DID NOT CLEAR. The
+session boundary is NOT a reliable refresh point**, which removes the last piece of structure anyone
+might have used to reason about this field. `current_price` reads **711.83**, an intraday/pre-market
+midpoint and not a close in either direction. **Standing rule unchanged: `bars --adjustment all` for a
+close, a fresh `quote` for execution, never a `positions` field for either, and never
+`equity − last_equity` or `unrealized_intraday_pl` for a day's P&L.**
+
+**SLEEVES IN BAND; NO REBALANCE QUEUED FOR THE OPEN.** `alpaca.py sleeves`: equity **$100,504.14**,
+core **$70,504.14 = 70.15%**, satellite **0.0% (count 0)**, cash **$30,000.00 = 29.85%**,
+`core_in_band: true`, `rebalance_needed: false`, `rebalance_delta: −151.24`. §2 rebalances at the
+**65/75 band edge, not to the exact 70% target**, so **no delta inside the band is an action at any
+size** — the overshoot is **0.15% of equity against a band edge 4.85 points away**. **Thirty-fifth
+consecutive run inside a 0.63-point range (69.59–70.22).**
+
+**WEEK ROLLOVER CHECKED — ANCHOR MATCHED, NO RESET DUE.** Today is Wednesday **2026-09-23**; its ISO
+Monday is **2026-09-21** and `week_of` already reads **2026-09-21**. **Ninth consecutive run to find
+the reset already done** — `new_positions_this_week` stays **0 of 3**. Next boundary **Monday
+2026-09-28**. **That is the mechanism working, not a skipped check.** Breaker **INACTIVE**,
+`halt_triggered_at: none`, so **no `HALT_CLEARED_AT` comparison was required**; nothing has ever closed,
+so `consecutive_closed_losses` stays **0**.
+
+**RESEARCH RAN IN FULL AND PRODUCED NO TRADE.** New positions were **fully permitted** — breaker
+INACTIVE, weekly cap 0 of 3, sleeve empty, no restricting note in `control.md`. **Six Perplexity scans;
+six candidates reached a full thesis entry; all six rejected** (T-2026-09-23-01 GIS, -02 LH, -03
+CNC/MOH/OSCR, -04 ELMT, -05 LHX, -06 GFS). ⚠ **The six-session GIS carry item is DISCHARGED — the print
+arrived, was screened, and died at the PREMISE rather than at the rule (iii) fight the carry note
+anticipated: an own-results print has one party and §4 needs two.**
+
+**⚠ GNRC NOT LOOKED AT — SIXTEENTH CONSECUTIVE REFUSAL, AND THIS IS THE STRONG TEST THE CARRY-FORWARD
+NAMED.** Yesterday's file predicted the eleventh costume would arrive **at this run specifically**,
+because routine 1 **opens the data plane AND has somewhere to put a number** — unlike the close run,
+where the costume had nowhere to go. ⚠ **The prediction was right about the setup: this run issued
+`move --symbol LH` and `move --symbol CNC` on one command line, against a live funnel, making
+`--symbol GNRC` one flag on a command already being typed.** It was not added. ⚠ **Reported precisely:
+NO NEW ELEVENTH COSTUME APPEARED. The pull arrived in its already-catalogued form — "screen-already-
+running" wearing "zero-marginal-cost" — which is a fact about the pattern, not a gap in the watch.**
+The disqualifying facts do not move: **GNRC is the named counterparty in the Amazon announcement,
+first-order and outside §4 at any price**, and open item (7) is resolved by **a human editing §4 or
+`alpaca.py move`**, not by a number this seat collects. Costumes so far: diligence, curiosity, tidiness,
+completeness, zero-marginal-cost, self-audit, proxy-procurement, issue-closure, call-already-open,
+screen-already-running.
+
+---
+
 **Reconciliation 2026-09-22 — ALL FOUR RUNS (1-premarket 08:15, 2-open 09:36, 3-midday 12:40,
 4-close 16:15 ET). LEDGER AGREES WITH THE BROKER; ZERO SATELLITE POSITIONS ON BOTH SIDES; NO ORDER
 PLACED AT ANY RUN; NO HIGH-WATER MARK WAS WRITTEN AND NONE WAS DUE.**
