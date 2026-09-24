@@ -40,6 +40,149 @@ anything where the honest-broker rule (§4) did real work>
 
 ## Entries
 
+### 2026-09-24 (Thursday)
+
+**Account:** total **$100,053.48 on official closes** / $99,957.40 broker mark | day P&L **$0.00
+(0.000%)**, both legs official | since inception **+0.053%** (+$53.48)
+**Sleeves:** core **70.016%** | satellite **0.0%** | cash **29.984%**   (§2 band 65–75%; broker-mark
+basis 69.99 / 0.0 / 30.01 — `core_in_band: true`, `rebalance_needed: false`) — **no rebalance due
+tomorrow on either basis**
+**Breaker:** INACTIVE
+**Week:** 0/3 new positions — Thursday 2026-09-24, ISO Monday **2026-09-21**, `week_of` already read
+2026-09-21; anchors matched, no reset due, **sixteenth consecutive run** to find it already done. Next
+boundary Monday 2026-09-28.
+**Trading day:** yes — a full session. `clock` at 16:15:53 reads `is_open: false` with `next_open`
+**2026-09-25**, the **post-bell** shape. The boolean is identical on a holiday, so the third
+discriminator was checked directly: **a VOO daily bar for 2026-09-24 exists** (o 704.10, h 708.505,
+l 703.355, c 707.28, v 141,074, n 3,718). A session happened and the summary is owed.
+
+**Traded:** nothing — zero orders. `orders --status all` still returns **one row for the account's
+entire history**, the 09-03 core VOO buy, `status: filled`, terminal. **Nothing is in limbo overnight.**
+**Researched:** 7 theses today — **0 accepted, 7 rejected**. Cumulative **67 real theses** (68 `### T-`
+headings less the template, recounted from source this run), **0 accepted ever**, 21 this week.
+**Positions near a sell rule:** none — there are no satellite positions. §5.1–§5.4 remain untested code
+paths, thirty-third consecutive session, and **§5.4 is still not armed.**
+
+**What happened:**
+
+The market closed exactly where it opened the day before. VOO's official close is **707.28**, to the
+cent the same as 09-23's **707.28**, so the account's true close-to-close move is **$0.00 — zero, not
+"about zero."** Core is unchanged at 99.046311231 shares, cash is flat at $30,000, and equity on
+official marks is $100,053.48, the same figure I would have written yesterday.
+
+An identical close two days running is exactly the shape of a stale or duplicated bar, so I did not
+take it. A second `bars --adjustment all` pull on a different window returned the same 707.28 with
+**distinct OHLV on both days** — 09-23 opened 712.13 and ranged 706.395–712.38 on 147,584 shares;
+09-24 opened 704.10 and ranged 703.355–708.505 on 141,074. Two genuinely different sessions that
+happened to land on the same number. A real coincidence, and it cost one extra call to know that.
+
+The invisible job — **writing today's closes into the `highest_close` marks §5.4 depends on** — again
+had no subject. There are zero satellite positions, so there is no mark to raise and, more to the
+point, **no `(as of …)` date to advance.** The field is **ABSENT**, which is a third state distinct
+from *stale* and from *current-and-unchanged*, and an absent field carries no date at all. That is what
+proves no backfill is owed. **Nothing was skipped; there was no operand**, and I have said so in
+`positions.md` in terms so tomorrow's midday run does not read a missing stamp as a failed close run.
+
+Core VOO was again not stamped — the fifty-first run, and a **strong** instance rather than a free one:
+this run pulled a clean official close and was holding it, with an entirely empty Step 2 to put it in.
+That is the sharpest form of the temptation, and §5 exempts core from all four sell rules precisely so
+that a trailing stop never attaches to the one position §7 forbids selling on a drawdown.
+
+Housekeeping ran in full and nothing fired: week anchor matched, loss streak still zero and still never
+having had an input, breaker INACTIVE with `halt_triggered_at: none` so no clearance comparison was
+required, and no order anywhere near a non-terminal state. `alerts.md` is empty.
+
+On §1's actual question: **VOO returned 0.000% and the book returned 0.000%, so today's excess is
+exactly 0.000pp.** That is not a good day and not a bad one — it is the clean boundary case of the
+standing finding that this book's excess is nothing but *minus* 30% of VOO's return. On a flat tape
+that formula predicts exactly zero, and it delivered exactly zero. The twelve-month question is
+untouched.
+
+**What I got wrong or nearly got wrong:**
+
+**I was one sentence away from writing a false superlative out of a series that had been silently
+truncated.** The broker's post-bell `current_price` read **706.31** against the official **707.28** —
+**97 cents low**. The carry-forward hands forward a three-item record for this field (22c low 09-21,
+16.9c high 09-22, 2c high 09-23), and against that list 97c is the largest by more than four times. I
+had the phrase "largest in the record" half-written. It is wrong. `journal.md`'s **own 09-18 close
+entry** records `current_price` **702.98** against an official **701.85** — **$1.13 high** — and that
+entry explicitly called it *"the widest gap yet."* The inherited series had **dropped its own largest
+member.** The corrected record is five observations: **+$1.13, −$0.22, +$0.169, +$0.02, −$0.97.** 97c
+is the **second** largest. This is the audit-inherited-claims rule paying for itself a **fifth** time,
+and the first where the defect was a **truncated series** rather than a stale count or a wrong
+mechanism. It ran in the direction that manufactures a superlative — the same shape as the "positive
+for the first time" error that survived three runs before being caught by accident. **A series handed
+forward in prose is not the series; go to the file that recorded each observation.**
+
+**The falsifiable prediction I was going to carry forward has quietly lost most of its power, and I
+nearly passed it on unchanged.** Yesterday's run wrote a good, concrete test: `lastday_price` should
+read today's official close at tomorrow's pre-market, and one `bars` call settles it. But today's
+official close is **707.28** — which is *the same number* the field was supposed to display today and
+did not (it has read 707.60 all day, five observations, unmoved through the pre-market, the bell, the
+midday and the close). So tomorrow, **707.28 is ambiguous**: it cannot distinguish "correctly rebuilt
+to 09-24's close" from "belatedly corrected to 09-23's close." Only the 707.60 branch still tells you
+anything. I have rewritten the prediction rather than repeating "settle it in one look," because that
+sentence is now false for the most likely outcome. **The coincidence that made today's P&L trivial is
+the same coincidence that broke tomorrow's experiment.**
+
+**The two-price defect reached a §2 quantity for the first time, and it flipped a sign.**
+`rebalance_delta` reads **+$12.78** on broker marks and **−$16.04** recomputed on the official close —
+same instant, same position, opposite direction, core reading *below* target on one basis and *above*
+on the other. It changes nothing today, because §2 rebalances at the **65/75 band edge** and the core
+sits ~5 points from it, so no delta inside the band is an action at any size. But I had been filing
+this defect as a P&L problem, and it is not: it feeds `sleeves` too, and it would be load-bearing
+under any rule that rebalanced *to target* rather than *at the edge*. That is a re-rating of open item
+(5), not a new incident.
+
+**One thing I should record as a confirmation rather than a catch, because the honest version is less
+flattering.** The broker reported the day at **−$127.77** (`equity − last_equity`, `change_today`
+−0.182%, `unrealized_intraday_pl` −$127.77, all agreeing with each other). The true move was **zero**,
+so **100% of that headline was artifact** — the most extreme instance this defect has produced, and
+exactly what the carry-forward predicted when it wrote that the rule's value is *inversely proportional
+to the size of the real move.* But I did not spot anything today. I followed a standing rule that was
+already written down, on a day it happened to matter maximally. Writing this up as "the rule saved me
+again" would be the flattering version and it would be wrong; the rule was followed because it is
+standing, and the only reason today looks impressive is that the denominator went to zero.
+
+**I wrote half of my own run note into a blind spot and only found it because I checked.** The
+`state.md` fenced block is machine-parsed, and `_parse_kv` in `scripts/common.py` does
+`line.split("#", 1)[0]` — **a `#` anywhere in a value silently truncates everything after it.** My
+`last_run` line quoted the thesis count as "68 `### T-` headings", which cut the parsed value off at
+5,046 characters and threw away the back half of the run note, including the loss-streak check, the
+unresolved-orders check and the ClickUp task ID. **No gating field was affected** and the file text a
+human or a future run *reads* was always complete, so nothing was actually lost — but a parser that
+silently returns a truncated value is precisely the kind of failure this repo keeps cataloguing, and
+I would not have seen it if I had not run the repo's own reader against the file after writing it.
+Fixed by dropping the hashes. **Standing consequence: never put a `#` in a fenced-block value, and
+validate `state.md` with `common.read_state()` after rewriting it — writing the block and parsing the
+block are not the same check.** No prior run hit this because none had written a `#` into the block.
+
+**And the honest limit of all of this:** every near-miss above is on the **reporting** plane. Routine 4
+does not trade, the sleeve is empty, and §5 had no operand, so there was no position I found myself
+wanting to hold past its invalidation condition and no thesis I talked myself into. I am not going to
+manufacture trading introspection to fill the section. The pressure I can actually name is the one
+already in the carry-forward and it did not get weaker today: **67 theses, zero accepted, ever, a flat
+account and 30% idle cash.** A day that closed at exactly zero makes "nothing is happening here" feel
+like a verdict on the §4 bar. It is not. It is what "no trade" looks like, and moving that bar is a
+`strategy.md` change only the human may make.
+
+**For the next run:**
+
+- **The `lastday_price` prediction is REWRITTEN, not retired.** Tomorrow's pre-market: **707.60 ⇒ it
+  never rebuilt** (informative); **707.28 ⇒ AMBIGUOUS and must not be logged as a clean rebuild**,
+  because 09-23 and 09-24 share a close; **anything else ⇒ the field is wrong in a fourth way.**
+- **Tape facts, so they are not re-derived:** VOO official closes **09-24 707.28**, 09-23 707.28,
+  09-22 712.69, 09-21 712.76, 09-18 701.85. Core **99.046311231 shares at 706.74**, cash **$30,000.00**
+  flat. Equity on official closes **$100,053.48**; **since inception +0.053475%.**
+- **The corrected post-bell `current_price` series is five entries, not three:** +$1.13 (09-18),
+  −$0.22 (09-21), +$0.169 (09-22), +$0.02 (09-23), −$0.97 (09-24). **Do not quote the three-item
+  version.**
+- **`rebalance_delta` now has a demonstrated sign ambiguity by basis.** Report which basis produced it.
+- **No backfill is owed.** `highest_close` is ABSENT, not stale — no satellite position has ever
+  existed. **§5.4 is not armed.**
+- **NEVER put a `#` inside a `state.md` fenced-block value** — `_parse_kv` truncates the value there,
+  silently. **Validate the block with `common.read_state()` after rewriting it.**
+
 ### 2026-09-23 (Wednesday)
 
 **Account:** total **$100,053.48 on official closes** / $100,055.46 broker mark | day P&L
