@@ -56,17 +56,54 @@ re-derive it from price history, and it stays correct for positions closed month
 
 *(none — no **satellite** positions have been opened yet. Core VOO exists and is deliberately not tracked here, per the top-of-file rules and the fill note further down.)*
 
-**Reconciliation 2026-09-24 — 1-premarket 08:20 ET. LEDGER AGREES WITH THE BROKER; ZERO SATELLITE
-POSITIONS ON BOTH SIDES; NO ORDER PLACED; NO HIGH-WATER MARK WAS WRITTEN AND NONE WAS DUE; NO §5 RULE
-HAD A SUBJECT.**
+**Reconciliation 2026-09-24 — 1-premarket 08:20 ET **and** 2-market-open 09:36 ET (ONE BLOCK, UPDATED
+IN PLACE). LEDGER AGREES WITH THE BROKER AT BOTH RUNS; ZERO SATELLITE POSITIONS ON BOTH SIDES; NO ORDER
+PLACED AT EITHER; NO HIGH-WATER MARK WAS WRITTEN AND NONE WAS DUE; NO §5 RULE HAD A SUBJECT.**
+
+**— 09:36 ET, 2-market-open-execution.** Selftest passed all five checks; pre-flight equity
+**$99,785.06**. `clock` reads **`is_open: TRUE`** at **09:36:06**, `next_close` 2026-09-24T16:00,
+`next_open` rolled forward to **2026-09-25** — ⚠ **the IN-SESSION shape, the one reading where the
+boolean alone settles it, because TRUE has a single meaning and FALSE has three.**
+**STEP 2 STALENESS GATE: `plan_date` 2026-09-24 against an ET date of 2026-09-24** (confirmed via
+`TZ=America/New_York`, not assumed) — **FRESH. THE GATE DID NOT FIRE; twenty-seventh exercise, still
+never fired, and its `--key stale-plan` alert path remains UNTESTED CODE.** ⚠ **This is the cleanest
+demonstration yet of why the gate reads the DATE: the plan was FRESH *and* EMPTY, and the run it
+produced — zero orders, zero `move` calls, nothing appended to any log — is byte-for-byte the run a
+STALE plan would have produced. Nothing in the outcome could distinguish them. Only `plan_date` did.**
+**FOUR SEPARATE NULLS, NOT ONE RESTATED FOUR TIMES.** **Step 3** — `core_established: true` since
+09-03, bootstrap **permanently closed**, `--core` not typed on any command line. **Step 4** — zero SELL
+intents in the plan **and** zero satellite positions to apply §5 against, **two independent reasons for
+the same null**; §5.1–§5.4 never started for the **thirty-first** session and **§5.4 is still NOT
+ARMED**. **Steps 5–6** — zero BUY intents, so **zero `alpaca.py move` re-validation calls were due and
+zero made: an ABSENT check, not a skipped one.** **Step 7** — core in band, below.
+⚠ **NEW POSITIONS WERE FULLY PERMITTED AND NONE WAS OPENED** — breaker INACTIVE, weekly cap **0 of 3**,
+sleeve **empty with 30.06% idle cash**, no restricting note in `control.md`. **Nothing was blocked; the
+plan simply carried no intent, and routine 2 may execute only what `plan_today.md` already contains.**
+⚠ **The seven 09-24 rejections were NOT rehabilitated at the open** — ILMN, GRAL, BBY, PYPL, SHOP,
+SoftBank/OpenAI, ELMT: **no `move`, no `quote`, no symbol data plane opened on any of them. A rejection
+is not a queue.**
+**SLEEVES AT THE OPEN:** equity **$99,808.83**, core **$69,808.83 = 69.94%**, satellite **0.0% (count
+0)**, cash **$30,000.00 = 30.06%**, `core_in_band: true`, `rebalance_needed: false`, `rebalance_delta`
+**+$57.35**. **NO REBALANCE** — §2 acts at the **65/75 band edge**, and the core sits **4.94 points**
+from the nearest one. **Fortieth consecutive run inside the 0.63-point range 69.59–70.22**; the delta
+stayed **positive for a second run and shrank again (+67.16 → +57.35)** — the core tracking the tape.
+⚠ **`lastday_price` STILL READ 707.60 AT 09:36, UNCHANGED FROM 08:20 — THE 32-CENT ERROR SURVIVED THE
+OPENING BELL.** The last remaining hope for this field was that it settles once real volume prints; **it
+does not.** `current_price` **704.815** is a **live intraday mark, not a close**; `change_today`
+**−0.00394** and `unrealized_intraday_pl` **−$275.84** are both computed off the wrong 707.60 baseline
+and **neither was used in nor carried into any figure.** Core `unrealized_pl` **−$190.66 / −0.27%**
+against the 706.74 fill — **§5 exempts core, so no action attaches to that number in either
+direction.** **Core VOO not stamped: forty-ninth refusal, and a WEAK one — this run pulled no close and
+held no official price, so it cost nothing.** **GNRC not looked at: twenty-first refusal, also FREE —
+the symbol data plane was SHUT for the entire run.**
 *(**One block per date, not one per run** — the open, midday and close runs must **update this block in
 place** rather than adding a second. **Collapse, do not append — forty-eighth consecutive run.**
 ⚠ **This run also COLLAPSED the 09-22 and 09-23 per-run blocks**, which together ran to roughly 350
 lines restating one null result five ways. **Nothing live was discarded**; the load-bearing facts are
 carried below and in `state.md`. **The correct response to the pull to append is to collapse.**)*
 
-Selftest passed all five checks (`trading_enabled: true`, LIVE paper account); pre-flight equity
-**$99,776.15**. `clock` at **08:20:51** reads `is_open: FALSE` with `next_open`
+**— 08:20 ET, 1-premarket-research.** Selftest passed all five checks (`trading_enabled: true`, LIVE
+paper account); pre-flight equity **$99,776.15**. `clock` at **08:20:51** reads `is_open: FALSE` with `next_open`
 **2026-09-24T09:30** and `next_close` **2026-09-24T16:00** — ⚠ **the PRE-MARKET shape: `next_open`
 points at TODAY.** Yesterday's 16:16 close run read the **identical boolean** with `next_open`
 pointing at **2026-09-24**. **Same boolean, opposite meaning; only the date discriminates.** **Not a
