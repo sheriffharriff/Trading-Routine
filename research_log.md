@@ -52,6 +52,268 @@ single most common way a plausible-sounding connection gets mistaken for an oppo
 
 ## Entries
 
+### 2026-09-24 (08:20 ET) — event survey (funnel, pre-thesis)
+
+Selftest passed all five checks (`trading_enabled: true`, LIVE paper account, equity **$99,776.15**).
+Window screened: **Wednesday's close through Thursday pre-market (Sept 23–24)** — one full session.
+**Five Perplexity scans** (four `--recency day`, one retried after a **500**). **Seven candidates
+reached a thesis entry; ALL SEVEN WERE REJECTED.**
+
+**⚠ A PERPLEXITY CALL RETURNED HTTP 500 AFTER A GREEN SELFTEST — OPEN ITEM (6), ON A SECOND DATA
+PLANE.** The first broad scan failed with `{"ok": false, "status": 500}`; a reworded retry succeeded
+immediately and every subsequent call returned 200. ⚠ **Open item (6) was written on 09-11 about
+Alpaca — `selftest.py` certifies a healthy system without probing the data plane. This is the first
+instance of the same gap on the RESEARCH plane, and it is the one that matters more here**, because a
+research run that silently returns nothing is indistinguishable in this file from a legitimate quiet
+day. **The selftest's Perplexity check confirms the model endpoint answers; it does not confirm a
+query will.** Single transient occurrence, recovered, **no alert raised** — recorded so that a future
+run seeing a string of empty scans knows to check the exit code rather than conclude the news was
+thin.
+
+---
+
+**⚠ THE FINDING OF THE DAY IS NOT A THESIS: THE §4 PRICED-IN FILTER FIRED ON THREE GENUINE RISES,
+AND THAT IS THE FIRST TIME THE RECORD HAS SHOWN IT DOING THE JOB IT WAS DESIGNED FOR IN VOLUME.**
+**SHOP +9.61%**, **ILMN +11.54%**, **GRAL +44.67%**, all over five sessions, all `priced_in: true`.
+
+Open item (1) in `state.md` has accumulated **nine instances of the filter reading a DRAWDOWN as
+priced-in** plus three near-misses, and the weight of that record makes it easy to read the filter as
+simply broken. ⚠ **It is not broken; it is SIGN-BLIND.** Today is the other half of the same defect
+seen from the working side: on a **rise**, "moved more than 4% in five sessions" means exactly what
+§4 intends — **you are late.** ⚠ **Recorded deliberately and prominently, because the accumulating
+narrative in these files runs one way and a run that only ever logs the filter's failures is building
+a case rather than keeping a record.** The fix a human might make to open items (1) and (2) is to make
+the filter read **sign**, not to loosen or remove it — **today is evidence for the first and against
+the second.**
+
+⚠ **ILMN IS THE SHARPEST SINGLE ENTRY OF THE MORNING AND IT NEVER REACHED A THESIS.** The GRAIL
+advisory-committee vote is the most genuinely **second-order** shape the funnel has produced in
+several sessions — a named beneficiary (GRAIL) with a real, structurally necessary, named supplier
+(Illumina, whose sequencers Galleri runs on). **The story was half-built when the hard filter was
+run, and the filter killed it at +11.54%.** ⚠ **§4 says to apply the hard filters BEFORE writing the
+thesis, and the reason is on display here: five more minutes of construction and this would have been
+a written thesis looking for permission.** It was not written. **The sequencing is the whole value.**
+
+---
+
+### T-2026-09-24-01 — ILMN (Illumina) — REJECTED
+**Company A / the news:** FDA advisory committee voted in favour of **GRAIL's** Galleri multi-cancer
+early-detection premarket approval application, **2026-09-23**. The vote is **non-binding** and the
+FDA's final PMA decision remains **pending** (per Perplexity, `insiderfinance.io`).
+**Company B / the candidate:** **Illumina (ILMN)** — GRAIL was spun out of Illumina and Galleri runs
+on Illumina sequencing chemistry, so an approved, reimbursed Galleri is consumable pull-through for
+Illumina.
+
+**Hard filters — run FIRST, per §4, and the thesis was NOT written:**
+- **Priced-in (§4): ILMN moved +11.54% over the last 5 sessions (229.015 → 255.45) → `priced_in: true`, verdict "LATE — skip". FAIL.**
+- Correlation (§4): zero open satellite positions; no driver to conflict with → pass (trivially).
+- Universe (§3): not sourced. **The market cap was never looked up, because the candidate was already
+  dead and collecting the figure would have been work in service of a rejected idea.**
+
+**Outcome: REJECTED on the §4 priced-in filter, and this one is NOT an artefact.** ⚠ **The move is a
++11.54% RISE, not a fall** — the filter is measuring exactly what §4 built it to measure, and the
+verdict "you are late" is correct on its face. **Do not file this alongside the nine drawdown
+instances in open item (1); it is the opposite case and it is the filter working.**
+
+⚠ **Two further kills were available and are recorded so no future run rehabilitates this at a lower
+price.** **(a) The premise is a REGULATOR'S ACTION** — an advisory committee is one party, and the
+09-23 standing rule ("a government action is not a Company A") applies, though **less cleanly here
+than to the CMS and ACA cases**, because an approval *enables* a named company's product and that
+company has a named supplier, which is a real two-party chain rather than money simply ceasing to be
+spent. **(b) Part 3 fails outright:** non-binding vote → FDA PMA decision (pending, undated) →
+reimbursement → commercial ramp → Illumina consumable revenue. **That is several quarters past the
+two-quarter horizon before the first step even has a date** (rule (vi)). ⚠ **ILMN does not become a
+buy at a lower price: part 3 kills it at any price.**
+
+---
+
+### T-2026-09-24-02 — GRAL (GRAIL) — REJECTED
+**Company A / the news:** As above — FDA advisory committee vote in favour of Galleri, 2026-09-23.
+**Company B / the candidate:** **GRAIL itself.**
+
+**1. Mechanism:** *not written — GRAIL is the company in the headline.*
+
+**Hard filters:**
+- **Priced-in (§4): GRAL moved +44.67% over the last 5 sessions (75.01 → 108.515) → `priced_in: true`. FAIL, by more than eleven times the threshold.**
+- Correlation (§4): no open positions → pass (trivially).
+- Universe (§3): not sourced — dead twice over before the check was due.
+
+**Outcome: REJECTED — FIRST-ORDER.** §4 is the *second*-order catalyst strategy: "news breaks about
+Company A; you look for Company B." **GRAIL is Company A.** The +44.67% is a second, independent
+kill and is the largest five-session move ever recorded against a candidate in this log. ⚠ **Logged
+rather than skipped because the temptation on an empty sleeve is to treat the biggest mover on the
+tape as the day's opportunity, and the entry that records why it is not is worth more than the entry
+that never mentions it.**
+
+---
+
+### T-2026-09-24-03 — BBY (Best Buy) — REJECTED
+**Company A / the news:** **Meta Platforms** unveiled **Muse** agent shopping integrations at
+**Connect 2026**, **2026-09-23**. Chief AI Officer Alexandr Wang named **Walmart, Best Buy, Gap,
+Sephora and Wayfair**; other coverage adds **Ulta Beauty, Fanatics, DICK'S Sporting Goods, American
+Eagle Outfitters and Michael Kors**. Users can browse, compare and — subject to approval — complete
+purchases inside the agent.
+**Company B / the candidate:** **Best Buy (BBY)** — the largest-cap named retail connector whose
+e-commerce line is a big enough share of revenue to be material.
+
+**1. Mechanism (one sentence):**
+> Meta's Muse agent adding Best Buy as a shopping connector causes Best Buy's domestic e-commerce
+> revenue to increase because Muse users complete purchases through Best Buy's catalogue.
+
+*Part 1 passes — it is one clause, and the causal path is direct.* ⚠ **Which is precisely why this
+entry is worth reading: a clean part 1 is not a trade, and this is the cleanest part 1 the funnel has
+produced this week.**
+
+**2. Dollar path: UNWRITABLE — and this is the rejection.** A dedicated query for commercial terms
+returned, explicitly: **no revenue-sharing percentage, no minimum guarantee, no fixed dollar value,
+no transaction-volume commitment, no take rate** disclosed by any party for Walmart, Best Buy or
+Sephora. Best Buy's domestic online channel is comfortably above the §4 10%-of-revenue floor, **so
+the segment is material and the INCREMENT is entirely unquantified** — the floor cannot even be
+tested. ⚠ **Worse, rule (viii) cuts the wrong way here: the only economics anyone described is
+Zuckerberg saying Muse "could eventually take a small fee from transactions" it completes. That is a
+COST line at the retailer, not revenue** — an unquantified benefit against a stated, unquantified
+charge, with no rate and no implementation date.
+
+**3. Timing window: UNWRITABLE.** No launch date for the commerce fee, no rollout schedule, no
+disclosed date on which any of this begins routing volume.
+
+**4. Invalidation:** *not reached — parts 2 and 3 already failed.*
+
+**Hard filters:**
+- Priced-in (§4): BBY moved **−0.71%** over 5 sessions (91.46 → 90.815) → `priced_in: false`, **passes**.
+- Correlation (§4): no open positions → pass.
+- Universe (§3): not sourced — no market-cap lookup was made, because the thesis died at part 2 and
+  §3 was never the binding constraint.
+
+**Outcome: REJECTED at part 2.** ⚠ **Note carefully that BBY PASSED the priced-in filter and the
+passing reading is NOT the reason for anything** — recorded this way so no future run inherits
+"BBY was fine on price" as a fact that survives the rejection. This is **constraint form (1) from
+open item (3) in its purest form: the source withholds the counterparty's number.** Every party is
+named, the event is real, dated and first-disclosed — **and not one commercial term exists to build a
+dollar path from.**
+
+---
+
+### T-2026-09-24-04 — PYPL (PayPal) — REJECTED
+**Company A / the news:** As T-2026-09-24-03 — Meta Muse commerce, Connect 2026, 2026-09-23. Coverage
+names **Shop Pay and PayPal** as supported payment methods and **Shopify** catalogue access and
+**Stripe** in the commerce plumbing.
+**Company B / the candidate:** **PayPal (PYPL)** — a payment rail inside an agent checkout flow is
+the classic second-order position: it earns on the transaction regardless of which retailer wins.
+
+**1. Mechanism (one sentence):**
+> Meta's Muse agent supporting PayPal at checkout causes PayPal's branded-checkout transaction
+> revenue to increase because agent-completed purchases settle through PayPal's payment stack.
+
+*Part 1 passes.* ⚠ **The rail thesis is the most seductive shape in this whole strategy, because it
+is the one where the mechanism sentence is always clean.**
+
+**2. Dollar path: UNWRITABLE — and this is the rejection.** No **TPV commitment**, no **take rate**,
+no **launch volume**, no **exclusivity**, no **date**. PayPal's transaction revenue is the great bulk
+of its total, **so the segment share test would pass trivially if any increment existed to test** —
+and none is disclosed by Meta, by PayPal, or by anybody else. ⚠ **A segment that is 90% of revenue
+does not rescue a numerator of zero.** Being *listed as a supported payment method* is a product
+integration, not a transaction between two parties with a value attached.
+
+**3. Timing window: UNWRITABLE.** Same as above — the commerce fee has no stated start date.
+
+**4. Invalidation:** *not reached.*
+
+**Hard filters:**
+- Priced-in (§4): PYPL moved **−0.38%** over 5 sessions (52.73 → 52.53) → `priced_in: false`, **passes**.
+- Correlation (§4): no open positions → pass. ⚠ **Had BBY been eligible, PYPL would have FAILED this
+  check against it** — both move on the identical driver (Muse commerce adoption), which is one bet in
+  two tickers. **Recorded because the correlation check passing trivially on an empty sleeve is not
+  the same as the candidates being uncorrelated.**
+- Universe (§3): not sourced — died at part 2.
+
+**Outcome: REJECTED at part 2**, same constraint and same morning as T-2026-09-24-03.
+
+---
+
+### T-2026-09-24-05 — SHOP (Shopify) — REJECTED
+**Company A / the news:** As above — Muse commerce names **Shop Pay** and Shopify product-catalogue
+access, 2026-09-23.
+**Company B / the candidate:** **Shopify (SHOP)**.
+
+**Hard filters — run FIRST:**
+- **Priced-in (§4): SHOP moved +9.61% over 5 sessions (129.855 → 142.33) → `priced_in: true`, verdict "LATE — skip". FAIL.**
+- Correlation (§4): no open positions → pass (trivially); would have failed against BBY/PYPL.
+- Universe (§3): not sourced — dead at the first filter.
+
+**Outcome: REJECTED on the §4 priced-in filter, on a genuine RISE.** ⚠ **Second of three rise-based
+firings this morning.** Part 2 would have failed identically to PYPL's in any case — no take rate,
+no volume, no date — so this is **not** a price-only rejection and **SHOP does not become a buy on a
+pullback.** *(A §3 question also sits unresolved and unneeded: Shopify is a Canadian issuer trading as
+common stock on a US exchange, which §3's "US-listed common stock" does not obviously settle either
+way. It was not resolved, because two independent kills landed first. **A future run that reaches this
+question with a live candidate must put it to the human rather than decide it.**)*
+
+---
+
+### T-2026-09-24-06 — SoftBank / OpenAI $11.1B — REJECTED (no eligible Company B found)
+**Company A / the news:** **SoftBank** issued approximately **$11.1 billion** of senior notes on
+**2026-09-24** — **$10B** dollar-denominated plus **€1B** (~$1.14B) — of which **$10B** funds the
+final tranche of its **$30B** follow-on investment in **OpenAI**, expected to close **2026-10-01**;
+the remainder is general corporate purposes (Reuters, CNBC).
+**Company B / the candidate:** *none found.*
+
+**2. Dollar path: UNWRITABLE, and the query to establish that was run explicitly.** Asked directly
+whether SoftBank or OpenAI has named **any publicly traded US company as a recipient with an
+allocated dollar amount**, the answer was unambiguous: **no.** The named recipient is **OpenAI, a
+private company.** ⚠ **This is the largest disclosed number of the morning by an order of magnitude,
+and it is capital paid IN to a private entity** — rule (viii) read broadly: **any disclosed figure
+that is not segment revenue at a Company B fails part 2.**
+
+**Outcome: REJECTED — no second-order company exists to name without inventing one.** ⚠ **The
+compute-supplier inference (OpenAI spends it, therefore semiconductor/datacentre names benefit) is
+available, obvious, and is exactly the reasoning rule (v) exists to stop: the source left the blank,
+and filling it in is not research.** This is the same object as the 09-22 **Nscale $103B** rejection
+and the **Brookfield/Bloom $25B** rejection — **a large, real, sourced, prominently-placed number that
+is not a dollar path.**
+
+---
+
+### T-2026-09-24-07 — ELMT (Elmet Group) / Masan High-Tech Materials — REJECTED
+**Company A / the news:** **The Elmet Group** announced long-term agreements under which
+**Masan High-Tech Materials** (Vietnam) supplies mined tungsten and tungsten-conversion services, with
+Elmet acquiring a **4.99% stake for $124.75 million**, **2026-09-23** (GlobeNewswire).
+**Company B / the candidate:** **Elmet (ELMT)** — the US-listed leg.
+
+**Hard filters:**
+- **Universe (§3): FAIL on both legs. ELMT is a ~$634M microcap** (figure carried from
+  T-2026-09-23-04, sourced there, **not re-derived this morning** — and it is a *rejection* input, not
+  a buy input, so it is not being passed to any script) **against a $10B floor; Masan is
+  Vietnam-listed.**
+- Priced-in (§4): **not run** — no `alpaca.py move` call was made, because a candidate below the §3
+  floor is ineligible at any price and the call would have been work in service of a dead idea.
+- Correlation (§4): no open positions → pass (trivially).
+
+**Outcome: REJECTED on §3, for the second time in two sessions on a DIFFERENT transaction.**
+⚠ **This is a genuinely new event, not a re-covering of yesterday's Tungsten West deal** — different
+counterparty, different structure (equity stake plus supply, versus a pure offtake), different
+disclosed figure. **Rule (iii) does not apply and was checked before the §3 kill was recorded.**
+⚠ **The decision-relevant point is the repeat itself:** Elmet has now entered this funnel twice in
+two sessions with two well-disclosed tungsten transactions, and **both died on the same structural
+floor.** Yesterday's entry flagged that **widening the evidence bar would not have caught ELMT**;
+today is the confirmation. **A third Elmet headline is not a third opportunity — it is the same
+ineligible company. Do not screen it again.**
+
+**Also swept and rejected without a full entry, all on one or more of §3, rule (iii) or rule (viii):**
+**Qualcomm / PickNik** (QCOM first-order; **no value disclosed**; PickNik private) · **Royal Caribbean
+/ Sandals** (~$3B for a 50% stake — **capital paid OUT** by the buyable leg; Sandals private) ·
+**Fiserv** Canadian venue deal (**no dollar amount**) · **NeoVolta / SK On** LFP cell supply 2027–31
+(NeoVolta nano-cap; **no value or volume**; and 2027 start fails part 3) · **Nocera / E-PRO Display**
+(~$520.5M — **allocation dated 2026-08-26, rule (iii) re-covering**; microcap) · **Crossject / BARDA**
+ZEPIZURE Modification 4, +$4.7M to $48.0M (**Euronext-listed, §3 outright**; and BARDA is a government
+payer, not a Company A) · **Elroy Air** $175M PIPE with Lockheed Martin Ventures participating
+(Elroy private; **LMT capital OUT, not revenue in**; contract described as previously announced) ·
+**Quanome** $18.8M AI infrastructure purchase (microcap) · **Costco, Jabil, Darden, TD SYNNEX, Vail
+Resorts** (**upcoming** estimates, not results — no event yet) · **"stocks fall as inflation fears lift
+bond yields", US PMI price pressures** (environment inputs, **not a Company A**).
+
+---
+
 ### 2026-09-23 (08:20 ET) — event survey (funnel, pre-thesis)
 
 Selftest passed all five checks (`trading_enabled: true`, LIVE paper account, equity
