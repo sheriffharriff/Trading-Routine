@@ -13,9 +13,9 @@ The block below is parsed by `scripts/common.py` and gates real behavior
 silently discards everything after it. **Validate with `common.read_state()` after rewriting.**
 
 ```
-last_run: 2026-09-25 09:36 ET 2-market-open-execution (selftest PASSED all five checks, trading_enabled true, LIVE paper, broker equity 100236.71 at pre-flight; ZERO ORDERS PLACED - zero buys, zero sells, zero rebalance; clock is_open TRUE at 09:36:17 with next_close 2026-09-25T16:00 and next_open 2026-09-28T09:30 pointing at MONDAY - the one FALSE-free shape, TRUE has a single meaning and is safe to read alone; STALENESS GATE PASSED - plan_date 2026-09-25 read from plan_today.md equals today's ET date confirmed via TZ=America/New_York, the plan is FRESH, the gate DID NOT FIRE for the TWENTY-EIGHTH time and its alert path REMAINS UNTESTED CODE; the plan carried ZERO BUY, ZERO SELL and ZERO REBALANCE intents so there was nothing to execute - a FRESH EMPTY plan producing a run BYTE-FOR-BYTE identical to what a stale plan would have produced, and only plan_date told them apart; RECONCILIATION CLEAN - positions returns ONE row core VOO 99.046311231 shares unchanged since the 09-03 fill, avg_entry 706.74, cost_basis 69999.99, market_value 70237.21 broker mark; zero satellite blocks in positions.md vs zero satellite Alpaca rows, they agree, satellite-to-satellite never raw-to-raw; STEP 3 BOOTSTRAP SKIPPED - core_established true, path permanently closed, not re-run; STEP 4 EXITS had NO OPERAND, STEP 5 RE-VALIDATION was ABSENT NOT SKIPPED - zero BUY intents means zero move calls were DUE and zero were made, record it as an absent check; ZERO move, ZERO quote and ZERO perplexity calls this run, the only data-plane calls were clock, sleeves, positions and ONE bars pull on VOO; 5.1-5.4 had NO OPERAND for the THIRTY-FIFTH session, 5.4 STILL NOT ARMED, all four remain UNTESTED CODE PATHS and the tally of no-exits records the ABSENCE OF A SUBJECT; highest_close ABSENT third state so NO backfill owed and none made; NEW FINDING AND IT IS THIS SEAT'S ALONE - THE 2026-09-25 VOO DAILY BAR ALREADY EXISTS AND IS A PARTIAL INTRADAY BAR, c 709.22 with n 193 trades and v 6776 against roughly 141000 on a full session, pulled six minutes after the bell; ROUTINE 2 IS THE ONLY ROUTINE THAT RUNS WITH is_open TRUE so it is THE ONLY ONE THAT CAN PULL A LIVE PARTIAL BAR AND MISREAD IT AS A CLOSE, and the carry-forward rule to prefer bars over broker fields does NOT protect against this - check n and v before treating any bar dated TODAY as a close; official 09-24 close CONFIRMED 707.28 with 09-23 also 707.28 and 09-22 712.69, the identical pair re-verified a third time with distinct OHLV; sleeves on broker marks at 09:36 equity 100237.21, core 70237.21 = 70.07 pct, satellite 0.0 pct count 0, cash 30000.00 = 29.93 pct, core_in_band TRUE, rebalance_needed FALSE, rebalance_delta -71.16; recomputed on the official 09-24 close equity 100053.48, core 70053.48 = 70.016 pct, cash 29.984 pct, delta -16.04 - BOTH NEGATIVE, the two bases AGREE IN SIGN for the second consecutive run which confirms the defect is INTERMITTENT not resolved; NO REBALANCE DUE on either basis, core sits ~4.9 points inside the 65/75 band edge, FORTY-FOURTH consecutive run inside 69.59-70.22; pre-flight equity 100236.71 and sleeves equity 100237.21 differ by 50c INSIDE THE SAME MINUTE on the same broker-mark basis, which is live-quote jitter and the cheapest available demonstration of open item (5); lastday_price reads 706.99, IDENTICAL to the 08:24 pre-market read, it did not move intraday - logged as an observation ONLY, the field is CLOSED as a question and no prediction is owed or offered; WEEK ROLLOVER CHECKED - Friday 2026-09-25 confirmed via TZ, ISO Monday 2026-09-21, week_of already 2026-09-21, EIGHTEENTH consecutive run to find the reset already done, new_positions_this_week stays 0 of 3, next boundary Monday 2026-09-28; LOSS STREAK - nothing closed this run and nothing has EVER closed so consecutive_closed_losses stays 0 and it HAS NEVER HAD AN INPUT, breaker INACTIVE, halt_triggered_at none so NO HALT_CLEARED_AT comparison required and NO circuit-breaker alert due; control.md notes (none), no human instruction to honor; research_log NOT appended - correct, routine 2 appends only skip records against a thesis and there were no intents to skip; trade_log correctly left unappended; positions.md unchanged; alerts.md empty, zero open incidents, zero SYSTEMIC; thesis counters UNCHANGED at 73 real theses 0 accepted - NOT recounted this run because nothing was added, recount from source before quoting)
+last_run: 2026-09-25 12:41 ET 3-midday-management (selftest PASSED all five checks, trading_enabled true, LIVE paper, broker equity 100362.50 at pre-flight; ZERO ORDERS - zero sells, zero exits, and routine 3 may not buy at all, it is EXITS-ONLY BY CONSTRUCTION; clock is_open TRUE at 12:41:35 with next_close 2026-09-25T16:00 and next_open 2026-09-28T09:30 - the mid-session shape; NO OPEN SATELLITE POSITIONS SO THERE WAS NOTHING TO MANAGE, the routine's own stopping condition, noted and not worked around; RECONCILIATION CLEAN - positions returns ONE row core VOO 99.046311231 shares unchanged since the 09-03 fill, avg_entry 706.74, cost_basis 69999.99, market_value 70352.10 broker mark, zero satellite blocks vs zero satellite Alpaca rows, they agree, satellite-to-satellite never raw-to-raw; STEP 2 HIGH-WATER REPAIR HAD NO OPERAND - highest_close is ABSENT, the third state with no (as of ...) stamp at all, so NO backfill was owed and none was made, and the missing stamp is NOT evidence of a failed close run; STEPS 3-5 - 5.1 through 5.4 had NO SUBJECT for the THIRTY-SIXTH consecutive session, 5.4 STILL NOT ARMED, core VOO excluded from the working list before any rule was read because 5 exempts it, all four remain UNTESTED CODE PATHS and the tally of no-exits records the ABSENCE OF A SUBJECT; TRADING_ENABLED WAS TRUE so a triggered stop WOULD have been submitted - the null is an EMPTY SLEEVE not a disabled stop, and nothing that should have executed failed to; ZERO perplexity, ZERO move, ZERO quote and ZERO sell calls, the only data-plane calls were clock, positions, sleeves and ONE bars pull on VOO; THE FINDING IS A CORRECTION TO THE CARRY-FORWARD AND THIS SEAT IS THE COUNTEREXAMPLE - the 09-25 open asserted that ROUTINE 2 IS THE ONLY ROUTINE THAT RUNS WITH is_open TRUE and that is FALSE, routine 3 runs at 12:30 ET mid-session and reads TRUE exactly as routine 2 does, so it can pull a live partial bar too; AND THE MIDDAY CASE IS THE MORE DANGEROUS ONE - at 09:36 the partial bar was an obvious stub at n 193 and v 6776, 4.8 pct of a full session, but at 12:41 the same bar reads c 710.555 o 708.46 h 711.26 l 706.33 with n 1731 and v 69713, which is 49.5 pct of the four-session mean volume 140926 against 49.0 pct of the session elapsed - THE VOLUME TRACKS ELAPSED SESSION TIME ALMOST EXACTLY because the bar is a live accumulator, and it carries half a session of real volume with a plausible OHLC and a close inside the recent range so it does NOT look like a stub, CHECK n AND v; this run used the 09-24 official close 707.28 for every official-basis figure and the partial bar for none; MINOR - the 09-24 bar has been REVISED BY ONE to v 141075 n 3719 against the close run's 141074 and 3718 with close and all four OHLC unchanged, so a bar is not byte-stable after the bell and a re-pulled v/n mismatch is NOT evidence of a bad pull; identical 09-23 and 09-24 closes of 707.28 confirmed a FOURTH time with distinct OHLV; sleeves on broker marks at 12:41 equity 100352.10, core 70352.10 = 70.11 pct, satellite 0.0 pct count 0, cash 30000.00 = 29.89 pct, core_in_band TRUE, rebalance_needed FALSE, rebalance_delta -105.63; recomputed on the official 09-24 close equity 100053.48, core 70053.48 = 70.016 pct, cash 29.984 pct, delta -16.04, since inception +53.48 = +0.053475 pct - BOTH NEGATIVE, the two bases AGREE IN SIGN for the THIRD consecutive run which confirms the defect is INTERMITTENT not resolved; the 298.62 equity spread between the two bases is a MIDDAY MARK against a PRIOR CLOSE, mostly a real intraday move, and must NOT be quoted as a two-price-defect measurement; NO REBALANCE DUE on either basis, core sits ~4.9 points inside the 65/75 band edge, FORTY-FIFTH consecutive run inside 69.59-70.22; WEEK ROLLOVER CHECKED - Friday 2026-09-25 confirmed via TZ=America/New_York, ISO Monday 2026-09-21, week_of already 2026-09-21, NINETEENTH consecutive run to find the reset already done, new_positions_this_week stays 0 of 3, next boundary Monday 2026-09-28; LOSS STREAK - nothing closed this run and nothing has EVER closed so consecutive_closed_losses stays 0 and it HAS NEVER HAD AN INPUT, breaker INACTIVE, halt_triggered_at none so NO HALT_CLEARED_AT comparison required and NO circuit-breaker alert due; control.md notes (none), no human instruction to honor; trade_log correctly left unappended, research_log correctly left unappended because routine 3 does not research, alerts.md empty with zero open incidents and zero SYSTEMIC; thesis counters CARRIED UNCHANGED at 73 real theses 0 accepted - NOT recounted this run because nothing was added, recount from source before quoting; TODAY IS FRIDAY so the 16:15 close run and the routine 5 weekly review are both still due, and that review is the LAST BEFORE THE 2026-10-02 MONTHLY ARCHIVE ROLLOVER)
 
-prior_run: 2026-09-25 08:24 ET 1-premarket-research (selftest PASSED all five, trading_enabled true, broker equity 100299.16; ZERO ORDERS - routine 1 does not trade; four Perplexity scans ALL EXIT 0, SIX candidates reached research_log and ALL SIX REJECTED, T-2026-09-25-01 JBL through -06; PLAN WRITTEN WITH ZERO INTENTS, plan_date 2026-09-25; THE FINDING WAS T-2026-09-25-01 - the Akamai/Anthropic chain delivered a NAMED US-LISTED SUPPLIER WITH AN ALLOCATED DOLLAR FIGURE QUOTED FROM AN 8-K, the thing open item (3) says never arrives, and it STILL produced nothing because the 1.7B is capital paid IN, held IN CONSIGNMENT AS BAILEE, and repurchased AT COST; JBL priced_in true at +4.97 pct was NOT the reason and must never be inherited as one; AKAM priced_in false at +3.19 pct is the worst open-item-(2) instance recorded; core 70.09 pct broker / 70.016 pct official, no rebalance; ClickUp prior context 86bc76x35)
+prior_run: 2026-09-25 09:36 ET 2-market-open-execution (selftest PASSED all five, trading_enabled true, broker equity 100236.71; ZERO ORDERS PLACED - zero buys, zero sells, zero rebalance; STALENESS GATE PASSED - plan_date 2026-09-25 equals today's ET date, the plan is FRESH, the gate DID NOT FIRE for the TWENTY-EIGHTH time and its alert path REMAINS UNTESTED CODE; the plan carried ZERO intents so a FRESH EMPTY plan produced a run BYTE-FOR-BYTE identical to what a STALE plan would have produced and only plan_date told them apart; bootstrap SKIPPED, core_established true, path permanently closed; Step 5 re-validation ABSENT NOT SKIPPED - zero BUY intents means zero move calls were DUE; core 70.07 pct broker / 70.016 pct official, delta -71.16 broker / -16.04 official, no rebalance; pre-flight equity 100236.71 vs sleeves equity 100237.21 differ by 50c INSIDE THE SAME MINUTE on the same basis - live-quote jitter and the CLEANEST demonstration of open item (5) on record; earlier, 08:24 pre-market - four Perplexity scans all exit 0, SIX candidates all REJECTED T-2026-09-25-01 JBL through -06, plan written with zero intents, the finding was JBL's 1.7B being capital paid IN held IN CONSIGNMENT AS BAILEE and repurchased AT COST; ClickUp prior context 86bc76x35)
 
 week_of: 2026-09-21
 new_positions_this_week: 0
@@ -31,8 +31,9 @@ open_thesis_ids: none
 ```
 
 *(`core_pct` / `cash_pct` above are on the **official-close basis** — core $70,053.48 of equity
-$100,053.48, using VOO's 09-24 official close of 707.28. On the broker-mark basis at 09:36 the same
-position reads 70.07 / 29.93. **Both are in band and neither implies an action.** The two bases are
+$100,053.48, using VOO's 09-24 official close of 707.28 — **the last COMPLETED session; today's bar is
+PARTIAL, see the top carry-forward item.** On the broker-mark basis at 12:41 the same position reads
+**70.11 / 29.89**. **Both are in band and neither implies an action.** The two bases are
 recorded separately because they have been shown to disagree in **sign** on `rebalance_delta`.
 **State which basis produced any figure you quote.**)*
 
@@ -79,28 +80,40 @@ position list win, and the discrepancy goes in the journal.
 
 Anything the next run must not lose. Cleared once acted on.
 
-**⚠ COLLAPSE, DO NOT APPEND — acted on thirty-six times.** The Week 3 review flagged the memory files
+**⚠ COLLAPSE, DO NOT APPEND — acted on thirty-seven times.** The Week 3 review flagged the memory files
 **against an instruction to read them in full**, calling the accumulation **actively harmful rather than
 untidy**: this repo's only continuity mechanism is the next run *reading* these files, and padding them
 with restatements raises the odds a genuinely live item gets skimmed. **Carry-forward is defined as
-cleared once acted on.** This run **added one item** (the partial-bar trap, which only this seat can
-hit) and **compressed five others in place** — the JBL, AKAM, priced-in-shape-three and rule-(iii)
-items are now fully written up in `research_log.md` and `journal.md`, so the carry-forward keeps only
-what changes a decision. **Nothing live has been discarded.**
+cleared once acted on.** ⚠ **The 09-25 midday run added NO new item.** It **corrected two inherited
+claims in place** (the partial-bar item's scope, which the previous run got wrong, and a twelve/thirteen
+key miscount) and **refreshed four others with this run's numbers**. ⚠ **A correction replaces the claim
+it corrects — it does not sit beside it.** **Nothing live has been discarded.**
 
 ---
 
 ### Live — act on these
 
-- **⚠⚠ NEW, 09-25 OPEN, AND IT IS THIS SEAT'S ALONE: A DAILY BAR DATED *TODAY* IS A PARTIAL BAR WHILE
-  THE MARKET IS OPEN.** `bars --symbol VOO --days 4` returned a **2026-09-25** bar six minutes after
-  the bell: **c 709.22, n 193 trades, v 6,776** — against **~141,000 shares and ~3,700 trades** on a
-  full session. ⚠ **Routine 2 is the ONLY routine that runs with `is_open: true`, so it is the only
-  one that can pull a live partial bar and read it as a close.** ⚠ **The standing "use `bars`, never a
-  broker field" rule does NOT protect against this** — the bar is from the right source and is still
-  not a close. **Check `n` and `v` before treating any bar dated today as a close; when in doubt use
-  the last COMPLETED session.** *(This run used the 09-24 close of 707.28 for every official-basis
-  figure and the partial bar for none.)*
+- **⚠⚠ A DAILY BAR DATED *TODAY* IS A PARTIAL BAR WHILE THE MARKET IS OPEN — AND THE 09-25 OPEN GOT THE
+  SCOPE OF THIS WRONG. CORRECTED 09-25 MIDDAY, BY THE COUNTEREXAMPLE ITSELF.** The open wrote that
+  *"routine 2 is the ONLY routine that runs with `is_open: true`, so it is the only one that can pull a
+  live partial bar and read it as a close."* ⚠ **FALSE. Routine 3 runs at 12:30 ET — mid-session — and
+  reads `is_open: TRUE` exactly as routine 2 does.** The claim was written by a run that could only see
+  its own timetable. ⚠⚠ **AND THE MIDDAY CASE IS THE MORE DANGEROUS OF THE TWO.** At **09:36** the bar
+  was an obvious stub: **n 193, v 6,776 — 4.8% of a full session.** At **12:41** the same bar reads
+  **c 710.555, o 708.46, h 711.26, l 706.33, n 1,731, v 69,713** — ⚠ **49.5% of the four-session mean
+  volume (140,926) against 49.0% of the session elapsed.** **The volume tracks elapsed session time
+  almost exactly**, which is the mechanism: the bar is a **live accumulator**. ⚠ **So a midday bar
+  carries half a session of real volume, a plausible OHLC and a close inside the recent range — it does
+  NOT look like a stub, and `n`/`v` are the only things that give it away.** ⚠ **The standing "use
+  `bars`, never a broker field" rule does NOT protect against this** — the bar is from the right source
+  and is still not a close. **Check `n` and `v` before treating any bar dated today as a close; when in
+  doubt use the last COMPLETED session.** *(Both the 09-25 open and midday used the 09-24 close of
+  707.28 for every official-basis figure and the partial bar for none.)*
+  ⚠ **MINOR, SO IT IS NOT RE-DISCOVERED AS A FINDING: a bar is NOT byte-stable after the bell.** The
+  09-24 bar now reads **v 141,075 / n 3,719** against the close run's **141,074 / 3,718** — a
+  one-share, one-trade late revision, **close and all four OHLC unchanged.** **A re-pulled `v`/`n`
+  mismatch is not evidence of a bad pull.** *(Identical 09-23 / 09-24 closes of **707.28** confirmed a
+  **fourth** time, distinct OHLV on both sides — a real coincidence, not a duplicated bar.)*
 
 - **⚠⚠ THE MOST DECISION-RELEVANT REJECTION ON THE BOARD, 09-25: JBL.** Anthropic committed **~$11.6B
   over seven years** to **Akamai**; Akamai's 8-K then did what open item (3) has said for a month never
@@ -139,27 +152,33 @@ what changes a decision. **Nothing live has been discarded.**
   and ⚠ **no 09:35 re-validation would have surfaced it either — the sharpest evidence yet for open
   item (7).**
 
-- **⚠ HIGH-WATER MARKS: NOTHING TO BACKFILL, AND NOTHING WAS SKIPPED.** `positions.md` carries **zero
-  satellite blocks**, so `highest_close` is **ABSENT — the third state, carrying no `(as of …)` date
-  at all.** ⚠ **Do not read a missing stamp as a failed close run.** **§5.4 is NOT ARMED**; it arms on
-  the first **satellite** fill, and the 09-03 core fill was not one. **Thirty-fifth consecutive session
-  with §5.1–§5.4 never started — UNTESTED CODE PATHS, and the running tally of "no exits" records the
-  ABSENCE OF A SUBJECT.** ⚠ **The distinction is FREE today and stops being free the moment a satellite
-  fill lands** — after that, a mark silently not written reads identically to a mark correctly
-  unchanged, and **only the `(as of …)` date separates them. Compare the date; never infer from the
-  field's emptiness.**
+- **⚠ HIGH-WATER MARKS: NOTHING TO BACKFILL, AND NOTHING WAS SKIPPED — CHECKED BY THE ONE ROUTINE WHOSE
+  STEP 2 EXISTS TO REPAIR THEM.** `positions.md` carries **zero satellite blocks**, so `highest_close`
+  is **ABSENT — the third state, carrying no `(as of …)` date at all.** ⚠ **Do not read a missing stamp
+  as a failed close run.** **§5.4 is NOT ARMED**; it arms on the first **satellite** fill, and the 09-03
+  core fill was not one. **Thirty-sixth consecutive session with §5.1–§5.4 never started — UNTESTED CODE
+  PATHS, and the running tally of "no exits" records the ABSENCE OF A SUBJECT.** ⚠ **The distinction is
+  FREE today and stops being free the moment a satellite fill lands** — after that, a mark silently not
+  written reads identically to a mark correctly unchanged, and **only the `(as of …)` date separates
+  them. Compare the date; never infer from the field's emptiness.** ⚠ **AND WHEN IT DOES ARM, THE
+  BACKFILL MUST NOT TAKE ITS MAX FROM A BAR DATED TODAY WHILE THE MARKET IS OPEN — routine 3 runs
+  mid-session, so its own repair step is exposed to the partial-bar trap at the top of this list.**
 
 - **⚠ TAPE FACTS THE NEXT RUN SHOULD NOT RE-DERIVE.** VOO **official** closes: **09-24 707.28**,
-  **09-23 707.28** (identical to the cent — verified a third time, distinct OHLV, a real coincidence),
-  09-22 712.69, 09-21 712.76, 09-18 701.85. ⚠ **The 09-25 bar is PARTIAL — see the top item.** Core is
-  **99.046311231 shares at 706.74**, cash **$30,000.00** flat. **AT THE 09-25 OPEN, ON THE OFFICIAL
-  09-24 CLOSE: equity $100,053.48, core $70,053.48 = 70.016%, cash 29.984%, since inception
-  +0.053475% (+$53.48).** On broker marks at 09:36: equity $100,237.21, core 70.07%, cash 29.93%.
-  **Forty-fourth consecutive run inside 69.59–70.22.** ⚠ **Both `rebalance_delta` bases are NEGATIVE
-  (−$71.16 broker, −$16.04 official) — they AGREE in sign for the second run running, which confirms
-  the defect is INTERMITTENT rather than resolved. A run that checks one basis and finds agreement
-  learns nothing.** **NO REBALANCE IS DUE** — §2 acts at the **65/75 band edge** and the core sits
-  **~4.9 points** inside it. **Audit any superlative here before repeating it.**
+  **09-23 707.28** (identical to the cent — verified a **fourth** time, distinct OHLV, a real
+  coincidence), 09-22 712.69, 09-21 712.76, 09-18 701.85. ⚠ **The 09-25 bar is PARTIAL — see the top
+  item.** Core is **99.046311231 shares at 706.74**, cash **$30,000.00** flat. **ON THE OFFICIAL 09-24
+  CLOSE (unchanged all day, since it is the last completed session): equity $100,053.48, core
+  $70,053.48 = 70.016%, cash 29.984%, since inception +0.053475% (+$53.48).** On broker marks: **09:36
+  equity $100,237.21, core 70.07%; 12:41 equity $100,352.10, core 70.11%, cash 29.89%.**
+  **Forty-fifth consecutive run inside 69.59–70.22.** ⚠ **All three `rebalance_delta` readings today are
+  NEGATIVE (−$89.75 and −$71.16 and −$105.63 broker, −$16.04 official) — the two bases AGREE in sign for
+  the THIRD run running, which confirms the defect is INTERMITTENT rather than resolved. A run that
+  checks one basis and finds agreement learns nothing.** ⚠ **DO NOT quote the midday broker/official
+  equity spread ($298.62) as a two-price-defect measurement — it is a MIDDAY MARK against a PRIOR CLOSE
+  and is mostly a real intraday move. The clean demonstration is the open's 50c inside one minute.**
+  **NO REBALANCE IS DUE** — §2 acts at the **65/75 band edge** and the core sits **~4.9 points** inside
+  it. **Audit any superlative here before repeating it.**
 
 - **⚠ STANDING RULE: NEVER `equity − last_equity` AS A DAY'S P&L, NEVER `unrealized_intraday_pl`,
   NEVER a `positions` field for a close or an execution reference. Close-to-close from
@@ -214,7 +233,21 @@ what changes a decision. **Nothing live has been discarded.**
   stock on a US exchange, which §3's "US-listed common stock" does not obviously settle. A future run
   reaching this with a LIVE candidate must put it to the human rather than decide it from this seat.**
 
-- **⚠ AUDIT EVERY INHERITED CLAIM BEFORE REPEATING IT — FIVE CATCHES, AND THEY KEEP CHANGING SHAPE.**
+- **⚠ AUDIT EVERY INHERITED CLAIM BEFORE REPEATING IT — SEVEN CATCHES, AND THEY KEEP CHANGING SHAPE.**
+  ⚠⚠ **(6) AND (7) ARE NEW ON 09-25 MIDDAY AND BOTH CAME FROM THE PREVIOUS RUN, ONE RUN OLD.**
+  **(6) A SCOPE CLAIM: *"routine 2 is the ONLY routine that runs with `is_open: true`"* — falsified by
+  the run that read it, from its own clock. ⚠ **This is the most dangerous shape yet, because it was not
+  a number to re-pull but a statement about the SYSTEM'S OWN SHAPE, which no data call would ever
+  contradict. It survived only until a routine it excluded happened to read it.** Full correction at the
+  top of this list.
+  **(7) A MISCOUNT IN A VERIFICATION CLAIM: the 09-24 close run wrote that it had *"re-parsed the block
+  and verified all TWELVE keys present and untruncated."* ⚠ **There are THIRTEEN.** `common.read_state()`
+  returns `last_run, prior_run, week_of, new_positions_this_week, consecutive_closed_losses,
+  circuit_breaker, halt_triggered_at, core_established, core_ticker, core_pct, satellite_pct, cash_pct,
+  open_thesis_ids`. ⚠ **The check itself was almost certainly run correctly; it is the REPORT of the
+  check that was wrong — which is worse, because a wrong count in a sentence that says "verified" is
+  exactly the claim a later run would not think to re-check.** *(Re-parsed this run: **13 keys**, all
+  present, no `#` anywhere in the block, both long values byte-identical to the file.)*
   **(1)** A false superlative (*"positive for the first time in this account's history"*) survived
   three runs, caught **by accident** on 09-21. **(2)** A stale count (*"49 theses"*) caught
   **deliberately** on 09-22, running in the direction that **understates** the problem. **(3)** The
@@ -228,9 +261,10 @@ what changes a decision. **Nothing live has been discarded.**
   it is the cheapest claim to write and the most expensive to verify. **Assume the next one you are
   handed is wrong until you have pulled the source.**
 
-- **⚠ GNRC IS NOT YOURS TO LOOK AT — TWENTY-FIVE CONSECUTIVE REFUSALS, AND 09-25's OPEN IS A WEAK
-  ONE.** ⚠ **Graded honestly: this run made ZERO `move` calls, had no research step and nowhere to put
-  a number — the refusal cost nothing and is recorded as weak.** The disqualifying facts do not move:
+- **⚠ GNRC IS NOT YOURS TO LOOK AT — TWENTY-SIX CONSECUTIVE REFUSALS, AND THE LAST TWO (09-25 OPEN AND
+  MIDDAY) ARE BOTH WEAK.** ⚠ **Graded honestly: both made ZERO `move` and ZERO `quote` calls, neither
+  has a research step, and neither had anywhere to put a number — the refusals cost nothing and are
+  recorded as weak.** The disqualifying facts do not move:
   **GNRC is the named counterparty in the Amazon announcement — first-order, outside §4 at any price**
   — and **open item (7) is resolved by a human editing §4 or `alpaca.py move`, not by a number this
   seat collects.** ⚠ **WHAT MATTERS IS NOT THE COUNT BUT WHETHER EACH REFUSAL COST ANYTHING, AND MANY
@@ -242,14 +276,17 @@ what changes a decision. **Nothing live has been discarded.**
   proxy-procurement, issue-closure, call-already-open, screen-already-running. **The pattern is the
   finding, not any instance. FREE IS NOT THE SAME AS PERMITTED.**
 
-- **⚠ CORE VOO IS NEVER STAMPED WITH A `highest_close` — FIFTY-THREE RUNS.** §5 exempts core from all
+- **⚠ CORE VOO IS NEVER STAMPED WITH A `highest_close` — FIFTY-FOUR RUNS.** §5 exempts core from all
   four sell rules. A mark on VOO would **fabricate a §5.4 trailing stop on the one position the
   strategy exempts**, a stop that could eventually **sell core on a drawdown, which §7 forbids
   outright.** ⚠ **Grade these as the GNRC count is graded. 09-25's open is a WEAK instance: a VOO
   `bars` pull was made for the sleeve arithmetic, but routine 2 has no Step that writes marks.** The
-  sharpest instances remain the close runs of 09-22, 09-23 and **09-24 — the STRONGEST of all, since
-  routine 4's entire declared purpose is writing closes into `highest_close` and it arrived holding a
-  fresh official close with an empty field to put it in.** ⚠ **"Nothing to write" is the correct output
+  sharpest instances are the close runs of 09-22, 09-23 and **09-24**, and now ⚠ **09-25 MIDDAY, which
+  grades JUST AS HIGH: routine 3's Step 2 is a DEDICATED HIGH-WATER REPAIR STEP, the run arrived holding
+  fresh VOO closes, and the field was empty.** ⚠ **A REPAIR step is if anything the sharper temptation
+  of the two — "backfill the missing mark" is the exact verb the ledger's one untracked position would
+  invite, and it reads as fixing an omission rather than adding a row.** **"Nothing to repair" is the
+  correct output of an empty Step 2.** ⚠ **"Nothing to write" is the correct output
   of an empty Step 2, not an invitation to find a row to write it to.** **Measure the core from the
   706.74 fill and from an official close, never from a `positions` field.** ⚠ **Noted honestly: this
   refusal is now close to automatic, and automatic is not the same as sound.**
@@ -334,7 +371,9 @@ what changes a decision. **Nothing live has been discarded.**
   the parser.** The 09-24 close run did this to itself and caught it before commit. ⚠ **STANDING
   CONSEQUENCE: never put a `#` in a fenced-block value, and VALIDATE `state.md` WITH
   `common.read_state()` AFTER REWRITING IT — writing the block and parsing the block are not the same
-  check.** *(Done this run: block re-parsed and all twelve keys verified present and untruncated.)*
+  check.** *(Done this run: block re-parsed, **THIRTEEN keys** — not twelve, see catch (7) — all present,
+  no `#` anywhere in the block, and both long values compared **byte-for-byte against the file** rather
+  than eyeballed, which is the only way truncation is actually visible.)*
 
 ### Standing rules — recognise on sight, do not re-derive
 
@@ -505,10 +544,11 @@ source after this long is itself the finding.**
 - **Counters as of 2026-09-25 OPEN: 73 theses since inception, 0 accepted, 73 rejected, 27 this week
   (09-21: 3, 09-22: 5, 09-23: 6, 09-24: 7, 09-25: 6); 0 satellite positions ever opened; 0 exits ever;
   `alerts.md` empty — zero open, zero SYSTEMIC.** ⚠ **Last verified from source at the 09-25
-  pre-market; the open run added none and CARRIED the figure. Recount from `research_log.md` before
-  quoting it anywhere human-facing.**
+  pre-market; the open and midday runs added none and CARRIED the figure — it is now TWO runs old as a
+  carried number. Recount from `research_log.md` before quoting it anywhere human-facing.**
 - **`week_of` 2026-09-21, `new_positions_this_week` 0 of 3.** Next boundary **Monday 2026-09-28**.
   The reset does not depend on the Friday review having run. ⚠ **The two counters are independent: 27
   theses this week and 0 positions this week are both correct — §6's cap counts POSITIONS OPENED.**
 - **TODAY, Friday 2026-09-25, is a weekly-review day** (routine 5), and it is the **LAST REVIEW BEFORE
-  THE 2026-10-02 MONTHLY ARCHIVE ROLLOVER.** `research_log.md` is **~333KB**.
+  THE 2026-10-02 MONTHLY ARCHIVE ROLLOVER.** `research_log.md` is **~333KB**. ⚠ **As of the 12:41
+  midday run, the 16:15 close run and that review are BOTH STILL DUE.**
