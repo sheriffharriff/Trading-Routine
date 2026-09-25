@@ -52,6 +52,321 @@ single most common way a plausible-sounding connection gets mistaken for an oppo
 
 ## Entries
 
+### 2026-09-25 (08:24 ET) — event survey (funnel, pre-thesis)
+
+Selftest passed all five checks (`trading_enabled: true`, LIVE paper account, equity **$100,299.16**
+on broker marks). Window screened: **Thursday's close through Friday pre-market (Sept 24–25)** — one
+full session. **Four Perplexity scans, all exit 0, no HTTP 500 this run** (09-24's transient is not
+recurring). **Six candidates reached a thesis entry; ALL SIX WERE REJECTED.**
+
+⚠⚠ **THE HEADLINE FINDING OF THIS RUN IS NOT THE REJECTIONS — IT IS THAT THE BEST-SOURCED CANDIDATE
+THIS FUNNEL HAS EVER PRODUCED WAS NOT A GOOD CANDIDATE, AND THE FILTER THAT FIRED FIRST WAS NOT THE
+REASON.** The Akamai/Anthropic chain delivered what open item (3) has spent a month saying never
+arrives: a **named US-listed supplier with a specifically allocated dollar figure, quoted verbatim
+from an 8-K** — Jabil, **$1.7 billion**. ⚠ **The figure is capital paid IN by Akamai, held on
+CONSIGNMENT as bailee, and repurchased AT COST. It is not Jabil revenue. It is standing rule (viii)
+in the best costume it has ever worn, and part 2 kills it independently of every filter.** See
+T-2026-09-25-01.
+
+**Today's tape was macro, not corporate:** the 10-year Treasury yield reached ~**5.22%** intraday
+(highest since 2007), the 30-year ~**5.48–5.50%** (highest since 2004), Brent near **$106**,
+manufacturing PMI **57** (52-month high) and services **58.7** (59-month high), initial claims
+**197,000** against a 201,000 consensus, and swaps pricing **three further 25bp hikes** over twelve
+months. ⚠ **None of it is a Company A.** See T-2026-09-25-06.
+
+**Screened and rejected without a full entry** (immaterial, first-order, or below §3): the **DoD
+daily contracts digest** — Northrop Grumman **$123.78M** F-35 APG-85 Lot 7 long-lead for 67 radars
+(~0.3% of NOC revenue, first-order, `priced_in: false` at −2.98% and that is **not** the reason),
+Raytheon **$50.07M** EA-18G NGJ-MB repairs (<0.1% of RTX revenue), Stark Aerospace **$114.0M** MK 41
+canisters (IAI subsidiary, not separately US-listed, §3), Southern Contracting **$22.0M**, RGAS
+**$23.6M** — ⚠ **the digest is standing rule (v)'s original costume and it has not changed shape.**
+Also: **Eli Lilly / InnoCare** five-drug licensing partnership (**no dollar value disclosed by any
+party**, LLY first-order, InnoCare HK-listed); **FMC / Tessenderlo** $403M for ~20% of FMC (a
+**secondary-market share purchase** — capital paid to selling shareholders, never to FMC, rule
+(viii)); **Blue Cloud Softech / IBM Cloud** $15.5M (Indian-listed; $15.5M is nothing to IBM);
+**FingerMotion** 52.5MW indications of interest (offtakers unnamed, contract expressly **not yet
+announced**); **Everforth / DARPA** $31M (private); **Endovia** $1M, **Algorhythm** (microcaps);
+**Amazon's $100M Greenwood plant** (immaterial to AMZN; no named counterparty).
+
+**⚠ TWO CANDIDATES WERE DELIBERATELY NOT SCREENED, UNDER STANDING INSTRUCTIONS, AND BOTH REFUSALS
+COST SOMETHING TODAY.**
+**ELMT / Masan High-Tech Materials** resurfaced a **third time in three sessions**, and this time the
+coverage carried what the prior two lacked: a **disclosed price — $124.75 million for a 4.99%
+stake**, plus the long-term Nui Phao tungsten supply and conversion agreements. ⚠ **`state.md` says
+verbatim: "A third Elmet headline is not a third opportunity — it is the same ineligible company. Do
+not screen it again." Honored. No `move`, `asset` or `quote` call was made on ELMT.** ⚠ **Grade this
+as a STRONG refusal, not a free one: the new disclosure is exactly the material whose absence killed
+the previous two attempts, and the pull to re-open on "but now there is a number" was real. §3 does
+not care. A microcap with a Vietnam-listed counterparty is ineligible at every price and at every
+level of disclosure, and a better-sourced version of an ineligible company is still ineligible.**
+**Welspun Corp** appeared for the second time (~**$412.5M** HFIW pipe order, US subsidiary in
+Arkansas) — **not US-listed, §3, already disposed**, and the buyer is **unnamed** besides. Not
+screened.
+
+**⚠ NO CANDIDATE FROM 09-24'S SEVEN REJECTIONS WAS REHABILITATED.** No `move`, `quote`, `bars` or
+`asset` call was made on ILMN, GRAL, BBY, PYPL, SHOP, SoftBank/OpenAI or ELMT. **A rejection is not
+a queue** — and note that ILMN, described yesterday as "the most seductive second-order shape in
+weeks," was not revisited at a different price.
+
+---
+
+### T-2026-09-25-01 — JBL (Jabil Inc.) — REJECTED
+
+**Company A / the news:** Anthropic committed to purchase approximately **$11.6 billion over seven
+years** of dedicated cloud-computing capacity and managed support from **Akamai Technologies**
+(Akamai press release and Form 8-K; Reuters, 2026-09-24). To deliver it, Akamai disclosed two
+supplier arrangements in the same filing: a master product-and-services agreement with **Lenovo**
+(entered 2026-09-23) and a **Build Request under its existing Jabil master services agreement**
+(entered 2026-09-24). Akamai separately estimated **~$5.5 billion of total capital spending**
+associated with the Anthropic commitment, **~$1.7 billion of it in 2026**.
+
+**Company B / the candidate:** **Jabil Inc. (NYSE: JBL)** — the named contract manufacturer,
+authorized to procure **~$1.7 billion of memory components** and to provide customized server
+hardware assembly and repair services.
+
+**Hard filters — run BEFORE the thesis, per §4:**
+- **Priced-in (§4):** moved **+4.97%** over the last five sessions (09-17 close 295.965 → 09-24 close
+  310.67) → **`priced_in: true`, FAIL.** ⚠ **See the finding below — this fired first, and it is NOT
+  the reason for the rejection.**
+- **Correlation (§4):** zero open satellite positions, so there is no `driver` to collide with →
+  **pass, trivially.** Recorded as a **trivial pass, not a clean one** — the check has never had an
+  operand and remains an untested path.
+- **Universe (§3):** US-listed common stock, NYSE; market cap **~$39.23B** as of 2026-09-22 (source:
+  Perplexity citing simplywall.st) — **above the $10B floor → pass.** ⚠ **Figure is a secondary
+  aggregator, not a company filing; it would have needed a primary source before any order.**
+
+**1. Mechanism (one sentence):**
+> Anthropic's $11.6B capacity purchase from Akamai causes Jabil's Intelligent Infrastructure segment
+> revenue to rise because Akamai has contracted Jabil to manufacture and assemble the server hardware
+> that capacity requires.
+
+⚠ **Part 1 PASSES, and passes cleanly — one clause, no "and also," two named parties, a signed
+instrument, and a dated 8-K.** This is the strongest part-1 sentence the log has produced.
+
+**2. Dollar path:** ⚠⚠ **THIS IS WHERE IT DIES, AND IT DIES ON THE VERY FIGURE THAT MADE IT LOOK
+STRONG.** The Akamai 8-K, quoted verbatim:
+
+> "Pursuant to the Build Request, the Company has authorized Jabil to purchase approximately $1.7
+> billion of memory components, **with the Company paying Jabil all corresponding supplier invoice
+> amounts upon Jabil's receipt of such components.**"
+
+> "Pending use, **Jabil will hold such components in consignment as bailee for the Company** and will
+> **repurchase such components from the Company at cost** as they are utilized."
+
+⚠ **Read what that actually says. The $1.7 billion is AKAMAI'S money, paid to AKAMAI'S suppliers,
+invoiced through Jabil. The components are held IN CONSIGNMENT AS BAILEE — they are Akamai's
+property, never Jabil's inventory. And the repurchase is EXPRESSLY AT COST, which is a disclosed
+statement that Jabil earns ZERO margin on the component value.** Jabil is acting as Akamai's
+**purchasing agent and warehouse**, not as a seller.
+⚠ **The only figure that would satisfy part 2 — Jabil's manufacturing and assembly fee — IS NOT
+DISCLOSED BY ANY PARTY.** Without it there is no magnitude and no segment share to write. For scale,
+Jabil's FY2025 revenue was ~**$33.59B** and Intelligent Infrastructure ~**$12.31B (~36.6%)** — both
+comfortably material as a *segment*, which is exactly what makes the absence of the fee so
+consequential: **the segment is big enough to matter and the increment is unquantifiable.**
+**Part 2 CANNOT BE WRITTEN HONESTLY. REJECTED.**
+
+**3. Timing window:** *not reached — part 2 failed first.* Recorded for the human only: Akamai's own
+~$1.7B of 2026 capex implies near-term hardware flow, so part 3 would likely have **passed**. **Do
+not read that as "it nearly worked."**
+
+**4. Invalidation:** *not reached.*
+
+**Outcome: REJECTED AT PART 2 — the disclosed dollar figure is capital paid IN, held on consignment,
+and repurchased at cost. It is not segment revenue at Company B.**
+
+⚠⚠ **RECORD THE ORDER OF KILLS PRECISELY, BECAUSE THE TEMPTING VERSION OF THIS ENTRY IS FALSE.** The
+priced-in filter fired **first** (§4 requires it to) and would on its own have ended this. **But it is
+NOT the reason, and it must never be inherited as the reason.** Two things follow, and they point in
+opposite directions:
+
+⚠ **(a) THE PRICED-IN READING IS AN ARTEFACT OF A NEW AND DISTINCT KIND — IT FIRED ON DRIFT, NOT ON
+THE NEWS.** JBL's five-session path was **299.52 (09-18) → 303.64 (09-21) → 308.86 (09-22) → 308.71
+(09-23) → 310.67 (09-24)**: a steady grind whose largest single session is **+1.72%**, and **the
+build-request day itself — 09-24, the day the $1.7B was authorized — moved JBL +0.63%.** §4's text
+conditions on having "already moved more than 4% over the last five sessions **on this news**." ⚠
+**The window and the news are demonstrably disjoint here. This is a THIRD defect shape for open items
+(1) and (2): not a drawdown misread as priced-in (nine instances), and not a genuine news rise (three
+instances, 09-24) — but a genuine, news-unrelated RISE that the window swept up.** ⚠ **It is also the
+first instance where the filter's verdict and the correct verdict happened to agree for unrelated
+reasons, which is the hardest kind to notice.**
+
+⚠ **(b) AND THE AGENT DID NOT ACT ON (a), DELIBERATELY.** The argument in (a) is a correct reading of
+§4's text and it is **still not the agent's to apply.** `state.md` is explicit that changing the §4
+bar or `alpaca.py move` is **a `strategy.md` change only the human may make**, and this is exactly the
+situation that rule was written for: **a candidate the agent had begun to like, plus a plausible
+technical argument that the filter misfired.** ⚠ **Had part 2 not failed, the honest outcome would
+STILL have been REJECTED-on-priced-in with the defect logged — not a rescue. The bar does not move
+from this seat.** **Noted so the next run does not read (a) as permission.**
+
+⚠⚠ **THE MOST USEFUL LINE IN THIS ENTRY: THIS IS THE CANDIDATE OPEN ITEM (3) SAID WOULD NEVER
+ARRIVE, AND IT ARRIVED AND STILL PRODUCED NOTHING.** Open item (3) names four forms of the binding
+constraint — the source withholds the counterparty's number; the counterparty gives roadmap instead
+of segment revenue; the beneficiary is vertically integrated; or both parties refuse to disclose.
+**Jabil matched NONE of them.** Every party was named, the instrument was signed and filed, the
+figure was specific, and it was **$1.7 billion in an 8-K.** ⚠ **A FIFTH FORM IS NOW ON THE RECORD:
+THE DISCLOSED FIGURE IS FULLY SPECIFIED AND IS THE WRONG QUANTITY — capital paid in, at cost, on
+consignment. No evidence bar, however wide, relieves this; widening the bar would have let it
+through.** ⚠ **The standing warning — "a large, real, sourced, prominently-placed number is not a
+dollar path" — has never been tested this hard, and the number has never looked this much like an
+answer.**
+
+---
+
+### T-2026-09-25-02 — AKAM (Akamai Technologies) — REJECTED
+
+**Company A / the news:** As above — Anthropic's ~$11.6B seven-year capacity commitment.
+
+**Company B / the candidate:** **Akamai Technologies (NASDAQ: AKAM)** — the named counterparty.
+
+**1. Mechanism:** *not written — Akamai is the company in the headline.*
+
+**Hard filters:**
+- **Priced-in (§4):** moved **+3.19%** over five sessions (09-17 close 107.025 → 09-24 close 110.44)
+  → **`priced_in: false`, "passes."** ⚠⚠ **THIS PASS IS FALSE, AND IT IS THE MOST SEVERE INSTANCE OF
+  OPEN ITEM (2) THE LOG HAS EVER RECORDED. SEE BELOW.**
+- **Correlation / Universe:** not reached.
+
+**Outcome: REJECTED — FIRST-ORDER.** §4 buys Company B, not the name in the headline. Akamai is the
+party receiving the $11.6B and the party whose press release this is. **No further test was needed.**
+
+⚠⚠ **BUT THE PRICED-IN READING IS THE FINDING, AND IT IS WORSE THAN ANY PRIOR INSTANCE.** The daily
+closes, pulled this run rather than inferred: **104.53 (09-18) → 117.435 (09-21) = +12.35% in ONE
+SESSION**, then 118.33 (09-22), 118.42 (09-23), then **110.44 (09-24) = −6.74%.** ⚠ **A +12.35%
+single-day event move and a −6.74% give-back fell inside the SAME five-session window and netted to
++3.19%, so the filter reported "passes the priced-in check" on a stock that had already made its
+entire move and partially unwound it.** Prior instances of this shape were QCOM (+2.70% after a +8.7%
+intraday move) and AVAV (+1.20% after a +12.9% round trip in one session). ⚠ **This one is larger,
+and unlike those two it spans multiple sessions — the round trip no longer has to happen intraday to
+hide from the filter. It fails in the direction of TAKING a trade.** **AKAM was never at risk because
+first-order killed it independently — but had this chain's beneficiary been second-order and
+otherwise clean, the filter would have waved it through.**
+
+⚠ **AND THE TAPE SETTLES A DATE THAT THE SOURCES DO NOT AGREE ON — STANDING RULE (iii), A NEW
+COSTUME.** Perplexity returned **conflicting disclosure dates**: one citation is titled "Form 8-K
+AKAMAI TECHNOLOGIES INC **For: Sep 18**", another reports the Anthropic agreement, the Lenovo
+agreement and the Jabil Build Request **all first disclosed in a September 24 8-K**, and a third says
+project plans were signed **September 18** under a master services agreement dating to **May 2026**.
+⚠ **The conflict is NOT resolved here and should not be asserted either way. But the tape is primary
+evidence pulled this run, and it is unambiguous about when the MARKET learned: +12.35% on Monday
+2026-09-21, the first session after an 09-18 filing date — and a 6.74% DECLINE on 09-24, the day of
+the press release and the Reuters coverage.** ⚠ **A stock does not fall 6.74% on the day it learns of
+an $11.6B contract. The 09-24 "announcement" is re-coverage of something the market had already
+absorbed three sessions earlier — standing rule (iii), in the costume of a FORMAL PRESS RELEASE
+RESTATING AN ALREADY-FILED 8-K. Ask a transaction when it happened before asking who it helps; this
+run asked, and the answer was 09-18/09-21, not 09-24.**
+
+---
+
+### T-2026-09-25-03 — memory suppliers to the Akamai build (no ticker) — REJECTED
+
+**Company A / the news:** Akamai authorized Jabil to procure **~$1.7 billion of memory components**
+for the Anthropic capacity buildout (8-K, 2026-09-24).
+
+**Company B / the candidate:** *none nameable.* $1.7B of memory has to be bought from somebody, and
+the DRAM/HBM supply base is short and well known.
+
+**1. Mechanism:** *not written.*
+
+**Outcome: REJECTED — NO COMPANY B EXISTS TO NAME WITHOUT INVENTING ONE. Standing rule (v).**
+⚠ **Akamai's 8-K names Jabil and it names Lenovo. It does NOT name a memory manufacturer, a GPU
+vendor, a CPU supplier, a networking vendor, a data-center operator or a utility.** A direct query
+asking for any disclosed supplier returned, explicitly: *"No other supplier has been specifically
+named in the available disclosures."*
+⚠ **This is the single most tempting inference available today, and it is the SoftBank/OpenAI shape
+from 09-24 with a much shorter apparent gap to close: there, the recipient was private and unnamed;
+here, the dollar figure is exact, the component category is named, and the plausible suppliers are
+countable on one hand. That makes the blank LOOK fillable. It is not research.** **The source left
+the blank; filling it in is not research.**
+⚠ **Note also that part 2 would have failed even with a name: $1.7B spread across the memory supply
+base is well under 10% of any of their revenues.** **Two independent kills — recorded so no future
+run reaches for this as "the one where we knew who it had to be."**
+
+**Lenovo**, the one other named supplier, is **§3 outright**: Hong Kong–listed, with only an **OTC
+ADR** in the US, and §3 excludes OTC and pink sheets without qualification. **No value was disclosed
+for the Lenovo agreement in any case.**
+
+---
+
+### T-2026-09-25-04 — RDW (Redwire) — REJECTED
+
+**Company A / the news:** US Space Systems Command selected vendors for the **NITE-STAR** contract
+supporting national-security testing infrastructure and operational readiness, reported
+2026-09-24/25 at **"more than $980 million."** Redwire shares were reported as surging on it.
+
+**Company B / the candidate:** **Redwire (NYSE: RDW)** — one of the selected vendors.
+
+**Hard filters:**
+- **Priced-in (§4):** moved **+0.61%** over five sessions (11.535 → 11.605) → `priced_in: false`,
+  passes. ⚠ **Recorded deliberately as NOT a point in its favour** — a pass on a flat tape says
+  nothing, and note it also contradicts the "surges on $980M contract" headline that surfaced it.
+- **Universe (§3):** at **$11.605** a share, Redwire's market cap is on the order of **$1–2B**,
+  **far below the $10B floor → FAIL.** (Approximate; not sourced to a filing, because it did not need
+  to be — see below.)
+
+**Outcome: REJECTED THREE TIMES OVER, and the order matters.**
+**(i)** ⚠⚠ **THE $980 MILLION IS A CEILING ACROSS FIFTEEN VENDORS, NOT REDWIRE'S REVENUE.** The
+follow-up scan established it is a **multiple-award contract for which Redwire is one of 15 selected
+vendors**, with **no disclosed allocation to Redwire.** ⚠ **This is the CEILING sub-shape of standing
+rule (v) and rule (viii) together — "a financing ceiling available to somebody else," here a
+contracting ceiling available to fourteen other companies. The headline "Redwire surges on $980M
+contract" is precisely how a ceiling gets read as revenue, and it is how this candidate entered the
+funnel.**
+**(ii)** **First-order** — Redwire is the named selectee, not a second-order beneficiary.
+**(iii)** **§3 market-cap floor.**
+⚠ **Any one of the three ends it; (i) is the one worth remembering, because it is the only one that
+generalises.**
+
+---
+
+### T-2026-09-25-05 — FLNC (Fluence Energy) — REJECTED
+
+**Company A / the news:** Fluence announced a **multiyear master supply agreement with EVE Power
+Co., Ltd.** for batteries for its energy-storage systems (GlobeNewswire, 2026-09-24).
+
+**Company B / the candidate:** Fluence is the **buyer**; the supplier is EVE Power.
+
+**Outcome: REJECTED — no writable part 2, on a candidate that was already disposed of.**
+⚠ **No dollar value and no volume commitment were disclosed by either party.** Part 2 cannot be
+written. The supplier leg, **EVE Power, is Shenzhen-listed — §3 outright** — and the buyer leg is
+Fluence itself, first-order and below the §3 floor.
+⚠ **Fluence already sits on the disposed-rejects list under standing rule (iii) as a re-covered
+deal. This is a DIFFERENT transaction, so it was screened rather than refused — but it died on the
+same missing quantity, which is the point: a new event at a company whose last event failed on an
+absent number is not more likely to carry one.**
+
+---
+
+### T-2026-09-25-06 — the rate, oil and PMI complex (no ticker) — REJECTED
+
+**Company A / the news:** The 10-year Treasury yield reached ~**5.22%** intraday on 09-25, the
+highest since **2007**; the 30-year ~**5.48–5.50%**, the highest since **2004**; Brent crude near
+**$106**; US manufacturing PMI **57** (52-month high) and services PMI **58.7** (59-month high);
+initial claims **197,000** against a **201,000** consensus, near a 57-year low; swap markets pricing
+**three further 25bp Fed increases** over twelve months.
+
+**Company B / the candidate:** *none.*
+
+**1. Mechanism:** *not written — every available sentence needs an "and also."*
+
+**Outcome: REJECTED — AN ENVIRONMENT INPUT IS NOT A COMPANY A. Standing rule, the FOMC object.**
+⚠ **This is the loudest tape event of the run by a wide margin, and that is exactly why it is written
+down.** Two-decade highs in long yields and $106 Brent produce an obvious-feeling list — insurers and
+banks earning more on float, E&Ps on crude, refiners on the crack — and **not one of those is a
+transaction between two named parties.** They are the **same macro input arriving at many companies
+at once**, which is the definition of a market, not a mechanism. ⚠ **The giveaway never changes: the
+sentence needs an "and also."**
+⚠ **AND THE LONG-ONLY PROBLEM BITES AGAIN, IN ITS BROADEST FORM YET.** Rising rates and rising oil
+are, for most of the S&P, a **cost being imposed** — and a long-only book cannot trade money being
+taken out of a sector unless a **named party receives it**. Here nobody does; it is a discount rate
+moving. ⚠ **Prior instances of this were sector-specific policy cuts (CMS, the ACA halt). This is the
+same object at full market scale, and scale makes it MORE convincing, not less — which is the only
+reason it earned an entry rather than a line in the survey.**
+⚠ **One genuine consequence is worth carrying for a different reason: a 5.22% ten-year is a real
+input to the §1 twelve-month benchmark question and to what the core sleeve is competing against. It
+is a fact about the BENCHMARK, not a trade.**
+
+---
+
 ### 2026-09-24 (08:20 ET) — event survey (funnel, pre-thesis)
 
 Selftest passed all five checks (`trading_enabled: true`, LIVE paper account, equity **$99,776.15**).
