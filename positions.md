@@ -56,6 +56,92 @@ re-derive it from price history, and it stays correct for positions closed month
 
 *(none — no **satellite** positions have been opened yet. Core VOO exists and is deliberately not tracked here, per the top-of-file rules and the fill note further down.)*
 
+**Reconciliation 2026-09-25 — 08:24 ET, 1-premarket-research.** Selftest passed all five checks;
+broker equity **$100,299.16** at pre-flight, `trading_enabled: true`, LIVE paper. `clock` at
+**08:24:08** reads `is_open: FALSE` with `next_open` **2026-09-25T09:30** — the **PRE-MARKET** shape,
+`next_open` pointing at **TODAY**. **Not a holiday; a session is due.**
+
+**RECONCILIATION CLEAN.** `alpaca.py positions` returns **one row, core VOO** — 99.046311231 shares
+unchanged since the 09-03 fill, avg_entry 706.74, cost_basis $69,999.99, market_value $70,299.16
+(broker mark). **Zero satellite blocks against zero satellite Alpaca rows — they agree**
+(satellite-to-satellite, never raw ledger to raw broker).
+
+**`sell_rule_status` — NO POSITION HAS ONE, BECAUSE NO POSITION EXISTS.** §5.1 (thesis invalidation):
+no thesis to invalidate. §5.2 (time stop): no timing window to expire. §5.3 (−7% hard stop): **no
+entry price to measure from — distance is UNDEFINED, not large.** §5.4 (−10% trailing stop): **no
+`highest_close` to measure from — the field is ABSENT, the third state, carrying no `(as of …)` date
+at all.** ⚠ **§5.4 is STILL NOT ARMED; it arms on the first SATELLITE fill and the 09-03 core fill
+was not one. THIRTY-FOURTH consecutive session with §5.1–§5.4 never started — all four remain
+UNTESTED CODE PATHS, and the tally of "no exits" records the ABSENCE OF A SUBJECT.**
+**No backfill was owed and none was done** — zero `bars` calls due on any satellite symbol, zero
+made. ⚠ **Yesterday's close run left no stamp because there is no field, not because it failed.**
+
+**SLEEVES — THE TWO BASES AGREE IN SIGN TODAY, AND THAT IS NOT REASSURANCE.** Broker marks: equity
+**$100,299.16**, core **$70,299.16 = 70.09%**, satellite **0.0% (count 0)**, cash **$30,000.00 =
+29.91%**, `core_in_band: true`, `rebalance_needed: false`, `rebalance_delta` **−$89.75**. Recomputed
+on the official 09-24 close (707.28): equity **$100,053.48**, core **$70,053.48 = 70.016%**, cash
+**29.984%**, delta **−$16.04**. ⚠ **Both negative — unlike 09-24, where the same two bases disagreed
+in SIGN. Intermittent is worse than consistently wrong: a run that checks one basis and finds
+agreement learns nothing.** **NO REBALANCE IS DUE** — §2 acts at the **65/75 band edge** and the core
+sits **~4.9 points** inside it on either basis. **Forty-third consecutive run inside 69.59–70.22.**
+
+**⚠ `lastday_price` RESOLVED ON ITS PRE-REGISTERED THIRD BRANCH: IT READS 706.99.** The carry-forward
+named the branches in advance — 707.60 ⇒ never rebuilt; 707.28 ⇒ ambiguous; **anything else ⇒ wrong in
+a FOURTH way.** It moved off the 707.60 it held through four reads on 09-24, and landed **29c BELOW**
+the official 707.28, matching **no recent official close**. ⚠ **The error now has BOTH SIGNS (+32c
+09-24, −29c today). "It rebuilt" is not evidence it is right — on both mornings it rebuilt, it was
+wrong.** `current_price` **709.7605** is a **pre-market midpoint**, not a close and not an execution
+reference; `change_today` +0.00392 and `unrealized_intraday_pl` +$274.41 are computed off the wrong
+706.99 baseline and were **not used in or carried into any figure.**
+
+**CORE VOO DELIBERATELY NOT STAMPED — FIFTY-SECOND RUN, AND A WEAK INSTANCE, GRADED HONESTLY.** This
+run pulled VOO closes for the tape context, so a number was in hand — but routine 1 has no Step 2 and
+the pull was for the plan's sleeve arithmetic, not for a ledger row. **Weaker than the 09-24 close,
+which arrived holding a fresh close with an empty Step 2 to put it in.** §5 exempts core from all four
+sell rules; a mark on VOO would **fabricate a §5.4 trailing stop on the one position the strategy
+exempts**, which could eventually sell core on a drawdown — **§7 forbids that outright.** Refused.
+**GNRC NOT LOOKED AT — TWENTY-FOURTH REFUSAL, AND A STRONG ONE.** ⚠ **This run opened the data plane
+against a live funnel and issued FOUR `move` calls (JBL, AKAM, RDW, NOC) plus four `bars` pulls —
+`--symbol GNRC` was one more invocation on a command line already typed four times over, and there
+was a research step to put the number in. Not made.** GNRC remains **first-order in the Amazon
+announcement — outside §4 at any price** — and open item (7) is resolved by a human editing §4 or
+`alpaca.py move`, **not by a number this seat collects.** **No new costume this run; the list still
+looks CONVERGING rather than growing.**
+
+**⚠ A THIRD REFUSAL WAS OWED TODAY AND IT IS THE STRONGEST OF THE THREE: ELMT WAS NOT RE-SCREENED.**
+Elmet/Masan resurfaced for the **third time in three sessions**, and this time carrying **the exact
+material whose absence killed the first two — a disclosed $124.75M for a 4.99% stake.** `state.md`
+says verbatim: *"A third Elmet headline is not a third opportunity — it is the same ineligible
+company. Do not screen it again."* **Honored: no `move`, `asset` or `quote` call was made on ELMT.**
+⚠ **This is not a free refusal. A microcap with a Vietnam-listed counterparty is ineligible at every
+price and at every level of disclosure, and "but now there is a number" is the purest form of the pull
+to re-open a §3 kill on evidence that §3 does not weigh.**
+
+**HOUSEKEEPING — ALL CHECKS RUN, NONE FIRED.** **Week rollover:** today is Friday **2026-09-25**
+(confirmed via `TZ=America/New_York`, not assumed); ISO Monday **2026-09-21**; `week_of` already reads
+2026-09-21 — **seventeenth consecutive run to find the reset already done**,
+`new_positions_this_week` stays **0 of 3**, next boundary **Monday 2026-09-28**. **Circuit breaker:**
+**INACTIVE**, `halt_triggered_at: none`, `consecutive_closed_losses: 0` — **it has never had an
+input**, since nothing has ever closed. **No `HALT_CLEARED_AT` comparison was required and no
+`circuit-breaker` alert was due.** **Research plane healthy:** four Perplexity calls, **all exit 0 —
+09-24's transient HTTP 500 did not recur.** `alerts.md` **empty — zero open incidents, zero
+SYSTEMIC.** `trade_log.md` correctly left unappended — **no order was placed; routine 1 does not
+trade.**
+
+**RESEARCH RAN IN FULL AND PRODUCED NO TRADE.** Four Perplexity scans; **six candidates reached a
+`research_log.md` entry and all six were rejected** (T-2026-09-25-01 JBL, -02 AKAM, -03 memory
+suppliers, -04 RDW, -05 FLNC, -06 the rate/oil/PMI complex); **four `alpaca.py move` calls** as §4
+hard filters. ⚠⚠ **THE FINDING OF THE RUN IS T-2026-09-25-01: the Akamai/Anthropic chain delivered a
+NAMED US-LISTED SUPPLIER WITH AN ALLOCATED DOLLAR FIGURE QUOTED FROM AN 8-K — the thing open item (3)
+says never arrives — and it still produced nothing, because the $1.7B is capital paid IN, held IN
+CONSIGNMENT AS BAILEE, and repurchased AT COST. It is not revenue at Company B. A FIFTH form of open
+item (3)'s constraint, and the only one that WIDENING THE EVIDENCE BAR WOULD NOT RELIEVE — widening it
+would have let this through.** ⚠ **The priced-in filter fired first on JBL (+4.97%) but is NOT the
+reason and must not be inherited as one: the move was a five-session grind whose largest day was
++1.72%, and whose news day moved JBL +0.63%.**
+
+---
+
 **Reconciliation 2026-09-24 — ONE BLOCK FOR THE DATE, ALL FOUR RUNS (1-premarket 08:20, 2-market-open
 09:36, 3-midday 12:40, 4-market-close 16:15), UPDATED IN PLACE AND COLLAPSED BY THE CLOSE RUN. THE
 LEDGER AGREES WITH THE BROKER AT ALL FOUR; ZERO SATELLITE POSITIONS ON BOTH SIDES AT ALL FOUR; NO ORDER
