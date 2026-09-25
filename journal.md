@@ -40,6 +40,176 @@ anything where the honest-broker rule (§4) did real work>
 
 ## Entries
 
+### 2026-09-25 (Friday)
+
+**Account:** total **$100,392.71 on official closes** / $100,387.36 broker mark | day P&L **+$339.23
+(+0.3391%)**, both legs official | since inception **+0.3927%** (+$392.71)
+**Sleeves:** core **70.117%** | satellite **0.0%** | cash **29.883%**   (§2 band 65–75%; broker-mark
+basis 70.12 / 0.0 / 29.88 — `core_in_band: true`, `rebalance_needed: false`) — **no rebalance due
+Monday on either basis**
+**Breaker:** INACTIVE
+**Week:** 0/3 new positions — Friday 2026-09-25, ISO Monday **2026-09-21** (confirmed via
+`TZ=America/New_York`, not assumed); `week_of` already read 2026-09-21, anchors matched, no reset due,
+**twentieth consecutive run** to find it already done. Next boundary Monday 2026-09-28.
+**Trading day:** yes — a full session. `clock` at 16:17:04 reads `is_open: false` with `next_open`
+**2026-09-28T09:30** and `next_close` **2026-09-28T16:00** — the **post-bell** shape. FALSE has three
+meanings, so the stronger discriminator was run rather than inferred: **a VOO daily bar for 2026-09-25
+exists and is complete** (o 708.46, h 711.615, l 706.33, **c 710.705**, v 164,682, n 4,246 — `n` and
+`v` both in line with full sessions, 3,719–4,319 and 125k–150k). A session happened; the summary is owed.
+
+**Traded:** nothing — zero orders, zero fills, nothing closed. `orders --status all` still returns
+**one row for the account's entire history**, the 09-03 core VOO buy, `status: filled`, terminal.
+**Nothing is in limbo overnight.**
+**Researched:** 6 theses today (pre-market run) — **0 accepted, 6 rejected**. Cumulative **73 real
+theses** (74 `### T-` headings less the template, **recounted from source this run**), **0 accepted
+ever**, 27 this week (09-21: 3, 09-22: 5, 09-23: 6, 09-24: 7, 09-25: 6).
+**Positions near a sell rule:** none — there are no satellite positions. §5.1–§5.4 remain untested
+code paths, **thirty-seventh consecutive session**, and **§5.4 is still not armed.** §5.3's distance is
+**undefined, not large** — there is no entry price to measure from.
+
+**What happened:**
+
+The first substantial green day the book has had since the core was established. VOO closed at
+**710.705**, up **+3.425 / +0.4843%** from 09-24's 707.28, which ends the two-session pause at exactly
+707.28 that the last two close runs spent so much ink on. On official closes the core is worth
+**$70,392.71**, equity **$100,392.71**, the day is **+$339.23 / +0.3391%**, and the account sits
+**+0.3927% since inception**. Core is unchanged at 99.046311231 shares; cash is flat at $30,000.00.
+Nothing was bought, nothing was sold, and this routine may not trade in any case.
+
+Step 2 — this run's invisible job, and the one the whole routine exists for — **had no operand.** There
+are zero open satellite positions, so there was no `highest_close` to raise and, more to the point, no
+`(as of …)` date to advance. `highest_close` is **absent**: the third state, carrying no stamp at all,
+which is precisely what distinguishes *nothing to backfill* from *a mark silently not written*. Zero
+`bars` calls were due on any satellite symbol and zero were made; the one `bars` pull was on VOO, for
+the sleeve arithmetic and the day's close. **Monday's runs must not read the missing stamp as a failed
+close run.**
+
+Housekeeping ran in full and nothing fired. Week rollover: already done, no reset. Loss streak:
+nothing closed today and nothing has ever closed, so `consecutive_closed_losses` stays **0 — it has
+never had an input**; breaker INACTIVE, `halt_triggered_at: none`, so no `HALT_CLEARED_AT` comparison
+was required and **no `circuit-breaker` alert was due.** Unresolved orders: none, ever. `alerts.md`
+empty — zero open, zero SYSTEMIC. `control.md` notes read `(none)`.
+
+Sleeves are in band on both bases and **agree to two decimal places on core %** today — 70.117%
+official against 70.12% broker. `rebalance_delta` is negative on both for the **fourth consecutive
+run** (−$117.81 official, −$116.21 broker). That is not the two-price defect resolving; it disagreed
+in *sign* on this same quantity on 09-24 (+$12.78 broker vs −$16.04 official). Intermittent is worse
+than persistent, and a run that checks one basis and finds agreement learns nothing. **No rebalance is
+due Monday** — §2 acts at the 65/75 band edge and the core sits ~4.88 points inside it.
+
+The broker's day-P&L fields were pulled, recorded and **not used**: `equity − last_equity` **+$362.61**,
+`unrealized_intraday_pl` **+$362.61**, `change_today` +0.00518. The true official close-to-close is
+**+$339.23**, so the artifact is **+$23.38 — 6.9% of the real move.** Worth noting that `last_equity`
+reads **100,024.75**, which is neither the official prior equity (100,053.48) nor yesterday's 16:15
+broker equity (99,957.40): it is a third number of its own, which is the whole reason the field is
+unusable rather than merely imprecise.
+
+`current_price` reads **710.651**, **5.4 cents below** the official 710.705. Corrected post-bell
+series, now six observations: **+$1.13 (09-18), −$0.22 (09-21), +$0.169 (09-22), +$0.02 (09-23),
+−$0.97 (09-24), −$0.054 (09-25).** Both signs, range 2c to $1.13, no predictable sign and no
+correctable offset. Today's is the **second smallest**, not the smallest — 09-23's 2c still holds that.
+`lastday_price` reads **706.99**, unmoved from the 08:24 pre-market and the 09:36 open, and **29 cents
+below** the actual prior close of 707.28 all day. The field is closed as a question; it is recorded, not
+predicted.
+
+Minor, so it is not re-discovered later as a finding: **the 09-24 bar's one-share revision has held.**
+It reads v 141,075 / n 3,719 for the second consecutive pull, so the late revision settled rather than
+continuing to drift. The identical 09-23 / 09-24 closes of 707.28 are confirmed a **fifth** time, with
+distinct OHLV on both sides.
+
+**What I got wrong or nearly got wrong:**
+
+**1. I nearly wrote a false superlative, and this is the first time one has been caught *before* it was
+written rather than three runs later.** Today's +$339.23 and +0.3927% are the largest day and the
+highest equity this book has carried in weeks, and the sentence that wanted to come out was "best since
+inception." I pulled 25 sessions of closes first. **It is third.** The peak is **2026-09-21 at
++0.5962%**, then 09-22 at +0.5893%, then today — and today is only **0.0005pp** ahead of 09-03's
++0.3922%, which is a tie, not a lead. Carry-forward catch (1) is exactly this shape: a superlative that
+survived three runs and was then caught by accident. This one cost one `bars` call to avoid. *(Note for
+anyone re-running that check: the 25-session pull reaches back to 2026-08-21, before the 09-03 fill.
+Those pre-fill rows are counterfactual — the account held $100,000 in cash then — and must not be read
+as account history. The comparison above uses only 09-03 onward.)*
+
+**2. The midday run's volume calibration is wrong, and I can check it now that the session is complete —
+eighth catch, and the claim was six hours old.** The 12:41 run wrote that the partial bar's **v 69,713**
+was *"49.5% of the four-session mean volume (140,926) against 49.0% of the session elapsed — the volume
+tracks elapsed session time almost exactly."* **Today's actual full-session volume is 164,682**, which
+is **16.9% above that four-session mean.** So the partial bar in fact held **42.3%** of the day's
+eventual volume at 49.0% elapsed. **The "tracks almost exactly" was an artifact of a stale
+denominator.** The mechanism the midday run identified is right and stands — the bar *is* a live
+accumulator. What does not stand is the calibration, and the consequence matters more than the
+arithmetic: ⚠ **you cannot judge a bar's completeness from `v` against a prior-day mean, because the
+day's own volume is unknown until the bell.** A high-volume day's half-finished bar can carry more
+volume than a quiet day's complete one. **`n` and `v` are a smell test, not a measurement. The reliable
+discriminator is the clock.**
+
+**3. And the trap was mild today, which is the more uncomfortable half of it.** The midday partial
+bar's close read **710.555**; the official close is **710.705**. **Fifteen cents apart.** Had a
+satellite position existed and had the midday run stamped `highest_close` from that partial bar, the
+mark would have been 15c low and tonight's run would have corrected it upward anyway — the error would
+have been small and self-healing. The carry-forward's warning about partial bars is written in capitals
+and double arrows, and **today's instance would have cost almost nothing.** That is worth writing down
+precisely because it is the shape that erodes a rule: a loud warning whose observed instances are all
+mild teaches a future run that the shortcut is safe. It is safe *on a day like today*. It is not safe
+on a day with a 2% afternoon reversal, and nothing about a midday bar tells you which day you are in.
+
+**4. §1's answer got sharper today, and it got sharper in the wrong direction.** This is the cleanest
+demonstration of the standing finding the log has produced: **VOO +0.4843%, the book +0.3391%, excess
+−0.1452pp — against the −0.1453pp predicted by simply holding 70% core and 30% idle cash.** Agreement
+to a hundredth of a basis point. The satellite sleeve contributed **exactly 0.0000%**, as it has for
+the account's entire history, so the book captured precisely 70% of the market's move and nothing else.
+The standing claim that **every positive-excess day in this account has been a VOO *down* day** survives
+its cleanest possible test: today the market rose and the book lagged by exactly the cash drag, to the
+fourth decimal. ⚠ **A good day in dollars is not a good day against the benchmark, and today those two
+readings point in opposite directions.** That is the §1 question, and it is uncomfortable on a green day
+in a way it is not on a red one.
+
+**5. Graded honestly: one refusal this run is strong and one is weak, and the count is not the point.**
+**Core VOO was not stamped with a `highest_close` — fifty-fifth run, and a strong instance.** Routine 4's
+Step 2 is the dedicated write step, this run arrived holding a fresh official close (710.705), and the
+field it would write to was empty. That is the sharpest form of the temptation, and "nothing to write"
+is the correct output of an empty Step 2 rather than an invitation to find a row to write it to.
+**GNRC was not looked at — twenty-seventh refusal, and a weak one.** This run made zero `move` calls,
+zero `quote` calls and zero Perplexity calls, has no research step by construction, and had nowhere to
+put a number. **The refusal cost nothing and is recorded as weak.** Quoting the bare count overstates
+the evidence; the count accumulates fastest on exactly the runs where it means least.
+
+**6. Nothing else was close to wrong, and I am not going to manufacture a sixth item.** Routine 4 does
+not research and does not trade, so there was no thesis to be talked into and no order to be tempted by.
+The day's genuine near-misses all happened in the 08:24 pre-market run and are already written up at
+length in `research_log.md` — chiefly T-2026-09-25-01, where JBL passed part 1 more cleanly than
+anything the log has produced, carried a real $1.7 billion quoted verbatim from an 8-K, and died at
+part 2 because the money was the customer's, the goods were held on consignment as bailee, and the
+repurchase was expressly at cost. **A large, real, sourced, prominently-placed number is not a dollar
+path.** That entry is the worked example to reach for first.
+
+**For the next run:**
+
+- **The high-water marks were NOT updated, because there was nothing to update — zero satellite
+  positions, `highest_close` absent with no `(as of …)` date at all.** This is not a skip and not a
+  failure. **Do not backfill anything on Monday.** The distinction stops being free the moment a
+  satellite fill lands: after that, a mark silently not written reads identically to a mark correctly
+  unchanged, and **only the date separates them.**
+- **`n`/`v` against a prior-day mean does not measure a bar's completeness** — see item 2. Today's
+  session ran 16.9% above the four-session mean, which broke the midday run's calibration. **Use the
+  clock; treat `n`/`v` as a smell test only.**
+- **+0.3927% since inception is third best, not best.** Peak 09-21 +0.5962%, then 09-22 +0.5893%.
+  Do not let this become a superlative.
+- **Today's weekly review (routine 5) is still due**, and it is the **last review before the 2026-10-02
+  monthly archive rollover.** `research_log.md` is ~333KB against an instruction to read the memory
+  files in full. That review may run the rollover early.
+- ⚠ **Honest note against that same flag: this run collapsed the midday `positions.md` block (~95 lines
+  to ~25) and still left both files it owns NET LARGER** — `positions.md` 30.4KB → 35.8KB, `state.md`
+  52.3KB → 55.3KB. The close run's own reconciliation block and the volume correction are the growth.
+  **A collapse that is outrun by the collapsing run's own output is a mitigation, not a fix**, which is
+  the ninth consecutive time that sentence has needed writing. The rollover is the fix.
+- Tape facts, so they are not re-derived: VOO official closes **09-25 710.705**, 09-24 707.28,
+  09-23 707.28, 09-22 712.69, 09-21 712.76, 09-18 701.85. Core **99.046311231 shares at 706.74**, cash
+  **$30,000.00** flat, unrealized **+$392.72 / +0.561%** against the fill — **and §5 exempts core, so no
+  action attaches to that number in either direction.**
+
+---
+
 ### 2026-09-24 (Thursday)
 
 **Account:** total **$100,053.48 on official closes** / $99,957.40 broker mark | day P&L **$0.00
