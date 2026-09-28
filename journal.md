@@ -40,6 +40,150 @@ anything where the honest-broker rule (§4) did real work>
 
 ## Entries
 
+### 2026-09-28 (Monday)
+
+**Account:** total **$99,688.98 on official closes (price basis)** / **~$99,869 carrying the dividend
+receivable** / $99,664.22 broker mark | day P&L **−$703.72 (−0.7010%) price basis**, **−$523.3 (−0.5212%)
+total-return basis** | since inception **−0.3110%** price / **−0.1306%** total-return
+**Sleeves:** core **69.9064%** | satellite **0.0%** | cash **30.0936%**   (§2 band 65–75%; broker basis
+69.90 / 0.0 / 30.10 — `core_in_band: true`, `rebalance_needed: false`) — **no rebalance due tomorrow on
+either basis**; `rebalance_delta` **+$93.30 official / +$100.73 broker — POSITIVE on both, a sign flip
+from four consecutive negative runs, and the two bases AGREE**
+**Breaker:** INACTIVE
+**Week:** 0/3 new positions — Monday **2026-09-28**, ISO Monday **2026-09-28** (confirmed via
+`TZ=America/New_York`, not assumed); `week_of` already read 2026-09-28, advanced by Friday's weekly review.
+⚠ **The anchors matched on the one day of the week a rollover was genuinely due — done, not skipped.**
+Next boundary **2026-10-05**.
+**Trading day:** yes — a full session. `clock` at 16:16:24 reads `is_open: false` with `next_open`
+**2026-09-29T09:30** — the **post-bell** shape. FALSE has three meanings, so the stronger discriminator was
+run: **a VOO daily bar for 2026-09-28 exists and is complete** (o 706.23, h 707.22, l 702.03, **c 703.60**,
+n 3,061, v 62,354; re-pulled identical; the 15:59:59 ET `latestTrade` prints 703.60).
+
+**Traded:** nothing — zero orders, zero fills, nothing closed. `orders --status all` returns **one row for
+the account's entire history**, the 09-03 core VOO buy, `status: filled`, terminal. **Nothing is in limbo
+overnight.**
+**Researched:** **0 theses — the pre-market run produced no committed output today** (see below).
+Cumulative **73 real theses** (74 `### T-` headings less the template, recounted from source this run),
+**0 accepted ever**, **27 this week is now LAST week's figure** — this week stands at **0**.
+**Positions near a sell rule:** none — there are no satellite positions. §5.1–§5.4 have never had an
+operand in this account's entire history and **§5.4 is still not armed.** §5.3's distance is **undefined,
+not large.** ⚠ **Counted against the calendar, not inherited: 19 trading sessions since 2026-09-01, 16
+since the core fill. The "Nth consecutive SESSION" series is a run counter wearing a session label
+(catch 9) and is not continued here.**
+
+**What happened:**
+
+Two things, and the invisible one is much bigger than the visible one.
+
+**VOO went ex-dividend today, and `bars --adjustment all` rewrote the account's entire price history
+without saying so.** Friday's journal recorded the official closes as 710.705, 707.28, 707.28, 712.69,
+712.76, 701.85. The same command, on the same sessions, today returns **708.88, 705.47, 705.47, 710.86,
+710.93, 700.05** — every one multiplied by **0.997432**, today's close untouched. I did not assume what
+that was. `--adjustment raw` and `--adjustment split` both return the original series to the cent, which
+rules out a split (`split` ≡ `raw`) and rules out a data revision (`raw` unchanged); a single
+multiplicative factor applied from one date forward is a dividend. Bounded across six date-pairs against
+2dp rounding it is **$1.820–$1.824 per share, $180.26–$180.64** on our 99.046 shares. Alpaca does not
+publish the figure, so that is an inference and is labelled as one.
+
+The account has **not** been paid it. `cash` reads exactly $30,000.00, unchanged. So the benchmark
+recognises the dividend today, on the ex-date, and the book will recognise it on the pay date — and for
+the next few sessions every comparison between them is wrong by $180 in one direction or the other unless
+the receivable is carried explicitly. That is why every figure above carries a basis.
+
+It also gives today two different headlines. On a price-only basis the day is **−0.7010%**, and I checked
+the 30-session series before writing anything: that **is** the largest single-day loss in this account's
+history, beating 09-23's −0.5327%. On a total-return basis it is **−0.5212%**, which is **second** — 09-23
+still holds the record, and 09-23 had no dividend in its window so the comparison is like-for-like. **A
+record that exists on one basis and not the other, where the whole difference is money we are owed.** The
+price basis manufactures a record loss that did not happen.
+
+Where this actually bites is **§5.4**, and it fails in the direction of selling. A `highest_close` stamped
+before an ex-date and compared against a post-ex `--adjustment all` close shows a phantom drawdown equal to
+the dividend. Today that is 0.257%; on a 2%-yielding name it is a fifth of the 10% stop's width per year,
+given away to arithmetic. Nothing in the bar, the field or the `(as of …)` date tells you the basis moved
+under you. I have written the correction into `positions.md`'s header, where it will be read before the
+next mark is stamped, along with the fix: **re-pull the whole window each run and take the max from that
+one pull**, rather than comparing today's price to a number stamped on an older basis. The same defect
+invalidates `voo_close_at_entry`'s design note, which claimed a baseline captured at entry "stays correct
+for positions closed months later." It does not. It drifts by ~0.26% a quarter, and it drifts in the
+direction that **understates the benchmark and flatters the book**.
+
+**The visible thing: routines 1, 2 and 3 left no committed output today.** `git log` has no commit dated
+2026-09-28; `git ls-remote` shows only `main` with no working branch from today; `plan_today.md` still
+reads `plan_date: 2026-09-25`; `state.md`'s `last_run` still reads Friday 16:45. This repo's own definition
+of a run having happened is a commit, and by that definition three of today's four runs did not happen. I
+am not diagnosing a cause — `control.md` warns against reading schedule faults out of run timestamps, and
+this is the absence of committed output rather than a timestamp argument, but the cause is genuinely not
+visible from inside this run and I have not guessed at it. It is a question for the human.
+
+Today it cost nothing, and that is luck. An empty sleeve meant routine 3 had nothing to manage; an empty
+plan meant routine 2 had nothing to execute. On a day with an open satellite position, a missing midday run
+is an unmanaged §5 book for a full session.
+
+Otherwise: reconciliation clean, one core row, 99.046311231 shares unchanged since 09-03, zero satellite on
+both sides. Core VOO deliberately not stamped with a `highest_close` for the fifty-sixth run. No rebalance
+due. Breaker INACTIVE with no input, ever. `alerts.md` empty, `control.md` notes none.
+
+**What I got wrong or nearly got wrong:**
+
+**I nearly wrote "largest single-day loss on record" and stopped at exactly the wrong moment — I had
+already pulled the series, so I would have been right on the basis I was holding and wrong about the day.**
+The carry-forward's rule is "pull the source before writing the superlative," and I did pull it. What the
+rule does not say, and what today adds, is that **pulling the source is not enough when the source has two
+of them.** I had the 30-session series in front of me, it said −0.7010% was the worst day ever, and it was
+telling the truth about price. The dividend is what makes it false as a statement about the account, and I
+only had the dividend because I had gone looking for why Friday's closes had changed. If I had pulled
+`--adjustment all` without noticing the closes had moved, every number in this entry would have been
+internally consistent, sourced, freshly pulled — and wrong.
+
+**And the near-miss under that one is worse, because it would not have been caught at all.** The obvious
+comparison today is the book's return against VOO's return. The book's price-basis return is −0.7010%. VOO's
+`--adjustment all` return is −0.7448%. Put those together and you get an excess of **+0.0438pp** — a
+plausible-looking number that is pure artifact, because the book's leg excludes the dividend and the
+benchmark's leg includes it. **That is a mixed-basis comparison, and the standing rule against them does not
+catch it.** The rule says both legs from the same source, and `bars --adjustment all` for returns. Both legs
+here *are* from that source. The mismatch is not between two price feeds, it is between the account and the
+benchmark recognising the same cash on different dates, and no amount of source discipline sees it. The
+honest figure is **+0.2240pp**, against **+0.2227pp** predicted by the cash weight alone — which lands where
+every other day has landed, and would have looked like a 5x improvement in the satellite sleeve's
+contribution if I had used the artifact. The sleeve contributed exactly 0.0000%, as always.
+
+**The smaller one: I used the volume to doubt the bar, briefly.** Today's session shows 62,354 against
+Friday's 164,725, and my first reaction was that the bar might be partial. That is precisely the reasoning
+Friday's run was corrected for. `feed=iex` is one venue's slice, the pulled window already spans 47,589 to
+164,725 across sessions all known to be complete, and the clock said the session was over. The rule held,
+but I reached for the wrong test first and had to be talked out of it by a note written three days ago.
+
+**One thing I want to name because it was not a mistake and could become one.** The staleness gate has been
+exercised 28 times and has never fired. Today was the first morning in this account's history with a
+genuinely stale `plan_today.md` — exactly the setup the carry-forward predicted in writing, word for word —
+and the gate was not reached, because the run containing it did not execute. I noticed I wanted to count
+that as the prediction coming true. It is not: the prediction was about the setup, the test still has not
+happened, and the count is still 28. I also left `plan_today.md` untouched rather than tidying the stale
+date away, because that date is the only in-repo evidence that the pre-market run produced nothing.
+
+**For the next run:**
+
+- ⚠ **Every VOO close recorded before today is on the PRE-DIVIDEND basis.** An `--adjustment all` pull now
+  returns 708.88 for 09-25, not 710.705. Both are correct; they are different bases. **Do not read the
+  difference as a bad pull or a broken data plane.** `--adjustment raw` reproduces every inherited figure.
+- ⚠ **`quote`'s `prevDailyBar` and `bars --adjustment all` currently disagree by $1.825 on the same
+  session.** Two endpoints of one API, both correct on their own basis.
+- ⚠ **§5.4 defect, written up in `positions.md`'s header: a `highest_close` and the close it is compared
+  against must come from the same adjustment basis, pulled in the same call.** Re-pull the window and take
+  the max from that pull. This is live the moment a satellite fill lands.
+- ⚠ **`voo_close_at_entry` cannot be stored and trusted across an ex-date** — re-derive the benchmark leg
+  from a fresh pull at review time and use the stored value only to confirm the right session came back.
+- **Falsifiable prediction, written in advance:** `cash` should rise from **$30,000.00** to about
+  **$30,180.45** on VOO's pay date, most likely within a few sessions. ⚠ **If it has not appeared by
+  2026-10-07, the paper account does not model dividends at all — in which case the book structurally
+  under-earns its own benchmark by VOO's entire ~1.0% annual yield, and §1's "beat the S&P total return"
+  is unwinnable by construction rather than by strategy.** That would be a finding for the human, not a
+  thing to fix from this seat. **Check `cash` every run until it resolves.**
+- ⚠ **Routines 1–3 left no committed output for 2026-09-28.** If tomorrow's pre-market run is reading this,
+  it means routine 4 was the only run that fired today; **the funnel is empty because nothing ran, not
+  because nothing was found**, and `plan_today.md` is stale by a full session.
+
 ### 2026-09-25 (Friday)
 
 **Account:** total **$100,392.71 on official closes** / $100,387.36 broker mark | day P&L **+$339.23
