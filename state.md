@@ -13,9 +13,9 @@ The block below is parsed by `scripts/common.py` and gates real behavior
 silently discards everything after it. **Validate with `common.read_state()` after rewriting.**
 
 ```
-last_run: 2026-09-25 16:45 ET 5-friday-weekly-review (selftest PASSED all five, trading_enabled true, LIVE paper, broker equity 100416.12 at pre-flight; ZERO ORDERS - routine 5 MEASURES, IT DOES NOT TRADE; FRIDAY CONFIRMED via TZ=America/New_York so the weekly series is not corrupted by a mid-week write; FOURTH weekly review, posted to ClickUp 86bc7vzam; THE §1 ANSWER IS NO AND THIS IS THE FIRST WEEK EVERY WINDOW SAYS SO - satellite 0.0000 pct against VOO total return of +1.262 pct week / +0.827 pct since inception / +0.974 pct 1M / +5.444 pct 3M / +18.571 pct rolling 12M, so dollar-weighted excess is -1.262 / -0.827 / -0.974 / -5.444 / -18.571pp, ALL FIVE NEGATIVE where Week 3 had the first three POSITIVE; the three reviews that called those positives 'zero exposure to a market that fell' were right and the market rising inverted the whole column with no rule change; structural cost now ~5.57pp per rolling 12M, up from 4.97pp because the BENCHMARK improved; core return from the 706.74 fill +0.5610 pct with divergence 0.0000 pct, satellite 0.0000 pct on 30000 idle, account week +0.8813 pct vs VOO +1.2617 pct = -0.3804pp which is EXACTLY 0.6985 x VOO to four decimals, since inception +0.3927 pct vs +0.8271 pct = -0.4344pp or EIGHT TIMES last Friday's -0.055pp on five up sessions and an unchanged entry gap; DAILY AUDIT RECOMPUTED NOT INHERITED - 15 post-fill sessions, 9 VOO-down days ALL positive excess, 5 VOO-up days ALL negative, 1 flat day EXACTLY zero, separation PERFECT 15 of 15, worst relative day 09-21 at -0.4686pp which the journal calls 'biggest dollar gain on record'; ZERO CLOSED TRADES fourth consecutive week, §5.1-§5.4 still untested and §5.4 still not armed; THESES RECOUNTED FROM SOURCE 73 real, 0 accepted ever, 27 this week, and THE FAILURE POINT MOVED ONE TEST DOWN THE CHAIN - part 2 is now dominant at 11 of 27 against 4 of 16 last week while part 1 HALVED to 6, completing the three-week arc, and JBL is the case that settles what it means since widening the evidence bar WOULD HAVE LET IT THROUGH; REJECT BOARD RE-MEASURED 65 names, 20 beat VOO, 45 lagged, mean -2.04 pct median -2.47 pct, CRDO displaced HPE as largest excess at +24.28pp from +4.68pp in five sessions and QCOM moved most at +0.76 to +13.11pp; NEW FINDING - six of the top six excesses are ONE THEME rejected under FIVE DIFFERENT RULES; CATCH (9) FOUND THIS RUN AND IT IS THE WORST SHAPE YET - the close journals' '37th consecutive SESSION' for §5 increments 3-4 PER TRADING DAY while sessions increment by ONE, the account has operated 18 sessions, so it is a RUN counter wearing a session label and only the CALENDAR exposes it since re-running reproduces the same number; HOUSEKEEPING - week_of advanced to 2026-09-28 and new_positions_this_week reset to 0, MONTHLY ROLLOVER NOT DUE AND DELIBERATELY NOT RUN EARLY since every entry is dated 2026-09 which IS the current month and splitting a live month for five sessions is the failure the archive prevents arriving early, alerts.md empty with zero open and zero SYSTEMIC so NO PROMPT BUG TO SURFACE, control.md notes none; prior last_run preserved below)
+last_run: 2026-09-28 16:16 ET 4-market-close-journal (selftest PASSED all five, trading_enabled true, LIVE paper, broker equity 99664.22 at pre-flight; ZERO ORDERS - routine 4 RECORDS AND JOURNALS, IT DOES NOT TRADE; clock at 16:16:24 is_open FALSE with next_open 2026-09-29T09:30 - POST-BELL, and the stronger discriminator was RUN not inferred, a VOO daily bar for 2026-09-28 EXISTS AND IS COMPLETE at o 706.23 h 707.22 l 702.03 c 703.60 n 3061 v 62354, re-pulled identical, and the 15:59:59 ET latestTrade prints 703.60; THE FINDING IS THE FIRST CORPORATE ACTION IN THIS ACCOUNT'S HISTORY - VOO WENT EX-DIVIDEND TODAY AND bars --adjustment all SILENTLY REWROTE EVERY PRIOR CLOSE by the single factor 0.997432, so Friday's 710.705 now reads 708.88 and 707.28 reads 705.47, DIAGNOSED NOT ASSUMED since --adjustment raw and --adjustment split BOTH return the original series to the cent which rules out a split and rules out a data revision, implied dividend 1.820-1.824 per share or 180.26-180.64 on 99.046311231 shares and ALPACA DOES NOT PUBLISH THE FIGURE so it is an INFERENCE; THE CASH HAS NOT BEEN PAID - cash reads exactly 30000.00 - so THE BENCHMARK RECOGNISES THE DIVIDEND ON THE EX-DATE AND THE BOOK WILL RECOGNISE IT ON THE PAY DATE and every comparison between them is wrong by 180 dollars in one direction until the receivable is carried explicitly; quote prevDailyBar 710.705 vs bars --adjustment all 708.88 DISAGREE ON THE SAME SESSION RIGHT NOW and the standing both-legs-same-source rule DOES NOT CATCH IT; THE DAY, BOTH BASES - price-only equity 99688.98, day -703.72 or -0.7010 pct, since inception -311.02 or -0.3110 pct; total-return carrying the ~180.45 receivable, economic equity ~99869.4, day -523.3 or -0.5212 pct, since inception -0.1306 pct; VOO total return -0.745 pct vs price return -1.000 pct; SUPERLATIVE PULLED BEFORE WRITING AND IT SPLIT ON THE BASIS - -0.7010 pct IS the largest one-day loss on record on PRICE but -0.5212 pct is SECOND on TOTAL RETURN behind 09-23's -0.5327 pct which had no dividend in its window, so the price basis MANUFACTURES A RECORD THAT DID NOT HAPPEN; -0.3110 pct since inception is NOT a low, 09-16 reached -1.3396 pct; sleeves broker 69.90 pct delta +100.73, official 69.9064 pct delta +93.30, BOTH POSITIVE which is a SIGN FLIP from four consecutive negative runs AND the bases AGREE, NO REBALANCE DUE with core ~4.91 points inside the band edge, forty-seventh consecutive run inside 69.59-70.22; 1 EXCESS +0.2240pp against +0.2227pp PREDICTED by the cash weight alone, satellite contributed EXACTLY 0.0000 pct, a VOO-DOWN day with POSITIVE excess makes the separation 16 OF 16 with no exception; STEP 2 HAD NO OPERAND - zero satellite positions, highest_close ABSENT which is the third state carrying no as-of date, zero bars calls due on any satellite symbol and zero made, DO NOT BACKFILL - but the EMPTY SLEEVE IS THE ONLY REASON TODAY WAS HARMLESS because a mark stamped Friday and compared against today's adjusted close would have shown a 0.257 pct DRAWDOWN THAT DID NOT HAPPEN; CORE VOO NOT STAMPED fifty-sixth run and HIGH; GNRC not looked at twenty-eighth refusal and WEAK; HOUSEKEEPING all four checks run none fired - week rollover anchors matched on the ONE day a rollover was due because Friday's review had already advanced week_of to 2026-09-28, loss streak 0 with NO INPUT EVER, breaker INACTIVE halt_triggered_at none so NO circuit-breaker alert due, orders --status all returns ONE row filled and terminal so NOTHING IN LIMBO, trade_log and research_log correctly unappended, alerts.md empty, control.md notes none; THESES 73 real recounted from source, 0 accepted EVER, 0 THIS WEEK; ClickUp daily summary 86bc8yrz0; AND THE THING THAT IS WRONG - ROUTINES 1, 2 AND 3 LEFT NO COMMITTED OUTPUT TODAY, no commit dated 2026-09-28, no working branch on the remote, plan_today.md still plan_date 2026-09-25, prior last_run still 2026-09-25 16:45, CAUSE NOT VISIBLE FROM INSIDE THIS RUN AND NOT ASSERTED, A QUESTION FOR THE HUMAN; prior last_run preserved below)
 
-prior_run: 2026-09-25 16:20 ET 4-market-close-journal (selftest PASSED all five checks, trading_enabled true, LIVE paper, broker equity 100387.36 at pre-flight; ZERO ORDERS - routine 4 RECORDS AND JOURNALS, IT DOES NOT TRADE; clock at 16:17:04 is_open FALSE with next_open 2026-09-28T09:30 - the POST-BELL shape, and the stronger discriminator was RUN not inferred, a VOO daily bar for 2026-09-25 EXISTS AND IS COMPLETE at o 708.46 h 711.615 l 706.33 c 710.705 v 164682 n 4246, so a session happened and the summary was owed; STEP 2 HAD NO OPERAND - zero open satellite positions, highest_close is ABSENT which is the third state carrying no (as of ...) date at all, zero bars calls due on any satellite symbol and zero made, and MONDAY MUST NOT READ THE MISSING STAMP AS A FAILED CLOSE RUN NOR BACKFILL ANYTHING; RECONCILIATION CLEAN - one row core VOO 99.046311231 shares unchanged since the 09-03 fill, zero satellite blocks against zero satellite Alpaca rows, they agree; 5.1-5.4 NEVER STARTED for the THIRTY-SEVENTH consecutive session, 5.4 STILL NOT ARMED, 5.3 distance UNDEFINED not large, and TRADING_ENABLED WAS TRUE so a triggered stop WOULD have been submitted - an EMPTY SLEEVE not a disabled stop; THE DAY, OFFICIAL BASIS - VOO 710.705 vs 707.28 is +0.4843 pct which ENDS the two-session pause, equity 100392.71, day P&L +339.23 or +0.3391 pct, since inception +392.71 or +0.3927 pct, and that is THIRD BEST NOT BEST - checked against 25 pulled sessions, peak 09-21 +0.5962 pct then 09-22 +0.5893 pct, and today is 0.0005pp ahead of 09-03 which is A TIE; broker day-P&L fields pulled and NOT used, artifact +23.38 = 6.9 pct of the real move, and last_equity 100024.75 is a THIRD number matching neither basis; sleeves broker 70.12 pct delta -116.21, official 70.117 pct delta -117.81, BOTH NEGATIVE for the FOURTH run and agreeing to 2dp which is NOT the defect resolving, NO REBALANCE DUE MONDAY with core ~4.88 points inside the band edge, FORTY-SIXTH consecutive run inside 69.59-70.22; THE FINDING IS A CORRECTION TO A CLAIM SIX HOURS OLD - the midday run's volume calibration is WRONG, it read the partial bar's v 69713 as 49.5 pct of the four-session mean 140926 against 49.0 pct elapsed and concluded the volume TRACKS ELAPSED TIME ALMOST EXACTLY, but the ACTUAL session volume is 164682 which is 16.9 pct ABOVE that mean so the partial held 42.3 pct at 49.0 pct elapsed and the precision was AN ARTIFACT OF A STALE DENOMINATOR; the mechanism stands, the bar IS a live accumulator, but YOU CANNOT JUDGE A BAR'S COMPLETENESS FROM v AGAINST A PRIOR-DAY MEAN, n and v are A SMELL TEST NOT A MEASUREMENT and the reliable discriminator is THE CLOCK; AND THE TRAP WAS MILD TODAY WHICH IS THE MORE UNCOMFORTABLE HALF - the midday partial's close 710.555 against the official 710.705 is FIFTEEN CENTS so a mark stamped from it would have been small and self-healing, and a loud warning whose instances are all mild teaches a future run that the shortcut is safe; 1 SHARPENED IN THE WRONG DIRECTION - excess -0.1452pp against -0.1453pp PREDICTED by the cash weight alone, satellite contributed EXACTLY 0.0000 pct, and a good day in dollars is not a good day against the benchmark; CORE VOO NOT STAMPED fifty-fifth run and STRONG; GNRC not looked at twenty-seventh refusal and WEAK; HOUSEKEEPING all four checks run none fired - week rollover already done TWENTIETH consecutive run with ISO Monday 2026-09-21 confirmed via TZ=America/New_York and next boundary 2026-09-28, loss streak 0 with NO INPUT EVER, breaker INACTIVE halt_triggered_at none so no comparison required and NO circuit-breaker alert due, orders --status all returns ONE row filled and terminal so NOTHING IS IN LIMBO OVERNIGHT, trade_log and research_log correctly unappended, alerts.md empty, control.md notes none; THESIS COUNT RECOUNTED FROM SOURCE - 74 T- headings less the template = 73 real theses, 0 accepted EVER, 27 this week; ClickUp daily summary 86bc7vgbw created; TODAY'S WEEKLY REVIEW routine 5 IS STILL DUE and it is the LAST BEFORE THE 2026-10-02 MONTHLY ARCHIVE ROLLOVER)
+prior_run: 2026-09-25 16:45 ET 5-friday-weekly-review (FOURTH weekly review, posted to ClickUp 86bc7vzam; THE §1 ANSWER IS NO AND EVERY WINDOW SAYS SO - satellite 0.0000 pct against VOO total return +1.262 pct week / +0.827 pct since inception / +0.974 pct 1M / +5.444 pct 3M / +18.571 pct rolling 12M, all five excesses NEGATIVE where Week 3 had the first three POSITIVE and the market rising inverted the column with no rule change; structural cost ~5.57pp per rolling 12M, up from 4.97pp because the BENCHMARK improved; DAILY AUDIT RECOMPUTED NOT INHERITED - 15 post-fill sessions, 9 VOO-down ALL positive excess, 5 VOO-up ALL negative, 1 flat EXACTLY zero, separation PERFECT 15 of 15, now 16 of 16 after 09-28; ZERO CLOSED TRADES fourth consecutive week; 73 theses recounted, 0 accepted ever, 27 that week, and THE FAILURE POINT MOVED ONE TEST DOWN THE CHAIN with part 2 dominant at 11 of 27 against 4 of 16 in Week 3 while part 1 HALVED to 6; REJECT BOARD 65 names, 20 beat VOO, 45 lagged, mean -2.04 pct, CRDO largest excess at +24.28pp, and SIX OF THE TOP SIX EXCESSES ARE ONE THEME rejected under FIVE DIFFERENT RULES; CATCH 9 FOUND - the close journals' Nth consecutive SESSION counter increments 3-4 PER TRADING DAY so it is a RUN counter wearing a session label; week_of advanced to 2026-09-28 and new_positions_this_week reset to 0, MONTHLY ROLLOVER DELIBERATELY NOT RUN EARLY and it is due 2026-10-02)
 
 
 week_of: 2026-09-28
@@ -25,18 +25,24 @@ circuit_breaker: INACTIVE
 halt_triggered_at: none
 core_established: true
 core_ticker: VOO
-core_pct: 70.12
+core_pct: 69.91
 satellite_pct: 0.0
-cash_pct: 29.88
+cash_pct: 30.09
 open_thesis_ids: none
 ```
 
-*(`core_pct` / `cash_pct` above are on the **official-close basis** — core $70,392.71 of equity
-$100,392.71, using VOO's **2026-09-25 official close of 710.705**, which is **a COMPLETED session's
-bar** (`is_open: false`, `n` 4,246, `v` 164,682). On the broker-mark basis at 16:20 the same position
-reads **70.12 / 29.88** — **the two agree to two decimal places today.** **Both are in band and neither
-implies an action.** The two bases are still recorded separately because they have been shown to
-disagree in **sign** on `rebalance_delta`. **State which basis produced any figure you quote.**)*
+*(`core_pct` / `cash_pct` above are on the **official-close basis** — core $69,688.98 of equity
+$99,688.98, using VOO's **2026-09-28 close of 703.60**, a **COMPLETED session's bar** (`is_open: false`,
+n 3,061, re-pulled identical, last trade of the session at 15:59:59 ET = 703.60). On the broker-mark basis
+at 16:16 the same position reads **69.90 / 30.10** — **the two agree to two decimal places today.** **Both
+are in band and neither implies an action**, and `rebalance_delta` is **POSITIVE on both bases** (+$93.30
+official, +$100.73 broker) — **a sign flip from four consecutive negative runs.** **State which basis
+produced any figure you quote.**
+⚠⚠ **AND FROM TODAY THERE IS A THIRD BASIS QUESTION THAT IS NOT ABOUT THE BROKER AT ALL: PRICE vs TOTAL
+RETURN.** VOO went ex-dividend on 2026-09-28. On a **price** basis equity is **$99,688.98** and the day is
+**−0.7010%**; carrying the **~$180.45 dividend receivable the account has not yet been paid**, economic
+equity is **~$99,869.4** and the day is **−0.5212%**. **Neither is wrong. Quoting one without saying which
+is.**
 
 ---
 
@@ -81,372 +87,385 @@ position list win, and the discrepancy goes in the journal.
 
 Anything the next run must not lose. Cleared once acted on.
 
-**⚠ COLLAPSE, DO NOT APPEND — acted on thirty-eight times.** The Week 3 review flagged the memory files
-**against an instruction to read them in full**, calling the accumulation **actively harmful rather than
-untidy**: this repo's only continuity mechanism is the next run *reading* these files, and padding them
-with restatements raises the odds a genuinely live item gets skimmed. **Carry-forward is defined as
-cleared once acted on.** ⚠ **The 09-25 close run added NO new item.** It **corrected one inherited claim
-in place** (the midday run's volume calibration, six hours old) and **refreshed the rest with a completed
-session's numbers**. ⚠ **A correction replaces the claim it corrects — it does not sit beside it.**
-**Nothing live has been discarded.**
+**⚠ COLLAPSE, DO NOT APPEND — acted on thirty-nine times.** This repo's only continuity mechanism is the
+next run *reading* these files, and padding them with restatements raises the odds a genuinely live item
+gets skimmed. **Carry-forward is defined as cleared once acted on.** ⚠ **The 09-28 close run added TWO
+genuinely new items** (the ex-dividend basis shift, and the missing routines 1–3) **and collapsed five
+older ones whose content is now settled or superseded.** ⚠ **A correction replaces the claim it corrects —
+it does not sit beside it.** **Nothing live has been discarded.**
 
 ---
 
 ### Live — act on these
 
-- **⚠⚠ A BAR DATED *TODAY* IS PARTIAL WHILE THE MARKET IS OPEN — AND THE `n`/`v` TEST PROPOSED FOR
-  DETECTING IT IS WEAKER THAN ITS AUTHOR CLAIMED. CORRECTED 09-25 CLOSE, BY THE COMPLETED SESSION.**
-  Two routines read `is_open: true` and can therefore pull a live partial bar and mistake it for a close:
-  **routine 2 at 09:35 and routine 3 at 12:30.** *(The 09-25 open claimed routine 2 was the only one;
-  the midday run falsified that from its own clock. That correction stands.)* ⚠ **The midday case is the
-  more dangerous: at 09:36 the bar was an obvious stub (n 193, v 6,776), but at 12:41 it read c 710.555,
-  o 708.46, h 711.26, l 706.33, n 1,731, v 69,713 — half a session of real volume, a plausible OHLC and a
-  close inside the recent range. It does NOT look like a stub.**
-  ⚠⚠ **BUT THE MIDDAY RUN'S CALIBRATION OF THAT TEST WAS WRONG.** It wrote that v 69,713 was *"49.5% of
-  the four-session mean volume (140,926) against 49.0% of the session elapsed — the volume tracks elapsed
-  session time almost exactly."* **Today's ACTUAL full-session volume is 164,682 — 16.9% ABOVE that
-  four-session mean — so the partial held 42.3% of the day's eventual volume at 49.0% elapsed.** ⚠ **The
-  precision was an artifact of a STALE DENOMINATOR.** The mechanism stands (the bar **is** a live
-  accumulator); the measurement does not. ⚠⚠ **LOAD-BEARING CONSEQUENCE: YOU CANNOT JUDGE A BAR'S
-  COMPLETENESS FROM `v` AGAINST A PRIOR-DAY MEAN, because the day's own volume is unknown until the bell —
-  a busy day's half-finished bar can carry more volume than a quiet day's COMPLETE one. `n` and `v` are a
-  SMELL TEST, not a measurement. THE RELIABLE DISCRIMINATOR IS THE CLOCK.** The standing "use `bars`,
-  never a broker field" rule does **not** protect against this — the bar is from the right source and is
-  still not a close. **When in doubt use the last COMPLETED session.**
-  ⚠ **AND THE TRAP WAS MILD TODAY, WHICH IS THE MORE UNCOMFORTABLE HALF.** The midday partial's close read
-  **710.555** against the official **710.705** — **fifteen cents.** A `highest_close` stamped from it would
-  have been 15c low and **self-healing** by tonight. ⚠ **A loud warning whose observed instances are all
-  mild teaches a future run that the shortcut is safe. It is safe on a day like today. It is not safe on a
-  day with a 2% afternoon reversal, and nothing about a midday bar tells you which day you are in.**
-  ⚠ **MINOR, so it is not re-discovered as a finding: the 09-24 bar's one-share late revision HAS HELD**
-  (v 141,075 / n 3,719 on a second pull — it settled rather than drifting). **A re-pulled `v`/`n` mismatch
-  is not evidence of a bad pull.** *(Identical 09-23 / 09-24 closes of **707.28** confirmed a **fifth**
-  time, distinct OHLV — a real coincidence, not a duplicated bar. The 09-25 close of **710.705** ends that
-  pause.)*
+- **⚠⚠ VOO WENT EX-DIVIDEND ON 2026-09-28 AND `bars --adjustment all` REWROTE EVERY PRIOR CLOSE. THIS IS
+  THE FIRST CORPORATE ACTION IN THIS ACCOUNT'S HISTORY AND IT BREAKS THREE THINGS.**
+  **The observation:** Friday's journal recorded VOO's official closes as **710.705 / 707.28 / 707.28 /
+  712.69 / 712.76 / 701.85** (09-25 back to 09-18). The **same command on the same sessions** now returns
+  **708.88 / 705.47 / 705.47 / 710.86 / 710.93 / 700.05** — every historical close multiplied by a single
+  constant, **0.997432**; today's close untouched.
+  **Diagnosed, not assumed:** `--adjustment raw` **and** `--adjustment split` both return the **original
+  series to the cent**. ⚠ **`split` ≡ `raw` rules out a split; `raw` unchanged rules out a data revision;
+  one multiplicative factor from one date forward is a DIVIDEND.** Implied **$1.820–$1.824/share**
+  (bounded across six date-pairs against 2dp rounding) = **$180.26–$180.64** on 99.046311231 shares.
+  ⚠ **Alpaca does not publish the figure. This is an INFERENCE and must stay labelled as one.**
+  ⚠⚠ **(a) DO NOT READ THE CHANGED CLOSES AS A BAD PULL OR A BROKEN DATA PLANE.** Every close recorded
+  before today sits on the **pre-dividend** basis. Both series are correct; they are different bases.
+  **`--adjustment raw` reproduces every inherited figure exactly.**
+  ⚠⚠ **(b) `quote` AND `bars` NOW DISAGREE ABOUT THE SAME SESSION, RIGHT NOW.** `quote`'s `prevDailyBar`
+  reports 09-25 as **710.705**; `bars --adjustment all` reports it as **708.88**. **Two endpoints of one
+  API, $1.825 apart, both correct.** ⚠ **The standing "both legs from the same source" rule does NOT catch
+  this — it distinguished broker fields from bar fields, never `quote` from `bars`.**
+  ⚠⚠ **(c) §5.4 IS THE REAL CASUALTY, AND IT FAILS TOWARD SELLING.** A `highest_close` stamped before an
+  ex-date and compared against a post-ex `--adjustment all` close shows a **phantom drawdown equal to the
+  dividend** — 0.257% today; on a 2%-yielding name, **a fifth of the 10% stop's width per year**, given
+  away to arithmetic, on a position that never fell. **Nothing in the bar, the field or the `(as of …)`
+  date tells you the basis moved.** ⚠ **THE FIX, written into `positions.md`'s header where it will be
+  read before the next mark is stamped: `highest_close` and the close it is compared against must come
+  from the SAME adjustment basis, pulled in the SAME call — re-pull the whole window each run and take the
+  max from that one pull.** ⚠ **The empty sleeve is the ONLY reason this cost nothing today.**
+  ⚠ **(d) `voo_close_at_entry`'s DESIGN NOTE WAS FALSIFIED AND HAS BEEN CORRECTED IN PLACE.** It claimed a
+  baseline captured at entry "stays correct for positions closed months later." It is only true **between
+  ex-dates**: every later ex-date rescales the series underneath the stored number, leaving it too HIGH
+  and **understating the BENCHMARK by ~0.26%/quarter, ~1.0%/year.** ⚠ **That direction FLATTERS THE BOOK,
+  which is the direction a run is least likely to question.** Store it as a *label*; re-derive the
+  benchmark leg from a fresh pull at review time.
 
-- **⚠ HIGH-WATER MARKS: NOTHING TO BACKFILL ON MONDAY, AND NOTHING WAS SKIPPED — CHECKED BY THE ROUTINE
-  WHOSE WHOLE PURPOSE IS TO WRITE THEM.** `positions.md` carries **zero satellite blocks**, so
-  `highest_close` is **ABSENT — the third state, carrying no `(as of …)` date at all.** ⚠ **Do not read a
-  missing stamp as a failed close run: there is no field, so there was nothing to write.** **§5.4 is NOT
-  ARMED**; it arms on the first **satellite** fill, and the 09-03 core fill was not one. **Thirty-seventh
-  consecutive session with §5.1–§5.4 never started — UNTESTED CODE PATHS, and the running tally of "no
-  exits" records the ABSENCE OF A SUBJECT.** §5.3's distance is **UNDEFINED, not large.** ⚠ **The
-  distinction is FREE today and stops being free the moment a satellite fill lands** — after that, a mark
-  silently not written reads identically to a mark correctly unchanged, and **only the `(as of …)` date
-  separates them. Compare the date; never infer from the field's emptiness.** ⚠ **AND WHEN IT DOES ARM,
-  NO BACKFILL MAY TAKE ITS MAX FROM A BAR DATED TODAY WHILE THE MARKET IS OPEN — routine 3 runs
-  mid-session, so its own repair step is exposed to the partial-bar trap at the top of this list.**
+- **⚠⚠ THE ACCOUNT HAS NOT BEEN PAID THE DIVIDEND, AND A FALSIFIABLE PREDICTION IS ON THE RECORD.**
+  `cash` reads **exactly $30,000.00, unchanged**. ⚠ **So the BENCHMARK recognises the dividend on the
+  EX-DATE (today) and the BOOK will recognise it on the PAY DATE.** Until then **every book-vs-benchmark
+  comparison is wrong by ~$180 in one direction or the other** unless the receivable is carried
+  explicitly. ⚠⚠ **THE TRAP, and it is the sharpest one today: book price-basis −0.7010% against VOO's
+  `--adjustment all` −0.7448% gives an excess of +0.0438pp. THAT NUMBER IS PURE ARTIFACT — one leg
+  excludes the dividend, the other includes it — and the standing same-source rule does NOT catch it,
+  because BOTH LEGS ARE FROM `bars --adjustment all`. The mismatch is not between two feeds; it is between
+  the ACCOUNT and the BENCHMARK recognising the same cash on different dates.** **The honest figure is
+  +0.2240pp against +0.2227pp predicted by the cash weight.**
+  ⚠ **PREDICTION, WRITTEN IN ADVANCE: `cash` should rise from $30,000.00 to about $30,180.45 on the pay
+  date, most likely within a few sessions. IF IT HAS NOT APPEARED BY 2026-10-07, the paper account does
+  not model dividends at all — in which case the book structurally under-earns its own benchmark by VOO's
+  entire ~1.0% annual yield and §1's "beat the S&P TOTAL RETURN" is unwinnable BY CONSTRUCTION rather than
+  by strategy.** ⚠ **That would be a finding for the human, not something to fix from this seat. CHECK
+  `cash` EVERY RUN UNTIL IT RESOLVES.**
 
-- **⚠ TAPE FACTS THE NEXT RUN SHOULD NOT RE-DERIVE.** VOO **official** closes: **09-25 710.705**,
-  **09-24 707.28**, **09-23 707.28** (identical to the cent — verified a **fifth** time, distinct OHLV),
-  09-22 712.69, 09-21 712.76, 09-18 701.85. **The 09-25 bar is COMPLETE** (`is_open: false` at 16:17,
-  n 4,246, v 164,682). Core is **99.046311231 shares at 706.74**, cash **$30,000.00** flat, unrealized
-  **+$392.72 / +0.561%** against the fill — **and §5 exempts core, so no action attaches to that number in
-  either direction.** **ON THE 09-25 OFFICIAL CLOSE: equity $100,392.71, core $70,392.71 = 70.117%, cash
-  29.883%, day P&L +$339.23 / +0.3391%, since inception +$392.71 / +0.3927%.** On broker marks at 16:20:
-  equity **$100,387.36**, core **70.12%**, cash **29.88%**. **Forty-sixth consecutive run inside
-  69.59–70.22.** ⚠ **`rebalance_delta` is NEGATIVE on both bases for the FOURTH run running (−$117.81
-  official, −$116.21 broker) and the two agree to 2dp on core % — that is NOT the defect resolving, since
-  the same quantity disagreed in SIGN on 09-24. A run that checks one basis and finds agreement learns
-  nothing.** **NO REBALANCE IS DUE MONDAY** — §2 acts at the **65/75 band edge** and the core sits
-  **~4.88 points** inside it. ⚠ **+0.3927% SINCE INCEPTION IS THIRD BEST, NOT BEST** — the peak is
-  **09-21 at +0.5962%**, then 09-22 **+0.5893%**; today is **0.0005pp** ahead of 09-03's +0.3922%, **a tie,
-  not a lead.** *(Checked against 25 pulled sessions. That pull reaches back to 08-21, **before the 09-03
-  fill**, where the rows are **COUNTERFACTUAL** — the account held $100,000 cash — and must never be read
-  as account history.)* **Audit any superlative here before repeating it.**
+- **⚠⚠ ROUTINES 1, 2 AND 3 LEFT NO COMMITTED OUTPUT FOR 2026-09-28 — A FULL, CONFIRMED TRADING SESSION.**
+  Observable facts, not inference from timestamps: **no commit dated 2026-09-28** (newest is Friday's
+  20:59 UTC weekly-review merge); **`git ls-remote` shows only `main`**, no working branch from today;
+  **`plan_today.md` still carries `plan_date: 2026-09-25`**; **`state.md`'s `last_run` still read
+  2026-09-25 16:45 ET** when this run started. ⚠ **The repo's own definition of a run having happened is
+  a commit — "push, or it never happened" — and by that definition three of four runs did not happen.**
+  ⚠ **`control.md` warns against diagnosing schedule faults from run TIMESTAMPS; this is the ABSENCE of
+  committed output, which is a different claim. The CAUSE is not visible from inside this run and is NOT
+  asserted. IT IS A QUESTION FOR THE HUMAN.**
+  ⚠⚠ **TODAY'S COST WAS ZERO AND THAT IS LUCK, NOT DESIGN** — an empty sleeve gave routine 3 nothing to
+  manage, an empty plan gave routine 2 nothing to execute. ⚠ **On a day with an open satellite position a
+  missing routine 3 is an UNMANAGED §5 BOOK for a full session.**
+  ⚠⚠ **AND THE GAP DESTROYED A PIECE OF EVIDENCE: today was the FIRST morning in this account's history
+  with a GENUINELY STALE `plan_today.md`** — word for word the setup the carry-forward predicted the
+  staleness gate would finally fire on — **and the gate was not reached, because the run containing it did
+  not execute.** ⚠ **The prediction was right about the setup and the test STILL DID NOT HAPPEN. The gate
+  remains untested code and the count is 28, NOT 29.** ⚠ **`plan_today.md` was left UNTOUCHED
+  deliberately: routine 4 does not write it, and tidying the stale `plan_date` away would erase the only
+  in-repo evidence that no plan was produced. THE NEXT PRE-MARKET RUN OVERWRITES IT NORMALLY.**
+  ⚠ **If a pre-market run is reading this: the funnel is empty because NOTHING RAN, not because nothing
+  was found. 0 theses were written on 2026-09-28.**
 
-- **⚠ STANDING RULE: NEVER `equity − last_equity` AS A DAY'S P&L, NEVER `unrealized_intraday_pl`,
-  NEVER a `positions` field for a close or an execution reference. Close-to-close from
-  `bars --adjustment all` (⚠ **a COMPLETED session's bar**), a fresh `quote` for execution.** ⚠ **09-25
-  confirms the rule FROM THE OTHER END, exactly as predicted.** On 09-24 the true move was **zero** and
-  the broker reported −$127.77 — **100% artifact.** On 09-25 the true move is **+$339.23** and the broker
-  reported **+$362.61** — artifact **+$23.38, only 6.9% of the move.** ⚠ **THE RULE'S VALUE IS INVERSELY
-  PROPORTIONAL TO THE SIZE OF THE REAL MOVE, so it looks like pedantry on exactly the days it costs
-  nothing to follow — and $23.38 would still have been reported as the day's P&L.** ⚠ **NEW AND WORTH
-  KEEPING: `last_equity` read 100,024.75 — NEITHER the official prior equity (100,053.48) NOR the prior
-  run's 16:15 broker equity (99,957.40). It is a THIRD number of its own, which is why the field is
-  UNUSABLE rather than merely imprecise.** ⚠ **`lastday_price` is CLOSED as a question — four falsified
-  mechanisms, both signs observed, and on 09-25 it read 706.99 at the pre-market, the open AND the close,
-  29c below the actual prior close all day. STOP PREDICTING IT.** **Corrected post-bell `current_price`
-  series, SIX observations: +$1.13 (09-18), −$0.22 (09-21), +$0.169 (09-22), +$0.02 (09-23), −$0.97
-  (09-24), −$0.054 (09-25).** ⚠ **Today's is the SECOND smallest, not the smallest — 09-23's 2c holds
-  that. Both signs, range 2c to $1.13, no predictable sign and no correctable offset.** **The practice of
-  writing falsifiable predictions down in advance is NOT closed — keep it for live questions.**
+- **⚠⚠ A BAR DATED *TODAY* IS PARTIAL WHILE THE MARKET IS OPEN, AND `n`/`v` CANNOT TELL YOU OTHERWISE.**
+  Two routines read `is_open: true` and can pull a live partial bar: **routine 2 at 09:35 and routine 3 at
+  12:30.** ⚠ **The midday case is the dangerous one: at 12:41 on 09-25 the partial read c 710.555, o
+  708.46, h 711.26, l 706.33, n 1,731, v 69,713 — half a session of real volume, a plausible OHLC and a
+  close inside the range. It does NOT look like a stub.** ⚠⚠ **YOU CANNOT JUDGE A BAR'S COMPLETENESS FROM
+  `v` AGAINST A PRIOR-DAY MEAN** — the day's own volume is unknown until the bell, and the 09-25 midday
+  run's "volume tracks elapsed time almost exactly" was an artifact of a **stale denominator** (actual
+  volume came in 16.9% above the mean it divided by). **`n` and `v` are a SMELL TEST. THE RELIABLE
+  DISCRIMINATOR IS THE CLOCK.**
+  ⚠ **RE-EXERCISED AND HELD ON 09-28, IN THE OPPOSITE DIRECTION:** today's session printed **v 62,354
+  against Friday's 164,725 — 38%** — and the first instinct was to doubt the bar. **It is a COMPLETE
+  session.** `feed=iex` returns **one venue's slice** of consolidated volume, and the pulled window
+  already spans **47,589 to 164,725 on sessions all known to be complete.** ⚠ **The clock settled it; the
+  volume was not allowed to. LOW VOLUME IS NOT EVIDENCE OF A PARTIAL BAR ANY MORE THAN HIGH VOLUME IS
+  EVIDENCE OF A COMPLETE ONE.**
+  ⚠ **And the trap is usually MILD, which is the uncomfortable half** — the 09-25 midday partial was
+  **fifteen cents** off the official close, small and self-healing. **A loud warning whose observed
+  instances are all mild teaches a future run that the shortcut is safe. It is not safe on a day with a 2%
+  afternoon reversal, and nothing about a midday bar tells you which day you are in.**
 
-- **⚠⚠ §1 BENCHMARK — THE STANDING FINDING JUST GOT ITS CLEANEST DEMONSTRATION, AND IT SHARPENED IN THE
-  WRONG DIRECTION.** **VOO +0.4843%, the book +0.3391%, excess −0.1452pp — against the −0.1453pp PREDICTED
-  by simply holding 70% core and 30% idle cash. Agreement to a hundredth of a basis point.** The satellite
-  sleeve contributed **exactly 0.0000%**, as it has for the account's entire history, so the book captured
-  **precisely 70% of the market's move and nothing else.** ⚠⚠ **THE "EVERY POSITIVE-EXCESS DAY WAS A VOO
-  DOWN DAY" CLAIM IS NO LONGER INHERITED — THE 09-25 WEEKLY REVIEW RECOMPUTED ALL 15 POST-FILL SESSIONS
-  FROM OFFICIAL CLOSES AND THE SEPARATION IS PERFECT, 15 OF 15: 9 VOO-down days ALL positive excess, 5
-  VOO-up days ALL negative, 1 flat day EXACTLY 0.0000pp. NOT ONE EXCEPTION IN THE RECORD.** ⚠ **That is
-  not a performance statistic — it is the signature of a book with ONE long position at 70% weight and
-  NO SECOND SOURCE OF RETURN. Worst relative session: 09-21 at −0.4686pp, the day the journal calls
-  "biggest dollar gain on record."** ⚠ **A GOOD DAY IN DOLLARS IS NOT A GOOD DAY AGAINST THE
-  BENCHMARK, and on 09-25 those two readings point in OPPOSITE directions — which is the single easiest
-  day to stop asking §1's actual twelve-month question.** *(Context, not a trade: the 10-year reached
-  ~5.22% and the 30-year ~5.48–5.50% on 09-25 — a fact about what the BENCHMARK and the core sleeve are
-  competing against.)*
+- **⚠ HIGH-WATER MARKS: NOTHING TO BACKFILL, AND NOTHING WAS SKIPPED — CHECKED BY THE ROUTINE WHOSE WHOLE
+  PURPOSE IS TO WRITE THEM.** `positions.md` carries **zero satellite blocks**, so `highest_close` is
+  **ABSENT — the third state, carrying no `(as of …)` date at all.** ⚠ **Do not read a missing stamp as a
+  failed close run: there is no field, so there was nothing to write. DO NOT BACKFILL ANYTHING.** **§5.4
+  is NOT ARMED**; it arms on the first **satellite** fill, and the 09-03 core fill was not one. §5.3's
+  distance is **UNDEFINED, not large.** ⚠ **The distinction is FREE today and stops being free the moment
+  a satellite fill lands** — after that, a mark silently not written reads identically to a mark correctly
+  unchanged, and **only the `(as of …)` date separates them. Compare the date; never infer from the
+  field's emptiness.** ⚠ **AND WHEN IT ARMS, NO BACKFILL MAY TAKE ITS MAX FROM A BAR DATED TODAY WHILE THE
+  MARKET IS OPEN** (routine 3 runs mid-session) **NOR FROM A DIFFERENT ADJUSTMENT BASIS THAN THE ONE IT IS
+  COMPARED AGAINST** (top item). **§5.1–§5.4 have never had an operand in this account's entire history.**
 
-- **⚠⚠ THE MOST DECISION-RELEVANT REJECTION ON THE BOARD, 09-25: JBL.** Anthropic committed **~$11.6B
-  over seven years** to **Akamai**; Akamai's 8-K then did what open item (3) has said for a month never
-  happens — **named a US-listed supplier and allocated a specific dollar figure to it**, a Build Request
-  authorizing **Jabil (JBL)** to procure **~$1.7 billion of memory components**. ⚠ **And it is not
-  revenue: Akamai pays "all corresponding supplier invoice amounts," Jabil holds the components "IN
-  CONSIGNMENT AS BAILEE," and Akamai "will REPURCHASE such components from the Company AT COST."** A
-  disclosed statement of **zero margin**. The only figure that would satisfy part 2 — Jabil's assembly
-  fee — **is disclosed by nobody.** ⚠⚠ **This is a FIFTH form of open item (3)'s binding constraint and
-  the ONLY one no widening of the evidence bar would relieve — widening it would have let this
-  THROUGH.** The other four are about information being *withheld*; this one is **fully disclosed and
-  simply the wrong quantity.** ⚠ **Do not reach for this chain again, and not at a lower price — the
-  price was never the problem.** Full working in **T-2026-09-25-01**.
+- **⚠ TAPE FACTS THE NEXT RUN SHOULD NOT RE-DERIVE — AND NOTE THE BASIS ON EVERY ONE.** VOO closes on
+  **`--adjustment raw` (the basis every inherited figure was recorded on)**: **09-28 703.60**, 09-25
+  **710.705**, 09-24 707.28, 09-23 707.28 (identical to the cent, verified five times, distinct OHLV),
+  09-22 712.69, 09-21 712.76, 09-18 701.85. ⚠ **On `--adjustment all` TODAY those same sessions read
+  703.60 / 708.88 / 705.47 / 705.47 / 710.86 / 710.93 / 700.05.** The 09-28 bar is **COMPLETE**
+  (`is_open: false` at 16:16, n 3,061, re-pulled identical, last trade 703.60 at 15:59:59 ET).
+  Core is **99.046311231 shares at 706.74**, cash **$30,000.00** flat. **ON THE 09-28 CLOSE, PRICE BASIS:
+  equity $99,688.98, core $69,688.98 = 69.9064%, cash 30.0936%, day P&L −$703.72 / −0.7010%, since
+  inception −$311.02 / −0.3110%.** **TOTAL-RETURN BASIS carrying the ~$180.45 receivable: ~$99,869.4,
+  day −0.5212%, since inception −0.1306%.** On broker marks at 16:16: equity **$99,664.22**, core
+  **69.90%**, cash **30.10%**. **Forty-seventh consecutive run inside 69.59–70.22.** ⚠ **`rebalance_delta`
+  is POSITIVE on BOTH bases (+$93.30 official, +$100.73 broker) — a SIGN FLIP from four consecutive
+  negative runs, and the bases AGREE. NOT the defect resolving; the same quantity disagreed in SIGN on
+  09-24. A run that checks one basis and finds agreement learns nothing.** **NO REBALANCE IS DUE** — §2
+  acts at the **65/75 band edge** and core sits **~4.91 points** inside it.
+  ⚠⚠ **THE SUPERLATIVE WAS PULLED BEFORE IT WAS WRITTEN AND IT SPLIT ON THE BASIS.** On **price**,
+  −0.7010% **IS** the largest single-day loss in this account's history (previous worst 09-23, −0.5327%).
+  On **total return** it is **−0.5212%, which is SECOND** — 09-23 still holds it, and 09-23 had no
+  dividend in its window so the comparison is like-for-like. ⚠ **A record that exists on one basis and not
+  the other, where the difference is money the account is OWED. QUOTE THE BASIS OR DO NOT QUOTE THE
+  NUMBER.** ⚠ **Since inception −0.3110% is NOT a low** — 09-16 reached −1.3396%, 09-15 −1.0350%, 09-10
+  −0.9954%. *(Grounded from a 30-session pull. That pull reaches back before the 09-03 fill, where the
+  rows are **COUNTERFACTUAL** — the account held $100,000 cash — and must never be read as account
+  history.)* **Audit any superlative here before repeating it.**
 
-- **⚠⚠ THE §4 PRICED-IN FILTER HAS THREE DEFECT SHAPES AND THE THIRD IS NEW.** **Shape one: a DRAWDOWN
-  misread as priced-in** (nine instances, newest CNC −6.44% → `true`), plus three near-misses that
-  cleared only because the *fall* was fractionally too small (LMT −3.61%, GM −3.95%, LH −3.83%).
-  **Shape two: the filter working** on genuine news rises (SHOP +9.61%, ILMN +11.54%, GRAL +44.67%).
-  ⚠ **Shape three, 09-25 JBL: a genuine RISE UNRELATED TO THE NEWS that the window swept up** —
-  +4.97% over five sessions, but the path was a grind whose largest day was **+1.72%** and whose
-  **news day moved JBL +0.63%.** §4 conditions on having moved 4% "**on this news**"; the mechanized
-  check cannot see causation. ⚠ **The defect is SIGN- AND CAUSATION-BLINDNESS, not the threshold.**
-  ⚠⚠ **AND THE AGENT DID NOT ACT ON IT, DELIBERATELY — that is the part to carry forward.** This was
-  the exact setup the "do not lower the bar" rule guards against: **a candidate the agent liked, plus
-  a plausible technical case that the filter misfired.** Had part 2 not failed independently, the
-  honest outcome would **still** have been rejected-on-priced-in with the defect logged. ⚠ **Not
+- **⚠ STANDING RULE: NEVER `equity − last_equity` AS A DAY'S P&L, NEVER `unrealized_intraday_pl`, NEVER a
+  `positions` field for a close or an execution reference. Close-to-close from `bars` (⚠ a COMPLETED
+  session's bar, ⚠ and STATE THE ADJUSTMENT), a fresh `quote` for execution.** ⚠ **09-28: broker
+  `equity − last_equity` = **−$736.91**, `unrealized_intraday_pl` −$736.90, against a real price-basis
+  move of −$703.72 — artifact **−$33.19**; against the total-return move of −$523.3 it is **−$213.6**.**
+  ⚠ **`last_equity` read 100,401.13 — a FOURTH distinct number, matching neither the official prior equity
+  (100,392.71) nor Friday's 16:20 broker equity (100,387.36). The field is UNUSABLE, not imprecise.**
+  ⚠ **`lastday_price` is CLOSED as a question — four falsified mechanisms, both signs observed, and on
+  09-28 it read **710.79**, which matches NEITHER basis (not raw 710.705, not adjusted 708.88). STOP
+  PREDICTING IT; DO NOT RE-OPEN IT.** **Post-bell `current_price` series, SEVEN observations: +$1.13
+  (09-18), −$0.22 (09-21), +$0.169 (09-22), +$0.02 (09-23), −$0.97 (09-24), −$0.054 (09-25), −$0.25
+  (09-28).** Both signs, range 2c to $1.13, **no predictable sign and no correctable offset.** **Keep
+  writing falsifiable predictions down in advance for LIVE questions** — there is one on the dividend
+  credit, above.
+
+- **⚠⚠ §1 BENCHMARK — THE SEPARATION IS NOW 16 OF 16 AND STILL HAS NO EXCEPTION.** **09-28 (total-return
+  basis): VOO −0.7448%, the book −0.5212%, excess +0.2240pp — against +0.2227pp PREDICTED by simply
+  holding 70.12% core and the rest in idle cash. Agreement to 0.0013pp.** The satellite sleeve contributed
+  **exactly 0.0000%**, as it has for the account's entire history. ⚠⚠ **The 09-25 weekly review recomputed
+  all 15 post-fill sessions from official closes and found PERFECT separation: 9 VOO-down days ALL
+  positive excess, 5 VOO-up days ALL negative, 1 flat day EXACTLY 0.0000pp. 09-28 is a TENTH VOO-down day
+  with a POSITIVE excess — 16 of 16, not one exception in the record.** ⚠ **That is not a performance
+  statistic — it is the signature of a book with ONE long position at ~70% weight and NO SECOND SOURCE OF
+  RETURN.** ⚠⚠ **AND 09-28 IS THE INVERSE OF 09-25'S LESSON: on 09-25 a good day in dollars was a bad day
+  against the benchmark; on 09-28 a LOSING day in dollars is a POSITIVE-EXCESS day, and it reads as a
+  "good" day precisely because the market fell. BOTH READINGS ARE THE SAME ONE FACT. Neither is skill.**
+  *(Context, not a trade: the 10-year reached ~5.22% and the 30-year ~5.48–5.50% on 09-25 — a fact about
+  what the BENCHMARK and the core sleeve are competing against.)*
+
+- **⚠⚠ THE MOST DECISION-RELEVANT REJECTION ON THE BOARD: JBL (09-25).** Anthropic committed **~$11.6B
+  over seven years** to **Akamai**; Akamai's 8-K then did what open item (3) says never happens — **named
+  a US-listed supplier and allocated a specific dollar figure to it**, a Build Request authorizing
+  **Jabil (JBL)** to procure **~$1.7 billion of memory components**. ⚠ **And it is not revenue: Akamai
+  pays "all corresponding supplier invoice amounts," Jabil holds the components "IN CONSIGNMENT AS
+  BAILEE," and Akamai "will REPURCHASE such components from the Company AT COST."** A disclosed statement
+  of **zero margin**. The only figure that would satisfy part 2 — Jabil's assembly fee — **is disclosed by
+  nobody.** ⚠⚠ **A FIFTH form of open item (3)'s binding constraint and the ONLY one no widening of the
+  evidence bar would relieve — widening it would have let this THROUGH.** ⚠ **Do not reach for this chain
+  again, and not at a lower price — the price was never the problem.** Full working in **T-2026-09-25-01**.
+
+- **⚠⚠ THE §4 PRICED-IN FILTER HAS THREE DEFECT SHAPES.** **Shape one: a DRAWDOWN misread as priced-in**
+  (nine instances, newest CNC −6.44% → `true`), plus three near-misses that cleared only because the
+  *fall* was fractionally too small (LMT −3.61%, GM −3.95%, LH −3.83%). **Shape two: the filter working**
+  on genuine news rises (SHOP +9.61%, ILMN +11.54%, GRAL +44.67%). **Shape three (09-25, JBL): a genuine
+  RISE UNRELATED TO THE NEWS that the window swept up** — +4.97% over five sessions, but the path was a
+  grind whose largest day was **+1.72%** and whose **news day moved JBL +0.63%.** §4 conditions on having
+  moved 4% "**on this news**"; the mechanized check cannot see causation. ⚠ **The defect is SIGN- AND
+  CAUSATION-BLINDNESS, not the threshold.** ⚠⚠ **AND THE AGENT DID NOT ACT ON IT, DELIBERATELY — that is
+  the part to carry forward.** This was the exact setup the "do not lower the bar" rule guards against: **a
+  candidate the agent liked, plus a plausible technical case that the filter misfired.** ⚠ **Not
   permission. Only a human may change §4 or `alpaca.py move`.**
+  **⚠ AND THE OPPOSITE FAILURE, WHICH FAILS TOWARD TAKING A TRADE: AKAM read `priced_in: false` at +3.19%**
+  while its closes ran **104.53 (09-18) → 117.435 (09-21) = +12.35% IN ONE SESSION**, then 118.33, 118.42,
+  then **110.44 (09-24) = −6.74%.** ⚠ **A +12.35% event move and a −6.74% give-back inside the SAME
+  five-session window, netting to a passing +3.19%.** Prior instances (QCOM, AVAV) were **intraday** round
+  trips; ⚠ **this one spans MULTIPLE SESSIONS.** AKAM was never at risk (first-order killed it), **but a
+  second-order beneficiary of the same chain would have been waved straight through**, and ⚠ **no 09:35
+  re-validation would have surfaced it either.**
 
-- **⚠⚠ OPEN ITEM (2)'S WORST INSTANCE, AND IT FAILS TOWARD TAKING A TRADE.** **AKAM read
-  `priced_in: false` at +3.19%** while its closes ran **104.53 (09-18) → 117.435 (09-21) = +12.35% IN
-  ONE SESSION**, then 118.33, 118.42, then **110.44 (09-24) = −6.74%.** ⚠ **A +12.35% event move and a
-  −6.74% give-back fell inside the SAME five-session window and netted to a passing +3.19%.** Prior
-  instances (QCOM, AVAV) were **intraday** round trips; ⚠ **this one spans MULTIPLE SESSIONS — the
-  round trip no longer has to hide inside a single bar.** AKAM was never at risk (first-order killed
-  it), **but a second-order beneficiary of the same chain would have been waved straight through**,
-  and ⚠ **no 09:35 re-validation would have surfaced it either — the sharpest evidence yet for open
-  item (7).**
+- **⚠⚠ THE PRESSURE TO LOWER THE §4 BAR IS MEASURABLE, AND IT IS THE ONLY ITEM HERE ASKING FOR JUDGMENT
+  RATHER THAN CARE.** **73 real theses, ZERO ACCEPTED EVER** (74 `### T-` headings less the template,
+  recounted from source at the 09-28 close). ⚠ **27 was LAST week's figure; THIS week stands at 0, and not
+  because the funnel found nothing — because the pre-market run left no output.** Set beside that: an
+  empty satellite sleeve, **~30% idle cash**, a weekly cap unused at **0 of 3**, an INACTIVE breaker, and
+  an account at **−0.311% since inception (−0.131% carrying the dividend)** — ⚠ **now NEGATIVE on both
+  bases, where every prior version of this item said positive.** ⚠⚠ **A LOSING ACCOUNT RAISES THE PULL IN
+  A NEW WAY AND THE DISTINCTION STILL HOLDS: the book is down because it holds 70% of a market that fell,
+  and it BEAT that market today by exactly the cash weight. "Deploy something" is not what today's numbers
+  argue for; they argue that the sleeve has no effect in EITHER direction.** ⚠ **09-25 is still the
+  sharpest evidence: the funnel finally produced the well-sourced, named-supplier, allocated-figure
+  candidate that a month of rejections implied was the missing ingredient — AND IT WAS STILL NOT A TRADE.
+  That is evidence the bar is not what is binding, NOT evidence the bar should move.** §4's own position
+  governs: a run that finds nothing is a successful run. **Naming the pull is the only defence against
+  acting on it.** If the bar is to move, that is a `strategy.md` change and **only the human may make it.**
+  ⚠⚠ **WHERE THE 27 ACTUALLY DIED (Week 4, measured): part 2 = 11, part 1 = 6, premise/no-Company-A = 5,
+  §3 = 2, §4 priced-in decisive = 2, part 3 = 1.** ⚠ **Part 2 is now DOMINANT (from 4 of 16 in Week 3)
+  while part 1 HALVED to 6 (from 9 of 16) — completing a three-week arc and REFRAMING THE HUMAN'S OPEN
+  QUESTION from "is the evidence bar too high" to "can this strategy produce trades AT ALL from public
+  disclosure, and if rarely, should the 30% sit in CASH or in the INDEX while it waits."** ⚠ **Neither
+  version is this seat's to answer.**
 
-- **⚠⚠ THE PRESSURE TO LOWER THE §4 BAR IS MEASURABLE, AND IT IS THE ONLY ITEM HERE ASKING FOR
-  JUDGMENT RATHER THAN CARE.** **73 real theses, ZERO ACCEPTED EVER**, 27 this week (09-21: 3, 09-22:
-  5, 09-23: 6, 09-24: 7, 09-25: 6). ⚠ **RECOUNTED FROM SOURCE at the 09-25 close: 74 `### T-` headings
-  in `research_log.md` less the template heading = 73. The figure is CURRENT as of this run, not
-  carried.** Set beside that: an empty satellite sleeve, **~30% idle cash**, a weekly cap unused at
-  **0 of 3**, an INACTIVE breaker, and an account at **+0.393% since inception.** ⚠ **09-25 raises the
-  pressure in a new way and the distinction matters: the funnel finally produced the well-sourced,
-  named-supplier, allocated-figure candidate that a month of rejections implied was the missing
-  ingredient — AND IT WAS STILL NOT A TRADE. That is evidence the bar is not what is binding, NOT
-  evidence the bar should move.** ⚠ **And a green day raises it a second way: the account is up
-  +0.393% and simultaneously LAGGING its benchmark by exactly the cash drag, which makes "deploy
-  something" feel like the obvious reading. It is not this seat's call.** §4's own position governs: a
-  run that finds nothing is a successful run. **Naming the pull is the only defence against acting on
-  it.** If the bar is to move, that is a `strategy.md` change and **only the human may make it.**
-  ⚠⚠ **THE 09-25 WEEKLY REVIEW MEASURED WHERE THE 27 ACTUALLY DIED, AND THE FAILURE POINT HAS MOVED ONE
-  TEST DOWN THE CHAIN: PART 2 IS NOW DOMINANT AT 11 OF 27 (from 4 of 16 in Week 3) WHILE PART 1 HALVED
-  TO 6 OF 27 (from 9 of 16).** Full breakdown: **part 2 = 11, part 1 = 6, premise/no-Company-A = 5,
-  §3 = 2, §4 priced-in decisive = 2, part 3 = 1.** ⚠ **That completes a three-week arc — Week 2 called
-  the constraint the unnamed counterparty (part 1), Week 3 found a second head at part 2, Week 4 shows
-  part 2 BECAME the primary one — and it REFRAMES THE HUMAN'S OPEN QUESTION from "is the evidence bar
-  too high" to "can this strategy produce trades AT ALL from public disclosure, and if rarely, should
-  the 30% sit in CASH or in the INDEX while it waits."** ⚠ **Neither version is this seat's to answer.**
+- **⚠ THERE IS NO LIVE RESEARCH ITEM. THE FUNNEL IS EMPTY — AND ON 09-28 IT IS EMPTY BECAUSE NOTHING RAN.**
+  ⚠ **09-25's six rejections do NOT become a queue — DO NOT REHABILITATE ANY OF THEM AT A DIFFERENT
+  PRICE.** **JBL** (part 2, see above) · **AKAM** (first-order; and see the priced-in item) · **memory
+  suppliers** (rule (v) — none named in any disclosure; **Lenovo** is the one other named supplier and is
+  **§3 outright**, HK-listed with only an OTC ADR) · **RDW** ($980M is a **multiple-award CEILING across
+  15 vendors**; also first-order; also below the §3 floor) · **FLNC** (no value disclosed; EVE Power is
+  Shenzhen-listed) · **the rate/oil/PMI complex** (environment input, not a Company A). ⚠ **AND 09-24'S
+  SEVEN WERE NOT REHABILITATED EITHER.** **A rejection is not a queue.**
+  ⚠ **ELMT ENTERED THIS FUNNEL THREE TIMES IN THREE SESSIONS AND THE THIRD TIME CARRIED A DISCLOSED PRICE
+  ($124.75M) — EXACTLY THE MATERIAL WHOSE ABSENCE KILLED THE FIRST TWO. IT WAS NOT SCREENED, and that
+  refusal COST something.** "But now there is a number" is the purest form of the pull to re-open a §3
+  kill on evidence §3 does not weigh. **A microcap with a Vietnam-listed counterparty is ineligible at
+  every price and at every level of disclosure. Do not screen it again.**
+  ⚠ **One §3 question remains reached-but-undecided: Shopify is a Canadian issuer trading as common stock
+  on a US exchange, which §3's "US-listed common stock" does not obviously settle. A future run reaching
+  this with a LIVE candidate must put it to the human rather than decide it from this seat.**
 
-- **⚠ THERE IS NO LIVE RESEARCH ITEM. THE FUNNEL IS EMPTY AND THAT IS ITS NORMAL STATE.** ⚠ **09-25's
-  six rejections do NOT become a queue — DO NOT REHABILITATE ANY OF THEM AT A DIFFERENT PRICE.**
-  **JBL** (part 2, see above) · **AKAM** (first-order; and see the priced-in item) · **memory
-  suppliers** (rule (v) — none named in any disclosure; **Lenovo** is the one other named supplier and
-  is **§3 outright**, HK-listed with only an OTC ADR) · **RDW** ($980M is a **multiple-award CEILING
-  across 15 vendors**; also first-order; also below the §3 floor) · **FLNC** (no value disclosed; EVE
-  Power is Shenzhen-listed) · **the rate/oil/PMI complex** (environment input, not a Company A).
-  ⚠ **AND 09-24'S SEVEN WERE NOT REHABILITATED EITHER** — no `move`, `quote`, `bars` or `asset` call
-  on ILMN, GRAL, BBY, PYPL, SHOP, SoftBank/OpenAI or ELMT. **A rejection is not a queue.**
-  ⚠ **ELMT ENTERED THIS FUNNEL THREE TIMES IN THREE SESSIONS AND THE THIRD TIME CARRIED A DISCLOSED
-  PRICE ($124.75M) — EXACTLY THE MATERIAL WHOSE ABSENCE KILLED THE FIRST TWO. IT WAS NOT SCREENED, and
-  that refusal COST something.** "But now there is a number" is the purest form of the pull to re-open
-  a §3 kill on evidence §3 does not weigh. **A microcap with a Vietnam-listed counterparty is
-  ineligible at every price and at every level of disclosure. Do not screen it again.**
-  ⚠ **One §3 question remains reached-but-undecided: Shopify is a Canadian issuer trading as common
-  stock on a US exchange, which §3's "US-listed common stock" does not obviously settle. A future run
-  reaching this with a LIVE candidate must put it to the human rather than decide it from this seat.**
-
-- **⚠ AUDIT EVERY INHERITED CLAIM BEFORE REPEATING IT — NINE CATCHES, AND THEY KEEP CHANGING SHAPE.**
-  ⚠⚠ **(9) IS NEW ON THE 09-25 WEEKLY REVIEW AND IT IS THE WORST SHAPE YET: A COUNTER WHOSE *UNIT* IS
-  WRONG.** Every close journal reports §5.1–§5.4 as untested for *"the Nth consecutive **SESSION**"* —
-  **23 on 09-21, 26 on 09-22, 29 on 09-23, 33 on 09-24, 37 on 09-25.** ⚠ **It increments by THREE OR
-  FOUR per trading day. Sessions increment by ONE. The account has operated EIGHTEEN sessions since
-  2026-09-01, so "thirty-seventh consecutive session" is MORE THAN TWICE the account's entire age and
-  cannot be sessions under any reading. It is a RUN counter wearing a session label.** ⚠⚠ **This is
-  worse than (2)'s stale count and (7)'s miscount, because the value is NOT stale and the arithmetic is
-  NOT wrong: re-running the check REPRODUCES THE SAME NUMBER, and only comparing it against the
-  CALENDAR exposes it.** **The fact it encodes is true and unchanged — §5 has never had an operand —
-  ONLY THE UNIT IS FICTION.** ⚠ **Report it as 18 sessions, or as a run count called a run count. Note
-  the separate "zero positions for the Nth consecutive session" counter (25 on 09-25) increments
-  CORRECTLY by one per session and is a different series — do not merge them.**
-  ⚠⚠ **(8) IS NEW ON 09-25 CLOSE AND IT CAME FROM THE PREVIOUS RUN, SIX HOURS OLD — THE SHORTEST-LIVED
-  CLAIM YET CAUGHT.** **(8) A MEASUREMENT PRESENTED AS A CALIBRATION: the midday run's *"the volume
-  tracks elapsed session time almost exactly"* (v 69,713 = 49.5% of the four-session mean at 49.0%
-  elapsed).** ⚠ **The completed session falsifies it — actual volume 164,682, 16.9% above that mean, so
-  the partial held 42.3% at 49.0% elapsed.** ⚠ **The shape to learn: the claim was arithmetically
-  correct and its DENOMINATOR was the error. A ratio against a prior-day mean LOOKS like a measurement
-  of the current day and is not one. Full correction at the top of this list.**
-  ⚠⚠ **AND A NINTH THING WAS CAUGHT BEFORE IT WAS WRITTEN RATHER THAN AFTER — THE FIRST TIME.** The
-  09-25 close nearly wrote *"best since inception"* on a +$339.23 day, pulled 25 sessions first, and
-  found it is **THIRD** (09-21 +0.5962%, 09-22 +0.5893%, then today, 0.0005pp ahead of 09-03 — a tie).
-  ⚠ **Catch (1) is this exact shape caught three runs late and by accident. This one cost one `bars`
-  call. PULL THE SOURCE BEFORE WRITING THE SUPERLATIVE, NOT AFTER.**
+- **⚠ AUDIT EVERY INHERITED CLAIM BEFORE REPEATING IT — TEN CATCHES, AND THEY KEEP CHANGING SHAPE.**
+  ⚠⚠ **(10) IS NEW ON 09-28 AND IT IS THE FIRST ONE WHERE *EVERY* SOURCE WAS FRESH AND THE CLAIM WAS
+  STILL WRONG: A NUMBER THAT IS CORRECT ON A BASIS NOBODY NAMED.** The 09-28 close nearly wrote *"largest
+  single-day loss on record"* off a 30-session series it had **just pulled**. ⚠ **The series was right and
+  the sentence was still false** — −0.7010% is a **price** figure, the day is **−0.5212%** on total
+  return, and 09-23's −0.5327% holds the record there. ⚠⚠ **"Pull the source before writing the
+  superlative" — catch (1)'s lesson — IS NOT SUFFICIENT WHEN THE SOURCE HAS TWO BASES. The only reason it
+  was caught is that the run had already noticed Friday's closes had moved.** ⚠ **New rule: NAME THE BASIS
+  IN THE SENTENCE, or do not write the sentence.**
+  ⚠ **(9) A COUNTER WHOSE *UNIT* IS WRONG.** Close journals reported §5.1–§5.4 untested for *"the Nth
+  consecutive **SESSION**"* — **23 on 09-21, 26 on 09-22, 29 on 09-23, 33 on 09-24, 37 on 09-25.** ⚠ **It
+  increments by THREE OR FOUR per trading day; sessions increment by ONE.** **It is a RUN counter wearing
+  a session label.** ⚠ **Re-running the check REPRODUCES THE SAME NUMBER — only the CALENDAR exposes it.**
+  **The fact it encodes is true; ONLY THE UNIT IS FICTION.** ⚠ **The 09-28 close STOPPED CONTINUING THE
+  SERIES and reports calendar figures instead: 19 trading sessions since 2026-09-01, 16 since the 09-03
+  fill, zero satellite positions ever.** **Do not restart it.**
+  **(8) A MEASUREMENT PRESENTED AS A CALIBRATION:** the 09-25 midday run's *"the volume tracks elapsed
+  session time almost exactly."* ⚠ **The completed session falsified it — the DENOMINATOR was a prior-day
+  mean, and a ratio against one LOOKS like a measurement of the current day and is not one.**
+  **(7) A MISCOUNT IN A VERIFICATION CLAIM:** the 09-24 close wrote it had *"verified all TWELVE keys."*
+  ⚠ **There are THIRTEEN.** *(Re-parsed at the 09-28 close with `common.read_state()`: **13 keys**, all
+  present, no `#` anywhere in the block, and both long values compared **character-for-character against
+  the file** — 4,037 and 1,404 chars, exact match, no truncation.)*
   **(6) A SCOPE CLAIM:** *"routine 2 is the ONLY routine that runs with `is_open: true`"* — falsified by
   the run that read it, from its own clock. ⚠ **The most dangerous shape, because it was not a number to
   re-pull but a statement about the SYSTEM'S OWN SHAPE, which no data call would ever contradict.**
-  **(7) A MISCOUNT IN A VERIFICATION CLAIM:** the 09-24 close run wrote that it had *"verified all TWELVE
-  keys present."* ⚠ **There are THIRTEEN.** `common.read_state()` returns `last_run, prior_run, week_of,
-  new_positions_this_week, consecutive_closed_losses, circuit_breaker, halt_triggered_at,
-  core_established, core_ticker, core_pct, satellite_pct, cash_pct, open_thesis_ids`. ⚠ **The check was
-  almost certainly run correctly; it is the REPORT of the check that was wrong — which is worse, because
-  a wrong count in a sentence that says "verified" is exactly the claim a later run would not re-check.**
-  *(Re-parsed at the 09-25 close: **13 keys**, all present, no `#` anywhere in the block.)*
-  **(1)** A false superlative (*"positive for the first time in this account's history"*) survived
-  three runs, caught **by accident** on 09-21. **(2)** A stale count (*"49 theses"*) caught
-  **deliberately** on 09-22, running in the direction that **understates** the problem. **(3)** The
-  09-22 claim that `lastday_price` rebuilds at a session boundary, falsified 09-23. **(4)** The 09-23
-  claim that it does **not**, falsified 09-24. **(5)** A **TRUNCATED SERIES**, 09-24: the three-item
-  post-bell `current_price` record had silently dropped its own largest member. **Corrected series is
-  in the standing-rule item above — SIX observations now. DO NOT QUOTE THE THREE-ITEM VERSION.**
-  ⚠ **A superlative, count, mechanism, SERIES or CALIBRATION inherited from a prior run is NOT a checked
-  fact** — it is the cheapest claim to write and the most expensive to verify. **Assume the next one you
-  are handed is wrong until you have pulled the source.**
+  **(5) A TRUNCATED SERIES (09-24):** the post-bell `current_price` record had silently dropped its own
+  largest member. **The corrected series has SEVEN members and is in the standing-rule item above.**
+  **(1)** A false superlative surviving three runs, caught **by accident** 09-21. **(2)** A stale count
+  ("49 theses") caught deliberately 09-22, running in the direction that **understates** the problem.
+  **(3)/(4)** Both halves of the `lastday_price` mechanism, asserted and falsified in turn.
+  ⚠ **A superlative, count, mechanism, SERIES, CALIBRATION or BASIS inherited from a prior run is NOT a
+  checked fact.** **Assume the next one you are handed is wrong until you have pulled the source — and
+  then check which basis the source answered on.**
 
-- **⚠ GNRC IS NOT YOURS TO LOOK AT — TWENTY-SEVEN CONSECUTIVE REFUSALS, AND THE LAST THREE ARE ALL
-  WEAK.** ⚠ **Graded honestly: the 09-25 open, midday and close all made ZERO `move` and ZERO `quote`
-  calls; the midday and close runs have no research step at all, and none of the three had anywhere to
-  put a number — the refusals cost nothing and are recorded as weak.** The disqualifying facts do not
-  move: **GNRC is the named counterparty in the Amazon announcement — first-order, outside §4 at any
-  price** — and **open item (7) is resolved by a human editing §4 or `alpaca.py move`, not by a number
-  this seat collects.** ⚠ **WHAT MATTERS IS NOT THE COUNT BUT WHETHER EACH REFUSAL COST ANYTHING, AND
-  MANY DID NOT. Quoting the bare count overstates the evidence.** The strong instances are the
-  pre-market runs of 09-23, 09-24 and 09-25 — all three opened the data plane against a live funnel
-  **and** had somewhere to put a number. ⚠ **No new costume in seven sessions; the list looks
-  CONVERGING rather than growing, and a run that manufactures a new name for an old experience would be
-  padding the log.** Costumes: diligence, curiosity, tidiness, completeness, zero-marginal-cost,
-  self-audit, proxy-procurement, issue-closure, call-already-open, screen-already-running. **The pattern
-  is the finding, not any instance. FREE IS NOT THE SAME AS PERMITTED.**
+- **⚠ GNRC IS NOT YOURS TO LOOK AT — TWENTY-EIGHT CONSECUTIVE REFUSALS, AND THE RECENT ONES ARE ALL WEAK.**
+  ⚠ **Graded honestly: 09-28 made ZERO `move` and ZERO `quote` calls on GNRC, has no research step by
+  construction, and had nowhere to put a number — the refusal cost nothing and is recorded as weak.** The
+  disqualifying facts do not move: **GNRC is the named counterparty in the Amazon announcement —
+  first-order, outside §4 at any price** — and **open item (7) is resolved by a human editing §4 or
+  `alpaca.py move`, not by a number this seat collects.** ⚠ **WHAT MATTERS IS NOT THE COUNT BUT WHETHER
+  EACH REFUSAL COST ANYTHING, AND MANY DID NOT. Quoting the bare count overstates the evidence.** The
+  strong instances are the pre-market runs of 09-23, 09-24 and 09-25 — all three opened the data plane
+  against a live funnel **and** had somewhere to put a number. ⚠ **No new costume in eight sessions; the
+  list looks CONVERGING rather than growing.** Costumes: diligence, curiosity, tidiness, completeness,
+  zero-marginal-cost, self-audit, proxy-procurement, issue-closure, call-already-open,
+  screen-already-running. **The pattern is the finding, not any instance. FREE IS NOT THE SAME AS
+  PERMITTED.**
 
-- **⚠ CORE VOO IS NEVER STAMPED WITH A `highest_close` — FIFTY-FIVE RUNS.** §5 exempts core from all
-  four sell rules. A mark on VOO would **fabricate a §5.4 trailing stop on the one position the
-  strategy exempts**, a stop that could eventually **sell core on a drawdown, which §7 forbids
-  outright.** ⚠ **Grade these as the GNRC count is graded.** The sharpest instances are the close runs
-  of 09-22, 09-23, 09-24 and **09-25 — the last of which grades HIGH: routine 4's Step 2 is THE
-  dedicated write step, the run arrived holding a fresh official close (710.705), and the field it
-  would write to was empty.** The **09-25 midday** grades just as high for the mirror reason: a
-  DEDICATED REPAIR step is if anything the sharper temptation, since "backfill the missing mark" reads
-  as fixing an omission rather than adding a row. ⚠ **"Nothing to write" — and "nothing to repair" — is
-  the correct output of an empty Step 2, not an invitation to find a row to write it to.** **Measure the
-  core from the 706.74 fill and from an official close, never from a `positions` field.** ⚠ **Noted
-  honestly: this refusal is now close to automatic, and automatic is not the same as sound.**
+- **⚠ CORE VOO IS NEVER STAMPED WITH A `highest_close` — FIFTY-SIX RUNS.** §5 exempts core from all four
+  sell rules. A mark on VOO would **fabricate a §5.4 trailing stop on the one position the strategy
+  exempts**, a stop that could eventually **sell core on a drawdown, which §7 forbids outright.**
+  ⚠ **09-28 grades HIGH and for a new reason: routine 4's Step 2 is THE dedicated write step, the run
+  arrived holding a fresh official close, the field was empty, AND the run had just built the entire
+  ex-dividend adjustment machinery a mark would have been written with. HAVING THE TOOLING IN HAND IS ITS
+  OWN PULL.** ⚠ **"Nothing to write" — and "nothing to repair" — is the correct output of an empty Step 2,
+  not an invitation to find a row to write it to.** **Measure the core from the 706.74 fill and from an
+  official close, never from a `positions` field** ⚠ **— and note that the fill price is a RAW print, so
+  measuring it against an `--adjustment all` close now MIXES BASES.** ⚠ **Noted honestly: this refusal is
+  close to automatic, and automatic is not the same as sound.**
 
-- **⚠ A CLOSE RUN AND A PRE-MARKET RUN BOTH READ `is_open: false`, AND SO DOES A HOLIDAY. THE BOOLEAN
-  IS USELESS ALONE — READ THE DATE.** Pre-market sees `next_open` pointing at **today**; post-bell
-  sees it pointing at the **next** trading day; a holiday sees it pointing **past** the holiday with
-  **no bar for today**. ⚠ **09-22 read all three shapes in one day, and consecutive runs read IDENTICAL
-  booleans meaning opposite things.** **`is_open: TRUE` is the one case where the boolean alone is
-  sufficient, and it is safe to read it that way ONLY because TRUE has a single meaning. FALSE has
-  three.** *(09-25 read all three of its shapes: pre-market FALSE with `next_open` at today, in-session
-  TRUE at 09:36 and 12:41, post-bell FALSE at 16:17 with `next_open` at Monday 09-28.)* ⚠ **THE
-  STRONGER DISCRIMINATOR FOR A FALSE IS TO CHECK THAT A DAILY BAR FOR TODAY EXISTS — run it before
-  deciding a run is a holiday skip. The 09-25 close ran it: the bar exists and is COMPLETE.** ⚠ **But
-  with `is_open: true` that same bar is PARTIAL and is not a close — see the top item.**
+- **⚠ A CLOSE RUN AND A PRE-MARKET RUN BOTH READ `is_open: false`, AND SO DOES A HOLIDAY. THE BOOLEAN IS
+  USELESS ALONE — READ THE DATE.** Pre-market sees `next_open` pointing at **today**; post-bell sees it
+  pointing at the **next** trading day; a holiday sees it pointing **past** the holiday with **no bar for
+  today**. ⚠ **`is_open: TRUE` is the one case where the boolean alone is sufficient, and only because
+  TRUE has a single meaning. FALSE has three.** ⚠ **THE STRONGER DISCRIMINATOR FOR A FALSE IS TO CHECK
+  THAT A DAILY BAR FOR TODAY EXISTS — run it before deciding a run is a holiday skip.** *(09-28 ran it:
+  the bar exists and is complete.)* ⚠ **But with `is_open: true` that same bar is PARTIAL and is not a
+  close.**
 
-- **⚠ SEVEN ITEMS ARE WITH THE HUMAN. NONE IS THE AGENT'S TO DECIDE, AND NONE MAY BE "CLOSED" BY A
-  NUMBER A RUN COLLECTS.**
+- **⚠ EIGHT ITEMS ARE WITH THE HUMAN. NONE IS THE AGENT'S TO DECIDE, AND NONE MAY BE "CLOSED" BY A NUMBER
+  A RUN COLLECTS.**
+  ⚠⚠ **(8) IS NEW ON 09-28 AND IT IS THE ONLY ONE THAT COULD MAKE §1 UNWINNABLE BY CONSTRUCTION: DOES THE
+  PAPER ACCOUNT PAY DIVIDENDS?** VOO went ex-dividend on 2026-09-28; `cash` reads **exactly $30,000.00**.
+  **If the ~$180.45 never arrives, the book under-earns its own benchmark by VOO's entire ~1.0% annual
+  yield forever, and "beat the S&P TOTAL RETURN" cannot be achieved by any strategy.** ⚠ **A falsifiable
+  test with a deadline is on the record (check `cash` every run; if nothing by 2026-10-07, it is
+  confirmed).** ⚠ **AND SEPARATELY: `positions.md`'s `voo_close_at_entry` design was falsified by the same
+  event and the agent CORRECTED IT IN PLACE (agent-owned file); whether the TOOLING should read closes on
+  a stated basis by default is a human's call, and today is the strongest evidence yet that it should.**
   **(1)** The **§4 priced-in filter reads a drawdown as priced-in** — nine instances plus three
-  near-misses; **there is no price at which those rejections flip**; LITE puts **+10.58% vs VOO** on
-  the bill. ⚠ **A pass on a fall is not evidence the filter worked, and neither is a FAIL on a fall** —
-  recorded **deliberately as NOT the reason for the rejection**, so no run inherits "rejected because
-  priced-in" as a fact. **Detail and the third shape are in the priced-in item above.**
-  **(2)** The same filter **reads an event move absorbed before it looks as "passes"** — QCOM, AVAV,
-  and ⚠ **AKAM (09-25), the first MULTI-SESSION round trip and the worst instance recorded.** Same
-  root cause as (1), opposite direction. **The fix for (1), (2) and shape three is a human editing §4
-  or `alpaca.py move`** — and the suggestion on the record is to make it **read SIGN and causation,
-  not loosen or remove the threshold.**
-  **(3)** The satellite sleeve is **structurally undeployed — 73 theses, zero positions, ever.** A
-  70/30 cash book cannot beat the S&P over a rolling 12 months (§1) in a rising market, ⚠ **and 09-25
-  is the cleanest arithmetic demonstration on record: excess −0.1452pp against −0.1453pp predicted by
-  the cash weight alone.** **§2 permits the cash and §4 says most runs end in no trade — both rules
-  were followed, and the agent must NOT respond by lowering the §4 bar.** **The binding constraint has
-  FIVE known forms:** the source withholds the counterparty's number; **or** the counterparty discloses
-  **roadmap instead of segment revenue**; **or** the named beneficiary is **vertically integrated** with
-  no external supplier to find; **or** **both parties expressly refuse to disclose as a commercial
-  choice** (GM); ⚠ **or — the JBL form — THE FIGURE IS FULLY DISCLOSED AND IS THE WRONG QUANTITY.**
-  ⚠ **Only the first two are addressable by widening the evidence bar. Forms three, four and five are
-  not, and form five would be made WORSE by widening it.** ⚠ **ELMT is the standing proof that evidence
-  is not the constraint: it withheld NOTHING and still produced no trade, because the obstruction was
-  STRUCTURAL (§3).**
+  near-misses; **there is no price at which those rejections flip**; LITE puts **+10.58% vs VOO** on the
+  bill. ⚠ **A pass on a fall is not evidence the filter worked, and neither is a FAIL on a fall.**
+  **(2)** The same filter **reads an event move absorbed before it looks as "passes"** — QCOM, AVAV, and
+  **AKAM (09-25), the first MULTI-SESSION round trip.** Same root cause as (1), opposite direction. **The
+  fix for (1), (2) and shape three is a human editing §4 or `alpaca.py move`** — the suggestion on record
+  is to make it **read SIGN and causation, not loosen or remove the threshold.**
+  **(3)** The satellite sleeve is **structurally undeployed — 73 theses, zero positions, ever.** A 70/30
+  cash book cannot beat the S&P over a rolling 12 months (§1) in a rising market. **§2 permits the cash
+  and §4 says most runs end in no trade — both rules were followed, and the agent must NOT respond by
+  lowering the §4 bar.** **The binding constraint has FIVE known forms:** the source withholds the
+  counterparty's number; **or** the counterparty discloses **roadmap instead of segment revenue**; **or**
+  the named beneficiary is **vertically integrated**; **or** **both parties expressly refuse to disclose
+  as a commercial choice** (GM); **or — the JBL form — THE FIGURE IS FULLY DISCLOSED AND IS THE WRONG
+  QUANTITY.** ⚠ **Only the first two are addressable by widening the evidence bar. Forms three, four and
+  five are not, and form five would be made WORSE by widening it.** ⚠ **ELMT is the standing proof that
+  evidence is not the constraint.**
   **(4)** The core's divergence from VOO is the **09-03 entry gap** (fill 706.74, **+0.483% above the
-  prior close**) — **not tracking error and never skill. DISCHARGED AND PROVEN 09-11: measured from
-  the fill, tracking error 0.0000%. Keep measuring it from the fill.**
+  prior close**) — **not tracking error and never skill. DISCHARGED AND PROVEN 09-11.** ⚠ **Keep measuring
+  it from the fill — and the fill is a RAW print.**
   **(5)** The broker/official price gap is a **live quote midpoint, not an offset** — which is why it
-  never had a stable size and never will. ⚠ **It is not a P&L problem — it is a PRICE-SOURCE problem
-  that contaminates every derived figure.** It has flipped the sign of a §2 quantity (`rebalance_delta`
-  +$12.78 broker vs −$16.04 official on 09-24), ⚠ **and on 09-25 all three runs AGREED in sign, which
-  establishes the defect is INTERMITTENT — worse than persistent.** ⚠ **Cleanest small reading on
-  record, 09-25 post-bell: 5.4c on the price, $5.35 on equity, $23.38 on the day's P&L. The sharpest
-  demonstration remains the 09-25 open's 50c inside the SAME MINUTE on the same basis.** **Whether the
-  tooling should read closes from `bars` by default is a human's call, and the accumulated evidence says
-  it should.**
-  **(6)** **`selftest.py` certifies a healthy system without probing `clock` or market data** — it
-  passed all five checks on 09-11 while `clock` returned 500 and `quote`/`bars` returned 504, **and on
-  09-24 while a `perplexity.py` QUERY returned 500 — the first instance on the RESEARCH plane.** ⚠ **The
-  09-24 transient did not recur on 09-25 — single occurrence, still no alert.** **Until a human changes
-  it: probe by hand; never infer data-plane health from a green selftest, and CHECK EXIT CODES — never
-  infer thin news from empty results.**
-  **(7)** **`alpaca.py move` cannot see an after-hours event, and neither can the 09:35 re-validation
-  that exists to catch exactly this.** ⚠ **Unlike (1) and (2), this fails in the direction of TAKING a
-  trade rather than skipping one**, which is why it is listed last and should be read first. ⚠ **AKAM
-  generalises it: the entire +12.35% event move was hidden from the filter by a later give-back inside
-  the same window. The blindness is not only to AFTER-HOURS events — it is to ANY event move the window
-  later cancels, and no 09:35 re-validation would surface either.** **It has cost zero only because no
-  plan has yet carried a BUY intent — an absence of exposure, not a mitigation.**
-  Prior context in ClickUp `86bbv75bz`; week-prior `86bbzgbg3`. **09-25 daily summary: `86bc7vgbw`**
-  (09-24: `86bc76x35`).
+  never had a stable size. ⚠ **A PRICE-SOURCE problem that contaminates every derived figure.** It has
+  flipped the sign of a §2 quantity (09-24). ⚠ **09-28 adds a SECOND, INDEPENDENT price-source axis —
+  `quote` vs `bars --adjustment all` on the SAME session — which is not a midpoint problem at all.**
+  **(6)** **`selftest.py` certifies a healthy system without probing `clock` or market data** — it passed
+  all five checks on 09-11 while `clock` returned 500, and on 09-24 while `perplexity.py` returned 500.
+  ⚠ **AND 09-28 SHOWS A THIRD BLIND SPOT: IT PASSED ALL FIVE WHILE THREE OF THE DAY'S FOUR ROUTINES HAD
+  PRODUCED NOTHING. A green pre-flight certifies this run's credentials, nothing about the schedule, the
+  data plane, or whether the other routines ran.** **Probe by hand; CHECK EXIT CODES.**
+  **(7)** **`alpaca.py move` cannot see an after-hours event, and neither can the 09:35 re-validation that
+  exists to catch exactly this.** ⚠ **Unlike (1) and (2), this fails in the direction of TAKING a trade.**
+  ⚠ **AKAM generalises it: the blindness is to ANY event move the window later cancels.** **It has cost
+  zero only because no plan has yet carried a BUY intent — an absence of exposure, not a mitigation.**
+  Prior context in ClickUp `86bbv75bz`; week-prior `86bbzgbg3`. **09-25 daily summary: `86bc7vgbw`;
+  09-25 weekly review: `86bc7vzam`. 09-28 daily summary: 86bc8yrz0.**
 
-- **⚠⚠ WEEK 4 REVIEW (2026-09-25) — RAN, POSTED `86bc7vzam`, AND IT REPLACES THE WEEK 3 ITEM.
-  THE §1 ANSWER IS NO, AND FOR THE FIRST TIME EVERY WINDOW SAYS SO.** Satellite **0.0000%**, so its
-  dollar-weighted excess is exactly **minus VOO's total return**: **−1.262pp week, −0.827pp since
-  inception, −0.974pp 1M, −5.444pp 3M, −18.571pp rolling 12M.** ⚠ **Week 3's first three rows were
-  POSITIVE (+0.095 / +0.430 / +0.509pp). The market rose and the whole column inverted with NO rule
-  change and no change in the sleeve** — which is exactly what three consecutive reviews predicted in
-  writing when they refused to read those positives as performance. ⚠ **DO NOT RE-INHERIT THE PLEASANT
-  VERSION; it was a property of a falling tape and it is gone.** Structural cost now **~5.57pp per
-  rolling 12M**, up from 4.97pp **because the BENCHMARK improved, not because the sleeve got worse.**
-  **Account week +0.8813% vs VOO +1.2617% = −0.3804pp, which is EXACTLY 0.6985 × VOO to four decimals;
-  since inception +0.3927% vs +0.8271% = −0.4344pp, EIGHT TIMES last Friday's −0.055pp on five up
-  sessions and an unchanged entry gap.** ⚠ **DAILY AUDIT, RECOMPUTED NOT INHERITED — 15 post-fill
-  sessions, 9 VOO-down days ALL positive excess, 5 VOO-up days ALL negative, 1 flat day EXACTLY zero.
-  Separation is PERFECT, 15 of 15: the sign of this book's daily excess is entirely determined by the
-  sign of VOO's move, with no exception in the record.** **Reject board re-measured: 65 names, 20 beat
-  VOO, 45 lagged, mean −2.04%, median −2.47%.** ⚠ **A tally, not a result.** ⚠ **HPE IS NO LONGER THE
-  LARGEST OPPORTUNITY COST — CRDO IS, at +24.28pp (from +4.68pp in five sessions); HPE +20.67pp, MU
-  +14.42pp, QCOM +13.11pp (the largest MOVE, from +0.76pp), LITE +11.16pp.** ⚠ **NEW FINDING: six of
-  the top six excesses are ONE THEME (AI/data-centre hardware and semis) rejected under FIVE DIFFERENT
-  §4 rules, every rejection individually correct — §4's three most active tests each independently
-  exclude a running theme. Input to the human's open question, NOT permission to change anything.**
-  ⚠ **AND A CORRECTION TO WEEK 3'S OWN HEADLINE: it promoted the board's "widening" as the finding.
-  Dispersion grows with elapsed time MECHANICALLY. The MEAN is the evidence the four-part test
-  discriminates.** Full working in `weekly_review.md`.
-  ⚠ **FILE SIZE — TENTH CONSECUTIVE FLAG AND THE RATE IS ACCELERATING.** `research_log.md` **333KB**,
-  up from **226KB** last Friday — **+107KB in one week on 27 theses**, faster than the +75KB Week 3
-  already called urgent. `journal.md` **162KB**. **589KB that every run reads in full.** ⚠ **THE WEEK 4
-  REVIEW CONSIDERED RUNNING THE ROLLOVER EARLY AND DELIBERATELY DID NOT — every entry is dated 2026-09,
-  which IS the current month, and splitting a live month across two files for five sessions is the
-  exact failure the archive exists to prevent, arriving early. THE 2026-10-02 REVIEW MOVES THE WHOLE
-  SEPTEMBER CORPUS IN ONE DESIGNED OPERATION AND IS FIVE SESSIONS AWAY. Do not re-litigate this weekly;
-  a human who disagrees should say so in `control.md`.**
+- **⚠⚠ WEEK 4 REVIEW (2026-09-25) — RAN, POSTED `86bc7vzam`. THE §1 ANSWER IS NO, AND FOR THE FIRST TIME
+  EVERY WINDOW SAYS SO.** Satellite **0.0000%**, so its dollar-weighted excess is exactly **minus VOO's
+  total return**: **−1.262pp week, −0.827pp since inception, −0.974pp 1M, −5.444pp 3M, −18.571pp rolling
+  12M.** ⚠ **Week 3's first three rows were POSITIVE. The market rose and the whole column inverted with
+  NO rule change and no change in the sleeve.** ⚠ **DO NOT RE-INHERIT THE PLEASANT VERSION; it was a
+  property of a falling tape.** Structural cost now **~5.57pp per rolling 12M**, up from 4.97pp **because
+  the BENCHMARK improved, not because the sleeve got worse.** **Reject board: 65 names, 20 beat VOO, 45
+  lagged, mean −2.04%, median −2.47%.** ⚠ **A tally, not a result.** **CRDO is the largest opportunity
+  cost at +24.28pp**; HPE +20.67pp, MU +14.42pp, QCOM +13.11pp, LITE +11.16pp. ⚠ **NEW FINDING: six of
+  the top six excesses are ONE THEME (AI/data-centre hardware and semis) rejected under FIVE DIFFERENT §4
+  rules, every rejection individually correct.** ⚠ **A CORRECTION TO WEEK 3'S HEADLINE: it promoted the
+  board's "widening" as the finding. Dispersion grows with elapsed time MECHANICALLY. The MEAN is the
+  evidence.** Full working in `weekly_review.md`.
+  ⚠ **FILE SIZE — ELEVENTH CONSECUTIVE FLAG.** `research_log.md` **333KB** (unchanged — nothing was
+  written on 09-28), `journal.md` now **~170KB**, `state.md` **~55KB**, `weekly_review.md` **147KB**.
+  ⚠ **THE 2026-10-02 REVIEW MOVES THE WHOLE SEPTEMBER CORPUS IN ONE DESIGNED OPERATION AND IS FOUR
+  SESSIONS AWAY. Do not re-litigate this weekly; a human who disagrees should say so in `control.md`.**
 
 - **⚠ A `#` IN A FENCED-BLOCK VALUE SILENTLY TRUNCATES IT.** `_parse_kv` in `scripts/common.py` does
-  `line.split("#", 1)[0]`, so **everything after the first `#` in a `key: value` line is discarded by
-  the parser.** The 09-24 close run did this to itself and caught it before commit. ⚠ **STANDING
-  CONSEQUENCE: never put a `#` in a fenced-block value, and VALIDATE `state.md` WITH
-  `common.read_state()` AFTER REWRITING IT — writing the block and parsing the block are not the same
-  check.** *(Done at the 09-25 close: block re-parsed, **THIRTEEN keys** — not twelve, see catch (7) —
-  all present, no `#` anywhere in the block, and the long values compared **against the file** rather
-  than eyeballed, which is the only way truncation is actually visible.)*
+  `line.split("#", 1)[0]`, so **everything after the first `#` in a `key: value` line is discarded by the
+  parser.** ⚠ **STANDING CONSEQUENCE: never put a `#` in a fenced-block value, and VALIDATE `state.md`
+  WITH `common.read_state()` AFTER REWRITING IT — writing the block and parsing the block are not the
+  same check.** *(Done at the 09-28 close: **13 keys**, no `#` anywhere in the block, and `last_run` /
+  `prior_run` compared **character-for-character against the file** — 4,037 and 1,404 chars, exact match.
+  Eyeballing does not make truncation visible; the comparison does.)*
 
 ### Standing rules — recognise on sight, do not re-derive
 
@@ -609,23 +628,37 @@ source after this long is itself the finding.**
 - **The only fill in this account's history: BUY VOO 99.046311231 @ $706.74, notional $70,000.00**,
   order `d177d8f0-cd0c-41bf-95c1-4772318265fd`, filled **2026-09-03 09:36:21 ET**, verified terminal
   before it was written. Audit record in `trade_log.md`. **No order has ever reached a non-terminal
-  state in this account, and no order has been placed since.**
-- **The core is deliberately NOT tracked in `positions.md`.** §5 exempts it, so it has no thesis
-  state, no timing window and no `highest_close`. ⚠ **Every reconciliation compares SATELLITE blocks
-  to SATELLITE Alpaca positions** — a run that compares the raw ledger to the raw broker will read a
+  state in this account, and no order has been placed since.** ⚠ **706.74 is a RAW print — comparing it
+  to an `--adjustment all` close mixes bases (see the ex-dividend item).**
+- **⚠⚠ VOO WENT EX-DIVIDEND ON 2026-09-28 — the first corporate action in this account's history.**
+  `bars --adjustment all` now multiplies **every close before that date** by **0.997432**; `--adjustment
+  raw` and `--adjustment split` return the original prints unchanged. Implied dividend **$1.820–$1.824
+  per share ≈ $180.45** on the core holding, ⚠ **NOT YET PAID — `cash` reads exactly $30,000.00.**
+  ⚠ **Every VOO close recorded in this repo before 2026-09-28 is on the PRE-dividend basis. This is not
+  a bad pull.**
+- **The core is deliberately NOT tracked in `positions.md`.** §5 exempts it, so it has no thesis state,
+  no timing window and no `highest_close`. ⚠ **Every reconciliation compares SATELLITE blocks to
+  SATELLITE Alpaca positions** — a run that compares the raw ledger to the raw broker will read a
   correct ledger as broken.
-- **Counters as of the 2026-09-25 CLOSE, RECOUNTED FROM SOURCE THIS RUN: 73 real theses since
-  inception** (74 `### T-` headings less the template), **0 accepted, 73 rejected, 27 this week
-  (09-21: 3, 09-22: 5, 09-23: 6, 09-24: 7, 09-25: 6); 0 satellite positions ever opened; 0 exits ever;
-  `alerts.md` empty — zero open, zero SYSTEMIC.** ⚠ **The figure is CURRENT as of this run. Recount
-  from `research_log.md` before quoting it anywhere human-facing if any run has added a thesis since.**
-- **`week_of` 2026-09-28, `new_positions_this_week` 0 of 3 — ADVANCED BY THE 09-25 WEEKLY REVIEW,
-  which is where the reset belongs.** ⚠ **Monday's runs will compare their week anchor to 2026-09-28,
-  find it already matches, and correctly do nothing. That is the reset having been done, NOT a run
-  that skipped it.** ⚠ **The two counters are independent: 27 theses this week and 0 positions this
-  week are both correct — §6's cap counts POSITIONS OPENED.**
-- **2026-09-25 was a full trading session** (bar complete: c 710.705, n 4,249, v 164,723 on the
-  review's own re-pull — the late one-share/one-trade settling is normal and is NOT a bad pull) and
-  **both its daily summary (`86bc7vgbw`) and its WEEKLY REVIEW (`86bc7vzam`) were posted.** ⚠ **THE
-  ROUTINE 5 WEEKLY REVIEW FOR 09-25 IS DONE — it is not owed again, and the next one is 2026-10-02,
-  which is also the MONTHLY ARCHIVE ROLLOVER.** `research_log.md` is **333KB**.
+- **Counters as of the 2026-09-28 CLOSE, RECOUNTED FROM SOURCE THIS RUN: 73 real theses since
+  inception** (74 `### T-` headings less the template), **0 accepted, 73 rejected, 0 this week.**
+  ⚠ **27 was LAST week's figure and must not be carried into this one.** **0 satellite positions ever
+  opened; 0 exits ever; `alerts.md` empty — zero open, zero SYSTEMIC.** ⚠ **Recount from
+  `research_log.md` before quoting it anywhere human-facing if any run has added a thesis since.**
+- **`week_of` 2026-09-28, `new_positions_this_week` 0 of 3.** ⚠ **Advanced by the 09-25 weekly review;
+  the 09-28 runs compared their anchor to it, found it already correct, and did nothing. That is the
+  reset having been done on the one day it was due, NOT a run that skipped it.** Next boundary
+  **2026-10-05.** ⚠ **The two counters are independent: theses this week and positions this week are
+  different things — §6's cap counts POSITIONS OPENED.**
+- **⚠ SESSION COUNTS, VERIFIED AGAINST THE CALENDAR (catch 9):** **19 trading sessions since
+  2026-09-01**, **16 since the 09-03 core fill**. ⚠ **The "Nth consecutive SESSION" series that appeared
+  in close journals through 09-25 was a RUN counter wearing a session label and has been DISCONTINUED.
+  Do not restart it.**
+- **2026-09-28 was a full trading session** (bar complete: c 703.60, n 3,061, v 62,354 on `feed=iex`,
+  re-pulled identical; last trade 703.60 at 15:59:59 ET). ⚠ **Its LOW volume is an IEX-feed artifact and
+  is NOT evidence of a partial bar.** **Its daily summary was posted: `86bc8yrz0`.**
+- **⚠⚠ ROUTINES 1, 2 AND 3 PRODUCED NO COMMITTED OUTPUT ON 2026-09-28.** No commit dated 2026-09-28, no
+  working branch on the remote, `plan_today.md` left at `plan_date: 2026-09-25`. **Routine 4 was the
+  only run of the day.** ⚠ **Cause unknown and not asserted — with the human.**
+- **⚠ THE ROUTINE 5 WEEKLY REVIEW FOR 09-25 IS DONE** (`86bc7vzam`) — it is not owed again. **The next
+  one is 2026-10-02, which is also the MONTHLY ARCHIVE ROLLOVER.** `research_log.md` is **333KB**.
