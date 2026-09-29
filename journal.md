@@ -40,6 +40,146 @@ anything where the honest-broker rule (§4) did real work>
 
 ## Entries
 
+### 2026-09-29 (Tuesday)
+
+**Account:** total **$99,557.25 on official closes (price basis, `bars --adjustment all`, VOO c 702.27)** /
+**~$99,737.70 carrying the inferred dividend receivable (total-return basis)** / **$99,601.82 broker mark at
+16:16:45 ET** | day P&L **−$131.73 (−0.1321%) price basis, close-to-close** (99,688.98 → 99,557.25) |
+since inception **−0.4427% price** / **−0.2623% total-return**
+**Sleeves:** core **69.8666%** | satellite **0.0%** | cash **30.1334%**   (§2 band 65–75%; broker basis
+69.88 / 0.0 / 30.12 — `core_in_band: true`, `rebalance_needed: false`) — **no rebalance due tomorrow on
+either basis.** `rebalance_delta` **+$132.82 official / +$119.45 broker — POSITIVE on both and the bases
+AGREE IN SIGN, third consecutive run.** ⚠ **Not the price-source defect resolving; the same quantity
+disagreed in sign on 09-24.** Fiftieth consecutive run inside 69.59–70.22.
+**Breaker:** INACTIVE (`halt_triggered_at: none`, `consecutive_closed_losses: 0` — nothing closed today, so
+the counter was confirmed unchanged rather than recomputed from a close)
+**Week:** 0/3 new positions — ISO Monday for 2026-09-29 is **2026-09-28** (computed, not assumed) and
+`week_of` already read **2026-09-28**, so **no rollover was due**. Next boundary **2026-10-05**.
+**Trading day:** yes — a full session. `clock` at 16:16:45 reads `is_open: false` with `next_open`
+**2026-09-30T09:30** — the **post-bell** shape, not a holiday. ⚠ **FALSE has three meanings, so the stronger
+discriminator was run: a VOO daily bar for 2026-09-29 EXISTS and is complete** (o 704.865, h 704.865,
+l 700.83, **c 702.27**, n 3,337, v 101,166), and the `latestTrade` at 15:59:57 ET prints **702.27**, the same
+number. **`--adjustment all` and `--adjustment raw` AGREE to the cent on this session and on 09-28**, because
+the 09-28 ex-date lies at or before both, so no rescaling separates them.
+
+**Traded:** nothing — zero orders placed, zero fills, nothing closed. `orders --status all` returns **one row
+for the account's entire history**, the 09-03 core VOO buy, `status: filled`, terminal. **Nothing is in limbo
+overnight** (§7).
+**Researched:** **6 theses — 0 accepted, 6 rejected**, all written by the 08:26 pre-market run; this seat ran
+no research and made zero Perplexity calls. Cumulative **79 real theses** (80 `### T-` headings less the
+template, recounted from source this run), **0 accepted ever.** **6 this week, all rejected.**
+**Positions near a sell rule:** **none — there are no satellite positions.** §5.1–§5.4 have never had an
+operand in this account's entire history. **§5.4 is still NOT ARMED** — it arms on the first *satellite*
+fill, and the 09-03 core fill was not one. **§5.3's distance is UNDEFINED, not large.** ⚠ Counted against the
+calendar, not inherited: **20 trading sessions since 2026-09-01, 17 after the 09-03 core fill, zero satellite
+positions ever.**
+
+**What happened:**
+
+A quiet, slightly-down session that changed nothing structural. VOO closed **702.27** against Monday's
+**703.60**, a **−0.1890%** day on `--adjustment all` closes. The book, holding ~69.9% of that and ~30.1% idle
+cash, fell **−0.1321%**. That is an excess of **+0.0569pp**, against **+0.0569pp** predicted by simply
+multiplying VOO's fall by the cash weight (30.0936% on Monday's close). **Agreement to 0.0000pp.**
+
+That makes the §1 separation **17 of 17 sessions with no exception**, and today is the **eleventh VOO-down
+day**, all eleven with positive excess. ⚠ It is worth being exact about what that is: **not a performance
+statistic but the arithmetic signature of a book with one long position at ~70% weight and no second source
+of return.** The satellite sleeve contributed **exactly 0.0000%**, as it has every session this account has
+existed.
+
+**The high-water marks — this routine's invisible job — had no operand today.** `positions.md` carries **zero
+satellite blocks**; `alpaca.py positions` returns **one row, core VOO**, 99.046311231 shares at avg_entry
+706.74, cost_basis $69,999.99, unchanged since 09-03. There is no `highest_close` field on any position, so
+there was no mark to raise and **no `(as of …)` date to refresh.** ⚠ **Core VOO was excluded from the working
+list before any §5 rule was read, and it was deliberately NOT stamped** — a mark on core would fabricate a
+§5.4 trailing stop on the one position §5 exempts, and that stop could eventually sell core on a drawdown,
+which §7 forbids outright. That refusal is now fifty-eight runs old and close to automatic; automatic is not
+the same as sound.
+
+Housekeeping was all confirmations rather than changes: the ISO Monday matched `week_of` so no rollover was
+due; nothing closed, so the loss streak stayed at 0 and the breaker stayed INACTIVE; the single lifetime order
+is terminal, so nothing carries forward unresolved. Core sits **4.87 points** inside the nearest §2 band edge
+on official closes, so **no rebalance is due tomorrow.**
+
+**The VOO dividend is still unpaid.** `cash` reads **exactly $30,000.00** on both `account` and `sleeves` —
+the fourth reading on 09-29 and the second day of the eight-day window. ⚠ **Four readings across two days are
+ONE unresolved observation of an unpaid dividend, not four data points, and non-arrival is EXPECTED this
+early because settlement runs on the pay date, not the ex-date.** The falsifiable test written in advance
+stands unchanged: **`cash` should rise to about $30,180.45; if it has not by 2026-10-07, the paper account
+does not model dividends at all**, in which case §1's "beat the S&P **total return**" is unwinnable by
+construction rather than by strategy. **That is a finding for the human, not something to fix from this
+seat.**
+
+One small new observation, recorded and not interpreted: the post-bell `positions.current_price` read
+**702.72** at 16:16:45 against the official close of **702.27**, a **+$0.45** gap — the **eighth** entry in
+that series (+1.13, −0.22, +0.169, +0.02, −0.97, −0.054, −0.25, **+0.45**). **Both signs, no predictable
+sign, no correctable offset.** `lastday_price` still reads **703.61** against an actual 09-28 close of
+703.60 on both bases — **the same reading this morning's runs saw, so it is the same observation and not a new
+miss.** That question is CLOSED; it was not re-opened.
+
+**What I got wrong or nearly got wrong:**
+
+**The one that matters, and I nearly wrote the false version of it.** This routine's stated purpose is to
+stamp today's closes into `highest_close`, and the honest sentence is that **the job had no operand — there
+was nothing to stamp.** The sentence I first reached for was "high-water marks updated," which is what a run
+summary wants to say and which would have been **false**. ⚠ And the deeper point is the one that survives
+the day: **"Step 2 found nothing to do" and "Step 2 works" are indistinguishable in every artifact this run
+produces.** The backfill path — re-pulling a window on a stated adjustment basis and taking the max from that
+one pull — **remains unexercised code**, and 09-28 is the proof that is not academic: that day lost its close
+run, and with one satellite position open, today's midday run would have had to backfill across an
+ex-dividend date. **The cost has been zero because the sleeve is empty. That is luck, not a control.** I am
+writing this down rather than letting a clean run read as a passing test.
+
+**Second, I nearly declared a defect resolved on one favourable observation.** `quote`'s `prevDailyBar` reads
+**703.6** today and `bars --adjustment all` reads **703.60** for the same session — they **agree**, where
+09-28 recorded them disagreeing and filed it as a second, independent price-source axis. The tempting
+sentence was that the axis had closed. It has not: **the disagreement on 09-28 arose from ex-dividend
+rescaling, and today there is no rescaling between the two sessions to disagree about.** What I observed is
+**the absence of the condition that produced the defect, not the defect being fixed.** An agreement obtained
+by removing the cause teaches nothing about the cause.
+
+**Third, the pleasant arithmetic.** The excess matched its prediction to **0.0000pp**, and a tight match
+feels like confirmation that something is working. It confirms only that the book is **70% of one ETF plus
+cash** — the model fits perfectly because there is nothing in the book the model omits. Set against it: the
+day's excess was **positive while the book lost money**, which is the same fact wearing the opposite face, and
+neither reading is skill. ⚠ The failure mode to name is reading a tightening fit as evidence, when the fit is
+tight precisely because **the sleeve has no effect in either direction.**
+
+**Fourth, and honestly:** no research ran in this seat, so **I have no §4 near-miss of my own to report.**
+There is real pull to reach back into the pre-market run's six rejections and re-narrate them here as
+introspection — the AMRAAM blank that priors want to fill, IOVA's clean rule-(iii) pass dying at vertical
+integration. **Those are that run's findings, already written up in `research_log.md` and `plan_today.md`, and
+borrowing them would inflate this entry with work I did not do.** The §4 pressure item is real and remains
+live — **79 theses, zero ever accepted, an empty sleeve, ~30% idle cash, an unused 0-of-3 weekly cap, an
+INACTIVE breaker and an account down 0.44% since inception** — but **this routine does not trade**, and idle
+capital is not an opportunity this seat may act on in any case. Naming the pull is the only defence against
+acting on it; if the §4 bar is to move, that is a `strategy.md` change and **only the human may make it.**
+
+Nothing else was close to wrong today, and I am not going to manufacture a fifth item.
+
+**For the next run:**
+
+- **The high-water marks were NOT updated today, and that is correct rather than a gap.** Zero satellite
+  positions means no `highest_close` field exists and no `(as of …)` date could be refreshed. ⚠ **Do not read
+  the missing stamp as a failed close run — there is no field, so there was nothing to write. DO NOT BACKFILL
+  ANYTHING.** The distinction is free today and stops being free the moment a satellite fill lands: after
+  that, **a mark silently not written reads identically to a mark correctly unchanged, and only the
+  `(as of …)` date separates them. Compare the date; never infer from the field's emptiness.**
+- **The 09-28 gap is now fully characterised and CLOSED as a question of scope: all four routines produced
+  committed output on 2026-09-29** (73aab79 pre-market, 0f76f6f open, 3e856bb midday, and this run). ⚠ **So
+  09-28 stands as a ONE-DAY, THREE-ROUTINE gap — a real gap and still a question for the human, but NOT an
+  ongoing failure, and it must not be reported as one.** The cause is not visible from inside a run and is
+  not asserted.
+- **`cash` = $30,000.00 exactly at the 09-29 close. Day 2 of 8. Check it every run until it resolves**, and
+  record which of $30,000.00 / ~$30,180.45 you saw.
+- **`plan_today.md` still carries `plan_date: 2026-09-29` and this run did not touch it.** Tomorrow's
+  pre-market run overwrites it normally. ⚠ If routine 1 fails again, routine 2 at 09:35 meets a genuinely
+  stale plan and **the staleness gate finally fires — exercise 29 and counting, alert path still untested
+  code.** Read routine 2's Step 2 then; do not recall it.
+- **Nothing is unresolved at the broker.** One lifetime order, terminal. Nothing carried forward.
+
+---
+
 ### 2026-09-28 (Monday)
 
 **Account:** total **$99,688.98 on official closes (price basis)** / **~$99,869 carrying the dividend
