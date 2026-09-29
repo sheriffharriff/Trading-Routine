@@ -85,6 +85,54 @@ check that the pull returned the right session. A stored baseline is a *label*, 
 
 *(none — no **satellite** positions have been opened yet. Core VOO exists and is deliberately not tracked here, per the top-of-file rules and the fill note further down.)*
 
+**Reconciliation 2026-09-29 — 08:26 ET, 1-premarket-research. THE LEDGER AGREES WITH THE BROKER; ZERO
+SATELLITE POSITIONS ON BOTH SIDES; NO ORDER PLACED (routine 1 does not trade); NO §5 RULE HAD A SUBJECT;
+NO HIGH-WATER MARK WRITTEN AND NONE DUE.**
+
+Selftest passed all five checks; pre-flight equity **$99,827.65** (broker mark), `trading_enabled: true`,
+LIVE paper. `clock` at **08:26:19** reads `is_open: FALSE` with `next_open` **2026-09-29T09:30** — and
+**`next_open` points at TODAY, which is the PRE-MARKET shape, not a holiday.** ⚠ **Read the date, not the
+boolean.**
+
+**RECONCILIATION CLEAN.** `alpaca.py positions` returns **one row, core VOO** — 99.046311231 shares
+unchanged since the 09-03 fill, avg_entry 706.74, cost_basis $69,999.99, market_value $69,827.65 (broker
+pre-market mark), `unrealized_pl` **−$172.34 / −0.246%** on that mark. **Zero satellite blocks against
+zero satellite Alpaca rows — they agree** (satellite-to-satellite, never raw ledger to raw broker). Core
+VOO was excluded from the working list before any §5 rule was read.
+
+**§5 HAD NO OPERAND — STEP 4 OF THE ROUTINE RAN AND FOUND NOTHING TO RUN ON.** Zero open positions means
+**zero Perplexity invalidation queries were due on any holding and zero were made**; no timing window to
+expire; no entry price for a §5.3 hard stop; no `highest_close` for a §5.4 trailing stop. ⚠ **§5.4 is
+STILL NOT ARMED** — it arms on the first **satellite** fill, and the 09-03 core fill was not one.
+**§5.3's distance is UNDEFINED, not large.** ⚠ **Counted against the CALENDAR, not inherited: 20 trading
+sessions since 2026-09-01, 17 since the 09-03 core fill, ZERO satellite positions in the account's entire
+history.** ⚠ **`TRADING_ENABLED` is TRUE, so a triggered stop WOULD be submitted — the null is an EMPTY
+SLEEVE, not a disabled stop.**
+
+**HIGH-WATER MARKS: NOTHING TO BACKFILL AND NOTHING WAS SKIPPED.** `highest_close` is **ABSENT — the
+third state, carrying no `(as of …)` date at all.** ⚠ **Do not read the missing stamp as a failed close
+run; there is no field, so there was nothing to write. DO NOT BACKFILL ANYTHING.** Zero `bars` calls were
+due on any satellite symbol and zero were made. ⚠ **The file-header rule stands unexercised and becomes
+load-bearing the moment a satellite fill lands: `highest_close` and the close it is compared against must
+come from the SAME adjustment basis, pulled in the SAME call.**
+
+**⚠⚠ THE DIVIDEND HAS STILL NOT BEEN PAID — CHECKED, AS THE CARRY-FORWARD REQUIRES.** `cash` reads
+**exactly $30,000.00**, unchanged from the 09-28 close. The implied VOO credit of **~$180.26–180.64**
+(an INFERENCE; Alpaca does not publish the figure) **has not arrived on day one of the window.** ⚠ **The
+falsifiable test stands and its deadline is 2026-10-07.** Day 1 of 8 and non-arrival on the ex-date+1 is
+**expected, not evidence** — settlement runs on the pay date, which is not the ex-date. **Do not read
+today's $30,000.00 as the test resolving.**
+
+**⚠⚠ AND THE THING THAT IS NOT ABOUT THIS LEDGER: YESTERDAY'S PRE-MARKET, OPEN AND MIDDAY RUNS LEFT NO
+COMMITTED OUTPUT, AND THIS RUN VERIFIED IT RATHER THAN INHERITING IT.** `git log` from inside this run
+shows the newest pre-today commit is **11804ab, the 09-28 close journal**, with **no premarket, open or
+midday commit dated 2026-09-28**; `plan_today.md` arrived carrying **`plan_date: 2026-09-25`**. ⚠ **On a
+day with an open satellite position, a missing routine 3 is an UNMANAGED §5 BOOK for a full session. The
+empty sleeve is the only reason the gap has cost nothing twice over.** **The cause is not visible from
+inside a run and is NOT asserted. It is a question for the human.**
+
+---
+
 **Reconciliation 2026-09-28 — ONE BLOCK FOR THE DATE, AND IT COVERS ONE RUN, NOT FOUR. ⚠⚠ ROUTINES 1,
 2 AND 3 LEFT NO COMMITTED OUTPUT TODAY — SEE THE HOUSEKEEPING NOTE BELOW. THE LEDGER AGREES WITH THE
 BROKER; ZERO SATELLITE POSITIONS ON BOTH SIDES; NO ORDER PLACED; NO HIGH-WATER MARK WRITTEN AND NONE DUE;

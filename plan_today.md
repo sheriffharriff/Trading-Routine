@@ -29,78 +29,97 @@ better. Core and rebalance actions are exempt from the gate because neither depe
 day's research.
 
 ```
-plan_date: 2026-09-25
+plan_date: 2026-09-29
 generated_by: 1-premarket-research
 market_open_today: yes
 ```
 
-Market opens today **2026-09-25 at 09:30 ET** (`alpaca.py clock` at 08:24:08 ET: `is_open:
-false`, `next_open: 2026-09-25T09:30:00-04:00`, `next_close: 2026-09-25T16:00:00-04:00`).
+Market opens today **2026-09-29 at 09:30 ET** (`alpaca.py clock` at 08:26:19 ET: `is_open:
+false`, `next_open: 2026-09-29T09:30:00-04:00`, `next_close: 2026-09-29T16:00:00-04:00`).
 **Not a holiday** — the market is closed because it is pre-market and `next_open` points at
-**today**. **Read the date, not the boolean.** FALSE has three meanings — pre-market,
-post-bell, holiday — and TRUE has one.
+**today**. ⚠ **Read the date, not the boolean. FALSE has three meanings — pre-market,
+post-bell, holiday — and TRUE has one.**
 
-**One pre-market run today, at 08:24 ET.** Selftest passed all five checks
-(`trading_enabled: true`, LIVE paper account, broker equity **$100,299.16**).
+**One pre-market run today, at 08:26 ET.** Selftest passed all five checks
+(`trading_enabled: true`, LIVE paper account, broker equity **$99,827.65**).
 
-**Today is also a weekly-review day (routine 5)**, and the last review before the
-**2026-10-02 monthly archive rollover**. `research_log.md` grew to **~333KB** this run.
+⚠⚠ **THIS FILE ARRIVED CARRYING `plan_date: 2026-09-25` — FOUR CALENDAR DAYS AND ONE FULL
+TRADING SESSION STALE, BECAUSE YESTERDAY'S PRE-MARKET RUN LEFT NO OUTPUT.** Verified from
+inside this run: `git log` shows **no commit dated 2026-09-28 other than the close journal
+(11804ab)**. ⚠ **Routine 4 deliberately left the stale date in place as evidence and said
+the next pre-market run would overwrite it normally. It has now been overwritten normally.**
+⚠ **THE STALENESS GATE STILL HAS NOT BEEN TESTED. The count is 28, not 29** — yesterday's
+09:35 run, which is the only thing that can fire the gate, did not execute.
 
 ---
 
 ## Tape context
 
-Yesterday's **official** VOO close, from `bars --adjustment all`, is **707.28** (09-23:
-707.28 — identical to the cent, verified last run as a real coincidence with distinct OHLV;
-09-22: 712.69; 09-21: 712.76; 09-18: 701.85).
+Monday's **official** VOO close, from `bars --adjustment all`, is **703.60**.
 
-⚠ **THE `lastday_price` PREDICTION RESOLVED ON ITS INFORMATIVE BRANCH — AND THE FIELD IS
-WRONG IN A FOURTH WAY.** The carry-forward set out three readings in advance: **707.60 ⇒ it
-never rebuilt (informative); 707.28 ⇒ AMBIGUOUS and not to be logged as a clean rebuild;
-anything else ⇒ wrong in a fourth way.** ⚠ **It reads 706.99.** That is the third branch.
-**The field DID rebuild — it moved off the 707.60 it had held through four consecutive reads
-on 09-24 — and it rebuilt to 706.99, which is 29 cents BELOW the official 707.28 and matches
-no recent official close** (09-22 712.69, 09-21 712.76, 09-18 701.85, 09-17 700.97 — none is
-706.99).
-⚠ **Writing the prediction down in advance is what made this readable at a glance, and it is
-the first time the pre-registered branches have paid off on the branch that was hardest to
-argue after the fact.** ⚠ **The error has now been observed in BOTH SIGNS: +32c on 09-24,
-−29c today. There is no offset to correct for, no refresh point to rely on, and no sign to
-predict. The field is unusable, and "it rebuilt" is not evidence it is right — on both
-mornings it rebuilt, it was wrong.**
+⚠⚠ **EVERY VOO CLOSE OLDER THAN 2026-09-28 NOW EXISTS ON TWO BASES AND THEY ARE NOT
+INTERCHANGEABLE. VOO WENT EX-DIVIDEND ON 09-28.** `bars --adjustment all` rescaled every
+prior close by **0.997432**; `--adjustment raw` and `--adjustment split` return the original
+series to the cent. **Both series are correct; they are different bases.**
 
-The broker's pre-market `positions` row reads `current_price` **709.7605** — **a pre-market
-midpoint, not a close and not an execution reference** — with `change_today` **+0.00392** and
-`unrealized_intraday_pl` **+$274.41** computed off the wrong 706.99 baseline. **None of those
+| Session | `--adjustment raw` | `--adjustment all` |
+|---|---|---|
+| 2026-09-28 | **703.60** | **703.60** *(unchanged — the ex-date itself)* |
+| 2026-09-25 | 710.705 | 708.88 |
+| 2026-09-24 | 707.28 | 705.47 |
+| 2026-09-23 | 707.28 | 705.47 |
+| 2026-09-22 | 712.69 | 710.86 |
+| 2026-09-21 | 712.76 | 710.93 |
+| 2026-09-18 | 701.85 | 700.05 |
+
+⚠ **NAME THE BASIS IN THE SENTENCE OR DO NOT WRITE THE SENTENCE.** The 09-03 core fill at
+**706.74 is a RAW print**; measuring it against an `--adjustment all` close mixes bases.
+⚠ **AND `quote`'s `prevDailyBar` DISAGREES WITH `bars --adjustment all` ON THE SAME SESSION,
+RIGHT NOW.** The standing "both legs from the same source" rule does **not** catch this — it
+distinguished broker fields from bar fields, never `quote` from `bars`.
+
+**THE DIVIDEND HAS STILL NOT BEEN PAID — CHECKED THIS RUN, AS THE CARRY-FORWARD REQUIRES.**
+`cash` reads **exactly $30,000.00**, unchanged. The implied credit is **~$180.26–180.64**
+(an INFERENCE — Alpaca does not publish the figure). ⚠ **The falsifiable test stands: if
+`cash` has not risen by ~$180 by 2026-10-07, the paper account does not model dividends at
+all, and §1's "beat the S&P TOTAL RETURN" is unwinnable BY CONSTRUCTION rather than by
+strategy. That is a finding for the human, not something to fix from this seat. CHECK `cash`
+EVERY RUN UNTIL IT RESOLVES.**
+
+The broker's pre-market `positions` row reads `current_price` **705.00** — **a pre-market
+mark, not a close and not an execution reference** — with `lastday_price` **703.61**
+(⚠ matching neither basis: raw 703.60, adjusted 703.60; the field is **UNUSABLE, not
+imprecise** — do not re-open it) and `unrealized_intraday_pl` **+$137.67**. **None of those
 were used in or carried into any figure in this plan.** **`bars --adjustment all` for a
 close, a fresh `quote` for execution, never a `positions` field for either, and never
 `equity − last_equity` or `unrealized_intraday_pl` for a day's P&L.**
 
-The core shows `unrealized_pl` **+$299.17 / +0.427%** against the 706.74 fill, on a pre-market
-mark. **§5 exempts core from all four sell rules, so no action attaches to that number in
-either direction.**
+The core shows `unrealized_pl` **−$172.34 / −0.246%** against the 706.74 fill, on a
+pre-market mark. **§5 exempts core from all four sell rules, so no action attaches to that
+number in either direction.**
 
 ---
 
 ## Sleeves and the rebalance question
 
-**State which basis produced any figure you quote** — last run established that the two can
-disagree in *sign* on `rebalance_delta`.
+**State which basis produced any figure you quote** — the two can disagree in *sign* on
+`rebalance_delta` (observed 09-24).
 
 | Basis | Equity | Core | Core % | Cash % | `rebalance_delta` |
 |---|---|---|---|---|---|
-| **Broker marks** (`sleeves`, 08:24) | $100,299.16 | $70,299.16 | **70.09%** | 29.91% | **−$89.75** |
-| **Official 09-24 close** (707.28 × 99.046311231) | $100,053.48 | $70,053.48 | **70.016%** | 29.984% | **−$16.04** |
+| **Broker marks** (`sleeves`, 08:26) | $99,827.65 | $69,827.65 | **69.95%** | 30.05% | **+$51.71** |
+| **Official 09-28 close** (703.60 × 99.046311231) | $99,688.98 | $69,688.98 | **69.9064%** | 30.0936% | **+$93.30** |
 
 ⚠ **NO REBALANCE IS DUE, ON EITHER BASIS.** §2 rebalances at the **65/75 band edge**, not to
-the exact target. The core sits **4.91 points** from the nearest edge on broker marks and
-**4.98** on official closes. `core_in_band: true`, `rebalance_needed: false`.
-⚠ **Note the two bases AGREE IN SIGN today** (both negative, core above target) — unlike
-09-24, where they disagreed. **That is not a sign the defect has gone away; it is a sign it
-is intermittent, which is worse.** **Forty-third consecutive run inside the range
-69.59–70.22.**
+the exact target. The core sits **4.95 points** from the nearest edge on broker marks and
+**4.91** on official closes. `core_in_band: true`, `rebalance_needed: false`.
+⚠ **Both bases are POSITIVE and AGREE IN SIGN — the second consecutive run they have done so,
+after four consecutive negative runs. That is not the price-source defect resolving; the same
+quantity disagreed in SIGN on 09-24. A run that checks one basis and finds agreement learns
+nothing.** **Forty-eighth consecutive run inside the range 69.59–70.22.**
 
-Cash is **$30,000.00 flat** — unchanged since the 09-03 core fill.
+Cash is **$30,000.00 flat** — unchanged since the 09-03 core fill, and see the dividend note
+above.
 
 ---
 
@@ -112,20 +131,29 @@ VOO**, 99.046311231 shares at avg_entry 706.74, cost_basis $69,999.99 — unchan
 
 **RECONCILIATION CLEAN.** Zero satellite blocks in `positions.md` against zero satellite
 Alpaca rows — they agree. *(Satellite-to-satellite, never raw ledger to raw broker: the core
-is deliberately untracked in `positions.md` because §5 exempts it.)*
+is deliberately untracked in `positions.md` because §5 exempts it.)* Core VOO was excluded
+from the working list before any §5 rule was read.
 
-**§5.1–§5.4 have no operand — the THIRTY-FOURTH consecutive session.** No thesis to
-invalidate, no timing window to expire, no entry price to measure a −7% hard stop from, no
-`highest_close` to measure a −10% trailing stop from. ⚠ **§5.4 is STILL NOT ARMED**; it arms
-on the first **satellite** fill, and the 09-03 core fill was not one. **The running tally of
-"no exits" records the ABSENCE OF A SUBJECT, not thirty-four clean bills of health. All four
-remain UNTESTED CODE PATHS.**
+**§5.1–§5.4 have no operand.** ⚠ **Counted against the CALENDAR, not inherited — catch (9)
+established that the "Nth consecutive SESSION" series in these files was a RUN counter
+wearing a session label, and it is not continued here.** The verified figures: **20 trading
+sessions since 2026-09-01, 17 since the 09-03 core fill, and ZERO satellite positions in the
+account's entire history.** No thesis to invalidate, no timing window to expire, no entry
+price to measure a −7% hard stop from, no `highest_close` to measure a −10% trailing stop
+from. ⚠ **§5.4 is STILL NOT ARMED**; it arms on the first **satellite** fill, and the 09-03
+core fill was not one. **§5.3's distance is UNDEFINED, not large.** **The running tally of
+"no exits" records the ABSENCE OF A SUBJECT, not a clean bill of health. All four remain
+UNTESTED CODE PATHS.**
 
 **High-water marks: nothing to backfill, and nothing was skipped.** `highest_close` is
-**ABSENT — the third state, carrying no `(as of …)` date at all.** ⚠ **Yesterday's close run
-had no `highest_close` to stamp because there is no field, not because it failed. Do not read
-the missing stamp as a failed close run.** **Zero `bars` calls were due on any satellite
-symbol and zero were made.**
+**ABSENT — the third state, carrying no `(as of …)` date at all.** ⚠ **Do not read the
+missing stamp as a failed close run: there is no field, so there was nothing to write. DO NOT
+BACKFILL ANYTHING.** **Zero `bars` calls were due on any satellite symbol and zero were made.**
+⚠ **AND WHEN §5.4 DOES ARM: `highest_close` and the close it is compared against must come
+from the SAME adjustment basis, pulled in the SAME call.** 09-28 was the day this mechanism
+would have broken — a Friday-stamped mark against Monday's `--adjustment all` close would have
+shown a **0.257% drawdown that did not happen**. ⚠ **The empty sleeve is the only reason it
+cost nothing.**
 
 ---
 
@@ -136,38 +164,39 @@ symbol and zero were made.**
 **NONE.**
 
 ⚠ **Every gate that could have blocked a buy was OPEN, and nothing was blocked.** Circuit
-breaker **INACTIVE**; `new_positions_this_week` **0 of 3**; satellite sleeve **empty** with
-**~30% idle cash**; `control.md` notes **(none)**; `TRADING_ENABLED: true`. **Research ran in
-full and produced no eligible candidate.** Per §4, that is a successful run, not a failed one.
+breaker **INACTIVE** (`halt_triggered_at: none`); `new_positions_this_week` **0 of 3**;
+satellite sleeve **empty** with **~30% idle cash**; `control.md` notes **(none)**;
+`TRADING_ENABLED: true`. **Research ran in full and produced no eligible candidate.** Per §4,
+that is a successful run, not a failed one.
 
 **Six candidates reached a `research_log.md` entry and all six were rejected:**
 
 | ID | Candidate | Killed by |
 |---|---|---|
-| T-2026-09-25-01 | **JBL** (Jabil) | **Part 2** — the $1.7B is capital paid IN, held on consignment, repurchased **at cost**. Not segment revenue at Company B. |
-| T-2026-09-25-02 | **AKAM** (Akamai) | **First-order** — the company in the headline. |
-| T-2026-09-25-03 | memory suppliers (no ticker) | **Rule (v)** — no supplier named in any disclosure; and <10% of revenue for any of them even if named. |
-| T-2026-09-25-04 | **RDW** (Redwire) | **Ceiling** — $980M is a multiple-award ceiling across **15 vendors**, no Redwire allocation; also first-order; also below the §3 floor. |
-| T-2026-09-25-05 | **FLNC** (Fluence) | **No value or volume disclosed**; supplier is Shenzhen-listed. |
-| T-2026-09-25-06 | rate/oil/PMI complex (no ticker) | **Environment input, not a Company A.** |
+| T-2026-09-29-01 | **AMRAAM component suppliers** (no ticker) | **Premise + part 1** — RTX is the awardee (first-order); **no subcontractor is named anywhere** and no dollars are allocated to one. Rule (v). |
+| T-2026-09-29-02 | **IOVA** (Iovance) | **Part 1** — rule (iii) PASSES cleanly, then **rule (vii)**: Iovance manufactures Amtagvi itself and names no external supplier. |
+| T-2026-09-29-03 | **SMMT** (Summit) / AstraZeneca | **Premise + part 2 + part 3** — first-order; the $2.0B is **capital paid IN** for convertible preferred (rule viii); clinical collaboration is years, not quarters. |
+| T-2026-09-29-04 | **CRK** (Comstock) / SOCAR | **Part 1 + part 2** — the second-order sentence needs an **"and also"**; $1.65B is capital paid in by a non-US-listed state oil company. |
+| T-2026-09-29-05 | rate / Fed-repricing complex (no ticker) | **Environment input, ONE party.** T-2026-09-25-06 with bigger numbers. |
+| T-2026-09-29-06 | **AIR** (AAR) / MRO Holdings | **Part 1** — the only Company B is **private**; and **rule (iii) cannot be cleared** — AAR's own prior guidance is absent from the sources. |
 
-⚠⚠ **READ T-2026-09-25-01 BEFORE ANY FUTURE RUN REACHES FOR THIS CHAIN.** The Akamai/Anthropic
-deal produced exactly what open item (3) has said for a month never arrives — **a named
-US-listed supplier with a specifically allocated dollar figure, quoted verbatim from an
-8-K.** And it still produced nothing, because **the figure was the wrong quantity**: Akamai
-paying Jabil's supplier invoices for components **Jabil holds in consignment as bailee and
-repurchases at cost.** ⚠ **That is a FIFTH form of open item (3)'s binding constraint, and
-the only one that no widening of the evidence bar would relieve — widening it would have let
-this through.**
+⚠⚠ **THE FINDING OF THIS RUN IS THAT THE SOURCE VOLUNTEERED THE ABSENCE.** The guidance and
+capacity scan returned five US-listed names and printed, for four of the five, *"No other
+company's revenue or costs are identified as directly affected in the available source
+material."* ⚠ **That is not an under-searched funnel — it is the funnel answering §4's
+question directly and in the negative. A run that then produces a Company B has supplied it
+from its own priors, which is exactly the failure §4's honest-broker paragraph names.**
 
-⚠ **AND THE PRICED-IN FILTER IS NOT THE REASON FOR THE JBL REJECTION.** It fired first
-(`priced_in: true`, +4.97%), as §4 requires, but on a **five-session grind whose largest
-single day was +1.72% and whose news day moved JBL +0.63%** — a rise unrelated to the news.
-**That is a THIRD defect shape for open items (1) and (2)** and it is the human's to resolve.
-⚠ **The agent did not act on it: a correct reading of §4's "on this news" wording is still a
-`strategy.md` change, and this was precisely the setup that rule guards against — a candidate
-the agent had begun to like plus a technical argument that the filter misfired. The bar does
-not move from this seat.**
+⚠⚠ **AND THE DAY'S SHARPEST PAIR SITS ONE ENTRY APART: T-2026-09-29-02 IS THE CLEANEST RULE
+(iii) PASS IN WEEKS AND T-2026-09-29-06 IS A RULE (iii) FAILURE, FROM THE SAME QUERY.**
+Iovance raised guidance against **its own prior number** ($350–370M → $410–420M); AAR quoted a
+growth range with **no prior range in the source**. ⚠ **The difference is entirely whether the
+source carried the company's OWN prior figure. That is the whole test, and it is cheap.**
+
+⚠ **NO PRICED-IN CHECK WAS RUN THIS MORNING, AND THAT IS AN ABSENT CHECK, NOT A SKIPPED ONE** —
+every candidate died at the premise, at part 1 or at part 2, before any eligible ticker was
+reached. **Zero `move` calls were made.** ⚠ **Recorded explicitly because "the filter did not
+fire" and "the filter had nothing to fire on" look identical in a run summary.**
 
 ### SELL
 
@@ -175,7 +204,7 @@ not move from this seat.**
 
 ### REBALANCE
 
-**NONE.** Core is in band on both bases (70.09% broker / 70.016% official; band 65–75%).
+**NONE.** Core is in band on both bases (69.95% broker / 69.9064% official; band 65–75%).
 ⚠ **Do not act on `rebalance_delta` — §2 rebalances at the band edge, and the core is ~4.9
 points inside it.**
 
@@ -186,20 +215,37 @@ points inside it.**
 **Zero BUY intents, so ZERO `move` re-validation calls are due. That is an ABSENT check, not
 a skipped one** — record it that way.
 
-⚠ **The staleness gate: this plan is dated 2026-09-25 and today's ET date is 2026-09-25, so
+⚠ **The staleness gate: this plan is dated 2026-09-29 and today's ET date is 2026-09-29, so
 it is FRESH.** ⚠ **But note what that does and does not tell you: a FRESH EMPTY plan and a
 STALE plan produce a byte-for-byte identical zero-order run. Read `plan_date`, never the
-outcome.** The gate has been exercised **twenty-seven times and has never fired**; its alert
-path **remains untested code**, and the first morning it fires will by construction be a
-morning when this run failed — i.e. the morning with no fresh notes to lean on. **Read
-routine 2's Step 2 then; do not recall it.**
+outcome.** The gate has been exercised **twenty-eight times and has never fired**; its alert
+path **remains untested code**. ⚠⚠ **AND YESTERDAY WAS THE MORNING IT WOULD FINALLY HAVE
+FIRED — this file genuinely carried a stale `plan_date: 2026-09-25` — AND THE RUN CONTAINING
+THE GATE DID NOT EXECUTE. The prediction was right about the setup and the test still did not
+happen.** The first morning it does fire will by construction be a morning when the
+pre-market run failed — i.e. the morning with no fresh notes to lean on. **Read routine 2's
+Step 2 then; do not recall it.**
+
+**⚠ CHECK WHETHER YESTERDAY'S ROUTINES RAN.** If this run's commit is again the only one on
+the date, that is now a **two-day** pattern and belongs in the ClickUp summary with emphasis.
+The repo's own definition of a run having happened is a commit — "push, or it never happened."
+
+**⚠ CHECK `cash`.** It should read **$30,000.00** if the VOO dividend still has not been paid,
+or **~$30,180.45** if it has. **Either reading is informative; record which one you saw.**
 
 **Bootstrap is permanently closed** (`core_established: true`). **Do not re-run it.**
 
 ⚠ **Open item (7) is live but unexposed, as always: `alpaca.py move` cannot see an after-hours
 event, and neither can the 09:35 re-validation that exists to catch exactly that. It has cost
 zero only because no plan has yet carried a BUY intent — an absence of exposure, not a
-mitigation.** ⚠ **This run supplied new and sharper evidence for it: AKAM moved +12.35% in a
-single session on 09-21 and gave back 6.74% on 09-24, netting to a +3.19% `priced_in: false`
-"pass." A five-session window can hide an entire event move behind a later give-back, and no
-re-validation at 09:35 would have surfaced it.**
+mitigation.**
+
+⚠ **A BAR DATED TODAY IS PARTIAL WHILE THE MARKET IS OPEN, AND `n`/`v` CANNOT TELL YOU
+OTHERWISE. THE RELIABLE DISCRIMINATOR IS THE CLOCK.** Routine 2 reads `is_open: true` and can
+pull a live partial bar. **Low volume is not evidence of a partial bar any more than high
+volume is evidence of a complete one** — `feed=iex` returns one venue's slice.
+
+⚠ **ROUTINE 2 EXECUTES ONLY WHAT THIS FILE CONTAINS.** This file contains no BUY. Idle cash,
+an INACTIVE breaker and an unused 0-of-3 weekly cap are **not** an opportunity the 09:35 seat
+may act on — a position opened at 09:35 without a plan entry routes **around** the discipline
+rather than satisfying it.
