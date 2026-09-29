@@ -52,6 +52,253 @@ single most common way a plausible-sounding connection gets mistaken for an oppo
 
 ## Entries
 
+### 2026-09-29 (08:26 ET) — event survey (funnel, pre-thesis)
+
+Selftest passed all five checks (`trading_enabled: true`, LIVE paper account, equity **$99,827.65**
+on broker marks). Window screened: **Monday's close through Tuesday pre-market (Sept 28–29)** — one
+full session. **Four Perplexity scans, all exit 0.** **Six candidates reached a thesis entry; ALL SIX
+WERE REJECTED.**
+
+⚠⚠ **FIRST, THE THING THAT IS NOT A THESIS: THE FUNNEL RESTARTED FROM ZERO TODAY BECAUSE YESTERDAY'S
+PRE-MARKET RUN LEFT NO OUTPUT.** `git log` confirms it from inside this run: the newest commit before
+today is **11804ab, the 09-28 close journal**, and there is **no premarket, open or midday commit dated
+2026-09-28**. **0 theses were written on 09-28 — not because the funnel found nothing, but because the
+run that writes them did not happen.** ⚠ **The carry-forward said so and this run verified it rather
+than inheriting it.** **The cause is still not visible from inside a run and is still NOT asserted.**
+⚠ **`plan_today.md` arrived carrying `plan_date: 2026-09-25` — the genuinely stale plan the staleness
+gate has been waiting 28 opens to fire on. This run overwrites it normally, as routine 4 said it
+would. THE GATE STILL HAS NOT BEEN TESTED, and the count is still 28.**
+
+**Today's tape is the same macro complex as Friday's, one notch louder and NOT a new event:** the
+10-year Treasury yield ~**5.25%** (highest since 2007), the 30-year ~**5.56–5.57%** (highest since
+2004), the 2-year approaching 5%, and CME FedWatch pricing **~70%** odds of a 25bp **hike** in
+October against ~57% a week earlier. ⚠ **This is T-2026-09-25-06 with a bigger number. It was rejected
+five sessions ago as an environment input with ONE party, and a larger number does not give it a second
+one. Logged as T-2026-09-29-05 and deliberately NOT re-litigated.**
+
+**⚠ THE SHAPE OF TODAY'S FUNNEL IS WORTH RECORDING ON ITS OWN: THE SOURCE VOLUNTEERED THE ABSENCE.**
+The guidance/capacity scan returned five US-listed names and printed, for four of the five, the phrase
+*"No other company's revenue or costs are identified as directly affected in the available source
+material."* ⚠ **That is not the funnel being under-searched — that is the funnel answering the §4
+question directly and in the negative.** A run that then produces a Company B has supplied it from
+its own priors, which is the exact failure §4's honest-broker paragraph describes.
+
+**Screened and rejected without a full entry** (immaterial, first-order, below §3, or no named
+counterparty): **TOYO** — ~$240M of binding US solar module supply agreements, **customers not named**
+(rule (v)); **Megaport** — three AI-infrastructure contracts totalling ~**A$978.6M** with
+**counterparties not named**, and Megaport is **ASX-listed** (§3); **Draganfly / Unusual Machines** —
+$10M strategic investment, both microcaps and the co-investor unnamed (§3); **Uniserve Communications**
+— counterparty described only as "an enterprise client," ~US$3.15M (rule (v), immaterial);
+**Newgen Software** — customer described only as "a US-based health insurer," US$5.475M (Indian-listed,
+rule (v), immaterial); **Exascale Labs Holdings** — FY2026 revenue **$14.8M**, a capacity plan with no
+prior target to compare against and no counterparty (§3 outright); **Uranium Energy Corp** — four
+header houses approved at Christensen Ranch, a genuine change against **UEC's own** prior disclosure
+(rule (iii) passes) but **no second party exists anywhere in the disclosure**; **Sangoma Technologies**
+— definitive sale agreement, **purchaser, value and terms all undisclosed**, and Sangoma is Canadian.
+
+**⚠ NO CANDIDATE FROM 09-25'S SIX REJECTIONS WAS REHABILITATED.** No `move`, `quote`, `bars` or `asset`
+call was made on JBL, AKAM, RDW, FLNC, Lenovo or any memory supplier. **A rejection is not a queue.**
+⚠ **And GNRC was not looked at: zero `move` calls, zero `quote` calls, zero Perplexity queries naming
+it. Graded honestly — this run had a live funnel and an open data plane, so the refusal was NOT free;
+but it also had no candidate whose thesis wanted a Generac number, so it is a MEDIUM instance, not a
+strong one.** The disqualifying fact has not moved: **GNRC is the named counterparty in the Amazon
+announcement — first-order, outside §4 at any price.**
+
+---
+
+### T-2026-09-29-01 — AMRAAM component suppliers (no ticker reached) — REJECTED
+**Company A / the news:** **The Pentagon awarded Raytheon, an RTX business, a five-year multiyear
+AMRAAM contract with two option years, not-to-exceed $20,699,334,581 (~$20.7B)**, announced 2026-09-28
+by RTX and covering *"AMRAAM All Up Rounds, Guidance Sections, Direct Charge, and FMS Offsets"*, with
+reporting citing a target output of **at least 1,900 missiles a year**.
+**Company B / the candidate:** the **solid rocket motor, seeker and guidance-section suppliers** feeding
+that production-rate increase.
+
+**1. Mechanism (one sentence):**
+> ⚠ **UNWRITABLE AT THE SECOND ORDER — THERE IS NO COMPANY B IN THE SOURCE.** The only writable sentence
+> names **RTX itself**, and **RTX is the awardee — first-order, outside §4 at any price.**
+
+**2. Dollar path:** ⚠ **NOT REACHED — and note that the dollar figure is not the missing piece here.**
+The DoD release gives an exact not-to-exceed amount to the cent and **names four contract line
+categories**, and **allocates none of it to any subcontractor.** The only supplier language in any
+source is *"small and mid-sized suppliers across the country"* and *"co-production with international
+partners"* — **no company names, no supplier-specific dollar amounts.**
+**3. Timing window:** ⚠ **Not reached.** *(And had it been: a five-year multiyear production ramp is
+outside §4 part 3's two-quarter horizon on its own.)*
+**4. Invalidation:** ⚠ **Not reached.**
+
+**Hard filters:**
+- Priced-in (§4): ⚠ **NOT RUN.** There is no ticker to run it on; RTX is first-order.
+- Correlation (§4): vacuously passes — zero open satellite positions.
+- Universe (§3): **not reached, and deliberately not sourced.** No cap figure belongs in the audit
+  trail for a thesis that died at the premise.
+
+**Outcome:** **REJECTED at the premise (first-order) and at part 1 (no Company B exists in the source).**
+⚠⚠ **THIS IS STANDING RULE (v) IN ITS PUREST FORM AND IT IS THE THIRD TIME IN SEVEN SESSIONS.** "Who
+makes the AMRAAM rocket motor?" is a question about an **industry**, answerable from priors — and the
+answer a run would reach for (Aerojet Rocketdyne, now inside L3Harris) is **exactly the kind of name
+the source does not contain.** ⚠ **The query was written to make the absence explicit rather than to
+find a name, and it returned: "The evidence available does not support identifying Northrop Grumman,
+Aerojet Rocketdyne/L3Harris, BAE Systems, or any other company as a contract-designated AMRAAM supplier
+for this award."** ⚠ **STANDING RULE (iv) ALSO FIRES: L3Harris would have been the third appearance of
+LHX in this log.** The 09-23 Tomahawk entry (T-2026-09-23-05) is the same chain with a different missile
+— ⚠ **and that one had NO disclosed value while this one has $20.7B, which makes this the MORE tempting
+version and not the stronger one. The blank the source left is in the same place both times.**
+
+---
+
+### T-2026-09-29-02 — IOVA (Iovance Biotherapeutics) — REJECTED
+**Company A / the news:** **Iovance raised FY2026 total revenue guidance to $410–420M from its own
+prior $350–370M on 2026-09-29** — a **+$55M midpoint increase, ~15%** — attributing it to US demand for
+**Amtagvi (lifileucel)** and **Proleukin**.
+**Company B / the candidate:** Iovance's **contract manufacturers, cell-therapy suppliers or logistics
+partners**.
+
+**1. Mechanism (one sentence):**
+> ⚠ **UNWRITABLE — no external manufacturing partner or supplier is named by Iovance or in its filings
+> for either product**, and the available evidence indicates **Iovance manufactures Amtagvi itself**.
+
+**2. Dollar path:** ⚠ **NOT REACHED.** There is no Company B to size a segment at.
+**3. Timing window:** ⚠ **Not reached.**
+**4. Invalidation:** ⚠ **Not reached.**
+
+**Hard filters:** ⚠ **None run — no ticker was reached.** Correlation passes vacuously (zero open
+positions).
+
+**Outcome:** **REJECTED at part 1.** ⚠⚠ **WORTH RECORDING PROPERLY, BECAUSE THIS IS THE BEST RULE (iii)
+PASS IN WEEKS AND IT STILL DID NOT PRODUCE A TRADE.** Rule (iii) — *verify the news is new to the
+company's own disclosure* — is the most prolific killer in this log, and Iovance clears it **cleanly**:
+this is a company-issued number compared against **the same company's own prior number**, not a
+guidance issuance measured against consensus (the Ameren / Five Below / Labcorp / Nucor costume) and not
+a reaffirmation (the Centene / Southwest / General Mills costume). ⚠ **The thesis died one step later,
+at standing rule (vii) — CHECK WHETHER THE NAMED BENEFICIARY MAKES THE PART ITSELF BEFORE LOOKING FOR
+ITS SUPPLIER. A vertically integrated cell-therapy manufacturer leaves no external supplier to find.**
+⚠ **This is the fourth known form of open item (3)'s binding constraint, and note which one it is NOT:
+widening the evidence bar would not help here, because there is no withheld figure — there is no
+counterparty.**
+
+---
+
+### T-2026-09-29-03 — SMMT (Summit Therapeutics) / AstraZeneca — REJECTED
+**Company A / the news:** **AstraZeneca agreed on 2026-09-28 to invest $2.0 billion in Summit
+Therapeutics convertible preferred shares**, alongside a clinical collaboration on **ivonescimab** and
+**sonesitatug vedotin**.
+**Company B / the candidate:** **SMMT** as the recipient; then, as the second-order attempt, suppliers
+to either party.
+
+**1. Mechanism (one sentence):**
+> ⚠ **The only writable sentence makes SMMT the beneficiary, and SMMT is a NAMED PARTY — first-order.**
+> No second-order sentence survives: **no supplier, CMO or component vendor is named by either side.**
+
+**2. Dollar path:** ⚠ **FAILS OUTRIGHT AT STANDING RULE (viii), AND THE FIGURE IS FULLY DISCLOSED.**
+The **$2.0 billion is capital paid IN to Summit in exchange for convertible preferred stock.** It is
+**not segment revenue at Company B** — it is equity issuance, which dilutes rather than earns. ⚠ **Read
+rule (viii) broadly, as the carry-forward instructs: any disclosed figure that is not SEGMENT REVENUE AT
+COMPANY B fails part 2.** Same shape as SoftBank/OpenAI's $11.1B and TotalEnergies/GIP's $1.8B.
+**3. Timing window:** ⚠ **FAILS INDEPENDENTLY.** A clinical collaboration on two oncology assets shows
+up in **reported results** years out, not within two quarters. **Standing rule (vi) kills it a second
+time.**
+**4. Invalidation:** ⚠ **Not reached.**
+
+**Hard filters:**
+- Priced-in (§4): ⚠ **NOT RUN** — first-order, and part 2 had already failed.
+- Correlation (§4): vacuously passes.
+- Universe (§3): **not reached.** *(AstraZeneca is in any case a UK issuer trading as an ADR.)*
+
+**Outcome:** **REJECTED at the premise (first-order), at part 2 (capital paid in, not revenue) and at
+part 3 (beyond two quarters) — three independent kills.** ⚠ **The interesting property is that the
+$2.0B is REAL, SIGNED AND DISCLOSED TO THE DOLLAR, which is the JBL lesson restated: a large, real,
+sourced, prominently-placed number is not a dollar path. The direction the money moves decides it.**
+
+---
+
+### T-2026-09-29-04 — CRK (Comstock Resources) / SOCAR — REJECTED
+**Company A / the news:** **Comstock Resources announced on 2026-09-28 a framework agreement with SOCAR**
+memorialising SOCAR's previously announced **$1.65 billion** investment in the Haynesville Shale, with a
+definitive purchase-and-sale agreement expected by 2026-10-31 and closing by year-end.
+**Company B / the candidate:** **CRK** as the recipient; then **Haynesville pressure pumpers, sand and
+oilfield-service names** as the second-order attempt.
+
+**1. Mechanism (one sentence):**
+> ⚠ **The first-order sentence names CRK, a NAMED PARTY. The second-order sentence needs an "and also":**
+> *"SOCAR's investment funds Haynesville development **and also** some unnamed service company will win
+> the resulting work."* ⚠ **That "and also" is the §4 giveaway. Reject it.**
+
+**2. Dollar path:** ⚠ **FAILS TWICE.** At CRK the **$1.65B is capital paid IN by an investor** — rule
+(viii), and SOCAR is **Azerbaijan's state oil company, not US-listed**, so the paying leg is
+unbuyable. At the second order there is **no rig count, no well count, no volume, no timetable and no
+named service provider anywhere in the disclosure** — nothing to size a segment with.
+**3. Timing window:** ⚠ **Not reached.** *(The definitive agreement is not even signed; standing rule
+(vi) — screen the window early on anything pending — applies.)*
+**4. Invalidation:** ⚠ **Not reached.**
+
+**Hard filters:**
+- Priced-in (§4): ⚠ **NOT RUN** — no eligible ticker was reached.
+- Correlation (§4): vacuously passes.
+- Universe (§3): **not reached and not sourced.**
+
+**Outcome:** **REJECTED at part 1 (the second-order sentence needs an "and also") and part 2 (capital
+paid in; no sizeable segment at any Company B).** ⚠ **Note the costume: "a $1.65B investment will fund
+drilling, so drilling services benefit" is standing rule (v) wearing a capital-expenditure coat — a fact
+about an INDUSTRY'S activity level, not a TRANSACTION with a named counterparty.**
+
+---
+
+### T-2026-09-29-05 — the rate / Fed-repricing complex (no ticker) — REJECTED
+**Company A / the news:** The 10-year Treasury at ~**5.25%** (highest since 2007), the 30-year at
+~**5.56–5.57%** (highest since 2004), the 2-year approaching 5%, and CME FedWatch pricing **~70%** odds
+of a 25bp October **hike** against ~57% a week earlier. Fed Governor Lisa Cook cited continued
+inflationary pressure from **AI-related demand and higher oil prices**.
+**Company B / the candidate:** ⚠ **None reached, deliberately.**
+
+**1. Mechanism (one sentence):** ⚠ **UNWRITABLE — THERE IS NO COMPANY A.** A yield level and a
+market-implied probability are **environment inputs with ONE party**. Every "who wins from higher rates"
+sentence requires an *"and also"*.
+**2–4:** ⚠ **Not reached.**
+
+**Hard filters:** ⚠ **None run.**
+
+**Outcome:** **REJECTED at the premise — and logged expressly so the next run can see it was ENCOUNTERED
+AND NOT RE-LITIGATED.** ⚠⚠ **This is T-2026-09-25-06 five sessions later with every number one notch
+larger, and the carry-forward's warning is the operative one: SCALE MAKES IT MORE CONVINCING, NOT LESS.**
+⚠ **A market-implied hike probability is a NEW and slightly more seductive costume than Friday's yield
+levels, because a probability that MOVED (57% → 70%) reads like an event with a date. It is still the
+same object: no named recipient, no transaction, one party.** ⚠ **Note also that this was the ONLY
+answer the broad overnight scan returned — the first query found no qualifying US corporate event at
+all. A run whose sole finding is macro is a run with no funnel, and the correct response is to say so.**
+
+---
+
+### T-2026-09-29-06 — AIR (AAR Corp.) / MRO Holdings — REJECTED
+**Company A / the news:** **AAR Corp. reported fiscal Q1 2027 results on 2026-09-28** and guided Q2 to
+**14–16% sales growth** ex-Legacy Commercial Programs and **13.0–13.4% adjusted EBITDA margin**. It
+separately announced an agreement to acquire a controlling interest in **MRO Holdings**, and stated the
+guidance **excludes any impact from the acquisition**.
+**Company B / the candidate:** **MRO Holdings**, then AAR's aftermarket suppliers.
+
+**1. Mechanism (one sentence):** ⚠ **UNWRITABLE.** **MRO Holdings is the acquisition TARGET and is
+private — not buyable.** No supplier to either party is named anywhere in the disclosure.
+**2. Dollar path:** ⚠ **FAILS AT THE SOURCE.** ⚠ **Rule (iii) CANNOT BE CLEARED HERE and that is the
+finding: the available evidence does not contain AAR's immediately preceding company guidance, so
+whether 14–16% is a RAISE, a CUT or a REITERATION is not establishable.** A growth range quoted without
+the prior range is exactly the shape rule (iii) exists to catch. **No value is disclosed for the MRO
+Holdings transaction either.**
+**3. Timing window:** ⚠ **Not reached.**
+**4. Invalidation:** ⚠ **Not reached.**
+
+**Hard filters:**
+- Priced-in (§4): ⚠ **NOT RUN** — no eligible Company B.
+- Correlation (§4): vacuously passes.
+- Universe (§3): **not reached.** *(AAR is first-order in any case.)*
+
+**Outcome:** **REJECTED at part 1 (the only Company B is private) and at rule (iii) (the company's own
+prior guidance is absent, so no change is establishable).** ⚠ **Recorded because it is a rule (iii)
+FAILURE sitting one entry away from T-2026-09-29-02's rule (iii) PASS, on the same day and from the same
+query. The difference is entirely whether the source carried the company's OWN prior number. That is the
+whole test, and it is cheap to apply.**
+
+---
+
 ### 2026-09-25 (08:24 ET) — event survey (funnel, pre-thesis)
 
 Selftest passed all five checks (`trading_enabled: true`, LIVE paper account, equity **$100,299.16**
