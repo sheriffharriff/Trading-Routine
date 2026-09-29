@@ -85,9 +85,28 @@ check that the pull returned the right session. A stored baseline is a *label*, 
 
 *(none — no **satellite** positions have been opened yet. Core VOO exists and is deliberately not tracked here, per the top-of-file rules and the fill note further down.)*
 
-**Reconciliation 2026-09-29 — 12:42 ET, 3-midday-management. ZERO SATELLITE POSITIONS ON BOTH SIDES;
-NO EXIT WAS TAKEN AND NONE WAS DUE; NO HIGH-WATER MARK NEEDED BACKFILLING BECAUSE THERE IS NO MARK.
-THIS RUN MAY NOT OPEN A POSITION AND DID NOT.**
+**Reconciliation 2026-09-29 — 16:16 ET, 4-market-close-journal. ZERO SATELLITE POSITIONS ON BOTH SIDES.**
+`alpaca.py positions` returns **one row, core VOO**, 99.046311231 shares at avg_entry 706.74, cost_basis
+$69,999.99 — unchanged since the 09-03 fill — against **zero satellite blocks in this file. They AGREE.**
+
+⚠⚠ **NO HIGH-WATER MARK WAS RECORDED TODAY, AND THAT IS CORRECT RATHER THAN A GAP.** The close routine's
+Step 2 exists to stamp each open satellite position's official close into `highest_close`. **There is no
+`highest_close` field on any position, because there are no positions** — the field is **ABSENT, the third
+state, carrying no `(as of …)` date at all.** ⚠ **Do not read the missing stamp as a skipped close run.
+DO NOT BACKFILL ANYTHING.** Today's official VOO close was **702.27** (`bars --adjustment all`, complete
+session, `--adjustment raw` agrees to the cent) and it was deliberately **NOT** written anywhere in this
+file: **core is exempt from §5 and a mark on it would fabricate a §5.4 trailing stop on the one position the
+strategy exempts** — a stop that could eventually sell core on a drawdown, which §7 forbids outright.
+
+⚠ **STEP 2 HAVING NO OPERAND IS NOT THE SAME AS STEP 2 PASSING.** The backfill path in the paragraph above
+— re-pull the window on a stated adjustment basis, take the max from that one pull — **remains unexercised
+code**, and 09-28 is the proof that is not academic: that day lost its close run, so with one satellite
+position open, 09-29's midday run would have had to backfill across an ex-dividend date. **The cost has been
+zero because the sleeve is empty. That is luck, not a control.**
+
+**§5.4 is still NOT ARMED** (it arms on the first *satellite* fill; the 09-03 core fill was not one) and
+**§5.3's distance is UNDEFINED, not large.** **§5.1–§5.4 have never had an operand in this account's
+history — 20 trading sessions since 2026-09-01, 17 after the fill, zero satellite positions ever.**
 
 Selftest passed all five checks; pre-flight equity **$99,462.17** (broker mark), `trading_enabled: true`,
 LIVE paper. `clock` at **12:42:08** reads `is_open: TRUE` with `next_close` **2026-09-29T16:00** — the
