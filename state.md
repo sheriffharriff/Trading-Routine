@@ -13,9 +13,9 @@ The block below is parsed by `scripts/common.py` and gates real behavior
 silently discards everything after it. **Validate with `common.read_state()` after rewriting.**
 
 ```
-last_run: 2026-09-29 09:35 ET 2-market-open-execution (selftest PASSED all five, trading_enabled true, LIVE paper, broker equity 99694.43 at pre-flight; ZERO ORDERS PLACED AND ZERO WERE DUE; clock at 09:35:56 is_open TRUE which is the one boolean reading that is sufficient alone, market genuinely open and the run genuinely in its window; THE STALENESS GATE DID NOT FIRE AND THIS IS EXERCISE 29 NOT A PASS - plan_date read 2026-09-29 against today's ET date 2026-09-29 so the plan was FRESH, and a FRESH EMPTY plan and a STALE plan produce a byte-for-byte identical zero-order run so the outcome proves nothing, read plan_date never the order count, THE ALERT PATH REMAINS UNTESTED CODE FOR THE 29TH TIME; THE PLAN CARRIED ZERO BUY AND ZERO SELL INTENTS so step 4 step 5 and step 6 all had NO OPERAND, ZERO move calls were due and ZERO were made which is an ABSENT re-validation NOT a skipped one, and ZERO orders of any kind were submitted; RECONCILIATION CLEAN - positions returns ONE row core VOO 99.046311231 shares avg_entry 706.74 cost_basis 69999.99 unchanged since the 09-03 fill, and positions.md carries ZERO satellite blocks (its only T-dash heading is the TEMPLATE) against ZERO satellite Alpaca rows, they AGREE; BOOTSTRAP NOT RUN - core_established was already true so step 3 was permanently closed and was not re-entered; HOUSEKEEPING all three checks run none fired - week anchor Monday 2026-09-28 MATCHES week_of so NO ROLLOVER was due, breaker INACTIVE with halt_triggered_at none and consecutive_closed_losses 0 so new positions were PERMITTED and nothing blocked them, weekly cap UNUSED at 0 of 3, core 69.91 pct broker / 69.9064 pct official BOTH INSIDE the 65-75 band so NO REBALANCE was due under step 7; THE LAST COMPLETED CLOSE WAS PULLED FRESH NOT INHERITED - bars --adjustment all gives 09-28 at 703.60 and the 09-29 bar EXISTS AND IS PARTIAL (n 293, v 11042) with is_open TRUE, which is the clock discriminating correctly where n and v could not; A THIRD EQUITY NUMBER APPEARED INSIDE THIS ONE RUN SECONDS APART - sleeves read 99687.00 and account read 99685.02 and the pre-flight read 99694.43, three live midpoints not three errors, open item (5) observed INTRA-RUN for the first time; CASH READS EXACTLY 30000.00 - the VOO dividend is STILL UNPAID on day 2 of the 8-day window and non-arrival remains EXPECTED NOT EVIDENCE; AND THE 09-28 GAP DID NOT CONTINUE - git log shows 73aab79 the 09-29 premarket commit dated TODAY, so yesterday stands as a ONE-DAY three-routine gap and NOT a two-day pattern, checked from source as the plan required; prior last_run preserved below)
+last_run: 2026-09-29 12:42 ET 3-midday-management (selftest PASSED all five, trading_enabled true, LIVE paper, broker equity 99462.17 at pre-flight; ZERO EXITS TAKEN AND ZERO WERE DUE; THIS RUN IS EXITS-ONLY BY CONSTRUCTION AND MAY NOT OPEN A POSITION - it did not, and the empty sleeve plus an unused 0-of-3 weekly cap plus 30 pct idle cash is NOT an opportunity this seat may act on; clock at 12:42:08 is_open TRUE next_close 16:00 so the market was genuinely open and the run genuinely inside its window; RECONCILIATION CLEAN - positions returns ONE row core VOO 99.046311231 shares avg_entry 706.74 cost_basis 69999.99 market_value 69447.31 unrealized -552.68 / -0.79 pct on the broker mark, unchanged since the 09-03 fill, and positions.md carries ZERO satellite blocks against ZERO satellite Alpaca rows, they AGREE; CORE WAS REMOVED FROM THE WORKING LIST BEFORE ANY RULE WAS READ per section 5 core exemption; STEP 2 HIGH-WATER REPAIR HAD NO OPERAND AND THAT IS NOT THE SAME AS PASSING - there was no highest_close field to check on any position, so the BACKFILL PATH REMAINS UNEXERCISED CODE, and 09-28 was the day it would have mattered because that day lost its close run; STEP 3 HAD NO OPERAND EITHER - zero invalidation queries due and zero made (5.1), no timing deadline (5.2), no entry_price to measure -7 pct from (5.3), no highest_close to measure -10 pct from (5.4), and 5.4 IS STILL NOT ARMED because it arms on the first SATELLITE fill and the 09-03 core fill was not one; STEPS 4 AND 5 ABSENT NOT SKIPPED - zero exits so zero sell orders, and no held position whose sell_rule_status could be refreshed; HOUSEKEEPING - week anchor Monday 2026-09-28 MATCHES week_of so NO ROLLOVER was due, breaker INACTIVE with halt_triggered_at none and consecutive_closed_losses 0 UNCHANGED because no position closed, core 69.84 pct INSIDE the 65-75 band and rebalance_delta 163.72 which is routine 2 business not this seat; CASH READS EXACTLY 30000.00 - VOO dividend STILL UNPAID on day 2 of the 8-day window, third reading on the second day and still ONE unresolved observation not three data points; AND THE 09-28 GAP TEST ADVANCED - routines 1, 2 and now 3 have all produced committed output on 09-29, so only routine 4 remains to close out the day; prior last_run preserved below)
 
-prior_run: 2026-09-29 08:26 ET 1-premarket-research (ZERO ORDERS - routine 1 THINKS, IT DOES NOT TRADE; RESEARCH RAN IN FULL, four Perplexity scans all exit 0, SIX candidates reached a thesis entry and ALL SIX WERE REJECTED, theses now 79 real RECOUNTED FROM SOURCE, 0 ACCEPTED EVER, 6 this week; THE FINDING WAS THAT THE SOURCE VOLUNTEERED THE ABSENCE - the guidance and capacity scan returned five US-listed names and printed for FOUR OF THE FIVE the phrase no other company's revenue or costs are identified as directly affected, the funnel answering section 4's question IN THE NEGATIVE, and a run that then produces a Company B has supplied it from its own priors; the sharpest PAIR is one entry apart and from the SAME query - IOVA is the cleanest rule (iii) PASS in weeks and died one step later at rule (vii) vertical integration, while AIR is a rule (iii) FAILURE because the source carried NO prior AAR guidance at all; the 20.7B AMRAAM award names four CONTRACT LINE CATEGORIES and not one subcontractor, rule (v)'s largest instance yet; wrote plan_today.md for 2026-09-29 with ZERO intents)
+prior_run: 2026-09-29 09:35 ET 2-market-open-execution (ZERO ORDERS PLACED AND ZERO WERE DUE; plan_today.md was FRESH (plan_date 2026-09-29) and carried ZERO buy and ZERO sell intents, so steps 4-6 had NO OPERAND and zero move re-validations were due - an ABSENT re-validation not a skipped one; staleness gate exercise 29, still never fired, alert path still UNTESTED CODE; RECONCILIATION CLEAN zero satellite blocks vs zero satellite rows; core 69.91 pct in band so no rebalance was due; THE HASH TRUNCATION TRAP FIRED FOR THE FIRST TIME ON RECORD on that run own state.md write and was caught only by reading the parsed value TAIL back; THREE equity numbers seconds apart inside one run 99694.43 / 99687.00 / 99685.02)
 
 
 week_of: 2026-09-28
@@ -25,9 +25,9 @@ circuit_breaker: INACTIVE
 halt_triggered_at: none
 core_established: true
 core_ticker: VOO
-core_pct: 69.91
+core_pct: 69.84
 satellite_pct: 0.0
-cash_pct: 30.09
+cash_pct: 30.16
 open_thesis_ids: none
 ```
 
@@ -48,8 +48,9 @@ it.** **Nothing live has been discarded.**
 ### Live — act on these
 
 - **⚠⚠ THE VOO DIVIDEND IS STILL UNPAID. DAY 2 OF 8. CHECK `cash` EVERY RUN UNTIL IT RESOLVES.**
-  `cash` read **exactly $30,000.00** at **09:35 on 09-29** — checked a second time today, from `sleeves`
-  and from `account`, both flat, unchanged from the 09-28 close. ⚠ **NON-ARRIVAL ON EX-DATE+1 IS EXPECTED,
+  `cash` read **exactly $30,000.00** at **12:42 on 09-29** — a **third** reading today, from `sleeves` and
+  from `account`, both flat, unchanged from the 09-28 close. ⚠ **Three readings across two days are ONE
+  unresolved observation of an unpaid dividend, not three data points.** ⚠ **NON-ARRIVAL ON EX-DATE+1 IS EXPECTED,
   NOT EVIDENCE — settlement runs on the PAY date, which is not the ex-date. Do not read $30,000.00 as the
   test resolving in either direction.** ⚠ **Two checks on the same day are ONE observation of an unpaid
   dividend, not two — do not let the repetition read as accumulating evidence.**
@@ -93,11 +94,26 @@ it.** **Nothing live has been discarded.**
   both produced committed output on 09-29.** ⚠ **So 09-28 stands as a ONE-DAY, THREE-ROUTINE gap — still
   a real gap and still a question for the human, but NOT an ongoing failure, and it must not be reported
   as one.** ⚠ **The remaining test is routines 3 and 4 today; a run that checks only the morning has
-  checked half the day.**
+  checked half the day.** ⚠⚠ **ADVANCED 09-29 12:42: ROUTINE 3 RAN AND COMMITTED. Routines 1, 2 and 3 have
+  all produced committed output on 09-29. ONLY ROUTINE 4 REMAINS to close out the day — and routine 4 is
+  the one that writes the daily `highest_close`, which is what made its absence on 09-28 the expensive
+  half of that gap.**
   ⚠ **AND THE GAP DESTROYED A PIECE OF EVIDENCE: 09-28 was the FIRST morning with a GENUINELY STALE
   `plan_today.md` — word for word the setup the staleness gate had been waiting for — and the gate was
   not reached, because the run containing it did not execute. THE GATE REMAINS UNTESTED CODE AND THE
   COUNT IS 28, NOT 29.** **This run overwrote `plan_today.md` normally, as routine 4 said it would.**
+
+- **⚠⚠ NEW ON 09-29 12:42 — THE §5.4 HIGH-WATER BACKFILL PATH IS UNEXERCISED CODE, AND ROUTINE 3's STEP 2
+  CANNOT TELL YOU OTHERWISE ON AN EMPTY SLEEVE.** Step 2 exists to catch a `highest_close` left stale by a
+  missed close run — **the failure that looks like nothing is wrong: every check passes, every number is
+  present, and the stop simply never fires.** ⚠ **This run found no `highest_close` field to check, on any
+  position, because there are no positions. It did NOT verify the backfill works; it verified there was
+  nothing to backfill.** ⚠⚠ **AND 09-28 IS THE PROOF THAT THIS IS NOT ACADEMIC: that day lost its
+  market-close run, which is the run that stamps the mark. Had ONE satellite position been open, 09-29's
+  midday run would have had to backfill it from `bars`, on the correct adjustment basis, across an
+  ex-dividend date — three things none of which this system has ever actually done.** **The cost has been
+  zero because the sleeve is empty. That is luck, not a control.** ⚠ **Do not read the long run of clean
+  reconciliations as evidence the repair path works.**
 
 - **⚠⚠ NEW ON 09-29 — THE FUNNEL ANSWERED §4's QUESTION IN THE NEGATIVE, OUT LOUD, AND THAT IS A RESULT
   RATHER THAN AN EMPTY SEARCH.** The guidance-and-capacity scan returned five US-listed names and printed,
