@@ -85,6 +85,47 @@ check that the pull returned the right session. A stored baseline is a *label*, 
 
 *(none — no **satellite** positions have been opened yet. Core VOO exists and is deliberately not tracked here, per the top-of-file rules and the fill note further down.)*
 
+**Reconciliation 2026-09-29 — 12:42 ET, 3-midday-management. ZERO SATELLITE POSITIONS ON BOTH SIDES;
+NO EXIT WAS TAKEN AND NONE WAS DUE; NO HIGH-WATER MARK NEEDED BACKFILLING BECAUSE THERE IS NO MARK.
+THIS RUN MAY NOT OPEN A POSITION AND DID NOT.**
+
+Selftest passed all five checks; pre-flight equity **$99,462.17** (broker mark), `trading_enabled: true`,
+LIVE paper. `clock` at **12:42:08** reads `is_open: TRUE` with `next_close` **2026-09-29T16:00** — the
+market is genuinely open and this run is genuinely inside its window, which for routine 3 is the one
+boolean that is sufficient on its own.
+
+**RECONCILIATION CLEAN.** `alpaca.py positions` returns **one row, core VOO** — 99.046311231 shares,
+unchanged since the 09-03 fill, avg_entry 706.74, cost_basis $69,999.99, market_value $69,447.31,
+`unrealized_pl` **−$552.68 / −0.79%** on that broker mark. **Zero satellite blocks in this file against
+zero satellite Alpaca rows — they agree** (satellite-to-satellite, never raw ledger to raw broker).
+**Core VOO was removed from the working list before any §5 rule was read**, per §5's core exemption and
+this routine's Step 3 instruction.
+
+**STEP 2 HAD NO OPERAND AND THAT IS NOT THE SAME AS PASSING.** The high-water repair step exists to
+catch a `highest_close` that a missed close run left stale — ⚠ **the failure that looks like nothing is
+wrong.** This run found **no `highest_close` field to check, on any position, because there are no
+positions.** ⚠ **It did NOT verify that the backfill logic works; it verified that there was nothing to
+backfill.** The distinction matters because **09-28 lost three routines including a market-close run** —
+had a satellite position existed on 09-28, **this is the run that would have had to backfill it**, and
+the repair path would have been exercised for the first time. **It still has not been.**
+
+**STEP 3 HAD NO OPERAND EITHER — ALL FOUR §5 RULES WENT UNEVALUATED FOR WANT OF A SUBJECT.** Zero open
+positions means **zero Perplexity invalidation queries were due and zero were made** (§5.1); no
+`timing_window` deadline to have passed (§5.2); no `entry_price` from which to measure −7% (§5.3); no
+`highest_close` from which to measure −10% (§5.4). ⚠ **§5.4 IS STILL NOT ARMED** — it arms on the first
+**satellite** fill, and the 09-03 core fill was not one. ⚠ **§5.3's distance is UNDEFINED, not large.**
+**Steps 4 and 5 were likewise absent, not skipped: zero exits triggered, so zero sell orders were
+submitted, and there is no held position whose `sell_rule_status` could be refreshed.**
+
+⚠ **THE EX-DIVIDEND BASIS TRAP AT THE TOP OF THIS FILE REMAINS UNTESTED AGAINST A REAL POSITION.** VOO's
+09-28 ex-date rescaled every prior close by 0.997432 on an `--adjustment all` pull, and the §5.4 phantom
+drawdown it would manufacture has cost this book **nothing — because the sleeve is empty, which is luck
+and not a control.** The rule stays written where it will be read at the moment the first mark is stamped.
+
+**Day 2 of 8 on the dividend test: `cash` reads exactly $30,000.00** from both `sleeves` and `account` at
+12:42. ⚠ **Non-arrival is still EXPECTED, not evidence** — settlement runs on the pay date, not the
+ex-date. Three readings on two days are **one unresolved observation**, not three data points.
+
 **Reconciliation 2026-09-29 — 08:26 ET, 1-premarket-research. THE LEDGER AGREES WITH THE BROKER; ZERO
 SATELLITE POSITIONS ON BOTH SIDES; NO ORDER PLACED (routine 1 does not trade); NO §5 RULE HAD A SUBJECT;
 NO HIGH-WATER MARK WRITTEN AND NONE DUE.**
