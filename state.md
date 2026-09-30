@@ -13,9 +13,9 @@ The block below is parsed by `scripts/common.py` and gates real behavior
 silently discards everything after it. **Validate with `common.read_state()` after rewriting.**
 
 ```
-last_run: 2026-09-30 08:23 ET 1-premarket-research (selftest PASSED all five, trading_enabled true, LIVE paper, broker equity 99598.85 at pre-flight; THIS RUN PLACES NO ORDERS BY DESIGN - it researches and plans, and the 09:35 seat executes; clock at 08:23:04 is_open FALSE with next_open 2026-09-30T09:30 which is the PRE-MARKET shape NOT a holiday, read from the DATE not the boolean; HOUSEKEEPING ALL CONFIRMATIONS NOT CHANGES - ISO Monday of 2026-09-30 computed not assumed is 2026-09-28 and MATCHES week_of so NO ROLLOVER was due, nothing closed so consecutive_closed_losses stays 0 and the breaker stays INACTIVE, core 69.88 pct sits 4.88 points inside the nearest 65/75 band edge so NO REBALANCE intent was queued and rebalance_delta +120.34 must NOT be acted on; RECONCILIATION CLEAN - zero satellite blocks in positions.md against zero satellite rows from the broker, core VOO one row 99.046311231 shares avg_entry 706.74 a RAW print cost_basis 69999.99 unchanged since the 09-03 fill; SECTION 5 HAD NO OPERAND ON ALL FOUR RULES which is ABSENT not PASSING - 5.4 NOT ARMED with no highest_close field at all, 5.3 distance UNDEFINED not large, and 5.1/5.2 have nothing to check, so zero news-on-holdings queries were due and zero were run; RESEARCH RAN IN FULL - four Perplexity scans all exit 0, EIGHT theses written T-2026-09-30-01 through 08 and ALL EIGHT REJECTED, cumulative 87 real theses and 0 ACCEPTED EVER, 14 this week all rejected; THE HEADLINE FINDING IS THAT THE SOURCE VOLUNTEERED THE ABSENCE OF A COMPANY B THREE SEPARATE TIMES IN ITS OWN WORDS on F/A-XX, on the Ultium LMR chain and on the named-second-party scan, and NO RE-QUERY WAS ISSUED on any of them; THE PULL WAS NAMED TWICE - GE Aerospace on F/A-XX from this run's own priors about the F414, and the LMR source's own warning about LG Chem Redwood and Cirba which would have been read as a shopping list, both DECLINED; PRICED-IN FILTER EXERCISED AND NON-DECISIVE which is a THIRD STATE - two move calls ABBV -0.78 pct and RARE -1.83 pct both priced_in false and BOTH PASSED BY FALLING, and both candidates died on the four-part thesis anyway; CORRELATION CHECK HAD NO OPERAND, zero drivers exist to collide with; SECTION 3 WAS THE DECISIVE KILL ON TWO FULL ENTRIES which it was not on any of 09-29's six - RARE market cap 1.42B against a 10B floor sourced to CompaniesMarketCap 09-28 and corroborated by Trefis and Yahoo; THE MOST INSTRUCTIVE REJECTION IS ABBV, the ONLY candidate that was BOTH explicitly named by a source AND section 3 eligible, and materiality killed it on its own - more evidence the binding constraint is NOT the evidence bar; cash reads EXACTLY 30000.00 on both sleeves and account, VOO dividend STILL UNPAID day 3 of 8, falsifiable test deadline 2026-10-07; TWO EQUITY FIGURES DISAGREED BY 216.91 INSIDE THIS RUN sleeves 99598.85 then account 99815.76 minutes apart, a live instance of the intraday-drift item with NO OPERAND today because there are no BUY intents; plan_today.md overwritten with plan_date 2026-09-30, ZERO BUY ZERO SELL ZERO REBALANCE; THE 09-28 GAP IS CHARACTERISED AND NOT ONGOING - git log confirms all four routines committed on 09-29; prior last_run preserved below)
+last_run: 2026-09-30 09:35 ET 2-market-open-execution (selftest PASSED all five, trading_enabled true, LIVE paper, broker equity 99792.98 at pre-flight; THIS RUN PLACED ZERO ORDERS - zero buys, zero sells, zero rebalance, and it is the ONLY seat that may open a position; clock at 09:35:57 is_open TRUE which is the ONE boolean value with a single meaning, next_close 2026-09-30T16:00; THE STALENESS GATE WAS EXERCISED FOR THE THIRTIETH TIME AND DID NOT FIRE - plan_date 2026-09-30 read from plan_today.md against an ET date of 2026-09-30 computed not assumed, so the plan is FRESH and its intents were eligible to execute; the plan contained NONE, so THIS RUN IS A FRESH-EMPTY ZERO-ORDER RUN AND A STALE-PLAN RUN WOULD HAVE LOOKED BYTE-FOR-BYTE IDENTICAL IN ORDER COUNT - the gate's alert path REMAINS UNTESTED CODE and no alert was posted because none was due; HOUSEKEEPING ALL CONFIRMATIONS NOT CHANGES - ISO Monday of 2026-09-30 computed not assumed is 2026-09-28 and MATCHES week_of so NO ROLLOVER was due, nothing closed so consecutive_closed_losses stays 0 and the breaker stays INACTIVE, new_positions_this_week stays 0 of 3; RECONCILIATION CLEAN - zero satellite blocks in positions.md against zero satellite rows from the broker, compared satellite-to-satellite never raw ledger against raw broker, core VOO one row 99.046311231 shares avg_entry 706.74 a RAW print cost_basis 69999.99 unchanged since the 09-03 fill; STEP 3 BOOTSTRAP PERMANENTLY CLOSED core_established true, not re-run; STEP 4 EXITS HAD NO OPERAND - zero SELL intents and zero satellite positions, so sections 5.1 and 5.2 had nothing to check, 5.3 distance is UNDEFINED not large, 5.4 is NOT ARMED with no highest_close field at all; STEP 5 RE-VALIDATION WAS ABSENT NOT SKIPPED - zero BUY intents means zero move calls were DUE and zero were made, and that is the state the carry-forward warns looks identical to a filter that did not fire; STEP 7 NO REBALANCE - core 69.94 pct on the 09:35:57 sleeves mark sits 4.94 points inside the 65 edge and 5.06 inside the 75 edge, and rebalance_delta +61.51 must NOT be acted on because section 2 acts at the BAND EDGE not toward the 70 pct target; the delta is positive for a FIFTH consecutive run and that is still NOT the sign-instability defect resolving, the same quantity disagreed in sign on 09-24; cash reads EXACTLY 30000.00 on sleeves, a SEVENTH reading and the THIRD calendar day, VOO dividend STILL UNPAID day 3 of 8, falsifiable test deadline 2026-10-07, and non-arrival this early is EXPECTED not evidence; THE INTRADAY-DRIFT ITEM PRODUCED ITS SMALLEST INSTANCE YET INSIDE THIS RUN - selftest equity 99792.98 and sleeves equity 99794.95 seconds apart, a 1.97 spread against yesterday's 216.91, and A SMALL SPREAD IS A PROPERTY OF A QUIET MINUTE NOT OF A FIXED DEFECT, with NO OPERAND again because there are no BUY intents; IDLE CASH AN INACTIVE BREAKER AND AN UNUSED 0-OF-3 CAP ARE NOT AN OPPORTUNITY THIS SEAT MAY ACT ON - a position opened at 09:35 without a plan entry routes AROUND the discipline rather than satisfying it, and that was declined; zero research theses this seat by design, zero Perplexity calls, zero quote or move or asset calls on any rejected name, GNRC not looked at for a THIRTY-FIRST time though this seat had no funnel so the refusal was close to FREE; prior last_run preserved below)
 
-prior_run: 2026-09-29 16:16 ET 4-market-close-journal (equity 99557.25 official closes / 99601.82 broker mark, day -0.1321 pct price basis and -0.1319 pct total-return, 1 position core VOO only, 0 trades; NO HIGH-WATER MARK RECORDED because there are ZERO SATELLITE POSITIONS and that is CORRECT NOT A GAP, but the backfill path REMAINS UNEXERCISED CODE; official close 702.27 deliberately NOT stamped on core which section 5 exempts; core 69.8666 pct in band; breaker INACTIVE, loss streak 0, week 0 of 3; ONE lifetime order and it is terminal; VOO -0.1890 pct vs book -0.1321 pct = excess +0.0569pp against +0.0569pp PREDICTED by the cash weight, separation 17 of 17 - arithmetic not skill, and the book LOST MONEY on a day it BEAT the benchmark; research 0 theses that seat, 6 for the day all rejected; ClickUp 86bc9q3t5)
+prior_run: 2026-09-30 08:23 ET 1-premarket-research (selftest PASSED all five, trading_enabled true, LIVE paper, broker equity 99598.85 at pre-flight on sleeves then 99815.76 on account MINUTES LATER a 216.91 SPREAD; THAT RUN PLACED NO ORDERS BY DESIGN - it researched and planned; HOUSEKEEPING ALL CONFIRMATIONS NOT CHANGES - ISO Monday 2026-09-28 matched week_of so no rollover, breaker INACTIVE, core 69.88 pct so NO REBALANCE and rebalance_delta +120.34 NOT acted on; RECONCILIATION CLEAN zero satellite blocks vs zero satellite rows; SECTION 5 HAD NO OPERAND ON ALL FOUR RULES which is ABSENT not PASSING; RESEARCH RAN IN FULL - four Perplexity scans all exit 0, EIGHT theses T-2026-09-30-01 through 08 and ALL EIGHT REJECTED, cumulative 87 real theses and 0 ACCEPTED EVER, 14 this week all rejected; THE HEADLINE FINDING IS THAT THE SOURCE VOLUNTEERED THE ABSENCE OF A COMPANY B THREE SEPARATE TIMES IN ITS OWN WORDS and NO RE-QUERY WAS ISSUED; THE PULL WAS NAMED TWICE - GE Aerospace on F/A-XX and the LMR source's own LG Chem Redwood Cirba warning - and both DECLINED; PRICED-IN FILTER EXERCISED AND NON-DECISIVE a THIRD STATE - ABBV -0.78 pct and RARE -1.83 pct both priced_in false and BOTH PASSED BY FALLING; SECTION 3 WAS THE DECISIVE KILL ON TWO FULL ENTRIES; ABBV IS THE MOST INSTRUCTIVE REJECTION, the ONLY candidate BOTH source-named AND section 3 eligible, killed by materiality alone; cash EXACTLY 30000.00, VOO dividend STILL UNPAID day 3 of 8, deadline 2026-10-07; plan_today.md written with plan_date 2026-09-30, ZERO BUY ZERO SELL ZERO REBALANCE)
 
 
 week_of: 2026-09-28
@@ -25,9 +25,9 @@ circuit_breaker: INACTIVE
 halt_triggered_at: none
 core_established: true
 core_ticker: VOO
-core_pct: 69.88
+core_pct: 69.94
 satellite_pct: 0.0
-cash_pct: 30.12
+cash_pct: 30.06
 open_thesis_ids: none
 ```
 
@@ -37,11 +37,11 @@ Anything the next run must not lose. Cleared once acted on.
 
 **⚠ COLLAPSE, DO NOT APPEND — acted on forty-two times.** This repo's only continuity mechanism is the next
 run *reading* these files, and padding them with restatements raises the odds a genuinely live item gets
-skimmed. **Carry-forward is defined as cleared once acted on.** ⚠ **This run added THREE new items (the
-defence-procurement funnel being structurally barren; the priced-in filter's THIRD state, exercised-and-
-non-decisive; and a session-count error committed and caught live) and CLOSED ONE: the 09-28 gap as a
-question of ONGOING failure — `git log` confirms all four routines committed on 09-29, so only the
-one-day event and the human's question remain.** ⚠ **A correction replaces the claim it corrects — it does
+skimmed. **Carry-forward is defined as cleared once acted on.** ⚠ **The 09:35 open run added NO new items and CLOSED none — it placed zero orders and had no operand on
+every check it owns.** It updated four existing items in place (the dividend reading, the staleness-gate
+count, the tape facts, and the intraday-drift instance) and **wrote one new observation into the drift item:
+its SMALLEST spread on record, $1.97, which is a property of a quiet minute and NOT the defect resolving.**
+⚠ **A run that adds nothing to this list is the normal case, not a gap in attention.** ⚠ **A correction replaces the claim it corrects — it does
 not sit beside it.** **Nothing live has been discarded.**
 
 ---
@@ -49,9 +49,11 @@ not sit beside it.** **Nothing live has been discarded.**
 ### Live — act on these
 
 - **⚠⚠ THE VOO DIVIDEND IS STILL UNPAID. DAY 3 OF 8. CHECK `cash` EVERY RUN UNTIL IT RESOLVES.**
-  `cash` read **exactly $30,000.00** at **08:23 on 09-30**, on both `account` and `sleeves` — a
-  **sixth** reading, and the **third calendar day**. ⚠ **Six readings across three days are ONE unresolved
-  observation of an unpaid dividend, not six data points. DAY 3 OF 8.** ⚠ **NON-ARRIVAL THIS EARLY IS EXPECTED, NOT EVIDENCE — settlement runs
+  `cash` read **exactly $30,000.00** again at **09:35:57 on 09-30** on `sleeves`, after the same reading at
+  08:23 on both `account` and `sleeves` — a **seventh** reading, and still the **third calendar day**.
+  ⚠ **Seven readings across three days are ONE unresolved observation of an unpaid dividend, not seven data
+  points. DAY 3 OF 8.** ⚠ **A reading taken with the market OPEN is not a stronger reading than a pre-market
+  one; settlement does not run on the bell.** ⚠ **NON-ARRIVAL THIS EARLY IS EXPECTED, NOT EVIDENCE — settlement runs
   on the PAY date, which is not the ex-date. Do not read $30,000.00 as the test resolving in either
   direction.** ⚠ **THE FALSIFIABLE TEST, WRITTEN IN ADVANCE AND STILL RUNNING: `cash` should rise to about
   $30,180.45. IF IT HAS NOT BY 2026-10-07, the paper account does not model dividends at all — in which case
@@ -257,11 +259,23 @@ not sit beside it.** **Nothing live has been discarded.**
   **ON THE 09-30 PRE-MARKET (08:23, BROKER MARKS, NOT CLOSES): `sleeves` equity $99,598.85, core
   $69,598.85 = 69.88%, cash $30,000.00 = 30.12%, `unrealized_pl` −$401.14 / −0.573% against the 706.74 RAW
   fill, `rebalance_delta` +$120.34.**
+  **ON THE 09-30 OPEN (09:35:57, BROKER MARKS, MARKET OPEN, NOT CLOSES): `sleeves` equity $99,794.95, core
+  $69,794.95 = 69.94%, cash $30,000.00 = 30.06%, `rebalance_delta` +$61.51; `positions` at the same minute
+  gives core `current_price` 704.6699, `unrealized_pl` −$205.04 / −0.293% against the 706.74 RAW fill, and
+  `lastday_price` 702.46 against an official 09-29 close of 702.27 on BOTH bases.** ⚠ **That `lastday_price`
+  gap is the CLOSED question — do not re-open it, and do not difference it against anything.**
+  ⚠ **NONE of these open-run figures is a close. Fifty-first consecutive run inside 69.59–70.22.**
   ⚠⚠ **STANDING CONSEQUENCE OF OPEN ITEM (5), AND 09-30 PRODUCED THE LARGEST INSTANCE YET — INSIDE ONE
   PRE-MARKET RUN: `sleeves` returned equity $99,598.85 and `account` returned $99,815.76 MINUTES LATER, a
   $216.91 SPREAD** (consistent with VOO drifting ~$2.19/share in thin pre-market trade across 99.046311231
   shares). ⚠ **That is twenty-three times the $9.41 spread caught at 09:35 on 09-29, and it is PRE-MARKET,
-  where the book is thinnest.** ⚠ **An intraday equity figure is only meaningful with its CALL and its
+  where the book is thinnest.**
+  ⚠⚠ **AND 09-30's OPEN RUN SUPPLIES THE SMALLEST INSTANCE ON RECORD, WHICH IS THE ONE MOST LIKELY TO BE
+  MISREAD: `selftest` reported equity $99,792.98 and `sleeves` returned $99,794.95 seconds later — a spread
+  of $1.97.** ⚠ **A SMALL SPREAD IS A PROPERTY OF A QUIET MINUTE, NOT OF A FIXED DEFECT. The range across
+  four recorded instances is now $1.97 to $216.91 with no stable size, exactly like the broker/official gap
+  in open item (5), and for the same reason: both are live midpoints.** ⚠ **Do not report a small spread as
+  the drift narrowing.** ⚠ **An intraday equity figure is only meaningful with its CALL and its
   TIMESTAMP attached, and two figures from different calls must never be differenced.** ⚠⚠ **THIS BITES
   §6's 5% SIZING CAP, WHICH IS COMPUTED AGAINST LIVE EQUITY — a notional sized off an 08:23 `sleeves` read
   and submitted at 09:35 is sized against a number that no longer exists. IT HAS NO OPERAND ONLY BECAUSE NO
@@ -348,10 +362,9 @@ not sit beside it.** **Nothing live has been discarded.**
   check which basis the source answered on.** *(09-29 recounted the thesis total from source twice: **80
   `### T-` headings less the template = 79**.)*
 
-- **⚠ GNRC IS NOT YOURS TO LOOK AT — THIRTY CONSECUTIVE REFUSALS.** ⚠ **Graded honestly: the 09-29 close run
-  made ZERO `move` and ZERO `quote` calls on GNRC and ran zero Perplexity queries naming it, but this seat
-  does no research and had no funnel, so the refusal was close to FREE — a WEAK instance, weaker than the
-  morning's medium one.** The disqualifying facts do not move: **GNRC is the named counterparty in the Amazon
+- **⚠ GNRC IS NOT YOURS TO LOOK AT — THIRTY-ONE CONSECUTIVE REFUSALS.** ⚠ **Graded honestly: the 09-30 open
+  run made ZERO `move` and ZERO `quote` calls on GNRC, but it is an EXECUTION seat with no funnel and no BUY
+  intent to validate, so the refusal was close to FREE — a WEAK instance, the same grade as the 09-29 close.** The disqualifying facts do not move: **GNRC is the named counterparty in the Amazon
   announcement — first-order, outside §4 at any price** — and **open item (7) is resolved by a human editing
   §4 or `alpaca.py move`, not by a number this seat collects.** ⚠ **WHAT MATTERS IS NOT THE COUNT BUT WHETHER
   EACH REFUSAL COST ANYTHING, AND MOST DID NOT. Quoting the bare count overstates the evidence.** The strong
@@ -361,7 +374,7 @@ not sit beside it.** **Nothing live has been discarded.**
   screen-already-running. **The pattern is the finding, not any instance. FREE IS NOT THE SAME AS
   PERMITTED.**
 
-- **⚠ CORE VOO IS NEVER STAMPED WITH A `highest_close` — FIFTY-EIGHT RUNS.** §5 exempts core from all four
+- **⚠ CORE VOO IS NEVER STAMPED WITH A `highest_close` — FIFTY-NINE RUNS.** §5 exempts core from all four
   sell rules. A mark on VOO would **fabricate a §5.4 trailing stop on the one position the strategy
   exempts**, a stop that could eventually **sell core on a drawdown, which §7 forbids outright.**
   ⚠ **09-29's CLOSE RUN IS THE STRONGEST INSTANCE THIS ITEM HAS EVER HAD, because it is the ONE SEAT THAT
@@ -566,9 +579,12 @@ research **plus** the 09:35 execution run, always.
 
 **⚠ AN EMPTY PLAN THAT IS FRESH AND A PLAN THAT IS STALE PRODUCE IDENTICAL ZERO-ORDER RUNS AND ARE NOT THE
 SAME RUN.** The difference is invisible in the order count — **read `plan_date`, not the outcome.** The gate
-has now been exercised **TWENTY-NINE times and has never fired** *(09-29 09:35: `plan_date` 2026-09-29
-against ET date 2026-09-29 — **FRESH**, so the gate correctly did nothing)*, and its alert path **remains
-untested code.** ⚠⚠ **AND 09-28 WAS THE MORNING IT WOULD FINALLY HAVE FIRED — `plan_today.md` genuinely carried
+has now been exercised **THIRTY times and has never fired** *(09-30 09:35: `plan_date` 2026-09-30 against an
+ET date of 2026-09-30 **computed, not assumed** — **FRESH**, so the gate correctly did nothing and no alert
+was due)*, and its alert path **remains untested code.**
+⚠⚠ **AND 09-30's OPEN RUN IS THE SHARPEST ILLUSTRATION OF THE ITEM ITSELF: the plan was FRESH and EMPTY, so
+the run placed zero orders — the EXACT order count a stale plan would have produced. Nothing in the fills,
+the ledger or the sleeve percentages distinguishes the two. ONLY `plan_date` DOES.** ⚠⚠ **AND 09-28 WAS THE MORNING IT WOULD FINALLY HAVE FIRED — `plan_today.md` genuinely carried
 `plan_date: 2026-09-25` — AND THE RUN CONTAINING THE GATE DID NOT EXECUTE. The prediction was right about
 the setup and the test STILL DID NOT HAPPEN.** ⚠ **Twenty-eight quiet opens are NOT evidence it works. The
 first morning it fires will by construction be a morning when the pre-market run failed — i.e. exactly the
