@@ -85,14 +85,22 @@ check that the pull returned the right session. A stored baseline is a *label*, 
 
 *(none — no **satellite** positions have been opened yet. Core VOO exists and is deliberately not tracked here, per the top-of-file rules and the fill note further down.)*
 
-**Reconciliation 2026-09-30 — 08:23 ET, 1-premarket-research. ZERO SATELLITE POSITIONS ON BOTH SIDES.**
+**Reconciliation 2026-09-30 — 09:35 ET, 2-market-open-execution. ZERO SATELLITE POSITIONS ON BOTH SIDES.**
 `alpaca.py positions` returns **one row, core VOO**, 99.046311231 shares at avg_entry **706.74** (a **RAW**
 print), cost_basis $69,999.99 — unchanged since the 09-03 fill — against **zero satellite blocks in this
 file. THEY AGREE.** ⚠ **Compared satellite-to-satellite, never raw ledger against raw broker.** **Core VOO
 was removed from the working list before any §5 rule was read**, per §5's core exemption.
 Selftest passed all five checks; `trading_enabled: true`, LIVE paper; pre-flight broker equity
-**$99,598.85**. `clock` at **08:23:04** reads `is_open: false` with `next_open` **2026-09-30T09:30** — the
-**pre-market** shape, **not a holiday**, confirmed by reading the date rather than the boolean.
+**$99,792.98**. `clock` at **09:35:57** reads **`is_open: true`** with `next_close` **2026-09-30T16:00** —
+⚠ **the one boolean value with a single meaning, and the only shape in which this file may be written by a
+seat that can place orders.**
+⚠⚠ **THIS RUN PLACED NO ORDERS, SO NO BLOCK WAS ADDED AND NONE WAS REMOVED.** The plan was **FRESH**
+(`plan_date: 2026-09-30` against an ET date of 2026-09-30, computed not assumed) and carried **zero BUY and
+zero SELL intents**, so §5 had **no operand** and Step 5's re-validation was **ABSENT, not skipped — zero
+`move` calls were DUE and zero were made.** ⚠ **The session counter is NOT advanced by this run: 09-30 is
+still in progress at 09:35 and an incomplete session is not a completed one** (catch (11) in `state.md`).
+*(Earlier stamp, same day: 08:23 ET, 1-premarket-research, pre-flight equity $99,598.85, `is_open: false`
+in the **pre-market** shape — superseded by the line above, not contradicted by it.)*
 
 ### `sell_rule_status` — ALL FOUR RULES, RECORDED AS ABSENT RATHER THAN AS PASSING
 
