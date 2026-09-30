@@ -13,9 +13,9 @@ The block below is parsed by `scripts/common.py` and gates real behavior
 silently discards everything after it. **Validate with `common.read_state()` after rewriting.**
 
 ```
-last_run: 2026-09-29 16:16 ET 4-market-close-journal (selftest PASSED all five, trading_enabled true, LIVE paper, broker equity 99601.82 at pre-flight; THIS RUN RECORDS AND JOURNALS AND DOES NOT TRADE - it placed zero orders and none were due; clock at 16:16:45 is_open FALSE with next_open 2026-09-30T09:30 which is the POST-BELL shape NOT a holiday, and the stronger discriminator was run - a VOO daily bar for 2026-09-29 EXISTS AND IS COMPLETE, o 704.865 h 704.865 l 700.83 c 702.27 n 3337 v 101166, and the 15:59:57 ET latestTrade prints 702.27 the same number, and adjustment all and adjustment raw AGREE TO THE CENT on both 09-28 and 09-29 because the 09-28 ex-date lies at or before both; STEP 2 HAD NO OPERAND AND THAT IS NOT THE SAME AS PASSING - zero satellite positions means there is NO highest_close field to raise and NO as-of date to refresh, so NO MARK WAS RECORDED and that is CORRECT NOT A GAP, while the backfill path REMAINS UNEXERCISED CODE; today official close 702.27 was deliberately NOT stamped on core because a mark on core would fabricate a 5.4 trailing stop on the one position section 5 exempts; DAY NUMBERS ON OFFICIAL CLOSES - equity 99557.25, core 69557.25 = 69.8666 pct, cash 30000.00 = 30.1334 pct, day -131.73 / -0.1321 pct close-to-close from 99688.98, since inception -0.4427 pct; TOTAL-RETURN BASIS carrying the inferred unpaid 180.45 receivable equity ~99737.70, day -0.1319 pct, since inception -0.2623 pct; BROKER MARK at 16:16:45 equity 99601.82 core 69601.82 = 69.88 pct unrealized_pl -398.17 / -0.569 pct - a live midpoint NOT comparable with the close figures; BENCHMARK - VOO -0.1890 pct on adjustment all completed closes, book -0.1321 pct, excess +0.0569pp against +0.0569pp PREDICTED by VOO fall times the 30.0936 pct cash weight, AGREEMENT TO 0.0000pp, separation now 17 OF 17 with no exception and today is the 11th VOO-down day all 11 positive - ARITHMETIC NOT SKILL and the book LOST MONEY on a day it BEAT the benchmark; HOUSEKEEPING ALL CONFIRMATIONS NOT CHANGES - ISO Monday 2026-09-28 computed not assumed MATCHES week_of so NO ROLLOVER was due, nothing closed so consecutive_closed_losses stays 0 and breaker stays INACTIVE, orders --status all returns ONE ROW for the entire account history the 09-03 core buy status filled terminal so NOTHING IS IN LIMBO OVERNIGHT, core 4.87 points inside the nearest 65/75 band edge so NO REBALANCE IS DUE TOMORROW on either basis with rebalance_delta +132.82 official and +119.45 broker POSITIVE AND AGREEING IN SIGN for the third consecutive run; CASH READS EXACTLY 30000.00 - VOO dividend STILL UNPAID on day 2 of 8, a FOURTH reading on 09-29 and still ONE unresolved observation; RESEARCH - zero theses written by this seat, the day total is 6 all rejected from the 08:26 pre-market run, cumulative 79 real theses 0 ACCEPTED EVER; ClickUp daily summary 86bc9q3t5; AND THE 09-28 GAP TEST COMPLETED - all four routines produced committed output on 09-29 so 09-28 stands as a ONE-DAY THREE-ROUTINE gap and NOT an ongoing failure; prior last_run preserved below)
+last_run: 2026-09-30 08:23 ET 1-premarket-research (selftest PASSED all five, trading_enabled true, LIVE paper, broker equity 99598.85 at pre-flight; THIS RUN PLACES NO ORDERS BY DESIGN - it researches and plans, and the 09:35 seat executes; clock at 08:23:04 is_open FALSE with next_open 2026-09-30T09:30 which is the PRE-MARKET shape NOT a holiday, read from the DATE not the boolean; HOUSEKEEPING ALL CONFIRMATIONS NOT CHANGES - ISO Monday of 2026-09-30 computed not assumed is 2026-09-28 and MATCHES week_of so NO ROLLOVER was due, nothing closed so consecutive_closed_losses stays 0 and the breaker stays INACTIVE, core 69.88 pct sits 4.88 points inside the nearest 65/75 band edge so NO REBALANCE intent was queued and rebalance_delta +120.34 must NOT be acted on; RECONCILIATION CLEAN - zero satellite blocks in positions.md against zero satellite rows from the broker, core VOO one row 99.046311231 shares avg_entry 706.74 a RAW print cost_basis 69999.99 unchanged since the 09-03 fill; SECTION 5 HAD NO OPERAND ON ALL FOUR RULES which is ABSENT not PASSING - 5.4 NOT ARMED with no highest_close field at all, 5.3 distance UNDEFINED not large, and 5.1/5.2 have nothing to check, so zero news-on-holdings queries were due and zero were run; RESEARCH RAN IN FULL - four Perplexity scans all exit 0, EIGHT theses written T-2026-09-30-01 through 08 and ALL EIGHT REJECTED, cumulative 87 real theses and 0 ACCEPTED EVER, 14 this week all rejected; THE HEADLINE FINDING IS THAT THE SOURCE VOLUNTEERED THE ABSENCE OF A COMPANY B THREE SEPARATE TIMES IN ITS OWN WORDS on F/A-XX, on the Ultium LMR chain and on the named-second-party scan, and NO RE-QUERY WAS ISSUED on any of them; THE PULL WAS NAMED TWICE - GE Aerospace on F/A-XX from this run's own priors about the F414, and the LMR source's own warning about LG Chem Redwood and Cirba which would have been read as a shopping list, both DECLINED; PRICED-IN FILTER EXERCISED AND NON-DECISIVE which is a THIRD STATE - two move calls ABBV -0.78 pct and RARE -1.83 pct both priced_in false and BOTH PASSED BY FALLING, and both candidates died on the four-part thesis anyway; CORRELATION CHECK HAD NO OPERAND, zero drivers exist to collide with; SECTION 3 WAS THE DECISIVE KILL ON TWO FULL ENTRIES which it was not on any of 09-29's six - RARE market cap 1.42B against a 10B floor sourced to CompaniesMarketCap 09-28 and corroborated by Trefis and Yahoo; THE MOST INSTRUCTIVE REJECTION IS ABBV, the ONLY candidate that was BOTH explicitly named by a source AND section 3 eligible, and materiality killed it on its own - more evidence the binding constraint is NOT the evidence bar; cash reads EXACTLY 30000.00 on both sleeves and account, VOO dividend STILL UNPAID day 3 of 8, falsifiable test deadline 2026-10-07; TWO EQUITY FIGURES DISAGREED BY 216.91 INSIDE THIS RUN sleeves 99598.85 then account 99815.76 minutes apart, a live instance of the intraday-drift item with NO OPERAND today because there are no BUY intents; plan_today.md overwritten with plan_date 2026-09-30, ZERO BUY ZERO SELL ZERO REBALANCE; THE 09-28 GAP IS CHARACTERISED AND NOT ONGOING - git log confirms all four routines committed on 09-29; prior last_run preserved below)
 
-prior_run: 2026-09-29 12:42 ET 3-midday-management (ZERO EXITS TAKEN AND ZERO WERE DUE; EXITS-ONLY BY CONSTRUCTION and it opened nothing; RECONCILIATION CLEAN zero satellite blocks vs zero satellite rows; step 2 high-water repair and step 3 sell rules BOTH HAD NO OPERAND which is ABSENT not PASSING; 5.4 still NOT ARMED, 5.3 distance UNDEFINED not large; core 69.84 pct in band; cash exactly 30000.00 dividend unpaid)
+prior_run: 2026-09-29 16:16 ET 4-market-close-journal (equity 99557.25 official closes / 99601.82 broker mark, day -0.1321 pct price basis and -0.1319 pct total-return, 1 position core VOO only, 0 trades; NO HIGH-WATER MARK RECORDED because there are ZERO SATELLITE POSITIONS and that is CORRECT NOT A GAP, but the backfill path REMAINS UNEXERCISED CODE; official close 702.27 deliberately NOT stamped on core which section 5 exempts; core 69.8666 pct in band; breaker INACTIVE, loss streak 0, week 0 of 3; ONE lifetime order and it is terminal; VOO -0.1890 pct vs book -0.1321 pct = excess +0.0569pp against +0.0569pp PREDICTED by the cash weight, separation 17 of 17 - arithmetic not skill, and the book LOST MONEY on a day it BEAT the benchmark; research 0 theses that seat, 6 for the day all rejected; ClickUp 86bc9q3t5)
 
 
 week_of: 2026-09-28
@@ -25,9 +25,9 @@ circuit_breaker: INACTIVE
 halt_triggered_at: none
 core_established: true
 core_ticker: VOO
-core_pct: 69.87
+core_pct: 69.88
 satellite_pct: 0.0
-cash_pct: 30.13
+cash_pct: 30.12
 open_thesis_ids: none
 ```
 
@@ -35,22 +35,23 @@ open_thesis_ids: none
 
 Anything the next run must not lose. Cleared once acted on.
 
-**⚠ COLLAPSE, DO NOT APPEND — acted on forty-one times.** This repo's only continuity mechanism is the next
+**⚠ COLLAPSE, DO NOT APPEND — acted on forty-two times.** This repo's only continuity mechanism is the next
 run *reading* these files, and padding them with restatements raises the odds a genuinely live item gets
-skimmed. **Carry-forward is defined as cleared once acted on.** ⚠ **This run added ONE new item (Step 2's
-no-operand result being indistinguishable from Step 2 passing) and CLOSED TWO: the 09-28 multi-routine gap,
-now fully characterised as a one-day event, and the `quote`-vs-`bars` axis, which agreed today for a reason
-that teaches nothing.** ⚠ **A correction replaces the claim it corrects — it does not sit beside it.**
-**Nothing live has been discarded.**
+skimmed. **Carry-forward is defined as cleared once acted on.** ⚠ **This run added THREE new items (the
+defence-procurement funnel being structurally barren; the priced-in filter's THIRD state, exercised-and-
+non-decisive; and a session-count error committed and caught live) and CLOSED ONE: the 09-28 gap as a
+question of ONGOING failure — `git log` confirms all four routines committed on 09-29, so only the
+one-day event and the human's question remain.** ⚠ **A correction replaces the claim it corrects — it does
+not sit beside it.** **Nothing live has been discarded.**
 
 ---
 
 ### Live — act on these
 
-- **⚠⚠ THE VOO DIVIDEND IS STILL UNPAID. DAY 2 OF 8. CHECK `cash` EVERY RUN UNTIL IT RESOLVES.**
-  `cash` read **exactly $30,000.00** at the **16:16 close on 09-29**, on both `account` and `sleeves` — a
-  **fourth** reading today. ⚠ **Four readings across two days are ONE unresolved observation of an unpaid
-  dividend, not four data points.** ⚠ **NON-ARRIVAL THIS EARLY IS EXPECTED, NOT EVIDENCE — settlement runs
+- **⚠⚠ THE VOO DIVIDEND IS STILL UNPAID. DAY 3 OF 8. CHECK `cash` EVERY RUN UNTIL IT RESOLVES.**
+  `cash` read **exactly $30,000.00** at **08:23 on 09-30**, on both `account` and `sleeves` — a
+  **sixth** reading, and the **third calendar day**. ⚠ **Six readings across three days are ONE unresolved
+  observation of an unpaid dividend, not six data points. DAY 3 OF 8.** ⚠ **NON-ARRIVAL THIS EARLY IS EXPECTED, NOT EVIDENCE — settlement runs
   on the PAY date, which is not the ex-date. Do not read $30,000.00 as the test resolving in either
   direction.** ⚠ **THE FALSIFIABLE TEST, WRITTEN IN ADVANCE AND STILL RUNNING: `cash` should rise to about
   $30,180.45. IF IT HAS NOT BY 2026-10-07, the paper account does not model dividends at all — in which case
@@ -103,20 +104,18 @@ that teaches nothing.** ⚠ **A correction replaces the claim it corrects — it
   BASIS THAN THE ONE IT IS COMPARED AGAINST.** **§5.1–§5.4 have never had an operand in this account's entire
   history.**
 
-- **⚠ THE 09-28 GAP IS CLOSED AS A QUESTION OF SCOPE AND REMAINS OPEN AS A QUESTION FOR THE HUMAN.**
-  Three of four routines left **no committed output on 2026-09-28** — only the close journal (11804ab)
-  committed. ⚠⚠ **VERIFIED COMPLETE ON 09-29: ALL FOUR ROUTINES PRODUCED COMMITTED OUTPUT** — 73aab79
-  pre-market, 0f76f6f open, 3e856bb midday, plus this close run. **So 09-28 stands as a ONE-DAY,
-  THREE-ROUTINE gap — a real gap and a question for the human, but NOT an ongoing failure, and it must not be
-  reported as one.** ⚠ **The cause is not visible from inside a run and is NOT asserted.**
+- **⚠ THE 09-28 GAP — CLOSED AS AN ONGOING FAILURE, STILL OPEN AS A QUESTION FOR THE HUMAN.**
+  Three of four routines left **no committed output on 2026-09-28**. ⚠⚠ **RE-VERIFIED FROM `git log` ON
+  09-30: all four routines committed on 09-29 AND the pre-market run committed on 09-30. So 09-28 stands as
+  a ONE-DAY, THREE-ROUTINE gap — a real gap and a question for the human, and it must NOT be reported as an
+  ongoing failure.** ⚠ **The cause is not visible from inside a run and is NOT asserted.**
   ⚠⚠ **THE COST WAS ZERO TWICE OVER AND THAT IS LUCK: an empty sleeve gave routine 3 nothing to manage, an
   empty plan gave routine 2 nothing to execute. On a day with an open satellite position, a missing routine 3
   is an UNMANAGED §5 BOOK for a full session, and a missing routine 4 is a `highest_close` that never got
   written.** ⚠ **AND THE GAP DESTROYED A PIECE OF EVIDENCE: 09-28 was the FIRST morning with a genuinely
   stale `plan_today.md` — word for word the setup the staleness gate had been waiting for — and the gate was
-  not reached, because the run containing it did not execute. THE GATE REMAINS UNTESTED CODE.**
-  **This close run did NOT touch `plan_today.md`, which still carries `plan_date: 2026-09-29`; tomorrow's
-  pre-market run overwrites it normally. If routine 1 fails again, routine 2 finally meets a stale plan.**
+  not reached, because the run containing it did not execute. THE GATE REMAINS UNTESTED CODE, and after
+  today's open it will have been exercised THIRTY times without ever firing.**
 
 - **⚠⚠ THE FUNNEL ANSWERED §4's QUESTION IN THE NEGATIVE, OUT LOUD, AND THAT IS A RESULT RATHER THAN AN EMPTY
   SEARCH.** The 09-29 guidance-and-capacity scan returned five US-listed names and printed, for **four of the
@@ -128,8 +127,8 @@ that teaches nothing.** ⚠ **A correction replaces the claim it corrects — it
   for one in a differently-worded query.**
 
 - **⚠⚠ THE PRESSURE TO LOWER THE §4 BAR IS MEASURABLE, AND IT IS THE ONLY ITEM HERE ASKING FOR JUDGMENT
-  RATHER THAN CARE. 79 REAL THESES, ZERO ACCEPTED EVER** (80 `### T-` headings less the template, recounted
-  from source on 09-29). **6 this week, all rejected.** Set beside that: an empty satellite sleeve, **~30%
+  RATHER THAN CARE. 87 REAL THESES, ZERO ACCEPTED EVER** (88 `### T-` headings less the template, recounted
+  from source on 09-30 with `grep -c`). **14 this week, ALL REJECTED.** Set beside that: an empty satellite sleeve, **~30%
   idle cash**, a weekly cap unused at **0 of 3**, an INACTIVE breaker, and an account at **−0.4427% since
   inception on official closes** (−0.2623% carrying the receivable). ⚠⚠ **A LOSING ACCOUNT RAISES THE PULL IN
   A NEW WAY AND THE DISTINCTION STILL HOLDS: the book is down because it holds ~70% of a market that fell,
@@ -140,24 +139,54 @@ that teaches nothing.** ⚠ **A correction replaces the claim it corrects — it
   evidence the bar is not what is binding, NOT evidence the bar should move.** §4's own position governs: a
   run that finds nothing is a successful run. **Naming the pull is the only defence against acting on it.**
   If the bar is to move, that is a `strategy.md` change and **only the human may make it.**
-  ⚠ **WHERE THIS WEEK'S 6 DIED: part 1 = 3 (T-01 AMRAAM, T-02 IOVA, T-06 AIR), premise/no-Company-A = 1
-  (T-05 rates), part 2 = 1 decisive (T-04 CRK, part 1 also), part 3 = 0 decisive (T-03 SMMT died three times
-  over: premise, part 2 and part 3).** ⚠ **Part 1 is dominant again after Week 4 saw part 2 take over — a
-  ONE-DAY sample and NOT a trend. Do not report it as one.**
+  ⚠ **WHERE THIS WEEK'S 14 DIED, BY THE DURABLE KILL: part 1 = 5, part 2 = 2, part 3 = 2, §3 = 2,
+  premise = 2, with one (SMMT) dying three times over.** **09-30's eight: T-01 F/A-XX part 1 · T-02 Ultium
+  LMR part 3 (2028 completion, durable even if a supplier is named later) · T-03 fusion/HTS §3 (CFS private,
+  Fujikura Tokyo-listed) · T-04 ABBV part 2 · T-05 RARE §3 ($1.42B vs a $10B floor) · T-06 LLY part 3 (BLA
+  planned Q1 2027) · T-07 tariffs premise · T-08 CI part 1 (no stated cause).**
+  ⚠⚠ **§3 WAS THE DECISIVE KILL ON TWO FULL ENTRIES TODAY, WHICH IT WAS NOT ON ANY OF 09-29'S SIX.** ⚠ **Do
+  NOT read that as a trend — it is a one-day observation, and it reflects WHICH EVENTS the tape offered
+  (a private fusion developer and a $1.4B biotech), not a change in how the funnel screens.**
+  ⚠⚠ **AND THE SINGLE MOST DECISION-RELEVANT DATUM THIS WEEK: T-2026-09-30-04 (ABBV) IS THE ONLY CANDIDATE
+  IN THE LOG THAT WAS BOTH EXPLICITLY NAMED BY A SOURCE AND §3-ELIGIBLE — the two things every other
+  candidate lacked — AND MATERIALITY KILLED IT ON ITS OWN.** ⚠ **That is direct evidence the binding
+  constraint is NOT the evidence bar. It sits beside 09-25's JBL as the second independent instance, and the
+  two fail on DIFFERENT parts (JBL on disclosed zero margin, ABBV on magnitude), which is what makes the pair
+  informative rather than repetitive.**
 
-- **⚠ THERE IS NO LIVE RESEARCH ITEM. THE FUNNEL IS EMPTY.** ⚠ **09-29's six rejections do NOT become a
-  queue — DO NOT REHABILITATE ANY OF THEM AT A DIFFERENT PRICE.** **AMRAAM suppliers** (rule (v) — no
-  subcontractor named, no dollars allocated; and RTX is first-order) · **IOVA** (rule (vii) — vertically
-  integrated, no external supplier to find) · **SMMT/AZN** (first-order; $2.0B is capital paid IN for
-  convertible preferred; clinical timeline beyond two quarters) · **CRK/SOCAR** (the second-order sentence
-  needs an "and also"; $1.65B is capital paid in by a non-US-listed state oil company) · **the rate /
-  Fed-repricing complex** (environment input, ONE party) · **AIR/MRO Holdings** (the only Company B is
-  private; AAR's own prior guidance absent from the sources).
-  ⚠ **AND 09-25'S SIX WERE NOT REHABILITATED EITHER** — no `move`, `quote`, `bars` or `asset` call was made
-  on JBL, AKAM, RDW, FLNC, Lenovo or any memory supplier, on 09-29 in any seat. **A rejection is not a
-  queue.** ⚠ **One §3 question remains reached-but-undecided: Shopify is a Canadian issuer trading as common
-  stock on a US exchange, which §3's "US-listed common stock" does not obviously settle. A future run
-  reaching this with a LIVE candidate must put it to the human rather than decide it from this seat.**
+- **⚠ THERE IS NO LIVE RESEARCH ITEM. THE FUNNEL IS EMPTY.** ⚠ **09-30's eight rejections do NOT become a
+  queue — DO NOT REHABILITATE ANY OF THEM AT A DIFFERENT PRICE.** **F/A-XX supplier chain** (rule (v) — the
+  source was asked directly and stated no subcontractor has been named; **and the answer this run nearly
+  supplied from its own priors was GE AEROSPACE, on the strength of the F414 and a press statement of
+  enthusiasm — the source explicitly closes that door**) · **Ultium Cells LMR chain** (no US-listed supplier
+  named; **retrofit completes 2028**, outside the horizon; the source's own warning about LG Chem / Redwood /
+  Cirba must not be read as a candidate list) · **CFS / Fujikura HTS tape** (§3 — CFS **private**, Fujikura
+  **Tokyo-listed**; price expressly undisclosed; and **AMSC is a competitor that did NOT win the order**, and
+  below the §3 floor) · **ABBV** (part 2 — an **unexercised option** on a single dry-eye asset cannot reach
+  10% of AbbVie's revenue) · **RARE** (§3 — **$1.42B against a $10B floor**) · **LLY / GLP-1 injectable
+  chain** (part 3 — **BLA planned Q1 2027**; and the only Company B, West Pharmaceutical, was **self-supplied
+  and never queried**) · **the pharmaceutical-tariff complex** (environment input, ONE party, tariffs only
+  *potential*) · **CI** (a **$7.2B miss against consensus** with no stated cause — rule (viii) in a new dress).
+  ⚠ **AND 09-29'S AND 09-25'S REJECTIONS WERE NOT REHABILITATED EITHER** — zero `move`, `quote`, `bars` or
+  `asset` calls on JBL, AKAM, RDW, FLNC, IOVA, SMMT, CRK, AIR, Lenovo or any memory supplier, in any seat on
+  09-30. **A rejection is not a queue.** ⚠ **One §3 question remains reached-but-undecided: Shopify is a
+  Canadian issuer trading as common stock on a US exchange, which §3's "US-listed common stock" does not
+  obviously settle. A future run reaching this with a LIVE candidate must put it to the human rather than
+  decide it from this seat.**
+
+- **⚠⚠ NEW ON 09-30, AND IT IS A STRUCTURAL FINDING ABOUT THE FUNNEL RATHER THAN ABOUT A CANDIDATE: US
+  DEFENCE PROGRAM AWARDS CANNOT PRODUCE A §4 CANDIDATE, AND TWO CONSECUTIVE SESSIONS NOW SAY SO.**
+  **09-29: a $20.7B AMRAAM multiyear award to RTX — four named CONTRACT LINE CATEGORIES, not one
+  subcontractor named or allocated a dollar. 09-30: a >$20B F/A-XX full-scale-development award to Boeing —
+  the funnel asked DIRECTLY whether any US-listed supplier had been named, and the source answered that none
+  had.** ⚠ **Different prime, different program, different service, same kill.** ⚠⚠ **THE MECHANISM IS
+  DISCLOSURE PRACTICE, NOT LUCK: a prime announces the award and the tier below it is commercially
+  confidential, so the dollars are never allocated to a named public company.** ⚠ **CONSEQUENCE FOR A FUTURE
+  RUN: when a defence award appears in the 5a scan, expect this outcome. It is still worth ONE funnel query —
+  because the exception would be enormously valuable and the query is cheap — but a run that gets the
+  now-familiar answer must WRITE IT DOWN and stop, not re-word the query.** ⚠ **The industry answer is always
+  sitting in the reader's priors (Aerojet Rocketdyne for AMRAAM, GE for the F/A-XX engine) and that is exactly
+  what makes this funnel dangerous rather than merely unproductive.**
 
 - **⚠⚠ THE MOST DECISION-RELEVANT REJECTION ON THE BOARD REMAINS JBL (09-25).** Anthropic committed **~$11.6B
   over seven years** to **Akamai**; Akamai's 8-K then **named a US-listed supplier and allocated a specific
@@ -190,6 +219,16 @@ that teaches nothing.** ⚠ **A correction replaces the claim it corrects — it
   ⚠ **09-29 MADE ZERO `move` CALLS IN ANY SEAT. That is an ABSENT check, not a skipped one — every candidate
   died before an eligible ticker was reached. "The filter did not fire" and "the filter had nothing to fire
   on" look identical in a run summary and are not the same thing.**
+  ⚠⚠ **AND 09-30 SUPPLIES THE THIRD STATE, WHICH IS NEW AND WHICH NEITHER OF THOSE TWO LABELS COVERS:
+  EXERCISED AND NON-DECISIVE.** Two `move` calls were made — **ABBV 265.29 → 263.22 = −0.78%** and
+  **RARE 15.60 → 15.315 = −1.83%**, both `priced_in: false` — **and neither rejection turned on them**; ABBV
+  died at part 2 and RARE at §3. ⚠ **So the filter ran, returned a verdict, and decided nothing.**
+  ⚠⚠ **WORSE, BOTH PASSED BY FALLING.** A `false` verdict obtained from a DOWN move carries no information
+  about whether the news is in the price — **it is defect shape one (sign-blindness) in its mild, passing
+  form, where the nine catalogued instances were all the loud, failing form.** ⚠ **RARE is the one to
+  remember: a name whose licensed product had just been APPROVED, printing −1.83% over five sessions, is
+  precisely the reading that invites a "the market has not noticed" story. That story was not written.**
+  ⚠ **A run reporting "priced-in: pass" must say WHICH of the three states it means.**
 
 - **⚠ A BAR DATED *TODAY* IS PARTIAL WHILE THE MARKET IS OPEN, AND `n`/`v` CANNOT TELL YOU OTHERWISE.**
   Two routines read `is_open: true` and can pull a live partial bar: **routine 2 at 09:35 and routine 3 at
@@ -215,10 +254,18 @@ that teaches nothing.** ⚠ **A correction replaces the claim it corrects — it
   $99,601.82, core $69,601.82 = 69.88%, cash 30.12%, core `unrealized_pl` −$398.17 / −0.569% against the
   706.74 RAW fill.** ⚠ **The broker figure is a LIVE MIDPOINT and must never be differenced against a close
   figure.** **Prior session for reference: 09-28 close equity $99,688.98, core 69.9064%.**
-  ⚠ **STANDING CONSEQUENCE OF OPEN ITEM (5), CAUGHT INTRA-RUN ON 09-29 AT 09:35 (three equity numbers
-  seconds apart: 99,694.43 / 99,687.00 / 99,685.02, a $9.41 spread): an intraday equity figure is only
-  meaningful with its CALL and its TIMESTAMP attached, and two figures from different calls must never be
-  differenced.** **Fiftieth consecutive run inside 69.59–70.22.** ⚠ **`rebalance_delta` is POSITIVE on BOTH
+  **ON THE 09-30 PRE-MARKET (08:23, BROKER MARKS, NOT CLOSES): `sleeves` equity $99,598.85, core
+  $69,598.85 = 69.88%, cash $30,000.00 = 30.12%, `unrealized_pl` −$401.14 / −0.573% against the 706.74 RAW
+  fill, `rebalance_delta` +$120.34.**
+  ⚠⚠ **STANDING CONSEQUENCE OF OPEN ITEM (5), AND 09-30 PRODUCED THE LARGEST INSTANCE YET — INSIDE ONE
+  PRE-MARKET RUN: `sleeves` returned equity $99,598.85 and `account` returned $99,815.76 MINUTES LATER, a
+  $216.91 SPREAD** (consistent with VOO drifting ~$2.19/share in thin pre-market trade across 99.046311231
+  shares). ⚠ **That is twenty-three times the $9.41 spread caught at 09:35 on 09-29, and it is PRE-MARKET,
+  where the book is thinnest.** ⚠ **An intraday equity figure is only meaningful with its CALL and its
+  TIMESTAMP attached, and two figures from different calls must never be differenced.** ⚠⚠ **THIS BITES
+  §6's 5% SIZING CAP, WHICH IS COMPUTED AGAINST LIVE EQUITY — a notional sized off an 08:23 `sleeves` read
+  and submitted at 09:35 is sized against a number that no longer exists. IT HAS NO OPERAND ONLY BECAUSE NO
+  PLAN HAS EVER CARRIED A BUY INTENT.** **Fiftieth consecutive run inside 69.59–70.22.** ⚠ **`rebalance_delta` is POSITIVE on BOTH
   bases for the third consecutive run (+$132.82 official, +$119.45 broker) and the bases AGREE. NOT the
   defect resolving; the same quantity disagreed in SIGN on 09-24. A run that checks one basis and finds
   agreement learns nothing.** **NO REBALANCE IS DUE** — §2 acts at the **65/75 band edge** and core sits
@@ -262,7 +309,17 @@ that teaches nothing.** ⚠ **A correction replaces the claim it corrects — it
   BENCHMARK recognising the same cash on DIFFERENT DATES.** ⚠ **It does NOT bite on 09-29, because no
   dividend falls inside the 09-28→09-29 window on either leg. It bites again on the next ex-date.**
 
-- **⚠ AUDIT EVERY INHERITED CLAIM BEFORE REPEATING IT — TEN CATCHES, AND THEY KEEP CHANGING SHAPE.**
+- **⚠ AUDIT EVERY INHERITED CLAIM BEFORE REPEATING IT — ELEVEN CATCHES, AND THEY KEEP CHANGING SHAPE.**
+  ⚠⚠ **(11) NEW ON 09-30, AND IT IS THE FIRST ONE COMMITTED BY THE RUN THAT CAUGHT IT RATHER THAN INHERITED.**
+  Writing `positions.md`, this run advanced the session counter from **20/17** to **21/18** — because it was
+  running *on* 09-30 and reflexively counted the day it was standing in. ⚠ **At 08:23 the market has not
+  opened: today is NOT a completed session and the count must not advance.** It was caught and reverted in
+  the same run, and the correction is written into `positions.md` beside the figure.
+  ⚠ **THE GENERAL FORM IS WORTH MORE THAN THE INSTANCE: a counter is only safe to increment from a COMPLETED
+  session, and a PRE-MARKET seat has none of today's to add. Routines 1 and 2 are both exposed to this;
+  routine 4 is not.** ⚠ **And note the failure mode this one shares with catch (9): re-running the check
+  REPRODUCES THE WRONG NUMBER, because the error is in the definition of the unit, not in the arithmetic.
+  Only the clock exposes it.**
   ⚠⚠ **(10) A NUMBER THAT IS CORRECT ON A BASIS NOBODY NAMED.** The 09-28 close nearly wrote *"largest
   single-day loss on record"* off a 30-session series it had **just pulled**. ⚠ **The series was right and
   the sentence was still false.** ⚠⚠ **"Pull the source before writing the superlative" IS NOT SUFFICIENT
@@ -433,6 +490,13 @@ NONE OF IT TO ANY SUBCONTRACTOR.** ⚠ **The only supplier language in any sourc
 suppliers across the country."** ⚠ **A precise figure plus named COMPONENT CATEGORIES is the most fillable-
 looking blank this funnel produces, because the industry answer (Aerojet Rocketdyne, now inside L3Harris) is
 sitting right there in the reader's priors. THE SOURCE LEFT THE BLANK; FILLING IT IN IS NOT RESEARCH.**
+⚠⚠ **09-30 ADDS THE CLEANEST INSTANCE THIS RULE WILL EVER GET, AND IT IS A DIFFERENT SHAPE: the F/A-XX funnel
+did not merely find a blank — it ASKED WHETHER ONE EXISTED, and the source AFFIRMATIVELY STATED that no
+US-listed supplier, subcontractor or partner has been named.** ⚠ **A volunteered absence is stronger evidence
+than a silence, and it removes the last excuse for re-wording the query.** ⚠ **Two consecutive sessions of
+defence awards dying here is now a STRUCTURAL finding about this funnel — see the carry-forward item.**
+⚠ **And the priors were ready again: GE Aerospace, on the strength of the F414 and a press statement of
+enthusiasm. The source closes that door explicitly.**
 **(vi)** *Screen the timing window early on anything under construction or pending approval.* Long-dated
 energy offtake is **a standing feature of this funnel, not a visitor** — Sempra/Petrobras, Venture
 Global/China Gas, Amazon/Generac, Centrus/Antares, Elmet/Tungsten West, NeoVolta/SK On. ⚠ **The REGULATORY
@@ -454,6 +518,13 @@ reads like a partnership benefit**; FMC/Tessenderlo's **$403M is a SECONDARY-MAR
 ⚠ **09-29 ADDS TWO MORE, BOTH CAPITAL PAID IN: AstraZeneca's $2.0B for Summit CONVERTIBLE PREFERRED (equity
 issuance — it DILUTES rather than earns) and SOCAR's $1.65B into Comstock's Haynesville (and the paying leg
 is a state oil company that cannot be bought).**
+⚠⚠ **09-30 ADDS A COSTUME NOT SEEN BEFORE IN THIS DRESS: A MISS AGAINST CONSENSUS.** Cigna guided FY2026
+revenue to **~$280.0B against a $287.2B consensus** — **a $7.2B gap that belongs to NOBODY.** ⚠ **It is the
+most seductive form of this error precisely because it arrives as two exact figures and a clean subtraction,
+so it LOOKS like the quantified dollar path part 2 asks for.** ⚠ **It is not revenue at any Company B, and it
+is not even Cigna's revenue declining — it is Cigna's revenue growing less than strangers expected.** ⚠ **Note
+the overlap with rule (iii), whose most prolific costume is a guidance ISSUANCE measured against CONSENSUS
+rather than against the company's own prior figure: the same sentence can fail both rules at once.**
 ⚠⚠ **AND THE DEFINITIVE INSTANCE, JBL: $1.7 BILLION, NAMED, ALLOCATED, QUOTED VERBATIM FROM AN 8-K — AND IT
 IS CAPITAL PAID IN BY THE CUSTOMER, HELD IN CONSIGNMENT AS BAILEE, AND REPURCHASED AT COST. A disclosed
 statement of ZERO MARGIN, reading like the best dollar path the funnel has ever produced.** ⚠ **A large,
@@ -511,6 +582,40 @@ figure you quote.** ⚠ **09-28 showed the rule is NECESSARY BUT NOT SUFFICIENT:
 cash on different dates.**
 
 ### Do not reach for these — disposed rejects and the trap in each
+
+⚠ **Added 09-30:** **F/A-XX supplier chain** — ⚠ **rule (v)'s cleanest instance yet, because the source was
+asked DIRECTLY and answered that no US-listed supplier, subcontractor or partner has been named.** Boeing is
+first-order. ⚠⚠ **DO NOT FILL THE BLANK WITH GE AEROSPACE. The F414 on the F/A-18 is a fact about the PAST,
+and GE's "excited to see this program advance" is a press statement, not a workshare — the source says
+explicitly that GE "should not be counted as a publicly named F/A-XX supplier."** **Ultium Cells prismatic
+LMR chain** — no US-listed supplier named; **retrofit completes 2028**, so part 3 kills it even if one is
+named later; ⚠ **the source volunteered LG Chem / Redwood / Cirba AND warned they must not be attributed to
+this program — that is a warning, not a shopping list**, and all three fail §3 anyway (Korean-listed,
+private, private). **CFS / Fujikura HTS tape** — **§3 outright: Commonwealth Fusion is PRIVATE and Fujikura is
+TOKYO-LISTED**; Fujikura is also first-order; **price expressly undisclosed**, and 10,000 km is a VOLUME not a
+revenue figure. ⚠ **AMSC is not the way in: it is a competitor that did NOT win this order, and it is far
+below the §3 floor.** **ABBV** — ⚠ **the second-most-important entry on this board, beside JBL: the ONLY
+candidate ever logged that was both source-named AND §3-eligible, killed by part 2 alone.** An **unexercised
+option** on a single dry-eye asset cannot reach 10% of AbbVie's revenue, and no dollar figure is disclosed.
+⚠ **Do not reach for it if the appeal succeeds — the materiality ceiling does not move.** **RARE** —
+**§3 outright, market cap $1.42B against a $10B floor** (CompaniesMarketCap 09-28, corroborated by Trefis and
+Yahoo). ⚠ **A §3-FIRST SUCCESS: the cap was pulled BEFORE the thesis was elaborated, which is why no effort
+went into a story a single number was always going to end.** **LLY / GLP-1 injectable chain** — part 3, the
+**BLA is planned for Q1 2027**; ⚠ **and West Pharmaceutical was SELF-SUPPLIED from priors and never queried —
+declining to ask is the correct action once the candidate is known to be self-supplied.** **The
+pharmaceutical-tariff complex** — environment input, ONE party, no figure, and the tariffs are only
+**potential**. **CI (Cigna)** — ⚠ **a NEW COSTUME for rule (viii): a $280.0B guide against a $287.2B
+consensus. A consensus miss LOOKS quantitative — two precise figures and a clean subtraction — and it is the
+purest form of a number that belongs to NOBODY.** No stated cause, therefore no causal path, therefore no
+second party. **HII** ($5.1B Truman refuelling, prime is first-order, no subcontractor named) · **Petrobras /
+Cheniere** (0.8 mtpa over 22 years, Cheniere is the direct counterparty and the volume is immaterial against
+its capacity) · **TOYO** (second consecutive session, customers still unnamed, §3) · **Avio USA** (Italian
+parent, no offtake counterparty, **production begins 2029**) · **Attalon** (~$13M, no counterparty) ·
+**Lyntris** (first-order, no value disclosed, orders under a **2023** agreement so rule (iii) cannot clear) ·
+**Tesla** ($30B of credit lines — a financing ceiling available to Tesla itself) · **the AI self-governance
+accord** (signatories not enumerated, no cost quantified) · **Carnival / Vail / CarMax** (⚠ **earnings prints;
+the only figures disclosed are the company's OWN lines, and a competitor reading across is a COMPARABLE, not
+a second-order catalyst**).
 
 ⚠ **Added 09-29:** **AMRAAM component suppliers** — ⚠ **rule (v)'s largest instance: $20.7B, four named
 CONTRACT LINE CATEGORIES, and not one subcontractor named or allocated a dollar.** RTX is first-order. **Do

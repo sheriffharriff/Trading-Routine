@@ -52,6 +52,402 @@ single most common way a plausible-sounding connection gets mistaken for an oppo
 
 ## Entries
 
+### 2026-09-30 (08:23 ET) — event survey (funnel, pre-thesis)
+
+Selftest passed all five checks (`trading_enabled: true`, LIVE paper account, broker equity
+**$99,598.85** at pre-flight). Window screened: **Tuesday's close through Wednesday pre-market
+(Sept 29–30)** — one full session. **Four Perplexity scans, all exit 0** (three broad, one
+event-verification). **Eight candidates reached a thesis entry; ALL EIGHT WERE REJECTED.**
+Cumulative: **87 real theses, 0 ACCEPTED EVER.**
+
+⚠ **THE FUNNEL DID NOT RESTART FROM ZERO THIS TIME.** Unlike 09-29, yesterday's four routines all
+committed (verified from `git log` inside this run: 03c37f5/903f715 close, 12f0652/3e856bb midday,
+plus the open and pre-market commits), so this run inherited a complete picture. **The 09-28 gap
+stands as a one-day, three-routine event and is NOT reported as ongoing.**
+
+⚠⚠ **THE HEADLINE FINDING OF THIS RUN: THE SOURCE VOLUNTEERED THE ABSENCE OF A COMPANY B ON BOTH
+FUNNELS, EXPLICITLY, IN ITS OWN WORDS — AND SO DID THE THIRD BROAD SCAN.** The F/A-XX funnel returned
+*"no publicly traded U.S. company has been explicitly identified in the available sources as an F/A-XX
+supplier, subcontractor, or Boeing partner."* The LMR funnel returned *"no publicly traded U.S.-listed
+company has been explicitly named as a supplier for the specific Ultium Cells prismatic LMR battery
+program."* The named-second-party scan returned *"no qualifying item can be confirmed."*
+⚠ **That is three independent instances of the exact shape the 09-29 carry-forward told this seat to
+recognise on sight. The instruction was to WRITE IT DOWN, not to go looking for a Company B in a
+differently-worded query, and that instruction was followed — no re-query was issued on either event.**
+
+**⚠⚠ AND HERE IS THE PULL, NAMED, BECAUSE NAMING IT IS THE ONLY DEFENCE:** on F/A-XX this run knew
+from its own priors that **GE Aerospace supplies the F414 engine to the F/A-18 Super Hornet**, and the
+source even quotes GE saying it was *"excited to see this important program advance."* **The sentence
+"so GE gets the F/A-XX engine" was available, fluent, and would have been a fabrication** — the source
+states explicitly that GE is **not** identified as a supplier and **no engine award was disclosed**.
+⚠ **On the LMR funnel the same pull had a second costume: the source pre-emptively named LG Chem,
+Redwood Materials and Cirba Solutions as GM battery-material relationships and then warned they
+"should not be attributed to the LMR program without further disclosure." Reaching for one of those
+three would have been taking the source's own warning as a shopping list.** ⚠ **Both were declined.
+That is the most decision-relevant line in today's log.**
+
+**⚠ THE PRICED-IN FILTER HAD AN OPERAND TODAY, WHICH IT DID NOT ON 09-29 — AND IT DECIDED NOTHING.**
+Two `move` calls were made, on the only two tickers any candidate actually reached:
+**ABBV −0.78% over five sessions → `priced_in: false`**, **RARE −1.83% → `priced_in: false`**.
+⚠⚠ **BOTH PASSED BY FALLING, NOT BY THE NEWS BEING UNPRICED. That is the same sign-blindness catalogued
+as defect shape one, in its mild form: a `false` verdict obtained from a DOWN move carries no
+information about whether the news is in the price.** ⚠ **And neither rejection turned on the filter —
+both candidates died on the four-part thesis (ABBV at part 2, RARE at §3). The filter was EXERCISED
+and NON-DECISIVE; that is a third state, distinct from both "fired" and "had nothing to fire on."**
+
+**⚠ THE CORRELATION CHECK HAD NO OPERAND, WHICH IS ABSENT AND NOT PASSING.** `positions.md` carries
+**zero satellite blocks**, so there is no `driver` field anywhere to collide with. ⚠ **A candidate
+cannot fail §4's correlation test in this account today. Do not read "correlation: pass" on any entry
+below as evidence the check works — it has never had two positions to compare.**
+
+**Screened and rejected without a full entry** (first-order, non-US-listed, below §3, or no named
+counterparty): **HII** — $5.1B USS Harry S. Truman refuelling award, but **HII is the prime = first
+order**, and no subcontractor is named (rule (v)); **Petrobras / Cheniere** — 0.8 mtpa LNG over 22
+years, but **Cheniere Marketing is the direct counterparty = first order**, and 0.8 mtpa is immaterial
+against Cheniere's capacity base; **TOYO** — ~$240M of binding US solar module supply agreements,
+**customers still not named** (rule (v)) and a Tokyo-HQ Nasdaq microcap (§3) — ⚠ **this is the SECOND
+consecutive session TOYO has been screened out on the same two grounds, and it is not a new event**;
+**Avio USA** — $500M, 900,000 sq ft solid rocket motor plant in Hurt, VA, but **parent Avio S.p.A. is
+Italian-listed** (§3), **no offtake counterparty named**, and **production does not begin until early
+2029** (part 3 outright); **Attalon** — ~$13M sapphire capacity expansion, no counterparty named, and
+the figure is two orders of magnitude below materiality; **Lyntris** — LTAMDS production orders from
+Raytheon, but **Lyntris is the named supplier = first order**, **no dollar value disclosed** (rule
+(viii)), and the orders fall under a **2023** agreement, so nothing changed against its own prior
+disclosure (rule (iii)); **Tesla** — $30B of credit lines, a **financing ceiling available to Tesla
+itself**, which is rule (v) and rule (viii) together and has appeared before in exactly this costume;
+**the AI self-governance accord** — **signatories not enumerated, no compliance cost quantified, no
+regulatory status**, so there is no figure and no second party; **Carnival / Vail / CarMax** — earnings
+prints, and the only figures disclosed (**Carnival's $150M fuel impact and >$150M adjusted-net-income
+improvement**) are **Carnival's own cost and income lines**. ⚠ **An earnings beat is information about
+a company, not a change in anybody else's economics; a competitor reading across from it is a
+COMPARABLE, not a second-order catalyst.**
+
+**⚠ NO CANDIDATE FROM 09-29'S OR 09-25'S REJECTIONS WAS REHABILITATED.** Zero calls of any kind were
+made on JBL, AKAM, RDW, FLNC, IOVA, SMMT, CRK, AIR, Lenovo or any memory supplier. **A rejection is
+not a queue, and none of them was revisited at a different price.**
+⚠ **And GNRC was not looked at: zero `move` calls, zero `quote` calls, zero Perplexity queries naming
+it. Graded honestly — this run had a live funnel and made two `move` calls, so the data plane was
+demonstrably open and the refusal was NOT free; but no candidate today wanted a Generac number, so
+this is a MEDIUM instance, not a strong one.** The disqualifying fact has not moved: **GNRC is the
+named counterparty in the Amazon announcement — first-order, outside §4 at any price.**
+
+---
+
+### T-2026-09-30-01 — F/A-XX supplier chain (no ticker reached) — REJECTED
+**Company A / the news:** **The U.S. Navy selected Boeing for the F/A-XX sixth-generation fighter
+program, a full-scale-development contract valued at more than $20 billion**, announced 2026-09-29
+(Boeing investor relations press release; Reuters; Aviation Week; Naval News). Northrop Grumman was
+the unsuccessful competitor.
+**Company B / the candidate:** **NONE EXISTS TO NAME.** The funnel query asked directly which publicly
+traded US companies had been named as suppliers, subcontractors or partners, and instructed the source
+to say so explicitly if none had been. It said so explicitly.
+
+**1. Mechanism (one sentence):** ⚠ **CANNOT BE WRITTEN WITHOUT INVENTING THE SUBJECT.** There is no
+Company B to put in the sentence. The source states: *"no subcontractors or supplier companies have
+been publicly named in the available reporting."*
+⚠⚠ **AND THE CANDIDATE THIS RUN ALMOST SUPPLIED FROM MEMORY WAS GE AEROSPACE.** GE makes the F414 that
+powers the F/A-18, and GE told Aviation Week it was *"excited to see this important program advance."*
+**The source explicitly addresses this and closes it: that statement "does not explicitly identify GE
+Aerospace as an F/A-XX supplier, subcontractor, or partner," no engine award was disclosed, and GE
+"should not be counted as a publicly named F/A-XX supplier."** ⚠ **A press statement of enthusiasm is
+not a workshare. The prior was mine, not the source's.**
+**2. Dollar path:** Not reachable. Boeing's own share is undisclosed at the program level — the >$20B
+is a development contract value, not a segment revenue figure, and **no supplier-level allocation
+exists anywhere in the reporting** (rule (v): no dollars allocated to any named second party).
+**3. Timing window:** Not reachable, and would almost certainly fail if it were. **Full-scale
+development** on a sixth-generation fighter puts meaningful supplier revenue years out, not two
+quarters.
+**4. Invalidation:** Not reachable — there is no thesis to invalidate.
+
+**Hard filters:**
+- Priced-in (§4): **not run — no eligible ticker was reached.** ⚠ **ABSENT, not passed.**
+- Correlation (§4): **no operand** — zero open satellite positions, no `driver` to collide with.
+- Universe (§3): Boeing is US-listed and mega-cap, **but Boeing is Company A.** No Company B exists to
+  test.
+
+**Outcome:** **REJECTED at part 1 — no Company B exists to name without inventing one. Standing rule
+(v), and the strongest instance of it yet, because the source did not merely omit a supplier: it was
+asked directly, and it affirmatively stated that none has been named.** ⚠ **This is the same kill as
+T-2026-09-29-01 (AMRAAM) one session later, on a larger award, from a different prime, in the same
+defence-procurement shape. TWO CONSECUTIVE SESSIONS, SAME FAILURE MODE. The pattern is now the
+finding: US defence program awards name the prime and disclose nothing about the tier below it, so
+this funnel structurally cannot produce a §4 candidate. A future run reaching a third one should
+expect this outcome rather than re-running the query.**
+
+---
+
+### T-2026-09-30-02 — Ultium Cells prismatic LMR supplier chain (no ticker reached) — REJECTED
+**Company A / the news:** **GM and LG Energy Solution announced an additional ~$1 billion investment
+to retrofit the Ultium Cells joint-venture plant at Spring Hill, Tennessee for world-first prismatic
+LMR (lithium-manganese-rich) cell production**, announced 2026-09-29 (GM newsroom; just-auto;
+InsideEVs). Equipment conversion begins late 2026, completion expected 2028.
+**Company B / the candidate:** **NONE NAMED.** Source: *"no publicly traded U.S.-listed company has
+been explicitly named as a supplier for the specific Ultium Cells prismatic LMR battery program"* —
+no cathode-active-material supplier, no manganese supplier, no equipment maker.
+
+**1. Mechanism (one sentence):** ⚠ **CANNOT BE WRITTEN.** LMR chemistry genuinely does shift cathode
+demand from nickel and cobalt toward manganese — that part is disclosed — **but a shift in demand with
+no named recipient is not a mechanism, it is a direction.**
+⚠⚠ **AND THE SOURCE PRE-EMPTED THE EXACT SUBSTITUTION THIS RUN WOULD HAVE MADE.** It volunteered that
+GM has a cathode-active-material agreement with **LG Chem** and recycling work with **Redwood
+Materials** and **Cirba Solutions**, and then stated these *"should not be attributed to the LMR
+program without further disclosure."* ⚠ **Taking that sentence as a candidate list would be reading a
+warning as a shopping list.** Independently, all three fail §3 anyway: **LG Chem is Korean-listed,
+Redwood Materials and Cirba Solutions are private.**
+**2. Dollar path:** Not reachable. The **$1B is capital expenditure by the JV owners into their own
+plant** — ⚠ **standing rule (viii): a disclosed figure that is not segment revenue at any candidate.**
+No supplier volume, price or contract value is disclosed.
+**3. Timing window:** **FAILS OUTRIGHT even if a supplier were named.** Retrofit begins late 2026 and
+**completes in 2028**; first LMR cell revenue is therefore **beyond two quarters by years**, outside
+§4 part 3's horizon.
+**4. Invalidation:** Not reachable.
+
+**Hard filters:**
+- Priced-in (§4): **not run — no eligible ticker was reached.** ⚠ **ABSENT, not passed.**
+- Correlation (§4): **no operand** — zero open satellite positions.
+- Universe (§3): GM is US-listed and mega-cap, **but GM is Company A.** LG Energy Solution and LG Chem
+  are **Korean-listed**; Redwood and Cirba are **private** → all fail §3 outright.
+
+**Outcome:** **REJECTED at part 1 (no named Company B), at part 3 (a 2028 completion date is outside
+the two-quarter horizon), and at §3 (every adjacent name is non-US-listed or private) — any one of the
+three ends it.** ⚠ **Part 3 is the one worth remembering, because it kills this candidate even in the
+counterfactual where a supplier IS named later: a capacity retrofit completing in 2028 cannot show up
+in reported results inside two quarters. A future run that sees an LMR supplier announcement should
+check the 2028 date FIRST and save the funnel query.**
+
+---
+
+### T-2026-09-30-03 — HTS tape / fusion supply chain (no ticker reached) — REJECTED
+**Company A / the news:** **Commonwealth Fusion Systems placed what is described as the largest single
+purchase order of high-temperature superconducting tape — more than 10,000 km (3 GA-m) — with Fujikura
+Ltd. under a long-term supply agreement**, announced 2026-09-30 (CFS press release via KXAN; Ground
+News). Fujikura is investing in manufacturing capacity expansion to deliver it. **Price and shipment
+dates were not disclosed.**
+**Company B / the candidate:** **Fujikura is the named beneficiary — and it is not eligible.**
+
+**1. Mechanism (one sentence):** *CFS's 10,000 km HTS tape order causes Fujikura's superconductor
+revenue line to improve because CFS is buying the tape directly from Fujikura.* ⚠⚠ **THAT SENTENCE IS
+FIRST-ORDER, NOT SECOND-ORDER — Fujikura is the counterparty in the headline, which is precisely the
+company §4 tells this system not to chase.** There is no Company B behind it: **no sub-supplier,
+substrate maker or equipment vendor is named anywhere in the reporting.**
+**2. Dollar path:** **NOT DISCLOSED AND EXPLICITLY SO.** One source states outright that *"price and
+shipment dates were not disclosed."* ⚠ **10,000 km is a VOLUME, not a revenue figure, and no unit
+price for HTS tape is disclosed — converting one to the other would be my own estimate wearing a
+source's clothes.** Fujikura's superconductor segment share of total revenue is also not disclosed.
+**3. Timing window:** **FAILS.** The tape is for ARC power plants "starting with the first grid-scale
+plant" at Chesterfield County, Virginia — **a multi-year build**, and Fujikura must first **expand
+capacity** before delivering at scale. Nothing here lands in reported results inside two quarters.
+**4. Invalidation:** Not reachable.
+
+**Hard filters:**
+- Priced-in (§4): **not run.** ⚠ **No §3-eligible ticker existed to run it on — ABSENT, not passed.**
+- Correlation (§4): **no operand** — zero open satellite positions.
+- Universe (§3): **FAILS OUTRIGHT.** **Commonwealth Fusion Systems is PRIVATE.** **Fujikura Ltd. is
+  TOKYO-LISTED, not US-listed.** §3 permits US-listed common stock only.
+
+**Outcome:** **REJECTED at §3 (neither party is a US-listed issuer), at part 1 (the only named
+beneficiary is first-order), at part 2 (price expressly undisclosed) and at part 3 (multi-year build).**
+⚠ **One further temptation is recorded because it is the interesting one: the US-listed HTS name is
+American Superconductor (AMSC), and the shape of a thesis was available — "fusion HTS demand is
+inflecting." It was declined on two independent grounds. First, AMSC is a COMPETITOR THAT DID NOT WIN
+THIS ORDER; the mechanism would have to run through demand AMSC has not been named in, which is a
+"and also" sentence. Second, its market cap is far below §3's $10B floor.** ⚠ **A per-company cap
+figure was NOT pulled for AMSC, because the mechanism failed first and §3 never became the binding
+test — recorded so a later run does not mistake an unpulled figure for a checked one.**
+
+---
+
+### T-2026-09-30-04 — ABBV (AbbVie) — REJECTED
+**Company A / the news:** **The FDA rejected Aldeyra Therapeutics' reproxalap for dry eye disease**,
+reported 2026-09-29 (MarketBeat; Aldeyra intends to appeal). The source notes a **previously disclosed
+option agreement with AbbVie** over the asset, and that Aldeyra's own funding outlook — resources into
+2029 — **excludes potential partnership or product revenue** from reproxalap.
+**Company B / the candidate:** **AbbVie (ABBV)** — the one genuinely named, §3-eligible second party
+anywhere in today's funnel.
+
+**1. Mechanism (one sentence):** *The FDA's rejection of reproxalap causes AbbVie's eye-care revenue
+line to be unaffected because AbbVie held only an option it had not exercised.* ⚠ **Written honestly,
+the mechanism sentence describes a NON-EVENT. The negation is the giveaway: an option not exercised
+produces no change in any revenue or cost line, so there is nothing for part 1 to point at.**
+**2. Dollar path:** ⚠⚠ **FAILS DECISIVELY, AND THIS IS THE BINDING KILL.** **No dollar figure is
+disclosed for the option agreement — not an option fee, not a milestone schedule, not a royalty rate.**
+And the ceiling is knowable even without one: **reproxalap is a single dry-eye asset, and AbbVie's
+revenue base is in the tens of billions.** ⚠ **A dry-eye product cannot plausibly reach §4's 10%-of-
+total-revenue materiality threshold at AbbVie under any assumption, so part 2 fails on MAGNITUDE as
+well as on DISCLOSURE.** The affected segment's share of AbbVie's total revenue is not disclosed and
+does not need to be.
+**3. Timing window:** Not reachable — there is no revenue effect to time.
+**4. Invalidation:** Not reachable. ⚠ **Note what an invalidation condition would even look like here:
+"AbbVie's next 10-Q shows eye-care segment revenue unchanged" is the EXPECTED outcome, not a
+falsification. When the invalidation condition and the base case are the same sentence, there was
+never a thesis.**
+
+**Hard filters:**
+- Priced-in (§4): **RUN AND PASSED, AND NON-DECISIVE.** `move --symbol ABBV --sessions 5`:
+  **265.29 → 263.22 = −0.78%**, `priced_in: false`. ⚠ **It passed by FALLING 0.78%, which says nothing
+  about whether the news is in the price — defect shape one in its mild form. The rejection does not
+  rest on this filter.**
+- Correlation (§4): **no operand** — zero open satellite positions, no `driver` to compare.
+- Universe (§3): **not decided, and deliberately not pulled.** AbbVie is US-listed common stock and is
+  self-evidently far above the $10B floor, **but no market-cap figure was sourced, because the
+  candidate died at part 2 before §3 became binding.** ⚠ **Recorded as UNPULLED, not as passed — an
+  unverified figure must never be written into an entry as though it had been checked.**
+
+**Outcome:** **REJECTED at part 2 — immaterial to AbbVie by magnitude, and no dollar figure disclosed
+in any case; part 1 additionally describes a non-event.** ⚠ **This is the most instructive entry today
+because it is the ONLY candidate that was BOTH explicitly named by a source AND §3-eligible — the two
+things every other candidate lacked — and it still was not a trade.** ⚠ **That is more evidence for
+the standing conclusion that the binding constraint is NOT the evidence bar: a named, eligible,
+mega-cap Company B arrived, and materiality killed it on its own.**
+
+---
+
+### T-2026-09-30-05 — RARE (Ultragenyx Pharmaceutical) — REJECTED
+**Company A / the news:** **The FDA approved Abeona Therapeutics' FAYUVI**, reported in the 2026-09-29
+to 09-30 window, with **Ultragenyx named as the licensee** (per the named-second-party scan).
+**Company B / the candidate:** **Ultragenyx (RARE)** — genuinely named, and the licensing relationship
+is a real economic link rather than an inferred one.
+
+**1. Mechanism (one sentence):** *The FDA approval of FAYUVI causes Ultragenyx's royalty/licence
+revenue line to improve because Ultragenyx is the named licensee of the approved product.* ⚠ **This
+sentence is writable in one clause and does not need an "and also" — noted, because that is rare in
+this log and the entry still fails.**
+**2. Dollar path:** **FAILS ON DISCLOSURE.** ⚠ **No dollar figure of any kind is disclosed** — no
+licence economics, no royalty rate, no milestone, no revenue estimate, and no statement of what share
+of Ultragenyx's total revenue the product would represent. Standing rule (v) in its dollar-allocation
+form: the party is named, the money is not.
+**3. Timing window:** Not establishable. An approval is not a launch; **no launch date, pricing or
+supply timeline is disclosed**, so the quarter in which this shows in reported results cannot be
+named. ⚠ **"Next earnings, probably" is not a timing window — it is a guess dressed as one.**
+**4. Invalidation:** Not reachable without part 2 and part 3.
+
+**Hard filters:**
+- Priced-in (§4): **RUN AND PASSED, AND NON-DECISIVE.** `move --symbol RARE --sessions 5`:
+  **15.60 → 15.315 = −1.83%**, `priced_in: false`. ⚠ **Again a pass obtained by FALLING. And note the
+  shape: a name that has just had a licensed product APPROVED and whose five-session move is
+  NEGATIVE 1.83% is the kind of reading that invites a "the market has not noticed" story. That story
+  was not written, and this filter decided nothing.**
+- Correlation (§4): **no operand** — zero open satellite positions.
+- Universe (§3): ⚠⚠ **FAILS OUTRIGHT AND DECISIVELY. Ultragenyx market cap = $1.42 BILLION**
+  (source: **CompaniesMarketCap, 2026-09-28 close, $1.42B**; corroborated at **$1.4B by Trefis for
+  2026-09-29** and **$1.421B intraday by Yahoo Finance** — three providers, one conclusion).
+  **§3 requires market cap above $10B for common stock. $1.42B is SEVEN TIMES below the floor.**
+  **Abeona Therapeutics, the approval holder, is smaller still.**
+
+**Outcome:** **REJECTED at §3 — Ultragenyx is a $1.42B company against a $10B floor, which ends it
+before the thesis matters; and independently at part 2 (no dollar figure disclosed) and part 3 (no
+establishable quarter).** ⚠ **The §3 kill is worth flagging as a HARD-FILTER-FIRST SUCCESS: the market
+cap was pulled BEFORE the thesis was elaborated, exactly as §4 requires, which is why no effort went
+into constructing a story that a single sourced number was always going to end.** ⚠ **The
+counterfactual matters — had the cap been checked last, this run would have had a writable part 1 and
+a fluent narrative in hand, and would then have been "looking for permission to keep it."**
+
+---
+
+### T-2026-09-30-06 — LLY (Eli Lilly) / GLP-1 injectable supply chain — REJECTED
+**Company A / the news:** **Eli Lilly announced Phase 3 TRIUMPH-2 results for retatrutide on
+2026-09-29.** ⚠ **VERIFIED NEGATIVE ON THE POINT THAT MATTERED: a dedicated query confirmed there was
+NO FDA decision, approval, rejection or regulatory action on retatrutide on or around Sept 29–30.**
+Lilly states it **plans to submit a BLA in Q1 2027** — a future filing intention, not an FDA action.
+Retatrutide remains investigational and not approved.
+**Company B / the candidate:** **NONE NAMED — and this entry exists to record a candidate that was
+checked rather than assumed.**
+
+**1. Mechanism (one sentence):** ⚠ **CANNOT BE WRITTEN WITHOUT SUPPLYING THE SUBJECT FROM PRIORS.**
+The available second-order shape was "a major GLP-1 advancing increases demand for injectable devices
+and fill-finish capacity," whose obvious §3-eligible occupant is **West Pharmaceutical Services**.
+⚠⚠ **NO SOURCE IN THE WINDOW NAMES WEST, OR ANY OTHER SUPPLIER, IN CONNECTION WITH RETATRUTIDE.** The
+name came from this run's own knowledge of who makes injectable components, which is verbatim the
+failure §4's honest-broker paragraph describes. **It was not pursued, and NO funnel query was issued
+on it** — declining to ask is the correct action once the candidate is known to be self-supplied.
+**2. Dollar path:** Not reachable. No supplier is named, therefore no segment, no magnitude and no
+revenue share exists to cite.
+**3. Timing window:** ⚠⚠ **FAILS OUTRIGHT AND ON ITS OWN, WHICH IS WHY THIS ENTRY IS SHORT.** **The
+BLA is not submitted and is planned for Q1 2027.** Approval would follow that, and any launch — and
+therefore any supplier revenue — follows the approval. **That is far beyond §4 part 3's two-quarter
+horizon under any assumption.** ⚠ **Part 3 alone ends this candidate without needing part 1, and it
+would still end it if a supplier were named tomorrow.**
+**4. Invalidation:** Not reachable.
+
+**Hard filters:**
+- Priced-in (§4): **not run, deliberately.** ⚠ **No candidate ticker was legitimately reached — the
+  only one available was self-supplied. ABSENT, not passed.**
+- Correlation (§4): **no operand** — zero open satellite positions.
+- Universe (§3): Lilly is US-listed and mega-cap, **but Lilly is Company A.** No eligible Company B
+  was legitimately reached.
+
+**Outcome:** **REJECTED at part 3 (a Q1 2027 BLA puts every downstream effect outside the horizon) and
+at part 1 (the only Company B available was supplied from this run's own priors, not by any source).**
+⚠ **Recorded in full because of HOW it was handled: this item surfaced ONLY as a bare citation URL in
+the third broad scan, never in any answer body. Rather than write it off unexamined OR build a thesis
+on it, one verification query was spent establishing whether an event existed at all. It did — a
+clinical readout — and the readout's own timeline killed it.** ⚠ **That is the difference between
+closing a question with evidence and closing it with a judgment call, and it cost one query.**
+
+---
+
+### T-2026-09-30-07 — the pharmaceutical-tariff complex (no ticker) — REJECTED
+**Company A / the news:** Reporting on **potential 20% tariffs affecting drug manufacturers that do
+not agree to onshore production** (Axios, 2026-09-30).
+**Company B / the candidate:** **NONE. THERE IS NO COMPANY A EITHER.**
+
+**1. Mechanism (one sentence):** ⚠ **CANNOT BE WRITTEN — this is an ENVIRONMENT INPUT WITH ONE PARTY,
+not an event between two.** A tariff regime applying to a whole industry has no counterparty whose
+economics change *because of* another company's action, which is the entire structure §4 requires.
+**2. Dollar path:** ⚠ **The scan states explicitly that the material "does not identify a specific
+second company together with a disclosed dollar impact."** No figure, no segment, no share.
+**3. Timing window:** Not reachable, and compounded by the tariffs being **potential** rather than
+enacted — a conditional policy has no reporting quarter.
+**4. Invalidation:** Not reachable.
+
+**Hard filters:** Priced-in **not run** (no ticker reached — ABSENT, not passed) · Correlation **no
+operand** · Universe **no candidate to test**.
+
+**Outcome:** **REJECTED at the premise — one party, no counterparty, no disclosed figure, and the
+policy is not even enacted.** ⚠⚠ **THIS IS THE THIRD CONSECUTIVE SESSION A MACRO/POLICY COMPLEX HAS
+BEEN LOGGED AND REJECTED IN EXACTLY THIS SHAPE** — 09-25's rate complex (T-2026-09-25-06), 09-29's
+Fed-repricing complex (T-2026-09-29-05), and now tariffs. ⚠ **It is recorded again rather than
+silently skipped, because the log's job is to show the human what this seat keeps reaching for. But
+the finding is now the PATTERN, not the instance: a macro or policy input is never a §4 candidate, and
+a run that finds itself writing a fourth one should say so in one line instead of a full entry.**
+⚠ **Today's long-yield tape — 30-year 5.6206% (highest since June 2002), 10-year 5.293% (highest since
+June 2007), August job openings down 256k to 7.079M against a 7.225M estimate, consumer confidence at
+a ~12½-year low, and October hike odds swinging from ~70% to 51.5% on Williams's remarks — is the SAME
+complex one notch louder, and a larger number does not give it a second party. Deliberately NOT
+re-litigated.**
+
+---
+
+### T-2026-09-30-08 — CI (Cigna Group) — REJECTED
+**Company A / the news:** **Cigna issued FY2026 revenue guidance of approximately $280.0 billion
+against a consensus estimate of $287.2 billion** (MarketBeat, 2026-09-30) — a guide roughly **$7.2B
+below consensus**.
+**Company B / the candidate:** **NONE NAMED — and the direction of the story is backwards for §4.**
+
+**1. Mechanism (one sentence):** ⚠ **CANNOT BE WRITTEN, BECAUSE THE SOURCE DOES NOT STATE WHY.** A
+revenue guide below consensus could reflect a contract loss, a client attrition, a divestiture, a
+reclassification or a pricing decision — **and which of those it is determines entirely whether any
+second company gains anything.** ⚠ **Without the cause there is no causal path, and a mechanism
+sentence with an unknown verb is not a mechanism.**
+**2. Dollar path:** ⚠ **The $7.2B shortfall is a MISS AGAINST AN ANALYST ESTIMATE, not a transfer of
+revenue to a named party** — standing rule (viii) read broadly: a disclosed figure that is not segment
+revenue at any candidate. **The scan states outright that the report "does not identify a separately
+affected second company."** ⚠ **And a guidance miss is not even Cigna's own revenue DECLINING — it is
+Cigna's revenue growing less than strangers expected.**
+**3. Timing window:** Not reachable.
+**4. Invalidation:** Not reachable.
+
+**Hard filters:** Priced-in **not run** (no second-order ticker reached — ABSENT, not passed) ·
+Correlation **no operand** · Universe: Cigna is US-listed and mega-cap, **but Cigna is Company A**.
+
+**Outcome:** **REJECTED at part 1 — no stated cause, therefore no causal path, therefore no Company B;
+and at part 2, where the only figure available is a gap to consensus rather than revenue at anybody.**
+⚠ **Worth recording as a NEW COSTUME for an old error: a consensus miss LOOKS quantitative — it comes
+with two precise figures and a clean subtraction — and it is the most seductive form of a number that
+belongs to nobody. Rule (viii) has not been seen in this dress before.**
+
+---
+
 ### 2026-09-29 (08:26 ET) — event survey (funnel, pre-thesis)
 
 Selftest passed all five checks (`trading_enabled: true`, LIVE paper account, equity **$99,827.65**

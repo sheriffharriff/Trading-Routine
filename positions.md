@@ -85,111 +85,54 @@ check that the pull returned the right session. A stored baseline is a *label*, 
 
 *(none — no **satellite** positions have been opened yet. Core VOO exists and is deliberately not tracked here, per the top-of-file rules and the fill note further down.)*
 
-**Reconciliation 2026-09-29 — 16:16 ET, 4-market-close-journal. ZERO SATELLITE POSITIONS ON BOTH SIDES.**
-`alpaca.py positions` returns **one row, core VOO**, 99.046311231 shares at avg_entry 706.74, cost_basis
-$69,999.99 — unchanged since the 09-03 fill — against **zero satellite blocks in this file. They AGREE.**
+**Reconciliation 2026-09-30 — 08:23 ET, 1-premarket-research. ZERO SATELLITE POSITIONS ON BOTH SIDES.**
+`alpaca.py positions` returns **one row, core VOO**, 99.046311231 shares at avg_entry **706.74** (a **RAW**
+print), cost_basis $69,999.99 — unchanged since the 09-03 fill — against **zero satellite blocks in this
+file. THEY AGREE.** ⚠ **Compared satellite-to-satellite, never raw ledger against raw broker.** **Core VOO
+was removed from the working list before any §5 rule was read**, per §5's core exemption.
+Selftest passed all five checks; `trading_enabled: true`, LIVE paper; pre-flight broker equity
+**$99,598.85**. `clock` at **08:23:04** reads `is_open: false` with `next_open` **2026-09-30T09:30** — the
+**pre-market** shape, **not a holiday**, confirmed by reading the date rather than the boolean.
 
-⚠⚠ **NO HIGH-WATER MARK WAS RECORDED TODAY, AND THAT IS CORRECT RATHER THAN A GAP.** The close routine's
-Step 2 exists to stamp each open satellite position's official close into `highest_close`. **There is no
-`highest_close` field on any position, because there are no positions** — the field is **ABSENT, the third
-state, carrying no `(as of …)` date at all.** ⚠ **Do not read the missing stamp as a skipped close run.
-DO NOT BACKFILL ANYTHING.** Today's official VOO close was **702.27** (`bars --adjustment all`, complete
-session, `--adjustment raw` agrees to the cent) and it was deliberately **NOT** written anywhere in this
-file: **core is exempt from §5 and a mark on it would fabricate a §5.4 trailing stop on the one position the
-strategy exempts** — a stop that could eventually sell core on a drawdown, which §7 forbids outright.
+### `sell_rule_status` — ALL FOUR RULES, RECORDED AS ABSENT RATHER THAN AS PASSING
 
-⚠ **STEP 2 HAVING NO OPERAND IS NOT THE SAME AS STEP 2 PASSING.** The backfill path in the paragraph above
-— re-pull the window on a stated adjustment basis, take the max from that one pull — **remains unexercised
-code**, and 09-28 is the proof that is not academic: that day lost its close run, so with one satellite
-position open, 09-29's midday run would have had to backfill across an ex-dividend date. **The cost has been
-zero because the sleeve is empty. That is luck, not a control.**
+⚠⚠ **THERE IS NO POSITION TO WRITE A `sell_rule_status` LINE ON. The distance to each rule is therefore not
+"large" — it is UNDEFINED, and those are different facts.**
 
-**§5.4 is still NOT ARMED** (it arms on the first *satellite* fill; the 09-03 core fill was not one) and
-**§5.3's distance is UNDEFINED, not large.** **§5.1–§5.4 have never had an operand in this account's
-history — 20 trading sessions since 2026-09-01, 17 after the fill, zero satellite positions ever.**
+| Rule | Status this run | Why it is not "passing" |
+|---|---|---|
+| **§5.1** thesis invalidation | **NO OPERAND** | No thesis is held, so no invalidation condition exists to check. **Zero Perplexity news-on-holdings queries were due, and zero were run.** |
+| **§5.2** time stop | **NO OPERAND** | No `timing_window` and no deadline field exists anywhere in this file. |
+| **§5.3** hard stop −7% | **DISTANCE UNDEFINED** | There is no `entry_price` to measure a drawdown from. ⚠ **Not "comfortably far" — undefined.** |
+| **§5.4** trailing stop −10% | **NOT ARMED** | There is no `highest_close` field — the **third state**, carrying **no `(as of …)` date at all**. It arms on the first **satellite** fill; the 09-03 core fill was not one. |
 
-Selftest passed all five checks; pre-flight equity **$99,462.17** (broker mark), `trading_enabled: true`,
-LIVE paper. `clock` at **12:42:08** reads `is_open: TRUE` with `next_close` **2026-09-29T16:00** — the
-market is genuinely open and this run is genuinely inside its window, which for routine 3 is the one
-boolean that is sufficient on its own.
+⚠⚠ **NO HIGH-WATER MARK WAS RECORDED OR WAS DUE, AND THIS IS NOT THE SEAT THAT WRITES THEM.** The
+market-close routine owns that step. ⚠ **STEP 2 HAVING NO OPERAND IS NOT THE SAME AS STEP 2 PASSING:** the
+backfill path described in this file's header — re-pull the whole window on a **stated** adjustment basis and
+take the max from that **one** pull — **remains unexercised code.** **09-28 is the proof that is not
+academic: that day lost its close run, so with one satellite position open, the next run would have had to
+backfill ACROSS AN EX-DIVIDEND DATE, which this system has never done.** ⚠ **The cost has been zero because
+the sleeve is empty. That is luck, not a control. DO NOT BACKFILL ANYTHING TODAY.**
 
-**RECONCILIATION CLEAN.** `alpaca.py positions` returns **one row, core VOO** — 99.046311231 shares,
-unchanged since the 09-03 fill, avg_entry 706.74, cost_basis $69,999.99, market_value $69,447.31,
-`unrealized_pl` **−$552.68 / −0.79%** on that broker mark. **Zero satellite blocks in this file against
-zero satellite Alpaca rows — they agree** (satellite-to-satellite, never raw ledger to raw broker).
-**Core VOO was removed from the working list before any §5 rule was read**, per §5's core exemption and
-this routine's Step 3 instruction.
+⚠ **Yesterday's official VOO close of 702.27** (`bars --adjustment all`, complete session, o 704.865
+h 704.865 l 700.83 n 3337 v 101166 — **re-pulled by this run, not inherited**) is deliberately **NOT written
+anywhere in this file.** **Core is exempt from all four §5 rules, and a mark on it would fabricate a §5.4
+trailing stop on the one position the strategy exempts** — a stop that could eventually sell core on a
+drawdown, which §7 forbids outright.
 
-**STEP 2 HAD NO OPERAND AND THAT IS NOT THE SAME AS PASSING.** The high-water repair step exists to
-catch a `highest_close` that a missed close run left stale — ⚠ **the failure that looks like nothing is
-wrong.** This run found **no `highest_close` field to check, on any position, because there are no
-positions.** ⚠ **It did NOT verify that the backfill logic works; it verified that there was nothing to
-backfill.** The distinction matters because **09-28 lost three routines including a market-close run** —
-had a satellite position existed on 09-28, **this is the run that would have had to backfill it**, and
-the repair path would have been exercised for the first time. **It still has not been.**
+**§5.1–§5.4 HAVE NEVER HAD AN OPERAND IN THIS ACCOUNT'S ENTIRE HISTORY** — **20 completed trading sessions
+since 2026-09-01, 17 after the 09-03 core fill (18 inclusive)**, **zero satellite positions ever opened.**
+⚠⚠ **THOSE FIGURES ARE AS OF THE LAST COMPLETED SESSION, 09-29 — AND THIS RUN CAUGHT ITSELF INCREMENTING
+THEM TO 21/18 BEFORE CORRECTING IT.** At 08:23 the market has not opened, so **today is not yet a session**
+and the count must not advance. ⚠ **This is the inherited-count error the carry-forward warns about,
+committed live and caught in the same run: a session counter is only safe to increment from a COMPLETED
+session, and a pre-market seat has none of today's to add.**
 
-**STEP 3 HAD NO OPERAND EITHER — ALL FOUR §5 RULES WENT UNEVALUATED FOR WANT OF A SUBJECT.** Zero open
-positions means **zero Perplexity invalidation queries were due and zero were made** (§5.1); no
-`timing_window` deadline to have passed (§5.2); no `entry_price` from which to measure −7% (§5.3); no
-`highest_close` from which to measure −10% (§5.4). ⚠ **§5.4 IS STILL NOT ARMED** — it arms on the first
-**satellite** fill, and the 09-03 core fill was not one. ⚠ **§5.3's distance is UNDEFINED, not large.**
-**Steps 4 and 5 were likewise absent, not skipped: zero exits triggered, so zero sell orders were
-submitted, and there is no held position whose `sell_rule_status` could be refreshed.**
-
-⚠ **THE EX-DIVIDEND BASIS TRAP AT THE TOP OF THIS FILE REMAINS UNTESTED AGAINST A REAL POSITION.** VOO's
-09-28 ex-date rescaled every prior close by 0.997432 on an `--adjustment all` pull, and the §5.4 phantom
-drawdown it would manufacture has cost this book **nothing — because the sleeve is empty, which is luck
-and not a control.** The rule stays written where it will be read at the moment the first mark is stamped.
-
-**Day 2 of 8 on the dividend test: `cash` reads exactly $30,000.00** from both `sleeves` and `account` at
-12:42. ⚠ **Non-arrival is still EXPECTED, not evidence** — settlement runs on the pay date, not the
-ex-date. Three readings on two days are **one unresolved observation**, not three data points.
-
-**Reconciliation 2026-09-29 — 08:26 ET, 1-premarket-research. THE LEDGER AGREES WITH THE BROKER; ZERO
-SATELLITE POSITIONS ON BOTH SIDES; NO ORDER PLACED (routine 1 does not trade); NO §5 RULE HAD A SUBJECT;
-NO HIGH-WATER MARK WRITTEN AND NONE DUE.**
-
-Selftest passed all five checks; pre-flight equity **$99,827.65** (broker mark), `trading_enabled: true`,
-LIVE paper. `clock` at **08:26:19** reads `is_open: FALSE` with `next_open` **2026-09-29T09:30** — and
-**`next_open` points at TODAY, which is the PRE-MARKET shape, not a holiday.** ⚠ **Read the date, not the
-boolean.**
-
-**RECONCILIATION CLEAN.** `alpaca.py positions` returns **one row, core VOO** — 99.046311231 shares
-unchanged since the 09-03 fill, avg_entry 706.74, cost_basis $69,999.99, market_value $69,827.65 (broker
-pre-market mark), `unrealized_pl` **−$172.34 / −0.246%** on that mark. **Zero satellite blocks against
-zero satellite Alpaca rows — they agree** (satellite-to-satellite, never raw ledger to raw broker). Core
-VOO was excluded from the working list before any §5 rule was read.
-
-**§5 HAD NO OPERAND — STEP 4 OF THE ROUTINE RAN AND FOUND NOTHING TO RUN ON.** Zero open positions means
-**zero Perplexity invalidation queries were due on any holding and zero were made**; no timing window to
-expire; no entry price for a §5.3 hard stop; no `highest_close` for a §5.4 trailing stop. ⚠ **§5.4 is
-STILL NOT ARMED** — it arms on the first **satellite** fill, and the 09-03 core fill was not one.
-**§5.3's distance is UNDEFINED, not large.** ⚠ **Counted against the CALENDAR, not inherited: 20 trading
-sessions since 2026-09-01, 17 since the 09-03 core fill, ZERO satellite positions in the account's entire
-history.** ⚠ **`TRADING_ENABLED` is TRUE, so a triggered stop WOULD be submitted — the null is an EMPTY
-SLEEVE, not a disabled stop.**
-
-**HIGH-WATER MARKS: NOTHING TO BACKFILL AND NOTHING WAS SKIPPED.** `highest_close` is **ABSENT — the
-third state, carrying no `(as of …)` date at all.** ⚠ **Do not read the missing stamp as a failed close
-run; there is no field, so there was nothing to write. DO NOT BACKFILL ANYTHING.** Zero `bars` calls were
-due on any satellite symbol and zero were made. ⚠ **The file-header rule stands unexercised and becomes
-load-bearing the moment a satellite fill lands: `highest_close` and the close it is compared against must
-come from the SAME adjustment basis, pulled in the SAME call.**
-
-**⚠⚠ THE DIVIDEND HAS STILL NOT BEEN PAID — CHECKED, AS THE CARRY-FORWARD REQUIRES.** `cash` reads
-**exactly $30,000.00**, unchanged from the 09-28 close. The implied VOO credit of **~$180.26–180.64**
-(an INFERENCE; Alpaca does not publish the figure) **has not arrived on day one of the window.** ⚠ **The
-falsifiable test stands and its deadline is 2026-10-07.** Day 1 of 8 and non-arrival on the ex-date+1 is
-**expected, not evidence** — settlement runs on the pay date, which is not the ex-date. **Do not read
-today's $30,000.00 as the test resolving.**
-
-**⚠⚠ AND THE THING THAT IS NOT ABOUT THIS LEDGER: YESTERDAY'S PRE-MARKET, OPEN AND MIDDAY RUNS LEFT NO
-COMMITTED OUTPUT, AND THIS RUN VERIFIED IT RATHER THAN INHERITING IT.** `git log` from inside this run
-shows the newest pre-today commit is **11804ab, the 09-28 close journal**, with **no premarket, open or
-midday commit dated 2026-09-28**; `plan_today.md` arrived carrying **`plan_date: 2026-09-25`**. ⚠ **On a
-day with an open satellite position, a missing routine 3 is an UNMANAGED §5 BOOK for a full session. The
-empty sleeve is the only reason the gap has cost nothing twice over.** **The cause is not visible from
-inside a run and is NOT asserted. It is a question for the human.**
+⚠ **AND THE THING THAT IS NOT ABOUT THIS LEDGER, CORRECTED FROM YESTERDAY: THE 09-28 GAP WAS A ONE-DAY
+EVENT AND IS NOT ONGOING.** `git log` from inside this run shows **all four routines committed on 09-29**
+(pre-market, open, midday 3e856bb, close 903f715). **09-28 stands as a real one-day, three-routine gap and a
+question for the human — but it must not be reported as a continuing failure.** ⚠ **A correction replaces
+the claim it corrects; it does not sit beside it.**
 
 ---
 
