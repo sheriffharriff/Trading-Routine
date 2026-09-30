@@ -85,31 +85,34 @@ check that the pull returned the right session. A stored baseline is a *label*, 
 
 *(none — no **satellite** positions have been opened yet. Core VOO exists and is deliberately not tracked here, per the top-of-file rules and the fill note further down.)*
 
-**Reconciliation 2026-09-30 — 12:41 ET, 3-midday-management. ZERO SATELLITE POSITIONS ON BOTH SIDES.**
+**Reconciliation 2026-09-30 — 16:16 ET, 4-market-close-journal. ZERO SATELLITE POSITIONS ON BOTH SIDES.**
 `alpaca.py positions` returns **one row, core VOO**, 99.046311231 shares at avg_entry **706.74** (a **RAW**
 print), cost_basis $69,999.99 — unchanged since the 09-03 fill — against **zero satellite blocks in this
 file. THEY AGREE.** ⚠ **Compared satellite-to-satellite, never raw ledger against raw broker.** **Core VOO
-was removed from the working list before any §5 rule was read**, per §5's core exemption — the routine
-prompt's own "if the core position appears in your working list, take it out."
+was removed from the working list before any §5 rule was read**, per §5's core exemption.
 Selftest passed all five checks; `trading_enabled: true`, LIVE paper; pre-flight broker equity
-**$99,908.87** at 12:40. `clock` at **12:41:16** reads **`is_open: true`**, `next_close`
-**2026-09-30T16:00**, `next_open` **2026-10-01T09:30**.
-⚠⚠ **THIS IS THE EXITS-ONLY SEAT AND IT TOOK NO EXITS, BECAUSE THERE WAS NOTHING TO EXIT.** No block was
-added — this seat **may not add one**; it cannot open a position at all. No block was removed.
-⚠⚠ **STEP 2 (HIGH-WATER REPAIR) HAD NO OPERAND, AND THAT IS NOT THE SAME AS STEP 2 PASSING.** There is no
-`highest_close` field anywhere in this file to compare an `(as of …)` date against, so **no staleness could
-be detected and none was ruled out** — the backfill path remains **UNEXERCISED CODE**. ⚠ **Zero `bars`
-calls were made, which matters at this hour specifically: a bar dated today is PARTIAL while the market is
-open, and at 12:41 it does not look like a stub** (the 09-25 midday partial was fifteen cents off the
-official close). **The trap was not avoided by care today; it was avoided by having no operand.**
-⚠ **Zero `quote` calls were made — the prompt asks for a quote on "every open satellite ticker" and that
-set is EMPTY. Zero Perplexity calls: §5.1 reads an `invalidation` line verbatim and there is no line to
-read.** **§5.1–§5.4 have never had an operand in this account's entire history.**
-⚠ **The session counter is NOT advanced by this run: 09-30 is still in progress at 12:41 and an incomplete
-session is not a completed one** (catch (11) in `state.md`).
-*(Earlier stamps, same day, superseded by the line above and not contradicted by it: 09:35 ET
-2-market-open-execution, pre-flight equity $99,792.98, `is_open: true`, zero orders on a FRESH EMPTY plan;
-08:23 ET 1-premarket-research, pre-flight equity $99,598.85, `is_open: false` in the pre-market shape.)*
+**$99,500.86** at 16:15. `clock` at **16:16:08** reads **`is_open: false`** with `next_open`
+**2026-10-01T09:30** and `next_close` **2026-10-01T16:00** — the **POST-BELL** shape, not a holiday.
+⚠ **FALSE has three meanings, so the stronger discriminator was RUN rather than inferred: a VOO daily bar
+for 2026-09-30 EXISTS AND IS COMPLETE** (o 704.52, h 707.20, l 700.605, **c 700.605**, n 2,050, v 61,014)
+**and the 15:59:59 ET `latestTrade` prints 700.605 — the bar's close is the last trade of the session.**
+**A session happened; the summary is owed.** ⚠ **v 61,014 against 09-29's 101,166 is NOT evidence of a
+partial bar** — `feed=iex` returns one venue's slice of consolidated tape, and 09-28's complete session
+printed 62,354. **The reliable discriminator is the clock, confirmed by the bar-exists / latestTrade check.**
+⚠⚠ **THIS SEAT RECORDS AND JOURNALS; IT DOES NOT TRADE.** No block was added and none removed. Zero orders
+placed, zero fills, nothing closed. `orders --status all` returns **one row for the account's entire
+history** — the 09-03 core VOO buy, `status: filled`, terminal. **Nothing is in limbo overnight (§7).**
+
+⚠⚠ **STEP 2 (RECORD THE CLOSES) HAD NO OPERAND, AND THAT IS NOT THE SAME AS STEP 2 WORKING.** There is no
+`highest_close` field anywhere in this file, so **there was no value to compare today's close against and no
+`(as of …)` date to refresh.** ⚠ **The sentence this run first reached for — "high-water marks updated" —
+would have been FALSE.** **This is the FOURTH consecutive close run to report no operand**, and the
+backfill path described in this file's header — re-pull the whole window on a **stated** adjustment basis
+and take the max from that **one** pull — **remains UNEXERCISED CODE.** ⚠⚠ **As of 09-30 12:41 so does its
+DETECTOR: routine 3's Step 2 is the seat that catches a missed write, and it has now reached that step and
+skipped it for want of input. BOTH SIDES OF THE MACHINERY HAVE A BLIND SPOT OF THE SAME SHAPE AND NEITHER
+HAS EVER RUN AGAINST A REAL MARK.** **The cost has been zero because the sleeve is empty. That is luck, not
+a control.**
 
 ### `sell_rule_status` — ALL FOUR RULES, RECORDED AS ABSENT RATHER THAN AS PASSING
 
@@ -123,39 +126,27 @@ session is not a completed one** (catch (11) in `state.md`).
 | **§5.3** hard stop −7% | **DISTANCE UNDEFINED** | There is no `entry_price` to measure a drawdown from. ⚠ **Not "comfortably far" — undefined.** |
 | **§5.4** trailing stop −10% | **NOT ARMED** | There is no `highest_close` field — the **third state**, carrying **no `(as of …)` date at all**. It arms on the first **satellite** fill; the 09-03 core fill was not one. |
 
-⚠⚠ **NO HIGH-WATER MARK WAS RECORDED OR WAS DUE — AND UNLIKE THE LAST THREE RUNS TO WRITE HERE, THIS SEAT
-IS THE ONE THAT OWNS THE REPAIR.** The market-close routine *writes* the mark daily; **routine 3's Step 2
-is the seat that DETECTS a missed write and backfills it.** ⚠ **So today's "no operand" is the repair seat
-itself reporting that it had nothing to repair, which is the weakest possible form of that reassurance:**
-the detector's whole input is a `(as of …)` date, **there is no field and therefore no date**, and a
-detector handed no input cannot distinguish a healthy mark from a missing one. ⚠ **STEP 2 HAVING NO OPERAND
-IS NOT THE SAME AS STEP 2 PASSING.** The backfill path described in this file's header — re-pull the whole
-window on a **stated** adjustment basis and take the max from that **one** pull — **remains unexercised
-code, and it has now been reached-and-skipped by its own owner.** **09-28 is the proof that is not
-academic: that day lost its close run, so with one satellite position open, the next run would have had to
-backfill ACROSS AN EX-DIVIDEND DATE, which this system has never done.** ⚠ **The cost has been zero because
-the sleeve is empty. That is luck, not a control. DO NOT BACKFILL ANYTHING TODAY — there is nothing to
-backfill, and a `bars` pull at 12:41 would return a PARTIAL bar dated today.**
-
-⚠ **Yesterday's official VOO close of 702.27** (`bars --adjustment all`, complete session, o 704.865
-h 704.865 l 700.83 n 3337 v 101166 — **re-pulled by this run, not inherited**) is deliberately **NOT written
+⚠ **Today's official VOO close of 700.605** (`bars --adjustment all`, complete session, confirmed against a
+15:59:59 `latestTrade` of 700.605 — **pulled by this run, not inherited**) is deliberately **NOT written
 anywhere in this file.** **Core is exempt from all four §5 rules, and a mark on it would fabricate a §5.4
 trailing stop on the one position the strategy exempts** — a stop that could eventually sell core on a
-drawdown, which §7 forbids outright.
+drawdown, which §7 forbids outright. ⚠⚠ **THIS IS THE SEAT THAT ACTUALLY WRITES MARKS, and it was holding a
+complete, official close at the moment it declined to write one — the strongest form this refusal takes.**
+⚠ **Noted honestly: sixty runs in, the refusal is close to automatic, and automatic is not the same as
+sound.**
 
-**§5.1–§5.4 HAVE NEVER HAD AN OPERAND IN THIS ACCOUNT'S ENTIRE HISTORY** — **20 completed trading sessions
-since 2026-09-01, 17 after the 09-03 core fill (18 inclusive)**, **zero satellite positions ever opened.**
-⚠⚠ **THOSE FIGURES ARE AS OF THE LAST COMPLETED SESSION, 09-29 — AND THIS RUN CAUGHT ITSELF INCREMENTING
-THEM TO 21/18 BEFORE CORRECTING IT.** At 08:23 the market has not opened, so **today is not yet a session**
-and the count must not advance. ⚠ **This is the inherited-count error the carry-forward warns about,
-committed live and caught in the same run: a session counter is only safe to increment from a COMPLETED
-session, and a pre-market seat has none of today's to add.**
+**§5.1–§5.4 HAVE NEVER HAD AN OPERAND IN THIS ACCOUNT'S ENTIRE HISTORY** — **21 completed trading sessions
+since 2026-09-01, 18 AFTER the 09-03 core fill (19 inclusive)**, **zero satellite positions ever opened.**
+⚠⚠ **THE COUNTER ADVANCED THIS RUN (20/17 → 21/18) AND THE REASON THAT IS SAFE IS NOT "ROUTINE 4 IS NOT
+EXPOSED TO CATCH (11)."** Treating that as licence would be inheriting a claim about the system's own shape
+— **catch (6)'s exact shape, the one no data call ever contradicts.** ⚠ **What makes the increment safe is
+that the session is COMPLETE, established from the bar-exists / `latestTrade` check above; and the figures
+were then RE-DERIVED from a fresh 45-session `bars` pull, not taken from yesterday's journal.**
 
-⚠ **AND THE THING THAT IS NOT ABOUT THIS LEDGER, CORRECTED FROM YESTERDAY: THE 09-28 GAP WAS A ONE-DAY
-EVENT AND IS NOT ONGOING.** `git log` from inside this run shows **all four routines committed on 09-29**
-(pre-market, open, midday 3e856bb, close 903f715). **09-28 stands as a real one-day, three-routine gap and a
-question for the human — but it must not be reported as a continuing failure.** ⚠ **A correction replaces
-the claim it corrects; it does not sit beside it.**
+*(Earlier stamps, same day, superseded by the block above and not contradicted by it: 12:41 ET
+3-midday-management, pre-flight equity $99,908.87, `is_open: true`, zero exits on an empty sleeve; 09:35 ET
+2-market-open-execution, pre-flight equity $99,792.98, `is_open: true`, zero orders on a FRESH EMPTY plan;
+08:23 ET 1-premarket-research, pre-flight equity $99,598.85, `is_open: false` in the pre-market shape.)*
 
 ---
 
