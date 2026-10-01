@@ -40,6 +40,123 @@ anything where the honest-broker rule (§4) did real work>
 
 ## Entries
 
+### 2026-10-01 (Thursday)
+
+**Account:** total **$99,555.77 on official closes (price basis, `bars --adjustment all`, VOO c 702.255)** /
+**~$99,736.22 on a total-return basis** carrying the **inferred, unconfirmed** ~$180.45 VOO dividend
+receivable | day **+$163.43 (+0.1644%)** from 09-30's official $99,392.34 | since inception **−0.4442%**
+(price basis) / **−0.2638%** (total return)
+**Sleeves:** core **69.87%** | satellite **0.0%** | cash **30.13%**   (§2 band 65–75% — **4.87 points inside
+the lower edge; NO rebalance due tomorrow**)
+**Breaker:** INACTIVE
+**Week:** 0/3 new positions (`week_of` 2026-09-28 — **no rollover; today is Thursday of that same ISO week**)
+
+**Traded:** nothing. Zero orders, zero fills, nothing opened, nothing closed, no realised P&L — across all
+four of today's runs.
+**Researched:** 6 theses — **0 accepted, 6 rejected** (T-2026-10-01-01 through -06)
+**Positions near a sell rule:** **none, and the honest statement is that there is no operand.** All four §5
+rules are **ABSENT, not passing**: §5.1 and §5.2 have no thesis and no deadline to read, §5.3's distance is
+**UNDEFINED rather than large**, and §5.4 is **NOT ARMED** because no `highest_close` field exists. Core VOO
+is exempt from all four and was removed from the working list before any rule was read.
+
+**What happened:**
+
+A full, ordinary session that the book participated in at about 70%. VOO closed **702.255** against 09-30's
+**700.605**, up **+0.2355%**; the book made **+0.1644%**. That is the fifth-best of the 19 post-fill sessions
+and notable in no direction.
+
+The §1 separation held for a **nineteenth consecutive session with no exception.** Excess was
+**−0.071085pp** against **−0.071085pp** predicted by holding 69.8167% core and the rest in idle cash —
+**residual exactly 0.00E+00.** The satellite sleeve contributed **0.000000%**, as it has every day of this
+account's life. Worth stating plainly because the sign flipped: on the last four down-days the same cash
+drag produced *positive* excess and the write-up read like a book doing something right. Today the market
+rose and the identical structure cost 0.071pp. **Neither is skill. It is one long position at ~70% weight
+and no second source of return, and the model fits to zero residual because there is nothing in the book for
+the model to omit.**
+
+The invisible job — **stamping today's close into each satellite position's `highest_close`** — **had no
+operand, for a fifth consecutive close run.** The sleeve is empty, so there was no mark to raise and no
+`(as of …)` date to refresh. I want to be precise about why that is not a clean bill of health: this is the
+*writing* seat, and it was holding a complete, verified official close of 702.255 at the moment it had
+nothing to write it onto. The backfill path is still code that has never run, and so is routine 3's detector
+for a missed write. **The cost has been zero because the sleeve is empty. That is luck, not a control.**
+
+Completeness was established rather than assumed: `clock` 16:16:49 `is_open: false` with `next_open` pointing
+at **tomorrow** (post-bell, not pre-market and not a holiday — read off the dates, because FALSE has three
+meanings), a 2026-10-01 bar that **exists**, and a **15:59:59 ET `latestTrade` of 702.255 matching the bar's
+close to the cent**.
+
+Housekeeping was all null and checked as such. `week_of` 2026-09-28 equals this ISO week's Monday, so no
+rollover. `consecutive_closed_losses` stays 0 — confirmed against what actually closed today, which was
+nothing. `orders --status all` returns **one row for the entire account history** (the 09-03 core buy,
+filled, terminal), so **no order from today exists to be stuck overnight** and §7 has nothing unverified.
+`cash` read **exactly $30,000.00** for a thirteenth time: the VOO dividend from the 09-28 ex-date is still
+unpaid, **day 4 of 8**, and the falsifiable test written in advance — cash should rise to about $30,180.45
+by 2026-10-07 or the paper account does not model dividends at all — is still running.
+
+**What I got wrong or nearly got wrong:**
+
+**Three things, and the first one is the one I would have gotten away with.**
+
+**1. I reached for "high-water marks updated" first, and it would have been false.** Not a slip of phrasing —
+it is the exact sentence the routine warns about, because a mark that was never written is indistinguishable
+in every artifact from a mark that is current and unchanged. The honest form is *the job had no operand*, and
+I only got there by checking that there is no field to carry a date rather than by checking that the date
+looked fine. Fifth consecutive run to reach for the wrong sentence; it has not gotten easier to resist.
+
+**2. I nearly promoted this morning's `n`/`v` floor test on the strength of a pass.** Midday replaced the old
+"is `n` visibly tiny" smell test with "is `n` below the trailing completed-session minimum," and this was the
+first seat to run it on a bar believed **complete** — the half that can only fail quietly. It passed:
+n 1,633 / v 51,892 against floors of 1,450 / 43,730. The available sentence was "the discriminator is
+validated." **Then I measured the margin, and it is thin on exactly the side that matters:** today's complete
+bar cleared the floor by **12.6%**, while this morning's partial sat **32.3% below** it. The populations did
+not overlap, but the complete-side clearance is less than half the partial-side clearance, which means a
+quiet full session could slip under the floor while being entirely complete. **One ticker, one day, on the
+easy side of the test is a corroborating instance, not a validation.** The clock stays primary and the
+floor test stays a corroborant. Its stated falsifier — it must fail on a half-day session — is still untested.
+
+**3. A small basis finding I nearly reported as a discrepancy.** Recomputing 09-22 → 09-23's book day-return
+from a fresh `--adjustment all` pull gives **−0.5317%** against the **−0.5327%** on record. My first read was
+that one of them was wrong. Decomposed, neither is: VOO's own return is **basis-invariant** under an exact
+rescale (−0.759096% both ways, because a constant multiple cancels in a ratio), but the **book's is not** —
+**the cash leg does not rescale**, so rescaling the core leg moves the core weight (+0.000408pp) — and the
+**published** closes add a larger rounding effect on top (+0.000859pp: exact 705.463705 published as
+**705.47**). **Magnitude ~0.001pp and nothing turns on it.** It matters only because Friday's review
+recomputes every post-fill session from one fresh pull and will differ from the dailies in the fourth
+decimal. **A day-return needs its basis *and* its vintage. §5.4 is untouched — it compares two numbers from
+the same pull, which is precisely why the rule is written as same-basis-same-call.**
+
+**And the thing that was not close to wrong, said plainly so it is not mistaken for restraint:** there was no
+trade to resist today. The research that produced six rejections ran at 08:24, in a different seat, and this
+run had no entry authority and no candidate in front of it. The pull named in this morning's log — my own
+priors volunteering Applied Materials, Lam Research and KLA against a source that explicitly said no US-listed
+supplier was named — was that run's temptation, not this one's. **I am not claiming credit for declining a
+trade I was never in a position to take.**
+
+**For the next run:**
+
+- **`highest_close` is ABSENT, not stale. DO NOT BACKFILL ANYTHING.** There is no field, so there is no date,
+  so no staleness could be detected and none was ruled out. The distinction is free only while the sleeve is
+  empty; **the first satellite fill arms the writing seat and the detector at once.**
+- **The dividend test is live: day 4 of 8.** `cash` exactly $30,000.00, thirteenth reading. Check it every
+  run. **Non-arrival this early is expected and is not evidence either way** — settlement runs on the pay
+  date, and no reading's hour makes it stronger.
+- **No rebalance due.** Core 69.87% official / 69.88% broker, 4.87 points inside the 65 edge. §2 acts at the
+  **band edge**, not toward the 70% target — **`rebalance_delta: +$118.86` is not an instruction.**
+- **Session counter advances to 22 completed since 2026-09-01, 19 post-fill.** Safe because today is a
+  **completed** session, established from the clock plus a matching `latestTrade` — **not** because this is
+  the close run.
+- **Post-bell `current_price` − official close = +$0.485, the tenth observation.** Unremarkable inside the
+  −$0.97 to +$1.145 range. The largest is still 09-30's +$1.145; **"the gap is widening" remains unsupported.**
+- **Equity drift now observed POST-BELL too:** selftest $99,611.63 vs `account`/`sleeves` $99,603.80, a $7.83
+  spread. Consistent with the already-solved live-midpoint finding, **not a new defect**, and well inside the
+  established $1.97–$216.91 range.
+- **93 real theses, zero ever accepted; 20 this week, all rejected.** Set against an empty satellite sleeve,
+  ~30% idle cash, a weekly cap unused at 0 of 3 and an inactive breaker. **That pressure is real and it is
+  the only item here asking for judgment rather than care. §4 says the correct output of most research runs is
+  no trade; it does not say the correct output of every run is no trade, and the difference is not something a
+  close run can settle.** Flagged for the human, not acted on.
+
 ### 2026-09-30 (Wednesday)
 
 **Account:** total **$99,392.34 on official closes (price basis, `bars --adjustment all`, VOO c 700.605)** /
