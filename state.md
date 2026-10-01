@@ -13,10 +13,9 @@ The block below is parsed by `scripts/common.py` and gates real behavior
 silently discards everything after it. **Validate with `common.read_state()` after rewriting.**
 
 ```
-last_run: 2026-10-01 12:41 ET 3-midday-management (selftest PASSED all five, trading_enabled true, LIVE paper, broker equity 99370.06 at pre-flight 12:41; EXITS-ONLY SEAT WITH NO OPERAND - zero orders, zero fills, nothing closed, no realised P and L, and NOTHING OPENED BECAUSE THIS SEAT MAY NOT OPEN, section 4 routing every entry through pre-market research and the 09:35 execution run so that a midday entry would BYPASS the written thesis rather than satisfy it; MARKET OPEN CONFIRMED - clock 12:41:34 is_open TRUE, next_close 2026-10-01T16:00 next_open 2026-10-02T09:30; NO OPEN SATELLITE POSITIONS, SO PER THE ROUTINE ITSELF THE RUN NOTES THE ABSENCE AND STOPS RATHER THAN LOOKING FOR SOMETHING TO DO; RECONCILIATION CLEAN - positions returns ONE row, core VOO 99.046311231 sh avg_entry 706.74 a RAW print, cost_basis 69999.99 unchanged since the 09-03 fill, against ZERO satellite blocks in positions.md, compared satellite-to-satellite and never raw ledger against raw broker, and core was REMOVED FROM THE WORKING LIST before any section 5 rule was read; orders --status open EMPTY and orders --status all ONE ROW for the account's entire history, so section 7 has nothing unverified anywhere; STEP 2 HIGH-WATER REPAIR NO OPERAND FOR A FOURTH CONSECUTIVE DAY WHICH IS NOT THE SAME AS IT WORKING - the detector's entire input is an as-of date compared against the last trading day, there is NO highest_close field so there is NO date, so NO STALENESS WAS DETECTED AND NONE WAS RULED OUT, and the backfill path remains UNEXERCISED CODE; sections 5.1-5.4 ALL ABSENT WHICH IS NOT PASSING - 5.1 and 5.2 NO OPERAND with ZERO Perplexity news-on-holdings queries due and zero run, 5.3 DISTANCE UNDEFINED not comfortably far, 5.4 NOT ARMED; consecutive_closed_losses stays 0 CONFIRMED not recomputed, breaker INACTIVE via common.halt_active() False with empty reason, halt_triggered_at none so NO HALT_CLEARED_AT comparison was required; THE FINDING OF THIS RUN IS THAT THE PARTIAL-BAR WARNING WAS FINALLY TESTED BY THE SEAT EVERY PRIOR INSTANCE NAMED AS THE DANGEROUS ONE, AND ITS TWO HALVES GRADED OPPOSITELY - at 3h12m into a 6.5h session the PRICE HALF IS CONFIRMED AND IS THE DANGEROUS HALF, c 700.35 sitting 26 cents from 09-30's official 700.605 and mid-range against a trailing 691.44-710.93 band, a WHOLLY PLAUSIBLE CLOSE CARRYING NO WARNING, and THE MECHANISM IS NOW VISIBLE RATHER THAN SUSPECTED because c 700.35 EQUALS latestTrade p 700.35 TO THE CENT, i.e. the partial bar's close field is THE LAST TRADE SO FAR WEARING A CLOSE'S CLOTHES; but THE n/v HALF IS REFUTED AS STATED - n 982 and v 26215 are NOT visibly tiny, being 47.8 pct and 43.0 pct of 09-30's completed bar - AND IS REPLACED BY A SHARPER DISCRIMINATOR, because across the 24 COMPLETED sessions in the trailing 25-day window the MINIMUM n is 1450 and the MINIMUM v is 43730, so today's partial sits BELOW THE FLOOR OF EVERY COMPLETED SESSION ON BOTH FIELDS, making the usable test NOT is-n-small but IS-n-BELOW-THE-TRAILING-COMPLETED-MINIMUM, a comparison against a distribution rather than a glance; THE LIMIT IS STATED AND FALSIFIABLE - the floor test MUST FAIL ON A HALF-DAY SESSION where a COMPLETED bar legitimately carries about half the usual n/v, the next early close is the test, and THE CLOCK REMAINS THE ONLY SOUND DISCRIMINATOR with the floor test a corroborant and never the primary; THE last_equity IDENTITY RECONFIRMED UNINHERITED FROM A FRESH PULL - qty times lastday_price 700.86 plus cash EQUALS last_equity 99417.59768935866 with a residual of 0E-11, BUT THE SAME IDENTITY DOES NOT HOLD INTRADAY, qty times current_price 700.19 plus cash being 99351.2367 against equity 99349.75, a 1.49 residual which also exactly explains why equity minus last_equity at -67.85 differs from qty times lastday-minus-current at -66.36; GRADED HONESTLY THAT IS NOT A WITHIN-RESPONSE CONTRADICTION because positions and account were TWO SEPARATE HTTP CALLS seconds apart, so the 1.49 is the established intraday-drift item in a NEW COSTUME and not a new defect, and unrealized_intraday_pl -66.361028 is on the BROKER basis not the official-close basis and was not used as a day return; INTRADAY-DRIFT ITEM NINTH INSTANCE - selftest 99370.06 against sleeves and account both 99349.75, a 20.31 spread, well inside the established 1.97 to 216.91 range and therefore NOT evidence of anything narrowing, and it bites section 6's 5 pct sizing cap which is 4967.49 on this mark with NO OPERAND because this seat may not buy; CASH READS EXACTLY 30000.00 - a TWELFTH reading on the FOURTH calendar day, VOO dividend STILL UNPAID, day 4 of 8, falsifiable deadline 2026-10-07, and NON-ARRIVAL THIS EARLY IS EXPECTED NOT EVIDENCE because settlement runs on the PAY date not the ex-date, and the HOUR of the reading adds nothing since settlement does not run on the bell; NO REBALANCE DUE - core 69.8051 pct on the 12:41 broker mark, 4.805 points inside the 65 edge and 5.195 from the 75 edge, and section 2 acts at the BAND EDGE not toward the 70 pct target; rebalance_delta +195.07 is a TENTH CONSECUTIVE POSITIVE READING AND NOT THE SIGN DEFECT RESOLVING, the same quantity having disagreed in sign on 09-24; FIFTY-SIXTH consecutive run inside 69.59-70.22; THIS SEAT IS NOT THE REBALANCING SEAT - section 2 rebalances at the next MARKET-OPEN run, so the band reading here is a RECORD and not a declined action; HOUSEKEEPING ALL CONFIRMATIONS NOT CHANGES - week_anchor computed via common.week_anchor() is 2026-09-28 and MATCHED week_of so NO ROLLOVER was due, next boundary 2026-10-05; new_positions_this_week stays 0 of 3 and open_thesis_ids stays none; NOTHING was appended to trade_log.md because no order reached a terminal state, and NOTHING to research_log.md because this seat writes no theses; control.md notes read (none); alerts.md carries ZERO open incidents and NO alert of any kind was posted; SESSION COUNTER DELIBERATELY NOT ADVANCED - it stays 21/18 because at 12:41 TODAY IS IN PROGRESS AND NOT A COMPLETED SESSION, which is the SAME trap the partial bar sets one layer down and catch (11) names this seat as exposed; 93 cumulative theses and 0 EVER ACCEPTED, ZERO written this seat by design, 6 on 10-01, 20 this week all rejected; EVERY GATE THAT COULD HAVE BLOCKED AN EXIT WAS OPEN AND THERE WAS NOTHING TO EXIT; state.md VALIDATED with common.read_state(), 13 keys, zero hash characters in the fenced block; prior last_run preserved below)
+last_run: 2026-10-01 16:16 ET 4-market-close-journal (selftest PASSED all five, trading_enabled true, LIVE paper, broker equity 99611.63 at pre-flight 16:16; A FULL SESSION HAPPENED AND ZERO ORDERS WERE PLACED BY ANY OF TODAY'S FOUR RUNS - zero fills, nothing opened, nothing closed, no realised P and L, and no order from today exists to be left in limbo because orders --status all still returns ONE ROW for the account's entire history, the 09-03 core buy, filled and terminal; POST-BELL CONFIRMED FROM DATES NOT THE BOOLEAN - clock 16:16:49 is_open FALSE with next_open 2026-10-02T09:30 pointing at TOMORROW, plus a 2026-10-01 bar that EXISTS and a 15:59:59 ET latestTrade of 702.255 matching its close to the cent, so the session is COMPLETE and this is not a holiday skip; OFFICIAL CLOSE BASIS bars --adjustment all VOO c 702.255 - equity 99555.77, core 69555.77 = 69.8661 pct, cash 30000.00 = 30.1339 pct, satellite 0.0 pct, day PLUS 163.43 / PLUS 0.1644 pct from 09-30's official 99392.34, since inception MINUS 444.23 / MINUS 0.4442 pct, total-return basis carrying the INFERRED 180.45 receivable about 99736.22 / MINUS 0.2638 pct; STEP 2 HIGH-WATER WRITE HAD NO OPERAND FOR A FIFTH CONSECUTIVE CLOSE RUN AND THAT IS NOT THE SAME AS IT WORKING - this is the WRITING seat holding a complete verified 702.255 close with nothing to stamp it onto, the sentence it first reached for was high-water marks updated which would have been FALSE, the honest form is the job had NO OPERAND, there is no field so there is no as-of date so the update-the-date-every-day discipline produced no artifact either, DO NOT BACKFILL ANYTHING; NO REBALANCE DUE TOMORROW - core 4.87 points inside the 65 edge, section 2 acts at the band edge not toward the target, rebalance_delta PLUS 118.86 is a distance readout not an instruction; SECTION 1 SEPARATION 19 OF 19 WITH NO EXCEPTION - VOO PLUS 0.2355 pct, book PLUS 0.1644 pct, excess MINUS 0.071085pp against MINUS 0.071085pp predicted from 69.8167 pct core weight, residual EXACTLY 0.00E+00, satellite contributed 0.000000 pct, and the SIGN FLIPPED from the last four down-days which is the same structural fact not a change in quality; THE n/v FLOOR TEST GOT ITS FIRST POST-BELL APPLICATION AND PASSED WITH A THIN MARGIN - 1633/51892 against floors 1450/43730, clearing by only 12.6 pct where this morning's partial sat 32.3 pct below, a CORROBORANT not a validation, clock stays primary, half-day falsifier still untested; NEW REPRODUCIBILITY FINDING DECOMPOSED NOT ASSERTED - a historical BOOK day-return cannot be reproduced exactly from a later --adjustment all pull across an ex-date, about 0.001pp, two causes, the cash leg not rescaling and published-close rounding; WEEK ROLLOVER NOT DUE - week_of 2026-09-28 equals this ISO week's Monday; consecutive_closed_losses 0 CONFIRMED against what actually closed today which was nothing; breaker INACTIVE; cash EXACTLY 30000.00 for a THIRTEENTH reading, dividend DAY 4 OF 8; SIXTY-FOURTH refusal to stamp a highest_close on core; journal written, ClickUp daily summary posted 86bcbdhng)
 
-prior_run: 2026-10-01 09:37 ET 2-market-open-execution (selftest PASSED all five, trading_enabled true, LIVE paper, broker equity 99625.59 at pre-flight 09:36; ZERO ORDERS PLACED - zero buys, zero sells, no rebalance, nothing opened, nothing closed, no realised P and L - AND THAT IS THE PLAN EXECUTED FAITHFULLY, NOT A SEAT THAT FAILED TO ACT: plan_today.md carried ZERO BUY ZERO SELL ZERO REBALANCE intents and this seat is forbidden to generate one; MARKET OPEN CONFIRMED - clock 09:37:08 is_open TRUE, the ONE boolean sufficient alone because TRUE has a single meaning while FALSE has three, next_close 2026-10-01T16:00 next_open 2026-10-02T09:30, and corroborated from the DATA PLANE by a bar DATED TODAY now EXISTING (c 703.15 o 702.95 h 703.335 l 701.85 n 72 v 2529) where the 08:24 pre-market run found NONE; THAT BAR IS PARTIAL AND WAS NOT USED AS A CLOSE - a fresh quote was used for reference (latestTrade 703.15 at 09:37:30, bid/ask 702.73/703.74); PARTIAL-BAR WARNING GRADED HONESTLY AND THIS INSTANCE DOES NOT TEST IT - at 09:37, seven minutes in, n 72 against 2053 and v 2529 against 61032 ARE visibly tiny, so the n/v half of the warning is untested here and the dangerous seat remains routine 3 at 12:30; BUT THE PRICE HALF DOES HOLD - c 703.15 sits INSIDE yesterday's 700.605 to 707.20 range and gives no warning whatsoever, which is the half that would fool a reader; STALENESS GATE EXERCISED FOR THE THIRTY-FIRST TIME AND DID NOT FIRE - plan_date 2026-10-01 compared against et_today 2026-10-01 COMPUTED via common.et_today() NOT ASSUMED, so the plan is FRESH, every intent was ELIGIBLE for execution and there were none; NO stale-plan alert was posted because the gate did not fire, and ITS ALERT PATH REMAINS UNTESTED CODE; THE PLAN'S OWN WARNING IS THE LOAD-BEARING ONE AND IT WAS HONORED - a FRESH EMPTY plan and a STALE plan produce a BYTE-FOR-BYTE IDENTICAL zero-order run, so freshness was read OFF plan_date and NEVER inferred from the outcome; RECONCILIATION CLEAN - positions returns ONE row, core VOO 99.046311231 sh avg_entry 706.74 a RAW print, cost_basis 69999.99 unchanged since the 09-03 fill, against ZERO satellite blocks in positions.md, compared satellite-to-satellite and never raw ledger against raw broker, and core was REMOVED FROM THE WORKING LIST before any section 5 rule was read; STEP 3 CORE BOOTSTRAP SKIPPED ON core_established TRUE - the flag was READ not assumed and this path never runs again; STEP 4 EXITS NO OPERAND - zero SELL intents and zero satellite positions, sections 5.1-5.4 ALL ABSENT WHICH IS NOT PASSING, 5.3 UNDEFINED not large, 5.4 NOT ARMED, consecutive_closed_losses stays 0 CONFIRMED not recomputed, breaker stays INACTIVE; STEP 5 RE-VALIDATION ZERO move CALLS DUE - ABSENT NOT SKIPPED, and this is a THIRD AND DIFFERENT STATE of the priced-in filter from the pre-market's EXERCISED-AND-NON-DECISIVE three hours earlier; the same filter was NON-DECISIVE at 08:24 on AMD, HPE and MU and had NO OPERAND AT ALL at 09:37, and reporting both as priced-in pass would erase the distinction; STEP 6 ZERO BUYS - new_positions_this_week stays 0 of 3, open_thesis_ids stays none, and NOTHING was appended to trade_log.md or research_log.md because no order reached a terminal state and no intent was skipped on a filter; AN EMPTY APPEND IS CORRECT HERE, NOT AN OMISSION; STEP 7 NO REBALANCE DUE - core 69.8922 pct on the 09:37 broker mark (69641.937584 of 99641.94), 4.892 points inside the 65 edge and 5.108 from the 75 edge, and section 2 acts at the BAND EDGE not toward the 70 pct target; rebalance_delta +107.42 is a NINTH CONSECUTIVE POSITIVE READING AND NOT THE SIGN DEFECT RESOLVING - the same quantity disagreed in sign on 09-24; FIFTY-FIFTH consecutive run inside 69.59-70.22; THIS WAS THE REBALANCING SEAT AND IT DECLINED ON THE BAND, WHICH IS THE ONLY ACTION SECTION 2 AUTHORISES HERE; ORDERS NOT IN LIMBO - orders --status all returns ONE ROW for the account's ENTIRE history, the 09-03 core VOO buy, status filled, terminal, and orders --status open returns EMPTY, so section 7 has nothing unverified anywhere; THE FINDING OF THIS RUN IS THAT equity MINUS last_equity IS NOW FULLY ATTRIBUTED, EXACTLY, TO A NAMED FIELD - last_equity 99417.59768935866 EQUALS qty 99.046311231 times lastday_price 700.86 plus cash 30000 with a residual of 0E-11, i.e. to ELEVEN DECIMAL PLACES, and last_equity minus the official-close equity 99392.340879994755 is 25.256809363905 which is EXACTLY qty times the 0.255 gap between lastday_price 700.86 and the 700.605 official close; SO THE ARTIFACT IS NEITHER NOISE NOR IMPRECISION - IT IS lastday_price NOT BEING THE OFFICIAL CLOSE, PROPAGATED THROUGH ONE MULTIPLICATION, and the standing item moves from MEASURED to ATTRIBUTED; WHAT IS EXPRESSLY NOT CLAIMED - this does NOT re-open WHY lastday_price reads 700.86, four mechanisms for that are already falsified and the carry-forward says stop predicting it; an ARITHMETIC IDENTITY between two broker fields and a MECHANISM for one of their values are DIFFERENT CLAIMS and only the first is made; THE SAME ARITHMETIC ALSO SUPPLIED AN UNINHERITED CONFIRMATION - qty times the 700.605 official close plus cash reproduces 99392.34 to the cent from a FRESH positions pull, so the 09-30 close run's equity figure is a CHECKED FACT this run rather than a carried one; consequence for change_today, which prints 0.00323 - it is computed against lastday_price 700.86 and is therefore on the BROKER basis, not the official-close basis, and was not used as a day return; INTRADAY-DRIFT ITEM EIGHTH INSTANCE - selftest 99625.59 at 09:36 against sleeves and account both 99641.94 at 09:37, a 16.35 spread, well inside the established 1.97 to 216.91 range and therefore NOT evidence of anything narrowing; it bites section 6's 5 pct sizing cap, which is 4982.10 on the 09:37 mark, and HAS NO OPERAND only because no plan has ever carried a BUY intent; CASH READS EXACTLY 30000.00 - an ELEVENTH reading on the FOURTH calendar day, VOO dividend STILL UNPAID, day 4 of 8, falsifiable deadline 2026-10-07, and NON-ARRIVAL THIS EARLY IS EXPECTED NOT EVIDENCE because settlement runs on the PAY date not the ex-date; the hour of the reading adds nothing, pre-market and market-open are the same observation; SESSION COUNTER DELIBERATELY NOT ADVANCED - it stays 21/18 because at 09:37 TODAY IS IN PROGRESS AND NOT A COMPLETED SESSION, and a market-open seat has none of today's to add; catch (11) names routines 1 and 2 as BOTH exposed and this is ROUTINE 2's FIRST OPPORTUNITY TO GET IT RIGHT, taken from the CLOCK rather than from the inherited sentence, which is the distinction catch (6) is about; HOUSEKEEPING ALL CONFIRMATIONS NOT CHANGES - week_anchor computed via common.week_anchor() is 2026-09-28 and MATCHED week_of so NO ROLLOVER was due, next boundary 2026-10-05; common.halt_active() returns False with an empty reason so the breaker is INACTIVE and halt_triggered_at none means NO HALT_CLEARED_AT comparison was required; control.md notes read (none); alerts.md carries ZERO open incidents and NO alert of any kind was posted; GNRC NOT LOOKED AT a THIRTY-FOURTH time but GRADED WEAK AND FREE - this seat has NO FUNNEL AT ALL, it executes a plan it is forbidden to add to, so the refusal cost nothing and the count is doing less work than it looks; 93 cumulative theses (94 T- headings less the template) and 0 EVER ACCEPTED, ZERO written this seat by design, 6 on 10-01, 20 this week all rejected; EVERY GATE THAT COULD HAVE BLOCKED A BUY WAS OPEN AND NOTHING WAS BLOCKED - breaker INACTIVE, week 0 of 3, sleeve EMPTY with 30.11 pct idle cash, 4982.10 of headroom under the 5 pct cap, control.md notes none, TRADING_ENABLED true - AND NOTHING WAS BOUGHT BECAUSE NOTHING WAS PLANNED; idle cash, an inactive breaker and an unused 0-of-3 cap are NOT an opportunity this seat may act on, because a position opened at 09:37 without a plan entry routes AROUND the discipline rather than satisfying it; state.md VALIDATED with common.read_state(), 13 keys, zero hash characters in the fenced block, and both long values read back TAIL-FIRST; prior last_run preserved below)
-
+prior_run: 2026-10-01 12:41 ET 3-midday-management (selftest PASSED all five, trading_enabled true, LIVE paper, broker equity 99370.06; EXITS-ONLY SEAT WITH NO OPERAND - zero orders, zero fills, nothing closed, and NOTHING OPENED BECAUSE THIS SEAT MAY NOT OPEN; market OPEN confirmed; NO OPEN SATELLITE POSITIONS so the run noted the absence and stopped; reconciliation clean, one core row against zero satellite blocks, compared satellite-to-satellite; STEP 2 DETECTOR REACHED AND SKIPPED WITH NO OPERAND - handed no input, so no staleness was detected and none was RULED OUT; ITS ONE REAL FINDING WAS A CORRECTION TO A STANDING WARNING - the partial-bar test was finally run by the seat every prior instance named as exposed, the PRICE half CONFIRMED with its mechanism now visible, c 700.35 EQUALS latestTrade.p 700.35 so a partial bar's close field is the last trade wearing a close's clothes, and the n/v half REFUTED AS STATED and replaced by the trailing-completed-session-minimum floor test)
 
 week_of: 2026-09-28
 new_positions_this_week: 0
@@ -25,9 +24,9 @@ circuit_breaker: INACTIVE
 halt_triggered_at: none
 core_established: true
 core_ticker: VOO
-core_pct: 69.81
+core_pct: 69.87
 satellite_pct: 0.0
-cash_pct: 30.20
+cash_pct: 30.13
 open_thesis_ids: none
 ```
 
@@ -35,27 +34,21 @@ open_thesis_ids: none
 
 Anything the next run must not lose. Cleared once acted on.
 
-**⚠ COLLAPSE, DO NOT APPEND — acted on forty-four times.** This repo's only continuity mechanism is the next
+**⚠ COLLAPSE, DO NOT APPEND — acted on forty-five times.** This repo's only continuity mechanism is the next
 run *reading* these files, and padding them with restatements raises the odds a genuinely live item gets
-skimmed. **Carry-forward is defined as cleared once acted on.** ⚠ **The 12:41 MIDDAY run placed ZERO ORDERS and produced ONE GENUINELY NEW FINDING, AND IT IS A CORRECTION
-TO A STANDING WARNING RATHER THAN A NEW DEFECT: THE PARTIAL-BAR TEST WAS FINALLY RUN BY THE SEAT THAT WAS
-NAMED AS EXPOSED TO IT, AND THE `n`/`v` HALF OF THAT WARNING IS REFUTED AS STATED WHILE THE PRICE HALF IS
-CONFIRMED WITH ITS MECHANISM NOW IDENTIFIED. See the new item below; it REPLACES the old form.**
-⚠ **The 09:37 MARKET-OPEN run placed ZERO ORDERS, CLOSED one item's loudest open question and
-added ONE new observation — and the new one is a CLOSURE BY ATTRIBUTION rather than a new defect: `equity −
-last_equity` IS NOW EXACTLY ACCOUNTED FOR. `last_equity` = qty × `lastday_price` + cash to ELEVEN decimal
-places, so the artifact that has been MEASURED five times is simply `lastday_price` not being the official
-close, run through one multiplication.** ⚠ **It did NOT re-open the separate, already-closed question of WHY
-`lastday_price` reads what it reads — an arithmetic identity and a mechanism are different claims.**
-⚠ **The 08:25 pre-market run's two BASIS observations stand unchanged: (1) A NEW SHAPE OF THE
-MIXED-BASIS TRAP, DECLINED — core `current_price` 703.52 sat **+$2.915** above the 700.605 official close,
-nearly TRIPLE the largest of the nine catalogued post-bell gaps, and appending it to that series would have
-manufactured a "largest gap on record" that is purely an artifact of mixing PRE-MARKET with POST-BELL
-readings; (2) A COMPLETED DAILY BAR IS NOT IMMUTABLE IN `n`/`v` — the 09-30 bar read 2050/61014 to the close
-run and 2053/61032 on the pre-market pull while its CLOSE held at 700.605 to the cent, so `n`/`v` are even
-weaker completeness evidence than the standing warning claims.** ⚠ **The pre-market run also recorded the
-sharpest instance yet of the honest-broker failure (own priors naming AMAT/LRCX/KLA against a source that
-volunteered the absence) and the first entry in this log whose PART 1 PASSED CLEANLY (T-2026-10-01-02, AMD).**
+skimmed. **Carry-forward is defined as cleared once acted on.**
+
+⚠ **The 16:16 CLOSE run placed ZERO ORDERS and produced TWO new findings plus ONE correction of emphasis —
+and none of the three is a new defect.** (1) **The n/v floor test got its FIRST POST-BELL APPLICATION and
+passed with a MARGIN THIN ENOUGH TO BE THE FINDING**, which refines rather than confirms this morning's
+discriminator. (2) **A reproducibility fact, decomposed rather than asserted: a historical BOOK day-return
+cannot be reproduced exactly from a later `--adjustment all` pull across an ex-date** — ~0.001pp, two
+distinct causes, nothing turns on it, recorded because Friday's review will hit it. (3) **The §1 excess SIGN
+FLIPPED NEGATIVE for the first time in five sessions and that is the SAME structural fact, not a change in
+quality** — stated because four consecutive positive-excess write-ups had begun to read like a book doing
+something right.
+⚠ **The close run ALSO reached for "high-water marks updated" first, on the fifth consecutive run with no
+operand. It has not gotten easier to resist, and that is the item below.**
 ⚠ **A run that adds nothing to this list is the normal case, not a gap in attention.** ⚠ **A correction
 replaces the claim it corrects — it does not sit beside it.** **Nothing live has been discarded.**
 
@@ -64,9 +57,9 @@ replaces the claim it corrects — it does not sit beside it.** **Nothing live h
 ### Live — act on these
 
 - **⚠⚠ THE VOO DIVIDEND IS STILL UNPAID. DAY 4 OF 8. CHECK `cash` EVERY RUN UNTIL IT RESOLVES.**
-  `cash` read **exactly $30,000.00** again at the **10-01 MIDDAY RUN (12:41)** — a **twelfth** reading,
-  across the **fourth calendar day**. ⚠ **Twelve readings across four days are ONE unresolved observation of
-  an unpaid dividend, not eleven data points. DAY 4 OF 8.** ⚠ **NON-ARRIVAL THIS EARLY IS EXPECTED, NOT EVIDENCE —
+  `cash` read **exactly $30,000.00** again at the **10-01 CLOSE RUN (16:16)** — a **thirteenth** reading,
+  across the **fourth calendar day**. ⚠ **Thirteen readings across four days are ONE unresolved observation of
+  an unpaid dividend, not thirteen data points. DAY 4 OF 8.** ⚠ **NON-ARRIVAL THIS EARLY IS EXPECTED, NOT EVIDENCE —
   settlement runs on the PAY date, which is not the ex-date. Do not read $30,000.00 as the test resolving in
   either direction, and note that no reading's HOUR makes it stronger: pre-market, midday and post-bell are
   all the same observation, because settlement does not run on the bell.** ⚠ **THE FALSIFIABLE TEST, WRITTEN
@@ -78,23 +71,28 @@ replaces the claim it corrects — it does not sit beside it.** **Nothing live h
   — and must stay labelled as one.
 
 - **⚠⚠ STEP 2 HAVING NO OPERAND AND STEP 2 WORKING ARE INDISTINGUISHABLE IN EVERY ARTIFACT A RUN PRODUCES —
-  AND 09-30's CLOSE IS THE FOURTH CONSECUTIVE CLOSE RUN TO REPORT IT.** The close routine's headline
-  invisible job is to stamp each open satellite position's official close into `highest_close`. **This run
-  had nothing to stamp, and the sentence it first reached for was "high-water marks updated," which would
-  have been FALSE.** ⚠ **The honest form is: the job had NO OPERAND.** ⚠⚠ **THE BACKFILL PATH REMAINS
-  UNEXERCISED CODE** — re-pull the window on a stated adjustment basis, take the max from that ONE pull —
-  **and 09-28 is the proof that is not academic: that day lost its close run, so with ONE satellite position
-  open, 09-29's midday run would have had to backfill across an ex-dividend date, which this system has
-  never done.** **The cost has been zero because the sleeve is empty. That is luck, not a control.**
-  ⚠ **Do not read a clean close run as a passing test of the mark machinery.**
-  ⚠⚠ **AND THE OTHER HALF OF THE MACHINERY IS IN THE SAME STATE, WHICH IS THE SHARPER HALF: THE CLOSE
-  ROUTINE *WRITES* THE MARK, BUT ROUTINE 3's STEP 2 IS THE SEAT THAT *DETECTS* A MISSED WRITE AND BACKFILLS
-  IT — AND IT HAS NOW REACHED THAT STEP AND SKIPPED IT, WITH NO OPERAND on a **FOURTH** CONSECUTIVE DAY
-  (10-01 12:41, the detector's own seat).** ⚠ **The detector's entire input is a `(as of …)` date compared against the last
-  trading day. There is no field, so there is no date, so NO STALENESS COULD BE DETECTED AND NONE WAS RULED
-  OUT.** ⚠⚠ **A detector handed no input returns the same silence as a detector finding everything healthy —
-  so BOTH THE WRITING SEAT AND THE DETECTING SEAT HAVE A CONFIRMED BLIND SPOT OF EXACTLY THE SAME SHAPE, AND
-  NEITHER HAS EVER RUN AGAINST A REAL MARK. THE FIRST SATELLITE FILL ARMS BOTH AT ONCE.**
+  AND 10-01's CLOSE IS THE FIFTH CONSECUTIVE CLOSE RUN TO REPORT IT.** The close routine's headline invisible
+  job is to stamp each open satellite position's official close into `highest_close`. **This run had nothing
+  to stamp, and the sentence it first reached for was "high-water marks updated," which would have been
+  FALSE.** ⚠ **The honest form is: the job had NO OPERAND.** ⚠⚠ **AND 10-01 IS THE SHARPEST FORM YET BECAUSE
+  THE SEAT HELD A COMPLETE, VERIFIED OFFICIAL CLOSE OF 702.255 AT THE MOMENT IT HAD NOTHING TO STAMP IT ONTO.**
+  ⚠⚠ **A SECOND DISCIPLINE ALSO PRODUCED NO ARTIFACT, AND THIS IS THE PART A FUTURE RUN WILL MISREAD: THE
+  ROUTINE SAYS UPDATE THE `(as of …)` DATE EVERY DAY WHETHER OR NOT THE VALUE MOVES, PRECISELY SO A CURRENT
+  MARK IS DISTINGUISHABLE FROM A SKIPPED ONE. THERE IS NO FIELD, SO THERE IS NO DATE, SO THAT RULE HAD NOTHING
+  TO WRITE EITHER.** ⚠⚠ **THE BACKFILL PATH REMAINS UNEXERCISED CODE** — re-pull the window on a stated
+  adjustment basis, take the max from that ONE pull — **and 09-28 is the proof that is not academic: that day
+  lost its close run, so with ONE satellite position open, 09-29's midday run would have had to backfill
+  across an ex-dividend date, which this system has never done.** **The cost has been zero because the sleeve
+  is empty. That is luck, not a control.** ⚠ **Do not read a clean close run as a passing test of the mark
+  machinery.**
+  ⚠⚠ **AND THE OTHER HALF OF THE MACHINERY IS IN THE SAME STATE: THE CLOSE ROUTINE *WRITES* THE MARK, BUT
+  ROUTINE 3's STEP 2 IS THE SEAT THAT *DETECTS* A MISSED WRITE AND BACKFILLS IT — AND IT REACHED THAT STEP AND
+  SKIPPED IT, WITH NO OPERAND, AT 10-01 12:41 (the detector's own seat).** ⚠ **The detector's entire input is
+  an `(as of …)` date compared against the last trading day. There is no field, so there is no date, so NO
+  STALENESS COULD BE DETECTED AND NONE WAS RULED OUT.** ⚠⚠ **A detector handed no input returns the same
+  silence as a detector finding everything healthy — so BOTH THE WRITING SEAT AND THE DETECTING SEAT HAVE A
+  CONFIRMED BLIND SPOT OF EXACTLY THE SAME SHAPE, AND NEITHER HAS EVER RUN AGAINST A REAL MARK. THE FIRST
+  SATELLITE FILL ARMS BOTH AT ONCE.**
 
 - **⚠⚠ EVERY VOO CLOSE OLDER THAN 2026-09-28 EXISTS ON TWO BASES AND THEY ARE NOT INTERCHANGEABLE.**
   VOO went ex-dividend 09-28; `bars --adjustment all` rescaled every prior close by **0.997432**;
@@ -117,12 +115,14 @@ replaces the claim it corrects — it does not sit beside it.** **Nothing live h
   ⚠ **An agreement obtained by removing the cause teaches nothing about the cause. DO NOT REPORT THE AXIS AS
   CLOSED.**
 
-- **⚠ HIGH-WATER MARKS: NOTHING TO RECORD AND NOTHING WAS SKIPPED — BUT 10-01's MIDDAY SEAT IS THE DETECTOR
-  ITSELF, AND ITS SILENCE IS THE LEAST INFORMATIVE OF ALL BECAUSE IT WAS HANDED NO INPUT.** The detector
-  reads an `(as of …)` date against the last trading day; there is no field, so no date, so **no staleness
-  was detected and none was ruled out.**
-  *(The strongest statement of this item remains the 09-30 CLOSE's: the WRITING seat, holding a complete
-  official 700.605 close at the moment it had nothing to stamp it onto.)*
+- **⚠ HIGH-WATER MARKS: NOTHING TO RECORD AND NOTHING WAS SKIPPED — AND 10-01's CLOSE IS NOW THE STRONGEST
+  STATEMENT OF THIS ITEM, REPLACING 09-30's.** The **WRITING** seat sat down holding a complete, verified
+  official close of **702.255** and had **nothing to stamp it onto.** `highest_close` is **ABSENT — the third
+  state, carrying no `(as of …)` date at all.** ⚠ **Do not read a missing stamp as a failed close run: there is
+  no field, so there was nothing to write. DO NOT BACKFILL ANYTHING.**
+  *(The least informative reading of the day was the 12:41 DETECTOR's, because it was handed no input at all:
+  it reads an `(as of …)` date against the last trading day, so no staleness was detected and none was ruled
+  out.)*
 
 - **⚠⚠ THE PARTIAL-BAR WARNING HAS NOW BEEN TESTED BY THE SEAT THAT EVERY PRIOR INSTANCE NAMED AS THE
   DANGEROUS ONE — ROUTINE 3 AT MIDDAY — AND ITS TWO HALVES GRADED OPPOSITELY. THIS REPLACES THE OLD "a
@@ -146,6 +146,16 @@ replaces the claim it corrects — it does not sit beside it.** **Nothing live h
   and would read as partial. **The next early close is the test.** ⚠ **THE CLOCK REMAINS THE ONLY SOUND
   DISCRIMINATOR. The floor test is a corroborant, never the primary — and no `bars` close may be stamped as
   a mark before the bell on any basis.**
+  ⚠⚠ **NEW AT THE 10-01 CLOSE — THE FLOOR TEST GOT ITS FIRST APPLICATION TO A BAR BELIEVED *COMPLETE*, WHICH
+  IS THE OTHER HALF OF THE TEST AND THE HALF THAT CAN ONLY FAIL QUIETLY. IT PASSED, AND THE MARGIN IS THE
+  FINDING.** Today's completed bar read **n 1,633 / v 51,892** against re-pulled floors of **1,450 / 43,730**
+  (both 09-02, still inside the window). ⚠⚠ **BUT THE CLEARANCE IS THIN ON THE SIDE THAT MATTERS: the complete
+  bar sat only 12.6% above the floor (`v` 18.7%), while the SAME DAY's PARTIAL sat 32.3% BELOW it. The two
+  populations did not overlap, but the complete-side clearance is LESS THAN HALF the partial-side clearance —
+  so a quiet, low-participation FULL session could land under the floor without being partial at all.**
+  ⚠ **GRADED HONESTLY: one ticker, one day, on the EASY side of the test. A CORROBORATING INSTANCE, NOT A
+  VALIDATION — the sentence "the discriminator is validated" was available and was declined.** ⚠ **The
+  half-day falsifier is unchanged and STILL UNTESTED.**
 
   `positions.md` carries **zero satellite blocks**, so `highest_close` is **ABSENT — the third state, carrying
   no `(as of …)` date at all.** ⚠ **Do not read a missing stamp as a failed close run: there is no field, so
@@ -156,13 +166,15 @@ replaces the claim it corrects — it does not sit beside it.** **Nothing live h
   separates them. Compare the date; never infer from the field's emptiness.** ⚠ **AND WHEN IT ARMS, NO
   BACKFILL MAY TAKE ITS MAX FROM A BAR DATED TODAY WHILE THE MARKET IS OPEN, NOR FROM A DIFFERENT ADJUSTMENT
   BASIS THAN THE ONE IT IS COMPARED AGAINST.** **§5.1–§5.4 have never had an operand in this account's entire
-  history: 21 completed sessions since 2026-09-01, 18 after the 09-03 core fill, zero satellite positions
-  ever** *(re-derived from a fresh 45-session `bars` pull at the 09-30 close)*. ⚠⚠ **NEITHER 10-01 SEAT ADVANCED THE COUNTER AND BOTH DECLINED FOR THE SAME REASON: at 08:24 the market had
-  not opened and at 09:37 today was IN PROGRESS — in neither case is today a COMPLETED session, and neither
-  seat has any of today's to add. It stays 21/18.** ⚠⚠ **THE 09:37 DECLINE IS THE ONE WORTH RECORDING,
-  BECAUSE CATCH (11) NAMES ROUTINES 1 AND 2 AS BOTH EXPOSED AND 10-01 IS THE FIRST TIME ROUTINE 2 REACHED
-  THAT DECISION. It was taken from the CLOCK, not from the inherited sentence — which is exactly the
-  distinction catch (6) is about: the right number by an unchecked route is not a checked fact.**
+  history: 22 completed sessions since 2026-09-01, 19 after the 09-03 core fill, zero satellite positions
+  ever** *(re-derived from a fresh 45-session `bars` pull at the 10-01 close)*.
+  ⚠⚠ **THE COUNTER ADVANCED 21/18 → 22/19 AT THE 10-01 CLOSE, AND THE ROUTE IS WHAT MAKES THAT SAFE, NOT THE
+  SEAT: today is a COMPLETED session, established from a 2026-10-01 bar that EXISTS plus a 15:59:59 ET
+  `latestTrade` of 702.255 matching its close — NOT from "routine 4 is the close run."** ⚠ **That distinction
+  is catch (6): a correct number reached by an unchecked route is not a checked fact.**
+  ⚠ **Both earlier seats today declined the same increment correctly — 08:24 because the market had not opened,
+  09:37 because the session was IN PROGRESS. Catch (11) names routines 1 and 2 as both exposed, and 10-01 was
+  the first time routine 2 reached that decision; it took it from the CLOCK.**
 
 - **⚠ THE 09-28 GAP — CLOSED AS AN ONGOING FAILURE, STILL OPEN AS A QUESTION FOR THE HUMAN.**
   Three of four routines left **no committed output on 2026-09-28**. ⚠⚠ **RE-VERIFIED FROM `git log` ON
@@ -201,11 +213,13 @@ replaces the claim it corrects — it does not sit beside it.** **Nothing live h
   RATHER THAN CARE. 93 REAL THESES, ZERO ACCEPTED EVER** (94 `### T-` headings less the template, recounted
   from source on 10-01 with `grep -c`). **20 this week, ALL REJECTED.** Set beside that: an empty satellite
   sleeve, **~30% idle cash**, a weekly cap unused at **0 of 3**, an INACTIVE breaker, and an account at
-  **−0.6077% since inception on official closes** (−0.4272% carrying the receivable). ⚠⚠ **A LOSING ACCOUNT
+  **−0.4442% since inception on official closes** (−0.2638% carrying the receivable). ⚠⚠ **A LOSING ACCOUNT
   RAISES THE PULL IN A NEW WAY AND THE DISTINCTION STILL HOLDS: the book is down because it holds ~70% of a
-  market that fell, and it BEAT that market again on 09-30, by exactly the cash weight, for the eighteenth
-  session in eighteen. "Deploy something" is not what these numbers argue for; they argue that the sleeve has
-  no effect in EITHER direction.** ⚠ **09-25 remains the sharpest evidence: the funnel finally produced the
+  market that fell. ⚠⚠ AND 10-01 SUPPLIES THE OTHER HALF OF THAT ARGUMENT, WHICH IS STRONGER THAN THE
+  "IT BEAT THE MARKET AGAIN" FORM USED ON THE FOUR PRECEDING DOWN-DAYS: on 10-01 the market ROSE and the
+  identical structure LAGGED it by exactly the cash weight, nineteenth session in nineteen. The sleeve has no
+  effect in EITHER direction, and a run that only ever cites the down-day half is quoting the flattering
+  half.** ⚠ **"Deploy something" is not what these numbers argue for.** ⚠ **09-25 remains the sharpest evidence: the funnel finally produced the
   well-sourced, named-supplier, allocated-figure candidate that a month of rejections implied was the missing
   ingredient — AND IT WAS STILL NOT A TRADE. That is evidence the bar is not what is binding, NOT evidence
   the bar should move.** §4's own position governs: a run that finds nothing is a successful run. **Naming the
@@ -344,50 +358,61 @@ replaces the claim it corrects — it does not sit beside it.** **Nothing live h
 
 - **⚠ TAPE FACTS THE NEXT RUN SHOULD NOT RE-DERIVE — AND NOTE THE BASIS ON EVERY ONE.** Core is
   **99.046311231 shares at 706.74 (a RAW print)**, cash **$30,000.00** flat.
-  **MOST RECENT OFFICIAL/PRICE BASIS (`bars --adjustment all`, the complete 2026-09-30 session,
-  RE-PULLED FRESH ON 10-01: o 704.52 h 707.20 l 700.605 c 700.605 n 2053 v 61032): equity $99,392.34,
-  core $69,392.34 = 69.8166%, cash 30.1834%, day −$164.91 / −0.1656% from 09-29's $99,557.25, since
-  inception −$607.66 / −0.6077%. TOTAL-RETURN BASIS carrying the inferred ~$180.45 receivable:
-  ~$99,572.79, since inception −0.4272%.**
-  **BROKER MARK at 10-01 09:37 (MARKET OPEN, NOT A CLOSE): equity $99,641.94, core $69,641.937584 =
-  69.8922%, cash 30.1078%, `current_price` 703.125, core `unrealized_pl` −$358.05 / −0.512% against the
-  706.74 RAW fill, `rebalance_delta` +$107.42 — a NINTH consecutive positive reading and NOT the sign defect
-  resolving (the same quantity disagreed in sign on 09-24).** *(Earlier the same day, 08:24 PRE-MARKET:
-  equity $99,681.06, core 69.9040%, `rebalance_delta` +$95.68. ⚠ **Two broker marks from the same day are
-  still two different calls at two different times and must not be differenced against each other either.**)*
+  **MOST RECENT OFFICIAL/PRICE BASIS (`bars --adjustment all`, the complete 2026-10-01 session:
+  o 702.95 h 703.43 l 697.50 c 702.255 n 1633 v 51892): equity $99,555.77, core $69,555.77 = 69.8661%,
+  cash 30.1339%, day +$163.43 / +0.1644% from 09-30's $99,392.34, since inception −$444.23 / −0.4442%.
+  TOTAL-RETURN BASIS carrying the inferred ~$180.45 receivable: ~$99,736.22, since inception −0.2638%.**
+  **BROKER MARK at 10-01 16:16 (POST-BELL, NOT A CLOSE): equity $99,603.80, core $69,603.80 = 69.88%,
+  `current_price` 702.74, core `unrealized_pl` −$396.19 / −0.566% against the 706.74 RAW fill,
+  `rebalance_delta` +$118.86 — a TENTH consecutive positive reading and NOT the sign defect resolving (the
+  same quantity disagreed in sign on 09-24).**
   ⚠ **The broker figure is a LIVE MIDPOINT and must never be differenced against a close figure.** **Prior
-  closes for reference: 09-29 $99,557.25 / core 69.8666%; 09-28 $99,688.98 / core 69.9064%.**
+  closes for reference: 09-30 $99,392.34 / core 69.8166%; 09-29 $99,557.25 / core 69.8666%; 09-28 $99,688.98.**
   ⚠⚠ **THE WORKED INSTANCE OF THE MIXED-BASIS TRAP, FROM THE 09-30 CLOSE AND STILL THE ONE TO REACH FOR:
   differencing the BROKER $99,505.75 against 09-29's OFFICIAL $99,557.25 gave −$51.50 / −0.0517%, a
   THREEFOLD UNDERSTATEMENT of the true −$164.91 / −0.1656%.**
-  ⚠⚠ **AND 10-01 SUPPLIES A SECOND, DIFFERENT SHAPE OF THE SAME TRAP, DECLINED: core `current_price` reads
-  703.52 at 08:24, i.e. **+$2.915 above the 700.605 official close** — NEARLY TRIPLE the largest of the nine
-  catalogued POST-BELL gaps (range −$0.97 to +$1.145). IT WAS NOT APPENDED TO THAT SERIES.** ⚠ **Those nine
-  are all post-bell; this is a PRE-MARKET indication on a morning when a softer August PCE lifted futures.
-  Appending it would have produced a spurious "largest gap on record" by nearly 3x — an artifact of mixing
-  two TIMES OF DAY, not evidence of any widening.** ⚠ **DIFFERENT HOUR, DIFFERENT SERIES. The post-bell
-  series still has NINE members and its largest is still +$1.145.**
-  ⚠⚠ **`equity − last_equity` REMAINS UNUSABLE, NOT IMPRECISE — its largest artifact on record is 09-30's
-  −$94.59 (−$70.32 printed against a real −$164.91), nearly three times 09-28's −$33.19.**
-  ⚠ **Fifty-fifth consecutive run inside 69.59–70.22.**
-  ⚠⚠ **THE INTRADAY-DRIFT ITEM GOT AN EIGHTH INSTANCE: `selftest` reported $99,625.59 at 09:36 and `sleeves`
-  and `account` BOTH returned $99,641.94 at 09:37 — a $16.35 spread.** ⚠ **Well inside the established
-  $1.97–$216.91 range, so it is NOT evidence of anything narrowing, and the range still has no stable size.**
-  ⚠ **An intraday equity figure is only meaningful with its CALL and its TIMESTAMP attached, and two figures
-  from different calls must never be differenced.** ⚠⚠ **THIS BITES §6's 5% SIZING CAP, WHICH IS COMPUTED
-  AGAINST LIVE EQUITY — 5% of the 09:37 mark is $4,982.10. IT HAS NO OPERAND ONLY BECAUSE NO PLAN HAS EVER
-  CARRIED A BUY INTENT.**
-  **NO REBALANCE WAS DUE AND NONE WAS PLACED** — §2 acts at the **65/75 band edge** and core sat **4.892
-  points** inside the 65 edge and **5.108** from the 75 edge at 09:37 (4.82 inside on the 09-30 official
-  close). ⚠⚠ **§2 NAMES THE MARKET-OPEN RUN AS THE SEAT THAT REBALANCES, AND THE 10-01 OPEN *WAS* THAT SEAT:
-  it reached the decision with the authority to act and declined ON THE BAND. That is the only action §2
-  authorises there — declining because the band holds is a DECISION, not an omission.**
-  ⚠ **AUDIT ANY SUPERLATIVE BEFORE REPEATING IT.** On **price**, 09-28's −0.7010% **IS** the largest
-  single-day loss on record; on **total return** it is **−0.5212%, SECOND**, behind 09-23's −0.5327%.
-  **09-30's −0.1656% is not notable in either direction.** Since inception **−0.6077% is NOT a low** — 09-16
-  reached −1.3396%, 09-15 −1.0350%, 09-10 −0.9954%. *(Grounded from a 45-session pull whose rows before the
-  09-03 fill are **COUNTERFACTUAL** — the account held $100,000 cash — and must never be read as account
-  history.)*
+  ⚠ **A SECOND SHAPE, DECLINED on 10-01: core `current_price` read 703.52 at 08:24, +$2.915 above the 700.605
+  official close — nearly TRIPLE the largest of the nine catalogued POST-BELL gaps. It was NOT appended to
+  that series. DIFFERENT HOUR, DIFFERENT SERIES.**
+  ⚠ **Post-bell `current_price` minus official close, TEN observations: +$1.13, −$0.22, +$0.169, +$0.02,
+  −$0.97, −$0.054, −$0.25, +$0.45, +$1.145 (09-30), and +$0.485 (10-01, 702.74 against a 702.255 close).**
+  ⚠ **+$0.485 is unremarkable inside the −$0.97 to +$1.145 range; THE LARGEST IS STILL 09-30's +$1.145, and
+  "the broker/official gap is widening" remains available, fluent and UNSUPPORTED.**
+  ⚠⚠ **A NINTH EQUITY-DRIFT INSTANCE, AND THE NEW PART IS THE HOUR: `selftest` read $99,611.63 and
+  `account`/`sleeves` BOTH read $99,603.80 — a $7.83 spread, ALL THREE *AFTER* THE BELL.** ⚠ **So the drift is
+  NOT confined to market hours. That is consistent with the already-solved two-price finding (`current_price`
+  is a live midpoint that keeps updating in after-hours) and is NOT a new defect.** ⚠ **Inside the established
+  $1.97–$216.91 range, so NOT evidence of anything narrowing.** ⚠ **An equity figure is only meaningful with
+  its CALL and its TIMESTAMP attached, and two figures from different calls must never be differenced.**
+  ⚠⚠ **THIS BITES §6's 5% SIZING CAP, WHICH IS COMPUTED AGAINST LIVE EQUITY — 5% of the official-close equity
+  is $4,977.79. IT HAS NO OPERAND ONLY BECAUSE NO PLAN HAS EVER CARRIED A BUY INTENT.**
+  **NO REBALANCE WAS DUE, NONE WAS PLACED, AND NONE IS DUE TOMORROW** — §2 acts at the **65/75 band edge** and
+  core sat **4.866 points** inside the 65 edge on the official close (**4.88** on the broker mark).
+  ⚠ **`rebalance_delta: +$118.86` IS A DISTANCE READOUT, NOT AN INSTRUCTION.**
+  ⚠ **Fifty-sixth consecutive run inside 69.59–70.22.**
+  ⚠ **AUDIT ANY SUPERLATIVE BEFORE REPEATING IT.** Today's **+0.1644%** is the **5th best of the 19 post-fill
+  sessions** (behind 09-21 +1.0848%, 09-17 +0.7774%, 09-11 +0.5833%, 09-25 +0.3382%) — **notable in no
+  direction.** Since inception **−0.4442% is NOT a low** — 09-16 reached −1.3396%, 09-15 −1.0350%, 09-10
+  −0.9954%. On **price** basis 09-28's −0.7010% IS the largest single-day loss on record; on **total return**
+  it is **−0.5212%, SECOND**, behind 09-23's −0.5327%.
+  *(Grounded from a 45-session pull whose rows before the 09-03 fill are **COUNTERFACTUAL** — the account held
+  $100,000 cash — and must never be read as account history.)*
+
+- **⚠⚠ NEW ON 10-01's CLOSE: A HISTORICAL *BOOK* DAY-RETURN IS NOT EXACTLY REPRODUCIBLE FROM A LATER
+  `--adjustment all` PULL ONCE AN EX-DATE INTERVENES. DECOMPOSED, NOT ASSERTED, AND NOTHING TURNS ON IT.**
+  Worked on 09-22 → 09-23: **raw −0.532701%**, **exact-rescale −0.532293%**, **published `all` −0.531690%**
+  (the figure on record was −0.5327%, i.e. the RAW one).
+  - **VOO's OWN day return is basis-INVARIANT under an exact rescale** (−0.759096% both ways): a constant
+    multiple cancels in a ratio.
+  - **The BOOK's is NOT** (+0.000408pp). **The cash leg does not rescale**, so rescaling the core leg moves the
+    core WEIGHT, and the book return is weight × VOO return.
+  - **Published closes add a second, LARGER effect** (+0.000859pp on VOO): the rescaled closes are **ROUNDED**
+    — exact 710.859812 → published 710.86; exact 705.463705 → published **705.47**, 0.6c up.
+  ⚠ **MAGNITUDE ~0.001pp. Recorded ONLY because the Friday review recomputes every post-fill session from one
+  fresh pull and will differ from the dailies in the FOURTH DECIMAL. NEITHER IS WRONG — a day-return must be
+  quoted with its BASIS *and* its VINTAGE.** ⚠ **§5.4 IS UNAFFECTED: it compares two numbers from the SAME
+  pull, which is exactly why the rule is written as same-basis-same-call.** ⚠ **Today's own figures are
+  unaffected — 09-30 and 10-01 are both post-ex, so no rescaling sits inside the window.**
 
 - **⚠⚠ NEW ON 10-01: A COMPLETED DAILY BAR IS NOT IMMUTABLE IN `n` AND `v`, WHICH MAKES AN ALREADY-WEAK
   SIGNAL WEAKER STILL.** The 2026-09-30 bar read **n 2050 / v 61014** to the 16:16 close run and reads
@@ -434,23 +459,24 @@ replaces the claim it corrects — it does not sit beside it.** **Nothing live h
   **Both signs, no predictable sign, no correctable offset.** **Keep writing falsifiable predictions down in
   advance for LIVE questions** — there is one on the dividend credit, above.
 
-- **⚠⚠ §1 BENCHMARK — THE SEPARATION IS 18 OF 18 AND STILL HAS NO EXCEPTION.** **09-30: VOO −0.2371%
-  (`--adjustment all`, completed closes, and no dividend sits inside this window because the 09-28 ex-date
-  preceded both sessions), the book −0.1656% on the same basis, excess +0.0714pp — against +0.0714pp
-  PREDICTED by holding 69.8666% core and the rest in idle cash. Agreement to 0.0000pp.** The satellite sleeve
-  contributed **exactly 0.0000%**, as it has for the account's entire history. ⚠⚠ **The 09-25 weekly review
-  recomputed all 15 post-fill sessions from official closes and found PERFECT separation: every VOO-down day
-  positive excess, every VOO-up day negative, one flat day exactly 0.0000pp. 09-30 is the TWELFTH VOO-down
-  day — 18 of 18 sessions.** ⚠ **That is not a performance statistic — it is the signature of a book with ONE
-  long position at ~70% weight and NO SECOND SOURCE OF RETURN.** ⚠⚠ **A TIGHT FIT IS NOT CONFIRMATION: the
-  model fits to 0.0000pp because there is nothing in the book the model omits.** ⚠⚠ **AND A LOSING DAY IN
-  DOLLARS BEING A POSITIVE-EXCESS DAY IS THE SAME FACT AS 09-25's GOOD DAY BEING A NEGATIVE-EXCESS ONE.
-  Neither is skill.**
+- **⚠⚠ §1 BENCHMARK — THE SEPARATION IS 19 OF 19 AND STILL HAS NO EXCEPTION.** **10-01: VOO +0.2355%
+  (`--adjustment all`, completed closes; no dividend sits inside this window because the 09-28 ex-date precedes
+  both sessions), the book +0.1644% on the same basis, excess −0.071085pp — against −0.071085pp PREDICTED by
+  holding 69.8167% core and the rest in idle cash. RESIDUAL EXACTLY 0.00E+00.** The satellite sleeve
+  contributed **exactly 0.000000%**, as it has for the account's entire history.
+  ⚠⚠ **THE SIGN FLIPPED NEGATIVE FOR THE FIRST TIME IN FIVE SESSIONS AND THAT IS THE SAME STRUCTURAL FACT, NOT
+  A CHANGE IN QUALITY.** The four preceding down-days all produced POSITIVE excess from the identical ~30% cash
+  drag, and four consecutive write-ups of that had begun to read like a book doing something right.
+  ⚠ **It is the signature of ONE long position at ~70% weight with NO SECOND SOURCE OF RETURN. A TIGHT FIT IS
+  NOT CONFIRMATION — the model fits to zero residual because there is NOTHING IN THE BOOK THE MODEL OMITS.**
+  ⚠⚠ **The 09-25 weekly review recomputed all 15 post-fill sessions from official closes and found PERFECT
+  separation: every VOO-down day positive excess, every VOO-up day negative, one flat day exactly 0.0000pp.
+  10-01 is the SEVENTH VOO-up day — 19 of 19 sessions.** ⚠ **Neither direction is skill.**
   ⚠ **THE TRAP, and the standing same-source rule does NOT catch it: comparing the book's PRICE basis against
   VOO's `--adjustment all` gave a spurious +0.0438pp on 09-28, because one leg excluded the dividend and the
   other included it. BOTH LEGS WERE FROM `bars --adjustment all` — the mismatch is between the ACCOUNT and the
-  BENCHMARK recognising the same cash on DIFFERENT DATES.** ⚠ **It does NOT bite on 09-29 or 09-30, because no
-  dividend falls inside either window on either leg. It bites again on the next ex-date.**
+  BENCHMARK recognising the same cash on DIFFERENT DATES.** ⚠ **It does NOT bite on 09-29, 09-30 or 10-01,
+  because no dividend falls inside any of those windows on either leg. It bites again on the next ex-date.**
 
 - **⚠ AUDIT EVERY INHERITED CLAIM BEFORE REPEATING IT — ELEVEN CATCHES, AND THEY KEEP CHANGING SHAPE.**
   ⚠⚠ **09-30's CLOSE ADDS NO TWELFTH CATCH BUT SUPPLIES THE CLEANEST LIVE INSTANCE OF (6)'s SHAPE:** that run
@@ -514,12 +540,12 @@ replaces the claim it corrects — it does not sit beside it.** **Nothing live h
   screen-already-running. **The pattern is the finding, not any instance. FREE IS NOT THE SAME AS
   PERMITTED.**
 
-- **⚠ CORE VOO IS NEVER STAMPED WITH A `highest_close` — SIXTY RUNS.** §5 exempts core from all four
+- **⚠ CORE VOO IS NEVER STAMPED WITH A `highest_close` — SIXTY-FOUR RUNS.** §5 exempts core from all four
   sell rules. A mark on VOO would **fabricate a §5.4 trailing stop on the one position the strategy
   exempts**, a stop that could eventually **sell core on a drawdown, which §7 forbids outright.**
   ⚠ **A CLOSE RUN IS THE STRONGEST INSTANCE THIS ITEM GETS, because it is the ONE SEAT THAT ACTUALLY WRITES
-  MARKS and it is holding a complete, official close at the moment it declines to write one — 09-30's
-  700.605 is the second consecutive close to be held and declined.** **Measure the core from the 706.74 fill and from an official close, never from a `positions`
+  MARKS and it is holding a complete, official close at the moment it declines to write one — 10-01's
+  702.255 is the THIRD consecutive close to be held and declined.** **Measure the core from the 706.74 fill and from an official close, never from a `positions`
   field** ⚠ **— and note that the fill price is a RAW print, so measuring it against an `--adjustment all`
   close MIXES BASES.** ⚠ **Noted honestly: this refusal is close to automatic, and automatic is not the same
   as sound.**
