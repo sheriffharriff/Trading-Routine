@@ -85,6 +85,79 @@ check that the pull returned the right session. A stored baseline is a *label*, 
 
 *(none — no **satellite** positions have been opened yet. Core VOO exists and is deliberately not tracked here, per the top-of-file rules and the fill note further down.)*
 
+**Reconciliation 2026-10-01 — 12:41 ET, 3-midday-management. ZERO SATELLITE POSITIONS ON BOTH SIDES.**
+Selftest passed all five; `trading_enabled: true`, LIVE paper; pre-flight equity **$99,370.06** at 12:41.
+`clock` 12:41:34 reads **`is_open: true`**, `next_close` 2026-10-01T16:00. `alpaca.py positions` returns
+**one row, core VOO**, 99.046311231 sh at avg_entry **706.74** (a **RAW** print), cost_basis $69,999.99 —
+unchanged since the 09-03 fill — against **zero satellite blocks in this file. THEY AGREE.**
+⚠ **Compared satellite-to-satellite, never raw ledger against raw broker. Core VOO was removed from the
+working list BEFORE any §5 rule was read**, per §5's core exemption. `orders --status open` is **EMPTY** and
+`orders --status all` returns **ONE ROW** for the account's entire history (the 09-03 core buy, filled,
+terminal), so §7 has nothing unverified anywhere.
+
+⚠⚠ **THIS SEAT IS EXITS-ONLY AND HAD NO OPERAND. Zero orders, zero fills, nothing closed, no realised P&L.**
+Per the routine's own instruction, a run with no satellite positions notes the absence and stops; it does not
+go looking for something to do. **No position was opened and none could be — §4 routes every entry through
+pre-market research and the 09:35 seat, and a midday entry would bypass the written thesis, not satisfy it.**
+
+⚠⚠ **STEP 2 (HIGH-WATER REPAIR) HAD NO OPERAND FOR A FOURTH CONSECUTIVE DAY — AND THAT IS NOT THE SAME AS IT
+WORKING.** The detector's entire input is an `(as of …)` date compared against the last trading day. **There
+is no `highest_close` field anywhere in this file, so there is no date, so NO STALENESS WAS DETECTED AND NONE
+WAS RULED OUT.** A detector handed no input returns the same silence as a detector finding everything
+healthy. **The backfill path remains UNEXERCISED CODE.** The cost is zero only because the sleeve is empty.
+
+### THE PARTIAL-BAR WARNING WAS FINALLY TESTED BY THE SEAT IT NAMES — HALF CONFIRMED, HALF REFUTED
+
+The standing warning says *a partial daily bar does not look like a stub.* Every prior instance was recorded
+from a 09:35-ish seat where `n`/`v` were visibly tiny, and each one said in writing that **routine 3 at 12:30
+was the dangerous seat because it is the one place a partial bar carries a plausible-looking volume.** That
+seat has now sat down, ~3h12m into a 6.5h session, and the two halves of the warning graded **oppositely**:
+
+- ⚠⚠ **THE PRICE HALF IS CONFIRMED, AND IT IS THE DANGEROUS HALF.** Today's partial bar reads **`c` 700.35**
+  — 26 cents from 09-30's official 700.605, mid-range against a trailing 691.44–710.93 band, a **wholly
+  plausible close carrying no warning of any kind.** ⚠ **AND THE MECHANISM IS NOW VISIBLE RATHER THAN
+  SUSPECTED: `c` 700.35 EQUALS `latestTrade.p` 700.35 to the cent. The partial bar's close field is simply
+  THE LAST TRADE SO FAR WEARING A CLOSE'S CLOTHES.** A §5.4 mark stamped from it would record an intraday
+  print as a high-water close and silently move the stop.
+- ⚠ **THE `n`/`v` HALF IS REFUTED AS STATED, AND REPLACED BY A SHARPER DISCRIMINATOR.** Today's `n` 982 /
+  `v` 26,215 are **not** "visibly tiny" in the 09:37 sense — they are 47.8% and 43.0% of 09-30's completed
+  bar. But across the **24 completed sessions** in the trailing 25-day window the **minimum** `n` is **1,450**
+  (09-02) and the minimum `v` is **43,730** (09-02), so **today's partial sits BELOW THE FLOOR OF EVERY
+  COMPLETED SESSION IN THE WINDOW, on both fields.** The usable test is therefore **not** "is `n` small" but
+  **"is `n` below the trailing completed-session minimum"** — a comparison against a distribution, not a
+  glance.
+- ⚠⚠ **STATED LIMIT, BECAUSE THIS IS ONE TICKER ON ONE DAY AND THE REFINEMENT IS FALSIFIABLE: THE FLOOR TEST
+  MUST FAIL ON A HALF-DAY SESSION** (the day after Thanksgiving, Christmas Eve), where a **completed** bar
+  legitimately carries roughly half the usual `n`/`v` and would read as partial. **The next early close is
+  the test. The CLOCK remains the only sound discriminator; the floor test is a corroborant, never the
+  primary.**
+
+### `sell_rule_status` — ALL FOUR RULES ABSENT, NOT PASSING (12:41 ET)
+
+| Rule | Status this run | Why it is not "passing" |
+|---|---|---|
+| **§5.1** thesis invalidation | **NO OPERAND** | No thesis is held, so no `invalidation` string exists to read verbatim. **Zero Perplexity news-on-holdings queries were due and zero were run.** |
+| **§5.2** time stop | **NO OPERAND** | No `timing_window` and no deadline field exists anywhere in this file. |
+| **§5.3** hard stop −7% | **DISTANCE UNDEFINED** | No `entry_price` to measure a drawdown from. ⚠ **Not "comfortably far" — undefined.** |
+| **§5.4** trailing stop −10% | **NOT ARMED** | No `highest_close` field — the **third state**, carrying no `(as of …)` date at all. It arms on the first **satellite** fill. |
+
+`consecutive_closed_losses` stays **0 — CONFIRMED, not recomputed** (nothing closed); breaker **INACTIVE**
+(`common.halt_active()` → `False`, empty reason; `halt_triggered_at: none`, so no `HALT_CLEARED_AT`
+comparison was required). ⚠ **SIXTY-THIRD consecutive refusal to write a `highest_close` on core**, which
+would fabricate a §5.4 stop on the one position §5 exempts. ⚠ **Graded honestly: this seat is the one that
+DETECTS stale marks, so the refusal is more load-bearing here than at the open — but it is still the
+sixty-third, and automatic is not the same as sound.**
+
+⚠ **THE `last_equity` IDENTITY RECONFIRMED FROM A FRESH PULL, AND IT IS UNINHERITED:** qty ×
+`lastday_price` 700.86 + cash = **99,417.59768935866**, equal to `last_equity` with a residual of **0E-11**.
+⚠ **BUT THE SAME IDENTITY DOES NOT HOLD INTRADAY:** qty × `current_price` 700.19 + cash = 99,351.2367
+against `equity` **99,349.75** — a **$1.49** residual, which also exactly explains why `equity − last_equity`
+(−67.85) differs from qty × (`lastday` − `current`) (−66.36). ⚠ **GRADED HONESTLY, THIS IS NOT A
+WITHIN-RESPONSE CONTRADICTION: `positions` and `account` were two separate HTTP calls seconds apart, so the
+$1.49 is the established intraday-drift item in a new costume, not a new defect.** `unrealized_intraday_pl`
+−66.361028 is on the **broker** basis (`lastday_price`), not the official-close basis, and was not used as a
+day return.
+
 **Reconciliation 2026-10-01 — 09:37 ET, 2-market-open-execution. ZERO SATELLITE POSITIONS ON BOTH SIDES.**
 `alpaca.py positions` returns **one row, core VOO**, 99.046311231 shares at avg_entry **706.74** (a **RAW**
 print), cost_basis $69,999.99 — unchanged since the 09-03 fill — against **zero satellite blocks in this
