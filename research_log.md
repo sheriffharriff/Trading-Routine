@@ -52,6 +52,252 @@ single most common way a plausible-sounding connection gets mistaken for an oppo
 
 ## Entries
 
+### 2026-10-01 (08:25 ET) — event survey (funnel, pre-thesis)
+
+Selftest passed all five checks (`trading_enabled: true`, LIVE paper, broker equity **$99,693.94**
+at pre-flight). Window screened: **Wednesday's close through Thursday pre-market (Sept 30 – Oct 1)**
+— one full session. **Four Perplexity scans, all exit 0** (two broad, one second-order funnel, one
+§3 market-cap check). **Six candidates reached a thesis entry; ALL SIX WERE REJECTED.**
+
+⚠ **Two events were recognised on sight and deliberately NOT written up as new theses, because
+re-litigating a disposed reject is exactly what the routine prompt forbids:**
+- **Boeing / F/A-XX (>$20B)** — disposed yesterday as **T-2026-09-30-01**. The 09-30 funnel asked
+  the source DIRECTLY whether any US-listed supplier had been named and was told none had. Nothing
+  in today's tape changes that. **The carry-forward instruction is explicit: do not re-word the
+  query.** Zero Perplexity calls were made on it today.
+- **The Fed / PCE / trade-deficit macro complex** — August PCE +0.3% m/m (July revised to +0.1%),
+  consumer spending +0.9%, Williams' "no urgency", the goods deficit +11.5% to $132.6B. ⚠ **These
+  are NEW DATA on an object already disposed on 09-29**: an environment input with **ONE party** and
+  no named recipient. ⚠ **Note the shape honestly — yesterday's seductive costume was a probability
+  that MOVED (57% → 70%); today's is the same probability moving BACK. A reversal is no more a
+  Company A than the move was.** Not written up.
+
+⚠ **A third was recognised on sight and is the one closest to a real temptation: the MEMORY
+READ-ACROSS.** Micron's print says memory/storage will be tighter in FY2027–28. The available
+inference is "so SanDisk / Western Digital / Seagate pricing improves." ⚠ **That is the
+COMPETITOR'S-EARNINGS-PRINT face of the shared-cause rule — memory pricing is a MARKET VARIABLE,
+not a transaction, and the sentence needs an "and also" ("Micron is tight AND ALSO buyers
+substitute to a rival"). Recognised, not screened. Zero `move`, `quote` or `asset` calls on SNDK,
+WDC or STX.**
+
+⚠ **And JBL appeared in a source citation today (−6.68% on the session). It is a disposed reject and
+was not reached for — zero calls of any kind. A rejection is not a queue, and a lower price was
+never what was missing.**
+
+---
+
+### T-2026-10-01-01 — AMAT / LRCX / KLA (no candidate reached) — REJECTED
+**Company A / the news:** Micron (MU), 2026-09-30, raised its forward outlook; customer commitments
+under signed long-term supply agreements rose to **$32B from $22B in June**, remaining performance
+obligations to **~$150B from ~$100B**; planned US investment lifted to **>$250B through 2035**; and
+it said it will **increase fiscal-2027 capex versus prior plans** (~$11.5B in FQ1, ~$25B in H1
+FY2027, H2 higher). *(Reuters, Micron IR press release, Q4 call transcripts.)*
+**Company B / the candidate:** intended to be a named semiconductor-equipment, construction or
+materials supplier to the expansion. **No such company exists in the sources.**
+
+**1. Mechanism (one sentence):** not written — see outcome.
+**2. Dollar path:** not written.
+**3. Timing window:** **THIS IS THE DURABLE KILL.** Micron's own call states the majority of the
+capex increase is **CONSTRUCTION capex, primarily to accelerate cleanroom availability in LATE
+CALENDAR 2028 AND BEYOND**, with equipment spend pulled forward but growing more slowly. ⚠ **That is
+two years-plus outside §4's two-quarter horizon, and it holds EVEN IF a supplier is named later.**
+**4. Invalidation:** not written.
+
+**Hard filters:**
+- Priced-in (§4): **MU −0.50% over 5 sessions (1072.18 → 1066.85), `priced_in: false`** — but MU is
+  the **headline name and first-order**, so this was never the candidate. ⚠ **And it is the mild,
+  passing form of defect shape one: a `false` verdict obtained by FALLING carries no information
+  about whether the news is in the price.** **EXERCISED AND NON-DECISIVE.**
+- Correlation (§4): **no open satellite positions, so no `driver` field exists to collide with.**
+  ⚠ **The check had NO OPERAND — that is ABSENT, not PASSING.**
+- Universe (§3): **not reached — no candidate ticker was ever established.**
+
+**Outcome: REJECTED on part 3, with rule (v) as an independent second kill.** The funnel asked
+directly which US-listed equipment, construction or materials vendors are explicitly linked to
+Micron's expansion, and the source answered: *"no publicly traded U.S. semiconductor-equipment
+supplier, construction company, or materials vendor was explicitly named… Naming companies such as
+equipment manufacturers, engineering contractors, or materials suppliers based only on industry fit
+would be an inference, not an explicit source linkage."*
+⚠⚠ **A VOLUNTEERED ABSENCE, for the second consecutive session and the third in four — and this one
+matters more than the F/A-XX instance because MY OWN PRIORS HAD THE ANSWER READY AND NAMED:
+Applied Materials, Lam Research, KLA. Every one of them is a fact about the INDUSTRY, not about this
+transaction.** ⚠ **This is §4's honest-broker paragraph describing the exact thing that nearly
+happened: the plausible connection was available, fluent and unsourced.**
+⚠ **Note what makes this entry worse than a dry hole: Micron's side is a CLEAN rule (iii) pass —
+$22B → $32B and $100B → $150B are the company's own figures against the company's own earlier
+figures, which is the test rule (iii) exists to apply. The news was real, new and quantified. It
+still produces no Company B.** ⚠ **A SEVENTH form of open item (3): the figures are fully disclosed,
+the news is genuinely new, and the spending lands TOO FAR IN THE FUTURE to be a catalyst — a kill no
+widening of the evidence bar reaches, because the bar was never what stopped it.**
+⚠ **The customer side was also considered and is not tradeable: tighter memory access is a COST
+HEADWIND at cloud/AI buyers, and a long-only book cannot trade a cost increase.**
+
+---
+
+### T-2026-10-01-02 — AMD — REJECTED
+**Company A / the news:** Hewlett Packard Enterprise (HPE), 2026-09-30, announced a **$1.2 billion**
+order from **Vultr** (a private cloud-infrastructure provider) for **AMD Helios AI racks** including
+HPE networking switches, software, liquid cooling and deployment services; HPE simultaneously raised
+its networking-revenue growth outlook to the high teens through fiscal 2029. *(Reuters, CNBC.)*
+**Company B / the candidate:** **AMD** — the Helios rack platform inside the order is AMD's, so AMD
+must supply the hardware HPE delivers. ⚠ **This is the only STRUCTURALLY second-order candidate the
+tape produced today, and it is why this entry got further than the other five.**
+
+**1. Mechanism (one sentence):**
+> HPE's $1.2B Vultr order causes AMD's Data Center segment revenue to rise because the racks HPE
+> has been contracted to deliver are AMD Helios systems that AMD must manufacture and sell to HPE.
+
+⚠ **Part 1 PASSES — one clause, no "and also", a real two-party transaction with a signed order and
+a disclosed figure.** ⚠ **That is rare in this log and is the reason to read the rest carefully
+rather than quickly.**
+
+**2. Dollar path:** **FAILS, and in a specific way worth naming.** The affected segment is AMD's
+**Data Center** segment, which is comfortably **above 10% of total revenue** — so the segment-share
+half of part 2 passes easily. ⚠ **It is the MAGNITUDE half that fails: the $1.2B is HPE's ORDER
+VALUE, and it expressly bundles HPE networking switches, HPE software, liquid cooling and HPE
+deployment services. AMD's share of it is disclosed by NOBODY.** ⚠ **And the ceiling is unhelpful
+even taken at its most generous: the ENTIRE $1.2B against AMD's annual revenue run-rate is a
+low-single-digit percentage, spread over an undisclosed multi-quarter deployment.** ⚠ **This is rule
+(viii) read broadly — the disclosed figure is not segment revenue at Company B — wearing its most
+convincing dress yet, because unlike JBL's consignment structure there is no disclosure saying the
+margin is zero. There is simply no allocation at all.**
+**3. Timing window:** **FAILS OUTRIGHT AND THIS IS THE DURABLE KILL.** Every source reviewed states
+that the reports **do not disclose a delivery schedule, contract duration, or revenue-recognition
+timing**. ⚠ **So part 3 is NOT "beyond two quarters" — it is NOT ESTABLISHABLE IN EITHER DIRECTION,
+which is exactly the AAR failure of 09-29 in a different sector.** ⚠ **The test is cheap and it is
+the same test: did the source carry the figure? Here it did not, and a horizon assumed from how AI
+rack deployments usually run would be a prior, not a disclosure.**
+**4. Invalidation:** could have been written (*"AMD's next two 10-Qs show Data Center segment revenue
+flat or declining sequentially"*) — ⚠ **but writing part 4 for a thesis whose parts 2 and 3 have
+already failed is constructing the story and then looking for permission to keep it. Not written.**
+
+**Hard filters (run BEFORE the thesis, per §4):**
+- Priced-in (§4): **AMD −0.52% over 5 sessions (614.84 → 611.65), `priced_in: false`.**
+  ⚠⚠ **THIRD STATE: EXERCISED AND NON-DECISIVE — the rejection does not turn on it.** ⚠ **AND IT
+  PASSED BY FALLING, which is defect shape one (sign-blindness) in its mild, passing form: a name
+  co-named in a $1.2B AI-order headline printing −0.52% over five sessions is precisely the reading
+  that invites a "the market has not noticed" story. THAT STORY WAS NOT WRITTEN.**
+- Correlation (§4): **NO OPERAND.** Zero open satellite positions, so there is no `driver` field to
+  collide with. ⚠ **Absent, not passing.**
+- Universe (§3): **PASSES** — AMD is US-listed common stock on NASDAQ, market cap far above the $10B
+  floor. ⚠ **A sourced figure was NOT pulled, because the entry was already dead on parts 2 and 3
+  and §3 would not have been the decisive kill. Recording that honestly: §3 is ASSUMED-CLEAR here,
+  not VERIFIED, and no run may treat this line as an audited cap.**
+
+**Outcome: REJECTED on part 3 (not establishable), with part 2 (magnitude undisclosed and immaterial
+at the ceiling) as an independent second kill.**
+⚠⚠ **AND A STRUCTURAL DOUBT THAT WOULD HAVE KILLED IT ANYWAY, RECORDED BECAUSE IT WAS NOTICED LATE
+RATHER THAN FIRST: AMD IS IN THE HEADLINE.** Several sources run it as *"HPE secures its first AMD
+Helios order in $1.2 billion deal with Vultr."* ⚠ **§4's whole premise is that you are not chasing
+the headline name, and a company co-named in the headline is not obviously a Company B at all.** ⚠ **The
+order of discovery is the lesson: the second-order STRUCTURE was found first and felt like the
+finding, and the first-order OBJECTION arrived afterwards. On a day when parts 2 and 3 had not
+already failed, that sequence is how a first-order trade gets taken wearing second-order clothes.**
+⚠ **Vultr is PRIVATE and unbuyable; HPE is first-order and hit a record on the news.**
+
+---
+
+### T-2026-10-01-03 — SNPS (no second-order candidate) — REJECTED
+**Company A / the news:** Synopsys signed a **multiyear agreement worth more than $1 billion** with
+**Amazon Web Services**, licensing Synopsys' semiconductor IP to AWS. The report does not specify
+duration, annual revenue contribution, or which IP products are involved. *(CNBC Daily Open.)*
+**Company B / the candidate:** **none exists.**
+
+**1. Mechanism (one sentence):** not written.
+**2. Dollar path:** not reached.
+**3. Timing window:** not reached — ⚠ **and could not have been: duration and annual contribution
+are both expressly undisclosed, so this would have failed the same not-establishable test as T-02.**
+**4. Invalidation:** not reached.
+
+**Hard filters:** **not run. No eligible candidate ticker was ever established, so the priced-in
+check is ABSENT rather than passed.** ⚠ **Zero `move` calls on SNPS or AMZN.**
+
+**Outcome: REJECTED on structure — THERE IS NO SECOND PARTY LEFT TO BUY.** Both counterparties are
+named and both are accounted for: **SNPS is the named beneficiary and therefore FIRST-ORDER**, and
+**AWS/Amazon is the PAYER — capital paid OUT by the buyable leg, which is rule (viii)'s original
+shape.** ⚠ **A two-party transaction in which both parties are named exhausts itself: §4 needs a
+THIRD company whose economics change, and there is none.**
+⚠ **The available inference — "AWS licensing more IP means more custom silicon, so a physical-design
+or ASIC partner wins work" — names no company that any source connects to this agreement. That is
+rule (v): filling in a blank the source left. Not pursued, and no query was re-worded to go looking.**
+
+---
+
+### T-2026-10-01-04 — Westinghouse / US–Korea reactor framework — REJECTED
+**Company A / the news:** The US and South Korea announced a framework contemplating **up to eight US
+nuclear reactors — six Westinghouse AP1000s and up to two Korean APR1400s**. The report states the
+framework is **separate from and unrelated to** the DOE's American Nuclear Supply Chain Loans
+conditional commitment, and is **a planning framework rather than evidence of completed orders,
+financing, construction starts or near-term revenue.** *(Las Vegas Sun / Cameco release.)*
+**Company B / the candidate:** not reached.
+
+**3. Timing window:** **FAILS IN ONE STEP AND NOTHING ELSE WAS EVALUATED.** A framework
+*contemplating* reactors is upstream of orders, upstream of financing and upstream of ground-break;
+AP1000 construction runs the better part of a decade. ⚠ **Rule (vi) in its purest form, and part 3
+kills it without any further work — which is the correct amount of work to spend on it.**
+
+**Hard filters:** **not run.** ⚠ **Westinghouse is not independently US-listed** (Brookfield/Cameco
+ownership), so there is no clean ticker for the named party in any case; ⚠ **and reaching for CCJ
+as the proxy would be exactly the proxy-procurement costume this log has catalogued.** Not reached for.
+
+**Outcome: REJECTED on part 3 (rule vi).** ⚠ **Logged deliberately despite dying in one line:
+long-dated energy and nuclear offtake is a STANDING FEATURE of this funnel, not a visitor — Sempra /
+Petrobras, Venture Global, Amazon/Generac, Centrus/Antares, Elmet, NeoVolta — and the value of the
+entry is the eighth tally mark, not the analysis.**
+
+---
+
+### T-2026-10-01-05 — MTUS (Metallus) — REJECTED
+**Company A / the news:** Metallus won a **five-year US Defense Logistics Agency contract with a
+maximum ceiling of $995 million** to supply steel for defense applications. ⚠ **The report states
+explicitly that the ceiling is NOT a guaranteed purchase amount**; no expected annual volume, no
+minimum commitment and no guidance change were reported. *(CNBC Daily Open.)*
+**Company B / the candidate:** none — Metallus is itself the awardee.
+
+**Hard filters:**
+- Universe (§3): **FAILS OUTRIGHT. Market cap ~$0.79B (≈$789M)** — source: **MarketBeat via
+  Perplexity, 2026-10-01** — **against a $10B floor.** ⚠ **Pulled BEFORE the thesis was elaborated,
+  so no effort went into a story a single number was always going to end.**
+- Priced-in (§4): **not run — an ineligible ticker is not screened.** ⚠ **Absent, not passed.**
+
+**Outcome: REJECTED on §3, with rule (v)'s CEILING sub-shape as an independent kill and
+first-order status as a third.** ⚠ **The ceiling sub-shape is worth the ink: "$995 million" over
+"five years" reads like a quantified dollar path, and the source itself supplies the sentence that
+voids it. RDW's "$980M" multiple-award ceiling was the same object at almost the same number.**
+⚠ **Note the §3-FIRST discipline held for the second consecutive session (RARE yesterday, MTUS
+today) — and note equally that §3 being decisive twice running reflects WHICH EVENTS the tape
+offered, not any change in how the funnel screens.**
+
+---
+
+### T-2026-10-01-06 — CALM (Cal-Maine Foods) — REJECTED
+**Company A / the news:** Cal-Maine Foods reported a **wider-than-expected fiscal Q1 loss and weaker
+revenue**; the source carries **no actual loss figure, no revenue figure, no consensus estimate and
+no revised guidance.** Management plans to raise prepared-food capacity by **more than 60% through
+the first half of fiscal 2028.** *(HDFC Sky market wrap.)*
+**Company B / the candidate:** none — no counterparty appears anywhere in the disclosure.
+
+**2. Dollar path:** **FAILS — there is no figure of any kind in the source to build one from**, and
+the capacity plan is a percentage increase in capacity, which is **a VOLUME statement, not revenue**
+(rule viii, read broadly).
+**3. Timing window:** **FAILS INDEPENDENTLY — "through the first half of fiscal 2028"** is outside
+§4's two-quarter horizon.
+
+**Hard filters:**
+- Universe (§3): ⚠⚠ **ATTEMPTED AND UNRESOLVED — RECORD THIS AS UNDECIDED, NOT AS PASSING.** The
+  market-cap query returned a verified figure for MTUS and **explicitly declined to supply one for
+  CALM** (*"I don't have a reliable current market-cap source in the provided search results"*).
+  ⚠ **No §3 verdict may be claimed on CALM in either direction, and a future run must not inherit
+  one from this entry.**
+- Priced-in (§4): **not run.**
+
+**Outcome: REJECTED on part 3, with part 2 as an independent kill.** ⚠ **An earnings print is not a
+second-order catalyst: the only figures ever disclosed are the company's OWN lines, and a competitor
+reading across from them is a COMPARABLE, not a transaction** — the same kill as Carnival, Vail and
+CarMax on 09-30. ⚠ **And CALM is first-order in its own news.**
+
+---
+
 ### 2026-09-30 (08:23 ET) — event survey (funnel, pre-thesis)
 
 Selftest passed all five checks (`trading_enabled: true`, LIVE paper account, broker equity
