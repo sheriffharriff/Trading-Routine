@@ -85,6 +85,86 @@ check that the pull returned the right session. A stored baseline is a *label*, 
 
 *(none — no **satellite** positions have been opened yet. Core VOO exists and is deliberately not tracked here, per the top-of-file rules and the fill note further down.)*
 
+**Reconciliation 2026-10-02 — 16:16 ET, 4-market-close-journal. THE LEDGER AGREES WITH THE BROKER;
+ZERO SATELLITE POSITIONS ON BOTH SIDES; THE DAY'S OFFICIAL CLOSE IS IN HAND AND THERE IS NOTHING TO
+STAMP IT ONTO. NO MARK WRITTEN, NO DATE ADVANCED, NO BACKFILL POSSIBLE.**
+
+Selftest passed all five checks; `trading_enabled: true`, LIVE paper; pre-flight broker equity
+**$100,106.96** at 16:16. `clock` at **16:16:45** reads **`is_open: false`** with `next_open`
+**2026-10-05T09:30** — pointing at the **NEXT** trading day, i.e. the **POST-BELL** shape, read off
+the DATE and not off the boolean. ⚠ **FALSE has three meanings — pre-market, post-bell, holiday.
+TRUE has one.**
+⚠⚠ **COMPLETENESS ESTABLISHED FROM THE DATA PLANE, NOT INFERRED FROM THE HOUR:** a daily bar dated
+**2026-10-02 EXISTS** (`o` 708.30 `h` 710.09 `l` 705.545 **`c` 707.35**) and the **`latestTrade` at
+19:59:58Z = 15:59:58 ET prints 707.35 — matching the bar's close TO THE CENT.** The session is
+**COMPLETE**. **Market was OPEN today; this is not a holiday skip.**
+**Corroborant only, and on a moving ruler:** the `n`/`v` floor test gives n **2,524** / v **134,995**
+against trailing completed-session floors of **1,560 / 45,031** (recomputed from source over the
+post-fill window excluding today — ⚠ **the floors have MOVED from the 1,450 / 43,730 on record, which
+is the known "the floor test's own inputs drift" finding, not a new one**). Clearance is **+61.8%** on
+`n` and **+199.8%** on `v` — the widest complete-side margin recorded, and still **not a validation**:
+⚠ **THE CLOCK PLUS THE MATCHING `latestTrade` IS THE PRIMARY DISCRIMINATOR AND THE FLOOR TEST IS NEVER
+IT.** Its stated falsifier — it must fail on a half-day session — remains **untested**.
+
+**RECONCILIATION, SATELLITE-TO-SATELLITE.** `alpaca.py positions` returns **one row, core VOO**,
+99.046311231 shares at avg_entry **706.74** (a **RAW** print), cost_basis **$69,999.99** — unchanged
+since the 09-03 fill — against **zero satellite blocks in this file. THEY AGREE.** ⚠ **Core VOO was
+removed from the working list BEFORE any §5 rule was read**, per §5's core exemption. Sleeves on the
+official close: core **70.0181%**, satellite **0.0%** (count 0), cash **29.9819%**, `core_in_band: true`.
+
+⚠⚠ **STEP 2 — THE ROUTINE'S HEADLINE INVISIBLE JOB HAD NO OPERAND, FOR A SIXTH CONSECUTIVE CLOSE RUN.
+"HIGH-WATER MARKS UPDATED" WOULD BE FALSE. THE HONEST FORM IS: THE JOB HAD NOTHING TO ACT ON.**
+This is the **WRITING** seat — the one that exists to stamp each open satellite position's official close
+into `highest_close` — and it is holding a **complete, verified, three-basis-agreeing official close of
+707.35** at the moment it has **nothing to write it onto.**
+⚠ **Verified from source rather than assumed: the only `highest_close` string in this file is the
+TEMPLATE PLACEHOLDER at line 53** (`grep -n highest_close positions.md`); every other occurrence is prose.
+⚠ **`highest_close` is ABSENT — the third state, carrying NO `(as of …)` date at all.**
+⚠⚠ **AND THE SECOND DISCIPLINE PRODUCED NO ARTIFACT EITHER, WHICH IS THE PART A FUTURE RUN WILL MISREAD:
+the routine says advance the `(as of …)` date EVERY DAY whether or not the value moves, precisely so a
+current mark is distinguishable from a skipped one. THERE IS NO FIELD, SO THERE IS NO DATE, SO THERE WAS
+NOTHING TO ADVANCE.** **A run that wrote no mark and a run that correctly left an unchanged mark in place
+are indistinguishable in every artifact except that date — and today there is no date to separate them.**
+⚠ **NO BACKFILL WAS PERFORMED AND NONE WAS POSSIBLE. The backfill path remains UNEXERCISED CODE**, as
+does routine 3's detector for a missed write — **both the writing seat and the detecting seat have a
+confirmed blind spot of exactly the same shape, neither has ever run against a real mark, and the first
+satellite fill arms both at once.**
+⚠ **THE COST HAS BEEN ZERO BECAUSE THE SLEEVE IS EMPTY. THAT IS LUCK, NOT A CONTROL.**
+⚠ **SIXTY-EIGHTH CONSECUTIVE REFUSAL TO STAMP A `highest_close` ON CORE — and a close run is the STRONGEST
+instance this item gets, because this is the one seat that writes marks and it declined while holding a
+complete official close.** §5 exempts core from all four sell rules; a mark on VOO would **fabricate a
+§5.4 trailing stop on the one position the strategy exempts**, a stop that could eventually sell core on a
+drawdown, which §7 forbids outright. ⚠ **Noted honestly: this refusal is close to automatic, and automatic
+is not the same as sound.**
+
+**ONE BASIS NOTE THAT RUNS IN THE HELPFUL DIRECTION, AND IT IS NARROW:** 2026-10-02's close reads
+**707.35 on ALL THREE bases** — `--adjustment all`, `raw` and `split` — **verified by three separate
+pulls, not assumed**, because 10-02 is **after** the 09-28 ex-date and nothing has rescaled since. So
+measuring the **706.74 RAW fill** against today's close does **NOT** mix bases today. ⚠ **That is a
+property of this week, not a repeal of the rule: the next ex-date restores the trap, and every VOO close
+OLDER than 2026-09-28 still exists on two non-interchangeable bases.**
+
+### `sell_rule_status` — ALL FOUR RULES ABSENT, NOT PASSING (2026-10-02 16:16 ET)
+
+⚠⚠ **THERE IS NO POSITION TO WRITE A `sell_rule_status` LINE ON. The distance to each rule is therefore not
+"large" — it is UNDEFINED, and those are different facts.** ⚠ **"Nothing close to triggering" would be a
+fabrication: nothing can be close to a threshold it has no operand for.**
+
+| Rule | Status this run | Distance | Why it is not "passing" |
+|---|---|---|---|
+| **§5.1** thesis invalidation | **NO OPERAND** | n/a | No thesis is held, so no `invalidation` string exists to read verbatim. Zero news queries due, zero run. |
+| **§5.2** time stop | **NO OPERAND** | n/a | No `timing_window` and no deadline field exists anywhere in this file. |
+| **§5.3** hard stop −7% from entry | **DISTANCE UNDEFINED** | **UNDEFINED, not large** | There is no satellite `entry_price` to measure a drawdown from. The 706.74 core fill is **exempt under §5** and is not an operand. |
+| **§5.4** trailing stop −10% from `highest_close` | **NOT ARMED** | **UNDEFINED, not large** | No `highest_close` field — the **third state**, carrying no `(as of …)` date at all. It arms on the first **satellite** fill; the 09-03 core fill was not one. |
+
+**§5.1–§5.4 have never had an operand in this account's history: 23 completed sessions since 2026-09-01,
+20 after the 09-03 core fill, zero satellite positions ever.** ⚠ **The counter ADVANCES this run (22/19 →
+23/20) and that is safe for a CHECKED reason, not because "routine 4 is not exposed to catch (11)" — which
+is a claim about the system's shape and is exactly the shape catch (6) warns about. What makes it safe is
+that TODAY IS A COMPLETED SESSION, established from `is_open: false` with `next_open` on 10-05, a bar dated
+today that exists, and a 15:59:58 `latestTrade` matching its close to the cent.** ⚠ **Re-derived from a
+fresh 45-session `bars` pull, not inherited.**
+
 **Reconciliation 2026-10-02 — 12:42 ET, 3-midday-management. THE LEDGER AGREES WITH THE BROKER;
 ZERO SATELLITE POSITIONS ON BOTH SIDES; ZERO EXITS; NO MARK WRITTEN, NONE DUE, AND NO BACKFILL POSSIBLE.**
 
