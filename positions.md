@@ -85,6 +85,54 @@ check that the pull returned the right session. A stored baseline is a *label*, 
 
 *(none — no **satellite** positions have been opened yet. Core VOO exists and is deliberately not tracked here, per the top-of-file rules and the fill note further down.)*
 
+**Reconciliation 2026-10-02 — 12:42 ET, 3-midday-management. THE LEDGER AGREES WITH THE BROKER;
+ZERO SATELLITE POSITIONS ON BOTH SIDES; ZERO EXITS; NO MARK WRITTEN, NONE DUE, AND NO BACKFILL POSSIBLE.**
+
+Selftest passed all five checks; `trading_enabled: true`, LIVE paper. `clock` **12:41:56** reads
+**`is_open: true`** — the one boolean value with a single meaning, and the shape this seat expects.
+`positions` returns **one row, core VOO**, 99.046311231 shares at avg_entry **706.74** (a **RAW** print),
+cost_basis **$69,999.99** — unchanged since the 09-03 fill — against **zero satellite blocks in this file.
+THEY AGREE.** ⚠ **Core VOO was removed from the working list BEFORE any §5 rule was read**, per §5's core
+exemption. Sleeves: core **70.0%**, satellite **0.0%** (count 0), cash **30.0%**, `core_in_band: true`.
+
+⚠⚠ **STEP 2 — THE HIGH-WATER DETECTOR RAN AND HAD NO INPUT, WHICH IS NOT THE SAME AS RUNNING CLEAN.**
+This is the seat whose named job is to **detect** a `highest_close` that a missed close run left stale, and
+the carry-forward warns that a stale mark **silently disables §5.4** while every other check still passes.
+⚠ **Its entire input is an `(as of …)` date compared against the last trading day. THERE IS NO POSITION, SO
+THERE IS NO FIELD, SO THERE IS NO DATE — NO STALENESS COULD BE DETECTED AND NONE WAS RULED OUT.** The only
+`highest_close` string in this file is the **template placeholder at line 53**, verified from source with
+`grep`; every other occurrence is prose. ⚠ **`highest_close` is ABSENT — the third state, carrying no
+`(as of …)` date at all.** **A detector handed no input returns the same silence as a detector finding
+everything healthy, and this is the sixth consecutive run in that state.**
+⚠ **NO BACKFILL WAS PERFORMED AND NONE WAS POSSIBLE — there was nothing to write a mark onto.**
+⚠ **ZERO `bars` CALLS WERE MADE, DELIBERATELY: at 12:42 a bar dated today is PARTIAL, and its `c` field is
+the last trade so far wearing a close's clothes.** **The backfill path remains UNEXERCISED CODE.**
+⚠ **SIXTY-SEVENTH CONSECUTIVE REFUSAL TO STAMP A `highest_close` ON CORE — graded FREE, because this seat
+writes no marks and had no operand to write one onto. FREE IS NOT THE SAME AS RESTRAINT.**
+
+⚠⚠ **STEP 4 HAD NO OPERAND: ZERO SELL ORDERS, AND THAT FOLLOWS FROM AN EMPTY SLEEVE RATHER THAN FROM ANY
+RULE BEING EVALUATED AND PASSED.** Zero Perplexity news-on-holdings queries were due and **zero were run** —
+§5.1 reads an `invalidation` string verbatim off a held position, and no such string exists. Zero `quote`
+calls were made for the same reason: the routine's quote step names "every open satellite ticker" and that
+list is **empty**.
+
+### `sell_rule_status` — ALL FOUR RULES ABSENT, NOT PASSING (2026-10-02 12:42 ET)
+
+⚠⚠ **THERE IS NO POSITION TO WRITE A `sell_rule_status` LINE ON. The distance to each rule is therefore not
+"large" — it is UNDEFINED, and those are different facts.** ⚠ **"Nothing close to triggering" would be a
+fabrication: nothing can be close to a threshold it has no operand for.**
+
+| Rule | Status this run | Distance | Why it is not "passing" |
+|---|---|---|---|
+| **§5.1** thesis invalidation | **NO OPERAND** | n/a | No thesis is held, so no `invalidation` string exists to read verbatim. Zero news queries due, zero run. |
+| **§5.2** time stop | **NO OPERAND** | n/a | No `timing_window` and no deadline field exists anywhere in this file. |
+| **§5.3** hard stop −7% from entry | **DISTANCE UNDEFINED** | **UNDEFINED, not large** | There is no satellite `entry_price` to measure a drawdown from. The 706.74 core fill is **exempt under §5** and is not an operand. |
+| **§5.4** trailing stop −10% from `highest_close` | **NOT ARMED** | **UNDEFINED, not large** | No `highest_close` field — the **third state**, carrying no `(as of …)` date at all. It arms on the first **satellite** fill; the 09-03 core fill was not one. |
+
+**§5.1–§5.4 have never had an operand in this account's history: 22 completed sessions since 2026-09-01,
+19 after the 09-03 core fill, zero satellite positions ever.** ⚠ **The session counter was NOT advanced —
+today is a session IN PROGRESS, not a completed one, and this seat reads `is_open: true`.**
+
 **Reconciliation 2026-10-02 — 09:38 ET, 2-market-open-execution. THE LEDGER AGREES WITH THE BROKER;
 ZERO SATELLITE POSITIONS ON BOTH SIDES; ZERO ORDERS PLACED; NO MARK WRITTEN AND NONE DUE.**
 

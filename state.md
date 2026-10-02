@@ -13,9 +13,9 @@ The block below is parsed by `scripts/common.py` and gates real behavior
 silently discards everything after it. **Validate with `common.read_state()` after rewriting.**
 
 ```
-last_run: 2026-10-02 09:38 ET 2-market-open-execution (selftest PASSED all five, trading_enabled true, LIVE paper, broker equity 100156.98 on the sleeves call and 100179.26 on the account call seconds apart - INTRADAY DRIFT, NOT A DISAGREEMENT, and no equity figure from an open session may be stamped as a close; ZERO ORDERS PLACED, AND THAT FOLLOWS FROM THE PLAN RATHER THAN FROM ANY GUARDRAIL - every gate was OPEN (breaker INACTIVE, week 0 of 3, sleeve EMPTY with 29.95 pct idle cash, control notes none, TRADING_ENABLED true); MARKET OPEN CONFIRMED FROM is_open TRUE at 09:36:33 which has only ONE meaning, the one direction the three-meanings-of-FALSE rule does not apply in; STALENESS GATE EXERCISED FOR THE THIRTY-SECOND TIME AND DID NOT FIRE - plan_date 2026-10-02 EQUALS today ET, so the plan is FRESH and DELIBERATELY EMPTY, and its alert path REMAINS NEVER-RUN CODE; FRESHNESS WAS READ OFF plan_date AND NOT OFF THE ZERO-ORDER OUTCOME, which is byte-for-byte identical either way; CORE BOOTSTRAP SKIPPED, core_established already true; STEP 4 EXITS had NO OPERAND - zero SELL intents and zero satellite positions to sell, so no rule was PASSED, each was ABSENT; STEP 5 RE-VALIDATION HAD NOTHING TO RE-VALIDATE and ZERO move CALLS WERE MADE - an ABSENT check not a skipped one, THIRD INSTANCE after 09-29 and 10-02 pre-market; RECONCILIATION CLEAN, one core row 99.046311231 shares against zero satellite blocks, compared SATELLITE-TO-SATELLITE with core removed BEFORE any rule was read; NO REBALANCE DUE - core 70.05 pct on the open mark, 4.95 points inside the 65 pct edge, core_in_band true, and rebalance_delta MINUS 45.11 was NOT acted on because Section 2 rebalances at the BAND EDGE and the delta is a DISTANCE READOUT; the delta FLIPPED NEGATIVE after eleven consecutive positive runs, which is core crossing 70 pct from below and NOT a signal; cash EXACTLY 30000.00 for a FIFTEENTH reading, dividend DAY 5 OF 8 and UNRESOLVED IN EITHER DIRECTION; NO BAR PULLED AND NO MARK STAMPED - a bar dated today is PARTIAL while the market is open and there was no position to stamp one onto anyway; SIXTY-SIXTH refusal to stamp highest_close on core, graded FREE because this seat writes no marks; NO INTENT GENERATED AT THE OPEN - this seat has no funnel and the refusal is STRUCTURALLY UNAVAILABLE TO VIOLATE, so it is not evidence of restraint; session counter NOT advanced, 22/19 holds because today is a session IN PROGRESS, not a completed one; WEEK ROLLOVER NOT DUE, week_of 2026-09-28 equals this ISO week's Monday; breaker INACTIVE, consecutive_closed_losses 0, 99 thesis headings and ZERO EVER ACCEPTED)
+last_run: 2026-10-02 12:42 ET 3-midday-management (selftest PASSED all five, trading_enabled true, LIVE paper, broker equity 100025.74 at pre-flight 12:41, 99986.12 on the sleeves call and 100009.89 on the account call within the same minute - AN ELEVENTH INTRADAY-DRIFT INSTANCE, NOT A DISAGREEMENT, spread 39.62 well inside the established 1.97-216.91 range and therefore NOT evidence of anything narrowing, and no equity figure from an open session may be stamped as a close; MARKET OPEN CONFIRMED FROM is_open TRUE at 12:41:56, the one boolean value with a single meaning and the shape this seat expects; THIS SEAT IS EXITS-ONLY AND OPENED NOTHING - structurally unavailable to violate, so it is not evidence of restraint; ZERO SATELLITE POSITIONS, SO THE ROUTINE HAD NO OPERAND AT ALL - one core VOO row 99.046311231 shares cost_basis 69999.99 against zero satellite blocks, THEY AGREE, compared SATELLITE-TO-SATELLITE with core removed BEFORE any rule was read; STEP 2 HIGH-WATER DETECTOR RAN AND HAD NO INPUT, WHICH IS NOT RUNNING CLEAN - its entire input is an (as of ...) date compared against the last trading day, there is no position so no field so no date, NO STALENESS COULD BE DETECTED AND NONE WAS RULED OUT, sixth consecutive run in that state; the only highest_close string in positions.md is the TEMPLATE PLACEHOLDER at line 53, verified from source with grep; NO BACKFILL PERFORMED AND NONE POSSIBLE, backfill path REMAINS UNEXERCISED CODE; ZERO bars CALLS MADE DELIBERATELY - at 12:42 a bar dated today is PARTIAL and its c field is the last trade so far wearing a close's clothes; SIXTY-SEVENTH refusal to stamp highest_close on core, graded FREE - no operand to write one onto; STEP 3 EXITS had NO OPERAND - no rule was PASSED, each was ABSENT, distances UNDEFINED not large; ZERO PERPLEXITY NEWS-ON-HOLDINGS QUERIES DUE AND ZERO RUN, and ZERO quote CALLS - the routine's quote step names every open satellite ticker and that list is EMPTY; STEP 4 ZERO SELL ORDERS, zero fills, zero intents, nothing written to trade_log.md; NOTHING WAS CLOSE TO TRIGGERING AND SAYING SO WOULD BE A FABRICATION - nothing can be close to a threshold it has no operand for; NO REBALANCE EVALUATED - this seat has no rebalance step, and core 70.0 pct sits 5.0 points inside the 65 pct edge with rebalance_delta 4.16 a DISTANCE READOUT; cash EXACTLY 30000.00 for a SIXTEENTH reading, VOO dividend DAY 5 OF 8 and UNRESOLVED IN EITHER DIRECTION, falsifiable test still running to 2026-10-07; session counter NOT advanced, 22/19 holds because today is a session IN PROGRESS; WEEK ROLLOVER NOT DUE, week_of 2026-09-28 equals this ISO week's Monday verified from the date; breaker INACTIVE, consecutive_closed_losses 0, open_thesis_ids none, 98 real theses and ZERO EVER ACCEPTED)
 
-prior_run: 2026-10-02 08:23 ET 1-premarket-research (selftest PASSED all five, trading_enabled true, LIVE paper, broker equity 99865.29 at pre-flight 08:23; PRE-MARKET SHAPE CONFIRMED FROM THE DATE NOT THE BOOLEAN - clock 08:23:38 is_open FALSE with next_open 2026-10-02T09:30 pointing at TODAY, plus a complete 2026-10-01 bar and NO bar dated 2026-10-02, so this is not a holiday and not post-bell; NO ORDERS - a pre-market seat places none by design; RECONCILIATION CLEAN, one core row against zero satellite blocks, compared satellite-to-satellite; FOUR PERPLEXITY SCANS all exit 0, FIVE THESES WRITTEN AND ALL FIVE REJECTED, bringing the log to 98 real theses and ZERO EVER ACCEPTED; PLAN FOR 2026-10-02 WRITTEN AND DELIBERATELY EMPTY - no BUY, no SELL, no REBALANCE, and EVERY GATE WAS OPEN (breaker INACTIVE, week 0 of 3, sleeve empty, 30.04 pct idle cash, 4992.82 of headroom under the 5 pct cap, control notes none, TRADING_ENABLED true) so the emptiness is a RESULT not a block; THE DEFENCE-AWARD FINDING TOOK A FOURTH INSTANCE ACROSS THREE PRIMES - RTX SM-6 24.4B, one funnel query spent, the familiar volunteered absence returned, NO RE-QUERY ISSUED and the priors not written; TWO NEW SHAPES RECORDED - a transaction in CAPACITY ALREADY BUILT has no second tier to benefit (ORCL/Tencent lease), and AN EARNINGS MISS IS NOT A SECOND-ORDER CATALYST because it improves nobody's economics in any disclosed way (Nike); ONE SELF-CORRECTION RUNNING THE UNUSUAL DIRECTION - the reflex was to flag Micron's 54.23B quarter as corrupt source data and that rested on a STALE PRE-2026 PRIOR which MU at about 1070 per share already overruns, so the figures were recorded as reported and NOT disputed; ZERO move CALLS, an ABSENT check not a skipped one, second instance after 09-29; MU DELIBERATELY NOT RE-SCREENED, zero queries on the memory chain, AMAT/LRCX/KLA again not written; sell_rule_status written as ABSENT NOT PASSING for all four rules with distances UNDEFINED; session counter NOT advanced - 22/19 holds because today is not a completed session, catch 11 declined from the clock in one of the two seats it names; SIXTY-FIFTH refusal to stamp highest_close on core, graded FREE because this seat does not write marks; WEEK ROLLOVER NOT DUE - week_of 2026-09-28 equals this ISO week's Monday; cash EXACTLY 30000.00 for a FOURTEENTH reading, dividend DAY 5 OF 8; breaker INACTIVE, consecutive_closed_losses 0)
+prior_run: 2026-10-02 09:38 ET 2-market-open-execution (selftest PASSED all five, trading_enabled true, LIVE paper, broker equity 100156.98 on the sleeves call and 100179.26 on the account call seconds apart - INTRADAY DRIFT, NOT A DISAGREEMENT, and no equity figure from an open session may be stamped as a close; ZERO ORDERS PLACED, AND THAT FOLLOWS FROM THE PLAN RATHER THAN FROM ANY GUARDRAIL - every gate was OPEN (breaker INACTIVE, week 0 of 3, sleeve EMPTY with 29.95 pct idle cash, control notes none, TRADING_ENABLED true); MARKET OPEN CONFIRMED FROM is_open TRUE at 09:36:33 which has only ONE meaning, the one direction the three-meanings-of-FALSE rule does not apply in; STALENESS GATE EXERCISED FOR THE THIRTY-SECOND TIME AND DID NOT FIRE - plan_date 2026-10-02 EQUALS today ET, so the plan is FRESH and DELIBERATELY EMPTY, and its alert path REMAINS NEVER-RUN CODE; FRESHNESS WAS READ OFF plan_date AND NOT OFF THE ZERO-ORDER OUTCOME, which is byte-for-byte identical either way; CORE BOOTSTRAP SKIPPED, core_established already true; STEP 4 EXITS had NO OPERAND - zero SELL intents and zero satellite positions to sell, so no rule was PASSED, each was ABSENT; STEP 5 RE-VALIDATION HAD NOTHING TO RE-VALIDATE and ZERO move CALLS WERE MADE - an ABSENT check not a skipped one, THIRD INSTANCE after 09-29 and 10-02 pre-market; RECONCILIATION CLEAN, one core row 99.046311231 shares against zero satellite blocks, compared SATELLITE-TO-SATELLITE with core removed BEFORE any rule was read; NO REBALANCE DUE - core 70.05 pct on the open mark, 4.95 points inside the 65 pct edge, core_in_band true, and rebalance_delta MINUS 45.11 was NOT acted on because Section 2 rebalances at the BAND EDGE and the delta is a DISTANCE READOUT; the delta FLIPPED NEGATIVE after eleven consecutive positive runs, which is core crossing 70 pct from below and NOT a signal; cash EXACTLY 30000.00 for a FIFTEENTH reading, dividend DAY 5 OF 8 and UNRESOLVED IN EITHER DIRECTION; NO BAR PULLED AND NO MARK STAMPED - a bar dated today is PARTIAL while the market is open and there was no position to stamp one onto anyway; SIXTY-SIXTH refusal to stamp highest_close on core, graded FREE because this seat writes no marks; NO INTENT GENERATED AT THE OPEN - this seat has no funnel and the refusal is STRUCTURALLY UNAVAILABLE TO VIOLATE, so it is not evidence of restraint; session counter NOT advanced, 22/19 holds because today is a session IN PROGRESS, not a completed one; WEEK ROLLOVER NOT DUE, week_of 2026-09-28 equals this ISO week's Monday; breaker INACTIVE, consecutive_closed_losses 0, 99 thesis headings and ZERO EVER ACCEPTED)
 
 week_of: 2026-09-28
 new_positions_this_week: 0
@@ -24,9 +24,9 @@ circuit_breaker: INACTIVE
 halt_triggered_at: none
 core_established: true
 core_ticker: VOO
-core_pct: 70.05
+core_pct: 70.0
 satellite_pct: 0.0
-cash_pct: 29.95
+cash_pct: 30.0
 open_thesis_ids: none
 ```
 
@@ -42,9 +42,13 @@ DISCARDED. Where an item had accumulated three statements of the same fact, one 
 adds nothing to this list is the normal case, not a gap in attention.** ⚠ **A correction REPLACES the claim
 it corrects — it does not sit beside it.**
 
-**What the 09:38 MARKET-OPEN run of 10-02 adds:** **nothing new in kind** — it placed **zero orders** off a
-fresh, deliberately empty plan, and the only movements on this board are **counter updates**, folded into the items
-they belong to rather than restated here. ⚠ **A run that adds no new finding is the normal case.**
+**What the 12:42 MIDDAY run of 10-02 adds:** **nothing new in kind, and one sharpening.** It took **zero exits**
+off an **empty sleeve**, so §5 had **no operand** — but it is the **detecting seat for a stale high-water mark**, and
+it is now on record that **the detector ran with NO INPUT for a sixth consecutive run**, which is **not** the same as
+running clean. Everything else on this board moved only by **counter updates**, folded into the items they belong to
+rather than restated here.
+**What the 09:38 MARKET-OPEN run of 10-02 added:** **nothing new in kind** — **zero orders** off a fresh,
+deliberately empty plan. ⚠ **A run that adds no new finding is the normal case.**
 
 **What the 08:23 PRE-MARKET run of 10-02 added:** **two new §4 structural shapes** (capacity-already-built;
 earnings-miss), **a fourth defence-award instance**, **a second instance of the non-immutable `n`/`v` bar**,
@@ -57,9 +61,9 @@ company's scale was stale.
 ### Live — act on these
 
 - **⚠⚠ THE VOO DIVIDEND IS STILL UNPAID. DAY 5 OF 8. CHECK `cash` EVERY RUN UNTIL IT RESOLVES.**
-  `cash` read **exactly $30,000.00** again at **10-02 09:37** — a **fifteenth** reading, across the
-  **fifth calendar day**. ⚠ **Fifteen readings across five days are ONE unresolved observation of an
-  unpaid dividend, not fifteen data points.** ⚠ **NON-ARRIVAL THIS EARLY IS EXPECTED, NOT EVIDENCE —
+  `cash` read **exactly $30,000.00** again at **10-02 12:42** — a **sixteenth** reading, across the
+  **fifth calendar day**. ⚠ **Sixteen readings across five days are ONE unresolved observation of an
+  unpaid dividend, not sixteen data points.** ⚠ **NON-ARRIVAL THIS EARLY IS EXPECTED, NOT EVIDENCE —
   settlement runs on the PAY date, not the ex-date, and no reading's HOUR makes it stronger, because
   settlement does not run on the bell.** ⚠ **THE FALSIFIABLE TEST, WRITTEN IN ADVANCE AND STILL RUNNING:
   `cash` should rise to about $30,180.45. IF IT HAS NOT BY 2026-10-07, the paper account does not model
@@ -82,6 +86,11 @@ company's scale was stale.
   ⚠⚠ **AND THE DETECTING SEAT IS IN THE SAME STATE: its entire input is an `(as of …)` date compared
   against the last trading day. No field, no date, so NO STALENESS COULD BE DETECTED AND NONE WAS RULED
   OUT. A detector handed no input returns the same silence as a detector finding everything healthy.**
+  ⚠⚠ **10-02's MIDDAY SEAT IS THE SIXTH CONSECUTIVE RUN OF THAT DETECTOR WITH NO INPUT, AND IT CHECKED THE
+  FIELD'S ABSENCE FROM SOURCE RATHER THAN ASSUMING IT** — `grep` returns the **template placeholder at
+  `positions.md` line 53** and nothing else; every other occurrence is prose. ⚠ **It made ZERO `bars` calls,
+  deliberately: at 12:42 a bar dated today is PARTIAL. So the one seat that exists to catch a silently
+  disabled §5.4 has still never run against a real mark.**
   ⚠⚠ **BOTH THE WRITING SEAT AND THE DETECTING SEAT HAVE A CONFIRMED BLIND SPOT OF EXACTLY THE SAME SHAPE,
   NEITHER HAS EVER RUN AGAINST A REAL MARK, AND THE FIRST SATELLITE FILL ARMS BOTH AT ONCE.**
   ⚠ **THE BACKFILL PATH REMAINS UNEXERCISED CODE** — re-pull the window on a stated adjustment basis, take
@@ -462,8 +471,9 @@ company's scale was stale.
   ⚠⚠ **AND NOTE THE ONE CATCH THAT RUNS THE OTHER WAY — 10-02's Micron correction, above. Every catch here
   guards against inventing what is not there; that one guards against DISMISSING what is.**
 
-- **⚠ GNRC IS NOT YOURS TO LOOK AT — THIRTY-FIVE CONSECUTIVE REFUSALS, AND THE COUNT IS DOING LESS WORK
-  THAN IT LOOKS.** The disqualifying facts do not move: **GNRC is the named counterparty in the Amazon
+- **⚠ GNRC IS NOT YOURS TO LOOK AT — THIRTY-SIX CONSECUTIVE REFUSALS, AND THE COUNT IS DOING LESS WORK
+  THAN IT LOOKS.** *(10-02's midday refusal is one of the FREE ones — an exits-only seat with no funnel,
+  logged as such and NOT as restraint.)* The disqualifying facts do not move: **GNRC is the named counterparty in the Amazon
   announcement — first-order, outside §4 at any price** — and **open item (7) is resolved by a human editing
   §4 or `alpaca.py move`, not by a number this seat collects.**
   ⚠⚠ **WHAT MATTERS IS NOT THE COUNT BUT WHETHER EACH REFUSAL COST ANYTHING, AND MOST DID NOT.** A midday
@@ -476,7 +486,7 @@ company's scale was stale.
   issue-closure, call-already-open, screen-already-running. **The pattern is the finding, not any instance.
   FREE IS NOT THE SAME AS PERMITTED.**
 
-- **⚠ CORE VOO IS NEVER STAMPED WITH A `highest_close` — SIXTY-FIVE RUNS.** §5 exempts core from all four
+- **⚠ CORE VOO IS NEVER STAMPED WITH A `highest_close` — SIXTY-SEVEN RUNS.** §5 exempts core from all four
   sell rules. A mark on VOO would **fabricate a §5.4 trailing stop on the one position the strategy
   exempts**, a stop that could eventually **sell core on a drawdown, which §7 forbids outright.**
   ⚠ **A CLOSE RUN IS THE STRONGEST INSTANCE THIS ITEM GETS, because it is the ONE SEAT THAT WRITES MARKS and
