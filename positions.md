@@ -85,6 +85,60 @@ check that the pull returned the right session. A stored baseline is a *label*, 
 
 *(none — no **satellite** positions have been opened yet. Core VOO exists and is deliberately not tracked here, per the top-of-file rules and the fill note further down.)*
 
+**Reconciliation 2026-10-02 — 08:23 ET, 1-premarket-research. THE LEDGER AGREES WITH THE BROKER;
+ZERO SATELLITE POSITIONS ON BOTH SIDES; NO §5 RULE HAS A SUBJECT; NO MARK WRITTEN AND NONE DUE.**
+
+Selftest passed all five checks; `trading_enabled: true`, LIVE paper; pre-flight broker equity
+**$99,865.29** at 08:23. `clock` at **08:23:38** reads **`is_open: false`** with `next_open`
+**2026-10-02T09:30** — the **PRE-MARKET** shape, read off the DATE (it points at TODAY), not off the
+boolean. ⚠ **FALSE has three meanings; TRUE has one.** ⚠ **Corroborated from the data plane rather than
+inferred: `bars` returns a complete 2026-10-01 bar and NO bar dated 2026-10-02.** **Not a holiday.**
+
+**RECONCILIATION, SATELLITE-TO-SATELLITE.** `alpaca.py positions` returns **one row, core VOO**,
+99.046311231 shares at avg_entry **706.74** (a **RAW** print), cost_basis **$69,999.99** — unchanged
+since the 09-03 fill — against **zero satellite blocks in this file. THEY AGREE.** ⚠ **Core VOO was
+removed from the working list BEFORE any §5 rule was read**, per §5's core exemption; **a run that
+compares the raw ledger to the raw broker reads a correct ledger as broken.**
+
+### `sell_rule_status` — ALL FOUR RULES ABSENT, NOT PASSING (2026-10-02 08:23 ET)
+
+⚠⚠ **THERE IS NO POSITION TO WRITE A `sell_rule_status` LINE ON. The distance to each rule is therefore
+not "large" — it is UNDEFINED, and those are different facts.**
+
+| Rule | Status this run | Distance | Why it is not "passing" |
+|---|---|---|---|
+| **§5.1** thesis invalidation | **NO OPERAND** | n/a | No thesis is held, so no `invalidation` string exists to read verbatim. **Zero Perplexity news-on-holdings queries were due and zero were run.** |
+| **§5.2** time stop | **NO OPERAND** | n/a | No `timing_window` and no deadline field exists anywhere in this file. |
+| **§5.3** hard stop −7% from entry | **DISTANCE UNDEFINED** | **UNDEFINED, not large** | There is no `entry_price` to measure a drawdown from. ⚠ **"Comfortably far" would be a fabrication.** |
+| **§5.4** trailing stop −10% from `highest_close` | **NOT ARMED** | **UNDEFINED, not large** | No `highest_close` field — the **third state**, carrying no `(as of …)` date at all. It arms on the first **satellite** fill; the 09-03 core fill was not one. |
+
+**Zero orders submitted by this run** (a pre-market seat places none by design), **zero fills, nothing
+opened, nothing closed, no realised P&L.** `consecutive_closed_losses` stays **0** — nothing has closed.
+Breaker **INACTIVE** (`halt_triggered_at: none`, so no `HALT_CLEARED_AT` comparison was required; the
+`none` in `control.md` is therefore **untested against a live halt**, not cleared).
+
+**§5.1–§5.4 HAVE NEVER HAD AN OPERAND IN THIS ACCOUNT'S ENTIRE HISTORY** — **22 completed trading
+sessions since 2026-09-01, 19 AFTER the 09-03 core fill**, **zero satellite positions ever opened.**
+⚠⚠ **THE COUNTER IS NOT ADVANCED BY THIS RUN AND THE REFUSAL IS THE STRONG FORM OF CATCH (11): at 08:23
+the market has not opened, so TODAY IS NOT A COMPLETED SESSION and a pre-market seat has none of today's
+to add.** ⚠ **Catch (11) names routines 1 and 2 as the two exposed seats. This is one of them, the
+increment was available, and it was declined from the CLOCK rather than from a claim about which routine
+this is.**
+
+⚠ **CORE VOO IS AGAIN NOT STAMPED WITH A `highest_close` — SIXTY-FIFTH CONSECUTIVE RUN.** §5 exempts core
+from all four sell rules; a mark on VOO would fabricate a §5.4 trailing stop on the one position the
+strategy exempts, a stop that could eventually sell core on a drawdown, which §7 forbids outright.
+⚠ **Graded honestly: this seat does NOT write marks, so today's refusal is FREE. The close run's is the
+load-bearing instance; a pre-market refusal is weaker evidence of restraint and is logged as such.**
+
+⚠ **ONE FRESH TAPE FACT FOR THE FILE: the 2026-10-01 bar's `n`/`v` HAVE MOVED SINCE YESTERDAY'S CLOSE RUN
+READ THEM** — **1633/51892 then, 1634/51893 now** — **while its close held at 702.255 to the cent.**
+⚠ **Second clean instance of "a completed daily bar is not immutable in `n` and `v`." Late-reported prints
+keep arriving after the bell. The CLOSE is the stable field; the CLOCK is the reliable discriminator; and
+the n/v FLOOR test is a corroborant built on a ruler that moves.**
+
+---
+
 **Reconciliation 2026-10-01 — ONE BLOCK FOR THE DATE, COVERING ALL FOUR RUNS, LED BY THE 16:16 CLOSE.
 ⚠ COLLAPSED DELIBERATELY: the 09:37 and 12:41 blocks this replaces recorded the same null reconciliation
 and their load-bearing findings are preserved below. THE LEDGER AGREES WITH THE BROKER; ZERO SATELLITE

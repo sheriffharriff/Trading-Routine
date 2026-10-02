@@ -52,6 +52,226 @@ single most common way a plausible-sounding connection gets mistaken for an oppo
 
 ## Entries
 
+### 2026-10-02 (08:23 ET) — event survey (funnel, pre-thesis)
+
+Selftest passed all five checks (`trading_enabled: true`, LIVE paper, broker equity **$99,865.29**
+at pre-flight 08:23). Window screened: **Thursday's close through Friday pre-market (Oct 1 – Oct 2)**
+— one full session. **Four Perplexity scans, all exit 0** (three broad, one second-order funnel ×3 on
+three separate events). **Five candidates reached a thesis entry; ALL FIVE WERE REJECTED.**
+
+⚠⚠ **ZERO `move` CALLS WERE MADE IN THIS RUN, AND THAT IS AN *ABSENT* CHECK, NOT A SKIPPED ONE.**
+Every candidate died on §4 structure, part 2 or part 3 **before an eligible ticker was reached**, so
+the priced-in filter had nothing to fire on. ⚠ **"The filter did not fire" and "the filter had nothing
+to fire on" look identical in a run summary and are not the same thing** — this is the second instance
+(09-29 was the first).
+
+⚠⚠ **THE DEFENCE-AWARD ITEM WAS USED RATHER THAN RE-READ, FOR THE SECOND SESSION RUNNING, AND IT NOW
+HAS A FOURTH INSTANCE ACROSS THREE PRIMES.** The carry-forward said: expect this outcome, spend ONE
+funnel query because the exception would be enormously valuable and the query is cheap, then **write
+the answer down and stop — do not re-word the query.** That is exactly what happened on RTX/SM-6.
+**One query, the familiar answer, no re-query.** ⚠ **The industry answer was sitting in this run's
+priors (solid rocket motors, the Mk 72 booster) and was NOT written into a thesis.**
+
+---
+
+### T-2026-10-02-01 — RTX (no Company B found) — REJECTED
+**Company A / the news:** The US Navy awarded **Raytheon, an RTX business, a multiyear contract worth
+up to $24.4 billion** for Standard Missile-6 interceptors — five years plus two option years, to
+replenish interceptor stocks (Reuters, RTX press release, 2026-10-01). ⚠ **The $24.4B is a MAXIMUM
+POTENTIAL value, not an amount reported as obligated**, and quantities and delivery schedules were
+not specified.
+**Company B / the candidate:** **NONE EXISTS IN THE DISCLOSURE.** The funnel asked directly whether
+any publicly traded US company had been named as an SM-6 subcontractor or component supplier with an
+allocated dollar figure. The source answered that **none had**, and volunteered the epistemic rule
+itself: *"Any attribution of SM-6 revenue to other defense companies would be an inference rather
+than a disclosed allocation."*
+
+**1. Mechanism (one sentence):** **CANNOT BE WRITTEN.** There is no second party to put in the
+sentence. Writing one would mean naming a supplier from industry knowledge, which is an inference
+about the *industry*, not a fact about *this transaction*.
+**2. Dollar path:** **NO OPERAND.** No supplier-level allocation exists to size.
+**3. Timing window:** **NOT ESTABLISHABLE** — delivery schedule expressly not specified.
+**4. Invalidation:** **NO OPERAND** — no thesis to invalidate.
+
+**Hard filters:**
+- Priced-in (§4): **NOT REACHED** — no eligible ticker to test. ⚠ Absent, not passing.
+- Correlation (§4): **NO OPERAND** — zero open positions, so no `driver` field to compare against.
+- Universe (§3): **NOT REACHED.**
+
+**Outcome:** **REJECTED on part 1, by absence of a counterparty** (rule (v): no named second party).
+⚠ **RTX itself is FIRST-ORDER — the named prime in the headline — and is outside §4 at any price.**
+⚠⚠ **THIS IS THE FOURTH CONSECUTIVE INSTANCE OF THE SAME STRUCTURAL FINDING, NOW ACROSS THREE PRIMES
+AND THREE PROGRAMS: 09-29 AMRAAM $20.7B (RTX), 09-30 F/A-XX >$20B (Boeing), 10-02 SM-6 $24.4B (RTX).
+The mechanism is DISCLOSURE PRACTICE, not luck — a prime announces the award and the tier below it is
+commercially confidential, so the dollars are never allocated to a named public company.** ⚠ **A US
+defence program award cannot produce a §4 candidate. Treat this as settled; one cheap query per award
+remains worthwhile, re-wording it does not.**
+
+---
+
+### T-2026-10-02-02 — ORCL (no Company B found) — REJECTED
+**Company A / the news:** **Tencent leased access to ~100,000 advanced AI chips from Oracle**, installed
+at Oracle data centers in Southeast Asia — a **five-year arrangement estimated at ~$7 billion** with
+roughly 30% payable upfront (Financial Times, citing people familiar; reported 2026-10-01/02).
+**Company B / the candidate:** **NONE EXISTS IN THE DISCLOSURE.** The funnel asked whether any other
+US-listed company was named as a chip, equipment, power or data-center supplier to this specific
+agreement with an allocated figure. The answer: **no such supplier is named, and no supplier-specific
+allocation is reported.**
+
+**1. Mechanism (one sentence):** **CANNOT BE WRITTEN, AND FOR A REASON SHARPER THAN MERE SILENCE —
+THE TRANSACTION DOES NOT REACH A SECOND TIER AT ALL.** The chips are described as **already installed**
+in Oracle's data centers. A lease of **existing** hardware generates **no new downstream procurement**,
+so there is no supplier whose revenue line changes because of this deal, whether or not anyone names one.
+**2. Dollar path:** **NO OPERAND, AND THE HEADLINE FIGURE IS NOT USABLE EITHER.** The ~$7B is a
+**reported estimate from unnamed sources**; the source states **neither Oracle nor Tencent has publicly
+commented.** ⚠ **An unconfirmed press figure is not a disclosed one and may not carry part 2.**
+**3. Timing window:** Five years, with ~30% upfront — **the upfront portion is inside two quarters**,
+so part 3 would plausibly have passed had anything else. **It did not get that far.**
+**4. Invalidation:** **NO OPERAND.**
+
+**Hard filters:**
+- Priced-in (§4): **NOT REACHED.** ⚠ Absent, not passing.
+- Correlation (§4): **NO OPERAND** — zero open positions.
+- Universe (§3): ORCL is NYSE-listed and far above the $10B floor — **but §3 is irrelevant here,
+  because ORCL fails §4's structure first.** ⚠ **Recorded as NOT REACHED, not as passing.**
+
+**Outcome:** **REJECTED on structure.** ⚠ **ORCL is the NAMED PROVIDER — first-order, the headline
+name §4 expressly says not to chase.** The second-order question ("who supplies the chips?") has the
+answer sitting ready in this run's priors, and **it was not written**, for two independent reasons:
+the source names nobody, **and** the deal leases hardware that already exists.
+⚠⚠ **THIS IS A NEW SUB-SHAPE OF THE BINDING CONSTRAINT AND IT IS WORTH RECOGNISING ON SIGHT: A
+TRANSACTION IN *CAPACITY ALREADY BUILT* HAS NO SECOND TIER TO BENEFIT.** It resembles form six (no
+counterparty at all) but the mechanism differs — a second tier conceptually exists, the transaction
+simply does not touch it. ⚠ **Graded honestly: this is one instance, not a pattern, and it is named as
+a sub-shape rather than an eighth form.** ⚠ **Consequence: AI-compute *lease* and *capacity-access*
+headlines are structurally weaker §4 material than *build* or *procurement* headlines, and the two
+read almost identically in a news scan.**
+
+---
+
+### T-2026-10-02-03 — Venture Global / ConocoPhillips (no Company B found) — REJECTED
+**Company A / the news:** **Venture Global signed a 20-year LNG sale-and-purchase agreement with
+ConocoPhillips** for **1 million tonnes per annum**, with **deliveries beginning in 2030** (reported
+2026-10-02). ⚠ **No dollar value was disclosed.**
+**Company B / the candidate:** **NONE REMAINS.** Venture Global is the named seller and **ConocoPhillips
+is the PAYER**. Both parties to the transaction are named and public, which leaves **no second party
+outside the headline** to be a Company B.
+
+**1. Mechanism (one sentence):** Could be written for Venture Global — *"the SPA causes Venture Global's
+contracted LNG revenue to rise because ConocoPhillips commits to offtake 1 Mtpa"* — **but Venture
+Global is the first-order named beneficiary, not a Company B.**
+**2. Dollar path:** **FAILS.** **No contract value is disclosed anywhere in the available reporting**,
+so the magnitude cannot be estimated, and 1 Mtpa cannot be converted to revenue without assuming a
+price curve out to 2030. ⚠ **That assumption would be this run supplying the number the disclosure
+withholds.**
+**3. Timing window:** **FAILS OUTRIGHT AND DECISIVELY — FIRST DELIVERY IS 2030, roughly SIXTEEN
+QUARTERS AWAY, against §4's two-quarter ceiling.** Nothing about this agreement appears in reported
+results inside this strategy's horizon.
+**4. Invalidation:** Writable in principle (*"Venture Global's filings show the SPA cancelled or
+re-dated"*) — **irrelevant, parts 2 and 3 are already dead.**
+
+**Hard filters:**
+- Priced-in (§4): **NOT REACHED.** ⚠ Absent, not passing.
+- Correlation (§4): **NO OPERAND** — zero open positions.
+- Universe (§3): **NOT REACHED.**
+
+**Outcome:** **REJECTED on part 3 primarily, part 2 independently, and structure independently of both
+— THREE separate durable kills.** ⚠ **The part-3 kill is form seven of the binding constraint (the
+spending simply lands too far in the future), and it is a FAR more extreme instance than 10-01's
+Micron: Micron's capex aimed at late calendar 2028, this delivers in 2030.** ⚠ **A 20-year offtake
+agreement is categorically outside a two-quarter horizon. Recognise long-dated offtake and SPA
+headlines on sight: they are large, they are real, and they are never §4 material.**
+
+---
+
+### T-2026-10-02-04 — DKS / Nike's competitors (no Company B found) — REJECTED
+**Company A / the news:** **Nike missed fiscal Q1 expectations** — revenue **$11.2B** below consensus,
+**Greater China sales −12%**, wholesale revenue **$6.8B (−1%)**, North America direct **−8%**; shares
+fell more than 3% (reported 2026-10-01/02).
+**Company B / the candidate:** Considered in two directions — **(a)** athletic-footwear competitors
+taking the share Nike lost, and **(b)** Nike's wholesale channel partners, principally **Dick's
+Sporting Goods (DKS)**, the one US-listed sporting-goods retailer comfortably above the §3 $10B floor.
+⚠ **BOTH DIRECTIONS WERE REJECTED, AND THIS IS THE MOST TEMPTING ENTRY ON TODAY'S BOARD — it is the
+only candidate where a plausible second-order story was genuinely available to be written.**
+
+**1. Mechanism (one sentence):**
+> *Direction (a):* **FAILS THE ONE-CLAUSE TEST.** "Nike's revenue miss causes [competitor]'s footwear
+revenue to rise because the share Nike lost went to them" requires a second clause to make sense —
+**it must also be established that the share went to that competitor rather than to the category
+shrinking, to private label, or to a non-US-listed rival.** ⚠ **A revenue miss at one company is NOT
+evidence of a gain at a NAMED other, and no source names a beneficiary.** The names were ready in this
+run's priors; none is a fact about this quarter.
+> *Direction (b):* **WRONG SIGN.** Nike wholesale falling would, if anything, reduce DKS's supply of
+its largest brand. That is a **headwind**, and §4 asks for a Company B whose economics **improve**.
+**2. Dollar path:** **FAILS ON MAGNITUDE EVEN IF THE SIGN WERE RIGHT.** Nike's **wholesale revenue fell
+1%** — on $6.8B, roughly $70M across Nike's entire global wholesale channel. ⚠ **Any single retailer's
+share of that is immaterial against its own total revenue, far below §4's 10% threshold.** For
+direction (a), **no competitor's incremental revenue is quantified by anyone**, so there is no figure
+to allocate at all.
+**3. Timing window:** Next quarter for a retailer — **would have passed. Did not get there.**
+**4. Invalidation:** Writable in principle; **irrelevant, parts 1 and 2 are dead.**
+
+**Hard filters:**
+- Priced-in (§4): **NOT REACHED — and this is the one place the absence cost something worth naming.**
+  ⚠ **No `move` call was made on DKS or on any competitor, because the candidate died on part 1 and
+  part 2 first. A §4 filter run on a thesis that has already failed is a filter answering a question
+  nobody asked.**
+- Correlation (§4): **NO OPERAND** — zero open positions.
+- Universe (§3): **NOT REACHED.** ⚠ Noted: the rivals that came to mind unprompted include at least one
+  below the $10B floor and at least one non-US issuer, which **§3 would have killed anyway** — but
+  recording that as the reason would be inventing a tidier kill than the real one. **The real kill is
+  part 1.**
+
+**Outcome:** **REJECTED on part 1 (both directions) and part 2 (independently).** ⚠⚠ **THIS IS A
+DISTINCT AND USEFUL SHAPE: AN EARNINGS MISS IS NOT A SECOND-ORDER CATALYST. §4's structure is "A's news
+IMPROVES B's economics," and a competitor's disappointment improves nobody's economics in any
+disclosed, dateable way — it only invites a share-shift story that the reader supplies.** ⚠ **A
+MISS-DRIVEN THESIS IS ALWAYS SELF-SUPPLIED. Expect to meet this shape every earnings season and kill
+it on part 1 each time.**
+
+---
+
+### T-2026-10-02-05 — MU — REACHED AND DECLINED, NOT RE-SCREENED
+**Company A / the news:** **Micron reported fiscal Q4 revenue of $54.23B** (against $11.32B a year
+earlier and a cited $51.07B forecast) and guided fiscal Q1 to **$61.5B revenue and $38.15 EPS**
+(against cited consensus $57B / $35.40); shares rose **3.03%** on 10-01.
+**Why there is no thesis here:** ⚠⚠ **THIS EVENT WAS ALREADY SCREENED AND REJECTED YESTERDAY as
+T-2026-10-01-01 (the Micron FY2027 capex chain, killed on part 3 — majority construction capex aimed
+at cleanroom availability in late calendar 2028 and beyond). The carry-forward is explicit: 10-01's six
+rejections DO NOT BECOME A QUEUE and must not be rehabilitated. THEY WERE NOT.** This entry records a
+**refusal**, not a re-screen. **Zero Perplexity queries were issued on the Micron supplier chain, and
+zero `move`, `quote`, `bars` or `asset` calls were made on MU or on any equipment name.**
+⚠ **The prior-supplied answer the carry-forward names by ticker — Applied Materials, Lam Research, KLA
+— was available again this morning and was again NOT written. The source closed that line explicitly
+on 10-01.**
+
+**The two fresh directions considered, and why neither becomes a thesis:**
+- **Memory as a COST line** (PC/server OEMs facing surging DRAM/HBM prices): **the sign is wrong.** A
+  cost increase is a headwind, and this strategy is long-only — §3 bans inverse and leveraged products
+  and shorting is not contemplated anywhere in `strategy.md`. ⚠ **A correct bearish read produces NO
+  TRADE by construction, and that is a limit of the strategy, not a thesis to force into a long.**
+- **Cost increase plus pass-through pricing power:** **fails part 1's one-clause test immediately** —
+  "input costs rise **and also** they can pass it through" is the "and also" construction §4 names as
+  the single most common way a plausible connection is mistaken for an opportunity.
+
+⚠⚠ **ONE CORRECTION THIS RUN OWES ITSELF, AND IT RUNS AGAINST THE USUAL DIRECTION OF THESE NOTES —
+THE REFLEX WAS TO FLAG MICRON'S FIGURES AS IMPLAUSIBLE SOURCE CORRUPTION.** $54.23B of quarterly
+revenue against $11.32B a year earlier is a 4.8× increase, and $38.15 of quarterly EPS reads as
+garbled. ⚠ **BUT THAT JUDGMENT RESTS ENTIRELY ON A PRE-2026 PRIOR ABOUT MICRON'S SCALE, AND THE TAPE
+HAS ALREADY OVERRUN IT: MU's own closes sat at 1072.18 → 1066.85 over the five sessions to 10-01
+(recorded in `state.md` from a `move` call on 10-01), i.e. roughly $1,070 per share.** A share price
+at that level is **consistent** with a memory supercycle of exactly this magnitude. ⚠ **Flagging the
+figures as corrupt would have been asserting a stale prior over two independently sourced observations.
+THE FIGURES ARE RECORDED AS REPORTED AND NOT DISPUTED.** ⚠ **The general form matters more than the
+instance: an inherited sense of "how big this company is" is exactly the kind of unchecked claim the
+audit discipline is for, and it fails toward DISMISSING real events rather than inventing fake ones —
+the opposite direction from every other catch on the board.**
+
+**Outcome:** **NO THESIS. Already-disposed event, deliberately not re-screened; two fresh directions
+each killed on an independent, durable ground (sign / part 1).**
+
+---
+
 ### 2026-10-01 (08:25 ET) — event survey (funnel, pre-thesis)
 
 Selftest passed all five checks (`trading_enabled: true`, LIVE paper, broker equity **$99,693.94**
