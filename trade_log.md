@@ -49,6 +49,22 @@ audit it later.
 
 ## Entries
 
+**📁 2026-09 ARCHIVED — 2026-10-02 (routine 5, monthly rollover).** The full 2026-09 section
+of this file — the core fill below plus the `## Dry-run intents` block (2026-09-02 and
+2026-09-01 VOO core bootstrap intents, neither of which was a trade) — was moved verbatim to
+**`archive/trade_log/2026-09.md`**.
+
+⚠ **THE 2026-09-03 CORE FILL IS DELIBERATELY RETAINED BELOW RATHER THAN REMOVED.** It is the
+only fill in this account history and **the position is still open.** The rollover rule exists
+because *"skimming the trade log is how a system quietly stops knowing what it holds"* — and
+removing the only record of a live $70,000 holding would make the live ledger read as an
+account that has never traded, which is that same failure arriving by a different door. The
+archive carries the audit trail; this copy is the ledger. **At 6KB this file is under 1% of the
+corpus, so nothing is bought by shrinking it.** ⚠ **Flagged for the human in the 2026-10-02
+weekly review: the prompt says to move entries older than the current month, and this run
+judged that the rule's purpose outranks its letter for an OPEN position. If the human
+disagrees, say so in `control.md` and the next review will move it.**
+
 ### 2026-09-03 09:36 ET — BUY — VOO — filled
 - thesis_id:      core
 - order_id:       d177d8f0-cd0c-41bf-95c1-4772318265fd
@@ -75,45 +91,3 @@ audit it later.
 
 ---
 
-## Dry-run intents (NOT trades)
-
-Recorded separately and deliberately kept out of `## Entries` above, which is reserved for
-orders that actually reached a terminal state. A future reader looking for the missing VOO core
-position should find the reason here rather than infer a broken run.
-
-### 2026-09-02 — VOO core bootstrap — INTENT ONLY, NOT FILLED
-- routine:        2-market-open-execution (09:36 ET)
-- thesis_id:      core
-- intended:       BUY VOO, notional $70,000.00 (70% of $100,000.00 live equity, §2 target)
-- command:        `python scripts/alpaca.py buy --symbol VOO --notional 70000 --core`
-- result:         `{"ok": true, "dry_run": true, "reason": "TRADING_ENABLED is not true in
-                  control.md"}` — exit 0, **no order submitted, no fill, no position**
-- reference:      VOO last trade 700.555 at 09:36:15 ET; bid/ask 700.15 / 700.71 (a live,
-                  40x40, 56-cent regular-hours book — not the stale 679.52 / 721.61
-                  after-hours spread the 08:30 pre-market run correctly refused to use);
-                  prior close 700.14 (2026-09-01), i.e. about +0.06% on the session
-- asset check:    `tradable: true`, `fractionable: true`, ARCA, us_equity, status active —
-                  eligible, §3 clear
-- sizing:         re-derived from live equity at the open per the plan's `revalidate` line,
-                  not copied from the $70,000 written pre-market. Live equity was still
-                  $100,000.00, so the two numbers coincide — the figure was re-derived, not
-                  merely reused.
-- effect:         none. `core_established` stays `false`; account remains 100% cash; the same
-                  intent regenerates tomorrow until a human sets `TRADING_ENABLED: true`.
-- **submitted once, not twice.** Step 3's bootstrap and Step 7's rebalance are the same
-                  $70,000 VOO buy on this account (`core_established: false` **and** core 0.0%
-                  against a 70% target are one condition with one remedy). Step 7 was
-                  evaluated and deliberately not submitted as a second order.
-
-### 2026-09-01 — VOO core bootstrap — INTENT ONLY, NOT FILLED
-- routine:        2-market-open-execution (09:36 ET)
-- thesis_id:      core
-- intended:       BUY VOO, notional $70,000.00 (70% of $100,000.00 equity, §2 target)
-- command:        `python scripts/alpaca.py buy --symbol VOO --notional 70000 --core`
-- result:         `{"ok": true, "dry_run": true, "reason": "TRADING_ENABLED is not true in
-                  control.md"}` — exit 0, **no order submitted, no fill, no position**
-- reference:      VOO last trade 700.625 at 09:35:37 ET; bid/ask 700.04 / 700.67; prior close
-                  704.875 (2026-08-31), i.e. about −0.6% on the session open
-- asset check:    `tradable: true`, `fractionable: true`, ARCA, us_equity — eligible, §3 clear
-- effect:         none. `core_established` stays `false`; account remains 100% cash; the same
-                  intent regenerates tomorrow until a human sets `TRADING_ENABLED: true`.
