@@ -85,6 +85,17 @@ check that the pull returned the right session. A stored baseline is a *label*, 
 
 *(none — no **satellite** positions have been opened yet. Core VOO exists and is deliberately not tracked here, per the top-of-file rules and the fill note further down.)*
 
+**Reconciliation 2026-10-02 — 09:38 ET, 2-market-open-execution. THE LEDGER AGREES WITH THE BROKER;
+ZERO SATELLITE POSITIONS ON BOTH SIDES; ZERO ORDERS PLACED; NO MARK WRITTEN AND NONE DUE.**
+
+`clock` **09:36:33** reads **`is_open: true`** — the one value with a single meaning. `positions` returns
+**one row, core VOO**, 99.046311231 shares, cost_basis **$69,999.99** — unchanged since the 09-03 fill —
+against **zero satellite blocks in this file. THEY AGREE.** Core was removed satellite-to-satellite before
+any §5 rule was read. Sleeves: core **70.05%**, satellite **0.0%**, cash **29.95%**, `core_in_band: true`.
+⚠ **No `bars` call was made and no `highest_close` was written: a bar dated today is PARTIAL while the
+market is open, and there was no position to stamp one onto in any case.** **Sixty-sixth consecutive
+refusal to stamp a mark on core — graded FREE, this seat writes no marks.**
+
 **Reconciliation 2026-10-02 — 08:23 ET, 1-premarket-research. THE LEDGER AGREES WITH THE BROKER;
 ZERO SATELLITE POSITIONS ON BOTH SIDES; NO §5 RULE HAS A SUBJECT; NO MARK WRITTEN AND NONE DUE.**
 
