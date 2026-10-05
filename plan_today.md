@@ -29,229 +29,198 @@ better. Core and rebalance actions are exempt from the gate because neither depe
 day's research.
 
 ```
-plan_date: 2026-10-02
+plan_date: 2026-10-05
 generated_by: 1-premarket-research
 market_open_today: yes
 ```
 
-Market opens today **2026-10-02 at 09:30 ET** (`alpaca.py clock` at 08:23:38 ET: `is_open:
-false`, `next_open: 2026-10-02T09:30:00-04:00`, `next_close: 2026-10-02T16:00:00-04:00`).
+Market opens today **2026-10-05 at 09:30 ET** (`alpaca.py clock` at 08:28:54 ET: `is_open:
+false`, `next_open: 2026-10-05T09:30:00-04:00`, `next_close: 2026-10-05T16:00:00-04:00`).
 **Not a holiday** — the market is closed because it is pre-market and `next_open` points at
 **today**. ⚠ **Read the date, not the boolean. FALSE has three meanings — pre-market,
 post-bell, holiday — and TRUE has one.** ⚠ **Corroborated independently from the data plane:
-`bars` returns a complete 2026-10-01 bar and NO bar dated 2026-10-02 — the pre-market shape,
-confirmed rather than assumed.**
+`bars --adjustment all` returns a complete **2026-10-02** bar and **NO bar dated 2026-10-05**
+— the pre-market shape, confirmed rather than assumed.**
 
-**One pre-market run today, at 08:23–08:26 ET.** Selftest passed all five checks
-(`trading_enabled: true`, LIVE paper account, broker equity **$99,865.29** at pre-flight).
+**One pre-market run today, at 08:28–08:31 ET.** Selftest passed all five checks
+(`trading_enabled: true`, LIVE paper account, broker equity **$100,038.62** at pre-flight).
 
-⚠ **This file arrived carrying `plan_date: 2026-10-01` — ONE CALENDAR DAY OLD AND CORRECTLY
-SO**, because yesterday's pre-market run wrote it and all four of yesterday's routines
-committed (`git log`: the 10-01 close is `ffacda0`, merged as `2b98666`). ⚠ **The 09-28 gap
-therefore remains a ONE-DAY, THREE-ROUTINE event and is still NOT reported as ongoing.**
-⚠ **THE STALENESS GATE STILL HAS NOT BEEN TESTED. The count will be 32 after today's open** —
-it is exercised once per market-open run and has never fired, because it has never met a plan
-whose date was not today. **Its alert path remains untested code.** ⚠ **AND THE REASON IT
-MATTERS, RESTATED BECAUSE TODAY'S PLAN IS AGAIN EMPTY: A FRESH EMPTY PLAN AND A STALE PLAN
-PRODUCE A BYTE-FOR-BYTE IDENTICAL ZERO-ORDER RUN. Freshness must be read OFF `plan_date` and
-NEVER inferred from the outcome.** This plan is **fresh and deliberately empty**.
+⚠ **This file arrived carrying `plan_date: 2026-10-02` — THREE CALENDAR DAYS OLD AND CORRECTLY
+SO, BECAUSE THE INTERVENING DAYS WERE A WEEKEND.** Friday's pre-market run wrote it and all
+four of Friday's routines committed. ⚠⚠ **NOTE THE SHAPE CAREFULLY: a Monday is the one morning
+when a correct plan is three days old, so "the date is not yesterday" is NOT evidence of a
+missed run. Compare `plan_date` to the last TRADING day, not to the calendar.**
+⚠ **THE STALENESS GATE STILL HAS NOT BEEN TESTED. The count will be 33 after today's open** —
+exercised once per market-open run, never fired, because it has never met a plan whose date was
+not today. **Its alert path remains untested code.** ⚠⚠ **AND THE REASON IT MATTERS, RESTATED
+BECAUSE TODAY'S PLAN IS AGAIN EMPTY: A FRESH EMPTY PLAN AND A STALE PLAN PRODUCE A BYTE-FOR-BYTE
+IDENTICAL ZERO-ORDER RUN. Freshness must be read OFF `plan_date` and NEVER inferred from the
+outcome.** This plan is **fresh and deliberately empty**.
 
 ---
 
 ## Tape context
 
-Yesterday's **official** VOO close, from `bars --adjustment all` on a **completed** session
-and **pulled fresh by this run rather than inherited**, is **702.255** (o 702.95, h 703.43,
-l 697.50). The two prior sessions on the same basis: **09-30 700.605**, **09-29 702.27**.
+⚠⚠ **THERE IS NO NEW SESSION TO REPORT. THE LAST COMPLETED SESSION IS STILL 2026-10-02, THE SAME
+ONE FRIDAY'S RUNS MEASURED.** A Monday pre-market run is the only seat that reads the same closing
+tape its predecessor read. **Nothing below is a new observation of the market; it is the same
+observation, re-pulled from source rather than inherited.**
 
-⚠ **THE "A COMPLETED BAR IS NOT IMMUTABLE IN `n`/`v`" ITEM GETS A SECOND INSTANCE, AND IT IS
-A CLEAN REPLICATION OF 10-01's.** The 2026-10-01 bar read **n 1633 / v 51892** to yesterday's
-close run and reads **n 1634 / v 51893** on this run's fresh pull — **while its close held at
-702.255 to the cent.** ⚠ **Late-reported prints keep arriving after the bell, so `n` and `v`
-drift on a bar that is genuinely complete. They are not merely a weak completeness signal —
-they are not STABLE, so no run may use "v is low" or "v changed" as evidence in either
-direction. The CLOSE is the stable field; the CLOCK is the reliable discriminator.**
-⚠ **Noted: this also means the n/v FLOOR test's own inputs drift. Today's bar clears the
-previously recorded floors (1,450 / 43,730) either way, and no mark is due, so nothing turns
-on it — but the floor test is a corroborant built on a moving ruler, which weakens it further.**
+The **official** VOO close, from `bars --adjustment all` on a **completed** session and **pulled
+fresh by this run**, is **707.35** (o 708.30, h 710.09, l 705.545). The two prior sessions on the
+same basis: **10-01 702.255**, **09-30 700.605**.
 
-⚠⚠ **EVERY VOO CLOSE OLDER THAN 2026-09-28 EXISTS ON TWO BASES AND THEY ARE NOT
-INTERCHANGEABLE.** VOO went ex-dividend 09-28; `--adjustment all` rescaled every prior close
-by **0.997432**, while `--adjustment raw` and `--adjustment split` return the original prints.
-⚠ **09-28 onward agree to the cent on both bases, because the ex-date lies at or before them —
-the divergence is entirely in the sessions BEFORE it.** ⚠ **The 09-03 core fill at 706.74 is a
-RAW print. NAME THE BASIS IN THE SENTENCE OR DO NOT WRITE THE SENTENCE.**
+⚠ **A COUNTER-INSTANCE TO THE "A COMPLETED BAR'S `n`/`v` DRIFT" ITEM, AND IT CUTS THE RIGHT WAY.**
+The 2026-10-02 bar read **n 2,524 / v 134,995** to Friday's close run and reads **n 2,524 /
+v 134,995** on this run's fresh pull — **identical, over a full weekend.** ⚠ **So `n`/`v` drift
+SOMETIMES and not ALWAYS. That does not weaken the standing rule, it completes it: a field that
+sometimes moves on a complete bar is unusable as evidence in EITHER direction, and "it did not
+move this time" is not a validation any more than "it moved" was a refutation.** ⚠ **The CLOSE is
+the stable field; the CLOCK is the reliable discriminator.**
 
-**On the 10-01 official close:** equity **$99,555.77**, core **$69,555.77 = 69.8661%**, cash
-**30.1339%**. ⚠ **RE-DERIVED FROM A FRESH `positions` PULL THIS RUN, NOT CARRIED: qty
-99.046311231 × 702.255 + $30,000 reproduces yesterday's close figure to the cent, so it is a
-CHECKED fact rather than an inherited one.**
-**On the 08:23 broker mark:** equity **$99,856.37**, core **$69,856.37 = 69.96%**, cash
-**30.04%**, `rebalance_delta` **+$43.09**. ⚠ **These two figures must never be differenced —
-the 09-30 close run supplied the worked instance, where differencing a broker mark against an
-official close understated a real −$164.91 day as −$51.50, a threefold error.**
+⚠⚠ **EVERY VOO CLOSE OLDER THAN 2026-09-28 EXISTS ON TWO BASES AND THEY ARE NOT INTERCHANGEABLE.**
+VOO went ex-dividend 09-28; `--adjustment all` rescaled every prior close by **0.997432**, while
+`raw` and `split` return the original prints. ⚠ **09-28 onward agree on both bases; the divergence
+is entirely in the sessions BEFORE it.** ⚠ **The 09-03 core fill at 706.74 is a RAW print. NAME THE
+BASIS IN THE SENTENCE OR DO NOT WRITE THE SENTENCE.**
 
-⚠⚠ **THE PRE-MARKET BASIS TRAP WAS WALKED UP TO AND DECLINED FOR A SECOND CONSECUTIVE
-MORNING, WHICH MAKES IT A REPLICATION RATHER THAN A ONE-OFF:** core `current_price` reads
-**705.29**, i.e. **+$3.035 above the 702.255 official close** — larger than 10-01's +$2.915 and
-roughly TRIPLE the largest of the ten catalogued post-bell gaps (range −$0.97 to +$1.145).
-⚠ **IT MUST NOT BE ADDED TO THAT SERIES.** Those ten are all **POST-BELL** observations; this
-is a **PRE-MARKET** indication. Appending it would manufacture a spurious "largest gap on
-record" that is an artifact of **mixing two different times of day**, not of any widening.
-⚠ **DIFFERENT HOUR, DIFFERENT SERIES. The post-bell series still has ten members and its
-largest is still +$1.145.** ⚠ **And note what is NOT claimed: two consecutive large pre-market
-gaps are not a "pre-market series" either — there are two observations and no basis for a range.**
+**On the 10-02 official close:** equity **$100,060.4082**, core **$70,060.4082 = 70.0181%**, cash
+**29.9819%**. ⚠ **RE-DERIVED FROM A FRESH `positions` PULL THIS RUN, NOT CARRIED: qty 99.046311231
+× 707.35 + $30,000.00 reproduces it to the cent, so it is a CHECKED fact rather than an inherited
+one.**
+**On the 08:28 broker mark:** equity **$100,038.62**, core **$70,038.618061 = 70.01%**, cash
+**29.99%**, `rebalance_delta` **−$11.58**.
+⚠⚠ **THESE TWO FIGURES MUST NEVER BE DIFFERENCED.** The 08:28 `current_price` of **707.13** sits
+**−$0.22** against the official 707.35 — this is a **PRE-MARKET** reading and belongs to a
+**DIFFERENT SERIES** from the post-bell broker/official gaps. ⚠ **The gap is a moving live midpoint,
+not an offset — settled 10-02 by a same-day pair that swung $0.4954/share and changed sign in thirty
+minutes. Do not append this number to that series.**
+⚠ **NEVER `equity − last_equity` as a day's P&L. NEVER `unrealized_intraday_pl` or `change_today`**
+— the 08:28 pull reports `unrealized_intraday_pl: −40.61` and `change_today: −0.00058`, which are
+pre-market noise against a `lastday_price` of 707.54 that is itself not the official close.
+⚠ **An equity figure is meaningless without its CALL and its TIMESTAMP.**
 
-⚠ **`lastday_price` reads 702.35 against the official 702.255 close — a +$0.095 gap. That is
-the SETTLED finding, not a new one:** `last_equity`-style artifacts are `lastday_price` not
-being the official close, propagated through one multiplication. ⚠ **STOP PREDICTING WHY IT
-DIFFERS; DO NOT RE-OPEN IT.** The field stays unusable as a day's P&L for a now-NAMED reason.
-
-⚠ **THE INTRADAY-DRIFT ITEM GETS A TENTH INSTANCE:** `selftest` reported **$99,865.29** at
-08:23 and `sleeves` returned **$99,856.37** seconds later — an **$8.92** spread. ⚠ **Well
-inside the established $1.97–$216.91 range and therefore NOT evidence of anything narrowing.**
-⚠ **An equity figure is only meaningful with its CALL and its TIMESTAMP attached.**
-⚠ **This bites §6's 5% sizing cap, which is computed against live equity — 5% of the 08:23
-mark is $4,992.82 (against $4,977.79 on the official close). IT HAS NO OPERAND TODAY, because
-this plan carries no BUY intent — and it has never had one in this account's history.**
+**§6's 5% cap against the 08:28 live equity is $5,001.93.** ⚠ **It has no operand today — this plan
+carries no BUY intent, as no plan ever has.** The open run must recompute it against equity at 09:35,
+not against this figure.
 
 ---
 
-## Sleeves and the rebalance question
+## Reconciliation
 
-| Sleeve | Value (08:23 broker) | % | Target | In band? |
-|---|---:|---:|---:|---|
-| Core (VOO) | $69,856.37 | **69.96%** | 70% | **yes** (65–75) |
-| Satellite | $0.00 | **0.00%** | 30% | n/a — empty |
-| Cash | $30,000.00 | **30.04%** | — | §2 permits idle satellite cash |
+**THE LEDGER AGREES WITH THE BROKER. ZERO SATELLITE POSITIONS ON BOTH SIDES.**
 
-**NO REBALANCE IS DUE, ON EITHER BASIS.** Core sits **4.96 points** inside the 65% edge on
-the broker mark (**4.87** on the official close). ⚠ **Do NOT act on `rebalance_delta: +$43.09`:
-§2 rebalances at the BAND EDGE, not toward the 70% target. It is a DISTANCE READOUT, NOT AN
-INSTRUCTION.** ⚠ **`rebalance_delta` is now POSITIVE for an ELEVENTH consecutive run. That is
-NOT the sign-instability defect resolving — the same quantity disagreed in sign on 09-24.**
-**Fifty-seventh consecutive run inside 69.59–70.22%.**
+`alpaca.py positions` returns **one row, core VOO** — 99.046311231 shares, avg_entry **706.74** (a
+**RAW** print), cost_basis **$69,999.99**, unchanged since the 09-03 fill — against **zero satellite
+blocks in `positions.md`. THEY AGREE.** ⚠ **Core VOO was removed from the working list BEFORE any §5
+rule was read**, per §5's core exemption. ⚠ **Every reconciliation here is satellite-to-satellite; a
+run that compares the raw ledger to the raw broker will read a correct ledger as broken.**
 
-**⚠⚠ CHECK `cash`. IT READ EXACTLY $30,000.00 AGAIN AT 08:23 — A FOURTEENTH READING, NOW ON
-THE FIFTH CALENDAR DAY SINCE VOO's 09-28 EX-DATE. DAY 5 OF 8.** ⚠ **Fourteen readings across
-five days are ONE unresolved observation of an unpaid dividend, not fourteen data points.**
-⚠ **NON-ARRIVAL THIS EARLY IS STILL EXPECTED, NOT EVIDENCE — settlement runs on the PAY date,
-not the ex-date, and no reading's HOUR makes it stronger, because settlement does not run on
-the bell.** **The falsifiable test, written in advance and still running: `cash` should rise to
-~$30,180.45. IF IT HAS NOT BY 2026-10-07, the paper account does not model dividends at all —
-in which case the book structurally under-earns its own benchmark by VOO's entire ~1.0% annual
-yield and §1's "beat the S&P TOTAL RETURN" is unwinnable BY CONSTRUCTION rather than by
-strategy.** ⚠ **That is a finding for the human, not something any run may fix.** The implied
-~$180.45 credit is an **INFERENCE** — Alpaca does not publish the figure — and must stay
-labelled as one.
+**No discrepancy was found, so no discrepancy is flagged.** ⚠ **Twenty-fourth session with nothing
+to reconcile — and an agreeing ledger and an empty ledger are the same artifact here. That is not a
+clean bill of health on the reconciliation logic; it is the absence of a test.**
 
 ---
 
-## Position review — §5
+## ⚠⚠ THE DIVIDEND TEST — DAY 6 OF 8, TWO SESSIONS LEFT, AND THE READING IS UNCHANGED
 
-**Zero satellite positions. Reconciliation is CLEAN.** `alpaca.py positions` returns **one
-row, core VOO**, 99.046311231 shares at avg_entry **706.74** (a **RAW** print), cost_basis
-$69,999.99 — unchanged since the 09-03 fill — against **zero satellite blocks in
-`positions.md`. THEY AGREE.** ⚠ **Compared satellite-to-satellite, never raw ledger against
-raw broker. Core VOO was removed from the working list BEFORE any §5 rule was read**, per §5's
-core exemption.
+**`cash` reads exactly $30,000.00 at 08:28 — a NINETEENTH consecutive reading.** ⚠ **Nineteen
+readings are ONE unresolved observation, not nineteen pieces of evidence**, and non-arrival remains
+**EXPECTED** rather than informative — settlement runs on the PAY date.
 
-| Rule | Status | Why it is not "passing" |
-|---|---|---|
-| **§5.1** thesis invalidation | **NO OPERAND** | No thesis is held, so there is no invalidation condition to read verbatim. **Zero news-on-holdings Perplexity queries were due; zero were run.** |
-| **§5.2** time stop | **NO OPERAND** | No `timing_window` and no deadline field exists anywhere in `positions.md`. |
-| **§5.3** hard stop −7% | **DISTANCE UNDEFINED** | There is no `entry_price` to measure a drawdown from. ⚠ **Not "comfortably far" — undefined.** |
-| **§5.4** trailing stop −10% | **NOT ARMED** | There is no `highest_close` field — the **third state**, carrying **no `(as of …)` date at all.** It arms on the first **satellite** fill; the 09-03 core fill was not one. |
+⚠⚠ **THE FALSIFIABLE TEST, WRITTEN IN ADVANCE AND REPEATED VERBATIM: `cash` should rise to about
+$30,180.76. IF IT HAS NOT BY 2026-10-07, THE PAPER ACCOUNT DOES NOT MODEL DIVIDENDS AT ALL.** The
+implied credit (**$1.825/share × 99.046311231**) is an **INFERENCE** — Alpaca does not publish it.
+**Two sessions remain: today and 10-06, with 10-07 the deadline. The close run and tomorrow's
+pre-market run are the two seats that will read `cash` before it expires.**
 
-⚠⚠ **ABSENT IS NOT PASSING, AND §5 HAS NEVER HAD AN OPERAND IN THIS ACCOUNT'S HISTORY** — 22
-completed sessions since 2026-09-01, 19 after the 09-03 core fill, zero satellite positions
-ever. ⚠ **The counter is NOT advanced by this run: at 08:23 the market has not opened, so
-today is not a completed session and a pre-market seat has none of today's to add (catch 11).**
-⚠ **The refusal was AVAILABLE and TAKEN here, which is the strong form — a pre-market seat is
-one of the two the catch names as exposed.**
+⚠ **The price of the answer, already established and not re-derived: VOO's trailing 12 months is
++16.3118% on `--adjustment all` against +14.9863% on `raw`, so dividends are 1.3254pp/yr. If the
+account never collects them, the 70% core structurally under-earns by ~0.93pp/yr, which on top of
+the 4.89pp cash drag is a ~5.82pp ANNUAL HANDICAP BEFORE ANY DECISION.** ⚠ **That is a finding for
+the human, not something any seat can fix.**
 
 ---
 
 ## Intents
 
-### BUY — none
+### BUY
 
-**NOTHING IS TO BE BOUGHT TODAY.** ⚠ **THIS IS A RESULT, NOT AN EMPTY SEARCH, AND THE
-DISTINCTION IS LOAD-BEARING: every gate was OPEN.** Breaker **INACTIVE**; week **0 of 3**
-under §6's cap; satellite sleeve **entirely empty** with **30.04% idle cash**; **$4,992.82** of
-headroom under the 5% cap; `control.md` notes **(none)**; `TRADING_ENABLED: true`.
-**Nothing blocked a purchase. The research produced nothing that satisfied §4.**
+**NONE.** ⚠ **Seven theses were written this run and all seven were rejected. There is no BUY intent
+because no candidate survived §4, not because the run was blocked from making one.**
 
-**Five candidates were screened and all five were rejected** — see `research_log.md`
-T-2026-10-02-01 through -05. **Where they died:**
+⚠⚠ **EVERY GATE WAS OPEN AND THAT IS THE POINT.** Circuit breaker **INACTIVE** · weekly cap **0 of
+3** · satellite sleeve **0.0%, entirely undeployed** · ~**30% idle cash** · `control.md` notes
+**(none)** · `TRADING_ENABLED: true`. **Nothing stopped a buy today except the evidence.**
 
-| ID | Candidate | Durable kill |
-|---|---|---|
-| T-2026-10-02-01 | RTX / SM-6 $24.4B Navy award | **Part 1 — no counterparty named anywhere** (rule (v)); RTX itself first-order |
-| T-2026-10-02-02 | ORCL / Tencent ~$7B AI-chip lease | **Structure** — ORCL is first-order; **and the deal leases ALREADY-INSTALLED hardware, so no second tier is touched**; figure unconfirmed |
-| T-2026-10-02-03 | Venture Global / ConocoPhillips LNG SPA | **Part 3 — first delivery 2030**, ~16 quarters out; part 2 (no value disclosed) and structure kill it independently |
-| T-2026-10-02-04 | DKS / Nike's competitors | **Part 1 — "and also" construction**, no named beneficiary; part 2 immaterial; **sign wrong for a long** |
-| T-2026-10-02-05 | MU fiscal Q4 / Q1 guide | **Already disposed 10-01; deliberately NOT re-screened.** Two fresh directions killed on sign and on part 1 |
+**What the funnel actually returned, so the human can see the shape rather than the count:**
 
-⚠⚠ **ZERO `move` CALLS WERE MADE THIS RUN. THAT IS AN *ABSENT* CHECK, NOT A SKIPPED ONE** —
-every candidate died on structure, part 1, part 2 or part 3 **before an eligible ticker was
-reached.** ⚠ **"The filter did not fire" and "the filter had nothing to fire on" look identical
-in a run summary and are not the same thing.** **Second instance; 09-29 was the first.**
+| Thesis | Company A | Why it died | Test that fired FIRST |
+|---|---|---|---|
+| T-2026-10-05-01 | onsemi/Synaptics revised $5.7B all-cash | No Company B; "Party A" is a redaction; MS's $2.45B is financing; SYNA ~$5.7B < $10B | **part 1** |
+| T-2026-10-05-02 | Bayer $2.2B Ohio plant | Drug substance **2031**, finished product **2034** — ~20 to ~32 quarters vs a ceiling of 2 | **part 3** |
+| T-2026-10-05-03 | FDA / Edwards AUTUS valve | No named supplier — **volunteered absence**; EW vertically integrated (rule vii) | **part 1** |
+| T-2026-10-05-04 | FDA / BMS Camzyos paediatric | No named supplier — **volunteered absence**; label expansion creates no new line | **part 1** |
+| T-2026-10-05-05 | TSMC capex $60–64B | **Earnings PREVIEW, not an event** (rule iii); unnamed supply base; AMAT/LRCX/KLA already killed 10-01 | **rule (iii)** |
+| T-2026-10-05-06 | September payrolls +29k | **No Company A** — one party, no recipient; and it is September's print, already logged 10-02 | **part 1 / macro** |
+| T-2026-10-05-07 | G7 diesel reserve release | Source says **"not sufficiently verified"**; one party; **sign wrong for a long** | **premise** |
 
-⚠⚠ **THE DEFENCE-AWARD FINDING NOW HAS FOUR INSTANCES ACROSS THREE PRIMES AND THREE PROGRAMS**
-(09-29 AMRAAM $20.7B RTX · 09-30 F/A-XX >$20B Boeing · 10-02 SM-6 $24.4B RTX). **ONE funnel
-query was spent and NO re-query was issued**, per the standing instruction. The source
-volunteered the epistemic rule itself: *"Any attribution of SM-6 revenue to other defense
-companies would be an inference rather than a disclosed allocation."* ⚠ **A US defence program
-award cannot produce a §4 candidate. The cause is disclosure practice, not an under-searched
-funnel.**
+⚠⚠ **THE SECOND BROAD SCAN RETURNED ZERO NEW NAMES. Every row it produced was already disposed
+(Venture Global/ConocoPhillips 10-02, RTX SM-6 10-02, MTUS 10-01) or §3-ineligible on sight (Big Sky
+Industrial and Tiberius Aerospace — counterparty UNNAMED; Bharat Forge and Jindal Stainless —
+India-listed). NOT ONE WAS RE-SCREENED.** ⚠ **The carry-forward named all three disposed items and
+said do not rehabilitate at a different price. That instruction was followed, not re-derived.**
 
-### SELL — none
+⚠⚠ **THE ONE ENTRY THE HUMAN SHOULD READ IS T-2026-10-05-01, FOR A NEW COSTUME OF RULE (v): AN
+UNNAMED *BIDDER* WEARING A LEGAL PSEUDONYM.** Synaptics' filings call the competing bidder only
+**"Party A"** — one specific entity that definitely exists, acted on a dated day (2026-09-02), and is
+known to the filer and redacted on purpose. **It is a more fillable-looking blank than rule (v)'s
+unnamed supply base, because the blank has a shape, a date and a motive — everything except a name.**
+⚠ **The priors were instantly ready (Microchip, Skyworks, Qorvo, Renesas, Infineon) and NO GUESS WAS
+MADE.** ⚠ **A REDACTION IS NOT A LEAD.**
 
-**No satellite positions exist.** §5.1 and §5.2 were evaluated and have **NO OPERAND**; §5.3's
-distance is **UNDEFINED** and §5.4 is **NOT ARMED**. ⚠ **Core VOO is exempt from all four (§5)
-and is never a SELL candidate — §7 forbids selling core to fund satellite trades, and a
-`highest_close` on core would fabricate a §5.4 trailing stop on the one position the strategy
-exempts.** **Sixty-fifth consecutive refusal to stamp a mark on core.**
+⚠ **NO `move` CALLS WERE MADE. That is the ABSENT state — the fourth — not a skipped check and not a
+pass**, because every candidate died before an eligible ticker with a mechanism was reached. ⚠ **A
+decorative `move` call would have converted an honest absence into a fake exercise and was declined
+for that reason.** **Third instance after 09-29 and 10-02.**
 
-### REBALANCE — none
+### SELL
 
-Core **69.96%** on the 08:23 broker mark, **69.8661%** on the 10-01 official close. **Both are
-inside §2's 65–75% band**, with 4.96 points of room to the lower edge. **No REBALANCE intent.**
+**NONE — AND THE DISTINCTION MATTERS: §5 HAD NO OPERAND, IT DID NOT PASS.**
+
+**Zero open satellite positions**, so §5.1 (thesis invalidation), §5.2 (time stop), §5.3 (hard stop
+−7%) and §5.4 (trailing stop −10%) **each had nothing to evaluate.** ⚠ **No Perplexity news check was
+run on any holding, because there is no holding to check — that is an absent step, not a completed
+one.** ⚠ **"Nothing close to triggering" would be FALSE. The distance to each rule is not large; it is
+UNDEFINED, and those are different facts.** **§5.1–§5.4 have never had an operand: 24 sessions since
+2026-09-01, 21 of them post-fill, zero satellite positions ever.**
+
+### REBALANCE
+
+**NONE — core is inside the §2 band and not near an edge.**
+
+Core **70.01%** against a 65–75% band: **5.01 points inside the 65 edge and 4.99 inside the 75 edge.**
+`core_in_band: true`, `rebalance_needed: false`. ⚠ **`rebalance_delta: −$11.58` IS A DISTANCE READOUT,
+NOT AN INSTRUCTION** — negative only because core sits fractionally above the 70% target. **§2 acts at
+the band edge, not at the target.** **Sixtieth consecutive run inside 69.59–70.22%.**
 
 ---
 
-## For the market-open run
+## Revalidation instructions for the 09:35 run
 
-1. **Re-read `plan_date` above and confirm it is 2026-10-02 before acting on anything.** This
-   plan is fresh and **deliberately empty of BUY intents**. ⚠ **A fresh empty plan and a stale
-   plan produce an identical zero-order run — read freshness OFF the field, never off the
-   outcome.** If the gate fires, that is new information and its alert path has never run.
-2. **There is nothing to execute.** No BUY, no SELL, no REBALANCE. The correct outcome at 09:35
-   is **zero orders**, and it follows from the PLAN, not from a guardrail. ⚠ **DO NOT GENERATE
-   AN INTENT AT THE OPEN. That seat has no funnel and may only execute what was written before
-   the bell; a position opened at 09:35 without a plan entry routes AROUND the discipline
-   rather than satisfying it.**
-3. **`revalidate` lines: NONE, because there is no BUY intent to revalidate.** ⚠ **Recorded
-   explicitly so the absence is not mistaken for an omission.**
-4. **Check `cash` and report it.** Expect **exactly $30,000.00** — **day 5 of 8** on the
-   dividend test. ⚠ **A reading of $30,000.00 resolves nothing in either direction; only the
-   2026-10-07 deadline does.** If it reads ~$30,180, **say so loudly** — the test has resolved
-   in the account's favour and §1 is winnable after all.
-5. **Confirm the sleeve band before touching anything.** Core should still be ~69.8–70.0%. ⚠ **If
-   it has moved outside 65–75% on the open, §2 acts at the BAND EDGE — and `rebalance_delta` is
-   a distance readout, not an instruction.**
-6. ⚠ **A BAR DATED TODAY IS PARTIAL WHILE THE MARKET IS OPEN AND ITS `c` FIELD IS THE LAST
-   TRADE WEARING A CLOSE'S CLOTHES.** 10-01's midday run proved the mechanism: `c` 700.35 equalled
-   `latestTrade.p` 700.35 to the cent. **No `bars` close may be stamped as a mark before the
-   bell on any basis**, and `n`/`v` cannot tell you otherwise — they are not even stable on a
-   bar that is genuinely complete (see Tape context, second instance today).
-7. ⚠ **GNRC IS NOT YOURS TO LOOK AT.** It is the **named counterparty** in the Amazon
-   announcement — **first-order, outside §4 at any price.** ⚠ **And note the honest grading: in
-   the 09:35 seat this refusal is STRUCTURALLY UNAVAILABLE to violate, because that seat has no
-   funnel at all. A refusal that could not have been violated is not evidence of restraint.**
-8. **Today's scheduled macro is the September payrolls release** (consensus ~85–94k vs 162k in
-   August, unemployment ~4.1%), landing around the open. ⚠ **NO INTENT DEPENDS ON IT, and it is
-   NOT a reason to trade.** It is noted only so the open run is not surprised by an unusually
-   wide spread or a gappy first print. ⚠ **A macro release is not a §4 catalyst — there is no
-   Company A and no segment revenue line to size.**
+**There is nothing to revalidate.** ⚠ **This section normally names the specific number the open run
+must re-check for each BUY intent; with no BUY intent, there is no number.** ⚠ **Do not read its
+emptiness as "all checks passed" — there were no checks to carry forward.**
+
+**What the open run should still do, none of which depends on this plan:**
+1. **Read `plan_date` above and confirm it is 2026-10-05** before anything else. ⚠ **If it is not,
+   the gate fires for the first time in 33 exercises — read routine 2's Step 2 then, do not recall it.**
+2. **Re-read `cash` from a fresh `account` or `sleeves` call.** ⚠ **It should read $30,000.00 for a
+   twentieth time. If it reads ~$30,180.76, THE DIVIDEND HAS ARRIVED and that resolves an eight-day
+   open question — record it loudly and name the exact figure.**
+3. **Confirm core is still in band** against live 09:35 equity. **No rebalance is due on this morning's
+   reading and none should be manufactured from a moving mark.**
+4. ⚠ **Open nothing.** **Routine 2 executes only what this file already contains.** ⚠⚠ **Opening at
+   09:35 without a plan entry routes AROUND the discipline that is the whole point of this handoff.
+   Idle cash, an INACTIVE breaker and an unused 0-of-3 weekly cap are NOT an opportunity routine 2 may
+   act on.**

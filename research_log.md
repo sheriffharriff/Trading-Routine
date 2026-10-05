@@ -52,6 +52,273 @@ single most common way a plausible-sounding connection gets mistaken for an oppo
 
 ## Entries
 
+### 2026-10-05 (08:28 ET) — event survey (funnel, pre-thesis)
+
+Selftest passed all five checks (`trading_enabled: true`, LIVE paper, broker equity **$100,038.62**
+at pre-flight 08:28). Window screened: **Friday's close through Monday pre-market (Oct 2 – Oct 5)** —
+a weekend, i.e. **no completed session since the last run**. **Three Perplexity scans, all exit 0**
+(two broad, one second-order funnel). **Seven candidates reached a thesis entry; ALL SEVEN WERE
+REJECTED.**
+
+⚠⚠ **A WEEKEND WINDOW IS A WINDOW OF RE-REPORTING, NOT OF EVENTS — AND `--recency day` CANNOT TELL
+THE DIFFERENCE. THIS RUN HAS THE WORKED INSTANCE.** The 5a scan, asked for "the last 24 hours
+(weekend of October 3-5)", returned the **onsemi/Synaptics revised merger** as a headline item. The
+targeted follow-up established it was announced **October 1** and merely re-reported Oct 2–5 — the
+source said so in its first sentence, unprompted. ⚠ **Rule (iii) caught it, but ONLY because the
+second query asked for the announcement DATE. The broad query's own framing presented a four-day-old
+8-K as fresh.** ⚠ **STANDING CONSEQUENCE: on a Monday, ask for the announcement date explicitly. A
+recency filter bounds when something was WRITTEN, never when it HAPPENED.**
+
+⚠⚠ **THE SECOND BROAD SCAN RETURNED ZERO NEW NAMES — EVERY ROW WAS ALREADY DISPOSED OR §3-INELIGIBLE
+ON SIGHT, AND THAT IS A RESULT.** Asked directly for named two-party supply agreements with a
+disclosed value in the window, the funnel returned: **Venture Global/ConocoPhillips** (disposed 10-02,
+part 3, first delivery 2030) · **RTX SM-6 $24.4B** (disposed 10-02) · **MTUS $995M** (disposed 10-01,
+rule (v) ceiling sub-shape) · **Big Sky Industrial** (counterparty UNNAMED; not §3-eligible) ·
+**Tiberius Aerospace** (counterparty not identified) · **Bharat Forge/Pratt & Whitney Canada** and
+**Jindal Stainless/Indian Oil** (India-listed, §3). ⚠ **NOT ONE WAS RE-SCREENED. The carry-forward
+named all three disposed items and said do not rehabilitate; that instruction was followed rather
+than re-derived.** ⚠ **Its own closing sentence: "no agreement found in the gathered material
+satisfies all four conditions… without qualification."**
+
+⚠⚠ **THREE VOLUNTEERED ABSENCES IN ONE RUN, AND THE COUNT IS NOW FIVE CONSECUTIVE SESSIONS.** The
+onsemi query, asked whether any third public company was named, answered **"no identified third
+public-company revenue beneficiary or loser."** The regulatory query, asked the same of two FDA
+approvals, answered **"No"** for **both** EW and BMY in its own table. ⚠ **This is a CONTINUATION of
+the standing carry-forward item (09-29, 09-30, 10-01, 10-02), reported with its count and NOT promoted
+to a new finding.**
+
+⚠⚠ **ZERO `move` CALLS WERE MADE IN THIS RUN. THAT IS THE *ABSENT* STATE — THE FOURTH — NOT A SKIPPED
+CHECK AND NOT A PASS.** Every candidate died on §4 structure, part 1, part 2, part 3 or §3 **before an
+eligible ticker with a mechanism was reached**, so the priced-in filter had nothing to fire on. ⚠ **A
+decorative `move` call on a name that has no mechanism would have converted an honest absence into a
+fake exercise, and was declined for that reason.** **Third instance (09-29, 10-02 were the first two).**
+
+---
+
+### T-2026-10-05-01 — ON Semiconductor / Synaptics — "Party A" / Morgan Stanley — REJECTED
+**Company A / the news:** **onsemi revised its acquisition of Synaptics from all-stock (~$7B, agreed
+June 25) to all-cash at $123/share, ~$5.7B**, announced **2026-10-01** (onsemi newsroom; Reuters/
+Investopedia Oct 2–5 re-reporting). The revision **followed an unsolicited, non-binding competing
+proposal submitted 2026-09-02 by a third party Synaptics' regulatory materials call only "Party A."**
+Financing includes a **$2.45B committed term loan from Morgan Stanley**. Previously announced **$200M
+annual run-rate synergies** reaffirmed; the ~59M share issuance and 12–13% dilution eliminated.
+**Company B / the candidate:** **NONE FOUND.** Three were reached and all three failed.
+
+**1. Mechanism (one sentence):** ⚠ **CANNOT BE WRITTEN FOR ANY CANDIDATE.** A change in the
+*consideration* of a merger between two parties alters no third party's revenue or cost line. The
+only sentences available are share-shift stories the reader supplies.
+
+**2. Dollar path:** ⚠ **FAILS FOR THE ONE ELIGIBLE NAME.** Morgan Stanley is US-listed and far above
+the §3 floor, which makes it the *reachable* trap. But the **arrangement and underwriting fee on a
+$2.45B committed term loan is NOT DISCLOSED ANYWHERE IN THE ANNOUNCEMENT**, and on any plausible
+estimate it is single-digit-to-low-tens of millions against MS revenue in the tens of billions —
+**far under §4's 10% floor. Part 2 fails twice over: the figure is undisclosed AND immaterial.**
+⚠ **This is standing rule (viii) exactly: a FINANCING COMMITMENT is not segment revenue at Company B.**
+**3. Timing window:** n/a — no mechanism survived to be dated.
+**4. Invalidation:** n/a — nothing to invalidate.
+
+**Hard filters:**
+- Priced-in (§4): **NOT REACHED — the ABSENT state.** No `move` call made; no candidate had a
+  mechanism to price. *(Noted from the tape, not from a call: SYNA was reported **+14.1%** and ON
+  **+6.5–8%** on the revision. Had SYNA reached the filter it would have FAILED it — shape two, the
+  filter working — but it never got there.)*
+- Correlation (§4): **pass, vacuously** — zero open satellite positions, so no `driver` field exists
+  to collide with. ⚠ **A vacuous pass, recorded as such.**
+- Universe (§3): **SYNA FAILS.** Its market cap is **~$5.7B — which IS the disclosed all-cash equity
+  value of the deal by construction** (source: onsemi/Synaptics announcement, $123 × shares out).
+  **Below the $10B floor.** ON and BMY-style acquirers aside, **ON is the ACQUIRER and first-order.**
+
+**Outcome:** **REJECTED — four independent kills, and part 1 is the primary.**
+**(a) PART 1: there is no Company B.** ON is first-order (the acquirer); SYNA is first-order (the
+target). **Buying a target at a fixed cash price is merger arbitrage — a spread trade on deal
+completion, with no §4 mechanism and no economics that change.** §4 is a second-order catalyst rule;
+it does not contain a deal-arb clause and this run did not invent one.
+**(b) RULE (iii): the news is not new** — 8-K'd October 1, re-reported over the weekend. **The 5a
+query framed it as a weekend event and was wrong.**
+**(c) RULE (viii): Morgan Stanley's $2.45B is a financing commitment**, not segment revenue.
+**(d) §3: SYNA is below the market-cap floor.**
+
+⚠⚠ **AND THE REASON THIS ENTRY IS THE MOST USEFUL ONE IN TODAY'S LOG — A NEW COSTUME FOR RULE (v),
+AND IT IS THE MOST FILLABLE-LOOKING BLANK THIS FUNNEL HAS EVER PRODUCED: AN UNNAMED *BIDDER* WEARING
+A LEGAL PSEUDONYM.** Rule (v)'s known form is an unnamed SUPPLY BASE made to look nameable by an exact
+figure and a component category ($1.7B of "memory components"). **"Party A" is strictly worse**, because
+unlike a diffuse supply base it is **ONE specific entity that definitely exists, definitely acted on a
+dated day (2026-09-02), and is definitely known to the filer and redacted on purpose.** The blank has
+a shape, a date and a motive — everything except a name.
+⚠⚠ **THE PRIORS WERE INSTANTLY READY AND SPECIFIC, AS ALWAYS: another analog/mixed-signal consolidator
+— Microchip, Skyworks, Qorvo, Renesas, Infineon.** ⚠⚠ **NO GUESS WAS MADE AND NONE IS RECORDED HERE AS
+A CANDIDATE. Naming Party A would not be research; it would be supplying the causal link and then
+finding a source adjacent to it — verbatim the root cause the eight standing rules share.**
+⚠ **A REDACTION IS NOT A LEAD. If a future run meets "Party A," "Company X" or "a strategic party,"
+the §4 answer is already written here: there is no Company B until the filing names one.**
+
+---
+
+### T-2026-10-05-02 — Bayer / New Albany, Ohio $2.2B plant (no Company B reached) — REJECTED
+**Company A / the news:** **Bayer announced a planned $2.2B US pharmaceutical manufacturing site in
+New Albany, Ohio**, ~600 jobs, with **drug-substance production planned for 2031 and finished-product
+production for 2034** (2026-10-03/05 reporting).
+**Company B / the candidate:** **NOT REACHED — part 3 ended it in one step.**
+
+**1. Mechanism (one sentence):** not written. ⚠ **Deliberately not written** — see outcome.
+**2. Dollar path:** not reached.
+**3. Timing window:** ⚠⚠ **FAILS, AND BY THE WIDEST MARGIN ON RECORD. Drug substance 2031 is ~20
+quarters out; finished product 2034 is ~32 quarters. §4's ceiling is TWO.** → no deadline assignable.
+**4. Invalidation:** not reached.
+
+**Hard filters:** none run. ⚠ **Correct order: part 3 is free and it fired first.**
+
+**Outcome:** **REJECTED on part 3 in a single step, before any funnel query was spent.** This is
+standing rule (vi) working exactly as the Venture Global calibration point says it should: *"Part 3
+kills it in ONE step, before any funnel query is spent."* ⚠ **It now holds the record previously held
+by Venture Global's 2030 first delivery (~16 quarters) — 2034 is roughly double that.**
+**Two further independent kills, recorded but not needed:** ⚠ **(a) THERE IS NO COUNTERPARTY AT ALL** —
+known form six; a self-funded greenfield plant names no supplier, no EPC contractor and no equipment
+vendor in the announcement. **(b) Bayer is a German issuer**; the US listing is an ADR, and §4's
+Company A does not need to be eligible, but there is no Company B to be eligible either.
+⚠ **The priors were ready here too — pharma-equipment and engineering names — and none was written.**
+⚠ **Long-dated industrial capex remains a STANDING FEATURE of this funnel, not a visitor. Fifth
+session running.**
+
+---
+
+### T-2026-10-05-03 — Edwards Lifesciences (EW) — no Company B, volunteered absence — REJECTED
+**Company A / the news:** **FDA approved Edwards Lifesciences' AUTUS Size-Adjustable Valve**
+(2026-10-01), a surgical pulmonary valve for paediatric congenital-heart patients requiring
+pulmonary-valve replacement.
+**Company B / the candidate:** **NONE — the source VOLUNTEERED the absence.** Asked directly whether
+the announcement disclosed a named publicly traded US supplier or manufacturing partner, the answer
+was **"No. The announcement identifies Edwards as the product company but does not disclose a named
+publicly traded U.S. supplier or manufacturing partner."**
+
+**1. Mechanism (one sentence):** ⚠ **CANNOT BE WRITTEN.** No second party exists in the disclosure.
+**2. Dollar path:** not reached. *(Recorded for completeness, not relied on: a paediatric congenital
+pulmonary-valve line is a small sub-segment of EW's surgical structural-heart business and would
+almost certainly fail §4's 10%-of-revenue floor even at EW itself — but **EW is FIRST-ORDER** and
+outside §4 at any price, so part 2 was never the operative test.)*
+**3. Timing window:** not reached. **4. Invalidation:** not reached.
+
+**Hard filters:** none run — no candidate reached them.
+
+**Outcome:** **REJECTED on part 1 — no Company B exists in the announcement.** ⚠⚠ **THIS IS THE
+COUNTER-CASE SHAPE TESTED HONESTLY AND IT CAME BACK NEGATIVE.** The carry-forward is explicit that an
+FDA approval *enabling* a named company's product is the one macro-adjacent shape that **can** form a
+real two-party chain, and warns against over-applying the "a government action is not a Company A"
+rule against approvals. ⚠ **So this one was pursued, not dismissed — and the chain has only one link.**
+⚠ **Standing rule (vii) is the mechanism: Edwards manufactures its own valves. Vertical integration
+leaves no external supplier to find** — the same structure that killed the log's best-ever rule (iii)
+pass (IOVA). ⚠ **The prior was ready (a polymer, tissue or catheter-component supplier) and was not
+written.**
+
+---
+
+### T-2026-10-05-04 — Bristol Myers Squibb (BMY) — no Company B, volunteered absence — REJECTED
+**Company A / the news:** **FDA approved an expanded indication for BMS's Camzyos (mavacamten)**
+(2026-10-01), extending it to paediatric patients — reported as adolescents weighing at least 30 kg —
+with symptomatic obstructive hypertrophic cardiomyopathy.
+**Company B / the candidate:** **NONE — the source VOLUNTEERED the absence**, in the same table and
+the same word as EW above: **"No."**
+
+**1. Mechanism (one sentence):** ⚠ **CANNOT BE WRITTEN.** No second party in the disclosure.
+**2. Dollar path:** ⚠ **WOULD FAIL EVEN IF A CANDIDATE EXISTED, AND THE REASON IS WORTH WRITING: THIS
+IS A LABEL EXPANSION ON A DRUG ALREADY APPROVED AND ALREADY SELLING IN ADULTS.** The incremental
+population is adolescents ≥30 kg with obstructive HCM — a **small fraction of an already-narrow
+indication**, against BMY revenue in the tens of billions. **Nowhere near §4's 10% floor, at BMY and
+a fortiori at any supplier.**
+**3. Timing window:** not reached. **4. Invalidation:** not reached.
+
+**Hard filters:** none run.
+
+**Outcome:** **REJECTED on part 1 — no Company B.** **BMY is FIRST-ORDER** and outside §4 at any price.
+⚠⚠ **AND A SUB-SHAPE WORTH NAMING, BECAUSE IT IS THE SECOND APPROVAL IN TWO ENTRIES AND IT POINTS THE
+OPPOSITE WAY FROM THE EW ONE: AN *EXPANDED INDICATION* IS THE WEAKEST FORM OF APPROVAL NEWS THIS FUNNEL
+CAN MEET.** A first approval at least creates a product that did not previously exist and therefore a
+supply chain that must be stood up. **A paediatric label extension creates no new manufacturing, no new
+supplier and no new line — the drug is already being made.** ⚠ **The two FDA items in this run bracket
+the range: EW's is a NEW product with a vertically integrated maker (rule vii), BMY's is an OLD product
+with a wider label. Neither yields a Company B, for two different reasons.**
+
+---
+
+### T-2026-10-05-05 — TSMC capex $60–64B (no Company B reached) — REJECTED
+**Company A / the news:** A semiconductor-industry report (TrendForce, 2026-10-05) discussed **TSMC's
+2026 capex guidance raised to $60–64B**, expected revenue $44.6–45.8B and gross margin 65–67%, ahead
+of TSMC's **October 15** earnings call; it also mentioned tight 3nm capacity and "Terafab" partnership
+*talks*.
+**Company B / the candidate:** **NOT REACHED.**
+
+**1. Mechanism (one sentence):** not written. **2–4:** not reached.
+
+**Hard filters:** none run.
+
+**Outcome:** **REJECTED on rule (iii) before anything else, and the source disqualified it itself:**
+⚠ **"Because this was an earnings PREVIEW, not a newly announced October 3-5 decision, it should not
+be treated as a fresh corporate event in the period."** The capex guidance is TSMC's own already-issued
+figure; the Terafab item is **talks, not a binding agreement**.
+**Two further kills, both pre-existing:** ⚠ **(a) RULE (v): TSMC does not disclose per-supplier
+allocation, so the supply base is UNNAMED** — and ⚠⚠ **(b) THE PRIOR HERE IS THE EXACT ONE THE
+CARRY-FORWARD NAMES BY NAME: "Applied Materials / Lam / KLA." T-2026-10-01-01 already killed that
+chain four sessions ago, as "no candidate reached."** ⚠ **It arrived again today attached to a
+different Company A, which is rule (iv) in its purest form: a recurring chain that keeps dying the
+same death is telling you about SEMICAP DISCLOSURE PRACTICE, not about a candidate maturing.**
+⚠ **NO FUNNEL QUERY WAS SPENT. The answer was already written down, and the carry-forward's
+instruction — write the answer down and STOP, do not re-word the query — was followed.**
+
+---
+
+### T-2026-10-05-06 — September payrolls / Fed repricing (no Company A) — REJECTED
+**Company A / the news:** **September nonfarm payrolls +29,000** against estimates of 79–90k;
+**unemployment 4.2% from 4.1%**; prior months revised down ~60k in aggregate; average hourly earnings
++3.0% y/y. Market-implied odds moved to a reported **77.9%** that the Fed holds at **3.75–4.00%** in
+October, against **22.7%** for at least a 25bp hike.
+**Company B / the candidate:** **NONE POSSIBLE.**
+
+**1. Mechanism (one sentence):** ⚠ **CANNOT BE WRITTEN. There is no Company A, so there can be no
+Company B.** A payrolls print is **one party** — in fact zero parties — and names no recipient of
+anything.
+**2–4:** not reached.
+
+**Hard filters:** none run.
+
+**Outcome:** **REJECTED — the macro/policy non-event, and this is now FIVE CONSECUTIVE SESSIONS
+logging one** (09-25 rates · 09-29 Fed repricing · 09-30 tariffs · 10-02 the September payrolls and the
+25bp hike · today). ⚠⚠ **THE FINDING IS THE PATTERN, NOT THE INSTANCE — and this instance carries BOTH
+of the costumes the standing rule warns about at once.** **(a) A MARKET-IMPLIED PROBABILITY THAT MOVED**
+(77.9%/22.7%) — *"a probability that CHANGED reads like an event with a date. Same object: no named
+recipient, no transaction, one party."* **(b) RULE (iii): this is the SEPTEMBER print, and the 10-02
+run already logged the September payrolls.** ⚠ **Re-reported over a weekend is not re-issued.**
+⚠ **The source's own read-through was offered and explicitly flagged as inference: "banks, rate-sensitive
+growth stocks, housing, consumer discretionary… That sector read-through is an inference; the sources do
+not identify specific company earnings effects."** ⚠⚠ **A SECTOR IS NOT A COMPANY B. Scale makes this
+object more convincing, not less — it moved the whole tape and it still has nobody on the other side.**
+
+---
+
+### T-2026-10-05-07 — G7 diesel / strategic reserve release (no Company A) — REJECTED
+**Company A / the news:** Secondary market commentary reported **G7 economies agreeing to release up to
+100 million barrels of diesel and oil over four months**, and a US request that Europe release strategic
+diesel reserves to ease prices and avoid a US diesel-export ban.
+**Company B / the candidate:** **NONE.**
+
+**1. Mechanism (one sentence):** ⚠ **CANNOT BE WRITTEN, AND THE SIGN IS WRONG.** A reserve release adds
+supply to push diesel prices **DOWN**. ⚠ **A long-only book cannot trade a price being pushed down, and
+refiners' crack spreads COMPRESS on it — so the only available sentence argues for a short, which §3
+forbids this account from expressing in any form.**
+**2–4:** not reached.
+
+**Hard filters:** none run.
+
+**Outcome:** **REJECTED on three independent grounds, and the FIRST one is that the source refused to
+stand behind it:** ⚠ **"The available evidence does not establish the formal terms, participating
+governments, implementation timetable, or whether this was an official new decision… this item is NOT
+SUFFICIENTLY VERIFIED."** ⚠ **An unverified event cannot be screened — it is not a weak candidate, it
+is an absent fact, and those are different. No second query was spent trying to firm it up, because
+§4's question (who is Company B?) is unanswerable regardless of whether the release is real.**
+**(b) It is a GOVERNMENT ACTION with one party** — the same object as the payrolls entry above, in a
+sector costume that *carries a number and names an industry*. **(c) The sign is wrong for a long.**
+
+---
+
 ### 2026-10-02 (08:23 ET) — event survey (funnel, pre-thesis)
 
 Selftest passed all five checks (`trading_enabled: true`, LIVE paper, broker equity **$99,865.29**
