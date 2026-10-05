@@ -40,6 +40,186 @@ anything where the honest-broker rule (§4) did real work>
 
 ## Entries
 
+### 2026-10-05 (Monday)
+
+**Account:** total **$100,561.58 on official closes** (price basis, `bars`, VOO c **712.41** — identical on
+`all` and `raw`, no ex-date since 09-28) / **$100,742.34 carrying the inferred, still-unconfirmed $180.76
+VOO dividend receivable** / $100,535.83 broker mark at 16:17 | day P&L **+$501.17 (+0.5009%)** from 10-02's
+official $100,060.41, both legs official and same-basis | since inception **+0.5616%** price basis /
+**+0.7423%** total-return
+**Sleeves:** core **70.1675%** | satellite **0.0%** | cash **29.8325%**   (§2 band 65–75% — **5.17 points
+inside the 65 edge, 4.83 inside the 75 edge; NO rebalance due tomorrow**; `core_in_band: true`,
+`rebalance_needed: false`, `rebalance_delta` −$160.75, a **distance readout, not an instruction**)
+**Breaker:** INACTIVE (`halt_triggered_at: none`, so no `HALT_CLEARED_AT` comparison was required —
+`control.md`'s `none` remains **untested against a live halt**, not cleared)
+**Week:** 0/3 new positions — today **is** the ISO Monday of its own ISO week (week 41), computed not
+assumed; `week_of` already read **2026-10-05**, so the anchors matched and **no reset was due on the one
+day of the week a rollover could have been**. Next boundary **2026-10-12**.
+**Trading day:** yes — a full session. `clock` at **16:17:29** reads `is_open: false` with `next_open`
+**2026-10-06T09:30** — the **post-bell** shape, read off the DATE. FALSE has three meanings, so the stronger
+discriminator was run: a VOO daily bar dated **2026-10-05 exists and is complete** (o 707.52, h 713.82,
+l 707.52, **c 712.41**, n 1,800, v 60,535) and the **15:59:59 ET `latestTrade` prints 712.41**, matching its
+close to the cent. All three discriminators agree; the session happened and the summary is owed.
+
+**Traded:** nothing. Zero orders, zero fills, nothing opened, nothing closed, no realised P&L — this seat
+**records and journals and does not trade**, and across all four of today's runs there were no orders
+either. `orders --status all` still returns **one row for the entire account history** — the 09-03 core
+buy, `status: filled`, terminal. **Nothing is in limbo overnight; §7 has nothing unverified.**
+**Researched:** 0 theses this seat (routine 4 has no funnel). **7 for the day, 0 accepted, 7 rejected**
+(T-2026-10-05-01 … -07), all written by the 08:28 pre-market seat. Cumulative **105** theses recounted from
+source (archive/research_log/2026-09.md 87 + live 18, template line excluded), **0 ever accepted.**
+**Positions near a sell rule:** **none, and the honest statement is that there is no operand.** All four §5
+rules are **ABSENT, not passing** — §5.1 has no thesis string to read, §5.2 no `timing_window`, §5.3's
+distance is **UNDEFINED rather than large** (no satellite `entry_price`), §5.4 is **NOT ARMED** (no
+`highest_close` field at all — the third state, carrying no `(as of …)` date). Core VOO is exempt from all
+four under §5 and was removed from the working list before any rule was read.
+
+**What happened:**
+
+The second-best day the book has had in dollars since 09-21, and the arithmetic is entirely the market's.
+VOO closed **712.41** against 10-02's **707.35**, **+0.7153%**; the book made **+0.5009%**. The whole move
+is one long position and idle cash: 0.700181 × 0.7153% = 0.50086%, which reproduces the day to the fifth
+decimal. §1's separation is now **21 of 21 with no exception** — 8 VOO-up days all with negative excess,
+12 down days all positive, 1 flat day exactly 0.0000pp. Today's excess is **−0.2144pp** against **−0.2144pp
+predicted** from the core weight alone, agreement to 0.0000pp. **That is the signature of a book with one
+position and no second source of return, not skill, and it runs identically in reverse on every down day.**
+−0.2144pp sits inside the established up-day band (−0.0380 to −0.4694pp) and just inside 10-02's −0.2186pp;
+**not a superlative in either direction, and not claimed as one.**
+
+**Step 2 — recording the closes — had NO OPERAND, and that is the headline because it is the invisible
+job.** There are **zero open satellite positions**, so there was no `highest_close` to raise and, more
+importantly, **no `(as of …)` date to advance**. "High-water marks updated" would have been a FALSE
+sentence. ⚠ **The honest form: the job had no operand, for the seventh consecutive close run by the count
+this record keeps — and the condition has in fact held on EVERY close run in the account's history, since
+no satellite position has ever existed. The count measures how long the finding has been NAMED, not how
+long it has been TRUE.** The backfill path and its detector both remain **unexercised code**, and the first
+satellite fill arms both at once.
+
+**No mark was written on core VOO either — and this seat held the raw material.** Step 3's day P&L requires
+an official close, so a `bars --symbol VOO` pull was made and returned a complete 712.41. A trailing maximum
+is one arithmetic step from that pull, and stamping it would have **fabricated a §5.4 trailing stop on the
+one position §5 exempts** — a stop that could eventually sell core on a drawdown, which §7 forbids outright.
+The step was not taken and no mark was written. ⚠ **This is the same load-bearing form prior close runs have
+had, not a new one: every close run pulls VOO bars for the P&L. Graded, not counted.**
+
+**`cash` read exactly $30,000.00 for a twenty-second time, now post-bell on the fourth trading day after the
+09-28 ex-date.** The VOO dividend is **still unpaid**. The falsifiable test stands verbatim: `cash` should
+rise to about **$30,180.76** ($1.825/share × 99.046311231 — an INFERENCE; Alpaca does not publish it). If it
+has not by **2026-10-07**, the paper account does not model dividends at all. **Eight seats remain after this
+run** — 10-06 r1–r4 and 10-07 r1–r4; routine 5 is Friday-only and 10-09 is past the deadline. ⚠ **Re-enumerated
+this run, not inherited; see below, because the number I inherited was right for me and wrong for the seat
+that wrote it.**
+
+**And the dividend stopped being an abstraction today, because it is now the only thing standing between this
+book and its all-time high.** Today's $100,561.58 is the **third-highest official-close equity in the
+account's 24-session history** on the basis the account actually experienced — behind **09-21's $100,596.25**
+and **09-22's $100,589.32**, by **$34.67** and **$27.74**. Both of those readings are **PRE-ex-dividend.** On
+an `--adjustment all` pull they rescale down by ~$180 and today reads as the **highest on record**; on the
+total-return basis carrying the receivable, today is **$100,742.34** and clears 09-21 by $146.09. **Two of
+three bases say "new high"; the one the account actually lived says third.** ⚠ **So the decision-relevant
+statement is conditional and belongs to the human: if the dividend lands by 10-07, today is a new high-water
+mark on every basis. If it never lands, 09-21's $100,596.25 stands, and the ~$180.76 is a permanent
+uncompensated step-down in the equity curve — the §5.4 phantom-drawdown defect applied to the BOOK rather
+than to a position.** The $34.67 gap is **19% of the unpaid dividend.**
+
+Housekeeping was all confirmations, no changes. ISO Monday computed (`2026-10-05`) and matched `week_of` —
+and today was the one day this week a rollover could genuinely have been due, so it was done, not skipped.
+Nothing closed, so `consecutive_closed_losses` stays **0 — confirmed against what actually closed today,
+which was nothing.** The §6 three-loss breaker has therefore **never been approached, not merely never
+breached**, and `clickup.py alert --key circuit-breaker` remains **untested code**. `control.md` notes:
+**(none)**. `alerts.md`: **zero open incidents**, no alert posted and none due. Reconciliation ran
+**satellite-to-satellite**: one broker row, core VOO 99.046311231 sh @ 706.74 (a **RAW** print), cost_basis
+$69,999.99, against **zero satellite blocks in `positions.md` — they agree.** **The 24th session with nothing
+to reconcile, and an agreeing ledger and an empty ledger are the same artifact here: that is the absence of a
+test, not a clean bill of health.**
+
+**Session counters advanced, and safely, because the session is COMPLETE:** **24 completed sessions since
+2026-09-01, 21 post-fill** (from 23/20). ⚠ **This is the one seat that may advance them — the bell has rung
+and all three discriminators confirm it — and doing so is not an exemption from catch (11), it is catch (11)
+being satisfied.**
+
+**What I got wrong or nearly got wrong:**
+
+**1. I nearly wrote "highest since-inception reading on record," and it is false on the basis the account
+actually experienced.** The number — +0.5616% — is correct, and the sentence was fluent and available. The
+inherited carry-forward made it look safe: its since-inception top list reads 09-21 **+0.4150%**, 09-22
++0.4081%, and +0.5616% clears both. ⚠ **But that list is on the `--adjustment all` vintage, which rescaled
+every pre-09-28 close down by the dividend.** The weekly review's own week-4 table — in a file I had already
+read — carries the as-printed figures: **09-21 +0.5962%, 09-22 +0.5893%.** I then went to the archived
+journal headers and confirmed from source: **$100,596.25 and $100,589.32.** Today is **third of 24, not
+first.** ⚠⚠ **This is catch (10) exactly — a number correct on a basis nobody named — and catch (13)'s
+sharpest feature too: the refuting figure was already sitting in a file this run had opened. The
+`--adjustment all` basis does not just complicate the comparison, it MANUFACTURES the superlative, because
+the adjustment lowers the past by precisely the amount the account may never have received.** The standing
+rule earned its keep on a real pair of numbers: name the basis in the sentence or do not write the sentence.
+
+**2. Catch (17) — an inherited claim about WHICH SEAT WENT MISSING on 09-28 is exactly inverted, it has been
+repeated across at least three runs, and the worked instance it props up is impossible as stated.** The
+carry-forward says, and the 09-29 midday and close runs said before it: *"09-28 proves that is not academic:
+it lost its close run, so with one position open 09-29's midday would have had to backfill ACROSS AN
+EX-DIVIDEND DATE."* ⚠⚠ **09-28 did not lose its close run. The close run is the ONLY routine that ran on
+09-28.** `git log` for 2026-09-28 returns exactly two commits — the close run and its merge — and the 09-28
+close commit says so in its own words (*"routines 1-3 left NO committed output today"*), as does 09-29's
+pre-market run (*"VERIFIED FROM INSIDE THIS RUN"*). The archived journal carries a full 09-28 close entry
+with a 16:16:24 `clock` read. ⚠ **So the hypothetical cannot happen the way it is written: if 09-28's close
+run ran, it would have written the mark, and 09-29's midday would have had nothing to backfill.**
+⚠⚠ **The corrected lesson is better than the one it replaces and points the other way. What 09-28 lost was
+routines 1, 2 and 3 — and routine 3 IS THE DETECTOR. A missing WRITER leaves evidence: a stale `(as of …)`
+date for the next detector to find. A missing DETECTOR leaves NOTHING AT ALL — it is silent by construction,
+and its absence is indistinguishable from its finding everything healthy. 09-28 is a worked instance of the
+harder failure, not the easier one, and the record has had it backwards for three runs.** This also means the
+field's standing line — that both halves of the machinery have a blind spot of the same shape — is right
+about the shape and wrong about the history: **the writing seat has never been missed; the detecting seat has,
+once.**
+
+**3. Catch (18) — catch (16) corrected the HORIZON of a countdown and committed the counting family's
+ORIGINAL error on its MAGNITUDE, in the same two sentences.** The 12:41 midday run rightly caught that the
+09:36 seat's *"three seats remain"* stopped at tomorrow morning instead of at the 10-07 deadline its own
+sentence named. But its replacement enumeration — *"NINE seats stand between that claim and it (10-05 close;
+10-06 r1–r4; 10-07 r1–r4)"* — **omits the 10-05 midday seat, which stood between 09:36 and 10-07 and was the
+seat doing the writing.** The right answer from 09:36 was **ten**. And its second sentence, *"EIGHT REMAIN
+AFTER THIS RUN,"* is one low for the same reason: after midday, nine remained. ⚠⚠ **Both halves are off by
+exactly one, in the same direction, from the same cause — a seat excluding itself from a period it was
+standing in. That is catch (11) and (15)'s mechanism arriving INSIDE the correction that named the counting
+family, which makes this the fourth consecutive proof of catch (9)'s sentence: naming a failure does not
+retire it.**
+⚠ **And the new, generalisable half, which is the part worth keeping: a COUNTDOWN inherited verbatim is a
+different and more dangerous object than a COUNT-UP.** A count-up ("24 completed sessions") is wrong or right
+independent of who reads it. A countdown ("eight seats remain") is only true at the instant it was written
+and silently becomes true or false as seats pass. **"Eight" was wrong when written and is right now — so
+inheriting it unchanged would have produced the correct number by accident, with no signal that anything had
+been checked.** I re-enumerated it rather than carrying it. **Write a countdown with the seat it was written
+from, or write the deadline and make the next reader count.**
+
+**4. An honest small one: a figure I did audit and chose not to chase far.** The 09-28 close run recorded the
+dividend as **~$180.45**; the carry-forward says **$180.76**. $1.825 × 99.046311231 = **$180.7595**, and
+$1.825/share is independently corroborated by the ex-date adjustment factor (710.705 raw × 0.002568 = 1.8251).
+**So $180.76 is right and $180.45 was a slip** — it implies $1.8219/share. It changes nothing material and is
+recorded here rather than promoted.
+
+**5. What was NOT close to wrong, stated plainly so the list is not padded.** This seat cannot trade, so its
+restraint today is the **FREE form** — the identical open gates the 09:36 seat faced (breaker INACTIVE, cap
+0 of 3, sleeve 0.0%, ~30% idle cash, `TRADING_ENABLED: true`, notes none, a §6 5% cap of $5,028.08 with no
+operand) were **structurally unavailable to violate from here.** ⚠ **Grade, do not count: 09:36 remains the
+load-bearing refusal of this session and nothing in this run adds to it.** GNRC did not appear and was not
+looked at, which is also free from this seat. No `move` calls were due or made — the **absent** state, not a
+pass. No Perplexity call was due: there is no holding to check.
+
+**For the next run:**
+
+- **The dividend test has EIGHT seats left, re-enumerated from this seat: 10-06 r1–r4 and 10-07 r1–r4.**
+  `cash` read **$30,000.00** a **22nd** time at 16:17. Expect **$30,180.76**. ⚠ **Do not inherit this count —
+  re-enumerate from where you sit, and see catch (18) for why.**
+- **Today is the account's 3rd-highest official close, not its highest.** 09-21 $100,596.25 and 09-22
+  $100,589.32 are both pre-ex. **Any "new high" sentence must name its basis.**
+- **Catch (17) corrects the record: 09-28 lost routines 1–3, NOT its close run. A missing detector is harder
+  to notice than a missing writer.** Do not repeat the old form.
+- **24 completed sessions, 21 post-fill. Both advanced by THIS run because the session is complete.** A
+  pre-market or open seat on 10-06 adds none.
+- **No rebalance is due tomorrow.** Core 70.1675%, 5.17 points inside the 65 edge. `rebalance_delta` −$160.75
+  is a distance readout. **63rd consecutive run inside 69.59–70.22%.**
+- **ClickUp daily summary: `86bcdauyg`.**
+
 ### 2026-10-02 (Friday)
 
 **Account:** total **$100,060.41 on official closes (price basis, `bars --adjustment all`, VOO c 707.35 —
