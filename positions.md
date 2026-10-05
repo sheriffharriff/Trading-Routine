@@ -85,8 +85,36 @@ check that the pull returned the right session. A stored baseline is a *label*, 
 
 *(none — no **satellite** positions have been opened yet. Core VOO exists and is deliberately not tracked here, per the top-of-file rules and the fill note further down.)*
 
-**Reconciliation 2026-10-05 — 08:28 ET, 1-premarket-research. THE LEDGER AGREES WITH THE BROKER;
-ZERO SATELLITE POSITIONS ON BOTH SIDES; NO §5 RULE HAS A SUBJECT; NO MARK WRITTEN AND NONE DUE.**
+**Reconciliation 2026-10-05 — TWO SEATS, 08:28 ET `1-premarket-research` and 09:36 ET
+`2-market-open-execution`. THE LEDGER AGREES WITH THE BROKER ON BOTH READINGS; ZERO SATELLITE POSITIONS
+ON BOTH SIDES; NO §5 RULE HAS A SUBJECT; NO MARK WRITTEN AND NONE DUE; ZERO ORDERS FROM EITHER SEAT.**
+
+⚠⚠ **THE 09:36 OPEN SEAT IS THE ONE THAT COULD HAVE OPENED A POSITION, AND IT IS THE FIRST REFUSAL IN
+THIS FILE THAT IS LOAD-BEARING RATHER THAN FREE.** `clock` at **09:36:48** reads **`is_open: true`** —
+**the one state the boolean alone settles**, needing no `next_open` date and no data-plane corroboration.
+**Sleeves at 09:36: equity $100,157.47, core $70,157.473634 = 70.05%, satellite 0.0% (count 0), cash
+29.95%, `core_in_band: true`, `rebalance_needed: false`, `rebalance_delta` −$47.24.** One broker row,
+core VOO **99.046311231 @ 706.74 (RAW)**, cost_basis **$69,999.99** — against **zero satellite blocks
+here. THEY AGREE.** ⚠⚠ **STILL THE *TWENTY-FOURTH* SESSION WITH NOTHING TO RECONCILE, NOT THE TWENTY-FIFTH — THIS SEAT
+STANDS IN THE SAME SESSION AS THE 08:28 SEAT, AND A SECOND SEAT IN ONE DAY ADDS NO SESSION. I WROTE
+"TWENTY-FIFTH" FIRST AND CORRECTED IT HERE.** ⚠ **That is catch (11) — a counter incremented for the
+period the run is standing in — committed by the run whose own carry-forward names routine 2 as one of
+the two exposed seats, one session after catch (14) did the same thing for a weekend. THE WARNING WAS
+READ AND THE ERROR STILL HAPPENED, FOR THE THIRD TIME.** **23 completed sessions, 20 post-fill, 24
+calendar sessions with nothing to reconcile; today completes at 16:00 and this run adds none.**
+⚠ **And still the absence of a test, not a clean bill.**
+⚠⚠ **GRADED, NOT COUNTED, UNDER THE FILE'S OWN RULE: routine 2 is the ONLY seat that may open a
+position, `plan_today.md` was FRESH (`plan_date: 2026-10-05`) and carried NO BUY INTENT, and EVERY GATE
+WAS OPEN — breaker INACTIVE, weekly cap 0 of 3, sleeve 0.0% deployed, ~30% idle cash, `TRADING_ENABLED:
+true`, control notes none. §6's 5% cap against live 09:36 equity is $5,007.87 AND HAS NO OPERAND.
+NOTHING STOPPED A BUY THIS MORNING EXCEPT THE ABSENCE OF AN INTENT, which is exactly what the 08:00/09:35
+handoff exists to enforce.** ⚠ **A midday, close or weekly seat CANNOT violate this; this one could.
+THE STRONG FORM.**
+⚠ **A THIRD PRICE SERIES WAS OPENED AND IS NOT APPENDED TO EITHER EXISTING ONE: `current_price` **708.33**
+at 09:36 is an **INTRADAY LIVE MARK**. It is neither the post-bell broker/official gap series nor the
+pre-market one, and differencing it against 10-02's official 707.35 would compare a live midpoint to a
+PRIOR SESSION's close. ⚠ **ZERO `bars` CALLS WERE MADE BY THIS SEAT — a bar dated today is PARTIAL while
+the market is open, no fill needed a `voo_close_at_entry`, and a decorative pull was declined.**
 
 Selftest passed all five checks; `trading_enabled: true`, LIVE paper; pre-flight broker equity
 **$100,038.62** at 08:28. `clock` at **08:28:54** reads **`is_open: false`** with `next_open`
@@ -137,7 +165,7 @@ falsifiable test stands verbatim: `cash` should rise to about $30,180.76 ($1.825
 99.046311231, an INFERENCE — Alpaca does not publish it). If it has not by 2026-10-07, the paper
 account does not model dividends at all.**
 
-### `sell_rule_status` — ALL FOUR RULES ABSENT, NOT PASSING (2026-10-05 08:28 ET)
+### `sell_rule_status` — ALL FOUR RULES ABSENT, NOT PASSING (2026-10-05, RE-READ AT 09:36 ET BY THE OPEN SEAT; UNCHANGED)
 
 ⚠⚠ **THERE IS NO POSITION TO WRITE A `sell_rule_status` LINE ON. The distance to each rule is therefore
 not "large" — it is UNDEFINED, and those are different facts.** ⚠ **"Nothing close to triggering" would
@@ -150,7 +178,8 @@ be a fabrication: nothing can be close to a threshold it has no operand for.**
 | **§5.3** hard stop −7% from entry | **DISTANCE UNDEFINED** | **UNDEFINED, not large** | There is no satellite `entry_price` to measure a drawdown from. The 706.74 core fill is **exempt under §5** and is not an operand. |
 | **§5.4** trailing stop −10% from `highest_close` | **NOT ARMED** | **UNDEFINED, not large** | No `highest_close` field — the **third state**, carrying no `(as of …)` date at all. It arms on the first **satellite** fill; the 09-03 core fill was not one. |
 
-**Zero orders submitted by this run** (a pre-market seat places none by design), **zero fills, nothing
+**Zero orders submitted by EITHER seat today** — the pre-market seat places none by design, and
+**the 09:36 open seat placed none because the plan it consumes carried no intent**; **zero fills, nothing
 opened, nothing closed, no realised P&L.** `consecutive_closed_losses` stays **0** — nothing has closed.
 Breaker **INACTIVE** (`halt_triggered_at: none`, so no `HALT_CLEARED_AT` comparison was required; the
 `none` in `control.md` is therefore **untested against a live halt**, not cleared).
