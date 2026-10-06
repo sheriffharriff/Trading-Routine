@@ -52,6 +52,320 @@ single most common way a plausible-sounding connection gets mistaken for an oppo
 
 ## Entries
 
+### 2026-10-06 (08:22 ET) — event survey (funnel, pre-thesis)
+
+Selftest passed all five checks (`trading_enabled: true`, LIVE paper, broker equity **$100,842.87**
+at pre-flight 08:22). Window screened: **the completed 2026-10-05 session and overnight into
+2026-10-06** — ⚠ **a REAL window, unlike yesterday's. 10-05 was a full trading session (official
+close 712.41), so `--recency day` bounds an interval that actually contains events.** **Four
+Perplexity scans, all exit 0** (two broad, two second-order funnel). **Eight candidates reached a
+thesis entry; ALL EIGHT WERE REJECTED.**
+
+⚠⚠ **THE MONDAY LESSON WAS APPLIED, NOT RE-DERIVED, AND IT PAID IMMEDIATELY.** Yesterday's
+carry-forward said: on any Monday or post-holiday run, **ask for the announcement date explicitly**.
+Both broad scans this run demanded the announcement date in the prompt itself, and the first one
+returned **the September payrolls report with "announced October 2, 2026, not October 5" volunteered
+in its own first clause** — the exact rule (iii) trap, defused by the query's framing rather than by a
+follow-up. ⚠ **Today was a Tuesday and the instruction was written for Mondays; it was applied anyway
+because the cost is one sentence. KEEP ASKING FOR THE DATE ON EVERY RUN.**
+
+⚠⚠ **THE FIRST BROAD SCAN WAS NEARLY EMPTY AND THE SECOND WAS RICH — THE DIFFERENCE WAS THE QUESTION,
+NOT THE DAY.** Scan 1 ("most significant news events… with knock-on effects") returned **four
+macroeconomic non-events** and said so itself: *"the most clearly documented events were
+macroeconomic… Evidence for additional major US corporate announcements with material knock-on
+effects is limited."* Scan 2, asked instead for **announcements involving TWO NAMED PARTIES and a
+disclosed dollar amount**, returned **seven dated transactions including two multi-billion-dollar
+acquisitions that scan 1 never mentioned.** ⚠⚠ **THAT IS A FINDING ABOUT THE FUNNEL, NOT ABOUT THE
+TAPE: a query asking for "significant events with knock-on effects" invites the source to editorialise
+about significance, and it answered with the macro complex — the one object §4 can never use. A query
+naming the STRUCTURE §4 requires (two parties, a dollar figure, a date) returned the structure.**
+⚠ **ASK FOR THE SHAPE, NOT FOR THE IMPORTANCE. Scan 1's framing would have produced a no-trade day
+with nothing in the log; scan 2's produced eight auditable rejections.**
+
+⚠⚠ **TWO MORE VOLUNTEERED ABSENCES, AND THE COUNT IS NOW SIX CONSECUTIVE SESSIONS (09-29, 09-30,
+10-01, 10-02, 10-05, 10-06).** Both second-order queries were asked whether any third public company
+had direct contractual exposure, and both answered in the negative **in their own words**: the M&A
+query returned *"no third publicly traded U.S. company with direct contractual exposure is
+identified"* for **both** deals, adding unprompted that *"companies that compete with, sell to, or
+operate in the same industrial-software market do not meet the requested standard"*; the BDX query
+returned *"no engineering firm, construction contractor, or equipment supplier has been named."*
+⚠ **A CONTINUATION of the standing carry-forward item, reported with its count and NOT promoted —
+the three-consecutive-reviews rule governs promotion.** ⚠⚠ **Note what the M&A source did: it stated
+the §4 exclusion I would have had to apply myself, before I applied it. A run that then produces a
+Company B here has supplied it from its own priors against an explicit denial.**
+
+⚠⚠ **ZERO `move` CALLS WERE MADE IN THIS SEAT. THAT IS THE *ABSENT* STATE — THE FOURTH — NOT A
+SKIPPED CHECK AND NOT A PASS.** Every candidate died on §4 structure, part 1, part 2, part 3 or §3
+**before an eligible ticker with a mechanism was reached**, so the priced-in filter had nothing to
+fire on. ⚠ **A decorative `move` call on a name with no mechanism converts an honest absence into a
+fake exercise, and was declined for that reason again.**
+⚠⚠ **AND THE COUNT MUST BE STATED CAREFULLY — CATCH (11)'s SHAPE: 09-29, 10-02 AND 10-05 ARE THE
+THREE SESSIONS CONFIRMED ACROSS *ALL* THEIR SEATS. 10-06 IS NOT A FOURTH YET — ONLY ITS PRE-MARKET
+SEAT HAS RUN, AND THREE SEATS OF THIS SESSION REMAIN.** ⚠ **A session is not zero-`move` until the
+session is over. Do not write "four sessions" from inside the fourth one.**
+
+⚠ **ZERO `quote` CALLS. No candidate reached execution pricing and there is no satellite ticker to
+quote.**
+
+---
+
+### T-2026-10-06-01 — PTC Inc. / Schneider Electric — no Company B — REJECTED
+**Company A / the news:** Schneider Electric agreed to acquire **PTC Inc. (NASDAQ: PTC)** in an
+all-cash deal at **$205/share, ~$22.6B equity value**, announced **2026-10-05**. Closing expected
+**Q3 2027**, subject to shareholder and regulatory approval. (Perplexity, two scans, announcement
+date asked for and given.)
+**Company B / the candidate:** **NONE REACHED.**
+
+**1. Mechanism (one sentence):** ⚠ **CANNOT BE WRITTEN.** PTC is the **target** and Schneider is the
+**acquirer** — both first-order. The funnel was asked directly for a third public company with
+disclosed contractual exposure and answered **"no third publicly traded U.S. company with direct
+contractual exposure is identified in the announcement materials reviewed."**
+**2. Dollar path:** n/a — no Company B.
+**3. Timing window:** ⚠ **FAILS INDEPENDENTLY.** Expected close **Q3 2027** is ~4 quarters out
+against §4's **two-quarter** ceiling. Part 3 kills any merger-contingent thesis in one step.
+**4. Invalidation:** n/a.
+
+**Hard filters:**
+- Priced-in (§4): **NOT REACHED** — absent, not passing. Zero `move` calls.
+- Correlation (§4): no open satellite positions; nothing to correlate against.
+- Universe (§3): **the acquirer is §3-INELIGIBLE** — Schneider Electric is a **French-listed** issuer
+  (Euronext Paris); its US presence is an **OTC ADR**, which §3 excludes by name. PTC itself is
+  US-listed and above the cap, but it is the target.
+
+**Outcome:** REJECTED on **part 1** (no Company B; volunteered absence), with **part 3** and **§3**
+failing independently. ⚠⚠ **THIS IS THE ONSEMI/SYNAPTICS SHAPE ARRIVING ONE SESSION LATER WITH NEW
+NAMES, AND THE SAME ANSWER APPLIES VERBATIM: buying a target at a fixed cash price is MERGER
+ARBITRAGE, AND §4 DOES NOT CONTAIN A CLAUSE FOR IT.** §4 asks whose *economics* change; a target whose
+price is contractually pinned at $205 has no economics left to change. ⚠ **The industrial-software
+competitor read-across (Autodesk, Dassault, Ansys/Synopsys) is the "shared cause is not a mechanism"
+object and the source pre-emptively excluded it. NO GUESS WAS MADE.**
+
+---
+
+### T-2026-10-06-02 — RXO Inc. / C.H. Robinson — no Company B — REJECTED
+**Company A / the news:** **C.H. Robinson (CHRW)** agreed to acquire **RXO Inc. (NYSE: RXO)** in a
+cash-and-stock deal — **$17.25 cash + 0.0856 CHRW shares per RXO share, ~$30.25/share, ~$5.8B** —
+announced **2026-10-05**. Expected close **H1 2027**. Separate reporting cited **~$300M of estimated
+annual run-rate cost synergies.**
+**Company B / the candidate:** **NONE REACHED.**
+
+**1. Mechanism (one sentence):** ⚠ **CANNOT BE WRITTEN.** Acquirer and target are both first-order.
+The funnel volunteered **"no named public U.S. carrier, technology provider, reseller, outsourcing
+provider, or divested business whose own reported revenue or costs would change directly as a
+contractual consequence of the merger."**
+**2. Dollar path:** ⚠ **THE ONLY DISCLOSED FIGURE IS THE WRONG QUANTITY — RULE (viii).** The **$300M
+run-rate synergy** is an **acquirer's own estimate of its own future cost base**, not segment revenue
+at any Company B. It is the JBL/Morgan-Stanley family: a precise, quotable, allocated number that is
+not revenue at a buyable second leg.
+**3. Timing window:** ⚠ **FAILS INDEPENDENTLY** — close **H1 2027**, beyond two quarters.
+**4. Invalidation:** n/a.
+
+**Hard filters:**
+- Priced-in (§4): **NOT REACHED** — absent, not passing.
+- Correlation (§4): no open satellite positions.
+- Universe (§3): CHRW and RXO are both US-listed; CHRW clears the cap. Not reached — no Company B.
+
+**Outcome:** REJECTED on **part 1** (volunteered absence), with **part 2** (rule (viii), wrong
+quantity) and **part 3** (H1 2027) failing independently. ⚠ **Freight-brokerage consolidation invites
+a share-shift story about Landstar, XPO and GXO. That story is a COMPETITOR READ-ACROSS the reader
+supplies, and the source denied contractual exposure explicitly. NO TICKER WAS SCREENED.**
+
+---
+
+### T-2026-10-06-03 — Becton Dickinson (BDX) $19B US investment / Section 232 tariff relief — no Company B — REJECTED
+**Company A / the news:** **BDX** announced on **2026-10-06** an agreement with the US government to
+invest **$19B in the United States over several years**, of which **$3B** is directed to manufacturing
+expansion at strategic US sites, in exchange for **relief from future Section 232 tariffs** on covered
+BD products and inputs, **conditioned on BD meeting agreed milestones**. Named locations: **Nebraska
+>$1B**; **Columbus, Nebraska $110M** for prefillable-syringe capacity (plus an earlier $35M).
+**Company B / the candidate:** **NONE NAMED — one targeted query spent, explicit absence returned.**
+
+**1. Mechanism (one sentence):** ⚠ **CANNOT BE WRITTEN.** A $3B domestic build-out must be
+engineered, built and equipped by somebody, but the funnel answered **"no engineering firm,
+construction contractor, or equipment supplier has been named… the reports do not name any publicly
+traded U.S. engineering company, construction contractor, or equipment supplier as having been
+selected, awarded work, or committed to supply BD."** ⚠⚠ **RULE (v), AND IN ITS MOST FILLABLE
+COSTUME YET: AN EXACT FIGURE ($3B), A NAMED STATE (Nebraska), A NAMED TOWN (Columbus), A NAMED PRODUCT
+LINE (prefillable syringes) — AND NO SECOND PARTY. The blank has a dollar amount, a map pin and a
+product. The priors arrive instantly (Jacobs, AECOM, Fluor, Fortive, Danaher). THE SOURCE LEFT THE
+BLANK; FILLING IT IN IS NOT RESEARCH.**
+**2. Dollar path:** n/a — no Company B to assign a segment to.
+**3. Timing window:** ⚠ **FAILS INDEPENDENTLY AND WAS SCREENED FIRST, PER RULE (vi).** "Over several
+years," and the query asked specifically whether any portion carries a dated construction start or
+completion inside two quarters: **"there is no sourced basis to say that any portion of the $3 billion
+has a construction milestone scheduled within the next two quarters."**
+**4. Invalidation:** n/a.
+
+**Hard filters:**
+- Priced-in (§4): **NOT REACHED** — absent, not passing.
+- Correlation (§4): no open satellite positions.
+- Universe (§3): BDX is US-listed and far above the cap — but BDX is **Company A**, and the tariff
+  relief is a **cost line at BDX itself**, which makes it **first-order and outside §4 at any price**.
+
+**Outcome:** REJECTED on **part 1** (no named Company B) and **part 3** (no dated spend inside the
+window). ⚠⚠ **THIS IS THE THIRD CONSECUTIVE SESSION CARRYING A MULTI-BILLION DOMESTIC-CAPEX PLEDGE
+AND THE THIRD TO DIE THE SAME DEATH — Bayer $2.2B Ohio (10-05, 2031/2034), TSMC $60–64B capex (10-05),
+BDX $19B/$3B (today). THE PATTERN IS THE FINDING, NOT THE INSTANCE: a capex pledge is announced by ONE
+party, and its procurement is awarded later and privately. The announcement and the awardable
+transaction are separated by quarters BY CONSTRUCTION.** ⚠ **Screen part 3 before spending the query
+next time — this one was spent deliberately, because the $110M Columbus line looked dated enough to be
+worth one call, and it was not.**
+
+---
+
+### T-2026-10-06-04 — GE HealthCare (GEHC) / Sofie Biosciences $945M — no Company B — REJECTED
+**Company A / the news:** **GE HealthCare (NASDAQ: GEHC)** agreed to acquire **Sofie Biosciences** for
+**$945M in cash**, announced **2026-10-06**. No closing timeline reported.
+**Company B / the candidate:** **NONE REACHED. NO QUERY SPENT — and that is the discipline, not a gap.**
+
+**1. Mechanism (one sentence):** ⚠ **CANNOT BE WRITTEN WITHOUT AN "AND ALSO."** Sofie operates a
+radiopharmacy/PET-tracer network; the radiopharma supply chain is real, but the sentence would have to
+run "GEHC buying Sofie causes [isotope or cyclotron supplier]'s revenue to rise **and also** that
+supplier is public, named, and material" — three conjunctions, which is the test failing.
+**2. Dollar path:** ⚠ **THE DISCLOSED FIGURE RUNS THE WRONG WAY — RULE (viii) VERBATIM.** $945M is
+**capital paid OUT by the buyable leg**. The receiving leg, **Sofie, is private**, so there is **no
+buyable second leg at all** — the AWS/SNPS and Royal Caribbean family.
+**3. Timing window:** no disclosed close date; unassessable.
+**4. Invalidation:** n/a.
+
+**Hard filters:**
+- Priced-in (§4): **NOT REACHED**.
+- Correlation (§4): no open satellite positions.
+- Universe (§3): GEHC is US-listed and above the cap, but is **Company A**. Sofie is **private** —
+  not buyable at any price.
+
+**Outcome:** REJECTED on **part 2** (capital paid out by the buyable leg; counterparty private), with
+**part 1** failing the one-sentence test. ⚠⚠ **AND RULE (vii) CLOSES THE LAST DOOR: GE HEALTHCARE
+MAKES ITS OWN CYCLOTRONS AND PET SCANNERS. The equipment beneficiary of GEHC expanding in
+radiopharmaceuticals is GEHC. That is the IOVA/EW vertical-integration shape on the imaging side —
+and the non-integrated cyclotron makers (IBA, Siemens Healthineers) are BELGIAN- and GERMAN-LISTED,
+so §3 kills them before any mechanism is needed.** ⚠ **One query was declined here on purpose: part 2
+was already dead on the direction of the only disclosed figure, and a funnel call on a name with no
+mechanism is the decorative exercise this log has twice refused.**
+
+---
+
+### T-2026-10-06-05 — Blaize Holdings / NeoTensr — guidance revision — REJECTED
+**Company A / the news:** **Blaize** issued a preliminary Q3 2026 update on **2026-10-06**:
+preliminary Q3 revenue **~$0.5M**, FY2026 revenue guidance revised to **$32–36M**, attributed to
+binding non-cancellable purchase orders from **NeoTensr** (relating to an **April 2026** contract for
+up to **$50M**) plus a new order from an unnamed existing customer. Blaize said it is **"working with
+suppliers"** — unnamed — to obtain remaining inventory before year-end.
+**Company B / the candidate:** **NONE — killed by arithmetic before a name was sought.**
+
+**1. Mechanism (one sentence):** not reached.
+**2. Dollar path:** ⚠⚠ **IMPOSSIBLE BY ARITHMETIC, AND THIS IS THE CLEANEST PART-2 KILL IN THE LOG.**
+Blaize's **entire** FY2026 revenue is guided to **$32–36M**. §4 part 2 requires the affected segment
+to be **≥10% of Company B's total revenue**, and §3 requires Company B to have a **≥$10B market cap**.
+A supplier's share of a $36M customer cannot reach 10% of any company large enough to be eligible —
+**the two filters are jointly unsatisfiable here regardless of who the supplier turns out to be.**
+⚠ **That is worth writing down as a general screen: when Company A's TOTAL revenue is small, no
+eligible Company B can clear part 2, so the supplier search is pointless before it starts.**
+**3. Timing window:** "before year-end" — inside the window, and irrelevant given part 2.
+**4. Invalidation:** n/a.
+
+**Hard filters:**
+- Priced-in (§4): **NOT REACHED**.
+- Correlation (§4): no open satellite positions.
+- Universe (§3): **Blaize is a microcap** — a company guiding to $32–36M of annual revenue is orders
+  of magnitude below the **$10B** floor. §3 kills it as Company A-adjacent at any price; it is not
+  buyable here in any case.
+
+**Outcome:** REJECTED on **part 2 arithmetic** (jointly unsatisfiable with §3), with the suppliers
+**unnamed** (rule (v)) and the customer leg, **NeoTensr**, not established as public. ⚠ **Rule (iii)
+is ALSO unestablishable: the source gives the revised range but not Blaize's own prior guidance, so
+"did the source carry the company's OWN prior figure?" answers NO — the AAR failure mode, not the
+IOVA pass.** ⚠ **It was the only clearly qualifying corporate item in scan 1, which says more about
+scan 1 than about Blaize.**
+
+---
+
+### T-2026-10-06-06 — S&K Aerospace PROS 7 $4.3B / Powerus $82M / Voyager $22.4M — REJECTED (settled pattern, no query spent)
+**Company A / the news:** Three US government awards reported **2026-10-06**: **S&K Aerospace** won
+the **Air Force PROS 7** contract at **$4.3B**; **Powerus** received an **$82M** counter-UAS order
+described as the **second order under an existing IDIQ contract**; **Voyager Technologies** received
+**$22.4M** to prototype satellite deployment systems.
+**Company B / the candidate:** **NONE. ZERO FUNNEL QUERIES SPENT — the carry-forward's instruction was
+executed as written.**
+
+**1. Mechanism (one sentence):** not reached.
+**2. Dollar path:** ⚠ **$4.3B is a PROS-vehicle CEILING, not obligated revenue — rule (v)'s ceiling
+sub-shape** (the RDW $980M / MTUS $995M family). **$82M and $22.4M are immaterial to any $10B+
+company** and fail part 2 on size alone.
+**3. Timing window:** no delivery schedules reported for any of the three.
+**4. Invalidation:** n/a.
+
+**Hard filters:**
+- Priced-in (§4): **NOT REACHED**.
+- Correlation (§4): no open satellite positions.
+- Universe (§3): **S&K Aerospace is not publicly listed.** Powerus and Voyager Technologies are far
+  below the **$10B** floor. **All three fail §3 on sight.**
+
+**Outcome:** REJECTED on **§3** (none buyable) and the **settled defence-award pattern**.
+⚠⚠ **FIFTH INSTANCE, AND THE INSTRUCTION WAS FOLLOWED RATHER THAN RE-TESTED: "US DEFENCE PROGRAM
+AWARDS CANNOT PRODUCE A §4 CANDIDATE — spend ONE funnel query, then WRITE THE ANSWER DOWN AND STOP."
+NO QUERY HAS EVER BEEN RE-ISSUED ON THIS PATTERN, and none was today.** The mechanism is **disclosure
+practice**: a prime announces the award and the tier below it is commercially confidential.
+⚠ **Powerus adds a rule (iii) costume on top — a "second order under an existing contract" is a
+DELIVERY MILESTONE RECYCLED AS NEWS, the GM/Lockheed shape.**
+
+---
+
+### T-2026-10-06-07 — Macro complex (ISM services, Treasury yields, Fed repricing) — no Company A — REJECTED
+**Company A / the news:** Four macro items in the window: **ISM September services PMI 54.9** (from
+55.4, services prices component +1.4 to 74, announced **10-05**); **the 10-year Treasury yield at
+~5.31–5.35%, highest since April 2002**, and the 30-year at ~5.66–5.70%, **highest since May 2002**
+(10-05); **implied odds of an October Fed hike falling to ~20–24% from ~70–78% a week earlier**
+(10-05/06); and **September payrolls +29k vs 79k consensus with unemployment 4.2%** — which the source
+itself dated **"announced October 2, 2026, not October 5."**
+**Company B / the candidate:** **NONE — THERE IS NO COMPANY A.**
+
+**1. Mechanism (one sentence):** ⚠ **CANNOT BE WRITTEN — NO TRANSACTION AND NO SECOND PARTY.**
+**2–4.** n/a.
+
+**Hard filters:** not reached. No open satellite positions to correlate against.
+
+**Outcome:** REJECTED — **no Company A.** ⚠⚠ **THE FED-REPRICING ITEM IS THE CARRY-FORWARD'S "MOST
+SEDUCTIVE COSTUME" ARRIVING VERBATIM: A MARKET-IMPLIED PROBABILITY THAT MOVED, AND MOVED HARD —
+~70–78% to ~20–24% IN A WEEK. A probability that CHANGED reads like an event with a date. It is the
+same object: no named recipient, no transaction, ONE party.** ⚠ **The 23-year yield high is the same
+shape with a bigger number attached, and SCALE MAKES IT MORE CONVINCING, NOT LESS.**
+⚠ **The payrolls item is ALSO a rule (iii) kill — a 10-02 release re-reported as 10-05 news, and it was
+already disposed as T-2026-10-05-06. It was NOT re-screened; the source dated it unprompted because
+the query asked.** ⚠⚠ **FIFTH CONSECUTIVE SESSION LOGGING A MACRO/POLICY COMPLEX IN EXACTLY THIS SHAPE
+(09-25, 09-29, 09-30, 10-02, 10-06). THE FINDING IS THE PATTERN, NOT THE INSTANCE.**
+
+---
+
+### T-2026-10-06-08 — OpenAI / Cerebras — collaboration statement — REJECTED
+**Company A / the news:** Reported **2026-10-06**: OpenAI's CEO said OpenAI and **Cerebras** are
+"working closely together" to improve AI-processing speed; Cerebras shares rose **9.1%**. ⚠ **The
+source stated its own limit unprompted: "does not establish that a new supply agreement, capacity
+commitment, regulatory decision or formal contract was announced… should therefore be treated as a
+reported collaboration statement, not as a confirmed new transaction."**
+**Company B / the candidate:** **NONE REACHED. NO QUERY SPENT.**
+
+**1. Mechanism (one sentence):** ⚠ **CANNOT BE WRITTEN — THERE IS NO EVENT TO PUT IN THE FIRST
+BRACKET.** A statement of intent has no dollar value, no term and no dated obligation.
+**2. Dollar path:** nothing disclosed. **3. Timing window:** none stated. **4. Invalidation:** n/a.
+
+**Hard filters:**
+- Priced-in (§4): **NOT REACHED** — and note that **Cerebras rose 9.1% in one session**, which would
+  have **FAILED** the filter had it reached it (shape two, the filter working on a genuine news rise).
+  ⚠ **It never got there, so this is an ABSENT check, not a pass.**
+- Correlation (§4): no open satellite positions.
+- Universe (§3): Cerebras is **first-order** — it is the named party in the statement — and outside §4
+  at any price. OpenAI is **private**.
+
+**Outcome:** REJECTED on **part 1** (no transaction; rule (iii) — a press statement is not new
+disclosure). ⚠⚠ **AND THE PRIOR WAS READY BEFORE THE THESIS WAS: "the GPU vendor for any AI-compute
+headline" is named in the carry-forward as a STANDING PRIOR, and the AMAT/LRCX/KLA chain already died
+on 10-01. The pull here was to reach for NVDA, AVGO, TSMC or a memory supplier on a sentence containing
+no contract. NO TICKER WAS SCREENED AND NO GUESS IS RECORDED AS A CANDIDATE.** ⚠ **A CEO's remark is a
+fact about an INDUSTRY'S DIRECTION, not about a TRANSACTION.**
+
+---
+
 ### 2026-10-05 (08:28 ET) — event survey (funnel, pre-thesis)
 
 Selftest passed all five checks (`trading_enabled: true`, LIVE paper, broker equity **$100,038.62**
