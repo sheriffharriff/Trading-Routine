@@ -85,10 +85,10 @@ check that the pull returned the right session. A stored baseline is a *label*, 
 
 *(none — no **satellite** positions have been opened yet. Core VOO exists and is deliberately not tracked here, per the top-of-file rules and the fill note further down.)*
 
-**Reconciliation 2026-10-06 — ONE BLOCK FOR THE DATE, COVERING TWO SEATS: `1-premarket-research`
-08:22 ET and `2-market-open-execution` 09:36 ET. ⚠ ROUTINES 3 AND 4 HAVE NOT RUN. THE LEDGER AGREES
-WITH THE BROKER AT BOTH SEATS; ZERO SATELLITE POSITIONS ON BOTH SIDES; NO §5 RULE HAS A SUBJECT; NO
-MARK WRITTEN AND NONE DUE; ZERO ORDERS AT EITHER SEAT.**
+**Reconciliation 2026-10-06 — ONE BLOCK FOR THE DATE, COVERING THREE SEATS: `1-premarket-research`
+08:22 ET, `2-market-open-execution` 09:36 ET and `3-midday-management` 12:42 ET. ⚠ ROUTINE 4 HAS NOT
+RUN. THE LEDGER AGREES WITH THE BROKER AT ALL THREE SEATS; ZERO SATELLITE POSITIONS ON BOTH SIDES; NO
+§5 RULE HAS A SUBJECT; NO MARK WRITTEN AND NONE DUE; ZERO ORDERS AT ANY SEAT.**
 
 Selftest passed all five checks; `trading_enabled: true`, LIVE paper; pre-flight broker equity
 **$100,842.87** at 08:22. `clock` at **08:23:42** reads **`is_open: false`** with `next_open`
@@ -198,6 +198,87 @@ series. THREE SERIES EXIST AND NONE MAY BE CONCATENATED.**
 live equity reads minutes apart disagreed ($100,842.87 / $100,838.91) — two samples of a moving
 pre-market mark, NOT a change.**
 
+**— 12:42 ET `3-midday-management`, THE EXITS-ONLY SEAT. NOTHING TO MANAGE, AND THAT IS THE WHOLE RUN.**
+Selftest passed all five (`trading_enabled: true`, LIVE paper, pre-flight equity **$101,041.96** at
+12:41). `clock` **12:42:08** reads **`is_open: true`** with `next_close` **2026-10-06T16:00** and
+`next_open` **2026-10-07T09:30** — ⚠ **the one case the boolean alone is sufficient, and the
+mid-session shape is unambiguous: `next_close` is TODAY and `next_open` is TOMORROW.**
+**RECONCILIATION, SATELLITE-TO-SATELLITE.** `alpaca.py positions` returns **one row, core VOO**,
+99.046311231 shares, avg_entry **706.74** (a **RAW** print), cost_basis **$69,999.99** — **unchanged
+from both earlier seats and from the 09-03 fill** — against **zero satellite blocks in this file. THEY
+AGREE.** ⚠ **Core VOO was removed from the working list BEFORE any §5 rule was read**, per §5's core
+exemption and this routine's own Step 3 instruction. ⚠ **TWENTY-FIFTH session with nothing to
+reconcile — the count does NOT advance for a THIRD seat in the same session (catch 15), and neither do
+the 24/21 session counters: no session has completed since the 09:36 seat and 10-06 is the day this run
+stands inside.**
+**STEPS 2, 3, 4 AND 5 ALL HAD NO OPERAND, AND EACH FOR ITS OWN REASON:** Step 2 had no `highest_close`
+and no `(as of …)` date to compare; Step 3's four rules had no position to evaluate; Step 4 had no
+triggered exit to execute; Step 5 had no held position to re-describe. **ZERO `bars` calls, ZERO
+`quote` calls, ZERO Perplexity calls, ZERO orders.** ⚠ **Step 1's instruction to quote "every open
+satellite ticker" resolved to an EMPTY symbol list, so the call was not made rather than made on VOO —
+a decorative quote on the exempt position would convert an honest absence into a fake exercise.**
+⚠⚠ **STEP 2'S STALENESS DETECTOR RAN WITH NO INPUT FOR THE SECOND TIME FROM THIS SEAT (10-05 12:41 was
+the first), AND THIS SEAT IS THE ONE THAT OWNS THE DETECTOR. The detector's entire input is the
+`(as of …)` date, which is ABSENT. So the check did not pass — IT DID NOT RUN, and "high-water marks
+verified" would have been FALSE.** ⚠⚠ **AND THE EXPOSURE IS LARGER THAN IT WAS YESTERDAY, BECAUSE THE
+10-05 CLOSE RUN NEVER COMMITTED: with ONE position open, this seat would have had to backfill ACROSS A
+MISSING STAMP — exactly the case the routine's Step 2 warns is silent. THE BACKFILL PATH HAS NOW HAD
+TWO CHANCES TO MATTER AND BEEN SAVED BY THE EMPTY SLEEVE BOTH TIMES. LUCK, NOT DESIGN.**
+⚠ **NO BACKFILL WAS PERFORMED AND NONE WAS DUE — there is nothing to write. When it arms: no backfill
+may take its max from a bar dated TODAY while the market is open (this seat sits at 12:42, squarely
+inside the partial-bar window routine 2's 09:36 seat measured at `n` 156 / `v` 2,029), nor from a
+different basis than the one it is compared against.**
+
+⚠⚠ **CATCH (18), AND IT IS CATCH (17) RECURRING INSIDE THE SAME SESSION THAT FIXED IT — THE REPAIRED
+RANGE WAS STALE WITHIN FOUR HOURS.** The 08:22 seat corrected the inherited band range from
+**69.59–70.22%** to **69.59–70.25%** against its own reading. **This seat reads core at 70.31%, which is
+OUTSIDE the corrected range too.** Corrected in file to **69.59–70.31%** rather than repeated.
+⚠⚠ **THE LESSON IS NOT "CHECK HARDER" — IT IS THAT A RANGE OVER A LIVE MOVING MARK GOES STALE BY
+CONSTRUCTION, SO THE STATISTIC ITSELF IS THE DEFECT.** Each repair is correct when written and false
+at the next seat. ⚠ **THE BAND TEST, WHICH IS THE THING §2 ACTUALLY REQUIRES, NEVER DEPENDED ON THE
+RANGE: 70.31% is IN BAND by 5.31 points at the 65 edge and 4.69 at the 75 edge, `core_in_band: true`,
+`rebalance_needed: false`, `rebalance_delta` **−$309.02** (a distance readout, not an instruction — and
+this seat could not act on it anyway, since rebalancing is routine 2's at the next open).**
+**65th consecutive RUN inside the band — the unit is a RUN, which is why it advances where the session
+counters do not.**
+**Sleeves at 12:42: equity $101,030.07, core $71,030.071636 = 70.31%, satellite 0.0% (count 0), cash
+29.69%.** §6's 5% cap would be **$5,051.50** — **NO OPERAND, and this seat may not open a position
+under any circumstance.**
+⚠ **A FOURTH EQUITY/MARK SAMPLE SET, REPORTED WITH ITS LIMIT: `positions.market_value`
+**71,032.191227** implies a mark of **717.1614**, while `account.long_market_value` **71,030.07**, read
+seconds later, implies **717.1400** — ~2.1 CENTS LOWER FROM A DIFFERENT ENDPOINT. `sleeves` and
+`account` agreed to the cent on equity ($101,030.07) while `selftest.py` had read **$101,041.96** a
+minute earlier.** ⚠⚠ **FOUR NUMBERS FROM ONE MINUTE AND NOT ONE OF THEM MAY BE DIFFERENCED INTO
+ANYTHING. TWO CALLS AGREEING IS NOT A CALIBRATION.** ⚠ **The band decision is robust on BOTH bases
+(70.3059% / 70.3065%) — one decision, which is the only reason the spread changes nothing.**
+**Cash read exactly $30,000.00 for a TWENTY-FOURTH time, from TWO independent calls (`sleeves` and
+`account`). THE VOO DIVIDEND IS STILL UNPAID.** ⚠ **FIVE seats remain to the 10-07 test, counted to the
+deadline the same sentence names: today's r4 and 2026-10-07's r1, r2, r3, r4 (routine 5 is Friday-only;
+10-07 is a Wednesday). This seat WAS 10-06 r3 and has now spent itself — six became five because a
+SEAT WAS CONSUMED, not because a day passed.** **The test stands verbatim: `cash` should rise to about
+$30,180.76 ($1.825 × 99.046311231, an INFERENCE — Alpaca does not publish it). If it has not by
+2026-10-07, the paper account does not model dividends at all.**
+
+⚠ **CORE VOO IS AGAIN NOT STAMPED WITH A `highest_close` — SEVENTY-FOURTH CONSECUTIVE RUN.** ⚠⚠ **AND
+THIS SEAT'S INSTANCE IS A LOAD-BEARING ONE, NOT THE WEAK FORM: routine 3's Step 2 holds a WRITE PATH
+into the field, and core VOO is the ONLY row the broker returns. A `bars --symbol VOO` pull followed by
+a max-close write would have produced a perfectly real number and ARMED §5.4 ON THE ONE POSITION §5
+EXEMPTS — a trailing stop that could eventually sell core on a drawdown, which §7 forbids outright.**
+⚠ **NO `bars` CALL WAS MADE AT ALL THIS SEAT, so the refusal is cheaper than 10-06 09:36's (which
+pulled the data and declined to stamp it) — the data was never in hand. ⚠ THAT MAKES IT WEAKER
+EVIDENCE, NOT STRONGER: declining to write a number you are holding is the distinction that matters,
+and this seat never held one.** ⚠ **The only `highest_close` string in this file remains the TEMPLATE
+PLACEHOLDER — the field is ABSENT, the third state, carrying no `(as of …)` date at all.**
+
+⚠⚠ **THIS SEAT'S RESTRAINT IS WORTH NOTHING AND IS GRADED AS SUCH — THE SAME GRADE 10-05 12:41 GOT,
+AND FOR THE SAME REASON.** Every gate was open (breaker INACTIVE, weekly cap 0 of 3, sleeve 0.0%
+deployed, ~29.7% idle cash, `TRADING_ENABLED: true`, control notes none, §6's cap at its LARGEST yet
+observed, $5,051.50), **and routine 3 is EXITS-ONLY: it may not open a position under any
+circumstance, so the refusal was STRUCTURALLY UNAVAILABLE TO VIOLATE.** ⚠ **New positions go through
+pre-market research and the 09:35 execution run, always — a midday entry would route around the
+discipline that forces every buy to sleep on a written thesis. THE IDLE CASH, THE UNUSED CAP AND THE
+INACTIVE BREAKER ARE NOT AN OPPORTUNITY THIS SEAT MAY ACT ON.**
+
 ---
 
 **⚠ THE 2026-10-05 THREE-SEAT BLOCK (~105 LINES) HAS BEEN COLLAPSED BY THIS RUN, UNDER THE FILE'S OWN
@@ -240,7 +321,7 @@ tape:
   `plan_today.md` arrives three calendar days old on a Monday** — compare `plan_date` to the last
   TRADING day, not to the calendar.
 
-### `sell_rule_status` — ALL FOUR RULES ABSENT, NOT PASSING (2026-10-06, 08:22 ET `1-premarket-research` and 09:36 ET `2-market-open-execution` — ⚠ RE-READ AT THE OPEN SEAT WITH THE SAME RESULT, AND A SECOND READING OF AN ABSENT OPERAND IS STILL AN ABSENCE)
+### `sell_rule_status` — ALL FOUR RULES ABSENT, NOT PASSING (2026-10-06, 08:22 ET `1-premarket-research`, 09:36 ET `2-market-open-execution` and 12:42 ET `3-midday-management` — ⚠ RE-READ AT ALL THREE SEATS WITH THE SAME RESULT, AND A THIRD READING OF AN ABSENT OPERAND IS STILL AN ABSENCE. ⚠⚠ THE 12:42 SEAT IS THE ONE WHOSE WHOLE JOB THIS TABLE IS, WHICH IS WHY ITS NULL IS WORTH MORE THAN THE OTHER TWO: ROUTINE 3 EXISTS TO EVALUATE §5, AND IT FOUND NO SUBJECT.)
 
 ⚠⚠ **THERE IS NO POSITION TO WRITE A `sell_rule_status` LINE ON. The distance to each rule is therefore
 not "large" — it is UNDEFINED, and those are different facts.** ⚠ **"Nothing close to triggering" would
@@ -253,9 +334,10 @@ be a fabrication: nothing can be close to a threshold it has no operand for.**
 | **§5.3** hard stop −7% from entry | **DISTANCE UNDEFINED** | **UNDEFINED, not large** | There is no satellite `entry_price` to measure a drawdown from. The 706.74 core fill is **exempt under §5** and is not an operand. |
 | **§5.4** trailing stop −10% from `highest_close` | **NOT ARMED** | **UNDEFINED, not large** | No `highest_close` field — the **third state**, carrying no `(as of …)` date at all. It arms on the first **satellite** fill; the 09-03 core fill was not one. |
 
-**Zero orders submitted by EITHER seat** — routine 1 places none by design (the WEAK form), and
-routine 2 at 09:36 placed none because **the plan carried no intent**, which is the LOAD-BEARING form —
-**zero fills, nothing opened, nothing closed, no realised P&L.** `consecutive_closed_losses` stays **0**: nothing has closed,
+**Zero orders submitted by ANY OF THE THREE SEATS** — routine 1 places none by design (the WEAK form),
+routine 2 at 09:36 placed none because **the plan carried no intent**, which is the LOAD-BEARING form,
+and routine 3 at 12:42 is **exits-only with nothing to exit** (the weak form again, structurally
+unavailable to violate) — **zero fills, nothing opened, nothing closed, no realised P&L.** `consecutive_closed_losses` stays **0**: nothing has closed,
 so the §6 three-loss breaker has **never been approached, not merely never breached**, and the alert
 path at `clickup.py alert --key circuit-breaker` remains **UNTESTED CODE**.
 Breaker **INACTIVE** (`halt_triggered_at: none`, so no `HALT_CLEARED_AT` comparison was required; the
