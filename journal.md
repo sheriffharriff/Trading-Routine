@@ -40,6 +40,123 @@ anything where the honest-broker rule (§4) did real work>
 
 ## Entries
 
+### 2026-10-06 (Tuesday)
+
+**Account:** total **$100,945.88 on official closes** (price basis, `bars --adjustment all`, VOO
+c **716.29**) / **~$101,126.64 on a total-return basis** carrying the **inferred, still-unconfirmed**
+$180.76 VOO dividend receivable | day **+$384.30 (+0.3822%)** from 10-05's official $100,561.58 | since
+inception **+0.9459%** (price basis) / **+1.1266%** (total return)
+**Sleeves:** core **70.28%** | satellite **0.0%** | cash **29.72%**   (§2 band 65–75% — **5.28 points
+inside the lower edge, 4.72 inside the upper. NO rebalance due tomorrow.**)
+**Breaker:** INACTIVE
+**Week:** 0/3 new positions (`week_of` **2026-10-05** — **no rollover**; today is Tuesday of that same
+ISO week, confirmed by computing this ISO week's Monday (2026-10-05) rather than assuming it)
+
+**Traded:** nothing. Zero orders across all four of today's seats. `orders --status all` still returns
+**one row for the entire account history** — the 09-03 core fill. Nothing opened, nothing closed, no
+realised P&L, and **nothing left unresolved overnight.**
+**Researched:** 8 theses — **0 accepted, 8 rejected** (T-2026-10-06-01 through -08)
+**Positions near a sell rule:** **none, and the honest statement is that there is no operand.** All four
+§5 rules are **ABSENT, not passing** — §5.1 and §5.2 have no thesis and no deadline to read, §5.3's
+distance is **UNDEFINED rather than large**, and §5.4 is **NOT ARMED** because no `highest_close` field
+exists. Core VOO is exempt under §5 and was removed from the working list before any rule was read.
+
+**What happened:**
+
+A good market day that the book caught about seven-tenths of. VOO closed **716.29** against 10-05's
+**712.41**, **+0.5446%**; the book made **+0.3822%**, for an excess of **−0.1625pp**. Equity reached its
+highest official close since inception and since-inception is now **+0.9459%** on the price basis. None
+of that is the strategy working — the satellite sleeve contributed **exactly 0.000000%**, as it has on
+every session this account has ever had, and 70% of a 0.54% day is 0.38%. The arithmetic is the market's
+and the structure's; there is no decision in it.
+
+**The session completed, and so did this routine — which is the first thing worth recording, because the
+last two times it mattered it did not.** The 10-05 close run never committed and the 09-28 one before it
+did the same; two of roughly twenty-five close runs have vanished with no alert, because a run that dies
+before `commit.py` leaves no trace by construction. This one ran, which also discharges something the
+carry-forward flagged in advance: the dividend deadline is read off `cash`, and the seat most likely to
+be missing was the one that would read it last. **`cash` read exactly $30,000.00 for a twenty-fifth
+time**, from two independent calls, at 16:17 on the last trading seat before the 10-07 test date. **Four
+seats remain, all of them tomorrow's.** The test was written in advance and has not been moved: `cash`
+should rise to about **$30,180.76**; if it has not by tomorrow, this paper account does not model
+dividends at all, and the core sleeve structurally under-earns about 0.93pp a year on top of the 4.89pp
+cash drag.
+
+**Step 2 — the job this routine exists for, the one that runs at 16:15 rather than 16:00 so the marks
+have settled — had no operand.** There are zero open satellite positions, so there is no `highest_close`
+to raise and no `(as of …)` date to advance. Writing "high-water marks updated" would have been false,
+and so would "verified". The job had no subject. The downstream consequence is the part the midday seat
+cannot see for itself: routine 3's staleness detector takes the `(as of …)` date as its *entire* input,
+so tomorrow it will again be handed nothing and will again neither pass nor fail. The backfill path is
+still unexercised code.
+
+**One clean finding, from the data plane, and it closes a loop the 09:36 seat opened this morning.** That
+seat found `bars --symbol VOO --days 1 --adjustment all` returning a bar dated *today* with `n` **156** and
+`v` **2,029** — six minutes of a session wearing a complete bar's shape — and flagged it as a latent defect
+in routine 2's own Step 6, which sources `voo_close_at_entry` from exactly that call. **The same call at
+16:17 returns `n` 3,734 / `v` 86,983.** The partial bar completed, observed end to end inside one session
+from both sides of the bell. That corroborates the clock-plus-data-plane discriminator; it does not repair
+the defect, which is still open item (12) and still a prompt-level fix.
+
+Eight theses were written this morning and all eight died, five of them on part 1 or part 2 before any
+filter was reached. The one entry worth reading is not a thesis: the two broad scans run minutes apart
+returned different *inventories* of the world, not different judgments about it. A query asking for the
+"most significant" news returned four macroeconomic non-events and said so itself; a query asking for
+"announcements involving two named parties and a disclosed dollar amount" returned seven dated
+transactions including two multi-billion-dollar acquisitions the first scan never mentioned. That is a
+finding about how to ask, and it is the most actionable thing this session produced.
+
+**What I got wrong or nearly got wrong:**
+
+**The real one, and it is this seat's own job rather than a research call.** This routine's instruction is
+to record today's closing prices into the high-water marks, and this is the seat that owns the write path
+into that field. I pulled `bars` for the day's numbers and had **716.29 in hand — a completed, official,
+correctly-based close** — and the broker returns **exactly one position row, core VOO.** The pull to write
+it was real and it was not abstract: the number is right, the call is right, the basis is right, and the
+routine tells me to fill the field. What stops it is that §5 exempts core from all four sell rules, so
+stamping a `highest_close` on VOO would **arm a §5.4 trailing stop on the one position the strategy
+exempts** — a stop that could eventually sell core on a drawdown, which §7 forbids outright. Seventy-five
+runs have now declined this, and almost all of those refusals were free: the seat either had no write path
+or had never fetched the number. **This is the first time the close seat has held both.** A seat that never
+fetched the data and a seat that fetched it and refused to write it look identical in a run summary, and
+only the second is evidence of anything.
+
+**The second one is a sentence I started to write and had to stop.** Today is a VOO-up day with negative
+excess, which is the twenty-first consecutive instance of a separation that has held without exception —
+and "21 of 21" is a claim about a whole series, which catches (5) and (13) say is not a checked fact when
+inherited. I recomputed **two** days from source: 10-06 (**−0.1625pp**) and 10-05 (**−0.2145pp**, which no
+close run ever measured). Both fit. The other twenty are inherited from the 10-02 review and I did not
+re-derive them, so what I can honestly write is **two new observations that fit a pattern I have not
+rechecked**, not a longer streak. The 10-05 figures are recorded here so the Friday review can add them
+from source: 10-05 equity **$100,561.58**, day **+$501.17 (+0.5009%)**, VOO **+0.7153%**, excess
+**−0.2145pp**, since inception **+0.5616%**.
+
+**The third is a counting question I had to think about rather than apply.** Catch (11) says never
+increment a session counter for the day the run is standing in, and catches (14) and (15) say never
+increment one for a weekend or a second seat. All three would have stopped me advancing 24/21 to 25/22.
+But the unit is a *completed* session, and this seat stands **after the bell** — `is_open: false` with
+`next_open` pointing at tomorrow, and a complete 10-06 bar on the tape. So the advance is correct, and the
+refinement worth keeping is that **whether today counts depends on the seat's position relative to the
+bell, not on the date**: routines 1 and 2 may never count the day they stand in, and routine 4 always may.
+That is the same rule, not an exception to it — but I nearly declined the advance out of deference to a
+catch that does not reach this seat, which would have been the mirror-image error.
+
+Nothing else was close. No position was wanted past its invalidation condition, because there is no
+position; no mechanism sentence had to be forced, because every candidate died before one was written.
+
+**For the next run:**
+
+- **The dividend deadline is tomorrow, 2026-10-07, with four seats left — r1, r2, r3, r4.** `cash` is at
+  exactly $30,000.00 for a twenty-fifth reading. **Check it every seat.** The threshold is ~$30,180.76.
+- **Do not stamp a `highest_close` on core VOO.** §5 exempts core; §7 forbids selling it on news. The
+  field stays absent until the first *satellite* fill.
+- **The §1 separation series is still missing 10-05 in its published form.** The numbers are in this entry;
+  the Friday review should fold them in from source rather than inherit the 20-day version.
+- **Routine 2's Step 6 partial-bar defect (open item 12) is confirmed in both directions now** — partial at
+  09:36, complete at 16:17 — and is still unfixed. It costs nothing until the first fill.
+- **Do not carry the core-percentage range as a statistic** (catch 18). Today's live reading is **70.28%**
+  against the 65 and 75 edges. State the reading and the edges; the range cannot be kept.
+
 ### 2026-10-02 (Friday)
 
 **Account:** total **$100,060.41 on official closes (price basis, `bars --adjustment all`, VOO c 707.35 —
