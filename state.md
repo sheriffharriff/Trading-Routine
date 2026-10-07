@@ -10,9 +10,9 @@ The block below is parsed by `scripts/common.py` and gates real behavior
 `key: value` format exactly. Prose goes underneath.
 
 ```
-last_run: 2026-10-07 08:24 ET 1-premarket-research (SEAT 1 OF 4 ON THE DIVIDEND DEADLINE DAY; selftest PASSED all five, trading_enabled true, LIVE paper, pre-flight equity 100643.92; PRE-MARKET, NOT A HOLIDAY - clock 08:24:50 is_open FALSE with next_open 2026-10-07T09:30 pointing at TODAY, read off the DATE not the boolean, corroborated from the data plane by bars --days 4 returning a complete 2026-10-06 bar c 716.29 and NO bar dated 2026-10-07; THE PRIOR SESSION WAS COMPLETE - all four 10-06 seats ran and committed, the first unbroken handoff since 10-02, and that is NOT a fix because the failure mode is a seat that never starts; LEDGER RECONCILES - one broker row (core VOO 99.046311231 at 706.74) against zero satellite blocks, TWENTY-SIXTH session with nothing to reconcile, and an AGREEING ledger and an EMPTY ledger are the same artifact; cash read EXACTLY 30000.00 a TWENTY-SIXTH time from TWO independent calls ON THE DEADLINE DAY ITSELF with THREE seats left (09:35, 12:30, 16:15) - non-arrival at 08:24 is EXPECTED and is NOT the result, and the answer at the end of today is NOT 'wait another day' because the pay date will have passed; 7 theses written, 0 accepted 7 rejected, 120 lifetime (113 inherited + 7), ZERO ever accepted; FOUR VOLUNTEERED ABSENCES IN ONE RUN - the most on record and the SEVENTH consecutive session with at least one (CEG/Google, CVX/Hess Midstream, POSCO/Samsung SDI and Boeing/Lockheed all answered §4's question in the negative in their own words), and the priors were ready and specific for all four with none written down; THE 10-06 FRAMING FINDING WAS APPLIED AS THE FIRST QUERY AND PAID, AND THEN WAS SHOWN TO BE INCOMPLETE - 'two named parties plus a dollar amount plus a date' returned four dated transactions AND their exclusions with reasons attached, but the most §4-shaped item of the run (Boeing/Lockheed PAC-3 MSE 14.7B) appeared ONLY when a third query asked who WON a contract and QUANTIFIED IT TO THEIR OWN SEGMENT: TWO COMPLEMENTARY FRAMINGS, NOT ONE REPLACEMENT; A NEW RULE (iii) COSTUME AND A GOOD ONE - AN UNDEFINITIZED CONTRACT ACTION PRICING A PREVIOUSLY ANNOUNCED FRAMEWORK (Boeing's 14.7B formalises an April 2026 DoD framework that already stated the intent to triple seeker output: the DOLLAR FIGURE IS NEW, THE ECONOMIC EVENT IS SIX MONTHS OLD); SIXTH defence-program instance and the FIRST where the named recipient is a buyable sub-prime rather than the prime - the pattern held anyway because the question moves one level down and the same confidentiality applies, which STRENGTHENS the rule; ZERO move calls and ZERO quote calls - the ABSENT state, the fourth, and FOUR COMPLETE sessions are confirmed zero-move (09-29, 10-02, 10-05, 10-06) with TODAY NOT COUNTABLE as a fifth from seat 1 of 4; core 70.1919 pct live and 70.2811 pct on the official 10-06 close basis, IN BAND by 5.19 and 4.81 points, 67th consecutive RUN inside it, rebalance_delta -193.18 a distance readout, NO REBALANCE DUE; a THIRD pre-market mark sample, current_price 713.2413 against the official 716.29 is -3.0487 against 10-06's +2.84 and 10-05's -0.22 - THREE SAMPLES, BOTH SIGNS, A FOURTEEN-FOLD SPREAD, NO PRE-MARKET OFFSET EXISTS; a FIFTH n/v drift instance arriving for free - the COMPLETE 10-06 bar read n 3734/v 86983 at 16:17 and n 3735/v 86985 now, ACROSS A SHUT MARKET, with c holding to the cent; CATCH (21), A NEW SHAPE CAUGHT BEFORE PUBLICATION - TWO COUNTERS OVER ONE DATE THAT LEGITIMATELY DISAGREE, and the pull is to 'fix' the one that looks out of step; weekly cap 0 of 3, week_of 2026-10-05 UNCHANGED (Monday of ISO week 41, COMPUTED not inherited), breaker INACTIVE, consecutive_closed_losses 0 - nothing has EVER closed; 25 completed sessions and 22 post-fill, NOT ADVANCED because this seat stands BEFORE the bell; core VOO NOT stamped with a highest_close for a 76th run, the MIDDLE grade - no write path but the number 716.29 WAS in hand from this run's own bars pull and was not written)
+last_run: 2026-10-07 09:37 ET 2-market-open-execution (SEAT 2 OF 4 ON THE DIVIDEND DEADLINE DAY; selftest PASSED all five, trading_enabled true, LIVE paper, pre-flight equity 100576.44; MARKET OPEN - clock 09:37:05 is_open TRUE, the ONE unambiguous reading of that boolean, next_close 2026-10-07T16:00 and next_open 2026-10-08T09:30; THE STALENESS GATE DID NOT FIRE - plan_date reads 2026-10-07 and IS today, read OFF THE FIELD and NEVER inferred from the zero-order outcome, because a FRESH EMPTY PLAN and a STALE PLAN produce a BYTE-FOR-BYTE IDENTICAL RUN; that is the 35th consecutive non-exercise and its alert path REMAINS UNTESTED CODE; ZERO ORDERS PLACED - the plan carried NO BUY intent (7 theses written at 08:24, ALL SEVEN REJECTED, each one verified PRESENT in research_log.md before concluding there was nothing to execute), NO SELL intent, and NO rebalance; §5 HAD NO OPERAND AND DID NOT PASS - zero satellite positions, so §5.1 invalidation, §5.2 time stop, §5.3 -7 pct hard stop and §5.4 -10 pct trailing stop each had NOTHING TO EVALUATE; the distance to each rule is UNDEFINED, not large; STEP 3 CORE BOOTSTRAP SKIPPED - core_established already true; that path ran once on 09-03 and by construction never runs again; LEDGER RECONCILES - one broker row (core VOO 99.046311231 at avg_entry 706.74, a RAW print, cost_basis 69999.99, unchanged since the 09-03 fill) against ZERO satellite blocks in positions.md, and THEY AGREE; this is the SECOND reconciliation INSIDE THE TWENTY-SIXTH SESSION with nothing to reconcile and NOT A TWENTY-SEVENTH - the unit is a SESSION IN WHICH A RECONCILIATION WAS PERFORMED and 10-07 was ALREADY COUNTED by the 08:24 seat, which is catch (21)'s exact trap seen from the other side; an AGREEING ledger and an EMPTY ledger remain the same artifact, the absence of a test and not a clean bill of health; cash read EXACTLY 30000.00 a TWENTY-SEVENTH time, from TWO independent calls (sleeves and account), and THIS IS THE FIRST READING TAKEN AFTER THE BELL ON THE PAY DATE - TWO seats remain (12:30, 16:15) and non-arrival HERE is EXPECTED and is NOT the result; core 70.17 pct live (70580.896615 of 100580.90), IN BAND by 5.17 points at the 65 edge and 4.83 at the 75 edge, 68th consecutive RUN inside it, rebalance_delta -174.27 A DISTANCE READOUT NOT AN INSTRUCTION (negative only because core sits fractionally ABOVE 70, and §2 acts at the BAND EDGE, not at the target), NO REBALANCE DUE AND NONE MANUFACTURED; EQUITY MOVED WITHIN THIS SINGLE RUN - 100576.44 at selftest, 100580.90 at sleeves, 100587.34 at account, a 10.90 SPREAD across three calls minutes apart, which is the mechanical reason a rebalance may never be built on a live intraday mark; VOO current_price 712.605 against lastday 716.20, change_today -0.502 pct, so the tape opened RED and that is NOT a §5 input on an exempt core; ZERO move calls and ZERO quote calls - the ABSENT state, the fourth, because no candidate reached an eligible ticker carrying a mechanism for the priced-in filter to fire on; NO highest_close STAMPED ON CORE VOO - declined deliberately, since a mark there would arm §5.4 on the one position §5 exempts, which §7 forbids; NO bars CALL MADE - Step 6's voo_close_at_entry had no fill to stamp, so OPEN ITEM (12)'s partial-bar defect WAS MET AND NOT TRIGGERED, which is not the same thing as fixed and must not be written as one)
 
-prior_run: 2026-10-06 16:17 ET 4-market-close-journal (THE SESSION WAS COMPLETE AND ALL FOUR SEATS RAN, which 10-05 and 09-28 cannot say; official close basis VOO c 716.29, equity 100945.8823, day +0.3822 pct, since inception +0.9459 pct, the highest official close equity since inception; VOO itself +0.5446 pct so the book LAGGED by 0.1625pp and the satellite sleeve contributed EXACTLY 0.000000 pct as always; its load-bearing finding was the strongest highest_close refusal in the record - the close seat held BOTH the completed official number 716.29 AND the only write path, on the only row the broker returns, and did not write it; catch (20), an inherited ARITHMETIC RESULT whose two inputs sat three lines above it; the 10-06 partial bar observed COMPLETING end to end inside one session, n 156/v 2029 at 09:36 to n 3734/v 86983 at 16:17; 8 theses all rejected; cash 30000.00 a twenty-fifth time; core 70.2811 pct, 66th run in band; session counters advanced 24/21 to 25/22 because the close seat stands AFTER the bell.)
+prior_run: 2026-10-07 08:24 ET 1-premarket-research (SEAT 1 OF 4; selftest passed all five, pre-flight equity 100643.92; PRE-MARKET and NOT a holiday, read off next_open pointing at TODAY rather than off is_open false, and corroborated from the data plane by bars returning a complete 10-06 bar c 716.29 and NO bar dated 10-07; 7 theses written, 0 accepted, 7 rejected, 120 lifetime and ZERO EVER ACCEPTED; FOUR VOLUNTEERED ABSENCES IN ONE RUN, the most on record and the seventh consecutive session with at least one, with the priors ready and specific for all four and NOT ONE written down as a candidate; the 10-06 framing finding was applied first, PAID, and was then shown INCOMPLETE - two complementary framings, not one replacement; a new rule (iii) costume, an undefinitized contract action pricing a six-month-old framework where the DOLLAR FIGURE is new and the ECONOMIC EVENT is not; core 70.19 pct in band, rebalance_delta -193.18, no rebalance; cash 30000.00 a twenty-sixth time; catch (21) - two counters over one date that legitimately disagree)
 
 week_of: 2026-10-05
 new_positions_this_week: 0
@@ -21,9 +21,9 @@ circuit_breaker: INACTIVE
 halt_triggered_at: none
 core_established: true
 core_ticker: VOO
-core_pct: 70.19
+core_pct: 70.17
 satellite_pct: 0.0
-cash_pct: 29.81
+cash_pct: 29.83
 open_thesis_ids: none
 ```
 
@@ -84,18 +84,19 @@ discarded; settled items were folded to one line each and repeated emphasis was 
   say it was worth to their own segment" targets the PART 2 EVIDENCE — the most common killer in this
   log — and it surfaced a transaction the first framing missed entirely. ASK BOTH, EVERY RUN.**
 
-- **⚠⚠ THE VOO DIVIDEND IS STILL UNPAID AND TODAY IS THE DEADLINE. THREE SEATS LEFT, ALL OF THEM
-  2026-10-07's. CHECK `cash` AT EVERY ONE.** `cash` read **exactly $30,000.00** again at 10-07 08:24 —
-  a **twenty-sixth** reading, taken from **two independent calls** (`account` and `sleeves`).
-  ⚠ **Twenty-six readings are ONE unresolved observation, and non-arrival at 08:24 on the pay date is
-  EXPECTED, not evidence — a credit can land at any point in the session.** ⚠ **THE FALSIFIABLE TEST,
-  WRITTEN IN ADVANCE AND NOT MOVED: `cash` should rise to about $30,180.76. IF IT HAS NOT BY THE END OF
-  TODAY, the paper account does not model dividends at all.** The implied credit (**$1.825/share ×
-  99.046311231**) is an **INFERENCE** — Alpaca does not publish it.
-  ⚠ **SEATS COUNTED TO THE DEADLINE THE SAME SENTENCE NAMES, PER CATCH (16): 10-07 r2 (09:35), r3
-  (12:30), r4 (16:15) — **THREE** (routine 5 is Friday-only). ⚠ **The 08:24 pre-market seat WAS r1 and
-  has spent itself, which is why four became three — the decrement is a seat CONSUMED, not a day
-  passing.** **Ask what the UNIT is, then what the BOUND is.**
+- **⚠⚠ THE VOO DIVIDEND IS STILL UNPAID, TODAY IS THE DEADLINE, AND TWO SEATS ARE LEFT — 10-07 r3
+  (12:30) AND r4 (16:15). CHECK `cash` AT BOTH.** `cash` read **exactly $30,000.00** again at 10-07
+  09:37 — a **twenty-seventh** reading, taken from **two independent calls** (`sleeves` and `account`),
+  and **THE FIRST ONE TAKEN AFTER THE BELL ON THE PAY DATE.** ⚠ **Twenty-seven readings are still ONE
+  unresolved observation, and non-arrival at 09:37 is EXPECTED, not evidence — a credit can land at any
+  point in the session.** ⚠ **THE FALSIFIABLE TEST, WRITTEN IN ADVANCE AND NOT MOVED: `cash` should
+  rise to about $30,180.76. IF IT HAS NOT BY THE END OF TODAY, the paper account does not model
+  dividends at all.** The implied credit (**$1.825/share × 99.046311231**) is an **INFERENCE** — Alpaca
+  does not publish it.
+  ⚠ **SEATS COUNTED TO THE DEADLINE THE SAME SENTENCE NAMES, PER CATCH (16): **TWO** (routine 5 is
+  Friday-only). ⚠ **The 09:35 open seat WAS r2 and has spent itself, which is why three became two —
+  the decrement is a seat CONSUMED, not a day passing.** **Ask what the UNIT is, then what the BOUND
+  is.**
   ⚠⚠ **AND THE ANSWER AT THE END OF TODAY IS NOT "WAIT ANOTHER DAY": the pay date will have passed and
   a non-arrival then is a finding about the PLATFORM, not about the market. The 16:15 seat is the one
   that must state the result.**
@@ -424,6 +425,12 @@ discarded; settled items were folded to one line each and repeated emphasis was 
   doing so would have broken a correct counter. AGREEMENT BETWEEN TWO COUNTERS IS NOT A VALIDITY CHECK
   AND DISAGREEMENT IS NOT AN ERROR SIGNAL — only the UNIT decides. Both are now stated with their unit
   named in the same breath, which is the only form that survives the next reader.**
+  ⚠⚠ **AND IT RECURRED AT THE VERY NEXT SEAT, FROM THE OTHER SIDE: the 09:37 open run reached for a
+  "TWENTY-SEVENTH reconciliation" and had to put it back. The reconciliation unit is a SESSION IN
+  WHICH ONE WAS PERFORMED, 10-07 was already counted by the 08:24 seat, and a second reconciliation
+  inside the same session advances NOTHING. The `cash`-reading counter DID advance 26→27 over the same
+  two seats, correctly, because ITS unit is a reading. TWO COUNTERS, SAME TWO SEATS, ONE ADVANCES AND
+  ONE DOES NOT — and only the unit says which.**
   ⚠⚠ **(20) AN INHERITED *ARITHMETIC RESULT* WHOSE TWO INPUTS WERE SITTING IN THE SAME PARAGRAPH.** The
   tape-facts block carried *"10-05 is +0.7168% close-to-close against 10-02"* — and the two closes it is
   computed from, **712.41 and 707.35**, were written **three lines above it in the same item.** The
@@ -692,10 +699,10 @@ discarded; settled items were folded to one line each and repeated emphasis was 
   MISSING SEAT.** ⚠ **What it DID buy is specific and is spent: (8)'s last pre-deadline reading was
   taken by a seat that ran, so this item is no longer load-bearing for that one.**
   **(8) THE DIVIDEND — THE DEADLINE IS TODAY AND THE ANSWER LANDS IN THIS SESSION.** Priced at
-  ~0.93pp/yr on top of the 4.89pp cash drag; a **twenty-sixth** unchanged reading of **$30,000.00** at
-  **10-07 08:24**, with **THREE seats left (09:35, 12:30, 16:15)**. ⚠ **The 16:15 seat is the one that
-  must STATE THE RESULT — non-arrival then is a finding about the platform, not a reason to extend the
-  deadline.**
+  ~0.93pp/yr on top of the 4.89pp cash drag; a **twenty-seventh** unchanged reading of **$30,000.00** at
+  **10-07 09:37**, the **first one taken AFTER the bell on the pay date**, with **TWO seats left
+  (12:30, 16:15)**. ⚠ **The 16:15 seat is the one that must STATE THE RESULT — non-arrival then is a
+  finding about the platform, not a reason to extend the deadline.**
   **(1)** the priced-in filter reads a drawdown as priced-in — **LITE at +28.34pp is the bill.**
   **(2)** the same filter reads an absorbed event move as a pass (QCOM, AVAV, AKAM).
   **(3)** the structurally undeployed sleeve — **113 theses, zero accepted.**
