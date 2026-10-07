@@ -86,8 +86,8 @@ check that the pull returned the right session. A stored baseline is a *label*, 
 *(none — no **satellite** positions have been opened yet. Core VOO exists and is deliberately not tracked here, per the top-of-file rules and the fill note further down.)*
 
 **Reconciliation 2026-10-07 — ONE BLOCK FOR THE DATE, COVERING THE SEATS THAT HAVE RUN SO FAR:
-`1-premarket-research` 08:24 ET and `2-market-open-execution` 09:37 ET. TWO OF FOUR; r3 (12:30) and
-r4 (16:15) are still to come and will append here. ⚠ THE PRIOR SESSION (10-06) WAS COMPLETE — ALL FOUR OF ITS SEATS RAN AND COMMITTED, so
+`1-premarket-research` 08:24 ET, `2-market-open-execution` 09:37 ET and `3-midday-management` 12:41 ET.
+THREE OF FOUR; only r4 (16:15) is still to come and will append here. ⚠ THE PRIOR SESSION (10-06) WAS COMPLETE — ALL FOUR OF ITS SEATS RAN AND COMMITTED, so
 this seat inherits an unbroken handoff for the first time since 10-02. THE LEDGER AGREES WITH THE
 BROKER; ZERO SATELLITE POSITIONS ON BOTH SIDES; NO §5 RULE HAS A SUBJECT; NO MARK WRITTEN AND NONE
 DUE; ZERO ORDERS.**
@@ -184,6 +184,88 @@ first is evidence of anything. This one is the second kind and says so.**
 (`sleeves`, `account`) — a **TWENTY-SEVENTH** unchanged reading, and **THE FIRST TAKEN AFTER THE BELL
 ON THE PAY DATE.** Expected at 09:37; NOT the result. TWO seats remain (12:30, 16:15).** ⚠ **The test
 is ~$30,180.76, has not been moved, and the 16:15 seat is the one that must state the result.**
+
+### SEAT 3 OF 4 — `3-midday-management` 2026-10-07 12:41 ET — THE SEAT THAT EXISTS ONLY FOR §5, WITH NO §5 OPERAND
+
+**THIS ROUTINE'S ENTIRE JOB IS TO EVALUATE §5 AND NOTHING ELSE, AND IT HAD NO SUBJECT.** Selftest passed
+all five checks; `trading_enabled: true`, LIVE paper; pre-flight equity **$100,683.41**. `clock` at
+**12:41:21** reads **`is_open: true`** with `next_close` **2026-10-07T16:00** — **MARKET OPEN, the ONE
+unambiguous reading of that boolean** — so the closed-market skip path was **not** taken and this seat ran
+inside the session it was scheduled for.
+
+**RECONCILIATION, SATELLITE-TO-SATELLITE — THE THIRD INSIDE THIS SESSION.** `alpaca.py positions` returns
+**one row, core VOO**, 99.046311231 shares at avg_entry **706.74** (a **RAW** print), cost_basis
+**$69,999.99** — unchanged since the 09-03 fill — against **zero satellite blocks in this file. THEY
+AGREE.** ⚠ **Core VOO was removed from the working list BEFORE any §5 rule was read**, per §5's core
+exemption. Sleeves at 12:41: equity **$100,689.35**, core **$70,689.352326 = 70.21%**, satellite **0.0%**
+(count 0), cash **29.79%**, `core_in_band: true`, `rebalance_needed: false`, `rebalance_delta`
+**−$206.81** — ⚠ **a distance readout, not an instruction, and in any case NOT THIS SEAT'S TO ACT ON:
+§2 rebalances at the MARKET-OPEN run.** In band by **5.21 points at the 65 edge and 4.79 at the 75 edge;
+69th consecutive run inside it.** VOO `current_price` **713.70** against `lastday_price` **716.20**,
+`change_today` **−0.349%** — the tape is red intraday and **that is not a §5 input on an exempt core.**
+⚠ **Still ONE session with nothing to reconcile, NOT a twenty-ninth — the unit is a SESSION, and 10-07 was
+already counted at the 08:24 seat (catch (21)).**
+
+**STEP 2 — THE HIGH-WATER REPAIR THIS SEAT UNIQUELY OWNS, WITH NOTHING TO REPAIR.**
+⚠⚠ **STEP 2 IS THE ONE THING ROUTINE 3 DOES THAT NO OTHER SEAT DOES, AND IT IS WHY THE ROUTINE EXISTS: a
+missed close run leaves `highest_close` stale, which silently disables §5.4 while every check still passes.
+THIS SEAT COULD NOT EXERCISE IT.** There is **no `highest_close` field in this file outside the TEMPLATE**
+— the **THIRD STATE: absent, carrying no `(as of …)` date at all** — ⚠ **and an ABSENT mark is NOT a STALE
+mark.** The staleness comparison against the last trading day **was not performed because it has no
+subject**, so **the backfill path remains UNTESTED CODE.** ⚠ **ZERO `bars` CALLS WERE MADE, and that is the
+correct number here rather than an omission — there is no entry date to pull a window from.**
+⚠⚠ **THIS MATTERS MORE ON THIS SEAT THAN ON ANY OTHER: two close runs have already vanished (09-28 and
+10-05) and this backfill is the designed compensation for exactly that. IT HAS NEVER ONCE RUN AGAINST A
+REAL MARK. The sleeve being empty is the only reason the vanished closes cost nothing — LUCK, NOT DESIGN.**
+
+**STEP 3 — §5 EVALUATED IN ORDER. ALL FOUR RULES ABSENT RATHER THAN PASSING.**
+
+| Rule | What it needed | What it got |
+|---|---|---|
+| **§5.1** thesis invalidation | the `invalidation` string verbatim, plus a news check naming the company | **NO OPERAND.** No position, so no `invalidation` line to read and **no company to name in a query — ZERO `perplexity` calls, which is the correct number, not a skipped check.** |
+| **§5.2** time stop | a `timing_window` deadline to compare against today | **NO OPERAND.** No deadline exists. |
+| **§5.3** hard stop −7% from entry | a satellite `entry_price` | **NO OPERAND.** The 706.74 core fill is **exempt under §5** and is not an operand. |
+| **§5.4** trailing stop −10% from `highest_close` | a high-water mark on the same adjustment basis | **NOT ARMED.** No mark. It arms on the first **satellite** fill; the 09-03 core fill was not one. |
+
+⚠⚠ **THE DISTANCE TO EACH OF THE FOUR RULES IS UNDEFINED, NOT LARGE.** Writing "comfortable" or "nothing
+close to triggering" would be a fabrication — there is no number to be far from a threshold. ⚠ **ZERO
+`quote` calls: the routine says to quote every open satellite ticker, and that list is EMPTY.**
+
+**STEPS 4 AND 5 — NO EXITS, NO HOLDS, AND NOTHING THE DRY-RUN FLAG COULD HAVE CAUGHT.**
+**ZERO ORDERS AND NO EXIT INTENT**, so the `"dry_run": true` branch was **never reached** — ⚠ **which is
+NOT evidence that `trading_enabled: true` would have let a stop through; that path stays untested from this
+seat.** `consecutive_closed_losses` stays **0** and `circuit_breaker` stays **INACTIVE**: ⚠ **no position
+closed, so there was no increment AND no reset — a streak that CANNOT MOVE is not a streak that HELD.**
+`open_thesis_ids` stays **none** — nothing to remove. Step 5's `sell_rule_status` refresh had **no position
+to write a line on.**
+
+⚠⚠ **AND THE RESTRICTION THAT DEFINES THIS SEAT: THIS RUN IS EXITS ONLY, AND NO POSITION WAS OPENED.**
+The sleeve is **0% deployed against a 30% target** and cash has sat at exactly $30,000.00 for twenty-eight
+readings — ⚠ **precisely the conditions under which a midday entry would feel most justified, which is why
+the restriction is written where it is.** A buy here would route around the pre-market thesis and the 09:35
+execution seat, the path that forces every entry to sleep on a written thesis. **Nothing was manufactured
+to fill the sleeve.**
+
+⚠ **CORE VOO IS AGAIN NOT STAMPED WITH A `highest_close` — SEVENTY-EIGHTH CONSECUTIVE RUN.** ⚠⚠ **AND ON
+THIS SEAT THE REFUSAL IS THE SHARPEST IT GETS: routine 3's Step 2 is the ONLY instruction in the system
+that says to WRITE a high-water mark mid-session, and the only position on the book is the one §5 exempts.
+Stamping 713.70 here would ARM §5.4 ON AN EXEMPT POSITION — §7's explicit "never" — and would do it under
+cover of a step that looks like routine maintenance.** ⚠ **The only `highest_close` string in this file
+remains the TEMPLATE placeholder.**
+
+⚠ **THE DIVIDEND TEST, SEAT 3 OF 4: `cash` read EXACTLY $30,000.00 from two call paths (`sleeves`,
+`account`, with `accrued_fees: 0`) — a **TWENTY-EIGHTH** unchanged reading and the **SECOND taken after the
+bell on the pay date**, ~3 hours into the session. Expected here; NOT the result. ONE seat remains (16:15).**
+⚠⚠ **AND THIS SEAT ADDS A FIELD THAT WEAKENS THE END-OF-TODAY TEST: `account` carries `balance_asof` and it
+reads **2026-10-06 — YESTERDAY.** So the cash figure may be a **PRIOR-DAY SNAPSHOT that never refreshes
+intraday**, and a non-arrival read at 16:15 today would be consistent with BOTH "the platform does not model
+dividends" AND "the credit posts to a balance this field will not show until 10-08." THE TEST AS WRITTEN
+CANNOT DISTINGUISH THEM — the falsifiable claim ($30,180.76) is UNCHANGED, but the reading moves to the
+first 10-08 seat. A refinement off an API field, NOT a softening.**
+
+**NOTHING SHOULD HAVE EXECUTED AND DID NOT.** ⚠⚠ **That lead line is empty BY CONSTRUCTION — because there
+was no position — and NOT because a stop was checked and found safe. The two read identically in a run
+summary and are not the same claim.**
 
 **Reconciliation 2026-10-06 — ONE BLOCK FOR THE DATE, COVERING ALL FOUR SEATS: `1-premarket-research`
 08:22 ET, `2-market-open-execution` 09:36 ET, `3-midday-management` 12:42 ET and
