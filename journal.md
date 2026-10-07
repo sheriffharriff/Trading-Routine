@@ -40,6 +40,156 @@ anything where the honest-broker rule (§4) did real work>
 
 ## Entries
 
+### 2026-10-07 (Wednesday)
+
+**Account:** total **$100,784.4368 on official closes** (price basis, `bars --adjustment all`, VOO
+c **714.66**) / **$100,763.64 on the live broker mark** at 16:17 | day **−$161.4455 (−0.1599%)** from
+10-06's official $100,945.8823 | since inception **+0.7844%** (price basis). ⚠ **The broker's own
+`change_today` reads −0.244% and `last_equity` $100,936.9681 → −$173.3281 (−0.1717%). TWO BASES, NEVER
+CONCATENATED: the official-close series is the one the §1 benchmark is computed on.**
+**Sleeves:** core **70.2335%** | satellite **0.0%** | cash **29.7665%**   (§2 band 65–75% — **5.2335
+points inside the lower edge, 4.7665 inside the upper. NO rebalance due tomorrow.**)
+**Breaker:** INACTIVE
+**Week:** 0/3 new positions (`week_of` **2026-10-05** — **no rollover**; today is Wednesday of that same
+ISO week, confirmed by computing this ISO week's Monday (**2026-10-05**) rather than assuming it)
+
+**Traded:** nothing. **Zero orders at all four seats.** `orders --status all` still returns **one row for
+the entire account history** — the 09-03 core fill, `status: filled`, terminal. **Nothing opened, nothing
+closed, no realised P&L, and nothing left unresolved overnight** — the §7 limbo case has no instance.
+**Researched:** 7 theses — **0 accepted, 7 rejected** (T-2026-10-07-01 … -07), all written at the 08:24
+pre-market seat.
+**Positions near a sell rule:** **none, and the honest statement is that there is no operand.** All four
+§5 rules are **ABSENT, not passing**: §5.1 has no thesis to invalidate, §5.2 no timing window to expire,
+§5.3 no satellite entry price to measure −7% from, §5.4 no `highest_close` to measure −10% from. ⚠ **The
+distance to each is UNDEFINED, not large.** **This is the 26th completed session since 2026-09-01, 23 of
+them post-fill, and §5 has never once had a subject.**
+
+**What happened:**
+
+A full, quiet, entirely uneventful session, and the only thing in it that required a decision was a
+decision not to write something.
+
+The pre-market seat ran the funnel and produced seven theses, every one rejected. Four of the seven died
+on a **volunteered absence** — the source was asked whether a third public company was named and said no,
+in its own words, four separate times. Google/Constellation's **$4.3B** nuclear uprate programme is the
+one worth remembering: a named counterparty with a trillion-dollar balance sheet, 3,590 MW, 11 named
+reactors, three named states, 7,200 jobs — every detail §4 could want except a recipient of the capex,
+and first capacity in **2028** regardless. Lockheed→Boeing's **$14.7B** PAC-3 MSE award was the other
+large one, and it carried a genuinely new rule (iii) costume: an *undefinitized contract action pricing a
+framework already announced in April 2026*. The dollar figure was new; the economic event was six months
+old. That was caught only because a drill query asked for the disclosure history, and the cost of asking
+was one clause.
+
+The open seat executed nothing because the plan contained nothing to execute, and the midday seat found
+§5 with no operand. Every gate stood open all day — breaker INACTIVE, weekly cap 0 of 3, satellite sleeve
+entirely undeployed, ~29.8% idle cash, `control.md` notes empty, `TRADING_ENABLED: true`, §6's 5% cap
+sitting ready at **$5,038.18** — and nothing stopped a buy except the absence of a candidate. That is the
+correct output of a §4 run and it is the twenty-sixth consecutive session to produce it.
+
+**My own job, Step 2, had no subject.** There are zero open satellite positions, so there was no
+`highest_close` to raise and — the half that matters more — **no `(as of …)` date to advance.** The field
+is ABSENT, the third state, carrying no date at all. "High-water marks updated" would have been false and
+so would "verified"; the honest form is that the job had no operand. The consequence is that tomorrow's
+midday staleness detector again has nothing to compare, so **no staleness could be detected and none was
+ruled out.** Both halves of the §5.4 machinery — the seat that writes the stamp and the seat that detects
+a missing one — have now recorded their own null on the same session for the second session running, and
+neither null is evidence that either path works.
+
+Core was removed from the working list before any §5 rule was read, per §5's exemption, and the ledger
+agreed with the broker at all four seats: one row, core VOO, 99.046311231 shares at 706.74 raw, cost basis
+$69,999.99, unchanged since 09-03, against zero satellite blocks. An agreeing ledger and an empty ledger
+are the same artifact.
+
+**The dividend deadline arrived and I could not state the result.** `cash` read exactly **$30,000.00** for
+a twenty-ninth time, from two call paths, with `accrued_fees: 0` — the third reading after the bell on the
+pay date. The **$30,180.76** credit has not appeared. But `account` carries `balance_asof` and at **16:17,
+seventeen minutes after the close of the pay date itself, it still reads 2026-10-06 — yesterday.** It did
+not advance across the entire session, 08:24 through 16:17. So the non-arrival is consistent with *both*
+"the platform does not model dividends" and "the credit posts to a balance stamped 10-07 that this field
+will not show until 10-08," and the test as written cannot separate them. **Recorded, not concluded.** The
+falsifiable claim is unchanged at ~$30,180.76 and the reading passes to the first 10-08 seat — the first
+one taken against a balance stamped after the pay date. The price of the answer, if it turns out to be the
+first branch, is already established: dividends are **1.3254pp/yr** on VOO, so a 70% core that never
+collects them under-earns **~0.93pp/yr**, on top of the **4.89pp** cash drag — a **~5.82pp annual
+handicap before any decision is made.** That is for the human, not something any seat can fix.
+
+**One new §1 observation, and it is a VOO-down day.** VOO fell **−0.2276%** (716.29 → 714.66) and the book
+fell **−0.1599%**, an excess of **+0.0676pp**. That is the established separation again — positive excess
+on down days — and the arithmetic is the whole explanation: 70.23% core against a 29.77% cash float gives
+0.7023 × (−0.2276%) = −0.1598%, which is the book's return to four decimal places. The satellite sleeve
+contributed **exactly 0.000000%**, as it has on every observation. ⚠ **This is ONE new observation, not a
+streak extended to 21 of 21. The other twenty days were not re-derived this run, and a model that fits to
+zero residual does so because there is nothing in the book it omits.** Neither direction is skill.
+
+**What I got wrong or nearly got wrong:**
+
+**1. I held the number, I held the write path, and the stamp was the literal wording of my own
+instruction.** This is the strongest-grade `highest_close` temptation available anywhere in this system
+and it landed on this seat. I pulled `bars --symbol VOO --days 2 --adjustment all` for the tape and it
+handed me **714.66** — real, completed, correct basis, on the only row the broker returns — while sitting
+on the one routine whose Step 2 says *"record the closes"* and owns the write path into the field. Seventy-
+nine runs have declined this and most of them declined it weakly, from seats with no write path or no
+number in hand. This one had both. A mark on VOO would **arm §5.4 on the one position §5 exempts**, which
+§7 forbids outright, and it fails toward *selling*: the mark would have sat at **716.29** and today's close
+is already below it, so the phantom drawdown starts accruing on day one. Writing it would have looked like
+diligence in the diff.
+
+**2. The deferred deadline is shaped exactly like a softening, and I nearly accepted it on the wrong
+grounds.** My instruction, and the carry-forward above it, said the 16:15 seat is the last one that can
+state the dividend result and has no successor to defer to. I arrived holding an inherited refinement that
+moved the deadline to 10-08 — and a refinement that relieves the current seat of a conclusion it was told
+to reach is precisely the shape of an agent talking itself out of a test it set in advance. The thing that
+makes it legitimate is not that it was inherited; it is that I **read `balance_asof` myself, post-bell,
+and found it still stamped yesterday.** Had the field advanced to 2026-10-07 while cash stayed at
+$30,000.00, the refinement would have collapsed and the platform finding would have been mine to write
+tonight. I want that condition recorded explicitly, because next time the convenient version will arrive
+without it.
+
+**3. The `n`/`v` floor test has its first demonstrated false positive, and it is today's complete bar.**
+The 2026-10-07 session closed with **n 1,323 / v 23,415**, against 10-06's complete **3,735 / 86,985**,
+10-05's **1,802 / 60,541**, 10-02's **2,524 / 134,995** and 10-01's **1,634 / 51,893**. Today's bar is
+**below every one of those floors** — a factor of 3.7 below yesterday on volume — and it is *complete*.
+The carry-forward stated this limit and called it untested ("a quiet, low-participation FULL session could
+land under them"); it is tested now, and the floor test fails. ⚠ **It is retired as a corroborant, not
+merely downgraded.**
+
+**4. And the corroborating leg of the sound discriminator failed too, which I did not expect.** The rule
+says the clock *plus* a bar dated today *plus* a ~15:59 `latestTrade` matching its close is the only sound
+test. The clock was unambiguous (`is_open: false`, `next_open` **2026-10-08T09:30**) and the bar existed —
+but `latestTrade` printed **714.53** at 16:00:52 against the bar's **c 714.66**, a 13-cent gap, and the
+20:00Z minute bar agreed with the trade rather than the close. That is benign (a 600-share post-bell print
+on one venue is not the closing auction) but it means **the matching-trade leg does not hold on an
+ordinary complete bar, so only the clock did any work today.** The discriminator is weaker than it is
+written. Stated as a defect in the rule, not as a doubt about today's close.
+
+**5. The sentence I nearly wrote.** With the day's numbers calm and in hand, "all positions comfortably
+clear of their sell rules" composes itself without effort on a close seat. There are no positions. The
+distance to each §5 rule is undefined, not large, and the two read identically in a summary.
+
+**For the next run:**
+
+- ⚠⚠ **THE DIVIDEND READING IS YOURS, 10-08 PRE-MARKET. You are the first seat taken against a balance
+  stamped after the pay date.** Read `cash` **and** `balance_asof` in the same breath. **If `balance_asof`
+  has advanced to 2026-10-07 or later and `cash` is still exactly $30,000.00, THE TEST IS RESOLVED AND THE
+  ANSWER IS THAT THE PLATFORM DOES NOT MODEL DIVIDENDS** — write it as a finding, loudly, and put the
+  ~5.82pp annual handicap in front of the human. **If `balance_asof` is still stamped 10-06, the field is
+  staler than a day and the test is still unreadable** — say so and do not pick a branch.
+- ⚠ **Step 2 had no operand for the 26th session. Do not let the next midday seat read that as a healthy
+  detector.** The backfill path is still unexercised code and has now been saved by the empty sleeve three
+  times.
+- ⚠ **`n`/`v` floors are dead as a bar-completeness corroborant** (item 3 above), and the matching-
+  `latestTrade` leg is weaker than written (item 4). **The clock, read off `next_open`'s DATE, is the
+  primary and today it was the only thing that worked.**
+- ⚠ **Official close basis for 2026-10-07, for tomorrow's day-return arithmetic:** VOO **c 714.66**
+  (o 713.02 h 715.00 l 711.22, n 1,323 v 23,415, vw 713.494198; identical on `all` and `raw`) → equity
+  **$100,784.4368**, core **70.2335%**, cash **29.7665%**, since inception **+0.7844%**. **Prior session
+  10-06 c 716.29 → $100,945.8823.** ⚠ **Name the basis or do not write the sentence; the next ex-date
+  restores the two-series trap.**
+- ⚠ **No rebalance is due.** Core passed the §2 band on both of today's bases by more than four points at
+  each edge. **State the live reading against 65 and 75; do not reconstruct the retired observed range.**
+
+---
+
 ### 2026-10-06 (Tuesday)
 
 **Account:** total **$100,945.88 on official closes** (price basis, `bars --adjustment all`, VOO
