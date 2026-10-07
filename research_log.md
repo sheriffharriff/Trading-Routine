@@ -52,6 +52,293 @@ single most common way a plausible-sounding connection gets mistaken for an oppo
 
 ## Entries
 
+### 2026-10-07 (08:24 ET) — event survey (funnel, pre-thesis)
+
+Selftest passed all five checks (`trading_enabled: true`, LIVE paper, broker equity **$100,643.92**
+at pre-flight 08:24). Window screened: **the completed 2026-10-06 session and overnight into
+2026-10-07** — a real window; 10-06 was a full trading session (official close 716.29). **Five
+Perplexity scans, all exit 0** (three broad/structural, two second-order drills). **Seven candidates
+reached a thesis entry; ALL SEVEN WERE REJECTED.**
+
+⚠⚠ **THE CARRY-FORWARD'S HEADLINE INSTRUCTION WAS APPLIED AS WRITTEN AND IT WORKED AGAIN: ASK FOR
+THE *STRUCTURE* §4 REQUIRES, NOT FOR *IMPORTANCE*.** 10-06 discovered that a query about
+"significant events with knock-on effects" returns the macro complex, while a query naming **two
+named parties plus a disclosed dollar amount plus a date** returns the funnel's actual inventory.
+**That framing was used as the FIRST query this run rather than the second, and it returned four
+dated two-party transactions with dollar figures immediately** — Chevron/Hess Midstream $200M,
+Google/Constellation $4.3B, POSCO Future M/Samsung SDI KRW 6T, HD Construction Machinery/ERock
+$290M — plus **four self-excluded items with the reason volunteered** (Clarivate/Altaris flagged as
+a completion of a 2026-07-06 announcement, Airtificial's counterparty unnamed, Alvotech/LOTTE
+carrying no dollar amount, RTX's SM-6 flagged as date-unverifiable). ⚠ **The structural framing does
+not just return more; it returns the exclusions with their reasons attached, which is work the run
+would otherwise do itself.**
+⚠⚠ **AND IT DOES NOT FIND EVERYTHING — THE SINGLE MOST §4-SHAPED ITEM OF THE RUN CAME FROM THE THIRD
+SCAN, NOT THE FIRST.** The Boeing/Lockheed PAC-3 MSE award ($14.7B, two named US-listed parties, a
+disclosed figure, announced 10-05) appeared **only** when the query asked specifically for a company
+that had **WON** a contract and **quantified the revenue to its own segment**. ⚠ **TWO
+COMPLEMENTARY FRAMINGS, NOT ONE REPLACEMENT: "two parties and a dollar amount" finds transactions;
+"who won it and what did they say it was worth to their own segment" finds the part-2 evidence, and
+it surfaced a transaction the first framing missed.** **Use both.**
+
+⚠⚠ **FOUR VOLUNTEERED ABSENCES IN ONE RUN — THE MOST IN ANY SESSION ON RECORD, AND THE SEVENTH
+CONSECUTIVE SESSION WITH AT LEAST ONE** (09-29, 09-30, 10-01, 10-02, 10-05, 10-06, 10-07). Every
+second-order drill answered §4's question in the negative in its own words:
+- **Constellation/Google:** *"No publicly traded U.S. company has been explicitly named by
+  Constellation Energy, Google, or an SEC filing as a contractor, equipment supplier, turbine or
+  generator vendor, or engineering firm for the more-than-$4.3 billion program."*
+- **Chevron/Hess Midstream:** *"does not explicitly name any additional publicly traded U.S.
+  company as a counterparty, supplier, customer, operator, or beneficiary."*
+- **POSCO Future M/Samsung SDI:** *"no qualifying third U.S.-listed company is named."*
+- **Boeing/Lockheed PAC-3 MSE:** *"No supplier, subcontractor, component supplier or partner below
+  Boeing is named in the available announcements for this specific award."*
+⚠ **REPORTED WITH ITS COUNT AND NOT PROMOTED — the three-consecutive-reviews rule governs
+promotion, and this item is a standing carry-forward entry rather than a new finding.**
+⚠⚠ **THE PRIORS WERE READY AND SPECIFIC FOR ALL FOUR AND NONE WAS WRITTEN DOWN AS A CANDIDATE:**
+BWXT/Curtiss-Wright/Fluor for nuclear uprates · Williams/ONEOK/Targa for Bakken midstream ·
+Albemarle/Livent for cathode inputs · the whole seeker-optics tier for PAC-3. ⚠ **Each is a fact
+about an INDUSTRY. The source named none of them, and three of the four said so unprompted.**
+
+⚠⚠ **ZERO `move` CALLS WERE MADE IN THIS SEAT. THAT IS THE *ABSENT* STATE — THE FOURTH — NOT A
+SKIPPED CHECK AND NOT A PASS.** Every candidate died on §4 structure, part 1, part 3 or §3 **before
+an eligible ticker carrying a mechanism was reached**, so the priced-in filter had nothing to fire
+on. ⚠ **A decorative `move` call on a name with no mechanism converts an honest absence into a fake
+exercise, and was declined for that reason again.**
+⚠⚠ **THE COUNT, STATED CAREFULLY PER CATCH (11): FOUR COMPLETE SESSIONS ARE CONFIRMED ZERO-`move`
+ACROSS ALL THEIR SEATS — 09-29, 10-02, 10-05 AND 10-06. 10-07 IS NOT A FIFTH AND CANNOT BE WRITTEN
+AS ONE: THIS IS SEAT 1 OF 4 AND THREE SEATS REMAIN.** ⚠ **A session is not zero-`move` until the
+session is over.**
+
+⚠ **ZERO `quote` CALLS. No candidate reached execution pricing and there is no satellite ticker to
+quote.**
+
+---
+
+### T-2026-10-07-01 — Constellation Energy (CEG) / Google — no Company B — REJECTED
+**Company A / the news:** **Google** and **Constellation Energy (NASDAQ: CEG)** announced power
+agreements on **2026-10-06** covering approximately **3,590 MW** — **890 MW** of new nuclear
+capacity from **uprates at 11 existing Constellation reactors** in Illinois, Pennsylvania and New
+Jersey on a **20-year** term, plus **2,700 MW** of existing-fleet output on a **15-year** term.
+Constellation disclosed **more than $4.3 billion** of new investment and **~7,200 construction
+jobs**. First upgraded capacity expected **2028**. (Perplexity, two scans; Constellation release.)
+**Company B / the candidate:** **NONE REACHED.** The intended search was for the engineering firm,
+turbine/generator vendor or equipment supplier that captures the $4.3B of uprate capex.
+
+**1. Mechanism (one sentence):** **CANNOT BE WRITTEN.** There is no named recipient of the $4.3B.
+**2. Dollar path:** not reached.
+**3. Timing window:** **INDEPENDENTLY FATAL EVEN IF A NAME EXISTED.** First upgraded capacity is
+expected in **2028** and Constellation disclosed **no calendar-quarter breakdown** of the spend —
+confirmed verbatim: *"the sources... do not provide a calendar-quarter breakdown for spending the
+$4.3 billion."* Against §4's **two-quarter ceiling** this is ~8 quarters out at the earliest
+observable point. → deadline n/a
+**4. Invalidation:** not reached.
+
+**Hard filters:**
+- Priced-in (§4): **NOT REACHED — zero `move` calls.** No eligible ticker with a mechanism existed.
+- Correlation (§4): n/a — no candidate, and zero open satellite positions.
+- Universe (§3): not reached.
+
+**Outcome:** **REJECTED on part 1, with part 3 as an independent kill.** This is **rule (vi)'s
+standing shape in its purest form** — long-dated energy capacity, the calibration point being
+Venture Global/ConocoPhillips (20-year SPA, first delivery 2030). ⚠⚠ **IT IS ALSO THE LARGEST
+DOLLAR FIGURE THIS FUNNEL HAS PRODUCED SINCE BDX's $19B, AND SCALE IS THE THING THAT MAKES THIS
+SHAPE CONVINCING RATHER THAN THE THING THAT MAKES IT TRADEABLE: $4.3B, a named counterparty with a
+trillion-dollar balance sheet, 3,590 MW, 11 named reactors, 7,200 jobs, three named states — EVERY
+DETAIL EXCEPT THE ONE §4 NEEDS.** ⚠ **A MAP PIN IS NOT A LEAD, and this is the sixth instance of
+the capex-blank form (Bayer's Ohio plant, BDX's $3B/Nebraska, now CEG's 11 reactors).** ⚠ **CEG
+itself is the NAMED party and therefore first-order, outside §4 at any price.**
+
+---
+
+### T-2026-10-07-02 — Boeing (BA) / Lockheed Martin (LMT) PAC-3 MSE $14.7B — REJECTED
+**Company A / the news:** **Boeing** announced on **2026-10-05** an **undefinitized contract
+action** from **Lockheed Martin**, valued at approximately **$14.7 billion**, covering **seven
+years** of production and delivery of **PAC-3 MSE seekers**, with the stated intent to **triple**
+Boeing's seeker output. (Perplexity, two scans, incl. a dedicated disclosure-history drill.)
+**Company B / the candidate:** **NONE REACHED.** Boeing is the **named recipient** and therefore
+first-order; the search was for the optics/sensor/component tier below Boeing.
+
+**1. Mechanism (one sentence):** **CANNOT BE WRITTEN.** *"No supplier, subcontractor, component
+supplier or partner below Boeing is named in the available announcements for this specific award."*
+**2. Dollar path:** not reached — **and the headline figure is not a revenue figure.** ⚠⚠ **AN
+UNDEFINITIZED CONTRACT ACTION HAS NO FINALISED PRICING BY DEFINITION** — the source states final
+terms *"had not yet been completed."* Even for Boeing, $14.7B over seven years against ~$80B of
+annual revenue is **~2.6%/yr spread across the horizon**; part 2 would fail at the first-order name.
+**3. Timing window:** **seven years of production**, no first-delivery date disclosed → beyond §4's
+two-quarter ceiling. → deadline n/a
+**4. Invalidation:** not reached.
+
+**Hard filters:**
+- Priced-in (§4): **NOT REACHED — zero `move` calls.** No second-order ticker existed to screen.
+- Correlation (§4): n/a — no candidate, and zero open satellite positions.
+- Universe (§3): not reached. (Both named parties clear §3 comfortably; neither is a §4 candidate.)
+
+**Outcome:** **REJECTED on part 1 (volunteered absence), with part 3 and rule (iii) each killing it
+independently.** Three things make this entry worth more than the usual defence rejection:
+
+⚠⚠ **(A) A NEW RULE (iii) COSTUME, AND A GOOD ONE: AN UNDEFINITIZED CONTRACT ACTION *PRICING* A
+PREVIOUSLY ANNOUNCED FRAMEWORK.** Boeing and the DoD had **already announced a seven-year framework
+agreement in April 2026 to expand PAC-3 MSE seeker output, including the intention to triple
+production.** The 10-05 award **formalises and prices that framework**; the production objective is
+**six months old**. ⚠ **This is distinct from the existing costumes — it is not a reaffirmation, not
+a re-covered deal and not a restated 8-K. The DOLLAR FIGURE IS GENUINELY NEW while the ECONOMIC
+EVENT IS NOT, which is precisely the combination that reads as fresh news.** ⚠ **Caught only
+because the drill query asked for the disclosure history explicitly. THE COST OF ASKING WAS ONE
+CLAUSE.**
+
+⚠⚠ **(B) THE SIXTH DEFENCE-PROGRAM INSTANCE, AND THE FIRST WHERE THE NAMED RECIPIENT IS A BUYABLE
+SUB-PRIME RATHER THAN THE PRIME.** AMRAAM (09-29, RTX) · F/A-XX (09-30, Boeing) · SM-6 (10-02, RTX)
+· S&K/Powerus/Voyager (10-06) were all prime-level. **Here the tier below the prime IS named, IS
+US-listed and IS above $10B — and the pattern held anyway, because the question simply moves one
+level down and the same commercial confidentiality applies.** ⚠⚠ **THAT STRENGTHENS THE RULE RATHER
+THAN WEAKENING IT: the mechanism is DISCLOSURE PRACTICE, not the primes' size. Naming the
+sub-prime does not create a second-order candidate; it creates a new first-order name.**
+
+⚠ **(C) Boeing is NOT a §4 candidate at any price.** It is the headline name. The temptation here is
+unusually strong because the award is large, dated, quantified and genuinely new as a number — and
+**§4 is about whose economics change that the market is NOT looking at.** A $14.7B award announced
+by the recipient itself is the definition of what the market is looking at.
+
+---
+
+### T-2026-10-07-03 — Chevron (CVX) / Hess Midstream (HESM) $200M — no Company B — REJECTED
+**Company A / the news:** **Chevron** agreed on **2026-10-06** to transfer its **Hess Midstream
+ownership interests, its general-partner position and its DJ Basin crude-oil midstream assets** to
+**Hess Midstream LP** for **$200 million cash** plus a revised Bakken commercial framework that
+extends the existing contracts. (Perplexity, two scans; Chevron newsroom release.)
+**Company B / the candidate:** **NONE REACHED.** *"does not explicitly name any additional publicly
+traded U.S. company as a counterparty, supplier, customer, operator, or beneficiary."*
+
+**1. Mechanism (one sentence):** **CANNOT BE WRITTEN.** No third party is named.
+**2. Dollar path:** not reached. ⚠ **And note the direction — rule (viii): the $200M is paid BY the
+buyable midstream leg TO Chevron.** It is **capital paid OUT by HESM**, not segment revenue at any
+Company B. The revised Bakken agreements carry **no disclosed term and no disclosed dollar value**.
+**3. Timing window:** not reached.
+**4. Invalidation:** not reached.
+
+**Hard filters:**
+- Priced-in (§4): **NOT REACHED — zero `move` calls.**
+- Correlation (§4): n/a — no candidate, and zero open satellite positions.
+- Universe (§3): not reached. ⚠ **Had a candidate existed, HESM would have raised an unsettled §3
+  question of its own — it is a limited partnership, not common stock. NOT SCREENED, because it is
+  the NAMED counterparty and therefore first-order regardless.** (Companion to the standing
+  Shopify/foreign-issuer question: a §3 edge case must go to the human **with a live candidate**,
+  never as an abstraction.)
+
+**Outcome:** **REJECTED on part 1.** ⚠ **Both named parties are first-order.** ⚠⚠ **THE
+INTERESTING FEATURE IS WHAT THE DEAL *IS*: a restructuring of the commercial relationship BETWEEN
+THE TWO NAMED PARTIES. The economics that change are entirely internal to the transaction — there
+is no outside leg for a second-order effect to travel along. That is a structurally stronger reason
+for "no Company B" than an undisclosed supply base, and it is the first instance of that shape in
+this log.**
+
+---
+
+### T-2026-10-07-04 — POSCO Future M / Samsung SDI KRW 6 trillion — REJECTED (§3)
+**Company A / the news:** **POSCO Future M** signed a **KRW 6 trillion** long-term agreement on
+**2026-10-06** to supply **LFP cathode materials** to **Samsung SDI**, running **2027 through
+2032**. ⚠ **The source volunteered that this is an AMENDMENT to the parties' 2023 supply agreement,
+adding LFP alongside existing NCA materials — rule (iii) on its face.**
+**Company B / the candidate:** **NONE REACHED.** *"no qualifying third U.S.-listed company is
+named."*
+
+**1. Mechanism (one sentence):** **CANNOT BE WRITTEN.**
+**2. Dollar path:** not reached. **3. Timing window:** supply begins **2027** — outside the
+two-quarter ceiling even for the named parties. **4. Invalidation:** not reached.
+
+**Hard filters:**
+- Universe (§3): **FAIL AT THE FIRST STEP, AND IT IS A FREE ONE.** **Both named parties are
+  Korea-listed.** §3 permits US-listed common stock and US-listed ETFs only. **No US-listed
+  company is named anywhere in the transaction.**
+- Priced-in (§4): **NOT REACHED.** - Correlation (§4): n/a.
+
+**Outcome:** **REJECTED on §3, with rule (iii) and part 3 both available as independent kills.**
+⚠ **§3-FIRST SAVED THE WHOLE EFFORT: the pull toward Albemarle / Livent / Piedmont as "US-listed
+lithium and cathode-input names with exposure" was immediate and is exactly rule (v) — a
+market-structure fact about the LFP supply chain is not a supply relationship in THIS agreement.**
+⚠ **The amendment disclosure is the second rule (iii) instance in one run (see T-2026-10-07-02),
+and both were volunteered by the source rather than extracted.**
+
+---
+
+### T-2026-10-07-05 — Four disposed two-party items (Clarivate/Altaris · HD Construction/ERock · Emera/Canadian Utilities · Alvotech/LOTTE) — REJECTED (no query spent)
+**Grouped deliberately.** All four arrived in the structural scan, each died on a **single settled
+test**, and **not one funnel query was spent on any of them.**
+
+| Item | Disclosed figure | Killing test |
+|---|---|---|
+| **Clarivate / Altaris** — completion of the Life Sciences & Healthcare divestiture, 2026-10-06 | **$600M** | **Rule (iii).** ⚠ **The source volunteered it: the transaction was announced 2026-07-06 and 10-06 is the COMPLETION.** A three-month-old deal reaching closing is not news to either company's disclosure. **Clarivate is also ~$2B market cap → §3 independently.** |
+| **HD Construction Machinery / ERock** — gas power-engine long blocks, 2026-10-07 | **~KRW 390B (~$290M)**, deliveries 2027–2028 | **§3.** HD Construction Machinery is **Korea-listed**; **ERock is a private US power-infrastructure provider**. No eligible leg. **Part 3 also fails** — deliveries begin 2027. |
+| **Emera / Canadian Utilities** — merger creating a ~$50B company, 2026-10-06 | **~$50B** | **§3 + merger arbitrage.** Both are **Canadian issuers**, and §4 does not contain merger arb: **a target whose price is contractually pinned has no economics left to change.** ⚠ **Fourth merger offered by this funnel in three sessions** (onsemi/Synaptics, Schneider/PTC, CHRW/RXO, now this). |
+| **Alvotech / LOTTE Biologics** — US-based manufacturing agreement, 2026-10-06 | **none disclosed** | **Part 2, at step zero.** ⚠ **The source volunteered the absence of a figure.** Alvotech is **Iceland-domiciled**; LOTTE Biologics is **Korea-listed** → §3 as well. |
+
+**Outcome:** **ALL FOUR REJECTED.** ⚠⚠ **THE POINT OF THE GROUPING IS THE COST: four items, four
+settled tests, ZERO funnel queries, and the structural scan supplied three of the four exclusions
+with its own reasoning attached. THAT IS THE 10-06 FRAMING FINDING PAYING FOR ITSELF IN QUERY
+BUDGET, not merely in candidate count.** ⚠ **A fifth item, Airtificial's $6.4M contract with an
+unnamed US Tier-1 supplier, was excluded by the source itself for having no named counterparty and
+is recorded here without a row — it is rule (v)'s unnamed-supply-base object at a §3-ineligible
+scale.**
+
+---
+
+### T-2026-10-07-06 — Fortuna Mining (FSM) · Avio USA · Lamb Weston (LW) — REJECTED
+**Grouped: three capacity/guidance items from the second broad scan, none reaching a mechanism.**
+
+- **Fortuna Mining (NYSE: FSM)** — board approved a **30% expansion of the Séguéla processing
+  plant**, **$109M** budget, throughput to **2.3Mt/yr**, **>200,000 oz/yr from 2H 2028**
+  (announced 2026-10-07). **REJECTED on §3 and part 3 jointly:** FSM is **~$2B market cap**, far
+  below §3's $10B floor, **and** the production target lands in **2H 2028 — ~7 quarters out.**
+  ⚠ **Note the source's own caution, which is a clean rule (iii) non-establishment: it could NOT
+  find Fortuna's prior throughput or prior production figure, so "30% expansion" is not verifiable
+  against the company's own baseline from this source.** ⚠ **Same shape as 09-29's AAR failure —
+  not establishable in EITHER direction.**
+- **Avio USA** — new **~900,000 sq ft solid rocket motor facility** in Virginia, capacity for
+  "thousands of motors annually" (2026-10-06). **REJECTED on §3:** Avio USA is **not US-listed**
+  (subsidiary of Italy-listed Avio S.p.A.). ⚠⚠ **AND THIS IS THE CARRY-FORWARD'S NAMED PRIOR
+  ARRIVING IN PERSON: "solid rocket motors for SM-6" is recorded as one of the four always-ready
+  priors. The prior was ready within a second — and the facility names NO equipment supplier,
+  contractor or customer. A GROUNDBREAKING IS A MAP PIN.**
+- **Lamb Weston (NYSE: LW)** — FY2027 adjusted EPS guidance **$3.05–$3.35**, adjusted EBITDA
+  **$1.125–$1.215B**, plus a production stoppage at its **Broekhuizenvorst** facility.
+  **REJECTED on part 1:** this is LW's **own earnings print — first-order**, and LW is **~$8B market
+  cap**, below §3's floor. ⚠ **The second-order pull here is the competitor read-across on the plant
+  stoppage (a rival capturing displaced potato volume) and it is the SHARED-CAUSE object with the
+  WRONG SIGN — a competitor's capacity loss improves nobody's economics in any disclosed, dateable
+  way.** ⚠ **The source also could not establish LW's own prior guidance figure or whether the
+  stoppage was newly disclosed — rule (iii) non-establishment again, the third in one run.**
+
+**Outcome:** **ALL THREE REJECTED, no query spent beyond the broad scan.**
+
+---
+
+### T-2026-10-07-07 — BWX Technologies (BWXT) $189M naval reactor fuel — REJECTED
+**Company A / the news:** **BWX Technologies** announced an approximately **$189 million**
+naval-reactor-fuel contract on **2026-10-07**. ⚠ **The source stated it could NOT identify a named
+customer, a reporting segment, or revenue-recognition timing.**
+**Company B / the candidate:** **NONE — and there is no Company A either.**
+
+**1. Mechanism (one sentence):** **CANNOT BE WRITTEN.** ⚠⚠ **THE NAMED PARTY IS BWXT AND THE
+COUNTERPARTY IS A GOVERNMENT BODY THAT THE SOURCE DID NOT EVEN NAME** — almost certainly Naval
+Reactors / DOE. **A GOVERNMENT ACTION IS NOT A COMPANY A**: one party, a number, an industry, no
+named recipient on the other side of the trade.
+**2. Dollar path:** **CANNOT BE WRITTEN.** No segment identified, no revenue-recognition timing.
+$189M against BWXT's revenue is **low single-digit percent at best**, and BWXT is the first-order
+name regardless. **3./4.** not reached.
+
+**Hard filters:**
+- Priced-in (§4): **NOT REACHED — zero `move` calls.**
+- Correlation (§4): n/a. - Universe (§3): BWXT clears the $10B floor; **irrelevant, it is
+  first-order.**
+
+**Outcome:** **REJECTED — no Company A, and the defence-award pattern on top.** ⚠ **SEVENTH
+defence-program item in nine sessions and the smallest; one funnel query was NOT spent, per the
+standing rule to write the answer down and stop.** ⚠⚠ **NOTE THE TWO-SIDED COST OF THAT RULE
+HONESTLY: by declining the query I also decline the chance that THIS award is the exception. The
+rule is kept because five prior instances all died the same death — but "I did not look" and
+"there was nothing there" are not the same sentence, and this is the former.**
+
+---
+
 ### 2026-10-06 (08:22 ET) — event survey (funnel, pre-thesis)
 
 Selftest passed all five checks (`trading_enabled: true`, LIVE paper, broker equity **$100,842.87**
