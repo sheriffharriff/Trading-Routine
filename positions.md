@@ -85,6 +85,47 @@ check that the pull returned the right session. A stored baseline is a *label*, 
 
 *(none — no **satellite** positions have been opened yet. Core VOO exists and is deliberately not tracked here, per the top-of-file rules and the fill note further down.)*
 
+**Reconciliation 2026-10-07 — ONE BLOCK FOR THE DATE. First seat of four: `1-premarket-research`
+08:24 ET. ⚠ THE PRIOR SESSION (10-06) WAS COMPLETE — ALL FOUR OF ITS SEATS RAN AND COMMITTED, so
+this seat inherits an unbroken handoff for the first time since 10-02. THE LEDGER AGREES WITH THE
+BROKER; ZERO SATELLITE POSITIONS ON BOTH SIDES; NO §5 RULE HAS A SUBJECT; NO MARK WRITTEN AND NONE
+DUE; ZERO ORDERS.**
+
+Selftest passed all five checks; `trading_enabled: true`, LIVE paper; pre-flight broker equity
+**$100,643.92** at 08:24. `clock` at **08:24:50** reads **`is_open: false`** with `next_open`
+**2026-10-07T09:30** — the **PRE-MARKET** shape, read off the DATE (it points at **TODAY**), not off
+the boolean. ⚠ **FALSE has three meanings; TRUE has one.** ⚠ **Corroborated from the data plane
+rather than inferred: `bars --days 4 --adjustment all` returns a complete **2026-10-06** bar
+(c 716.29) and **NO bar dated 2026-10-07**.** **Not a holiday.**
+
+**RECONCILIATION, SATELLITE-TO-SATELLITE.** `alpaca.py positions` returns **one row, core VOO**,
+99.046311231 shares at avg_entry **706.74** (a **RAW** print), cost_basis **$69,999.99** — unchanged
+since the 09-03 fill — against **zero satellite blocks in this file. THEY AGREE.** ⚠ **Core VOO was
+removed from the working list BEFORE any §5 rule was read**, per §5's core exemption; **a run that
+compares the raw ledger to the raw broker reads a correct ledger as broken.** Sleeves at 08:24:
+equity **$100,643.92**, core **$70,643.919783 = 70.19%**, satellite **0.0%** (count 0), cash
+**29.81%**, `core_in_band: true`, `rebalance_needed: false`, `rebalance_delta` **−$193.18** (a
+distance readout, not an instruction). ⚠ **NO DISCREPANCY WAS FOUND, SO NONE IS FLAGGED — and an
+AGREEING ledger and an EMPTY ledger are the same artifact. That is not a clean bill of health on the
+reconciliation logic; it is the absence of a test.** **TWENTY-SIXTH session with nothing to
+reconcile.**
+
+⚠ **CORE VOO IS AGAIN NOT STAMPED WITH A `highest_close` — SEVENTY-SIXTH CONSECUTIVE RUN.**
+⚠⚠ **GRADED, NOT COUNTED, AND THIS IS THE *MIDDLE* GRADE: this seat holds **NO WRITE PATH** into the
+field (routine 1 writes `sell_rule_status`, not the stamp — the close run and routine 3's Step 2
+backfill own that), but it **DID** pull `bars --symbol VOO --days 4 --adjustment all` for the tape
+context and that pull returned **716.29**, a real, completed, same-basis maximum on the only row the
+broker returns. THE NUMBER WAS IN HAND AND WAS NOT WRITTEN.** ⚠ **It is a step weaker than 10-06
+16:17, which held both the number and the path, and a step stronger than a seat that made no `bars`
+call at all — those two look identical in a run summary and only the second is evidence of
+anything.** ⚠ **The reason is unchanged and is not a judgment call: a mark on VOO would **fabricate a
+§5.4 trailing stop on the one position §5 exempts**, which §7 forbids outright.**
+
+⚠ **THE DIVIDEND TEST, SEAT 1 OF 4 ON THE DEADLINE DAY: `cash` read EXACTLY $30,000.00 from two
+independent calls (`account`, `sleeves`) — a **TWENTY-SIXTH** unchanged reading. Expected at 08:24;
+NOT the result. Three seats remain (09:35, 12:30, 16:15).** ⚠ **The test is ~$30,180.76 and has not
+been moved.**
+
 **Reconciliation 2026-10-06 — ONE BLOCK FOR THE DATE, COVERING ALL FOUR SEATS: `1-premarket-research`
 08:22 ET, `2-market-open-execution` 09:36 ET, `3-midday-management` 12:42 ET and
 `4-market-close-journal` 16:17 ET. ⚠⚠ ROUTINE 4 RAN — THE SESSION IS COMPLETE, WHICH IT WAS NOT ON
@@ -400,7 +441,7 @@ tape:
   `plan_today.md` arrives three calendar days old on a Monday** — compare `plan_date` to the last
   TRADING day, not to the calendar.
 
-### `sell_rule_status` — ALL FOUR RULES ABSENT, NOT PASSING (2026-10-06, 08:22 ET `1-premarket-research`, 09:36 ET `2-market-open-execution`, 12:42 ET `3-midday-management` and 16:17 ET `4-market-close-journal` — ⚠ RE-READ AT ALL FOUR SEATS WITH THE SAME RESULT, AND A FOURTH READING OF AN ABSENT OPERAND IS STILL AN ABSENCE. ⚠⚠ THE 12:42 SEAT IS THE ONE WHOSE WHOLE JOB THIS TABLE IS, WHICH IS WHY ITS NULL IS WORTH MORE THAN THE OTHERS: ROUTINE 3 EXISTS TO EVALUATE §5, AND IT FOUND NO SUBJECT. ⚠ THE 16:17 SEAT ADDS NOTHING TO THE TABLE AND IS NOT PRETENDING TO — IT DOES NOT TRADE; ITS LOAD-BEARING JOB IS §5.4's INPUT, THE `highest_close` STAMP, AND THAT HAD NO OPERAND EITHER.)
+### `sell_rule_status` — ALL FOUR RULES ABSENT, NOT PASSING (2026-10-07, 08:24 ET `1-premarket-research` — SEAT 1 OF 4. ⚠ RE-READ AT THIS SEAT WITH THE SAME RESULT, AND AN NTH READING OF AN ABSENT OPERAND IS STILL AN ABSENCE. ⚠⚠ THIS SEAT OWNS THIS TABLE — ROUTINE 1's STEP 4 IS WHERE THE DISTANCE TO EACH RULE IS WRITTEN — AND IT FOUND NO SUBJECT TO WRITE A LINE ON. ⚠ THE PRIOR SESSION'S FOUR SEATS, 2026-10-06 08:22 / 09:36 / 12:42 / 16:17, ALL RECORDED THE SAME NULL; THE 12:42 MIDDAY NULL REMAINS THE MOST VALUABLE OF THEM, SINCE ROUTINE 3 EXISTS TO EVALUATE §5 AND NOTHING ELSE.)
 
 ⚠⚠ **THERE IS NO POSITION TO WRITE A `sell_rule_status` LINE ON. The distance to each rule is therefore
 not "large" — it is UNDEFINED, and those are different facts.** ⚠ **"Nothing close to triggering" would
@@ -413,13 +454,16 @@ be a fabrication: nothing can be close to a threshold it has no operand for.**
 | **§5.3** hard stop −7% from entry | **DISTANCE UNDEFINED** | **UNDEFINED, not large** | There is no satellite `entry_price` to measure a drawdown from. The 706.74 core fill is **exempt under §5** and is not an operand. |
 | **§5.4** trailing stop −10% from `highest_close` | **NOT ARMED** | **UNDEFINED, not large** | No `highest_close` field — the **third state**, carrying no `(as of …)` date at all. It arms on the first **satellite** fill; the 09-03 core fill was not one. |
 
-**Zero orders submitted by ANY OF THE FOUR SEATS** — routine 1 places none by design (the WEAK form),
-routine 2 at 09:36 placed none because **the plan carried no intent**, which is the LOAD-BEARING form,
-routine 3 at 12:42 is **exits-only with nothing to exit** (the weak form again, structurally
-unavailable to violate), and routine 4 at 16:17 **does not trade at all** (the weakest form of the
-four) — **zero fills, nothing opened, nothing closed, no realised P&L.** `consecutive_closed_losses` stays **0**: nothing has closed,
-so the §6 three-loss breaker has **never been approached, not merely never breached**, and the alert
-path at `clickup.py alert --key circuit-breaker` remains **UNTESTED CODE**.
+**ZERO ORDERS SUBMITTED BY THIS SEAT, AND THAT IS THE *WEAK* FORM OF THE REFUSAL — ROUTINE 1 PLACES
+NO ORDERS BY DESIGN, SO ITS RESTRAINT IS STRUCTURALLY UNAVAILABLE TO VIOLATE AND IS WORTH NOTHING AS
+EVIDENCE.** ⚠⚠ **THE LOAD-BEARING SEAT IS 09:35's: routine 2 faces an OPEN market, a FRESH plan, and
+every gate open — breaker INACTIVE, weekly cap 0 of 3, sleeve 0.0% deployed, 29.81% idle cash,
+`TRADING_ENABLED: true`, control notes none, and §6's 5% cap standing ready at **$5,032.20** on live
+equity with NO OPERAND. Only the absence of a BUY intent in `plan_today.md` stops a buy there, and
+THAT is the refusal worth recording.** ⚠ **Zero fills, nothing opened, nothing closed, no realised
+P&L.** `consecutive_closed_losses` stays **0**: nothing has closed, so the §6 three-loss breaker has
+**never been approached, not merely never breached**, and the alert path at
+`clickup.py alert --key circuit-breaker` remains **UNTESTED CODE**.
 Breaker **INACTIVE** (`halt_triggered_at: none`, so no `HALT_CLEARED_AT` comparison was required; the
 `none` in `control.md` is therefore **untested against a live halt**, not cleared).
 
