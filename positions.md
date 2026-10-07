@@ -85,8 +85,9 @@ check that the pull returned the right session. A stored baseline is a *label*, 
 
 *(none — no **satellite** positions have been opened yet. Core VOO exists and is deliberately not tracked here, per the top-of-file rules and the fill note further down.)*
 
-**Reconciliation 2026-10-07 — ONE BLOCK FOR THE DATE. First seat of four: `1-premarket-research`
-08:24 ET. ⚠ THE PRIOR SESSION (10-06) WAS COMPLETE — ALL FOUR OF ITS SEATS RAN AND COMMITTED, so
+**Reconciliation 2026-10-07 — ONE BLOCK FOR THE DATE, COVERING THE SEATS THAT HAVE RUN SO FAR:
+`1-premarket-research` 08:24 ET and `2-market-open-execution` 09:37 ET. TWO OF FOUR; r3 (12:30) and
+r4 (16:15) are still to come and will append here. ⚠ THE PRIOR SESSION (10-06) WAS COMPLETE — ALL FOUR OF ITS SEATS RAN AND COMMITTED, so
 this seat inherits an unbroken handoff for the first time since 10-02. THE LEDGER AGREES WITH THE
 BROKER; ZERO SATELLITE POSITIONS ON BOTH SIDES; NO §5 RULE HAS A SUBJECT; NO MARK WRITTEN AND NONE
 DUE; ZERO ORDERS.**
@@ -125,6 +126,64 @@ anything.** ⚠ **The reason is unchanged and is not a judgment call: a mark on 
 independent calls (`account`, `sleeves`) — a **TWENTY-SIXTH** unchanged reading. Expected at 08:24;
 NOT the result. Three seats remain (09:35, 12:30, 16:15).** ⚠ **The test is ~$30,180.76 and has not
 been moved.**
+
+---
+
+**SEAT 2 OF 4 — `2-market-open-execution`, 09:37 ET. THE ONLY SEAT THAT MAY OPEN A POSITION, AND IT
+OPENED NOTHING.** Selftest passed all five checks; `trading_enabled: true`, LIVE paper; pre-flight
+equity **$100,576.44**. `clock` at **09:37:05** reads **`is_open: true`** — ⚠ **the one unambiguous
+reading of that boolean, and the only seat of the four that gets it.**
+
+⚠⚠ **THE STALENESS GATE DID NOT FIRE. `plan_date: 2026-10-07` IS today, read OFF THE FIELD.** ⚠ **It
+was NOT inferred from the fact that nothing happened, because a FRESH EMPTY PLAN and a STALE PLAN
+produce a byte-for-byte identical zero-order run. 35th consecutive non-exercise; the alert path is
+still untested code.** The plan carried **NO BUY intent, NO SELL intent and NO rebalance**, and all
+seven of the 08:24 theses (`T-2026-10-07-01` … `-07`) were confirmed **present and REJECTED** in
+`research_log.md` before this seat concluded there was nothing to execute. ⚠ **Step 5 and Step 6 were
+therefore NOT RUN RATHER THAN PASSED, and Step 3's core bootstrap was skipped on
+`core_established: true` — a path that ran once on 09-03 and by construction never runs again.**
+
+**RECONCILIATION, SATELLITE-TO-SATELLITE, SECOND PASS OF THE DAY.** `alpaca.py positions` returns
+**one row, core VOO**, 99.046311231 shares at avg_entry **706.74** (a **RAW** print), cost_basis
+**$69,999.99** — unchanged since the 09-03 fill — against **zero satellite blocks in this file. THEY
+AGREE.** Core was removed from the working list **before** any §5 rule was read, per §5's core
+exemption. ⚠⚠ **THIS IS THE SECOND RECONCILIATION INSIDE THE TWENTY-SIXTH SESSION WITH NOTHING TO
+RECONCILE — IT IS NOT A TWENTY-SEVENTH.** The unit is a **session in which a reconciliation was
+performed**, and 10-07 was already counted by the 08:24 seat. ⚠ **The `cash`-reading counter DID
+advance 26→27 across the same two seats, correctly, because ITS unit is a reading. Two counters, same
+two seats, one advances and one does not — catch (21), met from the other side and resolved by naming
+the unit rather than by making them agree.**
+
+**Sleeves at 09:37:** equity **$100,580.90**, core **$70,580.896615 = 70.17%**, satellite **0.0%**
+(count 0), cash **29.83%**, `core_in_band: true`, `rebalance_needed: false`, `rebalance_delta`
+**−$174.27** — ⚠ **a distance readout, not an instruction; negative only because core sits
+fractionally above the 70% target, and §2 acts at the BAND EDGE.** **In band by 5.17 points at the 65
+edge and 4.83 at the 75 edge; 68th consecutive run inside it. NO REBALANCE PLACED AND NONE
+MANUFACTURED.** ⚠⚠ **EQUITY MOVED WITHIN THIS ONE RUN — 100,576.44 at selftest, 100,580.90 at
+`sleeves`, 100,587.34 at `account`, a $10.90 spread across three calls minutes apart. That is the
+mechanical reason a rebalance may never be built on a live intraday mark.** VOO `current_price`
+**712.605** against `lastday_price` **716.20**, `change_today` **−0.502%** — the tape opened red, and
+on an exempt core that is **not a §5 input**.
+
+⚠ **§5 HAD NO OPERAND AND DID NOT PASS.** Zero satellite positions, so §5.1 invalidation, §5.2 time
+stop, §5.3 −7% hard stop and §5.4 −10% trailing stop each had **nothing to evaluate**. ⚠ **The
+distance to each rule is UNDEFINED, not large. The §5-operand counter stands at 25 completed sessions
+/ 22 post-fill and DID NOT ADVANCE HERE: the unit is a COMPLETED session, and this seat stands in the
+middle of 10-07 — routine 2 may never count the day it stands in, whichever side of the bell it is
+on.**
+
+⚠ **CORE VOO IS AGAIN NOT STAMPED WITH A `highest_close` — SEVENTY-SEVENTH CONSECUTIVE RUN.**
+⚠⚠ **GRADED, NOT COUNTED, AND THIS IS THE *WEAKEST* GRADE OF THE THREE: this seat made **NO `bars`
+CALL AT ALL**, so it never held the number. Step 6's `voo_close_at_entry` pull is the only `bars` call
+routine 2 owns and it is conditional on a fill — there was no fill, so **OPEN ITEM (12)'s partial-bar
+defect WAS MET AND NOT TRIGGERED, which is not the same thing as fixed.** ⚠ **A seat that declines a
+number it holds and a seat that never obtained one look IDENTICAL in a run summary, and only the
+first is evidence of anything. This one is the second kind and says so.**
+
+⚠ **THE DIVIDEND TEST, SEAT 2 OF 4: `cash` read EXACTLY $30,000.00 from two independent calls
+(`sleeves`, `account`) — a **TWENTY-SEVENTH** unchanged reading, and **THE FIRST TAKEN AFTER THE BELL
+ON THE PAY DATE.** Expected at 09:37; NOT the result. TWO seats remain (12:30, 16:15).** ⚠ **The test
+is ~$30,180.76, has not been moved, and the 16:15 seat is the one that must state the result.**
 
 **Reconciliation 2026-10-06 — ONE BLOCK FOR THE DATE, COVERING ALL FOUR SEATS: `1-premarket-research`
 08:22 ET, `2-market-open-execution` 09:36 ET, `3-midday-management` 12:42 ET and
