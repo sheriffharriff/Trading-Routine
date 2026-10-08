@@ -40,6 +40,112 @@ anything where the honest-broker rule (§4) did real work>
 
 ## Entries
 
+### 2026-10-08 (Thursday)
+
+**Account:** total **$100,444.7079 on official closes** (price basis, `bars --adjustment all`, VOO
+c **711.23**) / **$100,501.16 on the live broker mark** at 16:16 | day **−$339.7288 (−0.3371%)** from
+10-07's official $100,784.4368 | since inception **+0.4447%** (price basis). ⚠ **The broker's own
+`change_today` reads −0.356% and `last_equity` $100,752.74196475254 → −$251.58 (−0.2497%). TWO BASES,
+NEVER CONCATENATED: the official-close series is the one §1 is computed on.**
+**Sleeves:** core **70.1328%** | satellite **0.0%** | cash **29.8672%**   (§2 band 65–75% — **5.1328
+points inside the lower edge, 4.8672 inside the upper. NO rebalance due tomorrow.**)
+**Breaker:** INACTIVE
+**Week:** 0/3 new positions (`week_of` **2026-10-05** — **no rollover**; today is Thursday of that same
+ISO week, confirmed by computing this ISO week's Monday (**2026-10-05**) rather than assuming it)
+
+**Traded:** nothing. **Zero orders at all four seats.** `orders --status all` returns **one row for the
+entire account history** — the 09-03 core fill, `status: filled`, terminal. **Nothing opened, nothing
+closed, no realised P&L, nothing left unresolved overnight.**
+**Researched:** 10 theses — **0 accepted, 10 rejected** (`T-2026-10-08-01` … `-10`), all written at the
+08:25 pre-market seat.
+**Positions near a sell rule:** **none, and the honest statement is that there is no operand.** All four
+§5 rules are **ABSENT, not passing**: §5.1 has no thesis to invalidate, §5.2 no timing window to expire,
+§5.3 no satellite entry price to measure −7% from, §5.4 no `highest_close` to measure −10% from.
+⚠ **The distance to each is UNDEFINED, not large.** **This is the 27th completed session since
+2026-09-01, 24 of them post-fill, and §5 has never once had a subject.**
+
+**What happened:**
+
+A red session, and the first thing worth saying about it is that the book's own number looks better than
+the tape's and neither figure is an achievement. VOO closed **711.23** against 714.66, **−0.4799%**; the
+book went **−0.3371%**, which beats the benchmark by **+0.1429pp**. The whole of that outperformance is
+arithmetic on an idle cash pile: 0.702335 × −0.4799485% = −0.337085%, the book's return to six decimal
+places, with the satellite sleeve contributing **exactly 0.000000%**. This is the second VOO-down day
+computed from source in a row and the second with positive excess, which is what the established
+separation predicts — a 29.87% cash float cushions a fall by precisely as much as it costs on a rise.
+It is not skill in either direction, and a run quoting only today's half would be quoting the flattering
+half.
+
+The ten theses written pre-market were all rejected, and the shape of the day's funnel was unusually
+clean: **nine of the ten died at §3 or part 1**, upstream of any mechanism, and exactly one (SUPN)
+reached part 2. All three broad scans returned a volunteered absence in the source's own words — the
+eighth consecutive session with at least one, and the first in which every scan produced one. Nine
+items came back self-excluded with the reason attached, the highest count on record. The structural
+query framing is reaching the funnel's real inventory; the inventory itself was ineligible end to end.
+Those are two separate facts and only the first is about the query.
+
+What this seat actually exists to do, it could not do. **Step 2 — record the closes into the high-water
+marks — had no subject.** There are zero open satellite positions, so there was no `highest_close` to
+raise and, the half that matters more, **no `(as of …)` date to advance.** The field is absent, not
+stale, which means tomorrow's midday detector has nothing to compare and will again be unable to rule
+staleness in or out. "High-water marks updated" would be false, and so would "verified". The honest
+form is that the job had no subject, and this is the third consecutive close-seat null — which makes it
+weaker evidence, not stronger, because it is the same null under the same conditions.
+
+The one decision in the day was again a decision not to write something. This seat pulled
+`bars --symbol VOO --days 3 --adjustment all` for the day's numbers and it returned **711.23** — a real,
+completed, official, same-basis close, on the only row the broker returns, at the one routine whose own
+Step 2 instruction says *"record the closes."* **It held both the number and the write path, which is
+the strongest form this refusal takes, and nothing was written.** A `highest_close` on VOO would
+fabricate a §5.4 trailing stop on the one position §5 exempts, and §7 forbids selling core outright.
+
+**What I got wrong or nearly got wrong:**
+
+**The 08:25 pre-market seat stated a rule correctly and broke it forty-four lines later in the same
+file, and I nearly inherited the broken half without noticing.** `plan_today.md` line 171 reads: *"The
+§5-operand counter stands at 26 completed sessions / 23 post-fill and DOES NOT ADVANCE HERE: the unit
+is a COMPLETED session, and this seat stands before the bell on 10-08."* Line 215 of the same file, same
+seat, same morning, reads: *"27 completed sessions, 130 theses, ZERO POSITIONS EVER OPENED."* The thesis
+count was right (120 + today's ten). The session count was wrong by the rule the seat had just written
+out in full, and it is catch (11)'s exact shape recurring in the seat the rule names as exposed.
+
+That is a new catch — **(22)** — and the new part is not the arithmetic. It is that **"27" is the correct
+figure now, from this seat, by an entirely different route**: I stand after the bell on a completed
+session and I may advance 26 → 27. So the file now reads as consistent, the error would have become
+invisible within one session, and if I had checked the number against today's reality instead of against
+the reasoning that produced it, I would have confirmed it. **Arriving at the right number by the wrong
+route is not a confirmation**, and this is the cheapest possible demonstration of catch (6).
+
+The second near-miss is quieter and concerns the growing cost of the VOO stamp refusal. For eighty-three
+runs that refusal has been recorded as a principle with a hypothetical price attached. It now has a
+measured one: had 10-06's close been stamped, the mark would sit at **716.29** and today's close is
+**−0.7064% below it** — a phantom drawdown that has been accruing for three sessions and moves toward
+§5.4's −10% threshold on the holding that must never be sold on a drawdown. The pull I noticed in myself
+was to read that as reassurance — "see, it was right" — when what it actually shows is that **a refusal
+repeated eighty-three times is close to automatic, and automatic is not sound.** The number got larger;
+my reasoning about it did not get better.
+
+Third, and smallest: I collapsed 2026-10-07's four per-seat sections in `positions.md` into one digest,
+and the honest statement about why is that most of what I removed was four paragraphs tracking a
+dividend test that is now closed. That is legitimate housekeeping on a file flagged to the human for
+size (open item 9) — but a close seat collapsing a predecessor's records is also exactly how a
+near-miss would quietly disappear, so the digest names what went and why, and every durable finding is
+restated in it or already lives in `state.md`.
+
+**For the next run:**
+
+- **Step 2 again had no operand. The high-water marks were NOT updated because there is nothing to
+  update — they are ABSENT, not STALE, and there is no `(as of …)` date for the midday detector to
+  compare. Do not backfill; there is nothing to write.**
+- **Catch (22): one run can state a rule and break it in the same file. When two figures in one
+  document disagree, do not reconcile them against each other — recompute both against their unit.**
+- **Core VOO stays unstamped (83rd run). The phantom-drawdown cost of having stamped 10-06 is now
+  −0.7064% and growing.**
+- **Today's official close is 711.23 (`--adjustment all`, identical basis to the comparison). 10-08
+  equity $100,444.7079 / core 70.1328% / cash 29.8672%. NO rebalance due tomorrow.**
+- **Breaker INACTIVE, streak 0 and unable to move, `week_of` 2026-10-05 with no rollover, no unresolved
+  orders. All four seats of 10-08 ran — the third consecutive complete session, which is NOT a fix.**
+
 ### 2026-10-07 (Wednesday)
 
 **Account:** total **$100,784.4368 on official closes** (price basis, `bars --adjustment all`, VOO
