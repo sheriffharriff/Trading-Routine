@@ -10,9 +10,9 @@ The block below is parsed by `scripts/common.py` and gates real behavior
 `key: value` format exactly. Prose goes underneath.
 
 ```
-last_run: 2026-10-07 16:17 ET 4-market-close-journal (SEAT 4 OF 4 - THE SESSION IS COMPLETE, the second consecutive complete session, which 10-05 and 09-28 cannot say and which is NOT evidence about the next one; selftest PASSED all five, trading_enabled true, LIVE paper, pre-flight equity 100763.64; MARKET CLOSED - clock 16:17:00 is_open FALSE with next_open 2026-10-08T09:30, the POST-BELL shape READ OFF THE DATE and not off the boolean, and 2026-10-07 was a NORMAL FULL SESSION (next_close had read 2026-10-07T16:00 at the earlier seats, so NOT an early close and NOT a holiday); THE HOLIDAY SKIP PATH WAS NOT TAKEN; STEP 2 - THE ONE JOB THIS ROUTINE UNIQUELY OWNS AND THE ONE THE TRAILING STOP DEPENDS ON - HAD NO OPERAND: zero open satellite positions, so NO highest_close TO RAISE and, THE HALF THAT MATTERS MORE, NO (as of ...) DATE TO ADVANCE; highest_close is ABSENT, the THIRD STATE carrying no date at all, and the only such string in positions.md is the TEMPLATE placeholder; HIGH-WATER MARKS UPDATED WOULD BE FALSE AND SO WOULD VERIFIED - the honest form is THE JOB HAD NO SUBJECT, and tomorrow's midday detector again has NOTHING TO COMPARE so NO STALENESS COULD BE DETECTED AND NONE WAS RULED OUT; backfill path still UNEXERCISED CODE, spared by the empty sleeve a THIRD time; OFFICIAL CLOSE 2026-10-07 recorded: VOO c 714.66 (o 713.02 h 715.00 l 711.22, n 1323 v 23415, vw 713.494198, IDENTICAL on all and raw) -> equity 100784.4368, core 70784.4368 = 70.2335 pct, cash 29.7665 pct, day -161.4455 = -0.1599 pct against 10-06's official 100945.8823, since inception +0.7844 pct; BENCHMARK, ONE NEW OBSERVATION AND NOT A STREAK EXTENDED: VOO -0.2276 pct, book -0.1599 pct, excess +0.0676pp, a VOO-DOWN day with POSITIVE excess, and the arithmetic IS the whole explanation (0.7023 x -0.2276 = -0.1598), satellite contributed EXACTLY 0.000000 pct again; CORE VOO NOT STAMPED FOR A SEVENTY-NINTH RUN AND THIS IS THE STRONGEST GRADE EVER RECORDED - the number 714.66 WAS IN HAND from this seat's own bars pull AND the write path was OPEN (Step 2 IS the stamp) on the one routine whose instruction literally reads 'record the closes', and a mark would have sat at 716.29 with today's close already BELOW it, so the phantom drawdown starts on day one; ZERO ORDERS - routine 4 has NO ORDER PATH AT ALL, so the empty lead line is empty TWICE OVER by construction; orders --status all still returns ONE ROW for all account history, the 09-03 core fill, terminal filled, so NOTHING WAS LEFT UNRESOLVED OVERNIGHT and §7's limbo case has no instance; §5 HAD NO OPERAND AND DID NOT PASS - the distance to each of the four rules is UNDEFINED, not large, and on a close seat with calm numbers in hand 'comfortably clear' composes itself without effort; §5-OPERAND COUNTER ADVANCES TO 26 COMPLETED SESSIONS / 23 POST-FILL BECAUSE THIS SEAT STANDS AFTER THE BELL - seats 1, 2 and 3 could not count today and this one can, which is a function of POSITION RELATIVE TO THE BELL and not of the date; LEDGER RECONCILES A FOURTH TIME INSIDE THE TWENTY-SIXTH SESSION and it is NOT A THIRTIETH, per catch (21) - the unit is a SESSION; DIVIDEND DEADLINE ARRIVED AND THIS SEAT COULD NOT STATE THE RESULT - cash read EXACTLY 30000.00 a TWENTY-NINTH time from two call paths with accrued_fees 0, the 30180.76 credit HAS NOT ARRIVED, AND balance_asof STILL READS 2026-10-06 AT 16:17, SEVENTEEN MINUTES AFTER THE CLOSE OF THE PAY DATE, having not advanced at any point from 08:24 through 16:17 - which CONFIRMS the prior-day-snapshot suspicion and means the non-arrival is consistent with BOTH 'no dividend modelling' AND 'the credit posts to a 10-07 balance this field will not show until 10-08'; RECORDED, NOT CONCLUDED - the falsifiable claim is UNCHANGED at ~30180.76 and the reading passes to the FIRST 10-08 SEAT; TWO SMALLER FINDINGS, BOTH DEFECTS IN INHERITED TOOLS: (a) the n/v BAR-COMPLETENESS FLOOR TEST IS RETIRED, NOT DOWNGRADED - today's COMPLETE bar read n 1323 / v 23415, BELOW EVERY recent completed-session floor (10-06 3735/86985, 10-05 1802/60541, 10-02 2524/134995, 10-01 1634/51893) and 3.7x below yesterday on volume, which is the stated-but-untested limit (a quiet low-participation FULL session) arriving with an instance; (b) the SOUND DISCRIMINATOR's CORROBORATING LEG ALSO FAILED BENIGNLY - latestTrade printed 714.53 at 16:00:52 against the bar's c 714.66, the 20:00Z minute bar agreeing with the trade rather than the close, so a 600-share post-bell print on one venue is not the closing auction and ONLY THE CLOCK DID ANY WORK TODAY; 7 theses at the 08:24 seat, ALL SEVEN REJECTED, FOUR on a VOLUNTEERED ABSENCE which is the most on record and the seventh consecutive session with at least one; core 70.2335 pct on the official close and 70.23 pct live, IN BAND by 5.2335 points at the 65 edge and 4.7665 at the 75 edge, 70th consecutive run inside it, NO REBALANCE DUE TOMORROW, rebalance_delta -229.09 A DISTANCE READOUT NOT AN INSTRUCTION; week_of 2026-10-05 MATCHES the COMPUTED ISO Monday of 2026-10-07 (a Wednesday), so NO ROLLOVER and new_positions_this_week stays 0; breaker INACTIVE, consecutive_closed_losses 0 and UNABLE TO MOVE because nothing closed - not a streak that held)
+last_run: 2026-10-08 08:25 ET 1-premarket-research (SEAT 1 OF 4; selftest PASSED all five, trading_enabled true, LIVE paper, pre-flight equity 100491.26; MARKET CLOSED - clock 08:25:01 is_open FALSE with next_open 2026-10-08T09:30, the PRE-MARKET shape READ OFF THE DATE and not off the boolean, corroborated from the data plane by a complete 2026-10-07 bar (c 714.66) and NO bar dated 2026-10-08; next_close also carries today's date so NOT an early close; THE HOLIDAY SKIP PATH WAS NOT TAKEN; ***THE DIVIDEND TEST IS RESOLVED AND THIS IS THE RUN'S HEADLINE - BRANCH (a), THE ALPACA PAPER ACCOUNT DOES NOT MODEL DIVIDENDS.*** account.balance_asof reads 2026-10-07, THE FIELD HAS ADVANCED PAST THE PAY DATE, while cash reads EXACTLY 30000.00 from two independent calls with accrued_fees 0, a THIRTIETH unchanged reading - both inputs taken in the same breath, which is exactly the pre-written decision rule's branch (a); the inferred ~30180.76 credit (1.825/share x 99.046311231) NEVER ARRIVED and the stamp has now rolled past it; the claim was moved exactly ONCE, off an API field rather than for convenience, and 30180.76 itself was NEVER moved; THE TEST IS CLOSED, the 30-reading counter RETIRES HERE, and no future seat should re-read cash for this purpose; CONSEQUENCE IS A FINDING FOR THE HUMAN AND FIXABLE BY NO SEAT - ~0.93pp/yr dividend shortfall on the 70pct core plus the 4.89pp cash drag is a ~5.82pp ANNUAL HANDICAP against a §1 objective of beating the S&P 500 TOTAL return, three options written out in plan_today.md and all three are the human's call; 10 THESES WRITTEN (T-2026-10-08-01 ... -10), ALL TEN REJECTED, cumulative 130 and ZERO EVER ACCEPTED; NINE OF TEN DIED AT §3 OR PART 1, UPSTREAM OF ANY MECHANISM, and EXACTLY ONE (SUPN) reached part 2 - the structural query framing IS reaching the funnel's real inventory and the inventory itself was ineligible end to end, TWO SEPARATE FACTS and only the first is about the query; ALL THREE BROAD SCANS RETURNED A VOLUNTEERED ABSENCE, the eighth consecutive session with at least one and THE FIRST IN WHICH EVERY BROAD SCAN PRODUCED ONE; NEW REJECT FORM, THE EIGHTH AND THE FIRST OF ITS KIND - SUPN's MECHANISM IS SOUND AND POINTS DOWNWARD (FDA clinical hold impairs the named US rights holder), which is UNTRADEABLE under §3's cash-only long-only scope, a STRATEGY-SCOPE failure where the prior seven forms are all disclosure or calendar failures; ZERO move CALLS - the priced-in filter had NOTHING TO FIRE ON, the fourth state, an ABSENT check NOT a skipped one, and 10-08 is NOT a zero-move SESSION yet because three seats remain; correlation check VACUOUS not passing - an empty driver list cannot reject anything, so that filter has NEVER been exercised on this account; SMALLER FINDING ON TRUSTING COMPLETED BARS - the 10-07 bar was REVISED since the close seat read it, n 1323->1325 and v 23415->23423, with o/h/l/c and vw UNCHANGED, so nothing a §5 rule reads moved but COMPLETE and FINAL are different claims and an n/v staleness diff will see late-print settlement and call it motion, the opposite end of the RETIRED n/v completeness floor test inside 16 hours; broker vs official lastday_price 714.34 vs official close 714.66, a 0.32 gap, a MOVING LIVE MIDPOINT not a fixed offset; LEDGER RECONCILES A 27TH SESSION, one row core VOO 99.046311231 at 706.74 raw against zero satellite blocks, THEY AGREE, and an AGREEING ledger and an EMPTY ledger are THE SAME ARTIFACT so this is the absence of a test not a clean bill of health; core 70.1467 pct = 70491.259703 of 100491.26, IN BAND by 5.15 points at the 65 edge and 4.85 at the 75 edge, 71st consecutive run inside it, rebalance_delta -147.38 A DISTANCE READOUT NOT AN INSTRUCTION, NO REBALANCE QUEUED; §5 HAD NO OPERAND AND DID NOT PASS - the distance to each of the four rules is UNDEFINED, not large, and ZERO news-on-holdings Perplexity queries were due because Step 4.1's query is written for a named company and there is none; §5-OPERAND COUNTER STAYS AT 26 COMPLETED SESSIONS / 23 POST-FILL and DOES NOT ADVANCE because this seat stands BEFORE the bell on 10-08; CORE VOO NOT STAMPED FOR AN 80TH RUN, the MIDDLE grade - no write path at this seat but the bars pull HELD 716.29 and it was not written, and a mark would fabricate a §5.4 trailing stop on the one position §5 EXEMPTS with 10-07's close ALREADY BELOW it; ZERO ORDERS - routine 1 has no order path, so the empty lead line is the WEAK form of the refusal and the load-bearing seat is 09:35's; week_of 2026-10-05 MATCHES the COMPUTED ISO Monday of 2026-10-08 (a Thursday), NO ROLLOVER, new_positions_this_week stays 0; breaker INACTIVE, consecutive_closed_losses 0 and UNABLE TO MOVE because nothing has ever closed - not a streak that held; NEW POSITIONS WERE PERMITTED AND EVERY GATE WAS OPEN - 0 of 3 weekly, sleeve 0.0 pct deployed, 29.85 pct idle cash, control notes none - AND NOTHING WAS PLANNED, which is a §4 honest-broker outcome and NOT a blocked run)
 
-prior_run: 2026-10-07 12:41 ET 3-midday-management (SEAT 3 OF 4; selftest PASSED all five, trading_enabled true, LIVE paper, pre-flight equity 100683.41; MARKET OPEN - clock 12:41:21 is_open TRUE, so the closed-market skip path was NOT taken; ZERO OPEN SATELLITE POSITIONS, SO THE ROUTINE THAT EXISTS ONLY FOR §5 HAD NO OPERAND - 5.1 had no invalidation string, 5.2 no timing_window deadline, 5.3 no satellite entry_price, 5.4 no highest_close; THE DISTANCE TO EACH RULE IS UNDEFINED, NOT LARGE; STEP 2's HIGH-WATER REPAIR, THE ONE THING THAT SEAT UNIQUELY OWNS, HAD NOTHING TO REPAIR - the field is ABSENT (third state, no date) and NOT a stale mark, so the staleness comparison HAS NO SUBJECT and the backfill path stays untested; ZERO bars, quote and perplexity calls; ZERO ORDERS and no exit intent, so the dry-run flag path was never reached; EMPTY BY CONSTRUCTION, not by passing a test; ledger reconciled a THIRD time inside the twenty-sixth SESSION; core VOO removed from the working list before any §5 rule was read and NOT stamped for a 78th run; cash EXACTLY 30000.00 a 28th time from two call paths; THAT SEAT'S ONE SUBSTANTIVE FINDING, which this close seat then CONFIRMED rather than inherited: account carries balance_asof and it read 2026-10-06, so cash may be a PRIOR-DAY SNAPSHOT and a 16:15 non-arrival could not distinguish the two branches - the dividend deadline moved to the first 10-08 seat with the falsifiable claim 30180.76 unchanged; core 70.21 pct live, in band, 69th run, rebalance_delta -206.81 and not that seat's to act on; breaker INACTIVE, streak 0 and unable to move; no week rollover)
+prior_run: 2026-10-07 16:17 ET 4-market-close-journal (SEAT 4 OF 4 - the session was COMPLETE, the second consecutive complete one, which is NOT evidence about the next; MARKET CLOSED post-bell on a NORMAL FULL session; STEP 2 HIGH-WATER MARKS HAD NO OPERAND - zero satellite positions, no highest_close to raise and no (as of ...) date to advance, the field ABSENT rather than stale, backfill path still UNEXERCISED CODE; OFFICIAL CLOSE 2026-10-07 VOO c 714.66 -> equity 100784.4368, core 70.2335 pct, day -161.4455 = -0.1599 pct, since inception +0.7844 pct; BENCHMARK one new observation VOO -0.2276 pct vs book -0.1599 pct, excess +0.0676pp PURELY ARITHMETIC on the cash float (0.7023 x -0.2276 = -0.1598) and satellite contributed EXACTLY 0.000000 pct; CORE VOO NOT STAMPED FOR A 79TH RUN, THE STRONGEST GRADE EVER RECORDED - number in hand AND the write path open; 7 theses at the 08:24 seat, ALL SEVEN REJECTED, four on a volunteered absence; TWO TOOL DEFECTS - the n/v bar-completeness floor test RETIRED on a demonstrated false positive (complete bar n 1323/v 23415 below every recent floor) and the latestTrade-matching leg failed benignly (714.53 vs c 714.66), leaving the CLOCK as the only working discriminator; DIVIDEND DEADLINE PASSED WITHOUT AN ANSWER - cash exactly 30000.00 a 29th time but balance_asof STILL read 2026-10-06 at 16:17, frozen all session, so the non-arrival could not distinguish the two branches; RECORDED NOT CONCLUDED, three-branch rule written for the first 10-08 seat - ⚠ THAT SEAT HAS NOW RUN AND BRANCH (a) IS THE ANSWER; core 70.2335 pct official / 70.23 pct live, in band, 70th run, no rebalance due; breaker INACTIVE, streak 0; no week rollover; no unresolved orders)
 
 week_of: 2026-10-05
 new_positions_this_week: 0
@@ -21,9 +21,9 @@ circuit_breaker: INACTIVE
 halt_triggered_at: none
 core_established: true
 core_ticker: VOO
-core_pct: 70.23
+core_pct: 70.15
 satellite_pct: 0.0
-cash_pct: 29.77
+cash_pct: 29.85
 open_thesis_ids: none
 ```
 
@@ -85,33 +85,47 @@ discarded; settled items were folded to one line each and repeated emphasis was 
   say it was worth to their own segment" targets the PART 2 EVIDENCE — the most common killer in this
   log — and it surfaced a transaction the first framing missed entirely. ASK BOTH, EVERY RUN.**
 
-- **⚠⚠ THE DIVIDEND DEADLINE HAS PASSED, THE CREDIT NEVER ARRIVED, AND THE TEST IS STILL NOT READABLE
-  — IT IS YOURS, 10-08 PRE-MARKET, AND YOU ARE THE FIRST SEAT THAT CAN READ IT.** `cash` read **exactly
-  $30,000.00** at 10-07 **16:17**, from `sleeves` and `account` with `accrued_fees: 0` — a **TWENTY-NINTH**
-  unchanged reading and the **THIRD taken after the bell on the pay date.** **THE INFERRED $30,180.76 CREDIT
-  ($1.825/share × 99.046311231 — Alpaca does not publish it) HAS NOT APPEARED.**
-  ⚠⚠ **AND THE REASON THE 16:15 SEAT COULD NOT DECLARE THE PLATFORM FINDING, NOW CONFIRMED FROM ITS OWN
-  CALL RATHER THAN INHERITED: `account.balance_asof` STILL READ `2026-10-06` AT 16:17 — SEVENTEEN MINUTES
-  AFTER THE CLOSE OF THE PAY DATE ITSELF — HAVING NOT ADVANCED AT ANY POINT FROM 08:24 THROUGH 16:17.**
-  **That is a full session with the field frozen, which establishes the prior-day-snapshot reading rather
-  than merely suspecting it.** ⚠ **So the non-arrival is consistent with BOTH "the platform does not model
-  dividends at all" AND "the credit posts to a balance stamped 10-07 that this field will not surface until
-  10-08," and nothing available at 16:17 separated them. RECORDED, NOT CONCLUDED.**
-  ⚠⚠ **THE DECISION RULE FOR TOMORROW, WRITTEN NOW SO IT CANNOT BE BENT LATER — READ `cash` AND
-  `balance_asof` IN THE SAME BREATH:**
-  **(a) `balance_asof` ≥ 2026-10-07 AND `cash` still exactly $30,000.00 → THE TEST IS RESOLVED AND THE ANSWER
-  IS THAT THE PLATFORM DOES NOT MODEL DIVIDENDS.** Write it as a finding, loudly, and put the handicap below
-  in front of the human.
-  **(b) `balance_asof` ≥ 2026-10-07 AND `cash` ≈ $30,180.76 → THE DIVIDEND ARRIVED.** Record the exact figure.
-  **(c) `balance_asof` still 2026-10-06 → THE FIELD IS STALER THAN A DAY AND THE TEST REMAINS UNREADABLE.**
-  Say so and **do not pick a branch.**
-  ⚠ **The falsifiable claim itself ($30,180.76) is UNCHANGED and has been moved exactly once, off an API
-  field rather than for convenience. Do not move it again without a reason of that kind.**
-  ⚠⚠ **THE PRICE OF BRANCH (a), ESTABLISHED AND NOT RE-DERIVED: VOO's trailing 12 months is +16.3118% on
-  `--adjustment all` against +14.9863% on `raw`, so DIVIDENDS ARE 1.3254pp/YEAR. A 70% core that never
-  collects them structurally under-earns ~0.93pp/yr, which on top of the 4.89pp cash drag is a ~5.82pp
-  ANNUAL HANDICAP BEFORE ANY DECISION — against a §1 objective of beating the S&P 500 TOTAL return.**
-  ⚠ **A finding for the human, not something any seat can fix.**
+- **✅⚠⚠ THE DIVIDEND TEST IS **RESOLVED AND CLOSED** — BRANCH (a): **THE ALPACA PAPER ACCOUNT DOES
+  NOT MODEL DIVIDENDS.** *(Resolved 2026-10-08 08:25. This REPLACES the three-branch decision rule and
+  the 30-reading counter; neither is live any more.)*
+  **Both inputs read in the same breath, as the pre-written rule required: `account.balance_asof`
+  **`2026-10-07`** — the field has ADVANCED past the pay date — and `cash` **exactly $30,000.00** from
+  `account` and `sleeves` with `accrued_fees: 0`.** The inferred **~$30,180.76** credit
+  ($1.825/share × 99.046311231) **never arrived.**
+  ⚠ **DO NOT RE-READ `cash` FOR THIS PURPOSE AND DO NOT RESTART THE COUNTER. The test is spent.**
+  ⚠ **Worth preserving as process, not as trivia: a falsifiable claim written in advance, moved
+  exactly ONCE (off an API field, not for convenience), held across three sessions and five seats, and
+  then resolved against itself. The result is NEGATIVE, which is what most correct tests return.**
+  ⚠⚠ **WHAT REMAINS LIVE IS THE CONSEQUENCE, AND IT IS THE HUMAN'S DECISION, NOT ANY SEAT'S:
+  dividends are worth **1.3254pp/yr** on VOO (TTM +16.3118% `--adjustment all` vs +14.9863% `raw`), so
+  a 70% core that never collects them under-earns **~0.93pp/yr**, which on top of the **4.89pp** cash
+  drag is a **~5.82pp ANNUAL HANDICAP BEFORE ANY DECISION** — against a §1 objective of beating the
+  S&P 500 **TOTAL** return. ⚠ **§1 as written is unmeetable by construction on this platform.**
+  **Three options, written out in full in `plan_today.md` (2026-10-08): (i) benchmark against VOO
+  PRICE return and say so; (ii) accrue a notional dividend in `state.md` for benchmarking only,
+  touching no order path; (iii) leave it and treat the handicap as a known, quantified bias in every
+  performance line. Option (ii) needs a `strategy.md` or routine change — ONLY THE HUMAN MAY MAKE IT.**
+
+- **⚠⚠ NEW 10-08, THE EIGHTH REJECT FORM AND THE FIRST THAT IS NOT A DISCLOSURE OR CALENDAR FAILURE:
+  THE MECHANISM IS SOUND AND POINTS DOWNWARD.** **SUPN** (`T-2026-10-08-02`): Newron's 10-08 release
+  **names Supernus as the holder of US marketing rights to evenamide**, and the FDA clinical hold on
+  ENIGMA-TRS 2 genuinely impairs that asset. ⚠ **That read is UNTRADEABLE HERE — §3 forbids leverage,
+  inverse products and anything not bought outright with settled cash, so this strategy can only
+  express the LONG side.** ⚠⚠ **THE TEMPTING MOVE IS TO FLIP IT INTO A "COMPETITOR BENEFITS" LONG.
+  THAT IS THE SHARED-CAUSE OBJECT: no competitor's revenue or cost line changed, only its relative
+  standing, and NO COMPETITOR WAS NAMED IN ANY SOURCE. NOT TAKEN, AND IT WILL BE OFFERED AGAIN.**
+  ⚠ **The seven known forms are all about what the source WITHHELD or WHEN the money lands. This one
+  is about what §3 PERMITS, so widening the evidence bar would not touch it.** *(SUPN also failed §3's
+  cap floor at ~$2.5B and part 2 for want of any disclosed figure — three independent kills.)*
+
+- **⚠⚠ NEW 10-08 — A "COMPLETE" BAR IS NOT A "FINAL" BAR, AND THIS IS THE OTHER END OF THE RETIRED
+  n/v TEST.** The **2026-10-07** bar read **n 1323 / v 23415** at the 16:17 close seat and **n 1325 /
+  v 23423** at the 10-08 08:25 seat — **+2 trades, +8 shares, same date, same basis, 16 hours apart.**
+  ⚠ **`o`/`h`/`l`/`c` and `vw` were UNCHANGED, so nothing any §5 rule reads actually moved.**
+  ⚠⚠ **BUT: a staleness detector that diffs `n`/`v` across seats WILL see motion that is late-print
+  settlement rather than a live session.** ⚠ **The n/v completeness FLOOR test was retired on 10-07 for
+  false-positiving a quiet full session; this is the same two fields failing in the OPPOSITE direction
+  inside a day. THE CLOCK REMAINS THE ONLY WORKING MARKET-STATE DISCRIMINATOR.**
 
 - **⚠⚠ ASK FOR THE ANNOUNCEMENT DATE ON EVERY RUN, NOT JUST ON MONDAYS — 10-06 UPGRADED THIS FROM A
   MONDAY RULE TO A STANDING ONE AND IT PAID IMMEDIATELY.** A recency filter bounds when something was
@@ -138,7 +152,7 @@ discarded; settled items were folded to one line each and repeated emphasis was 
   RECORDED AS A CANDIDATE.** ⚠ **A REDACTION IS NOT A LEAD AND NEITHER IS A MAP PIN. There is no
   Company B until the source names one.** *(Entries: T-2026-10-05-01, T-2026-10-06-03.)*
 
-- **⚠⚠ THE SATELLITE SLEEVE IS STRUCTURALLY UNDEPLOYED — 26 COMPLETED SESSIONS, 120 THESES, ZERO
+- **⚠⚠ THE SATELLITE SLEEVE IS STRUCTURALLY UNDEPLOYED — 26 COMPLETED SESSIONS, **130 THESES**, ZERO
   POSITIONS EVER, AND THE PRESSURE TO LOWER THE §4 BAR IS THE ONLY ITEM HERE ASKING FOR JUDGMENT
   RATHER THAN CARE.**
   **Seven theses on 10-07, all rejected; 120 total = 113 (re-counted from source by the 10-06 16:17
@@ -180,9 +194,16 @@ discarded; settled items were folded to one line each and repeated emphasis was 
   (Autodesk/Dassault; Landstar/XPO/GXO) is the "shared cause is not a mechanism" object — and on 10-06
   the SOURCE stated that exclusion before I applied it.**
 
-- **⚠⚠ THE FUNNEL KEEPS ANSWERING §4's QUESTION IN THE NEGATIVE, OUT LOUD — SEVEN CONSECUTIVE
-  SESSIONS, AND 10-07 PRODUCED FOUR IN ONE RUN, THE MOST ON RECORD.**
-  09-29, 09-30, 10-01, 10-02, 10-05, 10-06 and 10-07 each returned at least one. **10-07's four, each
+- **⚠⚠ THE FUNNEL KEEPS ANSWERING §4's QUESTION IN THE NEGATIVE, OUT LOUD — **EIGHT** CONSECUTIVE
+  SESSIONS, AND 10-08 IS THE FIRST IN WHICH **EVERY ONE OF THE THREE BROAD SCANS** PRODUCED ONE.**
+  09-29 through 10-08 unbroken. ⚠⚠ **10-08's three, each in the source's own words: *"the available
+  evidence does not show any company that satisfies the full screen"* (the won-a-contract /
+  quantified-to-its-own-segment framing) · *"No qualifying event was identified"* (the
+  named-second-company framing) · and query 1 returning **one** qualifying item against **NINE**
+  self-excluded ones with the reason volunteered — the highest exclusion count on record.**
+  ⚠ **10-08's ready-and-unwritten priors: the solid-rocket-motor tier for the X-Bow booster, the
+  Sjögren's competitive set for argenx, the CDMO tier for Pfizer's Sicily exit. NONE WRITTEN DOWN.**
+  10-07's four and 10-06's two are kept below as the worked examples. **10-07's four, each
   in the source's own words:** *"No publicly traded U.S. company has been explicitly named by
   Constellation Energy, Google, or an SEC filing as a contractor, equipment supplier, turbine or
   generator vendor, or engineering firm for the more-than-$4.3 billion program"* · Chevron/Hess
@@ -218,9 +239,11 @@ discarded; settled items were folded to one line each and repeated emphasis was 
   multi-session round trip netting to a passing figure. **HPE is a milder instance.**
   ⚠⚠ **THE FOURTH STATE — THE FILTER HAVING NOTHING TO FIRE ON — IS AS COMMON AS THE OTHERS: FOUR
   COMPLETE SESSIONS OF IT, 09-29, 10-02, 10-05 AND 10-06, EACH WITH ZERO `move` CALLS IN EVERY ONE OF
-  ITS SEATS.** ⚠⚠ **10-07 IS NOT A FIFTH AND MUST NOT BE WRITTEN AS ONE: its pre-market seat made zero,
-  and THREE SEATS OF THAT SESSION REMAINED WHEN THIS WAS WRITTEN. A session is not zero-`move` until
-  the session is over.** ⚠ **The 10-06 count is only now writable, and the reason is
+  ITS SEATS.** ⚠⚠ **10-07 COMPLETED WITH ZERO `move` CALLS IN ALL FOUR SEATS AND IS NOW THE FIFTH.
+  10-08 IS NOT A SIXTH AND MUST NOT BE WRITTEN AS ONE: its pre-market seat made zero and THREE SEATS
+  REMAIN. A session is not zero-`move` until the session is over.** ⚠ **10-08's pre-market zero has
+  the cleanest cause yet recorded: NINE OF TEN CANDIDATES DIED AT §3 OR PART 1, UPSTREAM OF THE FILTER,
+  and the tenth failed §3's cap floor at the same moment it failed part 2.** ⚠ **The 10-06 count is only now writable, and the reason is
   the point: at 08:22 and 09:36 it was TWO of four seats — a PARTIAL session count — and writing "four
   sessions" then would have been catch (11)'s shape. All four seats have now run and all four made
   zero. THE HONEST UNIT IS THE SESSION, AND A SESSION IS ONLY COUNTABLE ONCE IT IS OVER.** ⚠ **That is an ABSENT check, not a skipped one,
@@ -232,6 +255,24 @@ discarded; settled items were folded to one line each and repeated emphasis was 
   state it means.** **Only a human may change §4 or `alpaca.py move`.**
 
 - **⚠ THERE IS NO LIVE RESEARCH ITEM. THE FUNNEL IS EMPTY. A REJECTION IS NOT A QUEUE.**
+  **10-08's ten, with the durable kill:** Asieris/Theramex CEVIRA $15M + >$250M (§3 — **neither party
+  US-listed**, and it was the best-disclosed figure of the day) · **SUPN** (§3 cap ~$2.5B · part 2 ·
+  **mechanism points DOWN** — see the eighth-form item above) · **OII** US Navy $154M (§3 cap
+  **$4.48B**, MarketWatch 10-07 · first-order · announced **10-02**, rule (iii) again) · **GVA**
+  $489.8M (§3 cap **$5.37B**, CompaniesMarketCap · first-order · no segment quantification) · X-Bow
+  Systems/US Navy ~$70M (**private**, counterparty is the Navy — **8th defence-award instance**) ·
+  **VAL**/PETRONAS ~$220M (**aggregate, unallocated** = form five · §3 **UNRESOLVED, the source declined
+  a cap figure — do not inherit a verdict from that entry**) · US Army NGC2 ~$100M/nine companies
+  (aggregate; **~$11M each cannot clear part 2's 10% test against ANY $10B+ company, so the two tests
+  are JOINTLY UNSATISFIABLE — a free one-step screen**, 9th defence instance) · **ARGX** UNITY
+  discontinuation (part 1, no second company named) · Pfizer Sicily ~330 jobs (**no counterparty at
+  all** = form six; **a headcount is not a dollar path**) · and a **§3 SCOPE SWEEP of twelve non-US
+  items** disposed as one entry (Alstom/Riyadh — a qualifying two-party disclosed-value contract
+  excluded purely on US scope, **and the source excluded it before I did** · Bayer · OPmobility ·
+  Medisca/EUROAPI · Elevra/LG Energy · ASELSAN · Machines With Vision/Network Rail · Cambridge
+  Heartwear/NHS · Aemulus · TCS · Interarch · Om Power).
+  ⚠ **`--recency day` returns a GLOBAL tape — roughly half of 10-08's raw funnel output was non-US.
+  That is not a defect in the query; it is why §3 is applied before a mechanism is attempted.**
   ⚠⚠ **THE DISPOSED-REJECT CATALOGUE IS SPLIT: `archive/research_log/2026-09.md` holds 87 theses; the
   live `research_log.md` holds the 26 October entries. A run checking whether a name was already
   disposed MUST READ BOTH.**

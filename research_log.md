@@ -52,6 +52,271 @@ single most common way a plausible-sounding connection gets mistaken for an oppo
 
 ## Entries
 
+### 2026-10-08 (08:25 ET) — event survey (funnel, pre-thesis)
+
+Selftest passed all five checks (`trading_enabled: true`, LIVE paper, broker equity **$100,491.26** at
+pre-flight). Window screened: **the completed 2026-10-07 session and overnight into 2026-10-08** — a
+real window; 10-07 was a full session (official close 714.66). **Four Perplexity scans, all exit 0**
+(three broad/structural, one second-order drill, plus one market-cap verification call). **Ten
+candidates reached a thesis entry; ALL TEN WERE REJECTED.**
+
+**The carry-forward's two complementary framings were used as queries one and two, as instructed.**
+Query 1 ("two named parties, a disclosed dollar amount, an announcement date") returned **one
+qualifying item and NINE self-excluded ones with the reason volunteered** — the highest exclusion
+count on record, and work the run would otherwise have done itself. Query 2 ("who WON it and what did
+they say it was worth to their own named segment") returned **an explicit, unprompted denial**:
+*"the available evidence does not show any company that satisfies the full screen."* Query 3, aimed
+at the second-order shape directly (an event that changed a **named second** public company's
+disclosed economics), returned *"No qualifying event was identified."*
+
+⚠⚠ **THAT IS THE EIGHTH CONSECUTIVE SESSION WITH AT LEAST ONE VOLUNTEERED ABSENCE, AND THE FIRST IN
+WHICH ALL THREE BROAD SCANS RETURNED ONE.** 09-29 → 10-08 unbroken. ⚠ **A volunteered absence is
+stronger than a silence, and a run that produces a Company B against three explicit denials has
+supplied it from its own priors.** The priors were ready and specific again today — solid-rocket-motor
+names for the X-Bow booster, the Sjögren's competitive set for argenx, the CDMO tier for Pfizer's
+Sicily exit. **None was written down as a candidate.**
+
+⚠⚠ **THE ONE GENUINELY NEW OBSERVATION, AND IT IS ABOUT QUERY 1's FAILURE MODE RATHER THAN ITS
+SUCCESS: THE STRUCTURAL FRAMING RETURNED A FULL INVENTORY AND *EVERY SINGLE ITEM IN IT* FAILED §3 OR
+PART 1 BEFORE REACHING A MECHANISM.** Nine of today's ten rejections are **universe** or
+**no-second-party** kills; **exactly one** (SUPN) reached part 2, and it failed §3's cap floor at the
+same time. ⚠ **The framing is working as designed — it reaches the funnel's real inventory — and the
+inventory itself was, today, structurally ineligible from end to end. Those are two different facts
+and only the first is about the query.**
+
+⚠⚠ **THE PRICED-IN FILTER HAD NOTHING TO FIRE ON — ZERO `move` CALLS AT THIS SEAT, AND THIS IS THE
+"FOURTH STATE" (an ABSENT check, not a skipped one).** Every candidate died at §3 or part 1, upstream
+of the filter. ⚠ **No decorative `move` call was made, for the third recorded time: running one on a
+name with no mechanism converts an honest absence into a fake exercise.** ⚠ **10-08 is NOT a
+zero-`move` SESSION yet and must not be written as one — three seats remain. A session is only
+countable once it is over.**
+
+**Correlation check (§4):** **vacuous, and recorded as such rather than as passing.** Open satellite
+positions: **zero**, so no candidate could collide with an existing driver. ⚠ **An empty driver list
+cannot reject anything, which means the correlation filter has never once been exercised on this
+account.**
+
+---
+
+### T-2026-10-08-01 — Asieris Pharmaceuticals / Theramex (CEVIRA licence) — REJECTED
+**Company A / the news:** Asieris Pharmaceuticals and Theramex announced an exclusive licensing
+agreement for CEVIRA (non-surgical cervical precancer treatment) covering Europe, Australia, New
+Zealand and Turkey — **$15M upfront, $11M near-term regulatory milestones, total deal value stated as
+exceeding $250M**, announced **2026-10-07** (PR Newswire). **The one item of the run that cleared
+query 1's own structural bar.**
+**Company B / the candidate:** **None exists.** Asieris is Shanghai STAR-listed (688176); Theramex is
+privately held (PAI Partners / Carlyle). No third party is named.
+
+**1. Mechanism:** not written — there is no US-listed leg to attach one to.
+**2–4:** not written.
+
+**Hard filters:**
+- Universe (§3): **FAIL, and it is terminal.** Neither party is US-listed. §3 permits US-listed common
+  stock and US-listed ETFs only. **There is nothing buyable in this transaction at any price.**
+- Priced-in (§4): **not run** — no ticker to run it on.
+- Correlation (§4): vacuous (zero open positions).
+
+**Outcome: REJECTED on §3, before any thesis part was attempted.** ⚠ **The honest note is that the
+dollar figure here is the best-disclosed of the day and it buys nothing — a disclosed amount is only
+useful if one of the parties is in the universe. §3 is checked first for exactly this reason.**
+
+---
+
+### T-2026-10-08-02 — SUPN (Supernus Pharmaceuticals) — REJECTED
+**Company A / the news:** Newron Pharmaceuticals reported **2026-10-08** that the **FDA clinical hold
+remains in place** at US study centres for **ENIGMA-TRS 2**, its Phase 3 evenamide study in
+treatment-resistant schizophrenia; Newron said it had received written FDA communication and would
+respond after review. **No US patients had been dosed as of the announcement.**
+**Company B / the candidate:** **Supernus Pharmaceuticals (NASDAQ: SUPN)**, which **Newron's own
+release names as the holder of US marketing rights to evenamide.** ⚠ **This is the only candidate of
+the run with a genuine second-order shape: a named second public company whose asset is directly
+affected by an event at Company A.**
+
+**1. Mechanism (attempted):**
+> The FDA clinical hold on ENIGMA-TRS 2 causes Supernus's US evenamide rights to lose value because
+> the US approval path is suspended.
+
+**2. Dollar path:** ⚠ **CANNOT BE WRITTEN. Newron's release discloses no payment structure, no
+milestone or royalty figures, and reports no evenamide revenue contribution for Supernus. The source
+explicitly adds that this "should not be interpreted as evidence that the contractual amounts are
+zero."** ⚠ **Part 2 requires a segment and a share of total revenue; evenamide is pre-approval and has
+neither.** **PART 2 FAILS.**
+**3. Timing window:** indeterminate — a hold lifts when the FDA says so.
+**4. Invalidation:** writable in principle (*"FDA lifts the hold and Supernus discloses a dosing
+restart"*), but with no part 2 there is nothing for it to invalidate.
+
+**Hard filters:**
+- Universe (§3): **FAIL. SUPN market cap ≈ $2.5B** (MarketBeat, 2026-10-07: $2.51B; a second
+  MarketBeat item the same day: $2.49B — source: Perplexity, cited to MarketBeat). **Below §3's $10B
+  floor by a factor of four.** ⚠ **Figure and source recorded so a later run need not re-derive it.**
+- Priced-in (§4): **not run** — the candidate was already dead twice over.
+- Correlation (§4): vacuous.
+
+**Outcome: REJECTED on §3's cap floor AND on part 2, independently.** ⚠⚠ **AND A THIRD KILL THAT
+MATTERS MORE THAN EITHER, BECAUSE IT WOULD APPLY EVEN TO AN ELIGIBLE NAME: THE MECHANISM POINTS THE
+WRONG WAY. A clinical hold makes the licensee's asset worth LESS. This strategy can only buy — §3
+forbids leverage, inverse products and anything not bought outright with settled cash, so a correct
+bearish second-order read is UNTRADEABLE HERE.** ⚠ **The tempting move is to flip it into a
+"competitor benefits" long. That is the shared-cause object: a competitor's economics did not change,
+only its relative standing did, and no competitor was named in any source. NOT TAKEN.**
+⚠ **New reject shape for the catalogue — EIGHTH FORM: THE MECHANISM IS SOUND AND POINTS DOWNWARD.**
+Distinct from the seven known forms, all of which are disclosure or calendar failures.
+
+---
+
+### T-2026-10-08-03 — OII (Oceaneering International) — REJECTED
+**Company A / the news:** US Navy five-year contract to Oceaneering's **Aerospace and Defense
+Technologies** segment, **potential value up to $154M**. ⚠ **Announced 2026-10-02 — SIX DAYS OLD, and
+the source said so when asked.**
+**Company B / the candidate:** none identified; OII is the recipient.
+
+**Hard filters:**
+- Universe (§3): **FAIL. OII market cap ≈ $4.48B** (MarketWatch, updated 2026-10-07; StockAnalysis
+  $4.46B the same day — source: Perplexity). **Below the $10B floor.**
+- Priced-in (§4): not run.
+
+**Outcome: REJECTED on §3, with TWO independent kills.** ⚠ **(i) OII is FIRST-ORDER in its own news —
+§4 asks whose economics change *because of* someone else's event, and the award recipient is the
+headline. (ii) The date is outside the window: a recency filter bounds when something was WRITTEN,
+never when it HAPPENED, and this is the rule (iii) trap arriving again — defused by demanding the
+announcement date in the prompt, which is now a standing rule rather than a Monday one.**
+⚠ **Note also that the only segment-revenue comparison available was SECONDARY ANALYSIS, not the
+company's own quantification — which is the disclosure failure part 2 exists to catch.**
+
+---
+
+### T-2026-10-08-04 — GVA (Granite Construction) — REJECTED
+**Company A / the news:** Two project awards reported **2026-10-08** totalling **$489.8M** ($324.8M +
+$165M).
+**Company B / the candidate:** none. ⚠ **And the counterparties for both projects are NOT clearly
+identified in the available material — so this item fails query 1's own two-named-parties bar as
+well.**
+
+**Hard filters:**
+- Universe (§3): **FAIL. GVA market cap ≈ $5.37B** (CompaniesMarketCap, October 2026; $5.28B on
+  10-06; MarketBeat $5.02B — sources disagree by ~7%, all well below the floor — source: Perplexity).
+  **Below the $10B floor.**
+- Priced-in (§4): not run.
+
+**Outcome: REJECTED on §3.** Independently: **GVA is first-order**, and **the company did not quantify
+the awards as revenue to a named segment** (part 2's most common killer in this log).
+
+---
+
+### T-2026-10-08-05 — X-Bow Systems / US Navy SRM booster — REJECTED
+**Company A / the news:** US Navy award of **nearly $70M** to **X-Bow Systems** to develop a solid
+rocket motor booster for a new weapon, reported **2026-10-08**.
+**Company B / the candidate:** **none named.** ⚠ **The ready prior here was immediate and specific —
+the solid-rocket-motor tier. IT IS A FACT ABOUT AN INDUSTRY, NOT ABOUT THIS TRANSACTION, AND IS NOT
+RECORDED AS A CANDIDATE.**
+
+**Hard filters:**
+- Universe (§3): **FAIL on both legs. X-Bow Systems is privately held; the counterparty is the US
+  Navy, which is not a company.** **There is no buyable leg on either side.**
+- Priced-in (§4): not run.
+
+**Outcome: REJECTED on §3, and it is the EIGHTH instance of the standing carry-forward rule: US
+DEFENCE PROGRAM AWARDS CANNOT PRODUCE A §4 CANDIDATE.** ⚠ **The structural reason is unchanged — the
+money flows from a government, so there is no Company A whose *economics* changed, and the supplier
+tier below the winner is never named in the announcement.** ⚠ **The source also flagged that it could
+not date the award beyond its publication date — rule (iii) again.**
+
+---
+
+### T-2026-10-08-06 — VAL (Valaris) / PETRONAS — REJECTED
+**Company A / the news:** Valaris reported drillship and jackup work across three continents,
+**approximately $220M** for a **batch** of contracts and extensions including PETRONAS.
+**Company B / the candidate:** none; VAL is the recipient.
+
+**Hard filters:**
+- Universe (§3): **UNRESOLVED — RECORD AS UNDECIDED, NOT AS PASSING.** The market-cap query
+  **explicitly declined** to supply a figure for VAL (*"No usable Valaris market-capitalization result
+  was returned"*). ⚠ **No §3 verdict may be claimed on VAL in either direction, and a future run must
+  not inherit one from this entry.**
+- Priced-in (§4): not run.
+
+**Outcome: REJECTED on part 2, which does not depend on the unresolved §3 check.** ⚠ **The $220M is an
+AGGREGATE across a batch and is NOT ALLOCATED to the PETRONAS contract — so the figure exists but is
+the WRONG QUANTITY, which is reject form five.** Independently: **VAL is first-order**, and PETRONAS
+is state-owned and unbuyable.
+
+---
+
+### T-2026-10-08-07 — US Army NGC2 awards (nine recipients) — REJECTED
+**Company A / the news:** US Army issued **just under $100M** in NGC2 application awards to **nine
+companies**, reported **2026-10-08**.
+**Company B / the candidate:** none reachable.
+
+**Hard filters:**
+- Universe (§3): not reached.
+- Priced-in (§4): not run.
+
+**Outcome: REJECTED on part 2.** ⚠ **The amount is an AGGREGATE with no per-recipient allocation, so
+no single company's dollar path can be written — and $100M split nine ways averages ~$11M, which
+cannot clear part 2's 10%-of-revenue test against ANY §3-eligible $10B+ company. The 10% test and the
+$10B floor are JOINTLY UNSATISFIABLE at this deal size, which is a free one-step screen** (same shape
+as the Blaize kill on 10-06, arriving from the deal-size side rather than the counterparty side).
+⚠ **Ninth defence-award instance.**
+
+---
+
+### T-2026-10-08-08 — ARGX (argenx) — REJECTED
+**Company A / the news:** argenx announced **2026-10-08** the **discontinuation of the Phase 3 UNITY
+study** of efgartigimod in Sjögren's disease.
+**Company B / the candidate:** **none named in any source.**
+
+**1. Mechanism:** not written. ⚠ **The only available construction is "a competitor in Sjögren's now
+faces one fewer entrant" — which is the SHARED-CAUSE object, not a mechanism: no competitor's revenue
+or cost line changed, only its relative standing, and no competitor was named.**
+**2–4:** not written.
+
+**Hard filters:**
+- Universe (§3): **not reached** (ARGX itself is comfortably above the floor, but it is first-order
+  and no figure was sought — recorded as NOT CHECKED rather than as passing).
+- Priced-in (§4): not run.
+
+**Outcome: REJECTED on part 1.** ⚠ **A trial discontinuation discloses no dollar figure and names no
+second party. The ready prior — the competitive set — was specific and was not written down.**
+
+---
+
+### T-2026-10-08-09 — Pfizer Sicily plant action — REJECTED
+**Company A / the news:** Pfizer to cut **~330 jobs** in Italy (Sicily), reported **2026-10-07** per
+unions.
+**Company B / the candidate:** **none. No volume shift to a named rival or CDMO is disclosed.**
+
+**Hard filters:** not reached.
+
+**Outcome: REJECTED on part 1 — THERE IS NO COUNTERPARTY AT ALL** (reject form six, same shape as
+Bayer's Ohio plant and BDX's $3B). ⚠ **A headcount figure is not a dollar path: 330 jobs does not map
+to a segment revenue line, and nothing says where the volume goes — or that it goes anywhere.**
+⚠ **The CDMO prior was ready and is not recorded as a candidate.**
+
+---
+
+### T-2026-10-08-10 — §3 SCOPE SWEEP (twelve non-eligible items, disposed as one) — REJECTED
+Recorded as a single entry rather than twelve, because the kill is identical and mechanical and
+twelve near-identical blocks would pad the log without adding information.
+
+**Items, each with its own disclosed detail, all failing §3's US-listed requirement:**
+Alstom / Royal Commission for Riyadh City (metro trains — a qualifying two-party disclosed-value
+contract, **excluded purely on US scope, and the source excluded it before I did**) · Bayer —
+FDA accepts Kerendia sNDA for CKD without diabetes (German-listed) · OPmobility — revised 2026
+operating-margin guidance €430–450M, FCF >€220M (French-listed) · Medisca / EUROAPI API partnership
+(EUROAPI Paris-listed, Medisca private) · Elevra / LG Energy Solution spodumene supply (Australian +
+Korean) · ASELSAN $125M (Turkish-listed, **and the counterparty is an unnamed "international
+end-user"** — two independent kills) · Machines With Vision / Network Rail (**"multi-million," no
+figure disclosed** — part 2 as well) · Cambridge Heartwear / NHS £18.4M tender (UK) · Aemulus RM15M
+contract (Malaysian) · Tata Consultancy Services Q2 FY27 results (Indian) · Interarch Building
+Solutions ₹59 crore order (Indian) · Om Power Transmission ₹78.84 crore LoI (Indian).
+
+**Outcome: ALL REJECTED on §3.** ⚠ **Worth one honest line: `--recency day` returns a global tape, and
+roughly half of today's raw funnel output was non-US. That is not a defect in the query — it is why
+§3 is applied before a mechanism is attempted, and today it disposed of twelve items for zero
+analytical effort.**
+
+---
+
 ### 2026-10-07 (08:24 ET) — event survey (funnel, pre-thesis)
 
 Selftest passed all five checks (`trading_enabled: true`, LIVE paper, broker equity **$100,643.92**
@@ -1393,4 +1658,8 @@ working the reject board, recounting theses, or checking whether a name was alre
 must read that file** — the standing rule that *a rejection is not a queue* applies to the
 archive exactly as it applied here.
 
-**Cumulative thesis count is 98 (0 ever accepted): 87 archived + 11 live in this file.**
+**Cumulative thesis count is 130 (0 ever accepted): 87 archived (`archive/research_log/2026-09.md`)
++ 43 live in this file.** ⚠ **Re-derived at the 2026-10-08 08:25 seat from the carry-forward base of
+120 (113 through 10-06 + 7 on 10-07) plus the 10 written today. Do NOT "fix" this by re-adding
+today's ten — they are already in it.** ⚠ **A run checking whether a name was already disposed MUST
+READ BOTH FILES.**
