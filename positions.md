@@ -85,6 +85,76 @@ check that the pull returned the right session. A stored baseline is a *label*, 
 
 *(none — no **satellite** positions have been opened yet. Core VOO exists and is deliberately not tracked here, per the top-of-file rules and the fill note further down.)*
 
+**Reconciliation 2026-10-08 — SEAT 1 OF 4, `1-premarket-research` 08:25 ET.**
+Selftest passed all five checks; `trading_enabled: true`, LIVE paper; pre-flight broker equity
+**$100,491.26**. `clock` at **08:25:01** reads **`is_open: false`** with `next_open`
+**2026-10-08T09:30** — the **PRE-MARKET** shape, read off the **DATE** (it points at **TODAY**), not
+off the boolean. ⚠ **FALSE has three meanings; TRUE has one.** ⚠ **Corroborated from the data plane:
+`bars --days 4 --adjustment all` returns a complete **2026-10-07** bar (c 714.66) and **NO bar dated
+2026-10-08**. Not a holiday**, and `next_close` also carries today's date, so not an early close
+either.
+
+**RECONCILIATION, SATELLITE-TO-SATELLITE.** `alpaca.py positions` returns **one row, core VOO**,
+99.046311231 shares at avg_entry **706.74** (a **RAW** print), cost_basis **$69,999.99**,
+market_value **$70,491.26**, unrealized **+$491.27 (+0.70%)** — unchanged since the 09-03 fill —
+against **zero satellite blocks in this file. THEY AGREE.** ⚠ **Core VOO was removed from the working
+list BEFORE any §5 rule was read**, per §5's core exemption; **a run that compares the raw ledger to
+the raw broker reads a correct ledger as broken.** Sleeves at 08:25: equity **$100,491.26**, core
+**$70,491.259703 = 70.15%**, satellite **0.0%** (count 0), cash **29.85%**, `core_in_band: true`,
+`rebalance_needed: false`, `rebalance_delta` **−$147.38** (a distance readout, not an instruction).
+**In band by 5.15 points at the 65 edge and 4.85 at the 75 edge; 71st consecutive run inside it.**
+⚠ **NO DISCREPANCY WAS FOUND, SO NONE IS FLAGGED — and an AGREEING ledger and an EMPTY ledger are the
+same artifact. That is not a clean bill of health on the reconciliation logic; it is the absence of a
+test.** **TWENTY-SEVENTH session with nothing to reconcile.**
+
+⚠ **CORE VOO IS AGAIN NOT STAMPED WITH A `highest_close` — EIGHTIETH CONSECUTIVE RUN.**
+⚠⚠ **GRADED, NOT COUNTED, AND THIS IS THE *MIDDLE* GRADE: this seat holds **NO WRITE PATH** into the
+field (routine 1 owns `sell_rule_status`, not the stamp — the close run and routine 3's Step 2
+backfill own that), but it **DID** pull `bars --symbol VOO --days 4 --adjustment all` for tape context
+and that pull returned **716.29** as the completed-bar maximum. THE NUMBER WAS IN HAND AND WAS NOT
+WRITTEN.** ⚠ **A step weaker than a seat holding both the number and the path; a step stronger than a
+seat that made no `bars` call at all — and those two look identical in a run summary.** ⚠ **The reason
+is unchanged and is not a judgment call: a mark on VOO would **fabricate a §5.4 trailing stop on the
+one position §5 exempts**, which §7 forbids outright. On today's numbers it would sit at 716.29 with
+10-07's close already **below** it, so the phantom drawdown starts on day one.**
+
+⚠⚠ **THE DIVIDEND TEST IS RESOLVED AT THIS SEAT, AND THE ANSWER IS BRANCH (a) — THE PLATFORM DOES NOT
+MODEL DIVIDENDS.** `account.balance_asof` reads **`2026-10-07`** — **the field has advanced past the
+pay date** — while `cash` reads **exactly $30,000.00** from two independent calls (`account`,
+`sleeves`) with `accrued_fees: 0`, a **THIRTIETH** unchanged reading. **The inferred ~$30,180.76
+credit ($1.825/share × 99.046311231) never arrived and the balance stamp has now rolled past it.**
+⚠ **That is the pre-written decision rule's branch (a), met on both inputs read in the same breath.
+The claim was moved exactly once — off an API field, not for convenience — and $30,180.76 was never
+moved. THE TEST IS CLOSED; the 30-reading counter retires here and no future seat should re-read
+`cash` for this purpose.** ⚠ **The consequence is a finding for the human and not fixable by any
+seat: a ~0.93pp/yr dividend shortfall on the 70% core plus the 4.89pp cash drag is a ~5.82pp ANNUAL
+HANDICAP against a §1 objective of beating the S&P 500 TOTAL return. Written up in full in
+`plan_today.md`.**
+
+⚠ **ONE SMALLER FINDING, ON TRUSTING "COMPLETED" BARS: the 10-07 bar has been REVISED since the close
+seat read it** — **n 1323 → 1325, v 23415 → 23423** (+2 trades, +8 shares), with **o/h/l/c and vw
+UNCHANGED**. ⚠ **Nothing a §5 rule reads has moved, but "complete" and "final" are different claims,
+and a staleness detector that diffs n/v across seats will see late-print settlement and call it
+motion.** This is the opposite end of the **retired n/v completeness floor test** — the same two
+fields failing in the other direction inside 16 hours.
+
+**Broker vs official:** `lastday_price` **714.34** against the official 10-07 close **714.66** — a
+**$0.32** gap. ⚠ **A moving live midpoint, not a fixed offset.** Live `current_price` **711.70**,
+`change_today` **−0.37%** — a pre-market indication on an **exempt** core holding and **not a §5
+input**.
+
+**Research:** 10 theses written (`T-2026-10-08-01` … `-10`), **ALL TEN REJECTED.** Nine died at §3 or
+part 1; exactly one (SUPN) reached part 2. ⚠ **All three broad scans returned a VOLUNTEERED ABSENCE —
+the eighth consecutive session with at least one, and the first in which every broad scan produced
+one.** **Zero `move` calls: the priced-in filter had nothing to fire on (the "fourth state", an ABSENT
+check rather than a skipped one). 10-08 is NOT a zero-`move` session yet — three seats remain.**
+
+**Week rollover:** ISO Monday of 2026-10-08 (Thursday) is **2026-10-05** = `week_of`. **NO ROLLOVER;
+`new_positions_this_week` stays 0.** **Breaker INACTIVE**, streak **0 and unable to move**.
+⚠ **New positions were PERMITTED and none was planned.**
+
+---
+
 **Reconciliation 2026-10-07 — ONE BLOCK FOR THE DATE, COVERING ALL FOUR SEATS:
 `1-premarket-research` 08:24 ET, `2-market-open-execution` 09:37 ET, `3-midday-management` 12:41 ET and
 `4-market-close-journal` 16:17 ET. ⚠⚠ ROUTINE 4 RAN — 2026-10-07 IS A COMPLETE SESSION, THE SECOND
@@ -666,7 +736,7 @@ tape:
   `plan_today.md` arrives three calendar days old on a Monday** — compare `plan_date` to the last
   TRADING day, not to the calendar.
 
-### `sell_rule_status` — ALL FOUR RULES ABSENT, NOT PASSING (2026-10-07, 08:24 ET `1-premarket-research` — SEAT 1 OF 4. ⚠ RE-READ AT THIS SEAT WITH THE SAME RESULT, AND AN NTH READING OF AN ABSENT OPERAND IS STILL AN ABSENCE. ⚠⚠ THIS SEAT OWNS THIS TABLE — ROUTINE 1's STEP 4 IS WHERE THE DISTANCE TO EACH RULE IS WRITTEN — AND IT FOUND NO SUBJECT TO WRITE A LINE ON. ⚠ THE PRIOR SESSION'S FOUR SEATS, 2026-10-06 08:22 / 09:36 / 12:42 / 16:17, ALL RECORDED THE SAME NULL; THE 12:42 MIDDAY NULL REMAINS THE MOST VALUABLE OF THEM, SINCE ROUTINE 3 EXISTS TO EVALUATE §5 AND NOTHING ELSE.)
+### `sell_rule_status` — ALL FOUR RULES ABSENT, NOT PASSING (2026-10-08, 08:25 ET `1-premarket-research` — SEAT 1 OF 4. ⚠ RE-READ AT THIS SEAT WITH THE SAME RESULT, AND AN NTH READING OF AN ABSENT OPERAND IS STILL AN ABSENCE. ⚠⚠ THIS SEAT OWNS THIS TABLE — ROUTINE 1's STEP 4 IS WHERE THE DISTANCE TO EACH RULE IS WRITTEN — AND IT FOUND NO SUBJECT TO WRITE A LINE ON. ⚠ THE PRIOR SESSION'S FOUR SEATS, 2026-10-07 08:24 / 09:37 / 12:41 / 16:17, ALL RECORDED THE SAME NULL; THE 12:41 MIDDAY NULL REMAINS THE MOST VALUABLE OF THEM, SINCE ROUTINE 3 EXISTS TO EVALUATE §5 AND NOTHING ELSE.)
 
 ⚠⚠ **THERE IS NO POSITION TO WRITE A `sell_rule_status` LINE ON. The distance to each rule is therefore
 not "large" — it is UNDEFINED, and those are different facts.** ⚠ **"Nothing close to triggering" would
@@ -682,9 +752,9 @@ be a fabrication: nothing can be close to a threshold it has no operand for.**
 **ZERO ORDERS SUBMITTED BY THIS SEAT, AND THAT IS THE *WEAK* FORM OF THE REFUSAL — ROUTINE 1 PLACES
 NO ORDERS BY DESIGN, SO ITS RESTRAINT IS STRUCTURALLY UNAVAILABLE TO VIOLATE AND IS WORTH NOTHING AS
 EVIDENCE.** ⚠⚠ **THE LOAD-BEARING SEAT IS 09:35's: routine 2 faces an OPEN market, a FRESH plan, and
-every gate open — breaker INACTIVE, weekly cap 0 of 3, sleeve 0.0% deployed, 29.81% idle cash,
-`TRADING_ENABLED: true`, control notes none, and §6's 5% cap standing ready at **$5,032.20** on live
-equity with NO OPERAND. Only the absence of a BUY intent in `plan_today.md` stops a buy there, and
+every gate open — breaker INACTIVE, weekly cap 0 of 3, sleeve 0.0% deployed, 29.85% idle cash,
+`TRADING_ENABLED: true`, control notes none, and §6's 5% cap standing ready at **$5,024.56** on live
+equity ($100,491.26 × 5%) with NO OPERAND. Only the absence of a BUY intent in `plan_today.md` stops a buy there, and
 THAT is the refusal worth recording.** ⚠ **Zero fills, nothing opened, nothing closed, no realised
 P&L.** `consecutive_closed_losses` stays **0**: nothing has closed, so the §6 three-loss breaker has
 **never been approached, not merely never breached**, and the alert path at
@@ -692,10 +762,11 @@ P&L.** `consecutive_closed_losses` stays **0**: nothing has closed, so the §6 t
 Breaker **INACTIVE** (`halt_triggered_at: none`, so no `HALT_CLEARED_AT` comparison was required; the
 `none` in `control.md` is therefore **untested against a live halt**, not cleared).
 
-**§5.1–§5.4 HAVE NEVER HAD AN OPERAND IN THIS ACCOUNT'S ENTIRE HISTORY** — **24 completed trading
-sessions since 2026-09-01, 21 AFTER the 09-03 core fill**, **zero satellite positions ever opened.**
-⚠ **The counter advances from 23/20 this run because 2026-10-05 completed and its official bar exists.
-10-06 is excluded: this run stands inside it.** ⚠⚠ **That exclusion is the whole content of catches
+**§5.1–§5.4 HAVE NEVER HAD AN OPERAND IN THIS ACCOUNT'S ENTIRE HISTORY** — **26 completed trading
+sessions since 2026-09-01, 23 AFTER the 09-03 core fill**, **zero satellite positions ever opened.**
+⚠ **The counter DOES NOT ADVANCE at this seat. It was set to 26/23 by the 10-07 close run, which could
+count 10-07 because it stood after the bell; this seat stands BEFORE the bell on 10-08, so 10-08 is
+not countable and nothing has completed since.** ⚠⚠ **That exclusion is the whole content of catches
 (11), (14) and (15), which the last three seats fell into in three different costumes — a weekend, a
 second seat, and the day in progress. THE UNIT IS A COMPLETED SESSION.**
 
