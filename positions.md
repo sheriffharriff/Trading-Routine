@@ -153,6 +153,80 @@ check rather than a skipped one). 10-08 is NOT a zero-`move` session yet — thr
 `new_positions_this_week` stays 0.** **Breaker INACTIVE**, streak **0 and unable to move**.
 ⚠ **New positions were PERMITTED and none was planned.**
 
+**Reconciliation 2026-10-08 — SEAT 2 OF 4, `2-market-open-execution` 09:37 ET. ⚠⚠ THE ONLY SEAT IN THE
+DAY THAT CAN PLACE AN ORDER, AND IT PLACED NONE.**
+Selftest passed all five checks; `trading_enabled: true`, LIVE paper; pre-flight broker equity
+**$100,538.80**. `clock` at **09:36:52** reads **`is_open: true`**, `next_close`
+**2026-10-08T16:00**, `next_open` **already rolled to 2026-10-09T09:30**. ⚠ **TRUE has exactly one
+meaning, so no corroborating read was needed and none was taken** — the mirror image of the three-way
+disambiguation every pre-market and post-bell seat is forced into. **The market was open; §7's
+closed-market prohibition was not in play.**
+
+⚠⚠ **STALENESS GATE: EVALUATED AND PASSED. `plan_date` was READ OFF THE FIELD as `2026-10-08` and
+compared against a COMPUTED ET date of `2026-10-08` (Thursday). The plan is TODAY'S; the gate did not
+fire; NON-EXERCISE COUNT IS NOW 36.** ⚠ **This is recorded explicitly because a FRESH EMPTY PLAN and a
+STALE PLAN produce a BYTE-FOR-BYTE IDENTICAL ZERO-ORDER RUN — the only thing that distinguishes them is
+which branch was taken, and that must be read off the field and never inferred from the emptiness. THIS
+RUN HAD THE FRESH PLAN.**
+
+**Plan content: ZERO BUY, ZERO SELL, ZERO REBALANCE intents.** All ten thesis IDs `T-2026-10-08-01` …
+`-10` were **verified present and REJECTED in `research_log.md`** before concluding nothing was pending.
+⚠ **That verification is what separates an EMPTY plan from an UNREADABLE one, and it costs one grep.**
+
+**RECONCILIATION, SATELLITE-TO-SATELLITE.** `alpaca.py positions` returns **one row, core VOO**,
+99.046311231 shares at avg_entry **706.74** (a **RAW** print), cost_basis **$69,999.99**, market_value
+**$70,548.706564**, unrealized **+$548.72 (+0.784%)**, `unrealized_intraday_pl` **−$204.04 (−0.288%)**,
+`current_price` **712.28** — against **zero satellite blocks in this file. THEY AGREE.** ⚠ **Core VOO
+removed from the working list BEFORE any §5 rule was read**, per §5's core exemption.
+⚠ **This is the SAME SESSION's SECOND reconciliation, so the session counter STAYS AT TWENTY-SEVEN — it
+does not advance per seat.** ⚠ **An AGREEING ledger and an EMPTY ledger are the same artifact: the
+absence of a test, not a clean bill of health.**
+
+**Sleeves at 09:37:** equity **$100,548.71**, core **$70,548.706564 = 70.16%**, satellite **0.0%**
+(count 0), cash **$30,000.00 = 29.84%**, `core_in_band: true`, `rebalance_needed: false`,
+`rebalance_delta` **−$164.61** (a distance readout, not an instruction). **In band by 5.16 points at the
+65 edge and 4.84 at the 75 edge; 72nd consecutive run inside it. NO REBALANCE PLACED.**
+⚠ **§2's rebalance is EXEMPT from the `plan_date` gate, so this was a LIVE re-check on this seat's own
+numbers and NOT an answer inherited from 08:25.** ⚠ **Equity read 100491.26 at 08:25, 100538.80 at the
+09:36 selftest and 100548.71 at the 09:37 `sleeves` call — three values inside one session, which is the
+MECHANICAL reason a rebalance is never built on a live intraday mark.**
+
+**Broker vs official — AND THIS CORRECTS WHAT 08:25 WROTE.** `lastday_price` reads **714.34**, the
+**same value it read at 08:25**, byte-identical **across the bell**, against the official 10-07 close of
+**714.66** (−**$0.32**). ⚠⚠ **So `lastday_price` behaves as a FIXED PRIOR-DAY FIELD within a session.
+The "moving live midpoint" finding is a property of the LIVE mark — `current_price`, which moved from
+716.29 to **712.28** over the same span — and the 08:25 line wrote the two as one thing.** ⚠ **The gap's
+SIZE is still unpredictable run to run (−$0.32 today, −$0.09 on 10-06) and it still must NEVER be
+differenced against an official close. This narrows WHICH series moves; it licenses using neither.**
+
+**§5: NO OPERAND.** Zero satellite positions, so none of the four sell rules was *passed* — each is
+**UNDEFINED**. Core VOO is **exempt from all four** (§5) and **must not be sold to fund anything** (§7).
+**Zero `move` calls** — the priced-in filter had nothing to fire on. ⚠ **An ABSENT check, not a passing
+one: a decorative `move` call on a name carrying no mechanism converts an honest absence into a fake
+exercise.** **Correlation check VACUOUS, not passing** — an empty driver list cannot reject anything, and
+that filter has still never been exercised on this account.
+
+⚠ **CORE VOO AGAIN NOT STAMPED WITH A `highest_close` — EIGHTY-FIRST CONSECUTIVE RUN, and this is the
+WEAKEST of the three grades: no `bars` call was made and none was due at this seat, so there was no
+number in hand to decline.** ⚠ **Declining a number you hold and never fetching one look identical in a
+run summary and are not the same restraint.** The reason is unchanged: a mark on VOO would **fabricate a
+§5.4 trailing stop on the one position §5 exempts**, which §7 forbids outright.
+
+**Dividend test CLOSED** (branch (a), resolved at 08:25). `cash` **$30,000.00** is reported here as an
+**ordinary balance** — ⚠ **not re-read as a dividend probe, and the retired 30-reading counter stays
+retired.**
+
+**Week rollover:** ISO Monday of 2026-10-08 (Thursday) is **2026-10-05** = `week_of`. **NO ROLLOVER;
+`new_positions_this_week` stays 0 of 3.** **Breaker INACTIVE**, `consecutive_closed_losses` **0 and
+unable to move** — nothing has ever closed, so that is not a streak that held.
+
+⚠⚠ **ZERO ORDERS WHILE EVERY GATE STOOD OPEN — breaker INACTIVE, 0 of 3 weekly, satellite 0.0% deployed
+against a 30% target, $30,000 idle, `control.md` notes empty, `TRADING_ENABLED: true`. NOTHING BLOCKED A
+BUY AND THERE WAS NOTHING TO BUY. §4 honest-broker outcome, NOT a blocked run — and THIS is the
+load-bearing form of that refusal, because this is the only seat with an order path.**
+**NO UNRESOLVED ORDERS: none were submitted, so the terminal-state check had no subject. That is the
+absence of that risk, not the management of it.**
+
 ---
 
 **Reconciliation 2026-10-07 — ONE BLOCK FOR THE DATE, COVERING ALL FOUR SEATS:

@@ -260,3 +260,28 @@ on 10-07, which is the mechanical reason.**
    priced-in call on a name with no mechanism converts an honest absence into a fake exercise.
 
 **Nothing in this plan requires an order. The correct 09:35 run places zero trades.**
+
+---
+
+## Consumed — `2-market-open-execution` 2026-10-08 09:37 ET
+
+**This plan has been executed. It carried no intents and ZERO ORDERS WERE PLACED.**
+
+- ⚠⚠ **`plan_date` was read OFF THE FIELD as `2026-10-08` and compared to a COMPUTED ET date of
+  `2026-10-08`. THE STALENESS GATE WAS EVALUATED AND PASSED — the plan was FRESH, not stale.
+  NON-EXERCISE COUNT 36.** Recorded explicitly because a fresh empty plan and a stale plan produce a
+  byte-for-byte identical zero-order run.
+- **Market was OPEN** — `clock` 09:36:52 `is_open: true`. §7's closed-market prohibition not in play.
+- **All ten thesis IDs `T-2026-10-08-01` … `-10` verified present and REJECTED in `research_log.md`**
+  before concluding nothing was pending.
+- **Step 3 core bootstrap SKIPPED** on `core_established: true`. Not re-bootstrapped.
+- **Step 4 exits: no operand** (zero satellite positions). **Step 5/6: no buy intents, ZERO `move`
+  calls — an ABSENT priced-in check, not a passing one.**
+- **Step 7 rebalance: re-checked LIVE and not inherited** — core **70.16%** of **$100,548.71**, in band,
+  `rebalance_needed: false`, `rebalance_delta` −$164.61. **No rebalance placed.**
+- **Core VOO not stamped with a `highest_close`** — 81st consecutive run declining it. No `bars` call was
+  made, so this is the weakest grade of that restraint.
+- **Breaker INACTIVE · 0 of 3 weekly · no week rollover · no unresolved orders.**
+
+⚠ **Every §6 and §7 gate was open and nothing was bought. That is the §4 honest-broker outcome, and this
+seat is where it actually binds — routine 2 is the only seat in the day with an order path.**
