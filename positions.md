@@ -229,6 +229,81 @@ absence of that risk, not the management of it.**
 
 ---
 
+**SEAT 3 OF 4 — `3-midday-management` 2026-10-08 12:41 ET. THE EXITS-ONLY SEAT, AND IT HAD NOTHING TO
+EXIT — §5 HAD NO OPERAND FOR A 79TH RUN.** Selftest passed all five; `trading_enabled: true`, LIVE
+paper; pre-flight equity **$100,591.79**. `clock` at **12:41:04** reads **`is_open: true`**, `next_close`
+2026-10-08T16:00, `next_open` 2026-10-09T09:30 — ⚠ **read off the boolean and NOT corroborated, because
+TRUE has exactly one meaning; the three-way read belongs to the pre-market seat alone.**
+⚠⚠ **THIS RUN MAY NOT OPEN A POSITION BY CONSTRUCTION, SO ITS ZERO-ORDER LINE IS THE *WEAK* FORM OF
+RESTRAINT ON THE BUY SIDE — but it is the LOAD-BEARING seat on the SELL side, since routine 3 exists to
+evaluate §5 and nothing else.**
+
+**RECONCILIATION, SATELLITE-TO-SATELLITE.** `positions` returns **one row, core VOO**, 99.046311231 at
+avg_entry **706.74** (RAW), cost_basis **$69,999.99**, market_value **$70,596.248793**, unrealized
+**+$596.26 (+0.852%)**, intraday **−$156.49 (−0.221%)**, current_price **712.76** — against **zero
+satellite blocks in this file. THEY AGREE.** ⚠ **Core VOO was struck from the working list BEFORE any
+§5 rule was read**, per §5's exemption and this routine's own "take it out". ⚠⚠ **THIS IS THE SESSION'S
+THIRD RECONCILIATION, SO THE 27-SESSION COUNTER DOES NOT ADVANCE — and an AGREEING ledger and an EMPTY
+ledger remain the same artifact.** ⚠ **`lastday_price` read **714.34** here, byte-identical to 08:25 and
+09:37 — a THIRD reading inside one session, which CONFIRMS 09:37's correction that this is a FIXED
+prior-day field; the moving-midpoint finding belongs to `current_price` only (712.28 → 712.76 across
+those two seats).**
+
+**STEP 2 — THE HIGH-WATER REPAIR THIS SEAT UNIQUELY OWNS, AND THE MARKS ARE *ABSENT*, NOT *STALE*.**
+⚠⚠ **THE DISTINCTION IS THE WHOLE POINT OF THE STEP.** Step 2 is built on comparing each
+`highest_close`'s `(as of …)` date against the last trading day (**2026-10-07**). There is **no
+`highest_close` field anywhere in this file outside the TEMPLATE, and therefore no `(as of …)` date to
+compare** — so the staleness test was **UNDEFINED, not passed.** ⚠ **ZERO `bars` CALLS WERE MADE: the
+backfill path (`bars --days N --adjustment all` → max close from entry forward) is **STILL UNTESTED
+CODE** on this account, for a 79th consecutive run.** ⚠⚠ **This is the failure mode routine 3 was
+written to catch — a stale mark silently disables §5.4 while every check still passes — and it remains
+UNEXERCISED. Two close runs have already vanished (09-28, 10-05), so the hazard is real and only the
+empty sleeve makes it free.**
+
+**STEP 3 — ALL FOUR SELL RULES UNDEFINED, IN ORDER, AND NONE OF THEM "PASSING".** §5.1: no held thesis,
+so no `invalidation` string to read verbatim — ⚠ **ZERO Perplexity queries were run and none were due; a
+news query with no invalidation condition to falsify is decoration, not a check.** §5.2: no
+`timing_window`, no deadline. §5.3: no satellite `entry_price` to measure −7% from (the 706.74 core fill
+is exempt and is not an operand). §5.4: **NOT ARMED** — no `highest_close`, the third state, carrying no
+date at all. ⚠ **ZERO `quote` CALLS: the Step 1 quote is per open satellite ticker and there are none.**
+
+**STEP 4 — NO EXITS, SO NO WRITE PATH FIRED.** Zero `sell` calls, zero fills, zero realized P&L.
+`consecutive_closed_losses` stays **0** and **CANNOT MOVE — nothing has ever closed**, so the §6
+three-loss breaker has **never been approached, not merely never breached**, and both the streak
+increment and `clickup.py alert --key circuit-breaker` remain **UNTESTED CODE**. Breaker **INACTIVE**,
+`halt_triggered_at: none`, so no `HALT_CLEARED_AT` comparison was required.
+⚠⚠ **NOTHING SHOULD HAVE EXECUTED AND NOTHING DID — AND THAT IS "EMPTY BY CONSTRUCTION", NOT "PASSED A
+TEST". `TRADING_ENABLED` is `true`, so no exit was suppressed into a dry-run intent; had one triggered it
+would have been submitted for real. There is simply no stop in this account that could have fired.**
+
+**SLEEVES.** Equity **$100,584.36**, core **$70,584.363236 = 70.17%**, satellite **0.0%** (count 0),
+cash **29.83%**, `core_in_band: true`, `rebalance_needed: false`, `rebalance_delta` **−$175.31** — ⚠ a
+distance readout, not an instruction, **and §2's rebalance is not this seat's to place; it belongs to the
+next market-open run.** **In band by 5.17 points at the 65 edge and 4.83 at the 75 edge; 73rd
+consecutive run inside it.** ⚠ **Equity has now moved FOUR times in one session — 100491.26 (08:25),
+100538.80 (09:36 selftest), 100548.71 (09:37), 100584.36 (12:41) — the mechanical reason a rebalance is
+never built on a live intraday mark.**
+
+⚠ **CORE VOO NOT STAMPED WITH A `highest_close` — EIGHTY-SECOND CONSECUTIVE RUN, and this is the *WEAK*
+grade: no `bars` call was made and none was due, so there was no number in hand to decline. A seat that
+declines a number it holds and a seat that never fetched one look identical in a summary, and only the
+first is evidence of anything.** ⚠ **The reason is unchanged: a mark on VOO would fabricate a §5.4
+trailing stop on the one position §5 exempts, which §7 forbids.**
+
+⚠ **`cash` read **$30,000.00** and is reported here as an ORDINARY BALANCE. The dividend test is
+**CLOSED** (branch (a), resolved 08:25) and the 30-reading counter stays **RETIRED** — this seat did not
+re-read it as a probe.**
+
+⚠ **MISSING-SEAT WATCH, AN OBSERVATION AND NOT A DETECTOR: `git log` shows 2026-10-07 committed all four
+seats, and 2026-10-08 has committed 08:25 (`ba53fd7`) and 09:37 (`dedee67`). Nothing has vanished in this
+session. THE DETECTION GAP IS UNCHANGED — a run that dies before `commit.py` leaves no trace by
+construction, so this check can only ever confirm the seats that DID run.**
+
+**Week rollover:** ISO Monday of 2026-10-08 (Thursday) is **2026-10-05** = `week_of`. **NO ROLLOVER;**
+`new_positions_this_week` stays **0**. **NO UNRESOLVED ORDERS — none were submitted.**
+
+---
+
 **Reconciliation 2026-10-07 — ONE BLOCK FOR THE DATE, COVERING ALL FOUR SEATS:
 `1-premarket-research` 08:24 ET, `2-market-open-execution` 09:37 ET, `3-midday-management` 12:41 ET and
 `4-market-close-journal` 16:17 ET. ⚠⚠ ROUTINE 4 RAN — 2026-10-07 IS A COMPLETE SESSION, THE SECOND
@@ -815,6 +890,14 @@ tape:
 ⚠⚠ **THERE IS NO POSITION TO WRITE A `sell_rule_status` LINE ON. The distance to each rule is therefore
 not "large" — it is UNDEFINED, and those are different facts.** ⚠ **"Nothing close to triggering" would
 be a fabrication: nothing can be close to a threshold it has no operand for.**
+
+⚠⚠ **RE-READ AND RE-AFFIRMED UNCHANGED AT THE 2026-10-08 12:41 ET `3-midday-management` SEAT — THE TABLE
+BELOW IS CORRECT AS WRITTEN AND WAS NOT REWRITTEN, BECAUSE ROUTINE 3's STEP 5 SAYS TO REFRESH
+`sell_rule_status` *FOR EVERY POSITION STILL OPEN* AND THERE ARE NONE.** ⚠ **The midday re-read is the
+one that matters: routine 1 writes this table but may place no order, where routine 3 both evaluates §5
+and holds a live `sell` path — so a trigger found here would have EXECUTED, and none was found because
+none exists. ⚠ AN NTH READING OF AN ABSENT OPERAND IS STILL AN ABSENCE, AND REWRITING THE TABLE WITH A
+NEW DATE ON IT WOULD MANUFACTURE THE APPEARANCE OF A FRESH EVALUATION OVER AN UNCHANGED NULL.**
 
 | Rule | Status this run | Distance | Why it is not "passing" |
 |---|---|---|---|
