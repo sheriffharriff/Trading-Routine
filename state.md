@@ -10,10 +10,10 @@ The block below is parsed by `scripts/common.py` and gates real behavior
 `key: value` format exactly. Prose goes underneath.
 
 ```
-last_run: 2026-10-09 16:17 ET 4-market-close-journal (SEAT 4 OF 4, AFTER THE BELL - NO TRADING IN THIS RUN BY DESIGN; selftest PASSED all five, trading_enabled true, LIVE paper, pre-flight equity 100890.42; SESSION COMPLETE - clock 16:17:07 is_open FALSE with next_open ALREADY ROLLED to 2026-10-12T09:30, the POST-BELL shape read off the DATE not the boolean because FALSE has three meanings; NOT a holiday, so the closed-skip path was NOT taken and a daily summary was due and was posted; STEP 2, THE INVISIBLE JOB, HAD AN EMPTY WORKING LIST AND THAT IS NOT THE SAME AS HAVING RUN - positions returns ONE ROW core VOO 99.046311231 at 706.74 against ZERO satellite blocks in positions.md, THEY AGREE, so ZERO bars calls on satellite names, ZERO highest_close writes, ZERO (as of ...) dates advanced; highest_close is the THIRD STATE, ABSENT, carrying no date at all, so MONDAYS MIDDAY SEAT HAS NOTHING TO BACKFILL AND THE REASON IS THAT THE FIELD DOES NOT EXIST NOT THAT IT IS CURRENT, and 5.4 arms on the first SATELLITE fill which the 09-03 core fill was not; DAYS NUMBERS ON THE OFFICIAL-CLOSE BASIS, bars --days 4 --adjustment all, VOO c 715.58 against 10-08s 711.23 and RAW RETURNS THE SAME TWO CLOSES so the basis choice is NON-DECISIVE today and is stated anyway: equity 100875.5594, day +430.8515 / +0.4289 pct, since inception +0.8756 pct, core 70875.5594 = 70.2604 pct, cash 30000.00 = 29.7396 pct, satellite 0 / 0.0 pct / count 0; LIVE 16:17 BROKER MARK, A DIFFERENT SERIES NEVER DIFFERENCED AGAINST IT: sleeves and account AGREEING TO THE CENT at 100890.42, core 70890.416337 = 70.26 pct, rebalance_delta -267.12, current_price 715.73, lastday_price 711.28, unrealized +890.4263 / +1.272 pct, and the brokers own change_today +0.626 pct and last_equity +0.4388 pct are a THIRD AND FOURTH FIGURE that 1 is NOT computed on; VOO +0.6116 pct AND THE BOOK LAGGED IT BY 0.1827pp - FIFTH SESSION COMPUTED FROM SOURCE, THIRD VOO-UP AMONG THEM, and the attribution is the entire mechanism at 0.701328 x 0.611612 pct = 0.428944 pct which is the books return to FIVE DECIMALS with satellite contributing EXACTLY 0.000000 pct for the fifth running; THIS IS THE UNFLATTERING HALF AND IT IS REPORTED WITH THE SAME PROMINENCE AS 10-07s +0.0676pp AND 10-08s +0.1429pp - the same float cushions a fall by exactly what it costs on a rise, NEITHER DIRECTION IS SKILL, and NO STREAK CLAIM IS MADE because the other twenty days are still not re-derived; core IN BAND, 78th consecutive RUN, 5.2604 points from the 65 edge and 4.7396 from the 75, NO REBALANCE DUE MONDAY and rebalance_delta is a DISTANCE READOUT NOT AN INSTRUCTION; ALL FOUR RULE 5s RE-READ FOR STEP 3s REPORTING LINE AND ALL FOUR HAVE NO OPERAND - 5.1 no invalidation string so ZERO perplexity calls were due, 5.2 no timing_window, 5.3 and 5.4 UNDEFINED NOT DISTANT, and the sell_rule_status table was DELIBERATELY NOT RE-DATED because reporting a distance is a WEAKER ACT than routine 3s dedicated evaluation and the table belongs to the seat that owns it; ZERO ORDERS AT ALL FOUR SEATS, orders --status all returns ONE ROW FOR THE ENTIRE ACCOUNT HISTORY which is the 09-03 core fill status filled terminal, so NOTHING OPENED NOTHING CLOSED NO REALISED P&L and NOTHING LEFT NON-TERMINAL OVERNIGHT which is the 7 condition this seat exists to check; week_of 2026-10-05 MATCHES the computed ISO Monday of 2026-10-09 (Friday, ISO week 41 weekday 5), NO ROLLOVER, 0 of 3 weekly, AND ROLLOVER IS DUE MONDAY (ISO Monday of 10-12 is 10-12) WHERE THE RESET IS A NO-OP IN VALUE AND MUST STILL BE PERFORMED IN THE FIELD; breaker INACTIVE, consecutive_closed_losses 0 CONFIRMED AGAINST WHAT ACTUALLY CLOSED TODAY WHICH IS NOTHING, halt_triggered_at none so NO HALT_CLEARED_AT COMPARISON WAS DUE, NO circuit-breaker alert was due and none was posted, and the increment path and the alert path BOTH STAY UNTESTED CODE; SESSION COUNT ADVANCED 27 -> 28 (25 post-fill) WHICH THIS SEAT MAY DO BECAUSE IT STANDS AFTER THE BELL, AND THE THESIS COUNT DID NOT MOVE AND STAYS AT 138 because the 08:27 seat already wrote todays eight into it - catch (21)s shape for the SEVENTH time, two counters over one date legitimately disagreeing, DO NOT FIX 138 TO 146; the session count is INHERITED-AND-INCREMENTED NOT RE-DERIVED and it CANNOT be re-derived from journal.md because the 09-28 and 10-05 entries are MISSING, so the journal under-counts by exactly the two close runs that vanished; CORE VOO NOT STAMPED for an 87th run and THIS IS THE STRONG GRADE - this seat held BOTH halves, a real completed official close 715.58 from its own bars pull AND the write path since STEP 2 IS THE STAMP, on the only row the broker returns, at the one routine whose instruction reads record the closes, AND NOTHING WAS WRITTEN because a mark on VOO would FABRICATE a 5.4 trailing stop on the one position 5 EXEMPTS and 7 forbids selling core on a drawdown outright; THE RUNS ONE REAL FINDING IS A CORRECTION TO THIS FILES OWN ARGUMENT FOR THAT REFUSAL - CATCH (25): the carry-forward said of the phantom drawdown THE NUMBER GROWS ON ITS OWN, which is a ONE-WAY-RATCHET CLAIM, AND TODAY IT SHRANK - against a 716.29 mark 10-08s close sat -0.7064 pct below it and todays 715.58 sits -0.0991 pct below it, A 0.607pp RECOVERY IN ONE SESSION; the refusal is UNCHANGED and was re-derived from 5s exemption and 7s prohibition rather than from the drawdown figure, WHAT IS CORRECTED IS THE ARGUMENT and the corrected form is STRONGER - a fabricated mark produces a drawdown that MOVES WITH THE TAPE IN BOTH DIRECTIONS which is precisely what makes arming 5.4 on an exempt position dangerous; AND THE MECHANISM OF THE NEAR-MISS IS THE DURABLE PART - the sentence was queued to copy forward VERBATIM because it was emphatic, inherited, AND SUPPORTED THE CONCLUSION THIS SEAT WAS GOING TO REACH ANYWAY, so AN INHERITED CLAIM THAT ARGUES FOR WHAT YOU ALREADY INTEND TO DO IS THE ONE YOU ARE LEAST LIKELY TO AUDIT; FIFTH POST-BELL BROKER/OFFICIAL SAMPLE current_price 715.73 against official 715.58 = +0.15 against priors +0.470 / -0.0254 / +0.1207 / +0.57, FIVE SAMPLES BOTH SIGNS A TWENTY-TWO-FOLD SPREAD, NO OFFSET SURVIVES; lastday_price READ 711.28 AT ALL FOUR SEATS BYTE-IDENTICAL END TO END ACROSS A COMPLETE SESSION while current_price moved 714.31 -> 713.67 -> 715.03 -> 715.73, the SECOND complete session after 10-08 confirming the FIXED PRIOR-DAY FIELD reading at all four seats; balance_asof still read 2026-10-08 seventeen minutes after the bell, observed and nothing derived from it; ZERO OPEN ALERTS and that is STILL NOT EVIDENCE EVERY SEAT RAN; ClickUp daily summary posted, task 86bcg3u5c; 10-09 IS THE FOURTH COMPLETE FOUR-SEAT SESSION IN A ROW AND A RUN OF FOUR IS NOT A DETECTOR - open item (11) stands exactly where it did; FILE SIZES THE UNFLATTERING WAY ROUND AND THIS IS THE HEADLINE OF CARRY-FORWARD ITEM (9): positions.md GREW 92,198B -> 98,296B (+6.1KB) and journal.md 52,819B -> 63,283B (+10.5KB) on this seats own writes, and state.md FOUR GENUINE COLLAPSES NETTED ONLY -0.2KB (130,224B -> 130,049B) BECAUSE THIS SEATS OWN NEW TEXT ATE THE SAVING, SO THE NET IS +16.0KB WHICH IS THE WORST SINGLE-RUN NET ON RECORD; the close seat is STRUCTURALLY the heaviest of the four because it is the ONLY one that writes a journal entry and ONE ENTRY COST 10.5KB, which is more than the other two files net movement combined; see item (9) for why that is a PROMPT-LEVEL problem and not a discipline one)
+last_run: 2026-10-09 16:46 ET 5-friday-weekly-review (SEAT 5, WEEKLY REVIEW - NO TRADING IN THIS RUN BY DESIGN AND NONE OCCURRED; selftest PASSED all five, trading_enabled true, LIVE paper, equity 100899.33; FRIDAY CONFIRMED from date +%A, so the weekly series is not corrupted by a wrong-day write. THE §1 ANSWER IS NO AND EVERY WINDOW GOT WORSE: satellite 0.0000% against VOO TTM total return +17.3486% = -17.3486pp; week -1.1635pp (VOO +1.1635%), since-sleeve-funded -0.9452pp, 1M -2.3705pp, 3M -3.8743pp. FOUR OF FIVE ROWS WORSE THAN WEEK 5 AND THE WEEKLY ROW CHANGED SIGN - week 5 improved on a falling benchmark and said so; this week deteriorated on a rising one, THE SAME MECHANISM IN THE UNFLATTERING DIRECTION, reported FIRST. Combined annual handicap RE-DERIVED 6.0978pp/yr (cash drag 29.7396 x 17.3486 = 5.1594pp + dividend 70.2604 x 1.3356 = 0.9384pp), UP from ~5.82pp because the benchmark improved. THE RUN'S THREE REAL FINDINGS: (1) THE "N OF N" DAILY SEPARATION IS AN ALGEBRAIC IDENTITY NOT A STREAK - all 25 post-fill sessions re-derived from one source series (10 up all negative, 14 down all positive, 1 flat exactly 0.0000pp) AND book_return = corewt x VOO_return proven exact to 1.3e-16, so a counterexample CANNOT exist while the sleeve is empty; SIX WEEKS OF SEATS TREATED A THEOREM AS EVIDENCE-GATHERING - item RETIRED, do not re-derive it. (2) THE CORE SLEEVE DOES NOT TRACK THE BENCHMARK AND FIVE REVIEWS REPORTED 0.0000% AGAINST THE WRONG THING - core actual +1.2508% from the 706.74 fill vs VOO TOTAL return +1.5090% = -0.2583pp, the uncredited $1.825/sh ($180.76); price basis really is 0.0000% and that was not false, it answered a question §1 does not ask. (3) THE SINCE-INCEPTION EXCESS HAS TWO DEFENSIBLE VALUES 1.31pp APART (-1.5932pp from 09-01, -0.2830pp from the 09-03 close) - week 5's "statistic promoted before it is stable" defect arriving in the §1 HEADLINE rather than on the reject board, which is worse; both reported, and week 5's inherited +0.6088% inception leg is RETIRED as unreconcilable on either basis. THESIS SCOREBOARD: 40 theses this week (0 accepted, 40 rejected), 138 since inception (87 archived Sept + 51 live Oct, RE-DERIVED and agreeing), acceptance rate 0% for a sixth week; part 1 largest at 12 of 40 for a SECOND week and DELIBERATELY NOT PROMOTED under week 5's three-review rule; §3 jumped 3->11 on two grouped scope sweeps and one seat reordering its tests, which measures the AGENT not the tape. REJECT BOARD REBUILT FROM SOURCE: 111 (ticker,date) pairs from headings, 106 measurable, 46 beat VOO / 60 lagged, mean -1.20% median -1.05% - MEAN AND MEDIAN MOVED IN OPPOSITE DIRECTIONS week over week, and on a ROW-FOR-ROW IDENTICAL subset (rej <= 09-24, n=64 beat=26, both identical to week 5) the mean went -2.04 -> -1.00 -> -1.30% across three weeks, THE CLEANEST INSTANCE THE INSTABILITY ITEM WILL EVER GET. THE THEME-CONCENTRATION ITEM REACHED ITS THIRD REVIEW AND WEAKENED (6/6 -> 9/12 -> 7/12) SO IT WAS NOT PROMOTED - WEEK 5'S COUNTER-DISCIPLINE CAUGHT THE ITEM WEEK 5 NOMINATED, which is the strongest evidence the rule is worth keeping. LITE is the standing bill at +29.34pp (up from +28.34), HPE now the largest cost on the board at +40.05pp, MU fell +13.86 -> +7.79pp as the reminder that the same row indicts one Friday and acquits the next. CLOSED TRADES: NONE, nothing has ever closed, so the exit-rule question has a ZERO DENOMINATOR and all four §5 rules have NO OPERAND - highest_close ABSENT (third state, no date). A ROUTINE VANISHED INSIDE THE REVIEW WEEK: no 10-05 close commit in git log, no 10-05 journal entry, 19 of 20 expected seats ran, AND alerts.md READS ZERO OPEN INCIDENTS - open item (11) with a live instance, and the reason the session count had to come from the TAPE not the journal. HOUSEKEEPING: weekly counter reset PERFORMED IN THE FIELD (week_of 2026-10-05 -> 2026-10-12, new_positions_this_week 0, a no-op in value); monthly rollover NOT DUE (Sept archived 10-02, second Friday review inside October, all three live logs carry their dated index line); alert hygiene zero open and nothing SYSTEMIC, reported as an ABSENCE OF EVIDENCE not as health; no routine steered this run at strategy.md or control.md, both read neither written. FILE SIZES: three genuine collapses this run - the §1 benchmark item folded to the identity proof, the Monday handoff item spent, and item (9)'s three per-seat retellings folded to one mechanism - state.md 130,049B -> 126,808B = A GENUINE NET -3,241B, the first net reduction by any seat in at least three sessions, RE-READ AFTER THE WRITE per the item's own rule - BUT weekly_review.md grew ~42KB in the same run, ELEVEN TIMES the saving, so THE FILE SET STILL GREW and reporting only the state.md number would be the flattering half. weekly_review.md is now the LARGEST file in the corpus at 190,907B and the Friday seat is its only writer, which has the same unbounded shape as state.md and nobody had named that before. TEN items remain with the human, none discharged, none added)
 
-prior_run: 2026-10-09 12:41 ET 3-midday-management (SEAT 3 OF 4, THE EXITS-ONLY SEAT - IT MAY NOT OPEN A POSITION AND IT DID NOT, AND IT CLOSED NONE; selftest PASSED, trading_enabled true, pre-flight equity 100821.58; MARKET OPEN, clock 12:41:48 is_open TRUE which has ONE MEANING; LEDGER RECONCILED - one core VOO row against zero satellite blocks; LIVE 12:41 MARK equity 100821.08, core 70.24 pct, cash 29.76 pct, satellite 0, rebalance_delta -246.33, current_price 715.03, lastday_price 711.28 unchanged from the 08:27 and 09:36 seats; core IN BAND 77th run, no rebalance; STEP 2 HIGH-WATER REPAIR HAD NO SUBJECT AND THAT IS NOT PASSING - highest_close ABSENT with no (as of ...) date, so THE STALENESS COMPARISON THIS SEAT EXISTS TO MAKE HAD NO LEFT-HAND SIDE; zero bars, zero backfills; ALL FOUR RULE 5s RE-EVALUATED IN ORDER, ALL FOUR NO OPERAND, zero perplexity news-on-holdings queries due and zero run; ZERO SELLS AND ON THIS SEAT THE REFUSAL COUNTS - a live sell path plus trading_enabled true means a sell was structurally available and there was simply no operand, so the sell path with its --reason handling, fill verification and realized-P&L write REMAINS UNEXERCISED CODE; streak 0 and UNABLE TO MOVE on an empty sleeve; breaker INACTIVE; week_of matched, no rollover; the 27/24 counter HELD because this seat stands MID-SESSION and routine 3 MAY NEVER ADVANCE IT; GFS not rehabilitated and NO QUOTE PULLED; core VOO not stamped, 86th run, the WEAK grade because no bars call put a number in hand; zero orders, nothing non-terminal; ITS ONE REAL FINDING WAS CATCH (24), A SELF-CERTIFYING DOCUMENTATION DEFECT - the GFS correction was published as corrected in ALL THREE FILES and it did reach those three, BUT THERE WERE FOUR and positions.md still read the first candidate three seats later; the defect is AN ENUMERATION THAT SOUNDED EXHAUSTIVE AND WAS NOT, and self-certifying is the harm because it reads as closure and suppresses the next re-check; fixed at that seat)
-week_of: 2026-10-05
+prior_run: 2026-10-09 16:17 ET 4-market-close-journal (post-bell seat, no trading by design; equity 100875.5594 on the official-close basis, day +0.4289%, VOO +0.6116% so the book LAGGED by 0.1827pp on the cash float not on skill; one row core VOO against zero satellite blocks, ledger reconciles; Step 2 had an EMPTY WORKING LIST - zero bars calls on satellite names, zero highest_close writes, and "Step 2 ran" vs "Step 2 had no subject" are different facts; all four §5 rules re-read with NO OPERAND; zero orders at all four seats and orders --status all still returns ONE ROW for the whole account history; core 70.2604% in band 78th run, no rebalance; breaker INACTIVE, streak 0 and unable to move; session count 27 -> 28 (25 post-fill) while the thesis count HELD at 138 - two counters over one date legitimately disagreeing, catch (21) for the seventh time; core VOO NOT stamped for an 87th run and this was the STRONG grade, both the number 715.58 and the write path in hand; ITS ONE REAL FINDING WAS CATCH (25), A CORRECTION TO THIS FILE'S OWN ARGUMENT - the inherited "THE NUMBER GROWS ON ITS OWN" claim about the phantom drawdown SHRANK 0.607pp in one session, and the durable lesson is that AN INHERITED CLAIM THAT ARGUES FOR WHAT YOU ALREADY INTEND TO DO IS THE ONE YOU ARE LEAST LIKELY TO AUDIT; ClickUp daily summary 86bcg3u5c)
+week_of: 2026-10-12
 new_positions_this_week: 0
 consecutive_closed_losses: 0
 circuit_breaker: INACTIVE
@@ -39,22 +39,20 @@ discarded; settled items were folded to one line each and repeated emphasis was 
 
 ### Live — act on these
 
-- **⚠ MONDAY 2026-10-12 HANDOFF — FOUR THINGS, THREE OF THEM "DO NOTHING, FOR THE RIGHT REASON".**
-  **(a) WEEK ROLLOVER IS DUE.** ISO Monday of 2026-10-12 is **2026-10-12**, which differs from
-  `week_of: 2026-10-05` → **reset `new_positions_this_week` to 0 and set `week_of: 2026-10-12`.** ⚠ **It
-  is already 0, so the reset is a NO-OP IN VALUE and must still be PERFORMED IN THE FIELD — whichever
-  routine gets there first, so a failed Friday review cannot leave the §6 cap stuck.**
+- **⚠ MONDAY 2026-10-12 HANDOFF — THREE THINGS, ALL "DO NOTHING, FOR THE RIGHT REASON".**
+  **(a) ✅ WEEK ROLLOVER IS ALREADY DONE** — performed in the field by the 10-09 Friday review:
+  `week_of: 2026-10-12`, `new_positions_this_week: 0`. ⚠ **Monday will compute the same ISO anchor,
+  find it matching, and must NOT reset again.**
   **(b) NO HIGH-WATER BACKFILL IS DUE, AND NOT BECAUSE A MARK IS CURRENT.** `highest_close` is the
-  **third state — ABSENT, no `(as of …)` date at all.** There is no satellite position and never has
-  been. §5.4 arms on the first **satellite** fill; the 09-03 core fill was not one. ⚠ **The 10-09 close
-  seat's Step 2 had an EMPTY WORKING LIST: zero `bars` calls on satellite names, zero `highest_close`
-  writes, zero dates advanced. "Step 2 ran" and "Step 2 had no subject" are different facts.**
+  **third state — ABSENT, no `(as of …)` date at all.** §5.4 arms on the first **satellite** fill; the
+  09-03 core fill was not one. ⚠ **25 consecutive close seats have had an EMPTY WORKING LIST at Step 2.
+  "Step 2 ran" and "Step 2 had no subject" are different facts, and the backfill path is untested code.**
   **(c) `plan_today.md` WILL ARRIVE READING `plan_date: 2026-10-09` — THREE CALENDAR DAYS OLD, AND THAT
   IS CORRECT.** Compare `plan_date` to the last **TRADING** day, not to the calendar.
-  **(d) CORE 70.2604%, IN BAND, 78th CONSECUTIVE RUN — NO REBALANCE.** `rebalance_delta` −$267.12 is a
-  distance readout, not an instruction.
-  ⚠ **Nothing is unresolved: zero open alerts, zero non-terminal orders, breaker INACTIVE with
-  `halt_triggered_at: none` so no `HALT_CLEARED_AT` comparison is due.**
+  **Core 70.2604% official / 70.27% live, IN BAND, 79th consecutive run — NO REBALANCE.**
+  `rebalance_delta` −$269.80 is a distance readout, not an instruction. ⚠ **Nothing is unresolved: zero
+  open alerts, zero non-terminal orders, breaker INACTIVE with `halt_triggered_at: none` so no
+  `HALT_CLEARED_AT` comparison is due.**
 
 - **⚠⚠ GFS/TSMC CLEARED EVERY FILTER AND DIED ON THE *THESIS PARTS* — `T-2026-10-09-01`, AND IT IS THE
   MOST INFORMATIVE REJECTION THIS LOG HAS PRODUCED.** *(Collapsed 10-09 16:17 by the close seat: the
@@ -1024,34 +1022,65 @@ discarded; settled items were folded to one line each and repeated emphasis was 
   70.31% passes by 5.31 and 4.69 points. STATE THE LIVE READING AND THE TWO EDGES; DO NOT CARRY A
   RANGE.**
 
-- **⚠⚠ §1 BENCHMARK — THE INHERITED SEPARATION IS "20 OF 20", AND IT IS INHERITED. FIVE SESSIONS ARE
-  NOW COMPUTED FROM SOURCE AND ALL FIVE FIT; THE OTHER TWENTY HAVE *NOT* BEEN RE-DERIVED.** *(Collapsed
-  10-09 16:17 to one table plus the rule. Nothing live discarded.)*
-  **The inherited base, recomputed from source on 10-02:** 12 VOO-down days, all positive excess
-  (+0.0029 to +0.2265pp); 7 up days, all negative (−0.0380 to −0.4694pp); 1 flat day exactly 0.0000pp.
+- **✅⚠⚠ §1 BENCHMARK — THE "N OF N" DAILY SEPARATION IS **RETIRED, NOT EXTENDED**: IT IS AN ALGEBRAIC
+  IDENTITY, NOT AN EMPIRICAL STREAK.** *(Resolved 2026-10-09 weekly review. This REPLACES the inherited
+  "20 of 20" table, the per-session re-derivation task, and every "21 of 21 … 25 of 25" caveat. None of
+  them is live any more.)*
+  **All 25 post-fill sessions were re-derived from one 260-session `--adjustment all` pull: 10 VOO-up
+  days (all negative excess), 14 down (all positive), 1 flat (exactly 0.0000pp). 25 of 25, no exception.**
+  ⚠⚠ **AND NO EXCEPTION CAN EXIST. With the book equal to `shares × VOO + fixed cash`,
+  `book_return = w × VOO_return` EXACTLY (`w` = prior close's core weight) — verified to machine
+  precision, max residual **1.3 × 10⁻¹⁶** across all 25. Since `w < 1`, `excess = (w − 1) × VOO_return`
+  always carries the opposite sign to the benchmark's move.**
+  ⚠ **SO DO NOT SPEND ANOTHER CLOSE RUN "ADDING A SESSION" TO THIS SERIES, AND DO NOT RE-DERIVE IT.
+  Six weeks of seats treated a theorem as evidence-gathering. The caution about superlatives was right;
+  the thing it was applied to was never a claim about a series.** ⚠ **What survives, and it is the only
+  part that was ever load-bearing: NEITHER DIRECTION IS SKILL, and a tight fit is not confirmation —
+  the model fits to zero residual because there is NOTHING IN THE BOOK THE MODEL OMITS. It becomes a
+  real empirical question again on the FIRST satellite fill, and not before.**
+  **Worst excess on record 2026-09-21 −0.4694pp (VOO +1.5542%); best 2026-09-23 +0.2265pp (VOO −0.7582%).**
 
-  | Session | Equity (official close) | Book | VOO | Excess | Since inception |
-  |---|---|---|---|---|---|
-  | 10-05 | $100,561.5826 | +0.5009% | +0.7153% | **−0.2145pp** | +0.5616% |
-  | 10-06 | $100,945.8823 | +0.3822% | +0.5446% | **−0.1625pp** | +0.9459% |
-  | 10-07 | $100,784.4368 | −0.1599% | −0.2276% | **+0.0676pp** | +0.7844% |
-  | 10-08 | $100,444.7079 | −0.3371% | −0.4799% | **+0.1429pp** | +0.4447% |
-  | **10-09** | **$100,875.5594** | **+0.4289%** | **+0.6116%** | **−0.1827pp** | **+0.8756%** |
+- **⚠⚠ NEW 10-09 REVIEW — THE CORE SLEEVE DOES *NOT* TRACK THE BENCHMARK, AND FIVE REVIEWS REPORTED
+  0.0000% BECAUSE THEY MEASURED AGAINST THE WRONG THING.** §1 names S&P 500 **TOTAL** return and this
+  paper account does not model dividends (settled 10-08). Measured from the 09-03 fill print 706.74 to
+  the 10-09 close 715.58: **core actual +1.2508%** against **VOO total return +1.5090%** (incl. the
+  $1.825/sh that went ex 09-28 and never arrived — **$180.76** on 99.046311231 shares) =
+  **−0.2583pp, and ~1.03%/yr of the sleeve going forward.**
+  ⚠ **On a PRICE basis the divergence really is 0.0000% and that statement was not false — it was
+  answering a question §1 does not ask.** ⚠ **Report BOTH bases and name them. The divergence is the
+  platform, NOT tracking error and NOT skill.** Combined annual handicap re-derived at this week's
+  benchmark: **cash drag 29.7396% × 17.3486% = 5.1594pp + dividend 70.2604% × 1.3356pp = 0.9384pp =
+  6.0978pp/yr BEFORE ANY DECISION** (up from ~5.82pp, because the benchmark's trailing year improved).
 
-  **Three VOO-up with negative excess, two VOO-down with positive. The satellite sleeve contributed
-  EXACTLY 0.000000% on every one of the five.**
-  ⚠ **The arithmetic is the ENTIRE mechanism, to five or six decimals every time** — 10-09:
-  0.701328 × 0.611612% = **0.428944%**, the book's return to five decimals; 10-08:
-  0.702335 × (−0.4799485%) = **−0.337085%**, to six. **A ~29.7% cash float cushions a fall by exactly
-  as much as it costs on a rise.** ⚠ **A TIGHT FIT IS NOT CONFIRMATION — the model fits to zero residual
-  because there is NOTHING IN THE BOOK THE MODEL OMITS. Neither direction is skill.**
-  ⚠⚠ **"21 OF 21" THROUGH "25 OF 25" HAVE ALL BEEN AVAILABLE SENTENCES AND NONE HAS BEEN WRITTEN: a
-  streak is a claim about a WHOLE SERIES (catches 5 and 13), and five recomputed days do not license a
-  claim about twenty inherited ones.**
-  ⚠⚠ **AND THE REPORTING RULE THE 10-09 SEAT HAD TO APPLY TO ITSELF: 10-07 AND 10-08 WERE BOTH DOWN DAYS
-  WITH POSITIVE EXCESS AND BOTH GOT REPORTED PROMINENTLY. 10-09 IS THE SAME FLOAT COSTING WHAT IT EARLIER
-  SAVED, AND IT IS REPORTED WITH THE SAME PROMINENCE. A RUN QUOTING ONLY THE DOWN DAYS IS QUOTING THE
-  FLATTERING HALF.**
+- **⚠⚠ NEW 10-09 REVIEW — A PERFORMANCE FIGURE THAT DEPENDS ON A CONVENTION MUST STATE THE CONVENTION
+  *AND* THE ALTERNATIVE VALUE, EVERY WEEK. THE §1 HEADLINE HAS TWO DEFENSIBLE VALUES 1.31pp APART.**
+  Since-inception excess is **−1.5932pp** from 2026-09-01 (the book's first session, $100k all cash,
+  VOO base 698.34) or **−0.2830pp** from the 2026-09-03 close (when the 70/30 split was funded, VOO base
+  708.88). **The spread is exactly the two sessions the book sat in 100% cash while VOO rose — a real
+  cost the second convention excludes by construction.** The review reports the 09-01 form as the
+  headline and both in the table. ⚠⚠ **THIS IS WEEK 5's "statistic promoted before it is stable"
+  DEFECT ARRIVING IN THE §1 ANSWER ITSELF RATHER THAN ON THE REJECT BOARD, WHICH IS WORSE.**
+  ⚠ **AND WEEK 5's INHERITED SINCE-INCEPTION VOO LEG (+0.6088%) IS RETIRED: its base date cannot be
+  recovered from a fresh 260-session pull on EITHER basis. DO NOT CARRY IT FORWARD.**
+
+- **⚠⚠ NEW 10-09 REVIEW — THE THEME-CONCENTRATION ITEM REACHED ITS THIRD REVIEW AND **WEAKENED**, SO IT
+  WAS **NOT PROMOTED**. WEEK 5's COUNTER-DISCIPLINE CAUGHT THE ITEM WEEK 5 NOMINATED.** AI /
+  data-centre hardware & semis among the top excesses: **6 of 6 (wk 4) → 9 of 12 (wk 5) → 7 of 12
+  (wk 6)**, with PBR, SHOP, ACN, GRAL and OSCR taking five of the top twelve on four unrelated drivers.
+  ⚠ **The structural argument is unchanged and still plausible; a mechanism that sounds right is not a
+  finding. KEEP THE THREE-REVIEW RULE — this is the evidence it is worth keeping.**
+  ⚠⚠ **AND THE CLEANEST INSTANCE THE INSTABILITY ITEM WILL EVER GET: on a ROW-FOR-ROW IDENTICAL subset
+  (rejected ≤ 09-24, n=64, beat=26 — identical to week 5 on both) the MEAN moved −2.04% → −1.00% →
+  −1.30% across three weeks. Composition demonstrably did not change. The counts are stable; the
+  moments are not. On the full board mean and median moved in OPPOSITE directions.**
+
+- **⚠ NEW 10-09 REVIEW — THE SCOREBOARD'S ONE LOAD-BEARING FIELD HAS NO ENFORCED FORMAT.** The ten
+  10-08 entries write `**Outcome: REJECTED …**` instead of `**Outcome:** REJECTED …`; a count keyed on
+  the week 1–5 delimiter silently drops **10 of 40** and reports a clean-looking 30. **Not a content
+  defect — use a tolerant match (`^\**Outcome:?\**`) and state the entry count.** ⚠ **Also: "40
+  theses" counts HEADINGS, not candidates — four entries this week disposed of 12, 11, 4 and 3 items
+  each, so ~64 items were screened under 40 headings. Keep the heading convention for continuity and
+  state the ambiguity.**
 
 - **⚠ TEN ITEMS REMAIN WITH THE HUMAN — RECOUNTED FROM THE LIST BELOW AGAIN BY THE 10-09 08:27 SEAT,
   WHICH DISCHARGED NOTHING AND ADDED NOTHING (twelve numbered, (4) discharged, (5) settled, (9) partly
@@ -1117,75 +1146,43 @@ discarded; settled items were folded to one line each and repeated emphasis was 
   would make the ledger read as an account that has never traded. **Overrule in `control.md` if wrong.**
   ⚠ **(4) IS DISCHARGED** (the core's divergence is the 09-03 entry gap, proven 09-11). ⚠ **(5) IS
   SETTLED AS A MECHANISM** — a moving live midpoint, not an offset, on BOTH the post-bell and
-  pre-market series. ⚠⚠ **(9) IS PARTLY DISCHARGED AND 10-09 TOOK THE BIGGEST SINGLE BITE YET: the 08:27 pre-market seat
-  collapsed 2026-10-08's FOUR per-seat sections into one dated digest, **107KB → 87KB (−20KB, the
-  largest single reduction on record)**, naming what was removed (the four repetitions of the same §5
-  null, the four per-seat sleeve readings, the four restatements of the broker/official gap) and keeping
-  both durable findings of that session in the digest. ⚠⚠ **BUT `state.md` MOVED THE OTHER WAY IN THE
-  SAME RUN, ~100KB → ~112KB, SO THE FILE SET IS NOT SHRINKING AND A RUN REPORTING ONLY THE COLLAPSE IS
-  REPORTING THE FLATTERING HALF.** ⚠ **The rollover rule excludes `positions.md` by design and
-  `state.md` has no month boundaries and so no archivable unit. THAT REMAINS A PROMPT-LEVEL PROBLEM FOR
-  THE HUMAN, NOT A DISCIPLINE PROBLEM.** Earlier: `positions.md` went from 68KB to ~53KB across
-  two collapses by the pre-market seat, and the 10-08 16:16 close seat took it from **113KB to 107KB** by
-  folding 2026-10-07's four per-seat sections into one digest — most of what went was the four spent
-  `THE DIVIDEND TEST, SEAT N OF 4` paragraphs, now that the test is closed. ⚠ **A close seat collapsing
-  a predecessor's records is also how a near-miss would quietly vanish, so the digest NAMES what was
-  removed and why, and every durable finding is restated in it or already lives here.** ⚠ **The file is
-  still growing faster than it is collapsed: it was ~53KB on 10-02 and is 107KB now.**
-  ⚠⚠ **10-09 16:17 CLOSE SEAT — THE FILE SET GREW AGAIN, AND BY THE LARGEST MARGIN OF THE THREE 10-09
-  SEATS. HEADLINE FIRST: `state.md` 130,224B → **130,049B** (**-0.2KB**, this seat's own additions
-  already netted in — four items genuinely collapsed: the GFS narrative −1.9KB now its correction saga is
-  settled, the core-stamp item −2.5KB, the §1 benchmark item −0.8KB folded to one table, the
-  undeployed-sleeve item −0.1KB, totalling −5,347B saved, against this seat's own ~+5.1KB of new text in the same file), BUT `positions.md`
-  92,198B → 98,296B (**+6.1KB**) AND `journal.md` 52,819B → 63,283B (**+10.5KB**).
-  **NET +16.0KB, THE WORST SINGLE-RUN NET ON RECORD.**
-  ⚠ **MEASURED IN BYTES RATHER THAN ROUNDED KB BECAUSE THE FIRST DRAFT OF THIS VERY SENTENCE CLAIMED
-  `state.md` −2.9KB AND THEN THE SENTENCE ITSELF ADDED ~1.9KB, MAKING THE CLAIM FALSE AS IT WAS WRITTEN.
-  A FILE-SIZE CLAIM INSIDE THE FILE IT MEASURES IS SELF-REFERENTIAL AND MUST BE RE-READ AFTER THE WRITE,
-  NOT BEFORE IT.**
-  ⚠⚠ **AND THE HONEST ATTRIBUTION IS THE PART THAT MATTERS, BECAUSE IT IS THE FIRST TIME `state.md` WAS
-  NOT THE CULPRIT: THE CLOSE SEAT IS THE ONLY SEAT THAT *WRITES A JOURNAL ENTRY*, AND ONE ENTRY COST
-  10.5KB — MORE THAN THE OTHER TWO FILES' NET MOVEMENT COMBINED. THE CLOSE RUN IS STRUCTURALLY THE
-  HEAVIEST OF THE FOUR AND THAT IS NOT A DISCIPLINE PROBLEM EITHER.**
-  ⚠ **THE ONE PIECE OF GOOD NEWS, AND IT NARROWS THE ITEM RATHER THAN CLOSING IT: `journal.md` IS
-  MONTH-SCOPED WITH `archive/journal/` AS ITS ARCHIVABLE UNIT, SO ITS GROWTH IS BOUNDED BY THE MONTHLY
-  ROLLOVER IN A WAY `state.md`'s AND `positions.md`'s ARE NOT.** ⚠ **So the structural problem is now
-  isolated to exactly two files: `positions.md`, which the rollover rule excludes by design, and
-  `state.md`, which has no month boundaries and therefore no archivable unit. THAT REMAINS A
-  PROMPT-LEVEL PROBLEM FOR THE HUMAN.**
-  ⚠ **A collapse that is more than cancelled by growth elsewhere has now been recorded at THREE
-  CONSECUTIVE SEATS IN ONE DAY (08:27 −20/+12 netting down, 12:41 −1.2/+6.3 netting up, 16:17
-  −0.2/+16.2 netting up). THREE INSTANCES IN ONE SESSION IS EVIDENCE OF THE MECHANISM, NOT OF
-  DISCIPLINE — and the mechanism is that every seat is instructed to RECORD and only one file has
-  somewhere for the records to go.**
-  ⚠⚠ **10-09 12:41 MIDDAY SEAT — AND THE HEADLINE IS THE UNFLATTERING HALF, DELIBERATELY: THE FILE SET
-  GREW THIS RUN. `positions.md` 93.4KB → 92.2KB (−1.2KB: today's two per-seat blocks folded into one
-  date block, and this seat added its own null in a few lines rather than a third 110-line block), BUT
-  `state.md` 124.0KB → 130.2KB (+6.3KB, THIS ITEM'S OWN TEXT INCLUDED). NET +5.1KB.** ⚠⚠ **THAT IS THE *SAME SHAPE* THE 08:27 SEAT
-  RECORDED SIX HOURS EARLIER — a collapse in `positions.md` more than cancelled by growth in `state.md`
-  — AND THE RATIO GOT WORSE, NOT BETTER: 08:27 traded −20KB for +12KB and still netted down; this seat
-  traded −1.2KB for +6.3KB and netted UP. A SECOND INSTANCE IN ONE DAY IS EVIDENCE OF THE MECHANISM,
-  NOT OF DISCIPLINE.** ⚠ **The mechanism is structural and worth naming plainly: `positions.md` has a
-  collapsible unit (the per-seat block) and an owner for collapsing it; `state.md`'s `last_run` and
-  `prior_run` are REQUIRED to be rewritten in full every run and the carry-forward has no unit at all,
-  so EVERY seat grows `state.md` by construction and NO seat can shrink it. The discipline rule
-  ("collapse, do not append") CANNOT REACH THE FILE THAT IS GROWING FASTEST.** ⚠ **This seat's own
-  `last_run` line is ~3.5KB of the +6.3KB, and THIS VERY ITEM is most of the rest — the note about the
-  growth is itself part of the growth, which is the problem in miniature. Writing a shorter `last_run`
-  would have cost the next blind run the
-  §5/Step-2 detail it needs, so the trade was taken knowingly — WHICH IS EXACTLY WHY THIS IS A
-  PROMPT-LEVEL PROBLEM AND NOT A DISCIPLINE ONE.** **STILL OPEN FOR
-  THE HUMAN: `state.md` has no month boundaries and so no archivable unit, and the rollover rule
-  excludes `positions.md` by design. That remains a prompt-level problem, not a discipline problem.**
-  ⚠ **A CONCRETE SUGGESTION FOR THE HUMAN, SINCE FIVE RUNS HAVE NOW NAMED THE PROBLEM WITHOUT ONE: give
-  `state.md` an archivable unit by capping the narration — e.g. `last_run`/`prior_run` keep only the
-  CURRENT and PREVIOUS run verbatim (as now) and anything older is already dropped, which is the
-  existing behaviour; the growth is therefore ALL in the carry-forward, so the unit to archive is a
-  carry-forward item marked DISCHARGED. There is currently no instruction to MOVE a discharged item out
-  of `state.md` — only to mark it — so discharged items accumulate forever beside live ones. ⚠ Items
-  (4) and (5) are marked DISCHARGED/SETTLED above and are still here, in full, being read by every seat
-  of every run. THAT is the archivable unit, and no routine owns moving it.**
-
+  pre-market series. ⚠⚠ **(9) IS PARTLY DISCHARGED AND STILL OPEN. THE DIAGNOSIS IS SETTLED; ONLY THE FIX IS MISSING.**
+  *(Collapsed 10-09 weekly review: three per-seat retellings of the SAME mechanism folded to the
+  mechanism plus the measured history. Nothing live discarded.)*
+  **Entering the 10-09 review: `state.md` 130,049B · `positions.md` 98,296B · `research_log.md`
+  139,986B · `weekly_review.md` 190,907B · `journal.md` 63,283B — ~622KB read IN FULL every run.**
+  ⚠⚠ **THE MECHANISM, WHICH IS WHY THIS IS PROMPT-LEVEL AND NOT DISCIPLINE-LEVEL: every seat is
+  instructed to RECORD, and only some files have anywhere for the records to go.** `positions.md` has a
+  collapsible unit (the per-seat block) and an owner; `journal.md` is month-scoped with
+  `archive/journal/` as its unit; `research_log.md` and `trade_log.md` likewise. **`state.md` has NO
+  month boundaries and therefore NO archivable unit — `last_run`/`prior_run` must be rewritten in full
+  every run and the carry-forward has no unit at all, so EVERY seat grows it by construction and NO seat
+  can shrink it. The rule "collapse, do not append" CANNOT REACH THE FILE THAT GROWS FASTEST.**
+  ⚠ **`weekly_review.md` is now the LARGEST file in the corpus (190,907B) and the Friday seat is the
+  only one that writes there — so it has the same unbounded shape as `state.md`, and nobody has named
+  that before.**
+  **Measured history, honestly signed:** real collapses have happened — `positions.md` 68KB → ~53KB,
+  then 113KB → 107KB, then the 10-09 08:27 seat's **107KB → 87KB (−20KB, largest single reduction on
+  record)** — **and every one was more than cancelled by growth elsewhere.** ⚠ **THREE CONSECUTIVE
+  SEATS IN ONE SESSION netted UP (08:27 −20/+12 down, 12:41 −1.2/+6.3 up, 16:17 −0.2/+16.2 up, the
+  worst single-run net on record). THREE INSTANCES IN ONE SESSION IS EVIDENCE OF THE MECHANISM, NOT OF
+  INDISCIPLINE** — the 16:17 close seat is structurally heaviest because it is the ONLY seat that writes
+  a journal entry, and one entry cost 10.5KB.
+  ⚠⚠ **AND THE RULE IS UPGRADED 10-09: ONE RE-READ IS NOT ENOUGH — A SELF-REFERENTIAL CLAIM MUST BE
+  ITERATED TO CONVERGENCE, BECAUSE THE CORRECTION IS ITSELF PART OF THE THING MEASURED.** The 10-09
+  review hit this three times in a row on one sentence: a correct pre-write measurement (-4,095B) was
+  falsified by writing it (+266B), the first correction (-3,829B) was falsified by correcting it (+2B),
+  and only the third was self-consistent. **State the number ONLY once the file size and the claimed
+  size are equal, and prefer a LENGTH-PRESERVING edit when fixing one.**
+  ⚠ **A FILE-SIZE CLAIM INSIDE THE FILE IT MEASURES IS SELF-REFERENTIAL AND MUST BE RE-READ AFTER THE
+  WRITE, NOT BEFORE IT** — a draft of that very sentence claimed −2.9KB and then added ~1.9KB, making
+  itself false as written. Measure in BYTES, not rounded KB.
+  ⚠⚠ **THE CONCRETE SUGGESTION, NOW SIX RUNS OLD AND UNANSWERED: give `state.md` an archivable unit by
+  making a DISCHARGED carry-forward item movable. There is currently an instruction to MARK an item
+  discharged and NONE to MOVE it out, so discharged items accumulate forever beside live ones — items
+  (4) and (5) are marked DISCHARGED/SETTLED and are STILL being read in full by every seat of every
+  run. THAT is the unit, and no routine owns moving it. The rollover rule excludes `positions.md` by
+  design and reaches neither `state.md` nor `weekly_review.md`.**
 ---
 
 ### Standing rules — recognise on sight, do not re-derive
