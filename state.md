@@ -10,9 +10,9 @@ The block below is parsed by `scripts/common.py` and gates real behavior
 `key: value` format exactly. Prose goes underneath.
 
 ```
-last_run: 2026-10-09 08:27 ET 1-premarket-research (SEAT 1 OF 4 - THE RESEARCH-AND-PLAN SEAT, WHICH PLACES NO ORDERS BY DESIGN; selftest PASSED all five, trading_enabled true, LIVE paper, pre-flight equity 100743.83; MARKET PRE-MARKET NOT HOLIDAY - clock 08:27:45 is_open false with next_open 2026-10-09T09:30 read off the DATE because FALSE HAS THREE MEANINGS, next_close also today so a normal full session, THE HOLIDAY SKIP PATH WAS NOT TAKEN; LEDGER RECONCILES - positions returns ONE ROW core VOO 99.046311231 at 706.74 against ZERO satellite blocks in positions.md, they AGREE, and core was struck from the working list BEFORE any rule 5 was read per the exemption; SESSION'S FIRST reconciliation so that counter advances and the 27-session counter does NOT; LIVE 08:27 MARK: equity 100749.77, core 70749.770575 = 70.22 pct, cash 30000.00 = 29.78 pct, satellite 0 / 0.0 pct / count 0, rebalance_delta -224.93, current_price 714.31, lastday_price 711.28, change_today +0.426 pct, unrealized +749.78 / +1.071 pct; CORE IN BAND by 5.22 points at the 65 edge and 4.78 at the 75 edge, 75th consecutive RUN inside it, NO REBALANCE INTENT QUEUED; FOURTH PRE-MARKET BROKER/OFFICIAL SAMPLE - current_price 714.31 vs official 711.23 = +3.08 against -0.22 / +2.84 / -3.05, four samples BOTH SIGNS a fourteen-fold spread, NO OFFSET SURVIVES; week_of 2026-10-05 MATCHES the computed ISO Monday of 2026-10-09 (Friday, ISO week 41 weekday 5), NO ROLLOVER, 0 of 3 weekly; breaker INACTIVE, halt_triggered_at none so NO HALT_CLEARED_AT COMPARISON WAS DUE, streak 0 and UNABLE TO MOVE so the increment and alert paths stay UNTESTED CODE; ZERO OPEN ALERTS which is NOT evidence every seat ran; ALL FOUR RULE 5s RE-EVALUATED IN ORDER AND ALL FOUR HAVE NO OPERAND - 5.1 and 5.2 are this seat's to assess and have no invalidation string and no timing_window to read, 5.3 and 5.4 are UNDEFINED NOT DISTANT, zero news-on-holdings perplexity queries were due and zero were run, nothing queued as already breaching; EIGHT THESES WRITTEN AND ALL EIGHT REJECTED (T-2026-10-09-01..08), ZERO BUY INTENTS AND NOT BECAUSE ANYTHING BLOCKED THEM - every gate OPEN with the 5 pct cap at 5037.49; THE RUN'S ONE REAL FINDING IS GFS/TSMC T-2026-10-09-01, THE *SECOND* CANDIDATE TO CLEAR SECTION 3's INSTRUMENT TESTS AND THE PRICED-IN FILTER AND THEN DIE ON THE THESIS PARTS RATHER THAN UPSTREAM - AMD T-2026-10-01-02 DID IT FIRST ON 10-01 WITH A STRONGER SECTION 3 PASS AND THE SAME PRIMARY KILL PART 3, AND CALLING GFS THE FIRST WAS CATCH (23) CORRECTED BEFORE PUBLICATION IN ALL THREE FILES - part 3 H1 2028 ramp quoted from GF's own release is SIX QUARTERS against a TWO-QUARTER ceiling, part 2 is 2000M over 5yr = ~400M/yr on FY2025 revenue 6791M = 5.89 pct against a 10 pct floor, part 1 is GFS being THE HEADLINE NAME with the second-order search returning a VERBATIM DENIAL of any named supplier; FIRST move CALL IN SEVEN SESSIONS AND IT WAS NOT DECORATIVE - GFS +1.48 pct over five sessions AND +2.72 pct on the news day itself, PASSES ON BOTH BASES, and it is THE FIRST RECORDED INSTANCE OF THE FILTER WORKING BY *ACCEPTING* A GENUINE NEWS-DAY MOVE rather than by rejecting one, stated with its limit that 10-08 traded to +6.98 pct intraday and closed -3.99 pct off that high so a close-to-close filter cannot see the excursion; ALL THREE BROAD SCANS PRODUCED A VOLUNTEERED ABSENCE, SECOND CONSECUTIVE SESSION OF THAT AND A NINTH CONSECUTIVE SESSION OF AT LEAST ONE, PLUS A FOURTH FROM THE GFS DRILL NAMING NO EQUIPMENT SUPPLIER; THREE DISPOSED REJECTS RETURNED (MTUS 995M from 10-01, Voyager 22.4M from 10-06, Elevra/LG from 10-08) AND READING THE LOG SAVED THREE QUERIES; RTX IS IN THE LOG A THIRD TIME IN SIX SESSIONS AND DIED THE SAME DEATH, the tenth defence-award instance, ZERO QUERIES SPENT; CORE VOO NOT STAMPED for an 84th run, the WEAK grade - no bars pull on VOO was made at this seat so no number was in hand to decline; thesis counter 130 -> 138 RE-DERIVED FROM SOURCE (archive 87 + live October 43 counted by date) and the 27-session counter HELD, two counters one date one advancing one not and only the UNIT says which; plan_today.md rewritten with plan_date 2026-10-09, deliberately EMPTY, no revalidate line because there is no intent; positions.md collapsed 10-08's four per-seat sections to one digest, 107KB -> 87KB)
+last_run: 2026-10-09 09:36 ET 2-market-open-execution (SEAT 2 OF 4 - THE ONLY SEAT THAT OPENS POSITIONS, AND IT OPENED NONE; selftest PASSED all five, trading_enabled true, LIVE paper, pre-flight equity 100696.29; MARKET OPEN - clock 09:36:24 is_open TRUE which has ONE MEANING, next_close 2026-10-09T16:00 today and next_open ALREADY ROLLED FORWARD to 2026-10-12T09:30 which is the in-session signature, THE HOLIDAY/CLOSED SKIP PATH WAS NOT TAKEN; STALENESS GATE EXERCISED AND PASSED - NOT FIRED, AND THOSE ARE OPPOSITE OUTCOMES OF THE SAME CHECK: plan_date 2026-10-09 READ OFF THE FIELD equals today ET, the 37th exercise, STILL NEVER FIRED, alert path remains UNTESTED CODE, and freshness was NOT inferred from the empty outcome because A FRESH EMPTY PLAN AND A STALE PLAN PRODUCE BYTE-IDENTICAL ZERO-ORDER RUNS; LEDGER RECONCILES - positions returns ONE ROW core VOO 99.046311231 at 706.74 against ZERO satellite blocks in positions.md, they AGREE, and core was struck from the working list BEFORE any rule 5 was read per the exemption; LIVE 09:36 MARK: equity 100686.38, core 70686.380936 = 70.2 pct, cash 30000.00 = 29.8 pct, satellite 0 / 0.0 pct / count 0, rebalance_delta -205.91, current_price 713.67, lastday_price 711.28 BYTE-UNCHANGED from the 08:27 seat which again confirms it is a FIXED PRIOR-DAY FIELD while current_price moved, unrealized +686.39 / +0.981 pct; STEP 3 CORE BOOTSTRAP SKIPPED on core_established true - the 2026-09-03 path that by construction never runs again, DO NOT RE-BOOTSTRAP; STEP 4 ZERO SELLS - zero SELL intents and zero satellite operands, ALL FOUR RULE 5s HAVE NO OPERAND WHICH IS NOT A PASSING DISTANCE, core exempt per rule 5 and never sold to fund anything per rule 7, so the loss-streak increment and the circuit-breaker alert BOTH STAY UNTESTED CODE; STEP 5 ZERO BUY INTENTS TO REVALIDATE AND THEREFORE NO move CALL WAS MADE - THAT IS AN ABSENT PRICED-IN CHECK, NOT A PASSING ONE, and a decorative call on a name with no mechanism was declined on purpose; all eight T-2026-10-09-01..08 VERIFIED PRESENT AND REJECTED in research_log.md BEFORE concluding nothing was pending; EVERY GATE WAS OPEN AND NOTHING WAS BOUGHT - breaker INACTIVE, 0 of 3 weekly, sleeve 0 pct deployed against a 30 pct target with 30000.00 idle cash, control.md notes EMPTY, TRADING_ENABLED true, 5 pct cap standing at 5034.32; STEP 7 NO REBALANCE - core 70.2 pct IN BAND by 5.2 points at the 65 edge and 4.8 at the 75 edge, 76th consecutive RUN inside it, and rebalance_delta -205.91 is a DISTANCE READOUT NOT AN INSTRUCTION because rule 2 acts at the BAND EDGE not at the 70 pct target; week_of 2026-10-05 MATCHES the computed ISO Monday of 2026-10-09 (Friday, ISO week 41 weekday 5), NO ROLLOVER, 0 of 3 weekly; breaker INACTIVE, halt_triggered_at none so NO HALT_CLEARED_AT COMPARISON WAS DUE, streak 0 and UNABLE TO MOVE on an empty sleeve; ZERO OPEN ALERTS which is NOT evidence every seat ran; CORE VOO NOT STAMPED for an 85th run, the WEAK grade and it says so - this seat made NO bars call on VOO so no number was ever in hand to decline, and routine 2 holds no stamp write path; GFS T-2026-10-09-01 NOT REHABILITATED AT A DIFFERENT PRICE - it died on the CALENDAR (H1 2028) and on MATERIALITY (5.89 pct) and neither moves with a quote, so no re-look was due; SECOND INTRADAY-SERIES MARK (10-05 09:36 was 708.33, today 713.67) AND IT WAS DELIBERATELY NOT DIFFERENCED against any official close, per the standing rule - the two pre-existing series were not touched; ZERO ORDERS PLACED, NOTHING LEFT NON-TERMINAL, so no trade_log.md entry and no positions.md block were due)
 
-prior_run: 2026-10-08 16:16 ET 4-market-close-journal (SEAT 4 OF 4, the seat that OWNS the highest_close write path and had NOTHING TO WRITE ON for a third consecutive session; OFFICIAL CLOSE 2026-10-08 c 711.23 -> equity 100444.7079, core 70.1328 pct, day -0.3371 pct, since inception +0.4447 pct; VOO -0.4799 pct so the book beat it by +0.1429pp ON THE CASH FLOAT NOT ON SKILL, satellite exactly 0.000000 pct; lastday_price 714.34 byte-identical at ALL FOUR SEATS confirming it is a FIXED PRIOR-DAY FIELD while current_price moved; fourth post-bell broker/official sample +0.57, the largest yet, four samples both signs a 22-fold spread; core VOO not stamped for an 83rd run and this was the STRONG grade - number AND write path both in hand, nothing written, and the cost is now MEASURED: a mark at 10-06's 716.29 leaves 10-08 -0.7064 pct below it, three sessions of phantom drawdown; CATCH (22) - the 08:25 seat stated the completed-session counting rule and broke it 44 lines later in the same file, and 27 became correct by a different route so the error was invisible within one session; 10 theses all rejected, SUPN is the eighth reject form and the first where the mechanism is SOUND AND POINTS DOWN; all four rule 5s ABSENT not passing; ZERO ORDERS, orders --status all still one row for the whole account history; breaker INACTIVE, streak 0, no rollover; 10-08 is the 27th completed session (24 post-fill) and the sixth zero-move session; all four seats ran, a third consecutive complete session WHICH IS NOT A FIX)
+prior_run: 2026-10-09 08:27 ET 1-premarket-research (SEAT 1 OF 4, PLACES NO ORDERS BY DESIGN; selftest passed all five, pre-flight equity 100743.83; PRE-MARKET not holiday - clock 08:27:45 is_open false with next_open pointing at TODAY, read off the DATE because FALSE HAS THREE MEANINGS; ledger reconciled, one row core VOO against zero satellite blocks; live 08:27 mark equity 100749.77, core 70.22 pct, cash 29.78 pct, rebalance_delta -224.93, current_price 714.31; core IN BAND, 75th consecutive run, no rebalance intent queued; FOURTH pre-market broker/official sample +3.08 against -0.22 / +2.84 / -3.05 - four samples BOTH SIGNS a fourteen-fold spread, NO OFFSET SURVIVES; no rollover, 0 of 3 weekly, breaker INACTIVE, streak 0; all four rule 5s re-evaluated in order and ALL FOUR HAVE NO OPERAND; EIGHT THESES WRITTEN AND ALL EIGHT REJECTED (T-2026-10-09-01..08), ZERO BUY INTENTS AND NOT BECAUSE ANYTHING BLOCKED THEM, every gate OPEN with the 5 pct cap at 5037.49; THE RUN'S ONE REAL FINDING IS GFS/TSMC T-2026-10-09-01, THE *SECOND* CANDIDATE TO CLEAR SECTION 3's INSTRUMENT TESTS AND THE PRICED-IN FILTER AND THEN DIE ON THE THESIS PARTS - AMD T-2026-10-01-02 DID IT FIRST ON 10-01 WITH A STRONGER SECTION 3 PASS AND THE SAME PRIMARY KILL PART 3, and calling GFS the first was CATCH (23), corrected before publication in all three files - part 3 H1 2028 ramp from GF's own release is SIX QUARTERS against a TWO-QUARTER ceiling, part 2 is 2000M over 5yr = ~400M/yr on FY2025 revenue 6791M = 5.89 pct against a 10 pct floor, part 1 is GFS being THE HEADLINE NAME with the second-order search returning a VERBATIM DENIAL of any named supplier; FIRST move CALL IN SEVEN SESSIONS AND NOT DECORATIVE - +1.48 pct over five sessions and +2.72 pct on the news day itself, passes on BOTH bases, and THE FIRST RECORDED INSTANCE OF THE FILTER WORKING BY *ACCEPTING* A GENUINE NEWS-DAY MOVE, stated with its limit that 10-08 traded to +6.98 pct intraday and closed -3.99 pct off that high so a close-to-close filter cannot see the excursion; three disposed rejects returned and reading the log saved three queries; RTX in the log a third time in six sessions, the tenth defence-award instance; core VOO not stamped for an 84th run, the WEAK grade; thesis counter 130 -> 138 RE-DERIVED FROM SOURCE and the 27-session counter HELD; plan_today.md rewritten with plan_date 2026-10-09, deliberately EMPTY, no revalidate line because there is no intent; positions.md collapsed 107KB -> 87KB)
 
 week_of: 2026-10-05
 new_positions_this_week: 0
@@ -21,9 +21,9 @@ circuit_breaker: INACTIVE
 halt_triggered_at: none
 core_established: true
 core_ticker: VOO
-core_pct: 70.22
+core_pct: 70.2
 satellite_pct: 0.0
-cash_pct: 29.78
+cash_pct: 29.8
 open_thesis_ids: none
 ```
 
@@ -86,6 +86,15 @@ discarded; settled items were folded to one line each and repeated emphasis was 
   system working, and it is worth as much as a catch.**
   ⚠ **DO NOT REHABILITATE IT AT A DIFFERENT PRICE — it did not die on price, and neither the calendar
   nor the 5.89% moves with the quote. "But it has not run yet" is "but it went up" wearing a coat.**
+  ⚠⚠ **TESTED ONCE, 10-09 09:36, AT THE ONLY SEAT THAT COULD HAVE ACTED ON IT: THE REHABILITATION WAS
+  DECLINED AND NO QUOTE WAS PULLED ON GFS AT ALL.** The temptation is real at the market-open seat —
+  it holds the live `buy` path, every §6 gate was open, and $30,000 sat idle. **It was refused on the
+  correct ground: the thesis died on the CALENDAR (H1 2028, six quarters against a two-quarter
+  ceiling) and on MATERIALITY (5.89% against a 10% floor), so there is no price at which it becomes
+  buyable and fetching one would only have invited the argument.** ⚠ **Declining to LOOK is stronger
+  than looking and resisting, and it is also why this run logged no `move` call: see the absent-check
+  note.** **THE NEXT SEAT TO FEEL THIS PULL SHOULD NOTE THAT IT HAS NOW BEEN FELT AND REFUSED ONCE,
+  NOT THAT THE ITEM IS SETTLED.**
 
 - **⚠⚠ TWO CLOSE RUNS HAVE VANISHED — 2026-09-28 AND 2026-10-05 — AND THIS IS THE DURABLE FORM.**
   `git log` for 10-05 holds premarket `4277aae`, open `2effdf1`, midday `d50219c` and **no close
@@ -788,9 +797,13 @@ discarded; settled items were folded to one line each and repeated emphasis was 
   across the two.** **No new costume in fourteen sessions — converging, not growing. FREE IS NOT THE
   SAME AS PERMITTED.**
 
-- **⚠ CORE VOO IS NEVER STAMPED WITH A `highest_close` — 84 RUNS. 10-09 08:27 IS THE **WEAK** GRADE AND
-  SAYS SO: THIS SEAT MADE NO `bars` CALL ON VOO AT ALL, SO NO NUMBER WAS EVER IN HAND TO DECLINE, AND IT
-  HOLDS NO WRITE PATH (routine 1 writes `sell_rule_status`, not the stamp).**
+- **⚠ CORE VOO IS NEVER STAMPED WITH A `highest_close` — 85 RUNS. 10-09 09:36 IS ALSO THE **WEAK** GRADE
+  AND SAYS SO: THE MARKET-OPEN SEAT MADE NO `bars` CALL ON VOO EITHER, SO AGAIN NO NUMBER WAS EVER IN
+  HAND TO DECLINE, AND ROUTINE 2 HOLDS NO STAMP WRITE PATH AT ALL.**
+  ⚠ **RE-MADE, NOT INHERITED, AND THE REASON IS WORTH RE-STATING ONCE: a mark on VOO would FABRICATE a
+  §5.4 trailing stop on the one position §5 EXEMPTS, which §7 forbids outright. The refusal is correct
+  on its own merits and was re-derived here rather than carried.**
+  **(10-09 08:27 WAS THE SAME WEAK GRADE: no `bars` call on VOO, no number in hand, no write path.)**
   ⚠ **A SEAT THAT NEVER FETCHED THE DATA AND A SEAT THAT FETCHED IT AND REFUSED LOOK IDENTICAL IN A RUN
   SUMMARY, AND ONLY THE SECOND IS EVIDENCE OF ANYTHING. RANK, DO NOT COUNT.**
   **(The STRONGEST instance remains 10-08 16:16, BECAUSE IT IS THE FIRST WHERE THE COST OF HAVING
@@ -877,9 +890,13 @@ discarded; settled items were folded to one line each and repeated emphasis was 
   PRODUCED IS BYTE-FOR-BYTE WHAT A STALE PLAN WOULD HAVE PRODUCED, AND ONLY `plan_date` SEPARATED
   THEM.** ⚠ **10-07's plan is the same shape again: written at 08:24 with `plan_date: 2026-10-07`,
   FRESH and deliberately EMPTY — so the 09:35 seat will produce a third consecutive indistinguishable
-  morning.** The gate has been exercised **34 times and has never fired; the 35th is today's open and
-  its alert path remains UNTESTED CODE.** ⚠ **The 34th exercise PASSED — it did not fire, and "passed" and "fired" are
-  opposite outcomes of the same check. Do not write that the gate has been tested. ⚠⚠ **09-28 WAS THE MORNING IT WOULD FINALLY HAVE FIRED — `plan_today.md`
+  morning.**
+  ⚠⚠ **UPDATED 10-09 09:36 BY THE SEAT THAT HOLDS THE GATE: `plan_today.md` carried `plan_date:
+  2026-10-09`, READ OFF THE FIELD AND COMPARED TO TODAY'S ET DATE — **FRESH**, and the morning it
+  produced was the FOURTH consecutive indistinguishable zero-order one. **THE GATE HAS NOW BEEN
+  EXERCISED 37 TIMES AND HAS NEVER FIRED; ITS ALERT PATH REMAINS UNTESTED CODE.**
+  ⚠ **THE 37th EXERCISE *PASSED* — IT DID NOT FIRE, AND "PASSED" AND "FIRED" ARE OPPOSITE OUTCOMES OF
+  THE SAME CHECK. Do not write that the gate has been tested. ⚠⚠ **09-28 WAS THE MORNING IT WOULD FINALLY HAVE FIRED — `plan_today.md`
   genuinely carried `plan_date: 2026-09-25` — AND THE RUN CONTAINING THE GATE DID NOT EXECUTE.**
   ⚠ **The first morning it fires will by construction be a morning when the pre-market run failed. Read
   routine 2's Step 2 then; do not recall it.**
@@ -904,6 +921,29 @@ discarded; settled items were folded to one line each and repeated emphasis was 
   read `is_open: false` with `next_open` **2026-10-09T09:30** and `next_close` **2026-10-09T16:00** —
   BOTH CARRYING TODAY'S DATE, the pre-market full-session signature. NOT A HOLIDAY AND NOT AN EARLY
   CLOSE.**
+  ⚠⚠ **CONFIRMED FROM THE OTHER SIDE AT 09:36:24 — `is_open` **TRUE**, `next_close`
+  **2026-10-09T16:00** (today) and `next_open` **ALREADY ROLLED FORWARD TO 2026-10-12T09:30**. THAT
+  FORWARD ROLL IS THE IN-SESSION SIGNATURE and it is the ONE unambiguous clock shape: TRUE HAS ONE
+  MEANING. ⚠ **The next `next_open` line to be spent is MONDAY 2026-10-12 — the weekend gap, so the
+  next pre-market seat's `plan_date` comparison legitimately reads THREE CALENDAR DAYS and one
+  TRADING day.**
+  **LIVE BROKER MARK, 2026-10-09 09:36 — THE INTRADAY SERIES, ITS SECOND DATED SAMPLE EVER (the first
+  was 10-05 09:36 at 708.33) AND NEVER CONCATENATED WITH THE PRE-MARKET OR POST-BELL SERIES:** `sleeves`
+  equity **$100,686.38**, core **$70,686.380936 = 70.2%**, cash **$30,000.00 = 29.8%**, satellite **$0 /
+  0.0% / count 0**, `rebalance_delta` **−$205.91**, `core_target_value` $70,480.47, `core_in_band` true.
+  `positions` VOO: qty **99.046311231** (UNCHANGED since the 09-03 fill), avg_entry 706.74, cost_basis
+  $69,999.99, market_value $70,686.380936, unrealized **+$686.39 (+0.981%)**, `current_price` **713.67**,
+  `lastday_price` **711.28**, `change_today` **+0.336%**.
+  ⚠⚠ **`lastday_price` READ **711.28** AT BOTH THE 08:27 AND THE 09:36 SEAT — BYTE-IDENTICAL ACROSS THE
+  BELL WHILE `current_price` MOVED 714.31 → 713.67. That is the FIXED PRIOR-DAY FIELD confirmed a
+  second time within one session, and it is the cleanest demonstration yet: one field moved, the other
+  could not.**
+  ⚠⚠ **TODAY'S 09:36 MARK WAS DELIBERATELY *NOT* DIFFERENCED AGAINST THE OFFICIAL 10-08 CLOSE, and that
+  is a CHANGE OF PRACTICE WORTH NOTICING: the four pre-market and four post-bell samples were each
+  recorded as a broker/official difference, which the standing rule two items up forbids outright
+  ("NEVER difference a broker mark against an official close"). The seat that could have logged a ninth
+  such sample declined to, and recorded the raw mark instead. **THE INTRADAY SERIES THEREFORE HOLDS TWO
+  MARKS AND ZERO DIFFERENCES.**
   **LIVE BROKER MARK, 2026-10-09 08:27 (a THIRD date on the pre-market series, never concatenated with
   any official close): `sleeves` equity **$100,749.77**, core **$70,749.770575 = 70.22%**, cash
   **$30,000.00 = 29.78%**, satellite **$0 / 0.0% / count 0**, `rebalance_delta` **−$224.93**,
