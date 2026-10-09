@@ -52,6 +52,325 @@ single most common way a plausible-sounding connection gets mistaken for an oppo
 
 ## Entries
 
+### 2026-10-09 (08:27 ET) — event survey (funnel, pre-thesis)
+
+Selftest passed all five checks (`trading_enabled: true`, LIVE paper, broker equity **$100,743.83** at
+pre-flight). Window screened: **the completed 2026-10-08 session and overnight into 2026-10-09** — a
+real window; 10-08 was a full session (official close 711.23). `clock` at **08:27:45** reads
+`is_open: false` with `next_open` **2026-10-09T09:30** — the **PRE-MARKET** shape, read off the
+**DATE**, not off the boolean. Not a holiday. **Five Perplexity scans, all exit 0** (three broad/
+structural, two drills on the single survivor). **Eight theses written, ALL EIGHT REJECTED.**
+
+**⚠⚠ THE STRUCTURAL FRAMING WAS QUERY ONE AGAIN AND IT PAID A THIRD CONSECUTIVE SESSION.** Asking for
+**two named parties + a disclosed dollar amount + the announcement date + whether it is new to the
+company's own disclosure** returned **one qualifying item and NINE self-excluded ones with the reason
+volunteered** — Transocean/Equinor flagged as *"previously announced"* by Transocean itself,
+Shield AI flagged as *"a modification of an existing Other Transaction agreement"*, TechnipFMC flagged
+as a **range** (`$75–250M`) rather than a figure, Elevra flagged as **tonnes not dollars**, BAE and
+Voyager flagged as listing-unverifiable. **Nine items disposed for ZERO follow-up queries.**
+
+**⚠⚠ ALL THREE BROAD SCANS PRODUCED A VOLUNTEERED ABSENCE — THE SECOND CONSECUTIVE SESSION OF THAT,
+AND A NINTH CONSECUTIVE SESSION OF AT LEAST ONE.** In the source's own words:
+*"No company identified in the available evidence meets the full screen"* (the won-a-contract /
+quantified-to-its-own-segment framing) · *"no qualifying case can be verified … there is no verified
+qualifying announcement to report"* (the named-second-company framing) · and query 1's one-for-nine
+exclusion ratio. **A FOURTH absence arrived from the GFS drill and it is the most specific of the
+four:** GF's own 10-08 release *"does not name any specific publicly traded equipment supplier,
+construction contractor, engineering firm, or materials vendor"* for the Malta expansion, and
+*"no dollar amount is attributed to one."*
+
+**⚠ READY-AND-UNWRITTEN PRIORS THIS RUN: AMAT / LRCX / KLA for the Malta fab expansion — the single
+most reflexive prior in this log, named in the carry-forward as the standing failure mode, and
+arriving against an EXPLICIT DENIAL. NOT WRITTEN DOWN AS A CANDIDATE.** Also ready and unwritten: the
+solid-rocket-motor tier for SM-3 Block IB, and the subsea-flexibles tier for TechnipFMC/Petrobras.
+**A volunteered absence is stronger than a silence, and a run that then produces a Company B has
+supplied it from its own priors.**
+
+**⚠ `--recency day` RETURNED A GLOBAL TAPE AGAIN** — roughly half the raw funnel output was non-US
+(Fujifilm, Samsung Electro-Mechanics, LG Electronics, BAE, KEC International, Arqit). That is not a
+defect in the query; it is why §3 is applied before a mechanism is attempted. Disposed as one entry
+(`T-2026-10-09-08`).
+
+---
+
+### T-2026-10-09-01 — GFS (GlobalFoundries) / TSMC silicon interposers — REJECTED
+**Company A / the news:** **GlobalFoundries' own press release, 2026-10-08** (globenewswire /
+gf.com), *"GlobalFoundries reaches agreement to establish U.S.-based supply of silicon interposers for
+advanced AI packaging"* — GF will manufacture silicon interposers for **TSMC**, supporting TSMC's
+CoWoS advanced-packaging platform, and will add fab capacity at **Malta, New York**. Reuters and
+Bloomberg reported the value as **$2 billion** over an **initial five-year term** the same day.
+**Company B / the candidate:** **GFS itself** — which is the first problem, see part 1.
+
+**1. Mechanism (one sentence):**
+> TSMC's decision to source US-made silicon interposers causes GlobalFoundries' Malta manufacturing-
+> services revenue to rise because GF will produce and sell interposers to TSMC under a five-year,
+> $2 billion agreement.
+
+⚠ **The sentence is clean and needs no "and also" — and it still fails §4, because GFS IS THE HEADLINE
+NAME.** The announcement was issued **by GF, about GF**; Bloomberg's headline is *"GlobalFoundries
+rallies after announcing $2 billion TSMC deal"*; and the tape agrees — **10-08 printed `n` 6,578 trades
+on `v` 522,592 shares against a trailing norm of ~1,400–1,700 trades on ~68k–142k shares, roughly 4x
+the trades and 6x the volume.** §4's premise is that news breaks about Company A and you buy Company B.
+**Here GF is Company A.** The genuine second-order question — *who supplies GF's Malta expansion?* —
+was put to the funnel and returned a **verbatim denial** (no equipment supplier, contractor, engineering
+firm or materials vendor named anywhere; no dollar attributed to one). **THERE IS NO COMPANY B.**
+
+**2. Dollar path:** **FAILS INDEPENDENTLY, AND THE ARITHMETIC IS ONE STEP.** $2B over the initial
+five-year term = **~$400M/yr**, against GF **FY2025 total revenue of $6.791B** (sourced to the funnel's
+own citation) = **5.89% of total revenue**. §4's floor is **10%**. ⚠ **And that is the MOST GENEROUS
+possible reading, because it treats the whole company as the "segment": GF has NOT assigned the
+agreement to a reporting segment at all, so the actual segment share is not merely small, it is
+NOT CALCULABLE.** The funnel said so explicitly: *"the sources returned do not establish whether GF
+will report it within an existing product category, its CMOS business, a manufacturing-services
+category, or another reporting line."*
+
+**3. Timing window:** **FAILS INDEPENDENTLY AND THIS IS THE PRIMARY KILL — IT IS QUOTED FROM GF'S OWN
+RELEASE AND IT IS NOT A JUDGMENT CALL.** *"Volume production is expected to begin ramping at GF's Malta
+site during the first half of 2028."* From Q4 2026 that is **SIX QUARTERS MINIMUM** (2027Q1 … 2028Q2)
+against §4's **TWO-QUARTER** ceiling — and **revenue recognition is later still and undisclosed**: the
+funnel declined to put a quarter on it, noting GF discloses no delivery terms, acceptance provisions,
+pricing structure or customer commitments. **Standing rule (vi) in its cleanest form yet: screen the
+timing window early on anything under construction. Part 3 kills this in ONE step, and it is the
+Venture Global / ConocoPhillips shape with a shorter fuse.**
+
+**4. Invalidation:** **NOT REACHED — there is no trade, so no invalidation condition was written.**
+⚠ Recorded deliberately: writing one here would mean constructing the apparatus of a position that
+three independent tests have already refused.
+
+**Hard filters:**
+- **Priced-in (§4): moved +1.48% over last 5 sessions (48.65 → 49.37) → PASS.** ⚠⚠ **AND IT PASSES ON
+  THE NEWS-DAY BASIS TOO, WHICH IS THE CHECK THAT MATTERS: 10-07 close 48.065 → 10-08 close 49.37 =
+  +2.72%, also under 4%.** Both bases pass. **This is the FIRST RECORDED INSTANCE OF THE FILTER WORKING
+  BY *ACCEPTING* A GENUINE NEWS-DAY MOVE** — every prior instance of "the filter working" (SHOP +9.61%,
+  ILMN +11.54%, GRAL +44.67%) was the filter working by **REJECTING**. ⚠ **Stated with its limit:
+  10-08 traded to an intraday high of **51.42, +6.98% over the prior close**, and closed **−3.99% off
+  that high** at 49.37. A close-to-close filter cannot see that excursion; had the close held near the
+  high, the same day's news would have FAILED the filter. The filter was right here and it was not
+  right by a wide margin.** ⚠ **THE TRADE DIED ON THE THESIS, NOT ON THE FILTER — which is the whole
+  point of applying §4's parts after the filters rather than instead of them.**
+- **Correlation (§4): pass, TRIVIALLY AND WORTH NOTHING.** Zero open satellite positions, so there is
+  no `driver` field anywhere in `positions.md` to collide with. **An absent check, not a passing one.**
+- **Universe (§3): asset_type stock. `alpaca.py asset --symbol GFS` → `us_equity`, NASDAQ, active,
+  tradable, fractionable, not leveraged / inverse / crypto → pass on every instrument test.**
+  ⚠⚠ **MARKET CAP: NOT ESTABLISHED FROM SOURCE. §3 IS UNRESOLVED, NOT PASSED.** The funnel was asked
+  twice and declined both times (*"the search results provided do not include a dated market-data source
+  stating GlobalFoundries' market capitalization"*). ⚠ **A share count × 49.37 would clear $10B
+  comfortably on my own arithmetic — AND THAT IS NOT A SOURCED FIGURE AND IS NOT RECORDED AS ONE.**
+  ⚠ **This follows the VAL precedent exactly: DO NOT INHERIT A §3 VERDICT FROM THIS ENTRY. It did not
+  need resolving, because parts 2 and 3 kill the thesis without it.**
+
+**Outcome:** **REJECTED — THREE INDEPENDENT KILLS.** **Part 3 is primary** (H1 2028 ramp, six quarters
+against a two-quarter ceiling, quoted from GF's own release). **Part 2 is independent and arithmetic**
+(~$400M/yr on $6.791B = 5.89%, below the 10% floor, and the segment share is not calculable at all).
+**Part 1 is independent and structural** (GFS is the headline name; the second-order search returned a
+verbatim denial; the only Company B on offer is the AMAT/LRCX/KLA prior, which the source explicitly
+refused to supply).
+⚠⚠ **THIS IS THE BEST-DISCLOSED CANDIDATE THIS FUNNEL HAS PRODUCED IN WEEKS AND IT IS WORTH SAYING SO
+PLAINLY: an official, dated, company-issued press release · two named parties · a dollar figure
+attributed to the US-listed leg by Reuters and Bloomberg · no rule (iii) problem (no earlier GF
+disclosure of a TSMC interposer agreement exists) · every §3 INSTRUMENT test passed · and the priced-in
+filter passed on BOTH bases.**
+⚠⚠ **CORRECTION MADE BEFORE PUBLICATION — CATCH (23), AND IT IS CATCH (13)'s EXACT SHAPE.** This entry
+first read *"the FIRST candidate in the live log to clear §3's instrument tests AND the priced-in filter
+and then die on the thesis parts."* **THAT IS FALSE, AND THE REFUTING ENTRY WAS IN A FILE THIS RUN HAD
+ALREADY READ.** **IT IS THE *SECOND* CANDIDATE TO CLEAR §3's INSTRUMENT TESTS AND THE PRICED-IN FILTER AND THEN DIE ON §4's PARTS — **AMD** (`T-2026-10-01-02`) DID IT FIRST ON 10-01, WITH A *STRONGER* §3 PASS (cap "far above the $10B" floor, where GFS's is UNRESOLVED) AND THE SAME PRIMARY KILL, PART 3.**
+⚠ **AMD: `Priced-in (§4): AMD −0.52% over 5 sessions (614.84 → 611.65), priced_in: false` ·
+`Universe (§3): PASSES — AMD is US-listed common stock on NASDAQ, market cap far above the $10B` floor ·
+`Outcome: REJECTED on part 3 (not establishable), with part 2 (magnitude undisclosed and immaterial)`.**
+⚠⚠ **WHAT SURVIVES THE CORRECTION IS NARROWER AND STILL WORTH RECORDING — AND IT IS THE PRICED-IN HALF,
+NOT THE CLEARED-EVERY-FILTER HALF: AMD's pass was on a **−0.52% NON-EVENT** drift (the
+"exercised-and-non-decisive" state), while GFS's pass is on a **GENUINE NEWS DAY** — 4x trades, 6x
+volume, a real transaction. **THAT is the first of its kind. "Cleared every filter" was not.**
+⚠ **AND THE NON-SUPERLATIVE OBSERVATION IS THE MOST USEFUL THING HERE: PART 3 KILLED BOTH. Of the two
+candidates that have ever reached §4's parts with the filters behind them, the TIMING WINDOW killed
+both, and part 2 was failing in both as well.**
+⚠⚠ **IT IS NOT A NEW REJECT FORM — IT IS FORM SEVEN ("everything is disclosed and the spending lands
+too far out", Bayer's 2031/2034 holding the record) IN ITS STRONGEST INSTANCE YET, because the
+beneficiary here is US-listed, liquid, buyable, un-priced-in and the headline name. Bayer was none of
+those. THE DIFFERENCE IS THAT THIS TIME THE ONLY THING STANDING BETWEEN THIS RUN AND A BUY ORDER WAS
+PART 2's AND PART 3's ARITHMETIC — and both were computable from the company's own release in one step
+each.** ⚠ **The temptation this entry records honestly: a clean one-sentence mechanism, a real
+transaction, a real counterparty and a stock that has not moved is the most buyable-looking object §4
+can meet, and §4's parts are what stopped it. THE RULES DID THE WORK; THE JUDGMENT DID NOT HAVE TO.**
+
+---
+
+### T-2026-10-09-02 — RTX (Raytheon) / US DoD SM-3 Block IB "up to $6.3B" — REJECTED
+**Company A / the news:** The Pentagon awarded **Raytheon (RTX)** a multi-year contract valued at
+**up to $6.3 billion** for production and sustainment of **Standard Missile-3 Block IB** interceptors.
+Reported **2026-10-08**, with the underlying contract notice dated **2026-10-07** (insidedefense,
+Reuters, Economic Times).
+**Company B / the candidate:** **NONE REACHED, AND NO QUERY WAS SPENT REACHING FOR ONE.**
+
+**1. Mechanism:** **NOT WRITTEN. The settled pattern was applied as written.**
+**2–4:** not reached.
+
+**Hard filters:** not reached — disposed upstream.
+
+**Outcome:** **REJECTED on the settled US-defence-award pattern, ZERO funnel queries spent.**
+⚠ **THIS IS THE TENTH INSTANCE and the carry-forward's instruction was explicit: spend ONE query, write
+the answer down, and STOP. No re-query has ever been issued and none was issued here.** The mechanism
+of the pattern is **DISCLOSURE PRACTICE**: a prime announces the award and the tier below it is
+commercially confidential.
+⚠ **THREE INDEPENDENT KILLS ON TOP, each one already in the log's standing rules:**
+**(a) RTX is FIRST-ORDER** — the named recipient, outside §4 at any price.
+**(b) "UP TO $6.3 BILLION" IS A MAXIMUM POTENTIAL VALUE, NOT A CONTRACT FIGURE** — standing rule (v)'s
+**CEILING sub-shape**, the same object as RDW's $980M and MTUS's $995M, and the same object as **RTX's
+OWN SM-6 "up to $24.4B" on 10-02**.
+**(c) THE COUNTERPARTY IS A GOVERNMENT BODY, SO THERE IS NO COMPANY A IN §4's SENSE** — one party, no
+transaction between two nameable commercial legs.
+⚠⚠ **AND STANDING RULE (iv) FIRES HARDEST HERE: RTX IS NOW IN THIS LOG FOR THE THIRD TIME IN SIX
+SESSIONS (09-29 AMRAAM $20.7B · 10-02 SM-6 "up to" $24.4B · 10-09 SM-3 Block IB "up to" $6.3B), AND IT
+HAS DIED THE SAME DEATH EVERY TIME.** ⚠ **A recurring ticker is a WARNING, not corroboration. RTX
+arriving every third session is telling me about the defence sector's DISCLOSURE PRACTICE, not about a
+candidate maturing.** ⚠ **The second query this run also surfaced the 10-02 SM-6 award again, side by
+side with the new one — the funnel is now re-serving its own disposed rejects, which is a reason to read
+the log before the tape, not after.**
+
+---
+
+### T-2026-10-09-03 — RIG (Transocean) / A/S Norske Shell $62M, + Equinor ~$1.0B — REJECTED
+**Company A / the news:** **Transocean (NYSE: RIG)** announced **2026-10-09** approximately **$62M**
+of firm contract backlog from a **new two-well contract** for the *Transocean Norge* with **A/S Norske
+Shell** (~120 days of work), and in the same release reported ~**$1.0B** of contract value from an
+**Equinor** agreement. **This was the funnel's ONE "qualifying" item of the day.**
+**Company B / the candidate:** **NONE — RIG is the recipient and is first-order.**
+
+**1. Mechanism:** **NOT WRITTEN — RIG is the named recipient of its own announcement, not a
+second-order beneficiary.**
+**2. Dollar path:** $62M of **BACKLOG**, not recognised revenue — and backlog converting over ~120 days
+is not a segment revenue line. Not reached in any case.
+**3–4:** not reached.
+
+**Hard filters:**
+- **Universe (§3): FAIL. Market cap ~$6.19B** (source: the funnel's own citation, gurufocus /
+  Business Insider coverage of the 10-09 release), **below §3's $10B floor.** No `move` call was made —
+  §3-first discipline, so no effort went into a story a single number was always going to end.
+- Priced-in, correlation: not reached.
+
+**Outcome:** **REJECTED — §3 cap floor (~$6.19B), and FIRST-ORDER regardless of cap.**
+⚠⚠ **AND THE $1.0B EQUINOR LEG IS A CLEAN RULE (iii) INSTANCE WITH THE REASON VOLUNTEERED BY THE
+SOURCE:** Transocean described that agreement as **previously announced** — the 10-09 release concerned
+**final approval and conversion into firm backlog**, not a new agreement. ⚠ **THE BIG NUMBER IS THE OLD
+NEWS AND THE NEW NUMBER IS THE SMALL ONE. That is the most legible form of rule (iii) this log has
+recorded: a single release carrying both, with the ratio ~16:1 in favour of the stale leg.** ⚠ **A
+reader skimming for the largest figure would have taken the one that fails.**
+
+---
+
+### T-2026-10-09-04 — MTUS (Metallus) $995M DLA defence-steel ceiling — REJECTED
+**Company A / the news:** Metallus reported to have received a **US Defense Logistics Agency** contract
+with a **maximum ceiling of $995M** over five years for defence steel supply (fastmarkets, reported
+**2026-10-08**).
+**Company B / the candidate:** **NONE REACHED. NO QUERY SPENT.**
+
+**Outcome:** **REJECTED — AN EXACT REPEAT OF `T-2026-10-01-05`, DISPOSED ON THE ALREADY-WRITTEN RULE.**
+⚠⚠ **THE SAME TICKER, THE SAME PROGRAM AND THE SAME $995M FIGURE RETURNING EIGHT SESSIONS LATER — and
+this is standing rule (iv) at its most literal: a recurring ticker dying the same death is telling me
+about its industry's disclosure practice, not about a candidate maturing.** Three kills, all inherited
+and all re-verified as still applying: **(a)** rule (v)'s **CEILING sub-shape** — a *maximum* multiple-
+award ceiling is not a contract figure and is not revenue at anybody; **(b)** MTUS is **first-order**,
+the named recipient; **(c)** §3 — the funnel again declined to establish a cap above $10B
+(*"the available evidence does not establish a market capitalization above $10 billion"*), consistent
+with the ~$0.6B figure recorded on 10-01. ⚠ **Reading the log cost one grep and saved a funnel query.
+THAT is what the reject catalogue is for.**
+
+---
+
+### T-2026-10-09-05 — Voyager Technologies / Strategic Capabilities Office $22.4M — REJECTED
+**Company A / the news:** Voyager awarded a **$22.4M** Other Transaction Agreement by the US
+**Strategic Capabilities Office** to prototype next-generation satellite deployment systems
+(cyprusshippingnews, carrying a **2026-10-09** date).
+**Company B / the candidate:** **NONE REACHED. NO QUERY SPENT.**
+
+**Outcome:** **REJECTED — AN EXACT REPEAT OF `T-2026-10-06-06`, same company, same program, same
+$22.4M figure, three sessions later.**
+⚠⚠ **AND IT IS A RULE (iii) INSTANCE IN A NEW COSTUME — A RE-REPORT CARRYING A FRESH DATE.** The item
+appeared in this log on **10-06**; the source serving it today stamps it **10-09**. ⚠ **A recency filter
+bounds when something was WRITTEN, never when it HAPPENED — and this run asked for the announcement
+date in the prompt itself, which is the only reason the collision was visible.** Kills unchanged:
+§3 (microcap, listing unverifiable), first-order recipient, and a **government counterparty** so there
+is no Company A. ⚠ **Second instance this run of the funnel re-serving a disposed reject (see RTX).
+THE DISPOSED-REJECT CATALOGUE IS SPLIT ACROSS `archive/research_log/2026-09.md` AND THIS FILE, AND A RUN
+CHECKING WHETHER A NAME WAS ALREADY DISPOSED MUST READ BOTH.**
+
+---
+
+### T-2026-10-09-06 — White House "Genesis Mission" — 11 companies / $2.4B aggregate — REJECTED
+**Company A / the news:** A **2026-10-08** White House announcement naming **11 participating
+companies** against **$2.4B in total commitments**, reported secondhand.
+**Company B / the candidate:** **NONE — AND THE TWO TESTS ARE JOINTLY UNSATISFIABLE, WHICH MAKES THIS A
+FREE ONE-STEP SCREEN.**
+
+**Outcome:** **REJECTED, TWO SETTLED OBJECTS AT ONCE AND NO QUERY SPENT.**
+**(a) A GOVERNMENT ACTION IS NOT A COMPANY A** — it is the most convincing non-event this funnel
+produces: sector-specific, carries a number, names an industry, moves the tape — **and it has ONE
+party.** ⚠ **Scale makes it more convincing, not less.**
+**(b) THE AGGREGATE-UNALLOCATED SHAPE, AND THE ARITHMETIC KILLS IT BEFORE ANY SUPPLIER SEARCH BEGINS:**
+$2.4B spread across 11 companies is **~$218M each**, which **cannot clear part 2's 10% test against ANY
+company above §3's $10B cap floor.** ⚠ **§3's floor and part 2's materiality test are JOINTLY
+UNSATISFIABLE here, so the search is pointless before it starts — the same free screen that disposed
+Blaize (10-06) and the US Army NGC2 awards (10-08).** ⚠ The funnel confirmed no amount is attributed to
+any individual company.
+
+---
+
+### T-2026-10-09-07 — FTI (TechnipFMC) / Petrobras subsea flexibles — REJECTED
+**Company A / the news:** TechnipFMC awarded a flexible-pipe contract by **Petrobras**, reported
+**2026-10-09** (cyprusshippingnews, Simply Wall St).
+**Company B / the candidate:** **NONE — FTI is the recipient and is first-order.**
+
+**2. Dollar path:** **FAILS AT SOURCE AND THE SOURCE SAID SO.** TechnipFMC characterised the contract
+only as **"significant"**, which it defines as **$75M–$250M**. ⚠⚠ **A RANGE IS NOT A DISCLOSED FIGURE,
+AND THIS ONE SPANS MORE THAN 3x FROM END TO END.** The funnel volunteered the exclusion in those terms.
+⚠ **This is a disclosure-practice sub-shape worth naming: a company substituting its own internal
+materiality BAND for a number. It reads as quantified and is not.**
+
+**Outcome:** **REJECTED — part 2 (no disclosed figure, only a self-defined band), and first-order
+regardless.** ⚠ **The ready-and-unwritten prior here was the subsea-flexibles supply tier. NOT WRITTEN
+DOWN. Petrobras is also a Brazilian state-controlled issuer, so the counterparty leg fails §3 besides.**
+
+---
+
+### T-2026-10-09-08 — §3 SCOPE SWEEP (eleven non-eligible items, disposed as one) — REJECTED
+Disposed in one entry because each dies on §3 or on an already-written rule before any mechanism is
+attempted. ⚠ **§3 IS APPLIED FIRST, SO NO EFFORT GOES INTO A STORY A SINGLE NUMBER WAS ALWAYS GOING TO
+END.** ⚠ **Roughly half of this run's raw funnel output was non-US — `--recency day` returns a GLOBAL
+tape, and that is why this sweep exists as a standing step rather than an exception.**
+
+- **Elevra Lithium / LG Energy Solution** — 240,000 dry metric tonnes of spodumene over 3–4 years.
+  ⚠ **A SECOND APPEARANCE: already swept on 10-08. VOLUME IS DISCLOSED AND DOLLARS ARE NOT — tonnage is
+  not a dollar path (part 2), and both legs fail §3 (microcap; LG Energy Solution is Korea-listed).**
+  ⚠ **Third instance this run of a disposed reject returning.**
+- **Samsung Electro-Mechanics — ₩290B (~$215.8M)** MLCC supply for AI servers, **counterparty an
+  UNNAMED "global company"** — §3 (Korea-listed) **and** standing rule (v)'s unnamed-counterparty shape.
+  ⚠ **A precise figure attached to a blank is the most fillable-looking object this funnel produces.
+  THE SOURCE LEFT THE BLANK.**
+- **BAE Systems / US Marine Corps $230.1M**, 32 amphibious combat vehicles — §3, UK-listed; government
+  counterparty; eleventh defence-award instance.
+- **Shield AI / US Navy $150M** — private company, government counterparty, and the source flagged it
+  as **a modification of an existing agreement** (rule iii).
+- **Boost Run / Cohere $525.6M** five-year AI cloud-services agreement — both legs unverifiable as to
+  listing and size; the funnel explicitly declined to verify the parties' corporate identities,
+  US-listing status or whether the agreement was new rather than part of previously reported aggregate
+  contract value. **NOT INHERITED AS A VERDICT EITHER WAY — it is UNRESOLVED, and unresolved is not a
+  pass.**
+- **Fujifilm** — Japan-listed; discussed semiconductor-material customers **generally** and named none.
+- **LG Electronics USA / AIR Control Concepts** — data-centre chiller supply agreement with a ~$680M
+  **2027 business TARGET**; LG is Korea-listed, AIR is private, and a company's own forward revenue
+  target is not a disclosed transaction figure (rule viii's broad reading).
+- **Quantisimo / WISeQey / SEALSQ** — a proposed merger with a **$15M minimum CASH CONDITION**, which is
+  not a transaction value; more than two parties; §3 on size.
+- **Cerebri AI / Cain Travel** — first-customer announcement, both legs private, no figure.
+- **Arqit** — preliminary FY2026 revenue of **$1M**; §3 on every test.
+- **KEC International** (₹1,030 crore orders) — India-listed; §3.
+
+**Outcome:** **ALL ELEVEN REJECTED.** ⚠ **Nine of the eleven were excluded BY THE SOURCE ITSELF, with
+the reason volunteered, which is work this run would otherwise have done query by query. THE STRUCTURAL
+FRAMING RETURNS THE EXCLUSIONS WITH THEIR REASONS ATTACHED — third consecutive session that has paid.**
+
+---
+
 ### 2026-10-08 (08:25 ET) — event survey (funnel, pre-thesis)
 
 Selftest passed all five checks (`trading_enabled: true`, LIVE paper, broker equity **$100,491.26** at
