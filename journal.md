@@ -40,6 +40,136 @@ anything where the honest-broker rule (§4) did real work>
 
 ## Entries
 
+### 2026-10-09 (Friday)
+
+**Account:** total **$100,875.5594 on official closes** (price basis, `bars --adjustment all`, VOO
+c **715.58**) / **$100,890.42 on the live broker mark** at 16:17 | day **+$430.8515 (+0.4289%)** from
+10-08's official $100,444.7079 | since inception **+0.8756%** (price basis). ⚠ **`--adjustment raw`
+returns the SAME 715.58 and 711.23, so the basis choice is NON-DECISIVE today — stated anyway, because
+the basis is part of the figure.** ⚠ **The broker's own `change_today` reads +0.626% and `last_equity`
+$100,449.66025238568 → +$440.76 (+0.4388%). TWO BASES, NEVER CONCATENATED: the official-close series is
+the one §1 is computed on.**
+**Sleeves:** core **70.2604%** | satellite **0.0%** | cash **29.7396%**   (§2 band 65–75% — **5.2604
+points inside the lower edge, 4.7396 inside the upper. NO rebalance due Monday.**)
+**Breaker:** INACTIVE
+**Week:** 0/3 new positions (`week_of` **2026-10-05** — **no rollover**; today is Friday of that same ISO
+week, confirmed by computing this ISO week's Monday (**2026-10-05**, ISO week 41 weekday 5) rather than
+assuming it)
+
+**Traded:** nothing. **Zero orders at all four seats.** `orders --status all` returns **one row for the
+entire account history** — the 09-03 core fill, `status: filled`, terminal. **Nothing opened, nothing
+closed, no realised P&L, and nothing left non-terminal overnight**, which is the §7 condition this seat
+is specifically told to check.
+**Researched:** 8 theses — **0 accepted, 8 rejected** (`T-2026-10-09-01` … `-08`), all written at the
+08:27 pre-market seat and all verified present in `research_log.md` before this entry was written.
+**Positions near a sell rule:** **none, and the honest statement is that there is no operand.** All four
+§5 rules are **ABSENT, not passing**: §5.1 has no thesis to invalidate, §5.2 no timing window to expire,
+§5.3 no satellite entry price to measure −7% from, §5.4 no `highest_close` to measure −10% from.
+⚠ **The distance to each is UNDEFINED, not large.** **This is the 28th completed session since
+2026-09-01, 25 of them post-fill, and §5 has never once had a subject.**
+
+**What happened:**
+
+An up session, and the book lagged it — which is the half of this account's one established fact that
+rarely gets written down. VOO closed **715.58** against 711.23, **+0.6116%**; the book went **+0.4289%**,
+**−0.1827pp of excess.** The whole of that shortfall is arithmetic on an idle cash pile:
+0.701328 × 0.611612% = 0.428944%, the book's return to five decimal places, with the satellite sleeve
+contributing **exactly 0.000000%** for the fifth consecutive session computed from source. The last two
+sessions were VOO-down days with positive excess (+0.0676pp, +0.1429pp) and both got reported; today is
+the same float costing exactly what it earlier saved, and it is reported with the same prominence. **A
+29.74% cash position is not a strategy and neither direction is skill.** Five sessions are now computed
+from source — three VOO-up with negative excess, two VOO-down with positive — all consistent with a
+separation whose other twenty days have **not** been re-derived, so there is still no streak claim here.
+
+The day's actual research was the pre-market seat's, and its one real finding was **GFS**
+(`T-2026-10-09-01`): GlobalFoundries' own 2026-10-08 release putting **$2B over five years** of TSMC
+interposer work into Malta, New York. It is the first candidate in this log's history to clear §3's
+instrument tests *and* the priced-in filter (+1.48% over five sessions, +2.72% on the news day — the
+first recorded instance of the filter working by **accepting** a genuine news-day move) and then die on
+§4's **parts**: part 3 on the calendar (volume ramp **H1 2028** = six quarters against a two-quarter
+ceiling), part 2 on materiality (~$400M/yr on FY2025 revenue of $6.791B = **5.89%** against a 10% floor,
+and that is the most generous reading because GF assigned the deal to no reporting segment at all), and
+part 1 structurally — **GFS is the headline name**, which is the one thing §4 cannot buy. The other
+seven died further upstream: RTX's SM-3 "up to $6.3B" (the eleventh defence-award instance and RTX's
+third appearance in six sessions, same death every time), RIG on the §3 cap with a previously-announced
+$1.0B leg bundled into the same release, MTUS and Voyager as **exact repeats of already-disposed
+rejects re-served by the funnel with fresh dates**, the "Genesis Mission" aggregate where §3's $10B
+floor and part 2's 10% test are jointly unsatisfiable, FTI on a self-defined $75–250M *band* presented
+as a figure, and an eleven-item §3 scope sweep disposed as one entry.
+
+This seat did the two things it exists to do and one of them had no subject. Step 2 — the invisible job,
+the one whose failure leaves no trace — found an **empty working list**: one broker row, core VOO, zero
+satellite blocks in `positions.md`, the two agreeing. Zero `bars` calls on satellite names, zero
+`highest_close` writes, zero `(as of …)` dates advanced. Monday's midday seat has nothing to backfill,
+and the reason is that **the field does not exist**, not that it is fresh.
+
+**What I got wrong or nearly got wrong:**
+
+**I nearly repeated an inherited claim that today's own data falsifies, and the reason I nearly repeated
+it is the uncomfortable part: it argued for the conclusion I was going to reach anyway.**
+`state.md` carries, in this file's house style of double-warning capitals, the line **"THE NUMBER GROWS
+ON ITS OWN"** about the phantom drawdown that would exist had 10-06's VOO close been stamped as a
+`highest_close` on core. That is a one-way-ratchet claim, and **today it shrank.** The mark would sit at
+716.29; 10-08's close was **−0.7064%** below it, today's 715.58 is **−0.0991%** below it — a **0.607pp
+recovery in one session.** The refusal to stamp core is unchanged and was re-derived from §5's exemption
+and §7's prohibition, not from the drawdown figure. But I had the sentence queued to copy forward
+verbatim, because it was emphatic, it was inherited, and it supported not-stamping — and **an inherited
+claim that supports what you already intend to do is the one you are least likely to audit.** The
+corrected form is actually a better argument: a fabricated mark produces a drawdown that **moves with
+the tape in both directions**, which is precisely what makes arming §5.4 on an exempt position
+dangerous. "It grows on its own" oversold a real point and would have been wrong by Monday.
+
+**Second, the core stamp refusal is now 87 runs old and I should say what grade this one actually
+earns.** This seat held *both* halves — a real completed official close (**715.58**, from its own `bars`
+pull) and the write path, since Step 2 *is* the stamp — on the only row the broker returns, at the one
+routine whose instruction literally reads *"record the closes"*. Nothing was written, which is the
+**strong** grade. But `state.md`'s own warning applies to me: *"a refusal this automatic is a refusal
+nobody is deciding any more."* Honestly graded, what I did was re-read last run's reasoning and confirm
+it still holds, which is a step short of deriving it cold from §5 and §7. It happens to be correct. It
+was not hard.
+
+**Third, the pull in the output line is real and worth naming.** This routine's own Output section asks
+me to report "high-water marks updated". There were none to update. **"Updated" and "had nothing to
+update" are different facts**, and the template's phrasing quietly rewards the first — the same shape as
+the §5 table reading "nothing near a stop" when the truth is that nothing can be near a threshold it has
+no operand for. Written the honest way in every artifact this run produced.
+
+**Fourth, a counter trap that was checked against its route rather than against today's reality.** The
+session count advanced **27 → 28** (25 post-fill) and the thesis count **did not move**, staying at 138.
+Both are correct and they disagree over the same date: routine 4 may count the session it stands in
+because it stands after the bell, and today's eight theses were already written into 138 by the 08:27
+seat. That is catch (21)'s shape for the seventh time. I also said plainly in `positions.md` that this
+count is **inherited-and-incremented, not re-derived**, because it *cannot* be re-derived from
+`journal.md` — the 09-28 and 10-05 entries are missing, so the journal under-counts by exactly the two
+close runs that vanished.
+
+**For the next run:**
+
+- **Monday 2026-10-12.** `next_open` **2026-10-12T09:30**, `next_close` **2026-10-12T16:00** — a full
+  session. ⚠ **A correct `plan_today.md` will arrive on Monday reading `plan_date: 2026-10-09`, THREE
+  calendar days old, and that is CORRECT — compare `plan_date` to the last TRADING day, not to the
+  calendar.**
+- **No high-water backfill is due, and not because a mark is current.** `highest_close` is **absent —
+  the third state, no `(as of …)` date at all.** There is no satellite position and never has been.
+  §5.4 arms on the first **satellite** fill; the 09-03 core fill was not one.
+- **Week rollover WILL be due Monday.** ISO Monday of 2026-10-12 is **2026-10-12**, which differs from
+  `week_of: 2026-10-05` → reset `new_positions_this_week` to 0 and set `week_of: 2026-10-12`. It is
+  already 0, so the reset is a no-op in value and must still be performed in the field.
+- **Core 70.2604% — in band, 78th consecutive run. No rebalance Monday.** `rebalance_delta` −$267.12 is
+  a distance readout, not an instruction.
+- **Nothing is unresolved.** No open alerts, no non-terminal orders, breaker INACTIVE with
+  `halt_triggered_at: none` so no `HALT_CLEARED_AT` comparison was due.
+- ⚠ **Today's close commit exists — so the 09-28/10-05 vanishing-close pattern did not recur, and 10-09
+  is the fourth complete four-seat session in a row. THAT IS NOT A FIX. There is still no detector for a
+  seat that never starts, and `alerts.md` reading "zero open incidents" still cannot tell a healthy week
+  from a run that died before `commit.py`. Open item (11) stands.**
+- **Today is Friday: the weekly review (routine 5) may take 10-09's figures from this entry** — equity
+  $100,875.5594, book +0.4289%, VOO +0.6116%, excess **−0.1827pp**, since inception +0.8756% — **rather
+  than re-deriving them, but it must not inherit the "20 of 20" separation streak, which remains
+  un-rechecked.**
+
+---
+
 ### 2026-10-08 (Thursday)
 
 **Account:** total **$100,444.7079 on official closes** (price basis, `bars --adjustment all`, VOO
