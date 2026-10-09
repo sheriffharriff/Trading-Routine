@@ -10,9 +10,9 @@ The block below is parsed by `scripts/common.py` and gates real behavior
 `key: value` format exactly. Prose goes underneath.
 
 ```
-last_run: 2026-10-08 16:16 ET 4-market-close-journal (SEAT 4 OF 4 - THE SEAT THAT OWNS THE highest_close WRITE PATH, AND IT HAD NOTHING TO WRITE ON FOR A THIRD CONSECUTIVE SESSION; selftest PASSED all five, trading_enabled true, LIVE paper, pre-flight equity 100497.20; MARKET CLOSED POST-BELL - clock 16:16:50 is_open false with next_open 2026-10-09T09:30, read off the DATE because FALSE HAS THREE MEANINGS, and 2026-10-08 was a NORMAL FULL session (next_close read 2026-10-08T16:00 at both intraday seats), so the HOLIDAY SKIP PATH WAS NOT TAKEN; STEP 2 RECORD-THE-CLOSES HAD NO SUBJECT - zero open satellite positions, so no highest_close to raise and, the half that matters more, NO (as of ...) DATE TO ADVANCE: the field is ABSENT, the third state carrying no date, so tomorrow's midday detector has NOTHING TO COMPARE and staleness can be neither ruled in nor out - 'HIGH-WATER MARKS UPDATED' WOULD BE FALSE AND SO WOULD 'VERIFIED', the honest form is THE JOB HAD NO SUBJECT, and this is the THIRD CONSECUTIVE CLOSE-SEAT NULL (10-06/10-07/10-08) which makes it WEAKER evidence not stronger; backfill path still UNEXERCISED CODE; OFFICIAL CLOSE BASIS 2026-10-08 (bars --days 3 --adjustment all, pulled here): o 712.26 h 714.11 l 708.45 c 711.23, n 1594 v 41588, vw 711.620829 -> equity 100444.7079, core 70444.7079 = 70.1328 pct, cash 29.8672 pct, day -339.7288 = -0.3371 pct against 10-07's official 100784.4368, since inception +0.4447 pct, core unrealized +444.72 (+0.6353 pct) on cost_basis 69999.99; VOO itself -0.4799 pct so the book BEAT it by +0.1429pp ON THE CASH FLOAT NOT ON SKILL (0.702335 x -0.4799485 pct = -0.337085 pct, the book's return to six decimals, satellite contributed EXACTLY 0.000000 pct); LIVE BROKER MARK 16:16 a DIFFERENT SERIES: equity 100501.16, core 70501.164334 = 70.1496 pct, cash 29.85 pct, rebalance_delta -150.35, change_today -0.356 pct, last_equity 100752.74196475254 -> -251.58 = -0.2497 pct - TWO DAY-RETURNS FOR ONE DATE, BOTH CORRECT ON THEIR OWN BASIS; last_equity re-attributed to the cent (99.046311231 x 714.34 + 30000); lastday_price 714.34 BYTE-IDENTICAL AT ALL FOUR SEATS of 10-08 so it is a FIXED PRIOR-DAY FIELD, confirmed end to end across a complete session; FOURTH POST-BELL BROKER/OFFICIAL SAMPLE AND THE LARGEST YET - current_price 711.80 vs official 711.23 = +0.57 against +0.470 / -0.0254 / +0.1207, four samples BOTH SIGNS a 22-fold magnitude spread, NO OFFSET SURVIVES; CORE VOO NOT STAMPED FOR AN 83RD RUN AND THIS IS THE STRONG GRADE - the number (711.23, a completed official same-basis close from this seat's own bars pull) AND the write path, both in hand, nothing written; AND THE COST IS NOW MEASURED NOT HYPOTHETICAL - a mark stamped at 10-06's 716.29 would leave today's close -0.7064 pct below it, a phantom drawdown accruing across THREE sessions toward 5.4's -10 pct on the one holding 5 exempts; ALL FOUR 5 RULES ABSENT NOT PASSING, distance UNDEFINED not large, zero quote / zero perplexity / zero move / zero sell calls; ZERO ORDERS and orders --status all returns ONE ROW for the whole account history (09-03 core fill, filled, terminal) so NOTHING IN LIMBO OVERNIGHT; nothing closed so consecutive_closed_losses stays 0 and CANNOT MOVE - streak increment and the circuit-breaker alert path remain UNTESTED CODE; breaker INACTIVE, halt_triggered_at none so no HALT_CLEARED_AT comparison was due; week_of 2026-10-05 MATCHES the computed ISO Monday of 2026-10-08 (Thursday), NO ROLLOVER, new_positions_this_week stays 0; core 70.1328 pct official / 70.1496 pct live, IN BAND by 5.1328 and 4.8672 points, 74th consecutive run inside it, NO REBALANCE DUE TOMORROW; cash 30000.00 reported as an ORDINARY BALANCE, dividend test CLOSED and the counter RETIRED; SESSION'S FOURTH RECONCILIATION so the 27-session counter does NOT advance, but THE 5-OPERAND COUNTER DOES AND THIS SEAT MAY DO IT: 27 COMPLETED SESSIONS since 2026-09-01, 24 POST-FILL, zero satellite positions ever; CATCH (22) - ONE RUN STATED THE RULE AND BROKE IT 44 LINES LATER IN THE SAME FILE (plan_today.md 171 vs 215) AND '27' IS CORRECT NOW BY A DIFFERENT ROUTE, so the error would have gone invisible within one session; collapsed 10-07's four per-seat positions.md sections to one digest, 113KB -> 107KB; ClickUp summary 86bcfgv9r)
+last_run: 2026-10-09 08:27 ET 1-premarket-research (SEAT 1 OF 4 - THE RESEARCH-AND-PLAN SEAT, WHICH PLACES NO ORDERS BY DESIGN; selftest PASSED all five, trading_enabled true, LIVE paper, pre-flight equity 100743.83; MARKET PRE-MARKET NOT HOLIDAY - clock 08:27:45 is_open false with next_open 2026-10-09T09:30 read off the DATE because FALSE HAS THREE MEANINGS, next_close also today so a normal full session, THE HOLIDAY SKIP PATH WAS NOT TAKEN; LEDGER RECONCILES - positions returns ONE ROW core VOO 99.046311231 at 706.74 against ZERO satellite blocks in positions.md, they AGREE, and core was struck from the working list BEFORE any rule 5 was read per the exemption; SESSION'S FIRST reconciliation so that counter advances and the 27-session counter does NOT; LIVE 08:27 MARK: equity 100749.77, core 70749.770575 = 70.22 pct, cash 30000.00 = 29.78 pct, satellite 0 / 0.0 pct / count 0, rebalance_delta -224.93, current_price 714.31, lastday_price 711.28, change_today +0.426 pct, unrealized +749.78 / +1.071 pct; CORE IN BAND by 5.22 points at the 65 edge and 4.78 at the 75 edge, 75th consecutive RUN inside it, NO REBALANCE INTENT QUEUED; FOURTH PRE-MARKET BROKER/OFFICIAL SAMPLE - current_price 714.31 vs official 711.23 = +3.08 against -0.22 / +2.84 / -3.05, four samples BOTH SIGNS a fourteen-fold spread, NO OFFSET SURVIVES; week_of 2026-10-05 MATCHES the computed ISO Monday of 2026-10-09 (Friday, ISO week 41 weekday 5), NO ROLLOVER, 0 of 3 weekly; breaker INACTIVE, halt_triggered_at none so NO HALT_CLEARED_AT COMPARISON WAS DUE, streak 0 and UNABLE TO MOVE so the increment and alert paths stay UNTESTED CODE; ZERO OPEN ALERTS which is NOT evidence every seat ran; ALL FOUR RULE 5s RE-EVALUATED IN ORDER AND ALL FOUR HAVE NO OPERAND - 5.1 and 5.2 are this seat's to assess and have no invalidation string and no timing_window to read, 5.3 and 5.4 are UNDEFINED NOT DISTANT, zero news-on-holdings perplexity queries were due and zero were run, nothing queued as already breaching; EIGHT THESES WRITTEN AND ALL EIGHT REJECTED (T-2026-10-09-01..08), ZERO BUY INTENTS AND NOT BECAUSE ANYTHING BLOCKED THEM - every gate OPEN with the 5 pct cap at 5037.49; THE RUN'S ONE REAL FINDING IS GFS/TSMC T-2026-10-09-01, THE *SECOND* CANDIDATE TO CLEAR SECTION 3's INSTRUMENT TESTS AND THE PRICED-IN FILTER AND THEN DIE ON THE THESIS PARTS RATHER THAN UPSTREAM - AMD T-2026-10-01-02 DID IT FIRST ON 10-01 WITH A STRONGER SECTION 3 PASS AND THE SAME PRIMARY KILL PART 3, AND CALLING GFS THE FIRST WAS CATCH (23) CORRECTED BEFORE PUBLICATION IN ALL THREE FILES - part 3 H1 2028 ramp quoted from GF's own release is SIX QUARTERS against a TWO-QUARTER ceiling, part 2 is 2000M over 5yr = ~400M/yr on FY2025 revenue 6791M = 5.89 pct against a 10 pct floor, part 1 is GFS being THE HEADLINE NAME with the second-order search returning a VERBATIM DENIAL of any named supplier; FIRST move CALL IN SEVEN SESSIONS AND IT WAS NOT DECORATIVE - GFS +1.48 pct over five sessions AND +2.72 pct on the news day itself, PASSES ON BOTH BASES, and it is THE FIRST RECORDED INSTANCE OF THE FILTER WORKING BY *ACCEPTING* A GENUINE NEWS-DAY MOVE rather than by rejecting one, stated with its limit that 10-08 traded to +6.98 pct intraday and closed -3.99 pct off that high so a close-to-close filter cannot see the excursion; ALL THREE BROAD SCANS PRODUCED A VOLUNTEERED ABSENCE, SECOND CONSECUTIVE SESSION OF THAT AND A NINTH CONSECUTIVE SESSION OF AT LEAST ONE, PLUS A FOURTH FROM THE GFS DRILL NAMING NO EQUIPMENT SUPPLIER; THREE DISPOSED REJECTS RETURNED (MTUS 995M from 10-01, Voyager 22.4M from 10-06, Elevra/LG from 10-08) AND READING THE LOG SAVED THREE QUERIES; RTX IS IN THE LOG A THIRD TIME IN SIX SESSIONS AND DIED THE SAME DEATH, the tenth defence-award instance, ZERO QUERIES SPENT; CORE VOO NOT STAMPED for an 84th run, the WEAK grade - no bars pull on VOO was made at this seat so no number was in hand to decline; thesis counter 130 -> 138 RE-DERIVED FROM SOURCE (archive 87 + live October 43 counted by date) and the 27-session counter HELD, two counters one date one advancing one not and only the UNIT says which; plan_today.md rewritten with plan_date 2026-10-09, deliberately EMPTY, no revalidate line because there is no intent; positions.md collapsed 10-08's four per-seat sections to one digest, 107KB -> 87KB)
 
-prior_run: 2026-10-08 12:41 ET 3-midday-management (SEAT 3 OF 4, the exits-only seat with nothing to exit - 5 had NO OPERAND for a 79th run; MARKET OPEN off the boolean; STEP 2 HIGH-WATER REPAIR FOUND THE MARKS ABSENT NOT STALE so the staleness test was UNDEFINED rather than passing and the backfill path is STILL UNTESTED CODE; all four sell rules undefined in order, core VOO struck from the working list BEFORE any rule was read per the 5 exemption; ZERO orders and ZERO sell/quote/bars/perplexity calls - every one an ABSENT check and not a passing one, EMPTY BY CONSTRUCTION not by surviving a test, and TRADING_ENABLED true so no exit was suppressed into a dry-run intent; ledger reconciles but it was the session's THIRD reconciliation so the 27-session counter did not advance; lastday_price 714.34 byte-identical at a third seat; core 70.17 pct in band, 73rd run; equity moved a FOURTH time in one session; core VOO not stamped for an 82nd run, the WEAK grade - no bars call so no number in hand to decline; breaker INACTIVE, streak 0, no rollover, no unresolved orders)
+prior_run: 2026-10-08 16:16 ET 4-market-close-journal (SEAT 4 OF 4, the seat that OWNS the highest_close write path and had NOTHING TO WRITE ON for a third consecutive session; OFFICIAL CLOSE 2026-10-08 c 711.23 -> equity 100444.7079, core 70.1328 pct, day -0.3371 pct, since inception +0.4447 pct; VOO -0.4799 pct so the book beat it by +0.1429pp ON THE CASH FLOAT NOT ON SKILL, satellite exactly 0.000000 pct; lastday_price 714.34 byte-identical at ALL FOUR SEATS confirming it is a FIXED PRIOR-DAY FIELD while current_price moved; fourth post-bell broker/official sample +0.57, the largest yet, four samples both signs a 22-fold spread; core VOO not stamped for an 83rd run and this was the STRONG grade - number AND write path both in hand, nothing written, and the cost is now MEASURED: a mark at 10-06's 716.29 leaves 10-08 -0.7064 pct below it, three sessions of phantom drawdown; CATCH (22) - the 08:25 seat stated the completed-session counting rule and broke it 44 lines later in the same file, and 27 became correct by a different route so the error was invisible within one session; 10 theses all rejected, SUPN is the eighth reject form and the first where the mechanism is SOUND AND POINTS DOWN; all four rule 5s ABSENT not passing; ZERO ORDERS, orders --status all still one row for the whole account history; breaker INACTIVE, streak 0, no rollover; 10-08 is the 27th completed session (24 post-fill) and the sixth zero-move session; all four seats ran, a third consecutive complete session WHICH IS NOT A FIX)
 
 week_of: 2026-10-05
 new_positions_this_week: 0
@@ -21,9 +21,9 @@ circuit_breaker: INACTIVE
 halt_triggered_at: none
 core_established: true
 core_ticker: VOO
-core_pct: 70.1328
+core_pct: 70.22
 satellite_pct: 0.0
-cash_pct: 29.8672
+cash_pct: 29.78
 open_thesis_ids: none
 ```
 
@@ -39,6 +39,53 @@ discarded; settled items were folded to one line each and repeated emphasis was 
 ---
 
 ### Live — act on these
+
+- **⚠⚠ NEW 10-09, AND IT IS THE MOST INFORMATIVE REJECTION THIS LOG HAS PRODUCED: GFS/TSMC CLEARED
+  EVERY FILTER AND DIED ON THE *THESIS PARTS*. `T-2026-10-09-01`.**
+  GlobalFoundries' **own dated press release, 2026-10-08**: GF will manufacture **silicon interposers**
+  for **TSMC** (CoWoS), adding capacity at **Malta, New York**; Reuters and Bloomberg put the value at
+  **$2B over an initial five-year term.**
+  **What it cleared:** two named parties · an official company-issued release · a dollar figure
+  attributed to the US-listed leg · **no rule (iii) problem** (no earlier GF disclosure of a TSMC
+  interposer deal exists) · `asset` returns us_equity/NASDAQ/tradable/fractionable, nothing leveraged or
+  inverse · **and `move` passed on BOTH bases.**
+  ⚠⚠ **CORRECTED BEFORE PUBLICATION — CATCH (23), BELOW, AND IT IS CATCH (13)'s EXACT SHAPE.** This item
+  first said GFS was the **FIRST** candidate to clear §3's instrument tests and the priced-in filter and
+  then die on §4's parts. **THAT IS FALSE.** **IT IS THE *SECOND* CANDIDATE TO CLEAR §3's INSTRUMENT TESTS AND THE PRICED-IN FILTER AND THEN DIE ON §4's PARTS — **AMD** (`T-2026-10-01-02`) DID IT FIRST ON 10-01, WITH A *STRONGER* §3 PASS (cap "far above the $10B" floor, where GFS's is UNRESOLVED) AND THE SAME PRIMARY KILL, PART 3.**
+  ⚠⚠ **WHAT SURVIVES IS NARROWER AND IT IS THE *PRICED-IN* HALF, NOT THE CLEARED-EVERY-FILTER HALF:
+  AMD's pass was on a **−0.52% NON-EVENT** drift (the exercised-and-non-decisive state); GFS's is on a
+  **GENUINE NEWS DAY** — 4x trades, 6x volume, a real transaction. THAT is first of its kind.**
+  ⚠⚠ **AND THE NON-SUPERLATIVE OBSERVATION IS THE MOST USEFUL ONE: PART 3 KILLED BOTH. Of the two
+  candidates ever to reach §4's parts with the filters behind them, THE TIMING WINDOW KILLED BOTH, and
+  part 2 was failing in both as well. THAT IS A PATTERN WORTH WATCHING; "first" was not a fact.**
+  ⚠⚠ **IT STILL DIED THREE TIMES OVER, AND BOTH KILLING NUMBERS CAME OUT OF GF'S OWN RELEASE IN ONE
+  STEP EACH:**
+  **PART 3 (primary, and not a judgment call)** — GF's words: *"Volume production is expected to begin
+  ramping at GF's Malta site during the first half of 2028."* From Q4 2026 that is **SIX QUARTERS
+  MINIMUM** against §4's **TWO-QUARTER** ceiling, and revenue recognition is later still and undisclosed.
+  **Standing rule (vi) in its cleanest form; the Venture Global shape with a shorter fuse.**
+  **PART 2 (independent, arithmetic)** — $2B / 5yr = **~$400M/yr** on **FY2025 revenue $6.791B** =
+  **5.89%**, under the **10%** floor. ⚠ **And that is the MOST GENEROUS reading, because it treats the
+  whole company as the "segment": GF assigned the deal to NO reporting segment, so the true segment
+  share is not small, it is NOT CALCULABLE.**
+  **PART 1 (independent, structural)** — **GFS IS THE HEADLINE NAME.** The release is GF's, about GF;
+  Bloomberg's headline is *"GlobalFoundries rallies after announcing $2 billion TSMC deal"*; the tape
+  agrees (**10-08: n 6,578 / v 522,592 against a trailing norm of ~1,400-1,700 / 68k-142k — ~4x trades,
+  ~6x volume**). §4's premise is that news breaks about Company A and you buy Company B; **here GF IS
+  Company A.** The genuine second-order question — *who supplies the Malta expansion?* — returned a
+  **verbatim denial**, and the only Company B on offer was the AMAT/LRCX/KLA prior. **NOT WRITTEN DOWN.**
+  ⚠ **§3's CAP IS *UNRESOLVED*, NOT PASSED** — the funnel declined a sourced market-cap figure twice.
+  **DO NOT INHERIT A §3 VERDICT FROM THIS ENTRY** (the VAL precedent). It never needed resolving.
+  ⚠⚠ **NOT A NEW REJECT FORM — IT IS FORM SEVEN ("everything disclosed, the spending lands too far
+  out", Bayer 2031/2034) IN ITS STRONGEST INSTANCE, because this beneficiary is US-listed, liquid,
+  buyable, un-priced-in and the headline name, and Bayer was none of those. THE DIFFERENCE IS THAT THE
+  ONLY THING BETWEEN THIS RUN AND A BUY ORDER WAS PART 2's AND PART 3's ARITHMETIC.**
+  ⚠⚠ **THE LESSON TO CARRY, AND IT CUTS THE OTHER WAY FROM MOST OF THIS FILE: a clean one-sentence
+  mechanism, a real transaction, a named counterparty and a stock that has not moved is the most
+  buyable-looking object §4 can meet. THE RULES STOPPED IT; THE JUDGMENT DID NOT HAVE TO. That is the
+  system working, and it is worth as much as a catch.**
+  ⚠ **DO NOT REHABILITATE IT AT A DIFFERENT PRICE — it did not die on price, and neither the calendar
+  nor the 5.89% moves with the quote. "But it has not run yet" is "but it went up" wearing a coat.**
 
 - **⚠⚠ TWO CLOSE RUNS HAVE VANISHED — 2026-09-28 AND 2026-10-05 — AND THIS IS THE DURABLE FORM.**
   `git log` for 10-05 holds premarket `4277aae`, open `2effdf1`, midday `d50219c` and **no close
@@ -76,6 +123,18 @@ discarded; settled items were folded to one line each and repeated emphasis was 
   unnamed, Alvotech/LOTTE carrying no dollar figure, RTX's SM-6 flagged as date-unverifiable.
   THE STRUCTURAL FRAMING RETURNS THE EXCLUSIONS WITH THEIR REASONS ATTACHED, which is work the run
   would otherwise do itself — four items disposed for ZERO follow-up queries.**
+  ⚠⚠ **10-09 IS THE THIRD CONSECUTIVE SESSION IT HAS PAID: ONE qualifying item against NINE
+  self-excluded ones with the reason volunteered** — Transocean/Equinor flagged *"previously announced"*
+  by Transocean itself, Shield AI as *"a modification of an existing"* agreement, TechnipFMC as a
+  **$75-250M BAND rather than a figure**, Elevra as **tonnes not dollars**, BAE and Voyager as
+  listing-unverifiable. **Nine items disposed for ZERO follow-up queries.**
+  ⚠⚠ **AND THE NEW OBSERVATION 10-09 ADDS, WHICH IS A REASON TO READ THE LOG *BEFORE* THE TAPE: THE
+  FUNNEL IS NOW RE-SERVING THIS LOG'S OWN DISPOSED REJECTS.** Three in one run — **MTUS $995M** (from
+  10-01, eight sessions earlier: same ticker, same program, same figure), **Voyager $22.4M** (from
+  10-06, **re-stamped with a fresh 10-09 date**) and **Elevra/LG** (from 10-08's sweep). ⚠ **A recency
+  filter bounds when something was WRITTEN, never when it HAPPENED — and the Voyager collision was
+  visible ONLY because the announcement date was demanded in the prompt. READING THE LOG COST ONE GREP
+  AND SAVED THREE QUERIES.**
   ⚠⚠ **AND THE REFINEMENT 10-07 ADDS, WHICH MATTERS MORE THAN THE CONFIRMATION: IT DOES NOT FIND
   EVERYTHING, AND THE SINGLE MOST §4-SHAPED ITEM OF THE RUN CAME FROM A DIFFERENT QUESTION.** The
   Boeing/Lockheed PAC-3 MSE award — **$14.7B, TWO NAMED US-LISTED PARTIES ABOVE $10B, a disclosed
@@ -152,9 +211,19 @@ discarded; settled items were folded to one line each and repeated emphasis was 
   RECORDED AS A CANDIDATE.** ⚠ **A REDACTION IS NOT A LEAD AND NEITHER IS A MAP PIN. There is no
   Company B until the source names one.** *(Entries: T-2026-10-05-01, T-2026-10-06-03.)*
 
-- **⚠⚠ THE SATELLITE SLEEVE IS STRUCTURALLY UNDEPLOYED — 27 COMPLETED SESSIONS, **130 THESES**, ZERO
+- **⚠⚠ THE SATELLITE SLEEVE IS STRUCTURALLY UNDEPLOYED — 27 COMPLETED SESSIONS, **138 THESES**, ZERO
   POSITIONS EVER, AND THE PRESSURE TO LOWER THE §4 BAR IS THE ONLY ITEM HERE ASKING FOR JUDGMENT
   RATHER THAN CARE.**
+  ⚠⚠ **THE 10-09 08:27 SEAT ADVANCED THE THESIS COUNT 130→138 AND HELD THE SESSION COUNT AT 27 — catch
+  (21)'s shape for the sixth time, resolved the same way: the thesis unit passed (this seat wrote eight)
+  and the session unit did NOT (this seat stands BEFORE the bell on 10-09, and 10-08 was already counted
+  by that day's close seat). DO NOT "FIX" 27 TO 28.** ⚠ **The 138 was RE-DERIVED FROM SOURCE rather than
+  inherited: `archive/research_log/2026-09.md` **87** + live October **43** (6 on 10-01 · 5 on 10-02 ·
+  7 on 10-05 · 8 on 10-06 · 7 on 10-07 · 10 on 10-08, counted by date) = **130**, + **8** today.**
+  ⚠⚠ **AND THE ONE THING 10-09 CHANGES ABOUT THIS ARGUMENT, WHICH CUTS *AGAINST* LOWERING THE BAR: for
+  the first time a candidate (GFS) reached §4's PARTS with every filter behind it, and the PARTS killed
+  it on two numbers out of the company's own release. THE BAR WAS LOAD-BEARING FOR THE FIRST TIME, AND
+  IT HELD. 137 of the 138 never got that far.**
   ⚠⚠ **THE 10-08 16:16 CLOSE SEAT ADVANCED THE SESSION COUNT 26→27 (24 post-fill) AND LEFT THE THESIS
   COUNT AT 130 — catch (21)'s shape for the fifth time, resolved the same way: the session unit passed
   (this seat stands after the bell on a completed one) and the thesis unit did not (the 08:25 seat
@@ -198,9 +267,21 @@ discarded; settled items were folded to one line each and repeated emphasis was 
   (Autodesk/Dassault; Landstar/XPO/GXO) is the "shared cause is not a mechanism" object — and on 10-06
   the SOURCE stated that exclusion before I applied it.**
 
-- **⚠⚠ THE FUNNEL KEEPS ANSWERING §4's QUESTION IN THE NEGATIVE, OUT LOUD — **EIGHT** CONSECUTIVE
-  SESSIONS, AND 10-08 IS THE FIRST IN WHICH **EVERY ONE OF THE THREE BROAD SCANS** PRODUCED ONE.**
-  09-29 through 10-08 unbroken. ⚠⚠ **10-08's three, each in the source's own words: *"the available
+- **⚠⚠ THE FUNNEL KEEPS ANSWERING §4's QUESTION IN THE NEGATIVE, OUT LOUD — **NINE** CONSECUTIVE
+  SESSIONS, AND 10-09 IS THE **SECOND** IN WHICH **EVERY ONE OF THE THREE BROAD SCANS** PRODUCED ONE.**
+  09-29 through 10-09 unbroken.
+  ⚠⚠ **10-09's THREE, PLUS A FOURTH FROM THE DRILL, EACH IN THE SOURCE'S OWN WORDS:** *"No company
+  identified in the available evidence meets the full screen"* (the won-a-contract / quantified-to-its-
+  own-segment framing) · *"no qualifying case can be verified … there is no verified qualifying
+  announcement to report"* (the named-second-company framing) · query 1's one-against-nine exclusion
+  ratio · **and the most specific of the four, from the GFS drill: GF's own release *"does not name any
+  specific publicly traded equipment supplier, construction contractor, engineering firm, or materials
+  vendor"* and *"no dollar amount is attributed to one."***
+  ⚠⚠ **10-09's READY-AND-UNWRITTEN PRIORS, AND THE FIRST IS THE MOST REFLEXIVE ONE IN THIS WHOLE FILE:
+  AMAT / LRCX / KLA for the Malta fab expansion — arriving against an EXPLICIT DENIAL, on the one
+  session where a buyable, un-priced-in Company A was actually on the table.** Also ready and unwritten:
+  the solid-rocket-motor tier for SM-3 Block IB, and the subsea-flexibles tier for FTI/Petrobras.
+  **NONE WRITTEN DOWN AS A CANDIDATE.** ⚠⚠ **10-08's three, each in the source's own words: *"the available
   evidence does not show any company that satisfies the full screen"* (the won-a-contract /
   quantified-to-its-own-segment framing) · *"No qualifying event was identified"* (the
   named-second-company framing) · and query 1 returning **one** qualifying item against **NINE**
@@ -257,10 +338,40 @@ discarded; settled items were folded to one line each and repeated emphasis was 
   mechanism converts an honest absence into a fake exercise and has now been declined for that reason
   twice. SYNA at +14.1% (10-05) and CEREBRAS at +9.1% (10-06) would BOTH have FAILED the filter had
   they reached it — shape two — and neither got there.** ⚠ **The EXERCISED-AND-NON-DECISIVE state also
-  stands (09-30 ABBV/RARE; 10-01 AMD/HPE/MU).** ⚠ **A run reporting "priced-in: pass" must say WHICH
-  state it means.** **Only a human may change §4 or `alpaca.py move`.**
+  stands (09-30 ABBV/RARE; 10-01 AMD/HPE/MU).**
+  ⚠⚠ **AND 10-09 ADDS THE STATE THE LIST WAS MISSING — THE FILTER WORKING BY *ACCEPTING*, WHICH ALSO
+  BREAKS THE SEVEN-SESSION ZERO-`move` RUN.** **GFS** reached the filter carrying a real mechanism and a
+  real disclosed figure — **not decorative, and the first `move` call since 10-01** — and passed **on
+  BOTH bases: +1.48% over five sessions (48.65 → 49.37) AND +2.72% on the news day itself
+  (48.065 → 49.37).**
+  ⚠⚠ **EVERY PRIOR "FILTER WORKING" INSTANCE WAS IT WORKING BY *REJECTING* (SHOP +9.61%, ILMN +11.54%,
+  GRAL +44.67%). THIS IS THE FIRST RECORDED INSTANCE OF A GENUINE NEWS-DAY MOVE BEING CORRECTLY LET
+  THROUGH — and the trade then died on §4's PARTS, not on the filter, which is exactly why the filters
+  run BEFORE the parts rather than instead of them.**
+  ⚠ **STATED WITH ITS LIMIT, WHICH IS REAL: 10-08 traded to **51.42, +6.98% over the prior close**, and
+  closed **−3.99% off that high.** A close-to-close filter cannot see that excursion; had the close held
+  near the high, the same news would have FAILED. **The filter was right and not by a wide margin — this
+  is a PASSING INSTANCE, NOT A CALIBRATION.**
+  ⚠ **A run reporting "priced-in: pass" must say WHICH state it means.** **Only a human may change §4 or `alpaca.py move`.**
 
 - **⚠ THERE IS NO LIVE RESEARCH ITEM. THE FUNNEL IS EMPTY. A REJECTION IS NOT A QUEUE.**
+  **10-09's eight, with the durable kill:** **GFS**/TSMC $2B interposers (**part 3 H1 2028 = six
+  quarters · part 2 5.89% of revenue · part 1 headline name — see the GFS item at the top of this
+  list, it is the run's one real finding**) · **RTX** SM-3 Block IB *"up to $6.3B"* (settled defence
+  pattern, **10th instance, ZERO queries spent**; first-order; a CEILING not a figure; govt
+  counterparty; **rule (iv) — RTX's THIRD appearance in six sessions, same death every time**) ·
+  **RIG**/Norske Shell $62M + Equinor $1.0B (§3 cap **~$6.19B**; first-order; ⚠ **the $1.0B leg is
+  PREVIOUSLY ANNOUNCED — one release carrying both, ~16:1 in favour of the STALE leg, the most legible
+  rule (iii) instance on record, and a reader skimming for the largest figure takes the one that
+  fails**) · **MTUS** $995M DLA ceiling (**exact repeat of `T-2026-10-01-05`**) · Voyager $22.4M SCO
+  (**exact repeat of `T-2026-10-06-06`, re-stamped with a fresh date**) · White House "Genesis Mission"
+  $2.4B/11 companies (**govt action = no Company A**; ~$218M each, so the 10% test and the $10B floor
+  are **jointly unsatisfiable** — a free one-step screen) · **FTI**/Petrobras (**part 2 — "significant"
+  is a self-defined $75-250M BAND, not a figure: a company substituting its own materiality band for a
+  number reads as quantified and is not**) · and a **§3 SCOPE SWEEP of eleven items** disposed as one
+  (Elevra/LG · Samsung Electro-Mechanics ₩290B to an **unnamed** global company · BAE/USMC $230.1M ·
+  Shield AI/US Navy $150M · **Boost Run/Cohere $525.6M — UNRESOLVED, and unresolved is NOT a pass** ·
+  Fujifilm · LG Electronics USA/AIR · Quantisimo/WISeQey/SEALSQ · Cerebri AI · Arqit · KEC).
   **10-08's ten, with the durable kill:** Asieris/Theramex CEVIRA $15M + >$250M (§3 — **neither party
   US-listed**, and it was the best-disclosed figure of the day) · **SUPN** (§3 cap ~$2.5B · part 2 ·
   **mechanism points DOWN** — see the eighth-form item above) · **OII** US Navy $154M (§3 cap
@@ -308,8 +419,17 @@ discarded; settled items were folded to one line each and repeated emphasis was 
   ⚠ **One §3 question is reached-but-undecided: Shopify is a Canadian issuer trading as common stock on
   a US exchange. A future run reaching this with a LIVE candidate must put it to the human.**
 
-- **⚠⚠ US DEFENCE PROGRAM AWARDS CANNOT PRODUCE A §4 CANDIDATE — SEVEN INSTANCES, AND 10-07 ADDS THE
-  ONE THAT TESTED THE RULE PROPERLY.** 09-29 AMRAAM $20.7B (RTX) · 09-30 F/A-XX >$20B (Boeing) · 10-02
+- **⚠⚠ US DEFENCE PROGRAM AWARDS CANNOT PRODUCE A §4 CANDIDATE — ELEVEN INSTANCES, AND 10-07 STILL
+  HOLDS THE ONE THAT TESTED THE RULE PROPERLY.**
+  ⚠ **COUNTED, NOT INHERITED: the header read SEVEN, 10-08 numbered X-Bow the 8th and US Army NGC2 the
+  9th, and 10-09 adds TWO — RTX's SM-3 (10th) and BAE/USMC $230.1M (11th, in the §3 sweep). ELEVEN.**
+  ⚠⚠ **THE TENTH IS THE PUREST RULE (iv) INSTANCE IN THE LOG: RTX's SM-3 Block IB
+  *"up to $6.3B"*, which makes RTX's THIRD appearance in six sessions (09-29 AMRAAM $20.7B · 10-02 SM-6
+  *"up to"* $24.4B · 10-09 SM-3 *"up to"* $6.3B) — AND IT DIED THE SAME DEATH ALL THREE TIMES.**
+  ⚠ **A recurring ticker is a WARNING, not corroboration: RTX arriving every third session is telling me
+  about the defence sector's DISCLOSURE PRACTICE, not about a candidate maturing.** ⚠ **ZERO queries
+  spent on it — the answer was already written down, which is what the catalogue is for. AND THE FUNNEL
+  RE-SERVED THE 10-02 SM-6 AWARD ALONGSIDE THE NEW ONE, so the log must be read BEFORE the tape.** 09-29 AMRAAM $20.7B (RTX) · 09-30 F/A-XX >$20B (Boeing) · 10-02
   SM-6 $24.4B (RTX, a MAXIMUM POTENTIAL value) · **10-06 S&K Aerospace PROS 7 $4.3B (an unlisted
   prime), Powerus $82M and Voyager $22.4M (both microcaps)** · **10-07 BWXT $189M naval reactor fuel
   (counterparty a government body the source did not even name)**.
@@ -492,7 +612,14 @@ discarded; settled items were folded to one line each and repeated emphasis was 
   THE BACKFILL AND `voo_close_at_entry` SHARE ONE DEFECT, AND IT IS THE SAME CALL.** ⚠ **After the first fill, a mark silently not written reads identically to
   one correctly unchanged; ONLY the `(as of …)` date separates them. COMPARE THE DATE.**
   **§5.1–§5.4 have never had an operand: 27 completed sessions since 2026-09-01, 24 post-fill, zero
-  satellite positions ever.** ⚠⚠ **ADVANCED 26→27 BY THE 10-08 **16:16** SEAT AND BY NO EARLIER SEAT THAT
+  satellite positions ever.**
+  ⚠⚠ **HELD AT 27/24 BY THE 10-09 08:27 PRE-MARKET SEAT, WHICH RE-EVALUATED ALL FOUR RULES IN ORDER AND
+  FOUND NO OPERAND FOR ANY — AND WHICH MAY NOT ADVANCE THE COUNTER, because it stands BEFORE the bell on
+  10-09 and 10-08 was already counted by that day's close seat. ⚠ THAT SEAT IS THE ONE CATCH (22) NAMES
+  AS EXPOSED, SO THE HOLD IS DELIBERATE, NOT AN OVERSIGHT.** ⚠ **It also RE-DATED the
+  `sell_rule_status` table rather than leaving it, because a table left untouched and a table
+  re-evaluated to the same answer are indistinguishable to the next reader — the same way an ABSENT
+  check and a PASSING one are. THE DATE IS THE ONLY THING THAT SEPARATES THEM.** ⚠⚠ **ADVANCED 26→27 BY THE 10-08 **16:16** SEAT AND BY NO EARLIER SEAT THAT
   DAY — and the 08:25 pre-market seat reached 27 anyway, which is CATCH (22) below.** ⚠⚠ **ADVANCED 25→26 BY THE 10-07 **16:17** SEAT AND BY NO EARLIER SEAT THAT
   DAY: the unit is a COMPLETED session, and only a seat standing AFTER the bell may count the day it is in.
   Routines 1 and 2 never may; routine 3 at 12:41 could not either. THE INCREMENT IS A FUNCTION OF THE
@@ -506,8 +633,27 @@ discarded; settled items were folded to one line each and repeated emphasis was 
   thing it adds is that the stamp seat and the detector seat have now BOTH recorded their own null on two
   consecutive sessions, and four nulls across two sessions still do not test either path.**
 
-- **⚠ AUDIT EVERY INHERITED CLAIM BEFORE REPEATING IT — TWENTY-TWO CATCHES, AND THEY KEEP CHANGING
+- **⚠ AUDIT EVERY INHERITED CLAIM BEFORE REPEATING IT — TWENTY-THREE CATCHES, AND THEY KEEP CHANGING
   SHAPE.**
+  ⚠⚠ **(23) A FALSE SUPERLATIVE ABOUT THE RUN'S OWN HEADLINE FINDING, CAUGHT BEFORE PUBLICATION, WITH
+  THE REFUTING ENTRY IN A FILE THE RUN HAD ALREADY READ.** The 10-09 seat wrote that **GFS** was *"the
+  FIRST candidate in the live log to clear §3's instrument tests AND the priced-in filter and then die
+  on the thesis parts rather than upstream of them"* — **and had already written it into `state.md`,
+  `plan_today.md` AND `research_log.md` as the run's one real finding.**
+  ⚠⚠ **IT IS FALSE. `T-2026-10-01-02` (AMD), eight sessions earlier, records
+  `priced_in: false` (−0.52% over five sessions), `Universe (§3): PASSES — market cap far above the $10B`
+  floor, and `REJECTED on part 3 … with part 2`. AMD CLEARED MORE THAN GFS DID — GFS's §3 cap is
+  UNRESOLVED — AND DIED THE SAME WAY.** **Corrected in all three files to "the SECOND".**
+  ⚠⚠ **THE NEW PART IS *WHERE IT CAME FROM*: this is the first catch in the series that is NOT an
+  inherited claim. The run MANUFACTURED it, about its own work, in the same breath as doing the work —
+  and a superlative is most tempting exactly when a run has finally produced something it thinks is
+  interesting.** ⚠ **It is catch (12)'s direction (flattering, about the book's own output) wearing
+  catch (13)'s mechanism (a claim about a whole series, refuted by a file already read).**
+  ⚠⚠ **WHAT SURVIVED THE CORRECTION IS THE TEST THAT MATTERS: the narrower claim — that GFS is the first
+  priced-in PASS on a GENUINE NEWS DAY, where AMD's was a −0.52% non-event drift — IS TRUE and is worth
+  more than the false one was. CUTTING A SUPERLATIVE DOWN USUALLY LEAVES A REAL FINDING BEHIND.**
+  ⚠ **AND THE PLAIN OBSERVATION THAT NEEDED NO SUPERLATIVE AT ALL: PART 3 KILLED BOTH OF THE TWO
+  CANDIDATES THAT HAVE EVER REACHED §4's PARTS WITH THE FILTERS BEHIND THEM.**
   ⚠⚠ **(22) ONE RUN STATED THE RULE CORRECTLY AND BROKE IT FORTY-FOUR LINES LATER IN THE SAME FILE —
   AND THE WRONG NUMBER HAD ALREADY BECOME THE RIGHT ONE BY THE TIME ANYONE COULD CHECK IT.**
   `plan_today.md` **line 171**, written by the 10-08 08:25 pre-market seat: *"The §5-operand counter
@@ -642,8 +788,13 @@ discarded; settled items were folded to one line each and repeated emphasis was 
   across the two.** **No new costume in fourteen sessions — converging, not growing. FREE IS NOT THE
   SAME AS PERMITTED.**
 
-- **⚠ CORE VOO IS NEVER STAMPED WITH A `highest_close` — 83 RUNS, AND 10-08 16:16 IS NOW THE STRONGEST
-  INSTANCE, BECAUSE IT IS THE FIRST WHERE THE COST OF HAVING WRITTEN IT IS A **MEASURED** NUMBER.**
+- **⚠ CORE VOO IS NEVER STAMPED WITH A `highest_close` — 84 RUNS. 10-09 08:27 IS THE **WEAK** GRADE AND
+  SAYS SO: THIS SEAT MADE NO `bars` CALL ON VOO AT ALL, SO NO NUMBER WAS EVER IN HAND TO DECLINE, AND IT
+  HOLDS NO WRITE PATH (routine 1 writes `sell_rule_status`, not the stamp).**
+  ⚠ **A SEAT THAT NEVER FETCHED THE DATA AND A SEAT THAT FETCHED IT AND REFUSED LOOK IDENTICAL IN A RUN
+  SUMMARY, AND ONLY THE SECOND IS EVIDENCE OF ANYTHING. RANK, DO NOT COUNT.**
+  **(The STRONGEST instance remains 10-08 16:16, BECAUSE IT IS THE FIRST WHERE THE COST OF HAVING
+  WRITTEN IT IS A **MEASURED** NUMBER.)**
   ⚠⚠ **THE 10-08 CLOSE SEAT HELD BOTH HALVES AGAIN — the number (**711.23**, a completed official
   same-basis close from its own `bars --days 3 --adjustment all` pull) AND the write path (Step 2 IS
   the stamp) — on the only row the broker returns, at the one routine whose instruction reads *"record
@@ -747,9 +898,27 @@ discarded; settled items were folded to one line each and repeated emphasis was 
   −0.2497%.** ⚠ **TWO DAY-RETURNS FOR ONE DATE, −0.3371% official and −0.2497% broker, BOTH CORRECT ON
   THEIR OWN BASIS.** ⚠ **`last_equity` re-attributed to the last digit: 99.046311231 × 714.34 + 30,000
   = $100,752.74196475254, byte-identical to the reported field — the THIRD session it has done so.**
-  ⚠ **THE LAST COMPLETED SESSION IS 2026-10-08. A NORMAL FULL session (`next_close` read
-  2026-10-08T16:00 at both intraday seats, so not an early close), and at 16:16 `clock` read
-  `is_open: false` with `next_open` **2026-10-09T09:30**. THE NEXT SESSION IS 2026-10-09.**
+  ⚠ **THE LAST COMPLETED SESSION IS 2026-10-08. A NORMAL FULL session, and at 16:16 `clock` read
+  `is_open: false` with `next_open` **2026-10-09T09:30**.**
+  ⚠⚠ **THAT NEXT-SESSION LINE IS NOW SPENT: 2026-10-09 IS THE SESSION IN PROGRESS. At 08:27 `clock`
+  read `is_open: false` with `next_open` **2026-10-09T09:30** and `next_close` **2026-10-09T16:00** —
+  BOTH CARRYING TODAY'S DATE, the pre-market full-session signature. NOT A HOLIDAY AND NOT AN EARLY
+  CLOSE.**
+  **LIVE BROKER MARK, 2026-10-09 08:27 (a THIRD date on the pre-market series, never concatenated with
+  any official close): `sleeves` equity **$100,749.77**, core **$70,749.770575 = 70.22%**, cash
+  **$30,000.00 = 29.78%**, satellite **$0 / 0.0% / count 0**, `rebalance_delta` **−$224.93**,
+  `core_target_value` $70,524.84. `positions` VOO: qty 99.046311231, avg_entry 706.74, cost_basis
+  $69,999.99, market_value $70,749.770575, unrealized **+$749.78 (+1.071%)**, `current_price`
+  **714.31**, `lastday_price` **711.28**, `change_today` **+0.426%**.**
+  ⚠ **`lastday_price` 711.28 sits **+$0.05** against the official 10-08 close 711.23 — the known
+  broker/official divergence, and the SMALLEST sample of it yet recorded. DO NOT RE-OPEN WHY (four
+  mechanisms falsified, both signs observed) AND NEVER DIFFERENCE IT AGAINST AN OFFICIAL CLOSE.**
+  ⚠⚠ **A FOURTH PRE-MARKET BROKER/OFFICIAL SAMPLE AND IT FINISHES THE IDEA OFF ON THAT SERIES TOO:
+  `current_price` **714.31** against the official 10-08 close **711.23** = **+$3.08**, against −$0.22
+  (10-05), +$2.84 (10-06) and −$3.05 (10-07). FOUR SAMPLES, BOTH SIGNS, A FOURTEEN-FOLD MAGNITUDE
+  SPREAD — NO OFFSET SURVIVES AND NO DIRECTION IS READABLE.** ⚠ **Reported as a sample, NOT as a
+  calibration (catch 8).**
+  ⚠ **§6's 5% cap on this mark is **$5,037.49**, with NO OPERAND — no plan has ever carried a buy intent.**
   **PRIOR OFFICIAL CLOSE — 2026-10-07 (`bars --adjustment all`, pulled by
   the 16:17 close seat: o 713.02 h 715.00 l 711.22 c **714.66**, n 1,323 v 23,415, vw 713.494198;
   IDENTICAL on `all` and `raw`): equity **$100,784.4368**, core **$70,784.4368 = 70.2335%**, cash
@@ -791,9 +960,10 @@ discarded; settled items were folded to one line each and repeated emphasis was 
   whole list a claim this run did not check (catches 5 and 13).** ⚠ **10-05's +0.5009% sits within
   0.006pp of 10-02's +0.5069% — close enough that the order of those two cannot be asserted from rounded
   figures. DO NOT QUOTE THESE RANKINGS AS COVERING OCTOBER.**
-  **NO REBALANCE IS DUE TOMORROW** — §2 acts at the **65/75 band edge**, not at the 70% target. **On the
-  official 2026-10-08 close basis core is 70.1328%, which is 5.1328 points inside the 65 edge and 4.8672
-  inside the 75 edge; on the live 16:16 broker mark it is 70.1496%.** ⚠ **State the live reading against the two
+  **NO REBALANCE IS DUE AND NONE IS QUEUED FOR TODAY'S OPEN** — §2 acts at the **65/75 band edge**, not
+  at the 70% target. **On the live 2026-10-09 08:27 mark core is 70.22% (`core_in_band: true`,
+  `rebalance_needed: false`), 5.22 points inside the 65 edge and 4.78 inside the 75 edge; on the
+  official 2026-10-08 close basis it was 70.1328%.** ⚠ **State the live reading against the two
   edges. Do NOT carry a range (catch 18).**
   ⚠ **THE BAND TEST IS ROBUST TO THE CHOICE OF MARK AND THAT IS WHY THE MARK QUESTION BELOW COSTS
   NOTHING — across 10-06 and 10-07 it has been checked on NINE bases (70.2507 / 70.2522 / 70.2528 /
@@ -803,12 +973,14 @@ discarded; settled items were folded to one line each and repeated emphasis was 
   ⚠ **`rebalance_delta: −$193.18` IS A DISTANCE READOUT, NOT AN INSTRUCTION**, negative only because
   core sits just above 70%. ⚠⚠ **DO NOT DIFFERENCE SUCCESSIVE `rebalance_delta` READINGS INTO A TREND —
   they are samples of a MOVING mark on days with no order in them, and any "widening" is VOO rising
-  against a fixed share count, nothing else.** ⚠ **Twelve readings now span 10-06, 10-07 and 10-08 with NO ORDER ANYWHERE IN THE
-  INTERVAL: −$252.87 (10-06 09:36), −$309.02 (12:42), −$287.35 (16:17), −$193.18 (10-07 08:24),
-  −$174.27 (09:37), −$206.81 (12:41), −$229.09 (16:17), −$147.38 (10-08 08:25), −$164.61 (09:37),
-  −$175.31 (12:41), −$150.35 (16:16). IT HAS CHANGED DIRECTION EIGHT TIMES IN THREE SESSIONS. THERE IS NO DIRECTION IN THIS FIELD TO READ, and anyone who had
-  called any two of these a trend would have been refuted by the next one.**
-  **SEVENTY-FOURTH consecutive run inside the band.** ⚠ **RUN is the unit that was checked, which is why
+  against a fixed share count, nothing else.** ⚠ **THIRTEEN readings now span 10-06 through 10-09 with
+  NO ORDER ANYWHERE IN THE INTERVAL: −$252.87 (10-06 09:36), −$309.02 (12:42), −$287.35 (16:17),
+  −$193.18 (10-07 08:24), −$174.27 (09:37), −$206.81 (12:41), −$229.09 (16:17), −$147.38 (10-08 08:25),
+  −$164.61 (09:37), −$175.31 (12:41), −$150.35 (16:16), **−$224.93 (10-09 08:27)**. IT HAS CHANGED
+  DIRECTION NINE TIMES IN FOUR SESSIONS. THERE IS NO DIRECTION IN THIS FIELD TO READ, and anyone who
+  had called any two of these a trend would have been refuted by the next one.**
+  **SEVENTY-FIFTH consecutive run inside the band — the 10-09 08:27 live mark reads 70.22%, inside by
+  5.22 points at the 65 edge and 4.78 at the 75 edge.**
   this one advances where the session counters do not — and on this session BOTH advanced, for
   different and separately verified reasons.**
   ⚠⚠ **THE OBSERVED RANGE HAS BEEN RETIRED AS A STATISTIC RATHER THAN REPAIRED AGAIN — SEE CATCH (18).
@@ -852,8 +1024,10 @@ discarded; settled items were folded to one line each and repeated emphasis was 
   direction is skill, and a model that fits to zero residual does so because there is nothing in the book
   it omits.**
 
-- **⚠ TEN ITEMS REMAIN WITH THE HUMAN — RECOUNTED FROM THE LIST BELOW AGAIN BY THE 10-08 CLOSE SEAT
-  (twelve numbered, (4) discharged, (5) settled, (9) partly discharged and STILL OPEN → TEN). SEE CATCH
+- **⚠ TEN ITEMS REMAIN WITH THE HUMAN — RECOUNTED FROM THE LIST BELOW AGAIN BY THE 10-09 08:27 SEAT,
+  WHICH DISCHARGED NOTHING AND ADDED NOTHING (twelve numbered, (4) discharged, (5) settled, (9) partly
+  discharged and STILL OPEN → TEN; item (8) is SPENT but stays in the count because its consequence —
+  §1 unmeetable by construction on this platform — is unanswered and was always the human's). SEE CATCH
   (19), WHICH IS WHY THIS HEADER IS RECOMPUTED RATHER THAN READ. NONE IS THE AGENT'S TO DECIDE, AND
   NONE MAY BE "CLOSED" BY A NUMBER A RUN COLLECTS.** ⚠ **THE 10-08 CLOSE SEAT DISCHARGED NOTHING AND
   ADDED NOTHING — item (8) IS NOW SPENT RATHER THAN OPEN (the dividend test resolved at the 08:25 seat,
@@ -914,7 +1088,15 @@ discarded; settled items were folded to one line each and repeated emphasis was 
   would make the ledger read as an account that has never traded. **Overrule in `control.md` if wrong.**
   ⚠ **(4) IS DISCHARGED** (the core's divergence is the 09-03 entry gap, proven 09-11). ⚠ **(5) IS
   SETTLED AS A MECHANISM** — a moving live midpoint, not an offset, on BOTH the post-bell and
-  pre-market series. ⚠⚠ **(9) IS PARTLY DISCHARGED: `positions.md` is down from 68KB to ~53KB across
+  pre-market series. ⚠⚠ **(9) IS PARTLY DISCHARGED AND 10-09 TOOK THE BIGGEST SINGLE BITE YET: the 08:27 pre-market seat
+  collapsed 2026-10-08's FOUR per-seat sections into one dated digest, **107KB → 87KB (−20KB, the
+  largest single reduction on record)**, naming what was removed (the four repetitions of the same §5
+  null, the four per-seat sleeve readings, the four restatements of the broker/official gap) and keeping
+  both durable findings of that session in the digest. ⚠⚠ **BUT `state.md` MOVED THE OTHER WAY IN THE
+  SAME RUN, ~100KB → ~112KB, SO THE FILE SET IS NOT SHRINKING AND A RUN REPORTING ONLY THE COLLAPSE IS
+  REPORTING THE FLATTERING HALF.** ⚠ **The rollover rule excludes `positions.md` by design and
+  `state.md` has no month boundaries and so no archivable unit. THAT REMAINS A PROMPT-LEVEL PROBLEM FOR
+  THE HUMAN, NOT A DISCIPLINE PROBLEM.** Earlier: `positions.md` went from 68KB to ~53KB across
   two collapses by the pre-market seat, and the 10-08 16:16 close seat took it from **113KB to 107KB** by
   folding 2026-10-07's four per-seat sections into one digest — most of what went was the four spent
   `THE DIVIDEND TEST, SEAT N OF 4` paragraphs, now that the test is closed. ⚠ **A close seat collapsing
