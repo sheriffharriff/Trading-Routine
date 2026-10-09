@@ -85,6 +85,67 @@ check that the pull returned the right session. A stored baseline is a *label*, 
 
 *(none — no **satellite** positions have been opened yet. Core VOO exists and is deliberately not tracked here, per the top-of-file rules and the fill note further down.)*
 
+**RECONCILIATION 2026-10-09 — SEAT 2 OF 4, `2-market-open-execution` 09:36 ET. ⚠⚠ THIS IS THE ONLY SEAT
+OF THE FOUR THAT OPENS POSITIONS, AND IT OPENED NONE. THE SLEEVE IS STILL EMPTY AFTER THE ONE RUN OF
+THE DAY THAT COULD HAVE CHANGED THAT.**
+Selftest passed all five; `trading_enabled: true`, LIVE paper; pre-flight broker equity **$100,696.29**.
+`clock` **09:36:24** reads **`is_open: true`** with `next_close` **2026-10-09T16:00** (today) and
+`next_open` **already rolled to 2026-10-12T09:30**. ⚠ **TRUE has ONE meaning, and the forward roll of
+`next_open` to MONDAY is the in-session signature — no date-reading was required here, unlike at the
+pre-market seat.**
+
+**RECONCILIATION, SATELLITE-TO-SATELLITE — UNCHANGED AND RE-PERFORMED, NOT INHERITED.**
+`alpaca.py positions` returns **one row, core VOO**, qty **99.046311231** (unchanged since the
+2026-09-03 fill) at avg_entry **706.74**, cost_basis **$69,999.99**, market_value **$70,686.380936**,
+unrealized **+$686.39 (+0.981%)** — against **zero satellite blocks in this file. THEY AGREE.**
+⚠ **Core VOO was struck from the working list BEFORE any §5 rule was read, per §5's core exemption.**
+⚠ **This is the session's SECOND reconciliation; the reconciliation counter advances on its own unit
+and the §5-operand session counter does NOT — the unit there is a COMPLETED session and this seat
+stands INSIDE 10-09, so 27 / 24 post-fill HOLDS. Catch (22)'s exact trap; checked against the route.**
+
+**SLEEVES, LIVE 09:36 MARK:** equity **$100,686.38**, core **$70,686.380936 = 70.2%**, cash
+**$30,000.00 = 29.8%**, satellite **$0 / 0.0% / count 0**, `core_in_band: true`,
+`rebalance_needed: false`, `rebalance_delta` **−$205.91**, `core_target_value` $70,480.47.
+**Core sits inside §2's 65–75% band by 5.2 points at the lower edge and 4.8 at the upper — the 76th
+consecutive run inside it (unit: a RUN). NO REBALANCE WAS PLACED, AND §2's REBALANCE WAS THE ONE
+ACTION THIS SEAT HELD THAT IS *EXEMPT* FROM THE `plan_date` GATE — it was checked on live numbers and
+simply not due.** ⚠ **`rebalance_delta` is a DISTANCE READOUT, not an instruction: §2 acts at the band
+EDGE, not at the 70% target, and core sits fractionally ABOVE target rather than outside the band.**
+⚠ **Do not difference successive `rebalance_delta` readings into a trend.**
+
+**STALENESS GATE — EXERCISED AND PASSED, WHICH IS THE OPPOSITE OF FIRED.** `plan_today.md` carried
+`plan_date: 2026-10-09`, **read off the field** and equal to today's ET date. **FRESH.** The plan was
+deliberately **EMPTY** — zero BUY, zero SELL, zero REBALANCE intents. ⚠⚠ **FRESHNESS WAS NOT INFERRED
+FROM THE EMPTY OUTCOME: a fresh empty plan and a stale plan produce a BYTE-IDENTICAL zero-order run,
+and only `plan_date` separates them. 37th exercise, NEVER FIRED, alert path still UNTESTED CODE.**
+All eight thesis IDs **`T-2026-10-09-01` … `-08` were verified present and REJECTED** in
+`research_log.md` before concluding nothing was pending.
+
+**§5 — ALL FOUR RULES RE-EVALUATED IN ORDER AT THIS SEAT AND ALL FOUR HAVE NO OPERAND.** Zero SELL
+intents and zero satellite positions, so 5.1 has no invalidation string to test, 5.2 no
+`timing_window`, and 5.3 / 5.4 are **UNDEFINED, NOT DISTANT.** ⚠ **"Nothing is near a stop" is a
+statement about an EMPTY SET.** Core is exempt from all four (§5) and was not sold to fund anything
+(§7). ⚠ **`consecutive_closed_losses` stays 0 and cannot move on an empty sleeve — the increment path
+and the circuit-breaker alert path both remain UNTESTED CODE.**
+
+**STEP 3 CORE BOOTSTRAP — SKIPPED on `core_established: true`.** That path ran once, on 2026-09-03, and
+by construction never runs again. **Not re-bootstrapped.**
+**NO `highest_close` WAS STAMPED ON CORE VOO — an 85th consecutive run declining it, and the WEAK grade
+again: this seat pulled no `bars` on VOO, so no number was ever in hand to decline, and routine 2 holds
+no stamp write path at all.** ⚠ **Re-made on its merits, not inherited: a mark on VOO would fabricate a
+§5.4 trailing stop on the one position §5 exempts, which §7 forbids outright.**
+**NO `move` CALL WAS MADE — that is an ABSENT priced-in check, NOT a passing one**, there being no
+intent to revalidate; a decorative call on a name with no mechanism was declined on purpose.
+⚠ **`T-2026-10-09-01` (GFS) WAS NOT REHABILITATED AND NO QUOTE WAS PULLED ON IT** — it died on the
+calendar (H1 2028) and on materiality (5.89%), neither of which moves with a price.
+
+⚠⚠ **THE LINE THE LEDGER EXISTS FOR: EVERY GATE WAS OPEN AND NOTHING WAS BOUGHT.** Breaker **INACTIVE**
+· `new_positions_this_week` **0 of 3** · satellite **0% deployed** against a 30% target · **$30,000
+idle cash** · `control.md` notes **EMPTY** · `TRADING_ENABLED: true` · §6's 5% cap standing at
+**$5,034.32**. **A buy could have been placed. Nothing was worth buying, and §4 says that is the
+correct output of most runs.** **ZERO ORDERS PLACED; NOTHING LEFT NON-TERMINAL; no `trade_log.md` entry
+and no position block were due.**
+
 **Reconciliation 2026-10-09 — SEAT 1 OF 4, `1-premarket-research` 08:27 ET.**
 Selftest passed all five checks; `trading_enabled: true`, LIVE paper; pre-flight broker equity
 **$100,743.83**. `clock` at **08:27:45** reads **`is_open: false`** with `next_open`
