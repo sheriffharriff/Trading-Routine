@@ -40,6 +40,151 @@ anything where the honest-broker rule (§4) did real work>
 
 ## Entries
 
+### 2026-10-12 (Monday)
+
+**Account:** total **$100,849.3121 on official closes** (price basis, `bars --adjustment all`, VOO
+c **715.315**) / **$100,830.49 on the live broker mark** at 16:17 | day **−$26.2473 (−0.0260%)** from
+10-09's official $100,875.5594 | since inception **+0.8493%** (price basis, $100,000.00 opening).
+⚠ **`--adjustment raw` returns the SAME 715.315, so the basis choice is NON-DECISIVE today — stated
+anyway, because the basis is part of the figure.** ⚠⚠ **THE BROKER BASIS DISAGREES BY ALMOST A FACTOR
+OF TWO ON A TINY NUMBER AND THE TWO ARE NEVER CONCATENATED:** `last_equity` 100,876.54985379129 →
+**−$46.0599 (−0.0457%)**, matching `unrealized_intraday_pl` **−46.056535** and `change_today`
+**−0.00065** to the cent, because cash is static and VOO is the only moving row. **The official-close
+series is the one §1 is computed on; the broker line is reported beside it, not instead of it.**
+**Sleeves:** core **70.2526%** (official-close basis) / **70.2471%** live | satellite **0.0%** | cash
+**29.7474%**   (§2 band 65–75% — **5.25 points inside the lower edge, 4.75 inside the upper. NO
+rebalance due tomorrow.**) `rebalance_delta` **−$249.15** is a distance readout, not an instruction.
+**Breaker:** INACTIVE (`halt_triggered_at: none`, so no `HALT_CLEARED_AT` comparison was due)
+**Week:** 0/3 new positions (`week_of` **2026-10-12** — **no rollover**; today IS the Monday of this
+ISO week, confirmed by COMPUTING the anchor (2026-10-12, ISO week 42 weekday 1) rather than assuming it,
+so the reset was deliberately NOT re-applied)
+
+**Traded:** nothing. **Zero orders at all four seats, and not one gate blocked the one seat that could
+have placed one.** `orders --status all` returns **one row for the entire account history** — the
+2026-09-03 core fill, `status: filled`, terminal. **§7's overnight-limbo warning therefore has NO
+OPERAND rather than a clean bill.**
+**Researched:** **5 theses — 0 accepted, 5 rejected** (`T-2026-10-12-01` … `-05`, all written by the
+08:36 pre-market seat; this close seat writes none, so the count HOLDS at **143** — re-derived from
+source as 87 archived + 56 live headings, the live `grep -c '^### T-'` returning 57 because the file's
+own TEMPLATE heading matches).
+**Positions near a sell rule:** **NONE — and the distance is UNDEFINED, NOT LARGE.** Zero satellite
+positions, so §5.1–§5.4 had no operand for an 82nd consecutive session. Core VOO is exempt under §5 and
+was struck from the working list before any rule was read.
+
+**What happened:**
+
+A full Monday session — `clock` at 16:17 read `is_open: false` with `next_open` **2026-10-13** and
+`next_close` **2026-10-13**, the post-bell signature, so the holiday-skip path was not taken and today
+is a real session to journal. All four seats ran: 08:36 pre-market, 09:37 open, 12:42 midday, this one.
+
+VOO opened 715.80, ranged 714.28–716.29 and closed **715.315** on 1,392 trades / 32,544 shares — down
+**26.5¢ (−0.037%)** from Friday's 715.58. On a 70% core and 30% static cash that is the entire day's
+P&L: **−$26.25**, or **−0.026%**. Nothing else in the account moved, because there is nothing else in
+the account.
+
+The day's real decisions were all made before the bell and all of them were refusals. Five candidates
+were researched and all five rejected: the US/Russia diesel arrangement (`-01`), which died on part 1
+by explicit source denial — *"no specific publicly traded U.S. company is named"* — with the two named
+parties being **sovereign states** and the disclosed quantity being **tonnes, not dollars**; RTX's SM-3
+*"up to $6.3B"* (`-02`), an exact repeat of a 10-09 reject re-served **twice in one run** by two
+differently framed queries, one of which called it *"the closest apparent match"* of the whole session;
+a thirteen-item §3 sweep (`-03`); the macro/fiscal complex (`-04`); and the **forward calendar**
+(`-05`) — JPM/C/WFC reporting 10-13, CPI 10-14, PPI and retail sales 10-15 — which is the Monday-shaped
+non-event, arriving with named large-cap US companies, precise dates and even consensus numbers, and
+with no event in it at all.
+
+By 09:37 the open seat held a **fresh (`plan_date: 2026-10-12`, read off the field) and EMPTY** plan,
+with breaker INACTIVE, weekly count 0 of 3, satellite 0% against a 30% target, $30,000 idle, the §6 cap
+standing at $5,046.62 and `TRADING_ENABLED: true`. **A buy was placeable all morning. Nothing was worth
+buying.** The midday seat is exits-only and had nothing to exit. That is the whole session.
+
+This seat's own job list came out the same way, and every item is a null for a stated reason rather than
+a pass:
+
+- **Step 2, the high-water marks — THE ONE THING THIS RUN EXISTS TO DO — HAD NO OPERAND, for a fifth
+  consecutive close seat.** There are zero open satellite positions, so there was no `highest_close` to
+  raise and, more to the point, **no `(as of …)` date to advance.** The field is **ABSENT** — the third
+  state, carrying no date at all — so the "update the date even when the value does not move" rule had
+  nothing to write it onto either. **"High-water marks updated" would be FALSE today, and so would
+  "verified".** The honest form is: the job had no subject.
+- **One `bars` call was made, and it was for the day's record, not for a mark.** VOO's official close
+  (715.315) is what the P&L above is computed on. A second call on `--adjustment raw` returned the same
+  715.315, confirming the basis is non-decisive on a post-ex date, as expected from 09-28 onward.
+- **Core VOO was NOT stamped with a `highest_close` — a 91st consecutive run declining it, and this
+  seat's instance is the strongest form available to anyone:** it held a real, complete, official close
+  on the correct basis, it **owns the Step 2 write path**, the field is empty, and VOO is the only row
+  the broker returns. Writing it would arm a §5.4 trailing stop on the one position §5 exempts — a stop
+  that could eventually **sell core**, which §7 forbids outright.
+- Week anchor **recomputed** and found matching; **not** re-reset. `consecutive_closed_losses` stays
+  **0** and the update was never reached — zero exits means an **untouched** counter, not a reset one,
+  so §6's increment and the `clickup.py alert --key circuit-breaker` path remain **untested code**.
+  `control.md` notes empty. Zero open incidents in `alerts.md`.
+- **Session counter advanced 28 → 29 completed (25 → 26 post-fill), and this is the seat entitled to do
+  it:** the unit is a COMPLETED session, and only a seat standing after the bell may count the day it is
+  in. Routines 1 and 2 may never; routine 3 may never at all.
+
+**What I got wrong or nearly got wrong:**
+
+**1. The routine's own Output section asks me to report that the high-water marks were updated, and
+there is no truthful version of that sentence today.** The prompt's closing line lists "high-water marks
+updated" among the things to report, and the pull toward writing it — or its softer cousin, "marks
+verified, nothing stale" — is created by the instruction itself rather than by the data. Both are false.
+**A detector handed no input returns the same silence as one finding everything healthy**, and that
+silence is now five close seats and four midday seats long. The only defence is that the next run reads
+the `(as of …)` date to decide whether to backfill, and an absent field cannot be mistaken for a current
+one — which is luck arising from the empty sleeve, not a property of the design.
+
+**2. I computed the day's P&L on the broker basis first, because `account` hands it over ready-made,
+and nearly reported −$46.06 / −0.0457% as "the day's P&L" full stop.** The official-close basis gives
+−$26.25 / −0.0260%. On a day this small that is a **1.75×** disagreement in a headline number, and the
+two bases differ for a boring reason — `last_equity` is the broker's own prior-day equity mark
+(100,876.54985379129), which is not Friday's official-close equity (100,875.5594). The rule caught it
+before publication: name the basis or do not write the sentence. **Had the day been a large one, the
+same slip would have been invisible, because both numbers would have looked plausible.**
+
+**3. `balance_asof` reads 2026-10-09 at 16:17 on 10-12** — the broker's balance date has not yet rolled
+to today. Reported rather than reconciled away. It is the same field whose advance past the pay date
+settled the dividend test on 10-08, so it is a field this log has already leaned on once; a stale
+reading of it on a live session is worth knowing about before the next run leans on it again.
+
+**4. A fresh `n`/`v` drift instance arrived free, and it is the cheapest one on record: the same complete
+2026-10-12 bar read `n` 1,392 / `v` 32,544 and then `n` 1,393 / `v` 32,547 about a minute later,
+post-bell, with the market shut and `c`/`o`/`h`/`l`/`vw` identical to the cent.** This is not new
+evidence — the `n`/`v` floor test was retired on 10-07 after a demonstrated false positive on a complete
+bar — and the honest thing to say is that it **confirms an established conclusion rather than adding
+to it**. A field that moves on a bar that cannot have changed is unusable as evidence in either
+direction. The clock remains the only working market-state discriminator.
+
+**5. The `current_price` / official-close gap showed up again and I did not treat it as an offset:**
+`positions` reported `current_price` **715.125** against the bar's **715.315** — 19¢ apart at 16:17.
+Every per-position number in this entry that is quoted on the official basis is quoted on the official
+basis throughout; the broker mark is not mixed into it anywhere.
+
+**Nothing else was close to wrong, and the reason is structural rather than creditable: an empty
+satellite sleeve removes almost every surface on which this seat could err.** The four §5 rules, the
+backfill path, the breaker increment, the realised-P&L write and the `sell` path are all still
+unexercised code.
+
+**For the next run:**
+
+- **Tuesday 2026-10-13 is an ORDINARY shape.** `plan_date` will be compared against **2026-10-12** —
+  one trading day and one calendar day back, not Monday's three. The staleness gate's non-exercise count
+  stands at **38**; it has **never fired** and its alert path is **still untested**.
+- **Three names report tomorrow morning** — JPM, C, WFC — and **September CPI lands 10-14**. Both were
+  met today as `T-2026-10-12-05`, the forward calendar, and **rejected because nothing had happened
+  yet**. ⚠ When the prints arrive they are first-order events on scheduled reporters, and §4 would kill
+  the read-across to competitors anyway as the shared-cause object. **A reporting date is not a lead.**
+- **Nothing is unresolved:** zero open alerts, zero non-terminal orders, zero satellite positions, no
+  `HALT_CLEARED_AT` comparison due, `control.md` notes empty, ledger reconciled against the broker at
+  all four seats (one VOO row, 99.046311231 at 706.74).
+- **Core 70.2471% live and in band for an 82nd consecutive run. No rebalance due at tomorrow's open.**
+- **Thesis count 143. Session count 29 completed / 26 post-fill — advanced by THIS seat. DO NOT "fix"
+  29 back to 28, and do not advance it again before tomorrow's bell.**
+- **Daily summary posted to ClickUp as task `86bch0wcv`** (https://app.clickup.com/t/86bch0wcv), and
+  passed to `commit.py --summary-file` so it survives a failed push.
+
+---
+
 ### 2026-10-09 (Friday)
 
 **Account:** total **$100,875.5594 on official closes** (price basis, `bars --adjustment all`, VOO
