@@ -10,9 +10,9 @@ The block below is parsed by `scripts/common.py` and gates real behavior
 `key: value` format exactly. Prose goes underneath.
 
 ```
-last_run: 2026-10-12 08:36 ET 1-premarket-research (SEAT 1 OF 4, MONDAY. NO ORDERS AT THIS SEAT BY DESIGN AND NONE PLACED; selftest PASSED all five, trading_enabled true, LIVE paper, equity 100,879.52 at pre-flight. CLOCK 08:36:59 is_open false with next_open AND next_close BOTH dated 2026-10-12 - the PRE-MARKET FULL-SESSION signature, read off the DATE because FALSE has three meanings and TRUE has one; NOT a holiday, the closed-skip path was not taken, and the data plane agreed by returning NO bar dated 2026-10-12. RECONCILIATION CLEAN AND IT WAS THE RUN'S FIRST JOB: positions returns ONE row, core VOO 99.046311231 at 706.74, against ZERO satellite blocks in positions.md and sleeves satellite.count 0 - no discrepancy, so no research was done on top of a ledger in doubt. FIVE THESES, ALL FIVE REJECTED, acceptance rate still 0% and the thesis count 138 -> 143; the SESSION counter HOLDS at 28 completed / 25 post-fill because this seat stands BEFORE the bell on 10-12 and 10-09 was already counted by its own close seat - catch (21)'s shape for the EIGHTH time, DO NOT 'FIX' 28 TO 29. THE RUN'S ONE REAL FINDING IS ABOUT THIS LOG'S OWN METHOD, NOT ABOUT A CANDIDATE: THE STRUCTURAL QUERY FRAMING HAS A FALSE-POSITIVE FORM AND T-2026-10-12-01 IS IT - the 10-09 US/Russia diesel arrangement carries TWO NAMED PARTIES, a precise date, a dated delivery schedule, an OFAC licence with an expiry (2027-04-07) and a four-rung quantity ladder (300k/500k/1M/3M tons), which is the ENTIRE shape the framing screens for, AND IT IS UNTRADEABLE BECAUSE THE PARTIES ARE SOVEREIGN STATES AND THE QUANTITY IS NOT MONEY; a drill query returned the explicit denial 'no specific publicly traded U.S. company is named' and 'No dollar amount is attributed to any named U.S.-listed company', so it died on part 1 by SOURCE DENIAL rather than by my own reasoning. THE FIX IS ADDITIVE AND CHEAP: the structure must also satisfy PARTY TYPE (both parties companies) and UNIT (dollars, at Company B) - 'it returned the shape' is no longer sufficient grounds to proceed to a mechanism, and the framing is NOT weakened, it still disposed eight items with reasons attached for zero follow-up queries. SECOND NEW SHAPE, SPECIFIC TO THE MONDAY SEAT: THE FORWARD CALENDAR (T-2026-10-12-05) - a weekend window contains no trading and little disclosure, so the funnel fills the space with the WEEK AHEAD (JPM/C/WFC reporting 10-13, CPI 10-14, PPI/retail 10-15), which arrives carrying everything §4 asks for EXCEPT THE EVENT: named US-listed companies above $10B, precise dates, even CONSENSUS NUMBERS a fast reader can mistake for disclosed ones. It is also the purest form of rule (iii) - the earliest possible failure of 'is this new to the company's own disclosure' is an event nobody has disclosed because it has not happened. THIRD: RULE (iv) PROMOTED ONE LEVEL, FROM TICKER TO EVENT TYPE - the diesel item is the SECOND diesel-release object in six sessions (the G7 release was disposed 10-05) and died the same death both times, so a recurring EVENT TYPE carries the same warning as a recurring TICKER and that had not been written down. THE LOG WAS READ BEFORE THE TAPE AND PAID A SECOND CONSECUTIVE SESSION: THREE disposed rejects re-served - RTX's SM-3 'up to $6.3B' TWICE IN ONE RUN by two differently-framed queries (its FOURTH appearance in seven sessions and its SECOND on this identical award), Samsung Electro-Mechanics KRW 290B verbatim, and KEC with a fresh figure; zero queries spent on any, and query 2 called RTX 'the closest apparent match' and killed it on PART 2 in the source's own words, so A DISPOSED REJECT CAN ARRIVE DRESSED AS A RUN'S BEST CANDIDATE. TENTH CONSECUTIVE SESSION of the funnel answering §4's question in the negative OUT LOUD, 09-29 to 10-12 unbroken, and the THIRD in which EVERY broad scan produced one. THE PRIORS AGAIN ARRIVED INSTANTLY AGAINST AN EXPLICIT DENIAL AND NONE WAS WRITTEN DOWN: VLO/MPC/PSX on crack spreads and DAL/UAL/UPS/FDX on distillate - the fuel-cost tier is the more seductive because a COST-LINE improvement is a form §4 part 1 PERMITS, and it fails anyway because airlines burn JET FUEL not diesel (the path needs a substitution clause = the 'and also' kill), a commodity price is a MARKET VARIABLE (shared-cause in its purest form), and a presidential statement with no executed contract is not a transaction to be second to. ZERO `move` CALLS - AN ABSENT CHECK, NOT A SKIPPED OR PASSING ONE: four of five rejects CARRY NO TICKER AT ALL, the fifth is a first-order repeat, and the thirteen-item sweep died at §3 upstream of the filter; a decorative call declined for the third time, and NOT COUNTABLE AS A ZERO-move SESSION because three seats remain. HOUSEKEEPING ALL THREE 'DO NOTHING, FOR THE RIGHT REASON': week anchor RECOMPUTED (today IS Monday, ISO anchor IS 2026-10-12, already matching) and DELIBERATELY NOT RE-RESET, new_positions_this_week 0 of 3; breaker INACTIVE with halt_triggered_at none so NO HALT_CLEARED_AT comparison was due; core 70.26% live / 70.2604% official IN BAND, 79th consecutive run, NO REBALANCE and rebalance_delta -$262.37 is a DISTANCE READOUT. plan_today.md arrived reading plan_date 2026-10-09 - THREE CALENDAR DAYS OLD AND CORRECT, predicted in advance by the Friday review, because the comparison is against the last TRADING day. §5.1-5.4 RE-EVALUATED IN ORDER AND ALL FOUR HAVE NO OPERAND - zero holdings queries due and zero run, highest_close still ABSENT (third state, no date), no backfill due and the reason is THAT THERE IS NO FIELD, NOT THAT IT IS FRESH. Core VOO NOT stamped for an 88th run; the official close 715.58 WAS in hand, so this is the STRONG grade. FILE SIZES - THE COLLAPSE WAS REAL AND THE RUN'S OWN RECORDING SPENT IT, WHICH IS ITEM (9)'s MECHANISM CAUGHT IN THE ACT: five carry-forward items were genuinely collapsed and state.md stood at 122,950B, a real -3,858B against the 126,808B it arrived at, AND IT THEN WENT BACK UP PAST WHERE IT STARTED on the counter updates and on the paragraph recording the collapse itself - THE SAVING WAS CANCELLED NOT BY ANOTHER FILE BUT BY THE ACT OF WRITING DOWN THAT IT HAD HAPPENED, which argues for the PROMPT-LEVEL fix (an archivable unit) rather than for more discipline. positions.md 98,296B -> 97,981B is a GENUINE -315B achieved while ALSO adding today's block. research_log.md grew +18,327B and plan_today.md +2,151B, so THE FILE SET GREW and reporting only a collapse would be the flattering half; the exact self-consistent figures are in item (9), iterated to convergence per its own rule. TEN items remain with the human, none discharged, none added)
+last_run: 2026-10-12 09:37 ET 2-market-open-execution (SEAT 2 OF 4, MONDAY. THE ONLY SEAT THAT OPENS POSITIONS, AND IT OPENED NONE - ZERO ORDERS OF ANY KIND, AND NOT ONE GATE BLOCKED THEM; selftest PASSED all five, trading_enabled true, LIVE paper, equity 100,939.44 at pre-flight and 100,932.33 at `sleeves` six seconds apart, which is the live-midpoint item in miniature. CLOCK 09:37:19 is_open TRUE - THE ONE UNAMBIGUOUS READING, and the shape confirms it from the other side: next_open has rolled to 2026-10-13 while next_close is STILL TODAY 16:00, the mid-session signature; the closed-skip path was not taken. STEP 2, THE STALENESS GATE, EXERCISED BY THE SEAT THAT HOLDS IT: plan_date READ OFF THE FIELD = 2026-10-12 against today's ET date 2026-10-12 taken from the CLOCK TIMESTAMP rather than a shell date - FRESH, SO THE GATE DID NOT FIRE. NON-EXERCISE COUNT 38, STILL NEVER FIRED, ALERT PATH STILL UNTESTED CODE, and 'passed' and 'fired' remain opposite outcomes of the same check. THE PLAN WAS FRESH *AND* EMPTY - zero BUY, zero SELL, zero REBALANCE - WHICH IS PRECISELY THE CASE THE INHERITED WARNING NAMES: A FRESH EMPTY PLAN AND A STALE PLAN PRODUCE A BYTE-FOR-BYTE IDENTICAL ZERO-ORDER RUN, SO THE RECORD OF WHICH ONE THIS WAS IS THE ONLY THING THAT SEPARATES THEM AND IT IS WRITTEN HERE: FRESH, FIFTH CONSECUTIVE SUCH MORNING. RECONCILIATION CLEAN AND DONE FIRST: positions returns ONE row, core VOO 99.046311231 (unchanged since the 09-03 fill) at avg_entry 706.74, cost_basis 69,999.99, market_value 70,932.332736, unrealized +932.34 = +1.332%, against ZERO satellite blocks in positions.md and sleeves satellite.count 0 - no discrepancy, nothing was placed on top of a ledger in doubt. STEP 3 SKIPPED ON core_established TRUE - a path that ran once on 2026-09-03 and by construction never runs again; NOT re-bootstrapped. STEP 4 HAD NO OPERAND: zero SELL intents and zero satellite positions, so §5.1-5.4 again had nothing to measure and the loss-streak update WAS NEVER REACHED - consecutive_closed_losses HOLDS at 0 and that is an UNTOUCHED counter, NOT a reset one, which are different facts. STEPS 5 AND 6 HAD NO INPUT: zero BUY intents means there was NOTHING TO RE-VALIDATE, and all five of the day's theses T-2026-10-12-01..-05 WERE CONFIRMED PRESENT AND REJECTED in research_log.md before concluding that - the plan's own instruction 2, discharged rather than assumed. ZERO `move` CALLS AT THIS SEAT TOO - AN ABSENT CHECK, NOT A SKIPPED OR A PASSING ONE - and seats 1 and 2 are now both zero, though two seats remain so the DAY is not yet a zero-`move` day. NOTHING WAS REHABILITATED AT A BETTER PRICE: GFS and ELMT were NOT re-screened (instruction 9 honored), and the §6 headroom - breaker INACTIVE, 0 of 3 weekly, 5% cap $5,046.62, $30,000 IDLE satellite cash against a 30% target - WAS NOT TREATED AS AN ARGUMENT FOR FINDING SOMETHING; an empty plan is a complete instruction, not a gap to fill. STEP 7 NO REBALANCE: core 70.28% live (70,932.332736 / 100,932.33), core_in_band true with 4.72 points to the near edge, 80th consecutive run; rebalance_delta -$279.70 is a DISTANCE READOUT NOT AN INSTRUCTION, and it WIDENED from -$262.37 at 08:36 purely because VOO rose intraday - a widening delta inside the band is not a trend toward anything. HOUSEKEEPING, ALL 'DO NOTHING FOR THE RIGHT REASON': week anchor RECOMPUTED not inherited (today IS Monday, ISO anchor IS 2026-10-12, already matching week_of) and DELIBERATELY NOT RE-RESET, new_positions_this_week 0 of 3; breaker INACTIVE with halt_triggered_at none so NO HALT_CLEARED_AT comparison was due (control.md carries `none` regardless) and control.md notes are EMPTY. CORE VOO NOT STAMPED WITH A `highest_close` FOR AN 89th RUN AND THE REFUSAL WAS RE-MADE FROM §5's CORE EXEMPTION, NOT INHERITED FROM THE COUNT - but the grade is WEAK ON BOTH LEGS AND IS STATED SO: this seat made NO `bars` call, so it never held an official close to decline, and it holds no stamp write path either; the 716.1532 in `positions` is a LIVE BROKER MIDPOINT and declining to use a number that is not a close is not the same act as declining a close. STEP 6's voo_close_at_entry DEFECT (open item 12) COST NOTHING AGAIN AND ONLY BECAUSE NO POSITION OPENED - it is NOT fixed, and the partial today-bar trap is still waiting for the first real fill. SESSION COUNTER HOLDS AT 28 COMPLETED / 25 POST-FILL - the unit is a COMPLETED session and 10-12 is mid-session at this seat; DO NOT 'FIX' 28 TO 29, catch (21)'s shape for the NINTH time. Thesis count HOLDS at 143 - this seat writes no theses, and nothing was skipped on priced-in grounds so research_log.md took no new line either. TEN items remain with the human, none discharged, none added. FILE SIZES - A GENUINE NET REDUCTION, AND THE METHOD THAT PRODUCED IT WAS DEMOTION RATHER THAN DELETION: state.md 128,756B -> about 125.5KB, a REAL -3.2KB, AND THE -4.4KB THE COLLAPSE ACTUALLY ACHIEVED WAS CUT TO THAT BY THIS PARAGRAPH ITSELF (about 1.1KB) - ONE ITERATION, MEASURED, THEN STOPPED, which is item (9) caught in the act for the second consecutive session. The saving came from demotion: because the 6,608-byte pre-market last_run was REWRITTEN TO 2,448 BYTES AS prior_run instead of being carried whole, and two counter-bearing carry-forward items (the `highest_close` refusal, 49 lines -> 27; the staleness-gate item, 23 -> 15) were collapsed to their rule plus the instances that still carry information. positions.md 97,981B -> 99,088B, +1,107B, and that GROWTH IS REAL AND REPORTED AS SUCH: the two 10-12 seat blocks were folded into ONE, which is the right shape, but the fold still costs more than the duplicate it removed. NET ACROSS THE SET about -2.1KB with plan_today.md, research_log.md and trade_log.md UNTOUCHED - the open seat writes no theses, had no fills to log and skipped nothing on priced-in grounds. ⚠ THE FIGURES ARE NOT ITERATED TO CONVERGENCE AND ARE DELIBERATELY WRITTEN WITH THE LAST DIGITS LOOSE, because this very sentence changes the number it reports - item (9)'s mechanism, and chasing the fixed point costs more bytes than the precision is worth)
 
-prior_run: 2026-10-09 16:46 ET 5-friday-weekly-review (SEAT 5, no trading by design and none occurred; equity 100,899.33. THE §1 ANSWER WAS NO AND EVERY WINDOW GOT WORSE: satellite 0.0000% vs VOO TTM total return +17.3486% = -17.3486pp; week -1.1635pp, since-sleeve-funded -0.9452pp, 1M -2.3705pp, 3M -3.8743pp - FOUR OF FIVE ROWS WORSE THAN WEEK 5 AND THE WEEKLY ROW CHANGED SIGN, the same mechanism in the unflattering direction, reported FIRST. Combined annual handicap re-derived 6.0978pp/yr, UP from ~5.82pp because the BENCHMARK improved. THREE FINDINGS: (1) the 'N of N' daily separation is an ALGEBRAIC IDENTITY not a streak - book_return = corewt x VOO_return exact to 1.3e-16, so a counterexample CANNOT exist while the sleeve is empty; SIX WEEKS TREATED A THEOREM AS EVIDENCE, item RETIRED, do not re-derive. (2) THE CORE SLEEVE DOES NOT TRACK THE BENCHMARK AND FIVE REVIEWS REPORTED 0.0000% AGAINST THE WRONG THING - core actual +1.2508% from the 706.74 fill vs VOO TOTAL +1.5090% = -0.2583pp, the uncredited $1.825/sh; the price basis really is 0.0000% and that was not false, it answered a question §1 does not ask. (3) THE SINCE-INCEPTION EXCESS HAS TWO DEFENSIBLE VALUES 1.31pp APART (-1.5932pp from 09-01, -0.2830pp from the 09-03 close) - week 5's 'statistic promoted before it is stable' defect arriving in the §1 HEADLINE, which is worse; week 5's inherited +0.6088% inception leg RETIRED as unreconcilable on either basis. 40 theses that week, 0 accepted, 138 since inception (87 archived Sept + 51 live Oct, re-derived and agreeing). REJECT BOARD REBUILT FROM SOURCE: 106 measurable rows, 46 beat VOO / 60 lagged, mean -1.20% median -1.05% moving in OPPOSITE directions week over week, and on a ROW-FOR-ROW IDENTICAL n=64 subset the mean went -2.04 -> -1.00 -> -1.30% across three weeks while the counts held - the cleanest instance the instability item will get. THE THEME-CONCENTRATION ITEM REACHED ITS THIRD REVIEW AND WEAKENED 9/12 -> 7/12 SO IT WAS NOT PROMOTED - week 5's counter-discipline caught the item week 5 nominated. LITE the standing bill at +29.34pp, HPE the largest cost at +40.05pp, MU fell +13.86 -> +7.79pp as the reminder that the same row indicts one Friday and acquits the next. A ROUTINE VANISHED INSIDE THE REVIEW WEEK (no 10-05 close commit, 19 of 20 seats) WITH ZERO OPEN ALERTS - open item (11) live. week_of -> 2026-10-12 reset in the field; state.md -3,241B, the first net reduction in three sessions, BUT weekly_review.md grew ~42KB in the same run - ELEVEN TIMES the saving - and is now the LARGEST file in the corpus at 190,907B with the Friday seat its only writer, the same unbounded shape as state.md and nobody had named that. ClickUp 86bcg4rzn)
+prior_run: 2026-10-12 08:36 ET 1-premarket-research (SEAT 1 OF 4, no orders at this seat by design and none placed; equity 100,879.52, pre-market clock shape read off the DATE not the boolean. Reconciliation clean BEFORE any research: one VOO row 99.046311231 at 706.74 against zero satellite blocks. FIVE THESES, ALL FIVE REJECTED (T-2026-10-12-01..-05), 138 -> 143, acceptance rate still 0%. THE FINDING WAS ABOUT THE LOG'S OWN METHOD, NOT A CANDIDATE: THE STRUCTURAL QUERY FRAMING HAS A FALSE-POSITIVE FORM AND -01 IS IT - the 10-09 US/Russia diesel arrangement carried two named parties, a precise date, a dated delivery schedule, an OFAC licence expiring 2027-04-07 and a four-rung tonnage ladder, i.e. the ENTIRE shape the framing screens for, AND WAS UNTRADEABLE because the parties are SOVEREIGN STATES and the quantity is NOT MONEY; it died on part 1 by EXPLICIT SOURCE DENIAL rather than by the agent's own reasoning. THE FIX IS ADDITIVE AND CHEAP: the structure must ALSO satisfy PARTY TYPE (both parties companies) and UNIT (dollars, at Company B); the framing is not weakened - it disposed eight items with reasons attached for zero follow-up queries. ALSO NEW: the FORWARD CALENDAR as a Monday-specific non-event shape (-05), and RULE (iv) PROMOTED ONE LEVEL FROM TICKER TO EVENT TYPE - the diesel item was the SECOND diesel-release object in six sessions and died the same death both times. THE LOG READ BEFORE THE TAPE PAID A SECOND CONSECUTIVE SESSION: three disposed rejects re-served, RTX's SM-3 'up to $6.3B' TWICE IN ONE RUN by two differently-framed queries, zero queries spent on any - A DISPOSED REJECT CAN ARRIVE DRESSED AS A RUN'S BEST CANDIDATE. TENTH consecutive session of the funnel answering §4's question in the negative OUT LOUD. Zero `move` calls, ABSENT not passing - four of five rejects carry no ticker. Core 70.2604% in band, 79th run, rebalance_delta -$262.37; week anchor matched and deliberately not re-reset; plan_today.md arrived at plan_date 2026-10-09, THREE CALENDAR DAYS OLD AND CORRECT because the comparison is against the last TRADING day, predicted in advance by the Friday review. 89th-run refusal of a VOO `highest_close` declined at the STRONG grade - it held 10-09's real official close 715.58. state.md's collapse was REAL (-3,858B) AND THEN SPENT BY THE ACT OF RECORDING IT, which is item (9)'s mechanism caught live and argues for a prompt-level archivable unit rather than more discipline)
 week_of: 2026-10-12
 new_positions_this_week: 0
 consecutive_closed_losses: 0
@@ -20,9 +20,9 @@ circuit_breaker: INACTIVE
 halt_triggered_at: none
 core_established: true
 core_ticker: VOO
-core_pct: 70.26
+core_pct: 70.28
 satellite_pct: 0.0
-cash_pct: 29.74
+cash_pct: 29.72
 open_thesis_ids: none
 ```
 
@@ -39,28 +39,34 @@ discarded; settled items were folded to one line each and repeated emphasis was 
 
 ### Live — act on these
 
-- **⚠ TUESDAY 2026-10-13 HANDOFF — THE MONDAY ITEM IS SPENT; ALL THREE OF ITS "DO NOTHING, FOR THE
-  RIGHT REASON" CALLS WERE MADE AND CAME OUT AS WRITTEN.** *(The Monday handoff is REPLACED, not kept
-  beside its own answer: the week anchor was recomputed and matched so nothing was re-reset; no
-  high-water backfill was due because `highest_close` is ABSENT rather than current; and
-  `plan_today.md` arrived at `plan_date: 2026-10-09`, three calendar days old and CORRECT.)*
-  **`plan_today.md` NOW CARRIES `plan_date: 2026-10-12` — FRESH, AND DELIBERATELY EMPTY: zero BUY,
-  zero SELL, zero REBALANCE.** ⚠⚠ **A FRESH EMPTY PLAN AND A STALE PLAN PRODUCE A BYTE-FOR-BYTE
-  IDENTICAL ZERO-ORDER RUN. READ `plan_date` OFF THE FIELD; NEVER INFER FRESHNESS FROM THE OUTCOME.**
-  **Staleness-gate non-exercise count 38 after 10-12's open; it has NEVER FIRED and its alert path is
-  UNTESTED CODE.** ⚠ **Tomorrow's comparison is against 10-12 and will read ONE trading day and ONE
-  calendar day — the ordinary shape, not Monday's.**
-  **Core 70.2604% official / 70.26% live, IN BAND, 79th consecutive run — NO REBALANCE DUE.**
-  `rebalance_delta` −$262.37 is a distance readout, not an instruction.
-  ⚠ **Nothing is unresolved: zero open alerts, zero non-terminal orders, breaker INACTIVE with
-  `halt_triggered_at: none` so no `HALT_CLEARED_AT` comparison is due, `control.md` notes empty.**
-  ⚠⚠ **FIVE THESES WERE WRITTEN 10-12 AND ALL FIVE REJECTED — `T-2026-10-12-01` … `-05`. FOUR OF THE
-  FIVE CARRY NO TICKER AT ALL (two macro aggregates, a forward calendar, and a Company-B-less sovereign
-  supply arrangement), WHICH IS WHY ZERO `move` CALLS WERE DUE.** **Thesis count 138 → 143.**
-  ⚠ **THE SESSION COUNTER HOLDS AT 28 COMPLETED / 25 POST-FILL. The unit is a COMPLETED session; the
-  10-12 pre-market seat stands before the bell and 10-09 was counted by its own close seat. DO NOT
-  "FIX" 28 TO 29 — catch (21)'s shape for the eighth time, and catch (22) is the worked failure of
-  stating the rule correctly and then writing the advanced number anyway.**
+- **⚠ TUESDAY 2026-10-13 HANDOFF — WRITTEN BY THE 10-12 OPEN SEAT, WHICH SPENT THE MONDAY ITEM IN FULL.**
+  *(The Monday handoff and its own answer are REPLACED by this one line each, not kept side by side: the
+  plan was FRESH, the gate did not fire, core stayed in band, no backfill was due, and all three of the
+  Monday item's "do nothing, for the right reason" calls came out as written.)*
+  ⚠⚠ **10-12 PLACED ZERO ORDERS AT THE ONE SEAT THAT CAN OPEN A POSITION, AND NOT ONE GATE BLOCKED IT.**
+  The plan was **FRESH (`plan_date: 2026-10-12`, read off the field and compared to the CLOCK's ET date)
+  AND EMPTY**, while breaker was **INACTIVE**, weekly count **0 of 3**, satellite **0% deployed with
+  $30,000 idle**, `TRADING_ENABLED` **true** and the §6 cap standing at **$5,046.62**. **A buy was
+  placeable all morning. Nothing was worth buying, and an empty plan is a complete instruction rather
+  than a gap to fill.**
+  ⚠ **TOMORROW'S GATE READS THE ORDINARY SHAPE: the comparison is against **2026-10-12** — ONE trading
+  day and ONE calendar day back, not Monday's three.** **Non-exercise count stands at 38; the gate has
+  STILL never fired and its alert path is STILL untested code.**
+  **Core 70.28% live at 09:37 (70,932.332736 / 100,932.33), IN BAND with 4.72 points of headroom, 80th
+  consecutive run — NO REBALANCE DUE.** `rebalance_delta` −$279.70 is a distance readout, not an
+  instruction, and it **widened** from −$262.37 at 08:36 only because VOO rose intraday.
+  ⚠ **Nothing is unresolved: zero open alerts, zero non-terminal orders, zero satellite positions,
+  breaker INACTIVE with `halt_triggered_at: none` so no `HALT_CLEARED_AT` comparison is due, and
+  `control.md` notes empty.** **Ledger reconciled against the broker at this seat: one VOO row,
+  99.046311231 at 706.74, against zero satellite blocks.**
+  ⚠⚠ **ALL FIVE 10-12 THESES WERE CONFIRMED PRESENT AND REJECTED IN `research_log.md` BY THIS SEAT
+  BEFORE IT CONCLUDED THERE WAS NOTHING TO EXECUTE — `T-2026-10-12-01` … `-05`, four of them carrying no
+  ticker at all. Thesis count HOLDS at 143; nothing was skipped on priced-in grounds, so the open seat
+  added no line to the research log.**
+  ⚠ **THE SESSION COUNTER HOLDS AT 28 COMPLETED / 25 POST-FILL. The unit is a COMPLETED session and
+  10-12 was still mid-session when the open seat ran. DO NOT "FIX" 28 TO 29 — catch (21)'s shape for the
+  NINTH time, and catch (22) is the worked failure of stating the rule correctly and then writing the
+  advanced number anyway.**
 
 - **⚠⚠ GFS/TSMC CLEARED EVERY FILTER AND DIED ON THE *THESIS PARTS* — `T-2026-10-09-01`, STILL THE
   MOST INFORMATIVE REJECTION THIS LOG HAS PRODUCED.** *(Collapsed 10-12 08:36: the catch (23)/(24)
@@ -832,55 +838,33 @@ discarded; settled items were folded to one line each and repeated emphasis was 
   across the two.** **No new costume in fourteen sessions — converging, not growing. FREE IS NOT THE
   SAME AS PERMITTED.**
 
-- **⚠ CORE VOO IS NEVER STAMPED WITH A `highest_close` — 88 RUNS. 10-09 16:17 IS THE *STRONGEST*
-  INSTANCE ON RECORD, AND IT ALSO CORRECTS THIS ITEM'S OWN ARGUMENT.** *(Collapsed 10-09 16:17: the
-  per-seat grading narrative for 10-05 through 10-08 is folded to the rule it produced. Nothing live
+- **⚠ CORE VOO IS NEVER STAMPED WITH A `highest_close` — 89 RUNS, AND THE *GRADE* IS THE POINT, NOT THE
+  COUNT.** *(Collapsed 10-12 09:37: the per-seat grading narrative for 10-05 through 10-12 08:36 is
+  folded to the rule it produced plus the two instances that still carry information. Nothing live
   discarded.)*
   **THE REFUSAL, RE-DERIVED AND NOT INHERITED:** §5 exempts core from all four sell rules. A
   `highest_close` on VOO would **fabricate a §5.4 trailing stop on the one position the strategy
   exempts**, which could eventually sell core on a drawdown — **§7 forbids that outright.** **Measure
   core from the 706.74 fill (a RAW print) and from an official close, never from a `positions` field.**
-  ⚠⚠ **GRADED, NOT COUNTED — AND THE GRADE IS THE WHOLE POINT: A SEAT THAT NEVER FETCHED THE DATA AND A
-  SEAT THAT FETCHED IT AND REFUSED LOOK IDENTICAL IN A RUN SUMMARY, AND ONLY THE SECOND IS EVIDENCE OF
-  ANYTHING.** **STRONG** = the seat held the NUMBER *and* a WRITE PATH (the close run, whose Step 2 *is*
-  the stamp; and routine 3's Step 2 backfill). **WEAK** = no write path, or no `bars` call so no number
-  was ever in hand to decline.
-  ⚠⚠ **10-09 16:17 IS THE STRONGEST: it held a real completed official close — **715.58**, from its own
+  ⚠⚠ **GRADED, NOT COUNTED — A SEAT THAT NEVER FETCHED THE DATA AND A SEAT THAT FETCHED IT AND REFUSED
+  LOOK IDENTICAL IN A RUN SUMMARY, AND ONLY THE SECOND IS EVIDENCE OF ANYTHING.** **STRONG** = the seat
+  held the NUMBER *and* a WRITE PATH (the close run, whose Step 2 *is* the stamp; and routine 3's Step 2
+  backfill). **WEAK** = no write path, or no `bars` call, so no number was ever in hand to decline.
+  ⚠⚠ **THE STRONGEST ON RECORD IS 10-09 16:17: a real completed official close — **715.58**, from its own
   `bars --days 4 --adjustment all` pull — AND the write path, on the only row the broker returns, at the
-  one routine whose own instruction reads *"record the closes"*. NOTHING WAS WRITTEN.** *(Prior strongest:
-  10-08 16:16, same shape at 711.23. The 10-09 08:27, 09:36 and 12:41 seats were all the WEAK grade and
-  said so — none made a `bars` call on VOO, so none had a number to decline.)*
-  ⚠⚠ **THE 88th IS 10-12 08:36, AND IT IS THE STRONG GRADE AT A *PRE-MARKET* SEAT FOR THE FIRST TIME:
-  it pulled `bars --days 4 --adjustment all` for its tape context and therefore HELD A REAL COMPLETED
-  OFFICIAL CLOSE — **715.58** — and declined. ⚠ **It holds no stamp write path, so the grade is strong on
-  the NUMBER and weak on the PATH; stated that way rather than claimed whole.** ⚠⚠ **AND THE PHANTOM
-  DRAWDOWN MOVED AGAIN, WHICH IS CATCH (25) CONFIRMING ITSELF: against a 716.29 mark, 10-09's close sits
-  −0.0991% below it, so the figure has now moved in BOTH directions across three sessions
-  (−0.7064% → −0.0991%). A fabricated mark produces a drawdown that TRACKS THE TAPE, which is the real
-  danger — not that it only ever grows.**
-  ⚠ **A REFUSAL REPEATED 88 TIMES IS A REFUSAL NOBODY IS DECIDING ANY MORE, AND AUTOMATIC IS NOT SOUND.
+  one routine whose own instruction reads *"record the closes"*. NOTHING WAS WRITTEN.** *(10-12 08:36 was
+  the STRONG-on-number grade at a pre-market seat for the first time, holding the same 715.58 with no
+  write path.)*
+  ⚠⚠ **THE 89th IS 10-12 09:37, AND IT IS THE **WEAK** GRADE ON BOTH LEGS — STATED THAT WAY RATHER THAN
+  COUNTED AS A WIN. That seat made **NO `bars` call**, so it never held an official close to decline, and
+  it opened no position, so its Step 6 write path was never live either.** ⚠ **The 716.1532 it did hold
+  is a **LIVE BROKER MIDPOINT** out of `positions`, and DECLINING TO STAMP A NUMBER THAT IS NOT A CLOSE
+  IS NOT THE SAME ACT AS DECLINING A CLOSE.**
+  ⚠⚠ **THE PHANTOM DRAWDOWN TRACKS THE TAPE IN BOTH DIRECTIONS — catch (25) confirming itself: against a
+  716.29 mark, the figure has moved −0.7064% → −0.0991% across three sessions. A fabricated mark produces
+  a drawdown that MOVES WITH THE MARKET; the danger is not that it only ever grows.**
+  ⚠ **A REFUSAL REPEATED 89 TIMES IS A REFUSAL NOBODY IS DECIDING ANY MORE, AND AUTOMATIC IS NOT SOUND.
   RE-MAKE IT ON ITS MERITS EVERY RUN; DO NOT INHERIT IT.**
-  ⚠⚠⚠ **CATCH (25), AND IT IS A CORRECTION TO THIS ITEM RATHER THAN TO ANOTHER FILE: THIS ENTRY SAID OF
-  THE PHANTOM DRAWDOWN "THE NUMBER GROWS ON ITS OWN". THAT IS A ONE-WAY-RATCHET CLAIM AND ON 10-09 IT
-  SHRANK.** Had 10-06's close been stamped the mark would sit at **716.29**; 10-08's close was
-  **−0.7064%** below it and 10-09's **715.58** is **−0.0991%** below it — **a 0.607pp recovery in one
-  session.**
-  ⚠⚠ **THE CORRECTED ARGUMENT IS STRONGER THAN THE ONE IT REPLACES: a fabricated mark produces a
-  drawdown that **MOVES WITH THE TAPE IN BOTH DIRECTIONS**, which is precisely what makes arming §5.4 on
-  an exempt position dangerous. "It grows on its own" oversold a real point and would have been wrong by
-  Monday.** ⚠ **The refusal itself is unchanged and was re-derived from §5 and §7, not from the drawdown
-  figure.**
-  ⚠⚠ **AND THE MECHANISM OF THE NEAR-MISS IS THE PART TO CARRY: the sentence was queued to copy forward
-  VERBATIM because it was emphatic, it was inherited, AND IT SUPPORTED THE CONCLUSION THE SEAT WAS GOING
-  TO REACH ANYWAY. AN INHERITED CLAIM THAT ARGUES FOR WHAT YOU ALREADY INTEND TO DO IS THE ONE YOU ARE
-  LEAST LIKELY TO AUDIT.**
-  ⚠⚠ **THE HONEST READING OF A REFUSAL REPEATED 87 TIMES IS NOT "SEE, IT WAS RIGHT" — A REFUSAL THIS
-  AUTOMATIC IS A REFUSAL NOBODY IS DECIDING ANY MORE, AND AUTOMATIC IS NOT SOUND.** ⚠ **10-09 16:17
-  graded itself honestly on exactly that: what it did was re-read the prior reasoning and confirm it
-  still holds, which is a step short of deriving it cold from §5 and §7. It happens to be correct. It was
-  not hard.**
-  ⚠ **§5.4 FAILS TOWARD SELLING, and core is the position that must never be sold on a drawdown — which
-  is why the direction of this error matters more than its size.**
 
 - **⚠⚠ EVERY ROUTINE'S SCOPE BINDS HARDEST ON AN EMPTY SLEEVE WITH ~30% CASH.** Routine 1 **RESEARCHES
   AND PLANS; IT PLACES NO ORDERS.** Routine 3 is **exits-only and may not open a position under ANY
@@ -906,26 +890,18 @@ discarded; settled items were folded to one line each and repeated emphasis was 
   on — and neither is a green day that lags the benchmark, nor a red week that beats it.**
 
 - **⚠ AN EMPTY PLAN THAT IS FRESH AND A PLAN THAT IS STALE PRODUCE IDENTICAL ZERO-ORDER RUNS. READ
-  `plan_date`, NEVER INFER FROM THE OUTCOME.** **10-06's plan WAS FRESH (`plan_date: 2026-10-06`, read and
-  compared by the 09:36 seat) and deliberately EMPTY, as 10-05's was. THE ZERO-ORDER MORNING IT
-  PRODUCED IS BYTE-FOR-BYTE WHAT A STALE PLAN WOULD HAVE PRODUCED, AND ONLY `plan_date` SEPARATED
-  THEM.** ⚠ **10-07's plan is the same shape again: written at 08:24 with `plan_date: 2026-10-07`,
-  FRESH and deliberately EMPTY — so the 09:35 seat will produce a third consecutive indistinguishable
-  morning.**
-  ⚠⚠ **UPDATED 10-09 09:36 BY THE SEAT THAT HOLDS THE GATE: `plan_today.md` carried `plan_date:
-  2026-10-09`, READ OFF THE FIELD AND COMPARED TO TODAY'S ET DATE — **FRESH**, and the morning it
-  produced was the FOURTH consecutive indistinguishable zero-order one. **THE GATE HAS NOW BEEN
-  EXERCISED 37 TIMES AND HAS NEVER FIRED; ITS ALERT PATH REMAINS UNTESTED CODE.**
-  ⚠⚠ **UPDATED 10-12 08:36 BY THE SEAT THAT *WRITES* THE FIELD RATHER THAN READS IT: `plan_today.md`
-  ARRIVED CARRYING `plan_date: 2026-10-09` — **THREE CALENDAR DAYS OLD AND CORRECT**, because the
-  comparison is against the last **TRADING** day. ⚠ **THE FRIDAY REVIEW PREDICTED THIS EXACT SHAPE IN
-  ADVANCE AND IT ARRIVED AS DESCRIBED, which is the only thing that stopped a correct plan reading as a
-  stale one.** **The new plan carries `plan_date: 2026-10-12` — fresh and deliberately EMPTY, so the
-  09:35 seat will produce a FIFTH consecutive indistinguishable zero-order morning. Non-exercise count
-  38 after today's open.**
-  ⚠ **THE 37th EXERCISE *PASSED* — IT DID NOT FIRE, AND "PASSED" AND "FIRED" ARE OPPOSITE OUTCOMES OF
-  THE SAME CHECK. Do not write that the gate has been tested. ⚠⚠ **09-28 WAS THE MORNING IT WOULD FINALLY HAVE FIRED — `plan_today.md`
-  genuinely carried `plan_date: 2026-09-25` — AND THE RUN CONTAINING THE GATE DID NOT EXECUTE.**
+  `plan_date`, NEVER INFER FROM THE OUTCOME.** *(Collapsed 10-12 09:37 by the seat that HOLDS the gate:
+  the per-morning narratives for 10-05 through 10-09 are folded to the count and the rule, since a
+  superseded reading of a field that is overwritten daily is not a durable fact. Nothing live discarded.)*
+  ⚠⚠ **UPDATED 10-12 09:37 — READ OFF THE FIELD AND COMPARED TO THE *CLOCK'S* ET DATE (not a shell
+  date): `plan_date: 2026-10-12` against today 2026-10-12 — **FRESH**, and the morning it produced was
+  the **FIFTH consecutive indistinguishable zero-order one**.**
+  **THE GATE HAS NOW BEEN EXERCISED 38 TIMES AND HAS NEVER FIRED; ITS ALERT PATH REMAINS UNTESTED CODE.**
+  ⚠ **EVERY EXERCISE SO FAR *PASSED* — IT DID NOT FIRE, AND "PASSED" AND "FIRED" ARE OPPOSITE OUTCOMES OF
+  THE SAME CHECK. Do not write that the gate has been tested.**
+  ⚠⚠ **09-28 WAS THE MORNING IT WOULD HAVE FIRED — the plan genuinely carried `plan_date: 2026-09-25` —
+  AND THE RUN CONTAINING THE GATE DID NOT EXECUTE. The gate's one real opportunity was lost to a missing
+  run, not survived.**
   ⚠ **The first morning it fires will by construction be a morning when the pre-market run failed. Read
   routine 2's Step 2 then; do not recall it.**
 
