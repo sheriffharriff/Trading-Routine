@@ -85,58 +85,64 @@ check that the pull returned the right session. A stored baseline is a *label*, 
 
 *(none — no **satellite** positions have been opened yet. Core VOO exists and is deliberately not tracked here, per the top-of-file rules and the fill note further down.)*
 
-**Reconciliation 2026-10-12 — PRE-MARKET SEAT 1 OF 4, 08:36 ET.** *(Collapsed by this seat: the
-10-09 four-seat block's repeated statements of the same null, its three per-seat sleeve readings and
-its clock-shape restatement are folded to the lines below. ⚠ WHAT WAS REMOVED IS NAMED, and every
-durable finding is either below or already in `state.md`.)*
+**Reconciliation 2026-10-12 — SEATS 1 AND 2, 08:36 AND 09:37 ET.** *(Collapsed by the 09:37 open seat:
+the pre-market seat's own block is FOLDED INTO this one rather than sitting above it, because two seats
+reporting the SAME null on the SAME day in two blocks is the shape the collapse rule exists to stop.
+⚠ WHAT WAS REMOVED IS NAMED, and every durable finding is below or already in `state.md`.)*
 
-**THE LEDGER AGREES WITH THE BROKER, AND THIS WAS THE RUN'S FIRST JOB.** `alpaca.py positions` returns
-**one row, core VOO**, qty **99.046311231** (unchanged since the 2026-09-03 fill) at avg_entry
-**706.74**, cost_basis **$69,999.99**, market_value **$70,874.568928** — against **ZERO satellite
-blocks in this file**, and `sleeves` reports `satellite.count: 0`. **No discrepancy. No research was
-done on top of a ledger in doubt.** ⚠ **Core VOO was struck from the working list BEFORE any §5 rule
-was read, per §5's core exemption. It is not a satellite operand.**
+**THE LEDGER AGREES WITH THE BROKER AT BOTH SEATS, AND IT WAS EACH RUN'S FIRST JOB.** `alpaca.py
+positions` returns **one row, core VOO**, qty **99.046311231** (unchanged since the 2026-09-03 fill) at
+avg_entry **706.74**, cost_basis **$69,999.99** — against **ZERO satellite blocks in this file** and
+`sleeves` reporting `satellite.count: 0`. **No discrepancy at 08:36, none at 09:37. Nothing was
+researched, and nothing was placed, on top of a ledger in doubt.** ⚠ **Core VOO was struck from the
+working list BEFORE any §5 rule was read, per §5's core exemption. It is not a satellite operand.**
 
-**CLOCK, THE PRE-MARKET SHAPE, READ OFF THE DATE:** 08:36:59 `is_open: false` with `next_open`
-**2026-10-12T09:30** and `next_close` **2026-10-12T16:00**, both carrying **TODAY's** date — the
-full-session signature. ⚠ **FALSE has three meanings and TRUE has one.** **Not a holiday, not an early
-close; the closed-skip path was not taken.** ⚠ **The data plane agrees — `bars --days 4
---adjustment all` returns NO bar dated 2026-10-12 — which corroborates the DISCRIMINATOR, not any
-bar's completeness.**
+**CLOCK AT BOTH SEATS, READ OFF THE DATE AND NOT THE BOOLEAN.** 08:36:59 `is_open: false` with
+`next_open` **2026-10-12T09:30** and `next_close` **2026-10-12T16:00**, both carrying TODAY's date — the
+pre-market full-session signature, **not a holiday and not an early close**. Then 09:37:19 `is_open:
+**true**` with `next_open` rolled to **2026-10-13T09:30** while `next_close` **stayed at today 16:00** —
+the mid-session signature, confirming the pre-market reading from the other side. ⚠ **FALSE has three
+meanings and TRUE has one. The closed-skip path was not taken at either seat.**
+⚠ **The 08:36 data plane agreed — `bars --days 4 --adjustment all` returned NO bar dated 2026-10-12 —
+which corroborates the DISCRIMINATOR, not any bar's completeness.**
 
 **LAST COMPLETED SESSION, 2026-10-09, OFFICIAL CLOSE BASIS** (`bars --days 4 --adjustment all`, pulled
-at this seat): VOO o 713.52 h 716.37 l 712.75 **c 715.58**, n 1,645 v 70,028, vw 715.336895 — a normal
-full session. **Equity $100,875.5594, core $70,875.5594 = 70.2604%, cash 29.7396%, day +0.4289%, since
-inception +0.8756%.** ⚠ **RE-DERIVED HERE AND IT AGREES WITH THE 10-09 CLOSE SEAT'S FIGURE TO THE
-CENT** — and the agreement is worth one line precisely because it was reached by the same route, so it
-confirms the arithmetic and NOT the route (catch (6)).
+at the 08:36 seat): VOO o 713.52 h 716.37 l 712.75 **c 715.58**, n 1,645 v 70,028, vw 715.336895 — a
+normal full session. ⚠ **THE 09:37 SEAT MADE NO `bars` CALL AND THEREFORE HELD NO OFFICIAL CLOSE OF ITS
+OWN**; the 716.1532 in its `positions` read is a **LIVE BROKER MIDPOINT**, not a close, and is not
+interchangeable with one.
 
-**WEEK ROLLOVER: ANCHOR RECOMPUTED, FOUND MATCHING, DELIBERATELY NOT RE-RESET.** Today is **Monday**,
-so the ISO anchor **IS** 2026-10-12 and `state.md` already carries `week_of: 2026-10-12` — reset in the
-field by the 10-09 review. `new_positions_this_week` stays **0 of 3**. ⚠ **Recomputed rather than read,
-per the rule that the §6 cap must not stay stuck at its limit if a Friday run fails. It simply agreed.**
+**WEEK ROLLOVER: ANCHOR RECOMPUTED AT BOTH SEATS, FOUND MATCHING, DELIBERATELY NOT RE-RESET.** Today is
+**Monday**, so the ISO anchor **IS** 2026-10-12 and `state.md` already carried `week_of: 2026-10-12` —
+set by the 10-09 review. `new_positions_this_week` stays **0 of 3**. ⚠ **Recomputed rather than trusted,
+per the rule that the §6 cap must not stay stuck at its limit if a Friday run fails. It simply matched.**
 
-**PLAN HANDOFF:** this seat received `plan_date: 2026-10-09` — **THREE CALENDAR DAYS OLD AND CORRECT**,
-because the comparison is against the last **TRADING** day. ⚠ **Predicted in advance by the Friday
-review and it arrived exactly as described.**
+**PLAN HANDOFF, BOTH DIRECTIONS IN ONE DAY.** The 08:36 seat RECEIVED `plan_date: 2026-10-09` — **three
+calendar days old and CORRECT**, because the comparison is against the last **TRADING** day — and then
+WROTE `plan_date: 2026-10-12`. The 09:37 seat READ that field against the clock's ET date and found it
+**FRESH**, so **the staleness gate did not fire; non-exercise count 38, still never fired.**
+⚠⚠ **AND THE PLAN IT PASSED WAS FRESH *AND* EMPTY — zero BUY, zero SELL, zero REBALANCE — WHICH IS THE
+EXACT CASE WHERE FRESHNESS CANNOT BE INFERRED FROM THE OUTCOME. Recorded here as FRESH.**
 
-**SLEEVES, ONE MARK AT ONE SEAT:** equity **$100,874.57**, core **70.26%** ($70,874.568928), cash
-**$30,000.00 = 29.74%**, satellite **$0 / 0.0% / count 0**; `core_in_band: true`,
-`rebalance_needed: false`, `rebalance_delta` **−$262.37**. **Core sits inside §2's 65–75% band by 5.26
-points at the lower edge and 4.74 at the upper — the 79th consecutive run inside it (unit: a RUN; the
-count is inherited-and-incremented, not re-derived).** ⚠ **`rebalance_delta` is a DISTANCE READOUT,
-not an instruction: §2 acts at the band EDGE, not at the 70% target, and core sits fractionally ABOVE
-target rather than outside the band. Do NOT difference successive readings into a trend — fifteen
-readings spanning 10-06 to now have flipped sign with NO ORDER in the interval.**
-⚠ **A FIFTH SAMPLE OF THE MOVING LIVE MARK AT ONE SEAT: `selftest.py` read equity $100,879.52 and
-`sleeves` read $100,874.57 minutes later — a $4.95 spread on the same quantity, which MUST NOT be
-differenced into anything.**
+**SLEEVES, TWO MARKS AN HOUR APART, NOT DIFFERENCED INTO A TREND:** 08:36 equity **$100,874.57**, core
+**70.26%** ($70,874.568928), `rebalance_delta` **−$262.37**; 09:37 equity **$100,932.33**, core
+**70.28%** ($70,932.332736), cash **$30,000.00 = 29.72%**, satellite **$0 / 0.0% / count 0**,
+`core_in_band: true`, `rebalance_needed: false`, `rebalance_delta` **−$279.70**. **Core sits inside §2's
+65–75% band with 5.28 points at the lower edge and 4.72 at the upper — the 80th consecutive run inside
+it (unit: a RUN; the count is inherited-and-incremented, not re-derived).**
+⚠ **`rebalance_delta` is a DISTANCE READOUT, not an instruction: §2 acts at the band EDGE, not at the 70%
+target, and core sits fractionally ABOVE target rather than outside the band. The delta WIDENED
+−$262.37 → −$279.70 across the bell with NO ORDER in the interval — purely VOO rising — which is itself
+the warning against differencing successive readings into anything.**
+⚠ **A SIXTH SAMPLE OF THE MOVING LIVE MARK: `selftest.py` read equity **$100,939.44** and `sleeves` read
+**$100,932.33** seconds later — a $7.11 spread on an unchanged quantity.**
 
-**§5 — ALL FOUR RULES RE-EVALUATED IN ORDER AT EACH SEAT AND ALL FOUR HAVE NO OPERAND.** 5.1 has no
-invalidation string to test, 5.2 no `timing_window`, and 5.3 / 5.4 are **UNDEFINED, NOT DISTANT.**
-⚠ **"Nothing is near a stop" is a statement about an EMPTY SET.** ⚠ **`consecutive_closed_losses`
-stays 0 and CANNOT MOVE on an empty sleeve — the increment path and the circuit-breaker alert path
-both remain UNTESTED CODE.**
+**§5 — ALL FOUR RULES RE-EVALUATED IN ORDER AT EACH SEAT AND ALL FOUR HAVE NO OPERAND.** 5.1 no
+invalidation string to test, 5.2 no `timing_window`, and 5.3 / 5.4 are **UNDEFINED, NOT DISTANT**.
+⚠ **"Nothing is near a stop" is a statement about an EMPTY SET.** ⚠ **`consecutive_closed_losses` stays
+0 and CANNOT MOVE on an empty sleeve — the increment path and the circuit-breaker alert path both remain
+UNTESTED CODE.** ⚠⚠ **THE 09:37 SEAT ALSO NEVER REACHED THE LOSS-STREAK UPDATE AT ALL: Step 4 had zero
+SELL intents and zero positions, so 0 is an UNTOUCHED counter rather than a reset one.**
 
 **THE 10-09 PER-SEAT NULLS, FOLDED TO THE MECHANISM PLUS WHAT EACH SEAT UNIQUELY ESTABLISHED.**
 *(Collapsed 2026-10-12 08:36. Three paragraphs retelling ONE null — the midday seat's Step 2 detector,
@@ -658,7 +664,7 @@ tape:
   `plan_today.md` arrives three calendar days old on a Monday** — compare `plan_date` to the last
   TRADING day, not to the calendar.
 
-### `sell_rule_status` — ALL FOUR RULES ABSENT, NOT PASSING (2026-10-12, 08:36 ET `1-premarket-research` — SEAT 1 OF 4. ⚠ RE-DATED FROM THE 10-09 12:41 MIDDAY SEAT BECAUSE THIS SEAT GENUINELY RE-EVALUATED ALL FOUR IN ORDER, NOT BECAUSE ANYTHING IN THE TABLE CHANGED — a table left untouched and a table re-evaluated to the same answer are INDISTINGUISHABLE to the next reader, and THE DATE IS THE ONLY THING THAT SEPARATES THEM, the same way an ABSENT check and a PASSING one are. ⚠⚠ THE ATTRIBUTION IS TAKEN HONESTLY AND WITH ITS LIMIT: ROUTINE 3 IS THE SEAT §5 WAS WRITTEN FOR — it exists to evaluate the sell rules and nothing else and it holds a live `sell` path — whereas routine 1's Step 4 evaluation is a weaker act performed in order to QUEUE intents, and this seat holds no `sell` path at all. ⚠ IT IS TAKEN ANYWAY because the 10-09 date would otherwise read as a current evaluation on Monday, and a STALE DATE ON A NULL TABLE is the one error this field can make.)
+### `sell_rule_status` — ALL FOUR RULES ABSENT, NOT PASSING (2026-10-12, 09:37 ET `2-market-open-execution` — SEAT 2 OF 4. ⚠ RE-DATED FROM THE 08:36 PRE-MARKET SEAT BECAUSE THIS SEAT GENUINELY RE-EVALUATED ALL FOUR IN ORDER AT STEP 4, NOT BECAUSE ANYTHING IN THE TABLE CHANGED — a table left untouched and a table re-evaluated to the same answer are INDISTINGUISHABLE to the next reader, and THE DATE IS THE ONLY THING THAT SEPARATES THEM, exactly as an ABSENT check and a PASSING one are. ⚠⚠ THE ATTRIBUTION IS TAKEN HONESTLY AND WITH ITS LIMIT, AND THIS SEAT'S LIMIT IS DIFFERENT FROM ROUTINE 1's: ROUTINE 3 IS THE SEAT §5 WAS WRITTEN FOR — it exists to evaluate the sell rules and nothing else — whereas routine 2's Step 4 evaluation exists to EXECUTE SELL INTENTS THAT THE PLAN ALREADY CARRIES, and today's plan carried NONE. ⚠ SO THIS SEAT DOES HOLD A LIVE `sell` PATH, which routine 1's does not, AND IT STILL NEVER CONFIRMED A RULE AGAINST A POSITION, because there was no position and no intent. IT IS TAKEN ANYWAY because the 08:36 date would otherwise read as a pre-market evaluation standing for the whole session, and a STALE DATE ON A NULL TABLE is the one error this field can make.)
 
 **RE-EVALUATED IN §5's ORDER AT THE 2026-10-12 08:36 PRE-MARKET SEAT, AND REACHED RATHER THAN
 INHERITED.** **5.1** — no `invalidation` string exists in this file to read verbatim, so **ZERO
