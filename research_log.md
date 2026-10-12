@@ -52,6 +52,238 @@ single most common way a plausible-sounding connection gets mistaken for an oppo
 
 ## Entries
 
+### 2026-10-12 (08:36 ET) — event survey (funnel, pre-thesis)
+
+Selftest passed all five checks (`trading_enabled: true`, LIVE paper, broker equity **$100,879.52** at
+pre-flight). `clock` at **08:36:59** reads `is_open: false` with `next_open` **2026-10-12T09:30** and
+`next_close` **2026-10-12T16:00** — both carrying **TODAY's** date, the **PRE-MARKET full-session
+signature**, read off the **DATE** because FALSE has three meanings and TRUE has one. **Not a holiday,
+not an early close.** Window screened: **the completed 2026-10-09 session, the weekend, and overnight
+into Monday 2026-10-12** — a **THREE-CALENDAR-DAY, ONE-TRADING-DAY** window, which is the Monday shape.
+**Four Perplexity scans, all exit 0** (three broad/structural, one drill on the single real event).
+**Five theses written, ALL FIVE REJECTED.** Zero `move` calls — see the note at the foot of this block.
+
+**⚠⚠ THE STRUCTURAL FRAMING WAS QUERY ONE AGAIN AND IT PAID A FOURTH CONSECUTIVE SESSION — BUT TODAY IT
+ALSO SHOWED ITS OWN LIMIT, AND THAT IS THE RUN'S ONE REAL FINDING. SEE `T-2026-10-12-01`.** Asking for
+**two named parties + a disclosed dollar amount + the announcement date + whether it is new to the
+company's own disclosure** returned a **volunteered absence in the source's own words** — *"no
+announcement that can be verified as meeting all of the requested criteria"* — against **EIGHT
+self-excluded items with the reason attached**: Fortem/MBDA flagged as *"does not disclose a dollar
+amount"* **and** as building on *"a technical collaboration established in 2024"*; Blend Labs' tenth
+lender flagged as **unnamed**; HITT/NIST flagged as *"up to $600 million"* with the announcing party's
+listing unverifiable; **RTX's SM-3 Block IB flagged as unverifiable pending a primary source**;
+Ascenty/Casa dos Ventos' $500M flagged as *"previously announced in January 2026"*; Bimergen's $400M
+flagged as **a growth strategy, not a contract**; New River Valley flagged as **a contract that was NOT
+finalised**; IPA Capital Markets flagged as parties-unidentified. **Eight items disposed for ZERO
+follow-up queries.**
+
+**⚠⚠ THE SECOND FRAMING (won-a-contract / quantified-to-its-own-segment) ALSO RETURNED A VOLUNTEERED
+ABSENCE — *"No company can be confirmed to meet the full screen from the information gathered"* — AND
+THE TWO FRAMINGS REMAIN COMPLEMENTARY RATHER THAN REDUNDANT.** It named the part-2 gap explicitly on the
+one item it offered: RTX *"does not report RTX's own quantified revenue impact for the Raytheon
+segment."* That is the most common killer in this log, stated by the source before I applied it.
+**THIS IS THE TENTH CONSECUTIVE SESSION IN WHICH THE FUNNEL HAS ANSWERED §4's QUESTION IN THE NEGATIVE
+OUT LOUD, 09-29 THROUGH 10-12 UNBROKEN, AND THE THIRD IN WHICH *EVERY* BROAD SCAN PRODUCED ONE** — the
+third scan's own closing line: *"It does not provide reliable evidence of a specific U.S. corporate
+earnings surprise, regulatory decision, guidance revision, or capacity announcement between October 9
+and October 12, 2026."*
+
+**⚠⚠ THE LOG WAS READ BEFORE THE TAPE AND IT PAID FOR A SECOND CONSECUTIVE SESSION — THREE DISPOSED
+REJECTS WERE RE-SERVED, AND ONE OF THEM TWICE IN ONE RUN BY TWO DIFFERENTLY-FRAMED QUERIES.**
+**RTX's SM-3 Block IB "up to $6.3B"** (disposed 10-09, re-served by **both** query 1 and query 2) ·
+**Samsung Electro-Mechanics ₩290B** (disposed 10-09 in that day's §3 sweep, re-served verbatim) ·
+**KEC International** (disposed 10-09, re-served with a fresh ₹1,030 crore figure).
+⚠ **A recency filter bounds when something was WRITTEN, never when it HAPPENED. Reading the log cost
+one grep and saved three drills.**
+
+---
+
+### T-2026-10-12-01 — *no ticker* — REJECTED
+**Company A / the news:** **2026-10-09** — President Trump said he had agreed with President Putin that
+Russia would supply the US with **more than 300,000 tons of diesel immediately**, a further **500,000
+tons during November** and **1 million tons thereafter**, with a possible additional **3 million tons**
+subject to Russian refinery conditions. The **US Treasury directed OFAC to issue a temporary general
+licence** authorising the sale, delivery, offloading and importation of Russian-origin diesel into the
+United States **through 2027-04-07**. Oil fell ~1.5% on the announcement.
+**Company B / the candidate:** **NONE — AND THE SOURCE SAID SO WHEN ASKED DIRECTLY.** A drill query
+asking whether any US-listed company is named as purchaser, importer, shipper, refiner, distributor,
+terminal operator or contractual counterparty returned, verbatim: *"no specific publicly traded U.S.
+company is named"* … *"it does not identify a commercial buyer, U.S. importer of record, vessel
+operator, refinery, distributor, storage-terminal operator, or other corporate counterparty"* … **"No
+dollar amount is attributed to any named U.S.-listed company."**
+
+**1. Mechanism (one sentence):** **NOT WRITTEN.** There is no Company B to put in the sentence. Every
+construction available requires a second clause — *"the arrangement lowers US distillate prices **and
+also** therefore Company B's fuel cost line improves"* — which is §4's own stated kill for part 1.
+**2. Dollar path:** **NO OPERAND.** The quantities disclosed are **TONNAGES**, not dollars, and no
+figure of any kind is attributed to a named company, so there is no segment and no percentage to
+compute. *(This is the **Elevra "tonnes not dollars"** shape from 10-09, arriving at vastly larger
+scale — and scale does not convert a tonnage into a dollar path.)*
+**3. Timing window:** not reached.
+**4. Invalidation:** not reached.
+
+**Hard filters:** not reached — the candidate died at part 1 for want of a Company B. **No `move` call
+was made and none was due: there is no ticker to call it on.**
+
+**Outcome:** **REJECTED on part 1 — there is no Company B, confirmed by explicit source denial rather
+than by my own reasoning.** Secondarily, part 2 has no operand.
+
+**⚠⚠ THE REASON THIS IS THE RUN'S ONE REAL FINDING: IT IS THE FIRST MACRO/GOVERNMENT OBJECT THAT
+*SATISFIES THE STRUCTURAL QUERY FRAMING'S SHAPE* AND STILL FAILS §4 — SO THE FRAMING THIS LOG HAS BEEN
+PROMOTING FOR SIX SESSIONS HAS A FALSE-POSITIVE FORM, AND THIS IS IT.** The framing asks for **two named
+parties, a dated announcement and a disclosed quantity**, on the theory that a query naming §4's
+required shape returns that shape or says it cannot. **This event has all three: two named parties (the
+United States and Russia), a precise date (10-09), a dated schedule (immediate / November / thereafter),
+a regulatory instrument with an expiry (the OFAC licence to 2027-04-07), and a quantity ladder
+(300,000 / 500,000 / 1,000,000 / 3,000,000 tons).** ⚠⚠ **AND IT IS UNTRADEABLE, BECAUSE THE TWO NAMED
+PARTIES ARE *SOVEREIGN STATES* AND THE DISCLOSED QUANTITY IS *NOT MONEY*.** ⚠ **THE FRAMING SCREENS FOR
+STRUCTURE, NOT FOR *PARTY TYPE* OR *UNIT*. Add both to what the structure must satisfy: the parties must
+be COMPANIES and the quantity must be DOLLARS AT COMPANY B.** ⚠ **This does not weaken the framing —
+it is still the query that reaches the funnel's actual inventory — but "it returned the shape" is no
+longer sufficient grounds to proceed to a mechanism.**
+
+**⚠⚠ THE PRIORS ARRIVED INSTANTLY AND SPECIFICALLY, AGAINST AN EXPLICIT DENIAL, AND NONE IS WRITTEN
+DOWN AS A CANDIDATE: the US refiner complex (VLO, MPC, PSX) on crack spreads and import economics, and
+the fuel-cost tier (DAL, UAL, UPS, FDX) on distillate.** ⚠ **The second set is the more seductive
+because it reads as a clean COST-LINE improvement, which is a form §4 part 1 explicitly permits — and it
+fails anyway on three independent grounds: airlines burn JET FUEL rather than diesel, so the causal path
+needs a product-substitution clause; a commodity price is a MARKET VARIABLE, which is the shared-cause
+object in its purest form (two companies moving on the same input is a market, not a transaction); and
+the arrangement is a PRESIDENTIAL STATEMENT with no executed commercial contract, so there is no
+transaction to be second to.**
+⚠⚠ **AND THE EVENT-TYPE OBSERVATION, WHICH IS RULE (iv) ONE LEVEL UP FROM WHERE IT WAS WRITTEN: THIS IS
+THE *SECOND* DIESEL-RELEASE ITEM THIS FUNNEL HAS SERVED IN SIX SESSIONS** (the **G7 diesel release** was
+disposed on **10-05**), **and it died the same death both times.** ⚠ **Rule (iv) is written about a
+recurring TICKER being a warning rather than corroboration. A recurring EVENT TYPE carries the same
+message and has not been written down before: it is telling me about the ENERGY-POLICY NEWS CYCLE'S
+disclosure practice — sovereign announcements, tonnages, no corporate counterparty — not about a
+candidate maturing.**
+⚠ **A GOVERNMENT ACTION IS NOT A COMPANY A, and this is the most convincing costume yet recorded: it
+has TWO named parties rather than one, a tonnage ladder, an expiry date, a named regulatory instrument,
+and it MOVED THE TAPE. Scale and specificity make it more convincing, not less.**
+
+---
+
+### T-2026-10-12-02 — RTX — REJECTED (EXACT REPEAT, ZERO QUERIES SPENT)
+**Company A / the news:** RTX's **SM-3 Block IB** interceptor agreement, *"up to $6.3 billion"* — the
+**same award, same programme, same figure** disposed on **2026-10-09**.
+**Company B / the candidate:** none sought. **The answer was already written down.**
+
+**Outcome:** **REJECTED without spending a query — this is what the disposed-reject catalogue is for.**
+The written kill stands unchanged on four independent grounds: **RTX is FIRST-ORDER** (it is the named
+recipient, so §4's premise does not apply at any price); the figure is a **CEILING** (*"up to"*), which
+is rule (v)'s ceiling sub-shape and not a revenue number; the counterparty is a **government body**, so
+there is no Company A that is a company; and **no supplier below RTX is named**, which is the
+eleven-instance US-defence-award pattern — the mechanism there is **disclosure practice**, not the
+primes' size.
+**⚠⚠ THIS IS RTX's *FOURTH* APPEARANCE IN SEVEN SESSIONS AND ITS SECOND ON THIS IDENTICAL AWARD** (09-29
+AMRAAM $20.7B · 10-02 SM-6 *"up to"* $24.4B · 10-09 SM-3 *"up to"* $6.3B · **10-12 SM-3 again**). ⚠ **A
+recurring ticker is a WARNING, NOT CORROBORATION — and a ticker re-arriving on the *same* award with the
+*same* figure is the strongest form of that warning, because nothing about it has changed at all.**
+**⚠⚠ THE NEW PART IS WHERE IT CAME FROM: TWO DIFFERENTLY-FRAMED QUERIES SERVED IT IN ONE RUN, AND THE
+SECOND FRAMING CAME *CLOSER TO ACCEPTING IT* THAN THE FIRST.** Query 1 excluded it as unverifiable
+pending a primary source; query 2 called it *"the closest apparent match"* and killed it specifically on
+**part 2** — *"does not report RTX's own quantified revenue impact for the Raytheon segment."* ⚠ **A
+disposed reject can arrive dressed as a run's best candidate, and the only thing that stopped it being
+re-elaborated from scratch was reading the log first.**
+
+---
+
+### T-2026-10-12-03 — §3 / NON-QUALIFYING SWEEP (THIRTEEN ITEMS, ONE ENTRY) — REJECTED
+Disposed as one entry because each dies on a **single** test applied **before** any mechanism was
+attempted — §3-first, which is the discipline that stops effort going into a story one number was always
+going to end.
+
+**Not US-listed (§3):** **Samsung Electro-Mechanics** ₩290B AI-server MLCC supply (Korea-listed; **EXACT
+REPEAT of 10-09**; and the counterparty is an **unnamed** *"global company"*, so it fails rule (v) too) ·
+**KEC International** ₹1,030 crore (India-listed; **repeat of 10-09**) · **SEPC** ₹855 crore SAIL order
+(India-listed, and far below the cap floor) · **Mitsubishi Heavy Industries** train order (Japan-listed) ·
+**Tialis Essential IT** £7.6M + £1.2M extension, **Thruvision**, **Acuity RM Group** (UK-listed
+microcaps) · **MBDA** (private European consortium).
+**Below the §3 $10B cap floor or not listed at all:** **Fortem Technologies** (private) · **HITT
+Contracting** (private) · **Bimergen Energy** (microcap) · **Ascenty** (private, Brazil).
+**Rule (iii) — not new to the parties' own disclosure:** **Fortem/MBDA** builds on *"a technical
+collaboration established in 2024"*, volunteered by the source · **Ascenty/Casa dos Ventos** $500M
+renewable supply agreement was **announced in January 2026** and merely re-reported on 10-12 —
+**the source excluded it before I did.**
+**Rule (v) — no named counterparty, or a ceiling rather than a figure:** **Blend Labs'** *"tenth
+lender"* is **unnamed** and carries no figure · **HITT/NIST** is *"up to $600 million"* over a
+five-year ordering period — **a CEILING against a government body** · **IPA Capital Markets**, parties
+unidentified.
+**No transaction at all:** **Bimergen's** $400M is a **growth strategy presented at a conference**, not
+an agreement · **New River Valley Commerce Park** is a contract a company **DECLINED TO FINALISE** —
+⚠ **a deal that did NOT happen, which is a new sub-shape worth one line: the funnel will serve the
+ABSENCE of a transaction in the same format as a transaction, and the headline reads identically.**
+
+**Outcome:** **ALL THIRTEEN REJECTED upstream of §4's parts, for ZERO follow-up queries.**
+⚠ **`--recency day` returns a GLOBAL tape — a clear majority of today's raw funnel output was non-US
+again. That is not a defect in the query; it is why §3 is applied before a mechanism is attempted.**
+
+---
+
+### T-2026-10-12-04 — *no ticker* — REJECTED (THE MACRO/FISCAL COMPLEX)
+**Company A / the news:** **2026-10-09** — University of Michigan preliminary survey: consumers raised
+one-year-ahead inflation expectations. **2026-10-12** — CBO-cited reporting put the **FY2026 federal
+deficit at ~$2 trillion**, with **net interest above $1 trillion for the first time** and **corporate
+tax receipts down 16% to $382 billion**.
+**Company B / the candidate:** **NONE. No company is named in any of it.**
+
+**Outcome:** **REJECTED on part 1 — a government or macroeconomic datum is not a Company A.** It is the
+standing object: one party (or none), no transaction, no named recipient.
+⚠ **THE ONE GENUINELY NEW OBSERVATION, AND IT IS A WARNING RATHER THAN A LEAD: `corporate tax receipts
+−16% to $382 billion` IS THE MOST COMPANY-ADJACENT MACRO NUMBER THIS FUNNEL HAS PRODUCED.** It is
+precise, it is dated, it is denominated in dollars, and it is *about corporate earnings in aggregate* —
+so it reads closer to a corporate fact than rates, payrolls or tariffs ever did. ⚠⚠ **AND IT NAMES
+NOBODY, which is exactly the point: an aggregate over all companies is a statement about the TAX BASE,
+not about any company's revenue or cost line. A number can be more corporate-sounding and no more
+tradeable.**
+
+---
+
+### T-2026-10-12-05 — *no ticker* — REJECTED (THE FORWARD CALENDAR — A NEW MONDAY-SHAPED NON-EVENT)
+**Company A / the news:** the third broad scan's largest single block was the **WEEK AHEAD**:
+**JPMorgan Chase, Citigroup and Wells Fargo** reporting **Tuesday 2026-10-13**; **September CPI on
+10-14** (consensus cited at **+0.6% m/m, +3.7% y/y headline, +0.2% m/m core**); **PPI and retail sales
+on 10-15**.
+**Company B / the candidate:** none. **Nothing has happened yet.**
+
+**Outcome:** **REJECTED — a CALENDAR is not news, and three large US banks are NAMED here purely as
+scheduled reporters.** The source said so itself: *"not as results announced during October 9–12"* and
+*"Scheduled earnings events, not reported earnings surprises."*
+**⚠⚠ THIS IS A NEW SHAPE AND IT IS SPECIFIC TO THE MONDAY PRE-MARKET SEAT, WHICH IS WHY IT HAS NOT BEEN
+SEEN BEFORE: THE WEEKEND WINDOW CONTAINS NO TRADING AND LITTLE CORPORATE DISCLOSURE, SO THE FUNNEL FILLS
+THE SPACE WITH THE WEEK AHEAD.** ⚠ **A forward calendar is the single most dangerous empty object this
+funnel produces, because it arrives carrying EVERYTHING §4 asks for except the event: named US-listed
+companies above $10B, precise dates, and even consensus NUMBERS — and a run reading quickly can mistake a
+consensus figure for a disclosed one.** ⚠⚠ **IT IS ALSO THE PUREST FORM OF rule (iii): the earliest
+possible failure of "is this new to the company's own disclosure?" is an event that has not been
+disclosed by ANYONE yet because it has not occurred.** ⚠ **The correct response is to note the dates and
+do nothing. An earnings print on 10-13 is a thing for the 10-13 seat to meet, not a thing for this seat
+to anticipate — and §4 would kill the read-across anyway as the competitor's-earnings-print shared-cause
+object.**
+
+---
+
+**⚠⚠ ZERO `move` CALLS AT THIS SEAT, AND THAT IS AN *ABSENT* CHECK RATHER THAN A SKIPPED ONE — THE
+DISTINCTION THIS LOG KEEPS INSISTING ON, BECAUSE THE TWO LOOK IDENTICAL IN A RUN SUMMARY.** The priced-in
+filter had **nothing to fire on**: **four of today's five rejects carry no ticker at all** (two macro
+objects, a forward calendar, and a Company-B-less supply arrangement), the fifth is a disposed repeat on
+a **first-order** name, and the thirteen-item sweep died at §3 upstream of the filter. ⚠⚠ **A DECORATIVE
+`move` CALL ON A NAME WITH NO MECHANISM CONVERTS AN HONEST ABSENCE INTO A FAKE EXERCISE, AND IT HAS NOW
+BEEN DECLINED FOR THAT REASON A THIRD TIME.** ⚠ **NOT COUNTABLE AS A ZERO-`move` SESSION FROM HERE —
+THREE SEATS REMAIN TODAY. The honest unit is the SESSION and a session is only countable once it is
+over; writing "the seventh" now would be catch (11)'s shape.**
+
+**⚠⚠ THE RUN'S SUMMARY JUDGMENT, STATED PLAINLY: NO TRADE, AND NOT A SINGLE CANDIDATE REACHED §4's
+PARTS.** 10-09 was the session where one finally did (**GFS**, killed by parts 3 and 2 out of the
+company's own release). **Today did not get close: the funnel's entire US corporate inventory for a
+three-calendar-day window was one sovereign supply announcement, a disposed repeat, a forward calendar
+and two macro aggregates.** ⚠ **That is a property of the WINDOW — a weekend plus a Monday pre-market —
+and it is the expected shape of a Monday, not a finding about the tape.** ⚠⚠ **IT IS ALSO EXACTLY WHAT
+§4's HONEST-BROKER PARAGRAPH DESCRIBES AS THE CORRECT OUTPUT: five auditable rejections, zero
+manufactured mechanisms, and $30,000 left idle because nothing earned it.**
+
+
 ### 2026-10-09 (08:27 ET) — event survey (funnel, pre-thesis)
 
 Selftest passed all five checks (`trading_enabled: true`, LIVE paper, broker equity **$100,743.83** at
