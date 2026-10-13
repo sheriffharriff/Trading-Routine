@@ -10,8 +10,8 @@ The block below is parsed by `scripts/common.py` and gates real behavior
 `key: value` format exactly. Prose goes underneath.
 
 ```
-last_run: 2026-10-13 08:26 ET 1-premarket-research (SEAT 1 OF 4, TUESDAY. Selftest PASSED all five, trading_enabled true, LIVE paper, broker equity 100,820.09 at pre-flight. CLOCK 08:26:35 is_open FALSE with BOTH next_open AND next_close dated 2026-10-13 - the PRE-MARKET full-session signature, read off the DATES and not the boolean; holiday path NOT taken, and `bars --days 4` returning NO 2026-10-13 bar corroborates the DISCRIMINATOR rather than any bar's completeness. LEDGER RECONCILED FIRST, BEFORE ANY RESEARCH: positions.md holds zero satellite blocks and the broker returns ONE row, VOO 99.046311231 sh @ avg_entry 706.74, market_value 70,820.093456, unrealized +820.10/+1.172% - BOTH SIDES AGREE. EIGHT THESES WRITTEN, ALL EIGHT REJECTED (T-2026-10-13-01..-08); thesis count 143 -> 151, RE-DERIVED FROM SOURCE as 87 archived + 64 live headings, with the template trap re-confirmed (raw grep returns 65 - DO NOT 'FIX' 151 TO 152). SESSION COUNTER HELD AT 29/26 - routine 1 may never count the day it stands in, and this is catch (21)'s shape for the NINTH time: thesis unit advanced, session unit held, same run, both correct. ⚠⚠ THE RUN'S ONE REAL FINDING IS `T-2026-10-13-01`, A NEW COSTUME OF RULE (v): LS Electric's own 10-13 release discloses a 138,458,284 USD contract with BLOOM ENERGY for 38-kV switchgear, deliveries Apr-Jul 2027, for a fuel-cell data-centre project in Pennsylvania owned by an unnamed 'major U.S. technology company'. AN UNNAMED *CUSTOMER* CARRYING A MAP PIN, A DELIVERY SCHEDULE AND A PRODUCT SPEC - and it is withheld by a THIRD party's release rather than by its own filing, so no filer is obliged to name it later. IT DIED TWICE OVER: part 1, because the ONE US-listed party (BE) is the PAYER and the only improving-revenue sentence needs an 'and also' clause carrying the whole load; and part 2, form five, because the disclosed figure is capital paid OUT while BE's project revenue is undisclosed - the source said so itself, 'Any conclusion that the data-center owner's revenue or costs change by a particular amount would be an inference unsupported by the cited announcement.' THE PULL WAS REAL: the list of eligible US-listed tech companies building Pennsylvania data centres is short and naming one would have been A GUESS DRESSED AS A DEDUCTION. NO GUESS MADE, NONE RECORDED. The ETN/PWR/VRT/HUBB electrical-tier prior arrived instantly and was NOT written down - the order went to LS Electric, which is a fact about who did NOT win it. SECOND FINDING, METHOD: the PARTY-TYPE and UNIT tests added to the structural framing on 10-12 have now FIRED ON CONSECUTIVE SESSIONS - 10-12's false positive was two SOVEREIGN STATES and a TONNAGE, today's (T-2026-10-13-02, EnergyX/Trafigura 2B lithium offtake) is two PRIVATE companies and a price-derived estimate. 'IT RETURNED THE SHAPE' IS STILL NOT GROUNDS TO PROCEED. THIRD: the funnel answered §4's question in the NEGATIVE for an ELEVENTH consecutive session (09-29 through 10-13 unbroken; the standing item read TEN through 10-12 - COUNTED, not inherited) and in its strongest form yet - four qualifying events in ONE query with 'No second publicly traded US company is named by the source as directly affected' written out FOUR TIMES (ENVX, BP, EQX, ARREF), and the segment framing added 'zero confirmed matches, rather than a constructed list of likely candidates' - the source declining to manufacture candidates in the same breath §4's honest-broker paragraph warns me not to. ZERO `move` CALLS AND THE CAUSE IS THE CLEANEST ON RECORD: the one US-listed party is the PAYER, so the candidate died at part 1 UPSTREAM of the filter and no eligible ticker ever reached it - THE FOURTH STATE, AN ABSENT CHECK, NOT A PASS; a `move` on BE would have been DECORATIVE and is declined on that ground for the fourth time. §5.1-5.4 RE-EVALUATED IN ORDER AND REACHED: no invalidation string, no timing_window, no satellite entry_price, no highest_close - DISTANCE UNDEFINED, NOT LARGE. ⚠ Step 4's ready-made news-on-holdings query template has an EMPTY <COMPANY> SLOT and was NOT filled with the nearest available name; core VOO is not a <COMPANY> for that purpose and was struck from the working list BEFORE any rule was read. ZERO quote, ZERO sell, ZERO SELL intents, ZERO fills. ONE `bars` call made and it was NOT a mark. CORE NOT STAMPED WITH A highest_close FOR A 92nd RUN (the 10-12 16:17 close seat was the 91st) - and this seat's temptation is WEAKER than the close seat's, because it holds no complete bar for today at all. HOUSEKEEPING: week anchor RECOMPUTED (Tuesday, ISO week 42 weekday 2, anchor 2026-10-12) and found MATCHING week_of, so new_positions_this_week DELIBERATELY NOT RE-RESET, 0 of 3; breaker INACTIVE with halt_triggered_at none so NO HALT_CLEARED_AT comparison was due; control.md notes EMPTY; consecutive_closed_losses 0 and THE UPDATE WAS NEVER REACHED - an UNTOUCHED counter, not a reset one, with the increment and circuit-breaker alert paths still UNTESTED CODE; `orders --status all` still ONE ROW for the whole account history (the 09-03 core fill, terminal) so §7's limbo warning has NO OPERAND rather than a clean bill. SLEEVES: core 70,820.093456 / 100,820.09 = 70.2441%, IN BAND by 5.24 points, 83rd consecutive run; satellite 0.0% count 0; cash 30,000.00 = 29.76%; rebalance_delta -246.03 a DISTANCE READOUT. ⚠ TWO EQUITY READINGS MINUTES APART WITH NO ORDER IN THE INTERVAL - selftest/sleeves 100,820.09 and account 100,813.16, 6.93 apart - so §6's 5% cap is 5,041.00 or 5,040.66 DEPENDING ON BASIS and the 09:35 seat must recompute it off its own live equity. ONE OBSERVATION REPORTED NOT RECONCILED: the complete 2026-10-12 bar reads n 1,393 / v 32,547 this morning, BYTE-IDENTICAL to the SECOND of the two readings the close seat took a minute apart (1,392/32,544 then 1,393/32,547) - the late-print drift SETTLED overnight, and o/h/l/c/vw never moved; balance_asof has advanced to 2026-10-12. FILES: research_log.md +8 entries; plan_today.md OVERWRITTEN, plan_date 2026-10-13, ZERO BUY / ZERO SELL / ZERO REBALANCE intents and therefore NO revalidate line, which is correct rather than an omission; positions.md sell_rule_status RE-DATED TO 08:26 AND THE BODY RE-WRITTEN WITH IT, plus a stray orphan line removed and the removal NAMED; trade_log.md and alerts.md UNTOUCHED - no fills, no incidents)
-prior_run: 2026-10-12 16:17 ET 4-market-close-journal (SEAT 4 OF 4, MONDAY, AND A COMPLETE SESSION. Step 2 had NO OPERAND for a fifth consecutive close seat: zero satellite positions, so no highest_close to raise AND no `(as of ...)` date to advance - 'HIGH-WATER MARKS UPDATED' AND 'VERIFIED' WOULD BOTH BE FALSE, and the honest form is THE JOB HAD NO SUBJECT. ⚠ THE PULL CAME FROM THE INSTRUCTION, NOT THE DATA - the routine's own Output section asks for a confirmation and a prompt that asks for one produces it. Day's numbers, BOTH BASES NAMED: official-close equity 100,849.3121 (VOO c 715.315, IDENTICAL on raw) = day -26.2473 (-0.0260%), since inception +0.8493%; broker basis 100,830.49 vs last_equity 100,876.54985379129 = -46.0599 (-0.0457%) - A 1.75x DISAGREEMENT ON A HEADLINE NUMBER, caught before publication, and INVISIBLE ON A LARGER DAY. Core 70.2471% in band 82nd run; four rebalance_delta samples RETRACING THEMSELVES in one day with no order placed; session counter 28/25 -> 29/26, thesis count HELD at 143. positions.md 85,955B -> 87,597B: the collapse INCREASED the file and is reported as it came out)
+last_run: 2026-10-13 09:37 ET 2-market-open-execution (SEAT 2 OF 4, TUESDAY. THE ONLY SEAT THAT MAY OPEN A POSITION, AND IT OPENED NONE - because the plan it consumed carried nothing, NOT because anything blocked it. Selftest PASSED all five, trading_enabled true, LIVE paper, equity 100,809.2 at pre-flight. CLOCK 09:36:59 is_open TRUE - the ONE signature with ONE meaning, read alongside next_open 2026-10-14 and next_close 2026-10-13T16:00; no date-discrimination needed at this seat, which is the FIRST of the four where the boolean alone suffices. ⚠⚠ THE STALENESS GATE WAS EXERCISED AND PASSED: plan_date 2026-10-13 READ OFF THE FIELD, today's ET date 2026-10-13 COMPUTED INDEPENDENTLY (America/New_York, Tuesday, ISO week 42 weekday 2) - FRESH. NON-EXERCISE COUNT 39, and the gate's alert path REMAINS UNTESTED CODE. ⚠ The plan was FRESH AND DELIBERATELY EMPTY, and that was recorded as such BEFORE the zero-order outcome was reached - a fresh empty plan and a stale plan produce a BYTE-FOR-BYTE IDENTICAL run, so the distinction exists only if it is written down at the moment it is read. LEDGER RECONCILED FIRST: broker returns ONE row, VOO 99.046311231 sh @ avg_entry 706.74, market_value 70,810.208635, unrealized +810.22/+1.157%, intraday -20.78/-0.029%; positions.md holds ZERO satellite blocks - the only entry_price/invalidation keys in the file are at lines 45 and 55 INSIDE THE TEMPLATE, which is not a position and was confirmed to be the template rather than assumed. BOTH SIDES AGREE. STEP 3 SKIPPED ON core_established: true - the 2026-09-03 bootstrap path, which by construction never runs again; NOT re-bootstrapped. STEP 4 EXITS: ZERO SELL intents in the plan and ZERO satellite positions, so §5.1-5.4 were re-evaluated in order and reached NO OPERAND - no invalidation string, no timing_window, no satellite entry_price, no highest_close field at all. DISTANCE UNDEFINED, NOT LARGE. consecutive_closed_losses 0 and THE UPDATE WAS NEVER REACHED - an UNTOUCHED counter, not a reset one; the increment and the circuit-breaker alert path are STILL UNTESTED CODE. STEPS 5-6: ZERO BUY intents, so ZERO `move` calls were due and NONE WAS MADE - an ABSENT check, the fourth state, NOT a pass and NOT a skip. All EIGHT thesis IDs T-2026-10-13-01..-08 CONFIRMED PRESENT AND REJECTED in research_log.md (lines 145/195/224/253/286/317/344/370) before concluding there was nothing to execute, per the plan's own instruction 2 - the confirmation was performed, not assumed. ⚠ T-2026-10-13-01 (BE, the PAYER on LS Electric's 138,458,284 USD switchgear order) WAS NOT REVIVED AND NO QUOTE WAS TAKEN ON IT - the plan said it must not be, and the cheapest way to honor that was to place no call at all. STEP 7 REBALANCE: core 70,810.208635 / 100,809.2 = 70.2418%, IN BAND by 5.24 points at the near edge, core_in_band true, rebalance_needed false, rebalance_delta -243.77 A DISTANCE READOUT NOT AN INSTRUCTION - 84th consecutive in-band run. NO REBALANCE PLACED. ⚠ §6's 5% CAP RECOMPUTED OFF THIS SEAT'S OWN LIVE EQUITY RATHER THAN INHERITED: 5,040.46 on the `sleeves` basis (100,809.2) and 5,040.51 on the `account` basis (100,810.19) - the two bases are 0.99 APART at this seat against 6.93 at 08:26, so the spread NARROWED into the open; BOTH NUMBERS CARRY THEIR BASIS. ZERO buy, ZERO sell, ZERO orders of any kind, ZERO fills - the account's whole order history is STILL the single 09-03 core fill, terminal, so §7's limbo warning has NO OPERAND rather than a clean bill. ⚠ ONE NEW OBSERVATION, AND IT IS A PARTIAL: `bars --days 1 --adjustment all` NOW RETURNS A 2026-10-13 BAR where the 08:26 seat's `--days 4` returned none - c 714.97, o 714.55, h 714.97, l 714.52, n 45, v 1,480, vw 714.582705, t 04:00Z. IT IS SEVEN MINUTES OF TAPE AND IT IS NOT A CLOSE AND NOT A MARK; it corroborates the pre-market DISCRIMINATOR by now disagreeing with it in the expected direction. CORE NOT STAMPED WITH A highest_close FOR A 93rd RUN - and this seat's temptation is the WEAKEST of the four, because the only VOO bar it holds is 45 trades deep. WEEK ANCHOR RECOMPUTED FROM SOURCE (Monday anchor 2026-10-12) and found MATCHING week_of, so new_positions_this_week DELIBERATELY NOT RE-RESET, 0 of 3. Breaker INACTIVE, halt_triggered_at none, so NO HALT_CLEARED_AT comparison was due; control.md notes EMPTY. SESSION COUNTER HELD AT 29/26 AND THESIS COUNT HELD AT 151 - BOTH UNITS HOLD AT THIS SEAT, which is a THIRD shape and NOT the mirror of this morning's: the session unit holds because the counter counts COMPLETED sessions and 2026-10-13 is TWO SEATS FROM OVER - no seat may count the day it stands in, not just routine 1 - and the thesis unit holds because this seat wrote NO thesis and the eight it verified were written and already counted by the 08:26 seat. ⚠ I DREW THE MIRROR FIRST AND IT WAS WRONG: catch (21)'s shape is one-advances-one-holds, and reaching for it here produced 30/27 at 09:37, which is EXACTLY catch (22) - a seat restating the rule correctly and then writing the advanced number anyway. The 08:26 seat left 'DO NOT ADVANCE IT TO 30 BEFORE TONIGHT'S BELL' in positions.md:587 and that sentence is what caught it. TONIGHT'S CLOSE SEAT ADVANCES IT TO 30/27; THIS SEAT MUST NOT. FILES: state.md rewritten; positions.md reconciliation RE-DATED TO 09:37 WITH THE BODY RE-WRITTEN (catch (25)'s rule); plan_today.md NOT TOUCHED - it is the pre-market seat's output and this seat CONSUMES it; research_log.md, trade_log.md and alerts.md UNTOUCHED - no theses, no fills, no incidents)
+prior_run: 2026-10-13 08:26 ET 1-premarket-research (SEAT 1 OF 4, TUESDAY. Selftest PASSED all five, trading_enabled true, LIVE paper, broker equity 100,820.09 at pre-flight. CLOCK 08:26:35 is_open FALSE with BOTH next_open AND next_close dated 2026-10-13 - the PRE-MARKET full-session signature, read off the DATES and not the boolean; holiday path NOT taken, and `bars --days 4` returning NO 2026-10-13 bar corroborates the DISCRIMINATOR rather than any bar's completeness. LEDGER RECONCILED FIRST, BEFORE ANY RESEARCH: positions.md holds zero satellite blocks and the broker returns ONE row, VOO 99.046311231 sh @ avg_entry 706.74, market_value 70,820.093456, unrealized +820.10/+1.172% - BOTH SIDES AGREE. EIGHT THESES WRITTEN, ALL EIGHT REJECTED (T-2026-10-13-01..-08); thesis count 143 -> 151, RE-DERIVED FROM SOURCE as 87 archived + 64 live headings, with the template trap re-confirmed (raw grep returns 65 - DO NOT 'FIX' 151 TO 152). SESSION COUNTER HELD AT 29/26 - routine 1 may never count the day it stands in, and this is catch (21)'s shape for the NINTH time: thesis unit advanced, session unit held, same run, both correct. ⚠⚠ THE RUN'S ONE REAL FINDING IS `T-2026-10-13-01`, A NEW COSTUME OF RULE (v): LS Electric's own 10-13 release discloses a 138,458,284 USD contract with BLOOM ENERGY for 38-kV switchgear, deliveries Apr-Jul 2027, for a fuel-cell data-centre project in Pennsylvania owned by an unnamed 'major U.S. technology company'. AN UNNAMED *CUSTOMER* CARRYING A MAP PIN, A DELIVERY SCHEDULE AND A PRODUCT SPEC - and it is withheld by a THIRD party's release rather than by its own filing, so no filer is obliged to name it later. IT DIED TWICE OVER: part 1, because the ONE US-listed party (BE) is the PAYER and the only improving-revenue sentence needs an 'and also' clause carrying the whole load; and part 2, form five, because the disclosed figure is capital paid OUT while BE's project revenue is undisclosed - the source said so itself, 'Any conclusion that the data-center owner's revenue or costs change by a particular amount would be an inference unsupported by the cited announcement.' THE PULL WAS REAL: the list of eligible US-listed tech companies building Pennsylvania data centres is short and naming one would have been A GUESS DRESSED AS A DEDUCTION. NO GUESS MADE, NONE RECORDED. The ETN/PWR/VRT/HUBB electrical-tier prior arrived instantly and was NOT written down - the order went to LS Electric, which is a fact about who did NOT win it. SECOND FINDING, METHOD: the PARTY-TYPE and UNIT tests added to the structural framing on 10-12 have now FIRED ON CONSECUTIVE SESSIONS - 10-12's false positive was two SOVEREIGN STATES and a TONNAGE, today's (T-2026-10-13-02, EnergyX/Trafigura 2B lithium offtake) is two PRIVATE companies and a price-derived estimate. 'IT RETURNED THE SHAPE' IS STILL NOT GROUNDS TO PROCEED. THIRD: the funnel answered §4's question in the NEGATIVE for an ELEVENTH consecutive session (09-29 through 10-13 unbroken; the standing item read TEN through 10-12 - COUNTED, not inherited) and in its strongest form yet - four qualifying events in ONE query with 'No second publicly traded US company is named by the source as directly affected' written out FOUR TIMES (ENVX, BP, EQX, ARREF), and the segment framing added 'zero confirmed matches, rather than a constructed list of likely candidates' - the source declining to manufacture candidates in the same breath §4's honest-broker paragraph warns me not to. ZERO `move` CALLS AND THE CAUSE IS THE CLEANEST ON RECORD: the one US-listed party is the PAYER, so the candidate died at part 1 UPSTREAM of the filter and no eligible ticker ever reached it - THE FOURTH STATE, AN ABSENT CHECK, NOT A PASS; a `move` on BE would have been DECORATIVE and is declined on that ground for the fourth time. §5.1-5.4 RE-EVALUATED IN ORDER AND REACHED: no invalidation string, no timing_window, no satellite entry_price, no highest_close - DISTANCE UNDEFINED, NOT LARGE. ⚠ Step 4's ready-made news-on-holdings query template has an EMPTY <COMPANY> SLOT and was NOT filled with the nearest available name; core VOO is not a <COMPANY> for that purpose and was struck from the working list BEFORE any rule was read. ZERO quote, ZERO sell, ZERO SELL intents, ZERO fills. ONE `bars` call made and it was NOT a mark. CORE NOT STAMPED WITH A highest_close FOR A 92nd RUN (the 10-12 16:17 close seat was the 91st) - and this seat's temptation is WEAKER than the close seat's, because it holds no complete bar for today at all. HOUSEKEEPING: week anchor RECOMPUTED (Tuesday, ISO week 42 weekday 2, anchor 2026-10-12) and found MATCHING week_of, so new_positions_this_week DELIBERATELY NOT RE-RESET, 0 of 3; breaker INACTIVE with halt_triggered_at none so NO HALT_CLEARED_AT comparison was due; control.md notes EMPTY; consecutive_closed_losses 0 and THE UPDATE WAS NEVER REACHED - an UNTOUCHED counter, not a reset one, with the increment and circuit-breaker alert paths still UNTESTED CODE; `orders --status all` still ONE ROW for the whole account history (the 09-03 core fill, terminal) so §7's limbo warning has NO OPERAND rather than a clean bill. SLEEVES: core 70,820.093456 / 100,820.09 = 70.2441%, IN BAND by 5.24 points, 83rd consecutive run; satellite 0.0% count 0; cash 30,000.00 = 29.76%; rebalance_delta -246.03 a DISTANCE READOUT. ⚠ TWO EQUITY READINGS MINUTES APART WITH NO ORDER IN THE INTERVAL - selftest/sleeves 100,820.09 and account 100,813.16, 6.93 apart - so §6's 5% cap is 5,041.00 or 5,040.66 DEPENDING ON BASIS and the 09:35 seat must recompute it off its own live equity. ONE OBSERVATION REPORTED NOT RECONCILED: the complete 2026-10-12 bar reads n 1,393 / v 32,547 this morning, BYTE-IDENTICAL to the SECOND of the two readings the close seat took a minute apart (1,392/32,544 then 1,393/32,547) - the late-print drift SETTLED overnight, and o/h/l/c/vw never moved; balance_asof has advanced to 2026-10-12. FILES: research_log.md +8 entries; plan_today.md OVERWRITTEN, plan_date 2026-10-13, ZERO BUY / ZERO SELL / ZERO REBALANCE intents and therefore NO revalidate line, which is correct rather than an omission; positions.md sell_rule_status RE-DATED TO 08:26 AND THE BODY RE-WRITTEN WITH IT, plus a stray orphan line removed and the removal NAMED; trade_log.md and alerts.md UNTOUCHED - no fills, no incidents)
 week_of: 2026-10-12
 new_positions_this_week: 0
 consecutive_closed_losses: 0
@@ -38,76 +38,95 @@ discarded; settled items were folded to one line each and repeated emphasis was 
 
 ### Live — act on these
 
-- **⚠ 2026-10-13 09:35 HANDOFF — WRITTEN BY THE 08:26 PRE-MARKET SEAT, WHICH SPENDS THE 10-12 CLOSE
-  SEAT'S TUESDAY HANDOFF IN FULL.**
-  *(That item is REPLACED, not kept beside this one. Where each piece of it now lives, named exactly
-  rather than asserted as a tidy count: the 10-12 numbers and the `positions.md` size measurement are in
-  **`prior_run`** · the "high-water marks would be FALSE" near-miss is in the **standing item that owns
-  it**, further down this list · its re-date-the-body lesson was **APPLIED in `positions.md` this run**
-  rather than promised · its forward-calendar warning **FIRED TODAY** and is `T-2026-10-13-08` · its
-  `rebalance_delta` and broker/official price-gap readings are in **the standing items that own those
-  series**. ⚠ Catch (24)'s rule observed: the scope is named file by file, not written as a count.)*
-  ⚠ **TODAY'S `positions.md` MEASUREMENT, FOR THE SERIES: 87,597B → 87,633B, **+36B** — effectively flat.
-  This seat re-wrote `sell_rule_status` in place and removed a stray orphan line; it did NOT collapse an
-  older date block, which is the only thing that would have reduced the file. Item (9) stands unchanged
-  and remains PROMPT-LEVEL and the HUMAN'S.**
-  ⚠⚠ **`plan_today.md` IS FRESH — `plan_date: 2026-10-13` — AND IT CARRIES ZERO BUY, ZERO SELL AND ZERO
-  REBALANCE INTENTS.** **There is therefore NO `revalidate` line in it, and that is correct rather than
-  an omission: the field names the number an intent must be re-checked against, and there is no intent.**
-  ⚠⚠ **A FRESH EMPTY PLAN AND A STALE PLAN PRODUCE A BYTE-FOR-BYTE IDENTICAL ZERO-ORDER RUN. READ
-  FRESHNESS OFF `plan_date`, NEVER OFF THE OUTCOME, AND RECORD WHICH ONE YOU HAD.** **Non-exercise count
-  will be 39 after today's open; the gate has STILL never fired and its alert path is STILL untested
-  code.** ⚠ **The first morning it fires will by construction be a morning when the pre-market run
-  failed — read your own Step 2 then, do not recall it.**
-  ⚠⚠ **EVERY GATE IS OPEN AND NOTHING BLOCKED A BUY: breaker INACTIVE · weekly 0 of 3 · satellite 0%
-  with $30,000 idle · `control.md` notes empty · `TRADING_ENABLED: true` · §6 cap $5,040.66 on the
-  `account` basis.** **A buy is placeable at 09:35. Eight candidates were researched and all eight
-  rejected, so there is nothing to place — an empty plan is a complete instruction, not a gap to fill.**
-  ⚠ **`T-2026-10-13-01` is the ONLY one of the eight carrying a US-listed ticker (BE) and it is there as
-  the PAYER. IT IS NOT A SHELVED CANDIDATE AND MUST NOT BE REVIVED AT A QUOTE.**
-  **Core 70.2441% ($70,820.093456 / $100,820.09), IN BAND with 5.24 points of headroom — NO REBALANCE
-  DUE, but re-check it on live numbers because §2's rebalance is EXEMPT from the `plan_date` gate.**
-  ⚠ **RECOMPUTE §6's 5% CAP OFF YOUR OWN LIVE EQUITY: two readings minutes apart this morning differed
-  by $6.93 ($100,820.09 from `selftest`/`sleeves`, $100,813.16 from `account`). NAME THE BASIS OR DO NOT
-  WRITE THE NUMBER.**
-  ⚠ **Nothing is unresolved: zero open alerts, zero non-terminal orders (`orders --status all` returns
-  ONE row for the whole account history, the 09-03 core fill, terminal), zero satellite positions,
-  breaker INACTIVE with `halt_triggered_at: none` so no `HALT_CLEARED_AT` comparison is due, `control.md`
-  notes empty, ledger reconciled against the broker before any research was done.**
-  ⚠⚠ **COUNTERS: THESIS COUNT 143 → 151, SESSION COUNTER HELD AT 29/26. BOTH CALLS ARE THIS RUN'S AND
-  BOTH ARE CORRECT — the thesis unit advanced because this seat wrote eight, the session unit held
-  because routine 1 may never count the day it stands in. DO NOT "FIX" EITHER.** **151 was re-derived
-  from source (87 archived + 64 live headings); the raw `grep -c '^### T-'` returns 65 because the
-  file's own template heading matches — DO NOT "FIX" 151 TO 152.**
-  ⚠ **TODAY'S DATA WEEK IS DENSE AND NONE OF IT IS A LEAD YET: JPM/C/WFC report this morning, September
-  CPI lands 10-14, PPI and retail sales 10-15, ASML and TSMC report later in the week. When the prints
-  arrive they are FIRST-ORDER events on SCHEDULED REPORTERS, and §4 kills the competitor read-across as
-  the shared-cause object. A REPORTING DATE IS NOT A LEAD, AND NEITHER IS A REPORTED NUMBER WITH NO
-  SECOND COMPANY NAMED AGAINST IT.** *(Rejected twice now — `T-2026-10-12-05` and `T-2026-10-13-08`.)*
-  **— AND THE TWO THINGS THIS SEAT ADDS, BOTH OF THEM FINDINGS RATHER THAN READINGS.**
-  ⚠⚠ **(a) RULE (v) HAS A THIRD COSTUME: AN UNNAMED *CUSTOMER* CARRYING A MAP PIN, A DELIVERY SCHEDULE
-  AND A PRODUCT SPEC.** `T-2026-10-13-01`: LS Electric's own 2026-10-13 release discloses **$138,458,284**
-  for 38-kV switchgear and distribution transformers sold to **Bloom Energy**, **deliveries April–July
-  2027**, for a fuel-cell-powered data centre under construction in **Pennsylvania** owned by an unnamed
-  *"major U.S. technology company."* ⚠ **Unlike Synaptics' "Party A", it is withheld by a THIRD party's
-  release rather than by its own filing — so there is not even a filer obliged to name it later.**
-  ⚠⚠ **IT DIED TWICE OVER AND NEITHER KILL WAS A JUDGMENT CALL: PART 1, because the one US-listed party
-  is the *PAYER* and the only improving-revenue sentence needs an "and also" clause carrying the whole
-  load; and PART 2, FORM FIVE, because the disclosed figure is capital paid OUT while BE's own project
-  revenue is undisclosed — the source volunteered the kill in its own words: *"Any conclusion that the
-  data-center owner's revenue or costs change by a particular amount would be an inference unsupported
-  by the cited announcement."*** ⚠ **THE PULL WAS REAL AND IS RECORDED: the list of eligible US-listed
-  technology companies building Pennsylvania data centres is SHORT, and naming one would have been a
-  GUESS DRESSED AS A DEDUCTION. NO GUESS WAS MADE AND NONE IS RECORDED AS A CANDIDATE.** ⚠ **The
-  ETN/PWR/VRT/HUBB electrical-tier prior arrived instantly and was not written down — the order went to
-  LS Electric, which is precisely a fact about who did NOT win it.**
-  ⚠⚠ **(b) THE PARTY-TYPE AND UNIT TESTS ADDED TO THE STRUCTURAL FRAMING ON 10-12 HAVE NOW FIRED ON
-  CONSECUTIVE SESSIONS, AND THAT IS THE EVIDENCE THE FIX WORKS.** 10-12's false positive carried two
-  **SOVEREIGN STATES** and a **TONNAGE**; today's (`T-2026-10-13-02`, EnergyX/Trafigura, *"more than
-  $2.0 billion"* over ten years for 100,000 t of lithium) carries two **PRIVATE** companies and a
-  **price-derived estimate**. ⚠ **Both satisfied STRUCTURE completely. "IT RETURNED THE SHAPE" IS NOT
-  GROUNDS TO PROCEED TO A MECHANISM — keep PARTY TYPE (both parties companies) and UNIT (dollars, at
-  Company B) in the query itself, where they cost one clause.**
+- **⚠ 2026-10-13 MIDDAY HANDOFF — WRITTEN BY THE 09:37 MARKET-OPEN SEAT, WHICH SPENDS THE 08:26
+  PRE-MARKET SEAT'S 09:35 HANDOFF IN FULL.**
+  *(That item is REPLACED, not kept beside this one. Where each piece of it now lives, named file by
+  file rather than asserted as a tidy count: the 10-13 pre-market numbers, the eight kills and the
+  `positions.md` +36B measurement are in **`prior_run`** · the rule (v) third-costume finding and the
+  party-type/unit finding are **spent as findings** and survive in `research_log.md` at
+  `T-2026-10-13-01` and `-02`, which this seat VERIFIED PRESENT rather than re-narrated · the
+  `highest_close` and vanished-run warnings are in **the standing items that own them**, further down ·
+  the §6-cap-basis warning **WAS ACTED ON AT THIS SEAT** and its new readings are below. ⚠ Catch (24)'s
+  rule observed: scope named file by file, not as a count.)*
+  ⚠⚠ **THE STALENESS GATE WAS EXERCISED AND PASSED AT 09:37, AND THAT IS THE SINGLE THING THIS SEAT
+  MOST NEEDS TO HAND ON: `plan_date: 2026-10-13` was READ OFF THE FIELD and compared to an ET date
+  COMPUTED INDEPENDENTLY (`America/New_York` → 2026-10-13, Tuesday, ISO week 42 weekday 2). FRESH.**
+  **NON-EXERCISE COUNT IS NOW 39. THE GATE HAS STILL NEVER FIRED AND ITS ALERT PATH IS STILL UNTESTED
+  CODE.** ⚠ **The plan was fresh and DELIBERATELY EMPTY, and this seat recorded which one it had BEFORE
+  reaching the zero-order outcome — a fresh empty plan and a stale plan produce a byte-for-byte
+  identical run, so the distinction exists only if it is written at the moment the field is read, never
+  reconstructed from the result afterwards.**
+  ⚠⚠ **EVERY GATE WAS OPEN AT THE ONE SEAT ENTITLED TO USE THEM, AND NOTHING WAS PLACED: breaker
+  INACTIVE · weekly **0 of 3** · satellite **0%** with **$30,000 idle** against a 30% target ·
+  `control.md` notes empty · `TRADING_ENABLED: true` · market **OPEN** · §6 cap standing ready.** **The
+  buy window of the day has now CLOSED without a buy, and the cause is upstream and legitimate: the
+  08:26 seat researched eight candidates and rejected all eight. AN EMPTY PLAN IS A COMPLETE
+  INSTRUCTION. The next seat entitled to open anything is 2026-10-14 09:35.**
+  ⚠ **T-2026-10-13-01 (BE, the PAYER on LS Electric's $138,458,284 switchgear order) WAS NOT REVIVED
+  AND NO QUOTE WAS TAKEN ON IT.** **Zero `move` calls were due and none was made — an ABSENT check, the
+  fourth state, NOT a pass and NOT a skip.** ⚠ **All eight IDs `T-2026-10-13-01`…`-08` were CONFIRMED
+  PRESENT AND REJECTED in `research_log.md` (lines 145/195/224/253/286/317/344/370) before this seat
+  concluded there was nothing to execute. The confirmation was PERFORMED, not assumed.**
+  ⚠⚠ **§6's 5% CAP, RECOMPUTED AT THIS SEAT OFF ITS OWN LIVE EQUITY AND NOT INHERITED — BOTH BASES
+  NAMED: `$5,040.46` on the `sleeves` basis ($100,809.2) and `$5,040.51` on the `account` basis
+  ($100,810.19).** ⚠ **The two bases are **$0.99 apart** here against **$6.93** at 08:26 — the spread
+  NARROWED into the open. That is one observation about mark settlement, NOT a trend, and the 12:xx seat
+  must recompute off its own numbers rather than inherit either figure or the narrowing.**
+  **CORE 70.2418% ($70,810.208635 / $100,809.2), IN BAND with 5.24 points of headroom at the near edge;
+  `core_in_band: true`, `rebalance_needed: false`, `rebalance_delta` −$243.77 — a DISTANCE READOUT, NOT
+  AN INSTRUCTION. 84th consecutive in-band run. NO REBALANCE WAS PLACED.** ⚠ **§2's rebalance is the one
+  action EXEMPT from the `plan_date` gate, so it was checked on live numbers at this seat rather than
+  inherited from the plan — a check, not an expectation.**
+  ⚠ **NOTHING IS UNRESOLVED: zero open alerts · zero non-terminal orders (`orders --status all` returns
+  ONE row for the whole account history, the 2026-09-03 core fill, terminal — so §7's limbo warning has
+  NO OPERAND rather than a clean bill) · zero satellite positions · breaker INACTIVE with
+  `halt_triggered_at: none`, so no `HALT_CLEARED_AT` comparison was due · `control.md` notes empty ·
+  ledger reconciled against the broker as this run's FIRST job, before any rule was read.**
+  ⚠ **THE LEDGER CHECK HAD A TRAP AND IT WAS NAMED: `positions.md` DOES contain `entry_price` and
+  `invalidation` keys, at lines 45 and 55 — INSIDE THE `## Template` SECTION. That is not a position.
+  It was confirmed to be the template rather than assumed to be, and a future seat grepping for those
+  keys will hit the same two lines.**
+  ⚠⚠ **TODAY'S `positions.md` MEASUREMENT, FOR THE SERIES, REPORTED AS IT CAME OUT RATHER THAN AS IT WAS
+  INTENDED: 87,633B → **90,475B**, **+2,842** — 1,042 lines → 1,075. **THIS IS NOT A COLLAPSE AND THE
+  HONEST WORD IS GROWTH.** This seat re-dated `sell_rule_status` and re-wrote its body (88 lines → 120),
+  which is per-seat DENSITY improving while absolute size rises — the same mechanism the 10-12 close
+  seat reported at +1,642B. ⚠ **What was added and is defensible: the two findings below, the
+  grep-trap naming, and the staleness-gate record. What was NOT done: no older dated block was
+  collapsed, which is the only thing that would have reduced the file.** **Item (9) stands unchanged and
+  remains PROMPT-LEVEL and the HUMAN'S — four consecutive seats have now reported growth while
+  individually behaving correctly, and that is a fact about the instructions, not about any one seat.**
+  ⚠⚠ **COUNTERS: SESSION COUNTER **HELD AT 29/26** AND THESIS COUNT **HELD AT 151**. BOTH UNITS HOLD AT
+  THIS SEAT — and that is a **THIRD SHAPE**, not the mirror of this morning's. The session unit holds
+  because the counter counts **COMPLETED** sessions and 2026-10-13 is **TWO SEATS FROM OVER**; the thesis
+  unit holds because this seat wrote **NO** thesis and the eight it verified were written and already
+  counted by the 08:26 seat. **DO NOT "FIX" EITHER.**
+  ⚠⚠ **AND THIS SEAT GOT IT WRONG FIRST, WHICH IS THE PART WORTH KEEPING: I WROTE `29/26 → 30/27` AND
+  CALLED IT "THE EXACT MIRROR OF THIS MORNING'S CALL" BEFORE ANY CHECK.** ⚠ **That is catch (22)
+  precisely — a seat that restates the counting rule correctly and then writes the advanced number
+  anyway — and it was reached by pattern-matching catch (21)'s one-advances-one-holds shape onto a seat
+  where BOTH hold.** ⚠ **WHAT CAUGHT IT WAS A SENTENCE THE 08:26 SEAT LEFT IN `positions.md:587`: *"DO
+  NOT 'FIX' 29 BACK TO 28 AND DO NOT ADVANCE IT TO 30 BEFORE TONIGHT'S BELL."* The generalisation the
+  08:26 seat wrote as "routine 1 may never count the day it stands in" is too narrow — **NO seat may
+  count the day it stands in. Only the close seat, standing after the bell, counts a completed day.** **151 remains re-derived from source (87 archived + 64 live headings); raw
+  `grep -c '^### T-'` returns 65 because the file's own template heading matches — DO NOT "FIX" 151 TO
+  152.**
+  **— AND THE ONE THING THIS SEAT ADDS AS AN OBSERVATION RATHER THAN A READING.**
+  ⚠ **A 2026-10-13 VOO BAR NOW EXISTS, AND IT IS A PARTIAL.** `bars --days 1 --adjustment all` at 09:37
+  returns **c 714.97, o 714.55, h 714.97, l 714.52, n 45, v 1,480, vw 714.582705**, `t` 04:00Z — where
+  the 08:26 seat's `--days 4` returned **no 10-13 bar at all**. ⚠⚠ **IT IS SEVEN MINUTES OF TAPE. IT IS
+  NOT A CLOSE, NOT A MARK, AND NOT COMPARABLE TO 10-12's n 1,393 / v 32,547.** **It corroborates the
+  pre-market discriminator precisely BY disagreeing with it in the expected direction — the bar's
+  absence was a fact about the session not having started, and its appearance at 45 trades deep is the
+  same fact from the other side.** ⚠ **The 12:xx and 16:xx seats will see this same bar grown. Only the
+  close seat holds a complete one, and §5.4's `highest_close` stamp is the CLOSE seat's to write and
+  NOBODY'S to write on core.**
+  ⚠⚠ **TODAY'S DATA WEEK IS STILL DENSE AND STILL NOT A LEAD: JPM/C/WFC reported this morning, CPI lands
+  10-14, PPI and retail sales 10-15, ASML and TSMC later in the week. A REPORTING DATE IS NOT A LEAD AND
+  NEITHER IS A REPORTED NUMBER WITH NO SECOND COMPANY NAMED AGAINST IT.** *(Rejected twice —
+  `T-2026-10-12-05` and `T-2026-10-13-08`.)* ⚠ **The bank prints have now actually LANDED, which changes
+  their status from rule (iii) "nothing has happened yet" to a real first-order event on a scheduled
+  reporter — §4 still kills the competitor read-across as the shared-cause object. The upgrade in status
+  is NOT an upgrade in eligibility.**
 
 - **⚠⚠ GFS/TSMC CLEARED EVERY FILTER AND DIED ON THE *THESIS PARTS* — `T-2026-10-09-01`, STILL THE
   MOST INFORMATIVE REJECTION THIS LOG HAS PRODUCED.** *(Collapsed 10-12 08:36: the catch (23)/(24)
