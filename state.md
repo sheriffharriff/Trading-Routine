@@ -10,8 +10,8 @@ The block below is parsed by `scripts/common.py` and gates real behavior
 `key: value` format exactly. Prose goes underneath.
 
 ```
-last_run: 2026-10-13 12:41 ET 3-midday-management (SEAT 3 OF 4, TUESDAY. EXITS-ONLY BY CONSTRUCTION - this seat MAY NOT open a position, so its zero-order outcome is STRUCTURAL, not the discipline the 09:37 seat's was. Selftest PASSED all five, trading_enabled true, LIVE paper, equity 100,804.74 at pre-flight. CLOCK 12:41:26 is_open TRUE with next_close 2026-10-13T16:00 and next_open rolled to 2026-10-14 - the MID-SESSION signature, read off the DATES; not a holiday, not an early close. LEDGER RECONCILED FIRST, BEFORE ANY RULE WAS READ: broker returns ONE row, VOO 99.046311231 sh @ avg_entry 706.74, market_value 70,802.265, cost_basis 69,999.99, unrealized +802.28/+1.146%, intraday -28.72/-0.041%, current 714.84, lastday 715.13; positions.md holds ZERO satellite blocks. BOTH SIDES AGREE. THE GREP TRAP NAMED NOT MERELY SURVIVED: entry_price/highest_close/invalidation return THREE hits, lines 45/53/55, ALL INSIDE ## Template - three hits is the EXPECTED reading of an EMPTY ledger, and the only `### <TICKER>` heading in the file is the template's. STEP 2, THE §5.4 HIGH-WATER STALENESS DETECTOR AND THIS SEAT'S OWN INSTRUMENT, REACHED NO OPERAND FOR A 30th SESSION - no satellite position carries a highest_close, so there was no mark to find stale and NO BACKFILL WAS PERFORMED OR DUE. ⚠⚠ THE BLIND SPOT IS THE SAME SHAPE AS THE FAILURE THE ROUTINE EXISTS TO CATCH, ONE LEVEL UP: an EMPTY ledger and a ledger whose marks are ALL CURRENT are BYTE-FOR-BYTE INDISTINGUISHABLE at this seat - both print 'no backfill performed'. The bars --adjustment all backfill and the max-close comparison are UNEXERCISED CODE and will first run on a position already open and already exposed. STEP 3: §5.1-5.4 re-evaluated IN ORDER and reached NO OPERAND - no invalidation string to read verbatim, no timing_window or deadline, no satellite entry_price, no highest_close. DISTANCE UNDEFINED, NOT LARGE; 'nothing close to triggering' would be a fabrication, since nothing can be close to a threshold it has no operand for. ⚠ Core VOO struck from the working list BEFORE any rule was read, per §5's exemption. ZERO sell, ZERO quote, ZERO bars, ZERO fills - and ZERO bars DELIBERATELY: with nothing to compare, a pull would have read in the artifact as a mark having been checked. Each of those is an ABSENT check, NOT a passing one. STEP 4 had no triggered position and therefore no subject; consecutive_closed_losses 0 AND THE UPDATE WAS NEVER REACHED - an UNTOUCHED counter, not a reset one. §6's three-loss breaker has NEVER BEEN APPROACHED, not merely never breached, and both the increment and the clickup.py alert --key circuit-breaker path remain UNTESTED CODE. ⚠ The ENTIRE sell path is likewise UNEXERCISED in this account's history - --reason handling, fill verification, the realized-P&L write - and so is buy's satellite branch (--thesis-id/--asset-type/--market-cap). The only order ever placed was --core. ⚠⚠ DO NOT STAMP CORE VOO WITH A highest_close - DECLINED FOR A 94th CONSECUTIVE RUN. VOO is the only row the broker returns and the field is empty, which is the structural pull present at every seat; but THIS seat's ingredient is the WORST of the four, because at 12:41 a partial bar's `c` equals latestTrade.p to the cent and carries no warning that it is not a close. Stamping it would ARM §5.4 ON THE ONE POSITION §5 EXEMPTS, which §7 forbids outright. SLEEVES: core 70.24% (70,802.265/100,802.27), IN BAND by 5.24 points at the near edge, 85th consecutive in-band run; satellite 0.0% count 0; cash 30,000.00 = 29.76%; rebalance_delta -240.68 A DISTANCE READOUT NOT AN INSTRUCTION - and §2 puts rebalancing at the MARKET-OPEN seat, so none was contemplated here. ⚠ TWO EQUITY READINGS MINUTES APART WITH NO ORDER IN THE INTERVAL, a TENTH instance: selftest 100,804.74 vs sleeves 100,802.27, 2.47 APART, against 0.99 at 09:37 and 6.93 at 08:26. NAME THE BASIS OR DO NOT WRITE THE NUMBER; never difference two figures from different calls; and DO NOT read the three gaps as a trend. HOUSEKEEPING: week anchor RECOMPUTED FROM SOURCE (America/New_York -> 2026-10-13, Tuesday, ISO week 42 weekday 2, Monday anchor 2026-10-12) and found MATCHING week_of, so new_positions_this_week DELIBERATELY NOT RE-RESET, 0 of 3; breaker INACTIVE with halt_triggered_at none so NO HALT_CLEARED_AT comparison was due and that path stays untested against a live halt; control.md notes EMPTY; orders --status all STILL ONE ROW for the whole account history (the 09-03 core fill, terminal) so §7's limbo warning has NO OPERAND rather than a clean bill; zero open alerts. SESSION COUNTER HELD AT 29/26 AND THESIS COUNT HELD AT 151 - BOTH UNITS HOLD, the third shape and NOT catch (21)'s. The session unit holds because NO seat may count the day it stands in and today is ONE SEAT FROM OVER; TONIGHT'S CLOSE SEAT ADVANCES IT TO 30/27 and this seat MUST NOT - the 09:37 seat wrote 30/27 prematurely and was caught by that sentence sitting in positions.md, which is why it stays there. The thesis unit holds because this seat wrote NO thesis; today's eight were written and counted by the 08:26 seat. 151 RE-DERIVED FROM SOURCE as 87 archived + 64 live headings - raw grep returns 65 because the file's own template heading matches, so DO NOT 'FIX' 151 TO 152. ⚠⚠ ONE REAL FINDING AND IT IS NOT ABOUT THE MARKET: THE MEMORY CORPUS IS NOW THE RISK. 760KB that every run is instructed to read IN FULL, BLIND - weekly_review.md 235KB, research_log.md 183KB, state.md 138KB, positions.md ~88KB WHILE HOLDING ZERO POSITIONS, journal.md 75KB, against trade_log.md at 4.5KB which is the only file sized like this account's actual activity. THIS SEAT CUT ITS OWN positions.md BLOCK 120 -> 96 LINES, 90,475B -> 87,959B, A REAL REDUCTION OF 2,516B AND THE FIRST MEASURED SHRINK ON RECORD - by writing LESS rather than by narrating a collapse, which is how the 10-12 close seat's attempt GREW its block 160 -> 196 lines and the file +1,642B. ⚠ AND THE HONEST READING IS THAT IT DOES NOT SOLVE IT: 2,516B is 0.35% of the corpus, and one seat writing tightly cannot outrun four seats a day appending. FLAGGED FOR THE HUMAN - the fix is a rule in control.md or in the routine prompts capping what a seat may append when the null is UNCHANGED; a seat cannot grant itself that rule, and five seats have each now independently judged their own block the necessary one. FILES: positions.md sell_rule_status RE-DATED TO 12:41 AND THE BODY RE-WRITTEN WITH IT (catch (25)'s rule - re-dating without re-writing IS the defect) and cut by 24 lines; state.md rewritten, the 09:37 midday handoff SPENT and replaced with a close-seat handoff, and its one forward-looking item - the 10-14 CPI / 10-15 PPI data week - CARRIED FORWARD EXPLICITLY RATHER THAN DROPPED, because it outlives the seat that wrote it; prior_run COMPACTED and the compaction NAMED; plan_today.md NOT TOUCHED - it is the pre-market seat's output and routine 3 is not its consumer; research_log.md, trade_log.md and alerts.md UNTOUCHED - no theses, no fills, no incidents)
-prior_run: 2026-10-13 09:37 ET 2-market-open-execution (SEAT 2 OF 4. ⚠ COMPACTED BY THE 12:41 SEAT FROM ~1,100 WORDS, AND THE COMPACTION IS NAMED RATHER THAN SILENT - state.md is rewritten every run by contract, the full narration is in git history, and its load-bearing findings were already folded into positions.md and the live items. Nothing live discarded. THE ONLY SEAT THAT MAY OPEN A POSITION, AND IT OPENED NONE - because the plan it consumed carried nothing, NOT because anything blocked it: breaker INACTIVE, weekly 0 of 3, 30,000 idle, §6 cap ~5,040.46, TRADING_ENABLED true, market OPEN. AN EMPTY PLAN IS A COMPLETE INSTRUCTION. The buy window of the day closed without a buy and the cause is upstream and legitimate - the 08:26 seat researched eight candidates and rejected all eight. ⚠ THE STALENESS GATE WAS EXERCISED AND PASSED: plan_date 2026-10-13 READ OFF THE FIELD against an ET date COMPUTED INDEPENDENTLY - FRESH. NON-EXERCISE COUNT 39; the gate has still never fired and its alert path is UNTESTED CODE. The plan was FRESH AND DELIBERATELY EMPTY and that was recorded BEFORE the zero-order outcome was reached, because a fresh empty plan and a stale plan produce a BYTE-FOR-BYTE IDENTICAL run. Ledger reconciled first and both sides agreed; all eight IDs T-2026-10-13-01..-08 CONFIRMED PRESENT AND REJECTED in research_log.md before concluding there was nothing to execute; T-2026-10-13-01 (BE, the PAYER on LS Electric's 138,458,284 USD switchgear order) NOT REVIVED and no quote taken; ZERO move calls due and none made - the FOURTH STATE, an ABSENT check. Core 70.2418%, in band, 84th consecutive run; rebalance_delta -243.77, no rebalance placed. ⚠ ITS ONE SELF-CAUGHT ERROR, KEPT BECAUSE IT IS THE USEFUL PART: it wrote the session counter 29/26 -> 30/27, called it 'the exact mirror of this morning's call', and was caught by a predecessor's warning in positions.md - catch (22) exactly, a seat restating the counting rule correctly and then writing the advanced number anyway.)
+last_run: 2026-10-13 16:17 ET 4-market-close-journal (SEAT 4 OF 4, TUESDAY, A COMPLETE SESSION - all four seats ran and committed. Selftest PASSED all five, trading_enabled true, LIVE paper, equity 100,829.01 at pre-flight AND sleeves returned 100,829.01 TO THE CENT - the eleventh two-readings instance and the FIRST to AGREE; AGREEMENT IS NOT A FIX and four readings are not a trend. CLOCK 16:17:10 is_open FALSE with BOTH next_open AND next_close dated 2026-10-14 - the POST-BELL signature, read off the DATES, exactly as the 12:41 seat predicted in writing. NOT a holiday, so the skip path was not taken and today IS a real session to journal. **STEP 2, THIS RUN'S WHOLE REASON TO EXIST, HAD NO SUBJECT FOR A 31st SESSION: zero open satellite positions, so NO highest_close to raise and NO (as of ...) date to advance. The field is ABSENT - the third state, carrying no date at all - so the advance-the-date-every-day rule had nothing to write onto either. 'MARKS UPDATED' WOULD BE FALSE AND SO WOULD 'VERIFIED'; THE JOB HAD NO OPERAND. NO BACKFILL DUE, NONE PERFORMED - the midday detector is not owed a date it can read, because there is no mark.** ⚠⚠ DO NOT STAMP CORE VOO - DECLINED A 95th CONSECUTIVE RUN, AND THIS SEAT'S PULL IS THE STRONGEST OF THE FOUR, NOT THE WEAKEST: it held a REAL, COMPLETE, CORRECTLY BASED official close (VOO c 715.08) at the one moment it had nothing to write it onto, and VOO is the only row the broker returns. Stamping it would ARM §5.4 ON THE ONE POSITION §5 EXEMPTS, which §7 forbids. The ingredient being CORRECT is what makes this refusal load-bearing; 12:41 declined a partial bar, which is easier. LEDGER RECONCILED FIRST: broker returns ONE row, VOO 99.046311231 sh @ 706.74, market_value 70,829.0076, cost_basis 69,999.99, unrealized +829.0176/+1.184%, intraday -1.9809, current 715.11, lastday 715.13; positions.md holds ZERO satellite blocks. BOTH SIDES AGREE. GREP TRAP NAMED: entry_price/highest_close/invalidation return THREE hits, lines 45/53/55, ALL INSIDE ## Template - the expected reading of an EMPTY ledger. §5.1-5.4 re-evaluated IN ORDER and reached NO OPERAND, 83rd consecutive session; DISTANCE UNDEFINED, NOT LARGE. Core VOO struck from the working list BEFORE any rule was read. ZERO sell, ZERO quote, ZERO fills. TWO bars calls and BOTH were FOR THE DAY'S RECORD, NOT FOR A MARK (--adjustment all and raw, identical 715.08 - basis non-decisive today, stated because the basis is part of the figure). DAY: VOO o 714.55 h 715.725 l 713.41 c 715.08 n 1262 v 25885 vw 714.860885, down 23.5c/-0.033% from 10-12's 715.315. Official-close equity 100,826.0362, day -23.2759/-0.0231%, since inception +0.8260% on a 100,000.00 opening. ⚠ BROKER BASIS READS -1.9786/-0.00196% (equity 100,829.01 vs last_equity 100,830.98855, matching unrealized_intraday_pl -1.980927 and change_today -0.00003) - AN ORDER OF MAGNITUDE APART ON A TINY NUMBER. NEVER CONCATENATE THE TWO; §1 is computed on the official-close series and the broker line is reported BESIDE it. SLEEVES on official closes: core 70.2458% (70,826.0362/100,826.0362), IN BAND by 5.25 points at the near edge and 4.75 at the far, 86th consecutive in-band run; satellite 0.0% count 0; cash 29.7542%; rebalance_delta -248.70 A DISTANCE READOUT NOT AN INSTRUCTION - NO REBALANCE DUE TOMORROW. HOUSEKEEPING: week anchor RECOMPUTED FROM SOURCE (America/New_York -> 2026-10-13, Tuesday, ISO week 42 weekday 2, Monday anchor 2026-10-12) and found MATCHING week_of, so new_positions_this_week DELIBERATELY NOT RE-RESET, 0 of 3; consecutive_closed_losses 0 AND THE UPDATE WAS NEVER REACHED - an UNTOUCHED counter, not a reset one, since nothing has ever closed, so §6's three-loss breaker has NEVER BEEN APPROACHED and both its increment and the clickup.py alert --key circuit-breaker path remain UNTESTED CODE; breaker INACTIVE with halt_triggered_at none so NO HALT_CLEARED_AT comparison was due; orders --status all STILL ONE ROW for the whole account history (09-03 core fill, filled, terminal) so §7's limbo warning has NO OPERAND rather than a clean bill; control.md notes EMPTY; zero open alerts. SESSION COUNTER ADVANCED 29/26 -> 30/27 AND THIS SEAT IS THE ONLY ONE ENTITLED TO (no seat may count the day it stands in; after the bell this seat is the first to stand on a completed one). INHERITED-AND-INCREMENTED and NOT re-derivable from journal.md, whose 09-28 and 10-05 entries are MISSING. THESIS COUNT HOLDS AT 151 - one counter advanced, one held, both correct, the opposite-directions shape. 151 RE-DERIVED FROM SOURCE: 87 archived + 64 live (6+5+7+8+7+10+8+5+8 by date); raw grep returns 65 because the template heading matches - DO NOT 'FIX' 151 TO 152. RESEARCH: 8 theses, 0 accepted, 8 REJECTED (T-2026-10-13-01..-08), all written by the 08:26 seat; this seat wrote none. ⚠⚠ TWO REAL FINDINGS AND NEITHER IS ABOUT THE MARKET. (1) TWO PRICE FEEDS DISAGREE ON VOO'S CLOSE AND BY MORE THAN THE DAY'S P&L: the official bar reads 715.08 today and 715.315 for 10-12, the broker's positions row 715.11 and 715.13 - 3c today and 18.5c on Monday. HARMLESS WHILE THE SLEEVE IS EMPTY; load-bearing the moment §5.4 arms, because a trailing stop that mixes a broker mark into a bar series FIRES ON THE WRONG NUMBER AND LOOKS CORRECT DOING IT. positions.md already carries the same-source rule; today is the first time the two were seen to disagree directly. (2) THE MEMORY CORPUS, FLAGGED FOR THE HUMAN AGAIN AND WITH THIS SEAT'S OWN FAILURE MEASURED RATHER THAN ASSERTED: ~760KB read in full, blind, every run - weekly_review.md 235KB, research_log.md 183KB, state.md 135KB, positions.md 88KB WHILE HOLDING ZERO POSITIONS, journal.md 75KB, against trade_log.md at 4.5KB. ⚠⚠ THIS SEAT'S FIRST DRAFT OF ITS positions.md BLOCK WENT 97 -> 103 LINES AND GREW THE FILE 708B - THE 10-12 CLOSE SEAT'S EXACT FAILURE, ONE RUN AFTER IT WAS WRITTEN DOWN - AND WAS CAUGHT BY RUNNING wc RATHER THAN BY TRUSTING HOW THE PROSE FELT. The committed draft is 97 -> 89 lines and positions.md 87,959 -> 87,475B, -484B, a real reduction. ⚠ AND TWO FURTHER DRAFTS WERE SPENT DISCOVERING THAT QUOTING THE FILE'S FINAL BYTE COUNT INSIDE THE FILE CHANGES IT - a fixed-point chase; the block now states its LINE delta and the file's DIRECTION, and the exact byte figure lives HERE, where it is not its own operand. 'COLLAPSED' IS A CLAIM WITH A NUMBER BEHIND IT OR IT IS NOTHING. The structural reading is unchanged: one seat writing tightly cannot outrun four seats a day appending, SIX seats have each now judged their own block the necessary one, and THE FIX IS A RULE ONLY THE HUMAN CAN WRITE. FILES: journal.md APPENDED (2026-10-13 entry, the 'what I got wrong' section carrying the measured positions.md miss and the two-feed near-miss); positions.md sell_rule_status REPLACED by a 2026-10-13 ALL-FOUR-SEATS DIGEST re-dated to 16:17 AND re-written with it per catch (25), folded into ONE block rather than opening a second, and MEASURED; state.md rewritten and the 12:41 close-seat handoff SPENT; ClickUp daily summary POSTED; plan_today.md NOT TOUCHED (pre-market's output, and routine 4 is not its consumer); research_log.md, trade_log.md and alerts.md UNTOUCHED - no theses, no fills, no incidents)
+prior_run: 2026-10-13 12:41 ET 3-midday-management (SEAT 3 OF 4. ⚠ COMPACTED BY THE 16:17 SEAT AND THE COMPACTION IS NAMED RATHER THAN SILENT - state.md is rewritten every run by contract, the full narration is in git history, and its load-bearing findings are folded into the positions.md 10-13 digest and the live items. Nothing live discarded. EXITS-ONLY BY CONSTRUCTION, so its zero-order outcome is STRUCTURAL, not the discipline the 09:37 seat's was - a midday entry would route around the pre-market thesis and the 09:35 gate. STEP 2, ITS OWN INSTRUMENT, IS THE §5.4 STALENESS DETECTOR AND IT REACHED NO OPERAND FOR A 30th SESSION: no satellite position carries a highest_close, so there was no mark to find stale and no backfill was due. ⚠⚠ ITS BLIND SPOT IS THE SAME SHAPE AS THE FAILURE IT EXISTS TO CATCH, ONE LEVEL UP - an EMPTY ledger and a ledger whose marks are ALL CURRENT are BYTE-FOR-BYTE INDISTINGUISHABLE at that seat; both print 'no backfill performed'. §5.1-5.4 reached no operand; ZERO sell, quote, bars and fills, and ZERO bars DELIBERATELY, because a decorative pull would have read in the artifact as a mark having been checked. Core 70.24%, in band, 85th consecutive run; rebalance_delta -240.68. It DECLINED to stamp core VOO for a 94th run on the ground that its own ingredient was the WORST of the four: at 12:41 a partial bar's c equals latestTrade.p to the cent and carries no warning that it is not a close. ⚠ ITS ONE SELF-CAUGHT ITEM, KEPT BECAUSE IT IS WHAT MADE TONIGHT'S COUNTER CORRECT: it HELD the session counter at 29/26 and said in writing that the close seat advances it to 30/27 - which is exactly what happened. The 09:37 seat had written 30/27 prematurely and was caught by that sentence sitting in positions.md.)
 week_of: 2026-10-12
 new_positions_this_week: 0
 consecutive_closed_losses: 0
@@ -19,9 +19,9 @@ circuit_breaker: INACTIVE
 halt_triggered_at: none
 core_established: true
 core_ticker: VOO
-core_pct: 70.24
+core_pct: 70.25
 satellite_pct: 0.0
-cash_pct: 29.76
+cash_pct: 29.75
 open_thesis_ids: none
 ```
 
@@ -38,100 +38,86 @@ discarded; settled items were folded to one line each and repeated emphasis was 
 
 ### Live — act on these
 
-- **⚠ 2026-10-13 CLOSE-SEAT HANDOFF — WRITTEN BY THE 12:41 MIDDAY SEAT, WHICH SPENDS THE 09:37
-  MARKET-OPEN SEAT'S MIDDAY HANDOFF IN FULL.**
-  *(That item is REPLACED, not kept beside this one. Where its pieces went, file by file rather than as
-  a tidy count: the 10-13 open numbers and the staleness-gate exercise are in **`prior_run`** · the
-  eight 10-13 kills are **spent as findings** and live in `research_log.md` at `T-2026-10-13-01`…`-08` ·
-  the §6-cap-basis warning **WAS ACTED ON HERE** and this seat's own readings are below · the
-  `highest_close` and vanished-run warnings are in **the standing items that own them**, further down.)*
+- **⚠ 2026-10-14 PRE-MARKET HANDOFF — WRITTEN BY THE 2026-10-13 16:17 CLOSE SEAT, WHICH SPENDS THE 12:41
+  MIDDAY SEAT'S CLOSE-SEAT HANDOFF IN FULL.**
+  *(That item is REPLACED, not kept beside this one. Where its pieces went: the 10-13 readings and both
+  Step 2 nulls are in **`prior_run`** and in the **2026-10-13 all-four-seats digest in `positions.md`** ·
+  the eight 10-13 kills are **spent as findings** and live in `research_log.md` at `T-2026-10-13-01`…`-08`
+  · the `highest_close`, vanished-run and counter warnings are in **the standing items that own them**,
+  below · the data week is **re-stated here with its status updated**, because it is the one item that
+  outlives the seat that wrote it.)*
 
-  ⚠⚠ **THE ONE THING THIS SEAT MOST NEEDS TO HAND ON IS A NEGATIVE, AND IT IS ABOUT YOUR OWN JOB:
-  ROUTINE 3 IS THE §5.4 STALENESS DETECTOR AND IT REACHED NO OPERAND FOR A 30th SESSION. An EMPTY
-  ledger and a ledger whose marks are ALL CURRENT are byte-for-byte indistinguishable at this seat —
-  both print "no backfill performed". The `bars --adjustment all` backfill and the max-close comparison
-  are UNEXERCISED CODE and will first run on a position already open and already exposed.** ⚠ **Your
-  stamp has a blind spot of exactly the same shape: a run that wrote no mark and a run that correctly
-  left one unchanged are indistinguishable in every artifact. The first satellite fill arms both.**
+  **TODAY WAS A COMPLETE SESSION AND IT CLOSED FLAT.** Equity **$100,826.04** on official closes
+  (**$100,829.01** live), day **−$23.28 / −0.0231%**, since inception **+0.8260%**. VOO closed **715.08**,
+  down 23.5¢ from 715.315. Core **70.2458%**, **IN BAND** by 5.25 points at the near edge — **NO REBALANCE
+  IS DUE.** Satellite **0.0%**, count **0**, cash **29.7542%**. Week **0 of 3**, breaker **INACTIVE**,
+  `TRADING_ENABLED: true`, `control.md` notes **empty**, **zero open alerts**, **zero non-terminal
+  orders**. **NOTHING IS UNRESOLVED AND NOTHING IS PENDING.**
 
-  ⚠⚠ **DO NOT STAMP CORE VOO WITH A `highest_close`. DECLINED 94 CONSECUTIVE RUNS, AND YOURS IS THE
-  SEAT WITH THE STRONGEST TEMPTATION OF THE FOUR, NOT THE WEAKEST** — you will hold a real, complete,
-  correctly-based official close at the moment you have nothing to write it onto, and VOO is the only
-  row the broker returns. **Writing it would ARM §5.4 ON THE ONE POSITION §5 EXEMPTS. §7 forbids it.**
-  ⚠ **This seat's own ingredient was the worst of the four and it declined on that basis too: at 12:41 a
-  partial bar's `c` equals `latestTrade.p` to the cent and carries no warning that it is not a close.**
+  ⚠⚠ **THE ONE THING THIS SEAT MOST NEEDS TO HAND ON IS A NEGATIVE ABOUT ITS OWN JOB: STEP 2 HAD NO
+  SUBJECT FOR A 31st SESSION.** Zero satellite positions → no `highest_close` to raise and **no `(as of
+  …)` date to advance**; the field is **ABSENT, the third state, carrying no date at all**, so even the
+  advance-the-date-every-day rule had nothing to write onto. **"MARKS UPDATED" WOULD BE FALSE AND SO WOULD
+  "VERIFIED". NO BACKFILL IS DUE AND NONE WAS PERFORMED.** ⚠ **The stamp's blind spot: a run that wrote no
+  mark and a run that correctly left one unchanged are indistinguishable in every artifact. The first
+  satellite fill arms the stamp and the midday detector together, and both run first on a position already
+  open and exposed.**
+  ⚠⚠ **DO NOT STAMP CORE VOO. DECLINED 95 CONSECUTIVE RUNS. §7 forbids arming §5.4 on the one position §5
+  exempts.** ⚠ **This seat's refusal is the load-bearing one precisely because its ingredient was CORRECT
+  — a real, complete official close, held at the moment it had nothing to write it onto.**
 
-  ⚠⚠ **YOU ADVANCE THE SESSION COUNTER, 29/26 → 30/27. YOU ARE THE ONLY SEAT ENTITLED TO — no seat may
-  count the day it stands in, and after the bell you are the first to stand on a completed one.** ⚠ **The
-  09:37 seat wrote 30/27 prematurely and was caught by that sentence sitting in `positions.md`; it stays
-  there for that reason. It CANNOT be re-derived from `journal.md` — the 09-28 and 10-05 close entries
-  are MISSING, so the journal under-counts by exactly those two runs. INHERITED-AND-INCREMENTED.**
-  **THESIS COUNT HOLDS AT 151** (87 archived + 64 live headings; `grep -c '^### T-'` returns **65**
-  because the file's own template heading matches — **DO NOT "FIX" 151 TO 152**). Seats 2 and 3 wrote no
-  thesis today; all eight of today's were written and counted by the 08:26 seat.
+  ⚠⚠ **NEW TONIGHT, AND IT IS THE FINDING WITH TEETH: TWO PRICE FEEDS DISAGREE ON VOO'S CLOSE, BY MORE
+  THAN THE DAY'S ENTIRE P&L.** `bars --adjustment all` reads **715.08** (10-13) and **715.315** (10-12);
+  the broker's `positions` row reads `current_price` **715.11** and `lastday_price` **715.13** — **3¢
+  today and 18.5¢ on Monday.** On a flat day that is the difference between a day P&L of **−$1.98** and
+  **−$23.28**, an order of magnitude on a number small enough to grab whichever reading came to hand.
+  ⚠ **A MARK READ OFF `positions` IS NOT A CLOSE.** `positions.md` already carries the same-source rule at
+  the top of the file; **tonight is the first time the two feeds were watched disagreeing rather than read
+  about.** ⚠ **Harmless while the sleeve is empty. The moment §5.4 arms, a trailing stop that mixes a
+  broker mark into a bar series FIRES ON THE WRONG NUMBER AND LOOKS ENTIRELY CORRECT DOING IT.**
+  ⚠ **`--adjustment all` and `raw` both returned 715.08, so the ADJUSTMENT basis is non-decisive today —
+  that is a different question from the FEED, and passing one is not passing the other.**
 
-  ⚠ **ZERO SATELLITE POSITIONS, SO THERE WAS NOTHING TO MANAGE AND THIS SEAT WENT LOOKING FOR NOTHING
-  ELSE TO DO.** §5.1–§5.4 were re-evaluated in order and reached **no operand**: no `invalidation`
-  string, no `timing_window`, no satellite `entry_price`, no `highest_close`. **Distance UNDEFINED, not
-  large.** Zero `sell`, zero `quote`, zero `bars`, zero fills. **Core VOO struck from the working list
-  BEFORE any rule was read, per §5's exemption.** `consecutive_closed_losses` **0 and the update was
-  NEVER REACHED** — untouched, not reset; §6's breaker has never been **approached**, and its increment
-  and `clickup.py alert --key circuit-breaker` paths are **UNTESTED CODE**.
-  ⚠ **THE GREP TRAP IN `positions.md`, NAMED SO YOU DO NOT MISREAD IT: `entry_price` / `highest_close` /
-  `invalidation` return THREE hits, lines 45/53/55, ALL INSIDE `## Template`. Three hits is the expected
-  reading of an EMPTY ledger, not evidence of a position.**
+  ⚠⚠ **THE DATA WEEK, RE-STATED WITH ITS STATUS UPDATED AND STILL NOT A LEAD: SEPTEMBER CPI PRINTS
+  2026-10-14 — YOU MEET IT FIRST — then PPI and retail sales 10-15, ASML and TSMC later.** The bank prints
+  (JPM/C/WFC) **LANDED 10-13 pre-bell**, which moves them from rule (iii)'s "nothing has happened yet" to
+  a real first-order event on a scheduled reporter. ⚠ **§4 still kills the competitor read-across as the
+  shared-cause object. A CHANGE IN STATUS IS NOT A CHANGE IN ELIGIBILITY.** Already rejected twice:
+  `T-2026-10-12-05`, `T-2026-10-13-08`. ⚠ **A macro print has ONE party and no transaction; it is the
+  government-action object in a calendar's clothing.**
 
-  ⚠⚠ **THIS SEAT OPENED NOTHING AND *COULD NOT HAVE* — ROUTINE 3 IS EXITS-ONLY BY CONSTRUCTION, AND THAT
-  IS A DIFFERENT FACT FROM THE 09:37 SEAT'S ZERO.** A midday entry would route around the pre-market
-  thesis and the 09:35 gate, which is the mechanism forcing every buy to sleep on a written thesis. The
-  09:37 zero was **discipline** with every gate open; this one is **structure**. **The buy window of the
-  day is closed. The next seat entitled to open anything is 2026-10-14 09:35.**
+  **COUNTERS: SESSION ADVANCED 29/26 → 30/27 BY THIS SEAT (the only seat entitled to — no seat may count
+  the day it stands in). THESIS COUNT HELD AT 151** (87 archived + 64 live; `grep -c '^### T-'` returns
+  **65** because the template heading matches — **DO NOT "FIX" 151 TO 152**). ⚠ **One advanced, one held,
+  both correct — the opposite-directions shape, not catch (21)'s and not catch (22)'s.** ⚠ **YOU STAND
+  BEFORE THE BELL ON 10-14: YOU MAY NOT ADVANCE THE SESSION COUNTER. You MAY advance the thesis count, by
+  exactly the number of theses you write.** **Week anchor: recompute it from source — if the Monday of
+  your ISO week is still 2026-10-12, do NOT re-reset `new_positions_this_week`.**
 
-  **CLOCK read off the DATES, not the boolean:** 12:41:26 `is_open: true`, `next_close` **2026-10-13**
-  T16:00, `next_open` **2026-10-14** — the **mid-session** signature. **You will read `is_open: false`
-  with BOTH dates on 2026-10-14; that is the post-bell signature, not a holiday.**
-  **SLEEVES AT 12:41:** core **70.24%** ($70,802.265 / $100,802.27), **IN BAND** by 5.24 points at the
-  near edge, **85th consecutive in-band run**; satellite **0.0%**, count **0**; cash **$30,000.00 =
-  29.76%**; `rebalance_delta` **−$240.68 — A DISTANCE READOUT, NOT AN INSTRUCTION.** §2 puts rebalancing
-  at the market-open seat, so none was contemplated here.
-  ⚠ **TWO EQUITY READINGS MINUTES APART WITH NO ORDER IN THE INTERVAL — a tenth instance: selftest
-  $100,804.74 vs `sleeves` $100,802.27, $2.47 apart, against $0.99 at 09:37 and $6.93 at 08:26. NAME THE
-  BASIS OR DO NOT WRITE THE NUMBER, and never difference two figures from different calls. Recompute off
-  your own; do not inherit either figure, and do not read the three gaps as a trend.**
+  ⚠ **CLOCK: you will read `is_open: false` with `next_open` dated **2026-10-14** — the PRE-MARKET
+  signature. Read the DATES, not the boolean: FALSE has three meanings (pre-market, post-bell, holiday)
+  and TRUE has one.** ⚠ **`plan_today.md` will arrive carrying `plan_date: 2026-10-13` — ONE trading day
+  and ONE calendar day old, the ordinary shape, NOT the Monday three-day shape. Compare `plan_date` to the
+  LAST TRADING DAY.**
 
-  ⚠ **NOTHING IS UNRESOLVED:** zero open alerts · **zero non-terminal orders** — `orders --status all`
-  returns **ONE row for the entire account history** (the 2026-09-03 core fill, `status: filled`,
-  terminal), so §7's limbo warning has **no operand rather than a clean bill** · `control.md` notes
-  **empty** · `TRADING_ENABLED: true` · breaker **INACTIVE** with `halt_triggered_at: none`, so **no
-  `HALT_CLEARED_AT` comparison was due** and that path stays untested against a live halt.
-  ⚠⚠ **CARRIED FORWARD RATHER THAN LOST, BECAUSE IT IS THE ONE FORWARD-LOOKING THING THE SPENT HANDOFF
-  HELD AND IT OUTLIVES THE SEAT THAT WROTE IT — THE DATA WEEK, WHICH IS DENSE AND IS STILL NOT A LEAD:**
-  JPM/C/WFC **reported 10-13 pre-bell** · **CPI 10-14** · **PPI and retail sales 10-15** · ASML and TSMC
-  later in the week. ⚠ **A REPORTING DATE IS NOT A LEAD AND NEITHER IS A REPORTED NUMBER WITH NO SECOND
-  COMPANY NAMED AGAINST IT** — rejected twice already, `T-2026-10-12-05` and `T-2026-10-13-08`. **The
-  bank prints having LANDED moves them from rule (iii)'s "nothing has happened yet" to a real
-  first-order event on a scheduled reporter; §4 still kills the competitor read-across as the
-  shared-cause object. A change in STATUS is not a change in ELIGIBILITY.** *(For the 10-14 08:xx seat,
-  which meets CPI first.)*
+  ⚠ **STILL UNEXERCISED IN THIS ACCOUNT'S HISTORY, so nothing below is a passing check:** the satellite
+  `buy` branch (`--thesis-id` / `--asset-type` / `--market-cap`) · the ENTIRE `sell` path (`--reason`,
+  fill verification, the realised-P&L write, the §6 streak increment) · §6's breaker increment and its
+  `clickup.py alert --key circuit-breaker` path · the `plan_date` staleness gate (non-exercise **39**) ·
+  the `HALT_CLEARED_AT` comparison. **The only order ever placed was `--core`.**
 
-  **WEEK ANCHOR RECOMPUTED FROM SOURCE** (`America/New_York` → 2026-10-13, Tuesday, ISO week 42 weekday
-  2, Monday anchor **2026-10-12**) and found **MATCHING** `week_of` — `new_positions_this_week`
-  **deliberately NOT re-reset**, **0 of 3**.
-  ⚠ **The satellite `buy` branch (`--thesis-id` / `--asset-type` / `--market-cap`) and the ENTIRE `sell`
-  path — `--reason`, fill verification, the realized-P&L write, the §6 streak increment — remain
-  UNEXERCISED in this account's history. The only order ever placed was `--core`.**
-
-  ⚠⚠ **AND ONE THING FOR *YOU* SPECIFICALLY, BECAUSE YOU WRITE `journal.md` AND THE WEEKLY REVIEW IS
-  THREE DAYS OUT: THE CORPUS IS THE PROBLEM NOW, NOT THE NULL.** 760KB that every run is instructed to
-  read **in full, blind** — `weekly_review.md` 235KB · `research_log.md` 183KB · `state.md` 138KB ·
-  `positions.md` **~88KB holding ZERO positions** · `journal.md` 75KB, against `trade_log.md` at
-  **4.5KB**, the only file sized like this account's actual activity. ⚠ **This seat cut its own
-  `positions.md` block 120 → 96 lines, −2,516B, THE FIRST MEASURED SHRINK ON RECORD — and it is 0.35% of
-  the corpus. One seat writing tightly cannot outrun four seats a day appending.** ⚠ **The 10-12 close
-  seat's attempt went the other way: the block it collapsed grew 160 → 196 lines, +1,642B. DO NOT narrate
-  a collapse; just write less.** **FLAGGED FOR THE HUMAN: the fix is a rule in `control.md` or in the
-  routine prompts capping what a seat may append when the null is unchanged — a seat cannot grant itself
-  that rule, and five seats have now each independently decided their own block was the necessary one.**
+  ⚠⚠ **AND THE ONE ITEM THAT IS NOT ABOUT THE MARKET AND IS GETTING WORSE: THE CORPUS, ~760KB READ IN
+  FULL AND BLIND EVERY RUN** — `weekly_review.md` 235KB · `research_log.md` 183KB · `state.md` 135KB ·
+  `positions.md` **87KB holding ZERO POSITIONS** · `journal.md` 85KB, against `trade_log.md` at **4.5KB**,
+  the only file sized like this account's activity. ⚠⚠ **THIS SEAT'S OWN FIRST DRAFT GREW `positions.md`
+  BY 708B (97 → 103 lines) — THE 10-12 CLOSE SEAT'S EXACT FAILURE, ONE RUN AFTER IT WAS WRITTEN DOWN FOR
+  ME — AND IT WAS CAUGHT BY RUNNING `wc`, NOT BY JUDGING HOW THE PROSE FELT. The committed draft is 97 →
+  89 lines and the file 87,959 → 87,475B, −484B.** ⚠ **"COLLAPSED" IS A CLAIM WITH A NUMBER BEHIND IT OR
+  IT IS NOTHING — MEASURE BEFORE AND AFTER.** ⚠ **And do not quote a file's final byte count inside that
+  file; two drafts were spent chasing that fixed point. The block states its LINE delta; the byte figure
+  lives in `state.md`, where it is not its own operand.** **FLAGGED FOR THE HUMAN, UNFIXABLE FROM INSIDE A
+  RUN: the fix is a rule in `control.md` or the routine prompts capping what a seat may append when the
+  null is UNCHANGED. SIX seats have now each judged their own block the necessary one.**
 
 - **⚠⚠ GFS/TSMC CLEARED EVERY FILTER AND DIED ON THE *THESIS PARTS* — `T-2026-10-09-01`, STILL THE
   MOST INFORMATIVE REJECTION THIS LOG HAS PRODUCED.** *(Collapsed 10-12 08:36: the catch (23)/(24)
@@ -185,12 +171,12 @@ discarded; settled items were folded to one line each and repeated emphasis was 
   ⚠ **DO NOT RECONSTRUCT EITHER MISSING JOURNAL ENTRY from a later vantage point — that manufactures a
   record rather than recovers one. The recording is discharged; the QUESTION stays with the human as
   open item (11).**
-  ⚠⚠ **2026-10-06, 10-07, 10-08, 10-09 AND NOW 10-12 WERE ALL COMPLETE SESSIONS — ALL FOUR SEATS RAN AND
-  COMMITTED ON EACH, AND THE 10-12 CLOSE SEAT IS THE ONE ENTITLED TO SAY SO ABOUT 10-12 BECAUSE IT *IS*
-  THE SEAT THAT WOULD HAVE BEEN MISSING.** ⚠⚠ **FIVE IN A ROW IS NOT A FIX AND MUST NOT BE READ AS ONE:
+  ⚠⚠ **2026-10-06 THROUGH 2026-10-13 WERE ALL COMPLETE SESSIONS — ALL FOUR SEATS RAN AND COMMITTED ON EACH,
+  AND EACH DAY'S CLOSE SEAT IS THE ONE ENTITLED TO SAY SO ABOUT ITS OWN DAY, BECAUSE IT *IS* THE SEAT
+  THAT WOULD HAVE BEEN MISSING.** ⚠⚠ **SIX IN A ROW IS NOT A FIX AND MUST NOT BE READ AS ONE:
   the failure mode is a run that never STARTS, so a session that completed is not evidence about the next
-  one in either direction, and a RUN OF FIVE is not evidence either. ⚠ Each added session makes the
-  streak longer and the DETECTOR no closer to existing. Two of 29 close runs have vanished and THE DETECTION GAP IS UNCHANGED — there is still no
+  one in either direction, and a RUN OF SIX is not evidence either. ⚠ Each added session makes the
+  streak longer and the DETECTOR no closer to existing. Two of 30 close runs have vanished and THE DETECTION GAP IS UNCHANGED — there is still no
   detector for a missing seat, and `alerts.md` reading "zero open incidents" still cannot distinguish a
   healthy week from a seat that died before `commit.py`.**
 - **⚠⚠ ASK THE FUNNEL FOR THE *STRUCTURE* §4 REQUIRES, NOT FOR *IMPORTANCE* — AND AS OF 10-12 THE RULE
@@ -331,8 +317,9 @@ discarded; settled items were folded to one line each and repeated emphasis was 
   RECORDED AS A CANDIDATE.** ⚠ **A REDACTION IS NOT A LEAD AND NEITHER IS A MAP PIN. There is no
   Company B until the source names one.** *(Entries: T-2026-10-05-01, T-2026-10-06-03.)*
 
-- **⚠⚠ THE SATELLITE SLEEVE IS STRUCTURALLY UNDEPLOYED — **29 COMPLETED SESSIONS** (26 post-fill),
-  **151 THESES** (143 + 10-13's eight, re-derived from source as 87 archived + 64 live headings),
+- **⚠⚠ THE SATELLITE SLEEVE IS STRUCTURALLY UNDEPLOYED — **30 COMPLETED SESSIONS** (27 post-fill),
+  **151 THESES** (re-derived from source as 87 archived + 64 live headings; the 10-13 close seat advanced the
+  SESSION count and HELD this one),
   ZERO POSITIONS EVER, AND THE PRESSURE TO LOWER THE §4 BAR IS THE ONLY ITEM HERE ASKING
   FOR JUDGMENT RATHER THAN CARE.** *(Collapsed 10-09 16:17: six retellings of the same counter trap folded
   to the rule. Nothing live discarded.)*
