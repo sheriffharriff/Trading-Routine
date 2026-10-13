@@ -52,6 +52,347 @@ single most common way a plausible-sounding connection gets mistaken for an oppo
 
 ## Entries
 
+### 2026-10-13 (08:26 ET) — event survey (funnel, pre-thesis)
+
+Selftest passed all five checks (`trading_enabled: true`, LIVE paper, broker equity **$100,820.09** at
+pre-flight). `clock` at **08:26:35** reads `is_open: false` with `next_open` **2026-10-13T09:30** and
+`next_close` **2026-10-13T16:00** — both carrying **TODAY's** date, the **PRE-MARKET full-session
+signature**, read off the **DATE** and not the boolean. **Not a holiday, not an early close.** The data
+plane agrees and corroborates the discriminator rather than any bar's completeness: `bars --days 4
+--adjustment all` returns **NO bar dated 2026-10-13**.
+
+Window screened: **the completed 2026-10-12 session and overnight into Tuesday 2026-10-13** — a
+**ONE-TRADING-DAY, ONE-CALENDAR-DAY** window, the ordinary shape, and the 10-12 close seat predicted it
+in those words. **Four Perplexity scans, all exit 0** (three broad/structural, one drill on the single
+transaction of the day carrying both a disclosed dollar figure and a US-listed party).
+**EIGHT theses written, ALL EIGHT REJECTED.** Zero `move` calls — cause stated at the foot of this block.
+
+**⚠⚠ THE STRUCTURAL FRAMING WAS QUERY ONE AGAIN AND IT PAID A FIFTH CONSECUTIVE SESSION — AND TODAY IT
+PAID IN THE FORM THE RULE WAS WRITTEN FOR: it returned exactly ONE qualifying item and SELF-EXCLUDED
+FOUR MORE WITH THE REASON ATTACHED.** Asking for **two named parties, both of them companies, a
+disclosed dollar amount, and the exact announcement date** returned EnergyX/Trafigura (`-02`) as the
+single structural match, and disposed of **LS Electric/Bloom Energy** (*"both are non-US companies"* —
+⚠ **the source was WRONG on that point and the drill corrected it; see `-01`**), **Hiteck/Visara**
+(*"headline value is an 'up to' ceiling"*), **Bluejay/Toray** (*"disclosed a contractual milestone but
+no dollar amount"*) and the Saudi/Gulf items, for **zero follow-up queries**.
+⚠⚠ **AND THE 10-12 FALSE-POSITIVE LESSON FIRED CORRECTLY ON ITS SECOND OUTING: the framing's single
+"qualifying" return (EnergyX/Trafigura) SATISFIES STRUCTURE AND FAILS PARTY TYPE — both parties are
+PRIVATE. Last session the structure arrived with two SOVEREIGN STATES; this session with two PRIVATE
+companies. "IT RETURNED THE SHAPE" IS STILL NOT GROUNDS TO PROCEED, and the additive party-type test
+written down on 10-12 caught it in one step.**
+
+**⚠⚠ THE SECOND FRAMING (won-a-contract / quantified-to-its-own-segment) RETURNED A VOLUNTEERED ABSENCE
+AGAIN — UNBROKEN SINCE 09-29 — IN THE SOURCE'S OWN WORDS:** *"No qualifying company can be
+identified from the available results"* … *"the evidence provided supports **zero confirmed matches**,
+rather than a constructed list of likely candidates."* ⚠ **The source declined to manufacture
+candidates in the same sentence in which §4's honest-broker paragraph warns me not to. FIVE items
+self-excluded with reasons** (Technip Energies' €250–500M **band** entering *"backlog, not … a
+quantified impact on that segment's revenue"* · LS Electric/Bloom **no segment named** · Aequs/Safran
+**no value** · IRCON **governmental counterparty** · BEL **no customer-by-customer breakdown**).
+
+**⚠⚠ AND THE THIRD BROAD SCAN PRODUCED THE STRONGEST FORM OF THE STANDING FINDING THIS LOG HAS ON
+RECORD — FOUR QUALIFYING EVENTS, AND THE SOURCE ANSWERED §4's QUESTION IN THE NEGATIVE ON EVERY SINGLE
+ONE, IN IDENTICAL WORDS:** *"No second publicly traded US company is named by the source as directly
+affected"* — written out four times, once each for **ENVX**, **BP**, **EQX** and **ARREF**.
+⚠ **ELEVENTH CONSECUTIVE SESSION of a volunteered absence, 09-29 through 10-13 unbroken (09-29, 09-30,
+10-01, 10-02, 10-05, 10-06, 10-07, 10-08, 10-09, 10-12, 10-13 — COUNTED, not inherited: the standing
+item read TEN through 10-12), and the FOURTH
+in which EVERY broad scan produced one.** ⚠ **A four-for-four denial inside ONE query is the cleanest
+instance yet of the mechanism: the tier below a named party is commercially confidential, so the source
+volunteers the absence when asked for a second company. A volunteered absence is stronger than a
+silence.**
+
+**⚠⚠ THE PRIORS ARRIVED ANYWAY, AGAINST THE DENIALS, AND NOT ONE WAS WRITTEN DOWN AS A CANDIDATE:** the
+data-centre electrical tier (ETN/PWR/VRT/HUBB) for the Bloom switchgear order — ⚠ **the most seductive
+of the run, because `T-2026-10-13-01` names a REAL 38-kV switchgear order with a REAL dollar figure and
+a REAL delivery schedule, and the eligible US-listed names in that tier were instantly ready** — the
+lithium/cathode complex (ALB/Livent/Piedmont) for EnergyX/Trafigura, the gold-development contractor
+tier for EQX's South Railroad permits, and AMAT/LRCX/KLA once more for the ASML capacity lines.
+⚠ **EACH IS A FACT ABOUT AN INDUSTRY, NOT ABOUT A TRANSACTION. Reported with its count and not
+promoted.**
+
+**⚠⚠ ZERO `move` CALLS, AND THE CAUSE IS CLEANER THAN ANY PRIOR INSTANCE OF THE FOURTH STATE: the ONE
+US-listed party in the ONE transaction of the day is BLOOM ENERGY, AND IT IS THE *PAYER*.** The
+candidate died at **part 1, upstream of the priced-in filter**, so there was no eligible ticker to call
+`move` on. ⚠⚠ **A `move` CALL ON BE WOULD HAVE BEEN DECORATIVE — a passing or failing number on a name
+with no mechanism — AND IT IS DECLINED FOR THE FOURTH TIME ON THAT GROUND** (SYNA 10-05, CEREBRAS
+10-06, no-eligible-ticker 10-12, **BE today**). **This is the FOURTH STATE — the filter having nothing
+to fire on — NOT a pass.** ⚠ **An absent check and a passing one look identical in a run summary. This
+one is ABSENT.**
+
+**Housekeeping, all re-derived at this seat and none inherited:** week anchor **RECOMPUTED** (today is
+**Tuesday**, ISO week 42 weekday 2, anchor **2026-10-12**) and found **matching** `week_of`, so
+`new_positions_this_week` **DELIBERATELY NOT RE-RESET**, **0 of 3** · breaker **INACTIVE** with
+`halt_triggered_at: none`, so **NO `HALT_CLEARED_AT` COMPARISON WAS DUE** · `control.md` notes **EMPTY**
+· core **70.2441%** ($70,820.093456 / $100,820.09) **IN BAND** by 5.24 points, **83rd consecutive run**,
+`rebalance_delta` **−$246.03**, a **DISTANCE READOUT AND NOT A DIFFERENCE** · satellite **0.0%**, count
+**0** · cash **$30,000.00 = 29.76%** · `orders --status all` still **ONE ROW** for the whole account
+history (the 09-03 core fill, terminal), so §7's limbo warning has **no operand rather than a clean
+bill** · **ledger RECONCILED: `positions.md` holds zero satellite blocks and the broker returns one row,
+VOO. No disagreement.**
+
+⚠ **§6 CAP, BASIS NAMED: 5% of the `account` equity $100,813.16 is $5,040.66; 5% of the `sleeves`
+equity $100,820.09 is $5,041.00. The two readings are $6.93 apart with no order in the interval — the
+moving pre-market mark again, and the reason no cap figure is written without its basis.**
+
+⚠ **ONE OBSERVATION, REPORTED NOT RECONCILED: the complete 2026-10-12 bar reads `n` 1,393 / `v` 32,547
+this morning — BYTE-IDENTICAL to the SECOND of the two readings the 10-12 close seat took a minute
+apart (1,392/32,544 then 1,393/32,547). The late-print drift SETTLED overnight. `balance_asof` has
+advanced to 2026-10-12.**
+
+---
+
+### T-2026-10-13-01 — Bloom Energy (BE) / LS Electric $138.5M switchgear order — REJECTED
+**Company A / the news:** **LS Electric** (Korea-listed, 006260.KS) announced on its own site on
+**2026-10-13** a contract signed with **Bloom Energy** worth **$138,458,284** — 38-kV-class high-voltage
+switchgear and distribution transformers, **deliveries April–July 2027**, for a **fuel-cell-based
+on-site power generation project at a data centre under construction in Pennsylvania** owned by an
+unnamed *"major U.S. technology company"* (LS Electric release; Yonhap; Korea Herald; transformer-magazine).
+**Company B / the candidate:** **NONE REACHED.** Bloom Energy is the only US-listed party and it is the
+**PAYER**; the data-centre owner is **UNNAMED**.
+
+**1. Mechanism (one sentence):** **NOT WRITTEN.** ⚠⚠ **THE SENTENCE CANNOT BE WRITTEN IN THE DIRECTION
+§3 PERMITS. The disclosed $138.5M is money leaving Bloom, not arriving: it is Bloom's INPUT COST for a
+project whose own revenue to Bloom is UNDISCLOSED.** The only version that improves a revenue line
+reads *"the switchgear order implies a Pennsylvania fuel-cell deployment **and also** implies Bloom
+books product revenue on it of an undisclosed size"* — **a second clause carrying the entire load, which
+is the "and also" kill in its textbook form.**
+**2. Dollar path:** **FAILS INDEPENDENTLY, AND ON THE *QUANTITY*, NOT THE SIZE.** The one disclosed
+figure is attributed by the source **to LS Electric's supply contract, not to revenue or a cost-line
+change at a named US-listed company** — the source said so in those words: *"Any conclusion that the
+data-center owner's revenue or costs change by a particular amount would be an inference unsupported by
+the cited announcement."* **This is form five — the figure is disclosed and is the WRONG QUANTITY — and
+specifically the sub-shape where the figure is capital paid OUT by the buyable leg** (the CVX/Hess
+Midstream $200M and GEHC/Sofie $945M shape, now its third instance).
+**3. Timing window:** Deliveries **April–July 2027** are **two to three quarters out** from Q4 2026 and
+revenue recognition is later and undisclosed — ⚠ **borderline-to-failing against §4's two-quarter
+ceiling, and NOT the reason this died.** No deadline set; there is no position.
+**4. Invalidation:** **NOT WRITTEN** — no thesis to invalidate.
+
+**Hard filters:**
+- Priced-in (§4): **NOT RUN — the candidate died at part 1, upstream of the filter.** ⚠ **A `move` call
+  on BE would have been DECORATIVE. Declined deliberately; this is the fourth state, not a pass.**
+- Correlation (§4): **vacuously clear** — zero open satellite positions, so no `driver` field exists to
+  collide with. ⚠ **Recorded as VACUOUS, not as a pass.**
+- Universe (§3): **LS Electric FAILS outright — Korea-listed, not US.** **BE's market cap was NOT
+  SOURCED this run and is therefore UNRESOLVED, NOT PASSED** — ⚠ **the kill does not rest on it, and
+  per the VAL/GFS precedent no §3 verdict may be inherited from this entry.**
+
+**Outcome:** **REJECTED on part 1 (no Company B in a permitted direction) and part 2 (the figure is the
+wrong quantity — capital paid OUT by the only US-listed leg), independently, with part 3 also pressing.**
+⚠⚠ **THE RUN'S REAL FINDING, AND IT IS A NEW COSTUME OF RULE (v): AN UNNAMED *CUSTOMER* CARRYING A MAP
+PIN, A DELIVERY SCHEDULE AND A PRODUCT SPEC.** The data-centre owner is one entity that definitely
+exists, definitely contracted on a dated day, and is withheld on purpose — ⚠ **and unlike "Party A" it
+is withheld by a THIRD party's release rather than by its own filing, so there is not even a filer
+obliged to name it later.** ⚠ **THE PULL WAS REAL AND IS RECORDED: the shortlist of eligible
+US-listed "major technology companies" building Pennsylvania data centres is short, and naming one would
+have been a GUESS DRESSED AS A DEDUCTION. NO GUESS WAS MADE AND NONE IS RECORDED AS A CANDIDATE.**
+⚠ **The electrical-tier prior (ETN/PWR/VRT/HUBB) arrived instantly and was NOT written down — the order
+went to LS Electric, which is precisely a fact about who did NOT win it.**
+
+---
+
+### T-2026-10-13-02 — EnergyX / Trafigura $2B lithium offtake — REJECTED
+**Company A / the news:** **2026-10-12** — **EnergyX** and **Trafigura Group** signed a **binding
+10-year take-or-pay offtake agreement** for **100,000 metric tons** of lithium products, valued at
+**"more than $2.0 billion" at current lithium prices** (Reuters via kelo.com; battery-tech.net; TipRanks).
+**Company B / the candidate:** **NONE REACHED.**
+
+**1. Mechanism (one sentence):** **NOT WRITTEN** — no eligible party exists on either side.
+**2. Dollar path:** **NOT REACHED.** ⚠ **Note the figure's own weakness even so: it is an estimate
+"based on current lithium prices" against a fixed TONNAGE — a quantity dressed as a dollar amount, the
+same defect as 10-12's four-rung tonnage ladder.**
+**3. Timing window:** **NOT REACHED** (a 10-year term is outside the two-quarter ceiling on its face).
+**4. Invalidation:** **NOT WRITTEN.**
+
+**Hard filters:**
+- Priced-in (§4): **NOT RUN — no ticker exists to run it on.**
+- Correlation (§4): **vacuous** — zero open positions.
+- Universe (§3): **FAILS OUTRIGHT AND IMMEDIATELY — BOTH PARTIES ARE PRIVATE COMPANIES.** The source
+  stated it in the table itself: *"EnergyX: No — private company. Trafigura: No — private company."*
+
+**Outcome:** **REJECTED at §3 in one step.** ⚠⚠ **ITS VALUE IS AS THE STRUCTURAL FRAMING'S SECOND KNOWN
+FALSE POSITIVE, AND IT CONFIRMS THE FIX WRITTEN DOWN YESTERDAY WORKS.** It carries **two named parties,
+a precise date, a binding contract, a term length and a dollar figure** — the entire shape the framing
+exists to find — ⚠ **and it is untradeable because the PARTY TYPE test fails: both parties are private.**
+10-12's instance failed the same test with **sovereign states**; this one fails it with **private
+companies**. ⚠ **The additive party-type and unit tests are now load-bearing on consecutive sessions.
+Keep them in the query itself, where they cost one clause.**
+
+---
+
+### T-2026-10-13-03 — Enovix (ENVX) preliminary Q3 2026 beat + $19M Korea expansion — REJECTED
+**Company A / the news:** **2026-10-12 8-K** — Enovix pre-announced Q3 revenue of **~$11M** against
+prior guidance and a **$9.5M** consensus, EPS **−$0.14** vs **−$0.16** consensus, plus a **$19M Korea
+plant expansion** to add capacity (stocktitan 8-K; ground.news).
+**Company B / the candidate:** **NONE — THE SOURCE DENIED IT EXPLICITLY:** *"No second publicly traded
+US company is named by the source as directly affected."*
+
+**1. Mechanism (one sentence):** **NOT WRITTEN** — no second company to write it about.
+**2. Dollar path:** **JOINTLY UNSATISFIABLE — THE FREE ONE-STEP SCREEN, AND IT IS THE REASON NO SUPPLIER
+SEARCH WAS ATTEMPTED.** A **$19M** capex programme cannot be 10% of revenue at any company clearing
+§3's **$10B** market-cap floor, so part 2's test and §3's floor cannot both be satisfied by any
+Company B. ⚠ **The search was pointless before it started; it was not started.**
+**3. Timing window:** **NOT REACHED.**
+**4. Invalidation:** **NOT WRITTEN.**
+
+**Hard filters:**
+- Priced-in (§4): **NOT RUN.** ⚠ **The source reports shares "jump 13" on the pre-announcement, which
+  would very likely FAIL the filter had the candidate reached it (shape two) — but ENVX is the HEADLINE
+  NAME, so §4's premise does not apply to it at any price.**
+- Correlation (§4): **vacuous** — zero open positions.
+- Universe (§3): **ENVX's market cap was NOT SOURCED this run — UNRESOLVED, NOT PASSED, and the kill
+  does not rest on it.** ⚠ **Resisting the inherited impression that it sits below the floor: an
+  unsourced recollection is not a §3 verdict, and this log's own rule forbids writing one.**
+
+**Outcome:** **REJECTED on part 1 (volunteered absence of any Company B) and part 2 (jointly
+unsatisfiable on a $19M programme), independently.** Enovix is first-order and outside §4 at any price.
+
+---
+
+### T-2026-10-13-04 — BP p.l.c. (BP) Q3 impairment $3–4.5B + production guidance — REJECTED
+**Company A / the news:** **2026-10-13** — BP guided to Q3 impairments of **$3.0–4.5B** in its gas and
+low-carbon-energy segment, with upstream production of **2.190–2.240 mmboe/d** against **2.201** in Q2
+and prior guidance of **2.100–2.245** (Reuters; Morningstar/Alliance News).
+**Company B / the candidate:** **NONE — DENIED IN THE SOURCE'S OWN WORDS:** *"No second publicly traded
+US company is named by the source as directly affected."*
+
+**1. Mechanism (one sentence):** **NOT WRITTEN, AND IT POINTS THE WRONG WAY.** ⚠⚠ **This is the EIGHTH
+REJECT FORM in its second recorded instance (SUPN, 10-08, was the first): a multi-billion-dollar
+impairment is a sound, large, well-disclosed mechanism that points DOWNWARD, and §3 permits only the
+LONG side — no options, no inverse, nothing not bought outright with settled cash.**
+⚠⚠ **THE TEMPTING MOVE IS TO FLIP IT INTO A "COMPETITOR BENEFITS" LONG (XOM/CVX/SHEL). THAT IS THE
+SHARED-CAUSE OBJECT IN ITS PUREST FORM: no competitor's revenue or cost line changes because BP wrote
+down its own gas and low-carbon assets — only BP's relative standing does. NO COMPETITOR WAS NAMED IN
+ANY SOURCE. NOT TAKEN, AND IT WILL BE OFFERED AGAIN.**
+**2. Dollar path:** **NOT REACHED** (and an impairment is a non-cash write-down, not a revenue or cost
+line at a second company).
+**3. Timing window:** **NOT REACHED.**
+**4. Invalidation:** **NOT WRITTEN.**
+
+**Hard filters:**
+- Priced-in (§4): **NOT RUN** — no Company B.
+- Correlation (§4): **vacuous** — zero open positions.
+- Universe (§3): **BP is a UK issuer trading in the US as an ADR. Above the cap floor, so §3's
+  "ADRs of companies below the cap floor" exclusion does not bite** — ⚠ **but it is FIRST-ORDER and the
+  mechanism points DOWN, so §3 was never the operative test and this is recorded as NOT REACHED rather
+  than as a pass.**
+
+**Outcome:** **REJECTED on part 1 twice over — no Company B by volunteered absence, and the only sound
+mechanism available is a SHORT this strategy cannot express.**
+
+---
+
+### T-2026-10-13-05 — Equinox Gold (EQX) Q3 production + South Railroad federal permits — REJECTED
+**Company A / the news:** **2026-10-13** — Equinox reported Q3 production of **237,019 oz** and sales of
+**248,484 oz**, held 2026 guidance of **870,000–920,000 oz** (~**1.1M oz** including Orla's full-year
+contribution), and received the **Record of Decision and final federal permits** for **South Railroad,
+Nevada**, beginning early construction (financialcontent/GlobeNewswire).
+**Company B / the candidate:** **NONE — DENIED EXPLICITLY:** *"No second publicly traded US company is
+named by the source as directly affected."*
+
+**1. Mechanism (one sentence):** **NOT WRITTEN.**
+**2. Dollar path:** **NO FIGURE EXISTS TO BUILD ONE FROM — the release quantifies OUNCES, not dollars,
+and attributes NO capital figure to any contractor.** ⚠ **This is form six — a capex blank with no
+counterparty at all — carrying a MAP PIN (South Railroad, Nevada) and a PERMIT, which is exactly the
+BDX $3B / Bayer Ohio shape.** ⚠⚠ **AND IT IS ALSO JOINTLY UNSATISFIABLE: a single mid-tier gold mine's
+construction spend cannot be 10% of revenue at any engineering or mining-services contractor clearing
+the $10B floor. The supplier search was pointless before it started.**
+**3. Timing window:** **NOT REACHED** (early construction work on a newly permitted mine is years from
+reported production revenue, far outside the two-quarter ceiling).
+**4. Invalidation:** **NOT WRITTEN.**
+
+**Hard filters:**
+- Priced-in (§4): **NOT RUN** — no Company B.
+- Correlation (§4): **vacuous** — zero open positions.
+- Universe (§3): **NOT REACHED.** EQX's market cap was **not sourced** — UNRESOLVED, not passed. ⚠ EQX
+  is in any case **Company A**, and a permit for its own project is **first-order**.
+
+**Outcome:** **REJECTED on part 1 (volunteered absence) and part 2 (no dollar figure, and jointly
+unsatisfiable even if one existed).** ⚠ **A PERMIT IS NOT A LEAD AND NEITHER IS A MAP PIN. The
+gold-development contractor prior was ready and is NOT written down as a candidate.**
+
+---
+
+### T-2026-10-13-06 — Technip Energies / HPCL €250–500M refinery EPC — REJECTED
+**Company A / the news:** **2026-10-13** — Technip Energies won an EPC contract from **HPCL** for a
+refinery project, valued only within a **€250M–€500M band**, entering the **Project Delivery** segment's
+**BACKLOG** (offshore-technology.com).
+**Company B / the candidate:** **NONE REACHED.**
+
+**1. Mechanism (one sentence):** **NOT WRITTEN.**
+**2. Dollar path:** **FAILS ON ITS OWN TERMS, TWICE, AND THE SOURCE APPLIED BOTH KILLS BEFORE I DID.**
+⚠ **A €250–500M BAND is a self-defined range, not a figure — the FTI/Petrobras "$75–250M significant"
+shape, now its second instance.** ⚠⚠ **AND BACKLOG IS NOT SEGMENT REVENUE: the source said the award
+*"will enter the Project Delivery segment's backlog, not that it represents a quantified impact on that
+segment's revenue."* A BOOKING IS NOT A DOLLAR PATH.**
+**3. Timing window:** **NOT REACHED** (refinery EPC revenue recognises over years).
+**4. Invalidation:** **NOT WRITTEN.**
+
+**Hard filters:**
+- Priced-in (§4): **NOT RUN.**
+- Correlation (§4): **vacuous** — zero open positions.
+- Universe (§3): **FAILS — Technip Energies is Euronext Paris-listed, not US-listed.** The counterparty
+  HPCL is Indian state-controlled. **Neither leg is eligible.**
+
+**Outcome:** **REJECTED at §3 (neither party US-listed) with part 2 failing independently on both the
+band and the backlog.** ⚠ **Worth one line because it is the cleanest "the source stated the exclusion
+before I applied it" instance of the run.**
+
+---
+
+### T-2026-10-13-07 — §3 / non-qualifying sweep of ELEVEN items — REJECTED (disposed as one, zero queries spent)
+**Company A / the news:** everything else the four scans returned, disposed in a single pass against §3
+and the standing rules rather than one thesis at a time.
+**Company B / the candidate:** **none for any of them.**
+
+**The eleven, each with the test that killed it:**
+**Amerigo Resources (ARREF)** — Q3 copper 17.0Mlb, moly 0.4Mlb, cash cost $1.55/lb — ⚠ **OTC, which §3
+excludes OUTRIGHT regardless of any other merit** · **Torm** — raised 2026 TCE guidance to $1.7–1.9B
+from $1.4–1.6B, **a genuinely large revision** — **Danish, no US listing established** · **Bachem** —
+guidance narrowed to 35–40%, **>CHF 500M** Sisslerfeld investment — **Swiss, AND the announcement date
+was not established inside the window (rule iii)** · **Aequs/Safran** — supply agreements, **no contract
+value**, neither US-listed · **IRCON International** — ₹862.45 crore EPC award — **governmental
+counterparty (East Central Railway), Indian issuer** · **Bharat Electronics (BEL)** — ₹533 crore of
+additional orders — **Indian, and no customer-by-customer breakdown or individual contract values** ·
+**Hiteck/Visara** licensing — **an "up to" CEILING, parties' status unestablished** · **Bluejay/Toray** —
+a contractual manufacturing milestone with **NO dollar amount** · **Saudi Steel Pipe/Aramco** and
+**Al-Yamamah Steel** 380kV towers — **non-US issuers** · **ADSB/Kuwait MoD** — **non-US, governmental
+counterparty**.
+
+**Hard filters:** not reached for any of the eleven — all died at §3 or on the absence of a figure.
+**Outcome:** **ALL REJECTED, ZERO follow-up queries spent.** ⚠ **`--recency day` returns a GLOBAL tape
+and roughly half of each run's raw funnel output is non-US. That is not a defect in the query; it is
+why §3 is applied before a mechanism is attempted.**
+
+---
+
+### T-2026-10-13-08 — The forward calendar: bank prints today, ASML/TSMC this week — REJECTED (rule iii, purest form)
+**Company A / the news:** **NOTHING HAS HAPPENED YET.** The scans returned **JPM/C/WFC reporting today
+(2026-10-13)**, **September CPI 10-14**, **PPI and retail sales 10-15**, and an **ASML/TSMC earnings
+preview** carrying ASML low-NA EUV capacity lines (*"approximately 65 machines in 2026, rising to around
+85 in 2027 and potentially 110 in 2028"*) in the frame *"can they restore confidence in the AI trade."*
+**Company B / the candidate:** **NONE — there is no event to be second to.**
+
+**1–4:** **NOT WRITTEN.** ⚠⚠ **THIS IS RULE (iii) AT ITS EARLIEST POSSIBLE FAILURE POINT: the question
+"is this new to the company's own disclosure?" cannot be passed by an event NOBODY HAS DISCLOSED BECAUSE
+IT HAS NOT HAPPENED.**
+⚠⚠ **IT WAS ALREADY MET AND REJECTED ON 10-12 AS `T-2026-10-12-05`, AND IT ARRIVED AGAIN TODAY WITH THE
+SAME CONTENTS — which is the second half of that entry's prediction coming true: "a reporting date is
+not a lead," and the 10-13 prints are *"for the 10-13 seat to meet."* ⚠ **THE 10-13 SEAT HAS NOW MET
+THEM, AT 08:26, BEFORE THEY LANDED, AND THEY ARE STILL NOT AN EVENT.** The correct response is unchanged:
+note the dates, write nothing, and let the CLOSE seat see the actual prints.**
+⚠ **AND THE ASML LINES ARE A CAPACITY *ROADMAP*, NOT A TRANSACTION — the 2027 and 2028 legs are outside
+the two-quarter ceiling on their face, and the AMAT/LRCX/KLA prior they summon is this log's single most
+reflexive one.** ⚠ **§4 would kill the competitor read-across from any of these prints anyway: a peer's
+earnings print is the shared-cause object, not a mechanism.**
+
+**Outcome:** **REJECTED — a scheduled event is not an event.** ⚠ **The 10-12 entry predicted this shape
+would recur on Mondays; today shows it recurs whenever a dense data week is AHEAD, not only after a
+weekend. Expect it all week.**
+
+---
+
 ### 2026-10-12 (08:36 ET) — event survey (funnel, pre-thesis)
 
 Selftest passed all five checks (`trading_enabled: true`, LIVE paper, broker equity **$100,879.52** at
