@@ -40,6 +40,132 @@ anything where the honest-broker rule (§4) did real work>
 
 ## Entries
 
+### 2026-10-13 (Tuesday)
+
+**Account:** total **$100,826.0362 on official closes** (price basis, `bars --adjustment all`, VOO `c`
+**715.08**) / **$100,829.01 on the live broker mark** at 16:17 | day **−$23.2759 (−0.0231%)** from
+10-12's official $100,849.3121 | since inception **+0.8260%** (price basis, $100,000.00 opening).
+⚠ **`--adjustment raw` returns the SAME 715.08, so the basis choice is non-decisive today — stated
+anyway, because the basis is part of the figure.** ⚠⚠ **THE TWO BASES DISAGREE BY AN ORDER OF MAGNITUDE
+ON A TINY NUMBER AND ARE NEVER CONCATENATED:** the broker line is `equity` 100,829.01 vs `last_equity`
+100,830.98855 → **−$1.9786 (−0.00196%)**, matching `unrealized_intraday_pl` −1.980927 and `change_today`
+−0.00003 to the cent. **The official-close series is what §1 is computed on; the broker line is reported
+beside it, never instead of it.**
+**Sleeves:** core **70.2458%** (official-close basis) / **70.2467%** live | satellite **0.0%** | cash
+**29.7542%**   (§2 band 65–75% — **5.25 points inside the lower edge, 4.75 inside the upper. NO rebalance
+due tomorrow.**) `rebalance_delta` **−$248.70** is a distance readout, not an instruction.
+**Breaker:** INACTIVE (`halt_triggered_at: none`, so no `HALT_CLEARED_AT` comparison was due)
+**Week:** 0/3 new positions (`week_of` **2026-10-12** — **no rollover**; the anchor was COMPUTED from
+`America/New_York` (2026-10-13, Tuesday, ISO week 42 weekday 2 → Monday 2026-10-12) rather than assumed,
+and it matched, so the reset was deliberately NOT re-applied)
+
+**Traded:** nothing. **Zero orders at all four seats, and not one gate blocked the one seat that could
+have placed one.** `orders --status all` returns **one row for the entire account history** — the
+2026-09-03 core fill, `filled`, terminal. **§7's overnight-limbo warning therefore has NO OPERAND rather
+than a clean bill.**
+**Researched:** **8 theses — 0 accepted, 8 rejected** (`T-2026-10-13-01` … `-08`, all written by the
+08:26 pre-market seat; this close seat writes none, so the count **HOLDS at 151** — re-derived from
+source as 87 archived + 64 live headings, the live `grep -c '^### T-'` returning 65 because the file's own
+TEMPLATE heading matches).
+**Positions near a sell rule:** **NONE — and the distance is UNDEFINED, NOT LARGE.** Zero satellite
+positions, so §5.1–§5.4 had no operand for an 83rd consecutive session. Core VOO is exempt under §5 and
+was struck from the working list before any rule was read.
+
+**What happened:**
+
+A full Tuesday session. `clock` at 16:17:10 read `is_open: false` with **both** `next_open` and
+`next_close` dated **2026-10-14** — the post-bell signature, and exactly what the midday seat predicted in
+writing — so the holiday-skip path was not taken and today is a real session to journal. All four seats
+ran: 08:26 pre-market, 09:37 open, 12:41 midday, this one.
+
+VOO opened 714.55, ranged 713.41–715.725 and closed **715.08** on 1,262 trades / 25,885 shares, down
+**23.5¢ (−0.033%)** from Monday's 715.315. On a 70% core and 30% static cash that is the whole day's P&L:
+**−$23.28**, or **−0.023%**. Nothing else in the account moved, because there is nothing else in it.
+
+Every decision of consequence was made before the bell, and all eight were refusals. The pre-market seat
+screened eight candidates and rejected eight. The one that mattered was **`T-2026-10-13-01`, Bloom
+Energy**: LS Electric's 10-13 release discloses a **$138,458,284** 38-kV switchgear order with
+deliveries April–July 2027 for a fuel-cell data-centre project in Pennsylvania — a real transaction, a
+figure to the cent, a dated delivery window — and it dies three times over. Part 1: the one US-listed
+party, BE, is the **payer**, so the mechanism cannot be written in the direction §3 permits without an
+"and also" clause. Part 2: form five — the disclosed figure is **capital paid out**, and BE's project
+revenue is undisclosed. Rule (v): **the data-centre owner, whose economics actually change, is withheld
+as "a major U.S. technology company."** The rest fell faster — EnergyX/Trafigura on both parties being
+private, ENVX and EQX and BP on the source volunteering that no second US-listed company is named,
+Technip/HPCL on neither party being US-listed and a **backlog booking not being a dollar path**, an
+eleven-item §3 sweep disposed as one for zero follow-up queries, and the forward calendar (CPI 10-14,
+PPI and retail sales 10-15, ASML/TSMC later) as rule (iii) at its earliest possible failure point.
+
+By 09:37 the open seat held a plan that was **fresh (`plan_date: 2026-10-13`, read off the field) and
+empty**, with the breaker inactive, the weekly count 0 of 3, the satellite sleeve at 0% against a 30%
+target, $30,000 idle and the §6 cap standing at about $5,040. **A buy was placeable all morning and
+nothing was worth buying.** The midday seat is exits-only by construction and had nothing to exit.
+
+This seat's own job came out the same way, and it is the part worth being precise about:
+
+- **Step 2 — recording the closing high-water marks, which is this run's entire reason to exist — had no
+  subject.** Zero open satellite positions, so there was no `highest_close` to raise and, more to the
+  point, **no `(as of …)` date to advance.** The field is **absent** — the third state, carrying no date
+  at all — so the advance-the-date-even-when-the-value-does-not-move rule had nothing to write onto
+  either. **"High-water marks updated" would be false today. So would "verified."** The honest form is
+  that the job had no operand, and no backfill is due or was performed.
+- **One `bars` call was made, and it was for the day's record, not for a mark.** A second on
+  `--adjustment raw` returned the identical 715.08.
+- **Core VOO was not stamped with a `highest_close` — a 95th consecutive run declining it, and this
+  seat's instance is the strongest form available to anyone.** It held a real, complete, correctly based
+  official close, it **owns the Step 2 write path**, the field is empty, and VOO is the only row the
+  broker returns. Stamping it would arm §5.4 on the one position §5 exempts, which §7 forbids outright.
+- **The session counter advances, 29/26 → 30/27.** This seat is the only one entitled to: no seat may
+  count the day it stands in, and after the bell this is the first to stand on a completed one.
+
+**What I got wrong or nearly got wrong:**
+
+**The honest answer today is not about a thesis — none of mine got close enough to be dangerous — it is
+about my own housekeeping, and I caught it only because I measured.** The file this account is thinnest
+on is `positions.md`, 88KB of commentary holding zero positions, and the standing instruction I inherited
+is to write less. **My first draft of today's block did the opposite: 97 lines became 103 and the file
+grew 708 bytes.** That is precisely the failure the 10-12 close seat recorded about itself, one run after
+it was written down for me, and I would have reported it as a collapse if I had trusted how the prose
+felt instead of running `wc`. The committed draft is genuinely shorter. **The lesson is not the byte
+count, it is that "collapsed" is a claim with a number behind it or it is nothing** — and I then burned
+two further drafts discovering that quoting the file's final size *inside* the file changes it, which is
+why the exact figure now lives in `state.md` instead.
+
+**The near-miss with teeth, though, is a data one.** Writing the P&L line I had four closing numbers for
+two days and they do not agree: the official close bar says **715.08** for today and **715.315** for
+10-12, while the broker's `positions` row says `current_price` **715.11** and `lastday_price` **715.13**.
+Three cents today, **18.5 cents** on Monday. On a flat day that is the difference between a day P&L of
+−$1.98 and −$23.28 — an order of magnitude on a number small enough that I could easily have taken
+whichever reading came to hand. **`positions.md` already carries the rule (`highest_close` and the close
+it is compared against must come from the same source), and today is the first time I have seen the two
+feeds disagree with my own eyes rather than read about it.** It is harmless while the sleeve is empty.
+The moment a satellite position exists, a §5.4 trailing stop computed by mixing a broker mark into a bar
+series is a stop that fires on the wrong number, and it will look entirely correct when it does.
+
+**One thing I will not dress up:** I keep writing, run after run, that the strategy is working as
+designed because §4 says most runs should end in no trade — and that remains true and I still believe it.
+But **151 theses and zero positions in 30 sessions is also what a bar set too high looks like from the
+inside**, and I cannot distinguish the two from where I sit. What I can say is that the one candidate
+that ever reached §4's parts (GFS, 10-09) was killed by two numbers out of the company's own release
+rather than by my judgment, which is weak evidence for the bar and not none. **Whether the bar moves is a
+`strategy.md` decision and only the human may make it.**
+
+**For the next run:**
+
+- **Nothing is unresolved.** Zero open alerts, zero non-terminal orders, `control.md` notes empty,
+  `TRADING_ENABLED: true`, breaker INACTIVE with `halt_triggered_at: none`. **No rebalance is due** — core
+  70.25%, more than five points inside either edge of the §2 band.
+- **The data week is dense and is still not a lead:** **CPI 10-14**, **PPI and retail sales 10-15**, ASML
+  and TSMC later. The bank prints (JPM/C/WFC, 10-13 pre-bell) have **landed**, which moves them from
+  "nothing has happened yet" to a real first-order event on a scheduled reporter — **and §4 still kills
+  the competitor read-across as the shared-cause object. A change in STATUS is not a change in
+  ELIGIBILITY.** Already rejected twice: `T-2026-10-12-05`, `T-2026-10-13-08`.
+- **The two feeds disagree on VOO's close.** See above. Harmless now, load-bearing the moment §5.4 arms.
+- **For the human, and it is the only item here that cannot be fixed from inside a run:** the memory
+  corpus is ~760KB read in full, blind, every run, against a `trade_log.md` of 4.5KB. **The fix is a rule
+  in `control.md` or the routine prompts capping what a seat may append when the null is unchanged.** Six
+  seats have now each independently judged their own block to be the necessary one.
+
 ### 2026-10-12 (Monday)
 
 **Account:** total **$100,849.3121 on official closes** (price basis, `bars --adjustment all`, VOO
