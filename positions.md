@@ -521,7 +521,7 @@ tape:
   `plan_today.md` arrives three calendar days old on a Monday** — compare `plan_date` to the last
   TRADING day, not to the calendar.
 
-### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-10-14, **ONE DIGEST FOR THE DATE, SEATS 1–2:** `1-premarket` 08:21, `2-market-open` 09:37. ⚠ The 08:21 narration is **folded into this block rather than standing beside it** — one date, one heading; the 10-13 digest below is untouched.)
+### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-10-14, **ONE DIGEST FOR THE DATE, SEATS 1–3:** `1-premarket` 08:21, `2-market-open` 09:37, `3-midday` 12:41. ⚠ Each later seat is **folded into this block rather than standing beside it** — one date, one heading; the 10-13 digest below is untouched. ⚠ **RE-DATED BY SEAT 3 BECAUSE A TABLE LEFT UNTOUCHED AND A TABLE RE-EVALUATED TO THE SAME ANSWER ARE INDISTINGUISHABLE TO THE NEXT READER.**)
 
 **§5 RE-EVALUATED IN ORDER AT BOTH SEATS, REACHED AND NOT INHERITED — SAME NULL, 85th CONSECUTIVE
 SESSION.** Core VOO was struck from the working list **before any rule was read**, per §5's exemption;
@@ -609,6 +609,93 @@ behind today's is negative in the wrong direction.** ⚠⚠ **The structural rea
 the item for the human: EIGHT seats have now each judged their own block the necessary one, one seat
 writing tightly cannot outrun four seats a day appending, and THE FIX IS A RULE ONLY THE HUMAN CAN
 WRITE.**
+
+**SEAT 3 (`3-midday-management`, 12:41) — AN EXITS-ONLY SEAT WITH NOTHING TO EXIT.** Selftest **5/5**,
+`TRADING_ENABLED: true`, LIVE paper. `clock` 12:41:22 `is_open` **TRUE**, `next_close`
+**2026-10-14T16:00** (today) and `next_open` **2026-10-15T09:30** (rolled) — the mid-session signature.
+⚠⚠ **THIS IS THE SEAT THE 08:21 PREDICTION WAS ABOUT, AND IT RESOLVES AGAINST THAT PREDICTION: 12:30
+READS TRUE, NOT FALSE.** The 09:37 seat's catch (24) was right, and right for the right reason — it
+checked the 10-12 record rather than reasoning about the boolean. ⚠ **The other half of the prediction
+(16:17 FALSE with both dates on 2026-10-15) is still OPEN and belongs to the close seat.**
+
+**LEDGER RECONCILED FIRST, BEFORE ANY RULE WAS READ.** `positions` returns **one row — VOO**
+99.046311231 sh @ **706.74**, cost_basis **$69,999.989999**, market_value **$70,146.578540**,
+unrealized **+$146.588541 / +0.209%**, current **708.22**, lastday **715.20**; this file holds **zero
+satellite blocks**; `sleeves` reports `satellite.count: 0`. **ALL THREE AGREE, SO THIS ROUTINE'S ENTIRE
+SCOPE HAS NO SUBJECT — AN ABSENT ONE, NOT A QUIET ONE.** Equity **$100,146.58** (`sleeves`, 12:41:22)
+against **$100,131.31** from `selftest` at 12:40 — ⚠ **the FOURTEENTH two-readings instance, $15.27
+apart. A MOVING LIVE MARK SAMPLED TWICE. NEVER DIFFERENCE THE TWO.** Core **70.04%** **IN BAND**,
+satellite **0.0%**, cash **29.96%** ($30,000.00 exactly).
+
+**STEP 2 (high-water repair) RAN AND HAD NO INPUT — THE DETECTOR SEAT'S OWN NULL, THIRD INSTANCE
+(10-05, 10-06, 10-14), AND THE THIRD IS NOT INDEPENDENT EVIDENCE OF ANYTHING.** No `highest_close`
+exists outside the template placeholder: the field is **ABSENT, a third state carrying no date at
+all**, so there was no `(as of …)` date to compare against the last trading day and **no staleness was
+detected AND none was ruled out.** ⚠ **The backfill path remains UNEXERCISED CODE.** ⚠ **Zero `bars`
+calls — which makes this seat's refusal to stamp core VOO the EASY grade and it says so: there was no
+ingredient to be tempted by.** **98th consecutive refusal.** ⚠ **Zero `bars` also keeps this seat clear
+of its own documented trap — 12:41 sits squarely inside the partial-bar window a backfill would pull
+from.**
+
+**STEP 3 — §5.1–5.4 RE-EVALUATED IN ORDER, REACHED AND NOT INHERITED, SAME NULL.** Core VOO was struck
+from the working list **before any rule was read**, per §5's exemption; with it gone the list is empty.
+Zero `sell`, zero `quote`, zero `bars`, zero `move`, and **zero Perplexity** — §5.1 requires one news
+query **per position** and there were none, so that absence is **structural, not a skipped step.** The
+four-rule table above stands unchanged: **ABSENT, NOT PASSING. Distance is UNDEFINED, not large.**
+
+**STEP 4 — ZERO EXITS, ZERO ORDERS OF ANY KIND.** `consecutive_closed_losses` **0, untouched and not
+reset**; breaker **INACTIVE**; no `clickup.py alert` was due; `orders --status all` still returns **one
+row for the whole account history** (2026-09-03 core fill, `status: filled`, terminal), so §7's
+unverified-order warning has **no operand rather than a clean bill.** ⚠⚠ **NOTHING SHOULD HAVE EXECUTED
+AND FAILED TO — this routine asks its seat to lead with that line, and today it is genuinely empty. No
+dry-run intent was suppressed, because no intent existed.**
+
+**STEP 5 — NOTHING TO RE-STATUS.** No open position has a `sell_rule_status` to refresh.
+
+**HOUSEKEEPING:** week anchor **recomputed from source** (`America/New_York` → 2026-10-14, Wednesday,
+ISO week 42 weekday 3, Monday anchor **2026-10-12**) and found **MATCHING** `week_of`, so
+`new_positions_this_week` was **not re-reset, 0 of 3**; `halt_triggered_at: none`, so **no
+`HALT_CLEARED_AT` comparison was due**; `control.md` re-read from disk — `TRADING_ENABLED: true`,
+**notes empty**; **zero open alerts**. ⚠ **Session count HELD at 30 / 27: only the close seat may count
+the day it stands in.** **No research was generated and none was permitted — this seat may not open a
+position, and §4 routes every buy through the pre-market and 09:35 seats.**
+
+⚠⚠ **FINDING (25) — THE "Nth CONSECUTIVE SESSION" COUNTER ON §5 IS NOT COUNTING SESSIONS, AND THIS FILE
+CONTRADICTS ITSELF ABOUT IT FOUR LINES APART.** The 10-13 digest below says **"§5.1–5.4 reached NO
+OPERAND for an 83rd session"** and then **"Step 2 had no subject for a 31st session"** — **two counters
+for the same null, on the same date, in the same file, 52 apart.** ⚠ **And the §5 one advanced TWICE
+inside 10-14 alone (84 at 08:21, 85 at 09:37) while all four of 10-13's seats shared a single value, so
+the unit is neither a session nor a seat — it is UNDEFINED.** ⚠ **`state.md` reports **30 completed
+sessions / 27 post-fill**, so 85 cannot be sessions and never could have been.** ⚠⚠ **THIS SEAT MINTS
+NO 86th, AND THAT REFUSAL IS THE REPAIR: an undefined counter incremented by every seat that reads it
+manufactures the appearance of evidence. State the null and let the two DEFINED facts carry it — zero
+satellite positions ever, 30 completed sessions, 27 post-fill.**
+
+⚠⚠ **FINDING — THE §2 BAND IS TWO FIXED VOO PRICES, AND 88 IN-BAND RUNS HAVE REPORTED IT AS A MOVING
+PERCENTAGE INSTEAD.** Today alone the same band was described three ways as the mark moved: core
+**70.2992%** → **70.16%** → **70.04%** on VOO **716.9096** → **712.2401** → **708.22**. ⚠ **While cash
+is EXACTLY $30,000 and the satellite sleeve is EMPTY, core/(core + 30,000) = 0.65 and 0.75 solve to
+core = $55,714.29 and $90,000, which over the fixed 99.046311231 shares is VOO at ~$562.51 (−20.6% from
+708.22) and ~$908.68 (+28.3%).** ⚠⚠ **THE PRECONDITION IS THE ENTIRE VALUE OF THE NUMBERS AND MUST BE
+RE-CHECKED RATHER THAN INHERITED: both edges are VOID the moment cash moves off $30,000 or any
+satellite position exists.** ⚠ **It also retires "a ~5-point cushion is not a tight one" as a way of
+describing this drift — a 0.12pp move over three hours is not five points from an edge, it is a fifth
+of VOO away.** **§2 puts the rebalance call at the MARKET-OPEN seat and nowhere else, so at this seat
+`rebalance_delta` **−$43.97** is a distance readout and NOT an instruction.**
+
+⚠ **TWO-FEED FINDING LIVE AT A FOURTH CONSECUTIVE SEAT, GAP UNCHANGED AT +12¢:** `lastday_price`
+**715.20** at 08:21, at 09:37 **and at 12:41**, against the official 10-13 close **715.08**. ⚠ **Holding
+steady through most of a session is still not a direction — do not predict the gap and do not difference
+the series. A mark read off `positions` is NOT a close: harmless on an empty sleeve, wrong-numbered the
+moment §5.4 arms.**
+
+**MEASUREMENT:** this seat folded itself into the existing 10-14 heading rather than opening a block of
+its own — **one date, one heading** — and the 10-13 digest below is **untouched**. ⚠ **No
+self-describing count appears above, per the finding this file already paid three drafts for; the exact
+deltas are `git diff --stat` on this commit, and `wc` before and after is this seat's own check.** ⚠ **The
+honest word for the result is still GREW: a third seat's readings were added and nothing was removed to
+pay for them. NINE seats have now each judged their own block the necessary one — the cap is a rule only
+the human can write.**
 
 **Reconciliation 2026-10-13 — ONE DIGEST FOR THE DATE, ALL FOUR SEATS** (`1-premarket` 08:26,
 `2-market-open` 09:37, `3-midday` 12:41, `4-market-close` 16:17). *(Collapsed 2026-10-14 08:21 from the
