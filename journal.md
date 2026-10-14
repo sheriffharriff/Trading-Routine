@@ -40,6 +40,122 @@ anything where the honest-broker rule (§4) did real work>
 
 ## Entries
 
+### 2026-10-14 (Wednesday)
+
+**Account:** total **$100,069.3224 on official closes** (`bars --adjustment all`, VOO `c` **707.44**)
+/ **$100,002.96 on the live broker mark** at 16:16 | day **−$756.71 (−0.7505%)** from 10-13's official
+**$100,826.0362** | since inception **+0.0693%** (official-close basis, $100,000.00 opening).
+⚠⚠ **THE FORBIDDEN FIGURE WAS PRE-COMPUTED AND SITTING IN THE JSON TODAY, IN TWO PLACES, AND IT IS 7.5
+BASIS POINTS WRONG:** `equity` 100,002.96 − `last_equity` 100,837.9218 = **−$834.96**, matching
+`unrealized_intraday_pl` **−834.960403** and `change_today` **−0.01179** exactly. That is **−0.828%**
+against the honest **−0.7505%**. ⚠ **`last_equity` = qty × `lastday_price` + cash, and `lastday_price`
+715.20 is NOT the official 10-13 close 715.08 — the broker line is reported beside the official-close
+series, never instead of it.**
+**Sleeves:** core **70.0208%** (official-close basis) / **70.0%** live | satellite **0.0%** | cash
+**29.9792%**   (§2 band 65–75% — **IN BAND. NO rebalance due tomorrow.**) `rebalance_delta` **−$0.89**
+is a distance readout, not an instruction, and it is the smallest this account has ever recorded.
+**Breaker:** INACTIVE (`halt_triggered_at: none`, so no `HALT_CLEARED_AT` comparison was due)
+**Week:** 0/3 new positions (`week_of` **2026-10-12** — **no rollover**; the anchor was COMPUTED from
+`America/New_York` (2026-10-14, Wednesday, ISO week 42 weekday 3 → Monday 2026-10-12), matched, and the
+reset was therefore deliberately NOT re-applied)
+
+**Traded:** nothing. Zero orders at all four seats; zero orders in the account since 2026-09-03.
+**Researched:** 5 theses — 0 accepted, 5 rejected (`T-2026-10-14-01`…`-05`, all written at the 08:21
+pre-market seat; the other three seats are not entitled to research and generated none)
+**Positions near a sell rule:** **none, and the honest form is that there is no operand.** Zero
+satellite positions exist. Distance to every §5 rule is **UNDEFINED, not large.**
+
+**What happened:**
+
+A full session that moved and a book that did nothing, which is the correct outcome and not an
+interesting one. VOO closed **707.44**, down **−1.0684%** from 10-13's **715.08** — the largest
+single-session fall this account has seen, on the day September CPI printed. The book fell
+**−0.7505%**, less than the index, for the single uninteresting reason that **30% of it is cash**. That
+is the cash drag running in reverse, not a decision and certainly not alpha: the satellite sleeve
+contributed exactly **0.000000%**, as it has on every session since inception.
+
+The one thing this routine exists to do — **stamp each open satellite position's official close into
+`highest_close`** — **had no subject.** Not "nothing to update," not "marks verified": there are zero
+satellite positions, the `highest_close` field is **ABSENT rather than stale**, carrying no `(as of …)`
+date at all, and so there was nothing to raise and no date to advance. ⚠ **Nothing was backfilled and
+nothing should be: the next run must not read this as a missed write.** The §5.4 backfill path remains
+unexercised code, and this is the sixth or seventh consecutive close seat to record the same null — each
+one weaker evidence than the last, since it is the same null under the same conditions.
+
+Every gate was open all day and nothing came through them. `TRADING_ENABLED: true`, breaker INACTIVE,
+week 0 of 3, $30,000 idle against a 30% satellite target, the 5% cap standing ready at ~$5,000. The
+pre-market seat researched five candidates and killed all five, and four of them did not die on price,
+so no later tape could have revived them. The plan arrived **fresh and deliberately empty** — the
+staleness gate was exercised at 09:37 against `plan_date: 2026-10-14` and did not fire, its 40th
+non-exercise and still never once fired in this account's history.
+
+Housekeeping found nothing to do, which I am recording as four specific nulls rather than one
+reassuring sentence: the week anchor was recomputed from `America/New_York` and matched, so the reset
+was **not** re-applied; nothing closed, so `consecutive_closed_losses` stayed at 0 **untouched rather
+than reset**, and there was no streak to confirm against; `orders --status all` still returns **one row
+for the entire account history**, so §7's overnight-limbo warning has **no operand rather than a clean
+bill**; and `alerts.md` holds zero open incidents.
+
+One prediction resolved. The 09:37 seat had corrected the 08:21 seat's claim that the 12:30 clock would
+read FALSE, and predicted the close seat would read **FALSE with both dates on 2026-10-15**. At 16:16:36
+`clock` returned exactly that. ⚠ **The transferable part is the method and not the verdict: the 09:37
+seat was right because it checked the 10-12 record instead of reasoning about the boolean.**
+
+**What I got wrong or nearly got wrong:**
+
+**1. The core `highest_close` refusal was the HARD grade today for the first time, and I should say so
+rather than bank the streak.** The previous three seats declined to stamp core VOO and each recorded it
+as an easy call — correctly, because **none of them called `bars` at all**, so no close was ever in
+front of them. This seat had to call `bars` to compute the day's P&L, so VOO's complete, official,
+correctly-dated **707.44** was sitting in the output at the one moment a `highest_close` write would
+have looked entirely routine and produced a plausible-looking number. §5 exempts core; stamping it would
+**fabricate a trailing stop on the only position that is exempt from one**. The refusal is the same; the
+grade is not, and ninety-eight easy refusals are not evidence about the hard one.
+
+**2. The wrong day-P&L figure was pre-computed, labelled, and internally consistent across three
+fields.** `equity − last_equity` = **−$834.96**, and `unrealized_intraday_pl` and `change_today` both
+agree with it to the cent. Three fields agreeing is exactly what a correct number looks like, and it is
+**−0.828%** against the honest **−0.7505%** — a 7.5bp error on the single headline figure of this
+report. It is wrong because `last_equity` is built on `lastday_price` **715.20**, which is not the
+official 10-13 close **715.08**. ⚠ **The standing rule caught this, not my judgment, and the reason it
+needed catching is that the forbidden figure arrives pre-computed and corroborated while the correct one
+has to be assembled.**
+
+**3. I nearly read a direction into the post-bell price gap because today's sample is the biggest one.**
+Broker `current_price` 706.77 against the official close 707.44 is **−$0.67**, the largest-magnitude
+post-bell sample on record and the second negative one. The pull is to write "the gap is widening." Five
+samples, **both signs**, a twenty-six-fold spread — that is not a direction, and the largest sample in a
+scatter is just the largest sample. Recorded as a fifth observation and nothing more.
+
+**4. The honest one about this file and its neighbours: the pressure today was to write a lot, and the
+reason is that there was nothing to write about.** Zero positions, zero trades, zero theses, zero marks,
+every null identical to yesterday's. A run in that position makes itself legible by producing prose, and
+ten consecutive seats have each judged their own block the necessary one while `state.md` grew to 131KB
+and `positions.md` to 96KB — files every future run must read in full before it may act. So this seat
+**collapsed** rather than appended: it replaced the 176-line three-seat 10-14 digest in `positions.md`
+with a shorter four-seat one (**96,566B → 94,318B**) and rewrote `state.md`'s carry-forward smaller than
+it found it, discarding nothing live. ⚠ **This is a demonstration and not a fix. One seat collapsing
+once a day cannot outrun four seats appending, and the cap on what a seat may append when the null is
+unchanged is a rule only `control.md` or the routine prompts can carry. It stays the human's to write.**
+
+**5. And one thing that was genuinely not close to wrong:** the §2 band. I re-solved the edges from
+source instead of inheriting the midday seat's numbers and got the same two prices to the cent — VOO
+**$562.51** and **$908.67**, which did not move once today while the percentage was written down four
+different ways. Today demonstrates it cleanly: VOO fell 1.07% and core% fell 0.28pp.
+
+**For the next run:**
+- ⚠ **DO NOT BACKFILL ANY `highest_close`. There is nothing to write** — the field is absent, not stale,
+  and carries no date to find stale.
+- Week anchor **2026-10-12**, ISO week 42. The next rollover is **Monday 2026-10-19**; recompute it from
+  `America/New_York` rather than trusting this line.
+- Session count **31 completed / 28 post-fill**, advanced by this seat because only a seat standing after
+  the bell may count the day it is in. Thesis count **156**, held — this routine writes no theses.
+  ⚠ **`grep -c '^### T-' research_log.md` returns 70 because the template heading matches. 87 archived +
+  69 live = 156. DO NOT "FIX" IT TO 157.**
+- 10-14 is now **complete and countable as a zero-`move` session**, all four seats.
+- Tomorrow is a scheduled **PPI and retail sales** day. A macro print is a government action: one party,
+  no transaction, not a Company A. Note the date and do nothing.
+
 ### 2026-10-13 (Tuesday)
 
 **Account:** total **$100,826.0362 on official closes** (price basis, `bars --adjustment all`, VOO `c`
