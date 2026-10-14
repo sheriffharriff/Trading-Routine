@@ -52,6 +52,218 @@ single most common way a plausible-sounding connection gets mistaken for an oppo
 
 ## Entries
 
+### 2026-10-14 (08:21 ET) — event survey (funnel, pre-thesis)
+
+Selftest passed all five checks (`trading_enabled: true`, LIVE paper, broker equity **$101,007.25** at
+pre-flight). `clock` at **08:21:37** reads `is_open: false` with `next_open` **2026-10-14T09:30** and
+`next_close` **2026-10-14T16:00** — both carrying **TODAY's** date, the **PRE-MARKET full-session
+signature**, read off the **DATES** and not the boolean. **Not a holiday, not an early close.**
+Window screened: **the completed 2026-10-13 session and overnight into Wednesday** — a
+**ONE-TRADING-DAY, ONE-CALENDAR-DAY** window, the ordinary shape, exactly as the 10-13 close seat
+predicted. **Four Perplexity scans, all exit 0** (three broad — structural framing first, then the
+segment-quantification framing, then the knock-on framing — plus one drill on the single event that
+put an eligible US-listed ticker in a dated transaction). **FIVE theses written, ALL FIVE REJECTED.**
+
+**⚠⚠ THE STRUCTURAL FRAMING WAS QUERY ONE AND IT PAID A SIXTH CONSECUTIVE SESSION, BUT TODAY IT PAID
+IN A NEW CURRENCY: IT RETURNED SIX ITEMS AND SELF-EXCLUDED ALL SIX IN A TABLE WITH A NAMED FAILURE
+AGAINST EACH.** Its own conclusion, verbatim: *"no announcement can be confirmed as meeting all
+criteria simultaneously."* The exclusions it supplied for free — Hormel/Brakebush (seller is a family,
+not a contracting company) · Galderma/ZO Skin Health (**SIX-listed**, counterparty private) ·
+Chemring/Roke (**LSE-listed** *and* *"the counterparty is unnamed"*) · Alpha Compute (counterparty
+unnamed **and** *"signed October 9, 2026, rather than announced within the last 24 hours"* — the source
+applying **rule (iii)** before I did) · FF EAI/FFAI (signed 10-12) · Aegis Logistics/Tristar (Indian
+issuer). **Six items, six reasons, zero queries spent disposing of them.**
+
+**⚠⚠ AND THE SECOND FRAMING DELIVERED THE TWELFTH CONSECUTIVE SESSION OF VOLUNTEERED ABSENCE
+(09-29 → 10-14 UNBROKEN), IN THE FLATTEST WORDS IT HAS USED YET:** *"No company can be confirmed to
+meet the full screen from the available results"* … *"the evidence provided does not establish any
+US-listed company with market capitalization above $10 billion that satisfies **all** requested
+criteria."* ⚠ **It then listed the three near-misses with their own kills attached — and the first of
+them was RTX again.**
+
+**⚠⚠ THE PRIORS ARRIVED ON SCHEDULE, AGAINST THE FACTS, AND NOT ONE IS WRITTEN DOWN AS A CANDIDATE.**
+The Lockheed/Avio item summoned **the solid-rocket-motor tier** — the exact prior this log already
+names as reflexive — and the summoning is worse than usual, because **the whole point of Lockheed
+buying *merchant* Italian capacity is that NOC's and L3Harris/Aerojet's capacity is constrained.**
+⚠ **So the prior points the WRONG WAY: the read-across is negative for the US incumbents, §3 forbids
+expressing a negative, and the "competitor loses relative standing" flip is the shared-cause object.
+NOT TAKEN.** The Fermi item summoned **the GPU vendor for any AI-compute headline**, and AMD was
+*already in the headline*.
+
+**⚠ ZERO `move` CALLS, AND THE CAUSE IS THE 10-13 CAUSE ONE RUNG HIGHER: TWO GENUINELY ELIGIBLE
+US-LISTED TICKERS REACHED THE RUN (`HRL`, `AMD`) AND **BOTH DIED AT PART 1**, which is UPSTREAM of the
+priced-in filter.** `asset` was pulled on both the structural question and the instrument question
+rather than assumed: **HRL** returns `us_equity` / NYSE / tradable, and **AVIO** returns **404 — not in
+the US equity universe at all**, so §3's kill on Avio is **established, not inherited** from its 10-07
+disposal. ⚠ **A `move` on HRL or AMD would have been DECORATIVE and was declined for that reason —
+the fifth and sixth such refusals (SYNA 10-05, CEREBRAS 10-06, no-eligible-ticker 10-12, BE 10-13).
+This is the fourth state of the priced-in filter, in its instructive form: tickers existed and the
+funnel's own structure killed them before price could matter.**
+
+---
+
+### T-2026-10-14-01 — AVIO (ineligible) / LMT (first-order) — REJECTED (§3 established; part 1; part 2 wrong quantity)
+**Company A / the news:** **2026-10-13** — Lockheed Martin and **Avio S.p.A.** announced a strategic
+cooperation agreement giving Lockheed access to part of Avio's **merchant solid-rocket-motor** capacity
+for the **ER GMLRS** and **PrSM** programs. Avio disclosed **"more than $500 million"** of investment in
+new **US** production capacity (Businesswire 2026-10-13; defence-industry.eu).
+**Company B / the candidate:** **None survives.** Avio is the party whose economics change; Lockheed is
+the headline name and the **buyer** of capacity.
+
+**1. Mechanism (one sentence):** *not written — see Outcome.* The only honest sentence names **Avio** as
+Company B, and Avio cannot be bought here at any price.
+**2. Dollar path:** **FAILS.** The one disclosed figure, **>$500M, is Avio's own CAPEX** — capital paid
+**OUT**, not segment revenue at any eligible Company B (**rule (viii)**). ⚠ **The source states the
+other half itself: it *"does not disclose the agreement's financial terms, expected revenue, unit
+volumes, or a specific cost impact for Lockheed Martin."***
+**3. Timing window:** *not reached.* A greenfield SRM line is a multi-year build; **rule (vi)** would
+kill it independently had parts 1 and 2 not.
+**4. Invalidation:** *not reached.*
+
+**Hard filters:**
+- Priced-in (§4): **not called — DECORATIVE.** No eligible Company B existed to call it on.
+- Correlation (§4): **no operand** — zero open satellite positions, so no `driver` field to collide with.
+- Universe (§3): **AVIO → `asset` returns 404, not in the US equity universe.** ⚠ **ESTABLISHED FROM
+  SOURCE THIS RUN, NOT INHERITED from the 10-07 disposal** (the GFS/VAL lesson). LMT passes §3 and is
+  irrelevant, being first-order.
+
+**Outcome:** **REJECTED three times over.** ⚠⚠ **This is the thirteenth US-defence-award instance and
+the FIRST where the mechanism is sound, the beneficiary is named, the figure is real and dated — and
+the beneficiary is simply NOT LISTED HERE. A different door on the same corridor: the previous twelve
+died because the tier below the prime was confidential; this one dies because the tier below the prime
+was named and is ITALIAN.** ⚠ **No re-query was issued on "who supplies Avio's new US plant" — the
+catalogue's answer is already written and the standing rule is to spend ONE query and stop. The plant
+has a dollar figure, a programme and a country, and **no contractor, engineer or equipment vendor
+whatsoever** — rule (v)'s capex-blank costume, the BDX shape.**
+
+---
+
+### T-2026-10-14-02 — AMD — REJECTED (part 1; part 2 no figure; rule (viii) NEW COSTUME)
+**Company A / the news:** **2026-10-13** — **Fermi** (FRMI, the Texas data-centre/energy developer)
+announced a **credit support agreement with AMD** backstopping a lease for **phase one of Project
+Matador**, Carson County, Texas — **222 MW** gross, with a partnership framework for expansion to
+**650 MW**. Fermi shares rose double digits on it.
+**Company B / the candidate:** **AMD** — US-listed, NASDAQ, far above §3's floor. The only genuinely
+eligible second-order-looking name this run produced.
+
+**1. Mechanism (one sentence):** **CANNOT BE WRITTEN.** AMD is a **named party to the announcement**,
+so §4's premise — news about Company A, find Company B — does not apply. Any sentence that makes AMD
+second-order here needs a second clause ("*and also* AMD will presumably sell the GPUs into it"), which
+is the "and also" kill.
+**2. Dollar path:** **FAILS, on the source's own words:** *"No source in the available reporting
+discloses a dollar amount of revenue, orders, or purchase commitments attributable to AMD"* and *"a
+figure for AMD is not disclosed."* **No AMD reporting segment is identified** — the source calls AMD
+only *"the high performance and adaptive computing leader."*
+**3. Timing window:** **FAILS independently.** The only dollar figure in the story — **~$6.5B** — is
+**Fermi's expected revenue over an initial FIFTEEN-YEAR term**, i.e. the wrong company **and** ~60
+quarters against §4's two-quarter ceiling.
+**4. Invalidation:** *not reached.*
+
+**Hard filters:**
+- Priced-in (§4): **not called — DECORATIVE.** Part 1 kills it upstream; a `move` on AMD would have
+  converted an honest absence into a fake exercise.
+- Correlation (§4): **no operand** — empty sleeve.
+- Universe (§3): AMD passes on instrument and cap. ⚠ **Passing §3 bought it nothing, which is the
+  normal case.**
+
+**Outcome:** **REJECTED.** ⚠⚠ **AND IT CARRIES A GENUINELY NEW COSTUME FOR RULE (viii), WORTH THE ENTRY
+ON ITS OWN: A CREDIT BACKSTOP IS A CONTINGENT LIABILITY ASSUMED BY THE BUYABLE LEG — THE OPPOSITE SIGN
+FROM REVENUE — AND IT READS AS A STRONG COMMERCIAL SIGNAL BECAUSE THE MARKET PRICED FERMI UP ON IT.**
+The catalogue already holds capital paid in, capital paid out, financing ceilings available to somebody
+else, synergy estimates and misses against consensus. **This is the first *guarantee*: AMD has promised
+to stand behind somebody else's rent. The amount is undisclosed, and if it is ever quantified it will
+appear as a risk, not a sale.** ⚠ **Do not rehabilitate this if AMD later announces a chip order into
+Matador — that would be a NEW event with its own entry, not this one maturing.**
+
+---
+
+### T-2026-10-14-03 — HRL — REJECTED (part 1 — Company A is the payer; no Company B exists)
+**Company A / the news:** **2026-10-14** — **Hormel Foods (HRL, NYSE)** announced a definitive agreement
+to acquire **Brakebush Brothers**, a chicken company, for **~$1.055 billion**, closing expected Q1
+fiscal 2027.
+**Company B / the candidate:** **None.** Brakebush is **private** and family-held — unbuyable at any
+price; no supplier, contractor or co-packer is named by any source.
+
+**1. Mechanism (one sentence):** **CANNOT BE WRITTEN.** HRL is the **headline name** and the **payer**.
+**2. Dollar path:** **FAILS — form five.** $1.055B is **acquisition consideration paid OUT by the only
+listed party to a private seller** — the **GEHC/Sofie** shape exactly: the money leaves the buyable leg
+and the receiving leg cannot be bought.
+**3. Timing window:** Closing **Q1 FY2027** and revenue contribution later — and §4 does not reach it,
+because **merger activity is not in §4 at all**: a target whose price is contractually pinned has no
+economics left to change, and the acquirer is first-order.
+**4. Invalidation:** *not reached.*
+
+**Hard filters:**
+- Priced-in (§4): **not called — DECORATIVE.** Part 1 is upstream.
+- Correlation (§4): **no operand** — empty sleeve.
+- Universe (§3): **HRL `asset` → `us_equity` / NYSE / tradable / fractionable — instrument test PASSES,
+  pulled from source this run.** ⚠ **Market cap NOT resolved and deliberately so: the funnel declined
+  to attach one and the thesis was already dead at part 1. §3's cap is UNRESOLVED, NOT PASSED — do not
+  inherit a §3 verdict from this entry** (the VAL/GFS precedent).
+
+**Outcome:** **REJECTED.** ⚠ **The honest note is how close this came to looking usable: a real
+transaction, a precise figure to three decimals, a US-listed party above any plausible floor, and a
+dated 8-K-grade release. Everything §4 asks for except a Company B.**
+
+---
+
+### T-2026-10-14-04 — RTX — REJECTED (rule (iv), FIFTH APPEARANCE IN EIGHT SESSIONS; rule (v) ceiling; no Company A)
+**Company A / the news:** **2026-10-13** — RTX reportedly received an **"up to $8 billion"** contract
+from the **US Air Force Nuclear Weapons Center** for strategic communications modernisation.
+**Company B / the candidate:** **None offered, none sought.**
+
+**1.–4.:** *not written.* The answer was already in the catalogue and **zero queries were spent.**
+
+**Hard filters:** not reached.
+
+**Outcome:** **REJECTED on four independent grounds already on file:** RTX is **first-order**; the
+counterparty is a **government body**, not a Company A (a government action has **one party** and no
+transaction); **"up to $8B" is a CEILING**, not a figure (**rule (v)**); and **no supplier below RTX is
+named**, which is this funnel's settled defence-disclosure pattern.
+⚠⚠ **THIS IS RTX's FIFTH APPEARANCE IN EIGHT SESSIONS AND ITS FOURTH DISTINCT AWARD** (09-29 AMRAAM
+$20.7B · 10-02 SM-6 *"up to"* $24.4B · 10-09 SM-3 *"up to"* $6.3B · 10-12 the SM-3 award **re-served
+twice in one run** · 10-14 USAF NWC *"up to"* $8B). ⚠ **It died the same death every time.** ⚠⚠ **AND
+THE NEW AWARD IS THE STRONGER FORM OF RULE (iv)'s WARNING, NOT THE WEAKER ONE: 10-12's re-serve could
+be dismissed as the funnel repeating itself, but this is a GENUINELY NEW, GENUINELY LARGE, GENUINELY
+DATED award — and it is still telling me about the defence sector's DISCLOSURE PRACTICE rather than
+about a candidate maturing. A fresh transaction is not fresh evidence when the kill is structural.**
+⚠ **Fourteenth US-defence-award instance counted** (thirteenth was T-2026-10-14-01).
+
+---
+
+### T-2026-10-14-05 — §3 / non-qualifying sweep of NINE, disposed as one — REJECTED
+Nine items dealt with in a single entry because each dies on one structural reading, with **zero
+follow-up queries spent** on any of them:
+
+- **Galderma / ZO Skin Health**, $1.5B enterprise value — **§3: Galderma is SIX-listed (Swiss)**; ZO is
+  private. Two kills.
+- **Chemring Group / Roke → an unnamed major US defence prime**, *"at least $170M over five years"*,
+  $16M initial order — **§3: LSE-listed**, **and rule (v): the counterparty is unnamed.** ⚠ **A fresh
+  costume of the unnamed-customer shape that `T-2026-10-13-01` logged: here the blank is a *named
+  industry role* ("major U.S. defense contractor") carrying a figure, a term and a product.**
+- **Alpha Compute (ALP, NASDAQ)**, **$81,732,160** four-year GPU lease — counterparty unnamed; **signed
+  2026-10-09, not announced in window (rule (iii), stated by the source itself)**; and **$81.7M on a
+  microcap makes part 2's 10% test and §3's $10B floor JOINTLY UNSATISFIABLE** — the free one-step screen.
+- **FF EAI Robotics (FFR) / Faraday Future (FFAI)**, ~$200M and ~$60M business valuations — both
+  **far below §3's $10B floor**; agreements signed **10-12**; no contract term.
+- **Aegis Logistics / Tristar**, $809M for 90% — **§3: Indian issuer.**
+- **Moreld ASA / Norwegian Defence Materiel Agency** — **§3 non-US** *and* a government counterparty.
+- **BigBear.ai**, *">$225M"* federal awards (10-13) — below §3's floor, and the source states the figure
+  *"includes contract options and ceilings rather than earned revenue"* — **rule (v)'s ceiling sub-shape
+  with the source applying it for me.**
+- **LS Electric / Bloom Energy, $138,458,284** — ⚠ **an EXACT RE-SERVE of `T-2026-10-13-01`, one session
+  old, same parties and same figure to the cent. Disposed on the log, not on the tape: part 1 — the one
+  US-listed party (BE) is the PAYER. Reading the log first cost one grep and saved a drill.**
+- **THE MACRO COMPLEX, including September CPI printing TODAY at 08:30 ET** (PPI and retail sales 10-15,
+  ASML/TSMC later this week) — ⚠⚠ **NO NEW ID MINTED, AND THAT IS DELIBERATE: this is the same disposed
+  object as `T-2026-10-12-05` and `T-2026-10-13-08`, and re-litigating it would inflate the thesis count
+  with a third entry for one rejection.** ⚠ **It has moved from "the forward calendar — nothing has
+  happened yet" to a print that lands inside this session, and that changes its STATUS, not its
+  ELIGIBILITY: a macro print has ONE party and no transaction — the government-action object in a
+  calendar's clothing.**
+
+---
+
 ### 2026-10-13 (08:26 ET) — event survey (funnel, pre-thesis)
 
 Selftest passed all five checks (`trading_enabled: true`, LIVE paper, broker equity **$100,820.09** at
