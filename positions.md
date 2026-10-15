@@ -521,7 +521,7 @@ tape:
   `plan_today.md` arrives three calendar days old on a Monday** — compare `plan_date` to the last
   TRADING day, not to the calendar.
 
-### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-10-15, **SEATS 1–2 OF 4:** `1-premarket-research` 08:19 ET · `2-market-open-execution` 09:37 ET. **Still deliberately SHORT; the two seats that follow fold into it and the close seat owns collapsing it.**)
+### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-10-15, **SEATS 1–3 OF 4:** `1-premarket-research` 08:19 ET · `2-market-open-execution` 09:37 ET · `3-midday-management` 12:42 ET. **Still deliberately SHORT; the close seat folds in last and owns collapsing it.**)
 
 **§5.1–5.4 RE-EVALUATED IN ORDER, REACHED AND NOT INHERITED — THE SAME NULL AS 10-14.** Core VOO is
 struck from the working list **before any rule is read**, per §5's exemption; with it gone the list is
@@ -612,6 +612,47 @@ routed around the one mechanism that forces a buy to sleep on a written thesis.*
 *EASY* AND SAYS SO: ZERO `bars` CALLS WERE MADE HERE.** No close was in hand to be tempted by, and
 09:37 would have offered only a **PARTIAL** bar in any case. ⚠ **The stamp is not this seat's job; the
 refusal is recorded only so the count stays continuous.**
+
+**SEAT 3 OF 4 — `3-midday-management` 12:42 ET. THE EXITS-ONLY SEAT. §5.1–5.4 RE-EVALUATED IN ORDER,
+REACHED AND NOT INHERITED FROM THE TWO TABLES ABOVE: the same four nulls, against a ledger re-read live
+at this seat. The table stands as written.** ⚠ **This seat MAY NOT OPEN A POSITION — the midday run
+exists so an 11am stop breach is acted on at lunchtime, not so a buy can route around the 09:35 seat and
+its written-thesis requirement. With no satellite position there was no stop to breach, so the seat's
+scope and its subject were BOTH empty, for two independent reasons.**
+
+**LEDGER RE-RECONCILED, THREE SIDES STILL AGREEING, FIRST JOB OF THE RUN:** this file **zero satellite
+blocks** · `positions` **one row, VOO** 99.046311231 sh @ **706.74**, `cost_basis` **$69,999.989999**,
+**unchanged since 2026-09-03 (31st session)** · `sleeves` `satellite.count: 0`. **Zero `quote` calls —
+Step 1's `quote --symbols <every open satellite ticker>` had an EMPTY SYMBOL LIST, which is an absent
+call, not a skipped one.**
+
+**CLOCK 12:41:35 — MID-SESSION SIGNATURE READ OFF THE DATES:** `is_open: **true**`, `next_open`
+**2026-10-16T09:30** (rolled) against `next_close` **2026-10-15T16:00** (standing). Same pairing the
+09:37 seat read, three hours later in the same session.
+
+**NUMBERS WITH THEIR CALL AND BASIS. ⚠ THE 09:37 READINGS ABOVE WERE NOT DIFFERENCED AGAINST THESE —
+TWO CALLS, TWO MOMENTS.** `sleeves` 12:41: equity **$100,086.16**, cash **$30,000.00 exactly**, core
+**$70,082.198438 / 70.02%**, satellite **0.0%** `count 0`, cash **29.97%**, `core_in_band: true`,
+`rebalance_needed: false`, `core_target_value` **$70,060.31**, `rebalance_delta` **−$21.89**.
+`positions` 12:41: `current_price` **707.61**, `market_value` **$70,086.16029**, `unrealized_pl`
+**+$86.170291 / +0.123%** against the 706.74 fill — ⚠ **the position crossed from unrealized LOSS to
+unrealized GAIN between the two seats, and that is a MARK MOVING, not a trade: qty, fill and cost_basis
+are byte-identical.** ⚠ **`lastday_price` 707.43 is STILL NOT the official 10-14 close 707.44, so
+`change_today` +0.00025 and `unrealized_intraday_pl` +$17.828336 are both built on the broker midpoint
+and are NOT official-basis day figures.** ⚠ **§2 REBALANCE IS NOT THIS SEAT'S CALL — `rebalance_delta`
+flipped SIGN (+$73.15 → −$21.89) between 09:37 and 12:41 while core stayed in band the whole time, which
+is exactly why §2 triggers on the BAND and not on the delta.**
+
+**STEP 2 (high-water repair) — THE STEP THIS SEAT OWNS, AND IT HAD NO OPERAND.** `highest_close` is
+**ABSENT — the third state, carrying no `(as of …)` date to compare against the last trading day** — so
+⚠⚠ **NO STALENESS WAS DETECTED *AND* NONE WAS RULED OUT. NOTHING WAS BACKFILLED BECAUSE THERE IS
+NOTHING TO BACKFILL: zero `bars` calls at this seat.** ⚠ **The backfill path — the one defence against
+the failure mode where every field is present and §5.4 silently never fires — remains UNEXERCISED CODE,
+and a 31-session run of "no subject" is not evidence it works.**
+
+⚠⚠ **CORE VOO NOT STAMPED — 102nd CONSECUTIVE REFUSAL, GRADED *EASY* AND SAYING SO: ZERO `bars` CALLS,
+so no correctly-basised official close was ever in hand to be tempted by, and a bar dated today would
+have been PARTIAL at 12:42 regardless.** §7 forbids arming §5.4 on the one position §5 exempts.
 
 ---
 
