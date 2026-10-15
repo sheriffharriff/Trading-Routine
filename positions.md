@@ -521,7 +521,7 @@ tape:
   `plan_today.md` arrives three calendar days old on a Monday** — compare `plan_date` to the last
   TRADING day, not to the calendar.
 
-### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-10-15, `1-premarket-research` 08:19 ET — **SEAT 1 OF 4. This block is deliberately SHORT; the three seats that follow fold into it and the close seat owns collapsing it.**)
+### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-10-15, **SEATS 1–2 OF 4:** `1-premarket-research` 08:19 ET · `2-market-open-execution` 09:37 ET. **Still deliberately SHORT; the two seats that follow fold into it and the close seat owns collapsing it.**)
 
 **§5.1–5.4 RE-EVALUATED IN ORDER, REACHED AND NOT INHERITED — THE SAME NULL AS 10-14.** Core VOO is
 struck from the working list **before any rule is read**, per §5's exemption; with it gone the list is
@@ -552,6 +552,66 @@ WRITE.** The backfill path stays **unexercised code.**
 `bars` CALLS AT THIS SEAT**, so no correctly-basised official close was ever in hand to be tempted by.
 §7 forbids arming §5.4 on the one position §5 exempts. ⚠ **Ninety-nine easy refusals are not evidence
 about a hard one; the close seat will meet the hard grade again today.**
+
+**SEAT 2 OF 4 — `2-market-open-execution` 09:37 ET. §5.1–5.4 RE-EVALUATED, NOT INHERITED FROM THE 08:19
+TABLE ABOVE: the same four nulls, reached in order, against a ledger re-read live at this seat.** The
+table stands as written. ⚠ **A table re-evaluated to the same answer and a table left untouched are
+indistinguishable to the next reader, so this seat says explicitly that it re-read it.**
+
+**LEDGER RE-RECONCILED AT THE OPEN, THREE SIDES STILL AGREEING, AND IT WAS THIS SEAT'S FIRST JOB —
+§7 forbids trading on top of a ledger known to be wrong:** this file **zero satellite blocks** ·
+`positions` **one row, VOO** 99.046311231 sh @ **706.74**, `cost_basis` **$69,999.989999**, **unchanged
+since 2026-09-03** · `sleeves` `satellite.count: 0`.
+
+**CLOCK — THE MID-SESSION SIGNATURE, READ OFF THE DATES.** 09:37:00 `is_open: **true**`, `next_open`
+**rolled to 2026-10-16T09:30** while `next_close` **stayed at 2026-10-15T16:00**. ⚠ **That pairing, not
+the boolean alone, is what distinguishes a live regular session.** §7's closed-market prohibition
+cleared on the dates.
+
+**NUMBERS WITH THEIR CALL AND BASIS — NEVER DIFFERENCED ACROSS CALLS.** `sleeves` 09:37 live mark:
+equity **$99,768.22**, cash **$30,000.00 exactly**, core **$69,764.606441 / 69.93%**, satellite **0.0%**
+`count 0`, cash **30.07%**, `core_in_band: true`, `rebalance_needed: false`, `core_target_value`
+**$69,837.75**, `rebalance_delta` **+$73.15**. `positions` 09:37: `current_price` **704.3635**,
+`market_value` **$69,764.606441**, `unrealized_pl` **−$235.383558 / −0.336%** against the 706.74 fill.
+⚠ **`lastday_price` **707.43** is NOT the official 10-14 close **707.44** — and `change_today`
+−0.00433 / `unrealized_intraday_pl` −$303.725513 are BOTH built on it, so neither is an official-basis
+day figure.** ⚠ **The selftest's own equity read ($99,704.83) and this `sleeves` read ($99,768.22) are
+TWO DIFFERENT CALLS AT TWO DIFFERENT MOMENTS — THEY WERE NOT DIFFERENCED, and the $63 between them is
+not a move anyone measured.**
+
+**§2 REBALANCE — THE CALL BELONGS TO THIS SEAT AND THIS SEAT MADE IT: NO REBALANCE.** Core **69.93%**
+sits inside §2's **65–75%** band with **4.93 points** of headroom at the near edge and 5.07 at the far.
+⚠ **`rebalance_delta` +$73.15 IS A DISTANCE READOUT, NOT AN INSTRUCTION** — §2 triggers on the band,
+not on the delta being non-zero, and the delta is non-zero on essentially every reading. ⚠ **Both band
+edges remain TWO FIXED VOO PRICES while cash sits at exactly $30,000 and the satellite sleeve is empty;
+they are VOID the moment either changes.**
+
+**STALENESS GATE — EXERCISED AND *PASSED*, WHICH IS THE OPPOSITE OUTCOME FROM *FIRED*.** `plan_date`
+**2026-10-15** read off the field against today's ET date **2026-10-15** → **FRESH**, so the plan's
+intents were executable. ⚠ **Freshness was NOT inferred from the plan being empty: a fresh empty plan
+and a stale plan produce IDENTICAL zero-order runs, and only the field distinguishes them.**
+
+**STEPS 3–6 ALL HAD NO SUBJECT, EACH FOR A DIFFERENT AND NAMED REASON.** Step 3 core bootstrap
+**SKIPPED on `core_established: true`** — that path ran once on 09-03 and never runs again. Step 4
+exits: **zero SELL intents and zero satellite positions**, so §5 was reached and found empty rather than
+skipped. Step 5 re-validation: **zero BUY intents, therefore NOTHING TO RE-VALIDATE** — ⚠ **ZERO `move`
+CALLS AT THIS SEAT, AN *ABSENT* PRICED-IN CHECK, NOT A SKIPPED ONE AND CERTAINLY NOT A PASSING ONE.**
+Step 6 execution: **zero orders submitted of any kind.** ⚠ **Zero non-terminal orders — `orders --status
+open` returns `[]` and `--status all` STILL RETURNS ONE ROW for the whole account history (the 09-03
+core fill, `filled`), so §7's order-limbo requirement has NO OPERAND rather than a clean bill.**
+
+⚠⚠ **EVERY §6 AND §7 GATE WAS OPEN AT THIS SEAT AND NO TRADE WAS PLACED, WHICH IS THE WHOLE POINT OF
+THE SEAT.** Breaker **INACTIVE** · `new_positions_this_week` **0 of 3** · satellite **0% deployed**
+against a 30% target with **$30,000 idle** · `TRADING_ENABLED: true` · `control.md` notes **empty** ·
+§6's 5% cap **RE-COMPUTED AGAINST LIVE 09:37 EQUITY at $4,988.41** rather than carried from the plan's
+pre-bell $4,992.68 — **and it has no operand either.** ⚠ **The only thing between this account and a
+buy this morning was the absence of an intent in `plan_today.md`. Opening anything here would have
+routed around the one mechanism that forces a buy to sleep on a written thesis.**
+
+⚠⚠ **CORE VOO NOT STAMPED WITH A `highest_close` — 101st CONSECUTIVE REFUSAL, AND THIS SEAT GRADES IT
+*EASY* AND SAYS SO: ZERO `bars` CALLS WERE MADE HERE.** No close was in hand to be tempted by, and
+09:37 would have offered only a **PARTIAL** bar in any case. ⚠ **The stamp is not this seat's job; the
+refusal is recorded only so the count stays continuous.**
 
 ---
 

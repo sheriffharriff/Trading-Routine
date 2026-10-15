@@ -10,8 +10,8 @@ The block below is parsed by `scripts/common.py` and gates real behavior
 `key: value` format exactly. Prose goes underneath.
 
 ```
-last_run: 2026-10-15 08:19 ET 1-premarket-research (SEAT 1 OF 4, THURSDAY. Selftest 5/5, trading_enabled true, LIVE paper, control.md notes EMPTY, zero open alerts, zero non-terminal orders (orders --status all STILL ONE ROW for the whole account history: the 2026-09-03 core fill, filled, terminal - so §7's limbo warning has NO OPERAND rather than a clean bill). CLOCK 08:19:46 is_open FALSE with next_open 2026-10-15T09:30 AND next_close 2026-10-15T16:00 - both dated TODAY, the PRE-MARKET FULL-SESSION signature, read off the DATES not the boolean. NOT A HOLIDAY. LEDGER RECONCILED FIRST, THREE SIDES AGREEING: positions.md zero satellite blocks, positions one row VOO 99.046311231 sh @ 706.74 cost_basis 69,999.989999 unchanged since 09-03, sleeves satellite.count 0. NUMBERS WITH THEIR CALL AND BASIS, NEVER DIFFERENCED ACROSS CALLS: sleeves 08:19 live-mark equity 99,853.59, cash 30,000.00 exactly, core 69,853.59 / 69.96%, satellite 0.0% count 0, cash 30.04%, rebalance_delta +43.92 (A DISTANCE READOUT, NOT AN INSTRUCTION, and §2 puts the call at the open seat). IN BAND, NO REBALANCE QUEUED. VOO pre-bell indicative 705.2619; lastday_price 707.43 is NOT the official 10-14 close 707.44 - NEVER DIFFERENCE THEM, and equity-last_equity / change_today / unrealized_intraday_pl ARE ALL BUILT ON IT. ZERO bars CALLS AT THIS SEAT. §6 5% cap 4,992.68 WITH NO OPERAND. HOUSEKEEPING: week anchor RECOMPUTED FROM SOURCE (America/New_York -> 2026-10-15, Thursday, ISO week 42 weekday 4, Monday anchor 2026-10-12) and MATCHED week_of, so new_positions_this_week NOT re-reset, 0 of 3; nothing closed so consecutive_closed_losses 0 UNTOUCHED rather than reset, no streak to confirm against; breaker INACTIVE, halt_triggered_at none so no HALT_CLEARED_AT comparison was due. STEP 4 HAD NO SUBJECT: zero satellite positions, §5.1-5.4 reached and found EMPTY, distance UNDEFINED NOT LARGE, highest_close ABSENT (a third state, no '(as of ...)' date) so NO STALENESS WAS DETECTED *OR* RULED OUT - DO NOT BACKFILL. CORE VOO NOT STAMPED, 100th consecutive refusal, EASY grade and says so (zero bars calls, no ingredient to be tempted by). RESEARCH: four Perplexity scans all exit 0, structural framing FIRST per the standing rule, announcement date demanded inside every prompt. FIVE THESES WRITTEN, ALL FIVE REJECTED - T-2026-10-15-01..-05; thesis count 156 -> 161. TWO GENUINELY ELIGIBLE US-LISTED NAMES REACHED THE RUN AND BOTH DIED AT PART 1: GEV ~250.31B and BKR ~56.0B, the WIDEST §3 margins this funnel has produced, so a move on either would have been DECORATIVE - DECLINED, the 7th and 8th such refusals. ZERO move CALLS: an ABSENT check, not a skipped or a passing one. THE TWO FINDINGS: (a) TSMC's 10-15 print is a NEW rule-(iii) COSTUME - one release carrying a genuine PASS (revenue outlook raised ~40% -> ~44% against its OWN prior figure) and a genuine FAIL (capex REITERATED at 60-64B, old range = new range) ON TWO DIFFERENT FIGURES, and the one that passes has NO second-order mechanism attached while the one with a supplier chain did not move - THE TEST BELONGS TO THE FIGURE THE MECHANISM RUNS ON, NOT TO THE RELEASE; (b) Venture Global's ~17.2B is a NEW rule-(viii) COSTUME - a CONTINGENT AGGREGATE CEILING SPANNING TWO FRAME AGREEMENTS AND TWO RECIPIENTS, unallocated and paid OUT by the non-candidate leg. FUNNEL RE-SERVED THIS LOG'S OWN DISPOSED REJECTS A THIRD CONSECUTIVE SESSION, both only TWO DAYS OLD (EnergyX/Trafigura T-2026-10-13-02; LS Electric/Bloom T-2026-10-13-01 RE-STAMPED 10-15 over a 10-13 announcement) - reading the log first cost one grep and saved two drills. 13th CONSECUTIVE SESSION OF VOLUNTEERED ABSENCE, 09-29 -> 10-15 unbroken. PPI AND RETAIL SALES PRINT TODAY: NO ID MINTED, following the 10-14 precedent - already disposed at T-2026-10-12-05 and T-2026-10-13-08, one party, no transaction. SESSION COUNT HELD AT 31/28 - this seat stands mid-session and may not count the day it is in. FILES: research_log.md five entries + survey block appended; plan_today.md OVERWRITTEN, plan_date 2026-10-15, ZERO BUY / ZERO SELL / ZERO REBALANCE intents with every §6 gate OPEN; positions.md 10-15 sell_rule_status block added, deliberately SHORT; state.md rewritten and it GREW ~+3.5KB - NOT 'rewritten smaller', which is what this field nearly said and would have been FALSE: three collapses (the 10-14 handoff -1.3KB, the priced-in per-session narratives, the item-(9) body) netted roughly -2KB against ~+3.7KB of genuinely new standing-rule findings. SAY WHICH DIRECTION IT WENT, MEASURED. trade_log.md, journal.md, weekly_review.md, alerts.md UNTOUCHED - no fills, no incidents, and routine 1 is not their author. CORPUS MEASURED, NOT ASSERTED: state+positions+research_log+journal ran 378,205B on 10-08 -> 428,373 -> 449,725 -> 515,427B on 10-14, i.e. ~+23KB PER SESSION AND ACCELERATING (+50KB, +21KB, +66KB across the three intervals), +36% in six sessions. THIS SEAT ADDED +23,461B TO THE THREE FILES THAT ARE NOT state.md (387,881 -> 411,342), OF WHICH ~+20.8KB IS research_log.md - five rejections whose value IS their reasoning. ITEM (9) IS NOT HOLDING, AND THE TRADE-OFF IS NOW EXPLICIT: ON A NO-TRADE DAY THE REJECTION REASONING IS BOTH THE ONLY OUTPUT OF VALUE AND THE WHOLE OF THE GROWTH. THAT IS THE HUMAN'S TO SETTLE, NOT A DISCIPLINE PROBLEM A SEAT CAN SOLVE.)
-prior_run: 2026-10-14 16:16 ET 4-market-close-journal (SEAT 4 OF 4, day COMPLETE. Narration COMPACTED by this seat and NAMED rather than silent: state.md is rewritten every run by contract, the full text is in git history, and its load-bearing readings are folded into the dated 10-14 digest in positions.md, into journal.md's 10-14 entry and into the live items below. NOTHING LIVE DISCARDED. Official-close basis, VOO c 707.44: book 100,069.3224, day -756.71 / -0.7505% from 10-13's official 100,826.0362, since inception +0.0693% on a 100,000.00 opening; live broker mark 100,002.96 reported BESIDE that series. VOO itself -1.0684% - the book fell LESS only because 30% is cash, which is CASH DRAG IN REVERSE AND NOT ALPHA; satellite contributed exactly 0.000000% as on every session since inception. The forbidden figure was pre-computed and corroborated in THREE fields and is 7.5bp WRONG: equity-last_equity -834.96 / -0.828%, matching unrealized_intraday_pl -834.960403 and change_today -0.01179 to the cent, because last_equity is built on lastday_price 715.20 which is NOT the official 10-13 close 715.08. THREE FIELDS AGREEING IS WHAT A CORRECT NUMBER LOOKS LIKE; THE STANDING RULE CAUGHT THIS, NOT JUDGMENT. Catch (24) FULLY RESOLVED, both halves, in the correction's favour, and the transferable part is the METHOD: it checked the 10-12 RECORD instead of reasoning about the boolean. Step 2 had NO SUBJECT; core VOO not stamped, 99th refusal and the HARD grade for the first time that day. Zero trades at all four seats.)
+last_run: 2026-10-15 09:37 ET 2-market-open-execution (SEAT 2 OF 4, THURSDAY, THE ONLY SEAT THAT MAY OPEN A POSITION. ZERO ORDERS SUBMITTED OF ANY KIND - no buy, no sell, no rebalance, no core bootstrap - AND EVERY GATE WAS OPEN, which is the seat working rather than the seat idle. Selftest 5/5, trading_enabled true, LIVE paper, control.md notes EMPTY, zero open alerts. CLOCK 09:37:00 is_open TRUE with next_open ROLLED to 2026-10-16T09:30 while next_close STAYED at 2026-10-15T16:00 - the MID-SESSION signature, read off the DATES not the boolean; TRUE alone does not separate a full session from an early close. STALENESS GATE EXERCISED AND PASSED, WHICH IS THE OPPOSITE OUTCOME FROM FIRED: plan_date 2026-10-15 read OFF THE FIELD against today's ET date 2026-10-15 -> FRESH. NOT inferred from the plan being empty - A FRESH EMPTY PLAN AND A STALE PLAN PRODUCE IDENTICAL ZERO-ORDER RUNS and only the field tells them apart. ~40 exercises, never once fired, so the failing branch is UNEXERCISED - do not call the gate 'tested'. LEDGER RE-RECONCILED AT THE OPEN AS THIS SEAT'S FIRST JOB (§7 forbids trading over a ledger known wrong), THREE SIDES AGREEING: positions.md zero satellite blocks, positions one row VOO 99.046311231 sh @ 706.74 cost_basis 69,999.989999 unchanged since 09-03 (now 30 sessions), sleeves satellite.count 0. NUMBERS WITH THEIR CALL AND BASIS, NEVER DIFFERENCED ACROSS CALLS: sleeves 09:37 live-mark equity 99,768.22, cash 30,000.00 EXACTLY, core 69,764.606441 / 69.93%, satellite 0.0% count 0, cash 30.07%, core_in_band true, rebalance_needed false, core_target_value 69,837.75, rebalance_delta +73.15; positions current_price 704.3635, unrealized_pl -235.383558 / -0.336% against the 706.74 fill. lastday_price 707.43 is NOT the official 10-14 close 707.44, and change_today -0.00433 / unrealized_intraday_pl -303.725513 ARE BOTH BUILT ON IT - no official-basis day figure was computed or quoted here. Selftest equity 99,704.83 and sleeves 99,768.22 are TWO CALLS AT TWO MOMENTS, NOT DIFFERENCED: the ~63 between them is not a move anyone measured. ZERO bars CALLS. §2 REBALANCE - THE CALL BELONGS TO THIS SEAT AND THIS SEAT MADE IT: NO REBALANCE. Core 69.93% inside the 65-75% band, 4.93 points of headroom at the near edge. The decision was TAKEN rather than deferred a fourth time. rebalance_delta +73.15 IS A DISTANCE READOUT, NOT AN INSTRUCTION - §2 triggers on the BAND and the delta is non-zero on essentially every reading. Both edges are TWO FIXED VOO PRICES while cash sits at exactly 30,000 and satellite is empty, and BOTH GO VOID the moment either changes. STEPS 3-6 EACH HAD NO SUBJECT FOR A DIFFERENT NAMED REASON: step 3 SKIPPED on core_established true (that path ran once on 09-03 and never runs again); step 4 zero SELL intents and zero satellite positions, §5.1-5.4 REACHED AND FOUND EMPTY, distance UNDEFINED NOT LARGE, highest_close ABSENT (a third state, no '(as of ...)' date) so NO STALENESS WAS DETECTED *OR* RULED OUT - DO NOT BACKFILL; step 5 zero BUY intents therefore NOTHING TO RE-VALIDATE, and ZERO move CALLS - an ABSENT priced-in check, not a skipped or a passing one; step 6 nothing submitted. ZERO NON-TERMINAL ORDERS: orders --status open returns [] and --status all STILL RETURNS ONE ROW for the whole account history (the 2026-09-03 core fill, filled), so §7's verification requirement has NO OPERAND rather than a clean bill. §6 5% CAP RE-COMPUTED AGAINST LIVE 09:37 EQUITY AT 4,988.41 rather than carried from the plan's pre-bell 4,992.68 - and it has no operand either. THE POINT OF THE RUN: breaker INACTIVE, week 0 of 3, satellite 0% deployed against a 30% target, 30,000 IDLE, trading enabled, notes empty - THE ONLY THING BETWEEN THIS ACCOUNT AND A BUY THIS MORNING WAS THE ABSENCE OF AN INTENT IN plan_today.md. Opening anything here would have routed AROUND the mechanism that forces every buy to sleep on a written thesis. THE RESTRAINT IS THE DELIVERABLE. HOUSEKEEPING: week anchor RECOMPUTED FROM SOURCE (America/New_York -> 2026-10-15, Thursday, ISO week 42 weekday 4, Monday anchor 2026-10-12) and MATCHED week_of, so new_positions_this_week NOT re-reset, 0 of 3; nothing closed so consecutive_closed_losses 0 UNTOUCHED rather than reset; breaker INACTIVE, halt_triggered_at none so no HALT_CLEARED_AT comparison was due. CORE VOO NOT STAMPED, 101st consecutive refusal, EASY grade and says so - zero bars calls, nothing in hand to be tempted by, and 09:37 would have offered only a PARTIAL bar anyway. PPI AND RETAIL SALES PRINT INSIDE THIS SESSION: NO ID MINTED and the two seats that follow should mint none - already disposed at T-2026-10-12-05 and T-2026-10-13-08, one party, no transaction; a change in STATUS is not a change in ELIGIBILITY. SESSION COUNT HELD AT 31/28 - this seat also stands mid-session and may not count the day it is in. Thesis count UNCHANGED at 161; this routine writes no theses. FILES: positions.md 10-15 sell_rule_status block re-headed SEATS 1-2 and folded into, with the §5 table RE-EVALUATED rather than inherited (a table re-evaluated to the same answer and a table left untouched are indistinguishable to the next reader, so it is said explicitly); state.md carry-forward handoff REPLACED not appended, spending the 08:19 item in full; plan_today.md CONSUMED NOT REWRITTEN - routine 2 is not its author and the 09:35 seat must leave plan_date standing for the seats behind it. trade_log.md, research_log.md, journal.md, weekly_review.md, alerts.md UNTOUCHED - no fills to log, no thesis written or skipped (a skip needs an intent to skip and there were none), no incidents, and routine 2 is not the author of the last three. CORPUS: this seat is NET-NEGATIVE OUTSIDE ITS OWN WRITES - it appended ~6KB to positions.md and state.md combined and nothing at all to research_log.md, which is where item (9)'s growth actually lives. THAT IS NOT PROGRESS ON ITEM (9), IT IS A SEAT THAT HAD LESS TO SAY - the pre-market seat is the one that adds ~20KB of rejection reasoning, and the trade-off the 08:19 seat named is still the human's to settle.)
+prior_run: 2026-10-15 08:19 ET 1-premarket-research (SEAT 1 OF 4. Selftest 5/5, pre-market full-session clock signature. Ledger reconciled three ways, unchanged since 09-03. sleeves 08:19 equity 99,853.59, cash 30,000.00, core 69.96% IN BAND, satellite 0.0%. FIVE THESES WRITTEN, ALL FIVE REJECTED, T-2026-10-15-01..-05; thesis count 156 -> 161. Four Perplexity scans all exit 0, structural framing FIRST, announcement date demanded inside every prompt. 13th consecutive session of VOLUNTEERED ABSENCE (09-29 -> 10-15 unbroken). TWO GENUINELY ELIGIBLE US-LISTED NAMES REACHED THE RUN AND BOTH DIED AT PART 1 - GEV ~250.31B and BKR ~56.0B, the WIDEST §3 margins this funnel has produced (~25x and ~5.6x the floor), so a move on either would have been DECORATIVE and was declined: the 7th and 8th such refusals. CLEARING §3 BY TWENTY-FIVE TIMES BUYS NOTHING - the binding constraint sits ABOVE the price check. TWO FINDINGS, both folded into the standing rules that own them: (a) TSMC's 10-15 print is a NEW rule-(iii) COSTUME - ONE RELEASE carrying a genuine PASS (revenue outlook raised ~40% -> ~44% against its OWN prior figure) and a genuine FAIL (capex REITERATED at 60-64B, old range = new range) ON TWO DIFFERENT FIGURES, and the figure that passes has NO second-order mechanism while the one with a supplier chain did not move - THE TEST BELONGS TO THE FIGURE THE MECHANISM RUNS ON, NOT TO THE RELEASE; (b) Venture Global's ~17.2B is a NEW rule-(viii) COSTUME - a CONTINGENT AGGREGATE CEILING spanning two frame agreements and two recipients, unallocated and paid OUT by the non-candidate leg. Funnel re-served this log's own disposed rejects a THIRD consecutive session, both only two days old - reading the log before the tape cost one grep and saved two drills; treat the re-serve as the default. plan_today.md OVERWRITTEN with plan_date 2026-10-15 and ZERO BUY / ZERO SELL / ZERO REBALANCE intents, every §6 gate OPEN. state.md grew ~+3.5KB and SAID SO MEASURED rather than claiming a collapse.)
 week_of: 2026-10-12
 new_positions_this_week: 0
 consecutive_closed_losses: 0
@@ -19,9 +19,9 @@ circuit_breaker: INACTIVE
 halt_triggered_at: none
 core_established: true
 core_ticker: VOO
-core_pct: 69.96
+core_pct: 69.93
 satellite_pct: 0.0
-cash_pct: 30.04
+cash_pct: 30.07
 open_thesis_ids: none
 ```
 
@@ -38,52 +38,88 @@ discarded; settled items were folded to one line each and repeated emphasis was 
 
 ### Live — act on these
 
-- **⚠ 2026-10-15 PRE-MARKET HANDOFF — WRITTEN BY THE 08:19 SEAT (SEAT 1 OF 4), WHICH SPENDS THE 10-14
-  CLOSE HANDOFF IN FULL.**
-  *(That item is **REPLACED, not kept beside this one.** Where its pieces went: the four 10-14 seats'
-  readings and §5 table are **collapsed into the dated 10-14 `sell_rule_status` digest in
-  `positions.md`** · the day's P&L series and the `last_equity` catch are in **`prior_run`, above**, and
-  in **`journal.md`'s 2026-10-14 entry** · the five 10-14 kills are at `T-2026-10-14-01`…`-05` in
-  `research_log.md` · the `highest_close`, vanished-run, counter, corpus and priced-in warnings sit in
-  **the standing items that own them**, below. **Nothing live discarded.**)*
+- **⚠ 2026-10-15 MARKET-OPEN HANDOFF — WRITTEN BY THE 09:37 SEAT (SEAT 2 OF 4), WHICH SPENDS THE 08:19
+  PRE-MARKET HANDOFF IN FULL.**
+  *(That item is **REPLACED, not kept beside this one.** Where its pieces went: the 08:19 readings and
+  the §5 table are **collapsed into the dated 10-15 `sell_rule_status` digest in `positions.md`**, which
+  this seat folded itself into · the five 10-15 kills are at `T-2026-10-15-01`…`-05` in
+  `research_log.md` · the TSMC two-figure finding and the Venture Global aggregate-ceiling finding live
+  in **rules (iii) and (viii)** below, which own them · the `highest_close`, vanished-run, counter,
+  corpus and priced-in warnings sit in **the standing items that own them**. **Nothing live discarded.**)*
 
-  **THE LEDGER IS STILL UNCHANGED FROM 2026-09-03 AND THE DAY IS PLANNED, NOT TRADED.** Selftest **5/5**,
-  `TRADING_ENABLED: true`, LIVE paper, `control.md` notes **empty**, **zero open alerts**, **zero
-  non-terminal orders**. Week **0 of 3**, breaker **INACTIVE**, `halt_triggered_at: none`. Equity
-  **$99,853.59** · cash **$30,000.00** · core **69.96% IN BAND** · satellite **0.0%, count 0**.
-  **`plan_today.md` carries ZERO BUY, ZERO SELL and ZERO REBALANCE intents with `plan_date: 2026-10-15`.**
+  ⚠⚠ **THE DAY'S PLAN WAS EXECUTED AND IT WAS EMPTY, WHICH IS AN OUTCOME AND NOT A GAP. ZERO ORDERS OF
+  ANY KIND WERE SUBMITTED AT THIS SEAT — no buy, no sell, no rebalance, no core bootstrap.** The ledger
+  is **STILL UNCHANGED FROM 2026-09-03**, now across **30 sessions**.
 
-  ⚠⚠ **STEP 4 — THE SELL-RULE REVIEW — HAD NO SUBJECT, AND THAT IS AN ABSENCE RATHER THAN A QUIET DAY.**
-  §5.1–5.4 were **reached and found empty**, not skipped: zero satellite positions, so §5.1's one
-  news-query-per-position cost **nothing structurally**, and ⚠ **distance is UNDEFINED, NOT LARGE.**
-  `highest_close` remains **ABSENT — a third state carrying no `(as of …)` date** — so ⚠ **no staleness
-  was detected *AND* none was ruled out.** ⚠⚠ **DO NOT BACKFILL — THERE IS NOTHING TO WRITE.**
+  **STALENESS GATE EXERCISED AND *PASSED* — THE OPPOSITE OUTCOME FROM *FIRED*.** `plan_date`
+  **2026-10-15** read **off the field** against today's ET date **2026-10-15** → **FRESH**. ⚠⚠ **IT WAS
+  NOT INFERRED FROM THE PLAN BEING EMPTY: A FRESH EMPTY PLAN AND A STALE PLAN PRODUCE IDENTICAL
+  ZERO-ORDER RUNS, AND ONLY THE FIELD TELLS THEM APART.** ⚠ **~40 exercises, never once fired. Do not
+  write that the gate has been *tested* — every exercise so far has passed, and a check that has never
+  returned its failing branch has an UNEXERCISED failure path.**
 
-  ⚠⚠ **TWO GENUINELY ELIGIBLE US-LISTED NAMES REACHED THE RUN AND BOTH DIED AT PART 1 — AND THEY ARE
-  THE WIDEST §3 MARGINS THIS FUNNEL HAS EVER DELIVERED.** `GEV` **~$250.31B** (Zolmax citing company
-  market data, as-of 10-15; a second source read ~$251.4B on the 10-14 price — **two figures, both ~25×
-  the floor, so the inconsistency is immaterial to the test and is reported rather than reconciled**) and
-  `BKR` **~$56.0B** (Simply Wall St, as-of 10-14). ⚠ **A `move` on either would have been DECORATIVE and
-  was declined — the 7th and 8th such refusals. ZERO `move` calls: an ABSENT check, not a skipped or a
-  passing one.** ⚠⚠ **THE FOUR-SESSION PROGRESSION POINTS ONE WAY: 10-12 no eligible ticker · 10-13 one
-  · 10-14 two · 10-15 two, and the two are mega-caps. CLEARING §3 BY A FACTOR OF TWENTY-FIVE BUYS
-  NOTHING, BECAUSE THE BINDING CONSTRAINT SITS ABOVE THE PRICE CHECK.**
+  **CLOCK — THE MID-SESSION SIGNATURE, READ OFF THE DATES AND NOT THE BOOLEAN.** 09:37:00 `is_open:
+  **true**`, `next_open` **rolled to 2026-10-16T09:30** while `next_close` **STAYED at 2026-10-15T16:00**.
+  ⚠ **That pairing is the live-regular-session fingerprint; `true` alone does not distinguish a full
+  session from an early-close day.**
 
-  ⚠⚠ **THE DAY'S PRIMARY FINDING IS A NEW RULE-(iii) COSTUME AND IT IS FOLDED INTO RULE (iii) BELOW:
-  ONE RELEASE CARRYING A GENUINE PASS AND A GENUINE FAIL ON TWO DIFFERENT FIGURES** (`T-2026-10-15-01`,
-  TSMC). ⚠ **The second finding, a CONTINGENT AGGREGATE CEILING ACROSS TWO AGREEMENTS AND TWO
-  RECIPIENTS, is folded into rule (viii)** (`T-2026-10-15-02`, Venture Global ~$17.2B).
-  ⚠ **Both live in the standing rules that own them rather than as fresh items here. Collapse, do not
-  append.**
+  **LEDGER RE-RECONCILED AT THE OPEN BEFORE ANYTHING ELSE, THREE SIDES AGREEING** — `positions.md` zero
+  satellite blocks · `positions` one row **VOO 99.046311231 sh @ 706.74**, `cost_basis`
+  **$69,999.989999**, unchanged since 09-03 · `sleeves` `satellite.count: 0`. ⚠ **§7 forbids trading on
+  top of a ledger known to be wrong, so this is the seat's first job and not a formality.**
 
-  ⚠ **TODAY IS THE SCHEDULED PPI AND RETAIL-SALES DAY and the prints land inside this session.** ⚠ **NO
-  ID WAS MINTED — the 10-14 seat set that precedent and it is right: already disposed at
-  `T-2026-10-12-05` and `T-2026-10-13-08`, one party, no transaction. A change in STATUS is not a change
-  in ELIGIBILITY. Note the date and do nothing.**
+  **NUMBERS WITH THEIR CALL AND BASIS, NEVER DIFFERENCED ACROSS CALLS.** `sleeves` 09:37 live mark:
+  equity **$99,768.22** · cash **$30,000.00 exactly** (the ~40th consecutive unchanged reading) · core
+  **$69,764.606441 / 69.93%** · satellite **0.0%, count 0** · cash **30.07%** · `core_in_band: true` ·
+  `rebalance_needed: false` · `core_target_value` **$69,837.75** · `rebalance_delta` **+$73.15**.
+  `positions` 09:37: `current_price` **704.3635**, `unrealized_pl` **−$235.383558 / −0.336%** against the
+  706.74 fill. ⚠ **`lastday_price` 707.43 is NOT the official 10-14 close 707.44, and `change_today`
+  −0.00433 / `unrealized_intraday_pl` −$303.725513 are BOTH built on it — no official-basis day figure
+  was computed or quoted at this seat.** ⚠ **The selftest equity read $99,704.83 and `sleeves` read
+  $99,768.22: TWO CALLS, TWO MOMENTS, NOT DIFFERENCED — the ~$63 between them is not a move anyone
+  measured.** **ZERO `bars` CALLS AT THIS SEAT.**
 
-  ⚠ **SESSION COUNT HELD AT 31 / 28.** This seat stands **mid-session** and may not count the day it is
-  in. **Thesis count 156 → 161.** ⚠ **`grep -c '^### T-' research_log.md` returns 75 because the template
-  heading matches; 87 archived + 74 live = 161. DO NOT "FIX" IT TO 162.**
+  ⚠⚠ **§2 REBALANCE — THE CALL BELONGS TO THIS SEAT, AND THIS SEAT MADE IT: NO REBALANCE.** Core
+  **69.93%** is inside the **65–75%** band, **4.93 points** of headroom at the near edge. ⚠ **The 08:19
+  seat was right to queue nothing and right that the decision was not its to make; the decision has now
+  actually been taken rather than deferred again.** ⚠ **`rebalance_delta` +$73.15 IS A DISTANCE READOUT,
+  NOT AN INSTRUCTION — §2 triggers on the BAND, and the delta is non-zero on essentially every reading.**
+  ⚠ **Both edges are TWO FIXED VOO PRICES while cash sits at exactly $30,000 and satellite is empty, and
+  BOTH GO VOID the moment either changes.**
+
+  **STEPS 3–6 EACH HAD NO SUBJECT, FOR FOUR DIFFERENT AND NAMED REASONS.** Step 3 **SKIPPED on
+  `core_established: true`** — that path ran once on 09-03 and never runs again. Step 4 exits: **zero
+  SELL intents, zero satellite positions**; §5.1–5.4 **reached and found empty**, ⚠ **distance UNDEFINED,
+  NOT LARGE** — and `highest_close` is still **ABSENT, a third state carrying no `(as of …)` date**, so
+  ⚠ **no staleness was detected *AND* none was ruled out. DO NOT BACKFILL.** Step 5: **zero BUY intents,
+  therefore NOTHING TO RE-VALIDATE** — ⚠ **ZERO `move` CALLS, AN *ABSENT* PRICED-IN CHECK, NOT A SKIPPED
+  OR A PASSING ONE.** Step 6: **nothing submitted.** ⚠ **Zero non-terminal orders: `orders --status open`
+  → `[]`, `--status all` → STILL ONE ROW for the entire account history, so §7's verification requirement
+  has NO OPERAND rather than a clean bill.**
+
+  ⚠⚠ **EVERY §6 AND §7 GATE WAS OPEN AT THIS SEAT AND NOTHING WAS BOUGHT — THAT IS THE SEAT WORKING, NOT
+  THE SEAT IDLE.** Breaker **INACTIVE** · week **0 of 3** · satellite **0% deployed against a 30%
+  target** with **$30,000 idle** · `TRADING_ENABLED: true` · `control.md` notes **empty** · §6's 5% cap
+  **RE-COMPUTED AGAINST LIVE 09:37 EQUITY AT $4,988.41**, not carried from the plan's pre-bell $4,992.68
+  ⚠ **(and it has no operand either)**. ⚠⚠ **THE ONLY THING STANDING BETWEEN THIS ACCOUNT AND A BUY THIS
+  MORNING WAS THE ABSENCE OF AN INTENT IN `plan_today.md`. Opening anything here would have routed
+  AROUND the one mechanism that forces every buy to sleep on a written thesis — the restraint is the
+  deliverable.**
+
+  ⚠ **PPI AND RETAIL SALES PRINT INSIDE THIS SESSION.** ⚠ **NO ID MINTED, and the two seats that follow
+  should mint none either** — already disposed at `T-2026-10-12-05` and `T-2026-10-13-08`: one party, no
+  transaction, and ⚠ **a change in STATUS is not a change in ELIGIBILITY.** Note the date and do nothing.
+
+  ⚠ **SESSION COUNT STILL HELD AT 31 / 28, AND THIS SEAT ALSO MAY NOT MOVE IT** — it stands mid-session
+  and cannot count the day it is in. **Thesis count 161**, unchanged: this routine writes no theses.
+  ⚠ **`grep -c '^### T-' research_log.md` returns 75 because the template heading matches; 87 archived +
+  74 live = 161. DO NOT "FIX" IT TO 162.**
+
+  ⚠ **CARRIED FORWARD FROM 08:19 AND STILL LIVE: `GEV` ~$250.31B and `BKR` ~$56.0B were the WIDEST §3
+  margins this funnel has produced (~25× and ~5.6× the floor) and BOTH DIED AT PART 1, upstream of the
+  price check. CLEARING §3 BY A FACTOR OF TWENTY-FIVE BUYS NOTHING, because the binding constraint sits
+  ABOVE the priced-in filter.** ⚠ **The four-session progression — 10-12 no eligible ticker · 10-13 one ·
+  10-14 two · 10-15 two mega-caps — points one way.**
 
 - **⚠⚠ GFS/TSMC CLEARED EVERY FILTER AND DIED ON THE *THESIS PARTS* — `T-2026-10-09-01`, STILL THE MOST
   INFORMATIVE REJECTION THIS LOG HAS PRODUCED.** *(Collapsed 2026-10-14 08:21: the item is SETTLED five
