@@ -52,6 +52,276 @@ single most common way a plausible-sounding connection gets mistaken for an oppo
 
 ## Entries
 
+### 2026-10-15 (08:19 ET) — event survey (funnel, pre-thesis)
+
+Selftest passed all five checks (`trading_enabled: true`, LIVE paper, broker equity **$99,853.59** at
+pre-flight). `clock` at **08:19:46** reads `is_open: false` with `next_open` **2026-10-15T09:30** and
+`next_close` **2026-10-15T16:00** — both carrying **TODAY's** date, the **PRE-MARKET full-session
+signature**, read off the **DATES** and not the boolean. **Not a holiday, not an early close.**
+Window screened: **the completed 2026-10-14 session and overnight into Thursday** — a
+**ONE-TRADING-DAY, ONE-CALENDAR-DAY** window, the ordinary shape. **Four Perplexity scans, all exit 0**
+(three broad — structural framing first, then the segment-quantification framing, then the knock-on
+framing — plus one drill on the single largest disclosure of the window). **FIVE theses written, ALL
+FIVE REJECTED.**
+
+**⚠⚠ THE STRUCTURAL FRAMING WAS QUERY ONE AND IT PAID A SEVENTH CONSECUTIVE SESSION — SEVEN ITEMS
+RETURNED, SIX SELF-EXCLUDED WITH A NAMED REASON EACH.** Its own conclusion, verbatim: *"no item can be
+confirmed as satisfying every stated test."* The exclusions supplied for free — Promino/Social Commerce
+Brands (CSE-listed, counterparty's listing unestablished) · Mercuria/Heritage Minerals (neither listing
+established; AUD prepayment) · Taihan Cable *"and its US unit"* (⚠ **not two companies — a parent and
+its own subsidiary**) · Ocugen/Roots Pharmaceutical (signed **10-13**, outside the window — the source
+applying **rule (iii)** before I did). **Four items, four reasons, zero queries spent.**
+
+**⚠⚠ AND THE SECOND FRAMING DELIVERED THE THIRTEENTH CONSECUTIVE SESSION OF VOLUNTEERED ABSENCE
+(09-29 → 10-15 UNBROKEN):** *"no company can be confirmed as meeting all of the requested criteria"* …
+*"does **not** verify a qualifying company that both quantified the value to its own named reporting
+segment and disclosed that segment's share of total revenue."*
+
+**⚠⚠ THE FUNNEL RE-SERVED THIS LOG'S OWN DISPOSED REJECTS FOR A **THIRD** CONSECUTIVE SESSION, AND
+BOTH ARE FROM **TWO DAYS AGO**:** **EnergyX/Trafigura ~$2B** (disposed `T-2026-10-13-02`, and this
+time the source added the kill itself — *"based on an assumed lithium price of $20,000 per tonne"*,
+⚠ an **ESTIMATE, NOT A DISCLOSED FIGURE**) · **LS Electric/Bloom Energy $138.7M** (disposed
+`T-2026-10-13-01`, now re-stamped **10-15** over a **10-13** announcement — and the source caught its
+own re-stamp: *"LS Electric announced the contract on October 13, not October 15"*). ⚠ **Reading the
+log first cost one `grep` and saved two drills. The re-serve rate is now 3 for 3 sessions.**
+
+**⚠⚠ ZERO `move` CALLS, AND THE CAUSE IS THE 10-14 CAUSE REPEATED WITH **BIGGER** TICKERS: TWO
+GENUINELY ELIGIBLE US-LISTED NAMES REACHED THE RUN — `GEV` at **~$250.3B** and `BKR` at **~$56.0B**,
+both an order of magnitude clear of §3's floor — AND **BOTH DIED AT PART 1**, which is UPSTREAM of the
+priced-in filter.** ⚠ **A `move` on either would have been DECORATIVE and was declined for that reason
+— the SEVENTH and EIGHTH such refusals** (SYNA 10-05, CEREBRAS 10-06, no-eligible-ticker 10-12, BE
+10-13, HRL 10-14, AMD 10-14). ⚠⚠ **THE PROGRESSION IS NOW FOUR SESSIONS LONG AND POINTS ONE WAY:
+10-12 no eligible ticker · 10-13 one · 10-14 two · 10-15 two, and the two are the LARGEST market caps
+the funnel has ever delivered to part 1. THE BINDING CONSTRAINT SITS ABOVE THE PRICE CHECK, AND
+CLEARING §3 BY A FACTOR OF TWENTY-FIVE BUYS NOTHING.**
+
+**⚠ TODAY'S MACRO PRINTS (September PPI and retail sales) LAND INSIDE THIS SESSION. NO ID WAS MINTED
+— following the 10-14 precedent exactly.** The object is already disposed at `T-2026-10-12-05` and
+`T-2026-10-13-08`; a government statistical release has **ONE party and no transaction** whether it is
+scheduled, printing or printed, and a third entry for one rejection would inflate the thesis count
+rather than record anything. **Noted the dates, did nothing.**
+
+---
+
+### T-2026-10-15-01 — TSMC (TSM) Q3 2026 print — REJECTED (part 1 — no Company B; rule (iii) SPLIT VERDICT IN ONE RELEASE)
+**Company A / the news:** TSMC reported Q3 2026 on **2026-10-15** (record net profit, 2nm share
+climbing). **Two guidance figures moved in opposite rule-(iii) directions in the SAME release:** it
+**RAISED** its own full-year 2026 USD revenue-growth outlook to **~44% from its own prior ~40%** — a
+clean rule (iii) **PASS**, the company's own prior figure present in the source — and it
+**REITERATED** full-year 2026 capex at **US$60–64B**, old range and new range **identical**.
+**Company B / the candidate:** the semiconductor capital-equipment tier the headline summons on sight
+— **AMAT / LRCX / KLA** (ASML is Netherlands-listed, §3).
+
+**1. Mechanism (one sentence):** **CANNOT BE WRITTEN.**
+> *Attempted:* "TSMC raising its 2026 revenue-growth outlook causes AMAT's Semiconductor Systems
+> revenue to improve because TSMC will buy more wafer-fab equipment."
+⚠⚠ **THE SAME RELEASE CONTRADICTS THE CAUSAL PATH IN ITS OWN WORDS. The equipment order book responds
+to CAPEX, and capex was REITERATED UNCHANGED at $60–64B. The figure that moved (revenue) is not the
+figure that buys equipment; the figure that buys equipment did not move.** ⚠ **To make the sentence
+work it needs "and also TSMC will eventually have to spend more to serve that revenue" — an *and also*,
+which §4 says is the kill.**
+
+**2. Dollar path:** **NOT REACHED** (part 1 failed). ⚠ **And it would have failed here too: TSMC named
+NO external equipment supplier** (source, verbatim: *"the cited reports do not identify any specific
+external equipment supplier or vendor in that announcement"*) — **rule (v), the unnamed supply base.**
+**3. Timing window:** **NOT REACHED.** The capex that did not change spans *"2026–2028"*.
+**4. Invalidation:** **NOT REACHED.**
+
+**Hard filters:**
+- Priced-in (§4): **NOT CALLED — DECLINED AS DECORATIVE.** No candidate survived part 1, so there was
+  nothing to price-check. ⚠ **An absent check, not a passing one.**
+- Correlation (§4): no open satellite positions → **no driver to collide with** (vacuously clear).
+- Universe (§3): **NOT REACHED on the candidates.** TSM itself is the headline name and not a
+  candidate at any cap.
+
+**Outcome:** **REJECTED at part 1.** ⚠⚠ **THIS IS THE MOST INFORMATIVE ENTRY OF THE RUN AND IT ADDS A
+NEW RULE-(iii) COSTUME: A SINGLE RELEASE CARRYING A GENUINE PASS AND A GENUINE FAIL ON TWO DIFFERENT
+FIGURES — AND THE ONE THAT PASSES IS THE ONE WITH NO SECOND-ORDER MECHANISM ATTACHED TO IT.** A reader
+who checks rule (iii) and stops at the first "yes" proceeds on the **revenue** figure and never notices
+that the **capex** figure — the only one with a supplier chain hanging off it — was a **reaffirmation**,
+which is costume #1 on the rule (iii) list. ⚠ **THE TEST MUST BE APPLIED TO THE FIGURE THE MECHANISM
+ACTUALLY RUNS ON, NOT TO THE RELEASE.** ⚠ Companion note: TSMC capex was already disposed at
+`T-2026-10-05-05` ($60–64B, no Company B reached) — **the figure has not moved since, which is itself
+the rule (iii) answer, and the verdict was RE-DERIVED here from today's source rather than inherited.**
+
+---
+
+### T-2026-10-15-02 — GE Vernova (GEV) · Baker Hughes (BKR) / Venture Global frame agreements — REJECTED (part 1 named parties; part 3 decisively; rule (viii) NEW COSTUME)
+**Company A / the news:** **Venture Global (VG) 8-K, announced 2026-10-15:** *"power and grid frame
+agreements"* with **GE Vernova** and **Baker Hughes Energy Services** covering **up to 16 new
+power-island units, each rated 720 MW**, plus associated transformer equipment, supporting up to
+**10 GW** of grid-independent capacity for AI data centres. Separately, an **Initial Unit Manufacturing
+Reservation Agreement** with GE Vernova for **eight** of the remaining 15 power islands.
+**Company B / the candidate:** **GEV** and **BKR**.
+
+**1. Mechanism (one sentence):** **CANNOT BE WRITTEN — §4's PREMISE DOES NOT APPLY.**
+⚠⚠ **GEV AND BKR ARE THE NAMED PARTIES. They are not Company B; they ARE the headline.** §4 is
+explicit — *"you are not chasing the headline name."* ⚠ **The genuine second-order question — who
+supplies GE Vernova's turbine and generator components — returns an UNNAMED SUPPLY BASE: rule (v).**
+The only other knock-on available is "more gas-fired generation helps gas producers," which is **a
+market, not a transaction** — the shared-cause object.
+
+**2. Dollar path:** **FAILS, AND THE FAILURE CARRIES A NEW COSTUME.** ⚠ **Venture Global's
+announcement disclosed NO dollar value for the power-island agreement, and neither GEV nor BKR stated
+what it is worth to their own reporting segment** (source, verbatim: *"no available source reported
+that GE Vernova or Baker Hughes stated what the agreement was worth to their own reporting segment,
+revenue, or backlog"*). ⚠⚠ **THE ~$17.2B FIGURE IN CIRCULATION IS NOT THE ONE §4 ASKS FOR, ON FOUR
+COUNTS AT ONCE, AND IT IS THE LARGEST NUMBER THIS FUNNEL HAS EVER PRODUCED:** it is **(a) CONDITIONAL**
+— *"if all contemplated purchase orders under both frame agreements are executed, subject to
+adjustments"* · **(b) AN AGGREGATE ACROSS TWO SEPARATE FRAME AGREEMENTS PLUS GE Grid equipment**, i.e.
+broader than the announced power-island arrangement · **(c) UNALLOCATED between GEV and BKR**, so
+neither buyable leg has a figure · and **(d) MONEY PAID OUT BY VENTURE GLOBAL**, the non-candidate leg.
+⚠⚠ **NEW RULE-(viii) ENTRY — A CONTINGENT AGGREGATE CEILING SPANNING MULTIPLE AGREEMENTS AND MULTIPLE
+RECIPIENTS. It is rule (v)'s CEILING sub-shape crossed with rule (viii)'s WRONG-PARTY shape, and its
+SCALE is the whole of its persuasive force.** ⚠ **$17.2B divided between two companies over nine years,
+contingent on orders nobody has placed, is not a dollar path — it is a press-release maximum.**
+**3. Timing window:** ⚠⚠ **FAILS INDEPENDENTLY AND DECISIVELY, AND THIS KILL NEEDED NO FUNNEL QUERY —
+PART 3 WAS AVAILABLE FROM THE FIRST SENTENCE.** First purchase order *"by the end of 2026"* (**a PO is
+not revenue**) · POs for the eight reservation units *"beginning in early 2027"* · **power generation
+available ~late 2028 / early 2029** · **frame-agreement delivery schedule running through 2034.**
+⚠ **That is ~8 to ~32 quarters against §4's ceiling of TWO.**
+**4. Invalidation:** **NOT REACHED.**
+
+**Hard filters:**
+- Priced-in (§4): **NOT CALLED — DECLINED AS DECORATIVE** (7th and 8th refusals). Both names die at
+  part 1, upstream of the filter. ⚠ **An absent check, not a passing one.**
+- Correlation (§4): no open satellite positions → no driver to collide with (vacuously clear).
+- Universe (§3): **PASSES, AND BY THE WIDEST MARGIN ON RECORD — WHICH IS THE POINT.** `GEV`
+  **~$250.31B** (source: Zolmax citing company market data, as-of 2026-10-15; a second source read
+  ~$251.4B on the 10-14 price — ⚠ **two sources, two figures, both ~25× the floor, so the
+  inconsistency is immaterial to the test and is reported rather than reconciled**). `BKR` **~$56.0B**
+  (source: Simply Wall St, as-of 2026-10-14). Both US-listed common stock.
+
+**Outcome:** **REJECTED — part 1, part 2 and part 3, each sufficient alone.** ⚠⚠ **THE LESSON IS THE
+ONE GFS TAUGHT FROM THE OTHER DIRECTION: §3 PASSING TELLS YOU NOTHING. Two mega-cap US names, a real
+8-K, a real counterparty, a real dated transaction and a $17.2B number — and the strategy kills it
+three times over before price is ever consulted.** ⚠ **RULE (iv) FIRES TOO: VENTURE GLOBAL IS NOW AT
+ITS THIRD APPEARANCE** (10-02 the ConocoPhillips 20-year SPA with first delivery 2030, logged twice
+that session) **AND IT HAS DIED ON PART 3 / RULE (vi) EVERY SINGLE TIME. A ticker that keeps arriving
+and keeps dying the same death is telling you about its INDUSTRY'S CONTRACTING HORIZON — LNG and
+merchant power are STRUCTURALLY long-dated — not about a candidate maturing.** ⚠ **Expect this issuer
+again; the answer is already written.**
+
+---
+
+### T-2026-10-15-03 — Vir Biotechnology (VIR) / Gilead Sciences (GILD) — REJECTED (part 1 — both parties named; rule (viii); part 3)
+**Company A / the news:** Announced **2026-10-14** — a multi-programme collaboration and licence
+agreement between **Vir Biotechnology** and **Gilead Sciences**: **up to $135M** in upfront and
+near-term preclinical milestone payments, comprising **$90M upfront ($65M cash + a $25M equity
+investment)** and **up to $45M** in milestones.
+**Company B / the candidate:** **none exists.**
+
+**1. Mechanism (one sentence):** **CANNOT BE WRITTEN — BOTH PARTIES ARE NAMED.** ⚠ **Vir is the named
+recipient and Gilead the named payer; §4's premise ("news about A, find unnamed B") has no subject
+left.** The genuine second-order question — who manufactures the programmes — reaches **preclinical**
+assets with **no CDMO named anywhere in the source**: rule (v)/(vii).
+
+**2. Dollar path:** **FAILS ON BOTH LEGS AND IN BOTH DIRECTIONS.** For **GILD** the $90M is capital
+paid **OUT** — rule (viii), wrong sign. For **VIR** the $25M equity component **DILUTES rather than
+earns** (the AstraZeneca-convertible-preferred precedent), and the **$45M milestone tranche is a
+CEILING** (*"up to"*) contingent on **preclinical** success — rule (v). ⚠ **Neither party assigned any
+of it to a named reporting segment, and on GILD's ~$100B+ revenue base $90M is immaterial by two
+orders of magnitude regardless.**
+**3. Timing window:** **FAILS INDEPENDENTLY.** *Preclinical* milestones are **multi-year by
+definition** — far beyond §4's two quarters. The regulatory/clinical version of rule (vi).
+**4. Invalidation:** **NOT REACHED.**
+
+**Hard filters:**
+- Priced-in (§4): **NOT CALLED — no candidate survived part 1.**
+- Correlation (§4): no open satellite positions → no driver to collide with.
+- Universe (§3): ⚠⚠ **VIR's MARKET CAP IS *UNRESOLVED*, NOT PASSED AND NOT FAILED — the query returned
+  no figure and NONE WAS ASSUMED.** It never needed resolving: the entry dies at part 1, upstream.
+  ⚠ **Do not inherit a §3 verdict from this entry (the VAL / GFS precedent).** GILD is comfortably
+  above the floor but is the first-order payer.
+
+**Outcome:** **REJECTED at part 1.** ⚠ **This was the structural framing's ONLY self-declared
+qualifying item of the whole run** — *"the only item that can be reported as meeting the named-company,
+disclosed-amount, US-listed-company, and new-announcement criteria."* ⚠⚠ **AND IT IS THE RE-SERVE
+WARNING'S SIBLING: THE FUNNEL'S OWN "BEST CANDIDATE OF THE RUN" DIED AT §4's FIRST PART. A source
+certifying an item against ITS OWN four tests is not certifying it against §4's.**
+
+---
+
+### T-2026-10-15-04 — Hallador Energy (HNRG) $700M MISO Zone 6 supply agreement — REJECTED (rule (v) — counterparty unnamed; part 1)
+**Company A / the news:** Announced **2026-10-14** — Hallador Energy signed a **$700M** total agreement
+with *"an unidentified utility operating in MISO Zone 6"*, reported as ~**$271M capacity revenue** and
+~**$422M energy revenue** over the term, associated with the **Merom Generating Station**.
+**Company B / the candidate:** **none reachable.**
+
+**1. Mechanism (one sentence):** **CANNOT BE WRITTEN.** ⚠⚠ **HNRG IS THE HEADLINE NAME AND THE WINNER,
+AND THE COUNTERPARTY IS NOT A COMPANY — IT IS A BLANK.** *"An unidentified utility operating in MISO
+Zone 6"* is **rule (v) in its purest form: a precise figure ($700M, split to the million) attached to
+an UNNAMED party made to look nameable by a named geography and a named plant.** ⚠ **The priors arrive
+instantly — the MISO Zone 6 utility list is short and public (AEP/Indiana Michigan, Duke Indiana,
+CenterPoint/Vectren, Hoosier, IPL/AES Indiana) — AND NAMING ONE WOULD BE ME FILLING THE SOURCE'S BLANK,
+NOT RESEARCH. THE PARTY-A PRECEDENT (10-05 Synaptics) IS EXACTLY THIS OBJECT. NOT TAKEN.**
+
+**2. Dollar path:** ⚠ **The figures belong to HNRG — the first-order winner — and the source could not
+tie them to a formal reporting segment** (*"refers to the 'segment level' and Merom Generating Station
+but does not identify a formal reporting-segment name"*, share of total revenue **not disclosed**).
+**3. Timing window:** **NOT REACHED.** ⚠ *"Over the term"* with no term stated is not a timing window;
+capacity-plus-energy utility agreements are routinely multi-year, which is the rule (vi) shape.
+**4. Invalidation:** **NOT REACHED.**
+
+**Hard filters:**
+- Priced-in (§4): **NOT CALLED** — no candidate survived part 1.
+- Correlation (§4): no open satellite positions → no driver to collide with.
+- Universe (§3): ⚠ **HNRG's MARKET CAP IS *UNRESOLVED*, NOT PASSED AND NOT FAILED** — the query
+  returned no figure and none was assumed. It never needed resolving. ⚠ **It is very likely below
+  §3's $10B floor, and "very likely" is NOT a §3 finding — do not inherit one from this entry.**
+
+**Outcome:** **REJECTED — rule (v) and part 1.** ⚠ **The 15th instance of "a disclosed figure with no
+nameable counterparty," and it was disposed without a drill query because the shape was recognised on
+sight. That recognition is what the standing-rules list is for.**
+
+---
+
+### T-2026-10-15-05 — §3 / non-qualifying / disposed-repeat sweep of SIXTEEN items — REJECTED (disposed as one, zero drill queries spent)
+**Company A / the news:** everything else the four scans returned. **Company B:** none reached on any.
+**Disposed as one entry rather than sixteen**, because sixteen near-identical rejections would inflate
+the thesis count without recording anything the shape does not already say.
+
+**Already disposed in THIS log — re-served by the funnel (3rd consecutive session of this):**
+**EnergyX / Trafigura ~$2B** (`T-2026-10-13-02`; the source added its own kill — the figure is *"based
+on an assumed lithium price of $20,000 per tonne"*, **an estimate, not a disclosure**) ·
+**LS Electric / Bloom Energy $138.7M** (`T-2026-10-13-01`; **re-stamped 10-15 over a 10-13
+announcement**, and the source caught its own re-stamp).
+
+**§3 — NOT US-LISTED or below the floor (eight):** Promino (CSE + OTC) · Social Commerce Brands
+(listing unestablished) · Mercuria / Heritage Minerals (AUD$40M gold prepayment, neither listing
+established) · Taihan Cable ~$82M (Korea-listed) · Symrise (Frankfurt) · Kuros Biosciences (SIX) ·
+Antofagasta (LSE) · Nel ASA (Oslo) · Rajesh Power Services + Nexa Dynamics (India) ·
+Persistent Systems (India; and ⚠ **quarterly order BOOKINGS, not a new announced order**) ·
+Sphere Corp ~$21.29M (listing unestablished) · Axe Compute (Nasdaq-listed but **no cap established
+and no dollar value disclosed** for the Penguin Solutions work).
+**RULE (iii) — outside the window / previously announced:** Ocugen / Roots Pharmaceutical (signed
+**10-13**; the source applied the rule before I did) · Constellation / Google (a **secondary commentary
+piece** on agreements already public, **not in the 24-hour window** — ⚠ **and CEG is the first-order
+named party regardless**).
+**RULE (vii) — vertical integration / no external beneficiary (three):** **IBA — 12 Cyclone KIUBE 300
+cyclotrons for *"a leading radiopharmaceutical producer"*** ⚠⚠ **THE MIRROR IMAGE OF THE 10-06 GEHC
+FINDING, AND IT CLOSES THE SAME LOOP FROM THE SUPPLIER SIDE: on 10-06 a named US acquirer had no
+nameable equipment beneficiary because it makes its own cyclotrons; today a named cyclotron maker has
+no nameable customer — and IBA is BELGIAN-LISTED, so §3 kills the one named leg anyway. BOTH ENDS OF
+THE CHAIN, TWO WEEKS APART, AND NEITHER YIELDS A COMPANY B.** · Symrise's own India capacity (no
+external party) · Scout Motors **$300M** supplier park, *"~1,000 supplier jobs"* (⚠ **no supplier
+company named** — rule (v), and Scout is VW-owned and not separately listed).
+**MERGER ARBITRAGE — not in §4 (one):** IonQ acquiring a cybersecurity firm for *"up to $1.3B"*
+(⚠ a **ceiling** on top of the merger-arb kill).
+**GUIDANCE ISSUANCE WITH NO COMPANY B (two):** Kuros raising 2026 sales growth to 36–40% · Antofagasta
+raising 2026 cash-cost guidance to **$2.60–2.70/lb from $2.40–2.60/lb** (⚠ **a genuine rule (iii) PASS
+— the company's own prior range is right there — and a §3 kill, LSE-listed. A clean pass on one filter
+is not progress toward a trade.**).
+
+**Hard filters:** not reached on any item; every one died at §3, rule (iii), rule (v), rule (vii) or
+the §4 premise. **Zero `move` calls, zero drill queries.**
+
+**Outcome:** **REJECTED, all sixteen.** ⚠ **The funnel's self-exclusions did four of these for free
+and `grep` on this log did two more. The sweep cost nothing because the shapes were recognised rather
+than re-derived.**
+
+---
+
 ### 2026-10-14 (08:21 ET) — event survey (funnel, pre-thesis)
 
 Selftest passed all five checks (`trading_enabled: true`, LIVE paper, broker equity **$101,007.25** at
