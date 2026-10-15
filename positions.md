@@ -521,6 +521,40 @@ tape:
   `plan_today.md` arrives three calendar days old on a Monday** — compare `plan_date` to the last
   TRADING day, not to the calendar.
 
+### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-10-15, `1-premarket-research` 08:19 ET — **SEAT 1 OF 4. This block is deliberately SHORT; the three seats that follow fold into it and the close seat owns collapsing it.**)
+
+**§5.1–5.4 RE-EVALUATED IN ORDER, REACHED AND NOT INHERITED — THE SAME NULL AS 10-14.** Core VOO is
+struck from the working list **before any rule is read**, per §5's exemption; with it gone the list is
+empty. **Zero `sell`, zero `quote`, zero `move`, zero `bars`, zero Perplexity-on-a-holding** — §5.1
+costs one news query **per position** and there were none, so that absence is **structural, not a
+skipped step.**
+⚠⚠ **DISTANCE IS UNDEFINED, NOT LARGE. "Nothing close to triggering" would be a fabrication, because
+nothing can be close to a threshold it has no operand for.**
+
+| Rule | Status | Distance | Why not "passing" |
+|---|---|---|---|
+| **§5.1** invalidation | **NO OPERAND** | n/a | No thesis held; no `invalidation` string to read. `open_thesis_ids: none`. |
+| **§5.2** time stop | **NO OPERAND** | n/a | No `timing_window` or deadline field exists in this file. |
+| **§5.3** hard stop −7% | **UNDEFINED** | **undefined** | No satellite `entry_price`. The 706.74 core fill is §5-exempt, not an operand. |
+| **§5.4** trailing −10% | **NOT ARMED** | **undefined** | No `highest_close`. Arms on the first **satellite** fill; 09-03's core fill was not one. |
+
+**LEDGER RECONCILED FIRST, BEFORE RESEARCH AND BEFORE ANY RULE WAS READ. THREE SIDES AGREE:** this file
+holds **zero satellite blocks**; `positions` returns **one row — VOO** 99.046311231 sh @ **706.74**,
+`cost_basis` **$69,999.989999** (unchanged since 2026-09-03); `sleeves` reports `satellite.count: 0`.
+Equity **$99,853.59**, cash **$30,000.00**, core **69.96%** — **IN BAND, no rebalance queued.**
+
+**STEP 2 (the high-water stamp) IS NOT THIS SEAT'S JOB AND HAD NO SUBJECT ANYWAY.** `highest_close` is
+**ABSENT — a third state carrying no `(as of …)` date at all** — so there was no date to advance and
+⚠ **NO STALENESS WAS DETECTED *AND* NONE WAS RULED OUT.** ⚠⚠ **DO NOT BACKFILL — THERE IS NOTHING TO
+WRITE.** The backfill path stays **unexercised code.**
+
+⚠⚠ **CORE VOO NOT STAMPED — 100th CONSECUTIVE REFUSAL, AND IT IS THE *EASY* GRADE AND SAYS SO: ZERO
+`bars` CALLS AT THIS SEAT**, so no correctly-basised official close was ever in hand to be tempted by.
+§7 forbids arming §5.4 on the one position §5 exempts. ⚠ **Ninety-nine easy refusals are not evidence
+about a hard one; the close seat will meet the hard grade again today.**
+
+---
+
 ### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-10-14, **ONE DIGEST FOR THE DATE, ALL FOUR SEATS:** `1-premarket` 08:21 · `2-market-open` 09:37 · `3-midday` 12:41 · `4-market-close` 16:16. ⚠ **COLLAPSED BY THE CLOSE SEAT, WHICH IS THE FIRST SEAT ENTITLED TO TOUCH A BLOCK THREE EARLIER SEATS WROTE** — a seat cannot fairly collapse a paragraph it has just written. ⚠ **RE-DATED AND RE-EVALUATED, NOT LEFT: a table untouched and a table re-evaluated to the same answer are indistinguishable to the next reader.**)
 
 **§5.1–5.4 RE-EVALUATED IN ORDER AT EVERY SEAT, REACHED AND NOT INHERITED — THE SAME NULL FOUR TIMES.**
