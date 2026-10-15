@@ -40,6 +40,129 @@ anything where the honest-broker rule (§4) did real work>
 
 ## Entries
 
+### 2026-10-15 (Thursday)
+
+**Account:** total **$100,260.4818 on official closes** (`bars --adjustment all`, VOO `c` **709.37**;
+`raw` returned the identical row, so the basis was non-decisive) | day **+$191.1594 (+0.1910%)** |
+since inception **+0.2605%**
+⚠ *Live broker mark at 16:16 was **$100,256.52** — a different series, quoted separately and never
+differenced against the official figure.*
+**Sleeves:** core **70.0779%** | satellite **0.0%** | cash **29.9221%**   (§2 band 65–75%) — **IN BAND,
+no rebalance due tomorrow**
+**Breaker:** INACTIVE
+**Week:** 0/3 new positions (week_of 2026-10-12, anchor re-derived from source and matched — no reset)
+
+**Traded:** nothing. Zero orders of any kind at any of the four seats.
+**Researched:** 5 theses — **0 accepted, 5 rejected** (`T-2026-10-15-01` … `-05`), all written by the
+08:19 pre-market seat. This routine writes no theses; the count stands at **161**.
+**Positions near a sell rule:** **none, and the honest form is NO OPERAND rather than "nothing close."**
+Zero satellite positions, so §5.1–5.4 have nothing to measure a distance against. Core VOO is exempt
+from all four by §5 and was struck from the working list before any rule was read.
+
+**What happened:**
+
+A full regular session, confirmed on the clock at both ends rather than assumed: `next_open` and
+`next_close` both dated 2026-10-15 at 08:19 (pre-market), both rolled to 2026-10-16 at 16:16
+(post-bell). The session I am journaling demonstrably happened.
+
+The tape did something worth recording even though the book did almost nothing. VOO opened at 704.34 —
+**$3.10 below** yesterday's 707.44 close, continuing 10-14's −1.068% drop — then fell to **702.965**, a
+−0.63% intraday low, and recovered the whole way to close at **709.37, up $1.93 / +0.2728%.** That is a
+**+0.91% round trip off the low inside one session**, on the day PPI and retail sales printed. The book
+captured 70.08% of the up-leg, as it mechanically must: **+0.1910%** against the benchmark's +0.2728%,
+for **−0.0818pp of excess.** That figure is not a measurement of anything — with the book equal to
+`shares × VOO + fixed cash`, `excess = (w − 1) × VOO_return` is an algebraic identity, and
+(0.700208 − 1) × 0.2728% = −0.0818pp reproduces it exactly. On an up day the core sleeve must lag. It
+becomes an empirical question on the first satellite fill and not before.
+
+The research seat produced five rejections and no trade, which §4 says is the expected shape of a run.
+Two are worth the human's time. **`-01` (TSMC)** is a new costume for rule (iii), the most prolific rule
+in the log: **one release carrying a genuine PASS and a genuine FAIL on two different figures.** TSMC
+raised its own FY2026 revenue-growth outlook to ~44% from its own prior ~40% — a textbook rule (iii)
+pass, the prior figure present in the source — and in the same release **reaffirmed** FY2026 capex at
+US$60–64B, old range identical to new. The signs are the wrong way round for §4: the figure that moved
+has no supplier chain hanging off it, and the figure with the supplier chain did not move. A reader who
+applies rule (iii) to *the release* and stops at the first "yes" proceeds on the wrong number.
+**`-02` (GE Vernova / Baker Hughes / Venture Global)** is the opposite lesson: §3 passing tells you
+nothing. GEV at ~$250.3B and BKR at ~$56.0B clear the $10B floor by ~25× and ~5.6× — the widest margins
+this funnel has ever delivered — attached to a real 8-K, a real dated transaction and a $17.2B headline.
+It died three times over, each kill sufficient alone, before price was ever consulted.
+
+The seat's own job — Step 2, writing today's close into each open satellite position's `highest_close`
+— **had no subject.** Zero satellite positions means no symbol to pull a bar for, no mark to raise and
+no `(as of …)` date to advance. I will not write "high-water marks updated," because it would be false,
+and "verified" would be false too.
+
+**What I got wrong or nearly got wrong:**
+
+**I wrote a false superlative about my own run's numbers and caught it one check later.** Drafting the
+`positions.md` digest I wrote that today's broker/official gap — `current_price` 709.33 against the
+official close 709.37, **−$0.04** — was *"the smallest yet,"* and called the sample spread
+*"fourteen-fold."* **Both are wrong, and the four refuting numbers were in the same sentence I was
+writing them in.** 10-02's 16:46 reading was **−$0.0254**, smaller; the spread across the five samples
+is **twenty-two-fold** (0.0254 → 0.57). Corrected in file before publication. This is catch (13)'s
+shape — a superlative is a claim about a whole series and requires the whole series — crossed with
+catch (20)'s — a derived number sitting next to its own inputs is an invitation to recompute, and
+recomputing cost one line. The uncomfortable part is *where* it came from: not inherited from a prior
+run, but manufactured by me about my own fresh observation, in the same breath as making it. That is
+the third instance of the catch-(23) direction, and the pull is strongest exactly when a run thinks it
+has found something interesting.
+
+**And the correction left something behind that is worth more than the error was.** Four cents is the
+*dangerous* sample, not the reassuring one. At that distance the broker mark and the official close
+look interchangeable, which is precisely the condition under which a run reaches for whichever number
+is already in hand. The rule — never difference a broker mark against an official close — does not
+relax as the gap narrows; it matters most when the gap is too small to notice.
+
+**The same shape caught itself a second time, smaller.** I measured the `positions.md` collapse at
+**−2,989B**, then spliced the price-gap correction into that same file and nearly carried the original
+figure into `state.md` and this entry. The true figure is **−2,480B** (132 lines → 94). A size figure
+is a derived number like any other, and it must be re-measured after the *last* write rather than
+carried from the first one — a measurement taken mid-edit is a measurement of a file that no longer
+exists.
+
+**The honest near-miss on the routine's own instruction.** The Output section of this run's prompt asks
+me to report "high-water marks updated." The prompt supplies the sentence; today the true answer is
+that the job had no operand. Declining a sentence your own instructions hand you is a small thing, but
+it is the exact mechanism by which "Step 2 ran and found nothing" would quietly become "Step 2 worked"
+— and those two are indistinguishable in every artifact this system produces. **32 sessions in, both
+the stamp path and the midday backfill path are still unexercised code.** Thirty-two nulls are not
+evidence that either one works.
+
+**The 103rd refusal to stamp core VOO was the hard grade, and it should be said that way.** Three
+earlier seats today declined it *easily* — they made zero `bars` calls, so no official close was ever
+in hand to be tempted by. This seat held a real completed correctly-basised close (709.37) from its own
+pull **and** the write path, at the one routine whose instruction literally reads "record the closes,"
+on the only row the broker returns. Nothing was written, because §5 exempts core and a `highest_close`
+on VOO would fabricate a §5.4 trailing stop on the one position the strategy protects. Ninety-nine easy
+refusals were never evidence about this one.
+
+**One thing I spent a call on that I could have skipped invisibly:** I pulled `bars --adjustment raw`
+alongside `--adjustment all` to confirm the two agreed on 10-14 and 10-15. They did, so the basis was
+non-decisive and the call changed nothing. It would have looked identical had I not made it — which is
+the entire argument for making it. The next ex-dividend date restores the trap, and a run that has
+stopped checking will not notice the day it starts mattering.
+
+**For the next run:**
+
+- **No rebalance is due.** Core 70.0779% on official closes (70.08% on the live mark), inside the
+  65–75% band with 4.92 points of headroom at each edge. ⚠ `rebalance_delta` took **three readings
+  today and flipped sign twice** — +$73.15 (09:37) → −$21.89 (12:41) → −$76.96 (16:16) — while core
+  never left the band. **The delta is a distance readout, not an instruction, and its sign is as
+  uninformative as its magnitude.**
+- **Nothing is pending.** Zero non-terminal orders (`--status all` still returns one row for the whole
+  account history, the 09-03 core fill). Zero open alerts. `control.md` notes empty.
+  `open_thesis_ids: none` — a rejection is not a queue.
+- **PPI and retail sales printed inside this session and no ID was minted for them**, correctly: both
+  were already disposed at `T-2026-10-12-05` and `T-2026-10-13-08`. A change in **status** is not a
+  change in **eligibility** — a macro print has one party and no transaction whether it is scheduled,
+  printing, or printed.
+- **Session counter advances to 32 completed / 29 post-fill.** This seat may count the day it stands
+  in because it stands after the bell on a session that is over; the three earlier seats correctly
+  could not. Thesis count **unchanged at 161** — this routine writes none, and today's five were
+  already written by the 08:19 seat. ⚠ `grep -c '^### T-' research_log.md` returns **75** because the
+  template heading matches: 87 archived + 74 live = 161. **Do not "fix" it to 162.**
+
 ### 2026-10-14 (Wednesday)
 
 **Account:** total **$100,069.3224 on official closes** (`bars --adjustment all`, VOO `c` **707.44**)
