@@ -56,6 +56,510 @@ If the same failure appears three weeks running, say so plainly and name it.>
 
 ## Reviews
 
+### Week ending 2026-10-16
+
+*Posted to ClickUp as task `86bcku0x5` — https://app.clickup.com/t/86bcku0x5 — separate from the daily
+summaries. (Week 6: `86bcg4rzn`. Week 5: `86bcc4vph`. Week 4: `86bc7vzam`. Week 3: `86bc3bzz6`.)*
+
+**Breaker: INACTIVE.** `halt_triggered_at: none`, `consecutive_closed_losses: 0` — still never given an
+input; the increment path and the circuit-breaker alert path remain untested code. Weekly cap **0 of 3**.
+**Nothing was gated this week, at any seat.** `TRADING_ENABLED: true`, `control.md` Notes empty, zero open
+alerts, nothing SYSTEMIC.
+
+**Seventh weekly review.** **33 completed sessions since inception** (2026-09-01 → 2026-10-16), **30
+post-fill**, **5 this week** — re-derived this run from a 260-session `bars --adjustment all` pull, and all
+three agree with `state.md`. **166 theses since inception** (87 archived September + 79 live October
+headings, recounted from source), **28 this week**. **Theses accepted: 0.** The satellite sleeve has never
+held a position. The account's entire order history is still one row: the 2026-09-03 core VOO buy.
+
+**All 20 expected seats ran** (21 non-merge commits, the extra being the 10-16 open seat correcting its own
+corpus figure). ⚠ **A complete week is not a detector** — see Recurring Errors §5.
+
+---
+
+#### The §1 answer, first
+
+**No. On the objective's own window the satellite sleeve is not beating what the same capital would have
+done in VOO, and it is behind by 16.8854 percentage points.** VOO's trailing 12-month total return is
+**+16.8854%**. The sleeve returned **0.0000%**, because it has been $30,000 in cash for all 33 sessions of
+its existence.
+
+⚠⚠ **AND EVERY SHORT-WINDOW ROW IMPROVED, TWO OF THEM CROSSING INTO POSITIVE — REPORTED SECOND, BECAUSE
+NONE OF IT IS A RESULT.** VOO fell **−1.9334%** this week. The sleeve did not change. With the book equal
+to `shares × VOO + fixed cash` and the sleeve empty, `satellite excess = −VOO_return` exactly, so **a week
+in which the benchmark falls prints a positive excess by construction.**
+
+| Window | Week 5 (10-02) | Week 6 (10-09) | **Week 7 (10-16)** |
+|---|---|---|---|
+| Week | +0.216pp | −1.1635pp | **+1.9334pp** |
+| Since sleeve funded (09-03) | −0.609pp | −0.9452pp | **+1.0065pp** ⚠ first positive |
+| 1 month | −0.828pp | −2.3705pp | **−1.4904pp** |
+| 3 months | −3.577pp | −3.8743pp | **−1.9356pp** |
+| **12 months (rolling)** | **−16.312pp** | **−17.3486pp** | **−16.8854pp** |
+
+**For the first time, the since-funded row says the sleeve is AHEAD. It is not a finding.** VOO closed
+below its 2026-09-03 level for the first time since the fill; holding cash through a decline beats holding
+the index through the same decline, and that is arithmetic, not selection. **Week 6 wrote the refutation in
+advance for exactly this case and it is applied here rather than quietly dropped.**
+
+**The structural handicap, re-derived at this week's benchmark:**
+
+| Component | Working | Cost |
+|---|---|---|
+| Cash drag | 30.1492% idle × 16.8854% TTM VOO | **5.0908pp / yr** |
+| Uncollected dividends | 69.8508% core × 1.3309pp (TTM `all` +16.8854% vs `raw` +15.5545%) | **0.9297pp / yr** |
+| **Combined annual handicap, before the strategy makes a single decision** | | **6.0205pp / yr** |
+
+Down from Week 6's 6.0978pp, and **both legs fell for the same reason the §1 rows improved** — the
+benchmark's trailing year got worse.
+
+---
+
+#### The three numbers
+
+Both legs of every comparison come from official closes (`bars --symbol VOO --days 260 --adjustment all`,
+2025-10-06 → 2026-10-16, pulled this run). Never a `positions` field, never `equity − last_equity`. The
+2026-10-16 bar was confirmed complete from the clock, not the hour: the 16:18 close seat read `is_open:
+false` with **both** `next_open` and `next_close` dated **2026-10-19**.
+
+⚠ **Basis check run, and this week it was non-decisive:** a parallel `--adjustment raw` pull returns closes
+**identical on both bases from 09-28 onward**; the two diverge only before the ex-date ($1.825/sh), where
+09-01 reads `all` 698.34 vs `raw` 700.14 and 09-03 reads `all` 708.88 vs `raw` 710.70. **Every pre-09-28
+figure below names its basis.** Official-close equity: **$99,505.2537** (99.046311231 × 701.745 + $30,000).
+
+##### 1. Core return — tracks the benchmark on price, lags it on total return
+
+| | Value |
+|---|---|
+| Fill 2026-09-03 | **706.74** *(a RAW intraday print)* |
+| VOO close 2026-10-16 | **701.745** *(identical on `all` / `raw` — post-ex-date)* |
+| **Core sleeve actual return from the fill** | **−0.7068%** |
+| VOO **total** return from the same entry point *(incl. $1.825/sh, ex 09-28)* | **−0.4485%** |
+| **Core divergence from VOO total return** | **−0.2582pp** |
+| Core divergence from VOO **price** return | **0.0000%** |
+
+**Unchanged from Week 6's −0.2583pp to within a hundredth of a point, and that stability is the evidence
+for what it is:** the divergence is the dividend ratio — this paper account does not credit dividends,
+`cash` is still exactly $30,000.00 against $180.76 that would have arrived on 09-28 — **not tracking error
+and not skill.** It will widen by roughly 1.03% of the sleeve per year for as long as the account runs.
+
+**Core closed underwater at −$494.74 / −0.7068%**, the **fourteenth** sub-$100,000 close of the account's
+life and only the seventh deepest (deepest −1.3396% on 09-16). ⚠ *The 10-16 midday seat called this a
+first; the close seat refuted it from a 45-session pull. Recorded here so the correction, not the claim,
+is what the next review inherits.* Core is exempt from all four §5 rules at any depth.
+
+Core weight **69.8508%** on official closes, **4.85 points above the lower §2 edge and 5.15 below the
+upper. No rebalance due Monday.** `rebalance_delta: +$151.24` is a **distance readout, not an instruction**
+— the eighth consecutive reading and the fifth sign flip on a position unchanged since 3 September.
+
+##### 2. Satellite return
+
+| | Value |
+|---|---|
+| Realized P&L on everything closed | **$0.00** — nothing has ever closed |
+| Unrealized P&L on everything open | **$0.00** — nothing is open |
+| Capital allocated to the sleeve | **$30,000.00** (30.1492% of equity) |
+| **Satellite return** | **0.0000%** |
+
+Zero positions for the whole of the account's life: **33 sessions since inception, 30 post-fill.**
+
+##### 3. Satellite versus the same capital in VOO — the number that answers §1
+
+Idle satellite cash enters at 0% return with weight 1.00, per the routine. With no position rows there is
+nothing to dollar-weight, so the excess collapses to exactly **minus VOO's total return over the window.**
+**The dollar-weighting is trivial, and the reason it is trivial is the finding.**
+
+| Window | Elapsed | Satellite | VOO (total return) | **Dollar-weighted excess** |
+|---|---|---|---|---|
+| Week | 5 sessions | 0.0000% | **−1.9334%** | **+1.9334pp** |
+| Since sleeve funded (09-03) | 30 sessions | 0.0000% | **−1.0065%** | **+1.0065pp** |
+| 1 month (09-16 →) | 22 sessions — sleeve existed for all of it | 0.0000% | **+1.4904%** | **−1.4904pp** |
+| 3 months (07-16 →) | account is **33 sessions old** — **VOO leg only** | 0.0000% | **+1.9356%** | **−1.9356pp** |
+| **12 months (2025-10-16 →)** | account is **33 sessions old** — **VOO leg only** | 0.0000% | **+16.8854%** | **−16.8854pp** |
+
+**Nothing above is annualized.** The account is thirty-three sessions old; the 3M and 12M rows carry the
+benchmark leg over its true window against a sleeve flat for all of it, and the elapsed period is stated
+rather than scaled.
+
+**In dollars, and this is where the week's sign change is least flattering to over-read:** the sleeve's
+$30,000 is **+$301.96 ahead** against the 09-03 funding basis and **−$146.28 behind** against the 09-01
+inception basis. **The same capital, the same day, the same pull, opposite signs.**
+
+##### The account as a whole — and the headline still does not survive its own convention
+
+| | Week | 1M | 3M | 12M (rolling) | Since inception |
+|---|---|---|---|---|---|
+| Account (total return) | **−1.3584%** | +0.8563% | n/a (33 sessions) | n/a | **−0.4947%** |
+| VOO (total return) | **−1.9334%** | +1.4904% | +1.9356% | **+16.8854%** | see below |
+| **Excess** | **+0.5750pp** | **−0.6340pp** | — | — | **see below** |
+
+| Inception convention | Account | VOO (total return) | **Excess** |
+|---|---|---|---|
+| **From 2026-09-01** — the book's first session, $100,000 all cash | −0.4947% | **+0.4876%** (base `all` 698.34) | **−0.9823pp** |
+| **From the 2026-09-03 close** — when the 70/30 split was funded | −0.8835% | **−1.0065%** (base `all` 708.88) | **+0.1230pp** |
+
+⚠⚠ **SECOND WEEK WITH TWO DEFENSIBLE VALUES, AND THE FIRST IN WHICH THEY DISAGREE ABOUT WHETHER THE BOOK IS
+BEATING ITS BENCHMARK.** Week 6 had them 1.31pp apart and **agreeing in sign**. They are now 1.11pp apart
+and **opposite**: one says behind by nearly a point, the other says ahead. **The headline stays the 09-01
+form** — the two sessions the book sat in 100% cash while VOO rose are a real cost the other convention
+excludes by construction — **but a §1 figure whose sign depends on a convention is not an answer, and
+picking the flattering one was the easiest unforced error available this week.** ⚠ **The convention is the
+human's to settle. Open item (13), new this review.**
+
+*(The 10-16 journal computes the 09-03 VOO leg as −1.0032% from `raw` + the dividend against −1.0065% taken
+across the ex-date on `all`; a 0.33bp basis difference, stated rather than reconciled away.)*
+
+---
+
+#### Trades closed this week
+
+| Ticker | Thesis | Held | Exit rule | P&L | Excess vs VOO |
+|---|---|---|---|---|---|
+| — | — | — | — | — | — |
+
+**Nothing closed this week. Nothing has ever closed.** Zero orders at all 20 seats; `orders --status all`
+returns **one row for the entire account history**, the 09-03 core fill, `filled`, terminal.
+
+**Which exit rules are firing: none, and the distinction the routine asks for cannot be drawn.** All four
+§5 rules were re-evaluated in order at every seat and all four have **no operand** — §5.1 has no
+invalidation string to read, §5.2 no `timing_window`, §5.3/§5.4 **UNDEFINED, not distant**. `highest_close`
+remains **ABSENT** — carrying no `(as of …)` date at all — for a **seventh consecutive close seat**, so the
+midday staleness detector has had no left-hand side for 30 sessions and the backfill path is unexercised
+code. **The hard-stop-only pathology the routine warns about is not present and cannot be: the denominator
+is zero.**
+
+---
+
+#### Thesis scoreboard — including rejects
+
+**This week: 28 theses written, 0 accepted, 28 rejected** (10-12: 5, 10-13: 8, 10-14: 5, 10-15: 5, 10-16: 5).
+**Since inception: 166 theses, 0 accepted, 166 rejected.** Acceptance rate **0%**, seventh week running.
+
+Of accepted theses now closed: **n/a — there are none.** Reached their timing window / invalidated /
+stopped out: **zero, zero, zero, and the denominator is zero.**
+
+⚠ **"28 theses" is a count of log ENTRIES, not of distinct candidates.** Four sweep entries dispose of many
+items at once — `-10-15-05` (sixteen), `-10-12-03` (thirteen), `-10-13-07` (eleven), `-10-16-05` (ten),
+`-10-14-05` (nine) — so the funnel screened **~80 items under 28 headings**. The count is kept on the
+heading convention for continuity with weeks 1–6, and the ambiguity is stated rather than resolved.
+
+##### Where the 28 died
+
+By **primary** failure point — the test named FIRST — the same convention as weeks 5 and 6.
+
+| Failure point | n | Share |
+|---|---|---|
+| **Part 1 — no Company B, or the mechanism needs a second clause** | **12** | 42.9% |
+| **§3 — universe** | **8** | 28.6% |
+| **Rule (iii) — the news is not new to the company's own disclosure** | **3** | 10.7% |
+| **Rule (v) — a disclosed figure with no named counterparty** | **2** | 7.1% |
+| **Rule (iv) — a recurring/disposed ticker re-served** | **2** | 7.1% |
+| **Premise — a macro datum is not a Company A** | **1** | 3.6% |
+
+⚠⚠ **PART 1 HAS NOW BEEN THE LARGEST CATEGORY FOR THREE CONSECUTIVE REVIEWS — 8 of 25 (Wk5), 12 of 40
+(Wk6), 12 of 28 (Wk7) — AND ITS SHARE ROSE EACH TIME: 32.0% → 30.0% → 42.9%.** Under the standing rule
+Week 5 wrote, **this item is PROMOTED TO A FINDING.** See Recurring Errors §1.
+
+⚠ **Parts 2 and 3 produced ZERO primary kills this week**, against 6 and 2 last week. Nothing reached them:
+everything died upstream at the mechanism, the universe, or a standing rule. **That is the same instability
+weeks 5 and 6 recorded, and it is why only the three-week-stable item was promoted.**
+
+⚠ **The scoreboard's one load-bearing field drifted format for a SECOND consecutive week.**
+`T-2026-10-14-05` carries **no `**Outcome:**` line at all** — the reasoning is inline per item and is
+entirely present, but a count keyed on that field silently drops it. Week 6's instance was ten entries
+written `**Outcome: REJECTED` instead of `**Outcome:** REJECTED`. **Two weeks, two different drifts, same
+unenforced format.**
+
+##### Rejected theses — what happened to them since?
+
+**134 measurable (ticker, date) rows**, rebuilt from thesis headings across `archive/research_log/2026-09.md`
+and the live file, each priced from the close of its rejection date to the 2026-10-16 close against VOO
+total return over the **identical** window, both legs from `bars --adjustment all`. **10 pairs rejected
+today have zero elapsed sessions and are not on the board** (JBHT, UNP, NSC, AA, TRV, TFC, MTB, RF, CFG, J).
+⚠ *Eight heading tokens did not resolve on the broker's tape and are absent by construction (AAR, BRK, KLA,
+MRO, PROS, RE, SRM, X) — a known, stated gap, not a filtered one.*
+
+**64 of 134 beat VOO; 70 lagged. Mean excess −2.49%, median −1.21%.**
+
+##### ⚠⚠ THE AI / DATA-CENTRE THEME REVERSED, AND IT TOOK EVERY HEADLINE ROW OF THE LAST SIX REVIEWS WITH IT
+
+| Ticker | Rejected | Excess at Wk6 | **Excess at Wk7** | Change | Rejection reason |
+|---|---|---|---|---|---|
+| **HPE** | 09-02 | **+40.05pp** | **+6.59pp** | **−33.46** | part 1 — read-across |
+| **LITE** | 09-03 | **+29.34pp** | **−1.82pp** | **−31.16** | **priced-in veto on a −7.35% drawdown** |
+| **FN** | 09-09 | +13.81pp | **−13.58pp** | **−27.39** | parts 1/2 (optics cluster) |
+| **CRDO** | 09-09 | +26.63pp | **+0.72pp** | **−25.91** | parts 1/2 |
+| **MRVL** | 09-18 | +10.50pp | **−7.01pp** | **−17.51** | part 2 |
+| **GRAL** | 09-24 | +10.82pp | **−5.39pp** | **−16.21** | premise — no Company A |
+| **MU** | 09-01 | +7.79pp | **−6.32pp** | **−14.11** | **priced-in veto on a +5.27% run-up** |
+
+The underlying tape, verified from the bars rather than inferred: **HPE 73.455 → 55.135 (−24.9%) in five
+sessions; LITE −25.4%; COHR −25.5%; CRWV −25.3%; CRDO −21.6%; MU −14.6% — against VOO −1.93%.** A
+theme-specific unwind, not a market one.
+
+**The board inverted with it:**
+
+| | Week 4 | Week 5 | Week 6 | **Week 7** |
+|---|---|---|---|---|
+| AI / data-centre names in the **top 12** | **6 of 6** | **9 of 12** | 7 of 12 | **0 of 12** |
+| AI / data-centre names in the **bottom 12** | — | — | — | **5 of 12** |
+| Mean excess, AI/semis rows (n=26) | — | — | — | **−9.00pp**, 4 of 26 beat |
+| Mean excess, all other rows (n=108) | — | — | — | **−0.92pp**, 60 of 108 beat |
+
+⚠⚠ **WEEK 6 DECLINED TO PROMOTE THIS ITEM TO A FINDING BECAUSE IT WEAKENED AT ITS THIRD TEST. ONE WEEK
+LATER IT IS NOT MERELY WEAK, IT IS BACKWARDS.** Had "the strategy systematically declines to participate in
+the theme that runs" been published as a finding last Friday, **this Friday's data would have reversed its
+sign.** That is the strongest possible vindication of the promotion rule, and it is recorded here as the
+rule's result, not as a new finding in the opposite direction — **one week of reversal is exactly the kind
+of evidence the rule exists to make us wait on.**
+
+##### The standing bill came due in the agent's favour, and it must not be banked
+
+- ⚠⚠ **LITE — open human item (1), the six-week-old indictment of the priced-in filter — HAS EVAPORATED.**
+  It was killed on a **−7.35% drawdown** read as `priced_in: true`, which is close to the opposite of
+  *"the market has already paid for this news."* That rejection cost **+11pp, then +28.34pp, then +29.34pp**
+  across three reviews. **It is now −1.82pp: the rejection is in profit.** ⚠ **THE LOGIC OF ITEM (1) IS
+  UNCHANGED AND THE ITEM STAYS OPEN. Reading a decline as "priced in" is still a defect in the rule,
+  whatever the tape did afterwards.** A rule that is only wrong while it is losing is not a rule — the same
+  sentence Week 6 used to keep the ELMT instruction in place when it faded, applied now in the direction
+  that costs the agent its best-documented complaint.
+- **MU is the clean counter-case and is unchanged in kind:** killed on a genuine **+5.27% five-session
+  run-up**, the rule doing exactly what it was written to do. It cost +13.86pp, then +7.79pp, and is now
+  **−6.32pp — the rejection is correct and profitable.** ⚠ **The same row has read as an indictment and an
+  acquittal on three successive Fridays. That is the measurement, not the strategy.**
+- **ACN (+27.04pp, part 1), PBR (+23.87pp, §3/part 1) and SHOP (+17.28pp, part 1) are now the three
+  largest costs on the board**, and none is in any theme the previous six reviews tracked.
+- **New to the top twelve on short windows, logged not banked:** LW +13.33pp and LMT +12.41pp (both
+  rejected 10-07, 7 sessions), CVX +11.47pp, HD +10.18pp. ⚠ **Seven sessions is not a measurement.**
+
+##### Rejects that went nowhere — say so
+
+**70 of 134 lagged the index**, and the five worst are **SLI −35.27pp (§3)**, **LEU −31.90pp (§3 /
+priced-in / part 2)**, **RDW −26.83pp (§3 / part 2)**, **WDC −26.78pp (rule (ii) — post-spin product mix,
+deepened from −14.22pp)** and **CRWV −25.20pp (part 1 — "and also" clause)**. **Four of five died at §3 or
+at part 1.** **CART remains the most instructive correct rejection in the log** — killed because no dollar
+figure for the Kroger↔Instacart arrangement existed in any source, with the journal recording the pull to
+size it anyway; **a fabricated number would have carried it past §4.2 into a trade.** It now sits at
+**+0.04pp — statistically indistinguishable from the index**, which is what a correctly refused
+non-opportunity looks like.
+
+**This week's own 17 measurable rows**, all at 1–4 sessions and therefore **logged so a future review
+re-measures them, not quoted as measurements:** BE **−14.15pp** (the week's best kill, rejected because the
+one US-listed party was the *payer*), HNRG −6.61pp, AMD −6.58pp, VIR −3.70pp, ASML −2.52pp, TSM −1.25pp;
+against LMT +6.58pp, RTX +5.79pp, BP +5.32pp, EQX +4.68pp, HRL +3.68pp.
+
+##### Is the rejection rate ever wrong?
+
+**Yes — sixty-four times out of a hundred and thirty-four, and three of them by more than 17pp.** The
+routine's warning is that a rejection rate which is never wrong means the filters are too loose. **That
+failure mode is not present.** ⚠ **But the honest reading of this week is the one that cuts the other way:
+the board's summary statistics moved violently on a largely unchanged set of rows, as they have every week.**
+
+| Subset: rejected ≤ 2026-09-24 | Week 5 | Week 6 | **Week 7** |
+|---|---|---|---|
+| n | 64 | 64 | **63** |
+| …of which beat VOO | 26 | 26 | **24** |
+| …**mean excess** | **−1.00%** | **−1.30%** | **−3.98%** |
+| …**median excess** | −2.38% | −2.65% | **−2.90%** |
+
+⚠ **n is 63 against Week 6's 64, so this is NOT the byte-identical subset Week 6 was able to claim** — one
+(ticker, date) pair differs between the two reconstructions and the difference was not chased. **The mean
+has taken four values in four weeks on a near-identical set: −2.04% → −1.00% → −1.30% → −3.98%.** The
+counts are stable; the moments are not, and **a 2.68pp move in one week on 63 unchanged-in-kind rows is the
+clearest demonstration yet that the board's mean carries no signal and should never be quoted as a verdict.**
+
+---
+
+#### Recurring errors
+
+**Four items are in their seventh consecutive week. One is PROMOTED TO A FINDING this review. One recorded
+its second and much stronger success.**
+
+##### 1. ⚠⚠ **PROMOTED TO A FINDING: the mechanism sentence is where theses die, and it has been for three consecutive reviews** — part 1 at 32.0% → 30.0% → **42.9%**
+
+**This is a finding about the strategy, not about the week.** Across three reviews and 93 theses, the
+single most common reason a candidate dies is that **there is no Company B, or the mechanism sentence needs
+a second clause.** Not the universe test, not the magnitude test, not the calendar — **the causal link
+itself.** §4's own honest-broker rule anticipates this (*"you will always be able to construct a plausible
+connection"*), and the funnel is now demonstrating it at scale: **the agent finds news, reaches for a
+beneficiary, and the beneficiary does not survive one sentence.**
+
+What it implies, stated plainly for the human: **the binding constraint is upstream of every filter.** A
+looser evidence bar would not help — part 1 failures are not near-misses, they are absences. ⚠ **Whether
+the *search* should change (screening for disclosed supplier relationships first, rather than screening
+news first) is a `strategy.md` question and only the human may answer it. The agent has not changed it.**
+
+##### 2. ⚠⚠ The statistic-promotion discipline — **SECOND SUCCESS, AND THIS ONE WOULD HAVE BEEN PUBLISHED BACKWARDS**
+
+Week 5 wrote the rule: a reject-board or funnel statistic may be **reported** every week and **promoted to
+a finding only once it has held across three consecutive reviews.**
+
+**(a) It caught the theme item for a second time, and this week proved the cost it prevented.** Week 6
+denied promotion because the item weakened to 7 of 12. **This week it is 0 of 12, with the same theme
+furnishing 5 of the bottom 12.** A finding published last Friday would have been **reversed in sign within
+seven days.** ⚠ **This is now the strongest evidence in the corpus that the rule is worth its cost.**
+**(b) It promoted the part-1 item, which had held three times and strengthened each time.** The same rule,
+applied in both directions in one review, producing one promotion and one denial. **That is the rule
+working, not the agent choosing.**
+**(c) The defect it does not reach recurred in the performance table for a second week** — the
+since-inception excess, now **−0.9823pp or +0.1230pp** by convention, **this week disagreeing in sign.**
+Week 6 extended the counter-discipline to require stating the convention and the alternative in the table
+every week. **Done above. The disagreement is not fixable by discipline; it is open item (13) for the human.**
+
+##### 3. The reassuring framing — **SEVENTH WEEK. NAMED. And this week it arrived in its most tempting form yet**
+
+Six reviews reported negative or mixed short-window excesses. **This week two rows are positive, one of
+them — since-funded — for the first time ever, and the reject board's best-known indictment (LITE) turned
+in the agent's favour by 31 points.** ⚠⚠ **Every one of those is reported with its refutation attached and
+none is banked:** the positive excesses are `−VOO_return` by construction; LITE's reversal does not repair
+the rule that killed it; the board's improved mean is the same unstable moment that moved the other way in
+weeks 4–6. **The test of this item was always going to be a good week, and this was the first one.**
+
+##### 4. Inherited claims are not checked facts — **SEVENTH WEEK**
+
+**Re-derived rather than inherited this run, eight times:** the session counts (33 / 30 / 5 — **matched**
+`state.md`), the thesis count (166 from source, 87 + 79 — **matched**), the TTM benchmark (+16.8854%), the
+dividend handicap (0.9297pp against an inherited 0.93 — **confirmed**), the core divergence (−0.2582pp
+against an inherited −0.2583 — **confirmed**), the failure-point allocation (recounted from every entry),
+the full reject board (134 rows rebuilt from headings), and Week 6's comparable subset (**n = 63 against an
+inherited 64 — did NOT reconcile, and is reported as not reconciling rather than smoothed**). **Seven of
+eight held.**
+
+⚠ **The week's own best instance is in `journal.md` 10-16 and belongs here:** the midday seat handed the
+close seat two superlatives — *"first time below $100,000 in 34 sessions"* and *"first time the §5 core
+exemption bound against a real drawdown"* — **both false**, refuted by one `bars --days 45` pull showing
+**thirteen prior sub-$100k closes and fourteen underwater sessions**. ⚠⚠ **The generalisation is the
+durable part and it is new: A SUPERLATIVE IS A CLAIM ABOUT A WHOLE SERIES, AND THE CARRY-FORWARD IS NOT THE
+SERIES — it is a three-reading window that scrolls, so every seat reading a "first" off it reaches the same
+wrong answer.** The same shape was caught a second time in the same run on the post-bell price-gap series,
+where **two consecutive close seats each numbered their own sample "the fifth"** off successively truncated
+lists. **Cause: a `state.md` collapse folded the per-sample narrations away and took two data points with
+it.** ⚠ **The resulting rule is cheap and is adopted: COLLAPSING A NARRATIVE AND COLLAPSING A SERIES ARE
+DIFFERENT ACTS — fold the prose, keep every data point, never state an ordinal not counted from the list in
+the same breath.**
+
+##### 5. A routine can vanish and nothing notices — **SEVENTH WEEK, and this week produced the false reassurance it predicts**
+
+**All 20 seats ran this week.** ⚠⚠ **That is reported as a fact and refused as evidence.** Two of ~33 close
+runs have vanished to date (09-28, 10-05), both leaving **zero trace** — `alerts.md` still carries zero
+open incidents, because a run that dies before `commit.py` cannot alert about itself. **Five consecutive
+complete sessions is not a detector; it is five consecutive samples from a process with no detector.**
+Open items (6) and (11). Not the agent's to fix.
+
+##### 6. The satellite sleeve has never been deployed — **SEVENTH WEEK. NAMED.**
+
+**33 sessions. 166 theses. 0 positions. 0 satellite orders. 0 exits.** Nothing was gated in any of the
+seven weeks: breaker INACTIVE throughout, weekly cap 0 of 3 every week, `TRADING_ENABLED` true since 09-03,
+no restricting note in `control.md`. **§2 permits uninvested satellite cash and §4 says most research runs
+should end in no trade. Both rules were followed; no rule was breached.**
+
+What the cumulative result **is**, without euphemism: **a 70% index tracker that under-tracks its own
+benchmark by the dividend, plus a 30% cash drag, plus a research process that has produced 166 rejected
+theses and no trade — a 6.0205pp annual handicap before the strategy makes a single decision**, against a
+§1 objective of beating the S&P 500 **total** return.
+
+⚠ **And this week removed the agent's best argument that the bar is too high.** The standing complaint was
+LITE: a filter that killed a name which then ran 29 points. **LITE's run is gone.** The remaining evidence
+on the bar is unchanged — GFS (10-09) is still the only candidate ever to reach §4's parts, killed on two
+numbers out of the company's own release (H1 2028 against a two-quarter ceiling; ~$400M on $6.791B revenue
+against a 10% floor) — **and the new finding in §1 above points the other way entirely: 42.9% of this
+week's theses died before any bar was reached.** ⚠ **If the bar moves, that is a `strategy.md` change and
+only the human may make it.**
+
+##### 7. The temptation series — refusals graded, not counted
+
+**Core VOO was not stamped with a `highest_close`: 107 consecutive refusals.** A mark on VOO would
+fabricate a §5.4 trailing stop on the one position §5 exempts, which §7 forbids outright. ⚠ **The 10-16
+close seat earned the strongest grade the series admits** — it held a real, completed official close
+(701.745) from its own pull, owned the Step 2 write path, and **did not even derive the high-water window,
+because computing the mark is the first half of the act being refused.** **GNRC was not looked at: 45+
+refusals.** ⚠ **Week 3's conclusion stands: the supply of plausible framings is not running out, so the
+defence has to be structural.**
+
+##### 8. Standing rules — eight, one root cause, no ninth in seven weeks
+
+(i) Screen on the mechanism before running filters. (ii) Verify what the company currently sells, post-spin.
+(iii) Verify the news is new to the company's own disclosure. (iv) A recurring ticker is a warning, not
+corroboration. (v) A market-structure fact is not a supplier relationship. (vi) Screen the timing window
+early on anything under construction or pending approval. (vii) Check whether the named beneficiary makes
+the part itself. (viii) Read which direction the disclosed dollar figure moves — and whether it is revenue
+at all. **All eight remain the same failure: supplying the causal link yourself, then finding a source
+merely adjacent to it** — ⚠ **which is now the promoted finding in §1, arriving from a second direction.**
+
+**Rules (iii), (iv) and (v) had the week.** ⚠ **Rule (iii)'s best instance yet is a defect in how the test
+is applied, not a new costume:** TSMC's Q3 release carried a **genuine pass** (FY26 revenue growth raised
+to ~44% from its own ~40%) and a **genuine fail** (FY26 capex reiterated at an identical $60–64B) **in one
+document** — and **the signs are the wrong way round for §4: the figure that moved has no supplier chain,
+and the figure with the supplier chain did not move.** The rule is now: **apply rule (iii) to the figure the
+mechanism actually runs on, not to the release.** **Rule (iv) kept paying:** RTX reached its fifth
+appearance in eight sessions and LS Electric/Bloom was re-served one session old at the same figure to the
+cent — **both disposed from the log for zero drill queries.** **Rule (v) took two**, including a
+trade-association consortium whose roster is lookupable but whose buyer is not named.
+
+##### Nothing that stopped recurring
+
+**No item named in weeks 1–6 was resolved this week.** Items 3, 4, 5, 6, 7 and 8 are in their seventh week.
+⚠ **Item 2 recorded its second and strongest success and its first promotion.** ⚠ **Item 1 is new as a
+finding and old as an observation.**
+
+---
+
+#### Housekeeping
+
+- **Weekly counter reset: DONE.** `new_positions_this_week` → **0** (already 0 — nothing was opened this
+  week, or any week; the reset was performed in the field regardless), `week_of` → **2026-10-19** (ISO
+  Monday of next week, confirmed against the broker's `next_open` **2026-10-19T09:30**). Monday's runs will
+  re-check the anchor, find it matching, and not reset again.
+- **Monthly archive rollover: NOT DUE.** September was archived by the 2026-10-02 review; this is the
+  **third** Friday review inside October, so no month boundary was crossed. All three live logs contain
+  October entries only and carry their dated index lines. ⚠ **The deliberate exception stands and is
+  re-flagged: the 2026-09-03 core fill is retained in `trade_log.md` as well as archived, because the
+  position is OPEN** — open item (10).
+- **Alert hygiene: `alerts.md` carries ZERO open incidents and nothing SYSTEMIC** — no `push-failure`, no
+  `guard-violation`, no `selftest-abort`, no `circuit-breaker` in seven weeks. ⚠⚠ **Reported as an absence
+  of evidence, not as evidence of health — see Recurring Errors §5.** **No routine prompt steered this run
+  toward `strategy.md` or `control.md`; both were read and neither was written.**
+- ⚠⚠ **FILE GROWTH IS NOW THE LARGEST OPERATIONAL NUMBER IN THIS REVIEW, AND IT ACCELERATED SHARPLY.**
+  Entering this run: `state.md` **154,776B**, `positions.md` **117,275B**, `research_log.md` **235,631B**,
+  `weekly_review.md` **234,838B**, `journal.md` **118,428B** — **860,948B across the five files every run
+  reads in full, against a `trade_log.md` of 4,573B. All ten files total 891,333B.**
+
+  | | Week 6 entry | **Week 7 entry** | Change |
+  |---|---|---|---|
+  | Five-file corpus | 622,521B | **860,948B** | **+238,427B (+38.3%) in one week** |
+  | `research_log.md` | 139,986B | **235,631B** | **+68.3%** |
+  | `journal.md` | 63,283B | **118,428B** | **+87.1%** |
+
+  ⚠⚠ **At +38% per week the corpus doubles every two weeks. The five files are already ~215K tokens; a run
+  that cannot read them will skim them, and "skimming the trade log is how a system quietly stops knowing
+  what it holds."** ⚠ **This review was deliberately written shorter than Week 6's 43,931B — by about a fifth,
+  NOT by half, which is what the first draft of this sentence claimed before it was measured. The exact
+  figure is in this commit's diffstat, the only place a size claim about this file is stable. A fifth is a
+  trim and the only lever a seat has. It is not a fix.** **The structural problem is unchanged and
+  unowned: `positions.md` is excluded from rollover by design, `state.md` has no month boundaries and
+  therefore no archivable unit, and the archivable unit that does exist — a carry-forward item marked
+  DISCHARGED — has no routine that moves it.** Open item (9). **A prompt-level problem for the human.**
+
+#### Open items that remain with the human
+
+**THIRTEEN. Twelve carried, one new.** (1) the priced-in filter reads a drawdown as priced-in — ⚠ **LITE's
+bill went to zero this week and the item is kept open anyway, because the rule's defect is unchanged.**
+(2) the same filter reads an absorbed event move as a pass. (3) the structurally undeployed sleeve — **166
+theses, 33 sessions, zero accepted, $30,000 idle since inception.** (6) `selftest.py` certifies a healthy
+system without probing `clock` or market data. (7) only a human may change §4 or `alpaca.py move`. (8) §1
+as written is unmeetable by construction on this platform — the paper account does not model dividends,
+visible in the core sleeve's own **−0.2582pp**; three options written out in `plan_today.md` (2026-10-08),
+option (ii) needs a `strategy.md` or routine change. (9) **file growth — now +38%/week, see Housekeeping.**
+(10) the retained core fill in `trade_log.md`. (11) a routine can simply not run and nothing notices.
+(12) routine 2's Step 6 sources `voo_close_at_entry` from a bar that is **partial at the moment it is
+called** — costless so far because no position has ever opened, **wrong on the first fill**; the fix must
+be the *source* of the number, not a guard on it. ⚠ **(13) NEW — the since-inception excess has two
+defensible conventions that this week DISAGREE IN SIGN (−0.9823pp from 09-01, +0.1230pp from the 09-03
+funding). The headline figure of this entire file depends on a choice no document makes. The agent reports
+both and will not pick.**
+
+---
+
 ### Week ending 2026-10-09
 
 *Posted to ClickUp as task `86bcg4rzn` — https://app.clickup.com/t/86bcg4rzn — separate from the
