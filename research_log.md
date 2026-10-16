@@ -52,6 +52,219 @@ single most common way a plausible-sounding connection gets mistaken for an oppo
 
 ## Entries
 
+### 2026-10-16 (08:13 ET) — event survey (funnel, pre-thesis)
+
+Selftest **5/5**, all exit 0 (`trading_enabled: true`, LIVE paper, broker equity **$100,397.17** at
+pre-flight). `clock` at **08:13:02** reads `is_open: false` with `next_open` **2026-10-16T09:30** and
+`next_close` **2026-10-16T16:00** — **both carrying TODAY's date**, the **PRE-MARKET full-session
+signature, read off the DATES and not the boolean. Not a holiday, not an early close.**
+Window screened: **the completed 2026-10-15 session and overnight into Friday** — a
+**ONE-TRADING-DAY, ONE-CALENDAR-DAY** window, the ordinary shape. **Three broad Perplexity scans plus
+two drills, all exit 0.** **FIVE theses written, ALL FIVE REJECTED.**
+
+**⚠⚠ ALL THREE BROAD FRAMINGS VOLUNTEERED THE ABSENCE, AND THE SEGMENT-QUANTIFICATION FRAMING MAKES
+IT FOURTEEN CONSECUTIVE SESSIONS (09-29 → 10-16 UNBROKEN).** Verbatim, framing one: *"no clearly
+documented US corporate announcement in the specified window with a confirmed cross-company
+operational effect."* Framing two (the earnings-window drill): *"No company can be confirmed … as
+having disclosed all of the requested elements."* Framing three (knock-on): *"No qualifying case can
+be identified from the available reports."*
+
+**⚠⚠ THE RE-SERVE RATE IS NOW 4 FOR 4 SESSIONS, AND TODAY'S RE-SERVE IS ONE DAY OLD.** **TSMC's Q3
+print** came back under a 10-16 dateline (*"TSMC just posted record profit"*) — **disposed YESTERDAY at
+`T-2026-10-15-01`**. **September PPI / retail sales** came back as well, **disposed at
+`T-2026-10-12-05` and `T-2026-10-13-08`**. ⚠ **Reading the log first cost one `grep` and saved two
+drills.**
+
+**⚠⚠ ZERO `move` CALLS AND ZERO MARKET-CAP FIGURES SOURCED — AND BOTH ARE CORRECT, NOT OMISSIONS.**
+The funnel delivered **THREE US-listed names into part 1 this session — `JBHT`, `AA` and `NVDA`
+(contextual) — the most it has ever delivered — and all three died AT part 1**, which is upstream of
+both the priced-in filter and the §3 universe check. ⚠ **A `move` on any of them would have been
+DECORATIVE (the 9th, 10th and 11th such refusals), and so would sourcing a market cap: a §3 figure
+exists to make an ACCEPTED thesis auditable, and there is no accepted thesis.** ⚠⚠ **THE PROGRESSION
+IS NOW FIVE SESSIONS LONG AND POINTS ONE WAY — 10-12 zero eligible tickers at part 1 · 10-13 one ·
+10-14 two · 10-15 two · 10-16 THREE. THE BINDING CONSTRAINT SITS ABOVE THE PRICE CHECK, AND THE FUNNEL
+GETTING BETTER AT DELIVERING BIG ELIGIBLE TICKERS HAS BOUGHT NOTHING.**
+
+**⚠ THE FIVE PRE-OPEN BANK PRINTS (TRV, TFC, MTB, RF, CFG) LAND AFTER THIS RUN AND ARE NOT EVENTS
+YET** — disposed below at `T-2026-10-16-04`, not carried as a lead.
+
+---
+
+### T-2026-10-16-01 — Taiwan / TEEMA $4B Texas AI industrial park — REJECTED (rule (v) NEW COSTUME — the most fillable blank this funnel has ever produced; part 1; part 3; rule (viii))
+**Company A / the news:** Taiwan's Ministry of Economic Affairs, reported **2026-10-16** (Bloomberg,
+Focus Taiwan, Reuters/Yahoo), plans US industrial parks to host an AI-hardware supply chain, **starting
+with a Texas complex estimated at up to $4 billion**, each park put at **$2–4B**. **Private businesses
+provide the funding; the government provides loan guarantees and regulatory coordination. The
+fundraising body named is the Taiwan Electrical and Electronic Manufacturers' Association (TEEMA).**
+**Company B / the candidate:** **NONE REACHED.** The drill asked for every company that has signed,
+committed to, or been contractually named. Source, verbatim: the plan *"does **not** identify any
+company as having signed, committed to, or been contractually named as a participant"*, and
+*"Nvidia, TSMC, and Foxconn had made no commitment to the parks."*
+
+**1. Mechanism (one sentence):** **NOT WRITTEN.** There is no Company B to put in the sentence.
+**2. Dollar path:** **FAILS — rule (viii) read broadly.** The **$4B is a PROJECT-LEVEL COST ESTIMATE**.
+It is **not segment revenue at any Company B**; it is not revenue at all; and *"the reported $4 billion
+is a project-level estimate, not an announced contribution by Nvidia, TSMC, Foxconn, Wistron, or
+another named company."* **No amount is attributable to any named company.**
+**3. Timing window:** **FAILS DECISIVELY — rule (vi).** Source: **no city, county, site or address**;
+**no construction start date, completion date, operating date, or schedule for subsequent sites.** ⚠ **A
+park with no disclosed groundbreaking cannot show in any company's reported results inside §4's
+two-quarter ceiling. Part 3 kills it in one step.**
+**4. Invalidation:** not reached.
+
+**Hard filters:** **NOT REACHED** — died at part 1, upstream of all three. ⚠ **No `move` call, no
+market cap sourced. Both declined deliberately.**
+
+**Outcome:** **REJECTED.**
+⚠⚠ **AND IT IS A GENUINELY NEW RULE (v) COSTUME, WORTH THE ENTRY ON THAT GROUND ALONE: AN UNNAMED
+PRIVATE CONSORTIUM ORGANISED BY A NAMED TRADE ASSOCIATION — WHICH MEANS THE BLANK COMES WITH A
+LOOKUPABLE MEMBERSHIP ROSTER.** ⚠ **Every earlier rule (v) blank was diffuse (an "unnamed supply
+base") or singular and redacted ("Party A"). THIS ONE IS NEITHER: TEEMA is a real organisation whose
+members are published, many of them listed, so a run can construct a candidate list in one search and
+feel it has been *sourced*. ⚠⚠ **A MEMBERSHIP ROSTER IS A LIST OF COMPANIES THAT COULD PARTICIPATE. IT
+IS NOT A TRANSACTION, AND THE DISTANCE BETWEEN THE TWO IS THE WHOLE OF §4.** The priors arrive
+instantly and unbidden — Texas industrial REITs, electrical equipment (ETN, EMR, PWR, VRT),
+engineering and construction — ⚠ **and not one of them is named in the source. THE SOURCE LEFT THE
+BLANK; FILLING IT IN IS NOT RESEARCH.**
+⚠ **Note also the §3 shape of the named parties: Foxconn and Wistron are TAIWAN-LISTED; the only
+US-listed names in the story (NVDA, TSM's ADR) are named as intended *beneficiaries* of a plan they
+have not committed to.**
+
+---
+
+### T-2026-10-16-02 — J.B. Hunt (JBHT) Q3 2026 → the rail read-through (UNP / NSC / BRK) — REJECTED (part 1 — no transaction; rule (iii) on the read-through; part 2 on BNSF-inside-BRK)
+**Company A / the news:** **J.B. Hunt Transport Services (JBHT)** reported Q3 2026 after the close
+**2026-10-15**: total operating revenue **$3.68B, up 20%** from $3.05B; revenue ex-fuel-surcharge
+**$3.01B, up 13%**; operating income **$247.1M, up 2%**; GAAP EPS **$1.82**; fuel surcharge revenue
+**$670.8M**; and **record intermodal volumes, up 8% year over year**, with higher driver, fuel, claims
+and medical costs partly offsetting the revenue growth.
+**Company B / the candidate:** **the Class I railroads that haul JBHT's intermodal containers** —
+reached as a constructed chain, **not supplied by any source.** Source, verbatim: *"No named external
+counterparty company with a specific dollar value appears in the reported Q3 results … J.B. Hunt's
+release was solely its own quarterly financial results and operating commentary."*
+
+**1. Mechanism (one sentence):** **NOT WRITTEN HONESTLY.** The best available sentence is *"record
+intermodal volumes at JBHT cause its rail haulage partners' intermodal segment revenue to improve
+because JBHT pays them per container moved"* — ⚠ **and it describes an ONGOING COMMERCIAL
+ARRANGEMENT, NOT AN EVENT. Nothing changed between the railroads and JBHT on 2026-10-15; a quarterly
+results release by the customer is not a new transaction with the supplier.**
+**2. Dollar path:** **FAILS, AND ON TWO COUNTS.** (a) **No dollar figure is attributable to any
+railroad** — JBHT disclosed its own revenue, not its purchased-transportation payments to any named
+carrier. (b) ⚠ **JBHT's eastern/western intermodal haulage runs over BNSF, which is NOT SEPARATELY
+BUYABLE — it is a wholly owned Berkshire Hathaway subsidiary, and BNSF's revenue is a single-digit
+share of BRK's total revenue, well under §4's 10% materiality floor.** ⚠⚠ **THAT SHARE IS MY OWN
+ESTIMATE AND WAS **NOT SOURCED THIS RUN** — it is recorded as a corroborating reason, NOT as the kill.
+The kill is part 1.**
+**3. Timing window:** not reached.
+**4. Invalidation:** not reached.
+
+**Hard filters:** **NOT REACHED.** ⚠ **No `move` on UNP, NSC, CSX or BRK; no market cap sourced for
+any of them.**
+
+**Outcome:** **REJECTED.**
+⚠⚠ **THIS IS THE STRONGEST PULL IN TODAY'S WINDOW AND IT IS RECORDED AS SUCH, BECAUSE IT IS EXACTLY
+THE HONEST-BROKER FAILURE §4 DESCRIBES.** A **+20% revenue print with record volumes** at a logistics
+company reads as a *discovery about the freight cycle*, and the second-order chain assembles itself in
+one step without any source being asked. ⚠ **AND IT DIES ON A RULE ALREADY IN THE BOOK: rule (iii) —
+RAIL VOLUMES ARE THE RAILROADS' OWN WEEKLY PUBLIC DISCLOSURE (AAR carload and intermodal reports).
+There is NOTHING in JBHT's release that is new to a railroad's own disclosure. The read-through is not
+early; it is a week late and public.** ⚠ **It is the competitor/customer earnings read-across — the
+SHARED-CAUSE object — which §4 kills every time, and the 10-15 carry-forward predicted it would
+arrive.**
+
+---
+
+### T-2026-10-16-03 — Alcoa (AA) Q3 2026 + South32 shareholder approval — REJECTED (part 1 — own results; §3 on the one named external party; rule (viii) — GEHC/Sofie costume repeating)
+**Company A / the news:** **Alcoa (AA)** reported Q3 2026 on **2026-10-15**: revenue **$3.704B** vs
+$2.995B a year earlier; net income **$483M / $1.81 diluted EPS** vs $232M / $0.88; adjusted EPS
+**$1.82**; alumina production **2.5M metric tons**, aluminium **649,000 metric tons**; quarterly
+dividend **$0.10**, payable Nov 13 to holders of record Oct 27. The release also stated that
+**South32 shareholders approved Alcoa's acquisition on 2026-10-15.**
+**Company B / the candidate:** **NONE.** The release names **exactly one external company — South32 —
+and it is on the wrong side of the transaction in two separate ways.**
+
+**1. Mechanism (one sentence):** **NOT WRITTEN.** No external beneficiary is named. The production and
+earnings figures are Alcoa's own.
+**2. Dollar path:** **FAILS — rule (viii), AND IT IS THE GEHC/SOFIE COSTUME ARRIVING AGAIN.**
+**Acquisition consideration flows OUT of the buyable leg (Alcoa) to the acquired party.** ⚠ **And this
+instance is weaker still than GEHC's: the cited report discloses NO DOLLAR VALUE for the transaction at
+all, so there is not even a wrong-direction figure to reject — there is no figure.**
+**3. Timing window:** not reached.
+**4. Invalidation:** not reached.
+
+**Hard filters:** **§3 FAILS ON THE ONLY NAMED COUNTERPARTY — South32 is ASX-listed, not US-listed.**
+⚠ **Priced-in and correlation NOT REACHED; no `move` call on AA; AA's market cap NOT SOURCED, because
+AA is the first-order headline name and §4 does not buy it at any price.**
+
+**Outcome:** **REJECTED.** ⚠ **A strong earnings beat at a US-listed >$10B-plausible industrial is the
+most ordinary-looking lead this funnel produces and it is first-order every time. The one external
+name in the release is simultaneously (a) not US-listed, (b) being acquired rather than selling
+anything, and (c) attached to no disclosed figure. THREE INDEPENDENT DOORS, ALL CLOSED.**
+
+---
+
+### T-2026-10-16-04 — the Friday pre-open bank cohort (TRV · TFC · MTB · RF · CFG) — REJECTED (rule (iii), PUREST FORM — they report AFTER this run)
+**Company A / the news:** Nasdaq's pre-market earnings list for **2026-10-16** names **Travelers
+(TRV), Truist Financial (TFC), M&T Bank (MTB), Regions Financial (RF) and Citizens Financial (CFG)**
+as reporting **before today's open** — i.e. **after this 08:13 run and before the 09:35 run.**
+**Company B / the candidate:** **NONE, AND NONE CAN EXIST YET.**
+
+**1. Mechanism (one sentence):** **UNWRITABLE — THE EVENT HAS NOT HAPPENED.** Source on the cohort:
+*"No qualifying disclosure established from the available results"* for every one of the five.
+**2. Dollar path:** no figures exist to path.
+**3. Timing window:** n/a.
+**4. Invalidation:** n/a.
+
+**Hard filters:** not reached.
+
+**Outcome:** **REJECTED — `T-2026-10-13-08` precedent applied exactly.** ⚠⚠ **A SCHEDULED RELEASE IS
+NOT AN EVENT. This is rule (iii) at its earliest possible failure point: the question "is this new to
+the company's own disclosure?" cannot even be asked of a disclosure that does not exist.** ⚠ **The
+cohort is NOT carried forward as a lead for the 09:35 seat either: five bank earnings reports are
+FIRST-ORDER financial results, and §4 buys Company B, not Company A. If one of them discloses a named
+external counterparty with a dollar figure, that is Monday's window, not a reason to pre-authorise
+anything today.**
+
+---
+
+### T-2026-10-16-05 — §3 / non-qualifying / disposed-repeat sweep of TEN items — REJECTED (disposed as one, ZERO drill queries spent)
+**The rule:** an item whose §3 or structural kill is visible in the broad-scan text itself does not get
+its own ID and does not get a drill query. Each is named with its reason so the next run can see it was
+reached, not missed.
+
+**§3 — NOT US-LISTED (four):** **Schneider Electric SE** (French-listed; reported its fastest sales
+growth in five years and a second 2026 guidance raise on data-centre demand — ⚠ **and the source adds
+the part 2 kill for free: *"no revenue figure, guidance range, customer names, or confirmed effect on
+US counterparties"*. An industry signal, not a transaction**) · **Telefonaktiebolaget LM Ericsson**
+(Swedish-listed, US ADR; its Q3 call discussed **its own** component-cost pressure — part 1, no
+Company B, and the cost line is the announcer's) · **Foxconn Technology Group** and **Wistron Corp.**
+(both Taiwan-listed; named only contextually in `T-2026-10-16-01`).
+**§3 — NON-US REGULATOR / NO COMPANY (one):** **Ofgem** energy-price action (UK).
+**RULE (viii) + §3 (one):** **Polibeli Group** — a ~**$130.1M** five-year cloud-computing contract for
+its subsidiary with a Japanese client. ⚠ **The figure is the ANNOUNCING company's own revenue, which
+is rule (viii) read broadly; and the issuer is nowhere near §3's floor.**
+**NO COMPANY A / GOVERNMENT-ACTION OR FORECAST OBJECT (two):** **Fed Chair Kevin Warsh's 2026-10-16
+remarks** declining to prejudge the **Oct 27–28 FOMC** — ⚠ **ONE party, no transaction, and the source
+states he *"declined to provide specific guidance"*, so the object is the ABSENCE of news** ·
+**the National Retail Federation's forecast of +4.2% US holiday spending** — ⚠ **an INDUSTRY
+FORECAST, which is rule (v)'s shape in a trade-body costume: it names no company and describes no
+transaction, while reading as quantified and actionable.**
+**BELOW §3's CAP FLOOR (one):** **Quaker Houghton** Q3 release.
+**ALREADY DISPOSED — RE-SERVED, NOT RE-LITIGATED (two, named here as the re-serve and NOT as new
+disposals):** **TSMC Q3 2026** (`T-2026-10-15-01`, **ONE DAY OLD**; its $60–64B capex separately at
+`T-2026-10-05-05`) · **September PPI (+1.3% m/m vs a 0.5% forecast) and retail sales (+0.8% headline,
++0.1% control group)** (`T-2026-10-12-05`, `T-2026-10-13-08`). ⚠⚠ **NO NEW ID WAS MINTED FOR THE MACRO
+PRINTS, FOLLOWING THE 10-14 AND 10-15 PRECEDENT EXACTLY: THE PRINTS HAVE NOW MOVED FROM "SCHEDULED" TO
+"PRINTED", AND A CHANGE IN STATUS IS NOT A CHANGE IN ELIGIBILITY. A third and fourth entry for one
+rejection would inflate the thesis count rather than record anything.**
+
+**Hard filters:** not reached on any item — every one died at **§3**, **rule (iii)**, **rule (v)**,
+**rule (viii)** or **part 1**, all upstream.
+
+**Outcome:** **REJECTED, ten items, one entry, zero drill queries spent.**
+
+---
+
 ### 2026-10-15 (08:19 ET) — event survey (funnel, pre-thesis)
 
 Selftest passed all five checks (`trading_enabled: true`, LIVE paper, broker equity **$99,853.59** at

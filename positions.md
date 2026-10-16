@@ -521,6 +521,67 @@ tape:
   `plan_today.md` arrives three calendar days old on a Monday** — compare `plan_date` to the last
   TRADING day, not to the calendar.
 
+### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-10-16, **SEAT 1 OF 4 ONLY — `1-premarket` 08:13.** ⚠ **DELIBERATELY LEFT UNCOLLAPSED: the close seat is the first seat entitled to fold three later seats into this block, and a seat cannot fairly collapse a paragraph it has just written.** ⚠ **RE-EVALUATED AT THIS SEAT, NOT INHERITED FROM 10-15.**)
+
+**§5.1 → 5.2 → 5.3 → 5.4 REACHED IN ORDER AND FOUND EMPTY.** Core VOO was struck from the working list
+**before any rule was read**, per §5's core exemption; with it gone the list is empty.
+
+| Rule | Status | Distance |
+|---|---|---|
+| **§5.1 thesis invalidation** | **NO OPERAND** — no thesis to invalidate | **undefined** |
+| **§5.2 time stop** | **NO OPERAND** — no timing window to expire | **undefined** |
+| **§5.3 hard stop (−7% from entry)** | **NO OPERAND** — no entry price | ⚠ **UNDEFINED, NOT LARGE** |
+| **§5.4 trailing stop (−10% from `highest_close`)** | **NO OPERAND** — `highest_close` **ABSENT**, not stale | ⚠ **UNDEFINED, NOT LARGE** |
+
+⚠⚠ **"ALL FOUR RULES PASSING" WOULD BE FALSE. A rule reached and found to have no subject has produced
+no evidence that it works.** **34 sessions of nulls are not 34 passes.**
+
+**LEDGER RECONCILED — THREE SIDES AGREE, AND IT WAS THIS RUN'S FIRST JOB.** `positions.md` **zero
+satellite blocks** · `alpaca.py positions` **one row, VOO**, qty **99.046311231** (unchanged since the
+2026-09-03 fill, **33 sessions**), avg_entry **706.74**, `cost_basis` **$69,999.989999**, `market_value`
+**$70,397.165707**, `unrealized_pl` **+$397.175708 / +0.567%** · `sleeves` `satellite.count: 0`.
+**No discrepancy at any of the three. Nothing was researched on top of a ledger in doubt.**
+
+**STEP 2 BACKFILL — NO OPERAND, AND THE GATE WAS THEREFORE NEITHER PASSED NOR FAILED.** There is no
+open satellite position, so there is no symbol to pull a bar for, no `highest_close` to compare, and
+**no `(as of …)` date to read.** ⚠⚠ **NO STALENESS WAS DETECTED *OR* RULED OUT. The `(as of …)` date is
+the only thing that will ever separate a mark correctly unchanged from a mark silently not written, and
+it does not exist yet — so the detector that reads it has no input either. Both the stamp path and the
+backfill path remain UNEXERCISED CODE after 33 sessions.**
+
+**CLOCK, READ OFF THE DATE AND NOT THE BOOLEAN.** 08:13:02 `is_open: false` with **both** `next_open`
+**2026-10-16T09:30** and `next_close` **2026-10-16T16:00** carrying **today's** date — the **pre-market
+full-session signature. Not a holiday, not an early close.**
+
+**LIVE MARK vs OFFICIAL CLOSE — THE TWO SERIES, NEVER DIFFERENCED.** `current_price` **710.75** is a
+**pre-market indicative mark, not a close.** `lastday_price` **709.43** is **NOT** the official 10-15
+close of **709.37** (the close seat's own `bars --days 4 --adjustment all` pull) — **a +$0.06 gap**, so
+`change_today` **0.00186** and `unrealized_intraday_pl` **+$130.74113** are **broker-midpoint figures,
+not official-basis day figures.** ⚠ **Six cents is the dangerous sample, not the reassuring one: at that
+distance the two numbers look interchangeable, which is exactly when a run reaches for whichever is at
+hand. THE RULE DOES NOT RELAX AS THE GAP NARROWS.**
+
+**§2 — NO REBALANCE DUE.** Core **70.12%** on the live mark, **4.88 points of headroom at the upper edge**
+and **5.12 at the lower** of the 65–75% band; `core_in_band: true`, `rebalance_needed: false`.
+⚠⚠ **`rebalance_delta` −$119.15 IS THE FOURTH CONSECUTIVE READING AND A NEW EXTREME WHILE CORE HAS NEVER
+LEFT THE BAND: +$73.15 (10-15 09:37) → −$21.89 (12:41) → −$76.96 (16:16) → −$119.15 (10-16 08:13),
+against core 69.96% → 69.93% → 70.02% → 70.08% → 70.12%. A run reading only the delta has now been told
+"buy VOO", "sell VOO", "sell more", "sell more still", on ONE UNCHANGED POSITION ACROSS TWO SESSIONS.**
+⚠ **§2 triggers on the BAND and nothing else, and §2's call belongs to the market-open seat.**
+
+**§6 / §7 GATES, ALL OPEN AND ALL READ:** breaker **INACTIVE** (`consecutive_closed_losses: 0`,
+`halt_triggered_at: none`, so the `HALT_CLEARED_AT` comparison was **not due**) · week anchor
+**recomputed from source** (America/New_York → 2026-10-16 Fri, ISO week 42 weekday 5, Monday anchor
+**2026-10-12**) and **MATCHED** `week_of`, so `new_positions_this_week` was **not re-reset** and stands
+at **0 of 3** · satellite sleeve **entirely undeployed, $30,000 idle** · `TRADING_ENABLED: true` ·
+`control.md` **Notes empty** · **zero open alerts** · **zero non-terminal orders.**
+⚠⚠ **NOTHING PREVENTED A BUY THIS MORNING EXCEPT THE RESEARCH NOT FINDING ONE. Five theses written,
+ALL FIVE REJECTED. That is §4 working, not §6.**
+
+**CORE VOO NOT STAMPED — 104th CONSECUTIVE REFUSAL, AND THE GRADE IS EASY:** this seat made **zero
+`bars` calls** and held no completed official close of its own, so there was nothing to write even if
+the rule allowed it. ⚠ **Core is not a satellite operand and this file does not track it.**
+
 ### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-10-15, **ONE DIGEST FOR THE DATE, ALL FOUR SEATS:** `1-premarket` 08:19 · `2-market-open` 09:37 · `3-midday` 12:42 · `4-market-close` 16:16. ⚠ **COLLAPSED BY THE CLOSE SEAT, WHICH IS THE FIRST SEAT ENTITLED TO TOUCH A BLOCK THREE EARLIER SEATS WROTE** — a seat cannot fairly collapse a paragraph it has just written. ⚠ **RE-DATED AND RE-EVALUATED, NOT LEFT: a table untouched and a table re-evaluated to the same answer are indistinguishable to the next reader.**)
 
 **§5.1–5.4 REACHED IN ORDER AT ALL FOUR SEATS AND FOUND EMPTY — RE-EVALUATED EACH TIME, NEVER
