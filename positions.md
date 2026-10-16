@@ -521,7 +521,7 @@ tape:
   `plan_today.md` arrives three calendar days old on a Monday** — compare `plan_date` to the last
   TRADING day, not to the calendar.
 
-### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-10-16, **SEATS 1–2 OF 4 — `1-premarket` 08:13 · `2-market-open` 09:37.** ⚠ **STILL UNCOLLAPSED: the close seat folds the date.** ⚠ **RE-EVALUATED AT EACH SEAT, NOT INHERITED.**)
+### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-10-16, **SEATS 1–3 OF 4 — `1-premarket` 08:13 · `2-market-open` 09:37 · `3-midday` 12:42.** ⚠ **STILL UNCOLLAPSED: the close seat folds the date.** ⚠ **RE-EVALUATED AT EACH SEAT, NOT INHERITED.**)
 
 **§5.1 → 5.2 → 5.3 → 5.4 REACHED IN ORDER AND FOUND EMPTY.** Core VOO was struck from the working list
 **before any rule was read**, per §5's core exemption; with it gone the list is empty.
@@ -636,6 +636,66 @@ the official 10-15 close **709.37** (+0.06), so `change_today` 0.00079 and `unre
 **709.99** is a **live intraday mark, not a close** — it was **not** added to the five post-bell
 samples. ⚠ **CORE VOO NOT STAMPED — 105th consecutive refusal, EASY grade:** zero `bars` calls at this
 seat and no completed close to write.
+
+**— `3-midday-management` 12:42 ET, THE EXITS-ONLY SEAT: IT MAY NOT OPEN A POSITION, AND IT HAD NOTHING
+TO CLOSE.** Selftest **5/5**, `TRADING_ENABLED: true`, LIVE paper, `control.md` Notes **empty**, **zero
+open alerts**, `orders --status open` → **`[]`**. Clock **12:41:48** `is_open` **TRUE**, `next_close`
+**today 16:00**, `next_open` **Monday 2026-10-19T09:30** — the **mid-session** signature.
+
+**LEDGER RECONCILED FIRST, THREE SIDES AGREEING:** **zero satellite blocks here** · `positions` **one
+row, core VOO** 99.046311231 @ **706.74**, `cost_basis` **$69,999.989999** · `sleeves`
+`satellite.count: 0`. **No discrepancy.** ⚠ **Step 1's exit condition fired: no open satellite position
+means nothing to manage, and this seat did not go looking for something to do.** **§5.1–5.4 reached in
+order and found empty** — the table above stands for this seat, **re-evaluated, not inherited**; the
+**§5.1 Perplexity check cost zero queries and that is STRUCTURAL** (one query per position). **Steps 4
+and 5 had no operand: nothing submitted, nothing to verify terminal, `trade_log.md` UNTOUCHED.**
+
+⚠⚠ **THE FIRST OF ITS KIND, AND IT BELONGS IN THIS FILE: CORE IS UNDERWATER AT THE SEAT WHOSE JOB IS
+EXECUTING STOPS, AND IT IS STILL NOT A SELL SIGNAL.** `unrealized_pl` **−$213.048615 / −0.304%** on the
+706.74 fill; equity **$99,786.94**, **below the $100,000 bootstrap for the first time in 34 sessions**
+(all prior readings gains: 10-15 16:16 +$256.53 · 10-16 08:13 +$397.18 · 09:37 +$321.90).
+⚠⚠ **CORE WAS STRUCK BEFORE ANY RULE WAS READ — BY EXEMPTION, NOT BY DISTANCE. For 33 sessions the §5
+exemption only ever protected a winner, so it cost nothing; today is the first time it bound against a
+real drawdown.** ⚠ **BASIS: −$213.05 rests on `current_price` **704.589**, a LIVE INTRADAY MARK, NOT A
+CLOSE. First negative **live** reading and nothing more — **not** "the first losing session," which
+needs an official close and is the close seat's to make or withhold.**
+
+**STEP 2 BACKFILL — NO OPERAND, FROM THE SEAT THAT OWNS THE DETECTOR.** No position, so no bar to pull,
+no `highest_close`, and **no `(as of …)` date — the detector's entire input.** ⚠ **No staleness detected
+*or* ruled out: the check did not pass, IT DID NOT RUN.** Stamp and backfill both stay unexercised.
+
+**TAPE, THREE READINGS FROM ONE `bars --days 4 --adjustment all` PULL** *(detail and the durable form
+live in `state.md`'s carry-forward; recorded here only as this date's ledger facts)*: the **official
+10-15 close 709.37 is CONFIRMED**, so `lastday_price` **709.43** is not it — **the +$0.06 gap is real,
+third seat on the same stale value**, making `change_today` −0.00682 and `unrealized_intraday_pl`
+−$479.483193 **broker-midpoint, not official-basis** · **that same completed session's `n`/`v`/`vw`
+DRIFTED** from the close seat's **1,796 / 41,161 / 706.291079** to **2,075 / 43,938 / 706.394276**
+(**+279 trades, +2,777 shares, a day later**) — **the CLOSE is the stable field** · **today's bar is
+PARTIAL at `c` 704.825, n 435, v 11,379**, against 10-13's **completed** n 1,262 / v 25,885 — **only
+~2.9× / ~2.3×, so `n`/`v` magnitude cannot mark a bar partial; the CLOCK is the discriminator** — and
+**704.825 ≠ the live 704.589** ($0.236 apart), **a fourth series, neither figure a close.**
+
+**§2 — NO REBALANCE DUE, AND THE CALL IS THE MARKET-OPEN SEAT'S.** Core **69.94%** of **$99,786.94**
+(cash **$30,000.00 exactly** / 30.06%); `core_in_band: true`, `rebalance_needed: false`. ⚠ **THE NEAR
+EDGE SWAPPED FOR THE FIRST TIME IN THIS SERIES: 4.94 points to the LOWER edge, 5.06 to the upper.**
+⚠⚠ **`rebalance_delta` +$63.92 — SIXTH consecutive reading, THIRD sign flip:** +73.15 → −21.89 →
+−76.96 → −119.15 → −96.57 → **+63.92**, against core 69.96 → 69.93 → 70.02 → 70.08 → 70.12 → 70.10 →
+**69.94**, never near an edge. **Read as a trigger it has now said buy, sell, sell more, sell more
+still, sell, BUY AGAIN — on one unchanged position.** ⚠ **§6's 5% cap is $4,989.35, under $5,000 for
+the first time, and must be re-computed where it is used.**
+
+**CORE VOO NOT STAMPED — 106th REFUSAL, AND THE FIRST MADE WHILE CORE IS DOWN.** **STRONG on the
+number** (own pull, real completed close **709.37**, declined); the write path is the one this routine
+**owns** (Step 2's backfill) but **had no row**, so that leg is **not** claimed STRONG. ⚠ **A drawdown is
+the only condition under which a fabricated §5.4 mark could sell core — §7 forbids it outright.**
+⚠ **The phantom figure was NOT derived: no series was pulled for the highest close since the fill,
+because computing the mark is the first half of the act being refused.**
+
+**HOUSEKEEPING:** week anchor **recomputed from source** (America/New_York → 2026-10-16 Fri, ISO week 42
+weekday 5, Monday anchor **2026-10-12**) and **MATCHED** `week_of` — `new_positions_this_week` **not
+re-reset**, **0 of 3** · nothing closed, `consecutive_closed_losses` **0 UNTOUCHED rather than reset** ·
+breaker **INACTIVE**, `halt_triggered_at: none`, `HALT_CLEARED_AT` comparison **not due**, no alert owed
+· session count **HELD at 32/29** — this seat stands **inside** an unfinished session.
 
 ### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-10-15, **ONE DIGEST FOR THE DATE, ALL FOUR SEATS:** `1-premarket` 08:19 · `2-market-open` 09:37 · `3-midday` 12:42 · `4-market-close` 16:16. ⚠ **COLLAPSED BY THE CLOSE SEAT, WHICH IS THE FIRST SEAT ENTITLED TO TOUCH A BLOCK THREE EARLIER SEATS WROTE** — a seat cannot fairly collapse a paragraph it has just written. ⚠ **RE-DATED AND RE-EVALUATED, NOT LEFT: a table untouched and a table re-evaluated to the same answer are indistinguishable to the next reader.**)
 
