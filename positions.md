@@ -521,7 +521,7 @@ tape:
   `plan_today.md` arrives three calendar days old on a Monday** — compare `plan_date` to the last
   TRADING day, not to the calendar.
 
-### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-10-16, **SEAT 1 OF 4 ONLY — `1-premarket` 08:13.** ⚠ **DELIBERATELY LEFT UNCOLLAPSED: the close seat is the first seat entitled to fold three later seats into this block, and a seat cannot fairly collapse a paragraph it has just written.** ⚠ **RE-EVALUATED AT THIS SEAT, NOT INHERITED FROM 10-15.**)
+### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-10-16, **SEATS 1–2 OF 4 — `1-premarket` 08:13 · `2-market-open` 09:37.** ⚠ **STILL UNCOLLAPSED: the close seat folds the date.** ⚠ **RE-EVALUATED AT EACH SEAT, NOT INHERITED.**)
 
 **§5.1 → 5.2 → 5.3 → 5.4 REACHED IN ORDER AND FOUND EMPTY.** Core VOO was struck from the working list
 **before any rule was read**, per §5's core exemption; with it gone the list is empty.
@@ -581,6 +581,61 @@ ALL FIVE REJECTED. That is §4 working, not §6.**
 **CORE VOO NOT STAMPED — 104th CONSECUTIVE REFUSAL, AND THE GRADE IS EASY:** this seat made **zero
 `bars` calls** and held no completed official close of its own, so there was nothing to write even if
 the rule allowed it. ⚠ **Core is not a satellite operand and this file does not track it.**
+
+**— `2-market-open` 09:37 ET, THE ONLY SEAT THAT CAN OPEN A POSITION, AND IT OPENED NOTHING.**
+
+**LEDGER RECONCILED FIRST, THREE SIDES AGREEING, BEFORE ANY RULE WAS READ:** `positions` returns **one
+row, core VOO**, qty **99.046311231** unchanged since the 2026-09-03 fill, avg_entry **706.74**,
+cost_basis **$69,999.99** — against **zero satellite blocks in this file** and `sleeves`
+`satellite.count: 0`. **No discrepancy.** ⚠ Core struck before §5 was read, per the §5 exemption.
+
+**CLOCK READ OFF THE DATES, AND THIS SEAT GOT THE SIGNATURE THE OTHER THREE CANNOT:** 09:37:13
+`is_open` **TRUE**, `next_close` **2026-10-16T16:00** (today), `next_open` **2026-10-19T09:30**
+(Monday) — the **mid-session** signature, and the only §7 clearance to trade that exists.
+
+**STALENESS GATE — `plan_date` 2026-10-16 READ OFF THE FIELD, TODAY IS 2026-10-16: FRESH, SO THE GATE
+PASSED.** ⚠⚠ **PASSED IS NOT FIRED — opposite outcomes of one check. The gate has still never fired,
+and this run is not evidence that it works.** Freshness was **not** inferred from the plan being empty:
+a fresh empty plan and a stale plan produce **identical zero-order runs**, which is the whole reason the
+field is read rather than the order count.
+
+**STEPS 4, 5 AND 6 ALL HAD NO OPERAND, AND THAT IS NOT THE SAME AS CLEARING THEM:** no SELL intent and
+**no satellite position to sell** (§5 has **no subject**, not "no exit warranted") · **no BUY intent**,
+so **zero `move` calls and zero market caps sourced — correct rather than omitted**, since the
+priced-in check names a candidate and there is none · **zero orders submitted**, so nothing to verify
+terminal and nothing written to `trade_log.md`.
+
+⚠⚠ **THE REFUSAL AT THIS SEAT IS THE ONLY ONE THAT COUNTS, AND IT WAS NOT STRUCTURAL.** Every §6 gate
+was **open** — breaker **INACTIVE**, **0 of 3** this week, satellite **0.0% with $30,000 idle**, §6 cap
+~**$5,016**, `TRADING_ENABLED: true`, notes empty. **The only thing between this account and a trade at
+09:37 was the absence of an intent.** The five bank prints (TRV·TFC·MTB·RF·CFG) landed **between 08:13
+and this seat** and were **not** picked up: a disclosure arriving after the plan was written is Monday's
+window, not a licence to reason a position into existence at the moment of execution. **T-2026-10-16-02
+(JBHT → rail) did not come back, and the answer was already written if it had.**
+
+**§2 — NO REBALANCE DUE, AND THE CALL BELONGS TO THIS SEAT:** core **70.1%** of equity
+**$100,321.89** (core $70,321.89, cash **$30,000.00 exactly** / 29.9%), inside the 65–75% band with
+**4.9 points** of headroom at the near (upper) edge and 5.1 at the lower. `core_in_band: true`,
+`rebalance_needed: false`. ⚠⚠ **`rebalance_delta` is −$96.57 — a FIFTH consecutive reading that would
+have mis-instructed a run reading it as a trigger** (+73.15 → −21.89 → −76.96 → −119.15 → **−96.57**,
+two sign flips, while core went 69.96 → 69.93 → 70.02 → 70.08 → 70.12 → **70.10** and **never came near
+an edge**). **§2 triggers on the BAND and nothing else; the delta is a distance readout.** ⚠ The
+−$119.15 extreme **did not persist** — it retraced to −96.57 within the same unchanged position, which
+is one more reason it is not a trigger.
+
+**HOUSEKEEPING:** week anchor **recomputed from source** (America/New_York → 2026-10-16 Fri, ISO week 42
+weekday 5, Monday anchor **2026-10-12**) and **MATCHED** `week_of`, so `new_positions_this_week` was
+**not re-reset** and stands at **0 of 3 because nothing was opened** · nothing closed, so
+`consecutive_closed_losses` **0 UNTOUCHED rather than reset** · breaker **INACTIVE** and
+`halt_triggered_at: none`, so the `HALT_CLEARED_AT` comparison was **not due** and no circuit-breaker
+alert was owed · **zero non-terminal orders** (`--status open` → `[]`) · **zero open alerts.**
+
+**PRICE-GAP, PRE-MARKET→INTRADAY, NOT A POST-BELL SAMPLE:** `lastday_price` **709.43** is **still not**
+the official 10-15 close **709.37** (+0.06), so `change_today` 0.00079 and `unrealized_intraday_pl`
+**+$55.47** are **broker-midpoint** figures, **not official-basis day figures.** `current_price`
+**709.99** is a **live intraday mark, not a close** — it was **not** added to the five post-bell
+samples. ⚠ **CORE VOO NOT STAMPED — 105th consecutive refusal, EASY grade:** zero `bars` calls at this
+seat and no completed close to write.
 
 ### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-10-15, **ONE DIGEST FOR THE DATE, ALL FOUR SEATS:** `1-premarket` 08:19 · `2-market-open` 09:37 · `3-midday` 12:42 · `4-market-close` 16:16. ⚠ **COLLAPSED BY THE CLOSE SEAT, WHICH IS THE FIRST SEAT ENTITLED TO TOUCH A BLOCK THREE EARLIER SEATS WROTE** — a seat cannot fairly collapse a paragraph it has just written. ⚠ **RE-DATED AND RE-EVALUATED, NOT LEFT: a table untouched and a table re-evaluated to the same answer are indistinguishable to the next reader.**)
 
