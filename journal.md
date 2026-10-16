@@ -40,6 +40,176 @@ anything where the honest-broker rule (§4) did real work>
 
 ## Entries
 
+### 2026-10-16 (Friday)
+
+**Account:** total **$99,505.2537 on official closes** (`bars --adjustment all`, VOO `c` **701.745**; a
+`raw` pull returned the identical row for 10-15 and 10-16, so the basis was **non-decisive — recorded
+anyway, because the next ex-date restores the trap**) | day **−$755.2281 (−0.7533%)** | since inception
+**−0.4947%** (2026-09-01 convention; see the sign-flip note below)
+⚠ *Live broker mark at 16:18 was **$99,444.8552** — a different series, quoted separately and never
+differenced against the official figure.*
+**Sleeves:** core **69.8508%** | satellite **0.0%** | cash **30.1492%**   (§2 band 65–75%) — **IN BAND,
+no rebalance due Monday.** 4.85 points to the lower edge, 5.15 to the upper.
+**Breaker:** INACTIVE
+**Week:** 0/3 new positions (week_of 2026-10-12; anchor re-derived from source and matched — no reset)
+
+**Traded:** nothing. Zero orders of any kind at any of the four seats; the account's whole history is
+still the one 2026-09-03 core fill, terminal.
+**Researched:** 5 theses — **0 accepted, 5 rejected** (`T-2026-10-16-01` … `-05`), all written by the
+08:13 pre-market seat. This routine writes none; the count stands at **166**.
+**Positions near a sell rule:** **none, and the honest form is NO OPERAND rather than "nothing close."**
+Zero satellite positions, so §5.1–5.4 have nothing to measure against. Core VOO is exempt from all four
+by §5 and was struck from the working list before any rule was read.
+
+**What happened:**
+
+A full regular session, confirmed on the clock at both ends rather than assumed: at 08:13 both
+`next_open` and `next_close` carried today's date (the pre-market full-session signature); at 16:18:50
+`is_open: false` with **both** dates rolled to **Monday 2026-10-19** — the post-bell signature. The
+session I am journaling demonstrably happened and is over, which is what entitles this seat to count it.
+
+The tape is the whole story, and its shape is the exact mirror of yesterday's. VOO **opened at 710.78,
+which was also the session high** — $1.41 above Thursday's close — then fell all day to a low of
+**699.53** and closed at **701.745, down $7.625 / −1.0749%.** Yesterday opened $3.10 below the prior
+close, bottomed at 702.965 and recovered to close *up* 0.2728%. Two consecutive sessions, opposite
+intrasession shapes, and the closes tell you nothing about either.
+
+Checked against the whole post-fill series rather than against the last few days: **−1.0749% is the
+largest single-session percentage fall in this record**, just ahead of 10-14's −1.0684% — but 10-14
+remains the largest in **dollars** (−$7.64 against today's −$7.625). The two orderings disagree, and a
+run quoting only one of them is quoting whichever one it happened to compute. (Raw basis; on
+`--adjustment all` the ranking is unchanged, since the uniform pre-ex rescaling does not touch
+day-over-day ratios inside the post-ex window.)
+
+The book did what the identity says it must. Core is 70% of a book whose other 30% is static cash, so
+**book day return = w × VOO return** exactly, at w = 0.700779 (yesterday's closing core weight):
+−0.75327% against VOO's −1.07490%, an excess of **+0.32163pp**. VOO fell, so the excess is positive, and
+**that is arithmetic, not skill** — the §1 "n of n" item was retired for exactly this reason and I did
+not re-derive it as though it were evidence.
+
+Core VOO closed underwater: **−$494.7363 / −0.7068%** against the 706.74 fill print. §5 exempts core
+from all four sell rules, so it was struck from the working list before any rule was read, and no
+`highest_close` was written on it — **107th consecutive refusal.** This seat's grade is the strongest the
+series admits: it held a **real, completed, official close on the correct basis (701.745)** from its own
+`bars` pull **and** it owns the Step 2 write path, and it wrote nothing. A `highest_close` on VOO would
+fabricate a §5.4 trailing stop on the one position the strategy exempts, which §7 forbids outright. The
+phantom figure was **not derived** — no window was pulled to find the highest close since the fill,
+because computing the mark is the first half of the act being refused.
+
+**Step 2 — the one job this routine owns alone — had no operand for a sixth consecutive close seat.**
+Zero open satellite positions: no symbol to pull a bar for, no `highest_close` to raise, and **no
+`(as of …)` date to advance.** The field is **ABSENT — a third state carrying no date at all** — so the
+every-day date rule had nothing to write onto and Monday's midday detector will have no left-hand side.
+⚠ **"High-water marks updated" would be FALSE today, and so would "verified." The job had no subject,
+and the next run needs no backfill because there is no field, not because the field is fresh.** Both the
+stamp path and the backfill path remain unexercised code after 30 post-fill sessions.
+
+Housekeeping, all re-derived rather than inherited: week anchor recomputed from source
+(America/New_York → 2026-10-16 Fri, ISO week 42, weekday 5, Monday anchor **2026-10-12**) and **matched**
+`week_of`, so `new_positions_this_week` was **not re-reset** and stands at 0 of 3 · nothing closed, so
+`consecutive_closed_losses` is **0 untouched rather than reset**, and on an empty sleeve it cannot move —
+the increment path and the circuit-breaker alert path are both still untested code · breaker INACTIVE,
+`halt_triggered_at: none`, so the `HALT_CLEARED_AT` comparison was **not due** and no alert was owed ·
+`orders --status all` returns **one row, the 09-03 fill, `filled`** — §7's order-limbo warning has no
+operand rather than a clean bill · zero open alerts · `control.md` Notes empty.
+
+**What I got wrong or nearly got wrong:**
+
+**1. The claim I was handed to make was false, and I was one sentence from publishing it.** The 12:42
+midday seat wrote that equity below $100,000 was happening "for the first time in the 34 sessions on
+record," reserved the words "the first losing session" for this seat on an official close, and told me
+the §5 core exemption had bound against a real drawdown "for the first time." Its stated evidence was
+that *"every prior carry-forward reading is a gain."* That is true of the three readings the
+carry-forward happens to carry and **false of the series.** One `bars --days 45 --adjustment raw` pull
+settles it: the book has closed below $100,000 on **thirteen prior post-fill sessions** — 09-08, 09-09,
+09-10, 09-11, 09-14, 09-15, 09-16, 09-17, 09-18, 09-28, 09-29, 09-30 and 10-01 — the deepest being
+**09-16 at $98,660.39 / −1.3396%.** Today's $99,505.25 / −0.4947% is the **fourteenth** such close and
+only the **seventh deepest.** The companion claim falls with it: the core exemption has bound against a
+real drawdown on **fourteen** sessions, most severely at **−1.9137%** on 09-16, against today's
+−0.7068%. ⚠⚠ **Nothing is "first" about today, and the conclusion is unchanged in every direction that
+matters — core is exempt whether it is down 0.7% or 1.9%. What was at stake was only the record, which
+is the whole of what this file is for.** ⚠ **The mechanism is catch (13)/(23) in its purest form: a
+superlative is a claim about a whole series, and THE CARRY-FORWARD IS NOT THE SERIES. It is a
+three-reading window that scrolls. Every seat that reads a "first" off it will reach the same wrong
+answer, and the refutation cost one API call.**
+
+**2. The post-bell price-gap series has no trustworthy count, and I nearly published a second wrong
+superlative off it.** Today's sample is **−$0.6098** (`current_price` 701.1352 against the official
+close 701.745). Read against `state.md`'s list — four priors, largest magnitude $0.57 — mine is "the
+largest on record." **It is not: 10-14's −$0.67 is larger, and it is recorded in both `positions.md`
+and `journal.md`.** Counted from source instead of inherited, the nameable samples are **nine**: 10-02
+16:16 **+$0.470** · 10-02 16:46 **−$0.0254** · 10-06 **+$0.1207** · 10-08 **+$0.57** · 10-09
+**+$0.1500** · 10-12 **−$0.19** · 10-14 **−$0.67** · 10-15 **−$0.04** · today **−$0.6098** — four
+positive, five negative, magnitudes spanning ~26-fold. **Today's is the second-largest.** (10-09's was
+re-derived independently rather than taken from the list that carries it: that day's journal records a
+live-mark equity of $100,890.42, which backs out to `current_price` 715.7300 against the official close
+715.58 — **+$0.1500**, confirming the figure by a different route.)
+⚠⚠ **The bookkeeping failure is worth more than the sample. TWO CONSECUTIVE CLOSE SEATS EACH NUMBERED
+THEIR OWN SAMPLE "THE FIFTH"** — 10-14 off a list that had dropped 10-09's and 10-12's, and 10-15 off a
+list that had additionally dropped 10-14's own, the one taken the previous day. ⚠ **The cause is not
+carelessness: `state.md`'s collapse of that item folded the per-sample narrations away and took two data
+points with them, and each later seat then computed an ordinal against the truncation.** ⚠⚠ **SO THE
+COLLAPSE DISCIPLINE ITEM (9) ASKS FOR PRODUCED CATCH (5)'s TRUNCATED SERIES. The rule that follows is
+new and cheap: COLLAPSING A NARRATIVE AND COLLAPSING A SERIES ARE DIFFERENT ACTS — fold the prose, keep
+every data point, and never state an ordinal that was not counted from the list in the same breath.**
+
+**3. The §1 since-inception answer changed SIGN between its two defensible conventions, for the first
+time.** From 2026-09-01 (the book's first session, $100k all cash) the book is **−0.4947%** against VOO
+total return **+0.4899%** (raw close plus the $1.825 that went ex 09-28; **+0.4876%** if the VOO leg is
+taken across the ex-date on `--adjustment all`) — an excess of **−0.9846pp.** From the 2026-09-03 close,
+when the 70/30 split was actually funded, the book is **−0.8835%** against VOO TR **−1.0032%** — an
+excess of **+0.1197pp.** ⚠⚠ **One is behind by nearly a point, the other is ahead, on the same day from
+the same pull. The 10-09 review recorded these two conventions 1.31pp apart and AGREEING IN SIGN; today
+they are 1.10pp apart and DISAGREE ABOUT WHETHER THE BOOK IS BEATING ITS BENCHMARK.** ⚠ **The headline
+stays the 09-01 form — the two sessions the book sat in 100% cash while VOO rose are a real cost the
+other convention excludes by construction — but a §1 figure whose sign depends on a convention is not an
+answer, and choosing the flattering one would have been the easiest unforced error available today.
+Flagged for the human; the convention is theirs to fix, not mine to pick.**
+
+**4. The forbidden figure arrived pre-computed and corroborated again.** `equity − last_equity` =
+**−$821.5693**, which reconciles to the cent with `unrealized_intraday_pl` — two fields agreeing, which
+is what a correct number looks like. It is **−0.8194%** against the honest **−0.7533%**, a **6.61bp**
+error on the headline, because `last_equity` is built on `lastday_price` **709.43** (itself not the
+official 10-15 close **709.37** — the **fourth** seat in a row on that same +$0.06 stale value) and
+`current_price` rather than on two official closes. ⚠ **Recomputed from source: `last_equity` =
+99.046311231 × 709.43 + 30,000 = $100,266.42457660833, exact to the cent — the attribution holds for a
+third session. The standing rule caught this, not my judgment, and the reason it needs catching is that
+the wrong figure comes assembled and the right one has to be built.**
+
+**5. Nothing in the trading sense was close to wrong, and that is worth saying plainly rather than
+dressing up.** No position, no order, no thesis and no sell rule with a subject at this seat; the §6
+gates were never approached because this routine cannot trade. All four near-misses above are in the
+*record*, not in the book — and on a day when the only thing a run produces is its record, that is
+exactly where the errors have to live.
+
+**For the next run:**
+
+- ⚠⚠ **Monday's pre-market seat: do NOT carry forward "first time below $100,000" or "first drawdown
+  the exemption has bound against" in any form.** Both are refuted above from a 45-session pull. Today
+  is the 14th sub-$100k close and the 7th deepest. **A "first" read off the carry-forward's scrolling
+  window is not a fact about the series.**
+- ⚠ **The post-bell gap series is nine samples, listed in full in item 2 above and in `state.md`.
+  Do not quote an ordinal you did not count, and do not collapse the list again — fold the prose only.**
+- ⚠ **§6's 5% cap is $4,975.26 on the official close ($4,972.24 on the 16:18 live mark) and must be
+  RE-COMPUTED at the seat that uses it.** `rebalance_delta` read **+$166.55** post-bell — a seventh
+  consecutive reading and a fourth sign flip; §2 triggers on the **band** and nothing else.
+- ⚠ **Monday is an ordinary overnight-plus-weekend gap:** `next_open` and `next_close` both
+  2026-10-19. A correct `plan_today.md` will arrive **three calendar days but one trading day** old —
+  compare `plan_date` to the last trading day, not to the calendar.
+- ⚠ **Monthly rollover is not due** (October is not over), and routine 5's weekly review stood today.
+- ⚠⚠ **CORPUS, MEASURED AFTER WRITING AND SIGNED AS IT CAME OUT, NOT AS IT WAS INTENDED: THIS RUN GREW
+  THE CORPUS.** `positions.md` was genuinely **collapsed** — the 10-16 digest went **176 lines → 156**
+  as a four-seat block *including* the correction — for a real **117,461 → 117,275 = −186B.** But
+  `state.md` went **146,121 → 154,776 = +8,655B**, and this file grew too (⚠ *its own delta is in the
+  commit's `git diff --stat`, which is the only place a file-size claim about this file is stable — a
+  size quoted inside the file it measures falsifies itself as it is written*).
+  ⚠⚠ **THE CAUSE IS NOT INDISCIPLINE AND IT IS THE POINT: THE TWO CORRECTIONS COST MORE THAN THE
+  COLLAPSE SAVED. A RUN THAT CORRECTS THE RECORD CANNOT DO IT FOR FREE** — refuting a superlative means
+  writing out the thirteen sessions that refute it, and rebuilding a truncated series means carrying
+  every data point it dropped. ⚠ **That is item (9)'s trade-off arriving from a new direction: until
+  today the growth was *rejection reasoning*, which §8 explicitly wants. Today it is *error correction*,
+  which nobody would trade away either. Both are the value and both are the bytes.**
+
 ### 2026-10-15 (Thursday)
 
 **Account:** total **$100,260.4818 on official closes** (`bars --adjustment all`, VOO `c` **709.37**;
