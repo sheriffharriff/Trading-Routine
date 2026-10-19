@@ -40,6 +40,127 @@ anything where the honest-broker rule (§4) did real work>
 
 ## Entries
 
+### 2026-10-19 (Monday)
+
+**Account:** total **$99,775.1549 on official closes** (`bars --adjustment all`, VOO `c` **704.47**;
+a `raw` pull returned the **identical** 10-15 / 10-16 / 10-19 rows, so the ex-dividend basis trap was
+**non-decisive today — recorded anyway, because the next ex-date restores it**) | day **+$269.9012
+(+0.2712%)** | since inception **−0.2248%** (09-01 convention, $100,000.00 opening, price basis)
+⚠ *Live broker mark at 16:16:56 was **$99,806.8497** — a separate series on `current_price` 704.79,
+quoted beside the official figure and **never differenced against it**. The gap is **+$31.69**.*
+**Sleeves:** core **69.9324%** | satellite **0.0%** | cash **30.0676%**   (§2 band 65–75%) — **IN BAND,
+no rebalance due tomorrow.** 4.93pp above the lower edge, 5.07pp below the upper.
+**Breaker:** INACTIVE (`consecutive_closed_losses: 0`, `halt_triggered_at: none`)
+**Week:** 0/3 new positions (`week_of: 2026-10-19`; Monday anchor **re-derived from source** —
+`America/New_York` 2026-10-19, ISO week 43, weekday 1 → anchor 2026-10-19, **MATCHED**, so the counter
+was **not re-reset**; it reads 0 because nothing was opened)
+
+**Traded:** nothing. Zero orders of any kind at all four seats. `orders --status all` returns **one row
+for the entire account history** — the 2026-09-03 core fill, `filled`, terminal. **§7's order-limbo
+warning has no operand, which is not the same as a clean bill.**
+**Researched:** 5 theses — **0 accepted, 5 rejected** (`T-2026-10-19-01` … `-05`), all written by the
+08:13 pre-market seat. This routine writes none.
+**Positions near a sell rule:** **none, and the honest form is NO OPERAND, not "nothing close."** Zero
+satellite positions, so §5.1–5.4 have nothing to measure. Core VOO is exempt from all four by §5 and was
+struck from the working list before any rule was read.
+
+**What happened:**
+
+A full regular session, confirmed on the clock at both ends rather than assumed. At 08:13 both
+`next_open` and `next_close` carried **today's** date (the pre-market full-session signature); at 12:41
+`is_open: true` with `next_open` rolled to 10-20 while `next_close` **stayed** at 2026-10-19T16:00 (the
+mid-session signature); at **16:16:56** `is_open: false` with **both** dates rolled to **2026-10-20**
+— the post-bell signature. **The session being journaled demonstrably happened and is over, which is
+what entitles this seat to count it.** Not a holiday, not an early close.
+
+**The high-water step — the one this routine exists for — had no operand, and that is the entry's
+most important line.** §5.4's trailing stop lives on `highest_close`, and the field **does not exist on
+any satellite row because there are no satellite rows.** Zero `bars` calls were made for high-water
+maintenance; **zero marks were written, and zero were possible.** The distinction the prompt insists on
+— a mark merely *not updated* being indistinguishable from one *current and unchanged* — **cannot be
+exercised against an empty ledger.** A tenth consecutive seat with §5 **ABSENT rather than passing**,
+and the repair machinery's first real test still waits on the first satellite fill. The one `bars` call
+this run did make was for VOO's official close, for the P&L basis, not for a high-water mark.
+
+The tape: VOO opened **705.315**, ranged a tight **704.35–708.10** and closed **704.47, up $2.725 /
++0.3883%** on 32,217 shares. Against the record since the fill, that is an unremarkable session — the
+day's whole range was $3.75, under half of Friday's $11.25. Friday's story was an open that *was* the
+high and a slide all day; today's was a drift with no shape worth narrating. **Two sessions, and the
+closes tell you nothing about either.** The book's +0.2712% lagged VOO's +0.3883% by **11.71bp**,
+entirely because 30.07% of the book is cash earning nothing — **the satellite sleeve contributed exactly
+0.000000%, as it has on every session since inception.**
+
+Nothing closed, so `consecutive_closed_losses` is **untouched at 0** and the breaker could not have
+moved. `control.md`'s `HALT_CLEARED_AT: none` therefore has **no operand and is correct, not an
+oversight.** `control.md` Notes: **empty.** `alerts.md` Open incidents: **(none)**. Nothing SYSTEMIC.
+
+§2 was re-derived from this seat's own reads on both bases and agrees on the verdict: **IN BAND on
+either.** `sleeves` reports `rebalance_delta: 57.95` — a **twelfth** reading of a **distance readout,
+not an instruction**: $58 on a $69,807 position is **0.08%**, and it moves only because VOO's mark moves
+under a fixed share count. **No rebalance is due tomorrow and none is queued.** §6's 5% cap computes to
+**$4,988.76** on the official-close equity, with no operand.
+
+**What I got wrong or nearly got wrong:**
+
+**1. The defective field arrived pre-computed, corroborated, and pointing the flattering way — and it
+is the single number this routine is most likely to publish by accident.** `equity − last_equity` =
+**+$314.9676**, which **reconciles to the cent with `unrealized_intraday_pl` (+314.967269)** — two
+fields agreeing, which is what a *correct* number looks like. It is wrong by **+$45.07** against the
+honest **+$269.9012**, a **4.53bp error on a 27.12bp move — a 16.7% relative overstatement of the day.**
+Recomputed from source, the error decomposes exactly and **both halves inflate**: `last_equity` is built
+on `lastday_price` **701.61** against the official 10-16 close **701.745** (99.046311231 × 701.61 +
+30,000 = $99,491.8824, exact to the cent — a **ninth** consecutive seat on that same stale field, gap
+unchanged at **−$0.135**), contributing **+$13.37**; and `equity` is built on `current_price` **704.79**
+rather than the official close **704.47**, contributing **+$31.69**. ⚠ **It would have been a better
+day on the forbidden number, and that is precisely why the rule is written as "never difference" rather
+than "difference carefully."** I did compute from the two official closes first — but the honest report
+is that the wrong figure was sitting in the `account` payload, self-corroborating, and $45 better.
+
+**2. The near-miss I actually had is in this run's own output field, not in the market.** The routine's
+Output section asks me to report "**high-water marks updated**," and the true answer is **"no operand —
+zero written, zero possible,"** not "yes." A seat that ticks that box because it reached the step and the
+step raised no error would be **writing a false positive into the one field designed to catch a silent
+failure** — the §5.4 trailing stop quietly not existing. **That is the failure mode this routine's own
+prompt names, arriving through the reporting line rather than through the data.** I have written it as
+absent in every place it appears this run. ⚠ **It will keep being the easiest thing to get wrong here
+for exactly as long as the sleeve stays empty, and it gets *harder* to catch the longer the empty-ledger
+streak runs, because "no operand" starts reading as the normal answer.**
+
+**3. The pull toward treating an empty sleeve as a defect to be fixed by trading.** Thirty-three
+sessions, 171 theses, **zero satellite positions, $30,000 idle, every §6 gate open all day** — breaker
+inactive, 0 of 3 positions used, a $4,988.76 cap untouched. §4 is explicit that most research runs
+should end in no trade, and **I hold to that for today: nothing qualified, and nothing was blocked.**
+But I will not pretend the two statements are the same size: *one* no-trade day is §4 working, and
+**thirty-three consecutive sessions of it is a different object**, and the honest thing is that this is
+**the human's question (open item 1), not mine to resolve by loosening a filter at the margin.** This
+seat has no buy authority in any case, which makes the observation cheap — the seats that *did* have it
+today bought nothing, and that is where the restraint was actually spent.
+
+**4. One thing I checked and found non-decisive rather than clean.** The ex-dividend basis rule says
+`highest_close` and the close it is compared against must share an adjustment basis from the same call.
+I pulled `raw` alongside `all` and got **identical** closes for 10-15, 10-16 and 10-19 — so the trap did
+not bite. ⚠ **That is "no corporate action since 09-28," not "the rule is satisfied."** The rule has
+still never been exercised against a real `highest_close`, because one has never existed.
+
+**For the next run:**
+
+- **The high-water marks were NOT updated, because there was nothing to update** — not a skip, not a
+  backfill debt. **There is no stale `(as of …)` date anywhere, so the midday backfill check has nothing
+  to detect.** ⚠ **Do not read this as the repair step having been exercised.**
+- **Week anchor stands at 2026-10-19 and is correct through Friday 10-23.** Tomorrow's pre-market run
+  will re-derive the same Monday anchor and must **not** re-reset `new_positions_this_week`.
+- **No rebalance is due at tomorrow's open.** Core 69.93% on official closes / 69.94% on the live mark,
+  in band on both. `rebalance_delta` is a distance readout.
+- ⚠ **NEVER difference `equity − last_equity`, `change_today` (0.00453) or `unrealized_intraday_pl`
+  (+$314.967269) into a P&L figure.** Today the error was **+$45.07 / 4.53bp** and *both* components
+  pushed the same way. The `lastday_price` gap is **−$0.135** for the ninth seat running — **not a fixed
+  offset** that could be corrected for; it flipped sign and doubled on 10-19.
+- **Nothing is carried from the research as a pending lead.** All five of `T-2026-10-19-01` … `-05` are
+  disposed with named reasons; **the 10-16 bank deferral is discharged** (they reported, were screened,
+  died at part 1); **LS Electric will return and the rule (iv) answer is already written.**
+
+---
+
 ### 2026-10-16 (Friday)
 
 **Account:** total **$99,505.2537 on official closes** (`bars --adjustment all`, VOO `c` **701.745**; a
