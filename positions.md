@@ -521,7 +521,7 @@ tape:
   `plan_today.md` arrives three calendar days old on a Monday** — compare `plan_date` to the last
   TRADING day, not to the calendar.
 
-### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-10-19, `1-premarket` 08:13 — **FIRST SEAT OF THE WEEK. This block will be collapsed by the 16:xx close seat, which is the first seat entitled to touch what three earlier seats wrote; it is deliberately left SHORT so there is less to collapse.** ⚠ **RE-DERIVED THIS RUN, NOT INHERITED: a table left untouched and a table re-evaluated to the same answer are indistinguishable to the next reader.**)
+### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-10-19, `1-premarket` 08:13 · `2-market-open` 09:36 — **FIRST SEAT OF THE WEEK. This block will be collapsed by the 16:xx close seat, which is the first seat entitled to touch what three earlier seats wrote; it is deliberately left SHORT so there is less to collapse.** ⚠ **RE-DERIVED THIS RUN, NOT INHERITED: a table left untouched and a table re-evaluated to the same answer are indistinguishable to the next reader.**)
 
 **THE LEDGER AGREED WITH THE BROKER, AND IT WAS THIS RUN'S FIRST JOB — BEFORE ANY RESEARCH AND BEFORE
 ANY SELL RULE WAS READ.** `alpaca.py positions` at 08:13 returns **one row, core VOO**, qty
@@ -546,6 +546,16 @@ subject does not exist.**
 own `bars --days 6 --adjustment all` pull confirms the official 10-16 close at **701.745** on a single
 stated basis. **It was used for the plan's tape table only, never compared against a mark from another
 call.** The rule's first real test still lies in the future, with the first satellite fill.
+
+**`2-market-open` 09:36 — RE-DERIVED, SAME ANSWER, AND THE SEAT PLACED NO ORDERS.** `positions` at
+09:36 returns the **same one row** (VOO 99.046311231 sh @ 706.74, cost_basis $69,999.989999) against
+**zero satellite blocks here** and `sleeves` `satellite.count: 0` — **the day's second reconciliation,
+three sides agreeing.** All four rules remain **ABSENT, NOT PASSING** — an **eighth** consecutive seat
+with no operand. ⚠ **The staleness gate PASSED (`plan_date: 2026-10-19` = today), so the plan was
+executable; the seat bought and sold nothing because the plan carried ZERO intents, NOT because a gate
+blocked it — nothing was skipped.** **§2 re-derived: equity $99,868.26, core 69.96% IN BAND,
+`rebalance_needed: false`, `rebalance_delta: 39.52` a DISTANCE READOUT (0.06%), no rebalance placed.**
+⚠ **No block is added to `## Open positions`, because nothing was opened.**
 
 ---
 
