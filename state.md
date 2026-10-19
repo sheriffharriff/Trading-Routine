@@ -10,8 +10,8 @@ The block below is parsed by `scripts/common.py` and gates real behavior
 `key: value` format exactly. Prose goes underneath.
 
 ```
-last_run: 2026-10-16 20:45 ET 5-friday-weekly-review SEVENTH WEEKLY REVIEW, THE ONLY SEAT THAT ANSWERS SECTION 1, AND IT DOES NOT TRADE. Selftest 5/5, Friday CONFIRMED (America/New_York 2026-10-16 Fri, ISO week 42 weekday 5), trading_enabled true, LIVE paper, control.md notes EMPTY, zero open alerts, nothing SYSTEMIC. SECTION 1 ANSWER: NO - satellite 0.0000% against VOO TOTAL RETURN +16.8854% TTM = -16.8854pp on the objective's own rolling-12-month window. ALL FIVE WINDOWS IMPROVED AND TWO CROSSED INTO POSITIVE - week +1.9334pp and SINCE-FUNDED +1.0065pp, THE FIRST POSITIVE SINCE-FUNDED ROW EVER - AND NONE OF IT IS A RESULT: with the sleeve empty satellite_excess = -VOO_return EXACTLY, and VOO FELL -1.9334% this week. Structural handicap re-derived 6.0205pp/yr (cash drag 30.1492% x 16.8854% = 5.0908 + dividend 69.8508% x 1.3309 = 0.9297), DOWN from 6.0978 for the same reason the rows improved. Core -0.7068% from the 706.74 fill vs VOO TR -0.4485% = -0.2582pp divergence, the DIVIDEND RATIO not drift, unchanged from 10-09's -0.2583. Equity on official closes 99,505.2537; core 69.8508% IN BAND, 4.85 above the lower edge, no rebalance due Monday; rebalance_delta +151.24 is an EIGHTH reading and FIFTH sign flip - a DISTANCE READOUT, NOT AN INSTRUCTION. THE WEEK'S REAL FINDING IS ON THE REJECT BOARD AND IT REVERSES SIX REVIEWS: THE AI / DATA-CENTRE THEME UNWOUND. 134 measurable rows, 64 beat VOO / 70 lagged, mean -2.49% median -1.21%. AI/semis rows (n=26) mean -9.00pp with 4 of 26 beating; all other rows (n=108) mean -0.92pp with 60 of 108 beating. TOP-12 AI COUNT WENT 6of6 -> 9of12 -> 7of12 -> ZERO OF 12, and the same theme now supplies 5 of the BOTTOM 12. Every headline row of the last six reviews collapsed: HPE +40.05 -> +6.59, LITE(09-03) +29.34 -> -1.82, FN +13.81 -> -13.58, CRDO +26.63 -> +0.72, MRVL +10.50 -> -7.01, GRAL +10.82 -> -5.39, MU(09-01) +7.79 -> -6.32. Tape verified: HPE 73.455 -> 55.135 (-24.9%) in five sessions, LITE -25.4%, COHR -25.5%, CRWV -25.3%, against VOO -1.93% - a THEME unwind, not a market one. WEEK 6 DENIED THIS ITEM PROMOTION BECAUSE IT WEAKENED AT ITS THIRD TEST; ONE WEEK LATER IT IS BACKWARDS, SO A FINDING PUBLISHED LAST FRIDAY WOULD HAVE REVERSED SIGN IN SEVEN DAYS. THAT IS THE PROMOTION RULE'S SECOND AND STRONGEST SUCCESS AND IT IS NOT A NEW FINDING IN THE OPPOSITE DIRECTION. LITE - open human item (1), the six-week bill against the priced-in filter - IS NOW IN PROFIT AT -1.82pp. THE ITEM STAYS OPEN: reading a -7.35% DRAWDOWN as priced_in is still a defect whatever the tape did after. A RULE THAT IS ONLY WRONG WHILE IT IS LOSING IS NOT A RULE. MU is the clean counter-case and is unchanged in kind. ONE ITEM PROMOTED TO A FINDING: PART 1 - NO COMPANY B, OR THE MECHANISM NEEDS A SECOND CLAUSE - HAS BEEN THE LARGEST PRIMARY FAILURE POINT FOR THREE CONSECUTIVE REVIEWS WITH A RISING SHARE: 8of25 32.0% -> 12of40 30.0% -> 12of28 42.9%. The binding constraint is UPSTREAM OF EVERY FILTER and a looser bar would not reach it - part 1 failures are ABSENCES, not near-misses. Whether the SEARCH should change is a strategy.md question and ONLY THE HUMAN MAY ANSWER IT. Parts 2 and 3 produced ZERO primary kills this week against 6 and 2 last week. This week: 28 theses (10-12: 5, 10-13: 8, 10-14: 5, 10-15: 5, 10-16: 5), 0 accepted, 28 rejected, ~80 items under 28 headings. SINCE INCEPTION 166 THESES, 0 ACCEPTED, SEVENTH WEEK AT 0%. Nothing closed, nothing has ever closed; all four section 5 rules have NO OPERAND and highest_close is ABSENT for a seventh close seat. SCOREBOARD FORMAT DRIFTED A SECOND CONSECUTIVE WEEK: T-2026-10-14-05 carries NO **Outcome:** LINE AT ALL (week 6's was ten entries written **Outcome: without the closing **). Two weeks, two drifts, one unenforced format. RE-DERIVED EIGHT TIMES, SEVEN HELD: sessions 33/30/5 MATCHED, theses 166 (87+79) MATCHED, TTM +16.8854%, dividend handicap 0.9297 CONFIRMED, core divergence -0.2582 CONFIRMED, failure-point allocation recounted, 134-row board rebuilt - and week 6's comparable subset came back n=63 against an inherited 64, DID NOT RECONCILE, reported as such. Subset mean has now taken FOUR values in four weeks: -2.04 -> -1.00 -> -1.30 -> -3.98. THE COUNTS ARE STABLE, THE MOMENTS ARE NOT - never quote the board's mean as a verdict. ALL 20 SEATS RAN THIS WEEK (21 non-merge commits, the extra being 10-16 open correcting its own corpus figure) - REPORTED AS A FACT AND REFUSED AS EVIDENCE: two of ~33 close runs have vanished leaving zero trace, so five complete sessions is five samples from a process with no detector. CORPUS IS NOW THE LARGEST OPERATIONAL NUMBER IN THE REVIEW: five-file corpus 622,521B -> 860,948B, +238,427B / +38.3% IN ONE WEEK (research_log +68.3%, journal +87.1%); all ten files 891,333B. AT +38%/WEEK IT DOUBLES EVERY TWO WEEKS. This review was written ~a fifth shorter than week 6's 43,931B - a TRIM, NOT A FIX; the diffstat is the authority. HOUSEKEEPING: week_of ADVANCED 2026-10-12 -> 2026-10-19 (confirmed against the broker's next_open 2026-10-19T09:30) and new_positions_this_week RESET to 0 in the field though it was already 0. MONTHLY ROLLOVER NOT DUE - third Friday review inside October, no month boundary crossed; the 09-03 core fill stays retained in trade_log.md because the position is OPEN (item 10). HUMAN ITEMS 10 -> 13: (13) IS NEW - THE SINCE-INCEPTION EXCESS'S TWO DEFENSIBLE CONVENTIONS NOW DISAGREE IN SIGN (-0.9823pp from 09-01, +0.1230pp from the 09-03 funding). THE HEADLINE FIGURE OF THE WHOLE FILE DEPENDS ON A CHOICE NO DOCUMENT MAKES; THE AGENT REPORTS BOTH AND WILL NOT PICK. FILES: weekly_review.md week-ending-2026-10-16 section prepended; state.md fenced block rewritten, the 10-16 close handoff SPENT and REPLACED, four standing items edited in place. ClickUp weekly task posted, separate from the dailies. positions.md, trade_log.md, research_log.md, journal.md, plan_today.md, alerts.md UNTOUCHED - no fills, no thesis, no incidents, and this routine does not trade.
-prior_run: 2026-10-16 16:18 ET 4-market-close-journal (SEAT 4 OF 4. Zero trades and zero orders at all four seats; ledger reconciled with three sides agreeing; section 5.1-5.4 reached in order and found EMPTY, re-evaluated not inherited; orders --status all returns ONE ROW, the 09-03 fill, filled. OFFICIAL CLOSE 701.745 (o 710.78 = THE HIGH, l 699.53), DOWN 7.625 / -1.0749% - the largest single-session PERCENTAGE fall on record while 10-14 keeps the largest in DOLLARS (-7.64). Book 99,505.2537, core 69.8508%, cash 30.1492%, day -0.75327%, core unrealized -0.7068%. IT REFUTED TWO INHERITED SUPERLATIVES AND BOTH REFUTATIONS ARE NOW THE RECORD: the 12:42 seat's 'first time below 100,000 in 34 sessions' and 'first time the section 5 core exemption bound against a real drawdown' ARE BOTH FALSE - the book has closed below 100,000 on THIRTEEN PRIOR POST-FILL SESSIONS (deepest 09-16 at 98,660.39 / -1.3396%) and core has been underwater at a close FOURTEEN times (worst -1.9137%), so 10-16 is the FOURTEENTH and only the SEVENTH DEEPEST. THE GENERALISATION IS THE DURABLE PART: A SUPERLATIVE IS A CLAIM ABOUT A WHOLE SERIES AND THE CARRY-FORWARD IS NOT THE SERIES - it is a three-reading window that scrolls. Caught a SECOND time in the same run on the post-bell price-gap series, where TWO CONSECUTIVE CLOSE SEATS EACH NUMBERED THEIR OWN SAMPLE 'THE FIFTH' off successively truncated lists; the nine samples are carried in full and marked never to be shortened. RULE: COLLAPSING A NARRATIVE AND COLLAPSING A SERIES ARE DIFFERENT ACTS - fold the prose, keep every data point, never state an ordinal not counted from the list in the same breath. Step 2 had NO OPERAND for a sixth consecutive close seat - highest_close is ABSENT, a third state carrying no date, so Monday needs no backfill because there is no field. CORE VOO NOT STAMPED - 107th refusal and the STRONGEST grade the series admits: a real completed official close held in hand, the write path owned, and the high-water window NOT EVEN DERIVED. The forbidden figure arrived pre-corroborated a third time: equity - last_equity = -821.5693 agreeing to the cent with unrealized_intraday_pl, reading -0.8194% against the honest -0.7533%, a 6.61bp error - NEVER USE IT. lastday_price 709.43 is still not the official 709.37, a fourth consecutive seat on that stale +0.06.)
+last_run: 2026-10-19 08:13 ET 1-premarket-research FIRST SEAT OF WEEK 43. Selftest 5/5 all exit 0 (broker equity 99,852.41 at pre-flight), trading_enabled true, LIVE paper, control.md notes EMPTY, zero open alerts, nothing SYSTEMIC. Clock 08:13:13 is_open false with next_open AND next_close BOTH 2026-10-19 - the pre-market full-session signature read off the DATES not the boolean; not a holiday. LEDGER RECONCILED FIRST, THREE SIDES AGREE: positions returns ONE row core VOO 99.046311231 sh @ 706.74 cost_basis 69,999.989999 unchanged since the 09-03 fill, zero satellite blocks in positions.md, sleeves satellite.count 0. WEEK ROLLOVER RECOMPUTED FROM SOURCE NOT READ OFF THE FIELD: America/New_York 2026-10-19 Monday ISO week 43 weekday 1, Monday anchor 2026-10-19, MATCHES week_of which Friday's review had already advanced - so new_positions_this_week was NOT re-reset and stands at 0 of 3 because nothing was opened, not because this run zeroed it. BREAKER INACTIVE, and because halt_triggered_at is none the HALT_CLEARED_AT comparison has NO OPERAND, so control.md's "none" is CORRECT not an oversight. Section 2: core 69.96% IN BAND, 4.96pp above the lower edge; rebalance_needed false; rebalance_delta +44.28 is a NINTH reading and a DISTANCE READOUT NOT AN INSTRUCTION ($44 on $69,852 = 0.06%). NO REBALANCE QUEUED. Section 5 HAS NO OPERAND for a seventh consecutive seat - all four rules ABSENT NOT PASSING, highest_close does not exist as a field, and no Perplexity invalidation check was run on any holding because 5.1's subject does not exist. RESEARCH: three broad scans plus two drills, all exit 0; FIVE theses T-2026-10-19-01..05, ZERO ACCEPTED, FIVE REJECTED. ALL THREE BROAD FRAMINGS VOLUNTEERED THE ABSENCE (3 for 3) and the segment-quantification framing makes it FIFTEEN CONSECUTIVE SESSIONS 09-29 -> 10-19 UNBROKEN. THE RUN'S ONE REAL OBSERVATION AND IT IS NEW: THE BINDING CONSTRAINT MOVED FROM PART 1 TO SECTION 3 FOR THE FIRST TIME. Five sessions running theses died because NO COMPANY B EXISTED (10-12 zero eligible tickers at part 1, 10-13 one, 10-14 two, 10-15 two, 10-16 three). Today the funnel delivered THREE GENUINE TWO-PARTY TRANSACTIONS WITH DISCLOSED FIGURES - THE MOST IT HAS EVER PRODUCED - and SECTION 3 KILLED ALL THREE BEFORE PART 1 WAS REACHED: 44.01/Frontier $11.7M carbon offtake (Omani private + a buyer coalition), NOVONIX/PowerCo (ASX-primary below floor + VW's German subsidiary, and the 10-19 release REPLACED a BINDING offtake with a framework so it DELETED ITS OWN DOLLAR FIGURE), Orion Minerals/Glencore $250M (South African, neither leg US-listed). COMPANY B NOW EXISTS AND IS NOT US-LISTED - a DIFFERENT failure from an absence. ONE SESSION IS NOT A FINDING: recorded for the next three reviews to test, acted on in no way. Biggest genuinely new event of the window - Trump's 10-16 executive order suspending the Graham Act sanctions and the up-to-100% duties two days before their 10-18 start - is STRUCTURALLY DEAD at part 1: ONE party, no named Russian entity exempted, no transaction, and the only figure (~2.3M bbl diesel rising to ~7.6M bbl/month) is a POLITICAL ANNOUNCEMENT'S VOLUME that the source itself will not attribute to the waiver. Drill asked directly: NO US airline, chemical company or refiner disclosed a guidance change or a quantified fuel/feedstock figure 10-16..10-19. A BIG TRUE EVENT IS NOT A THESIS. THE 10-16 DEFERRAL IS DISCHARGED NOT DROPPED: T-2026-10-16-04 deferred the five bank prints because they reported after that run; they reported, were screened at T-2026-10-19-02 and died at part 1 - and THAT ENTRY IS A REJECTION ON ABSENCE OF EVIDENCE AND LABELS ITSELF SO (the source stated the primary releases were not in its result set), so it must NEVER be quoted as "the banks disclosed nothing". ZERO move CALLS AND ZERO MARKET CAPS SOURCED, SIXTH CONSECUTIVE SESSION, AND CORRECT RATHER THAN OMITTED - nothing reached the priced-in filter, every kill upstream of price; a move on Cleveland-Cliffs (the only US-listed name with a real disclosure, dead at part 1 on its own results) would have been the 12th decorative refusal. RE-SERVE RATE 5 FOR 5 SESSIONS (TSMC Q3, Schneider Electric) and LS ELECTRIC AT A THIRD APPEARANCE on a genuinely new $125M US data-centre deal with an unnamed counterparty - rule (iv) exactly; reading the log first cost one grep and saved three drills. REFUSED THE FUNNEL'S INVITATION TO TRADE FRIDAY'S OWN FINDING: the AI/data-centre unwind came back as a buyable idea at T-2026-10-19-03 and was rejected on rule (v) - no named project, no named supplier, and the only quantity is Dan Ives' 5-10% ESTIMATE; CoreWeave's distress is expressed in BONDS which section 3 forbids outright. A FINDING IS NOT A THESIS. STALE lastday_price SERIES DID SOMETHING NEW: the gap FLIPPED SIGN AND MORE THAN DOUBLED, from four seats at +$0.06 (709.43 vs 709.37) to -$0.135 today (701.61 vs the official 701.745 confirmed by this run's own bars --adjustment all pull) - a SIXTH seat on a defective field and NOT a fixed offset that could be corrected for. FILES: research_log.md 5 entries + session survey prepended; plan_today.md OVERWRITTEN with plan_date 2026-10-19, ZERO BUY / ZERO SELL / ZERO REBALANCE intents and NO revalidate lines because there is no candidate and inventing one would be the open seat's most dangerous inheritance; positions.md dated 10-19 digest added SHORT ON PURPOSE; state.md fenced block rewritten and the Friday handoff SPENT. trade_log.md, journal.md, weekly_review.md, alerts.md UNTOUCHED - no fills, no incidents, and this routine does not trade. CORPUS DISCIPLINE EXERCISED, NOT JUST NOTED: plan_today.md 14,726B -> 10,652B (-27.7%) against open human item (9).
+prior_run: 2026-10-16 20:45 ET 5-friday-weekly-review (SEVENTH WEEKLY REVIEW, THE ONLY SEAT THAT ANSWERS SECTION 1, AND IT DOES NOT TRADE. SECTION 1 ANSWER: NO - satellite 0.0000% against VOO TOTAL RETURN +16.8854% TTM = -16.8854pp on the objective's own rolling-12-month window; 166 theses, 33 sessions, zero positions, $30,000 idle since inception. ALL FIVE WINDOWS IMPROVED AND TWO CROSSED POSITIVE - week +1.9334pp and SINCE-FUNDED +1.0065pp, the first positive since-funded row ever - AND NONE OF IT IS A RESULT: with the sleeve empty satellite_excess = -VOO_return EXACTLY and VOO FELL -1.9334% that week. Structural handicap 6.0205pp/yr (cash drag 5.0908 + dividend 0.9297), DOWN from 6.0978 for the same reason the rows improved. THE WEEK'S REAL FINDING REVERSED SIX REVIEWS: THE AI/DATA-CENTRE THEME UNWOUND and took every headline row of the reject board with it - top-12 AI count 6of6 -> 9of12 -> 7of12 -> ZERO of 12, same theme now 5 of the bottom 12; AI/semis rows n=26 mean -9.00pp with 4 of 26 beating vs all other rows n=108 mean -0.92pp with 60 of 108 beating; HPE +40.05 -> +6.59, LITE -> -1.82, FN -> -13.58, CRDO -> +0.72, MRVL -> -7.01, GRAL -> -5.39, MU -> -6.32; tape verified HPE -24.9% in five sessions, LITE -25.4%, COHR -25.5%, CRWV -25.3% against VOO -1.93%. WEEK 6 DENIED THAT ITEM PROMOTION AND ONE WEEK LATER IT WAS BACKWARDS - the promotion rule's second and strongest success, filed as THE RULE'S RESULT and NOT as a new finding in the opposite direction. ONE ITEM PROMOTED TO A FINDING: PART 1 - no Company B, or the mechanism needs a second clause - is the largest primary failure point for three consecutive reviews with a RISING share, 32.0% -> 30.0% -> 42.9%, and it is UPSTREAM OF EVERY FILTER so a looser bar would not reach it; whether the SEARCH should change is a strategy.md question only the human may answer. Parts 2 and 3 produced ZERO primary kills. 134 measurable rows, 64 beat / 70 lagged, mean -2.49% median -1.21% - and the subset mean has taken FOUR values in four weeks, so NEVER quote the board's moments as a verdict. Scoreboard format drifted a SECOND consecutive week. All 20 seats ran - reported as a fact and REFUSED as evidence, since two of ~33 close runs vanished leaving zero trace. CORPUS 622,521B -> 860,948B = +38.3% IN ONE WEEK, doubling every two weeks. week_of advanced 2026-10-12 -> 2026-10-19. HUMAN ITEMS 10 -> 13, with (13) NEW: the since-inception excess's two defensible conventions now DISAGREE IN SIGN (-0.9823pp from 09-01 vs +0.1230pp from the 09-03 funding) and the agent reports both and will not pick.)
 week_of: 2026-10-19
 new_positions_this_week: 0
 consecutive_closed_losses: 0
@@ -19,9 +19,9 @@ circuit_breaker: INACTIVE
 halt_triggered_at: none
 core_established: true
 core_ticker: VOO
-core_pct: 69.85
+core_pct: 69.96
 satellite_pct: 0.0
-cash_pct: 30.15
+cash_pct: 30.04
 open_thesis_ids: none
 ```
 
@@ -38,82 +38,99 @@ discarded; settled items were folded to one line each and repeated emphasis was 
 
 ### Live — act on these
 
-- **⚠ 2026-10-16 WEEKLY-REVIEW HANDOFF — WRITTEN BY THE 20:45 FRIDAY SEAT (ROUTINE 5, THE LAST SEAT OF
-  THE WEEK), WHICH SPENDS THE 16:18 CLOSE HANDOFF IN FULL.**
-  *(That item is **REPLACED, not kept beside this one.** Where its pieces went: the two refuted superlatives
-  and the collapse-a-series rule are **folded into `prior_run` and into the audit item, which own them** ·
-  the nine-sample price-gap list, the partial-bar item and the two-basis item are **untouched standing
-  items** · the §2 no-rebalance call is **re-derived below from this seat's own `sleeves` read** · the
-  Monday pre-market instructions are **carried forward unspent at the foot of this item**, because they
-  still bind and this seat is not that seat.)*
+- **⚠ 2026-10-19 PRE-MARKET HANDOFF — WRITTEN BY THE 08:13 MONDAY SEAT, THE FIRST SEAT OF WEEK 43,
+  WHICH SPENDS THE 2026-10-16 WEEKLY-REVIEW HANDOFF.**
+  *(⚠ **SPENT, NOT DISCARDED, AND WHERE EACH PIECE WENT IS NAMED.** The review's **Monday-specific
+  instructions were addressed to THIS seat and were EXECUTED** — plan dated three calendar days / one
+  trading day old and compared against the **last trading day**, the forward-calendar Monday shape
+  noted and nothing done, the §3 verdicts for **JBHT / AA / NVDA** NOT inherited (none of the three
+  arrived this morning, so nothing needed re-deriving), and the two refuted superlatives NOT carried
+  in any form. **Those instructions are now DISCHARGED and are not repeated below.** · The review's
+  **§1 answer, the AI-unwind finding, the part-1 finding, the board-moments warning, the 20-seats
+  fact and the corpus figure are REVIEW-LEVEL STANDING FACTS, not instructions to this seat**: they
+  are folded to one line each below and live in full in `weekly_review.md` and in `prior_run`. · The
+  **§2 no-rebalance call is RE-DERIVED from this seat's own `sleeves` read**, not inherited. · The
+  **LITE open human item is carried UNSPENT and UNCHANGED** — the review said explicitly that the
+  next seat must not close it.)*
 
-  - **⚠⚠ THE §1 ANSWER, AND IT IS THE ONLY THING THIS SEAT EXISTS TO PRODUCE: NO.** Satellite **0.0000%**
-    against VOO **total return +16.8854%** TTM = **−16.8854pp** on the objective's own rolling-12-month
-    window. **166 theses, 33 sessions, zero positions, $30,000 idle since inception.**
-  - **⚠⚠ ALL FIVE WINDOWS IMPROVED AND TWO CROSSED INTO POSITIVE — AND NOT ONE OF THEM IS A RESULT.**
-    Week **+1.9334pp**; **since-funded (09-03) +1.0065pp, THE FIRST POSITIVE SINCE-FUNDED ROW EVER**;
-    1M −1.4904pp; 3M −1.9356pp; 12M −16.8854pp. **With the sleeve empty, `satellite_excess = −VOO_return`
-    EXACTLY, and VOO FELL −1.9334% this week.** ⚠ **A run that reads the sign of these rows as performance
-    is reading the tape. Structural handicap **6.0205pp/yr** (cash drag 5.0908 + dividend 0.9297), **DOWN**
-    from 6.0978 for the same reason the rows improved.**
-  - **⚠⚠⚠ THE WEEK'S REAL FINDING AND IT REVERSES SIX REVIEWS: THE AI / DATA-CENTRE THEME UNWOUND, AND IT
-    TOOK EVERY HEADLINE ROW OF THE REJECT BOARD WITH IT.** Top-12 AI count went **6of6 → 9of12 → 7of12 →
-    **ZERO of 12**, and the same theme now supplies **5 of the bottom 12**. AI/semis rows (n=26) mean
-    **−9.00pp**, 4 of 26 beating; all other rows (n=108) mean **−0.92pp**, 60 of 108 beating.
-    **HPE +40.05 → +6.59 · LITE(09-03) +29.34 → −1.82 · FN +13.81 → −13.58 · CRDO +26.63 → +0.72 ·
-    MRVL +10.50 → −7.01 · GRAL +10.82 → −5.39 · MU(09-01) +7.79 → −6.32.** Tape verified: **HPE
-    73.455 → 55.135 (−24.9%) in five sessions**, LITE −25.4%, COHR −25.5%, CRWV −25.3%, against VOO −1.93%
-    — **a theme unwind, not a market one.**
-    ⚠⚠ **WEEK 6 DENIED THIS ITEM PROMOTION BECAUSE IT WEAKENED AT ITS THIRD TEST. ONE WEEK LATER IT IS
-    BACKWARDS — a finding published last Friday would have REVERSED SIGN IN SEVEN DAYS.** **That is the
-    promotion rule's second and strongest success, and it is recorded as the RULE'S RESULT, not as a new
-    finding in the opposite direction. One week of reversal is exactly what the rule exists to make us
-    wait on.**
-  - **⚠⚠ LITE — OPEN HUMAN ITEM (1), THE SIX-WEEK BILL AGAINST THE PRICED-IN FILTER — IS NOW IN PROFIT AT
-    −1.82pp. THE ITEM STAYS OPEN AND THE NEXT SEAT MUST NOT CLOSE IT.** Reading a **−7.35% drawdown** as
-    `priced_in: true` is still a defect in the rule, whatever the tape did afterwards. ⚠ **A RULE THAT IS
-    ONLY WRONG WHILE IT IS LOSING IS NOT A RULE** — the same sentence week 6 used to keep the ELMT
-    instruction in place when it faded, now applied in the direction that costs the agent its
-    best-documented complaint. **MU is the clean counter-case (a genuine +5.27% run-up) and is unchanged
-    in kind, now −6.32pp: correct AND profitable.**
-  - **⚠⚠ ONE ITEM PROMOTED TO A FINDING UNDER THE THREE-REVIEW RULE: PART 1 — NO COMPANY B, OR THE
-    MECHANISM NEEDS A SECOND CLAUSE — IS WHERE THESES DIE.** Largest primary failure point for **three
-    consecutive reviews with a rising share: 8of25 32.0% → 12of40 30.0% → 12of28 42.9%.** ⚠ **The binding
-    constraint is UPSTREAM OF EVERY FILTER, and a looser evidence bar would not reach it: part 1 failures
-    are ABSENCES, not near-misses.** Whether the *search* should change (screening for disclosed supplier
-    relationships first rather than screening news first) is a **`strategy.md` question and only the human
-    may answer it. The agent has not changed it.** ⚠ **Parts 2 and 3 produced ZERO primary kills this week
-    against 6 and 2 last week.**
-  - **⚠ THE BOARD'S MOMENTS STILL CARRY NO SIGNAL AND MUST NEVER BE QUOTED AS A VERDICT.** 134 measurable
-    rows, **64 beat / 70 lagged, mean −2.49%, median −1.21%.** Week 6's comparable subset (rejected ≤
-    09-24) came back **n = 63 against an inherited 64 — DID NOT RECONCILE**, and the subset mean has now
-    taken **four values in four weeks: −2.04 → −1.00 → −1.30 → −3.98.** **The counts are stable; the
-    moments are not.**
-  - **⚠ THE SCOREBOARD'S ONE LOAD-BEARING FIELD DRIFTED FORMAT A SECOND CONSECUTIVE WEEK.**
-    `T-2026-10-14-05` carries **no `**Outcome:**` line at all** (the reasoning is inline and complete).
-    Week 6's instance was ten entries written `**Outcome: REJECTED`. **Two weeks, two different drifts,
-    one unenforced format.**
-  - **ALL 20 SEATS RAN THIS WEEK — REPORTED AS A FACT AND REFUSED AS EVIDENCE.** Two of ~33 close runs
-    have vanished (09-28, 10-05) leaving **zero trace**, so **five complete sessions is five samples from a
-    process with no detector.** `alerts.md` still reads zero open and nothing SYSTEMIC.
-  - **⚠⚠ CORPUS IS NOW THE LARGEST OPERATIONAL NUMBER IN THE REVIEW AND IT ACCELERATED.** Five-file corpus
-    **622,521B → 860,948B = +238,427B / +38.3% IN ONE WEEK** (`research_log.md` +68.3%, `journal.md`
-    +87.1%); **all ten files 891,333B.** ⚠ **At +38%/week it doubles every two weeks.** This review was
-    written **about a fifth shorter** than week 6's 43,931B — **a trim, not a fix; the diffstat is the
-    authority.** Open item (9).
-  - **HOUSEKEEPING DONE BY THIS SEAT:** `week_of` **2026-10-12 → 2026-10-19** (confirmed against the
-    broker's `next_open` **2026-10-19T09:30**); `new_positions_this_week` **reset to 0 in the field though
-    it was already 0.** **Monthly rollover NOT DUE** — third Friday review inside October, no month
-    boundary crossed; the **09-03 core fill stays retained in `trade_log.md`** because the position is OPEN
-    (item 10). **§2: core 69.8508%, IN BAND, 4.85 above the lower edge — no rebalance due Monday;
-    `rebalance_delta +151.24` is an EIGHTH reading and FIFTH sign flip, a DISTANCE READOUT NOT AN
-    INSTRUCTION.** §6's 5% cap is **$4,975.26** on the official close and must be **RE-COMPUTED** where used.
-  - **⚠ FOR MONDAY'S PRE-MARKET SEAT SPECIFICALLY (CARRIED FORWARD UNSPENT):** `next_open` and `next_close`
-    are both **2026-10-19**, so a correct `plan_today.md` will arrive **three CALENDAR days but ONE TRADING
-    day** old — **compare `plan_date` to the last trading day, not to the calendar.** ⚠ **Expect the Monday
-    forward-calendar shape; note the dates and do nothing.** ⚠ **Do NOT inherit a §3 verdict for JBHT / AA /
-    NVDA — re-derive it.** ⚠ **Do NOT carry "first time below $100,000" or "first drawdown the exemption
-    bound against" in any form: both were refuted from a 45-session pull.**
+  - **⚠⚠ THIS SEAT'S ONE REAL OBSERVATION, AND IT IS NEW: THE BINDING CONSTRAINT MOVED FROM PART 1
+    TO §3 FOR THE FIRST TIME.** Five sessions running, theses died because **no Company B existed**
+    (10-12 zero eligible tickers at part 1 · 10-13 one · 10-14 two · 10-15 two · 10-16 three).
+    **Today the funnel delivered THREE GENUINE TWO-PARTY TRANSACTIONS WITH DISCLOSED FIGURES — the
+    most it has ever produced — and §3 killed all three before part 1 was reached:** 44.01/Frontier
+    **$11.7M** (Omani private + a buyer coalition) · **NOVONIX/PowerCo** (ASX-primary below the floor
+    + VW's German subsidiary, and ⚠ **the 10-19 release replaced a BINDING offtake with a framework,
+    so it DELETED ITS OWN DOLLAR FIGURE and fails part 2 on a disclosure that previously passed it**)
+    · **Orion Minerals/Glencore $250M** (South African, neither leg US-listed).
+    ⚠⚠ **COMPANY B NOW EXISTS AND IS NOT US-LISTED. That is a DIFFERENT failure from an absence, and
+    it is the first movement in the binding constraint this log has recorded.** ⚠ **ONE SESSION IS
+    NOT A FINDING — the three-review rule applies, and this seat acted on it in NO WAY. Carried for
+    the next three reviews to TEST, not to confirm.** ⚠ **It is also NOT a reason to loosen §3, which
+    is `strategy.md`'s and only the human's to change.**
+  - **⚠⚠ A BIG TRUE EVENT IS NOT A THESIS — `T-2026-10-19-01`, AND IT IS THE HARDEST VERSION OF THIS
+    ERROR TO SEE.** Trump's **10-16 executive order suspending the Graham Act** sanctions and the
+    up-to-100% duties, two days before their 10-18 start, was the window's **largest genuinely new,
+    dated, market-moving and verifiable event — and it contains NO SECOND COMPANY.** One party, **no
+    named Russian entity exempted**, no transaction; the only figure (**~2.3M bbl diesel rising to
+    ~7.6M bbl/month**) is a political announcement's volume the source itself **will not attribute to
+    the waiver**; and the drill asked directly — **no US airline, chemical company or refiner
+    disclosed a guidance change or a quantified fuel/feedstock figure 10-16→10-19.** ⚠ **The
+    mechanism needed THREE second clauses. Rule (vi) kills it again anyway: a 60-day assessment with
+    no fixed end date can reverse inside one quarter.**
+  - **⚠⚠ THE FUNNEL SERVED FRIDAY'S OWN FINDING BACK AS A BUYABLE IDEA AND IT WAS REFUSED —
+    `T-2026-10-19-03`. THE NEXT SEAT WILL BE OFFERED THIS AGAIN.** The AI/data-centre unwind arrived
+    as "projects delayed or blocked, CoreWeave bonds distressed." Rejected on **rule (v)** — no named
+    project, no named supplier, no supplier disclosure — and **rule (viii)**: the only quantity is
+    **Dan Ives' 5–10% ESTIMATE**, and a bond yield is a secondary-market price, not revenue.
+    ⚠⚠ **AND §3 FORBIDS EXPRESSING THE SHORT SIDE AT ALL. The review filed the unwind as the
+    PROMOTION RULE'S RESULT, not as a finding in the opposite direction. A FINDING IS NOT A THESIS,
+    and last week's work is not corroboration for a trade pointing the other way.**
+  - **⚠ THE 10-16 DEFERRAL IS DISCHARGED, NOT DROPPED — AND THE ENTRY THAT DISCHARGED IT LABELS ITS
+    OWN WEAKNESS.** `T-2026-10-16-04` deferred the five bank prints (TRV·TFC·MTB·RF·CFG) because they
+    reported *after* that run. **They reported, were screened at `T-2026-10-19-02`, and died at part
+    1 — no cross-company disclosure in five releases.** ⚠⚠ **BUT THE SOURCE STATED THE PRIMARY
+    RELEASES WERE NOT IN ITS RESULT SET, SO THIS IS A REJECTION ON *ABSENCE OF EVIDENCE*, NOT ON
+    EVIDENCE OF ABSENCE. It must NEVER be quoted as "the banks disclosed nothing."** The decision is
+    unchanged — §4 requires a disclosed mechanism before a buy — but **the two facts are not the
+    same, and a log that blurred them would overstate what this run established.** ⚠ **Do not carry
+    the bank prints forward again as a pending lead.**
+  - **⚠ THE STALE `lastday_price` SERIES DID SOMETHING NEW: THE GAP FLIPPED SIGN AND MORE THAN
+    DOUBLED.** Four prior seats carried **+$0.06** (709.43 vs the official 709.37). This morning it
+    is **−$0.135** — `lastday_price` **701.61** against the official 10-16 close **701.745**,
+    confirmed by **this run's own `bars --days 6 --adjustment all` pull**. ⚠⚠ **A SIXTH consecutive
+    seat on a defective field, and it is NOT a fixed offset that could be corrected for. NEVER
+    DIFFERENCE `equity − last_equity`, `change_today` or `unrealized_intraday_pl` INTO A P&L FIGURE.**
+  - **⚠ §2 RE-DERIVED FROM THIS SEAT'S OWN READ, NOT INHERITED: core 69.96%, IN BAND, 4.96pp above
+    the lower edge. `rebalance_needed: false`, NO REBALANCE QUEUED.** `rebalance_delta +44.28` is a
+    **NINTH reading** and a **DISTANCE READOUT, NOT AN INSTRUCTION** — $44 on a $69,852 position is
+    **0.06%**, and it moves because VOO's mark moves under a fixed share count. **§6's 5% cap is
+    $4,992.62 on this morning's equity and must be RE-COMPUTED wherever used.**
+  - **⚠ HOUSEKEEPING, RECOMPUTED FROM SOURCE: `America/New_York` 2026-10-19, Monday, ISO week 43,
+    weekday 1, Monday anchor 2026-10-19 — MATCHES `week_of`, which Friday's review had already
+    advanced.** So `new_positions_this_week` was **NOT re-reset** and stands at **0 of 3 because
+    nothing was opened, not because this run zeroed it.** ⚠ **A run that resets a counter it did not
+    need to reset would mask a §6 breach.** **Breaker INACTIVE; `halt_triggered_at: none`, so the
+    `HALT_CLEARED_AT` comparison has NO OPERAND and `control.md`'s "none" is CORRECT, not an
+    oversight.** **§5 has no operand for a SEVENTH consecutive seat — all four rules ABSENT, NOT
+    PASSING; `highest_close` does not exist as a field, so there is nothing to backfill.**
+  - **⚠ CORPUS DISCIPLINE EXERCISED, NOT JUST NOTED (open item 9).** The review reported
+    **+38.3% in one week, doubling every two weeks**, and called its own shorter write-up *"a trim,
+    not a fix."* This seat **cut `plan_today.md` 14,726B → 10,652B (−27.7%)** and wrote the shortest
+    `positions.md` digest in the file. ⚠ **`research_log.md` still grew, because five disposals have
+    to be written down — the diffstat is the authority, not the intent.**
+  - **REVIEW-LEVEL STANDING FACTS, FOLDED TO ONE LINE EACH — NOT THIS SEAT'S TO SPEND OR RESTATE
+    (full text in `weekly_review.md` and `prior_run`):** **§1 answer NO** — satellite **0.0000%** vs
+    VOO TR **+16.8854%** TTM = **−16.8854pp**; 166 theses, 33 sessions, zero positions, $30,000 idle.
+    · **All five windows improved and two crossed positive, and NONE of it is a result** — with the
+    sleeve empty `satellite_excess = −VOO_return` exactly. Handicap **6.0205pp/yr**. · **The
+    AI/data-centre theme unwound, top-12 AI count 6of6 → ZERO of 12** — filed as the promotion rule's
+    **result**. · **FINDING: part 1 is where theses die**, three reviews with a rising share
+    **32.0% → 30.0% → 42.9%**, upstream of every filter; whether the *search* should change is a
+    **`strategy.md` question only the human may answer.** · **Never quote the reject board's moments
+    as a verdict** — 134 rows, 64 beat / 70 lagged, and the subset mean has taken four values in four
+    weeks. · **Scoreboard format drifted a second consecutive week.** · **All 20 seats ran — a fact,
+    refused as evidence**, since two of ~33 close runs vanished leaving zero trace. · **LITE stays an
+    OPEN human item (1) at −1.82pp: a rule that is only wrong while it is losing is not a rule.**
 - **⚠⚠ GFS/TSMC CLEARED EVERY FILTER AND DIED ON THE *THESIS PARTS* — `T-2026-10-09-01`, STILL THE MOST
   INFORMATIVE REJECTION THIS LOG HAS PRODUCED.** *(Collapsed 2026-10-14 08:21: the item is SETTLED five
   sessions on, so the per-part arithmetic and the repair narrative are folded to the two killing numbers

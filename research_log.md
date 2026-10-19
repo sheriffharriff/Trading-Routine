@@ -52,6 +52,229 @@ single most common way a plausible-sounding connection gets mistaken for an oppo
 
 ## Entries
 
+### 2026-10-19 (08:13 ET) — event survey (funnel, pre-thesis)
+
+Selftest **5/5**, all exit 0 (`trading_enabled: true`, LIVE paper, broker equity **$99,852.41** at
+pre-flight). `clock` at **08:13:13** reads `is_open: false`, `next_open` **2026-10-19T09:30**,
+`next_close` **2026-10-19T16:00** — **both carrying TODAY's date: the pre-market full-session
+signature, read off the DATES and not the boolean. Not a holiday, not an early close.** Window
+screened: **the completed 2026-10-16 session and the weekend into Monday — THREE CALENDAR DAYS,
+ONE TRADING DAY.** The Monday shape; expected and noted. **Three broad scans plus two drills, all
+exit 0. FIVE theses, ALL FIVE REJECTED.** ⚠ **Written deliberately short against open human item
+(9): the corpus grew +38.3% last week and a tighter entry is the only lever this seat holds.**
+
+**⚠⚠ ALL THREE BROAD FRAMINGS VOLUNTEERED THE ABSENCE AGAIN (3 for 3), AND THE
+SEGMENT-QUANTIFICATION FRAMING MAKES IT FIFTEEN CONSECUTIVE SESSIONS — 09-29 → 10-19 UNBROKEN.**
+Verbatim: framing one, *"only one announcement clearly satisfies all stated conditions"* (and that
+one is §3-dead) · framing two, *"No qualifying disclosure can be established from the available
+results"* · framing three, *"does not identify any qualifying event."*
+
+**⚠⚠⚠ THE BINDING CONSTRAINT MOVED THIS SESSION, AND IT IS THE FIRST TIME IT HAS: FROM PART 1 TO
+§3.** Five sessions running, theses died because **no Company B existed** (10-12 zero eligible
+tickers at part 1 · 10-13 one · 10-14 two · 10-15 two · 10-16 three). **Today the funnel delivered
+THREE GENUINE TWO-PARTY TRANSACTIONS — the most it has ever produced — and §3 killed all three
+before part 1 was reached:** 44.01/Frontier (`-04`), **NOVONIX/PowerCo** and **Orion
+Minerals/Glencore** (both in the sweep). ⚠ **Company B now EXISTS and is NOT US-LISTED. That is a
+different failure from an absence, and one session is not a finding — recorded for the next three
+reviews to test, not acted on.**
+
+**⚠ ZERO `move` CALLS AND ZERO MARKET CAPS SOURCED — THE SIXTH CONSECUTIVE SESSION, AND CORRECT
+RATHER THAN OMITTED.** Not one candidate reached the priced-in filter: every kill was §3, part 1,
+rule (v) or rule (viii), all upstream of price. The one US-listed name with a real disclosure in the
+window (**Cleveland-Cliffs**, Q3 beat) dies at **part 1 — its own results** — which is upstream of
+§3 as well, so a `move` would have been the **12th decorative refusal** and a cap figure would have
+documented nothing. ⚠ **A §3 figure exists to make an ACCEPTED thesis auditable; there is no
+accepted thesis.**
+
+**⚠⚠ THE RE-SERVE RATE IS NOW 5 FOR 5 SESSIONS:** **TSMC Q3** (`T-2026-10-15-01`) and **Schneider
+Electric** (10-16 sweep) both came back under a 10-19 dateline, and **LS Electric** arrives for a
+**third** time on a genuinely new $125M deal — **rule (iv) exactly: a recurring issuer whose kill is
+structural.** ⚠ **Reading the log first cost one `grep` and saved three drills.**
+
+**⚠ THE 10-16 DEFERRAL IS DISCHARGED, NOT DROPPED.** `T-2026-10-16-04` deferred the five pre-open
+bank prints because they reported *after* that run. **They have now reported and were screened** —
+`T-2026-10-19-02`. A deferred item that is never reached is indistinguishable from one that was
+missed; this one was reached and died.
+
+---
+
+### T-2026-10-19-01 — Russia sanctions suspension → US airline / refiner fuel cost lines — REJECTED (part 1 — no Company B; rule (viii); rule (vi) on a 60-day reversible measure)
+**Company A / the news:** Trump signed an executive order on **2026-10-16** suspending the sanctions,
+restrictions and duties provided for by the **Graham Act**, including proposed duties of up to 100% on
+major buyers of Russian oil, two days before they were due to take effect on **10-18**. Brent fell
+~1.8% into Monday. Rubio: the President wants **up to 60 days** to assess the economic effect; the
+order carries **no fixed end date**.
+**Company B / the candidate:** a US airline or refiner whose fuel/feedstock cost line falls.
+
+**1. Mechanism (one sentence):** **FAILS, AND IT FAILS AT THE SUBJECT.**
+> *"The sanctions suspension causes [a US airline]'s fuel expense line to fall because more Russian
+> barrels reach the market."*
+
+⚠ **There is no Company A in the §4 sense: ONE party (the US government), no transaction, no named
+counterparty.** The drill asked explicitly and the source confirms **no individual Russian bank, oil
+company or refinery is named as exempted.** ⚠⚠ **And the sentence cannot be completed without
+"…*and also* the barrels actually arrive, *and also* crude stays down, *and also* the carrier does not
+hedge it away" — three second clauses, which is the mechanism test failing three times over.**
+⚠ **This is the root cause the eight standing rules share, in its purest form: I would be supplying
+the entire causal chain and then pointing at a Brent print adjacent to it.**
+
+**2. Dollar path:** **FAILS — rule (viii) read broadly.** The only quantified figure in the window is
+a **proposed diesel-export arrangement of ~2.3M bbl in October rising to ~7.6M bbl/month** — a
+**political announcement's volume, not segment revenue or a disclosed cost at any Company B**, and the
+source states it is **not established that these volumes were released by the waiver itself.** ⚠ **The
+drill asked directly whether any US airline, chemical company or refiner had disclosed a guidance
+change or a quantified fuel figure between 10-16 and 10-19: *"no disclosed guidance change or
+quantified fuel/feedstock-cost figure."* No company, no figure.**
+
+**3. Timing window:** **FAILS — rule (vi).** A measure suspended for a **60-day assessment with no
+fixed end date** can reverse inside one quarter. ⚠ **A cost tailwind that may be withdrawn before it
+is ever reported is not a two-quarter thesis; it is a headline with a timer on it.**
+
+**4. Invalidation:** **not reached** — parts 1–3 all fail.
+
+**Hard filters:** **not reached.** Priced-in, correlation and §3 all sit downstream of a mechanism
+that has no subject. ⚠ *(Correlation is trivially clear in any case — zero open satellite positions,
+so no driver can collide.)*
+
+**Outcome:** **REJECTED.** The largest genuinely new event of the window and it is structurally dead
+at the first test. ⚠ **Worth naming plainly, because it is the version of this error that is hardest
+to see: the event is real, dated, market-moving and verifiable, and it still contains no second
+company. A big true event is not a thesis.**
+
+---
+
+### T-2026-10-19-02 — the Friday bank cohort (TRV · TFC · MTB · RF · CFG) — REJECTED (part 1 — no cross-company disclosure in any of five releases; the 10-16 deferral discharged)
+**Company A / the news:** all five reported **Q3 2026 on 2026-10-16**, after the 10-16 pre-market run.
+Travelers: net income **$1.917B**, core income **$1.947B**.
+**Company B / the candidate:** none found.
+
+**1. Mechanism (one sentence):** **FAILS — THERE IS NO CANDIDATE TO PUT IN THE SENTENCE.** The drill
+asked each of the five for a technology-vendor contract, an outsourcing agreement, a named
+acquisition or divestiture counterparty, a disclosed exposure to a named borrower, or a quantified
+spend commitment to a named supplier. **Five rows, five blanks.** A bank's quarterly release is a
+report on **its own** balance sheet; there is no second party in it by construction.
+
+**2. Dollar path:** **not reached.** The figures that exist (TRV's $1.917B) are **Company A's own
+earnings** — rule (viii)'s plainest shape.
+**3. Timing window / 4. Invalidation:** **not reached.**
+
+**Hard filters:** **not reached** — part 1 is upstream.
+
+**Outcome:** **REJECTED, and the 10-16 deferral is hereby DISCHARGED.** ⚠⚠ **ONE HONEST QUALIFIER,
+RECORDED BECAUSE IT CUTS AGAINST THE CONCLUSION: the source states the primary releases were not in
+its result set and that *"no such disclosure reported" should not be treated as proof that the
+releases contained none."* ⚠ **So this is a rejection on ABSENCE OF EVIDENCE, not on evidence of
+absence, and it is labelled as such.** The decision is unchanged — §4 requires a disclosed mechanism
+before a buy, so an unfound disclosure and a nonexistent one produce the same answer today — but
+**the two are not the same fact, and a log that blurs them would be overstating what this run
+established.**
+
+---
+
+### T-2026-10-19-03 — data-centre project delays / CoreWeave bond distress → equipment-supplier read-through — REJECTED (rule (v) — no named project, no named supplier; rule (viii) — an analyst estimate; and it is the weekly review's own finding being re-served as an opportunity)
+**Company A / the news:** CoreWeave's Oct-2031 bonds briefly yielded **above 16%** on 10-16, other
+notes at **75–78c** (~16.4–16.5%); bonds financing data-centre construction for **Meta, Nvidia and
+Oracle** below face value; press reports of "numerous large data-centre projects delayed or blocked"
+on power, water, noise and air-pollution constraints.
+**Company B / the candidate:** none establishable.
+
+**1. Mechanism (one sentence):** **FAILS — rule (v), and this is the rule's single cleanest
+instance.** The drill asked for the specific projects, operator, location, MW or dollar size, and the
+**named suppliers who themselves disclosed an order deferral, backlog cut or guidance cut.** Verbatim:
+*"do not identify any specific delayed or cancelled U.S. data-centre project, nor do they name an
+equipment supplier or contractor that disclosed a resulting order deferral."* ⚠ **"Numerous projects"
+is a market-structure claim about an industry, not a transaction. The source left the blank; filling
+it in is not research.**
+
+**2. Dollar path:** **FAILS — rule (viii) read broadly.** The only quantity offered is **Dan Ives'
+estimate that 5–10% of planned projects will not be built** — ⚠ **an analyst estimate, which is not a
+disclosed figure at any company, and the bond yields are a SECONDARY-MARKET PRICE, not revenue.**
+
+**3. Timing window / 4. Invalidation:** **not reached.**
+
+**Hard filters:** **not reached.** ⚠ *(And §3 would close the obvious door anyway: CoreWeave's
+distress is expressed in its BONDS, and a debt instrument is not §3-eligible.)*
+
+**Outcome:** **REJECTED.** ⚠⚠ **AND THE REASON THIS ENTRY MATTERS IS THE DIRECTION IT ARRIVED FROM.**
+Friday's weekly review found the **AI / data-centre theme unwound**, taking every headline row of the
+reject board with it — and it filed that explicitly as **the three-review promotion rule's result,
+NOT as a new finding in the opposite direction.** ⚠ **Today the funnel served the same unwind back as
+a buyable idea, and the temptation is to treat last week's work as corroboration for a trade pointing
+the other way. It is not: the unwind is a TAPE observation, this is a press narrative with no named
+party, and §3 forbids expressing the short side at all. The finding stays a finding; it does not
+become a thesis.**
+
+---
+
+### T-2026-10-19-04 — 44.01 / Frontier $11.7M carbon-removal offtake — REJECTED (§3 both legs; part 2 catastrophically; rule (viii) — capital paid OUT by the only buyable leg)
+**Company A / the news:** **2026-10-19** — **Frontier** agreed offtake with **44.01** for permanent
+removal and storage of **20,932 tonnes of CO₂** between 2028 and 2031, **US$11.7M**. ⚠ **The single
+item in the whole window that framing one accepted as satisfying its conditions — both parties named,
+a specific transaction, a disclosed figure, and the figure is revenue to the supplier.**
+**Company B / the candidate:** 44.01 (the supplier), or a US-listed member of the Frontier buyer group.
+
+**1. Mechanism (one sentence):** writable in one clause for the supplier leg — *"Frontier's purchase
+causes 44.01's carbon-removal revenue to rise because Frontier is paying for 20,932 tonnes of
+removal."* ⚠ **The sentence is clean. Everything else fails.**
+
+**2. Dollar path:** **FAILS, AND BY THREE ORDERS OF MAGNITUDE ON THE BUYABLE LEG.** 44.01 is
+**Omani and privately held — not buyable at all.** Frontier is a **buyer coalition**, so the only legs
+with a ticker are its US-listed members, and for them **$11.7M spread across a multi-member coalition
+and four years is immaterial against revenue measured in the hundreds of billions** — nowhere near
+§4's 10%-of-revenue floor. ⚠ **It is also rule (viii)'s shape exactly: capital paid OUT by the
+buyable leg. The money is a COST to every company here that one could actually own.**
+
+**3. Timing window:** **FAILS — rule (vi).** Delivery runs **2028–2031**, ~**8 to 20 quarters** out
+against §4's two-quarter ceiling.
+**4. Invalidation:** **not reached.**
+
+**Hard filters:** **§3 — FAIL on both legs** (44.01 not US-listed and not public; Frontier not an
+issuer). Priced-in and correlation **not reached.**
+
+**Outcome:** **REJECTED.** ⚠ **Logged at full length precisely because it is the window's only
+complete two-party transaction with a real figure — and it still fails on size, listing and horizon.
+A disclosure that passes the test the last fifteen sessions kept failing is not thereby a trade;
+it just fails further down.**
+
+---
+
+### T-2026-10-19-05 — §3 / non-qualifying / disposed-repeat sweep of NINE items — REJECTED (disposed as one, zero drill queries spent)
+**The rule:** an item whose §3 or structural kill is visible in the broad-scan text itself gets no ID
+and no drill query. Each is named with its reason so the next run can see it was reached.
+
+**§3 — NAMED TWO-PARTY TRANSACTIONS THAT ARE SIMPLY NOT US-LISTED (two — and see the session note,
+this is where the constraint moved):** **NOVONIX / PowerCo** — ⚠ **both parties named, and the 10-19
+announcement REPLACED a prior BINDING offtake with a framework under which volume and price are
+negotiated later, so the disclosure DELETED its own dollar figure. Part 2 fails on a release that
+previously would have passed it** (NVX is ASX-primary and far below §3's floor; PowerCo is VW's
+German subsidiary) · **Orion Minerals / Glencore** **US$250M offtake, $40M first phase** — a South
+African mining transaction, neither leg US-listed.
+**RULE (v) — COUNTERPARTY UNNAMED (three):** **Elbit Systems** **$235M** EXTRA-MR rockets and PULS
+launchers to *"a European country"* — ⚠ **an unnamed sovereign ministry, and the figure is the
+ANNOUNCER's own revenue (rule viii)** · **Samsung Electro-Mechanics**, figure disclosed, customer only
+*"a global major company"* · **LS ELECTRIC** **$125M** US data-centre power deal for *"a U.S. big tech
+company"* — ⚠ **THIRD APPEARANCE, rule (iv): genuinely new transaction, structurally identical kill
+to 10-13 (Bloom Energy $138.5M) and the 10-15 re-serve. Korea-listed on top.**
+**PART 1 — OWN RESULTS, NO COMPANY B (two):** **Cleveland-Cliffs** Q3 profit beat (⚠ **the only
+US-listed name with a real disclosure in the window; the beat is against ANALYST ESTIMATES, which is
+rule (viii)'s consensus shape, and §3's cap floor is not even reached before part 1 kills it**) ·
+**Delta's** fuel-cost forecast cut — **dated 10-14, outside the window (rule iii), and it is Company
+A's own guidance.**
+**NO COMPANY A / MACRO OR GOVERNMENT OBJECT (two):** **September industrial production +0.7%,
+manufacturing +0.3%, capacity utilisation 76.9%** · **CPI / PPI / import prices and the Oct 27–28 FOMC
+hold expectation** — ⚠ **ONE party, no transaction. Already disposed at `T-2026-10-12-05` and
+`T-2026-10-13-08`; NO NEW ID MINTED, following the 10-14/10-15/10-16 precedent exactly. A government
+statistical release has one party whether it is scheduled, printing or printed.**
+**ALREADY DISPOSED — RE-SERVED, NOT RE-LITIGATED (named as re-serves, not as new disposals):**
+**TSMC Q3** (`T-2026-10-15-01`) · **Schneider Electric** (10-16 sweep, §3 French-listed).
+
+**Hard filters:** not reached on any item — every one died at **§3**, **part 1**, **rule (iii)**,
+**rule (iv)**, **rule (v)** or **rule (viii)**, all upstream.
+
+**Outcome:** **REJECTED, nine items, one entry, zero drill queries spent.**
+
+---
+
 ### 2026-10-16 (08:13 ET) — event survey (funnel, pre-thesis)
 
 Selftest **5/5**, all exit 0 (`trading_enabled: true`, LIVE paper, broker equity **$100,397.17** at

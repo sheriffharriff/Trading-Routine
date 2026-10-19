@@ -521,6 +521,34 @@ tape:
   `plan_today.md` arrives three calendar days old on a Monday** — compare `plan_date` to the last
   TRADING day, not to the calendar.
 
+### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-10-19, `1-premarket` 08:13 — **FIRST SEAT OF THE WEEK. This block will be collapsed by the 16:xx close seat, which is the first seat entitled to touch what three earlier seats wrote; it is deliberately left SHORT so there is less to collapse.** ⚠ **RE-DERIVED THIS RUN, NOT INHERITED: a table left untouched and a table re-evaluated to the same answer are indistinguishable to the next reader.**)
+
+**THE LEDGER AGREED WITH THE BROKER, AND IT WAS THIS RUN'S FIRST JOB — BEFORE ANY RESEARCH AND BEFORE
+ANY SELL RULE WAS READ.** `alpaca.py positions` at 08:13 returns **one row, core VOO**, qty
+**99.046311231** (unchanged since the 2026-09-03 fill), avg_entry **706.74**, cost_basis
+**$69,999.989999** — against **ZERO satellite blocks in this file** and `sleeves` reporting
+`satellite.count: 0`. **No discrepancy.** ⚠ **Core VOO was struck from the working list BEFORE any §5
+rule was read, per §5's core exemption. It is not a satellite operand.**
+
+| Rule | Status | Distance |
+|---|---|---|
+| §5.1 thesis invalidation | **ABSENT** | no thesis to invalidate — `open_thesis_ids: none` |
+| §5.2 time stop | **ABSENT** | no `timing_window`, so no deadline exists to pass |
+| §5.3 hard stop (−7% from entry) | **ABSENT** | no `entry_price` on any satellite row |
+| §5.4 trailing stop (−10% from `highest_close`) | **ABSENT** | ⚠ **`highest_close` does not exist as a field — a SEVENTH consecutive seat with no operand, so there is nothing to backfill. The high-water gap that would silently disable §5.4 cannot occur on an empty ledger.** |
+
+⚠ **"ABSENT" IS THE HONEST WORD AND "PASSING" WOULD BE A LIE.** A rule with no operand has not been
+satisfied; it has not been evaluated, because there is nothing to evaluate. ⚠ **No Perplexity
+invalidation check was run on any holding this morning — not as a skipped step, but because §5.1's
+subject does not exist.**
+
+⚠ **THE EX-DIVIDEND BASIS RULE AT THE TOP OF THIS FILE WAS NOT EXERCISED AND STILL BINDS.** This run's
+own `bars --days 6 --adjustment all` pull confirms the official 10-16 close at **701.745** on a single
+stated basis. **It was used for the plan's tape table only, never compared against a mark from another
+call.** The rule's first real test still lies in the future, with the first satellite fill.
+
+---
+
 ### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-10-16, **ONE DIGEST FOR THE DATE, ALL FOUR SEATS:** `1-premarket` 08:13 · `2-market-open` 09:37 · `3-midday` 12:42 · `4-market-close` 16:18. ⚠ **COLLAPSED BY THE CLOSE SEAT, THE FIRST SEAT ENTITLED TO TOUCH A BLOCK THREE EARLIER SEATS WROTE** — a seat cannot fairly collapse a paragraph it has just written. ⚠ **RE-DATED AND RE-EVALUATED, NOT LEFT: a table untouched and a table re-evaluated to the same answer are indistinguishable to the next reader.** ⚠⚠ **AND SEE THE CORRECTION AT THE FOOT OF THIS BLOCK — TWO CLAIMS THE 12:42 SEAT WROTE INTO THIS FILE ARE FALSE AND ARE REPLACED, NOT LEFT BESIDE THEIR REFUTATION.**)
 
 **§5.1 → 5.2 → 5.3 → 5.4 REACHED IN ORDER AT EVERY SEAT AND FOUND EMPTY.** Core VOO was struck from the
