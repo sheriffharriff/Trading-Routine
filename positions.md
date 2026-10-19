@@ -521,7 +521,7 @@ tape:
   `plan_today.md` arrives three calendar days old on a Monday** — compare `plan_date` to the last
   TRADING day, not to the calendar.
 
-### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-10-19, `1-premarket` 08:13 · `2-market-open` 09:36 — **FIRST SEAT OF THE WEEK. This block will be collapsed by the 16:xx close seat, which is the first seat entitled to touch what three earlier seats wrote; it is deliberately left SHORT so there is less to collapse.** ⚠ **RE-DERIVED THIS RUN, NOT INHERITED: a table left untouched and a table re-evaluated to the same answer are indistinguishable to the next reader.**)
+### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-10-19, `1-premarket` 08:13 · `2-market-open` 09:36 · `3-midday` 12:41 — **FIRST SEAT OF THE WEEK. This block will be collapsed by the 16:xx close seat, which is the first seat entitled to touch what three earlier seats wrote; it is deliberately left SHORT so there is less to collapse.** ⚠ **RE-DERIVED THIS RUN, NOT INHERITED: a table left untouched and a table re-evaluated to the same answer are indistinguishable to the next reader.**)
 
 **THE LEDGER AGREED WITH THE BROKER, AND IT WAS THIS RUN'S FIRST JOB — BEFORE ANY RESEARCH AND BEFORE
 ANY SELL RULE WAS READ.** `alpaca.py positions` at 08:13 returns **one row, core VOO**, qty
@@ -556,6 +556,23 @@ executable; the seat bought and sold nothing because the plan carried ZERO inten
 blocked it — nothing was skipped.** **§2 re-derived: equity $99,868.26, core 69.96% IN BAND,
 `rebalance_needed: false`, `rebalance_delta: 39.52` a DISTANCE READOUT (0.06%), no rebalance placed.**
 ⚠ **No block is added to `## Open positions`, because nothing was opened.**
+
+**`3-midday` 12:41 — THIRD RECONCILIATION OF THE DAY, SAME ANSWER, AND THIS SEAT MAY NOT OPEN
+ANYTHING.** `positions` at 12:41 returns the **same one row** (VOO 99.046311231 sh @ 706.74,
+cost_basis $69,999.989999) against **zero satellite blocks here** and `sleeves`
+`satellite.count: 0`. All four rules remain **ABSENT, NOT PASSING** — a **ninth** consecutive seat
+with no operand. ⚠ **Steps 2–5 of the midday prompt had NO OPERAND, and that is not the same as
+passing them:** no `highest_close` existed to compare against the last trading day, so **no
+backfill was performed because none was possible**; no `invalidation` string existed, so **no
+Perplexity check was run — §5.1's subject does not exist**; no `entry_price` and no
+`timing_window`, so §5.2/§5.3 have no arithmetic. ⚠ **Zero `sell` calls were submitted — there was
+nothing to exit, so no `dry_run` and no `terminal:false` could arise, and `consecutive_closed_losses`
+is untouched at 0.** **§2 re-derived from this seat's own read: equity $99,926.70, core
+$69,926.695729 = 69.98% IN BAND (4.98pp above the lower edge), cash $30,000.00 exactly,
+`rebalance_delta: 21.99` — an ELEVENTH reading and a DISTANCE READOUT (0.03%), and the midday seat
+has no rebalance authority in any case.** ⚠ **The stale `lastday_price` defect persists into an
+EIGHTH seat, gap unchanged at −$0.135** (701.61 vs the official 10-16 close 701.745) — **never
+difference `change_today` (0.00626) or `unrealized_intraday_pl` (+$434.813306) into a P&L figure.**
 
 ---
 
