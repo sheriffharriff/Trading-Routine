@@ -52,6 +52,334 @@ single most common way a plausible-sounding connection gets mistaken for an oppo
 
 ## Entries
 
+### 2026-10-20 (08:06 ET) — event survey (funnel, pre-thesis)
+
+Selftest **5/5**, all exit 0 (`trading_enabled: true`, LIVE paper, broker equity **$99,604.80** at
+pre-flight). `clock` at **08:03:00** reads `is_open: false`, `next_open` **2026-10-20T09:30**,
+`next_close` **2026-10-20T16:00** — **both carrying TODAY's date: the pre-market full-session
+signature, read off the DATES and not the boolean. Not a holiday, not an early close.** Window
+screened: **the completed 2026-10-19 session and the overnight into Tuesday — ONE TRADING DAY.**
+**Three broad scans plus two drills, all exit 0. SIX theses, ALL SIX REJECTED.**
+
+**⚠⚠ THE STRUCTURAL FRAMING EARNED ITS PLACE AGAIN AND THE "SIGNIFICANCE" FRAMING FAILED AGAIN, ON
+THE SAME WINDOW — THE 10-06 PAIRED TEST REPRODUCED.** Scan 1 (the routine's own Step 5a voice, *"most
+significant … news events"*) returned **two own-earnings prints and a macro aggregate**, and
+volunteered *"the available results do not establish a material supply agreement."* Scan 2 (**two
+named companies and a disclosed dollar amount**) returned **the 3M/Amazon warrant arrangement and the
+MKS/TTM divestiture — NEITHER of which scan 1 mentioned at all** — plus five self-excluded items with
+reasons attached. ⚠ **Scan 1's framing would have produced a no-trade day whose only content was two
+earnings prints. USE THE STRUCTURAL FRAMING FIRST; it is now 6 for 6 sessions.**
+
+**⚠⚠ THE SEGMENT-QUANTIFICATION FRAMING VOLUNTEERED THE ABSENCE FOR THE SIXTEENTH CONSECUTIVE SESSION
+— 09-29 → 10-20 UNBROKEN.** Verbatim: *"Among the available results, no winner clearly disclosed the
+award's value specifically to its own reported business segment. The reported figures are total
+contract or agreement values where available—not segment-attributed values."* ⚠ **Seven awards
+returned, seven with no segment figure. That framing's whole job is to find part-2 evidence, and it
+has now reported its absence sixteen times running.**
+
+**⚠⚠⚠ THE BINDING CONSTRAINT MOVED TO §3 FOR A SECOND CONSECUTIVE SESSION — OBSERVATION 2 OF THE 3
+THE 10-19 ENTRY ASKED FOR, AND IT IS A STRONGER INSTANCE THAN THE FIRST.** On 10-19 three genuine
+two-party transactions died at §3 on foreign listing (44.01/Frontier, NOVONIX/PowerCo, Orion
+Minerals/Glencore). **Today the single best event in the window produced a genuine, named,
+publicly-traded SECOND-ORDER company B — the thing this funnel has been failing to reach for five
+weeks — and it is TAIWAN-LISTED** (`T-2026-10-20-02`, GSEO / Taiwan 3406). ⚠ **The 10-19 instances
+were §3-dead at the *transaction* leg; this one is §3-dead at the *Company B* leg, which is the exact
+rung §4 exists to reach. Company B now EXISTS, is CORRECTLY IDENTIFIED, and is NOT BUYABLE.** ⚠ **Two
+sessions is still not a finding. Recorded for the next two reviews to test, not acted on.**
+
+**⚠⚠ ONE `move` CALL — THE FIRST IN SEVEN SESSIONS, LEGITIMATE RATHER THAN DECORATIVE, AND IT EXPOSED
+A SIXTH DEFECT SHAPE IN THE §4 PRICED-IN FILTER.** `MMM` reached the filter carrying a part-1 pass and
+a real dated transaction. **It returned `priced_in: false`, +0.69% over five sessions, "passes" — and
+the verdict carries ZERO information about the event, because every close in the window predates it.**
+Full statement at `T-2026-10-20-01`; it is the run's most useful output and it belongs to the human.
+
+---
+
+### T-2026-10-20-01 — 3M (MMM) / Amazon — REJECTED (part 2 — no segment, no figure; rule (viii) NEW COSTUME — a $6B figure whose only disclosed function is to vest DILUTION at Company B; rule (iii) split verdict; and the priced-in filter's SIXTH defect shape)
+
+**Company A / the news:** **Amazon.com** and a wholly owned subsidiary entered an **expanded
+commercial relationship** with 3M, disclosed in a **3M 8-K dated 2026-10-19** (coverage timestamped
+~17:36 ET, i.e. **after the 10-19 bell**), covering 3M's supply of **"optical connectivity and other
+Data Center products."** Terms as disclosed: 3M **issued a warrant** to an Amazon subsidiary for up to
+**3,162,015 3M shares**, **seven-year** term, exercise price **$164.89**; **85% of the warrant shares
+vest on Amazon's cumulative payments** for those products and become **fully vested at $6 billion**
+cumulative; the remaining **15%** vests on **unspecified "event-based milestones."** Full exercise
+would yield 3M ~**$521.4M** in proceeds.
+**Company B / the candidate:** **3M Company (MMM)** — tested under the reading that makes the strongest
+possible case for it (Company A = Amazon, the party making the commitment; Company B = 3M, the supplier
+whose revenue line it lands on). ⚠ **Under the plainer reading 3M is simply the headline name — it
+filed the 8-K and its stock moved on it — and §4 forbids chasing the headline name. The entry is
+written against the stronger reading because dismissing it on the weaker one would be dodging.**
+
+**1. Mechanism (one sentence):**
+> Amazon's expanded data-centre purchase arrangement causes 3M's data-centre optical-connectivity
+> revenue line to rise because Amazon is contracting to buy those products from 3M.
+
+⚠ **THIS IS A CLEAN PART-1 PASS AND THEY ARE RARE IN THIS LOG — one clause, no "and also", a named
+buyer, a named seller, a named product line and a dated filing.** Five of the last six sessions died
+*at* part 1 for want of a Company B. **This one gets through it, which is exactly why the rest of the
+entry matters: the filters that follow are not a formality here, they are the whole decision.**
+
+**2. Dollar path:** ⚠⚠ **THIS IS WHERE IT DIES, AND IT DIES WITHOUT A JUDGEMENT CALL.** 3M disclosed
+**no reporting segment** for the sales, **no revenue figure**, **no backlog**, **no annual or total
+contract value**, **no margin**, **no change to 2026 guidance** and **no quantified contribution to
+any segment** — the sources state each of those absences explicitly. §4 part 2 requires *the segment
+affected, the magnitude, and that segment's share of total revenue*; **I cannot supply one of the
+three without inventing it.** 3M's total revenue runs ~**$24–25B/yr**, so even taking the $6B at face
+value and spreading it over the warrant's seven-year term gives **~$860M/yr ≈ 3.5% of revenue —
+UNDER §4's 10% floor** — and that arithmetic is itself illegitimate, because **the $6B is not a
+purchase commitment** (see below). **No honest part 2 exists. REJECT.**
+
+**3. Timing window:** **Not establishable, and it fails in the direction of too long.** No delivery
+schedule, no first-revenue date and no guidance change were disclosed; the only dated horizon in the
+document is the **warrant's seven-year term** (~28 quarters against §4's **two**). ⚠ *Not the decisive
+kill — part 2 is — but it does not rescue anything either.*
+
+**4. Invalidation:** *(not reached — part 2 is unwritable, so there is no thesis to invalidate.)*
+
+**Hard filters:**
+- **Priced-in (§4): `move --symbol MMM --sessions 5` → 160.895 → 162.01, +0.69%, `priced_in: false`,
+  "passes the priced-in check" — AND THE VERDICT IS INFORMATIONALLY EMPTY. SEE THE DEFECT-SHAPE NOTE
+  BELOW; this is a NEW failure mode, not a pass.**
+- Correlation (§4): drivers of open positions checked → **pass, with NO OPERAND — zero satellite
+  positions exist, so nothing could correlate.** ⚠ *Recorded as the fourth state, not as a pass.*
+- Universe (§3): `asset` → **`us_equity` / NYSE / `tradable: true` / fractionable**; market cap
+  **~$87B** (source: Perplexity, against 162.01 × ~537M shares — **order-of-magnitude only, and NOT
+  audit-grade; it is recorded because the rule says to record where it came from, and it was never
+  load-bearing because the thesis died at part 2**) → **pass, by a factor of ~8.7.**
+
+**⚠⚠⚠ RULE (viii) — A NEW COSTUME, AND IT IS THE MOST SEDUCTIVE ONE SINCE JBL's $1.7B CONSIGNMENT.
+A DOLLAR FIGURE WHOSE ONLY DISCLOSED FUNCTION IS TO MEASURE HOW MUCH DILUTION VESTS AT COMPANY B.**
+The "$6 billion" is **not revenue, not a purchase order, not a commitment, and not a ceiling on a
+contract** — it is **the threshold at which 85% of a warrant 3M GAVE ITS CUSTOMER becomes fully
+vested.** ⚠ **The sign is inverted twice over: the instrument is equity issued BY the candidate TO the
+counterparty, and the $6B's role is to accelerate that issuance.** ⚠ **The nearest prior entry on this
+list is AstraZeneca's $2.0B convertible preferred, *"which DILUTES rather than earns"* — but this is
+worse-shaped, because AZN's figure was at least the size of the instrument, whereas here the large
+number ($6B) and the instrument ($521.4M of proceeds against 3.16M shares of dilution) are DIFFERENT
+OBJECTS, and only the large one gets quoted.** ⚠⚠ **IT READS AS A $6 BILLION COMMERCIAL WIN. The
+disclosure says only that if Amazon chooses to buy $6B of product over seven years, Amazon will have
+earned the right to buy 3.16M shares of 3M at $164.89. NOBODY HAS COMMITTED TO BUY ANYTHING.**
+⚠ **Rule (v)'s CEILING sub-shape rides along on top: "up to", cumulative, seven years, contingent on
+the counterparty's own future purchasing decisions.**
+
+**⚠⚠ RULE (iii) — A SPLIT VERDICT IN ONE DISCLOSURE, AND IT IS THE 10-15 TSMC LESSON REPEATING: APPLY
+THE RULE TO THE FIGURE THE MECHANISM RUNS ON, NOT TO THE RELEASE.** The **warrant** is genuinely new —
+the sources confirm no prior announcement of the warrant, the 3,162,015-share count, the $164.89 strike
+or the $6B threshold (**a clean rule (iii) PASS**). The **commercial relationship is NOT** — 3M's own
+word is **"EXPANDED"**, which concedes a pre-existing one of unstated size (**costume #1,
+reaffirmation-shaped**). ⚠⚠ **AND THE SIGNS ARE THE WRONG WAY ROUND FOR §4, EXACTLY AS THEY WERE FOR
+TSMC: THE THING THAT IS NEW (the warrant) HAS THE WRONG SIGN, AND THE THING THE MECHANISM RUNS ON (the
+product revenue) IS THE PART THAT IS NOT NEW AND HAS NEVER BEEN SIZED.** A reader who tests the
+release, hits the warrant's clean pass, and stops has proceeded on the wrong figure.
+
+**⚠⚠⚠ PRICED-IN FILTER — DEFECT SHAPE SIX, NEW TODAY, AND IT FAILS TOWARD TAKING THE TRADE.
+THE WINDOW CONTAINED ZERO POST-NEWS CLOSES, SO THE FILTER CERTIFIED A PASS ON A PRE-NEWS PRICE
+SERIES.** The five-session window ends at the **2026-10-19 close (162.01)**; the 8-K and its coverage
+landed **after that bell**. **Every close the filter read predates the event.** ⚠ **The +0.69% is
+arithmetically correct and informationally empty: it measured the five sessions BEFORE the news and
+reported that the news is not in the price — which is true, and useless.** ⚠ **It is not shape three
+either: shape three is a real move swept up by the window; here there is no post-news close in the
+window AT ALL, and the window's +0.69% nets a run-up (160.895 → 165.22) against a pull-back
+(165.22 → 162.01) that have nothing to do with the event — 3M in fact closed **DOWN 1.62%** on the
+announcement date, at 162.01 against the 10-16 close of 164.675, because the news broke after it
+closed.** ⚠⚠ **THE DEFECT IS THE WINDOW'S RIGHT EDGE, NOT THE THRESHOLD AND NOT THE SIGN — and it is
+systematic, not incidental: ANY event disclosed after a bell meets this filter in exactly this state
+at the next pre-market seat, which is the seat that does all the research.**
+⚠⚠⚠ **AND THE MITIGATION THE SYSTEM ALREADY HAS DOES NOT COVER IT — THIS IS THE PART FOR THE HUMAN.**
+`plan_today.md` requires every BUY intent to carry a `revalidate` line precisely so the 09:35 seat can
+catch an overnight gap past the 4% threshold. ⚠ **A `move` call at 09:35 READS CLOSES, and 2026-10-20's
+close does not exist at 09:35 — so the re-check would return THE SAME 160.895 → 162.01 / +0.69% /
+`priced_in: false`, bit for bit.** ⚠⚠ **THE REVALIDATE MECHANISM CANNOT SEE AN OVERNIGHT GAP WITH THE
+TOOL IT IS POINTED AT. Catching it needs a quote-against-prior-close comparison, which is a different
+call.** ⚠ **This is open items (1), (2) and (7) arriving in a new and sharper form, and only a human
+may change §4 or `alpaca.py move`. IT COST NOTHING TODAY BECAUSE THE THESIS DIED AT PART 2; IT BECOMES
+A WRONG TRADE THE FIRST TIME A POST-BELL EVENT PRODUCES A WRITEABLE PART 2.**
+⚠ **WHAT I DID NOT VERIFY, STATED PLAINLY: the sources say MMM rose ~3.6% in extended hours. THE
+ALPACA FEED CANNOT CORROBORATE THAT — `quote --symbols MMM` returns a `latestTrade` stamped
+**2026-10-19T20:03Z (16:03 ET)** at 163.66 and NO 10-20 pre-market print at all, so this feed carries
+no extended-hours tape. The gap's SIZE is an unverified source claim and is not relied on anywhere
+above. The finding does not need it: what makes the window pre-news is the DATE of the last close in
+it, which the tape does establish.**
+
+**Outcome:** **REJECTED at part 2** — no segment, no figure, no guidance change, and the only large
+number in the disclosure is a **warrant-vesting threshold, not revenue**. ⚠ **This is the best-formed
+candidate the funnel has produced since GFS on 10-09 and the first in seven sessions to reach the
+priced-in filter, and it still produces no trade.** ⚠ **The pull here was real and is worth naming: a
+Dow component, a named hyperscaler, "$6 billion", a clean one-clause mechanism and a filter saying
+"passes" — five things that each look like a reason to proceed, against one missing segment figure
+that §4 makes decisive. The honest-broker rule is doing exactly the work it was written for.**
+
+---
+
+### T-2026-10-20-02 — Genius Electronic Optical (GSEO, Taiwan 3406) / 3M — REJECTED (§3, hard — the genuine second-order Company B, correctly reached, NOT US-LISTED)
+
+**Company A / the news:** the same 2026-10-19 3M/Amazon arrangement as `T-2026-10-20-01` — Amazon
+committing to buy 3M **optical connectivity and data-centre products** at scale.
+**Company B / the candidate:** **Genius Electronic Optical Co. (GSEO, Taiwan 3406)** — named in 3M's
+own collaboration disclosure as the **external manufacturing partner** for 3M's **expanded-beam optical
+ferrules, co-packaged-optics solutions and related optical-interconnect** products. 3M supplies the
+EBO technology, optical design and customer relationships; **GSEO supplies the precision-optics
+manufacturing, production capacity and precision assembly**, and **3M is acquiring ~4.7% of GSEO** as
+part of it.
+
+**Hard filters — §3 FIRST, BEFORE THE MECHANISM WAS ELABORATED, per the standing discipline:**
+- **Universe (§3): FAIL. GSEO is TAIWAN-LISTED (ticker 3406). Not US-listed → ineligible at any price,
+  at any market cap, and at any level of disclosure. The thesis was stopped here and no further query
+  was spent on it.**
+- Priced-in / correlation: **not reached.** ⚠ *A `move` call on a Taiwan ticker is not even available,
+  and would have been decorative if it were.*
+
+**Why this one matters more than a routine §3 kill, stated carefully:** ⚠⚠ **THIS IS THE RUNG §4
+EXISTS TO REACH, AND THE FUNNEL REACHED IT.** Not the headline name, not a shared-cause read-across,
+not an unnamed supply base — **a specifically named, publicly traded manufacturing partner, named in
+the principal's own disclosure, with a disclosed equity stake pinning the relationship down.** ⚠ **It
+is the cleanest Company B this log has produced, and §3 kills it in one line.**
+⚠ **AND PART 2 WOULD HAVE KILLED IT ANYWAY, WHICH IS WORTH RECORDING SO THE §3 KILL IS NOT MISTAKEN
+FOR THE ONLY THING STANDING IN THE WAY:** the sources state that **no figure or percentage is reported
+for how much of GSEO's revenue comes from 3M**, and do not establish that 3M is currently a material
+customer at all. **Two independent kills, and §3 is the cheaper one.**
+
+**Outcome:** **REJECTED on §3.** ⚠ **Second consecutive session in which a genuine named Company B
+existed and was not buyable — observation 2 of the 3 the 10-19 entry asked for. §3 does not weigh
+outcomes (the standing ELMT proof), and "but this is the best one yet" is the same pull ELMT wore.**
+
+---
+
+### T-2026-10-20-03 — Northrop Grumman (NOC) Q3 2026 — REJECTED (part 1 — own results, no transaction; and THE FIGURE THAT MOVED HAS NO SUPPLIER CHAIN HANGING OFF IT)
+
+**Company A / the news:** NOC's **2026-10-20** Q3 print: sales **+7% to $11.1B**, net income **+2% to
+$1.124B**, diluted EPS **$7.89 vs $7.67**. Backlog a record **$109.6B**. **Guidance: MTM-adjusted EPS
+RAISED to $29.35–29.75 from its OWN prior $28.60–29.10; segment operating income RAISED to
+$4.94–5.04B from its OWN $4.85–5.00B; FY2026 SALES guidance MAINTAINED at $43.75–44.25B** and adjusted
+FCF **maintained at $3.1–3.5B**.
+**Company B / the candidate:** **none reached.**
+
+**1. Mechanism:** **cannot be written.** A company reporting its own quarter is **first-order**, and
+the release names **no counterparty and no transaction** — the backlog figure is contracted demand in
+aggregate, not an agreement with an identifiable second party. ⚠ **REJECT at part 1.**
+
+**⚠⚠ RULE (iii) IS A CLEAN PASS HERE AND IT BUYS NOTHING — AND THAT IS THE ENTRY'S WHOLE VALUE.** The
+EPS and segment-operating-income raises are measured against **NOC's OWN prior ranges**, present in the
+source, which is the test the most prolific rule on the standing list asks for. **Sixteen costumes on
+that list and this one is not wearing any of them.** ⚠⚠ **AND IT STILL DIES, BECAUSE OF *WHICH* FIGURE
+MOVED: SALES GUIDANCE WAS MAINTAINED, UNCHANGED, AT $43.75–44.25B.** A supplier chain hangs off **what
+a prime contractor BUYS**, which tracks **sales and capex** — not off **EPS and segment margin**, which
+is what moved. ⚠⚠ **THE ATTEMPTED MECHANISM — *"NOC raised guidance, so its suppliers will see more
+orders"* — IS CONTRADICTED BY ITS OWN SOURCE DOCUMENT: the top line NOC guided to is the SAME top line
+as before. It needs an *"and also NOC will eventually have to buy more"*, and that "and also" is the
+part-1 test failing.**
+⚠⚠ **THIS IS `T-2026-10-15-01` (TSMC) REPEATING EXACTLY, ON THE DEFENCE SIDE AND WITH THE SIGNS EVEN
+CLEANER.** There, revenue growth was raised while capex — the figure with the supplier chain — was
+reaffirmed. **Here, EPS and margin were raised while sales were maintained.** ⚠ **The shape is now
+established across two unrelated industries five sessions apart: A MARGIN OR EPS RAISE IS NOT A
+SECOND-ORDER CATALYST, BECAUSE NOBODY SUPPLIES MARGIN. Expect it every earnings season.**
+⚠ **And the defence-award finding stands behind it independently: fourteen-plus instances say US
+defence programme disclosure does not produce a §4 Company B.**
+
+**Outcome:** **REJECTED at part 1.** No `move` call — the kill is upstream of price, so one would have
+been the thirteenth decorative refusal.
+
+---
+
+### T-2026-10-20-04 — RTX Corporation (RTX) Q3 2026 — REJECTED (rule (iii) costume #1 — guidance against CONSENSUS, not its own prior figure; rule (iv) SIXTH APPEARANCE; part 1 — own results)
+
+**Company A / the news:** RTX's **2026-10-20** Q3 print: revenue **$24.97B, +11.1% y/y**; FY2026
+revenue guidance **midpoint $97.25B**, reported as **"1.1% above analysts' estimates."**
+**Company B / the candidate:** **none reached.**
+
+**1. Mechanism:** **cannot be written** — RTX's own quarter, no counterparty, no transaction.
+**REJECT at part 1.**
+
+**⚠⚠ RULE (iii), COSTUME #1, IN ITS PUREST FORM — AND THE CONTRAST WITH `-03` ONE ENTRY ABOVE IS THE
+POINT OF LOGGING BOTH.** The only benchmark the source supplies for RTX's guidance is **"above
+analysts' estimates"** — **consensus**, not **RTX's own prior range**, which appears nowhere in the
+available reporting. ⚠ **A figure above consensus establishes nothing about whether RTX's own outlook
+MOVED, and the gap between a guide and a consensus BELONGS TO NOBODY** (the standing Cigna
+$280.0B-vs-$287.2B instance). ⚠⚠ **NOC AND RTX REPORTED THE SAME MORNING AND SIT ON OPPOSITE SIDES OF
+THIS TEST: NOC's raise is against its OWN prior range (a clean pass that still dies on which figure
+moved); RTX's is against CONSENSUS (not establishable in either direction). 09-29 produced the same
+pass/fail pair one entry apart — IOVA against AAR. The test is cheap, it discriminates, and it
+discriminated again today.**
+
+**⚠⚠ RULE (iv) — RTX IS NOW AT SIX APPEARANCES IN NINE SESSIONS ACROSS FIVE DISTINCT DISCLOSURES**
+(09-29 AMRAAM $20.7B · 10-02 SM-6 *"up to"* $24.4B · 10-09 SM-3 *"up to"* $6.3B · 10-12 the SM-3 award
+re-served twice in one run · 10-14 USAF Nuclear Weapons Center *"up to"* $8B · **10-20 the Q3 print**)
+**AND IT HAS DIED AT PART 1 EVERY SINGLE TIME.** ⚠ **Today's arrival is a DIFFERENT KIND of disclosure
+— an earnings print rather than a programme award — and it dies at the same rung for the same reason:
+a first-order disclosure by a company that names no second party.** ⚠⚠ **THAT IS THE STRONGEST FORM OF
+RULE (iv) YET: a new disclosure TYPE on a recurring ticker is still not fresh evidence when the kill is
+structural. A ticker that keeps arriving and keeps dying the same death is telling you about its
+industry's disclosure practice, not about a candidate maturing. Expect RTX again; the answer is already
+written.**
+
+**Outcome:** **REJECTED at part 1,** with rule (iii) failing independently. No `move` call — decorative.
+
+---
+
+### T-2026-10-20-05 — MKS Inc. (MKSI) / TTM Technologies (TTMI) — Ophir Optics $650M — REJECTED (merger arbitrage is not in §4; rule (viii) — consideration paid OUT by one buyable leg and IN to the other; part 1 — both legs are named parties)
+
+**Company A / the news:** **2026-10-19 8-K** — **MKS Inc.** agreed to sell its **Ophir Optics**
+business to **TTM Technologies** for **$650M all-cash**, subject to customary closing adjustments.
+Both parties **US-listed**.
+**Company B / the candidate:** **none exists.** Both legs are named parties to the transaction.
+
+**1. Mechanism:** **cannot be written without an "and also".** ⚠ **MERGER AND DIVESTITURE
+ARBITRAGE IS NOT IN §4 — the standing item covers three such deals in two sessions (onsemi/Synaptics,
+Schneider/PTC, CHRW/RXO) and the answer needed no query then or now.** §4 asks whose **economics
+change** because of an event at **another** company; in an asset sale **both** parties are first-order,
+and the asset itself is not listed.
+**2. Dollar path:** ⚠ **RULE (viii), BOTH SIGNS IN ONE TRANSACTION, WHICH IS UNUSUAL ENOUGH TO
+RECORD:** the **$650M is consideration paid OUT by TTM** (wrong sign at the acquirer — the GEHC/Sofie
+and CHRW/RXO shape) **and capital paid IN to MKS** (wrong sign at the seller — the TotalEnergies/GIP
+and SOCAR shape). ⚠ **Neither leg has disclosed segment REVENUE attached to it. The same figure fails
+rule (viii) twice, in opposite directions, depending on which side you stand on.**
+**3 / 4:** not reached.
+
+**Hard filters:** not reached — the kill is at part 1, upstream of price and upstream of §3.
+⚠ *Both tickers are plausibly US-listed and TTM is plausibly below the §3 $10B floor; NEITHER WAS
+PULLED, because a cap figure on a candidate that does not exist documents nothing.*
+
+**Outcome:** **REJECTED at part 1.** ⚠ **Noted for the pattern, not for the trade: this is the second
+optics/photonics transaction in the SAME 24-hour window** (with the 3M/Amazon optical-connectivity
+arrangement) **— and a theme appearing twice is a reason for the correlation check to be stricter if
+either ever produces a candidate, NOT corroboration that the theme is an opportunity. A shared cause is
+not a mechanism, and that holds for a shared THEME across two unrelated transactions too.**
+
+---
+
+### T-2026-10-20-06 — §3 / non-qualifying / disposed-repeat sweep of TWELVE items — REJECTED (disposed as one, ZERO drill queries spent)
+
+Every remaining item the three scans returned, with the rung that kills it. ⚠ **Each of these was
+disposed on the face of the scan output, by a rule already on the standing list. No drill query was
+spent on any of them, which is the entire point of keeping the list.**
+
+| Item | Figure | Killed at |
+|---|---|---|
+| **BAE Systems** / US DoW APKWS framework, up to 7 years, capacity to 35,000 kits/yr | **no value disclosed** | **§3 — UK-listed.** Plus **part 2** (capacity in kits, not dollars, not revenue) and the standing defence-award finding. |
+| **General Dynamics Mission Systems** / US Navy nuclear cruise-missile fire control | **$194M modification** | **part 2** — $194M against GD revenue ~$50B is **~0.4%**, an order of magnitude under §4's 10% floor. Plus **rule (iii)** (a *modification*, original award date not stated) and the defence-award finding. |
+| **GE Vernova** / Côte d'Ivoire Songon 372MW, 9E turbine + generator | **no value disclosed** | **part 2** — no figure at all. **Rule (iv)**: GEV's third appearance in six sessions. |
+| **Elbit Systems** / EXTRA-MR + PULS to "a European customer" | **~$235M** | **rule (v)** — counterparty **unnamed**, and the funnel volunteered it is a government-to-government framework. **§3** independently (Israel-domiciled, below-floor ADR shape). |
+| **Aquirian** / Western Energetics, Mt Ida extension to 2030 | **~A$21M** | **§3** — Australian microcap. **Rule (iii)** — an *extension*. **Part 3** — a 2030 horizon. |
+| **Wärtsilä** / Origem Energia, 7 Brazilian projects, 371MW | **no value disclosed** | **§3** — Finnish-listed. **Rule (iii)** — source says the engine supply was **"previously announced."** |
+| **Tower Semiconductor / Semtech** — expanded multiyear dedicated SiGe capacity, US + Israel + Japan | **no value disclosed** | **part 2** — no figure, so no dollar path. **Rule (iii)** — *"expanded"*. **Part 1** — both parties named, so the candidate IS the headline. ⚠ *§3 status of TSEM/SMTC not pulled: three kills upstream.* |
+| **Anthropic / Nscale** compute arrangement | **~$45B** | **not an announcement** — reported as **still under discussion, terms not finalised.** Plus the **PRE-IPO CONTRACT BOOK** shape already disposed on Nscale's $103B, and **Anthropic is not listed.** |
+| **Samsung Bioepis / Brazilian Ministry of Health** | **none disclosed** | **one party is a GOVERNMENT** (the standing "a government action is not a Company A" object) **+ no figure + §3.** |
+| **Broadcom / NTT Docomo** | **terms not disclosed** | **part 2** — no figure. |
+| **PT Krakatau Steel** / Australian Steel Traders, HRC/HRS | **up to 30,000 t/yr, NO dollar amount** | **unit is not money** (the 10-12 sovereign-diesel false-positive's companion failure) **+ §3** (Indonesian). |
+| **JPMorgan** — $230B financed under a **$1.5T** national-security initiative | **$230B / $1.5T** | **rule (v) + no named recipient** — the source states it does not identify the financed companies or project-level commitments. ⚠ **THE LARGEST NUMBERS IN THE WHOLE RUN AND THE EMPTIEST: a trillion-dollar FINANCING CEILING AVAILABLE TO SOMEBODY ELSE, unnamed. Rule (viii)'s Brookfield/Bloom $25B and Tesla $30B shape, two orders of magnitude up. SCALE MAKES IT MORE CONVINCING, NOT LESS.** |
+
+**⚠ RE-SERVE RATE, SIXTH CONSECUTIVE SESSION: GE Vernova** returns for a **third** time in six sessions
+(10-15 Venture Global frame agreements, 10-19 in the sweep, 10-20 Côte d'Ivoire) and **Elbit's unnamed
+European customer** is the same rule (v) blank as 10-19's. ⚠ **Reading the log before the tape cost one
+`grep` and saved three drills — the sixth session running that it has.**
+
+**Outcome:** **ALL TWELVE REJECTED.** ⚠ **Nine of the twelve carry either no dollar figure at all or a
+figure in the wrong unit, at the wrong party, or available to nobody in particular. That ratio is the
+funnel's actual inventory and it has not moved in six weeks.**
+
+---
+
 ### 2026-10-19 (08:13 ET) — event survey (funnel, pre-thesis)
 
 Selftest **5/5**, all exit 0 (`trading_enabled: true`, LIVE paper, broker equity **$99,852.41** at
