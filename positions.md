@@ -521,7 +521,7 @@ tape:
   `plan_today.md` arrives three calendar days old on a Monday** — compare `plan_date` to the last
   TRADING day, not to the calendar.
 
-### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-10-20, **TWO SEATS SO FAR:** `1-premarket` 08:03 · `2-market-open` 09:37. ⚠ **Two seats are still to write today; UNCOLLAPSED BY DESIGN — the close seat is the first seat entitled to collapse what three earlier seats wrote. The 09:37 seat APPENDED and did not touch the 08:03 material above it.**)
+### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-10-20, **THREE SEATS SO FAR:** `1-premarket` 08:03 · `2-market-open` 09:37 · `3-midday` 12:41. ⚠ **One seat is still to write today; UNCOLLAPSED BY DESIGN — the close seat is the first seat entitled to collapse what three earlier seats wrote, because a seat cannot fairly collapse a paragraph it has just written. Each seat APPENDED and did not touch the material above it.**)
 
 **THE LEDGER AGREED WITH THE BROKER, AND IT WAS THIS RUN'S FIRST JOB — BEFORE ANY RESEARCH AND BEFORE
 ANY SELL RULE WAS READ.** `alpaca.py positions` at **08:03** returns **one row, core VOO**, qty
@@ -624,6 +624,72 @@ shape — that a `move` re-check at the open **cannot** catch an overnight gap, 
 `move` calls.** **It stands unfalsified, NOT confirmed, and the next seat must not read a clean run as
 having tested it.** It gets tested the first time a BUY intent survives to 09:35, and on that day it
 fails **toward taking the trade.**
+
+
+**── `3-midday-management` 12:41 ET — THE EXITS-ONLY SEAT. ZERO EXITS, AND NONE WERE DUE. ──**
+
+⚠⚠ **THIS SEAT'S WHOLE JOB HAD NO OPERAND, AND THAT IS THE POINT WORTH RECORDING.** The routine exists
+so an 11am stop breach is acted on at lunchtime instead of at the close. **There are ZERO open satellite
+positions, so Steps 2, 3, 4 and 5 had nothing to evaluate** — §5's four rules are **ABSENT, NOT PASSING**,
+for the **THIRTEENTH consecutive seat.** ⚠ **The Step 1 early-exit path ("nothing to manage, note it,
+commit, exit") was taken DELIBERATELY. This seat MAY NOT open a position and did not go looking for one:
+a midday entry would route around the pre-market research and 09:35 execution path, which is the thing
+that forces every buy to sleep on a written thesis.**
+
+**LEDGER RECONCILED FIRST, BEFORE ANY RULE WAS READ — THREE SIDES AGREE.** `positions` returns **one row,
+core VOO**, qty **99.046311231** (unchanged since the 2026-09-03 fill), avg_entry **706.74**, cost_basis
+**$69,999.99**; **ZERO satellite blocks in this file**; `sleeves` reports `satellite.count: 0`. ⚠ **Core
+VOO was STRUCK FROM THE WORKING LIST BEFORE ANY §5 RULE WAS READ, per §5's core exemption — it is not a
+satellite operand and is never sold on news.**
+
+⚠⚠ **STEP 2 — THE HIGH-WATER REPAIR — HAD NO OPERAND, AND THIS IS THE FAILURE MODE THE PROMPT ITSELF
+NAMES.** There is **no `highest_close` field anywhere in this file to be stale, because there is no
+position.** **THE BACKFILL MACHINERY HAS NEVER BEEN EXERCISED ONCE IN 35 SESSIONS.** The prompt warns
+that a missed close run silently disables the §5.4 trailing stop — *"every check passes, every number is
+present, and the stop simply never fires."* ⚠ **A clean midday run is NOT evidence that the repair path
+works. The first position this account opens will be the first live test of it.**
+
+**§5 LINE BY LINE, FOR THE RECORD, SO "NO EXITS" CANNOT BE MISREAD AS "ALL CLEAR":** **5.1** — no
+`invalidation` condition exists to read verbatim, and **no `perplexity.py` call was made**, because a
+news check with no position to invalidate is theatre, not diligence. **5.2** — no `timing_window`
+deadline exists to have passed. **5.3** — no `entry_price` to measure −7% from. **5.4** — no
+`highest_close` to measure −10% from. **ZERO sell orders, ZERO `trade_log.md` entries, ZERO blocks
+removed from this file, ZERO thesis IDs retired.** The loss streak **cannot move at this seat** — it
+changes only on a *closed* position, and nothing closed; `consecutive_closed_losses` stands at **0**,
+breaker **INACTIVE**.
+
+**CLOCK, READ OFF THE DATES AND NOT THE BOOLEAN.** 12:41:48 `is_open: **true**`, `next_close`
+**2026-10-20T16:00** (**today**) and `next_open` **2026-10-21T09:30** (**tomorrow**) — the **mid-session**
+signature. **The closed-market skip path was not taken.**
+
+**§2 IN BAND, NO REBALANCE DUE — AND THE DELTA HAS FLIPPED SIGN FOR THE FIRST TIME.** Equity
+**$100,069.32**, core **$70,066.351028 = 70.02%** (**5.02pp** above the lower edge, **4.98pp** below the
+upper), cash **$30,000.00 exactly** (~**39th** consecutive unchanged reading), satellite **$0.00 / 0.0% /
+count 0**; `core_in_band: true`, `rebalance_needed: false`. `rebalance_delta` **−17.83** against
+`core_target_value` **$70,048.52**, **RE-COMPUTED AT THIS SEAT, NOT INHERITED** — the 09:37 seat's
+**+82.01** and the 08:03 seat's **+118.56** are dead readings. ⚠ **It is NEGATIVE because the core now
+sits fractionally ABOVE 70%, not below it — the first time that has been recorded — and it is a DISTANCE
+READOUT, NOT AN INSTRUCTION:** 0.025% of the position, VOO's own mark moving under a fixed share count.
+**§6's 5% satellite cap is now $5,003.47 and must be RE-COMPUTED wherever used.**
+
+**WEEK ROLLOVER RE-DERIVED, NOT READ OFF THE FIELD.** `America/New_York` **2026-10-20, Tuesday, ISO week
+43, weekday 2**; Monday anchor **2026-10-19 MATCHES `week_of`**, so `new_positions_this_week` was **NOT
+re-reset** and stands at **0 of 3** because nothing was opened. Anchor holds through **Friday
+2026-10-23**.
+
+⚠ **STALE `lastday_price` IN A TWELFTH SEAT, RE-MEASURED AND NOT ASSUMED:** `positions` reports
+**704.60** against the official 10-19 close **704.47** (`bars --days 4 --adjustment all`), **+$0.13** —
+same sign and magnitude as the 08:03 and 09:37 readings. ⚠ **NEVER difference `equity − last_equity`,
+`change_today` (0.00403) or `unrealized_intraday_pl` ($281.291524) into a P&L figure.**
+⚠⚠ **AND A TRAP THIS SEAT WALKED UP TO: that same `bars` call RETURNS A 2026-10-20 BAR (`c: 707.32`).
+IT IS NOT A CLOSE.** It is a running intraday value at 12:41 that will keep moving until 16:00. **It must
+never be written into a `highest_close` field by this routine — only the close seat may read today's
+close**, and a midday seat backfilling a high-water mark from it would corrupt the very field §5.4
+measures from, in the direction of a looser stop.
+
+**EQUITY BACK ABOVE $100,000** at **$100,069.32**, core unrealized **+$69.33 (+0.099%)** since the 09-03
+entry. ⚠ **That is the core sleeve doing its job and is NOT a strategy result** — the satellite sleeve
+has produced no P&L in either direction, because it has never held anything.
 
 ---
 
