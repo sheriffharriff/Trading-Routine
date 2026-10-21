@@ -605,6 +605,53 @@ tape:
   `plan_today.md` arrives three calendar days old on a Monday** — compare `plan_date` to the last
   TRADING day, not to the calendar.
 
+**ADDED BY THE `3-midday-management` 12:41 SEAT — ADDITION, NOT COLLAPSE AND NOT A RE-NARRATION.** ⚠ **This
+seat is not entitled to collapse the 08:03 and 09:36 paragraphs; the close seat is the first that is. And
+this file is flagged to the human as `state.md` item (9) — 139,696 bytes / 1,614 lines holding ZERO
+satellite positions — so an honest-sized record of a third null at the same ledger is a few lines.**
+
+**LEDGER RE-RECONCILED MID-SESSION, BEFORE ANY §5 RULE WAS READ. THREE SIDES STILL AGREE.** `positions`
+**one row**, core VOO 99.046311231 sh @ **706.74**, `cost_basis` **$69,999.989999** — unchanged since the
+2026-09-03 fill · **ZERO satellite blocks here** · `sleeves` `satellite.count: 0`. ⚠ **Verified
+STRUCTURALLY: a `grep -cE` for this file's own position-block header pattern returns **0**, and the only
+`entry_price` hit is line 45 inside `## Template` — the documented grep trap, RE-CONFIRMED, not
+re-raised.** ⚠ **ORDER LIMBO CHECKED AND EMPTY: `orders --status open` returns `[]` and the account's whole
+history is still the ONE 2026-09-03 core fill (`status: filled`), so §7's unverifiable-order clause has NO
+OPERAND — which is not the same as a clean bill.**
+
+⚠ **§5 ABSENT, NOT PASSING — SEVENTEENTH CONSECUTIVE SEAT.** Rules 5.1–5.4 have **no operand**: zero
+satellite positions, therefore **zero Perplexity invalidation checks were run and ZERO WERE DUE**. Core VOO
+struck from the working list **before** any rule was read (§5 core exemption) — **94th consecutive refusal
+to stamp it.**
+
+⚠⚠ **THIS SEAT'S STEP 2 IS THE ROUTINE'S OWN REASON FOR EXISTING, AND IT HAD NOTHING TO REPAIR.** The
+routine prompt names the stale-`highest_close` gap as *"the failure mode that looks like nothing is
+wrong"*. On this ledger the field is **ABSENT — the third state, carrying no `(as of …)` date at all** —
+so there is no mark to compare against the last trading day (2026-10-20) and **no backfill was performed
+or due**. ⚠ **The repair path has now never executed once in this repo's history. A gap that cannot occur
+on an empty ledger is NOT evidence that the repair works, and the first satellite fill is the first real
+test of it.**
+
+**§2 IN BAND — AND THIS RUN MAY NOT ACT ON IT ANYWAY.** Core **70.11%**, `core_in_band: true`,
+`rebalance_needed: false`, cash **$30,000.00** exactly (~43rd consecutive unchanged reading), satellite
+**0.00 / 0.0% / count 0**, equity **100,376.32**. ⚠ **`rebalance_delta` moved **−37.14 (09:36) → −112.89
+(12:41)**, same sign, same session, 76 dollars apart on a 70,376 position — a DISTANCE READOUT re-computed
+at each seat, never inherited, never an instruction, and §2 assigns any rebalance to the market-open run,
+which this seat is not.** Core unrealized **+$376.326460 / +0.538%** against the 706.74 fill — **a mark
+moving, not a result**; never differenced from `change_today` (+0.00529) or `unrealized_intraday_pl`
+(+370.383681). 5% satellite cap **$5,018.82** — RE-COMPUTE wherever used.
+
+⚠ **`lastday_price` READ 706.80 AGAIN, A SIXTEENTH CONSECUTIVE SEAT, against the official 2026-10-20 close
+of 706.33 (+0.47).** Identical to the 08:03 and 09:36 readings today: the field is **FROZEN WITHIN a
+session and moves ACROSS sessions**, which is exactly why it is not a correctable offset. Recognised on
+sight per the standing list; **not re-derived and not re-raised as a finding.**
+
+**NOTHING WAS SOLD AND NOTHING WAS DUE.** Zero exits, zero orders, zero positions near a rule — **because
+no rule has an operand, which is different from "far away".** ⚠ **Nothing should have executed and failed
+to.** This run is **exits-only by its own prompt** and it opened nothing; the four 2026-10-21 theses
+(T-2026-10-21-01..-04, all rejected pre-market) were **not re-litigated**, because a midday entry would
+route around the research-and-open path that forces every buy to sleep on a written thesis.
+
 ### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-10-20, **ONE DIGEST FOR THE DATE, ALL FOUR SEATS:** `1-premarket` 08:03 · `2-market-open` 09:37 · `3-midday` 12:41 · `4-market-close` 16:16. ⚠ **COLLAPSED BY THE CLOSE SEAT, THE FIRST SEAT ENTITLED TO TOUCH WHAT THREE EARLIER SEATS WROTE** — a seat cannot fairly collapse a paragraph it has just written. ⚠ **RE-EVALUATED AT THIS SEAT, NOT LEFT: a table untouched and a table re-evaluated to the same answer are indistinguishable to the next reader.** ⚠ **MEASURED COLLAPSE, COUNTED AFTER THE FACT AND REPORTED AS IT CAME OUT: 171 lines → 98, a REAL SAVING OF 73 LINES. ⚠ THE FIRST DRAFT OF THIS SENTENCE CLAIMED "171 → 48", WRITTEN FROM INTENT BEFORE THE COUNT; THAT FIGURE WAS FALSE AND IS REPLACED HERE RATHER THAN LEFT BESIDE ITS CORRECTION. It is the same defect three earlier seats recorded (`119 → 58`, `73 → 34`, `15 → 20`) arriving a FOURTH time, in the one line that reports on itself — which is now the strongest available evidence that the lesson does not survive contact with a seat writing its own collapse figure.** **WHAT WAS REMOVED IS NAMED:** the four per-seat narrations of the same null, the four re-derivations of the same week anchor and the four restatements of the ledger reconciliation are folded to one each. **WHAT WAS KEPT:** the three distinct findings in full, plus a fourth this seat measured.)
 
 **LEDGER RECONCILED AT ALL FOUR SEATS, BEFORE ANY RULE WAS READ, THREE SIDES AGREEING EACH TIME.**
