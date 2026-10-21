@@ -52,6 +52,304 @@ single most common way a plausible-sounding connection gets mistaken for an oppo
 
 ## Entries
 
+### 2026-10-21 (08:03 ET) — event survey (funnel, pre-thesis)
+
+Selftest **5/5**, all exit 0 (`trading_enabled: true`, LIVE paper, broker equity **$100,167.38** at
+pre-flight). `clock` at **08:03:24** reads `is_open: false`, `next_open` **2026-10-21T09:30**,
+`next_close` **2026-10-21T16:00** — **both carrying TODAY's date: the pre-market full-session
+signature, read off the DATES and not the boolean. Not a holiday, not an early close.** Window
+screened: **the completed 2026-10-20 session and the overnight into Wednesday — ONE TRADING DAY.**
+**Two structural scans, one significance scan and two drills, all exit 0. FOUR theses, ALL FOUR
+REJECTED.**
+
+**⚠⚠⚠ CORRECTED BEFORE PUBLICATION, AND THE CORRECTION IS THE MORE USEFUL FINDING: THIS RUN'S `move`
+RESULT IS **SHAPE ONE AT THE LARGEST SAMPLE EVER RECORDED**, NOT A NEW SEVENTH SHAPE. THE FIRST DRAFT OF
+THIS ENTRY CALLED IT "A SEVENTH DEFECT SHAPE … THE FIRST THAT FAILS IN THE SAFE DIRECTION" IN FOUR FILES.
+THAT WAS FALSE AND IS REPLACED HERE RATHER THAN LEFT BESIDE A CORRECTION.** ⚠⚠ **`state.md` ALREADY
+CARRIES BOTH HALVES: *shape one — a DRAWDOWN misread as priced-in*, nine instances, and *shape three —
+SIGN- AND CAUSATION-BLINDNESS*. I re-derived a documented defect from scratch and promoted it to a
+discovery.** ⚠⚠⚠ **THAT IS CATCH (24)'s SHAPE WEARING A NEW COAT: not an enumeration that sounded
+exhaustive and was not, but a seat that DID NOT READ THE ENUMERATION IT ALREADY HAD before adding to it.
+The standing rules were read this run; the shape list forty lines below them was not. ⚠ THE FIX IS THE
+SAME ONE: `grep` THE EXISTING LIST BEFORE CLAIMING AN ADDITION TO IT. It cost one grep to find and would
+have cost one grep to prevent.** ⚠ **WHAT IS GENUINELY NEW IS THE EVIDENCE, AND IT IS WORTH HAVING:**
+seven `move`
+calls were spent today — **the largest single-run sample this filter has ever had** — and **all seven
+returned `priced_in: true`, and ALL SEVEN WERE DOWN**: `COHR` **−20.07%** · `AMKR` **−12.45%** · `GLW`
+**−10.94%** · `GM` **−8.24%** · `AVGO` **−6.41%** · `MU` **−5.92%** · `TSM` **−4.43%**. ⚠⚠ **`scripts/alpaca.py:177`
+is `abs(move) > PRICED_IN_MOVE_PCT`. THE FILTER IS DIRECTION-BLIND, so it reads a 20% COLLAPSE as
+"you are late, the news is priced in."** ⚠ **For a §3 long-only strategy that is backwards: §4's check
+exists to stop a buy AFTER the stock has run UP on the news, and a name that has fallen a fifth has
+whatever is in its price, but it is not the good news being bought.** ⚠⚠ **SECOND GAP, AND IT IS §4's
+WORDING NOT THE SCRIPT'S: the rule says "moved more than 4% … *on this news*", and the filter CANNOT
+TELL WHETHER THE MOVE WAS ON THE NEWS AT ALL. Today it demonstrably was not — `VOO` over the identical
+window is **−1.22%, `priced_in: false`**, so the index is flat while the semi/AI complex is down 4–20%,
+and the broad scan named the cause itself (*"an AI-stock pullback"*, *"chip stocks fall"*). The filter
+blocked seven candidates for a SECTOR DRAWDOWN THAT HAS NOTHING TO DO WITH ANY OF THEIR THESES.**
+⚠⚠ **THE DIRECTION OF THE ERROR IS WHY THIS IS NOT A CRISIS: shape six fails TOWARD taking a trade;
+shape one fails toward REFUSING one. IT COSTS OPPORTUNITY, NOT CAPITAL — and that asymmetry is also the
+reason nine prior instances were tolerated rather than escalated, which is a decision for the human and
+not a defence of the filter.** ⚠⚠⚠ **AND IT
+IS EXPLICITLY NOT USED AS GROUNDS TO OVERRIDE ANYTHING TODAY — the filter said skip and the skip stands,
+and every one of the five Apple-named suppliers DIES INDEPENDENTLY ON PART 2 AND RULE (iii) ANYWAY, so
+the defect rescues NO candidate. Recording a filter defect on the same run it would have helped is the
+moment the temptation exists; it is named here so the next seat can see it was refused.** ⚠ **ONLY A
+HUMAN MAY CHANGE §4 OR `alpaca.py move`. Open human item.**
+
+**⚠⚠ THE STRUCTURAL FRAMING EARNED ITS PLACE FOR A SEVENTH CONSECUTIVE SESSION, AND THE "SIGNIFICANCE"
+FRAMING FAILED IN THE *PREDICTED* WAY — THE CARRY-FORWARD CALLED THE SHAPE BEFORE THE QUERY RAN.** Scan 1
+(the routine's own Step 5a voice) returned **pending home sales −7.3% m/m to a series low, the NAHB index
+at 29, a Fed-pause repricing to 84.5%, the 10-year at 5.12% and oil reversing** — **the macro complex,
+the one object §4 can never use** — and its two corporate items were an own-earnings print and a
+**reject this log disposed less than 24 hours ago.** Scan 2 (**two named companies and a disclosed dollar
+amount**) returned **one qualifying item plus SIX self-excluded with reasons attached**, and scan 3 (the
+segment-quantification framing) returned **nothing qualifying plus EIGHT self-excluded**. ⚠ **Fourteen
+items disposed for free across the two structural scans, for ZERO follow-up queries.**
+
+**⚠⚠⚠ THE DISPOSED-REJECT RE-SERVE IS NOW AT THREE CONSECUTIVE SESSIONS AND TODAY IS THE WORST FORM YET:
+THE FUNNEL NAMED A REJECT DISPOSED *YESTERDAY* AS THE DAY'S CLEAREST CROSS-COMPANY EVENT.** Scan 1's own
+bottom line: *"The clearest cross-company events were 3M's Amazon-linked data-center arrangement and
+raised outlook."* **That is `T-2026-10-20-01` verbatim — minted, drilled and killed on part 2 at this
+same seat 24 hours ago**, and the re-serve arrived carrying the warrant structure as a selling point.
+⚠ **`RTX` was ALSO re-served, by scan 3, now at a SEVENTH appearance — and the source itself dated the
+cited missile awards to 2026-09-28, i.e. it re-served a reject while disclosing that it was stale.**
+⚠⚠ **NO NEW ID WAS MINTED FOR EITHER, per the 10-14 precedent: a second entry for one rejection inflates
+the thesis count and records nothing. They are disposed inside `T-2026-10-21-04`.** ⚠ **READING THE LOG
+FIRST COST ONE `grep` AND SAVED TWO FULL DRILLS — third session running that this has been the single
+highest-return minute of the run.**
+
+---
+
+### T-2026-10-21-01 — Apple (AAPL) American Manufacturing Program → its five named US-listed suppliers (AVGO · GLW · COHR · TSM · AMKR) — REJECTED (part 2 at every leg; rule (iii) — the GM/Lockheed *delivery-milestone-recycled-as-news* costume at FIVE legs at once; §3 on both genuinely NEW relationships; and the priced-in filter on all five — SHAPE ONE at its largest recorded sample, NOT a new shape)
+
+**Company A / the news:** **Apple Inc. (AAPL)**, announcement dated **2026-10-20**, expanding its
+American Manufacturing Program for the **iPhone Duo** and **iPhone 18 Pro**. The announcement **names
+seven suppliers**: two new-or-expanded (**Perryman Company**, **Qnity Electronics**) and five existing
+(**Broadcom**, **Corning**, **Coherent**, **TSMC**, **Amkor Technology**), each tied to a **named US
+facility and a named component** — Perryman/grade-5 titanium enclosures (PA), Qnity/variable-aperture
+camera films (DE), Broadcom/RF components (Fort Collins CO), Corning/Ceramic Shield cover glass
+(Harrodsburg KY), Coherent/VCSELs for Face ID (Sherman TX), TSMC/advanced chips (Arizona),
+Amkor/packaging and test (Peoria AZ).
+
+**Company B / the candidate:** **this is the best-structured object this funnel has produced in seven
+sessions, and it must be said plainly before it is killed.** Company A **named** its Company Bs — five
+of them, US-listed, with the facility and the part specified. **No link had to be supplied, no blank had
+to be filled, and no prior had to be guessed.** That is the entire thing rule (v) exists to complain
+about the absence of, and today it was present.
+
+**1. Mechanism (one sentence):** **WRITEABLE, in one clause, for at least three legs.** *"Apple's
+expansion of US iPhone component sourcing causes Corning's specialty-materials revenue to improve
+because Apple buys Ceramic Shield cover glass from Corning's Harrodsburg plant."* ⚠ **No "and also"
+needed. Part 1 PASSES, and it is the first multi-leg part-1 pass in this log.**
+
+**2. Dollar path:** **FAILS, AT ALL FIVE LEGS, AND THE SOURCE SAYS SO ITSELF.** Verbatim: *"The sources
+do not provide supplier-specific dollar figures for Qnity, Corning, Coherent, TSMC, or Amkor."* **No
+segment is named at any Company B, no magnitude is disclosed, and no share of total revenue is
+establishable for any of the five.** ⚠⚠ **THE ONE DOLLAR FIGURE IN THE WHOLE ANNOUNCEMENT ATTACHED TO A
+LISTED SUPPLIER IS RULE (iii) AND RULE (viii) AT ONCE: Broadcom's "$1.5 billion" is an investment in its
+OWN Fort Collins facility, ANNOUNCED IN JULY, and the source states explicitly that it "does not
+explicitly state that the entire amount is Apple's payment to Broadcom." It is Broadcom's capex, four
+months old, not Apple's revenue to Broadcom.** ⚠ **The only NEW figure in the announcement — Apple's
+**up to $100M over three years** — belongs to **Perryman**, and §3 kills it (see below). It is also
+~0.025% of Apple's annual revenue, so it would fail part 2 at Company A too.**
+
+**3. Timing window:** **NOT REACHED.** Part 2 failed first and §4 forbids constructing the rest to see
+whether it survives. *(For the record: iPhone Duo volume ramp is a plausible one-to-two-quarter object,
+so part 3 is the one part that would likely have passed. That makes the part-2 kill the whole story.)*
+
+**4. Invalidation:** **NOT REACHED**, same reason.
+
+**Hard filters:**
+- **Priced-in (§4): FAIL AT ALL FIVE, AND THE FAILURE IS THE RUN'S FINDING.** `AVGO` **−6.41%** ·
+  `GLW` **−10.94%** · `COHR` **−20.07%** · `TSM` **−4.43%** · `AMKR` **−12.45%** over five sessions,
+  every one `priced_in: true`, **every one DOWN**, against `VOO` **−1.22% / false** over the identical
+  window. ⚠ **THE FILTER BLOCKED FIVE CANDIDATES FOR A SECTOR SELL-OFF, NOT FOR THIS NEWS — defect
+  SHAPE ONE at its largest recorded sample plus SHAPE THREE's first index control — stated in full in the
+  survey above, where this entry's own false "seventh shape" claim is corrected, and raised for the human.** ⚠⚠ **THE SKIP STANDS
+  ANYWAY: part 2 and rule (iii) kill all five independently, so the filter defect changes NO outcome
+  today and is NOT used to rehabilitate anything.**
+- **Correlation (§4): pass, VACUOUSLY — zero open satellite positions, so there is no `driver` field in
+  `positions.md` to collide with.** ⚠ **A vacuous pass is not a pass the mechanism has ever been
+  tested by; it has now passed this way for 37 sessions.**
+- **Universe (§3): UNRESOLVED, NOT PASSED — and deliberately left that way.** All five are US-listed
+  (`AVGO` Nasdaq · `GLW` NYSE · `COHR` Nasdaq · `TSM` NYSE · `AMKR` Nasdaq), but **no market-cap figure
+  was sourced for any of them because they died two rungs earlier.** ⚠ **DO NOT INHERIT A §3 VERDICT
+  FROM THIS ENTRY (the VAL precedent). `AMKR` in particular is plausibly NEAR the $10B floor and was
+  not checked.** The two genuinely NEW relationships are **§3-dead outright: Perryman Company is
+  family-owned and Qnity Electronics has no identified listing** — both private, neither buyable at any
+  price.
+
+**Outcome:** **REJECTED.** Part 2 fails at all five listed legs — **no figure, no segment, no revenue
+share, with the source volunteering the absence** — and **rule (iii) fails at all five: Apple described
+them as "existing partners whose progress Apple reported", which is the GM/Lockheed delivery-milestone
+costume arriving at five legs simultaneously.** The two relationships that ARE new to disclosure are
+private. ⚠⚠ **THE LESSON, AND IT CUTS THE SAME WAY AS GFS (`T-2026-10-09-01`): A NAMED COMPANY B IS NOT
+ENOUGH. Seven weeks of this log have complained that the funnel never names Company B; today Company A
+named five, and the kill moved one rung later — to the NUMBER rather than the NAME. The missing object
+was never the identity of Company B; it is the SEGMENT-ATTRIBUTED DOLLAR FIGURE, which the
+segment-quantification framing has now reported absent SEVENTEEN consecutive sessions.** ⚠ **AND THE
+STRUCTURAL FRAMING DID NOT FIND THIS — scan 2 surfaced only the Perryman leg and its PRIVATE
+counterparty; the five listed suppliers appeared ONLY under the targeted drill. A one-line drill on "name
+every company the announcement named" converted a dead private-counterparty item into the log's first
+five-leg part-1 pass. KEEP THAT DRILL.**
+
+---
+
+### T-2026-10-21-02 — Micron Technology (MU) / Indium Corporation — REJECTED (part 1 — the only counterparty is PRIVATE; rule (viii) — money paid OUT by the only buyable leg; part 2 — no figure, no segment; and a NEW rule (iii) SPLIT RUNNING THE OPPOSITE WAY FROM TSMC's)
+
+**Company A / the news:** **Micron Technology (MU)** press release dated **BOISE, Idaho, Oct. 20, 2026**:
+Micron is **investing in Indium Corporation** to restart and expand **critical-minerals and high-purity
+materials processing in Clinton, New York**, in support of *"advanced memory manufacturing"*. The parties
+also **"planned a long-term supply agreement"** — planned, not signed.
+
+**Company B / the candidate:** **NONE EXISTS.** The announcement names **Micron and Indium Corporation
+and no one else** (source, asked directly: *"No other company is identified as an investment recipient or
+project participant"*). **Indium Corporation is private** — the release and all coverage identify no
+ticker and no exchange. ⚠ **So the only US-listed party is Company A, and it is the PAYER.**
+
+**1. Mechanism (one sentence):** **UNWRITEABLE — there is no second party to write it about.** The
+mechanism that *could* be written runs the wrong way: *"Micron's investment causes Micron's own
+critical-materials cost line to improve"* — **that is a first-order statement about Company A, which §4
+is not a strategy for.**
+
+**2. Dollar path:** **FAILS TWICE OVER.** Micron **disclosed no dollar amount for the Indium investment
+at all**, and **named no reporting segment, no revenue percentage and no cost-base percentage**. ⚠ **The
+source applied the kill before I did, in its own words: *"Any conclusion that the project materially
+affects a particular segment or share of revenue/costs would be an inference, not a disclosed fact."***
+
+**3. Timing window:** **NOT REACHED.** *(And it would have failed: a minerals-processing restart plus a
+supply agreement that has not been signed is rule (vi)'s under-construction shape.)*
+
+**4. Invalidation:** **NOT REACHED.**
+
+**Hard filters:**
+- **Priced-in (§4): `MU` −5.92% over 5 sessions, `priced_in: true` — FAIL.** ⚠ **Direction-blind again:
+  Micron is DOWN over five sessions while the stock *"ticked up"* on this news per the coverage. The
+  filter and the event disagree about the sign — shape one and shape three in one reading.** **Immaterial
+  — part 1 killed it.**
+- **Correlation (§4): pass, vacuously (zero open positions).**
+- **Universe (§3): `MU` is plainly eligible; **Indium Corporation is §3-DEAD (private, not buyable with
+  settled cash)**. No market cap sourced for `MU` — not needed, it is Company A.**
+
+**Outcome:** **REJECTED.** ⚠⚠⚠ **AND IT CARRIES A GENUINELY NEW RULE (iii) VARIANT — THE *MIRROR* OF THE
+10-15 TSMC SPLIT, WHICH IS WHY IT IS WORTH THE ENTRY.** On 10-15 one release carried a rule (iii) PASS
+on revenue and a FAIL on capex, and **the figure that MOVED had no supplier chain while the figure WITH
+the supplier chain did not move.** Today the split is along the *other* axis: **THE NEW DISCLOSURE
+CARRIES NO NUMBER, AND THE ONLY QUOTABLE NUMBER CARRIES NO NEW DISCLOSURE.** The Indium funding **is**
+new to Micron's disclosure (a clean rule (iii) pass) and **has no amount attached**; the **"up to $3
+billion"** that every headline carried is **Micron's broader US supply-chain programme ceiling announced
+in JULY** — rule (iii) costume #1 *and* rule (v)'s ceiling sub-shape at once. ⚠⚠ **THE TELL IS THE SAME
+ONE AS 3M's $6B YESTERDAY, AND IT IS BECOMING THE DOMINANT SHAPE: THE BIG NUMBER AND THE NEW EVENT ARE
+DIFFERENT OBJECTS. A reader who tests "is there a dollar figure?" and "is this new?" as two separate
+yes/no questions gets two yeses and proceeds on a combination that does not exist.** ⚠ **THE FIX IS ONE
+WORD IN THE DRILL: ask for the figure disclosed *FOR THIS TRANSACTION*, not for the figure in the
+announcement. Today's drill did exactly that — "not the broader programme ceiling" — and that clause is
+the only reason the $3B did not become a part-2 input.** ⚠ **Rule (viii) also lands cleanly: the money
+moves OUT of the only buyable leg, the GEHC/Sofie and 44.01/Frontier costume for a third time.**
+
+---
+
+### T-2026-10-21-03 — General Motors (GM) Q3 2026 → the auto-supplier read-across — REJECTED (part 1 — own results, no transaction, no named second party; rule (iii) costume #1 — outlook moved against MARKET expectations, not its own prior range; and the supplier read-through is the shared-cause object)
+
+**Company A / the news:** **General Motors (GM)**, **2026-10-20**: Q3 profit **above expectations**
+while the **full-year 2026 outlook disappointed**, with the forecast midpoint **below market
+projections**.
+
+**Company B / the candidate:** **NONE REACHED, AND THE ONE ON OFFER IS A SHAPE THIS LOG HAS ALREADY
+NAMED.** The tempting move is the **auto-supplier read-across** (a weaker GM build outlook → lower
+volumes at `APTV`, `BWA`, `LEA`, `ALSN`, `MGA`). ⚠⚠ **IT IS THE SHARED-CAUSE OBJECT AND IT ALSO POINTS
+DOWNWARD, WHICH `T-2026-10-08-02` (SUPN) ESTABLISHED IS UNTRADEABLE HERE: §3 permits only the long side,
+so a correct bearish read cannot be expressed, and flipping it into a "GM's competitors benefit" long is
+the shared-cause trap — no competitor's revenue or cost line changed, only its relative standing, and
+NO COMPETITOR OR SUPPLIER WAS NAMED IN ANY SOURCE.** ⚠ **The supplier names above are MY priors, not the
+source's. They are recorded as priors and NONE is logged as a candidate — the rule (v) / "Party A"
+discipline.**
+
+**1. Mechanism (one sentence):** **UNWRITEABLE in the required direction.** The only one-clause
+mechanism available is a cost or volume line getting **WORSE** at an unnamed supplier.
+
+**2–4:** **NOT REACHED.**
+
+**Hard filters:**
+- **Priced-in (§4): `GM` −8.24% over 5 sessions, `priced_in: true` — FAIL.** ⚠ **Direction-blind again,
+  and here the sign is *informative* in a way the filter discards: GM fell on a disappointing outlook,
+  which is the market pricing the BAD news. Immaterial — part 1 killed it.**
+- **Correlation (§4): pass, vacuously.**
+- **Universe (§3): `GM` eligible; no Company B to check.**
+
+**Outcome:** **REJECTED.** **Part 1 — an own-results print naming no second party is a first-order
+disclosure, the rung `RTX` has now died at seven times and `NOC` died at yesterday.** ⚠ **RULE (iii)
+FAILS INDEPENDENTLY AND THE SOURCE WAS EXPLICIT: the shortfall is stated *"relative to analyst or market
+expectations"* and the reporting *"does not establish whether GM lowered guidance against its own
+previously stated range."* Costume #1, the most prolific costume on the list, for the Nth time.**
+⚠⚠ **AND THE EARNINGS-SEASON PATTERN THE 10-20 SEAT PREDICTED IS HOLDING EXACTLY: it wrote "expect it
+all earnings season" about a figure quoted against consensus rather than against the company's own prior
+range, and 10-21's first earnings print does it again. THE PREDICTION IS NOW CONFIRMED RATHER THAN
+OUTSTANDING.**
+
+---
+
+### T-2026-10-21-04 — §3 / non-qualifying / disposed-repeat / macro sweep of FIFTEEN items — REJECTED (disposed as one, ZERO drill queries spent)
+
+Disposed without spending a drill, each with the test that kills it. ⚠ **This is where the two
+structural scans' self-exclusions and the re-served rejects land; the funnel supplied the reason in
+most of these cases, which is the whole return on the structural framing.**
+
+**§3 — not US-listed, or not listed at all (6):** **Perryman Company** (family-owned, private — and it
+is the holder of the only genuinely new dollar figure in the Apple announcement) · **Qnity Electronics**
+(no identified listing; also previously announced, joined Apple's programme **March 2026**) · **Indium
+Corporation** (private; see `T-2026-10-21-02`) · **MS International plc** (UK-listed; 12 DS30M naval gun
+systems) · **Theon International plc** (Euronext Amsterdam; €45M night-vision from two NATO states) ·
+**Circle8 Group / CAK** (**$68M/yr** managed services — and **CAK is a Dutch government implementation
+agency**, so it is the government-action object on top of the listing failure).
+
+**Part 2 / rule (viii) — the figure is not segment revenue at a buyable Company B (4):** **Polaris
+Renewable Energy / Trina Energy Storage** (`TSX:PIF`, so §3 too — and the **US$55–60M** is **gross capex
+for the whole Punta Lima project including transformer, tariffs and balance of plant**, NOT the Trina
+contract value; the source said so) · **Hotel101 Global / Egypt JV** (**US$102.09M** is **expected
+project value**, counterparty identity and listing unestablished) · **Orion Energy Systems (`OESX`)**
+(a real **$45M / 3yr, ~$15M/yr recurring** award naming its **maintenance and technical services**
+segment — ⚠ **the CLOSEST THING ALL DAY TO PART-2 EVIDENCE, and it still did not state the award's share
+of that segment; killed outright by §3's $10B floor, which `OESX` is nowhere near**) · **Archer**
+(Q3 backlog slides; no award figure, no §3 cap established).
+
+**Part 1 / rule (iii) — no transaction, or not new (2):** **TechnipFMC / BP** (a **memorandum of
+understanding** establishing a cooperation framework for 20k subsea systems — **no dollar amount, and an
+MoU is rule (vi)'s pending-definitive-agreement shape**; note `FTI`/Petrobras was already disposed at
+`T-2026-10-09-07`) · **XCF Global / Paramount facility** (definitive acquisition agreement, **no dollar
+amount reported**).
+
+**⚠⚠ DISPOSED REPEATS RE-SERVED BY THE FUNNEL (2) — NO NEW ID MINTED, per the 10-14 precedent:**
+**3M (MMM) / Amazon** — **re-served by scan 1 as the day's "clearest cross-company event" less than 24
+hours after being minted, drilled and killed at `T-2026-10-20-01`.** ⚠ **The re-serve arrived with the
+3.2M-share warrant and the $6B trigger presented as commercial strength, which is precisely the rule
+(viii) dilution costume that entry exists to record. Also note scan 1 could not establish whether 3M's
+raised outlook moved against its own prior range — so the rule (iii) split verdict from yesterday is
+*still* unresolved in the sources, not resolved in 3M's favour.** · **RTX** — **re-served by scan 3,
+SEVENTH appearance in eleven sessions, as "$81 billion of contracts during the third quarter"; the source
+itself dated the cited missile awards to **2026-09-28** and conceded the $81B was not identified as an
+award announced on 10-20 or 10-21. ⚠ A reject re-served WITH its own staleness disclosed in the same
+breath.**
+
+**⚠ MACRO COMPLEX AND FORWARD CALENDAR — ONE PARTY, NO TRANSACTION, ALREADY DISPOSED TWICE (1, as a
+block):** pending home sales **−7.3% m/m / −11.3% y/y**, a series low since 2001, against a ~0.4–0.5%
+expected decline · NAHB HMI **29**, lowest since June 2012 (⚠ **released 2026-10-19, so it is not even
+in today's window — the source flagged its own date discipline**) · Fed-pause probability **84.5%** for
+the 10-27/28 FOMC, up from 81.2% · 10-year at **5.12%** · oil reversing on US–Iran mediation reports ·
+September CPI **+0.6% m/m / +3.7% y/y** and FY2026 net interest **$1.052T** — ⚠ **both of which the source
+explicitly declined to date to 10-21, so they are not establishable as today's news** · and **Tesla, Meta
+and Netflix SCHEDULED to report 10-21**. ⚠⚠ **The forward calendar arrived on a WEDNESDAY, which the
+carry-forward said was a Monday-seat shape — the prediction was too narrow: it is a shape of any thin
+window, and a mid-week AI-pullback session with one trading day of inventory is thin. NOTE THE DATES AND
+DO NOTHING; a macro aggregate has ONE party and no transaction, already disposed at `T-2026-10-12-05`
+and `T-2026-10-13-08`, and a third ID for it would inflate the thesis count.**
+
+**Outcome:** **ALL FIFTEEN REJECTED.** ⚠ **Zero drill queries spent on any of them. Eleven arrived
+pre-excluded with the funnel's own reason attached, two were killed by reading this log first, and two
+are macro.**
+
+---
+
 ### 2026-10-20 (08:06 ET) — event survey (funnel, pre-thesis)
 
 Selftest **5/5**, all exit 0 (`trading_enabled: true`, LIVE paper, broker equity **$99,604.80** at
