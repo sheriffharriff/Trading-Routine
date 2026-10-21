@@ -40,6 +40,144 @@ anything where the honest-broker rule (§4) did real work>
 
 ## Entries
 
+### 2026-10-21 (Wednesday)
+
+**Account:** total **$100,392.21 on official closes** (`bars --days 4 --adjustment all`, VOO `c`
+**710.70**, 99.046311231 sh + $30,000.00 cash) | day **+$432.83 (+0.433%)** | since inception
+**+0.392%** ($100,000.00 opening, price basis)
+⚠ *The live broker mark at 16:16:20 was **$100,394.19** on `current_price` **710.72** — a separate
+post-bell series, quoted beside the official figure and **never differenced against it**. Gap
+**+$1.98**, which attributes exactly to 99.046311231 × $0.02.*
+**Sleeves:** core **70.12%** | satellite **0.0%** | cash **29.88%**   (§2 band 65–75%) — **IN BAND, NO
+REBALANCE DUE TOMORROW.** 5.12pp above the lower edge, 4.88pp below the upper.
+**Breaker:** INACTIVE (`consecutive_closed_losses: 0`, `halt_triggered_at: none`)
+**Week:** 0/3 new positions (`week_of: 2026-10-19`; anchor **re-derived from source** —
+`America/New_York` 2026-10-21, Wednesday, ISO week 43, weekday 3 → Monday anchor **2026-10-19**,
+**MATCHED**, so the counter was **not re-reset**; it reads 0 because nothing was opened)
+
+**Traded:** nothing. Zero orders at all four seats. `orders --status all` returns **one row for the
+entire account history** — the 2026-09-03 core fill, `filled`, terminal. **No order in limbo
+overnight; §7's warning has no operand, which is not the same as a clean bill.**
+**Researched:** 4 theses — **0 accepted, 4 rejected** (`T-2026-10-21-01`…`-04`), all by the 08:03
+pre-market seat. This routine writes none.
+**Positions near a sell rule:** **none, and the honest form is NO OPERAND, not "nothing close."** Zero
+satellite positions, so §5.1–5.4 have nothing to measure. Core VOO is exempt by §5 and was struck from
+the working list before any rule was read.
+
+**What happened:**
+
+A full regular session, confirmed off the clock's *dates* at both ends rather than off its boolean: at
+08:03 both `next_open` and `next_close` carried today's date (the pre-market full-session signature);
+at 16:16 both carry **2026-10-22** (the post-bell signature). Not a holiday, not an early close. All
+four seats ran and committed.
+
+**The day's work, in the order it mattered:**
+
+**Step 2 — the high-water write, which is the only reason this routine runs at 16:15 rather than
+16:00 — had no operand, and the sentence "high-water marks updated" would have been false.** There are
+zero open satellite positions, so there was no `highest_close` to raise and no `(as of …)` date to
+advance. The field is **ABSENT — a third state that carries no date at all**, which is neither "current
+and unchanged" nor "stale". That distinction is load-bearing for tomorrow's midday seat specifically:
+routine 3's Step 2 backfill decides from the `(as of …)` date, and with no date anywhere in
+`positions.md` its detector has **no input** — so no staleness was detected and **none was ruled out**.
+A detector handed nothing returns the same silence as a detector finding nothing wrong. Eighteen
+consecutive seats now; the repair path has still never executed once.
+
+Today's official VOO close — **710.70**, `n` 1,228 / `v` 24,709, on a session the clock proved
+complete — is recorded in `positions.md` **for the record and stamped nowhere.** Core VOO was again not
+given a `highest_close`: a **95th** consecutive refusal, and not out of tidiness. Stamping the one
+position §5 *exempts* would arm a §5.4 trailing stop against it, manufacturing a sell rule on a holding
+the strategy says is never sold on news.
+
+**§2 held in band all day** — core 70.05% → 70.04% → 70.11% → 70.12% across the four seats, with
+`rebalance_delta` running −50.21 → −37.14 → −112.89 → −118.26. Same sign, same session, re-computed at
+every seat and never inherited. $118 on a $70,394 position is 0.17%, and the whole range is VOO's mark
+moving under a fixed share count rather than drift developing. Cash **$30,000.00 exactly** for a ~44th
+consecutive reading. **No rebalance is due tomorrow.**
+
+**The day P&L is close-to-close on one stated basis** and nothing else: 99.046311231 × 706.33 + 30,000
+= $99,959.38 → 99.046311231 × 710.70 + 30,000 = $100,392.21, i.e. **+$432.83 (+0.433%)** on VOO's
++$4.37 (+0.619%). `lastday_price` read **706.80** at all four seats against the official 10-20 close of
+706.33 — a seventeenth consecutive seat, frozen within the session, which is precisely why it is not a
+correctable offset and why `equity − last_equity`, `change_today` and `unrealized_intraday_pl` were
+never touched.
+
+**Nothing was traded and nothing was due.** Every §6 gate permitted a buy all day — breaker inactive,
+0 of 3 this week, the satellite sleeve entirely undeployed, `control.md` notes empty — so the absence
+of a buy is a **research** result, not a permission result. Nothing was blocked; nothing qualified. §4
+says that is the correct output of most research runs, and it is.
+
+**What I got wrong or nearly got wrong:**
+
+**1. The midday seat's 10-21 digest was in the wrong block, and its own state record says otherwise in
+writing.** This is the day's real finding and it is a process defect, not a market one. The 12:41
+seat's `positions.md` entry was physically inside the **2026-10-06** reconciliation block — 438 lines
+below the 10-21 block it was written for, under a heading dated fifteen days earlier. `state.md`'s
+`last_run` field asserts the opposite: *"positions.md 10-21 midday digest APPENDED to the session block
+the 08:03 seat opened (NOT a new block)"*. The append happened; the destination did not.
+
+What makes this worth writing down is **why** it slipped through. That seat was unusually careful about
+the thing this repo has been failing at — it counted its own write with `wc -l` and `git diff --stat`
+*after* the fact (`+47` lines) rather than from intent, and said so. The count was right. **A verified
+line count tells you nothing about line position, and nothing in a diffstat distinguishes the two.** So
+a seat that had specifically beaten the overstated-saving defect walked straight into a different one in
+the same write.
+
+And it is not a new defect. The 10-12 close seat wrote the rule that catches it, **in this same file**:
+*"dated material living under another date's heading is the same defect as a fresh date over a stale
+body."* Written 10-12, broken 10-21, by a seat that had read the file. That is the same shape as
+`state.md` catch (24) — a documented item re-derived or re-broken instead of referenced, because an item
+too long to re-read stops functioning as a check. I repaired it: both halves of the 10-21 material are
+now one dated digest, and the fix going forward is one line — **after appending a dated block, `grep -n`
+the date headers and confirm the insertion point falls inside the one you named.**
+
+**2. I nearly reported "high-water marks updated" as a completed step.** The run output template asks
+for it and the honest answer is a different shape of sentence entirely — the job had no operand. Writing
+the affirmative would have been the exact failure `positions.md`'s own header warns about, arriving from
+the opposite direction: not a mark that silently went stale, but a *report* that silently claimed a
+mark was written. Caught by reading the ledger before the template.
+
+**3. The post-bell sample came in at +$0.02 and the pull toward "the broker and the official close have
+converged" was real.** `current_price` 710.72 against the official 710.70 is the smallest gap in the ten
+samples on that series — smaller than the previous smallest (−$0.0254). It would read as calibration.
+It is not: the series carries both signs and a ~26-fold spread, and two numbers nearly agreeing is a
+coincidence of a moving mark. I counted the ordinal from the list in the same breath as writing it, per
+the truncated-series rule, rather than inheriting "the Nth" from a prior seat.
+
+**4. The thing I keep not being able to make honest, stated plainly because it is now measurable.** The
+account is **54 trading days** old and has made **one** fill, the core. Satellite has been $0 and ~30%
+cash for its entire life, against **94 thesis headings** written and zero accepted. §1's objective is to
+beat the S&P 500, and against VOO's own close on the account's first day (704.83 on 2026-08-06 → 710.70
+today, **+0.833%**) the book is **+0.392%** — **44bp behind, since inception.** Every individual
+rejection has been correct on its stated reason, and §4's honest-broker rule explicitly says a run that
+finds nothing is a successful run. **Both of those can be true while the strategy as configured still
+loses to its own benchmark by construction**, because the 30% sleeve earns nothing while the index
+compounds. That is `state.md` open human item **(3)** and it is not the agent's to resolve — but it now
+has a number attached rather than a complaint, and the number is the one §1 is scored on.
+
+**For the next run:**
+
+- **`positions.md` 10-21 is now ONE dated digest covering all four seats** (block at line 88, 110
+  lines). The 12:41 material that was sitting in the 10-06 block has been moved into it. **Do not look
+  for a separate midday 10-21 section — there is not one, and its absence is the repair, not a loss.**
+- ⚠ **AFTER APPENDING A DATED BLOCK TO `positions.md`, `grep -n` THE DATE HEADERS AND CONFIRM YOUR
+  INSERTION POINT IS INSIDE THE BLOCK YOU NAMED.** Verifying the size of a write is not verifying its
+  place. This is a new standing check and it cost nothing today only because the file holds no positions.
+- **`highest_close` is ABSENT, not stale — the third state, no `(as of …)` date anywhere.** Tomorrow's
+  midday Step 2 has **no input** and therefore nothing to backfill. That is not a clean bill: the
+  detector cannot distinguish "nothing wrong" from "nothing to look at", and it never has.
+- **Official closes, `--adjustment all`, re-pulled at 16:16:** 10-21 **710.70** · 10-20 **706.33** ·
+  10-19 **704.47** · 10-16 **701.745**. Max close in the trailing 80 sessions: **716.29 (2026-10-06)**.
+- **Do not re-litigate `T-2026-10-21-01`…`-04`.** All four are disposed with named reasons. If the
+  funnel re-serves AVGO/GLW/COHR/TSM/AMKR, the answer is written: no segment-attributed figure, existing
+  partner, and **§3's cap is UNRESOLVED for all five rather than passed** — `AMKR` is plausibly near the
+  $10B floor and was never checked.
+- **Tomorrow is Thursday 2026-10-22**, a normal session on the clock (`next_open` 09:30,
+  `next_close` 16:00). `week_of: 2026-10-19` holds through **Friday 2026-10-23**; Friday is the weekly
+  review.
+
+---
+
 ### 2026-10-20 (Tuesday)
 
 **Account:** total **$99,959.381012 on official closes** (`bars --days 4 --adjustment all`, VOO `c`
