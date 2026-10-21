@@ -126,6 +126,47 @@ cash **$30,000.00** exactly (~41st consecutive unchanged reading), satellite **0
 yesterday's +118.56 — core is now marginally above 70% rather than below. The sign flip is VOO's mark
 moving under a fixed share count, not drift developing. RE-COMPUTE it wherever used.**
 
+
+**ADDED BY THE `2-market-open` 09:36 SEAT — NOT A COLLAPSE AND NOT A RE-NARRATION.** ⚠ **This seat is
+NOT entitled to collapse what the 08:03 seat wrote six minutes of trading ago; the close seat is the
+first that is. So this adds only what the open seat established that the pre-market seat could not.**
+
+**LEDGER RE-RECONCILED AT THE OPEN, BEFORE ANY §5 RULE WAS READ. THREE SIDES STILL AGREE.** `positions`
+**one row**, core VOO 99.046311231 sh @ **706.74**, `cost_basis` **$69,999.989999** — unchanged since the
+2026-09-03 fill · **ZERO satellite blocks here** · `sleeves` `satellite.count: 0`. ⚠ **Verified
+STRUCTURALLY, not by eye: the only `entry_price` hit in this file is line 45, inside `## Template`. That
+is the documented grep trap, RE-CONFIRMED rather than re-raised as a finding.**
+
+⚠ **§5 ABSENT, NOT PASSING — SIXTEENTH CONSECUTIVE SEAT.** Rules 5.1–5.4 have **no operand**: zero
+satellite positions, so zero Perplexity invalidation checks were run and **ZERO WERE DUE**.
+`highest_close` has still never existed as a field in this file, so the backfill repair has **still never
+been exercised once**. Core VOO was struck from the working list **before** any rule was read (§5 core
+exemption) — **93rd consecutive refusal to stamp it**, because stamping it would arm a §5.4 trailing stop
+on the one position §5 exempts.
+
+⚠⚠ **AND THE STAMPING TRAP CAME BACK AT THIS SEAT IN ITS EXACT DOCUMENTED FORM, AND WAS REFUSED ON
+SIGHT.** `bars --days 4` returned a **2026-10-21** row at **c 708.04, n 64, v 1,966** — six minutes after
+the bell. ⚠ **That is a RUNNING bar, not a close, and it was not recorded as one anywhere in this run.**
+The 10-20 midday seat priced this precise trap: its running 707.32 would have stamped a mark **$0.99 too
+high**, i.e. a **LOOSER** stop. ⚠ **The trap has a sign and a magnitude, not an argument — and with zero
+satellite positions there was, again, nothing to stamp.** Official closes re-pulled: 10-16 **701.745** ·
+10-19 **704.47** · 10-20 **706.33**.
+
+**§2 AT THE OPEN — IN BAND, NOTHING PLACED.** Core **70.04%** · satellite **$0.00 / 0.0% / count 0** ·
+cash **$30,000.00 exactly** (~42nd consecutive unchanged reading) · equity **$100,123.81** ·
+`core_in_band: true` · `rebalance_needed: false` → **Step 7 had no rebalance to place.**
+⚠ **`rebalance_delta` moved **−50.21 (08:03) → −37.14 (09:36)**: same sign, same session, $13 apart on a
+$70,123 position. RE-COMPUTED here, never inherited.** Core unrealized **+$123.82 / +0.177%** against the
+706.74 fill — a mark moving, not a result.
+
+⚠ **NO ORDER OF ANY KIND WAS PLACED AT THIS SEAT, AND NONE WAS DUE.** The plan was **FRESH** —
+`plan_date: 2026-10-21` matched the ET date derived from source here, so the staleness gate was
+**exercised and PASSED**, and its **zero intents are a research result, not a missing handoff**. No
+`stale-plan` alert was posted and **none was due**. ⚠⚠ **Every §6 gate permitted a buy — breaker
+INACTIVE, 0 of 3 this week, sleeve entirely undeployed, `control.md` Notes empty — so the absence of a
+buy is INHERITED RESEARCH, NOT PERMISSION.** ⚠⚠⚠ **Routine 2 may not generate an idea: a buy not
+researched before the bell does not get made after it. Zero `move` calls were spent BY DESIGN — with zero
+BUY intents there was no candidate for one to take as its subject.**
 ---
 
 **Reconciliation 2026-10-12 — ONE DIGEST FOR THE DATE, ALL FOUR SEATS** (`1-premarket` 08:36,
