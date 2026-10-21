@@ -22,18 +22,18 @@ ET date and **refuses to execute any intent from a plan not dated today** — it
 stale plan, posts an alert, and proceeds to the core/rebalance section only.
 
 ```
-plan_date: 2026-10-20
+plan_date: 2026-10-21
 generated_by: 1-premarket-research
 market_open_today: yes
 ```
 
-Market opens today **2026-10-20 at 09:30 ET** (`alpaca.py clock` at 08:03:00 ET: `is_open:
-false`, `next_open: 2026-10-20T09:30:00-04:00`, `next_close: 2026-10-20T16:00:00-04:00`).
+Market opens today **2026-10-21 at 09:30 ET** (`alpaca.py clock` at 08:03:24 ET: `is_open:
+false`, `next_open: 2026-10-21T09:30:00-04:00`, `next_close: 2026-10-21T16:00:00-04:00`).
 **Not a holiday** — the market is closed because it is **pre-market**, and **both**
 `next_open` and `next_close` carry **today's** date, which is the full-session signature
 rather than an early close or a holiday. ⚠ **Read off the DATES, not the boolean.**
 
-The plan this run replaced was dated **2026-10-19** — **one calendar day and one trading
+The plan this run replaced was dated **2026-10-20** — **one calendar day and one trading
 day old.** Correct and current; nothing to note.
 
 ---
@@ -51,25 +51,29 @@ rather than a clean bill.
 
 | Reading | Value | Call / basis |
 |---|---|---|
-| Account equity | **$99,604.80** | `sleeves` 08:03, live broker mark |
-| Cash | **$30,000.00** exactly | `sleeves` — ~**37th** consecutive unchanged reading |
-| Core VOO | **$69,604.795218** · **99.046311231 sh** @ **706.74** avg entry | `positions` 08:03 |
-| Core % | **69.88%** | `sleeves`, live-mark basis |
+| Account equity | **$100,167.38** | `sleeves` 08:03, live broker mark |
+| Cash | **$30,000.00** exactly | `sleeves` — ~**41st** consecutive unchanged reading |
+| Core VOO | **$70,167.378265** · **99.046311231 sh** @ **706.74** avg entry | `positions` 08:03 |
+| Core % | **70.05%** | `sleeves`, live-mark basis |
 | Satellite | **$0.00 · 0.0% · count 0** | `sleeves` |
-| Cash % | **30.12%** | `sleeves` |
-| Unrealized P&L on core | **−$395.194781 / −0.565%** | `positions`, against the 706.74 fill |
-| VOO live pre-bell | **702.75** | `positions` `current_price`, 08:03 — a **pre-market indicative mark, NOT a close** |
-| VOO official 10-19 close | **704.47** | carried from the 10-19 close seat's own `bars` pull; **not re-pulled this run** |
-| VOO `lastday_price` | **704.60** | ⚠ **NOT the official close. See the warning below.** |
-| §6 5% cap | **$4,980.24** | 99,604.80 × 5%, **with no operand** |
+| Cash % | **29.95%** | `sleeves` |
+| Unrealized P&L on core | **+$167.388266 / +0.239%** | `positions`, against the 706.74 fill |
+| VOO live pre-bell | **708.43** | `positions` `current_price`, 08:03 — a **pre-market indicative mark, NOT a close** |
+| VOO official 10-20 close | **706.33** | `bars --days 4 --adjustment all`, **re-pulled this run** |
+| VOO `lastday_price` | **706.80** | ⚠ **NOT the official close. See the warning below.** |
+| §6 5% cap | **$5,008.37** | 100,167.38 × 5%, **with no operand** |
 
-⚠⚠ **DO NOT USE `equity − last_equity`, `change_today` (−0.00263), OR
-`unrealized_intraday_pl` (−$183.235675) AS A P&L FIGURE.** All three are built on
-`lastday_price`, which reads **704.60** against the official 10-19 close of **704.47**.
-⚠⚠ **TENTH CONSECUTIVE SEAT ON THE STALE `lastday_price`, AND THE GAP FLIPPED SIGN AGAIN:
-it was −$0.135 yesterday and is **+$0.13** this morning.** ⚠ **The defect is NOT a fixed
-offset that could be corrected for — it has now flipped sign on consecutive seats. Never
-difference the two.**
+⚠⚠ **DO NOT USE `equity − last_equity`, `change_today` (+0.00231), OR
+`unrealized_intraday_pl` (+$161.445487) AS A P&L FIGURE.** All three are built on
+`lastday_price`, which reads **706.80** against the official 10-20 close of **706.33**.
+⚠⚠ **FOURTEENTH CONSECUTIVE SEAT ON THE STALE `lastday_price`, GAP NOW +$0.47 — THE LARGEST
+RECORDED AND POSITIVE FOR A SECOND CONSECUTIVE SEAT.** ⚠ **The defect is NOT a fixed offset
+that could be corrected for — it has flipped sign across seats before (−$0.135 on 10-19,
++$0.13 on 10-20, +$0.47 today). Never difference the two.**
+
+⚠ **The core is ABOVE its entry for the first time in several sessions (+$167.39 against the
+706.74 fill). That is a mark moving, not a result, and it changes nothing: §5 exempts core and
+§2's band is the only test that applies to it.**
 
 ---
 
@@ -84,7 +88,7 @@ difference the two.**
    `invalidation` return hits in `positions.md` that are ALL INSIDE `## Template`. That is the
    expected reading of an EMPTY ledger, not a position.**
 2. **WEEK ROLLOVER — RECOMPUTED FROM SOURCE, NOT READ OFF THE FIELD.**
-   `America/New_York` → **2026-10-20, Tuesday, ISO week 43, weekday 2, Monday anchor
+   `America/New_York` → **2026-10-21, Wednesday, ISO week 43, weekday 3, Monday anchor
    2026-10-19.** That **MATCHES** `week_of: 2026-10-19`. So `new_positions_this_week` was
    **NOT re-reset** — it stands at **0 of 3** because nothing has been opened, not because
    this run zeroed it. ⚠ **The distinction matters: a run that resets a counter it did not
@@ -96,21 +100,21 @@ difference the two.**
 4. **§5 HAS NO OPERAND.** Zero satellite positions → rules 5.1–5.4 are **ABSENT, not passing**,
    and `highest_close` does not exist as a field. **No Perplexity invalidation checks were run
    on holdings, because there are no holdings.** Core VOO was struck from the working list
-   **before** any §5 rule was read, per §5's core exemption. ⚠ **ELEVENTH consecutive seat with
+   **before** any §5 rule was read, per §5's core exemption. ⚠ **FIFTEENTH consecutive seat with
    §5 absent rather than passing. The repair machinery has still never been exercised once.**
 
 ---
 
 ## Sleeve check (§2)
 
-**Core 69.88%, IN BAND** (65–75%), **4.88pp above the lower edge and 5.12pp below the upper.**
+**Core 70.05%, IN BAND** (65–75%), **5.05pp above the lower edge and 4.95pp below the upper.**
 `core_in_band: true`, `rebalance_needed: false`.
-⚠ **`rebalance_delta: +118.56` is a THIRTEENTH reading and a DISTANCE READOUT, NOT AN
-INSTRUCTION.** It is the dollar distance to a perfect 70.00%, driven by VOO's own mark moving
-under a fixed share count. **$119 on a $69,605 position is 0.17%.** ⚠ *It is the largest such
-reading recorded (prior range $5–$58) and still an order of magnitude inside the band — the
-drift is VOO falling 1.72 from its 10-19 close against unchanged cash, nothing else.* **No
-rebalance is due and none is queued.**
+⚠ **`rebalance_delta: −50.21` is a DISTANCE READOUT, NOT AN INSTRUCTION.** It is the dollar
+distance to a perfect 70.00%, driven by VOO's own mark moving under a fixed share count.
+**$50 on a $70,167 position is 0.07%.** ⚠ *It has flipped SIGN from yesterday's +$118.56 —
+core is now marginally ABOVE 70% rather than below it, because VOO's pre-bell mark rose against
+unchanged cash. The sign flip is the mark moving, not drift developing.* **No rebalance is due
+and none is queued.**
 
 ---
 
@@ -123,32 +127,38 @@ not a failed run.**
 
 New positions were **permitted** this morning on every gate — breaker inactive,
 `new_positions_this_week` **0 of 3**, satellite sleeve **entirely undeployed** ($30,000 and
-30.12% of the account in cash), `control.md` notes empty. ⚠ **So the absence of a buy is a
+29.95% of the account in cash), `control.md` notes empty. ⚠ **So the absence of a buy is a
 RESEARCH result, not a permission result. Nothing was blocked; nothing qualified.**
 
-**Six theses written, all six rejected** — `T-2026-10-20-01` through `-06`. Where they died:
+**Four theses written, all four rejected** — `T-2026-10-21-01` through `-04`. Where they died:
 
 | ID | Object | Killed by |
 |---|---|---|
-| `-01` | **3M (MMM) / Amazon** — $6B data-centre optical warrant arrangement | **part 2** (no segment, no figure, no guidance change) · **rule (viii) NEW COSTUME** · rule (iii) split verdict |
-| `-02` | **GSEO (Taiwan 3406) / 3M** — the genuine second-order Company B | **§3** — not US-listed. Part 2 would have killed it too |
-| `-03` | **Northrop Grumman (NOC)** Q3 | **part 1** — own results; **the figure that moved (EPS) has no supplier chain; sales guidance MAINTAINED** |
-| `-04` | **RTX** Q3 | **rule (iii)** — guidance vs CONSENSUS not its own prior · **rule (iv) 6th appearance** · part 1 |
-| `-05` | **MKSI / TTMI** — Ophir Optics $650M | **part 1** — merger/divestiture arbitrage is not in §4 · rule (viii) both signs |
-| `-06` | Sweep of **twelve** (BAE, GD, GEV, Elbit, Aquirian, Wärtsilä, TSEM/SMTC, Nscale, Samsung Bioepis, AVGO/Docomo, Krakatau, JPM) | disposed as one, **zero drill queries** |
+| `-01` | **Apple (AAPL) American Manufacturing Program → AVGO · GLW · COHR · TSM · AMKR** | **part 2 at all five legs** (no figure, no segment, no revenue share — source volunteered the absence) · **rule (iii) at all five** (existing partners, "progress reported" = the GM/Lockheed delivery-milestone costume) · **§3** on both NEW relationships (Perryman, Qnity — private) |
+| `-02` | **Micron (MU) / Indium Corporation** | **part 1** — the only counterparty is PRIVATE · **rule (viii)** money paid OUT by the only buyable leg · **part 2** no figure, no segment · **NEW rule (iii) split, mirror of TSMC's** |
+| `-03` | **General Motors (GM) Q3 → the auto-supplier read-across** | **part 1** — own results, no second party · **rule (iii) costume #1** — outlook vs MARKET expectations, not its own prior range · read-across is the **shared-cause** object and points DOWN |
+| `-04` | Sweep of **fifteen** (Perryman · Qnity · Indium · MS International · Theon · Circle8/CAK · Polaris/Trina · Hotel101 · OESX · Archer · FTI/BP MoU · XCF · **MMM re-serve** · **RTX re-serve** · macro+calendar block) | disposed as one, **zero drill queries** |
 
-⚠⚠⚠ **THE ONE THING THE OPEN SEAT MUST CARRY FROM THIS RESEARCH, AND IT IS A DEFECT IN THE
-OPEN SEAT'S OWN MACHINERY — NOT A LEAD.** `T-2026-10-20-01` is **the first candidate in seven
-sessions to reach the §4 priced-in filter**, and it exposed a **sixth defect shape**:
-`move --symbol MMM --sessions 5` returned **160.895 → 162.01, +0.69%, `priced_in: false`,
-"passes"** — ⚠ **and every close in that window PREDATES the event, because the 3M 8-K landed
-after the 10-19 bell. The verdict is arithmetically correct and carries zero information about
-the news.** ⚠⚠ **AND THE `revalidate` MECHANISM CANNOT CATCH IT: a `move` call at 09:35 reads
-CLOSES, and today's close does not exist at 09:35, so the re-check would return the SAME
-+0.69% pass bit for bit. Catching an overnight gap needs a quote-against-prior-close
-comparison, which is a different call.** ⚠ **It cost nothing today because the thesis died at
-part 2. It becomes a wrong trade the first time a post-bell event produces a writeable part 2.
-Only a human may change §4 or `alpaca.py move` — this is open items (1), (2) and (7).**
+⚠⚠⚠ **THE ONE THING THE OPEN SEAT MUST CARRY FROM THIS RESEARCH IS A DEFECT IN ITS OWN
+MACHINERY — AND THE CLAIM IS CORRECTED FROM THE DRAFT: THIS IS **SHAPE ONE AT THE LARGEST SAMPLE EVER
+RECORDED (7 OF 7)**, NOT A NEW "SHAPE SEVEN". `state.md` already carries *shape one — a DRAWDOWN misread
+as priced-in* (nine instances) and *shape three — sign- and causation-blindness*; this seat re-derived
+both from scratch and briefly promoted them to a discovery. ⚠ **`grep` THE EXISTING LIST BEFORE CLAIMING
+AN ADDITION TO IT.** ⚠ **WHAT IS GENUINELY NEW IS THE EVIDENCE:** seven `move` calls
+were spent today, the largest sample this filter has ever had, and **all seven returned
+`priced_in: true` with ALL SEVEN DOWN**: `COHR` −20.07% · `AMKR` −12.45% · `GLW` −10.94% ·
+`GM` −8.24% · `AVGO` −6.41% · `MU` −5.92% · `TSM` −4.43%. ⚠⚠ **`scripts/alpaca.py:177` is
+`abs(move) > PRICED_IN_MOVE_PCT` — THE FILTER IS DIRECTION-BLIND and reads a 20% COLLAPSE as
+"you are late, the news is priced in." For a §3 long-only strategy that is backwards.**
+⚠⚠ **SECOND GAP, IN §4's WORDING NOT THE SCRIPT'S: the rule says "moved more than 4% … *on
+this news*", and the filter cannot tell whether the move was on the news at all. Today it
+demonstrably was not — `VOO` over the identical window is **−1.22%, `priced_in: false`**, so
+the index is flat while the semi/AI complex is down 4–20%, and the scan named the cause
+(*"an AI-stock pullback"*).** ⚠⚠⚠ **IT IS NOT GROUNDS TO OVERRIDE ANYTHING: the filter said
+skip, the skip stands, and every one of the five Apple suppliers dies independently on part 2
+and rule (iii), so the defect rescues NO candidate. Shape six failed TOWARD a trade; this one
+fails toward refusing one — it costs opportunity, not capital.** ⚠ **Only a human may change
+§4 or `alpaca.py move`. Open human item.**
 
 ⚠ **NO `revalidate` LINES EXIST BECAUSE THERE IS NOTHING TO REVALIDATE.** The template asks
 for the specific number the open run should re-check against an overnight gap. **With zero BUY
@@ -162,39 +172,54 @@ Core VOO is **exempt** by §5 and was struck from the working list before the ru
 
 ### REBALANCE — none
 
-Core **69.88%**, in band. See **Sleeve check** above. `rebalance_needed: false`.
-⚠ **`rebalance_delta: 118.56` must be RE-COMPUTED at the open seat, not inherited** — it is a
-distance to 70.00% on a mark that moves every minute.
+Core **70.05%**, in band. See **Sleeve check** above. `rebalance_needed: false`.
+⚠ **`rebalance_delta: −50.21` must be RE-COMPUTED at the open seat, not inherited** — it is a
+distance to 70.00% on a mark that moves every minute, and it has already flipped sign once
+since yesterday.
 
 ---
 
 ## Carried from the research — for the open seat
 
-- ⚠ **DO NOT re-litigate any of `T-2026-10-20-01`…`-06`.** All six are disposed with named
+- ⚠ **DO NOT re-litigate any of `T-2026-10-21-01`…`-04`.** All four are disposed with named
   reasons in `research_log.md`.
-- ⚠⚠ **MMM IS NOT A DEFERRED LEAD. IT IS A REJECTION.** It died at **part 2** — 3M disclosed
-  no segment, no revenue figure and no guidance change, and the "$6 billion" is **a warrant
-  vesting threshold, not a purchase commitment**. ⚠ **If the funnel re-serves it today dressed
-  as the session's best candidate, that is rule (iv) and the 10-12 RTX warning: a disposed
-  reject can arrive as a run's best idea. The answer is already written.**
-- ⚠⚠ **A MARGIN OR EPS RAISE IS NOT A SECOND-ORDER CATALYST — NOBODY SUPPLIES MARGIN.**
-  `T-2026-10-20-03` (NOC: EPS and segment-margin guidance raised, **sales guidance maintained**)
-  is `T-2026-10-15-01` (TSMC: revenue outlook raised, **capex reaffirmed**) repeating in an
-  unrelated industry five sessions later. **Apply rule (iii) to the figure the mechanism runs
-  on, not to the release.** Expect this shape through the rest of earnings season.
-- ⚠ **RTX WILL BE BACK — rule (iv), now at SIX appearances in NINE sessions across FIVE
-  distinct disclosures, dead at part 1 every time.** 10-20's arrival is an **earnings print**
-  rather than a programme award — **a new disclosure TYPE is still not fresh evidence when the
-  kill is structural.**
-- ⚠ **GE VERNOVA IS AT THREE APPEARANCES IN SIX SESSIONS** (10-15, 10-19, 10-20) and has died
-  on part 2 or part 3 each time. Long-dated energy and merchant-power contracting is a
-  **standing feature of this funnel, not a visitor.**
-- ⚠⚠ **SECOND CONSECUTIVE SESSION IN WHICH A GENUINE NAMED COMPANY B EXISTED AND WAS NOT
-  BUYABLE** (10-19: three §3-dead transactions; 10-20: GSEO, Taiwan-listed, named in 3M's own
-  disclosure with a 4.7% equity stake pinning it down). ⚠ **Observation 2 of the 3 the 10-19
-  entry asked for. Two sessions is not a finding. It changes nothing today and must not be
-  written up as a conclusion.**
-- ⚠ **ONE `move` CALL AND ONE MARKET CAP SOURCED, breaking a six-session run of zero — and
-  the cap (~$87B for MMM, Perplexity, order-of-magnitude) was NEVER LOAD-BEARING, because the
-  thesis died at part 2 above it.** The `move` call was legitimate rather than decorative, and
-  what it bought was the defect-shape finding, not a trade.
+- ⚠⚠⚠ **THE APPLE ITEM IS A REJECTION, AND IT IS THE MOST IMPORTANT ONE THIS LOG HAS PRODUCED
+  SINCE GFS — READ IT BEFORE ANY RESEARCH TODAY.** For seven weeks this log's complaint has been
+  that the funnel never names Company B. **Today Company A named FIVE, US-listed, with the
+  facility and the component specified, and the mechanism sentence wrote itself in one clause.**
+  ⚠ **AND THE KILL JUST MOVED ONE RUNG LATER — to the NUMBER instead of the NAME. The missing
+  object was never Company B's identity; it is the SEGMENT-ATTRIBUTED DOLLAR FIGURE, reported
+  absent seventeen consecutive sessions.** ⚠ **If the funnel re-serves any of AVGO/GLW/COHR/
+  TSM/AMKR today, the answer is written: no figure, no segment, existing partner.**
+- ⚠⚠ **A NAMED COMPANY B IS NOT ENOUGH, AND THE DRILL THAT FOUND IT IS WORTH KEEPING.** The
+  structural scan surfaced only the **private** Perryman leg; the five listed suppliers appeared
+  **only** under a one-line drill asking *"name EVERY company the announcement named."* **That
+  clause converted a dead item into the log's first five-leg part-1 pass. Use it whenever
+  Company A announces a programme rather than a transaction.**
+- ⚠⚠ **THE BIG NUMBER AND THE NEW EVENT ARE DIFFERENT OBJECTS — NOW THE DOMINANT SHAPE, THREE
+  SESSIONS RUNNING.** 10-20: 3M's "$6B" was a warrant vesting threshold, not revenue. 10-21:
+  Micron's "up to $3B" is a **July** programme ceiling while the **genuinely new** Indium
+  funding **has no amount at all**, and Broadcom's "$1.5B" is **Broadcom's own July capex**, not
+  Apple's payment. ⚠ **A reader who asks "is there a dollar figure?" and "is this new?" as two
+  separate yes/no questions gets two yeses and proceeds on a combination that does not exist.**
+  ⚠ **THE FIX IS ONE CLAUSE IN THE DRILL: ask for the figure disclosed *FOR THIS TRANSACTION*,
+  not for the figure in the announcement. It worked today and is the only reason the $3B did not
+  become a part-2 input.**
+- ⚠⚠ **DISPOSED-REJECT RE-SERVE IS AT THREE CONSECUTIVE SESSIONS AND TODAY WAS THE WORST FORM:
+  the funnel named `T-2026-10-20-01` (MMM/Amazon) as the day's "clearest cross-company event"
+  less than 24 hours after it was killed.** ⚠ **`RTX` was re-served too — SEVENTH appearance in
+  eleven sessions — with the source itself dating the cited awards to 2026-09-28. READ THE LOG
+  BEFORE THE TAPE; it cost one `grep` and saved two drills.**
+- ⚠ **EARNINGS-SEASON PREDICTION NOW CONFIRMED, NOT OUTSTANDING.** The 10-20 seat wrote "expect
+  it all earnings season" about guidance quoted against consensus rather than a company's own
+  prior range. **GM did exactly that on 10-21, with the source stating outright that it "does
+  not establish whether GM lowered guidance against its own previously stated range."**
+  **Apply rule (iii) to the figure the mechanism runs on, not to the release.**
+- ⚠ **THE FORWARD CALENDAR IS NOT A MONDAY-ONLY SHAPE.** The carry-forward predicted it for the
+  Monday pre-market seat; it arrived on a **Wednesday** (Tesla/Meta/Netflix scheduled for 10-21).
+  ⚠ **The prediction was too narrow: it is a shape of any THIN window, and a mid-week session
+  with one trading day of inventory inside an AI pullback is thin. NOTE THE DATES AND DO NOTHING.**
+- ⚠ **SEVEN `move` CALLS AND ZERO MARKET CAPS SOURCED.** The `move` calls were legitimate rather
+  than decorative and bought the shape-seven finding. ⚠ **No §3 cap was sourced for any of
+  AVGO/GLW/COHR/TSM/AMKR, so §3 is UNRESOLVED for all five, not passed — DO NOT INHERIT A §3
+  VERDICT FROM `T-2026-10-21-01` (the VAL precedent). `AMKR` is plausibly near the $10B floor.**
