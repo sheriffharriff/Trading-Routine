@@ -10,8 +10,8 @@ The block below is parsed by `scripts/common.py` and gates real behavior
 `key: value` format exactly. Prose goes underneath.
 
 ```
-last_run: 2026-10-22 12:41 ET 3-midday-management SELFTEST 5/5 EXIT 0. MARKET OPEN - clock is_open TRUE at 12:41:37 ET, next_close 16:00 today. TRADING_ENABLED true, control.md Notes EMPTY. ZERO OPEN SATELLITE POSITIONS, so the routine's own Step 1 clause governs verbatim - there is nothing to manage, note it, commit, exit, do not go looking for something to do - and STEPS 2, 3, 4 AND 5 ALL HAD NO OPERAND. NOTHING SHOULD HAVE EXECUTED AND DID NOT: zero sell calls, zero orders, ZERO DRY-RUN INTENTS (the dry-run flag was never the reason - trading is enabled), nothing unresolved, no alert posted and none owed. LEDGER RECONCILED FIRST, THREE SIDES AGREED: Alpaca positions ONE row (core VOO 99.046311231 sh @ 706.74, cost_basis 69,999.989999), positions.md satellite block-header grep -cE = 0, sleeves satellite.count 0 - the single entry_price hit in positions.md is line 45 inside ## Template, the documented grep trap. SLEEVES RE-PULLED NOT INHERITED: equity 99,492.38, core 69,492.377654 = 69.85% core_in_band true rebalance_needed false, satellite 0.00 / 0.0% / count 0, cash 30,000.00 = 30.15% (~47th consecutive unchanged cash reading). A MIDDAY SEAT HAS NO REBALANCE PATH - rebalance_delta 152.29 is a DISTANCE READOUT and section 2 sends any rebalance to the NEXT MARKET-OPEN run; its growth from 53.93 at 09:36 is VOO marking down (current_price 701.615 against the 706.74 basis), not an instruction to this seat. WEEK ANCHOR COMPUTED FROM THE DATE: Thursday 2026-10-22 is ISO 2026-W43, Monday 2026-10-19, MATCHES week_of - no rollover, counter stays 0 of 3. STEP 2'S HIGH-WATER BACKFILL - THE REPAIR THIS ROUTINE EXISTS FOR - WAS NOT EXERCISED, AS IT HAS NOT BEEN AT ANY MIDDAY SEAT IN THIS REPO'S HISTORY: the detector only works against a highest_close that EXISTS, so on an empty ledger a passing Step 2 is a VACUOUS pass and must not be read as evidence the backfill works. Its trigger condition is real rather than hypothetical - the 2026-09-28 and 2026-10-05 close runs genuinely vanished - and it cost nothing only because the sleeve is empty. SECTION 5 ABSENT NOT PASSING, TWENTY-FIRST SEAT: 5.1 had no invalidation string to test so NO PERPLEXITY INVALIDATION QUERY WAS ISSUED AT ALL (a 5.1 check against zero positions is not a check that passed), 5.2 no timing_window deadline, 5.3 NOT COMPUTABLE which differs from far away, 5.4 no highest_close anywhere in the file - a field never written in this repo's history. Core VOO again NOT stamped with a highest_close (97th consecutive refusal - stamping the one position section 5 EXEMPTS would ARM a 5.4 stop against it). consecutive_closed_losses 0 UNTOUCHED - no close to increment or reset, which is not the same as a streak checked and found clean. Breaker INACTIVE, halt_triggered_at none, open_thesis_ids none. This seat MAY NOT open a position and did not want to: no quote was pulled for any ticker it does not hold, AMKR included, so AMKR has now gone three seats on this date without being re-priced. positions.md was DELIBERATELY NOT WRITTEN - Step 5's scope is every position still open and there are none, so a midday digest there would be pure growth restating what the carry-forward already carries.
-prior_run: 2026-10-22 09:36 ET 2-market-open-execution SELFTEST 5/5. MARKET OPEN, plan_today.md plan_date 2026-10-22 EQUALS today so the staleness gate PASSED and no stale-plan alert was posted. The plan carried ZERO BUY, ZERO SELL AND ZERO REBALANCE INTENTS, so STEPS 4, 5 AND 6 ALL HAD NO OPERAND AT ONCE - first on record - and ZERO ORDERS were placed with nothing unresolved. core_established true so Step 3 skipped. Ledger reconciled three sides agreeing; sleeves equity 99,820.22, core 69.95% in band, satellite 0.0% count 0, cash 30,000.00. The distinction worth keeping: HAVING NOTHING TO RE-VALIDATE and HAVING RE-VALIDATED AN INTENT AND PASSED IT are different states that produce the identical zero-order run. AMKR was not re-litigated and not re-priced; the section 7 softening path stayed shut.
+last_run: 2026-10-22 16:16 ET 4-market-close-journal SELFTEST 5/5 EXIT 0. POST-BELL - clock is_open FALSE at 16:16:27 ET with BOTH next_open 2026-10-23T09:30 and next_close 2026-10-23T16:00 carrying TOMORROW's date, which is the post-bell signature; a full regular session, not a holiday and not an early close. READ OFF THE DATES, NOT THE BOOLEAN. TRADING_ENABLED true, control.md Notes EMPTY, zero open alerts. ALL FOUR SEATS RAN AND COMMITTED ON THIS DATE. STEP 2 - THE HIGH-WATER WRITE, THE ONLY REASON THIS ROUTINE RUNS AT 16:15 RATHER THAN 16:00 - RAN AND HAD NO OPERAND, AND "high-water marks updated" WOULD HAVE BEEN A FALSE SENTENCE. Zero open satellite positions, so no highest_close was raised and no (as of ...) date advanced; the field stays ABSENT, the THIRD STATE carrying no date at all, which is neither current-and-unchanged nor stale. THE MIDDAY BACKFILL DETECTOR THEREFORE GETS NO INPUT FOR A 20TH CONSECUTIVE SEAT: no staleness detected and NONE RULED OUT, and the repair path has still never executed once in this repo's history - the first satellite fill is its first real test. Its trigger condition is real (the 2026-09-28 and 2026-10-05 close runs genuinely vanished) and it costs nothing only because the sleeve is empty: LUCK, NOT DESIGN. THE DAY'S EVENT WAS THE INDEX ITSELF: VOO official close 702.02 against 710.70, -8.68 = -1.2213%, on volume 62,936 against a recent 24-32k range (2.5x) and n 2,595 against ~1,000-1,650 - a genuine high-participation down day, not a thin print. NUMBERS ON OFFICIAL CLOSES, bars --days 90 --adjustment all: equity 99,532.49 (702.02 x 99.046311231 sh + 30,000.00 cash), day -859.72 = -0.8564% from 10-21's official 100,392.21, since inception -0.4675% on 100,000.00 opening. THE SINCE-INCEPTION READING WENT NEGATIVE AGAIN AND IT IS NOT A RECORD - counted off the journal's own prior entries: 10-19 -0.2248%, 10-20 -0.0406%, 10-21 +0.392%, today -0.4675%, the lowest OCTOBER reading (prior low -0.4442% on 10-01) and nowhere near September's -1.340% floor. CORE TOOK THE WHOLE MOVE as the account's only exposure, now -467.50 = -0.6679% against the 706.74 fill. SLEEVES RE-PULLED NOT INHERITED: core 69.86% core_in_band true rebalance_needed false, satellite 0.00 / 0.0% / count 0, cash 30,000.00 = 30.14% (~48th consecutive unchanged reading); core WALKED DOWN through the band 70.12% -> 69.86% purely because a falling mark acts on a FIXED SHARE COUNT - no shares moved - and rebalance_delta 140.85 is a DISTANCE READOUT, with NO REBALANCE DUE TOMORROW. ZERO TRADES AT ALL FOUR SEATS; orders --status all returns ONE ROW FOR THE ENTIRE ACCOUNT HISTORY (the 2026-09-03 core fill, status filled, terminal), so NOTHING WAS LEFT IN LIMBO OVERNIGHT and section 7's warning had NO OPERAND rather than a clean bill. Nothing closed, realized P&L 0.00, consecutive_closed_losses 0 UNTOUCHED - not incremented and not reset, which is not the same as checked and found clean. WEEK ANCHOR RE-DERIVED FROM THE DATE: Thu 2026-10-22, ISO 2026-W43, Monday 2026-10-19 = week_of, MATCHED, no rollover, 0 of 3. SECTION 5 ABSENT NOT PASSING, 22ND SEAT: 5.1 no invalidation string so ZERO news queries run and ZERO due, 5.2 no timing_window, 5.3 NOT COMPUTABLE which differs from far away, 5.4 no highest_close anywhere. CORE VOO AGAIN NOT STAMPED - 98TH REFUSAL - and today the temptation carried a number: VOO's trailing max close is 716.29 (2026-10-06) and 702.02 is -1.99% from it, so a 5.4 stop would have been nowhere near triggering, WHICH IS EXACTLY WHAT MAKES STAMPING IT FEEL HARMLESS. It is harmless TODAY. 4 theses written by the 08:07 seat, 0 accepted, 4 rejected (T-2026-10-22-01..-04); a buy was PERMITTED ALL DAY with every section 6 gate open and 30,000 idle, and nothing was bought - A RESEARCH RESULT, NOT A PERMISSION RESULT. ClickUp daily summary task 86bcpxvcb created. ONE CORRECTION MADE AND THE SHAPE OF IT IS THE RUN'S OWN FINDING: the "39 sessions" undeployed figure carried in plan_today.md prose and copied into the 10-22 state.md block matches NO basis (not 34 post-fill, not 37 on the 09-01 window, not 55 since inception) and this seat caught it only because it went to increment it to 40 - BUT THE TRACKED COUNTER IS SOUND AND THAT IS THE CORRECTION THAT MATTERS: the carry-forward item reads 33 completed / 30 post-fill as of the 10-16 close, advancing by the four sessions since gives 37 completed / 34 post-fill, and an independent bars pull returns exactly 34 strictly after the 09-03 fill - IT RECONCILES. WHAT DRIFTED IS A NARRATIVE FIGURE IN PROSE, a number written into an argument rather than read off the thing that tracks it, which is the more dangerous shape because a tracked counter carries its basis and invites re-derivation while a figure inside a sentence does not, and this one had already been copied once before any seat checked it. The 39 is ABANDONED not carried; the section 1 trading-day counter also reconciles at 55.
+prior_run: 2026-10-22 12:41 ET 3-midday-management SELFTEST 5/5. MARKET OPEN at 12:41:37 ET, TRADING_ENABLED true. ZERO OPEN SATELLITE POSITIONS so the routine's own Step 1 clause governed verbatim and STEPS 2, 3, 4 AND 5 ALL HAD NO OPERAND: zero sell calls, zero orders, zero dry-run intents, nothing unresolved, no alert owed. Ledger reconciled three sides agreeing; sleeves equity 99,492.38, core 69.85% in band, satellite 0.0% count 0, cash 30,000.00. Its own line: STEP 2'S HIGH-WATER BACKFILL HAS NEVER BEEN EXERCISED AT ANY MIDDAY SEAT IN THIS REPO'S HISTORY, and on an empty ledger a passing Step 2 is a VACUOUS pass, not evidence the backfill works.
 week_of: 2026-10-19
 new_positions_this_week: 0
 consecutive_closed_losses: 0
@@ -19,9 +19,9 @@ circuit_breaker: INACTIVE
 halt_triggered_at: none
 core_established: true
 core_ticker: VOO
-core_pct: 69.85
+core_pct: 69.86
 satellite_pct: 0.0
-cash_pct: 30.15
+cash_pct: 30.14
 open_thesis_ids: none
 ```
 
@@ -38,172 +38,104 @@ discarded; settled items were folded to one line each and repeated emphasis was 
 
 ### Live — act on these
 
-- **⚠ 2026-10-22 — DATE BLOCK, THREE SEATS: 08:07 pre-market · 09:36 market-open · 12:41 midday.** The
-  12:41 seat **SPENDS** the 09:36 block exactly as 09:36 spent the 08:07 one, carrying forward only what
-  outlived it and adding its own run in one item.
-  **DROPPED as settled (all STANDING items below — recognise on sight):** the 09:36 restatements of the
-  sleeves pull, the ledger reconciliation, the week anchor, the plan-staleness gate and the §5 null; and
-  the 08:07 AMKR per-part arithmetic, full statement at `T-2026-10-22-01`.
-  ⚠ **KEPT BECAUSE IT IS NOT A RESTATEMENT:** routine 2's Steps 4, 5 and 6 all had **NO OPERAND AT
-  ONCE** (first on record), and *having nothing to re-validate* and *having re-validated an intent and
-  passed it* are different states that produce the identical zero-order run. ⚠ **`AMKR` was not
-  re-litigated and NOT RE-PRICED AT ANY SEAT ON THIS DATE — three seats, no quote pulled for it.**
+- **⚠ 2026-10-22 — DATE BLOCK, **ALL FOUR SEATS, ONE ITEM**: 08:07 pre-market · 09:36 market-open ·
+  12:41 midday · **16:16 close (this seat)**.** ⚠ **COLLAPSED BY THE CLOSE SEAT, THE ONLY SEAT ENTITLED
+  TO TOUCH WHAT THREE EARLIER SEATS WROTE** — a seat cannot fairly collapse a paragraph it has just
+  written. **The date is now CLOSED: tomorrow's pre-market seat SPENDS this block and carries forward
+  only what outlives it.**
+  **DROPPED AS SETTLED (all STANDING items — recognise on sight, do not re-derive):** the four
+  restatements of the sleeves pull · the four ledger reconciliations · the four week-anchor
+  re-derivations · the plan-staleness gate · the §5 null's per-seat narration · the 08:07 AMKR per-part
+  arithmetic (full statement at `T-2026-10-22-01`) · the `AKAM`-netting sub-shape note (recorded shape
+  three, **not** a new shape seven) · the §3 foreign-listing compound instance (full statement at
+  `T-2026-10-22-02`, and it is **open item (3)**, below) · the Meta narrowed-range rule (iii) costume
+  (`T-2026-10-22-03`) · the disposed-reject re-serve at four consecutive sessions (`T-2026-10-22-04`).
   *(⚠ **No figure for this collapse is claimed in prose — READ THE DIFFSTAT.** A `state.md` total
   written inside `state.md` is falsified by the act of writing it.)*
 
-  - **⚠⚠ THE 12:41 MIDDAY SEAT — EXITS-ONLY, AND IT HAD NOTHING TO EXIT. STEPS 2, 3, 4 AND 5 ALL HAD NO
-    OPERAND.** Selftest **5/5** (env 6/6 · Alpaca ACTIVE, equity 99,487.92, `trading_blocked: false` ·
-    Perplexity `sonar-pro` · ClickUp · control.md **LIVE**), `TRADING_ENABLED: true`, clock
-    `is_open: true` at **12:41:37 ET**, next_close 16:00 today. **ZERO OPEN SATELLITE POSITIONS**, so the
-    routine's own Step 1 clause governs verbatim: *"There is nothing to manage. Note it, commit, exit. Do
-    not go looking for something to do."* Ledger reconciled **three sides, all agreeing** — Alpaca
-    `positions` **one row** (core VOO 99.046311231 sh @ 706.74, cost_basis 69,999.989999) ·
-    `positions.md` satellite block-header `grep -cE` = **0** · `sleeves` `satellite.count: 0`. Sleeves
-    **re-pulled, not inherited**: equity **$99,492.38**, core **$69,492.38 = 69.85%**,
-    `core_in_band: true`, `rebalance_needed: false`, satellite **$0.00 · 0.0%**, cash **$30,000.00 =
-    30.15%** (~**47th** consecutive unchanged cash reading). ⚠ **A MIDDAY SEAT HAS NO REBALANCE PATH:
-    `rebalance_delta` 152.29 is a DISTANCE READOUT, and §2 sends any rebalance to the NEXT MARKET-OPEN
-    run — its growth from 53.93 at 09:36 is VOO marking down (701.615 vs 706.74 basis), not an
-    instruction to this seat.** Week anchor **recomputed from the date** — Thu 2026-10-22, ISO
-    **2026-W43**, Monday **2026-10-19** = `week_of` → **no rollover, 0 of 3.**
-    ⚠⚠⚠ **THE LINE THAT IS GENUINELY THIS SEAT'S, AND IT IS ABOUT THE REPAIR THIS ROUTINE EXISTS FOR:
-    STEP 2'S HIGH-WATER BACKFILL HAS NOW BEEN UN-EXERCISED AT EVERY MIDDAY SEAT IN THE REPO'S HISTORY.**
-    The detector only works against a `highest_close` that **EXISTS**; on an empty ledger there is no
-    stale `(as of …)` date to catch, so **a passing Step 2 is a VACUOUS pass, NOT a working backfill, and
-    must never be read as evidence the repair functions.** ⚠ **Its trigger condition is real, not
-    hypothetical — the 2026-09-28 and 2026-10-05 close runs genuinely vanished (standing item (1)). Had
-    a position been open across either, this seat would have had to backfill across it. It cost nothing
-    ONLY because the sleeve is empty: LUCK, NOT DESIGN — and this is that same fact arriving at the one
-    seat that would have had to perform the repair.**
-    ⚠ **TWENTY-FIRST consecutive seat with an ABSENT §5, and all four rules have no operand: 5.1 no
-    `invalidation` string to test, so **NO Perplexity invalidation query was issued at all** — a §5.1
-    check against zero positions is not a check that passed · 5.2 no `timing_window` deadline · 5.3
-    **NOT COMPUTABLE**, which differs from "far away" · 5.4 no `highest_close` anywhere in the file, a
-    field never written in this repo's history.** ⚠ **CORE VOO AGAIN NOT STAMPED — 97th consecutive
-    refusal — because stamping the one position §5 EXEMPTS would ARM a 5.4 stop against it.**
-    ⚠⚠ **NOTHING SHOULD HAVE EXECUTED AND DID NOT.** Zero `sell` calls, zero orders, **zero dry-run
-    intents** (`TRADING_ENABLED` is true, so the dry-run flag was never the reason), nothing unresolved,
-    no alert posted and **none owed**. Breaker **INACTIVE**, `halt_triggered_at: none`,
-    `consecutive_closed_losses: 0` **untouched** — no close to increment or reset, which is NOT the same
-    as a streak that was checked and found clean. `open_thesis_ids: none`, control.md Notes **EMPTY**.
-    ⚠ **This seat MAY NOT open a position and did not want to: no quote was pulled for any ticker it
-    does not hold.**
-    ⚠ **`positions.md` WAS DELIBERATELY NOT WRITTEN.** Step 5's scope is "every position still open" and
-    there are none, so a midday digest there would be pure growth restating what this block already
-    carries. **The check happened; `state.md` is where it lives.**
+  - **⚠⚠⚠ THE CLOSE SEAT'S OWN LINE, AND IT IS ABOUT THE JOB THIS ROUTINE EXISTS TO DO INVISIBLY:
+    STEP 2 — THE HIGH-WATER WRITE — RAN AND HAD NO OPERAND, FOR A 20TH CONSECUTIVE SEAT.** Zero open
+    satellite positions, so **no `highest_close` was raised and no `(as of …)` date advanced.** The
+    field stays **ABSENT — the THIRD STATE, carrying no date at all** — which is neither "current and
+    unchanged" nor "stale". ⚠⚠ **"High-water marks updated" would have been a FALSE sentence, and the
+    run output template invites it.** ⚠ **Tomorrow's midday backfill detector therefore gets NO INPUT
+    AGAIN: no staleness detected and NONE RULED OUT. The repair path has never executed once in this
+    repo's history; THE FIRST SATELLITE FILL IS ITS FIRST REAL TEST.** ⚠ **Its trigger condition is
+    real — the 2026-09-28 and 2026-10-05 close runs genuinely vanished — and it costs nothing ONLY
+    because the sleeve is empty: LUCK, NOT DESIGN.**
 
-  - **⚠⚠⚠ THE DATE'S FINDING, SETTLED AND COMPRESSED — THE FUNNEL FINALLY SUPPLIED THE OBJECT IT HAD
-    BEEN MISSING FOR FIVE WEEKS AND §4 STILL KILLED IT.** `T-2026-10-22-01`, **AMKR / NVIDIA $1.3B**,
-    from **Amkor's own IR release dated 2026-10-21**: a **primary source** · **named counterparty** ·
-    **dated** · a **dollar figure attributed to the buyable leg BY the buyable leg** · a **one-clause
-    mechanism** · `us_equity`/NASDAQ/`tradable` · and `move` printing **"passes"**.
-    ⚠⚠ **IT DIED ON THREE INDEPENDENT PARTS, EACH SUFFICIENT: (1) PART 1 — AMKR *IS* THE HEADLINE
-    NAME** (§4's opening sentence; **the GFS kill verbatim**) · **(2) PART 2 — the figure is
-    `PREPAYMENTS` in Amkor's own word** = capital paid **IN**, a deferred-revenue liability until the
-    work is performed, **rule (viii)'s JBL shape**; the release **expressly declines to call it revenue
-    or give a recognition schedule** and names **no segment and no revenue share**, so the 10% test is
-    **NOT COMPUTABLE** · **(3) PART 3 — the only date in the document is "by the END OF 2028"**
-    (~9 quarters against §4's two) **and NO revenue date is stated at all, so part 3 is UNWRITEABLE**.
-    ⚠⚠ **THE LESSON THAT OUTLIVES IT AND CUTS AGAINST MOST OF THIS FILE: NOTHING WAS MISSING.** Second
-    time in a month that the best-documented object the funnel has ever reached was the **FIRST-ORDER**
-    leg, and the **third consecutive month** the best candidate died on a **2028 ramp date**.
-    ⚠⚠⚠ **A ONE-CLAUSE MECHANISM IS NOT A LICENCE: the test asks whether a *second-order* link is
-    tight enough; it does NOT certify a *first-order* name whose link is tight because there is no link
-    to make. A first-order candidate PASSES part 1's grammar and FAILS part 1's purpose.**
-    ⚠ **The pull was real and is named rather than omitted — 39 sessions undeployed, $30,000 idle,
-    every §6 gate open. That is §4's honest-broker configuration exactly.**
+  - **⚠⚠ THE DAY'S EVENT WAS THE INDEX ITSELF — FIRST SESSION IN A WHILE WHERE THE TAPE OUTRANKED THE
+    RESEARCH.** VOO official close **702.02** vs 10-21's **710.70** — **−$8.68, −1.2213%** — on volume
+    **62,936** against a recent **24–32k** range (**2.5×**) and `n` **2,595** against ~1,000–1,650.
+    ⚠ **A genuine high-participation down day, NOT a thin tape producing a wide print.** The core sleeve
+    took all of it as the account's only exposure: **−$467.50 / −0.6679%** against its 706.74 fill.
+    ⚠⚠ **AND THE PULL THAT CAME WITH IT WAS REFUSED: 2.5× volume on a −1.22% index day has an obvious
+    narrative attached and there is NO ACTION BEHIND IT — §1 is a swing/fundamentals mandate and §2
+    holds core permanently and does not trade it on news. Recorded as tape context and used for
+    nothing.** ⚠ **Equity on official closes **$99,532.49**, day **−$859.72 / −0.8564%**, since
+    inception **−0.4675%**. THAT IS NOT A RECORD — counted off `journal.md`'s own prior entries
+    (10-19 −0.2248% · 10-20 −0.0406% · 10-21 +0.392%), it is the lowest **OCTOBER** reading (prior low
+    −0.4442%, 10-01) and nowhere near September's **−1.340%** floor. "First" and "worst" are the two
+    claims this file keeps having to retract.**
 
-  - **⚠⚠ THE PRICED-IN FILTER ON `AMKR` IS THE RECORDED `AKAM` NETTING SUB-SHAPE OF SHAPE THREE,
-    ***NOT*** A NEW SHAPE SEVEN — AND THE `grep` THE LIST DEMANDS IS WHAT CHANGED THE ANSWER.**
-    Five-session **−2.37%**, `priced_in: false`, **"passes"**; **news-day +4.87%** (10-20 **41.69** →
-    10-21 **43.72**, volume **183,526** vs ~115–125k preceding). **§4's words say "more than 4% …
-    ON THIS NEWS" → the candidate is LATE on the basis the rule describes and the script does not
-    measure.** ⚠ **The five-session pass is MANUFACTURED BY CANCELLATION — a −6.9% sector drawdown
-    against the +4.87% news pop, two legs with DIFFERENT CAUSES netting to a clean-looking figure.**
-    Index control over the identical window: `VOO` **+0.46%**, `false`.
+  - **⚠⚠⚠ THE BENCHMARK GAP WENT 44bp → 7bp BEHIND AND IT IS **NOT PROGRESS** — DECOMPOSED SO NO
+    FUTURE SEAT SCORES IT AS ONE.** Book **−0.4675%** vs **VOO −0.3987%** since inception (704.83 on
+    2026-08-06 → 702.02), **6.88bp behind**. Exact decomposition: **cash cushion +11.96bp** (0.30 ×
+    0.3987%, being only 70% exposed to a *falling* index) · **entry price on the one fill −18.84bp**
+    (0.70 × 0.271%, the core bought at **706.74** against the 704.83 inception reference) · **net
+    −6.88bp ✓**.
+    ⚠⚠ **SO THE "IMPROVEMENT" IS THE CASH DRAG RUNNING BACKWARDS, AND IT REVERSES THE MOMENT THE INDEX
+    TURNS UP. The residual gap is now dominated by ENTRY TIMING ON A SINGLE FILL — a thing no future
+    run can fix and no future run should take credit for.** ⚠ **This REPLACES the §1 scorecard's
+    "44bp behind" line, which was correct on 10-21 and is now stale. Attached to open item (3) and to
+    tomorrow's weekly review.**
 
-  - **⚠⚠⚠ §3 ON FOREIGN LISTING IS THE BINDING CONSTRAINT FOR A THIRD SESSION IN FOUR — OBSERVATION 3
-    OF THE 3 THE 10-19 ENTRY ASKED FOR, AND IT IS A *COMPOUND* INSTANCE.** NVIDIA's AI
-    component-capacity initiative names **SIX** participants and **FIVE ARE FOREIGN-LISTED** (Samsung
-    Electro-Mechanics/KRX · Ibiden/TSE · Unimicron/TWSE · KYEC/TWSE · SPIL/TWSE, parent ASE an NYSE
-    ADR). ⚠ **10-19 was §3-dead at the TRANSACTION leg; 10-20 (GSEO) at the COMPANY B leg; 10-22 is
-    BOTH AT ONCE, with the one US-listed participant failing on the thesis parts instead.**
-    ⚠⚠ **FOR THE HUMAN, ATTACHED TO OPEN ITEM (3): if the second-order companies §4's logic correctly
-    identifies in the AI hardware chain are systematically foreign-listed, then §3 and §4 TOGETHER
-    cannot produce a trade in the sector that dominates the current news flow. A STRUCTURAL STATEMENT
-    ABOUT THE CONFIGURATION, NOT A REASON TO LOWER §3.** ⚠ **Three sessions in four is now a pattern
-    rather than an observation; the next two weekly reviews should test it.** Full statement:
-    `T-2026-10-22-02`.
+  - **⚠⚠ A LOOSE "39 SESSIONS" WAS CIRCULATING AND THE TRACKED COUNTER WAS NEVER WRONG — THE SHAPE IS
+    THE FINDING, NOT THE CATCH.** This seat went to increment "39 sessions undeployed" to 40 and it
+    reconciles against **no** basis: not **34** (post-fill), not **37** (the 09-01 window), not **55**
+    (since inception). ⚠ **The tracked counter — the `SATELLITE SLEEVE IS STRUCTURALLY UNDEPLOYED` item
+    below — RECONCILES EXACTLY, by two independent routes, and has been advanced to 37 / 34 with its
+    basis.** ⚠⚠ **WHAT DRIFTED IS A *NARRATIVE FIGURE IN PROSE*: a number written into an argument in
+    `plan_today.md` rather than read off the thing that tracks it, then copied into the 10-22 block
+    before any seat checked it. THAT IS THE MORE DANGEROUS SHAPE — a tracked counter carries its basis
+    and invites re-derivation; a figure inside a sentence does neither.** ⚠ **STANDING RULE: quote the
+    counter item, never a number from inside a sentence.** *(Corrected in `journal.md` 10-22, in the
+    `state.md` fenced block, and on ClickUp task **86bcpxvcb** as a comment, because the first version
+    of the summary overstated it as a broken counter — the correction REPLACES that claim.)*
 
-  - **⚠⚠ DRILL THE EXCLUSIONS, NOT JUST THE PASSES — AND IT IS WHAT REACHED THE DATE'S CANDIDATE AT
-    ALL.** The structural scan **excluded** NVIDIA/Samsung Electro-Mechanics for having no disclosed
-    dollar amount **and never mentioned Amkor**; drilling behind that exclusion found a **$1.3B
-    primary-sourced figure at a different, US-LISTED counterparty in the same initiative.**
-    ⚠ **This file already says a self-exclusion is a HINT, NOT A RULING (Bloom Energy, 10-13); this is
-    its strongest instance.** ⚠ **The structural framing still won on balance — SEVENTH consecutive
-    session — but it was the WEAKER of the two scans that day: scan 1 returned four items, THREE of
-    them disposed rejects, while the routine's own "significance" voice surfaced the Meta capex figure.
-    Use both; drill what either one throws away.**
+  - **⚠ THE §5.4 ARITHMETIC WAS AVAILABLE FOR CORE TODAY AND WAS NOT WRITTEN TO A POSITION ROW —
+    98th CONSECUTIVE REFUSAL, AND THIS TIME THE TEMPTATION CARRIED A NUMBER.** VOO's trailing max close
+    is **716.29 (2026-10-06)** and 702.02 is **−1.99%** from it, so a §5.4 stop would have been nowhere
+    near triggering. ⚠⚠ **THAT IS EXACTLY WHAT MAKES STAMPING IT FEEL HARMLESS. It is harmless TODAY.
+    Arming a trailing stop against the one sleeve §5 EXEMPTS and §2 says to hold permanently is not a
+    thing to do on a quiet day.** The 702.02 close is carried here as a tape fact and written to no row.
 
-  - **⚠ RULE (iii) — A GENUINELY NEW COSTUME, ONE LINE: A *NARROWED* RANGE IN WHICH ONE ENDPOINT MOVED
-    AND THE OTHER DID NOT.** Meta FY2026 capex **$135–145B**: the low end rose **$5B**, the high end is
-    **UNCHANGED**, midpoint $137.5B → $140B (**+1.8%**). ⚠ **"Raised the low end" and "narrowed from"
-    are both arithmetically true and carry OPPOSITE impressions. When a range moves, STATE WHICH
-    ENDPOINT MOVED — neither "raised guidance" nor "reaffirmed" is establishable from a narrowing.**
-    ⚠ **It is the 10-15 TSMC split verdict one level deeper: there, two figures in one release; here,
-    ONE figure whose two endpoints disagree.** ⚠⚠ **AND NOTE THE INVERSION, THE ONE ENCOURAGING LINE:
-    at TSMC the figure that MOVED had no supplier chain and the figure WITH the chain did not move.
-    Here the figure that moved IS the capex — the one WITH a supplier chain. THE SHAPE FINALLY POINTED
-    THE RIGHT WAY AND STILL PRODUCED NOTHING, BECAUSE THE CHAIN IS UNNAMED. The binding constraint was
-    never the sign; it is the NAMING.** `T-2026-10-22-03`.
+  - **⚠ ZERO TRADES AT ALL FOUR SEATS, AND THE §7 LIMBO CHECK HAD NO OPERAND RATHER THAN A CLEAN BILL.**
+    `orders --status all` returns **ONE ROW FOR THE ENTIRE ACCOUNT HISTORY** — the 2026-09-03 core fill,
+    `status: filled`, terminal. Nothing closed, realized P&L **$0.00**,
+    `consecutive_closed_losses: 0` **UNTOUCHED** (not incremented, not reset — which is not the same as
+    checked and found clean). Breaker **INACTIVE**, `halt_triggered_at: none`, `open_thesis_ids: none`,
+    `control.md` Notes **EMPTY**, zero open alerts, **no alert owed**.
+    ⚠ **A BUY WAS PERMITTED ALL DAY AND NOTHING WAS BOUGHT — A RESEARCH RESULT, NOT A PERMISSION
+    RESULT.** Every §6 gate open: 0 of 3 this week, 5% cap **$4,976.62** with no operand, **$30,000
+    idle across 34 post-fill sessions.** ⚠ **`AMKR` went FOUR seats on this date without being
+    re-priced, deliberately — and it did NOT die on price, so a better quote changes nothing.**
 
-  - **⚠ DISPOSED-REJECT RE-SERVE AT FOUR CONSECUTIVE SESSIONS; READING THE LOG FIRST SAVED THREE DRILLS
-    ON 10-22.** Apple/**Perryman** (private — re-served as the structural scan's ONLY qualifying item,
-    inside 24 hours of `T-2026-10-21-04`, the source conceding it had no direct company announcement) ·
-    **MU/Indium** (`T-2026-10-21-02`; the source itself dated it **10-20**, outside the window) ·
-    **Qnity** (unlisted; joined Apple's programme **March 2026**) · **NOC Q3** (`T-2026-10-20-03`;
-    re-served as a beat **against consensus**, rule (iii) costume #1). ⚠ **NO NEW IDs, per the 10-14
-    precedent. One `grep`, three drills saved.** All inside `T-2026-10-22-04` with 17 others.
+  - **⚠ §2 IN BAND, NO REBALANCE DUE TOMORROW — AND NOTE *HOW* IT MOVED.** Core **69.86%**
+    (`core_in_band: true`, `rebalance_needed: false`), satellite **0.0%** count 0, cash **$30,000.00 =
+    30.14%** (~**48th** consecutive unchanged reading). ⚠ **Core WALKED DOWN through the band
+    70.12% → 69.86% purely because a FALLING MARK acts on a FIXED SHARE COUNT — no shares moved.**
+    `rebalance_delta` **140.85** is a **DISTANCE READOUT**, not an instruction. ⚠ **Week anchor
+    re-derived from the date: Thu 2026-10-22, ISO **2026-W43**, Monday **2026-10-19** = `week_of` →
+    no rollover, 0 of 3. The rollover lands Monday **2026-10-26**.**
 
-  - **⚠ A CLEAN RULE (iii) PASS THAT STILL DIES, RECORDED BECAUSE A PASS ON ONE FILTER IS NOT PROGRESS
-    TOWARD A TRADE:** **United Rentals** raised FY2026 revenue guidance to **$18.0–18.2B from its OWN
-    $17.5–17.8B** — the company's own prior range, present in the source. ⚠ **URI is FIRST-ORDER, named
-    no supplier and disclosed no fleet commitment; the CAT/DE/TEX read-across needs an "and also URI
-    will therefore buy more" = rule (v) plus the shared-cause object.**
-
-  - **⚠ CARRIED FROM 10-21, ONE LINE EACH, NOT RE-DERIVED.** **(a)** The misfiled-dated-block defect
-    and its repair: a seat's dated digest landed **438 lines inside the 2026-10-06 block**, and a
-    verified `wc -l` says nothing about line POSITION. **STANDING CHECK: after appending a dated block,
-    `grep -n` the date headers and confirm the insertion point is inside the block you named** —
-    applied and passed at both 08:07 writes (`research_log.md` 10-22 survey above the 10-21 survey;
-    `positions.md` 10-22 digest above the 10-21 digest). **(b)** The partial-bar trap was refused on
-    sight at 09:36 on 10-21 (`c` 708.04, `n` 64, `v` 1,966, recorded nowhere as a close) and the
-    completed bar closed **2.66 HIGHER** — the trap's sign and magnitude measured, not argued.
-    **(c)** Shape one's seven-of-seven sample (`COHR` −20.07% · `AMKR` −12.45% · `GLW` −10.94% ·
-    `GM` −8.24% · `AVGO` −6.41% · `MU` −5.92% · `TSM` −4.43%, all `true`, all DOWN, against `VOO`
-    −1.22% `false`) stands as open item (1)'s strongest evidence. ⚠ **Note AMKR's five-session window
-    has since rolled to −2.37% and now reads `false` — the same ticker, the same filter, opposite
-    verdicts eight days apart, on a window edge rather than on any fact about the company.**
-
-  - **⚠ ITEM (9), THE 08:07 MEASUREMENT KEPT AS ONE LINE BECAUSE THE MECHANISM OUTLIVES THE FIGURES.**
-    That seat collapsed two files and spent one — `plan_today.md` **−3,228B**, `positions.md`
-    **+3,801B**, `research_log.md` **+28,259B**, **net +25,008B on the four-file corpus** — so the
-    collapses saved ~10KB and the date's reasoning spent ~28KB. ⚠⚠ **THE MECHANISM: the funnel finally
-    produced a real candidate, a real candidate needs a real rejection, and the rejection IS the bytes.
-    A SEAT COLLAPSING CANNOT OUTRUN A DAY THAT ACTUALLY HAD SOMETHING TO SAY — an argument for an
-    ARCHIVABLE UNIT, not for less reasoning.** ⚠ **No seat quotes its own `state.md` delta in prose;
-    `git diff --stat` on the commit is the only stable place for it.**
-
-  - **⚠ §1 SCORECARD, CARRIED WITH ITS BASIS AND NOT RE-COMPUTED: THE BOOK IS 44bp BEHIND ITS OWN
-    BENCHMARK SINCE INCEPTION** — account **+0.392%** ($100,000.00 → $100,392.21 on official closes)
-    against **VOO +0.833%** (704.83 on 2026-08-06 → 710.70 on 10-21). ⚠ **BASIS CAVEAT: PRICE-vs-PRICE
-    on one `--adjustment all` pull, NOT the TR-vs-TR figure the weekly review needs — the cash leg does
-    not rescale on an ex-date. Quote it with its basis or not at all.** ⚠ **55 trading days · 98 thesis
-    HEADINGS · 0 accepted · ONE fill in the account's history (the core). Every rejection has been
-    correct on its stated reason and §4 says a run that finds nothing is a successful run — BOTH TRUE
-    WHILE THE CONFIGURATION LOSES TO ITS BENCHMARK BY CONSTRUCTION, because the ~30% sleeve earns
-    nothing while the index compounds. FOR THE HUMAN, ATTACHED TO ITEM (3); NOT A REASON TO LOWER A
-    FILTER.** ⚠ **HEADINGS, not candidates — do not reconcile against item (3)'s screened-item counts.**
+  - **⚠⚠ TOMORROW IS FRIDAY 2026-10-23 — THE WEEKLY REVIEW DAY.** Normal session on the clock
+    (`next_open` 09:30, `next_close` 16:00). **Three items the review should take up, all already open
+    for the human:** the **§3 foreign-listing pattern at three sessions in four** (item (3)) · the
+    **44bp → 7bp benchmark move and its decomposition above**, so the review does not score it as
+    progress · the **missing-close-run detector that still does not exist** (item (11)) — **two of 33
+    close runs have vanished** and `alerts.md` reading "zero open incidents" still cannot tell a healthy
+    week from a seat that died before `commit.py`.
 
 - **⚠⚠ GFS/TSMC CLEARED EVERY FILTER AND DIED ON THE *THESIS PARTS* — `T-2026-10-09-01`, STILL THE MOST
   INFORMATIVE REJECTION THIS LOG HAS PRODUCED.** *(Collapsed 2026-10-14 08:21: the item is SETTLED five
@@ -253,7 +185,8 @@ discarded; settled items were folded to one line each and repeated emphasis was 
   THAT WOULD HAVE BEEN MISSING.** ⚠⚠ **EIGHT IN A ROW IS NOT A FIX AND MUST NOT BE READ AS ONE:
   the failure mode is a run that never STARTS, so a session that completed is not evidence about the next
   one in either direction, and a RUN OF EIGHT is not evidence either. ⚠ Each added session makes the
-  streak longer and the DETECTOR no closer to existing. Two of 32 close runs have vanished and THE DETECTION GAP IS UNCHANGED — there is still no
+  streak longer and the DETECTOR no closer to existing. Two of **33** close runs have vanished (advanced by the 10-22 close seat, which is the seat that
+  would itself have been the missing one) and THE DETECTION GAP IS UNCHANGED — there is still no
   detector for a missing seat, and `alerts.md` reading "zero open incidents" still cannot distinguish a
   healthy week from a seat that died before `commit.py`.**
 - **⚠⚠ ASK THE FUNNEL FOR THE *STRUCTURE* §4 REQUIRES, NOT FOR *IMPORTANCE* — AND AS OF 10-12 THE RULE
@@ -393,11 +326,15 @@ discarded; settled items were folded to one line each and repeated emphasis was 
   RECORDED AS A CANDIDATE.** ⚠ **A REDACTION IS NOT A LEAD AND NEITHER IS A MAP PIN. There is no
   Company B until the source names one.** *(Entries: T-2026-10-05-01, T-2026-10-06-03.)*
 
-- **⚠⚠ THE SATELLITE SLEEVE IS STRUCTURALLY UNDEPLOYED — **33 COMPLETED SESSIONS** (30 post-fill,
-  advanced by the 10-16 **16:18** close seat, which stands after the bell on a session that is over;
-  ⚠ **RE-DERIVED FROM SOURCE THIS RUN RATHER THAN INHERITED-AND-INCREMENTED: a `bars` pull returns
-  exactly 33 session rows dated 2026-09-01 … 2026-10-16, of which 30 postdate the 09-03 fill day —
-  the first independent confirmation of this counter, and it MATCHED**),
+- **⚠⚠ THE SATELLITE SLEEVE IS STRUCTURALLY UNDEPLOYED — **37 COMPLETED SESSIONS** (**34 post-fill**,
+  advanced by the 10-22 **16:16** close seat, which stands after the bell on a session that is over;
+  ⚠ **RE-DERIVED FROM SOURCE AT THIS SEAT, NOT INHERITED-AND-INCREMENTED: a `bars --days 90` pull
+  returns exactly **34** session rows strictly after the 09-03 fill day, and the 10-16 reading
+  (33 / 30, itself re-derived) advanced by the four sessions since — 10-19 · 10-20 · 10-21 · 10-22 —
+  gives 37 / 34. TWO INDEPENDENT ROUTES, SAME ANSWER, SECOND CONFIRMATION OF THIS COUNTER.**
+  ⚠⚠ **AND THE REASON IT WAS RE-DERIVED: a LOOSE "39 sessions" was circulating in `plan_today.md`
+  prose and in the 10-22 block, matching NO basis. THE TRACKED COUNTER WAS NEVER WRONG — a NARRATIVE
+  FIGURE drifted beside it. Quote THIS item, never a number from inside a sentence.**),
   **166 THESES** (87 archived + 79 live headings; the **10-16** pre-market seat advanced this count by
   its five and HELD the session count, the opposite call to the close seat's and equally correct),
   ZERO POSITIONS EVER, AND THE PRESSURE TO LOWER THE §4 BAR IS THE ONLY ITEM HERE ASKING
