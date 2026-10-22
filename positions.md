@@ -85,7 +85,7 @@ check that the pull returned the right session. A stored baseline is a *label*, 
 
 *(none — no **satellite** positions have been opened yet. Core VOO exists and is deliberately not tracked here, per the top-of-file rules and the fill note further down.)*
 
-### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-10-22, `1-premarket` **08:07 ET** — first seat of the date, block opened here. ⚠ **RE-EVALUATED AT THIS SEAT, NOT INHERITED: a table left alone and a table re-evaluated to the same answer are indistinguishable to the next reader.**)
+### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-10-22, **ONE DIGEST FOR THE DATE, ALL FOUR SEATS:** `1-premarket` **08:07** · `2-market-open` **09:36** · `3-midday` **12:41** · `4-market-close` **16:16**. ⚠ **CLOSED BY THE CLOSE SEAT, THE ONLY SEAT ENTITLED TO TOUCH WHAT THREE EARLIER SEATS WROTE** — a seat cannot fairly collapse a paragraph it has just written. The 09:36 and 12:41 seats wrote nothing here; the close note is the last item below. ⚠ **RE-EVALUATED AT THIS SEAT, NOT INHERITED: a table left alone and a table re-evaluated to the same answer are indistinguishable to the next reader.**)
 
 **Ledger reconciled FIRST, before any research — three sides, all agreeing.**
 `positions.md` satellite block-header pattern `grep -cE '^### [A-Z]{1,5} '` = **0** · Alpaca
@@ -128,6 +128,22 @@ document is **end-2028**, ~9 quarters against §4's two). ⚠ **Had it been boug
 today hold its first `entry_price`, `invalidation`, `timing_window` and `highest_close`, and every
 "no operand" line above would have become a live computation. IT WAS NOT BOUGHT, AND THE REASONS ARE
 NOT PRICE-DEPENDENT — see `plan_today.md` and `research_log.md`.**
+
+⚠⚠ **CLOSE SEAT, 16:16 ET — THE STEP 2 HIGH-WATER WRITE RAN AND HAD NO OPERAND. THIS IS THE SEAT THAT
+OWNS THE WRITE, SO ITS NULL IS THE ONE THAT MATTERS.** Re-reconciled at the bell, three sides still
+agreeing (Alpaca `positions` **one row**, core VOO only · this file's satellite block-header `grep -cE`
+= **0** · `sleeves` `satellite.count: 0`). **No `highest_close` was raised and no `(as of …)` date was
+advanced, because there is no row carrying either.** ⚠ **The field remains ABSENT — the THIRD STATE,
+no date at all — so tomorrow's midday backfill detector gets NO INPUT for a TWENTIETH consecutive
+seat: no staleness detected and NONE RULED OUT.** The repair path has still never executed once in this
+repo's history; the first satellite fill is its first real test.
+⚠ **CORE VOO AGAIN NOT STAMPED — 98th CONSECUTIVE REFUSAL.** Today's official close (**702.02**,
+`bars --adjustment all`, session proved complete off the clock's post-bell date signature) is carried
+in `state.md` as a tape fact and is written to no position row here. ⚠ **The temptation had a number
+behind it today: VOO's trailing max close is 716.29 (2026-10-06) and 702.02 is −1.99% from it, so a
+§5.4 stop would have been nowhere near triggering. That is what makes stamping it feel harmless — it is
+harmless TODAY, and arming a trailing stop against the sleeve §2 says to hold permanently is not a
+thing to do on a quiet day.**
 
 ---
 

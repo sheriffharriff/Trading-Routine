@@ -40,6 +40,154 @@ anything where the honest-broker rule (§4) did real work>
 
 ## Entries
 
+### 2026-10-22 (Thursday)
+
+**Account:** total **$99,532.49 on official closes** (`bars --days 90 --adjustment all`, VOO `c`
+**702.02**, 99.046311231 sh + $30,000.00 cash) | day **−$859.72 (−0.8564%)** from 10-21's official
+$100,392.21 | since inception **−0.4675%** ($100,000.00 opening, price basis)
+⚠ *The live broker mark at 16:16:27 was **$99,530.51** on `current_price` **702.00** — a separate
+post-bell series, quoted beside the official figure and **never differenced against it**. Gap
+**−$1.98**, which attributes exactly to 99.046311231 × −$0.02.*
+⚠ **The since-inception reading went NEGATIVE again today and this is NOT a record.** Prior October
+readings: 10-19 **−0.2248%** · 10-20 **−0.0406%** · 10-21 **+0.392%** · today **−0.4675%**. It is the
+lowest **October** reading (prior low −0.4442%, 10-01) and nowhere near the September floor of
+**−1.340%**. ⚠ **Counted off the journal's own prior entries, not asserted — "first" and "worst" are
+the two claims this file keeps having to retract.**
+**Sleeves:** core **69.86%** | satellite **0.0%** | cash **30.14%**   (§2 band 65–75%) — **IN BAND,
+NO REBALANCE DUE TOMORROW.** 4.86pp above the lower edge, 5.14pp below the upper.
+**Breaker:** INACTIVE (`consecutive_closed_losses: 0`, `halt_triggered_at: none`)
+**Week:** 0/3 new positions (`week_of: 2026-10-19`; anchor **re-derived from the date** —
+`America/New_York` 2026-10-22, Thursday, ISO week **2026-W43**, weekday 4 → Monday anchor
+**2026-10-19**, **MATCHED**, so the counter was **not re-reset**; it reads 0 because nothing was
+opened)
+
+**Traded:** nothing. Zero orders at all four seats. `orders --status all` returns **one row for the
+entire account history** — the 2026-09-03 core fill, `status: filled`, terminal. **No order in limbo
+overnight; §7's warning has NO OPERAND, which is not the same as a clean bill.**
+**Researched:** 4 theses — **0 accepted, 4 rejected** (`T-2026-10-22-01`…`-04`), all written by the
+08:07 pre-market seat. This routine writes none.
+**Positions near a sell rule:** **none, and the honest form is NO OPERAND, not "nothing close."** Zero
+satellite positions, so §5.1–5.4 have nothing to measure. Core VOO is §5-exempt and was struck from the
+working list before any rule was read.
+
+**What happened:**
+
+A full regular session, confirmed off the clock's **dates** rather than its boolean: at 16:16:27 ET
+`is_open: false` with **both** `next_open` **2026-10-23T09:30** and `next_close` **2026-10-23T16:00**
+carrying **tomorrow's** date — the post-bell signature. Not a holiday and not an early close. All four
+seats ran and committed.
+
+**Step 2 — the high-water write, the only reason this routine runs at 16:15 rather than 16:00 — had
+NO OPERAND, and "high-water marks updated" would have been a false sentence.** There are zero open
+satellite positions, so there was no `highest_close` to raise and no `(as of …)` date to advance. The
+field is **ABSENT — a third state that carries no date at all**, which is neither "current and
+unchanged" nor "stale". ⚠ **That is precisely what tomorrow's midday Step 2 backfill detector reads,
+and it will again get NO INPUT: no staleness detected and NONE RULED OUT. Twentieth consecutive seat.
+The repair path has never executed once in this repo's history, and a gap that cannot occur on an empty
+ledger is not evidence the repair works.** The trigger condition is real — the 2026-09-28 and 2026-10-05
+close runs genuinely vanished — and it has cost nothing only because the sleeve is empty. **Luck, not
+design.**
+
+**The tape did something, and it is the first day in a while where the index move was the day's event.**
+VOO closed **702.02** against 10-21's **710.70** — **−$8.68, −1.2213%** — on volume **62,936** against
+a ~24–32k recent range and `n` **2,595** against ~1,000–1,650. ⚠ **2.5× the recent volume: a genuine
+high-participation down day, not a thin tape producing a wide print.** The core sleeve took the whole
+of it (it is the account's only exposure) and is now **−$467.50 / −0.6679%** against its 706.74 fill.
+§2's band never came close to binding: 69.86% is nearer the middle of 65–75% than it was yesterday at
+70.12%, because a falling mark on a fixed share count walks core **down** through the band.
+`rebalance_delta` **140.85** is a **distance readout**, not an instruction, and §2 sends any rebalance
+to a market-open seat regardless.
+
+**Nothing was bought, and today that was not a close call** — the date's candidate had already been
+disposed before the bell on three independent §4 parts. The honest-broker configuration is unchanged
+and is worth naming rather than omitting: **34 post-fill sessions undeployed, $30,000 idle, every §6
+gate open** (breaker INACTIVE, 0 of 3 this week, `control.md` Notes empty, 5% cap $4,976.62 with no
+operand). ⚠ **That counter is CORRECTED, not incremented — see item 2 below.**
+
+**What I got wrong or nearly got wrong:**
+
+**1. I nearly reported the benchmark gap NARROWING as progress, and the decomposition says the
+opposite.** Since inception the book is **−0.4675%** against **VOO −0.3987%** (704.83 on 2026-08-06 →
+702.02 today) — **6.88bp behind**, against **44bp behind** when the 10-21 seat measured it. That reads
+as the strategy catching up. It is not a decision doing anything. Decomposed exactly:
+
+- **cash cushion, +11.96bp** — being only 70% exposed to an index that is *down* since inception helps
+  by 0.30 × 0.3987%;
+- **entry price on the one fill, −18.84bp** — the core was bought at **706.74**, which is **+0.271%
+  above** the 704.83 inception reference, and 0.70 × 0.271% is the drag;
+- net **−6.88bp**. ✓
+
+⚠⚠ **So the "improvement" is the cash drag running backwards, and it reverses the moment the index
+turns up. The gap is now dominated by ENTRY TIMING ON A SINGLE FILL, not by cash — a thing no future
+run can fix and no future run should take credit for.** The 44bp→7bp move is a fact about VOO's
+direction, not about this account's conduct, and reporting it as improvement would have been the most
+flattering false sentence available today.
+
+**2. I was one keystroke from propagating a figure that does not reconcile, and the shape of the defect
+is not the one I first wrote down.** `plan_today.md` and the 10-22 `state.md` block both say the sleeve
+has been undeployed for **"39 sessions"**. I was about to write 40. A `bars --days 90` pull returns
+**34** session rows strictly after the 2026-09-03 fill and **55** from the 2026-08-06 inception
+inclusive — **39 is neither.** My first draft of this item called it a broken tracked counter. ⚠⚠ **It
+is not, and the correction matters more than the catch: the TRACKED counter in `state.md`'s carry-forward
+RECONCILES EXACTLY.** That item reads *33 completed sessions / 30 post-fill* as of the 10-16 close,
+re-derived from `bars` at the time; advancing it by the four sessions since (10-19 · 10-20 · 10-21 ·
+10-22) gives **37 completed / 34 post-fill**, and my independent pull returns **34**. ⚠ **So the counter
+the repo maintains is sound, and what drifted is a NARRATIVE FIGURE in prose — a number written into an
+argument rather than read off the thing that tracks it.** That is the more dangerous shape, because the
+tracked counter carries its basis and invites re-derivation while a figure inside a sentence does not,
+and it had already been copied once (plan → `state.md`) before this seat met it. **Recorded here as 34
+post-fill with its basis; the 39 is abandoned rather than carried.** The §1 trading-day counter also
+reconciles (55 today, 54 through 10-21, matching yesterday's entry). The cost of catching it was one
+`bars` pull I was making for the close anyway.
+
+**3. The volume reading tempted me into a market call I have no business making.** 2.5× volume on a
+−1.22% index day has an obvious narrative attached, and I started to write that the core's drawdown
+"may continue." **§1 is a swing/fundamentals mandate and §2 says core is held permanently and not
+traded on news — there is no action behind that sentence and therefore no reason to write it.** The
+volume figure is recorded as tape context and used for nothing, which is the same discipline the
+pre-market seat applied to the 703.9485 indicative mark.
+
+**4. The §5.4 arithmetic was available for core and I did not run it into the file.** VOO's trailing
+max close is **716.29 (2026-10-06)**; today's 702.02 is **−1.99%** from it. That number is computable,
+and it is computable *only* because `bars` happens to carry the history — it is **not** a §5.4 reading,
+because §5 exempts core and because **no `highest_close` is stamped on core (98th consecutive
+refusal)**. ⚠ **Stamping it would arm a trailing stop against the sleeve §2 says to hold permanently,
+and the fact that −1.99% is comfortably inside −10% is exactly the circumstance in which stamping it
+feels harmless. It is not harmless; it is harmless *today*.**
+
+**5. Nothing else was close.** Steps 2, 4's streak check and the §5 table all had no operand; the week
+anchor matched; no order was in limbo; no alert was owed. Four of the five routine steps were
+null, and the one that was not — the journal — is this entry.
+
+**For the next run:**
+
+- **Official closes, `--adjustment all`, pulled at 16:16:** 10-22 **702.02** · 10-21 **710.70** ·
+  10-20 **706.33** · 10-19 **704.47** · 10-16 **701.745**. Max close in the trailing 90 sessions:
+  **716.29 (2026-10-06)**, unchanged.
+- ⚠ **`highest_close` is ABSENT, not stale — no `(as of …)` date anywhere in `positions.md`.** Tomorrow's
+  midday Step 2 has **no input** and nothing to backfill. **That is not a clean bill.**
+- **`lastday_price` standing item, NINETEENTH seat, not re-raised as new:** the broker's post-bell
+  `current_price` **702.00** sits **−$0.02** against the official **702.02**. Same magnitude as
+  yesterday's gap, **opposite sign** — which is the standing item's whole point: a moving live midpoint,
+  not an offset. ⚠ **Do not use `equity − last_equity` (−$863.68), `change_today` (−0.01227) or
+  `unrealized_intraday_pl` (−$863.68) as a P&L figure; all three are built on `lastday_price` 710.72,
+  not the official 710.70.**
+- **Tomorrow is Friday 2026-10-23 — the WEEKLY REVIEW day**, and a normal session on the clock
+  (`next_open` 09:30, `next_close` 16:00). `week_of: 2026-10-19` holds through it; the Monday rollover
+  lands on **2026-10-26**.
+- **Three items the weekly review should take up, all already open for the human:** the §3 foreign-listing
+  pattern now at **three sessions in four** (item (3)); the **44bp→7bp** benchmark move and its
+  decomposition above, so the review does not score it as progress; and the **missing-close-run detector
+  that still does not exist** (item (11)) — two of 33 close runs have vanished and `alerts.md` reading
+  "zero open incidents" still cannot tell a healthy week from a seat that died before `commit.py`.
+- **Do not re-litigate `T-2026-10-22-01`…`-04`.** All four are disposed with named reasons. **AMKR
+  specifically: it did not die on price**, so a better quote changes nothing — part 1 (it *is* the
+  headline name), part 2 (`prepayments`, no segment, no revenue share) and part 3 (end-2028, no revenue
+  date at all) are each independently sufficient and none moves with the mark. ⚠ **AMKR has now gone
+  four seats on this date without being re-priced, deliberately.**
+
+---
+
 ### 2026-10-21 (Wednesday)
 
 **Account:** total **$100,392.21 on official closes** (`bars --days 4 --adjustment all`, VOO `c`
