@@ -85,6 +85,52 @@ check that the pull returned the right session. A stored baseline is a *label*, 
 
 *(none — no **satellite** positions have been opened yet. Core VOO exists and is deliberately not tracked here, per the top-of-file rules and the fill note further down.)*
 
+### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-10-22, `1-premarket` **08:07 ET** — first seat of the date, block opened here. ⚠ **RE-EVALUATED AT THIS SEAT, NOT INHERITED: a table left alone and a table re-evaluated to the same answer are indistinguishable to the next reader.**)
+
+**Ledger reconciled FIRST, before any research — three sides, all agreeing.**
+`positions.md` satellite block-header pattern `grep -cE '^### [A-Z]{1,5} '` = **0** · Alpaca
+`positions` = **ONE row, core VOO only** (99.046311231 sh @ **706.74**, `cost_basis`
+**$69,999.989999**, unchanged since 2026-09-03) · `sleeves` `satellite.count: 0`, `value: 0`,
+`pct: 0.0`. **NO DISCREPANCY.** ⚠ **GREP TRAP, documented and NOT re-raised: the one `entry_price`
+hit in this file is line 45, inside `## Template`.**
+
+| Rule | State | Distance to the rule |
+|---|---|---|
+| **§5.1** thesis invalidation | **ABSENT — no operand** | No `invalidation` field on any satellite row. **ZERO Perplexity news queries run, ZERO DUE** — Step 4.1 has nothing to check news against. |
+| **§5.2** time stop | **ABSENT — no operand** | No `timing_window`, no deadline on any satellite row. |
+| **§5.3** hard stop (−7% from entry) | **ABSENT — NOT COMPUTABLE** | No satellite `entry_price`. ⚠ **"Not computable" ≠ "far away".** The 706.74 core fill is **§5-EXEMPT**, not an operand. |
+| **§5.4** trailing stop (−10% from `highest_close`) | **ABSENT — no operand** | No satellite `highest_close` anywhere in this file. |
+
+⚠ **NINETEENTH consecutive seat recording §5 as ABSENT rather than PASSING.** The distinction is
+load-bearing and is the reason this table is re-typed rather than dated forward.
+
+⚠ **CORE VOO NOT STAMPED WITH A `highest_close` — 96th CONSECUTIVE REFUSAL, and the GRADE is the
+point rather than the count: stamping the one position §5 explicitly EXEMPTS would ARM a §5.4
+trailing stop against the sleeve §2 says to hold permanently.** Today's official 10-21 close
+(**710.70**) is carried in `state.md` as a tape fact and is written to no position row here.
+
+⚠⚠ **STEP 2 / HIGH-WATER WRITE — STILL NO OPERAND, AND THE CONSEQUENCE IS UNCHANGED AND MUST NOT BE
+READ AS A CLEAN BILL.** Zero satellite positions → no `highest_close` to raise and no `(as of …)`
+date to advance. The field is **ABSENT — the THIRD STATE, carrying no date at all** — which is
+neither "current and unchanged" nor "stale". ⚠ **The midday seat's staleness detector therefore has
+**NO INPUT** again today: no staleness was detected and **NONE WAS RULED OUT**. NINETEEN consecutive
+seats; the repair path has still never executed once in this repo's history, and a gap that cannot
+occur on an empty ledger is not evidence the repair works. The first satellite fill is its first
+real test.**
+
+⚠⚠ **TODAY'S ONE-LINE NOTE THAT IS NOT A NULL: the §5 table had its closest brush yet with having an
+operand, and it is worth one line because it is the reason the next seat should not read this block as
+routine.** `T-2026-10-22-01` (**AMKR** / NVIDIA **$1.3B**, Amkor's own IR release, 2026-10-21) is the
+best-documented candidate this repo has produced — and it was rejected on **three independent §4
+parts** (part 1, it **is** the headline name · part 2, the figure is **`prepayments`**, rule (viii)'s
+JBL capital-paid-in shape, with no segment and no revenue share · part 3, the only date in the
+document is **end-2028**, ~9 quarters against §4's two). ⚠ **Had it been bought, this file would
+today hold its first `entry_price`, `invalidation`, `timing_window` and `highest_close`, and every
+"no operand" line above would have become a live computation. IT WAS NOT BOUGHT, AND THE REASONS ARE
+NOT PRICE-DEPENDENT — see `plan_today.md` and `research_log.md`.**
+
+---
+
 ### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-10-21, **ONE DIGEST FOR THE DATE, ALL FOUR SEATS:** `1-premarket` 08:03 · `2-market-open` 09:36 · `3-midday` 12:41 · `4-market-close` 16:16. ⚠ **COLLAPSED *AND REPAIRED* BY THE CLOSE SEAT, THE FIRST SEAT ENTITLED TO TOUCH WHAT THREE EARLIER SEATS WROTE** — a seat cannot fairly collapse a paragraph it has just written. ⚠ **RE-EVALUATED AT THIS SEAT, NOT LEFT: a table untouched and a table re-evaluated to the same answer are indistinguishable to the next reader.**)
 
 ⚠⚠⚠ **THE REPAIR THIS SEAT MADE IS THE DAY'S REAL FINDING IN THIS FILE, AND IT IS A DEFECT THIS FILE

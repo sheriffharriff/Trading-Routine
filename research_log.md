@@ -52,6 +52,345 @@ single most common way a plausible-sounding connection gets mistaken for an oppo
 
 ## Entries
 
+### 2026-10-22 (08:07 ET) — event survey (funnel, pre-thesis)
+
+Selftest **5/5**, all exit 0 (`trading_enabled: true`, LIVE paper, broker equity **$99,723.50** at
+pre-flight). `clock` at **08:07:02** reads `is_open: false`, `next_open` **2026-10-22T09:30**,
+`next_close` **2026-10-22T16:00** — **both carrying TODAY's date: the pre-market full-session
+signature, read off the DATES and not the boolean. Not a holiday, not an early close.** Window
+screened: **the completed 2026-10-21 session and the overnight into Thursday — ONE TRADING DAY.**
+**Four broad scans plus three drills, all exit 0. FOUR theses, ALL FOUR REJECTED.**
+
+**⚠⚠⚠ THE FUNNEL FINALLY PRODUCED THE OBJECT IT HAS BEEN MISSING FOR FIVE WEEKS, AND THE RULES STILL
+STOPPED IT. READ `T-2026-10-22-01` BEFORE ANYTHING ELSE IN THIS ENTRY.** Amkor's **own IR release**
+(`ir.amkor.com`, dated **2026-10-21**) discloses a **$1.3 billion** NVIDIA agreement — **a primary
+source, a named counterparty, a dated announcement, and a dollar figure attributed to the buyable leg
+BY THE BUYABLE LEG.** ⚠ **That is the exact object the segment-quantification framing has reported
+absent for SEVENTEEN consecutive sessions.** ⚠⚠ **IT DIED ON PART 2 ANYWAY, ON THE RELEASE'S OWN
+WORD: the $1.3B is `prepayments`, which is rule (viii)'s JBL shape — CAPITAL PAID IN BY THE CUSTOMER,
+not segment revenue at Company B.** ⚠ **AND IT WAS NEVER A §4 CANDIDATE TO BEGIN WITH: Amkor is the
+NAMED COUNTERPARTY — the headline name §4's opening sentence says not to chase.**
+
+**⚠⚠ THE STRUCTURAL FRAMING WON AGAIN — SEVEN CONSECUTIVE SESSIONS — BUT TODAY IT WAS THE *WEAKER* OF
+THE TWO SCANS, WHICH IS NEW AND WORTH THE HUMAN'S ATTENTION.** Scan 1 (structural: two named parties +
+a disclosed amount) returned **four items, three of them disposed rejects**, and **never mentioned
+Amkor at all.** Scan 2 (the routine's own Step 5a "significance" voice) returned the usual earnings
+prints and macro — **but it was scan 2 that surfaced the Meta capex figure**, and the Amkor disclosure
+was reached only by **drilling the NVIDIA/Samsung Electro-Mechanics item that scan 1 had killed on a
+missing dollar amount.** ⚠⚠ **THE LESSON IS NOT THAT THE STRUCTURAL FRAMING FAILED — IT IS THAT A
+SCAN'S *SELF-EXCLUSION* IS A HINT AND NOT A RULING, WHICH THIS FILE ALREADY SAYS (Bloom Energy,
+10-13), AND TODAY IS ITS STRONGEST INSTANCE: scan 1 excluded NVIDIA/SEMCO for having no disclosed
+figure, and the drill behind that exclusion found a $1.3B primary-sourced figure at a DIFFERENT,
+US-LISTED counterparty in the same initiative.** ⚠ **DRILL THE EXCLUSIONS, NOT JUST THE PASSES.**
+
+**⚠⚠ DISPOSED-REJECT RE-SERVE AT FOUR CONSECUTIVE SESSIONS, AND READING THE LOG FIRST SAVED THREE
+DRILLS TODAY.** Scan 1's four results included **Apple/Perryman** (disposed yesterday, `T-2026-10-21-04`,
+private), **Micron/Indium** (disposed yesterday, `T-2026-10-21-02`, and the source itself dated it
+**10-20**, outside the window) and **Northrop Q3** (disposed 10-20, `T-2026-10-20-03`). ⚠ **No new IDs
+minted, per the 10-14 precedent. One `grep` of this file, three drills saved.**
+
+**⚠⚠ THE SEGMENT-QUANTIFICATION FRAMING VOLUNTEERED THE ABSENCE FOR THE SEVENTEENTH CONSECUTIVE
+SESSION — 09-29 → 10-22 UNBROKEN.** Verbatim: *"No winning company in the available October 21–22,
+2026 results disclosed both (1) the award's value specifically within its own reported business
+segment and (2) that segment's share of total revenue."* ⚠ **All five items it returned were US
+defence program awards — the standing item's FIFTEENTH instance of that shape (Lockheed F-35 framework
+with no value and pricing not formalised · Karman $218M · Cherokee Nation Government Solutions $99.3M ·
+Leidos $160M · CACI's $4.8B AGGREGATE).** ⚠ **Amkor's release does not rescue this streak: it supplied
+a FIGURE, and the streak is about SEGMENT ATTRIBUTION. Amkor named no segment and no revenue share.**
+
+**⚠⚠⚠ §3 ON FOREIGN LISTING IS NOW THE BINDING CONSTRAINT FOR A THIRD SESSION IN FOUR — OBSERVATION 3
+OF THE 3 THE 10-19 ENTRY ASKED FOR, AND IT IS A COMPOUND INSTANCE RATHER THAN A REPEAT.** NVIDIA's
+AI component-capacity initiative names **SIX** participants and **FIVE ARE FOREIGN-LISTED** (Samsung
+Electro-Mechanics/Korea · Ibiden/Japan · Unimicron/Taiwan · King Yuan Electronics/Taiwan ·
+SPIL/Taiwan, via NYSE-ADR parent ASE). ⚠ **10-19 was §3-dead at the TRANSACTION leg; 10-20 (GSEO) was
+§3-dead at the COMPANY B leg; today is BOTH AT ONCE plus the one US-listed participant failing on the
+thesis parts.** ⚠⚠ **FOR THE HUMAN, ATTACHED TO OPEN ITEM (3): if the second-order companies §4's
+logic correctly identifies in the AI hardware chain are systematically foreign-listed, then §3 and §4
+together cannot produce a trade in the sector that dominates the current news flow. THAT IS A
+STRUCTURAL STATEMENT ABOUT THE CONFIGURATION, NOT A REASON TO LOWER §3.** Three sessions in four is
+now a pattern rather than an observation; the next two weekly reviews should test it.
+
+**⚠⚠ ONE `move` CALL ON A LIVE CANDIDATE AND IT IS THE RECORDED AKAM SUB-SHAPE, *NOT* A NEW SHAPE
+SEVEN — THE `grep` THE CARRY-FORWARD DEMANDS WAS RUN FIRST AND IT CHANGED THE ANSWER.** `AMKR`
+returned **−2.37% / `priced_in: false` / "passes"** over five sessions, **and the pass is manufactured
+by arithmetic cancellation**: closes ran **44.78 → 41.875 → 41.69 → 43.72**, i.e. a **−6.9% sector
+drawdown** against a **+4.87% news-day pop** (10-20 41.69 → 10-21 43.72, on **183,526** shares against
+~115–125k on the preceding days). ⚠⚠ **THE INDEX CONTROL SEPARATES THE TWO LEGS AND COST ONE CALL, AS
+10-21 ESTABLISHED: `VOO` over the IDENTICAL WINDOW returned +0.46%, `priced_in: false` — so the
+drawdown was AMKR's and the sector's, not the market's.** ⚠ **A 10-21 SEAT CALLED THIS "SHAPE SEVEN"
+IN FOUR FILES AND HAD TO CORRECT IT; the shape names are the index, and this one is already written
+down as shape three's opposite-failure sub-shape (`AKAM` at +3.19% netting a 104.53 → 117.435 → 110.44
+round trip). THE REFINEMENT, WHICH IS GENUINELY NEW: IN `AKAM` BOTH LEGS WERE THE TICKER'S OWN NEWS;
+HERE THE TWO LEGS HAVE **DIFFERENT CAUSES**, so shape three's causation-blindness and the AKAM netting
+sub-shape COMPOUND — and compounding is what makes the net verdict look clean.** ⚠⚠ **§4's words are
+"moved more than 4% over the last five sessions *ON THIS NEWS*". On this news AMKR moved **+4.87%**.
+THE GFS PRECEDENT (shape five) IS THIS LOG'S CONTROLLING PRACTICE AND IT PASSED ON **BOTH** BASES;
+AMKR PASSES ONE AND FAILS THE OTHER, SO IT IS LATE.**
+
+---
+
+### T-2026-10-22-01 — Amkor Technology (AMKR) / NVIDIA $1.3B South Korea advanced packaging — REJECTED (part 1 — AMKR *IS* THE HEADLINE NAME; part 2 — rule (viii), the figure is **PREPAYMENTS**, the JBL capital-paid-in shape, and no segment or revenue share exists; part 3 — the only dated milestone is **END OF 2028** and the release states NO revenue date at all; priced-in FAILS on the news-day basis; §3 cap **UNRESOLVED**)
+
+**Company A / the news:** **NVIDIA** and **Amkor Technology** announced a strategic-partnership
+expansion on **2026-10-21**. **Amkor's own IR release** (`ir.amkor.com/news-releases/...`,
+`T-2026-10-22` retrieval) states the South Korea commitment is worth **$1.3 billion** and targets a
+**greater-than-300% increase in interposer-wafer capacity by the END OF 2028**. The release adds that
+the combined multi-year Arizona + South Korea agreements **total $3 billion**.
+**Company B / the candidate:** **AMKR itself** — which is the first thing wrong with it.
+
+**1. Mechanism (one sentence):**
+> NVIDIA's $1.3B advanced-packaging commitment causes Amkor's advanced-packaging revenue to improve
+> because Amkor is the named counterparty building the interposer capacity NVIDIA has contracted for.
+
+⚠⚠ **THAT SENTENCE IS ONE CLAUSE AND IT IS STILL A PART-1 FAILURE, WHICH IS A DISTINCTION THIS LOG
+HAS NOT HAD TO DRAW BEFORE.** The one-clause test is a test of whether a *second-order* link is tight
+enough; it is not a licence to buy a *first-order* name whose link is tight because there is no link
+to make. ⚠ **§4's opening sentence: *"news breaks about Company A; you look for Company B, whose
+economics improve because of it. You are not chasing the headline name."* The headline here is
+"NVIDIA and Amkor announce agreement." AMKR is the counterparty — Company A's other half.**
+⚠ **THIS IS THE GFS KILL REPEATING VERBATIM** (`T-2026-10-09-01`: *"GFS IS THE HEADLINE NAME, and the
+genuine second-order question returned a verbatim denial"*), **and it is the second time the funnel's
+single best-documented object of the month has been the first-order leg.**
+
+**2. Dollar path:** ⚠⚠⚠ **FAILS THREE WAYS, ALL THREE OUT OF THE PRIMARY SOURCE.**
+**(a) THE FIGURE IS NOT REVENUE AND THE RELEASE SAYS SO IN ITS OWN WORD — `PREPAYMENTS`.** Verbatim:
+*"The prepayments align Amkor's manufacturing capacity with NVIDIA's long-term growth plans and
+support increasing demand for advanced packaging solutions."* ⚠ **A prepayment is CAPITAL PAID IN BY
+THE CUSTOMER — a deferred-revenue liability until the work is performed, NOT segment revenue at
+Company B. That is rule (viii)'s list, and specifically its DEFINITIVE WORKED EXAMPLE: JBL's $1.7
+BILLION, named, allocated, quoted verbatim from an 8-K, and still capital paid in by the customer.**
+⚠⚠ **THE RELEASE EXPRESSLY DECLINES TO CALL IT REVENUE OR GIVE A RECOGNITION SCHEDULE** (source,
+verbatim: *"does not expressly label the $1.3 billion as revenue or provide a revenue-recognition
+schedule"*). **(b) NO SEGMENT, NO SHARE.** Amkor named no reporting segment for the award and no
+segment revenue share; the sources do not carry Amkor's segment table or FY revenue at all, and the
+source **declined to supply either rather than estimate** — so the **10%-of-revenue test is NOT
+COMPUTABLE, which differs from "fails it".** **(c) THE $3B IS A TRAP AND THE STANDING FIX CAUGHT IT.**
+$3B is an **AGGREGATE SPANNING THIS DEAL PLUS THE PREVIOUSLY ANNOUNCED ARIZONA COLLABORATION** — rule
+(viii)'s Venture Global $17.2B shape (*"broader than the announced deal"*). ⚠ **The 10-21 fix — *ask
+for the figure disclosed FOR THIS TRANSACTION* — is the only reason the $3B did not become a part-2
+input. One clause, second consecutive session it has paid.**
+
+**3. Timing window:** ⚠⚠ **FAILS, AND IN THE WORSE OF THE TWO AVAILABLE WAYS.** The only dated
+milestone anywhere is **">300% interposer-wafer capacity by the END OF 2028"** — **~9 quarters against
+§4's ceiling of TWO.** ⚠⚠ **AND THE RELEASE STATES NO REVENUE-CONTRIBUTION DATE AT ALL** (source,
+verbatim: *"does not state a date or quarter when the South Korean project will begin contributing to
+reported revenue"*). **So part 3 is not merely too long — it is UNWRITEABLE from the disclosure.**
+⚠ **This is the GFS part-3 kill at a longer horizon** (GFS: ramp *"during the first half of 2028"*,
+six quarters minimum; here, end-2028, nine) **— the third consecutive month in which the best-sourced
+candidate in the log dies on a 2028 ramp date.** → **no deadline; no position.**
+
+**4. Invalidation:** not written. ⚠ **Parts 1, 2 and 3 all failed first, and §4 is explicit that
+failing one part ends the trade. Writing a fourth part here would be constructing the rest of a thesis
+whose foundation is already gone.**
+
+**Hard filters** *(run BEFORE the parts, per §4, and the §3-first discipline — the cap was pulled
+before any part was elaborated):*
+- **Priced-in (§4): SPLIT, AND IT FAILS ON THE BASIS §4's WORDS DESCRIBE.** Five-session:
+  **−2.37%**, `priced_in: false`, *"passes"* (`move --symbol AMKR --sessions 5`: 44.78 → 43.72).
+  **News-day: +4.87%** (10-20 close **41.69** → 10-21 close **43.72**, `bars --days 8 --adjustment
+  all`, volume **183,526** vs ~115–125k preceding). ⚠⚠ **§4 says "more than 4% … ON THIS NEWS" →
+  **FAIL**. The five-session pass is the recorded AKAM netting sub-shape of shape three, compounded:
+  a −6.9% drawdown and a +4.87% news pop with DIFFERENT CAUSES cancelling to a clean-looking net.
+  Index control over the identical window: `VOO` **+0.46%**, `priced_in: false`.** ⚠ **NOT a new
+  defect shape — the `grep` was run first, as the carry-forward demands.**
+- **Correlation (§4): PASSES TRIVIALLY AND THE REASON MATTERS.** Zero open satellite positions, so
+  there is **no `driver` field anywhere to collide with.** ⚠ **An empty ledger makes this filter
+  unfireable, which is not the same as a candidate that is genuinely uncorrelated. Thirty-ninth
+  consecutive session with no operand.**
+- **Universe (§3): `asset` returns `us_equity` / **NASDAQ** / `active` / `tradable`, not leveraged,
+  not inverse, not crypto — all pass. MARKET CAP: **UNRESOLVED, NOT PASSED.** Perplexity **declined
+  to supply a figure**, correctly and verbatim: *"A market capitalization figure must be tied to both
+  a share price date and a share-count date… so no precise current market-capitalization calculation
+  can be reported without introducing unsupported figures."* ⚠⚠ **DO NOT INHERIT A §3 VERDICT FROM
+  THIS ENTRY (the VAL precedent). At the 10-21 close of 43.72 a $10B cap implies ~229M shares, so
+  AMKR sits NEAR THE FLOOR ON EITHER SIDE and the 10-21 carry-forward's "plausibly near the $10B
+  floor" is confirmed as the right caution.** ⚠ **It never needed resolving: the thesis parts killed
+  it first, and §3 is not the reason it is rejected.**
+
+**Outcome:** **REJECTED.** ⚠⚠⚠ **AND THIS IS THE MOST INFORMATIVE REJECTION SINCE GFS, FOR THE
+OPPOSITE REASON TO MOST ENTRIES IN THIS FILE: nothing was missing.** A primary-source company release ·
+a named counterparty · a dated announcement · a $1.3B figure attributed to the buyable leg BY the
+buyable leg · a one-clause mechanism · `us_equity`/NASDAQ/tradable · and a filter verdict reading
+*"passes"*. ⚠⚠ **THE PULL TO BUY IT WAS REAL AND IS NAMED HERE RATHER THAN OMITTED: the sleeve has
+been undeployed since inception, $30,000 has earned nothing for 39 sessions, every §6 gate is open,
+and this is the best-documented object this funnel has ever produced. THAT IS PRECISELY THE
+CONFIGURATION §4's HONEST-BROKER RULE DESCRIBES, AND THE ANSWER IS STILL NO.** ⚠ **The three kills
+are independent and each is sufficient: it is the headline name (part 1), the figure is a prepayment
+rather than segment revenue (part 2 / rule (viii)), and the only date in the document is end-2028
+(part 3).** ⚠ **DO NOT REHABILITATE IT AT A DIFFERENT PRICE — it did not die on price. Neither the
+end-2028 date, nor the word "prepayments", nor Amkor's position in the headline moves with the quote.
+"But it has not run yet" is "but it went up" wearing a coat.**
+
+---
+
+### T-2026-10-22-02 — NVIDIA / Samsung Electro-Mechanics ABF substrate lines → the second-order substrate chain (SEMCO · Ibiden · Unimicron · KYEC · SPIL/ASE) — REJECTED (§3 at EVERY genuine Company B; part 2 — no figure at any leg; part 3 — mid-2027 to end-2028; rule (v) — participation in an INITIATIVE is not a transaction)
+
+**Company A / the news:** **Samsung Electro-Mechanics** announced on **2026-10-21** a strategic
+partnership with **NVIDIA** to **jointly invest in dedicated ABF / FC-BGA package-substrate production
+lines** at **Sejong and Busan, South Korea**, serving NVIDIA AI compute chipsets and high-speed
+networking switches under a multiyear supply agreement.
+**Company B / the candidate:** the substrate and advanced-packaging supply base NVIDIA named —
+**Ibiden · Unimicron · King Yuan Electronics (KYEC) · SPIL**, plus **ASE Technology Holding (ASX)** as
+SPIL's NYSE-ADR parent.
+
+**1. Mechanism (one sentence):** cannot be written for any US-listed leg without an "and also."
+> *"NVIDIA's capacity co-investments cause ASE Technology Holding's packaging revenue to improve
+> because SPIL is a named participant — **and also** SPIL's participation translates into an
+> ASE-level figure, **and also** NVIDIA's arrangement with SPIL has disclosed terms."*
+
+⚠ **Two "and also"s. §4 rejects at the first.** ⚠⚠ **THE UNDERLYING DEFECT IS RULE (v) IN ITS CLEANEST
+FORM: NVIDIA named these companies as PARTICIPANTS IN AN INITIATIVE, which is a fact about an
+industry's capacity, not a transaction with any one of them.** The source drew the line itself,
+verbatim: *"identifying Amkor in the initiative supports an inference of potential exposure… but it
+does not establish substrate-specific revenue, contract value, or segment revenue."*
+
+**2. Dollar path:** **FAILS AT EVERY LEG, AND THE ONE CIRCULATING FIGURE IS A NEW RULE (viii)
+COSTUME.** ⚠⚠ **THE "$2.8 BILLION" (KRW 3.7T) IS SOURCED TO A NEWSPAPER CITING UNNAMED INDUSTRY
+SOURCES, EXPLICITLY NOT CONFIRMED BY EITHER PARTY** — Reuters citing *Maeil Business Newspaper*; a
+trade publication stated outright that *"neither company had disclosed the investment amount or how
+costs would be divided."* ⚠ **AND ITS COMPOSITION IS THE TELL: KRW 2.6T from NVIDIA and KRW 1.1T from
+**TESLA** — Tesla appearing, unconfirmed, in a substrate deal it is not a party to. A figure whose own
+breakdown names a party the announcement does not is not a dollar path; it is a rumour with a decimal
+point.** ⚠ **SEMCO's own KRW 4.27T Sejong plan and KRW 23T-through-2040 site plan are its BROADER
+CAPEX, not this deal — rule (viii)'s "broader than the announced deal" shape, third session running.**
+⚠ **NVIDIA/SPIL: capacity target only, "15× by mid-2027", and the source confirms NO SPIL-specific
+dollar amount, prepayment or reservation was disclosed.**
+
+**3. Timing window:** **FAILS INDEPENDENTLY, NO QUERY NEEDED.** SPIL **15× by mid-2027** with a further
+doubling **by end-2028**; SEMCO deliveries *"beginning in 2026"* but under a multiyear agreement with
+no revenue date. ⚠ **~3 to ~9 quarters against §4's TWO. Rule (vi) screened early, as the standing
+rule instructs.**
+
+**4. Invalidation:** not written — parts 1, 2 and 3 failed.
+
+**Hard filters:** **§3 KILLS EVERY GENUINE COMPANY B BEFORE A MECHANISM IS NEEDED.** Samsung
+Electro-Mechanics **KRX** · Ibiden **TSE** · Unimicron **TWSE** · KYEC **TWSE** · SPIL **TWSE**.
+⚠ **ASE Technology Holding (ASX) is an NYSE ADR and §3 bars only *"ADRs of companies below the cap
+floor"*, so it is not barred by form — but its cap was NOT sourced and is therefore UNRESOLVED, and
+it dies on parts 1/2/3 regardless.** ⚠ **No `move` call spent on any leg: a candidate dead at part 1
+does not reach the priced-in filter, and calling it anyway is the decorative use this log has
+recorded six times.**
+
+**Outcome:** **REJECTED.** ⚠⚠ **THIS IS THE GSEO FINDING (10-20) IN A COMPOUND FORM AND IT IS THE
+RUN'S SECOND MESSAGE FOR THE HUMAN: §4's logic worked — it reached a real second-order supply base
+from a real event — and FIVE OF THE SIX NAMED PARTICIPANTS ARE FOREIGN-LISTED.** ⚠ **Company B
+exists, is correctly identified, and is not buyable. Third session in four where §3 on foreign listing
+is the binding constraint. Attached to open item (3); NOT a reason to lower §3.**
+
+---
+
+### T-2026-10-22-03 — Meta Platforms (META) FY2026 capex $135–145B → the unnamed AI-infrastructure supply base — REJECTED (rule (v) — an UNNAMED SUPPLY BASE made nameable by a very large figure; part 2 — the source volunteered that any attribution *"would be inference, not disclosure"*; rule (iii) NEW COSTUME — a **NARROWED** range, one endpoint moved and one did not)
+
+**Company A / the news:** **Meta** reported Q3 2026 on **2026-10-21**: revenue **$64.6B** against a
+reported **$63.4B** expectation; quarterly capex **$34.9B**, up from **$31B** in Q2 and **$19.4B** a
+year earlier; and FY2026 capex guidance of **$135–145B**.
+**Company B / the candidate:** the data-centre, networking, semiconductor and power supply base — **no
+company was ever named, by Meta or by anyone else.**
+
+**1. Mechanism (one sentence):** **unwriteable without naming a company, and no source names one.**
+⚠⚠ **THE DRILL RETURNED A VERBATIM REFUSAL, WHICH IS THE CLEANEST PART-2 KILL AVAILABLE:** *"No
+publicly traded US company was identified as having disclosed a Meta-specific dollar revenue figure
+for a specifically reported business segment… Any attribution based only on Meta's general
+AI-infrastructure spending would be inference, not disclosure."* ⚠ **Meta named no supplier, vendor
+or counterparty in the announcement. That is rule (v)'s UNNAMED SUPPLY BASE, and §4's warning about
+the pull is exact: a $135–145B figure plus named component CATEGORIES (data centre, networking, power)
+is the most fillable-looking blank this funnel produces. THE SOURCE LEFT THE BLANK; FILLING IT IN IS
+NOT RESEARCH.**
+
+**2. Dollar path:** **FAILS — THE FIGURE IS COMPANY A'S SPENDING, UNALLOCATED ACROSS AN UNNAMED
+BASE.** No segment at any Company B, no share of revenue, no counterparty. ⚠ **Scale is the whole of
+its persuasive force, which the standing macro rule already names: SCALE MAKES IT MORE CONVINCING,
+NOT LESS.**
+
+**3. Timing window / 4. Invalidation:** not written — parts 1 and 2 failed.
+
+**⚠⚠ RULE (iii) — A GENUINELY NEW COSTUME, AND IT IS WORTH THE LINE IT COSTS: A *NARROWED* RANGE IN
+WHICH ONE ENDPOINT MOVED AND THE OTHER DID NOT.** Scan 2 reported Meta *"raised the low end of its
+2026 capital-expenditure outlook, to $135–145B from $130–145B."* ⚠ **The drill's primary-sourced
+wording is **"narrowed from"**, not "raised": the LOW end rose $5B, the HIGH end is UNCHANGED, and the
+midpoint moved $137.5B → $140B, **+1.8%**.** ⚠⚠ **BOTH DESCRIPTIONS ARE ARITHMETICALLY TRUE AND THEY
+CARRY OPPOSITE IMPRESSIONS. This is the 10-15 TSMC SPLIT VERDICT one level deeper: there, two
+different figures in one release gave a pass and a fail; here it is **ONE figure whose two endpoints
+disagree**.** ⚠ **THE RULE: when a range moves, state which endpoint moved. "Raised guidance" is not
+establishable from a narrowing, and "reaffirmed" is not establishable either — it is neither costume,
+and it needs its own name.** ⚠ **NOTE THE INVERSION FROM 10-15, which is the one genuinely encouraging
+line in this entry: at TSMC the figure that moved (revenue) had no supplier chain and the figure with
+the supplier chain (capex) did not move. **Here the figure that moved IS the capex — the one WITH a
+supplier chain.** The shape finally pointed the right way, and it still produced nothing, because the
+supplier chain is unnamed. THE BINDING CONSTRAINT WAS NEVER THE SIGN; IT IS THE NAMING.**
+
+**Outcome:** **REJECTED.** No named Company B exists, and the source said so unprompted.
+
+---
+
+### T-2026-10-22-04 — §3 / non-qualifying / defence / disposed-repeat / macro sweep of TWENTY-ONE items — REJECTED (disposed as one, ZERO drill queries spent)
+
+Disposed without spending a drill, each with the test that kills it.
+
+**⚠⚠ DISPOSED REPEATS RE-SERVED BY THE FUNNEL (4) — NO NEW ID MINTED, per the 10-14 precedent:**
+**Apple / Perryman Company** *"up to $100M"* — **re-served by scan 1 as the day's only qualifying
+announcement**, less than 24 hours after being disposed at `T-2026-10-21-04`; **Perryman is
+family-owned and private**, and remains the holder of the only genuinely new dollar figure in Apple's
+programme. ⚠ **The source itself conceded it *"does not provide a direct Apple or Perryman
+announcement"* and attributed the report to Reuters at second hand.** · **Micron / Indium
+Corporation** — disposed at `T-2026-10-21-02`; **the source dated it 2026-10-20, outside today's
+window**, and Indium is private. · **Qnity Electronics** — no identified listing; joined Apple's
+programme **March 2026** (rule (iii)). · **Northrop Grumman Q3** — disposed 10-20 at
+`T-2026-10-20-03`; re-served as an EPS beat **against consensus** ($7.89 vs $7.18, FY guidance
+$29.35–29.75 vs consensus $28.97), which is rule (iii) costume #1 and **not** its own prior range.
+
+**§3 — not US-listed, or not listed at all (8):** **Samsung Electro-Mechanics** (KRX) · **Ibiden**
+(TSE) · **Unimicron** (TWSE) · **King Yuan Electronics** (TWSE — ⚠ **and the separately reported
+$1.1B NVIDIA capacity-reservation advance was formalised 2026-10-13, EIGHT DAYS before the window, so
+rule (iii) kills it independently**) · **SPIL** (TWSE) · **Cherokee Nation Government Solutions**
+($99.3M US Navy award — a tribal government enterprise, not listed) · **Luda Technology Group**
+(long-term coal supply, **supplier unnamed and the parties stated there is NO fixed unit price or
+total contract value** — rule (v) plus no figure) · **e3 Lithium** (TSXV).
+
+**§3 cap floor — US-listed but nowhere near $10B (3):** **3 E Network Technology Group** (Nasdaq;
+~$5.0M hardware sales agreement, **client unnamed** — rule (v) on top) · **Peraso** (production order
+*"exceeding $2 million"*, **customer unnamed**) · **Karman Space & Defense** ($218M THAAD component
+deal from Lockheed — ⚠ **a real two-party award with a real figure, and the closest thing in the sweep
+to part-2 evidence; no segment attribution, and the §3 cap is unresolved and plausibly below the
+floor**).
+
+**⚠ US DEFENCE PROGRAM AWARDS — FIFTEENTH INSTANCE OF A STANDING SHAPE, DISPOSED AS A BLOCK (4):**
+**Lockheed Martin F-35 framework** (850 aircraft, 10 years' sustainment, 156/yr — ⚠ **NO award value,
+and the source states pricing and schedules still require a formal contract award: rule (vi)'s
+pending-definitive shape, and LMT is first-order**) · **Leidos** $160M US Cyber Command (own award,
+first-order, segments named but the value **not attributed** to one) · **CACI** *"$4.8 billion of
+first-quarter contract awards"* (⚠ **an AGGREGATE, not an award — rule (v)**) · and the Karman item
+above, counted once. ⚠ **The standing item holds: a defence program award names a government, which
+is ONE party and no transaction.**
+
+**Part 1 / rule (iii) — own results, no transaction, or not new to the company's own disclosure (4):**
+**United Rentals** — ⚠ **A CLEAN RULE (iii) PASS AND IT STILL DIES, WHICH IS WORTH RECORDING: FY2026
+revenue guidance raised to **$18.0–18.2B from its OWN $17.5–17.8B**, adjusted EBITDA to $8.3–8.4B, the
+prior range present in the source. The company's own prior figure moved. But URI is FIRST-ORDER, named
+no supplier, and disclosed no fleet-purchase commitment to anyone — the equipment-maker read-across
+(CAT/DE/TEX/OSK) needs an "and also URI will therefore buy more", which is rule (v) and the
+shared-cause object.** ⚠ **A clean pass on one filter is not progress toward a trade.** ·
+**Procter & Gamble** (FQ1 net sales $23.3B, +4%; FY2027 guidance 2–4% **explicitly reflecting the
+Thorne acquisition effective 2026-10-01** — an acquisition changing the reporting base, not a
+second-order catalyst) · **PG&E** (reaffirmed 2026 core EPS $1.64–1.66 and 2027 $1.78–1.82 —
+**reaffirmation is rule (iii) costume #1**) · **SpaceX / Capital One / Winnebago** (reported above
+expectations; the source said the snippets lacked figures and operational detail — **not establishable
+in either direction**, the AAR shape).
+
+**⚠ MACRO COMPLEX — ONE PARTY, NO TRANSACTION, ALREADY DISPOSED AT `T-2026-10-12-05` AND
+`T-2026-10-13-08` (1, as a block):** hotter-than-expected recent US CPI and PPI with higher energy
+costs · expectations for a Fed **hold** at the **10/27–28** FOMC · Goldman Sachs reported as expecting
+a further **25bp in December** to a **4.00–4.25%** peak · gold at a two-week low on an oil rally.
+⚠⚠ **THE SOURCE DREW THE LINE ITSELF — *"These are market or economist expectations, not a Federal
+Reserve decision. The available material does not establish a new policy action during the 24-hour
+period."*** ⚠ **A third ID for the macro complex would inflate the thesis count. NOTE AND DO NOTHING.**
+
+**Outcome:** **ALL TWENTY-ONE REJECTED.** ⚠ **Zero drill queries spent on any of them. Four were
+killed by reading this log first, eleven arrived pre-excluded with the funnel's own reason attached,
+four are the standing defence shape and one is macro.**
+
+---
+
 ### 2026-10-21 (08:03 ET) — event survey (funnel, pre-thesis)
 
 Selftest **5/5**, all exit 0 (`trading_enabled: true`, LIVE paper, broker equity **$100,167.38** at
