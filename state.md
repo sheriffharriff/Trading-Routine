@@ -10,8 +10,8 @@ The block below is parsed by `scripts/common.py` and gates real behavior
 `key: value` format exactly. Prose goes underneath.
 
 ```
-last_run: 2026-10-22 09:36 ET 2-market-open-execution SELFTEST 5/5 EXIT 0. MARKET OPEN - clock is_open TRUE at 09:36:36 ET, next_close 16:00 today. STALENESS GATE PASSED: plan_today.md plan_date 2026-10-22 EQUALS today's ET date, so the plan is FRESH, every intent in it is executable, and NO stale-plan alert was posted (posting one on a fresh plan is the mirror failure of missing a stale one). THE PLAN CARRIED ZERO BUY, ZERO SELL AND ZERO REBALANCE INTENTS, so STEPS 4, 5 AND 6 ALL HAD NO OPERAND AT ONCE - the first run on record to log that, and it is NOT the same state as having re-validated an intent and passed it. ZERO ORDERS PLACED, ZERO ORDERS SUBMITTED, NOTHING UNRESOLVED. core_established true so Step 3 was SKIPPED (unchanged since the 09-03 bootstrap, the only fill in this account's history). LEDGER RECONCILED FIRST, THREE SIDES AGREED: Alpaca positions ONE row (core VOO 99.046311231 sh @ 706.74, cost_basis 69,999.989999), positions.md satellite block-header grep -cE = 0, sleeves satellite.count 0. NO DISCREPANCY - the single entry_price hit in positions.md is line 45 inside ## Template, the documented grep trap. SLEEVES RE-PULLED NOT INHERITED: equity 99,820.22, core 69,820.220945 = 69.95% core_in_band true rebalance_needed false, satellite 0.00 / 0.0% / count 0, cash 30,000.00 = 30.05% (~46th consecutive unchanged cash reading). STEP 7 A NO-OP: 69.95% sits near the middle of section 2's 65-75% band; rebalance_delta 53.93 is a DISTANCE READOUT on a fixed share count, not an instruction. WEEK ANCHOR COMPUTED FROM THE DATE: Thursday 2026-10-22 is ISO 2026-W43, Monday 2026-10-19, MATCHES week_of - no rollover, counter stays 0 of 3. SECTION 5 ABSENT NOT PASSING, TWENTIETH SEAT - zero satellite rows so all four rules have NO OPERAND; 5.3's distance to the stop is NOT COMPUTABLE, which differs from far away; core VOO was again NOT stamped with a highest_close (stamping the one position section 5 EXEMPTS would ARM a 5.4 stop against it). EVERY SECTION 6 GATE OPEN AND OPEN AGAINST NOTHING: breaker INACTIVE, halt_triggered_at none, 0 of 3 this week, sleeve entirely undeployed with 30,000 idle, control.md Notes EMPTY, 5% cap 4,991.01 with no operand. AMKR WAS NOT RE-LITIGATED AND NOT RE-PRICED - no quote was pulled for it at all; the plan's instruction 4 forbade it and none of T-2026-10-22-01's three kills (part 1 headline name, part 2 prepayments = rule (viii), part 3 end-2028) moves with the quote. The section 7 softening path stayed shut. lastday_price still reads 710.72 against the official 10-21 close of 710.70 - standing item, nineteenth seat, NOT re-derived; change_today -0.00815 and unrealized_intraday_pl -573.973373 are built on it and are NOT P&L figures. Step 6's partial-bar defect (open human item 12) was NOT exercised because no position was opened - still wrong on the first fill, still not the agent's to fix.
-prior_run: 2026-10-22 08:07 ET 1-premarket-research SELFTEST 5/5. 4 broad scans + 3 drills, FOUR theses T-2026-10-22-01..04, ALL FOUR REJECTED, ZERO BUY INTENTS - and the headline is that the funnel FINALLY PRODUCED ITS MISSING OBJECT AND SECTION 4 STILL KILLED IT. T-2026-10-22-01 AMKR/NVIDIA $1.3B came from Amkor's OWN dated IR release and died on THREE INDEPENDENT PARTS, each sufficient; the priced-in filter also fails it on the news-day basis (+4.87%) that section 4's words describe and the script does not measure, the 5-session pass (-2.37%) being manufactured by cancellation. Section 3's foreign-listing filter was binding for a third session in four. Full statements in research_log.md; the surviving lessons are in Carry forward under the 2026-10-22 date block.
+last_run: 2026-10-22 12:41 ET 3-midday-management SELFTEST 5/5 EXIT 0. MARKET OPEN - clock is_open TRUE at 12:41:37 ET, next_close 16:00 today. TRADING_ENABLED true, control.md Notes EMPTY. ZERO OPEN SATELLITE POSITIONS, so the routine's own Step 1 clause governs verbatim - there is nothing to manage, note it, commit, exit, do not go looking for something to do - and STEPS 2, 3, 4 AND 5 ALL HAD NO OPERAND. NOTHING SHOULD HAVE EXECUTED AND DID NOT: zero sell calls, zero orders, ZERO DRY-RUN INTENTS (the dry-run flag was never the reason - trading is enabled), nothing unresolved, no alert posted and none owed. LEDGER RECONCILED FIRST, THREE SIDES AGREED: Alpaca positions ONE row (core VOO 99.046311231 sh @ 706.74, cost_basis 69,999.989999), positions.md satellite block-header grep -cE = 0, sleeves satellite.count 0 - the single entry_price hit in positions.md is line 45 inside ## Template, the documented grep trap. SLEEVES RE-PULLED NOT INHERITED: equity 99,492.38, core 69,492.377654 = 69.85% core_in_band true rebalance_needed false, satellite 0.00 / 0.0% / count 0, cash 30,000.00 = 30.15% (~47th consecutive unchanged cash reading). A MIDDAY SEAT HAS NO REBALANCE PATH - rebalance_delta 152.29 is a DISTANCE READOUT and section 2 sends any rebalance to the NEXT MARKET-OPEN run; its growth from 53.93 at 09:36 is VOO marking down (current_price 701.615 against the 706.74 basis), not an instruction to this seat. WEEK ANCHOR COMPUTED FROM THE DATE: Thursday 2026-10-22 is ISO 2026-W43, Monday 2026-10-19, MATCHES week_of - no rollover, counter stays 0 of 3. STEP 2'S HIGH-WATER BACKFILL - THE REPAIR THIS ROUTINE EXISTS FOR - WAS NOT EXERCISED, AS IT HAS NOT BEEN AT ANY MIDDAY SEAT IN THIS REPO'S HISTORY: the detector only works against a highest_close that EXISTS, so on an empty ledger a passing Step 2 is a VACUOUS pass and must not be read as evidence the backfill works. Its trigger condition is real rather than hypothetical - the 2026-09-28 and 2026-10-05 close runs genuinely vanished - and it cost nothing only because the sleeve is empty. SECTION 5 ABSENT NOT PASSING, TWENTY-FIRST SEAT: 5.1 had no invalidation string to test so NO PERPLEXITY INVALIDATION QUERY WAS ISSUED AT ALL (a 5.1 check against zero positions is not a check that passed), 5.2 no timing_window deadline, 5.3 NOT COMPUTABLE which differs from far away, 5.4 no highest_close anywhere in the file - a field never written in this repo's history. Core VOO again NOT stamped with a highest_close (97th consecutive refusal - stamping the one position section 5 EXEMPTS would ARM a 5.4 stop against it). consecutive_closed_losses 0 UNTOUCHED - no close to increment or reset, which is not the same as a streak checked and found clean. Breaker INACTIVE, halt_triggered_at none, open_thesis_ids none. This seat MAY NOT open a position and did not want to: no quote was pulled for any ticker it does not hold, AMKR included, so AMKR has now gone three seats on this date without being re-priced. positions.md was DELIBERATELY NOT WRITTEN - Step 5's scope is every position still open and there are none, so a midday digest there would be pure growth restating what the carry-forward already carries.
+prior_run: 2026-10-22 09:36 ET 2-market-open-execution SELFTEST 5/5. MARKET OPEN, plan_today.md plan_date 2026-10-22 EQUALS today so the staleness gate PASSED and no stale-plan alert was posted. The plan carried ZERO BUY, ZERO SELL AND ZERO REBALANCE INTENTS, so STEPS 4, 5 AND 6 ALL HAD NO OPERAND AT ONCE - first on record - and ZERO ORDERS were placed with nothing unresolved. core_established true so Step 3 skipped. Ledger reconciled three sides agreeing; sleeves equity 99,820.22, core 69.95% in band, satellite 0.0% count 0, cash 30,000.00. The distinction worth keeping: HAVING NOTHING TO RE-VALIDATE and HAVING RE-VALIDATED AN INTENT AND PASSED IT are different states that produce the identical zero-order run. AMKR was not re-litigated and not re-priced; the section 7 softening path stayed shut.
 week_of: 2026-10-19
 new_positions_this_week: 0
 consecutive_closed_losses: 0
@@ -19,9 +19,9 @@ circuit_breaker: INACTIVE
 halt_triggered_at: none
 core_established: true
 core_ticker: VOO
-core_pct: 69.95
+core_pct: 69.85
 satellite_pct: 0.0
-cash_pct: 30.05
+cash_pct: 30.15
 open_thesis_ids: none
 ```
 
@@ -38,39 +38,59 @@ discarded; settled items were folded to one line each and repeated emphasis was 
 
 ### Live — act on these
 
-- **⚠ 2026-10-22 — DATE BLOCK, TWO SEATS: 08:07 pre-market and 09:36 market-open.** The 09:36 seat
-  **SPENDS** the 08:07 block and carries forward only what outlived it, adding its own run in one item.
-  **DROPPED:** the 08:07 restatements of the ledger reconciliation, the week anchor, the §5 null, the
-  `rebalance_delta` / `lastday_price` narrations, and the per-part arithmetic of the AMKR kill — now
-  **settled**, folded to the three killing grounds and the lesson, full statement at
-  `T-2026-10-22-01`. **All of the dropped items are STANDING items below; recognise on sight.**
+- **⚠ 2026-10-22 — DATE BLOCK, THREE SEATS: 08:07 pre-market · 09:36 market-open · 12:41 midday.** The
+  12:41 seat **SPENDS** the 09:36 block exactly as 09:36 spent the 08:07 one, carrying forward only what
+  outlived it and adding its own run in one item.
+  **DROPPED as settled (all STANDING items below — recognise on sight):** the 09:36 restatements of the
+  sleeves pull, the ledger reconciliation, the week anchor, the plan-staleness gate and the §5 null; and
+  the 08:07 AMKR per-part arithmetic, full statement at `T-2026-10-22-01`.
+  ⚠ **KEPT BECAUSE IT IS NOT A RESTATEMENT:** routine 2's Steps 4, 5 and 6 all had **NO OPERAND AT
+  ONCE** (first on record), and *having nothing to re-validate* and *having re-validated an intent and
+  passed it* are different states that produce the identical zero-order run. ⚠ **`AMKR` was not
+  re-litigated and NOT RE-PRICED AT ANY SEAT ON THIS DATE — three seats, no quote pulled for it.**
   *(⚠ **No figure for this collapse is claimed in prose — READ THE DIFFSTAT.** A `state.md` total
-  written inside `state.md` is falsified by the act of writing it. Instance SIX of the
-  overstated-saving defect was committed at 08:07 by a seat writing the very sentence that claimed to
-  have beaten it.)*
+  written inside `state.md` is falsified by the act of writing it.)*
 
-  - **⚠⚠ THE 09:36 MARKET-OPEN SEAT — IT PLACED NO ORDERS, AND THE ONE LINE THAT IS GENUINELY NEW IS
-    THAT **STEPS 4, 5 AND 6 ALL HAD NO OPERAND AT ONCE.** Selftest **5/5**, clock `is_open: true` at
-    **09:36:36 ET**, **`plan_date: 2026-10-22` = TODAY → FRESH, NOT STALE → NO `stale-plan` ALERT
-    POSTED.** The plan carried **ZERO BUY · ZERO SELL · ZERO REBALANCE**, so there was nothing to
-    re-validate, nothing to exit and nothing to size. `core_established: true` → **Step 3 skipped, as
-    it has been since 09-03.** Sleeves **re-pulled, not inherited**: equity **$99,820.22**, core
-    **69.95%** / `core_in_band: true` / `rebalance_needed: false`, satellite **$0.00 · 0.0% · count
-    0**, cash **$30,000.00** (~**46th** consecutive unchanged reading) → **NO REBALANCE, Step 7 a
-    no-op.** Ledger reconciled **three sides, all agreeing** (Alpaca one row, core VOO 99.046311231 sh
-    @ 706.74; `positions.md` satellite header `grep -cE` = **0**; `sleeves` `satellite.count: 0`).
-    Week anchor **recomputed from the date** — Thu **2026-10-22**, ISO **2026-W43**, Monday
-    **2026-10-19** = `week_of` → **no rollover, 0 of 3.**
-    ⚠⚠ **THE DISTINCTION THAT IS WORTH THE LINE: *HAVING NOTHING TO RE-VALIDATE* AND *HAVING
-    RE-VALIDATED AN INTENT AND PASSED IT* ARE DIFFERENT STATES, AND THEY PRODUCE THE IDENTICAL
-    ZERO-ORDER RUN.** Routine 2 **cannot generate a candidate** — §4's sleep-on-it gap is exactly that
-    prohibition — so on a zero-intent plan this seat is a **RECONCILER WITH NO DISCRETION LEFT TO
-    EXERCISE**, and every gate it reports "open" was open against **nothing**. ⚠ **This is the
-    TWENTIETH consecutive seat with an absent §5, and the first on record to also log Steps 4-6
-    absent. §5.3's distance to the stop remains NOT COMPUTABLE, which differs from "far away".**
-    ⚠⚠ **`AMKR` WAS NOT RE-LITIGATED AND NOT RE-PRICED — NO QUOTE WAS PULLED FOR IT AT ALL.** The
-    plan's instruction 4 forbade it, and none of the three kills moves with the quote. **The §7
-    softening path stayed shut and it cost one decision not to open it.**
+  - **⚠⚠ THE 12:41 MIDDAY SEAT — EXITS-ONLY, AND IT HAD NOTHING TO EXIT. STEPS 2, 3, 4 AND 5 ALL HAD NO
+    OPERAND.** Selftest **5/5** (env 6/6 · Alpaca ACTIVE, equity 99,487.92, `trading_blocked: false` ·
+    Perplexity `sonar-pro` · ClickUp · control.md **LIVE**), `TRADING_ENABLED: true`, clock
+    `is_open: true` at **12:41:37 ET**, next_close 16:00 today. **ZERO OPEN SATELLITE POSITIONS**, so the
+    routine's own Step 1 clause governs verbatim: *"There is nothing to manage. Note it, commit, exit. Do
+    not go looking for something to do."* Ledger reconciled **three sides, all agreeing** — Alpaca
+    `positions` **one row** (core VOO 99.046311231 sh @ 706.74, cost_basis 69,999.989999) ·
+    `positions.md` satellite block-header `grep -cE` = **0** · `sleeves` `satellite.count: 0`. Sleeves
+    **re-pulled, not inherited**: equity **$99,492.38**, core **$69,492.38 = 69.85%**,
+    `core_in_band: true`, `rebalance_needed: false`, satellite **$0.00 · 0.0%**, cash **$30,000.00 =
+    30.15%** (~**47th** consecutive unchanged cash reading). ⚠ **A MIDDAY SEAT HAS NO REBALANCE PATH:
+    `rebalance_delta` 152.29 is a DISTANCE READOUT, and §2 sends any rebalance to the NEXT MARKET-OPEN
+    run — its growth from 53.93 at 09:36 is VOO marking down (701.615 vs 706.74 basis), not an
+    instruction to this seat.** Week anchor **recomputed from the date** — Thu 2026-10-22, ISO
+    **2026-W43**, Monday **2026-10-19** = `week_of` → **no rollover, 0 of 3.**
+    ⚠⚠⚠ **THE LINE THAT IS GENUINELY THIS SEAT'S, AND IT IS ABOUT THE REPAIR THIS ROUTINE EXISTS FOR:
+    STEP 2'S HIGH-WATER BACKFILL HAS NOW BEEN UN-EXERCISED AT EVERY MIDDAY SEAT IN THE REPO'S HISTORY.**
+    The detector only works against a `highest_close` that **EXISTS**; on an empty ledger there is no
+    stale `(as of …)` date to catch, so **a passing Step 2 is a VACUOUS pass, NOT a working backfill, and
+    must never be read as evidence the repair functions.** ⚠ **Its trigger condition is real, not
+    hypothetical — the 2026-09-28 and 2026-10-05 close runs genuinely vanished (standing item (1)). Had
+    a position been open across either, this seat would have had to backfill across it. It cost nothing
+    ONLY because the sleeve is empty: LUCK, NOT DESIGN — and this is that same fact arriving at the one
+    seat that would have had to perform the repair.**
+    ⚠ **TWENTY-FIRST consecutive seat with an ABSENT §5, and all four rules have no operand: 5.1 no
+    `invalidation` string to test, so **NO Perplexity invalidation query was issued at all** — a §5.1
+    check against zero positions is not a check that passed · 5.2 no `timing_window` deadline · 5.3
+    **NOT COMPUTABLE**, which differs from "far away" · 5.4 no `highest_close` anywhere in the file, a
+    field never written in this repo's history.** ⚠ **CORE VOO AGAIN NOT STAMPED — 97th consecutive
+    refusal — because stamping the one position §5 EXEMPTS would ARM a 5.4 stop against it.**
+    ⚠⚠ **NOTHING SHOULD HAVE EXECUTED AND DID NOT.** Zero `sell` calls, zero orders, **zero dry-run
+    intents** (`TRADING_ENABLED` is true, so the dry-run flag was never the reason), nothing unresolved,
+    no alert posted and **none owed**. Breaker **INACTIVE**, `halt_triggered_at: none`,
+    `consecutive_closed_losses: 0` **untouched** — no close to increment or reset, which is NOT the same
+    as a streak that was checked and found clean. `open_thesis_ids: none`, control.md Notes **EMPTY**.
+    ⚠ **This seat MAY NOT open a position and did not want to: no quote was pulled for any ticker it
+    does not hold.**
+    ⚠ **`positions.md` WAS DELIBERATELY NOT WRITTEN.** Step 5's scope is "every position still open" and
+    there are none, so a midday digest there would be pure growth restating what this block already
+    carries. **The check happened; `state.md` is where it lives.**
 
   - **⚠⚠⚠ THE DATE'S FINDING, SETTLED AND COMPRESSED — THE FUNNEL FINALLY SUPPLIED THE OBJECT IT HAD
     BEEN MISSING FOR FIVE WEEKS AND §4 STILL KILLED IT.** `T-2026-10-22-01`, **AMKR / NVIDIA $1.3B**,
