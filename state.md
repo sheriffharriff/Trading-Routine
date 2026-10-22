@@ -10,8 +10,8 @@ The block below is parsed by `scripts/common.py` and gates real behavior
 `key: value` format exactly. Prose goes underneath.
 
 ```
-last_run: 2026-10-22 08:07 ET 1-premarket-research SELFTEST 5/5 EXIT 0. PRE-MARKET, NOT A HOLIDAY - clock 08:07:02 is_open FALSE with BOTH next_open (09:30) AND next_close (16:00) dated 2026-10-22, the full-session signature read off the DATES not the boolean. LEDGER RECONCILED FIRST, THREE SIDES AGREED: positions ONE row (core VOO 99.046311231 sh @ 706.74, cost_basis 69,999.989999, unchanged since 09-03), positions.md satellite block-header grep = 0, sleeves satellite.count 0. NO DISCREPANCY. WEEK ANCHOR COMPUTED FROM THE DATE: Thursday 2026-10-22 is ISO 2026-W43, Monday 2026-10-19, MATCHES week_of - no rollover, counter stays 0 of 3. SLEEVES IN BAND, NO REBALANCE: core 69.92%, core_in_band true, rebalance_needed false, rebalance_delta 82.95 (a DISTANCE READOUT, 0.12% of a fixed share count, re-compute wherever used). SECTION 5 ABSENT NOT PASSING, NINETEENTH SEAT - zero satellite rows so all four rules have NO OPERAND; 5.1 ran ZERO Perplexity news queries and ZERO WERE DUE; 5.3 is NOT COMPUTABLE, which differs from far away. STEP 2 HIGH-WATER WRITE STILL HAS NO OPERAND so the midday staleness detector again has NO INPUT - nothing detected and NOTHING RULED OUT. THE RUN'S REAL CONTENT: 4 broad scans + 3 drills, FOUR theses T-2026-10-22-01..04, ALL FOUR REJECTED, ZERO BUY INTENTS - and the headline is that the funnel FINALLY PRODUCED ITS MISSING OBJECT AND SECTION 4 STILL KILLED IT. T-2026-10-22-01 AMKR/NVIDIA: Amkor's OWN IR release, dated 2026-10-21, discloses $1.3B - a primary source, named counterparty, dated, figure attributed to the buyable leg BY the buyable leg, one-clause mechanism, us_equity/NASDAQ/tradable, and move printed "passes". REJECTED ON THREE INDEPENDENT PARTS: part 1 AMKR IS THE HEADLINE NAME (the GFS kill verbatim); part 2 the figure is PREPAYMENTS = rule (viii) JBL capital-paid-in shape, release expressly declines to call it revenue or give a recognition schedule, no segment and no revenue share so the 10% test is NOT COMPUTABLE; part 3 the only date in the document is END OF 2028 (~9 quarters vs TWO) and NO revenue date is stated at all. PRICED-IN ALSO FAILS ON SECTION 4's OWN BASIS: five-session -2.37% false "passes" but NEWS-DAY +4.87% (10-20 41.69 -> 10-21 43.72, vol 183,526 vs ~115-125k), and the five-session pass is MANUFACTURED BY CANCELLATION of a -6.9% drawdown against the news pop; VOO control over the identical window +0.46% false. NOT A NEW SHAPE SEVEN - the grep was run first and it is the RECORDED AKAM netting sub-shape of shape three, compounded because the two legs have DIFFERENT CAUSES. SECTION 3 CAP UNRESOLVED NOT PASSED (Perplexity correctly declined to supply one without a dated share count; ~229M shares implies the $10B floor at the 43.72 close, so AMKR sits NEAR IT on either side - do not inherit a section 3 verdict, the VAL precedent). EVERY SECTION 6 GATE WAS OPEN ALL RUN (breaker INACTIVE, 0 of 3, sleeve entirely undeployed, control.md Notes EMPTY, 5% cap $4,986.18) AND NOTHING WAS BOUGHT - a RESEARCH result, not a permission result, and the strongest instance of that sentence on record.
-prior_run: 2026-10-21 16:16 ET 4-market-close-journal SELFTEST 5/5. Recorded the official 10-21 close VOO 710.70 (n 1,228 / v 24,709) against 10-20 706.33; trailing-80 max close 716.29 (10-06). Step 2 had no operand. Its findings that outlived it are folded into Carry forward: the misfiled-dated-block defect and its repair, the partial-bar refusal at 09:36, and the section 1 scorecard number. Its claim about the eighteenth consecutive absent-section-5 seat stands and is now nineteen.
+last_run: 2026-10-22 09:36 ET 2-market-open-execution SELFTEST 5/5 EXIT 0. MARKET OPEN - clock is_open TRUE at 09:36:36 ET, next_close 16:00 today. STALENESS GATE PASSED: plan_today.md plan_date 2026-10-22 EQUALS today's ET date, so the plan is FRESH, every intent in it is executable, and NO stale-plan alert was posted (posting one on a fresh plan is the mirror failure of missing a stale one). THE PLAN CARRIED ZERO BUY, ZERO SELL AND ZERO REBALANCE INTENTS, so STEPS 4, 5 AND 6 ALL HAD NO OPERAND AT ONCE - the first run on record to log that, and it is NOT the same state as having re-validated an intent and passed it. ZERO ORDERS PLACED, ZERO ORDERS SUBMITTED, NOTHING UNRESOLVED. core_established true so Step 3 was SKIPPED (unchanged since the 09-03 bootstrap, the only fill in this account's history). LEDGER RECONCILED FIRST, THREE SIDES AGREED: Alpaca positions ONE row (core VOO 99.046311231 sh @ 706.74, cost_basis 69,999.989999), positions.md satellite block-header grep -cE = 0, sleeves satellite.count 0. NO DISCREPANCY - the single entry_price hit in positions.md is line 45 inside ## Template, the documented grep trap. SLEEVES RE-PULLED NOT INHERITED: equity 99,820.22, core 69,820.220945 = 69.95% core_in_band true rebalance_needed false, satellite 0.00 / 0.0% / count 0, cash 30,000.00 = 30.05% (~46th consecutive unchanged cash reading). STEP 7 A NO-OP: 69.95% sits near the middle of section 2's 65-75% band; rebalance_delta 53.93 is a DISTANCE READOUT on a fixed share count, not an instruction. WEEK ANCHOR COMPUTED FROM THE DATE: Thursday 2026-10-22 is ISO 2026-W43, Monday 2026-10-19, MATCHES week_of - no rollover, counter stays 0 of 3. SECTION 5 ABSENT NOT PASSING, TWENTIETH SEAT - zero satellite rows so all four rules have NO OPERAND; 5.3's distance to the stop is NOT COMPUTABLE, which differs from far away; core VOO was again NOT stamped with a highest_close (stamping the one position section 5 EXEMPTS would ARM a 5.4 stop against it). EVERY SECTION 6 GATE OPEN AND OPEN AGAINST NOTHING: breaker INACTIVE, halt_triggered_at none, 0 of 3 this week, sleeve entirely undeployed with 30,000 idle, control.md Notes EMPTY, 5% cap 4,991.01 with no operand. AMKR WAS NOT RE-LITIGATED AND NOT RE-PRICED - no quote was pulled for it at all; the plan's instruction 4 forbade it and none of T-2026-10-22-01's three kills (part 1 headline name, part 2 prepayments = rule (viii), part 3 end-2028) moves with the quote. The section 7 softening path stayed shut. lastday_price still reads 710.72 against the official 10-21 close of 710.70 - standing item, nineteenth seat, NOT re-derived; change_today -0.00815 and unrealized_intraday_pl -573.973373 are built on it and are NOT P&L figures. Step 6's partial-bar defect (open human item 12) was NOT exercised because no position was opened - still wrong on the first fill, still not the agent's to fix.
+prior_run: 2026-10-22 08:07 ET 1-premarket-research SELFTEST 5/5. 4 broad scans + 3 drills, FOUR theses T-2026-10-22-01..04, ALL FOUR REJECTED, ZERO BUY INTENTS - and the headline is that the funnel FINALLY PRODUCED ITS MISSING OBJECT AND SECTION 4 STILL KILLED IT. T-2026-10-22-01 AMKR/NVIDIA $1.3B came from Amkor's OWN dated IR release and died on THREE INDEPENDENT PARTS, each sufficient; the priced-in filter also fails it on the news-day basis (+4.87%) that section 4's words describe and the script does not measure, the 5-session pass (-2.37%) being manufactured by cancellation. Section 3's foreign-listing filter was binding for a third session in four. Full statements in research_log.md; the surviving lessons are in Carry forward under the 2026-10-22 date block.
 week_of: 2026-10-19
 new_positions_this_week: 0
 consecutive_closed_losses: 0
@@ -19,9 +19,9 @@ circuit_breaker: INACTIVE
 halt_triggered_at: none
 core_established: true
 core_ticker: VOO
-core_pct: 69.92
+core_pct: 69.95
 satellite_pct: 0.0
-cash_pct: 30.08
+cash_pct: 30.05
 open_thesis_ids: none
 ```
 
@@ -29,7 +29,7 @@ open_thesis_ids: none
 
 Anything the next run must not lose. Cleared once acted on.
 
-**⚠ COLLAPSE, DO NOT APPEND — acted on fifty times.** **Everything below is LIVE. Nothing live was
+**⚠ COLLAPSE, DO NOT APPEND — acted on fifty-one times.** **Everything below is LIVE. Nothing live was
 discarded; settled items were folded to one line each and repeated emphasis was removed.**
 ⚠ **A run that adds nothing to this list is the normal case.**
 ⚠ **A correction REPLACES the claim it corrects — it does not sit beside it.**
@@ -38,63 +38,75 @@ discarded; settled items were folded to one line each and repeated emphasis was 
 
 ### Live — act on these
 
-- **⚠ 2026-10-22 — BLOCK OPENED BY THE 08:07 PRE-MARKET SEAT, FIRST OF THE DATE.** It **SPENDS** the
-  10-21 four-seat block and carries forward only what outlived it. **DROPPED:** the four per-seat
-  retellings of the same §5 null, the four re-derivations of the week anchor, the four restatements of
-  the ledger reconciliation, the post-bell broker/official sample narration and the
-  `rebalance_delta` / `lastday_price` narrations — **all four are STANDING items below; recognise on
-  sight.** **KEPT, one line each with its pointer:** the misfiled-dated-block defect and its repair,
-  the §1 scorecard number, the partial-bar refusal, and the seven-of-seven priced-in sample.
-  *(⚠ **No figure for this collapse is claimed in prose — the block was written first and then
-  measured, and instance SIX of the overstated-saving defect was committed by a seat writing the very
-  sentence that claimed to have beaten it. READ THE DIFFSTAT. No whole-file total is quoted: a
-  `state.md` total written inside `state.md` is falsified by the act of writing it.)*
+- **⚠ 2026-10-22 — DATE BLOCK, TWO SEATS: 08:07 pre-market and 09:36 market-open.** The 09:36 seat
+  **SPENDS** the 08:07 block and carries forward only what outlived it, adding its own run in one item.
+  **DROPPED:** the 08:07 restatements of the ledger reconciliation, the week anchor, the §5 null, the
+  `rebalance_delta` / `lastday_price` narrations, and the per-part arithmetic of the AMKR kill — now
+  **settled**, folded to the three killing grounds and the lesson, full statement at
+  `T-2026-10-22-01`. **All of the dropped items are STANDING items below; recognise on sight.**
+  *(⚠ **No figure for this collapse is claimed in prose — READ THE DIFFSTAT.** A `state.md` total
+  written inside `state.md` is falsified by the act of writing it. Instance SIX of the
+  overstated-saving defect was committed at 08:07 by a seat writing the very sentence that claimed to
+  have beaten it.)*
 
-  - **⚠⚠⚠ THE DAY'S FINDING, AND IT IS THE MOST IMPORTANT ONE THIS REPO HAS PRODUCED SINCE GFS — THE
-    FUNNEL FINALLY SUPPLIED THE OBJECT IT HAD BEEN MISSING FOR FIVE WEEKS AND §4 STILL KILLED IT.**
-    `T-2026-10-22-01`, **AMKR / NVIDIA $1.3B**, from **Amkor's own IR release dated 2026-10-21**:
-    a **primary source** · a **named counterparty** · a **dated announcement** · a **dollar figure
-    attributed to the buyable leg BY THE BUYABLE LEG** · a **one-clause mechanism** ·
-    `us_equity`/NASDAQ/`tradable` · and `move` printing **"passes"**. ⚠ **That is the exact object the
-    segment-quantification framing has reported ABSENT for SEVENTEEN consecutive sessions.**
+  - **⚠⚠ THE 09:36 MARKET-OPEN SEAT — IT PLACED NO ORDERS, AND THE ONE LINE THAT IS GENUINELY NEW IS
+    THAT **STEPS 4, 5 AND 6 ALL HAD NO OPERAND AT ONCE.** Selftest **5/5**, clock `is_open: true` at
+    **09:36:36 ET**, **`plan_date: 2026-10-22` = TODAY → FRESH, NOT STALE → NO `stale-plan` ALERT
+    POSTED.** The plan carried **ZERO BUY · ZERO SELL · ZERO REBALANCE**, so there was nothing to
+    re-validate, nothing to exit and nothing to size. `core_established: true` → **Step 3 skipped, as
+    it has been since 09-03.** Sleeves **re-pulled, not inherited**: equity **$99,820.22**, core
+    **69.95%** / `core_in_band: true` / `rebalance_needed: false`, satellite **$0.00 · 0.0% · count
+    0**, cash **$30,000.00** (~**46th** consecutive unchanged reading) → **NO REBALANCE, Step 7 a
+    no-op.** Ledger reconciled **three sides, all agreeing** (Alpaca one row, core VOO 99.046311231 sh
+    @ 706.74; `positions.md` satellite header `grep -cE` = **0**; `sleeves` `satellite.count: 0`).
+    Week anchor **recomputed from the date** — Thu **2026-10-22**, ISO **2026-W43**, Monday
+    **2026-10-19** = `week_of` → **no rollover, 0 of 3.**
+    ⚠⚠ **THE DISTINCTION THAT IS WORTH THE LINE: *HAVING NOTHING TO RE-VALIDATE* AND *HAVING
+    RE-VALIDATED AN INTENT AND PASSED IT* ARE DIFFERENT STATES, AND THEY PRODUCE THE IDENTICAL
+    ZERO-ORDER RUN.** Routine 2 **cannot generate a candidate** — §4's sleep-on-it gap is exactly that
+    prohibition — so on a zero-intent plan this seat is a **RECONCILER WITH NO DISCRETION LEFT TO
+    EXERCISE**, and every gate it reports "open" was open against **nothing**. ⚠ **This is the
+    TWENTIETH consecutive seat with an absent §5, and the first on record to also log Steps 4-6
+    absent. §5.3's distance to the stop remains NOT COMPUTABLE, which differs from "far away".**
+    ⚠⚠ **`AMKR` WAS NOT RE-LITIGATED AND NOT RE-PRICED — NO QUOTE WAS PULLED FOR IT AT ALL.** The
+    plan's instruction 4 forbade it, and none of the three kills moves with the quote. **The §7
+    softening path stayed shut and it cost one decision not to open it.**
+
+  - **⚠⚠⚠ THE DATE'S FINDING, SETTLED AND COMPRESSED — THE FUNNEL FINALLY SUPPLIED THE OBJECT IT HAD
+    BEEN MISSING FOR FIVE WEEKS AND §4 STILL KILLED IT.** `T-2026-10-22-01`, **AMKR / NVIDIA $1.3B**,
+    from **Amkor's own IR release dated 2026-10-21**: a **primary source** · **named counterparty** ·
+    **dated** · a **dollar figure attributed to the buyable leg BY the buyable leg** · a **one-clause
+    mechanism** · `us_equity`/NASDAQ/`tradable` · and `move` printing **"passes"**.
     ⚠⚠ **IT DIED ON THREE INDEPENDENT PARTS, EACH SUFFICIENT: (1) PART 1 — AMKR *IS* THE HEADLINE
-    NAME**, which is §4's opening sentence and **the GFS kill verbatim** · **(2) PART 2 — the figure is
-    `PREPAYMENTS`, IN AMKOR'S OWN WORD**: capital paid **IN** by the customer, a deferred-revenue
-    liability until the work is performed = **rule (viii)'s JBL shape**, the release **expressly
-    declining to call it revenue or give a recognition schedule**, with **no segment and no revenue
-    share** so §4's 10% test is **NOT COMPUTABLE** · **(3) PART 3 — the ONLY date in the document is
-    "by the END OF 2028"** (~9 quarters against §4's two) **and NO revenue-contribution date is stated
-    at all, so part 3 is UNWRITEABLE rather than merely too long.**
-    ⚠⚠ **THE LESSON THAT OUTLIVES IT AND CUTS AGAINST MOST OF THIS FILE: NOTHING WAS MISSING. This is
-    the second time in a month that the best-documented object the funnel has ever reached was the
-    FIRST-ORDER leg, and the third consecutive month the best candidate died on a 2028 ramp date.**
-    ⚠⚠⚠ **A ONE-CLAUSE MECHANISM IS NOT A LICENCE — NEW AND WORTH THE LINE: the one-clause test asks
-    whether a *second-order* link is tight enough; it does NOT certify a *first-order* name whose link
-    is tight because there is no link to make. A first-order candidate PASSES part 1's grammar and
-    FAILS part 1's purpose.** ⚠ **DO NOT REHABILITATE AT A DIFFERENT PRICE: it did not die on price,
-    and neither the end-2028 date, the word "prepayments", nor Amkor's position in the headline moves
-    with the quote.** ⚠ **The pull was real and is named rather than omitted — 39 sessions undeployed,
-    $30,000 idle, every §6 gate open. That is §4's honest-broker configuration exactly.**
+    NAME** (§4's opening sentence; **the GFS kill verbatim**) · **(2) PART 2 — the figure is
+    `PREPAYMENTS` in Amkor's own word** = capital paid **IN**, a deferred-revenue liability until the
+    work is performed, **rule (viii)'s JBL shape**; the release **expressly declines to call it revenue
+    or give a recognition schedule** and names **no segment and no revenue share**, so the 10% test is
+    **NOT COMPUTABLE** · **(3) PART 3 — the only date in the document is "by the END OF 2028"**
+    (~9 quarters against §4's two) **and NO revenue date is stated at all, so part 3 is UNWRITEABLE**.
+    ⚠⚠ **THE LESSON THAT OUTLIVES IT AND CUTS AGAINST MOST OF THIS FILE: NOTHING WAS MISSING.** Second
+    time in a month that the best-documented object the funnel has ever reached was the **FIRST-ORDER**
+    leg, and the **third consecutive month** the best candidate died on a **2028 ramp date**.
+    ⚠⚠⚠ **A ONE-CLAUSE MECHANISM IS NOT A LICENCE: the test asks whether a *second-order* link is
+    tight enough; it does NOT certify a *first-order* name whose link is tight because there is no link
+    to make. A first-order candidate PASSES part 1's grammar and FAILS part 1's purpose.**
+    ⚠ **The pull was real and is named rather than omitted — 39 sessions undeployed, $30,000 idle,
+    every §6 gate open. That is §4's honest-broker configuration exactly.**
 
-  - **⚠⚠ THE PRICED-IN FILTER: `AMKR` IS THE RECORDED `AKAM` SUB-SHAPE OF SHAPE THREE, ***NOT*** A NEW
-    SHAPE SEVEN — AND THE `grep` THE LIST DEMANDS IS WHAT CHANGED THE ANSWER.** Five-session **−2.37%
-    / `false` / "passes"**; **news-day +4.87%** (10-20 **41.69** → 10-21 **43.72**, vol **183,526** vs
-    ~115–125k). ⚠⚠ **THE PASS IS MANUFACTURED BY ARITHMETIC CANCELLATION — a **−6.9%** drawdown
-    against the **+4.87%** news pop — and §4's words are "more than 4% … *ON THIS NEWS*", so the
-    candidate is LATE. The GFS precedent (shape five) is this log's controlling practice and it passed
-    on BOTH bases.** ⚠ **INDEX CONTROL COST ONE CALL AND SEPARATED THE LEGS, as 10-21 established:
-    `VOO` **+0.46% / `false`** over the identical window.** ⚠⚠ **THE GENUINELY NEW REFINEMENT, ONE
-    LINE: in `AKAM` both legs were the ticker's own news; here they have **DIFFERENT CAUSES** (a sector
-    drawdown and a news pop), so shape three's causation-blindness and the AKAM netting sub-shape
-    **COMPOUND** — and compounding is what makes the net verdict look clean. IT FAILS TOWARD TAKING THE
-    TRADE.** ⚠ **A 10-21 seat called a re-derivation "shape seven" in FOUR FILES before correcting it.
-    THE SHAPE NAMES ARE THE INDEX; `grep` THEM. This seat did, and it held.**
+  - **⚠⚠ THE PRICED-IN FILTER ON `AMKR` IS THE RECORDED `AKAM` NETTING SUB-SHAPE OF SHAPE THREE,
+    ***NOT*** A NEW SHAPE SEVEN — AND THE `grep` THE LIST DEMANDS IS WHAT CHANGED THE ANSWER.**
+    Five-session **−2.37%**, `priced_in: false`, **"passes"**; **news-day +4.87%** (10-20 **41.69** →
+    10-21 **43.72**, volume **183,526** vs ~115–125k preceding). **§4's words say "more than 4% …
+    ON THIS NEWS" → the candidate is LATE on the basis the rule describes and the script does not
+    measure.** ⚠ **The five-session pass is MANUFACTURED BY CANCELLATION — a −6.9% sector drawdown
+    against the +4.87% news pop, two legs with DIFFERENT CAUSES netting to a clean-looking figure.**
+    Index control over the identical window: `VOO` **+0.46%**, `false`.
 
   - **⚠⚠⚠ §3 ON FOREIGN LISTING IS THE BINDING CONSTRAINT FOR A THIRD SESSION IN FOUR — OBSERVATION 3
     OF THE 3 THE 10-19 ENTRY ASKED FOR, AND IT IS A *COMPOUND* INSTANCE.** NVIDIA's AI
     component-capacity initiative names **SIX** participants and **FIVE ARE FOREIGN-LISTED** (Samsung
     Electro-Mechanics/KRX · Ibiden/TSE · Unimicron/TWSE · KYEC/TWSE · SPIL/TWSE, parent ASE an NYSE
-    ADR). ⚠ **10-19 was §3-dead at the TRANSACTION leg; 10-20 (GSEO) at the COMPANY B leg; today is
+    ADR). ⚠ **10-19 was §3-dead at the TRANSACTION leg; 10-20 (GSEO) at the COMPANY B leg; 10-22 is
     BOTH AT ONCE, with the one US-listed participant failing on the thesis parts instead.**
     ⚠⚠ **FOR THE HUMAN, ATTACHED TO OPEN ITEM (3): if the second-order companies §4's logic correctly
     identifies in the AI hardware chain are systematically foreign-listed, then §3 and §4 TOGETHER
@@ -103,15 +115,15 @@ discarded; settled items were folded to one line each and repeated emphasis was 
     rather than an observation; the next two weekly reviews should test it.** Full statement:
     `T-2026-10-22-02`.
 
-  - **⚠⚠ DRILL THE EXCLUSIONS, NOT JUST THE PASSES — NEW, AND IT IS WHAT REACHED THE DAY'S CANDIDATE
-    AT ALL.** The structural scan **excluded** NVIDIA/Samsung Electro-Mechanics for having no disclosed
-    dollar amount, **and never mentioned Amkor**; drilling behind that exclusion found a **$1.3B
+  - **⚠⚠ DRILL THE EXCLUSIONS, NOT JUST THE PASSES — AND IT IS WHAT REACHED THE DATE'S CANDIDATE AT
+    ALL.** The structural scan **excluded** NVIDIA/Samsung Electro-Mechanics for having no disclosed
+    dollar amount **and never mentioned Amkor**; drilling behind that exclusion found a **$1.3B
     primary-sourced figure at a different, US-LISTED counterparty in the same initiative.**
-    ⚠ **This file already says a self-exclusion is a HINT, NOT A RULING (Bloom Energy, 10-13); today is
+    ⚠ **This file already says a self-exclusion is a HINT, NOT A RULING (Bloom Energy, 10-13); this is
     its strongest instance.** ⚠ **The structural framing still won on balance — SEVENTH consecutive
-    session — but it was today the WEAKER of the two scans: scan 1 returned four items, THREE of them
-    disposed rejects, while the routine's own "significance" voice is what surfaced the Meta capex
-    figure. Use both; drill what either one throws away.**
+    session — but it was the WEAKER of the two scans that day: scan 1 returned four items, THREE of
+    them disposed rejects, while the routine's own "significance" voice surfaced the Meta capex figure.
+    Use both; drill what either one throws away.**
 
   - **⚠ RULE (iii) — A GENUINELY NEW COSTUME, ONE LINE: A *NARROWED* RANGE IN WHICH ONE ENDPOINT MOVED
     AND THE OTHER DID NOT.** Meta FY2026 capex **$135–145B**: the low end rose **$5B**, the high end is
@@ -126,7 +138,7 @@ discarded; settled items were folded to one line each and repeated emphasis was 
     never the sign; it is the NAMING.** `T-2026-10-22-03`.
 
   - **⚠ DISPOSED-REJECT RE-SERVE AT FOUR CONSECUTIVE SESSIONS; READING THE LOG FIRST SAVED THREE DRILLS
-    TODAY.** Apple/**Perryman** (private — re-served as the structural scan's ONLY qualifying item,
+    ON 10-22.** Apple/**Perryman** (private — re-served as the structural scan's ONLY qualifying item,
     inside 24 hours of `T-2026-10-21-04`, the source conceding it had no direct company announcement) ·
     **MU/Indium** (`T-2026-10-21-02`; the source itself dated it **10-20**, outside the window) ·
     **Qnity** (unlisted; joined Apple's programme **March 2026**) · **NOC Q3** (`T-2026-10-20-03`;
@@ -141,29 +153,27 @@ discarded; settled items were folded to one line each and repeated emphasis was 
 
   - **⚠ CARRIED FROM 10-21, ONE LINE EACH, NOT RE-DERIVED.** **(a)** The misfiled-dated-block defect
     and its repair: a seat's dated digest landed **438 lines inside the 2026-10-06 block**, and a
-    verified `wc -l` says nothing about line POSITION. **STANDING CHECK, APPLIED AND PASSED AT BOTH
-    WRITES THIS RUN: after appending a dated block, `grep -n` the date headers and confirm the
-    insertion point is inside the block you named** (`research_log.md` 10-22 survey at line 55 above
-    the 10-21 survey at 394; `positions.md` 10-22 digest at line 88 above the 10-21 digest at 134).
-    **(b)** The partial-bar trap was refused on sight at 09:36 on 10-21 (`c` 708.04, `n` 64, `v` 1,966,
-    recorded nowhere as a close) and the completed bar closed **2.66 HIGHER** — the trap's sign and
-    magnitude measured, not argued. **(c)** Shape one's seven-of-seven sample (`COHR` −20.07% · `AMKR`
-    −12.45% · `GLW` −10.94% · `GM` −8.24% · `AVGO` −6.41% · `MU` −5.92% · `TSM` −4.43%, all `true`, all
-    DOWN, against `VOO` −1.22% `false`) stands as open item (1)'s strongest evidence. ⚠ **Note AMKR's
-    five-session window has since rolled to −2.37% and now reads `false` — the same ticker, the same
-    filter, opposite verdicts eight days apart, on a window edge rather than on any fact about the
-    company.**
-  - **⚠ ITEM (9), MEASURED AFTER THE WRITES AND REPORTED AS IT CAME OUT — NOT THE FLATTERING HALF.**
-    This seat collapsed **two** files and spent one: `plan_today.md` **15,309 → 12,081B (−3,228)** and
-    `positions.md` +3,801B against `research_log.md` **+28,259B**. ⚠⚠ **NET ON THE FOUR-FILE CORPUS:
-    **+25,008B** — the collapses saved ~10KB and the day's reasoning spent ~28KB.** ⚠ **THIS SEAT'S
-    OWN `state.md` DELTA IS DELIBERATELY NOT QUOTED HERE** (a file-size claim inside the file it
-    measures falsifies itself as it is typed); **it is in `git diff --stat` on this commit and in the
-    run output, which are the only places it is stable, and it is NEGATIVE.** ⚠⚠ **THE MECHANISM IS
-    ITEM (9)'s EXACTLY AND THIS RUN IS ITS CLEANEST CASE: the funnel finally produced a real candidate,
-    a real candidate needs a real rejection, and the rejection IS the bytes. A SEAT COLLAPSING CANNOT
-    OUTRUN A DAY THAT ACTUALLY HAD SOMETHING TO SAY — which is an argument for an ARCHIVABLE UNIT, not
-    for less reasoning.**
+    verified `wc -l` says nothing about line POSITION. **STANDING CHECK: after appending a dated block,
+    `grep -n` the date headers and confirm the insertion point is inside the block you named** —
+    applied and passed at both 08:07 writes (`research_log.md` 10-22 survey above the 10-21 survey;
+    `positions.md` 10-22 digest above the 10-21 digest). **(b)** The partial-bar trap was refused on
+    sight at 09:36 on 10-21 (`c` 708.04, `n` 64, `v` 1,966, recorded nowhere as a close) and the
+    completed bar closed **2.66 HIGHER** — the trap's sign and magnitude measured, not argued.
+    **(c)** Shape one's seven-of-seven sample (`COHR` −20.07% · `AMKR` −12.45% · `GLW` −10.94% ·
+    `GM` −8.24% · `AVGO` −6.41% · `MU` −5.92% · `TSM` −4.43%, all `true`, all DOWN, against `VOO`
+    −1.22% `false`) stands as open item (1)'s strongest evidence. ⚠ **Note AMKR's five-session window
+    has since rolled to −2.37% and now reads `false` — the same ticker, the same filter, opposite
+    verdicts eight days apart, on a window edge rather than on any fact about the company.**
+
+  - **⚠ ITEM (9), THE 08:07 MEASUREMENT KEPT AS ONE LINE BECAUSE THE MECHANISM OUTLIVES THE FIGURES.**
+    That seat collapsed two files and spent one — `plan_today.md` **−3,228B**, `positions.md`
+    **+3,801B**, `research_log.md` **+28,259B**, **net +25,008B on the four-file corpus** — so the
+    collapses saved ~10KB and the date's reasoning spent ~28KB. ⚠⚠ **THE MECHANISM: the funnel finally
+    produced a real candidate, a real candidate needs a real rejection, and the rejection IS the bytes.
+    A SEAT COLLAPSING CANNOT OUTRUN A DAY THAT ACTUALLY HAD SOMETHING TO SAY — an argument for an
+    ARCHIVABLE UNIT, not for less reasoning.** ⚠ **No seat quotes its own `state.md` delta in prose;
+    `git diff --stat` on the commit is the only stable place for it.**
+
   - **⚠ §1 SCORECARD, CARRIED WITH ITS BASIS AND NOT RE-COMPUTED: THE BOOK IS 44bp BEHIND ITS OWN
     BENCHMARK SINCE INCEPTION** — account **+0.392%** ($100,000.00 → $100,392.21 on official closes)
     against **VOO +0.833%** (704.83 on 2026-08-06 → 710.70 on 10-21). ⚠ **BASIS CAVEAT: PRICE-vs-PRICE
