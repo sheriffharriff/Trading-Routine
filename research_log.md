@@ -52,6 +52,304 @@ single most common way a plausible-sounding connection gets mistaken for an oppo
 
 ## Entries
 
+### 2026-10-23 (08:03 ET) — event survey (funnel, pre-thesis)
+
+Selftest **5/5**, exit 0 (`trading_enabled: true`, LIVE paper, broker equity **$99,378.54** at
+pre-flight). `clock` at **08:03:12** reads `is_open: false` with `next_open` **2026-10-23T09:30**
+and `next_close` **2026-10-23T16:00** — **both carrying TODAY's date, which is the pre-market
+full-session signature. Read off the DATES, not the boolean: not a holiday, not an early close.**
+Window surveyed: the 2026-10-22 regular session and the overnight into 2026-10-23.
+
+**Ledger reconciled FIRST, before any research — three sides, all agreeing.** Alpaca `positions`
+= **ONE row, core VOO only** (99.046311231 sh @ **706.74**, `cost_basis` **$69,999.989999**,
+unchanged since 2026-09-03) · `positions.md` satellite header `grep -cE '^### [A-Z]{1,5} '` = **0**
+· `sleeves` `satellite.count: 0`, `value: 0`, `pct: 0.0`. **NO DISCREPANCY.**
+
+**Every §6 gate open and nothing was bought — a research result, not a permission result.**
+Breaker **INACTIVE**, `halt_triggered_at: none`, `new_positions_this_week` **0 of 3**, satellite
+sleeve **0.0% deployed**, `control.md` Notes **EMPTY**, zero open alerts. 5% cap = **$4,968.85**,
+**$30,000.00 idle across 34 post-fill sessions.**
+
+**THREE BROAD SCANS, THE STRUCTURAL FRAMING FIRST, THE ANNOUNCEMENT DATE DEMANDED INSIDE EVERY
+PROMPT — AND THE FUNNEL ANSWERED §4's QUESTION IN THE NEGATIVE AGAIN, OUT LOUD, IN ALL THREE.**
+Verbatim: *"The available results do not establish any qualifying item involving two named
+corporate entities where both parties are companies and a disclosed dollar amount is tied to the
+agreement"* · *"No company can be confirmed to meet all of the stated criteria from the available
+reporting"* · *"The available sources provide no qualifying example in which a second publicly
+traded company was both explicitly identified as directly affected in its revenue or cost lines
+and assigned a dollar amount."*
+
+⚠ **THE STRUCTURAL FRAMING PAID AGAIN AND THIS TIME IT PAID IN A TABLE: EIGHT ITEMS RETURNED AND
+EIGHT SELF-EXCLUDED, WITH A NAMED FAILURE AGAINST EACH** — six of the eight excluded for a
+**government or municipal counterparty** (Albany International/US govt $21.2M · Long Wall/MDA
+$75M · Smith-Midland/Stafford County $2.2M), a **wrong transaction type** (IPM/ATD acquisition;
+Foremost/Denison property consideration), or **no dollar amount at all** (Seatrium/Karpowership;
+Cheniere/QatarEnergy). **Work the run would otherwise have done itself, for zero follow-up
+queries.** ⚠ **A self-exclusion is a HINT, NOT A RULING** — each was re-checked, and this time
+every one held.
+
+⚠ **AND THE SECOND FRAMING EARNED ITS PLACE FOR ITS USUAL REASON: it stated the part-2 gap
+outright on the day's largest named order** — Welspun's ~$730M US line-pipe win came back with
+*"the customer was not named in one report"* and no segment attribution, **the source applying
+two kills before I did.**
+
+**ONE DRILL QUERY SPENT, ON THE ONE ITEM THAT DESERVED IT** (`T-2026-10-23-01`). Four of the
+day's items carry a **clean rule (iii) pass** — Lockheed's own revenue outlook moved from its own
+**$79.75–81.75B to $80–82B** and EPS from its own **$29.95–30.65 to $30.35–30.75**; Bloom Energy's
+adjusted EPS from its own **$2.55–2.85 to $3.10–3.40** — ⚠ **and a clean pass on rule (iii) is not
+progress toward a trade when part 1 has no Company B to name.** P&G **maintained** FY27 targets,
+which is reaffirmation, costume #1.
+
+---
+
+### T-2026-10-23-01 — Lockheed Martin (LMT) 850-aircraft F-35 framework + raised FY2026 guidance → the unnamed F-35 supplier base — REJECTED (part 1 — NO Company B is named and the source says so on request; part 3 — the framework is contingent on CONGRESSIONAL AUTHORIZATION AND APPROPRIATIONS with NO first-delivery or first-revenue date in existence; rule (viii) NEW COSTUME — the only dollar figure in the story is Lockheed's own commitment to **SELF-FUND** $7B; and the framework's total value is **NEVER DISCLOSED AT ALL**)
+
+**Company A / the news:** Lockheed Martin and the US Department of War announced a **10-year
+framework agreement covering at least 850 US F-35 aircraft**, initial spares, 10 years of
+modification kits and sustainment, and international orders across **Lots 21–30**, at an announced
+production rate of **156 aircraft per year** (LMT release and DoW release, both **2026-10-22**;
+`f35.com`, `globalsecurity.org`). In the same Q3 release LMT **raised its own FY2026 revenue
+outlook to $80–82B from its own prior $79.75–81.75B** and EPS to **$30.35–30.75 from $29.95–30.65**.
+
+**Company B / the candidate:** none. **That is the finding, not a gap in the research.**
+
+**1. Mechanism (one sentence):** ❌ **CANNOT BE WRITTEN.** The drill asked the primary sources
+directly whether any publicly traded supplier is named with a dollar amount attributed to it, and
+the answer was a **verbatim denial**: *"No publicly traded supplier company or named supplier
+reporting segment is identified in the cited primary releases … it does not name a supplier company
+or assign any dollar amount to one."* ⚠⚠ **THE PRIORS WERE INSTANTLY READY AND SPECIFIC — RTX
+(Pratt & Whitney F135), Northrop Grumman (centre fuselage), L3Harris, Honeywell, BAE Systems —
+AND NO GUESS WAS MADE AND NONE IS RECORDED AS A CANDIDATE.** This is **rule (v)** in its plainest
+form: *"sole producer on the F-35 programme"* is a fact about an **industry**, not a **transaction
+disclosed on 2026-10-22**. ⚠ **The source left the blank; filling it in is not research.**
+⚠ **Rule (iv) rides on top for the one prior that arrives loudest: RTX would be its SEVENTH
+appearance in this log, and it has died at part 1 all six previous times.**
+
+**2. Dollar path:** ❌ **NOT CALCULABLE AT ANY COMPANY B, AND NOT CALCULABLE AT COMPANY A EITHER.**
+⚠⚠ **THE SOURCES DISCLOSE NO TOTAL DOLLAR VALUE FOR THE 850-AIRCRAFT FRAMEWORK — none, at the
+headline name, in a deal covering a decade of production.** The one big number in circulation,
+**$7 billion**, is the DoW release's statement of *"Lockheed Martin's commitment to self-fund at
+least $7 billion in unspecified F-35-support initiatives"*, and the source named the defect
+itself: *"The $7 billion is therefore not a supplier allocation or disclosed segment revenue
+figure."*
+⚠⚠⚠ **NEW RULE (viii) COSTUME, AND IT IS THE FIRST *SELF-FUNDING COMMITMENT* ON THAT LIST: A
+DOLLAR FIGURE THE BUYABLE LEG PROMISES TO SPEND ON ITSELF, WITH NO NAMED RECIPIENT ANYWHERE.** It
+is rule (viii)'s wrong-direction shape crossed with rule (v)'s unnamed-supply-base: the money
+leaves Lockheed, and the tier it lands in is exactly the tier the release declines to name.
+⚠ **It is distinct from the nearest prior entries — GEHC's $945M went OUT to a named private
+seller; AMD/Fermi's backstop was a contingent liability with no figure; Royal Caribbean's ~$3B was
+capex. This one is an UNDERTAKING TO SPEND, unallocated, and it reads as a measure of programme
+commitment, which is why it is the number that gets quoted.**
+
+**3. Timing window:** ❌ **FAILS, AND IT FAILS HARDER THAN ANY PRIOR INSTANCE ON THIS LIST.**
+The sources state the framework *"remained subject to congressional authorization and
+appropriations, and the parties still had to finalize contract terms, pricing, and delivery
+schedules"*, and — asked directly — that **no first-delivery date and no first-revenue date is
+stated in the cited primary materials at all.**
+⚠⚠ **THIS IS RULE (vi)'s PENDING-DEFINITIVE-AGREEMENT SHAPE WITH THE GATE MOVED FROM A
+COUNTERPARTY TO A LEGISLATURE, WHICH IS STRICTLY WORSE: CRK/SOCAR at least had two parties able to
+sign. Here the authorising body has not voted, the pricing does not exist, and the schedule does
+not exist.** ⚠ **A 10-year framework running Lots 21–30 is ~40 quarters of horizon against §4's
+TWO, and part 3 kills it in one step before any Company B question is reached.**
+
+**4. Invalidation:** ❌ **not reachable** — there is no position to invalidate.
+
+**Hard filters:**
+- **Priced-in (§4): NOT RUN, AND DELIBERATELY SO. ZERO quotes pulled, on LMT or on any of the five
+  supplier priors.** ⚠ **There is no ticker to price, because part 1 produced no Company B. Pulling
+  a quote on RTX or NOC here would be inventing the candidate and then pricing it, in that order.
+  DECLINING TO LOOK IS STRONGER THAN LOOKING AND RESISTING.**
+- **Correlation (§4): no operand** — zero open satellite positions, so no `driver` field exists to
+  collide with. ⚠ **Recorded as ABSENT, not as PASSING.**
+- **Universe (§3): UNRESOLVED, NOT PASSED.** No market cap was pulled for LMT or for any prior,
+  because §3 is never reached on a candidate that does not exist. ⚠ **DO NOT INHERIT A §3 VERDICT
+  FROM THIS ENTRY (the VAL precedent).**
+
+**Outcome:** **REJECTED — three independent kills, and the most useful one is the LAST one anybody
+would reach for.** ⚠⚠ **THE LESSON IS THE 10-15 TSMC SPLIT ARRIVING IN A SHARPER FORM: APPLY RULE
+(iii) TO THE FIGURE THE MECHANISM ACTUALLY RUNS ON. On 10-15 the figure that moved (TSMC revenue)
+had no supplier chain and the figure with the supplier chain (capex) did not move. HERE THE FIGURE
+WITH THE SUPPLIER CHAIN — the framework's total value — WAS NEVER DISCLOSED IN THE FIRST PLACE, so
+there is nothing to test rule (iii) against. A reader who tests the release, finds a clean pass on
+the guidance range, and stops, proceeds on a number no supplier touches.**
+⚠ **And this is the second-strongest-looking object §4 has met after GFS/TSMC: a real agreement, a
+named counterparty, a dated announcement, a famous programme, a quantity (850 aircraft, 156/yr),
+a genuine rule (iii) pass on the guidance, and a $7B figure in the headline. IT HAS NO COMPANY B,
+NO DEAL VALUE AND NO DATE. The rules stopped it; the judgment did not have to.**
+⚠ **DO NOT REHABILITATE IT WHEN CONGRESS APPROPRIATES. Appropriation would fix part 3's GATE and
+change NEITHER the missing Company B nor the missing deal value — and a Lots 21–30 delivery
+schedule cannot come inside two quarters however it is funded.**
+
+---
+
+### T-2026-10-23-02 — Lam Research (LRCX) component shortage delaying $300–400M of deliveries → the unnamed component supply base / the AMAT-KLA read-across — REJECTED (part 1 — the suppliers are UNNAMED and the only reachable Company B is a competitor, which is the shared-cause object; rule (viii) — the disclosed figure moves in the WRONG DIRECTION and §3 permits only the long side)
+
+**Company A / the news:** Lam Research's **2026-10-22** results carried a record quarter with a
+weaker near-term shipment outlook, because **component shortages were expected to delay
+approximately $300–400 million of deliveries into March** (`hdfcsky.com` earnings wrap,
+`bigmoves` 10-22).
+
+**Company B / the candidate:** attempted two ways, dead both ways.
+
+**1. Mechanism (one sentence):** ❌ **CANNOT BE WRITTEN IN EITHER DIRECTION.**
+**(a) Upstream — the component makers.** ⚠ **THE SOURCE NAMES NO COMPONENT, NO CATEGORY AND NO
+SUPPLIER: it says "component shortages" and stops.** That is rule (v)'s unnamed-supply-base with
+*less* to work with than the $1.7B-of-"memory components" instance, which at least named a
+category. **There is no Company B until the source names one.**
+**(b) Across — AMAT, KLA.** ⚠⚠ **THIS IS THE SHARED-CAUSE OBJECT AND IT IS THE SHARE-SHIFT
+COSTUME: a competitor's delivery slip improves nobody's revenue or cost line in any disclosed,
+dateable way — it changes only relative standing, and the WET-process tools LRCX ships are not
+the deposition or metrology tools AMAT and KLA ship, so there is not even a substitution story
+without an "and also".** ⚠ **This is the 10-02 Nike sub-shape (*an earnings miss is not a
+second-order catalyst*) arriving as a DELIVERY miss rather than a demand miss. Kill it on part 1
+each time.**
+**(c) And the honest third reading points DOWN, which §3 forbids expressing.** The parties whose
+economics genuinely change are LRCX's **customers**, who receive tools a quarter late — and that
+is a cost and a delay, not an improvement, at names nobody disclosed. ⚠ **This is the 10-08 SUPN
+shape: the mechanism is sound and points the wrong way, and §3 permits only the long side. THE
+TEMPTING MOVE IS TO FLIP IT INTO A "COMPETITOR BENEFITS" LONG, WHICH IS (b). NOT TAKEN.**
+
+**2. Dollar path:** ❌ **the $300–400M is LRCX's OWN deferred revenue, at Company A, and it is
+deferred rather than lost** — the source says *"delayed … into March"*. ⚠ **A figure that moves
+between two of Company A's own quarters is not a dollar path at any Company B.**
+
+**3. Timing window:** not reached. (⚠ **Worth noting it is the one part that would have PASSED —
+"into March" is inside two quarters. A single passing part is not a candidate, and this is the
+cheapest possible illustration of why §4 requires all four.**)
+
+**4. Invalidation:** ❌ not reachable.
+
+**Hard filters:** ⚠ **NONE RUN — zero quotes pulled on LRCX, AMAT or KLA.** Part 1 produced no
+Company B, and a priced-in check on a name reached only by a share-shift story is a filter applied
+to a thesis that was never eligible for one. **§3 and correlation: no operand.**
+
+**Outcome:** **REJECTED at part 1, twice over, and the second reading is the one worth keeping.**
+⚠ **A DISCLOSED DOLLAR FIGURE ATTACHED TO A NAMED LARGE-CAP'S NAMED PROBLEM IS NOT A SECOND-ORDER
+CATALYST WHEN THE FIGURE IS THE PROBLEM'S SIZE RATHER THAN SOMEBODY'S REVENUE.** It arrives
+carrying precision, a date, a specific operational cause and a mechanism that genuinely holds —
+and every one of those features is about Company A.
+
+---
+
+### T-2026-10-23-03 — BioNTech (BNTX) / Gilead Sciences (GILD) — pumitamig + Trodelvy into Phase 3 Rosetta Breast-01 — REJECTED (part 3 — a Phase 3 BREAST-CANCER TRIAL is ~8–20 quarters against §4's two, and rule (vi) names clinical collaborations explicitly; part 2 — NO dollar amount reported at either leg; and the arrangement is a COST to both parties, not revenue to either)
+
+**Company A / the news:** BioNTech and Gilead announced on **2026-10-22** that they are advancing
+**pumitamig** in combination with Gilead's **Trodelvy** into the **Phase 3 Rosetta Breast-01**
+trial. **BioNTech sponsors and leads the study; Gilead supplies the antibody-drug conjugate**
+(`eoption` 10-22 market review).
+
+**Company B / the candidate:** Gilead Sciences (GILD) — **and it is worth saying plainly that this
+is the ONLY item in the entire day's funnel inventory where two publicly traded companies are both
+named and a supply relationship between them is disclosed.** The source confirmed it in those
+terms: *"Yes. Gilead Sciences was explicitly named as the supplying company."* ⚠ **It is therefore
+the day's only candidate that gets past the structural screen at all — and it dies on the parts.**
+
+**1. Mechanism (one sentence):** *"BioNTech's Phase 3 Rosetta Breast-01 trial causes Gilead's
+Trodelvy supply volumes to rise because Gilead supplies the ADC for the combination arm."*
+⚠ **The sentence stands up without an "and also", which is more than most entries in this log
+manage — AND IT IS A SENTENCE ABOUT CLINICAL-TRIAL SUPPLY, which is a cost recovery at best and is
+not a product sale.** Trial-supply volumes for one Phase 3 arm are not a commercial revenue line.
+
+**2. Dollar path:** ❌ **FAILS ABSOLUTELY. No dollar amount is reported, by either company, for
+either leg** — the source stated it: *"the source did not state a direct revenue or cost-line
+impact for either company"* and *"No dollar amount reported."* ⚠ **Trodelvy sits inside Gilead's
+oncology franchise; even the most generous reading of one trial arm's drug supply is immaterial
+against GILD's ~$28B of annual revenue, and §4's floor is 10% of TOTAL revenue. The part-2 test
+is not close — it is not even calculable, because there is no numerator.**
+
+**3. Timing window:** ❌ **FAILS, AND IT IS THE PRIMARY KILL.** A Phase 3 oncology trial that is
+only now being *entered* reports in **years, not quarters** — enrolment, then treatment, then
+progression-free-survival readout. ⚠⚠ **RULE (vi) NAMES THIS EXACT OBJECT: *"CLINICAL
+COLLABORATIONS (SMMT/AZN)"* are the regulatory version of long-dated offtake in a lab coat. SMMT/AZN
+is the standing precedent and the answer was already written before the query ran.** ⚠ **Nothing
+about this appears in either company's reported results inside two quarters, and the thing that
+*would* eventually move — Trodelvy's commercial label — depends on a readout that does not exist.**
+
+**4. Invalidation:** ❌ not reached.
+
+**Hard filters:** ⚠ **NOT RUN. §3 was NOT resolved and no market cap was pulled for either leg** —
+part 3 killed it in one step, before §3 was needed, which is the §3-first discipline running in the
+only direction it is allowed to run (a cheaper kill first is not a §3 pass). ⚠ **No quote pulled on
+BNTX or GILD. DO NOT INHERIT A §3 VERDICT FROM THIS ENTRY.**
+**Correlation: no operand** — zero open positions.
+
+**Outcome:** **REJECTED — part 3 primary, part 2 independently.** ⚠⚠ **THE REASON THIS ENTRY IS
+WORTH ITS LENGTH: it is the shape the whole funnel has been failing to produce for fifteen
+consecutive sessions — TWO NAMED US-LISTED PUBLIC COMPANIES ABOVE $10B, A DISCLOSED SUPPLY
+RELATIONSHIP BETWEEN THEM, A DATED ANNOUNCEMENT AND A MECHANISM SENTENCE THAT NEEDS NO SECOND
+CLAUSE — and the calendar kills it anyway.** ⚠ **That matters for the standing argument about the
+§4 bar: the binding constraint here was NOT disclosure practice and NOT the evidence bar. It was
+part 3, a rule no amount of widening would touch. Widening the evidence bar would not have bought
+this trade.**
+
+---
+
+### T-2026-10-23-04 — §3 / wrong-counterparty / wrong-transaction / disposed-repeat / own-results sweep of TWENTY-ONE items — REJECTED (disposed as one, ZERO drill queries spent)
+
+**One entry for twenty-one items, each dead on a filter that needs no mechanism, no query and no
+quote.** ⚠ **A separate ID for each would inflate the thesis count and record nothing; the §4 work
+is in `T-2026-10-23-01` through `-03`.**
+
+**(a) GOVERNMENT OR MUNICIPAL COUNTERPARTY — one party, no transaction between companies (6):**
+**Albany International** / US govt, $21.2M IBAS contract plus >$36M of its own investment (10-22;
+also ~$1B cap, below the §3 floor) · **Long Wall** / Missile Defense Agency, $75M award plus $75M
+of its own private capital (10-22) · **Smith-Midland** / Stafford County, Virginia, $2.2M
+SlenderWall (10-22; microcap) · **Raytheon (RTX)**, a contract modification *raising the ceiling by
+$394M* (10-22) — ⚠ **RULE (iv), SEVENTH APPEARANCE IN THIS LOG, AND RULE (v)'s CEILING SUB-SHAPE
+ON TOP OF A GOVERNMENT COUNTERPARTY. Dead at part 1 for the seventh time, same rung, same reason.
+A fresh award is not fresh evidence when the kill is structural** · **Lockheed Martin**'s F-35
+framework in its government-action aspect (drilled separately at `-01`) · **Saab**'s Ukraine
+fighter-jet order (also Stockholm-listed).
+**(b) §3 — NOT US-LISTED, OR BELOW THE $10B CAP FLOOR (7):** **Zymeworks / Roche** — ⚠ **the
+day's most complete-looking disclosure, $55M upfront + $40M Phase 1b + up to $718M milestones +
+tiered royalties on ZW209, announced 10-23, and BOTH LEGS FAIL §3: ZYME is ~$1.5B against a $10B
+floor and Roche is SIX-listed. §3 does not weigh outcomes (the ELMT precedent), and this is the
+cheapest possible instance — one number at each leg, before any mechanism** · **Welspun Corp**,
+~$730M (₹5,500 crore) US line-pipe order, India-listed, **and the customer unnamed** ·
+**KEC International**, ₹1,006 crore of new orders, India-listed — ⚠ **DISPOSED-REPEAT, AND THE
+RE-SERVE RATE HOLDS: KEC was disposed on 10-12 at ₹1,030 crore and is back with a FRESH FIGURE and
+a fresh 10-23 dateline, order values and customers undisclosed both times. Reading the log before
+the tape cost one grep** · **Seatrium / Karpowership**, Singapore-listed, no dollar amount ·
+**Electro Cable Egypt**, >$16M supply order · **Foremost Lithium / Denison Mines**, $650k · **MSA
+Safety**, a five-year purchase agreement *up to $10.6M* with an **unnamed** "major Northeast US
+utility" (10-22) — ⚠ **rule (v): the counterparty is described, dated and sized, and not named.**
+**(c) WRONG TRANSACTION TYPE / WRONG DIRECTION (2):** **Intelligent Protection Management /
+Advanced Technology Distributors**, *up to $2.7M* — a purchase price paid BY the listed leg ·
+**GM**-led **$108M** round into **Peak Energy** (sodium-ion storage, 10-23) — ⚠ **rule (viii):
+capital paid OUT by the only buyable leg, into a PRIVATE recipient. The Brookfield/Bloom and
+Tesla/$30B shape.**
+**(d) OWN RESULTS, NO TRANSACTION, NO NAMED SECOND PARTY (4):** **P&G** Q1 beat ($23.28B vs
+$22.80B est.) — ⚠ **and it MAINTAINED FY27 targets (1–3% organic, ~$7 core EPS), which is rule
+(iii) costume #1, REAFFIRMATION; the raw-material, energy and freight headwinds it cited name
+nobody** · **Omnicom** Q3 beat ($2.73 vs $2.67; revenue $6.42B vs $6.21B, +59.1% y/y on the IPG
+combination) — ⚠ **measured against CONSENSUS, not its own prior figure** · **Bloom Energy**,
+adjusted EPS guidance raised to **$3.10–3.40 from its own $2.55–2.85** (10-23) — ⚠ **a CLEAN rule
+(iii) PASS on its own prior range, and dead at part 1 anyway: own results, no transaction, no named
+second party, and its suppliers are unnamed. Rule (iv) second appearance (10-13, LS Electric).
+A CLEAN PASS ON ONE FILTER IS NOT PROGRESS TOWARD A TRADE** · **Lam Research** in its own-results
+aspect (reached separately at `-02`).
+**(e) REGULATORY DECISION, NO SECOND PARTY, NO SUPPLIER (3):** **Aardvark Therapeutics** — FDA
+lifted the clinical hold on **ARD-101** (10-22) · **Arbutus Biopharma** — FDA removed the hold on
+**AB-101** (10-22) · **Biohaven** — FDA accepted the resubmitted NDA for **Vyglxia** (10-22).
+⚠ **All three are microcaps, all three name no second company and no external supplier, and the
+rule (vii) answer is already written: a clinical-hold lift creates no new manufacturing and no new
+supplier — the drug was already being made. These are the 10-08 SUPN item with the SIGN REVERSED
+(a hold lifted rather than imposed), which makes them long-expressible and changes nothing else.**
+**(f) LONG-DATED ENERGY OFFTAKE (1):** **Cheniere Energy / QatarEnergy** — LNG purchase agreements
+for **4 million tons annually through 2054** (10-23). ⚠ **NO DOLLAR AMOUNT DISCLOSED; the
+quantity is a VOLUME AND A TERM, not money — which is `T-2026-10-12-01`'s unit defect arriving
+again. Part 3 kills it without a query: a contract running to 2054 is ~112 quarters against §4's
+two. QatarEnergy is state-owned, so the party-type test fails too, and Cheniere is the headline
+name.** ⚠ **Rule (vi) calls long-dated energy offtake a standing FEATURE of this funnel, not a
+visitor — Venture Global three times, and this is the same object with a longer tail than any of
+them.**
+
+**Outcome:** **REJECTED, all twenty-one, zero drill queries spent and zero quotes pulled.**
+⚠ **Where a §3 or part-3 kill landed first, NO OTHER FILTER WAS RESOLVED, and none of these may be
+read later as having passed anything.**
+
+---
+
 ### 2026-10-22 (08:07 ET) — event survey (funnel, pre-thesis)
 
 Selftest **5/5**, all exit 0 (`trading_enabled: true`, LIVE paper, broker equity **$99,723.50** at
