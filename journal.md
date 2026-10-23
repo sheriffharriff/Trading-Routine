@@ -40,6 +40,212 @@ anything where the honest-broker rule (§4) did real work>
 
 ## Entries
 
+### 2026-10-23 (Friday)
+
+**Account:** total **$99,167.01 on official closes** (`bars --days 90 --adjustment all`, VOO `c`
+**698.33**, 99.046311231 sh + $30,000.00 cash) | day **−$365.48 (−0.3672%)** from 10-22's official
+$99,532.49 | since inception **−0.8330%** ($100,000.00 opening, price basis)
+⚠ *The live broker series at 16:16 was **$99,243.28** on `current_price` **699.10** — a separate
+post-bell series, quoted beside the official figure and **never differenced against it**. Gap
+**+$76.27**, which attributes exactly to 99.046311231 × +$0.77.*
+⚠⚠ **DO NOT TAKE THE DAY'S P&L FROM THE `account` CALL, AND TODAY IS THE LARGEST INSTANCE YET OF
+WHY.** `equity − last_equity` reads **−$316.94 (−0.3183%)**, and `last_equity` **$99,560.2243775313**
+is **exactly** 99.046311231 × **702.30** + $30,000 — i.e. it is built on `lastday_price` **702.30**,
+not the official 10-22 close **702.02**. ⚠ **Both ends of the broker's own day-P&L pair are live
+midpoints, so it understates the real close-to-close loss by $48.54 (4.9bp).** ⚠ **22nd seat on the
+standing `lastday_price` item, not re-raised as new — but the prior gaps were ±$0.02 and today's is
+**+$0.28**, 14× the largest so far, which is the item's whole point: a MOVING midpoint, not a fixed
+offset.** `change_today` **−0.00456** is likewise not the day's return; the official figure is
+**−0.5256%** on VOO.
+**Sleeves:** core **69.75%** | satellite **0.0%** | cash **30.25%**   (§2 band 65–75%, official-close
+basis; broker basis 69.77 / 0.0 / 30.23 — `core_in_band: true`, `rebalance_needed: false`) — **IN
+BAND, NO REBALANCE DUE MONDAY on either basis.** 4.75pp above the lower edge, 5.25pp below the upper;
+in dollars the band is **$64,458.56 – $74,375.26** and core sits **$249.90 below** the 70% target of
+$69,416.91. ⚠ **`rebalance_delta` 227.02 is a DISTANCE READOUT, not an instruction, and §2 sends any
+rebalance to a market-open seat regardless.**
+**Breaker:** INACTIVE (`consecutive_closed_losses: 0`, `halt_triggered_at: none` — nothing closed
+today, so the counter was **confirmed unchanged, not recomputed from a close**)
+**Week:** 0/3 new positions (`week_of: 2026-10-19`; anchor **re-derived from the date, not read off
+the field** — `America/New_York` 2026-10-23, Friday, ISO week **2026-W43**, weekday 5 → Monday anchor
+**2026-10-19**, **MATCHED**, so the counter was **not re-reset**; it reads 0 because nothing was
+opened. Rollover lands **Monday 2026-10-26**.)
+
+**Traded:** nothing. Zero orders at all four seats. `orders --status all` returns **one row for the
+entire account history** — the 2026-09-03 core fill, `status: filled`, terminal. **No order in limbo
+overnight; §7's warning has NO OPERAND, which is not the same as a clean bill.**
+**Researched:** 4 theses — **0 accepted, 4 rejected** (`T-2026-10-23-01`…`-04`), all written by the
+08:03 pre-market seat. This routine writes none. Cumulative **189** (87 archived + 102 live headings,
+counted by date from source).
+**Positions near a sell rule:** **none, and the honest form is NO OPERAND, not "nothing close."** Zero
+satellite positions, so §5.1–§5.4 have nothing to measure; §5.3's distance is **NOT COMPUTABLE**, which
+is a different state from "far away". Core VOO is §5-exempt and was struck from the working list before
+any rule was read.
+
+**What happened:**
+
+A full regular session, read off the clock's **dates** rather than its boolean: at 16:16:18 ET
+`is_open: false` with **both** `next_open` **2026-10-26T09:30** and `next_close` **2026-10-26T16:00**
+carrying **Monday's** date — the post-bell, pre-weekend signature. Not a holiday, not an early close.
+All four seats ran and committed.
+
+**The day's event was the tape, and it was the second down day in a row.** VOO closed **698.33**
+against 10-22's **702.02** — **−$3.69, −0.5256%** — on `v` **34,730** and `n` **1,080**, roughly half
+yesterday's 62,938 / 2,597 and back inside the recent 24–32k range. ⚠ **Yesterday's 2.5× volume read
+as high participation; today's is an ordinary tape, so the two days are NOT one move and must not be
+narrated as one.** The core sleeve took the whole of it, because it is the account's only exposure,
+and is now **−$832.98 / −1.190%** against its 706.74 fill on a close basis. **698.33 is the lowest
+official close since the fill.** Since-inception went to **−0.8330%**, the **lowest October reading** —
+counted off this file's own fifteen October entries, not asserted: 10-01 −0.4442 · 10-02 +0.0604 ·
+10-06 +0.9459 · 10-07 +0.7844 · 10-08 +0.4447 · 10-09 +0.8756 · 10-12 +0.8493 · 10-13 +0.8260 ·
+10-14 +0.0693 · 10-15 +0.2605 · 10-16 **−0.4947** · 10-19 −0.2248 · 10-20 −0.0406 · 10-21 +0.392 ·
+10-22 −0.4675. ⚠ **It is NOT an account low: the September floor is −1.340%, and today is 51bp above
+it.** ⚠ **And it corrects yesterday's entry, which named 10-01's −0.4442% as the prior October low —
+10-16's −0.4947% is lower. Yesterday said in writing that it had counted off its own prior entries,
+and it had still missed one.**
+
+**Step 2 — the high-water write, the invisible job this routine exists for — had NO OPERAND, and that
+sentence is the one Monday's midday run needs.** There are zero open satellite positions, so there was
+no `highest_close` to raise and no `(as of …)` date to advance. **"High-water marks updated" would have
+been false and is not claimed anywhere.** The field stays **ABSENT — a third state carrying no date at
+all**, which is neither current-and-unchanged nor stale, so Monday's backfill detector gets **no input
+again: no staleness detected and NONE RULED OUT.**
+
+**Nothing was bought, and today that was not a close call** — all four of the date's candidates were
+disposed before the bell on named §4 parts, none of them price-dependent, so nothing could have been
+revived at any later seat. The honest-broker configuration, named rather than omitted: **38 completed
+sessions undeployed (35 post-fill), $30,000 idle, every §6 gate open** — breaker INACTIVE, 0 of 3 this
+week, `control.md` Notes empty, 5% cap **$4,958.35** with no operand. ⚠ **The counter was re-derived
+from source at a post-bell seat, which is the only seat the `bars` route is valid from: 35 rows
+strictly after the 09-03 fill, ALL complete now that today's bar is finished. 37/34 → 38/35, exactly
+as the 12:41 seat predicted.**
+
+**What I got wrong or nearly got wrong:**
+
+**1. I was about to report that the account is now BEATING its benchmark, and then found that the
+benchmark line has been comparing two different bases for its entire history — the exact error this
+repo wrote a rule against, one file over.** The gap flipped sign today: the book is **−0.8330%** since
+inception against **VOO −0.9222%** (704.83 on 2026-08-06 → 698.33), so **+8.92bp ahead**, where
+yesterday it was **6.88bp behind**. Yesterday's entry had already named the mechanism and warned the
+narrowing was *"the cash drag running backwards"* — and it was right, so the flip is the prediction
+landing, not news. ⚠⚠ **But the 704.83 reference is the `--adjustment all` close, i.e. the RAW 706.645
+multiplied by the 0.997432 ex-dividend factor. It is a DIVIDEND-ADJUSTED close, and a return measured
+from it is a TOTAL return — while the account's −0.8330% is a PURE PRICE return on an account this
+repo has already confirmed never receives a dividend.** The journal has been labelling both *"price
+basis"* and differencing them. ⚠ **`positions.md` carries the rule verbatim at the top of the file —
+*"`highest_close` and the close it is compared against must come from the SAME adjustment basis"* —
+written for §5.4 after the 09-28 ex-date, and the benchmark line has been violating it the whole time.
+The lesson was written down and then not applied one file over, which is a worse failure than not
+having learned it.**
+
+- **Like-for-like PRICE vs PRICE** (raw 706.645 → 698.330, **−1.1767%**): the book is **+34.37bp
+  ahead**, not +8.92.
+- **Like-for-like TOTAL vs TOTAL** is not computable for this account, because the dividend was never
+  credited — that is the **open human item**, not a number.
+- **Against §1 AS WRITTEN** (account price return vs the S&P 500 **total** return, which is what §1
+  names): **+8.92bp ahead** — ⚠ **which is the figure the journal has been printing, but by accident
+  and under the wrong label.** ⚠⚠ **And that is the trap: the dividend carry-item asks the human to
+  choose option (i), "benchmark against VOO PRICE return and say so." A future seat taking option (i)
+  and keeping the 704.83 reference would still be measuring TOTAL return while believing it had
+  switched. The reference must change to the RAW close at the same time, or option (i) is a no-op that
+  looks like a fix.**
+
+**2. The decomposition I was about to reuse is not an identity, and the version I inherited earned its
+tick mark by back-solving a term from the answer.** Yesterday's entry split the gap into *cash cushion
++11.96bp* and *entry price −18.84bp*, summed them to *−6.88bp* and wrote **✓**. ⚠ **The two-term split
+is a linearisation and does not close: the exact identity needs a cross term.** Today, same method:
+cash cushion 0.30 × 0.9222% = **+27.67bp**, entry drag 0.70 × 0.2710% = **−18.97bp**, sum **+8.70bp**
+against a true excess of **+8.92bp** — a **0.23bp residual**. Yesterday's residual was **0.13bp**, and
+its *−18.84bp* is not 0.70 × 0.271% (that is **−18.97bp**); **−18.84 is exactly 11.96 − 6.88**, i.e.
+the term was fitted to the answer and then ticked. The exact form is
+`excess = [0.30·(−r) − 0.70·e − r·e] / (1+e)` with `r` the index return and `e` the entry premium; it
+reproduces +8.9229bp to four decimals.
+⚠⚠ **And once defect 1 is fixed the decomposition's CONCLUSION reverses, which matters more than the
+residual.** On a consistent price basis the entry premium is 706.74 against the **raw** 706.645 =
+**+0.0134%**, not +0.2710% — so the entry-timing drag is **−0.94bp, not −18.97bp, twenty times
+smaller** — and the +34.37bp gap decomposes as **cash cushion +35.30bp, entry timing −0.94bp**.
+⚠ **Yesterday concluded *"the gap is now dominated by ENTRY TIMING ON A SINGLE FILL, not by cash — a
+thing no future run can fix."* On a consistent basis it is dominated by cash, almost entirely, and the
+entry fill was within 1bp of the reference. The caution was right; the arithmetic behind it was not,
+and I would have repeated it verbatim because the entry said "same method as the 10-22 entry."**
+
+**3. I nearly recorded the benchmark sign-flip as the day's good news, and it is not news about this
+account at all.** Being 30% in cash while the index falls is not a decision; it is the absence of one,
+and **35 post-fill sessions of an undeployed satellite sleeve** is the thing actually generating the
+outperformance. ⚠ **It reverses the moment the index turns up, and §1's handicap — ~4.89pp/yr cash
+drag plus ~0.93pp/yr of uncredited dividends, ~5.82pp/yr before any decision is made — is unchanged
+and still the human's call.** Reporting "beating the benchmark" would have been the most flattering
+false sentence available today, for the second day running, and in a different direction from
+yesterday's.
+
+**4. One tracked carry item is factually wrong, and I only found it because I went looking for a
+detector rather than taking the item's word.** `state.md` has carried *"TWO CLOSE RUNS HAVE VANISHED —
+2026-09-28 AND 2026-10-05"* with *"THE 10-05 AND 09-28 JOURNAL ENTRIES ARE GONE AND UNRECOVERABLE"*,
+and it has been copied into `plan_today.md` and into yesterday's entry as *"two of 33 close runs."*
+⚠ **The 2026-09-28 entry is in the repo and always was:** `archive/journal/2026-09.md` holds it in
+full — a contemporaneous close-seat entry with its own 16:16:24 `clock` read, the complete 09-28 VOO
+bar, and the ex-dividend discovery the entire dividend thread descends from. That archive was written
+by the **2026-10-02** rollover, which moved **all 22** September entries verbatim, so the entry was
+committed before 10-02 and cannot be a later reconstruction. ⚠ **ONE close run has vanished: 2026-10-05.**
+⚠⚠ **The item's substance survives — one vanished run is still a vanished run and the detector still
+does not exist — but this is a TRACKED item, and the 08:03 seat's rule this morning was "quote the
+tracked counter, never a number from inside a sentence." Today the tracked counter is the thing that
+was wrong, and three files were repeating it.** I cannot re-check it against `git log`: this clone's
+history starts **2026-10-08**, so the commit-level evidence the item cites is no longer reachable from
+here. **The journal file is the primary evidence and it was always in the repo.**
+
+**5. And the detector that "still does not exist" is a subset test over data already committed.**
+`journal.md` is written by this routine and only this routine, one entry per trading day — so the
+session dates from a `bars --adjustment all` pull must be a **subset** of the `### YYYY-MM-DD` headings
+in `journal.md` plus `archive/journal/`. Run over the 90-session window it returns **exactly one
+session with no entry: 2026-10-05**, and one heading with no session: **2026-09-07**, Labor Day, which
+correctly produced a holiday-skip entry — ⚠ **which is why it must be a subset test and not equality.**
+⚠ **No new script, no new `state.md` field, and it works ON AN EMPTY LEDGER, which is exactly where
+the `positions.md` date-based route gets no input.** ⚠ **I did not build it: the routine prompts are
+not a seat's to edit mid-run.** It is item 7 for tonight's review.
+
+**6. The 12:41 phantom-mark finding now carries a measured price, and it cost nothing again — by
+luck.** The finished bar is `c` **698.33** against the midday partial's `c` **700.69**: ⚠ **the
+partial sat $2.36 ABOVE the real close, 0.34% of §5.4's 10% width, taken out of the selling side.**
+`h` 701.52 did not move between the two pulls while `v` doubled, so the high was set before midday and
+the afternoon only sold off. **On an up day the partial `c` IS the day's high and the error is
+unbounded above.** The one-clause fix stands.
+
+**7. Nothing else was close.** Step 2, Step 4's streak check and the whole §5 table had no operand;
+the week anchor matched; no order was in limbo; no alert was owed; `control.md` Notes are empty. Six
+of this routine's seven steps were null or near-null, and the one that was not is this entry.
+
+**For the next run:**
+
+- **Official closes, `--adjustment all`, pulled at 16:16:** 10-23 **698.33** · 10-22 **702.02** ·
+  10-21 **710.70** · 10-20 **706.33** · 10-19 **704.47** · 10-16 **701.745**. Max close in the
+  trailing 90 sessions: **716.29 (2026-10-06)**, unchanged; today is **−2.5074%** from it.
+- ⚠ **`highest_close` is ABSENT, not stale** — no `(as of …)` date anywhere in `positions.md`, because
+  there is no row to carry one. **Monday's midday Step 2 has NO INPUT and nothing to backfill. That is
+  not a clean bill.** ⚠ **And when the first satellite fill lands, take the max over bars STRICTLY
+  BEFORE today's ET date at any pre-close seat** — the 12:41 finding, now measured at $2.36.
+- ⚠⚠ **BENCHMARK REFERENCE IS ON THE WRONG BASIS — the single most consequential item here.** The
+  704.83 figure used as the 2026-08-06 inception reference is the **`--adjustment all`** close and is
+  therefore a **total-return** reference; the **raw** close is **706.645**. Price-vs-price the book is
+  **+34.37bp** ahead, not +8.92bp, and the entry-timing drag is **−0.94bp**, not −18.97bp. **Do not
+  carry the "entry timing now dominates the gap" conclusion forward — it is an artifact.**
+- ⚠ **`lastday_price` standing item, 22nd seat:** the broker's `lastday_price` **702.30** sits
+  **+$0.28** against the official 10-22 close **702.02** — 14× the prior largest gap and the same
+  sign as 10-21's. **Do not use `equity − last_equity` (−$316.94), `change_today` (−0.00456) or
+  `unrealized_intraday_pl` (−$316.95) as a day-P&L figure; all three are built on 702.30.**
+- **Monday 2026-10-26 is the WEEK ROLLOVER** — `week_of` advances **2026-10-19 → 2026-10-26** and
+  `new_positions_this_week` resets to 0 (it is already 0, so the reset is a no-op that must still be
+  recorded as done, not skipped). Monday is a normal session on the clock (`next_open` 09:30,
+  `next_close` 16:00, both dated 2026-10-26).
+- **Do not re-litigate `T-2026-10-23-01`…`-04`.** All four are disposed with named reasons and **none
+  is price-dependent**, so a better quote on Monday changes nothing about any of them.
+- **Tonight's weekly review has SEVEN items** — the five at the foot of `plan_today.md`, the 12:41
+  partial-bar defect (sixth), and the journal-vs-sessions detector above (seventh). ⚠ **Item 1 of
+  that list — the stale thesis counter — and item 2 — the benchmark decomposition — are both
+  SUPERSEDED by findings 1, 2 and 4 above, and the review should read those rather than the
+  summaries.**
+
+---
+
 ### 2026-10-22 (Thursday)
 
 **Account:** total **$99,532.49 on official closes** (`bars --days 90 --adjustment all`, VOO `c`

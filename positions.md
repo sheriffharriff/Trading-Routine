@@ -85,7 +85,7 @@ check that the pull returned the right session. A stored baseline is a *label*, 
 
 *(none — no **satellite** positions have been opened yet. Core VOO exists and is deliberately not tracked here, per the top-of-file rules and the fill note further down.)*
 
-### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-10-23, `2-market-open-execution` **09:36**. ⚠ **RE-EVALUATED AT THIS SEAT, NOT INHERITED: a table left alone and a table re-evaluated to the same answer are indistinguishable to the next reader.** This is the **24th consecutive seat** at which all four rules are absent rather than passing.)
+### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-10-23, **ONE DIGEST FOR THE DATE, ALL FOUR SEATS:** `1-premarket` **08:03** · `2-market-open` **09:36** · `3-midday` **12:41** · `4-market-close` **16:16**. ⚠ **CLOSED BY THE CLOSE SEAT, THE ONLY SEAT ENTITLED TO TOUCH WHAT THREE EARLIER SEATS WROTE** — a seat cannot fairly collapse a paragraph it has just written; the close note is the last item below and it CORRECTS two claims the earlier seats left here. ⚠ **RE-EVALUATED AT EACH SEAT, NOT INHERITED: a table left alone and a table re-evaluated to the same answer are indistinguishable to the next reader.** The table below was written at **09:36** and is the **24th** consecutive absent seat; 12:41 is the 25th and the close is the **26th**.)
 
 **Ledger reconciled BEFORE the order path was entered — three sides, all agreeing.**
 `positions.md` satellite block-header pattern `grep -cE '^### [A-Z]{1,5} '` = **0** · Alpaca
@@ -163,6 +163,80 @@ routine whose whole purpose is to repair this field.** ⚠ **NOT THE SAME DEFECT
 that one is routine 2 Step 6 writing `voo_close_at_entry` from a partial bar (a BENCHMARK LABEL);
 this one is routine 3 Step 2 writing `highest_close` (A STOP OPERAND). Same root cause, different
 field, different routine, and this one can sell a position.**
+
+---
+
+**⚠ SEAT 4 OF 4 — `4-market-close-journal` 16:16 ET, THE CLOSE SEAT. RE-EVALUATED, NOT
+INHERITED: all four rules still ABSENT, 26th consecutive seat** (24th at 09:36 · 25th at 12:41 ·
+26th here). Ledger reconciled three sides after the bell and agreeing: Alpaca `positions` **ONE
+row, core VOO only** (99.046311231 sh @ 706.74, `cost_basis` 69,999.989999, `market_value`
+69,243.276182, `current_price` **699.10**, unrealized **−756.713817 / −1.081%**) · satellite
+block-header count in this file **0** · `sleeves` `satellite.count 0 / value 0 / pct 0.0`.
+
+⚠⚠ **STEP 2 — THE HIGH-WATER WRITE, THE ONLY REASON THIS ROUTINE RUNS AT 16:15 RATHER THAN
+16:00 — HAD NO OPERAND, AND THE NEXT RUN MUST READ THAT AS "NOTHING TO STAMP", NOT AS "NOT
+RUN".** Zero open satellite positions, so there was no `highest_close` to raise and no
+`(as of …)` date to advance. **The field is ABSENT — the third state, carrying no date at
+all — which is neither current-and-unchanged nor stale.** ⚠ **Monday's midday backfill
+detector will again get NO INPUT: no staleness detected and NONE RULED OUT.** The step was
+performed and had nothing to write; **"high-water marks updated" would have been a false
+sentence and is not claimed.** Core VOO **not stamped** — 102nd consecutive refusal (99th at
+08:03 · 100th at 09:36 · 101st at 12:41 · 102nd here); the count is tracked in `state.md`.
+
+⚠⚠⚠ **AND THIS SEAT CLOSES THE 12:41 FINDING DIRECTLY ABOVE BY MEASURING IT AGAINST THE
+FINISHED BAR — THE PREDICTION HELD AND NOW CARRIES A PRICE.** The same
+`bars --symbol VOO --days 1 --adjustment all` pull at 16:16, with the session over, returns the
+**COMPLETE** 2026-10-23 bar: `o` 698.47 · `h` **701.52** · `l` 697.56 · `c` **698.33** · `n`
+**1,080** · `v` **34,730**. Against the 12:41 partial (`c` 700.69 · `n` 572 · `v` 16,676):
+⚠ **the partial `c` sat $2.36 ABOVE the real close**, and `v` doubled while `h` did not move,
+so the day's high was already set by midday and the afternoon only sold off. **Had the midday
+seat stamped a mark from that bar it would have written 700.69 for a session that closed
+698.33 — a $2.36 phantom, 0.34% of the stop's 10% width, taken out of the selling side on a
+day the tape went DOWN.** ⚠ **The defect is confirmed as real and is not a worst case: it is
+bounded below by nothing, and on an up day the partial `c` is the day's high rather than
+$2.36 under it.** The one-clause fix stands — **at any pre-close seat, max over bars STRICTLY
+BEFORE today's ET date** — and this seat needed no such guard, which is the asymmetry that
+makes it routine 3's defect alone.
+
+⚠⚠ **CORRECTION TO THE PARAGRAPH ABOVE, AND IT REPLACES THE CLAIM RATHER THAN SITTING BESIDE
+IT: ONE CLOSE RUN HAS VANISHED IN THIS REPO'S HISTORY, NOT TWO.** The Step 5 paragraph above
+(and the tracked item in `state.md`) say *"the 2026-09-28 and 2026-10-05 close runs genuinely
+vanished"* and that **both** journal entries are gone and unrecoverable. ⚠ **The 2026-09-28
+entry is in the repo and always was** — `archive/journal/2026-09.md` holds it in full, a
+contemporaneous close-seat entry carrying its own 16:16:24 `clock` read, the complete 09-28
+VOO bar and the ex-dividend discovery that the whole dividend thread descends from. That
+archive was written by the **2026-10-02** monthly rollover, which moved **all 22** September
+entries verbatim, so the entry was committed before 10-02 and cannot have been reconstructed
+later. ⚠ **2026-10-05 is the ONLY gap**, verified below. **The detection gap is unchanged and
+the item stays open — one vanished run is still a vanished run — but its headline figure was
+wrong, and it is a TRACKED item, which is the shape this repo keeps being told to trust over
+prose.**
+
+⚠⚠ **AND THE DETECTOR THAT "STILL DOES NOT EXIST" (open human item 11) IS A SUPERSET TEST OVER
+DATA ALREADY COMMITTED, RUN FOR THE FIRST TIME AT THIS SEAT.** `journal.md` is written by this
+routine and only this routine, one entry per trading day, so **the set of session dates from a
+`bars --adjustment all` pull must be a SUBSET of the `### YYYY-MM-DD` headings in `journal.md`
+plus `archive/journal/`.** Run over the 90-session window: **exactly one session has no journal
+entry — 2026-10-05** (the pre-09-01 sessions predate journaling and are excluded by date).
+⚠ **It must be a SUBSET test, not equality: 2026-09-07 is a journal heading with no session row,
+because Labor Day correctly produced a holiday-skip entry.** ⚠ **It needs no new script, no new
+`state.md` field, and — the part that matters — IT WORKS ON AN EMPTY LEDGER, which is exactly
+where the date-based staleness route in this file gets no input.** **FLAGGED, NOT BUILT: the
+routine prompts are not this seat's to edit. It is now the seventh item for tonight's review.**
+
+| §5 rule | State at the close | Distance |
+|---|---|---|
+| **§5.1** invalidation | **ABSENT — no operand** | No `invalidation` string on any satellite row. **ZERO Perplexity news queries run, ZERO DUE.** |
+| **§5.2** time stop | **ABSENT — no operand** | No `timing_window`, no deadline anywhere. |
+| **§5.3** hard stop (−7%) | **ABSENT — NOT COMPUTABLE** | No satellite `entry_price`. ⚠ **NOT COMPUTABLE, which is a different state from "far away."** |
+| **§5.4** trailing stop (−10%) | **ABSENT — no operand** | No satellite `highest_close` has ever been written. Core **not stamped, 102nd refusal.** |
+
+⚠ **The core §5.4 arithmetic, computed CLOSE-TO-CLOSE FROM ONE PULL as the top-of-file rule
+requires, and written to NO row:** VOO's trailing max close is **716.29 (2026-10-06)** and
+today's official **698.33** is **−2.5074%** from it (10-22 read −1.99% on the same basis).
+⚠ **Both figures come from the SAME `--adjustment all` call, so the ex-dividend artifact at the
+top of this file cannot be in this comparison.** Still nowhere near −10%, **and that is still
+exactly what makes stamping it feel harmless.**
 
 ### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-10-22, **ONE DIGEST FOR THE DATE, ALL FOUR SEATS:** `1-premarket` **08:07** · `2-market-open` **09:36** · `3-midday` **12:41** · `4-market-close` **16:16**. ⚠ **CLOSED BY THE CLOSE SEAT, THE ONLY SEAT ENTITLED TO TOUCH WHAT THREE EARLIER SEATS WROTE** — a seat cannot fairly collapse a paragraph it has just written. The 09:36 and 12:41 seats wrote nothing here; the close note is the last item below. ⚠ **RE-EVALUATED AT THIS SEAT, NOT INHERITED: a table left alone and a table re-evaluated to the same answer are indistinguishable to the next reader.**)
 
