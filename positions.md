@@ -85,29 +85,36 @@ check that the pull returned the right session. A stored baseline is a *label*, 
 
 *(none — no **satellite** positions have been opened yet. Core VOO exists and is deliberately not tracked here, per the top-of-file rules and the fill note further down.)*
 
-### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-10-23, `1-premarket-research` **08:03**. ⚠ **RE-EVALUATED AT THIS SEAT, NOT INHERITED: a table left alone and a table re-evaluated to the same answer are indistinguishable to the next reader.** This is the **23rd consecutive seat** at which all four rules are absent rather than passing.)
+### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-10-23, `2-market-open-execution` **09:36**. ⚠ **RE-EVALUATED AT THIS SEAT, NOT INHERITED: a table left alone and a table re-evaluated to the same answer are indistinguishable to the next reader.** This is the **24th consecutive seat** at which all four rules are absent rather than passing.)
 
-**Ledger reconciled FIRST, before any research — three sides, all agreeing.**
+**Ledger reconciled BEFORE the order path was entered — three sides, all agreeing.**
 `positions.md` satellite block-header pattern `grep -cE '^### [A-Z]{1,5} '` = **0** · Alpaca
 `positions` = **ONE row, core VOO only** (99.046311231 sh @ **706.74**, `cost_basis`
-**$69,999.989999**, `market_value` **$69,376.988702**, unrealized **−$623.001297 / −0.89%**,
-unchanged in share count since 2026-09-03) · `sleeves` `satellite.count: 0`, `value: 0`,
-`pct: 0.0`. **NO DISCREPANCY.** ⚠ **GREP TRAP, documented and NOT re-raised: the one
+**$69,999.989999**, `market_value` **$69,165.029596**, unrealized **−$834.960403 / −1.193%**,
+`current_price` **698.31**, unchanged in share count since 2026-09-03) · `sleeves`
+`satellite.count: 0`, `value: 0`, `pct: 0.0`. **NO DISCREPANCY**, so nothing was reconciled —
+the check was performed and came back clean. ⚠ **GREP TRAP, documented and NOT re-raised: the one
 `entry_price` hit in this file is line 45, inside `## Template`.**
+
+⚠ **Zero SELL intents in today's plan and zero satellite rows to test them against, so Step 4 had
+NO OPERAND. `consecutive_closed_losses` stays 0 — UNTOUCHED, not checked-and-clean.**
 
 | Rule | State | Distance to the rule |
 |---|---|---|
-| **§5.1** thesis invalidation | **ABSENT — no operand** | No `invalidation` field on any satellite row. **ZERO Perplexity news queries run, ZERO DUE** — Step 4.1 has no invalidation string to test news against. |
+| **§5.1** thesis invalidation | **ABSENT — no operand** | No `invalidation` field on any satellite row. **ZERO Perplexity news queries run, ZERO DUE** — there is no invalidation string to test news against. |
 | **§5.2** time stop | **ABSENT — no operand** | No `timing_window`, no deadline on any satellite row. |
 | **§5.3** hard stop (−7% from entry) | **ABSENT — NOT COMPUTABLE** | No satellite `entry_price` exists. ⚠ **NOT COMPUTABLE is a different state from "far away", and the two must not be written the same way.** The 706.74 core fill is **§5-exempt** and is not an operand. |
-| **§5.4** trailing stop (−10% from `highest_close`) | **ABSENT — no operand** | No satellite `highest_close` has ever been written in this repo. ⚠ **Core VOO AGAIN NOT STAMPED — 99th consecutive refusal.** |
+| **§5.4** trailing stop (−10% from `highest_close`) | **ABSENT — no operand** | No satellite `highest_close` has ever been written in this repo. ⚠ **Core VOO AGAIN NOT STAMPED — 100th consecutive refusal.** |
 
-⚠⚠ **THE §5.4 TEMPTATION CARRIED A NUMBER AGAIN AND WAS REFUSED AGAIN.** VOO's trailing max
-close is **716.29 (2026-10-06)**; yesterday's official close **702.02** is **−1.99%** from it,
-so a §5.4 stop would be nowhere near triggering. ⚠ **THAT IS PRECISELY WHAT MAKES STAMPING IT
-FEEL HARMLESS — it is harmless TODAY.** Arming a trailing stop against the one sleeve §5
-**exempts** and §2 holds **permanently** is not a thing to do on a quiet day. The 702.02 close
-is carried as a tape fact and written to no row.
+⚠⚠ **THE §5.4 TEMPTATION CARRIED A LIVE NUMBER THIS TIME AND WAS REFUSED AGAIN — AND THE 100TH
+REFUSAL IS NOT A MILESTONE.** VOO's trailing max close is **716.29 (2026-10-06)**; the live
+`current_price` **698.31** at 09:36 is **−2.51%** from it, so a §5.4 stop would be nowhere near
+triggering. ⚠ **THAT IS PRECISELY WHAT MAKES STAMPING IT FEEL HARMLESS — it is harmless TODAY.**
+Arming a trailing stop against the one sleeve §5 **exempts** and §2 holds **permanently** is not a
+thing to do on a quiet day. ⚠ **And 698.31 is a LIVE INTRADAY MIDPOINT, not a close — it is not
+comparable to the 716.29 close except as a rough distance, which is a second reason the figure does
+not belong on a row.** The 702.02 official 10-22 close is carried as a tape fact and written to no
+row.
 
 ⚠ **STEP 5's SCOPE IS "EVERY POSITION STILL OPEN" AND THERE ARE NONE, so nothing below the
 table was written either.** The absent `highest_close` field is in its **THIRD STATE** —
