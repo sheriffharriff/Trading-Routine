@@ -125,6 +125,45 @@ first satellite fill is its first real test. Its trigger condition is real — t
 and 2026-10-05 close runs genuinely vanished — and it costs nothing only because the sleeve is
 empty: LUCK, NOT DESIGN.**
 
+
+---
+
+**⚠ SEAT 3 OF 4 — `3-midday-position-management` 12:41 ET. RE-EVALUATED, NOT INHERITED, AND THE
+TABLE ABOVE STANDS UNCHANGED: all four rules still ABSENT, 25th consecutive seat.** Ledger
+reconciled three sides again at this seat and agreeing: Alpaca `positions` **ONE row, core VOO
+only** (99.046311231 sh @ 706.74, `market_value` 69,410.664448, `current_price` **700.79**,
+unrealized **−589.325551 / −0.842%**) · satellite block-header count in this file **0** · `sleeves`
+`satellite.count 0 / value 0 / pct 0.0`. **ZERO exits taken, ZERO were due, and NOTHING SHOULD HAVE
+FIRED AND DID NOT.** Zero Perplexity invalidation queries run and **zero due**. Core VOO **not
+stamped** — one clause, the count is in `state.md`.
+
+⚠⚠⚠ **AND THIS SEAT ADVANCED THE ITEM DIRECTLY ABOVE, WHICH THIS FILE HAS CARRIED FOR 21 SEATS AS
+"NEVER EXECUTED, FIRST FILL IS ITS FIRST TEST": THE BACKFILL COMMAND WAS RUN FOR THE FIRST TIME,
+AGAINST VOO AS A TOOL CHECK WITH NOTHING STAMPED ANYWHERE — AND STEP 2'S PRESCRIPTION, AS WRITTEN,
+WOULD MANUFACTURE A PHANTOM HIGH-WATER MARK.** `bars --symbol VOO --days 5 --adjustment all` at
+12:41 returned **five** bars, and the last one is **TODAY'S, STILL IN PROGRESS**: dated 2026-10-23
+with `c` **700.69**, `n` **572** trades and `v` **16,676** against yesterday's `n` 2,597 / `v`
+62,938 — and its `c` tracks the live `current_price` 700.79, because **on an unfinished session `c`
+is the last trade, not a close.**
+⚠ **Step 2 says "take the maximum close from entry date forward," and that maximum is taken over a
+set that INCLUDES the partial bar.** So on any day where the intraday print exceeds every real
+close since entry — **which is exactly what a winner making new highs looks like** — the midday
+seat stamps `highest_close` with a price that was never a close, and **§5.4's trailing stop is
+tightened against a position that never closed there.**
+⚠ **THE FAILURE DIRECTION IS TOWARD SELLING — THE SAME DIRECTION AS THE EX-DIVIDEND BASIS ARTIFACT
+AT THE TOP OF THIS FILE, AND IT COMPOUNDS WITH IT.** A mark that is too high and a comparison close
+that is too low both eat the stop's width from the same end.
+⚠ **IT COST NOTHING TODAY AND THAT WAS LUCK, NOT SAFETY:** today's partial `c` 700.69 and today's
+high 701.52 both sit **below** all four real closes in the window (704.47 · 706.33 · **710.70** ·
+702.02), so the max would have come from a finished bar anyway. Had the tape been up, it would not.
+⚠ **THE FIX IS IN THE PROMPT, NOT THE SCRIPT, AND IT IS ONE CLAUSE: when backfilling at any
+PRE-CLOSE seat, take the max over bars STRICTLY BEFORE today's ET date.** ⚠ **The close seat at
+16:16 is unaffected — by then the bar is finished — so this is specific to routine 3, the one
+routine whose whole purpose is to repair this field.** ⚠ **NOT THE SAME DEFECT AS HUMAN ITEM 12:
+that one is routine 2 Step 6 writing `voo_close_at_entry` from a partial bar (a BENCHMARK LABEL);
+this one is routine 3 Step 2 writing `highest_close` (A STOP OPERAND). Same root cause, different
+field, different routine, and this one can sell a position.**
+
 ### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-10-22, **ONE DIGEST FOR THE DATE, ALL FOUR SEATS:** `1-premarket` **08:07** · `2-market-open` **09:36** · `3-midday` **12:41** · `4-market-close` **16:16**. ⚠ **CLOSED BY THE CLOSE SEAT, THE ONLY SEAT ENTITLED TO TOUCH WHAT THREE EARLIER SEATS WROTE** — a seat cannot fairly collapse a paragraph it has just written. The 09:36 and 12:41 seats wrote nothing here; the close note is the last item below. ⚠ **RE-EVALUATED AT THIS SEAT, NOT INHERITED: a table left alone and a table re-evaluated to the same answer are indistinguishable to the next reader.**)
 
 **Ledger reconciled FIRST, before any research — three sides, all agreeing.**
