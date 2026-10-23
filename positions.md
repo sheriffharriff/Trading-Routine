@@ -85,6 +85,39 @@ check that the pull returned the right session. A stored baseline is a *label*, 
 
 *(none — no **satellite** positions have been opened yet. Core VOO exists and is deliberately not tracked here, per the top-of-file rules and the fill note further down.)*
 
+### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-10-23, `1-premarket-research` **08:03**. ⚠ **RE-EVALUATED AT THIS SEAT, NOT INHERITED: a table left alone and a table re-evaluated to the same answer are indistinguishable to the next reader.** This is the **23rd consecutive seat** at which all four rules are absent rather than passing.)
+
+**Ledger reconciled FIRST, before any research — three sides, all agreeing.**
+`positions.md` satellite block-header pattern `grep -cE '^### [A-Z]{1,5} '` = **0** · Alpaca
+`positions` = **ONE row, core VOO only** (99.046311231 sh @ **706.74**, `cost_basis`
+**$69,999.989999**, `market_value` **$69,376.988702**, unrealized **−$623.001297 / −0.89%**,
+unchanged in share count since 2026-09-03) · `sleeves` `satellite.count: 0`, `value: 0`,
+`pct: 0.0`. **NO DISCREPANCY.** ⚠ **GREP TRAP, documented and NOT re-raised: the one
+`entry_price` hit in this file is line 45, inside `## Template`.**
+
+| Rule | State | Distance to the rule |
+|---|---|---|
+| **§5.1** thesis invalidation | **ABSENT — no operand** | No `invalidation` field on any satellite row. **ZERO Perplexity news queries run, ZERO DUE** — Step 4.1 has no invalidation string to test news against. |
+| **§5.2** time stop | **ABSENT — no operand** | No `timing_window`, no deadline on any satellite row. |
+| **§5.3** hard stop (−7% from entry) | **ABSENT — NOT COMPUTABLE** | No satellite `entry_price` exists. ⚠ **NOT COMPUTABLE is a different state from "far away", and the two must not be written the same way.** The 706.74 core fill is **§5-exempt** and is not an operand. |
+| **§5.4** trailing stop (−10% from `highest_close`) | **ABSENT — no operand** | No satellite `highest_close` has ever been written in this repo. ⚠ **Core VOO AGAIN NOT STAMPED — 99th consecutive refusal.** |
+
+⚠⚠ **THE §5.4 TEMPTATION CARRIED A NUMBER AGAIN AND WAS REFUSED AGAIN.** VOO's trailing max
+close is **716.29 (2026-10-06)**; yesterday's official close **702.02** is **−1.99%** from it,
+so a §5.4 stop would be nowhere near triggering. ⚠ **THAT IS PRECISELY WHAT MAKES STAMPING IT
+FEEL HARMLESS — it is harmless TODAY.** Arming a trailing stop against the one sleeve §5
+**exempts** and §2 holds **permanently** is not a thing to do on a quiet day. The 702.02 close
+is carried as a tape fact and written to no row.
+
+⚠ **STEP 5's SCOPE IS "EVERY POSITION STILL OPEN" AND THERE ARE NONE, so nothing below the
+table was written either.** The absent `highest_close` field is in its **THIRD STATE** —
+carrying no date at all, which is neither current-and-unchanged nor stale — so the midday
+backfill detector gets **no input** for a 21st consecutive seat: **no staleness detected and
+none ruled out.** ⚠ **The repair path has never executed once in this repo's history; the
+first satellite fill is its first real test. Its trigger condition is real — the 2026-09-28
+and 2026-10-05 close runs genuinely vanished — and it costs nothing only because the sleeve is
+empty: LUCK, NOT DESIGN.**
+
 ### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-10-22, **ONE DIGEST FOR THE DATE, ALL FOUR SEATS:** `1-premarket` **08:07** · `2-market-open` **09:36** · `3-midday` **12:41** · `4-market-close` **16:16**. ⚠ **CLOSED BY THE CLOSE SEAT, THE ONLY SEAT ENTITLED TO TOUCH WHAT THREE EARLIER SEATS WROTE** — a seat cannot fairly collapse a paragraph it has just written. The 09:36 and 12:41 seats wrote nothing here; the close note is the last item below. ⚠ **RE-EVALUATED AT THIS SEAT, NOT INHERITED: a table left alone and a table re-evaluated to the same answer are indistinguishable to the next reader.**)
 
 **Ledger reconciled FIRST, before any research — three sides, all agreeing.**
