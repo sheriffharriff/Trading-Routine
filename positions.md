@@ -85,6 +85,63 @@ check that the pull returned the right session. A stored baseline is a *label*, 
 
 *(none — no **satellite** positions have been opened yet. Core VOO exists and is deliberately not tracked here, per the top-of-file rules and the fill note further down.)*
 
+### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-10-26, **`1-premarket` 08:05 — FIRST SEAT OF THE DATE; later seats append to this block and the close seat closes it.** ⚠ **RE-EVALUATED AT THIS SEAT, NOT INHERITED: a table left alone and a table re-evaluated to the same answer are indistinguishable to the next reader.** This is the **27th** consecutive absent seat, counted forward from Friday's close at the 26th — ⚠ **and the ordinal is stated only because it was counted from the preceding block in the same breath, per the rule against ordinals computed from a truncation.**)
+
+**Ledger reconciled FIRST, before any research — three sides, all agreeing.**
+`positions.md` satellite block-header pattern `grep -cE '^### [A-Z]{1,5} '` = **0** · Alpaca
+`positions` = **ONE row, core VOO only** (99.046311231 sh @ **706.74**, `cost_basis`
+**$69,999.989999**, `market_value` **$69,460.187603**, unrealized **−$539.802396 / −0.771%**,
+`current_price` **701.29** — ⚠ **a pre-bell indicative midpoint, NOT a close** — share count
+unchanged since 2026-09-03) · `sleeves` `satellite.count: 0`, `value: 0`, `pct: 0.0`.
+**NO DISCREPANCY**, so nothing was reconciled — the check was performed and came back clean.
+⚠ **GREP TRAP, documented and NOT re-raised: the one `entry_price` hit in this file is line 45,
+inside `## Template`.**
+
+⚠ **Zero SELL intents in today's plan and zero satellite rows to test them against, so Step 4
+had NO OPERAND. `consecutive_closed_losses` stays 0 — UNTOUCHED, not checked-and-clean.**
+
+| Rule | State | Distance to the rule |
+|---|---|---|
+| **§5.1** thesis invalidation | **ABSENT — no operand** | No `invalidation` field on any satellite row. **ZERO Perplexity news queries run for §5.1, ZERO DUE** — there is no invalidation string to test news against. ⚠ The four Perplexity calls this run were §4 research, not §5 checks; **do not read the call count as a §5 exercise.** |
+| **§5.2** time stop | **ABSENT — no operand** | No `timing_window`, no deadline on any satellite row. |
+| **§5.3** hard stop (−7% from entry) | **ABSENT — NOT COMPUTABLE** | No satellite `entry_price` exists. ⚠ **NOT COMPUTABLE is a different state from "far away", and the two must not be written the same way.** The 706.74 core fill is **§5-exempt** and is not an operand. |
+| **§5.4** trailing stop (−10% from `highest_close`) | **ABSENT — no operand** | No satellite `highest_close` has ever been written in this repo. ⚠ **Core VOO AGAIN NOT STAMPED.** ⚠⚠ **THE REFUSAL COUNT IS WITHHELD RATHER THAN QUOTED — see the 10-23 weekly review: a monotone counter was found to have moved BACKWARDS (95 → 103 → 107 → 102) and is not re-derivable from source, because no file records the individual refusal events. THE REFUSAL ITSELF IS UNBROKEN; ONLY THE NUMBER IS UNTRUSTWORTHY. Do not "fix" it to an inferred figure either.** |
+
+⚠⚠ **STEP 2 HAD NO OPERAND AGAIN AND THE NEXT SEAT MUST READ THAT AS *NOTHING-TO-STAMP*, NOT AS
+*STEP-SKIPPED*.** There is no `highest_close` to raise and no `(as of …)` date to advance, so the
+midday backfill detector gets **NO INPUT** today: **no staleness detected and NONE RULED OUT.**
+⚠ **A detector handed no input returns the same silence as one finding everything healthy.**
+
+⚠ **THE §5.4 TEMPTATION, REFUSED AGAIN AND WITH ITS LIVE NUMBERS WRITTEN OUT SO THE REFUSAL IS
+AUDITABLE RATHER THAN ASSERTED:** VOO's max close **over the seven sessions this
+seat actually pulled (2026-10-15 → 10-23)** is **710.70 (2026-10-21)**; Friday's official close
+is **698.33**, which is **−1.741%** from it. ⚠⚠ **THAT IS A WINDOW MAXIMUM, NOT A TRAILING MAX,
+AND THE DIFFERENCE IS NOT COSMETIC: the 10-23 block one section down records **716.29
+(2026-10-06)** from a longer pull, against which Friday's close is **−2.507%**. A seven-session
+pull cannot produce a since-entry high-water mark, and writing one as though it could is exactly
+the §5.4 failure the header rule guards against.** Both readings sit comfortably inside a −10%
+trailing band **if core were subject to one.** ⚠⚠ **IT IS NOT. §5's final line
+exempts core from all four rules, so this figure is NOT a sell-rule reading and must never be
+written into a `highest_close` field, quoted as a §5.4 distance, or carried forward as one.**
+⚠ **It is recorded here only to show the number was seen and the stamp was still refused.**
+
+⚠ **AND THE BASIS RULE THAT GUARDS IT, RESTATED BECAUSE THE NEXT EX-DATE RESTORES THE TRAP: a
+`highest_close` and the close it is compared against must come from the SAME adjustment basis
+and ideally the SAME pull. VOO went ex-dividend 2026-09-28 and `--adjustment all` rescaled every
+prior close by 0.99743914. §5.4 fails TOWARD SELLING when the bases are mixed.**
+
+⚠ **A `bars` close dated TODAY may never be stamped as a mark before the bell on any basis — a
+partial bar's `c` is the last trade so far wearing a close's clothes. This seat stands at 08:05
+and pulled no bar dated today.**
+
+**Friday's completed bar, re-pulled at this seat and carried as context only:** VOO **c 698.33**
+(o 698.47, h 701.52, l 697.56), `v` **34,733**, `n` **1,082** — ⚠ **against 34,730 / 1,080 read
+by Friday's own 16:16 close seat. +3 shares, +2 trades on a bar that cannot have changed, with
+o/h/l/c unchanged. A FRESH INSTANCE OF THE RETIRED n/v DRIFT ITEM, NOT A NEW FINDING — late-print
+settlement, and the reason `n`/`v` are unusable as evidence in either direction.**
+
+---
+
 ### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-10-23, **ONE DIGEST FOR THE DATE, ALL FOUR SEATS:** `1-premarket` **08:03** · `2-market-open` **09:36** · `3-midday` **12:41** · `4-market-close` **16:16**. ⚠ **CLOSED BY THE CLOSE SEAT, THE ONLY SEAT ENTITLED TO TOUCH WHAT THREE EARLIER SEATS WROTE** — a seat cannot fairly collapse a paragraph it has just written; the close note is the last item below and it CORRECTS two claims the earlier seats left here. ⚠ **RE-EVALUATED AT EACH SEAT, NOT INHERITED: a table left alone and a table re-evaluated to the same answer are indistinguishable to the next reader.** The table below was written at **09:36** and is the **24th** consecutive absent seat; 12:41 is the 25th and the close is the **26th**.)
 
 **Ledger reconciled BEFORE the order path was entered — three sides, all agreeing.**
