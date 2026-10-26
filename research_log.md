@@ -52,6 +52,328 @@ single most common way a plausible-sounding connection gets mistaken for an oppo
 
 ## Entries
 
+### 2026-10-26 (08:05 ET) — event survey (funnel, pre-thesis)
+
+Selftest **5/5**, exit 0 (`trading_enabled: true`, LIVE paper, broker equity **$99,434.44** at
+pre-flight 08:04). `clock` at **08:05:20** reads `is_open: false` with `next_open`
+**2026-10-26T09:30** and `next_close` **2026-10-26T16:00** — ⚠ **both carrying TODAY's date,
+which is the pre-market full-session signature. Read off the DATES, not the boolean: not a
+holiday, not an early close.** Window surveyed: Friday 2026-10-23 after the close through this
+morning — **a weekend window, the thinnest this routine ever screens.**
+
+**Ledger reconciled FIRST, before any research — three sides, all agreeing.** Alpaca `positions`
+= **ONE row, core VOO only** (99.046311231 sh @ **706.74**, `cost_basis` **$69,999.989999**,
+unchanged since 2026-09-03) · `positions.md` satellite header `grep -cE '^### [A-Z]{1,5} '` =
+**0** · `sleeves` `satellite.count: 0`, `value: 0`, `pct: 0.0`. **NO DISCREPANCY.**
+
+**Every §6 gate open and nothing was bought — a research result, not a permission result.**
+Breaker **INACTIVE**, `halt_triggered_at: none`, `new_positions_this_week` **0 of 3**, satellite
+sleeve **0.0% deployed**, `control.md` Notes **EMPTY**, zero open alerts. 5% cap **$4,973.01**
+against the `sleeves` 08:05 equity, **$30,000.00 idle across 35 post-fill sessions.**
+
+**THREE BROAD SCANS PLUS ONE DRILL, THE STRUCTURAL FRAMING FIRST, THE ANNOUNCEMENT DATE DEMANDED
+INSIDE EVERY PROMPT — AND THE FUNNEL ANSWERED §4's QUESTION IN THE NEGATIVE AGAIN IN THE TWO
+SCANS THAT ASK IT DIRECTLY, PLUS THE DRILL.** Verbatim: *"the evidence supports **zero confirmed
+matches**, rather than a list of likely candidates"* (segment-quantification framing) ·
+*"**no second publicly traded U.S. company is named with a dollar figure attributed to it**"*
+(the EQT/Range drill) · and from the overnight-events scan, the honest limit volunteered rather
+than hidden: *"The available evidence is insufficient to claim that the list above is exhaustive
+for the full Friday-after-close through Monday-pre-market interval."*
+
+⚠⚠ **TODAY IS THE FIRST SESSION IN THIS LOG WHERE THE STRUCTURAL FRAMING RETURNED FOUR ITEMS AND
+*NOT ONE* OF THEM WAS SELF-EXCLUDED — AND ALL FOUR DIED ANYWAY, ON THE *UNIT* AND *PARTY-TYPE*
+TESTS THE 10-12 FALSE POSITIVE ADDED TO THE RULE.** The framing screens for **structure**, and
+all four had it: two named parties, a date, a dollar figure. **EQT/Range** $50B+ — an
+**enterprise value** · **Corxel/Amanat** $377M — **gross proceeds** · **Ovintiv/Logan** $890M —
+**consideration paid out** · **Getty Images/DIP lenders** $143M — a **credit ceiling**.
+⚠ **FOUR ITEMS, FOUR DOLLAR FIGURES, AND NOT ONE IS SEGMENT REVENUE AT A COMPANY B. That is
+rule (viii) returning a clean sweep of a scan's entire output, which this log has not recorded
+before.** ⚠ **The framing is not weakened by this — it still reached the funnel's actual
+inventory, and the source named its own three near-misses unasked (High Liner/Umios Canadian ·
+Axon's $22M government party · Elbit's $200M with no second named company).**
+
+⚠ **THE MONDAY FORWARD-CALENDAR SHAPE ARRIVED ON SCHEDULE AND NO ID WAS MINTED FOR IT** — a
+"weekly market insights October 26–30" item surfaced in the third scan's citations. **Disposed
+already at `T-2026-10-12-05` and `T-2026-10-13-08`; the 10-14 precedent declined to mint a third
+entry for one rejection and this seat declines a fourth.** It is folded into `-04` below.
+⚠ **The carry-forward predicted this shape on *every* Monday pre-market seat. It was right.**
+
+⚠ **THE RE-SERVE RATE HELD AND IT IS ONE SESSION OLD AGAIN: WELSPUN CORP CAME BACK, DISPOSED ON
+2026-10-23 AT ~$730M AND RETURNING TODAY AT $580M** of coated line pipe for a US natural-gas
+transportation project. ⚠⚠ **A NEW SUB-SHAPE WORTH THE LINE: the re-serves logged so far
+repeated a figure *to the cent* (LS Electric's $138,458,284, RTX's $6.3B). THIS ONE CAME BACK
+WITH A DIFFERENT NUMBER, which reads as a new award rather than a repeat — and the kill is
+identical either way (Indian-listed, customer unnamed), so the LOG answered it and no query was
+spent.** ⚠ **A changed figure is the one disguise a re-serve has not worn before. Check the
+ISSUER, not the number.**
+
+---
+
+### T-2026-10-26-01 — EQT Corporation (EQT) / Range Resources (RRC) — $50B+ all-stock Appalachian gas merger → the unnamed midstream / gathering / service tier — REJECTED (merger arbitrage is not in §4, and the second-order drill returned a VERBATIM DENIAL; part 2 — every dollar figure in the story is an enterprise value, an exchange ratio or consideration to shareholders; part 3 — close is Q1 2027 and no revenue date exists at any third party)
+
+**Company A / the news:** **EQT Corporation** announced on **2026-10-26** a definitive agreement
+to acquire **Range Resources** in an **all-stock** transaction at an exchange ratio of **0.987
+EQT shares per Range share**, creating a company with **pro forma enterprise value exceeding $50
+billion**. EQT and Range holders would own approximately **73% / 27%** of the combined company
+(EQT IR release and 8-K, 2026-10-26). **Reuters put the implied equity consideration at ~$12.83
+billion.** ⚠ **This is by a wide margin the largest US corporate event in the window.**
+**Company B / the candidate:** the Appalachian **midstream, gathering, processing and
+oilfield-service tier** that would see contracted volumes consolidate under one counterparty.
+
+**1. Mechanism (one sentence):** **cannot be written without an "and also", and the Company B
+slot is empty before the sentence even starts.**
+> *"EQT's acquisition of Range causes [midstream operator]'s gathering revenue to improve because
+> the combined producer concentrates volumes on its system — **and also** the combined company
+> renegotiates or redirects contracts that transfer unchanged at closing, **and also** that shows
+> up in reported segment revenue inside two quarters."*
+
+⚠⚠ **TWO "AND ALSO"s, AND §4 REJECTS AT THE FIRST.** ⚠⚠⚠ **BUT THE DECISIVE FACT IS NOT THE
+SENTENCE — IT IS THAT THE DRILL QUERY RETURNED A VERBATIM DENIAL AND THE SENTENCE ABOVE COULD
+ONLY BE COMPLETED BY *ME* SUPPLYING THE NAME.** Asked directly whether EQT's or Range's
+announcement, 8-K or investor materials name any specific other publicly traded US company —
+midstream, gathering, service, processing or equipment — with a dollar amount attached, the
+source answered: ***"No. … no second publicly traded U.S. company is named with a dollar figure
+attributed to it in the materials reflected in the available results. The available evidence
+does not support identifying any directly affected third-party company with quantified
+exposure."*** ⚠⚠ **THE PRIORS ARRIVED INSTANTLY AND SPECIFICALLY — the Appalachian gatherers are
+a short, well-known list — AND NOT ONE IS WRITTEN DOWN HERE AS A CANDIDATE. That is rule (v) and
+the honest-broker paragraph meeting on the same object: a market-structure fact about who
+gathers Marcellus gas is a fact about an INDUSTRY, not a transaction.**
+
+**2. Dollar path:** ⚠⚠ **FAILS, AND IT IS RULE (viii) SWEEPING THE WHOLE DISCLOSURE.** Three
+dollar figures exist and **not one of them is revenue at any Company B**: the **$50B+ pro forma
+enterprise value** is a valuation of the **combined merged entity** (rule (viii)'s wrong-quantity
+shape at its largest scale yet) · the **0.987 exchange ratio** is a **share-swap term**, not money
+at all · the **~$12.83B implied equity consideration** is **paid to Range's SHAREHOLDERS**, which
+is neither party's revenue and is a Reuters *calculation* rather than a disclosure. ⚠ **No
+segment is named, no share of revenue is computable at any third party, and no third party has a
+figure.** ⚠ **The 10-21 standing fix — *ask for the figure disclosed FOR THIS TRANSACTION* — was
+applied inside the drill prompt and is what separated the $50B EV from anything a part 2 could
+use. Fourth consecutive session it has paid.**
+
+**3. Timing window:** ⚠⚠ **FAILS INDEPENDENTLY, AND ON THE DEAL'S OWN STATED TIMETABLE.** The
+transaction is expected to close in **Q1 2027**, subject to regulatory clearances and shareholder
+approvals. ⚠ **So the earliest date on which the combined company exists at all is roughly ONE
+quarter out, and any second-order effect on a gatherer's reported segment revenue is at minimum
+one to two quarters BEYOND that — past §4's two-quarter ceiling before the first dollar could
+move.** ⚠ **This is the merger-contingent part-3 kill the carry-forward already records against
+the 10-06 pair, recurring without modification.**
+
+**4. Invalidation:** **not written.** ⚠ **Parts 1, 2 and 3 all failed, and §4 is explicit that
+failing one part ends the trade. A fourth part here would be building the roof of a house with
+no foundation.**
+
+**Hard filters** *(run BEFORE the parts, per §4):*
+- **Priced-in (§4): NOT RUN, AND THE STATE IS "NO OPERAND", NOT "PASSES".** ⚠ **Both legs died at
+  part 1 as named parties to the headline transaction, upstream of price. A `move` call on EQT or
+  RRC would be DECORATIVE — the ninth time this log has declined one for that reason.** ⚠ **An
+  ABSENT check and a PASSING one look identical in a summary; this is the absent kind.**
+- **Correlation (§4): PASSES TRIVIALLY, AND THE REASON MATTERS.** Zero open satellite positions,
+  so there is no `driver` field anywhere to collide with. ⚠ **An empty ledger makes this filter
+  unfireable, which is not the same as a candidate that is genuinely uncorrelated.**
+- **Universe (§3): NOT RESOLVED AND NOT NEEDED.** ⚠ **DO NOT INHERIT A §3 VERDICT FROM THIS ENTRY
+  (the VAL precedent).** Both are US-listed common stock on the NYSE and EQT is comfortably above
+  the floor, but **no market-cap figure was pulled from source**, because the thesis parts killed
+  it first and §3 is not the reason it is rejected.
+
+**Outcome:** **REJECTED.** ⚠⚠ **AND IT IS THE CLEANEST MERGER-ARBITRAGE INSTANCE THIS LOG HAS
+MET, WHICH IS WHY IT IS WRITTEN OUT RATHER THAN SWEPT: §4 asks whose ECONOMICS change, and in an
+all-stock merger Range's price is pinned to EQT's by a fixed ratio — the target has no economics
+left of its own to change — while the acquirer is the headline name.** ⚠ **The competitor
+read-across this invites (other Appalachian producers re-rating on consolidation) is the
+shared-cause object in its purest form: a sector re-rating is a MARKET, not a transaction.**
+⚠ **DO NOT REHABILITATE IT AT A DIFFERENT PRICE. Neither the Q1 2027 close, nor the absence of a
+named third party, nor the fact that an enterprise value is not segment revenue moves with the
+quote.**
+
+---
+
+### T-2026-10-26-02 — Audi / Volkswagen $4.2B Georgia assembly plant → the unnamed construction, equipment and supplier tier — REJECTED (part 3 — PRODUCTION IN THE EARLY 2030s, which BEATS Bayer's 2031/2034 as the record holder for the too-far-out form; part 1 — NO counterparty of any kind is named; §3 — the only named company is non-US-listed; and the announcement was made by a POLITICIAN AT A RALLY, not by the company)
+
+**Company A / the news:** **Audi** (a **Volkswagen** subsidiary) announced a planned assembly
+plant in **Georgia** — reported investment **$4.2 billion**, approximately **4,500 jobs**,
+construction scheduled to begin **2027**, production **in the early 2030s** (reported
+**2026-10-25**). **Company B / the candidate:** the construction, engineering, automation and
+tier-one supplier base that would build and equip it.
+
+**1. Mechanism (one sentence):** **there is no Company B to put in the slot.** ⚠⚠ **This is form
+six — THERE IS NO COUNTERPARTY AT ALL — in its textbook presentation: a dollar figure, a map pin,
+a headcount and a construction year, and not one contractor, engineer, equipment vendor or
+tier-one supplier named anywhere.** ⚠ **It is the BDX $3B shape (Nebraska, Columbus, prefillable
+syringes, and no contractor whatsoever) and the Bayer Ohio shape arriving together.** ⚠⚠ **AND
+THE CARRY-FORWARD'S SHARPEST LINE APPLIES VERBATIM: A MAP PIN IS NOT A LEAD. The priors for a
+greenfield auto plant are instant and specific; none is recorded here as a candidate, because
+there is no Company B until the source names one.**
+
+**2. Dollar path:** ⚠ **FAILS. The $4.2B is AUDI'S OWN CAPEX** — rule (viii)'s "capital paid out
+by the non-candidate leg", and in this case paid out by a leg that cannot be bought under §3
+anyway. **No portion is attributed to any named recipient; no segment exists to measure it
+against.** ⚠ **A HEADCOUNT IS NOT A DOLLAR PATH** — the standing Pfizer-Sicily line, recurring.
+
+**3. Timing window:** ⚠⚠⚠ **FAILS BY THE WIDEST MARGIN THIS LOG HAS EVER RECORDED, AND IT IS A
+NEW RECORD HOLDER STATED WITH ITS PREDECESSOR NAMED SO THE ORDINAL CAN BE CHECKED: construction
+begins 2027, PRODUCTION IN THE EARLY 2030s — roughly 16 to 24 quarters against §4's ceiling of
+TWO.** ⚠ **The prior record was Bayer's Ohio plant at 2031/2034 (`T-2026-10-05`), and this is
+further out on the production date than Bayer's earlier figure.** ⚠ **Counted against that entry
+in the same breath, per the rule against stating an ordinal that was not counted from the list.**
+⚠ **Part 3 kills it in ONE step, before any funnel query is spent — rule (vi) working exactly as
+designed.**
+
+**4. Invalidation:** **not written** — parts 1, 2 and 3 all failed.
+
+**Hard filters:**
+- **Universe (§3): HARD KILL AT COMPANY A.** **Volkswagen AG is listed in Frankfurt**, not on a US
+  exchange as common stock; **Audi is a subsidiary, not separately buyable.** ⚠ **The source said
+  so itself: *"Audi is owned by Volkswagen, a publicly traded non-U.S. company; the available
+  result does not identify a second publicly traded U.S. company as counterparty."* The source
+  applied the kill before I did.**
+- **Priced-in (§4): NO OPERAND.** No eligible ticker exists to call it on.
+- **Correlation (§4):** no open positions; unfireable.
+
+**Outcome:** **REJECTED.** ⚠⚠ **AND THE ONE GENUINELY NEW THING HERE IS THE PROVENANCE, WHICH IS
+WORTH MORE THAN THE REJECTION: THE SOURCE REPORTS THE ANNOUNCEMENT AS HAVING BEEN MADE BY
+PRESIDENT TRUMP AT A CAMPAIGN RALLY.** ⚠⚠⚠ **THAT IS A NINTH REJECT FORM AND IT IS NOT ON THE
+EXISTING LIST: AN ANNOUNCEMENT ABOUT A COMPANY, CARRYING A COMPANY'S DOLLAR FIGURE, THAT THE
+COMPANY DID NOT ISSUE.** The seven known forms are all about what the source WITHHELD or WHEN the
+money lands; the eighth (SUPN) is about what §3 permits. **This one is about WHO SPOKE.** ⚠ **A
+third-party announcement of a corporate commitment has no 8-K behind it, no investor-relations
+release to check a figure against, and no company on the hook for the number — so rule (iii)'s
+test (*"did the source carry the company's OWN prior figure?"*) cannot even be ASKED, because the
+source is not the company.** ⚠ **It would have been rejected on part 3 regardless, so this costs
+nothing today. RECORD IT NOW — the next instance may be the one where every other part passes.**
+
+---
+
+### T-2026-10-26-03 — Samsung SDI America / Alpha Omega Power — 1 GWh energy-storage supply agreement → StarPlus Energy and the Stellantis (STLA) read-across — REJECTED (§3 — Company A is KRX-listed and the customer is not public; the disclosed quantity is 1 GWh, which is NOT MONEY — the 10-12 UNIT failure recurring; rule (iii) — the source flags the headline total as PART RE-REPORT; and the Stellantis link is a PRIOR I supplied, not a disclosure)
+
+**Company A / the news:** **Samsung SDI** said on **2026-10-26** that its **US unit** signed an
+agreement to supply **1 GWh** of energy-storage battery solutions to **Alpha Omega Power**, a US
+energy-storage developer, with delivery **by December**. Including an initial agreement signed
+**the prior year**, the agreements total **1.5 GWh**. Production is planned at the **StarPlus
+Energy** plant in Indiana. **Company B / the candidate considered and refused:** **Stellantis
+(STLA)**, StarPlus Energy's joint-venture partner.
+
+**1. Mechanism (one sentence):** **not written as a thesis, and the reason is the point of this
+entry.** ⚠⚠⚠ **THE CANDIDATE HERE WAS SUPPLIED ENTIRELY BY ME. The source names Samsung SDI,
+Alpha Omega Power and a plant. It does NOT name Stellantis, does not mention the joint venture's
+ownership, and attributes no dollar figure to anyone.** ⚠⚠ **"StarPlus Energy is the Samsung
+SDI / Stellantis JV" is a FACT ABOUT A CORPORATE STRUCTURE — rule (v) in its cleanest form, a
+market-structure fact rather than a transaction — and reaching for it is verbatim the failure
+§4's honest-broker paragraph describes. IT IS WRITTEN DOWN HERE AS A REFUSED PRIOR, NOT AS A
+CANDIDATE.** ⚠ **The pull was real: it is the only path in today's entire funnel output that
+reaches a US-listed name above $10B, and the sleeve has been empty since inception. The answer
+is still no.**
+
+**2. Dollar path:** ⚠⚠ **FAILS ON THE UNIT, AND THIS IS THE 10-12 FALSE POSITIVE'S EXACT SHAPE
+RECURRING.** The only quantity disclosed is **1 GWh** (1.5 GWh cumulative). ⚠ **A GIGAWATT-HOUR
+IS NOT A DOLLAR.** The US/Russia diesel item (`T-2026-10-12-01`) died on precisely this: *"the
+disclosed quantity is NOT MONEY"*, with a four-rung tonnage ladder standing in for a figure.
+⚠ **The structural framing's UNIT test, added to the rule after that run, caught this one at the
+first reading rather than after a mechanism had been elaborated. The fix paid.** ⚠ **No segment
+is named at any leg, and no revenue share is computable for Samsung SDI, for Alpha Omega Power,
+or for the JV.**
+
+**3. Timing window:** **delivery "by December"** — genuinely **inside two quarters**, and ⚠ **a
+clean pass on the one part that kills most of this log is not progress toward a trade when parts
+1 and 2 and §3 have already failed.** ⚠ **Recorded because a part-3 PASS is rare enough here to
+be worth the line.**
+
+**4. Invalidation:** **not written** — §3 and parts 1 and 2 failed first.
+
+**Hard filters** *(run BEFORE the parts, per the §3-first discipline):*
+- **Universe (§3): HARD KILL ON BOTH NAMED PARTIES.** **Samsung SDI is KRX-listed** (Korea), not
+  US-listed. **Alpha Omega Power is not established as publicly traded** anywhere — the source
+  says only *"a U.S. energy-storage developer"*. ⚠ **So the two parties to the transaction are a
+  non-US issuer and a private company, and the only US-listed name in the vicinity is one the
+  source never mentions.**
+- **Rule (iii): the source flagged the re-report itself, unasked.** Verbatim: *"the combined total
+  includes an **initial contract signed last year**; only the latest 1 GWh agreement is new."*
+  ⚠ **The 1.5 GWh headline is the aggregate-spanning-a-previously-announced-deal shape — Venture
+  Global's $17.2B and Amkor's $3B, now in gigawatt-hours. Asking for the figure disclosed FOR
+  THIS TRANSACTION is what separated the new 1 GWh from the 1.5 GWh total.**
+- **Priced-in (§4): NO OPERAND** — no eligible ticker reached the filter.
+- **Correlation (§4):** no open positions; unfireable.
+
+**Outcome:** **REJECTED.** ⚠ **Three independent kills (§3 at both parties, part 2 on the unit,
+rule (iii) on the headline total), and a fourth standing behind them: the only route to a buyable
+name runs through a JV ownership fact the disclosure never mentions.**
+
+---
+
+### T-2026-10-26-04 — §3 / wrong-quantity / wrong-transaction / government-counterparty / disposed-repeat / forward-calendar sweep of SEVENTEEN items — REJECTED (disposed as one, ZERO drill queries spent)
+
+⚠ **Disposed from the scans' own output and from this log, without spending a query on any of
+them.** The sweep is written as one entry rather than seventeen because each kill is a single
+step and minting an ID apiece would inflate the thesis count without recording anything.
+
+**Wrong transaction type / rule (viii) — a dollar figure that is not segment revenue at a
+Company B:**
+- **Corxel Pharmaceuticals / Amanat Acquisition Corp (AMAN)** — ~**$377M gross proceeds** from a
+  SPAC business combination (~$75M trust + ~$300M PIPE). **Capital paid IN**, rule (viii)'s first
+  listed shape; Corxel is not US-listed; **a SPAC is far below §3's $10B floor.**
+- **Ovintiv (OVV) / Logan Energy (LGN)** — ~**US$890M** acquisition including assumed net debt.
+  **Merger arbitrage, not in §4**; consideration **paid OUT** by the only US-listed leg; Logan is
+  **TSX Venture**-listed. Three kills, no query.
+- **Getty Images / its DIP lenders** — **up to $143M** Chapter 11 debtor-in-possession financing,
+  $85M drawn 2026-10-23. **A FINANCING CEILING** (rule v's ceiling sub-shape crossed with rule
+  viii), the lenders are **unnamed**, and Getty is far below the §3 floor. ⚠ *A DIP facility is
+  the clearest "money moving in the wrong direction" object this funnel has produced.*
+- **MKS/TTM-style consideration items aside, the pattern across all four of the structural scan's
+  returns is one finding, recorded above in the survey header, not four.**
+
+**§3 — not US-listed, or below the floor:**
+- **High Liner Foods / Umios** — **Canadian**, consideration in **C$**. *The source excluded it
+  before I did.*
+- **Welspun Corp** — **$580M** coated line pipe for a US natural-gas transportation project.
+  **Indian-listed (NSE/BSE)**, customer **unnamed**. ⚠ **A ONE-SESSION-OLD RE-SERVE WITH A
+  CHANGED FIGURE** — see the survey header; the log answered it and no query was spent.
+- **KEC International** — **₹2,872 crore** award from **Power Grid Corporation of India**, a
+  **government-controlled** counterparty. Indian-listed. ⚠ *KEC's third appearance in this log
+  (10-12, 10-14, today) — rule (iv): a recurring ticker is a warning, not corroboration.*
+- **Vection Technologies** — **$1.4M**, **ASX**-listed, client **unnamed**. Jointly unsatisfiable.
+- **Elbit Systems (ESLT)** — **$200M** Asia-Pacific airborne defence contracts. **Israeli issuer**;
+  and *"does not identify a second named company"* — the source's own words.
+- **Cemex** — Mexican issuer; a Q3-disclosed supply agreement with **no announcement date and no
+  counterparty named**. Not confirmable as a first-time announcement in the window.
+- **6K Additive / ADDMAN** — a **30-month nickel-powder supply agreement** and a Burgettstown
+  expansion to 6,000 t by end-2027. **6K is private, ADDMAN is private**, Q3 revenue **$7.2M** —
+  ⚠ **part 2's 10% test and §3's $10B floor are JOINTLY UNSATISFIABLE, the free one-step screen.**
+  ⚠ *Its capex guidance cut ($11–12M → $10–11M) is a clean rule (iii) PASS against its own prior
+  range — and a clean pass on one filter is not progress toward a trade.*
+- **StandardAero / TAROM** — a PW127M engine-support agreement, **2026-10-26**, with **no
+  transaction value and no revenue-recognition timing.** Part 2 unwriteable.
+
+**Government action / no Company A:**
+- **Axon Enterprise (AXON)** — **$22M** Reno surveillance approval. **Government counterparty**;
+  and $22M against AXON's revenue base is jointly unsatisfiable on part 2.
+- **West Virginia Public Service Commission** — proposed rules for power-plant capacity. ⚠ **A
+  government action is not a Company A — ONE party, no transaction.** *The source excluded it
+  itself on the company-announcement requirement.*
+
+**Own results / aggregate backlog — no transaction, no named second party:**
+- **Alphabet (GOOGL)** — Google Cloud's **$514B backlog**, slightly more than half expected to be
+  recognised over 24 months. ⚠⚠ **AN AGGREGATE BACKLOG IS NOT A TRANSACTION AND NAMES NO CUSTOMER
+  — and it is the largest number this funnel has ever returned, which makes it the most persuasive
+  non-event of the day rather than the most promising one. SCALE MAKES IT MORE CONVINCING, NOT
+  LESS.** *The source applied the kill: "this is an aggregate backlog, not the value of a specific
+  newly announced transaction."*
+- **ServiceNow (NOW)** — **123 deals above $1M net new ACV**. A count, not a named transaction;
+  no customer, no per-deal value, no recognition timing.
+- **Atlas Energy** — bridge facility closed **2026-10-22** and reimbursement agreements announced
+  **2026-09-25**. ⚠ **BOTH OUTSIDE THE WINDOW — rule (iii), and the source supplied both dates
+  unasked.**
+
+**The forward calendar:**
+- **"Weekly market insights, October 26–30, 2026."** ⚠ **The Monday shape, predicted by the
+  carry-forward and arriving on schedule. NOTHING HAS HAPPENED YET — rule (iii) at its earliest
+  possible failure point. Already disposed at `T-2026-10-12-05` and `T-2026-10-13-08`; NO NEW ID
+  MINTED, per the 10-14 precedent. Note the dates and do nothing.**
+
+**Outcome:** **ALL SEVENTEEN REJECTED.** ⚠ **Zero drill queries spent on any of them — every kill
+came from the scans' own output or from a `grep` of this log.**
+
+---
+
 ### 2026-10-23 (08:03 ET) — event survey (funnel, pre-thesis)
 
 Selftest **5/5**, exit 0 (`trading_enabled: true`, LIVE paper, broker equity **$99,378.54** at
