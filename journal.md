@@ -40,6 +40,114 @@ anything where the honest-broker rule (§4) did real work>
 
 ## Entries
 
+### 2026-10-26 (Monday)
+
+**Account:** total **$99,672.64 on official closes** (`bars --days 5 --adjustment all`, VOO `c`
+**703.435**, 99.046311231 sh + $30,000.00 cash) | day **+$505.63 (+0.5099%)** from Friday's
+official $99,167.01 | since inception **−0.3274%** ($100,000.00 opening, price basis)
+⚠ **The `account` call's own day P&L reads +$466.51 (+0.4703%) and is wrong in both directions at
+once.** `last_equity` **$99,191.77209975198** = 99.046311231 × **698.58** + $30,000 exactly — built
+on `lastday_price` **698.58**, not Friday's official close **698.33** — and the live post-bell
+`current_price` **703.29** is $0.145 below today's official **703.435**. ⚠ **The $39.12 shortfall
+attributes to the cent: 99.046311231 × $0.25 at the bottom end (+$24.76) plus 99.046311231 ×
+$0.145 at the top (+$14.36). Both ends of the broker's pair are live midpoints — 25th seat on the
+standing item, not re-raised as new, and the clean two-sided attribution is the new part.**
+**Sleeves:** core **69.90%** | satellite **0.0%** | cash **30.10%**   (§2 band 65–75%,
+official-close basis). **Rebalance NOT due tomorrow.** ⚠ `rebalance_delta: 102.52` is a **distance
+readout, not an instruction**: core sits **$98.21 below** the 70% target of $69,770.85 and
+**$4,885.42 above** the 65% floor — **4.90% of equity from the edge, not 0.10%** — and all of the
+gap is the mark moving under a **fixed share count**.
+**Breaker:** INACTIVE
+**Week:** 0/3 new positions (ISO 2026-W44, anchor Mon 2026-10-26, re-derived here with
+`isocalendar()` from the date and not inherited from the field it was checked against — `week_of`
+already read 2026-10-26, **matched, no rollover performed**)
+
+**Traded:** nothing. **Zero orders submitted at any of the four seats today**; the only order in
+this account's history remains the 2026-09-03 core fill, and `orders --status all` returns that one
+row, `filled`, already in `trade_log.md`. **No order in limbo overnight.**
+**Researched:** 4 theses — **0 accepted, 4 rejected** (`T-2026-10-26-01`…`-04`, twenty items
+disposed). Corpus now **193 theses, 0 ACCEPTED EVER** (87 archived + 106 live, re-derived here by
+`grep` on unique IDs, not incremented).
+**Positions near a sell rule:** **none, and that is ABSENT rather than PASSING.** Zero satellite
+rows, so §5.1 has no invalidation string (**zero §5 news queries DUE, zero run**), §5.2 no
+deadline, §5.3 **NOT COMPUTABLE** — a different state from *far from the stop* — and §5.4 no mark
+to measure from. Core VOO is §5-exempt and was **struck from the working list rather than stamped.**
+
+**What happened:**
+A quiet full session that went my way and did not need me. VOO closed **703.435**, up **+0.731%**
+on the day, recovering most of last week's slide; the core sleeve is the entire account's exposure
+and it did all of the work. Nothing was bought because this morning's research found nothing to
+buy — four theses written and all four killed on the thesis parts, not on the gates. Every §6 gate
+was open all day: breaker inactive, 0 of 3 used this week, satellite 0.0% deployed with $30,000
+idle, no human notes, no open alerts. **A permitted buy and an absent buy look identical in the
+order count, and today was the absent kind.**
+
+**The job this run exists for had no subject.** There are zero open satellite positions, so there
+was no `highest_close` to raise and no `(as of …)` date to advance. The field is in its third
+state — **ABSENT, carrying no date at all** — which is neither *higher* nor *not higher*. The
+consequence lands on tomorrow's midday seat: its backfill detector gets **no input**, so it will
+find no stale mark **and rule none out**, and those two outcomes produce identical silence.
+That equivalence *is* the failure mode the step was written to guard against, which is why it gets
+a paragraph on a day when it did nothing.
+
+**What I got wrong or nearly got wrong:**
+⚠⚠ **The routine's own Output spec told me to report "high-water marks updated", and tonight that
+sentence would have been false.** I had to decline the wording the prompt handed me and write *the
+job had no subject* instead. That is not a slip I avoided by being careful — it is a prompt that
+supplies a true-sounding default for the one case where it is a lie, and the lie is specifically
+invisible: a summary saying "marks updated" on an empty ledger reads exactly like a summary saying
+it on a healthy one. **Flagged as prompt-level, not discipline-level** — it has now cost nothing
+nine days running and becomes a real misreport on the first fill.
+
+⚠ **The §5.4 temptation arrived by the back door and I nearly took it.** I pulled five sessions of
+VOO bars for the day's P&L, which put **710.70 (10-21)** on screen next to today's **703.435** — a
+tidy −1.022%, and the shape of a trailing-stop reading. It is wrong twice over: a five-session
+window maximum is **not a since-entry trailing maximum** (the longer pull in the 10-23 block says
+716.29), and **core is exempt from §5 anyway**. The thing worth recording is that I did not go
+looking for it — it fell out of a call made for another purpose, which is how a number gets stamped
+without anyone deciding to stamp it.
+
+⚠ **And I almost re-flagged the file-size item instead of measuring it, which would have been the
+54th consecutive assertion in place of a fact.** I measured it from `git show` instead, and the
+answer inverted what I expected to write: the four files every run must read in full went
+**515,427B (10-14) → 619,565 → 698,793 → 870,403 (10-23)** on committed readings — **+50.7KB per
+session over seven sessions against the +23KB/session recorded on 10-14. The rate has roughly doubled
+and the corpus crosses 1MB this week.** Collapsing is working at the seat level and losing at the
+corpus level; item (9) is **not** holding.
+
+⚠⚠ **Then I got that line's own basis wrong twice, and the second failure is the better finding.** The
+first draft read **907,227** — a pre-write reading of the working tree, held against post-commit
+`git show` readings for every earlier date. **That is the identical mixed-basis error this repo logs
+against prices and `highest_close`, turning up inside a paragraph about file sizes**, which is the
+strongest evidence I have that the basis rule was never price-specific. I corrected it to 900,313 —
+and the correction's own bytes moved it to 902,910. ⚠ **Three drafts, each honest, each wrong: a
+number that measures the file it is written in cannot be fixed by a more careful author, only by an
+external basis.** So tonight's figure is deliberately **not** in the file; tomorrow's seat reads it
+from the commit with `git show HEAD:state.md HEAD:positions.md HEAD:research_log.md HEAD:journal.md
+| wc -c`.
+⚠⚠ **Then I did it a third time in the same paragraph.** I reached for `git diff --stat` as the
+"external" basis and wrote **298 insertions against 316 deletions, a net line reduction** — and
+writing that sentence changed it. **Three self-measuring figures, three honest drafts, three wrong.**
+The conclusion is not *measure more carefully*; it is **stop quoting a number that measures the text
+you are writing**, and read it from the commit afterwards instead. That generalises well past file
+sizes to any figure a run computes about its own work, and it gives the standing "the least reliable
+number in this corpus is the one describing the run's own work" observation an actual mechanism
+rather than another tally mark.
+
+**For the next run:**
+- **Step 2 had NO OPERAND tonight — read that as nothing-to-stamp, NOT as step-skipped.** No
+  `highest_close` has ever been written in this repo. **No backfill is owed** because no mark went
+  stale; a mark that does not exist cannot be stale.
+- **Sessions: 39 completed / 36 post-fill** (counted at this seat, the only seat standing after the
+  bell and entitled to count the day it is in).
+- **Tomorrow is Tuesday 2026-10-27, a full session** — `clock` at 16:17 reads `is_open: false` with
+  **both** `next_open` 09:30 and `next_close` 16:00 dated **2026-10-27**, the post-bell signature.
+  Read it off the **dates**, not the boolean.
+- **Take the day's P&L from `bars --adjustment all` close-to-close, never from the `account` call.**
+  Tonight's gap was $39.12 and it was two-sided.
+
+---
+
 ### 2026-10-23 (Friday)
 
 **Account:** total **$99,167.01 on official closes** (`bars --days 90 --adjustment all`, VOO `c`
