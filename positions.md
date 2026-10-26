@@ -85,7 +85,7 @@ check that the pull returned the right session. A stored baseline is a *label*, 
 
 *(none — no **satellite** positions have been opened yet. Core VOO exists and is deliberately not tracked here, per the top-of-file rules and the fill note further down.)*
 
-### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-10-26, **SEATS SO FAR: `1-premarket` 08:05 · `2-market-open` 09:40 — later seats append to this block and the close seat closes it.** ⚠ **RE-EVALUATED AT THIS SEAT, NOT INHERITED: a table left alone and a table re-evaluated to the same answer are indistinguishable to the next reader.** This is the **27th** consecutive absent seat, counted forward from Friday's close at the 26th — ⚠ **and the ordinal is stated only because it was counted from the preceding block in the same breath, per the rule against ordinals computed from a truncation.**)
+### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-10-26, **SEATS SO FAR: `1-premarket` 08:05 · `2-market-open` 09:40 · `3-midday` 12:41 — later seats append to this block and the close seat closes it.** ⚠ **RE-EVALUATED AT THIS SEAT, NOT INHERITED: a table left alone and a table re-evaluated to the same answer are indistinguishable to the next reader.** This is the **27th** consecutive absent seat, counted forward from Friday's close at the 26th — ⚠ **and the ordinal is stated only because it was counted from the preceding block in the same breath, per the rule against ordinals computed from a truncation.**)
 
 **Ledger reconciled FIRST, before any research — three sides, all agreeing.**
 `positions.md` satellite block-header pattern `grep -cE '^### [A-Z]{1,5} '` = **0** · Alpaca
@@ -186,6 +186,26 @@ maximum, not a trailing max, and core is exempt from §5 regardless.**
 compared against must come from the SAME adjustment basis and ideally the SAME pull. VOO went
 ex-dividend 2026-09-28 and `--adjustment all` rescaled every prior close by 0.99743914. §5.4 fails
 TOWARD SELLING when the bases are mixed.**
+
+**⚠ SEAT 3 NOTE — `3-midday-management` 12:41, appended not rewritten (this seat did not touch what
+the 08:05 and 09:40 seats wrote above; the close seat is the only seat entitled to collapse it).**
+**29th consecutive absent seat**, counted forward from 09:40's 28th in the same breath. **Market
+open, live at this seat:** `clock` 12:41:26, `is_open: true`, `next_close` 2026-10-26T16:00 (today),
+`next_open` 2026-10-27T09:30 (tomorrow). **Reconciliation re-run and agreeing on three sides:**
+Alpaca `positions` **one row, core VOO only** (99.046311231 sh @ 706.74, `cost_basis`
+$69,999.989999, `market_value` $69,647.375227, unrealized **−$352.614772 / −0.504%**,
+`current_price` **703.1799 — a live intraday mark, not a close**) · satellite headers here **0** ·
+`sleeves` `satellite.count 0`. **This routine terminated at its own Step 1 early exit: nothing to
+manage.** It is an **exits-only** seat, so the idle $30,000.00 was never its operand.
+
+⚠⚠ **THE LINE THAT MATTERS AT THIS SEAT, BECAUSE STEP 2 IS WHY THIS ROUTINE EXISTS: THE HIGH-WATER
+STALENESS CHECK HAD NO OPERAND. No stale `highest_close` was found AND NONE WAS RULED OUT.** Zero
+`bars` calls, zero backfills. ⚠ **NOTHING-TO-CHECK, NOT CHECKED-AND-CLEAN** — and the failure mode
+the step guards against (a stale mark silently disabling §5.4 while every check still passes) cannot
+be demonstrated absent or present on an empty ledger. **No `highest_close` has ever been written in
+this file.** §5.1 ran **zero** news queries because no row carries an invalidation string to query;
+§5.2 no deadline; §5.3 **not computable**, which is not the same as far from the stop; §5.4 no mark.
+Core VOO **struck from the working list rather than stamped.**
 
 ---
 
