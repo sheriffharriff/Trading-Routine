@@ -85,7 +85,7 @@ check that the pull returned the right session. A stored baseline is a *label*, 
 
 *(none — no **satellite** positions have been opened yet. Core VOO exists and is deliberately not tracked here, per the top-of-file rules and the fill note further down.)*
 
-### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-10-27, **OPEN — `1-premarket` 08:20 only so far.** ⚠ **This block stays open until tonight's close seat, which is the only seat entitled to collapse what the day's earlier seats wrote** — a seat cannot fairly collapse a paragraph it has just written. ⚠ **RE-EVALUATED AT THIS SEAT, NOT INHERITED from the 10-26 block: a table left alone and a table re-evaluated to the same answer are indistinguishable to the next reader.** Absent-seat ordinal: **31st**, counted forward from the 10-26 close seat's 30th in the same breath.)
+### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-10-27, **OPEN — `1-premarket` 08:20 · `2-market-open` 09:39.** ⚠ **This block stays open until tonight's close seat, which is the only seat entitled to collapse what the day's earlier seats wrote** — a seat cannot fairly collapse a paragraph it has just written. ⚠ **RE-EVALUATED AT THIS SEAT, NOT INHERITED from the 10-26 block: a table left alone and a table re-evaluated to the same answer are indistinguishable to the next reader.** Absent-seat ordinal: **31st**, counted forward from the 10-26 close seat's 30th in the same breath.)
 
 **Zero satellite positions.** Ledger reconciled **before** any research, three-sided and agreeing:
 Alpaca `positions` = **ONE row, core VOO only** (99.046311231 sh @ `avg_entry_price` **706.74**,
@@ -119,6 +119,39 @@ offered rather than offered and refused.** ⚠ **Both are honest; they are not t
 nothing was open. The §6 breaker increment, the breaker trip and the `circuit-breaker` alert path
 were **NOT EXERCISED** at this seat, and this seat is not one of the two that could fire them.
 ⚠ **§5.1–5.4 and `alpaca.py sell` remain untested code after 39 completed sessions.**
+
+**— 09:39 `2-market-open` seat, re-evaluated not inherited (same four answers, 32nd consecutive
+absent seat, counted forward from this morning's 31st).** ⚠ **The table above was written before the
+bell and this seat is the first in the repo's history to re-read it with the market OPEN** (`clock`
+09:39:00 ET `is_open: true`, `next_close` 16:00 today, `next_open` 2026-10-28) — **and the answers
+do not change, because they are absent for want of a position, not for want of a quote.** ⚠ **An
+open market is exactly the condition under which a NOT-COMPUTABLE row is most likely to get quietly
+filled in from a live price; it was not.**
+
+**Ledger re-reconciled three-sided AT THIS SEAT, intraday and after the bell, not inherited from the
+08:20 reading:** Alpaca `positions` = **ONE row, core VOO only**, 99.046311231 sh, `avg_entry_price`
+**706.74**, `cost_basis` **$69,999.989999** — ⚠ **the share count and cost basis are byte-identical
+to 08:20 and to every reading since 2026-09-03; only the mark moved** (`current_price` 706.04 vs
+706.02 pre-market) · this file's satellite header count **0** · `sleeves` `satellite.count: 0`.
+**NO DISCREPANCY.** ⚠ **This is the reconciliation §1 of the routine requires BEFORE any order path,
+and it was run before the staleness gate, not after it.**
+
+⚠ **§7 LIMBO-ORDER CHECK RUN AND CLEAN — and that is the CHECKED-AND-CLEAN statement, not the
+nothing-to-check one, which makes it the only line in this block of that kind.** `orders --status
+all` returns **exactly one order in the account's entire history**: `d177d8f0` 2026-09-03, VOO,
+`status: filled`, `filled_qty` 99.046311231 @ 706.74, already in `trade_log.md`. **No working,
+partial, accepted-but-unfilled or otherwise non-terminal order exists.**
+
+⚠ **NO `bars` AND NO `move` CALL WAS MADE AT THIS SEAT EITHER** — zero BUY intents to re-validate and
+zero satellite rows to mark, so **no window maximum landed on screen beside a live price a second
+time today.** ⚠ **ELEVENTH refusal of a decorative price call, counted forward from the tenth this
+morning.** ⚠ **`voo_close_at_entry` (open item 12) was NOT exercised — it has no operand and
+therefore was not tested; the first fill will still meet the partial-bar defect unrepaired.**
+
+⚠ **`consecutive_closed_losses` STAYS 0 at this seat too — UNTOUCHED, and this seat IS one of the two
+that could have fired the increment.** It did not fire because **zero sell orders were placed**, not
+because a sell was evaluated and declined. ⚠ **That distinction is the whole difference between
+untested code and tested-and-passing code, and after 39 completed sessions it is still the former.**
 
 ### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-10-26, **ONE DIGEST FOR THE DATE, ALL FOUR SEATS:** `1-premarket` 08:05 · `2-market-open` 09:40 · `3-midday` 12:41 · `4-market-close` 16:17. ⚠ **CLOSED AND COLLAPSED BY THE CLOSE SEAT, THE ONLY SEAT ENTITLED TO TOUCH WHAT THREE EARLIER SEATS WROTE** — a seat cannot fairly collapse a paragraph it has just written. ⚠ **RE-EVALUATED AT EACH SEAT, NOT INHERITED: a table left alone and a table re-evaluated to the same answer are indistinguishable to the next reader.** Absent-seat ordinals, each counted forward from the one before in the same breath: 08:05 **27th** · 09:40 **28th** · 12:41 **29th** · this close **30th**.)
 
