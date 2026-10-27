@@ -40,6 +40,133 @@ anything where the honest-broker rule (§4) did real work>
 
 ## Entries
 
+### 2026-10-27 (Tuesday)
+
+**Account:** total **$100,071.30 on official closes** (`bars --days 5 --adjustment all`, VOO `c`
+**707.46**, 99.046311231 sh + $30,000.00 cash) | day **+$398.66 (+0.4000%)** from Monday's official
+$99,672.64 | since inception **+0.0713%** ($100,000.00 opening, price basis)
+⚠ **The `account` call's own day P&L reads +$427.88 (+0.4293%) and is inflated at BOTH ends today —
+the mirror image of Monday, when both ends deflated it.** `last_equity` **$99,670.16578** =
+99.046311231 × **703.41** + $30,000 exactly, built on `lastday_price` 703.41 against Monday's
+official close **703.435** (−$0.025, i.e. the prior-close end is now LOW), while post-bell
+`current_price` **707.73** is **$0.27 ABOVE** today's official 707.46. ⚠ **The $29.22 gap attributes
+to the cent: 99.046311231 × $0.025 at the bottom (+$2.48) plus 99.046311231 × $0.27 at the top
+(+$26.74).** ⚠⚠ **26th seat on the standing item, and the NEW part is the sign: the broker pair's
+error is NOT systematically signed, so "the gap is small and always the same way" is not available
+as a shortcut.**
+**Sleeves:** core **70.02%** | satellite **0.0%** | cash **29.98%**   (§2 band 65–75%,
+official-close basis). **Rebalance NOT due tomorrow.** ⚠ `rebalance_delta: −29.41` is a **distance
+readout, not an instruction**, and ⚠⚠ **it is NEGATIVE for the first time in this repo's history —
+the nearer band edge flipped from the floor to the ceiling at the 12:43 seat.** Band on close-basis
+equity: **$65,046.35–$75,053.48**; core sits **$4,982.17 below the ceiling** and **$5,024.96 above
+the floor** — **4.98% of equity from the nearer edge, not 0.03%.** All of it is the mark moving
+under a **fixed share count**.
+**Breaker:** INACTIVE
+**Week:** 0/3 new positions (ISO 2026-W44, anchor 2026-10-26 — re-derived with `isocalendar()`,
+matched `week_of`, **no rollover performed**)
+
+**Traded:** nothing. **Zero orders of any kind at any of the four seats** — zero buys, zero sells,
+zero rebalance. §7 limbo check re-run after the bell: **one order in the account's entire history,
+`d177d8f0`, filled 2026-09-03, already logged. Nothing carried into the night.**
+**Researched:** 5 theses — **0 accepted, 5 rejected.** Running total **198** (87 archived + 111
+live, re-derived by `grep` on unique IDs). ⚠ **0 accepted ever.**
+**Positions near a sell rule:** **none — and that is ABSENT, not FAR AWAY.** Zero satellite rows, so
+§5.1 and §5.2 have no operand and §5.3/§5.4 are **NOT COMPUTABLE**, which is a different state from
+"no stop breached." Core VOO is §5-exempt and was **struck from the working list, not stamped.**
+
+**What happened:**
+
+A quiet, ordinary Tuesday that produced one genuinely useful thing, and it was not a trade.
+
+VOO closed **707.46**, up **+0.576%** from Monday's 703.435, which is the whole of the day's P&L:
+the account is 70% index tracker and 30% idle cash, so on a day with no fills the book simply does
+what VOO does, scaled by 0.70. Equity finished **$100,071.30** on the close basis. Four seats ran,
+all five selftest checks passed at each, every §6 gate was open all day — breaker INACTIVE, 0 of 3
+weekly, $30,000 idle, `TRADING_ENABLED: true`, `control.md` Notes empty, zero open alerts — and
+nothing was bought, because the pre-market funnel produced **five candidates and rejected all five**.
+The three kinds of zero the day produced are worth keeping distinct, because they read identically
+in a summary: 08:20 wrote **no intents** (empty plan), 09:39 had a **fresh plan with nothing in it**
+(gate passed, no operand), and 12:43 had **no position to exit** (no subject at all).
+
+**Step 2 — the high-water write this routine exists for — had no subject.** Zero satellite rows
+means no `highest_close` to raise and no `(as of …)` date to advance. **Nothing was written and
+nothing was owed.** I am saying that plainly rather than reporting "high-water marks updated,"
+because the Output spec asks for exactly that sentence and it is **false on an empty ledger** —
+open item 15, now in its ninth seat and still the one line in this routine's own instructions that
+would become a real misreport on the first fill.
+
+The §2 band reading flipped sign today for the first time in the repo's history: `core_pct` crossed
+70% from below between 09:39 and 12:43 and `rebalance_delta` went **+20.80 → −11.74 → −29.41**. A
+negative delta is the exact shape that invites being read as "sell $29.41 of core." It is not one.
+Core is in band with ~5% of equity to the nearer edge, §2 routes any rebalance to the market-open
+run, and no share has changed hands in 37 post-fill sessions.
+
+**What I got wrong or nearly got wrong:**
+
+**Two things, and both were claims I nearly inherited instead of checking.**
+
+**1. I almost copied a piece of arithmetic that has been backwards in this repo for seven
+sessions.** `positions.md:1151` and this file's own 10-20 entry both describe stamping a high-water
+mark *above* the true close as producing **"a *looser* §5.4 stop"** and **"a position held longer
+than §5.4 intends."** I was drafting today's re-measurement of the same trap in the same words when
+I stopped to work the example. **It is the opposite.** §5.4 exits at **0.9 × `highest_close`**;
+raising the mark raises the trigger, so an overstated mark fires the stop **earlier**, on a position
+that never fell that far. Entry 100, true high 110, stamped 111, price 99.50: true drawdown −9.5%,
+**no exit**; stamped drawdown −10.4%, **exit**. The galling part is that `positions.md:26` — the
+ex-dividend finding, same arithmetic, written a month earlier — **had it right**, in the words
+"fails in the direction of selling" and "§5.4 fires on a position that never fell." The repo has
+carried both readings side by side without noticing, and **the wrong one is in the sentence that
+advertises itself as the MEASURED instance**, which is precisely the sentence a later seat would
+trust. Corrected in place at both sites rather than left beside the correction. The repair this
+matters for is real: *"too loose"* invites **widening** the stop, which on the first live fill would
+compound the premature exit instead of preventing it.
+
+**2. The midday seat's performance line was flattering in the direction of modesty, and I nearly
+repeated it.** At 12:43 it wrote that equity **"crossed $100,000 for the FIRST TIME since the
+2026-09-03 fill"** and drew from that **"+$39.11, +0.039% in 39 sessions."** That reads as scrupulous
+and is false. One `bars --days 90 --adjustment all` pull says close-basis equity has finished above
+$100,000 on **15 of the 37 post-fill sessions**, starting **2026-09-21**, peaking **2026-10-06 at
+$100,945.88**, most recently **2026-10-21 — four sessions ago.** Today is the 15th, not the first.
+The mechanism is worth more than the fact: **a seat only ever sees the live mark at its own seat,
+and it read "I have not seen this before" as "this has not happened before."** The resulting
+sentence understated the account's realised range by roughly 24× while sounding careful about it.
+⚠ **Any claim containing "first time since" has to come from bars, never from the seats that
+happened to look.**
+
+**And the one temptation that was genuinely OFFERED today rather than merely absent — the
+distinction the 10-26 block asked for.** The `bars --days 5` pull I made for the day's P&L put a
+**window maximum of 710.70 (10-21)** on screen beside today's 707.46, wearing the shape of a
+trailing-stop reading (**−0.46%**); the 90-bar pull I made for the session counter put the
+**since-entry maximum, 716.29 on 10-06**, there too (**−1.23%**). ⚠ **Both are wrong twice over — a
+window maximum is not a since-entry maximum, and core is §5-exempt from all four rules anyway — and
+neither was written into any field, any table or any summary.** ⚠⚠ **This is an OFFERED-AND-REFUSED,
+not the nothing-to-check kind the last twelve seats recorded, and the numbers are named here so the
+refusal is checkable rather than merely asserted.** ⚠ **It fell out of calls made for another
+purpose, which is exactly how a number gets stamped without anyone deciding to stamp it.**
+
+**The near-miss with no teeth, named so it is not mistaken for a clean bill:** today's
+`current_price` 707.73 sits **$0.27 above** the official close — the same trap as 10-20's $1.24 and
+10-26's −$0.145, far smaller, and **pointing the opposite way from Monday.** I did not stamp it
+anywhere, but the honest reason is that there was **nothing to stamp it into**. An absent temptation
+is not a resisted one.
+
+**For the next run:**
+
+- **No backfill is owed, and that is not the same as a backfill being clean.** `highest_close`
+  remains **ABSENT — the third state, carrying no date at all.** Tomorrow's midday staleness
+  detector will get **no input**: it will find no stale mark **and rule none out.**
+- **The §5.4 direction correction is now the repo's position** (overstated mark → **tighter** stop,
+  **premature** exit). Two sites annotated. ⚠ **Do not re-derive it backwards from the 10-20 text.**
+- **Session counters, re-derived not incremented: 40 completed since 2026-09-01 / 37 post-fill.**
+  Theses **198**, **0 accepted ever.**
+- **FOMC decision lands 2026-10-28.** `T-2026-10-27-04` disposed it in BOTH states — ⚠ **a change in
+  status is not a change in eligibility, and NO second ID is to be minted for it tomorrow.**
+- **The structural finding stands and is the human's, not a seat's:** 198 theses, 37 post-fill
+  sessions, **zero accepted**, $30,000 idle. A 70% tracker plus 30% cash **cannot beat §1's
+  benchmark** — it is the benchmark minus the cash drag, by construction.
+
+---
+
 ### 2026-10-26 (Monday)
 
 **Account:** total **$99,672.64 on official closes** (`bars --days 5 --adjustment all`, VOO `c`
@@ -712,7 +839,11 @@ corpus figure that was not counted" does not survive contact with a seat grading
 **The near-miss with teeth was the one the midday seat predicted and I could finally measure.** At
 12:41 its `bars` call returned a **2026-10-20 bar at `c: 707.32`** and it refused to treat a running
 intraday value as a close. **Today's official close is 706.33.** So a midday backfill from that bar
-would have stamped a high-water mark **$0.99 above the true close** — a *looser* §5.4 stop, written
+would have stamped a high-water mark **$0.99 above the true close** — ⚠⚠ **[CORRECTED 2026-10-27:
+"looser" and "held longer" below are WRONG and are replaced. An overstated `highest_close` raises the
+0.9× trigger, so §5.4 fires EARLIER on a position that never fell that far — a TIGHTER stop and a
+PREMATURE exit. The measurement and its sign stand; the consequence drawn from it did not.]** a
+*looser* §5.4 stop, written
 into the exact field §5.4 measures from. The trap stops being a prediction here and becomes a measured
 instance with a sign and a magnitude. **The same error was available to me from a different field one
 minute before I made the `bars` call:** `positions.current_price` reads **707.57** post-bell, **$1.24
