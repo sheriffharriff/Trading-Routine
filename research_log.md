@@ -52,6 +52,253 @@ single most common way a plausible-sounding connection gets mistaken for an oppo
 
 ## Entries
 
+### 2026-10-27 (08:20 ET) — event survey (funnel, pre-thesis)
+
+Selftest **5/5**, exit 0 (`trading_enabled: true`, LIVE paper, equity **$99,915.80** at pre-flight
+08:18). `clock` at **08:20:09** reads `is_open: false` with `next_open` **2026-10-27T09:30** and
+`next_close` **2026-10-27T16:00** — ⚠ **both carrying TODAY's date: the pre-market full-session
+signature. Not a holiday, not an early close. Read off the DATES, not the boolean.** Window
+surveyed: Monday 2026-10-26 after the close through this morning — a normal overnight window, not
+the thin weekend one.
+
+**Ledger reconciled FIRST, three sides, all agreeing.** Alpaca `positions` = **ONE row, core VOO
+only** (99.046311231 sh @ 706.74, `cost_basis` $69,999.989999, unchanged since 2026-09-03) ·
+`positions.md` satellite header count **0** · `sleeves` `satellite.count: 0`, `value: 0`,
+`pct: 0.0`. **NO DISCREPANCY.**
+
+**Every §6 gate open and nothing was bought — a research result, not a permission result.** Breaker
+**INACTIVE**, `halt_triggered_at: none`, `new_positions_this_week` **0 of 3**, satellite **0.0%
+deployed**, `control.md` Notes **EMPTY**, zero open alerts. 5% cap **$4,996.43**, **$30,000.00 idle
+across 36 post-fill sessions.**
+
+**THREE BROAD SCANS PLUS TWO DRILLS, STRUCTURAL FRAMING FIRST, THE ANNOUNCEMENT DATE DEMANDED
+INSIDE EVERY PROMPT.** ⚠ **THE FUNNEL ANSWERED §4's QUESTION IN THE NEGATIVE OUT LOUD IN BOTH
+SCANS THAT ASK IT DIRECTLY.** ⚠⚠ **AND THE STREAK COUNTER IS *NOT* ADVANCED — THE CORRECTION IS
+WORTH MORE THAN THE ORDINAL WOULD HAVE BEEN. A first draft of this entry wrote *"fifteenth
+consecutive session"*, which INHERITED-AND-INCREMENTED A COUNTER THAT IS STALE AT FOURTEEN /
+10-16 and has not been advanced since.** ⚠ **It is not cheaply re-derivable, and 10-20 is a
+CANDIDATE BREAK: `MMM` reached the priced-in filter that day, so the funnel DID produce a
+candidate.** ⚠⚠ **A COUNTER REACHED BY AN UNCHECKED ROUTE IS NOT A CHECKED FACT — recurring
+error 4, caught in this run's own draft, inside the very paragraph reporting on the funnel.
+THE TRACKED FIGURE STAYS FOURTEEN THROUGH 10-16; TODAY IS AN INSTANCE, NOT AN ORDINAL.** Verbatim: *"No announcement in the
+available results can be confirmed to meet all of the stated criteria"* (structural framing, which
+then **self-excluded four items with a named reason against each**) · *"no company can be reported
+as meeting all criteria based on the available evidence"* (segment-quantification framing, five
+self-exclusions). ⚠ **The scan-1 "significance" framing editorialised toward macro exactly as the
+carry-forward predicts — a pending FOMC decision, Treasury yields and four own-results earnings
+prints — and the structural framing is the one that found the day's only real object.**
+
+⚠⚠ **THE DAY'S ONE FINDING, AND IT IS A GENUINELY NEW SUB-SHAPE OF RULE (iii) — THE MOST PROLIFIC
+RULE IN THIS LOG — BECAUSE IT DEFEATS THE PROVENANCE TEST RATHER THAN FAILING IT: A SEVEN-WEEK-OLD
+AGREEMENT ARRIVED WRAPPED INSIDE A GENUINELY NEW, GENUINELY COMPANY-ISSUED PRIMARY DISCLOSURE.**
+Verizon's **2026-10-26** Q3 earnings release is real, new and issued by the company — it passes
+every provenance test this log has built. **Inside it, Verizon refers to its Corning fiber
+agreement as announced *"last month"*, and the funnel surfaced that agreement among today's news.**
+⚠⚠ **EVERY PRIOR RE-SERVE WAS THE FUNNEL RE-STAMPING ITS OWN DATELINE OVER AN OLD EVENT — catchable
+by asking who issued it and when. THIS ONE CANNOT BE CAUGHT THAT WAY, BECAUSE THE ISSUER AND THE
+DATE ARE BOTH CORRECT AND BOTH NEW.** ⚠⚠⚠ **THE RULE THAT GENERALISES: THE DATE ON A RELEASE IS NOT
+THE DATE OF EVERY EVENT INSIDE IT. Rule (iii) must be asked of the EVENT, not of the DOCUMENT —
+and an earnings release is the highest-risk document for this, because its job is to recap a
+quarter.** ⚠ **Expect this every earnings season, in exactly the shape that passes the existing
+checks.** Caught here only because the drill asked for the agreement's **first** announcement date
+rather than for its source.
+
+⚠ **PRICED-IN: THE FOURTH STATE AGAIN — NOTHING TO FIRE ON. ZERO `move` CALLS, and the honest reason
+is that both candidates died UPSTREAM OF PRICE** (`VZ` at part 1 and part 2, `GLW` at rule (iii) and
+part 2). ⚠ **A `move` on either would have been DECORATIVE and was declined — the TENTH such
+refusal.** ⚠ **GLW is a shape-one veteran in the priced-in defect list (−10.94%, a drawdown read as
+priced-in), which makes declining the call worth stating: a candidate already dead at rule (iii)
+cannot be revived by a price, and pulling one would have converted an honest absence into a fake
+exercise.** ⚠ **An ABSENT check and a SKIPPED one look identical in a summary. This is the absent
+kind.**
+
+⚠ **THE CORRELATION CHECK (§4) HAD NO OPERAND AND THAT IS NOT THE SAME AS PASSING: zero open
+positions means zero `driver` fields to compare against, so no candidate could have failed it. It
+was not run because there was nothing to run it against.**
+
+---
+
+### T-2026-10-27-01 — VZ (Verizon) / Amazon Web Services — $2.0B+ AI-infrastructure fiber agreement → the unnamed optical / fiber / equipment supply tier — REJECTED (part 1 — VZ *IS* a named party, so the second-order drill asked for a THIRD company and returned **no named third party with any quantified impact**, which is rule (v); part 2 — the company's own release calls the figure the **"value of the agreement"**, assigns it to **NO reporting segment** and states **NO contract term**, so no revenue share is calculable; part 3 — no revenue-recognition date exists at any leg)
+
+**Company A / the news:** Verizon's own release, **2026-10-26**, *"Verizon delivers another
+record-breaking quarter with 3Q 2026 results"*, discloses an expanded AWS partnership as a
+**"$2B+ AI infrastructure deal"** — Verizon supplying high-capacity fiber connectivity to AWS data
+centres, i.e. **AWS pays Verizon.** ⚠ **Provenance PASSES cleanly: a dated, company-issued primary
+release. This is not a rule (iii) failure.**
+**Company B / the candidate:** none reached. The second-order question — whose optical components,
+fiber, or construction revenue changes because Verizon must build this capacity — returned, verbatim:
+*"no source in the available material identifies a specific third publicly traded equipment,
+optical-component, fiber, or construction supplier whose revenue changes because of the AWS
+agreement, with a dollar amount attributed to that company."*
+
+**1. Mechanism:** **CANNOT BE WRITTEN.** There is no Company B to put in the sentence. Any name
+would be a prior I supplied, which is the honest-broker paragraph's exact object and the 10-26
+Stellantis refusal one session earlier.
+**2. Dollar path:** **FAILS INDEPENDENTLY, AT THE FIRST-ORDER LEG.** ⚠ **This is rule (viii)'s
+value-of-the-agreement costume, and the kill is the company's own wording.** The release says
+*"valued at $2.0+ billion"* and establishes a *"commercial framework"* — ⚠ **not recognised
+revenue, not bookings, and explicitly NOT assigned to a reporting segment.** No term is stated, so
+even the annualised figure does not exist. Against VZ's ~$135B annual revenue, $2.0B over an
+unstated multi-year term is **far under part 2's 10% floor on any reading** — and the floor is not
+even reachable, because the denominator's period is undisclosed.
+**3. Timing window:** **NO DATE EXISTS.** No term, no start, no recognition schedule at either leg.
+**4. Invalidation:** not written — there is no thesis to invalidate.
+
+**Hard filters:**
+- Priced-in (§4): **NOT RUN — the FOURTH STATE.** Died at part 1 and part 2, upstream of price. A
+  `move` would have been decorative; declined.
+- Correlation (§4): **NO OPERAND** — zero open positions, zero `driver` fields.
+- Universe (§3): VZ is us_equity/NYSE and far above the $10B floor — ⚠ **but §3 was never the
+  binding constraint and no cap figure was pulled, so §3 is UNRESOLVED-AND-IRRELEVANT here, not
+  passed. DO NOT INHERIT A §3 VERDICT FROM THIS ENTRY** (the VAL/GFS precedent).
+
+**Outcome:** **REJECTED.** ⚠ **Worth recording because it is the day's only object that reached a
+US-listed name above $10B with an official dated release behind it — and it died on the oldest
+failure in this log: the headline name is buyable and the second-order tier is UNNAMED.** ⚠ **A
+$2B+ fiber build must be supplied by somebody. The source would not say who, and a redaction is not
+a lead.**
+
+---
+
+### T-2026-10-27-02 — GLW (Corning) / Verizon — 80+ million miles of optical fiber, 2027–2032 → REJECTED (rule (iii) — the agreement was announced **2026-09-08**, SEVEN WEEKS OLD, and reached today's funnel only because Verizon's new 10-26 earnings release recapped it; part 2 — **NO dollar value disclosed by either party**, only *"multi-billion dollar"*)
+
+**Company A / the news:** Verizon's 2026-10-26 Q3 release recaps a Verizon–Corning fiber supply
+agreement, jointly announced **2026-09-08**: more than **80 million miles** of optical fiber,
+deliveries **2027 through 2032**. ⚠ **Verizon's own earnings call called it *"last month."***
+**Company B / the candidate:** **GLW (Corning)** — US-listed, NYSE, well above the §3 floor, and a
+genuinely named third party. ⚠ **This is the first time in several sessions that the funnel produced
+a named, eligible, above-$10B Company B at all.**
+
+**1. Mechanism:** writeable in one clause without an "and also" — *Verizon's fiber build causes
+Corning's Optical Communications segment revenue to rise because Corning is the contracted
+supplier.* ⚠ **PART 1 PASSES. That is rare in this log and is why the entry is written out rather
+than swept.**
+**2. Dollar path:** ⚠⚠ **FAILS ON THE MAGNITUDE HALF WHILE *PASSING* THE SEGMENT HALF — a split
+this log has not recorded before and worth naming.** The segment is unambiguous: **Optical
+Communications**, Q3 2026 sales **$2.379B** against consolidated core sales **$5.08B** = **~46.8%**,
+⚠ **four and a half times part 2's 10% floor.** ⚠⚠ **AND THERE IS STILL NO DOLLAR PATH, BECAUSE
+NEITHER COMPANY DISCLOSED A VALUE: no total contract value, no price per mile, no minimum purchase
+obligation, no guaranteed revenue. *"Multi-billion dollar"* is an adjective.** ⚠ **80 million MILES
+IS NOT MONEY — the UNIT failure, one session after 1 GWh did the same thing on 10-26 and two weeks
+after the sovereign diesel tonnage ladder. Three instances now; the UNIT test earns its place.**
+⚠ **Part 2 has two halves and this log has been recording them as one. A candidate can clear the
+segment-materiality half by a factor of four and still have no dollar path at all.**
+**3. Timing window:** deliveries **2027–2032**; no exact recognition date exists. ⚠ **NOT the clean
+kill here — first deliveries in early 2027 would be inside §4's two quarters — but the contract's
+mass sits five years out, and no dated first-revenue figure exists to size the near part.**
+**4. Invalidation:** not reached.
+
+**Hard filters:**
+- Priced-in (§4): **NOT RUN — the FOURTH STATE, declined as decorative** (tenth refusal). ⚠ **Named
+  explicitly because GLW is a shape-one veteran at −10.94%: the filter would likely have returned
+  `true` on a DRAWDOWN, and "but the filter would have blocked it anyway" is not why this was
+  rejected. It died at rule (iii).**
+- Correlation (§4): **NO OPERAND** — zero open positions.
+- Universe (§3): us_equity/NYSE, above the floor. ⚠ **Not pulled from source and not needed — the
+  kill is upstream. §3 UNRESOLVED, not passed.**
+
+**Outcome:** **REJECTED — and it is the day's finding.** ⚠⚠ **A seven-week-old event reached a
+pre-market research seat carrying a new date, a new document and a correct issuer, because an
+earnings release's job is to recap a quarter. Rule (iii) must be asked of the EVENT, not of the
+DOCUMENT.** ⚠ **Do not rehabilitate at a different price: nothing about the September announcement
+date or the absent dollar figure moves with the quote.** ⚠ **If Corning or Verizon ever discloses a
+contract value with a dated recognition start, part 1 and the segment half of part 2 are already
+written and PASSING — this is the closest thing to a live standing condition in the log, and it is
+still NOT a queue.**
+
+---
+
+### T-2026-10-27-03 — UPS Q3 2026 revenue $22.9B + raised FY guidance · Centene (CNC) FY2026 EPS floor and HBR guidance revision → REJECTED (part 1 — these are the companies' OWN RESULTS, which is not a second-order catalyst; the only Company B either offers is a competitor read-across, which is the shared-cause object)
+
+**Company A / the news:** **UPS, 2026-10-27** — Q3 revenue **$22.9B**, FY2026 guidance raised to
+~**$92.6B** revenue / **$8.75B** adjusted operating profit / **$7.28** adjusted EPS / **$6.1B**
+adjusted FCF. **Centene, 2026-10-27** — GAAP EPS floor to **>$3.46**, adjusted to **>$5.20**,
+health-benefits ratio cut to **90.4–91.1%**, interest expense to **$600–620M**.
+**Company B / the candidate:** none exists.
+
+**1. Mechanism:** **CANNOT BE WRITTEN.** ⚠ **A company's own print changes its own reported
+numbers, not another company's revenue or cost line.** The read-across each invites — parcel peers
+off UPS, managed-care peers off Centene's HBR — is the **COMPETITOR'S-EARNINGS-PRINT shared-cause
+object**, the third and most respectable face of "a shared cause is not a mechanism": nobody's
+economics changed, only relative standing, and **no counterparty is named in either release.**
+⚠ **Both would need an "and also" in part 1, which is the designed kill.**
+**2–4:** not reached.
+
+**Hard filters:** all three **NOT RUN** — died at part 1, upstream. **No `move`, no cap pull.**
+
+**Outcome:** **REJECTED.** ⚠ **The scan-1 "significance" framing returned these as the day's top
+items. The structural framing returned neither, because neither is a transaction between two named
+parties. That is the eleventh session in which the two framings disagreed in exactly this
+direction.** ⚠ **Expect this shape every earnings season and kill it on part 1 each time.**
+
+---
+
+### T-2026-10-27-04 — FOMC two-day meeting opening 2026-10-27, decision 2026-10-28 (consensus: hold at 3.75–4.00%, 93% expect a pause, 76% expect a December hike) · 10-year Treasury +84bp YTD, 30-year +~50bp · the "AI-financing and federal deficits" market theme → REJECTED (no Company A — a government action has ONE party and no transaction; and the decision has **not happened yet**, which is rule (iii)'s purest form)
+
+**Company A / the news:** there is none. ⚠ **A central-bank decision is the standing
+GOVERNMENT-ACTION object: sector-moving, carrying numbers, naming no counterparty, with ONE
+party.** The survey probabilities (93% / 76%) are the **MARKET-IMPLIED-PROBABILITY costume** the
+carry-forward names as the most seductive form — a number that moved, wearing the shape of an event
+with a date.
+**Company B / the candidate:** none. ⚠ **A long-only book cannot trade a policy hold, and no named
+party receives anything.**
+
+**1. Mechanism:** **CANNOT BE WRITTEN — no event, no parties, no transaction.**
+⚠⚠ **AND IT FAILS RULE (iii) AT THE EARLIEST POSSIBLE POINT: THE 10-28 DECISION HAS NOT HAPPENED.
+The earliest possible failure of "is this new to the company's own disclosure?" is an event nobody
+has disclosed because it does not yet exist.** ⚠ **The 3.75–4.00% range itself was set in
+SEPTEMBER and is merely being re-reported, so the only concrete number here fails rule (iii) a
+second way.** The Treasury-yield and AI-financing items are **macro aggregates** — the same object
+in its plainest coat, and the source said so itself: *"not a newly announced supply agreement,
+capacity decision, or regulatory action."*
+**2–4:** not reached.
+
+**Hard filters:** **NO TICKER TO RUN THEM ON.**
+
+**Outcome:** **REJECTED.** ⚠ **The correct response is to note the date and do nothing — the 10-28
+decision is for the 10-28 seat to meet, and it will be the same object then, because A CHANGE IN
+STATUS IS NOT A CHANGE IN ELIGIBILITY.** ⚠ **No second ID will be minted for it tomorrow; this
+entry disposes it in both states.** *(Same object as `T-2026-10-12-05`, `T-2026-10-13-08` and the
+09-25/09-29/09-30/10-02 macro complex.)*
+
+---
+
+### T-2026-10-27-05 — §3 / unnamed-counterparty / wrong-quantity / own-results sweep of ELEVEN items — REJECTED (disposed as one, ZERO drill queries spent)
+
+Every item below died at the first test applied. ⚠ **Named individually because a sweep that lists
+no reasons is indistinguishable from a sweep that did no work.**
+
+**Unnamed counterparty — rule (v):** **Boost Run (BRUN)**, a five-year **$525.6M** AI-cloud-services
+agreement with **the customer not named.** ⚠ **A disclosed figure and a disclosed term with no second
+party is not a two-party transaction.** *(Also almost certainly under the §3 cap floor; not pulled,
+because the counterparty test kills it one step earlier.)*
+
+**Party type / not US-listed — §3:** **Anthropic / "SpaceXAI"** — a reported **$120.5B** computing
+arrangement where **neither leg is established as a US-listed company** and the SpaceX unit is not
+separately listed ⚠ *(the largest dollar figure the funnel has ever served into this log, and
+§3 does not weigh scale — the ELMT lesson in its biggest coat yet)* · **Quant Group / Chewujie** —
+HK-listed, and the RMB figures are **explicitly estimates, not disclosures** · **ST Engineering** —
+Singapore-listed, no customer named, no recognition date · **ADES Holding / PT Pertamina Hulu
+Mahakam** **$46.2M** — not established as US-listed, no segment share, no recognition date.
+
+**Wrong quantity — rule (viii):** **SpaceX / Apollo Global Management**, ~**$40B** — ⚠ **financing
+and equipment leasing, i.e. CAPITAL, not revenue or cost savings at either leg**, and SpaceX is not
+listed.
+
+**No figure at all:** **California Nanotechnologies** — a purchase order disclosed **with no stated
+value**, plus no segment share and no recognition date. *(Microcap; §3 would kill it independently.)*
+
+**Own results — part 1:** **FirstSun Capital Bancorp** (Q3, 10-26) · **Herc Holdings** (Q3, 10-27) ·
+**Alexandria Real Estate Equities** (Q3, 10-26) · **Phillips Edison** (Q3 + guidance, 10-26). ⚠ **A
+company's own print is not a second-order catalyst, and the source volunteered that the snippets
+"do not provide enough detail to determine whether any of these constituted a material earnings
+surprise, guidance change, capacity announcement, or cross-company supply-chain event."**
+
+⚠ **Zero drill queries spent on any of the eleven. Every kill was reachable from the scan output
+plus this log.**
+
+---
+
 ### 2026-10-26 (08:05 ET) — event survey (funnel, pre-thesis)
 
 Selftest **5/5**, exit 0 (`trading_enabled: true`, LIVE paper, broker equity **$99,434.44** at

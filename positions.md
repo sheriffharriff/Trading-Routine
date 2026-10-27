@@ -85,6 +85,41 @@ check that the pull returned the right session. A stored baseline is a *label*, 
 
 *(none — no **satellite** positions have been opened yet. Core VOO exists and is deliberately not tracked here, per the top-of-file rules and the fill note further down.)*
 
+### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-10-27, **OPEN — `1-premarket` 08:20 only so far.** ⚠ **This block stays open until tonight's close seat, which is the only seat entitled to collapse what the day's earlier seats wrote** — a seat cannot fairly collapse a paragraph it has just written. ⚠ **RE-EVALUATED AT THIS SEAT, NOT INHERITED from the 10-26 block: a table left alone and a table re-evaluated to the same answer are indistinguishable to the next reader.** Absent-seat ordinal: **31st**, counted forward from the 10-26 close seat's 30th in the same breath.)
+
+**Zero satellite positions.** Ledger reconciled **before** any research, three-sided and agreeing:
+Alpaca `positions` = **ONE row, core VOO only** (99.046311231 sh @ `avg_entry_price` **706.74**,
+`cost_basis` **$69,999.989999**, unchanged since the 2026-09-03 fill) · this file's satellite
+header count = **0** · `sleeves` `satellite.count: 0`, `value: 0`, `pct: 0.0`. **NO DISCREPANCY.**
+
+| Rule | Status | Distance to trigger | Why it is ABSENT rather than PASSING |
+|---|---|---|---|
+| **§5.1** thesis invalidation | **ABSENT** | n/a | No invalidation string exists in this file, so **ZERO §5 news queries were DUE and none was run.** ⚠ Not "checked and clean." |
+| **§5.2** time stop | **ABSENT** | n/a | No `timing_window` and no deadline exists. |
+| **§5.3** hard stop (−7% from entry) | **NOT COMPUTABLE** | **undefined** | No `entry_price`. ⚠ **NOT COMPUTABLE differs from FAR-FROM-THE-STOP, and a summary that says "no stop breached" conflates them.** |
+| **§5.4** trailing stop (−10% from `highest_close`) | **NOT COMPUTABLE** | **undefined** | ⚠⚠ **No `highest_close` has ever been written in this repo.** The field is in its **THIRD STATE — ABSENT, carrying no date** — neither *higher* nor *not higher*. |
+
+⚠ **Core VOO was STRUCK FROM THE §5 WORKING LIST RATHER THAN STAMPED AGAINST ANY RULE.** §5 exempts
+core explicitly; evaluating it and recording a pass would manufacture a reading the rule does not
+ask for. ⚠ **The running refusal count remains WITHHELD, not quoted — it is a counter about the
+run's own work and was found to move backwards across sessions in which it could only have risen.
+The refusal is unbroken; only the number is untrustworthy.**
+
+⚠⚠ **NO BACKFILL IS OWED AND THAT IS NOT THE SAME AS A BACKFILL BEING CLEAN: a mark that does not
+exist cannot be stale.** ⚠⚠ **CONSEQUENCE FOR TODAY'S MIDDAY SEAT, SO IT DOES NOT MISREAD ITS OWN
+OUTPUT: its staleness detector GETS NO INPUT. It will find no stale mark AND RULE NONE OUT —
+NOTHING-TO-CHECK, NOT CHECKED-AND-CLEAN.**
+
+⚠ **NO WINDOW MAXIMUM LANDED ON SCREEN AT THIS SEAT.** No `bars` pull was made — the day's P&L is
+the close seat's job — so the §5.4 back-door temptation the 10-26 block recorded (a five-session
+window high sitting beside a live price and wearing the shape of a trailing-stop reading) **was not
+offered rather than offered and refused.** ⚠ **Both are honest; they are not the same statement.**
+
+⚠ **`consecutive_closed_losses` STAYS 0 — UNTOUCHED, NOT CHECKED-AND-CLEAN.** Nothing closed because
+nothing was open. The §6 breaker increment, the breaker trip and the `circuit-breaker` alert path
+were **NOT EXERCISED** at this seat, and this seat is not one of the two that could fire them.
+⚠ **§5.1–5.4 and `alpaca.py sell` remain untested code after 39 completed sessions.**
+
 ### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-10-26, **ONE DIGEST FOR THE DATE, ALL FOUR SEATS:** `1-premarket` 08:05 · `2-market-open` 09:40 · `3-midday` 12:41 · `4-market-close` 16:17. ⚠ **CLOSED AND COLLAPSED BY THE CLOSE SEAT, THE ONLY SEAT ENTITLED TO TOUCH WHAT THREE EARLIER SEATS WROTE** — a seat cannot fairly collapse a paragraph it has just written. ⚠ **RE-EVALUATED AT EACH SEAT, NOT INHERITED: a table left alone and a table re-evaluated to the same answer are indistinguishable to the next reader.** Absent-seat ordinals, each counted forward from the one before in the same breath: 08:05 **27th** · 09:40 **28th** · 12:41 **29th** · this close **30th**.)
 
 **Zero satellite positions all day, at every seat.** Ledger reconciled **before** any order or
