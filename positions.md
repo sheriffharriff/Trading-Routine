@@ -135,6 +135,52 @@ Monday anchor **2026-10-26**, `week_of` already matched → **NO ROLLOVER**, cou
 because nothing has been bought. `consecutive_closed_losses` stays **0, untouched** — nothing
 closed because nothing was open.
 
+### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-10-28, `2-market-open` 09:44 — appended to the OPEN date block above; tonight's close seat collapses both. **RE-EVALUATED AT THIS SEAT, NOT INHERITED.** Absent-seat ordinal, counted forward from the 08:04 seat (35th): this seat is the **36th**.)
+
+**Zero satellite positions, so §5.1–§5.4 are the NO-OPERAND kind of absent at every step** — no
+`invalidation` string, no `timing_window` deadline, no satellite `entry_price`, and **no satellite
+`highest_close` has ever been written in this repo.** **ZERO §5.1 news queries run, ZERO due.** Core
+VOO **struck from the working list rather than stamped** — core is §5-exempt, so not stamping it is
+the correct action, not an omission. **No §5.4 back door was offered at this seat** (no five-session
+pull was made here); the 08:04 refusal stands on its own record and is not re-claimed here.
+
+**Ledger reconciled three-sided, RE-DERIVED at live open prices, no discrepancy:** Alpaca
+`positions` = **ONE row, core VOO only** (99.046311231 sh @ `avg_entry_price` **706.74**,
+`cost_basis` **$69,999.989999** — unchanged since 2026-09-03, only the mark moving, now
+`current_price` **708.37**) · this file's satellite header count = **0** · `sleeves`
+`satellite.count: 0`, `value: 0`, `pct: 0.0`.
+
+**⚠ §7 LIMBO CHECK RE-DERIVED AT THIS SEAT, NOT INHERITED — this discharges the 08:04 handoff.**
+`orders --status all` returns **exactly one order in the account's entire history**
+(`d177d8f0`, 2026-09-03, VOO core, `status: filled`, already in `trade_log.md`); `orders --status
+open` returns **`[]`**. **No order is in limbo and none ever has been.**
+
+**Figures at this seat — LIVE INTRADAY MARKS, MARKET OPEN, NOT A CLOSE BASIS, NOT TO BE STAMPED:**
+equity **$100,161.44** · core **$70,161.44 / 70.05%** · satellite **$0 / 0.0%**, count **0** · cash
+**$30,000.00 / 29.95%** · `core_in_band: true`, `rebalance_needed: false`, `rebalance_delta:
+−48.43`. **§2 band re-computed against LIVE equity rather than the 08:04 figure, per the plan's own
+instruction:** band **$65,104.94–$75,121.08**, target **$70,113.01**; core sits **$5,056.50 above
+the floor** and **$4,959.64 below the ceiling** = **4.95% of equity from the nearer edge, not
+0.05%.** ⚠ **`rebalance_delta` is a DISTANCE READOUT, NOT AN INSTRUCTION. No rebalance due; none
+placed.**
+
+**Executed nothing. Plan was fresh (`plan_date: 2026-10-28`) and carried ZERO intents** — zero BUY,
+zero SELL, zero REBALANCE — **so there was no number to re-validate and no `move` call was due or
+made.** ⚠ **This is the EMPTY-PLAN kind of zero, not the STALE-PLAN kind and not the BLOCKED kind:
+the staleness gate PASSED, every §6 gate was open, and research had already found nothing writable.
+All three produce an identical order count of zero and are three different results.**
+
+**⚠ ONE OPERATIONAL NOTE FOR FUTURE SEATS, recorded because this seat nearly filed a false
+correction.** A grep for unique thesis IDs over **`research_log.md` alone returns 120**, which reads
+as a flat contradiction of the **204** carried in `state.md`. **It is not. The figure is only
+re-derivable across BOTH files:** `research_log.md` (120) **plus**
+`archive/research_log/2026-09.md` (87), **combined unique 204** — the two overlap by 3 IDs, which is
+why 120 + 87 ≠ 204 and why a seat checking the arithmetic alone will think it has found an error.
+⚠ **204 is CORRECT and must not be "fixed" down to 120. Any thesis-count check that does not include
+the archive is invalid**, and the monthly rollover means this trap deepens with every archived month.
+
+---
+
 ### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-10-27, **ONE DIGEST FOR THE DATE, ALL FOUR SEATS:** `1-premarket` 08:20 · `2-market-open` 09:39 · `3-midday` 12:43 · `4-market-close` 16:16. ⚠ **CLOSED AND COLLAPSED BY THE CLOSE SEAT, THE ONLY SEAT ENTITLED TO TOUCH WHAT THREE EARLIER SEATS WROTE** — a seat cannot fairly collapse a paragraph it has just written. ⚠ **RE-EVALUATED AT EACH SEAT, NOT INHERITED: a table left alone and a table re-evaluated to the same answer are indistinguishable to the next reader.** Absent-seat ordinals, each counted forward from the one before: 08:20 **31st** · 09:39 **32nd** · 12:43 **33rd** · this close **34th**. ⚠⚠ **AND THE CLOSE NOTE AT THE FOOT CORRECTS TWO CLAIMS WRITTEN EARLIER — ONE BY THE 12:43 SEAT TODAY AND ONE CARRIED SINCE 10-20 — AND REPLACES THEM RATHER THAN SITTING BESIDE THEM.**)
 
 **Zero satellite positions.** Ledger reconciled three-sided at **all four** seats, no discrepancy:
