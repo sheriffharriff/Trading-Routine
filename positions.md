@@ -179,6 +179,49 @@ why 120 + 87 ≠ 204 and why a seat checking the arithmetic alone will think it 
 ⚠ **204 is CORRECT and must not be "fixed" down to 120. Any thesis-count check that does not include
 the archive is invalid**, and the monthly rollover means this trap deepens with every archived month.
 
+### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-10-28, `3-midday-management` 12:42 — appended to the OPEN date block above; tonight's close seat collapses all three. **RE-EVALUATED AT THIS SEAT, NOT INHERITED.** Absent-seat ordinal, counted forward from the 09:44 seat (36th): this seat is the **37th**.)
+
+**Zero satellite positions, so §5.1–§5.4 are the NO-OPERAND kind of absent at every step** — no
+`invalidation` string to read verbatim, no `timing_window` deadline to test, no satellite
+`entry_price` to measure −7% from, and **no satellite `highest_close` has ever been written in this
+repo** to measure −10% from. **ZERO §5.1 news queries run, and ZERO were due** — §5.1 queries a
+*specific* invalidation condition, and with no condition on file there is nothing to ask about. Core
+VOO **struck from the working list rather than stamped**: core is §5-exempt, so not stamping it is
+the correct action and not an omission.
+
+**⚠⚠ STEP 2's STALENESS DETECTOR FOUND NO STALE MARK *AND RULED NONE OUT* — IT HAD NO INPUT.** This
+is the distinction the routine's own Step 2 warns about from the other side: a stale `highest_close`
+is "the failure mode that looks like nothing is wrong." ⚠ **On an empty ledger the detector produces
+that same reassuring silence for a different reason, and the two are indistinguishable in the output
+line "high-water backfills performed: none."** Nothing was backfilled and **nothing was owed** —
+open item 15, now its **tenth** seat.
+
+⚠ **NO §5.4 BACK DOOR WAS OFFERED AT THIS SEAT, AND THIS IS THE *NOTHING-TO-CHECK* KIND, NOT THE
+*OFFERED-AND-REFUSED* KIND THE 10-27 CLOSE RECORDED.** **No `bars` pull of any kind was made here** —
+not for P&L, not for a session counter — so core's since-entry maximum **never reached the screen**
+and could not be stamped. ⚠ **That is the only defence the 10-27 close found to be reliable: the
+number that gets stamped without anyone deciding to stamp it is the one that falls out of a call made
+for another purpose.** The 08:04 and 09:44 records stand on their own; neither is re-claimed here.
+
+**Ledger reconciled three-sided, RE-DERIVED at live intraday prices, no discrepancy:** Alpaca
+`positions` = **ONE row, core VOO only** (99.046311231 sh @ `avg_entry_price` **706.74**,
+`cost_basis` **$69,999.989999** — unchanged since 2026-09-03, only the mark moving, now
+`current_price` **708.90**) · this file's satellite header count = **0** · `sleeves`
+`satellite.count: 0`, `value: 0`, `pct: 0.0`. ⚠ **A NOTE FOR ANY SEAT RE-DERIVING THAT ZERO: a grep
+for position *fields* over this file returns 4 (`entry_price`, `highest_close`, `timing_window`,
+`invalidation`) — those are the TEMPLATE FENCE, one occurrence each, NOT a position.** The header
+grep (`grep -cE '^### [A-Z]{1,5} '`) is the one that answers the question.
+
+**Live marks, not a close basis, NOT TO BE STAMPED ANYWHERE:** equity **$100,213.93** · core
+**$70,213.93 / 70.06%** · satellite **0.0%**, count **0** · cash **$30,000.00 / 29.94%** ·
+`core_in_band: true`, `rebalance_needed: false`, `rebalance_delta: −64.18` (**a distance readout:
+core sits 4.96% of equity from the nearer §2 band edge, not 0.06% — and in any case a §2 rebalance is
+the market-open seat's, never a midday seat's**). **§7 limbo re-derived here and clean:** `orders
+--status open` = **`[]`**, `orders --status all` = **exactly one order in account history**
+(`d177d8f0`, filled, logged). **Zero exits taken, zero due, nothing near triggering — there is no
+"near" without a position.**
+
+
 ---
 
 ### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-10-27, **ONE DIGEST FOR THE DATE, ALL FOUR SEATS:** `1-premarket` 08:20 · `2-market-open` 09:39 · `3-midday` 12:43 · `4-market-close` 16:16. ⚠ **CLOSED AND COLLAPSED BY THE CLOSE SEAT, THE ONLY SEAT ENTITLED TO TOUCH WHAT THREE EARLIER SEATS WROTE** — a seat cannot fairly collapse a paragraph it has just written. ⚠ **RE-EVALUATED AT EACH SEAT, NOT INHERITED: a table left alone and a table re-evaluated to the same answer are indistinguishable to the next reader.** Absent-seat ordinals, each counted forward from the one before: 08:20 **31st** · 09:39 **32nd** · 12:43 **33rd** · this close **34th**. ⚠⚠ **AND THE CLOSE NOTE AT THE FOOT CORRECTS TWO CLAIMS WRITTEN EARLIER — ONE BY THE 12:43 SEAT TODAY AND ONE CARRIED SINCE 10-20 — AND REPLACES THEM RATHER THAN SITTING BESIDE THEM.**)
