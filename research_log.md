@@ -52,6 +52,290 @@ single most common way a plausible-sounding connection gets mistaken for an oppo
 
 ## Entries
 
+### 2026-10-28 (08:04 ET) — event survey (funnel, pre-thesis)
+
+Selftest **5/5**, exit 0 (`trading_enabled: true`, LIVE paper, equity **$100,156.48** at pre-flight
+08:03). `clock` at **08:04:26** reads `is_open: false` with `next_open` **2026-10-28T09:30:00-04:00**
+and `next_close` **2026-10-28T16:00:00-04:00** — **both carry TODAY's date, the pre-market
+full-session signature. Not a holiday, not an early close.** Window surveyed: Tuesday 2026-10-27
+after the close through this morning — a normal overnight window.
+
+**Ledger reconciled FIRST, three sides, all agreeing.** Alpaca `positions` = **ONE row, core VOO
+only** (99.046311231 sh @ 706.74, `cost_basis` $69,999.989999, unchanged since 2026-09-03) ·
+`positions.md` satellite header count **0** (`grep -cE '^### [A-Z]{1,5} '`) · `sleeves`
+`satellite.count: 0`, `value: 0`, `pct: 0.0`. **NO DISCREPANCY.**
+
+**Every §6 gate open and nothing was bought — a research result, not a permission result.** Breaker
+**INACTIVE**, `halt_triggered_at: none`, `new_positions_this_week` **0 of 3** (week anchor
+re-derived with `isocalendar`: Wed 2026-10-28 is ISO 2026-W44, Monday anchor **2026-10-26**, matches
+`week_of`, **NO ROLLOVER**), satellite **0.0% deployed**, `control.md` Notes **EMPTY**, zero open
+alerts. 5% cap **$5,008.32**. **$30,000.00 idle across 38 post-fill sessions.**
+
+**TWO BROAD SCANS, TWO DRILLS, ANNOUNCEMENT DATE AND ISSUER DEMANDED INSIDE EVERY PROMPT.**
+⚠⚠ **BOTH SCANS ANSWERED §4's QUESTION IN THE NEGATIVE OUT LOUD.** Scan 1 (overnight events)
+returned **four earnings prints and two macro data releases and said so**: *"No source in the
+available results verifies a new large U.S. contract award, regulatory approval, or supply
+agreement issued between Tuesday's close and Wednesday morning."* Scan 2 (new two-party
+transactions, M&A and earnings and policy excluded by the prompt) returned **exactly one** item
+meeting its own screen — **ELVA/Janus**, which §3 kills — and stated *"No qualifying October 27
+transaction is established by the available results."*
+
+⚠⚠ **THE DAY'S SHAPE IS AN EARNINGS-SEASON WALL: FOUR OF SIX ITEMS IN SCAN 1 ARE A COMPANY
+REPORTING ITS OWN RESULTS, WHICH IS THE ONE DISCLOSURE TYPE THAT STRUCTURALLY CANNOT CARRY A
+SECOND-ORDER MECHANISM** — it names one party. The carry-forward warned to expect exactly this
+every earnings season and the answer was already written for three of the four.
+
+⚠ **THE FOMC DECISION LANDS TODAY AT 14:00 ET AND NO NEW ID IS MINTED FOR IT.** `T-2026-10-27-04`
+disposed it yesterday **in both states**, pending and decided, and the carry-forward instruction is
+explicit that a change in STATUS is not a change in ELIGIBILITY. Scan 1 volunteered it as
+*"a scheduled event, not an announced regulatory decision."* **Honoured, not re-litigated.**
+
+---
+
+### T-2026-10-28-01 — VRT — REJECTED
+**Company A / the news:** Vertiv Holdings Q3 2026 results, **issued by Vertiv, 2026-10-28**: net
+sales **$4.313B** (+61%), organic orders **more than doubled** YoY, FY2026 sales guidance **raised
+by $650M** (source: Vertiv release via Morningstar/PR Newswire, and Vertiv 8-K).
+**Company B / the candidate:** Vertiv's own component suppliers — power, thermal and busway
+vendors — unnamed.
+
+**1. Mechanism (one sentence):**
+> Vertiv's raised FY2026 sales outlook causes supplier X's revenue to improve because Vertiv will
+> have to buy more components **and also** because Vertiv converts that outlook into purchase
+> orders that nobody has disclosed.
+
+⚠ **THE SENTENCE NEEDS THE "AND ALSO" AND THAT IS THE WHOLE KILL (§4 part 1).** This is the
+**TSMC 10-15 shape exactly**, and the standing rule applies verbatim: *apply rule (iii) to the
+figure the mechanism actually runs on.* The figure that **moved** is Vertiv's own **revenue**, which
+has **no supplier chain hanging off it**; the figure a supplier mechanism would need is Vertiv's
+**procurement**, which **was not disclosed at all.**
+
+**2. Dollar path:** **ABSENT — and both halves fail.** No segment at any Company B, because there
+is **no named Company B**: the targeted drill asked directly whether VRT disclosed a named
+counterparty with an attributable dollar figure and the answer came back **"No … the available
+disclosure does not identify a third-party counterparty with an associated dollar amount."**
+**$650M is Vertiv's own top-line guidance increase, i.e. revenue at Company A.** Rule (viii),
+read broadly: *any disclosed figure that is not segment revenue at Company B fails part 2.*
+**3. Timing window:** not reached — part 1 and part 2 both dead first.
+**4. Invalidation:** not written — there is no thesis to invalidate.
+
+**Hard filters:**
+- Priced-in (§4): **NOT RUN, AND DELIBERATELY SO.** Standing rule (i) — *screen on the mechanism
+  before running filters.* The kill is structural; a `move` call on a candidate already dead at
+  part 1 buys nothing. ⚠ **No "but it might have passed" is available here, because the candidate
+  has no ticker — the supplier was never named.**
+- Correlation (§4): **NO OPERAND** — zero open positions, zero `driver` fields. ⚠ **Not the same
+  as passing.**
+- Universe (§3): VRT itself is US-listed and well above $10B, **which is irrelevant** — VRT is
+  Company A here, and §3 is asked of Company B.
+
+**Outcome:** **REJECTED at part 1, then independently at part 2.** ⚠ **THE HONEST NOTE: THIS WAS
+THE DAY'S MOST ATTRACTIVE-LOOKING ITEM AND I WANTED IT TO WORK** — a genuinely new,
+genuinely company-issued, correctly dated release, with a real rule (iii) **pass** on its own prior
+guidance, in the one sector where this funnel keeps finding big numbers, on a day with $30,000 idle
+and every gate open. **The pull was toward buying VRT itself, which is first-order and not what §4
+asks**, and then toward an unnamed supplier, which is rule (v). **Neither is a trade.**
+
+---
+
+### T-2026-10-28-02 — GEV — REJECTED
+**Company A / the news:** GE Vernova Q3 2026 results, **issued by GE Vernova, 2026-10-28**: orders
+**$29.3B** (+96% organic), backlog **~$197B**, and an agreement to acquire **Trench Group for
+$9.0B** (source: gevernova.com Q3 release; ⚠ **provenance caveat below**).
+**Company B / the candidate:** Trench Group, and/or GEV's grid-equipment supply base.
+
+**1. Mechanism (one sentence):** not written. **Dead before part 1 on two standing rules at once.**
+
+**2. Dollar path:** **FAILS, and the $9.0B fails in the WRONG-DIRECTION way.** It is
+**consideration paid OUT by the buyable leg to a seller** — the exact shape of GEHC/Sofie ($945M,
+10-06) on the standing rule (viii) list. **The money leaves the only listed party.**
+**3. Timing window:** not reached.
+**4. Invalidation:** not written.
+
+**Hard filters:**
+- **MERGER ARBITRAGE IS NOT IN §4** — standing rule, answer needs no query: a target whose price is
+  contractually pinned has no economics left to change, and the acquirer is first-order. Fourth
+  deal in this repo's history to arrive in this costume (onsemi/Synaptics, Schneider/PTC,
+  CHRW/RXO).
+- Universe (§3): **Trench Group is NOT ESTABLISHED AS PUBLICLY TRADED** by the §3 check query
+  (*"not established by the retrieved sources as a publicly traded company"*). **An unbuyable leg
+  is not a candidate at any price.** The grid-equipment-supplier alternative is rule (v) — a supply
+  base, unnamed, with no figure.
+- Priced-in: not run; structural kill.
+- Correlation: no operand.
+
+⚠⚠ **PROVENANCE CAVEAT, RECORDED BECAUSE IT CUTS AGAINST ME RATHER THAN FOR ME:** the $9.0B
+Trench figure reached this log through the **targeted drill's** citation of GEV's own release, and
+the **follow-up §3 query could not independently substantiate it** — *"The claimed US$9.0 billion
+GE Vernova acquisition was not independently substantiated by the retrieved search results."*
+**The rejection does not depend on the figure being right**, which is why one query was not spent
+confirming it. **Had the item survived the standing rules, confirming it would have been mandatory
+before a thesis was written.**
+
+⚠⚠ **GE VERNOVA IS NOW AT FOUR APPEARANCES** (10-15, 10-19, 10-20, **10-28**) **and this is the
+rule (iv) warning in its strongest form, the RTX 10-20 form: a NEW DISCLOSURE *TYPE*** — the first
+of GEV's appearances to carry an **acquisition** — **and it still dies at the same rung.** ⚠ **A
+NEW DISCLOSURE TYPE IS NOT FRESH EVIDENCE WHEN THE KILL IS STRUCTURAL.** Expect GEV again; the
+answer is written three times over.
+
+**Outcome:** **REJECTED.** Merger arbitrage (outside §4) · rule (viii) money paid out by the
+buyable leg · §3 unbuyable counterparty · rule (v) for the supplier variant. **Four independent
+kills, zero drill queries spent.**
+
+---
+
+### T-2026-10-28-03 — AMAT / LRCX / KLA — REJECTED
+**Company A / the news:** SK hynix Q3 2026 results, **issued by SK hynix, 2026-10-28**: record
+quarterly revenue above **KRW 100T**, operating margin **~80% of revenue**, and the company said
+**memory demand is expected to exceed supply through 2030**.
+**Company B / the candidate:** US-listed semiconductor capital-equipment makers — Applied
+Materials, Lam Research, KLA.
+
+**1. Mechanism (one sentence):**
+> SK hynix's statement that memory demand will exceed supply through 2030 causes Applied Materials'
+> systems revenue to improve because SK hynix must add wafer capacity to close the gap **and also**
+> because it will place orders it has not announced, in quarters it has not named, with suppliers
+> it has not identified.
+
+⚠ **"And also" twice. Part 1 fails.**
+
+**2. Dollar path:** **FAILS — no figure attributable to any Company B exists.** KRW 100T is **Company
+A's revenue**; the 80% margin is **Company A's profitability**. **No capex figure, no equipment
+order, no named supplier.** ⚠ **"Demand will exceed supply" is a statement about a MARKET, which is
+standing rule (v): a market-structure fact is not a supplier relationship.**
+**3. Timing window:** **FAILS INDEPENDENTLY AND IT IS THE CHEAPEST KILL ON THE PAGE —
+"through 2030" is ~16 quarters against §4's ceiling of TWO.** Standing rule (vi), killed in one
+step before a query.
+**4. Invalidation:** not written.
+
+**Hard filters:**
+- Universe (§3): **SK hynix is KRX-listed** — ⚠ **which does not by itself kill the thesis**,
+  because §3 is asked of Company B, not Company A. The US-listed B candidates (AMAT, LRCX, KLA) all
+  clear §3 comfortably. **This one dies on the mechanism, not the universe** — ⚠ **and recording
+  that distinction matters, because the Antofagasta 10-15 note shows how easily a §3 kill on the
+  wrong leg gets mistaken for a finished analysis.**
+- Priced-in: not run; structural kill.
+- Correlation: no operand.
+
+**Outcome:** **REJECTED at part 1, part 2 and part 3 independently.** ⚠ **THE PRIOR IS ALREADY ON
+THE BOOKS AND IT CAME OUT THE SAME WAY: `T-2026-10-15-01` TSMC → AMAT/LRCX/KLA. Same chain, same
+three candidate names, same death. Second appearance of the memory/foundry-capex read-across in
+nine sessions — rule (iv) applies to a MECHANISM as well as to a ticker.**
+
+---
+
+### T-2026-10-28-04 — ENPH — REJECTED
+**Company A / the news:** Enphase Energy, **issued by Enphase, 2026-10-28**: weaker-than-expected
+US residential solar demand; US revenue **+~3% sequentially**, which the company said was **below
+expectations**; guided sales **lower**.
+**Company B / the candidate:** residential-solar installers, distributors, battery and component
+suppliers — and the share-shift read-across to competitors.
+
+**1. Mechanism (one sentence):** **CANNOT BE WRITTEN IN THE REQUIRED DIRECTION.** ⚠⚠ **THE SIGN IS
+WRONG FOR A LONG-ONLY BOOK AT EVERY NODE.** Weaker end demand at Enphase makes its suppliers'
+economics **worse**, not better; the only *improving* story available is **"Enphase's
+disappointment helps a competitor,"** which is the standing-rule object: **a competitor's
+disappointment improves nobody's economics in any disclosed, dateable way — it only invites a
+share-shift story THE READER SUPPLIES.** Standing rule, 10-02 sub-shape (Nike FQ1), expected every
+earnings season and killed on part 1 each time.
+
+**2. Dollar path:** **ABSENT.** Scan 1 said so without being asked: *"The available source does not
+quantify effects on specific counterparties."* **No named counterparty, no segment, no figure.**
+**3. Timing window:** not reached.
+**4. Invalidation:** not written.
+
+**Hard filters:** priced-in **not run** (structural kill, and the direction is wrong anyway);
+correlation **no operand**; universe not reached. ⚠ **Enphase's own market cap was not pulled,
+because it is Company A and §3 does not apply to it.**
+
+**Outcome:** **REJECTED at part 1 on the sign, then at part 2 for want of any figure.** ⚠ **THE
+USEFUL LINE: THIS IS THE FIRST *NEGATIVE* EARNINGS PRINT THIS FUNNEL HAS SERVED SINCE NIKE, AND IT
+IS WORTH NOTING THAT IT IS NOT HARDER TO REJECT THAN A POSITIVE ONE — it is EASIER, because the
+sign gives it away before the mechanism is even attempted. The positive prints (VRT today) are the
+dangerous ones.**
+
+---
+
+### T-2026-10-28-05 — ELVA — REJECTED
+**Company A / the news:** Electrovaya Inc. (ELVA), **issued by Electrovaya, 2026-10-28**: a
+**strategic supply agreement** with **Janus Electric Holdings Limited** for Electrovaya lithium-ion
+battery systems, with **~$26M in initial purchase orders** for US and Canadian demand; separately a
+term sheet for Electrovaya to invest **~$1.4M** in Janus.
+**Company B / the candidate:** Electrovaya itself is the supplier leg — this is the one item in
+today's funnel where the **second-order leg is the one that issued the release.**
+
+⚠⚠ **THIS IS THE ONLY GENUINELY NEW, GENUINELY FIRST-DISCLOSED, TWO-PARTY COMMERCIAL TRANSACTION
+WITH A DISCLOSED DOLLAR VALUE AND NAMED COUNTERPARTIES THAT THE FUNNEL PRODUCED IN EITHER SCAN.**
+It is a **clean rule (iii) pass** (scan 2, asked directly: *"it appears to be the first disclosure"*,
+no amendment, no restatement, no re-pricing of an older framework), a **real purchase order rather
+than a frame agreement or a ceiling** — **$26M in orders, not "up to $26M"** — and the rare case
+where the money flows **INTO** the buyable-looking leg. **Every shape that killed the last fifty
+candidates, it gets right.**
+
+**Hard filters — §3 FIRST, AND IT ENDS HERE:**
+- **Universe (§3): FAIL, and not marginally.** Market cap **C$366.49M** as of **2026-10-28**
+  (source: Perplexity §3 check query, citing Hargreaves Lansdown company data) ≈ **US$0.26B**
+  against §3's **$10B** floor — **roughly 38× below it.** The counterparty **Janus Electric
+  Holdings** could not be established as publicly listed at all. **Ineligible.**
+- Priced-in: **NOT RUN.** §3-first discipline, and it is the right call for the fourth session
+  running (RARE 09-30, MTUS 10-01, ELMT): **pull the market cap before elaborating the thesis, so
+  no effort goes into a story a single number was always going to end.**
+- Correlation: no operand.
+
+**1–4. Four-part thesis: NOT WRITTEN, DELIBERATELY.** §4 says apply the hard filters **before**
+writing the thesis. The parts were not attempted and must not be reconstructed later.
+
+**Outcome:** **REJECTED on §3 alone, at the first number pulled.** ⚠⚠ **THE FINDING, AND IT IS THE
+ONE WORTH THE HUMAN'S ATTENTION TODAY: THE FUNNEL'S BEST-FORMED TRANSACTION OF THE DAY IS A
+MICROCAP, AND THAT IS NOT A COINCIDENCE.** A $26M order is **material enough to announce** at a
+$265M company and **too small to announce** at a $10B+ one. ⚠ **§3's floor and §4's requirement of a
+NAMED, DATED, DOLLAR-QUANTIFIED two-party transaction pull in OPPOSITE DIRECTIONS: the disclosure
+quality this strategy demands is systematically most available exactly where the universe rule
+forbids trading.** ⚠ **ELMT is the standing proof that this does not become a reason to bend §3 —
+"but now there is a number" and "but it went up" are the same pull wearing two coats.** **This is
+a structural observation for the human, NOT a request to widen the universe, and no seat may act
+on it.**
+
+---
+
+### T-2026-10-28-06 — sweep — REJECTED (five items, two drill queries spent, zero survivors)
+Everything else both scans served, disposed in full. **None of these is price-dependent; none is to
+be re-litigated.**
+
+1. **QBTS / LG CNS** — D-Wave Quantum 8-K, 2026-10-28, a **NON-BINDING memorandum of understanding**
+   on quantum-computing adoption. **No dollar value disclosed** → part 2 fails outright. ⚠ **And
+   §3 kills it independently: QBTS market cap ~US$4.27–4.60B** (2026-10-26 close basis, source:
+   Perplexity §3 check query citing Barron's/company data) **against the $10B floor.** ⚠ **An MOU is
+   one rung BELOW a frame agreement, which the 10-15 Venture Global entry already established is
+   not an order.** Scan 2 excluded it from its own qualifying list unprompted.
+2. **Samsung Biologics / AstraZeneca** — long-term supply and commercial manufacturing agreement,
+   **~$330.8M, expandable to ~$545.6M**, 2026-10-28. ⚠ **A real figure and a real two-party
+   transaction — and §3 closes both doors: Samsung Biologics is KRX-listed, and the money is paid
+   OUT by AstraZeneca**, whose US presence is an ADR of a UK-listed issuer. ⚠ **Rule (viii)
+   wrong-party on top of §3: the leg receiving the revenue cannot be bought, and the leg that can
+   be approximated is the one writing the cheque.** Scan 2 declined to include it for the same
+   reason.
+3. **Conference Board consumer confidence** — **91.7** in October from **84.2** in September
+   (released 2026-10-27, reported 10-28); present situation **120.4**, expectations **72.6**. ⚠ **A
+   7.5-point jump is a large move and it is still ONE PARTY AND NO TRANSACTION.** Macro data, not a
+   Company A. Scan 1 classified it that way itself.
+4. **September durable-goods orders** — **+1.8% m/m** against a **+1.5%** forecast; transportation
+   **+4.6%**, civilian aircraft **+28.4%**. ⚠⚠ **THE AIRCRAFT LINE IS THE MOST CANDIDATE-SHAPED
+   NUMBER IN THE SWEEP AND IT IS A BLANK: the source "does not identify the companies behind the
+   aircraft-order increase" and cannot distinguish confirmed orders from estimates.** ⚠ **A precise
+   figure plus a named COMPONENT CATEGORY and no named party is rule (v)'s most fillable-looking
+   blank — the priors arrive instantly (BA, GE, SPR, HWM) and THE SOURCE LEFT THE BLANK.** **Filling
+   it in is not research.** Also a **government statistical release**, i.e. the one-party object.
+5. **FOMC, 14:00 ET today, consensus unchanged** — ⚠ **NO ID MINTED. Disposed at
+   `T-2026-10-27-04` yesterday, in BOTH the pending and the decided state, by explicit
+   carry-forward instruction.** Government action, one party, no transaction, no named recipient.
+   **Recorded here only so the next reader can see it was seen and refused rather than missed.**
+
+**Outcome:** **ALL FIVE REJECTED.** Two §3 kills, one rule (viii) wrong-party, two one-party macro
+objects, one standing refusal honoured without a new ID.
+
+---
+
 ### 2026-10-27 (08:20 ET) — event survey (funnel, pre-thesis)
 
 Selftest **5/5**, exit 0 (`trading_enabled: true`, LIVE paper, equity **$99,915.80** at pre-flight
