@@ -40,6 +40,121 @@ anything where the honest-broker rule (§4) did real work>
 
 ## Entries
 
+### 2026-10-28 (Wednesday)
+
+**Account:** total **$100,322.88 on official closes** (`bars --adjustment all`, VOO `c` **710.00**,
+99.046311231 sh + $30,000.00 cash) | day **+$251.58 (+0.2514%)** from Tuesday's official
+$100,071.30 | since inception **+0.3229%** ($100,000.00 opening, price basis)
+⚠ **The `account` call's own day P&L reads +$184.22 (+0.1841%) and is DEFLATED at BOTH ends today —
+a FOURTH distinct sign pattern in four sessions, and the first in which both errors push the SAME
+way.** `lastday_price` **707.52** sits **+$0.06 ABOVE** Tuesday's official close 707.46, while
+post-bell `current_price` **709.38** sits **−$0.62 BELOW** today's official 710.00. ⚠ **The $67.35
+gap attributes to the cent: 99.046311231 × $0.06 at the bottom ($5.94) + 99.046311231 × $0.62 at
+the top ($61.41) = $67.35.** ⚠⚠ **28th seat on the standing broker-pair item. The four patterns now
+on record — Mon both deflated, Tue both inflated, Wed pre-market bottom-high-only, Wed close
+bottom-high-and-top-low — leave no shortcut available: the pair is not systematically signed, the
+gap is not a fixed offset, and the error does not even reliably cancel within a day. Use the
+official close basis for any P&L line that gets written down.**
+**Sleeves:** core **70.10%** | satellite **0.0%** | cash **29.90%**   (§2 band 65–75%,
+official-close basis). **Rebalance NOT due tomorrow.** Band **$65,209.87–$75,242.16**; core sits
+**$5,113.01 above the floor** and **$4,919.28 below the ceiling** = **4.90% of equity from the
+nearer edge**. ⚠ `rebalance_delta: −78.44` is a **distance readout, not an instruction** — it is
+4.90%, not 0.08%. All of the movement is the mark moving under a **fixed share count**; no shares
+have changed since 2026-09-03.
+**Breaker:** INACTIVE
+**Week:** 0/3 new positions (ISO 2026-W44, anchor 2026-10-26 — re-derived with `isocalendar()`,
+matched `week_of`, **no rollover performed**)
+
+**Traded:** nothing. **Zero orders of any kind at any of the four seats** — zero buys, zero sells,
+zero rebalance. §7 limbo check re-run after the bell: **one order in the account's entire history,
+`d177d8f0`, filled 2026-09-03, already logged. Nothing carried into the night.**
+**Researched:** 6 theses — **0 accepted, 6 rejected.** Running total **204** (87 archived + 120
+live, overlapping by 3 — ⚠ **not re-derivable from `research_log.md` alone, which greps to 120**).
+⚠ **0 accepted ever.**
+**Positions near a sell rule:** **none — and that is ABSENT, not FAR AWAY.** Zero satellite rows, so
+§5.1 and §5.2 have no operand and §5.3/§5.4 are **not computable**, which is a different state from
+"no stop breached." Core VOO is §5-exempt and was **struck from the working list, not stamped.**
+
+**What happened:**
+
+A full Wednesday session that moved the account up $251.58 on closes and produced nothing to trade.
+VOO closed 710.00, its highest close of the five-session window, carrying core to +$322.89
+(+0.46%) against a cost basis that has not changed since September. The FOMC decision landed at
+14:00 as expected and was correctly treated as tape, not catalyst — `T-2026-10-27-04` had already
+disposed of it in both its pending and decided states, and no seat minted an ID for it.
+
+The morning funnel ran six theses and killed all six, and the shape of the day was the
+earnings-season wall the carry-forward predicted: four of the six items the broad scan served were
+companies reporting their own results, which is the one disclosure type that structurally cannot
+carry a second-order mechanism, because it names one party. Both broad scans answered §4's question
+in the negative out loud.
+
+Nothing happened at the three later seats, and the close seat's own headline job — Step 2, recording
+today's closes into the high-water marks §5.4 depends on — **had no subject at all.** Zero satellite
+rows means no `highest_close` to raise and no `(as of …)` date to advance. That is worth stating
+plainly rather than reporting as success: the line this run writes, "high-water marks updated:
+none," is byte-identical to what a run that silently skipped Step 2 would write.
+
+**What I got wrong or nearly got wrong:**
+
+**Two things, and the first one I actually did rather than nearly did.**
+
+**1. I wrote a collapse figure from intent before measuring it — and then, half an hour later, did
+it again inside the paragraph warning about the first one.**
+
+Collapsing the three seat blocks in `positions.md`, I typed "135 → 46 lines" into the digest header
+as I wrote it. The real count after the splice was **135 → 66**. That is the **fifth** recorded
+instance of the identical defect — the 10-20 close seat logged `171 → 48` claimed against `171 → 98`
+actual, and named it then as *the strongest available evidence that the lesson does not survive
+contact with a seat writing its own collapse figure*. ⚠ **I read that exact sentence this run,
+before writing mine, and reproduced the defect anyway.**
+
+Then I wrote the `state.md` date-block header, typed **"179 → 58 lines"**, and the measured figure
+was **179 → 123**. ⚠⚠ **Instance six, in the same run, inside the block whose own foot-note is a
+warning about instance five, written by a seat that had been burned by it once already that hour.**
+
+Both are corrected in place rather than left beside their corrections. ⚠⚠⚠ **What I take from it is
+harder than "be careful," and I think it retires "be careful" as a control: six instances, five
+seats, and today twice in one run at maximum salience with zero time decay. The defect is not
+inattention and it is not forgetting.** It is that at the moment of writing the header, a
+plausible-looking ratio is available to type and the true count is not yet knowable — and typing the
+plausible one feels exactly like knowing it. That is the same machinery §4's honest-broker paragraph
+warns about, pointed at my own prose instead of at a stock. **The fix is ordering, not vigilance:
+splice, then count, then fill the number in.** A seat that cannot work in that order should write
+"collapse not measured" and omit the figure — an absent number is honest, a confabulated one is not.
+
+**2. The §5.4 back door was offered at this seat in its most convenient form yet, and I want it on
+record exactly how convenient.** I pulled `bars --symbol VOO --days 5 --adjustment all` for the P&L
+basis, which put core's five-session maximum close on screen — **710.00, which is today's close,
+meaning core finished at its own five-session high, 0.00% below the maximum.** A number that is a
+genuine `--adjustment all` close, pulled by the close seat, after the bell, on the correct basis
+satisfies **every mechanical precondition** the stamping rule at the top of `positions.md` names. It
+is still wrong for the one reason no mechanical check covers: **core is §5-exempt.** A five-session
+window maximum is also not a since-entry maximum. Nothing was written. ⚠ **This is the second
+consecutive close seat to find that the dangerous stamp is the one that falls out of a call made for
+another purpose — the midday seat, which made no `bars` call at all, was never tempted. That is not
+discipline, it is absence of opportunity, and the two should not be recorded as the same thing.**
+
+**Nothing else was close to wrong.** No thesis reached a priced-in check, no correlation test had an
+operand, and no position wanted holding past an invalidation condition, because there is no position.
+
+**For the next run:**
+
+- **Step 2 produced no marks for the 44th consecutive session and the §5 machinery is still
+  untested code** — 5.1–5.4, `alpaca.py sell`, the breaker increment, the breaker trip and the
+  circuit-breaker alert path. The first satellite fill exercises **all of it at once**.
+- **Do not "fix" the thesis count 204 down to 120.** It needs `research_log.md` + the September
+  archive; the two overlap by 3.
+- **Tomorrow is Thursday 2026-10-29, a full session** (`next_open` and `next_close` both
+  2026-10-29). Plan is tonight's pre-market seat's to write; `plan_today.md` is still dated
+  2026-10-28 and will be stale at 09:35 if the pre-market run does not fire.
+- **Use the official close basis for anything written down.** The broker pair has now produced four
+  distinct sign patterns in four sessions.
+- **⚠ NEVER TYPE A COLLAPSE RATIO BEFORE THE SPLICE IS DONE AND COUNTED.** Six instances now, two of
+  them in this run. Splice → count → fill in, or write "collapse not measured" and leave it out.
+
+---
+
 ### 2026-10-27 (Tuesday)
 
 **Account:** total **$100,071.30 on official closes** (`bars --days 5 --adjustment all`, VOO `c`
