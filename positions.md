@@ -114,6 +114,47 @@ preceding close seats each found the dangerous stamp falling out of a call made 
 WRITE.** Open item 15, **twelfth seat**. The §5 machinery remains **untested code** after 45
 completed / 42 post-fill sessions.
 
+**— 10:05 `2-market-open-execution` APPENDS to this open digest (seat 2 of 4). Absent-seat ordinal:
+10:05 is the 40th.** ⚠ **RE-EVALUATED AT THIS SEAT'S OWN PRICES, NOT INHERITED** — a table left alone
+and a table re-evaluated to the same answer are indistinguishable to the next reader, which is exactly
+why it was re-run. ⚠ **NO COLLAPSE RATIO IS CLAIMED: this seat appended to an open digest and collapsed
+nothing, and a seat with nothing to collapse cannot honestly report a ratio.**
+
+**All four rules remain ABSENT — NOT PASSING — and the reason is unchanged: ZERO satellite rows, so
+§5.1–§5.4 had NO OPERAND at any step.** No `invalidation` string to test news against, no
+`timing_window` deadline, no satellite `entry_price` to measure −7% from, and ⚠ **still no
+`highest_close` has ever been written in this repo** to measure −10% from. **ZERO §5.1 news queries
+were run and ZERO were due.**
+
+**Ledger reconciled three-sided at 10:05, re-derived not inherited, NO DISCREPANCY:** Alpaca
+`positions` = **ONE row, core VOO only** (99.046311231 sh @ `avg_entry_price` **706.74**, `cost_basis`
+**$69,999.989999** — unchanged since 2026-09-03, **only the mark moving**, now 707.64) · this file's
+satellite header count (`grep -cE '^### [A-Z]{1,5} '`) = **0** · `sleeves` `satellite.count: 0,
+value: 0, pct: 0.0`.
+
+⚠ **CORE VOO IS §5-EXEMPT AND WAS AGAIN STRUCK FROM THE §5 WORKING LIST RATHER THAN STAMPED AGAINST ANY
+RULE.** ⚠⚠ **§5.4 BACK DOOR: NOT OFFERED AT THIS SEAT, AND IT IS THE *NOTHING-TO-CHECK* KIND IN ITS
+purest form yet — this seat made NO `bars` call on VOO and NO `move` call AT ALL** (the plan carried
+zero intents, so not one priced-in check was due), **so core's since-entry maximum never reached the
+screen and could not have been stamped.** ⚠ **That is absence of opportunity, not discipline**, and
+this seat had even less opportunity than the 08:14 seat, which at least had four candidate `move`
+calls on screen.
+
+⚠ **§7 LIMBO CHECK RUN HERE, AND IT IS THIS SEAT'S ONE POSITIVE CONFIRMATION:** `orders --status all`
+returns **exactly one order in the account's entire history** — `d177d8f0`, 2026-09-03, **filled,
+terminal, already logged.** **No order is in limbo; nothing is held that is unverified.**
+
+⚠ **THE LINE THIS SEAT WRITES IS AGAIN BYTE-EQUIVALENT TO WHAT A SEAT THAT SILENTLY SKIPPED §5 WOULD
+WRITE.** Open item 15, **thirteenth seat**. The §5 machinery — 5.1–5.4, `alpaca.py sell`, the breaker
+increment, the breaker trip and the circuit-breaker alert path — remains **UNTESTED CODE** after **46
+completed / 43 post-fill** sessions. **The first live satellite fill will exercise all of it at once.**
+
+⚠⚠⚠ **AND ITEM 16 CROSSED FROM MEASUREMENT INTO CONSEQUENCE AT THIS SEAT: `state.md` and
+`positions.md` COULD NOT BE READ IN ONE CALL** — the read overflowed the tool's output limit and was
+spilled to a scratch file. **Four read-in-full files now measure 1,018,957B, up 27,810B in one seat and
+past 1,000,000.** The requirement this whole file's design rests on **failed in practice here for the
+first time, rather than in forecast. ESCALATED TO THE HUMAN BY NOTIFICATION, not measured a 56th time.**
+
 ### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-10-28, **ONE DIGEST FOR THE DATE, ALL FOUR SEATS:** `1-premarket` 08:04 · `2-market-open` 09:44 · `3-midday` 12:42 · `4-market-close` 16:16. ⚠ **CLOSED AND COLLAPSED BY THE CLOSE SEAT, THE ONLY SEAT ENTITLED TO TOUCH WHAT THREE EARLIER SEATS WROTE.** ⚠ **RE-EVALUATED AT EACH SEAT, NOT INHERITED.** Absent-seat ordinals: 08:04 **35th** · 09:44 **36th** · 12:42 **37th** · this close **38th**. ⚠⚠ **DELIBERATELY SHORTER THAN THE 135 LINES IT REPLACES — open item 16 is live and prose volume is the one lever a seat controls. MEASURED AFTER THE FACT: 135 → 66 lines, a real saving of 69.** ⚠⚠⚠ **THE FIRST DRAFT OF THIS SENTENCE SAID "135 → 46", WRITTEN FROM INTENT BEFORE THE COUNT, AND IT WAS FALSE. It is REPLACED here rather than left beside its correction. That is the SAME defect the 10-20 close seat recorded (`171 → 48` claimed, `171 → 98` actual) arriving a FIFTH time, in the one line that reports on itself — by a seat that had JUST READ the 10-20 warning. ⚠ The lesson demonstrably does not survive contact with a seat writing its own collapse figure, and the only thing that has ever worked is counting after the write.**)
 
 **Zero satellite positions, at all four seats.** Ledger reconciled three-sided and **re-derived at
