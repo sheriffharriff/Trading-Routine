@@ -52,6 +52,286 @@ single most common way a plausible-sounding connection gets mistaken for an oppo
 
 ## Entries
 
+### 2026-10-29 (08:14 ET) — event survey (funnel, pre-thesis)
+
+Selftest **5/5**, exit 0 (`trading_enabled: true`, LIVE paper, equity **$99,992.07** at pre-flight).
+`clock` at 08:14:15 reads `is_open: false` with `next_open` **2026-10-29T09:30:00-04:00** and
+`next_close` **2026-10-29T16:00:00-04:00** — both carry today's date, the pre-market full-session
+signature. Not a holiday. Window surveyed: Wednesday 2026-10-28 after the close through this morning.
+
+**Ledger reconciled, three sides, agreeing.** Alpaca `positions` = one row, core VOO only
+(99.046311231 sh @ 706.74, `cost_basis` $69,999.989999, unchanged since 2026-09-03) · `positions.md`
+satellite count **0** · `sleeves` `satellite.count: 0`, `value: 0`, `pct: 0.0`. **No discrepancy.**
+
+**Every §6 gate open.** Breaker INACTIVE, `halt_triggered_at: none`; `new_positions_this_week` **0 of
+3** (week anchor re-derived with `isocalendar`: 2026-10-29 is ISO 2026-W44, Monday anchor 2026-10-26,
+matches `week_of`, no rollover); satellite 0.0% deployed, **$30,000 idle**; `control.md` Notes empty;
+zero open alerts. 5% cap **$4,999.60**.
+
+**Three broad scans, one drill, zero survivors.** The overnight window is dominated by an
+earnings-print wall — Alphabet, Microsoft, Oracle, FedEx, Ford, Vertiv, Robinhood, SK Hynix — the one
+disclosure type that structurally names a single party. Scan 2 (new named-counterparty agreements,
+M&A and earnings and policy excluded in the prompt) returned **zero qualifying items** and said so:
+*"no qualifying announcement by a US company can be verified."* Scan 3 (regulatory enable/block
+actions with a named US-listed supplier) likewise: *"No qualifying regulatory, antitrust, court,
+tariff, or export-control action is identified."*
+
+**The day's one genuinely useful result, and it is a negative with a shape worth naming.** The tape
+this morning is moving on AI capital spending, which is the one earnings-season disclosure class that
+*does* have a supplier chain hanging off it. So the drill asked the only question §4 cares about:
+**did the capex figure move against the company's own prior figure, and in which direction?** All
+three large disclosures answer the wrong way:
+
+| Company | Capex figure disclosed | Its own prior figure | Direction |
+|---|---|---|---|
+| Alphabet FY2026 | $195–205B | $195–205B | **unchanged** — reaffirmation, rule (iii) costume #1 |
+| Alphabet FY2027 | *"increase significantly"* | none stated | **unquantifiable** |
+| Microsoft CY2026 | ~$170B | ~$175B | **down** |
+| Microsoft quarter | $45.2B actual | $50B own projection | **underspent**, plans *"unchanged"* |
+| Tesla FY2026 | ~$20B | *">$25B"* | **down ~$5B** |
+
+**Not one figure moved up.** The two that moved, moved down; the one that was raised was raised in
+**July**, three months before this window. ⚠ **A long-only second-order book cannot trade spending
+being withdrawn — there is no named party whose revenue improves.** That is rule (viii) applied to
+three companies in one night, and it is the whole of today's disposal.
+
+⚠ **FOMC held at 3.75–4.00% (10–2) at 14:00 yesterday. NO NEW ID MINTED.** `T-2026-10-27-04` disposed
+it in both states, pending and decided; the standing instruction is that a change in status is not a
+change in eligibility. Honoured, not re-litigated.
+
+⚠ **VRT IS NOT RE-LITIGATED AND NO NEW ID IS MINTED FOR IT.** It died at part 1 yesterday
+(`T-2026-10-28-01`) and the carry-forward forbids re-opening a disposal on the same event. Recorded
+only because the number is new and makes the point twice over: `move --sessions 5` returns
+**+14.48%**, so VRT is now **mechanically LATE** as well as structurally dead. The item I most wanted
+to work yesterday became the item it would have been most expensive to work today.
+
+---
+
+### T-2026-10-29-01 — GOOGL (Alphabet) → the datacenter / power / optical supplier tier — REJECTED
+
+**Company A / the news:** Alphabet Q3 2026, released after the bell 2026-10-28. Revenue missed;
+free cash flow **−$9.1B**; Q3 property-and-equipment purchases **$51.4B**; shares −~10% after hours.
+FY2026 capex guidance **$195–205B**; FY2027 described only as *"increase significantly."*
+(Perplexity, recency=day: Alphabet Q3 2026 earnings call transcript, alphastreet; CNBC 2026-10-29;
+ppc.land.)
+**Company B / the candidate:** the unnamed suppliers of datacenter capacity, power equipment and
+optical interconnect that $195–205B of capex is spent with.
+
+**1. Mechanism (one sentence):** cannot be written without an "and also."
+> *"Alphabet's capex guidance causes [supplier]'s segment revenue to improve because Alphabet buys
+> from it"* — **and also** Alphabet must spend **more** than it had already said it would, **and
+> also** the supplier must be named somewhere, **and also** its share of that spend must be known.
+**Three added clauses. Part 1 fails.**
+
+**2. Dollar path:** **not calculable in either direction.** The FY2026 figure is unchanged, so the
+increment is **$0**. The FY2027 figure does not exist — *"increase significantly"* is not a number.
+No supplier is named by Alphabet or by any source in the window, so there is no segment and no
+revenue share to compute. **Part 2 fails.**
+
+**3. Timing window:** not reached.
+**4. Invalidation:** not reached.
+
+**Hard filters:** (applied first, per §4, and two of them are the kill)
+- Priced-in (§4): GOOGL **−2.79%** over 5 sessions → the script returns *"passes the priced-in
+  check."* ⚠⚠ **DO NOT READ THAT AS A PASS. This is open human item 1 arriving live: the move is a
+  DRAWDOWN on a bad print, and the −10% after-hours drop is not in the closes yet, so this morning's
+  gap down will make the filter read MORE room, not less.** The filter cannot distinguish *"has not
+  moved on this news"* from *"moved hard the wrong way."* **Recorded as an instance, not used as a
+  pass — the thesis was already dead at parts 1 and 2.**
+- Correlation (§4): no open satellite positions, so no driver to collide with → no operand.
+- Universe (§3): US-listed, mega-cap, passes — and **irrelevant**, because §3 passing is not progress.
+
+**Outcome: REJECTED at part 1 and independently at part 2, and the deeper kill is rule (iii).**
+Alphabet **reaffirmed** its FY2026 capex range. A reaffirmation is costume #1 on the rule (iii) list
+and this is its purest form: the figure *was* raised — from $175–185B to $195–205B — **in July**, and
+reaches this funnel only because an earnings release restated it. ⚠ **The raise is real and is three
+months old. The release is new. Those are not the same thing, and the TSMC lesson of 10-15 applies
+exactly: apply rule (iii) to the figure the mechanism actually runs on, not to the release.**
+⚠ **And the figure with the supplier chain is the one that did not move, while the figure that moved
+(FY2027) has no number — the 10-15 sign problem recurring with the clauses swapped.**
+
+---
+
+### T-2026-10-29-02 — MSFT (Microsoft) → third-party datacenter capacity providers — REJECTED
+
+**Company A / the news:** Microsoft Q1 FY2027, 2026-10-28. Azure +48% y/y. Quarterly capex **$45.2B
+against Microsoft's own $50B projection**, which Microsoft attributed to **delayed third-party
+capacity deliveries** and stated did **not** represent a change to its underlying spending plans;
+calendar-2026 spend now *"approximately $170 billion"* against a prior *"$175 billion."* CoreWeave
+and Nebius fell on the capex signal. (Perplexity, recency=day: MSFT Q1 FY2027 call transcript,
+alphastreet; CNBC 2026-10-29; Fidelity/Reuters 2026-10-28.)
+**Company B / the candidate:** the third-party capacity providers whose deliveries slipped.
+
+**1. Mechanism (one sentence):** **fails on the sign.**
+> *"Microsoft's capex underspend causes [provider]'s revenue to improve…"* — it does the opposite.
+> Revenue Microsoft did not spend is revenue no provider recognised. The only improving reading is
+> *"capacity is scarce, so pricing power rises,"* which needs an "and also" and names nobody.
+
+**2. Dollar path:** **wrong sign and wrong party.** The $4.8B gap between $50B projected and $45.2B
+actual is **spending that did not happen**; the $5B calendar-year revision is **downward**. Rule
+(viii): read which direction the disclosed figure moves. Both move away from any Company B.
+⚠ **And Microsoft said the forward plan is unchanged, so on its own account no budget figure moved at
+all — the only thing that moved was timing.** **Part 2 fails.**
+
+**3. Timing window:** not reached.
+**4. Invalidation:** not reached.
+
+**Hard filters:**
+- Priced-in (§4): MSFT **−0.11%** over 5 sessions → passes, and irrelevant.
+- Correlation (§4): no operand.
+- Universe (§3): passes, and irrelevant.
+
+**Outcome: REJECTED at part 1 on the sign, and at part 2 on rule (viii).** ⚠ **The named second
+companies the market actually traded — CoreWeave and Nebius — went DOWN, which is the market agreeing
+with this disposal rather than contradicting it.** ⚠ **Rule (v) rides on top: "delayed third-party
+capacity deliveries" is an UNNAMED supply base made to look nameable by a precise figure ($45.2B vs
+$50B) and a named category ("capacity"). The source left the blank; filling it in is not research.**
+⚠ **A quieter reason not to build on these figures even if the sign were right: the sources do not
+agree on them.** One reports calendar-2026 capex at **$118.1B** against a *"prior full-year forecast"*
+of **$175B**; another reports **~$170B** vs **~$175B**. Those cannot all be the same quantity.
+**Figures that contradict each other across sources are not a dollar path.**
+
+---
+
+### T-2026-10-29-03 — TSLA (Tesla) → the automotive / battery / factory-equipment supplier tier — REJECTED
+
+**Company A / the news:** Tesla cut its 2026 capital-spending outlook to **approximately $20B from
+more than $25B** — an explicit forward reduction of at least ~$5B against its own prior figure.
+(Perplexity, recency=day: Fidelity/Reuters 2026-10-28.)
+**Company B / the candidate:** none identified; no supplier is named in the disclosure.
+
+**1. Mechanism (one sentence):** **fails on the sign, in the cleanest form this funnel has produced.**
+> *"Tesla cutting $5B of capex causes [supplier]'s revenue to improve"* is not a sentence that can be
+> written at all. The money is being **withdrawn**.
+
+**2. Dollar path:** the only disclosed figure is **−$5B of spending**. Rule (viii). **Part 2 fails.**
+**3 / 4:** not reached.
+
+**Hard filters:** not run — §4 says filters come before the thesis, and this one died before a ticker
+existed to filter. No `move` call was spent.
+
+**Outcome: REJECTED at part 1.** ⚠ **Logged rather than dropped because it is the day's third
+independent instance of the same shape and the three together are the finding: Alphabet's figure did
+not move, Microsoft's moved down, Tesla's moved down. The AI-capex complex that is driving the tape
+this morning contains NO disclosed figure that moved up against its own prior.** ⚠ **A long-only
+second-order book has nothing to do with a capex cut. There is no short leg in this strategy and §3
+forbids every instrument that would create one.**
+
+---
+
+### T-2026-10-29-04 — MU (Micron) ← SK Hynix record quarter — REJECTED
+
+**Company A / the news:** SK Hynix reported a record quarter, described as a more-than-sevenfold y/y
+profit increase; shares +13%. Micron rose ~5.9% on the read-through. (Perplexity, recency=day:
+sedaily 2026-10-29; newstribune 2026-10-29.)
+**Company B / the candidate:** Micron Technology (MU).
+
+**1. Mechanism (one sentence):** **fails — this is the shared-cause object, and in its most
+respectable costume: a competitor's earnings print read across.**
+> *"SK Hynix's record quarter causes Micron's DRAM revenue to improve because…"* — **because the DRAM
+> market is tight.** SK Hynix did not buy anything from Micron and did not sell anything to it.
+> **They are competitors in the same market responding to the same input.** Two companies moving on
+> one macro input is a **market**, not a **transaction**.
+
+**2. Dollar path:** no figure attaches to Micron from SK Hynix's result. No transaction, no segment,
+no share. **Part 2 fails independently.**
+**3 / 4:** not reached.
+
+**Hard filters:**
+- Priced-in (§4): MU **+7.59%** over 5 sessions → **FAIL, LATE.** ⚠ **This one is a genuine
+  mechanical kill and it would have fired even if part 1 had held — it is the filter working as
+  designed, on a real advance, which is worth recording beside `T-2026-10-29-01` where the same
+  filter returned a meaningless pass on a drawdown. Same script, same threshold, two completely
+  different epistemic values. That is open human item 1 in one paragraph.**
+- Correlation (§4): no operand.
+- Universe (§3): US-listed, passes.
+
+**Outcome: REJECTED at part 1 (shared cause), at part 2 (no figure), and at the priced-in filter
+(+7.59%).** ⚠ **Related to but distinct from `T-2026-10-28-03`, which took the SAME SK Hynix event to
+AMAT/LRCX/KLA via the equipment chain. That was a supplier story and died on parts 1, 2 and 3. This
+is the competitor story and dies on part 1. One event, two candidate shapes, two different deaths —
+and rule (iv) now applies to the EVENT: SK Hynix's quarter has produced a candidate on two
+consecutive sessions and killed it both times.**
+
+---
+
+### T-2026-10-29-05 — ORCL (Oracle) — REJECTED
+
+**Company A / the news:** Oracle issued a fiscal-2030 outlook of **more than $225B revenue**
+(implying >35% average annual growth); shares +~10.6%. Separately disclosed a plan to raise **no more
+than $20B** in additional AI financing through fiscal 2030, and said capital spending will peak in
+the current and following fiscal years then decline. (Perplexity, recency=day: kansascity.com /
+sedaily / theedgemalaysia 2026-10-28–29.)
+**Company B / the candidate:** none reaches a thesis.
+
+**1. Mechanism:** not written. **Part 3 kills this before part 1 is worth spending a clause on** —
+per rule (vi), screen the timing window early. FY2030 is **~16 quarters** against §4's **two**.
+**2. Dollar path:** the $225B is **Oracle's own revenue**, not a segment at any Company B. The $20B
+is a **FINANCING CEILING** — rule (viii), the Brookfield/Bloom $25B and Tesla $30B shape, money
+*available to be raised*, not revenue earned by anybody. ⚠ **"No more than" is also rule (v)'s
+CEILING sub-shape: a maximum, not a commitment.**
+**3. Timing window:** **FY2030 → ~16 quarters. FAIL.**
+**4. Invalidation:** not reached.
+
+**Hard filters:** not run; part 3 ended it at the first date read, which is the §3-first discipline
+applied to the timing test. No `move` call spent.
+
+**Outcome: REJECTED at part 3, independently at part 2 twice over.** ⚠ **And the capex sentence cuts
+against the only mechanism anyone would reach for: Oracle said spending will PEAK and then DECLINE.
+Even the generous reading has the wrong sign past the near term.**
+
+---
+
+### T-2026-10-29-06 — sweep: own-results prints, non-US-listed contracts, government counterparties, one macro object — REJECTED (fifteen items, disposed as one, ZERO drill queries spent)
+
+Every item below was killed by a rule already written down, from the scan output alone. **No drill
+query was spent on any of them**, which is the point of the recognise-on-sight list.
+
+**Own results, one party (shared-cause / first-order kill):**
+- **FedEx** raised FY profit and sales guidance — no figure disclosed in the window, no counterparty.
+- **Ford** raised the low end of FY profit guidance — no revised range disclosed, no counterparty.
+- **Robinhood** Q3 profit below expectations on softer crypto activity, −3.3% — ⚠ **an earnings MISS
+  is not a second-order catalyst, and the share-shift story has the wrong sign for a long.**
+- **Alphabet / Microsoft / Oracle / Vertiv / SK Hynix** — worked above or disposed yesterday.
+
+**§3, non-US-listed or below the floor** (the recurring majority of this funnel):
+- **EnSilica plc** (UK) — ~$2.4M development-and-supply agreement with an **unnamed** US healthcare
+  technology company. §3 **and** rule (v): the only buyable leg is the unnamed one.
+- **Gaon Cable** (KRX) — **$90M** cable supply to an **unnamed US cloud company**. ⚠ **A precise
+  figure plus a named category and an unnamed counterparty is the most fillable-looking blank this
+  funnel produces. The priors arrive instantly and none of them is a disclosure.** Rule (v) + §3, and
+  rule (viii) on top: the money is paid **by** the US leg **to** the Korean one.
+- **Taihan** (KRX) — ~$90M EHV grid supply to its **own US subsidiary**, end customer unidentified.
+- **Woodside** (ASX) / QatarEnergy — 20-year LNG SPA, up to 3 Mtpa, **no dollar value**. ⚠ **Rule
+  (vi), the standing LNG shape: 20 years against two quarters. Venture Global's own answer, reused.**
+- **Critical One Energy** (Canada) — C$25M + up to C$400M construction financing, Canadian project.
+- **Kongsberg** (Oslo) — $54M DoD contract extension. **Government counterparty, one party.**
+- **SK pharmteco** (Korea) — >$200M five-year US capacity plan, no counterparty.
+- **UMC** (Taiwan) — ~$3.2B additional capex approved. §3; and no US-listed supplier named.
+- **Eldorado Gold** — raised Skouries project capital to ~$1.425B plus $390M accelerated operational
+  capital. ⚠ **Capital paid OUT by the only listed party, rule (viii), and no supplier named.**
+- **AdvanSix (ASIX)** — $98.1M ammonia capacity expansion with **$47.4M proposed USDA funding**.
+  ⚠ **US-listed and a real transaction, and it dies twice: the counterparty is a GOVERNMENT AGENCY
+  (one party, no named recipient of a sale), and §3 kills ASIX on the market-cap floor regardless.**
+- **Alume Biosciences** — FDA **accepted an NDA for filing**, product still investigational, **not
+  approved**. ⚠ **An acceptance-for-filing is weaker than the expanded-indication shape of 10-06: it
+  creates no product, no supply chain and no date. And no supplier is named.**
+
+**Macro / policy, one party:**
+- **FOMC held 3.75–4.00%, 10–2**, with an indication of fewer meetings next year. ⚠ **NO NEW ID
+  MINTED — `T-2026-10-27-04` disposed this in both the pending and the decided state. The standing
+  instruction was honoured at this seat.** Counted here as a swept item, not as a thesis.
+- **10-year / 30-year yields, the "AI sell-off" and the Treasury rally** — a government action and a
+  market variable. No named recipient, no transaction.
+
+**Outcome: REJECTED, all fifteen.** ⚠ **Nine of the fifteen are killed by §3 alone, which is the
+single most common death in this log and is a fact about where news is generated, not about this
+funnel's judgment.** ⚠ **And the §3-first discipline held: for Gaon Cable, Taihan, EnSilica and
+Woodside the market cap or listing venue was read BEFORE any mechanism was elaborated, so no effort
+went into a story a single field was always going to end.**
+
+---
+
 ### 2026-10-28 (08:04 ET) — event survey (funnel, pre-thesis)
 
 Selftest **5/5**, exit 0 (`trading_enabled: true`, LIVE paper, equity **$100,156.48** at pre-flight
