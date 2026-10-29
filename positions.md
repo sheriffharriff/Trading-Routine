@@ -85,6 +85,35 @@ check that the pull returned the right session. A stored baseline is a *label*, 
 
 *(none — no **satellite** positions have been opened yet. Core VOO exists and is deliberately not tracked here, per the top-of-file rules and the fill note further down.)*
 
+### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-10-29, **DIGEST OPEN — `1-premarket` 08:14. The three later seats append below; the close seat closes and collapses it.** ⚠ **Absent-seat ordinal: 08:14 is the 39th.** ⚠ **DELIBERATELY WRITTEN SHORT. Open item 16 is live at 991,147B and prose volume is the one lever a seat controls; no collapse ratio is claimed here because there is nothing yet to collapse.**)
+
+**Zero satellite positions.** Ledger reconciled three-sided at 08:14, re-derived not inherited, no
+discrepancy: Alpaca `positions` = **ONE row, core VOO only** (99.046311231 sh @ `avg_entry_price`
+**706.74**, `cost_basis` **$69,999.989999** — unchanged since 2026-09-03, **only the mark moving**) ·
+this file's satellite header count (`grep -cE '^### [A-Z]{1,5} '`) = **0** · `sleeves`
+`satellite.count: 0, value: 0, pct: 0.0`.
+
+| Rule | Status | Why |
+|---|---|---|
+| **§5.1** thesis invalidation | **ABSENT — no operand** | No `invalidation` field on any satellite row. **ZERO §5.1 news queries run, ZERO DUE.** ⚠ The seat's **three** Perplexity calls were all **§4 research**. **Do not read the day's call count as a §5 exercise.** |
+| **§5.2** time stop | **ABSENT — no operand** | No `timing_window` deadline to compare a date against. |
+| **§5.3** hard stop −7% | **ABSENT — no operand** | No satellite `entry_price` exists to measure from. |
+| **§5.4** trailing stop −10% | **ABSENT — no operand** | ⚠ **No `highest_close` has ever been written in this repo.** The field is in its **third state — ABSENT, carrying no date** — which is neither *higher* nor *not higher* and is **nothing for the midday staleness detector to call stale.** |
+
+⚠ **CORE VOO IS §5-EXEMPT AND WAS STRUCK FROM THE §5 WORKING LIST RATHER THAN STAMPED AGAINST ANY
+RULE.** Not stamping it is the correct action, not an omission.
+
+⚠⚠ **§5.4 BACK DOOR: NOT OFFERED AT THIS SEAT, AND IT IS THE *NOTHING-TO-CHECK* KIND, NOT THE
+*OFFERED-AND-REFUSED* KIND.** The four `move --sessions 5` calls made this morning (VRT, MU, GOOGL,
+MSFT) were §4 priced-in checks on **candidate** tickers and **no `bars` call was made on VOO**, so
+core's since-entry maximum never reached the screen and could not have been stamped. ⚠ **That is
+absence of opportunity, not discipline, and the two must not be logged as the same thing** — the two
+preceding close seats each found the dangerous stamp falling out of a call made for another purpose.
+
+⚠ **THE LINE THIS SEAT WRITES IS BYTE-EQUIVALENT TO WHAT A SEAT THAT SILENTLY SKIPPED §5 WOULD
+WRITE.** Open item 15, **twelfth seat**. The §5 machinery remains **untested code** after 45
+completed / 42 post-fill sessions.
+
 ### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-10-28, **ONE DIGEST FOR THE DATE, ALL FOUR SEATS:** `1-premarket` 08:04 · `2-market-open` 09:44 · `3-midday` 12:42 · `4-market-close` 16:16. ⚠ **CLOSED AND COLLAPSED BY THE CLOSE SEAT, THE ONLY SEAT ENTITLED TO TOUCH WHAT THREE EARLIER SEATS WROTE.** ⚠ **RE-EVALUATED AT EACH SEAT, NOT INHERITED.** Absent-seat ordinals: 08:04 **35th** · 09:44 **36th** · 12:42 **37th** · this close **38th**. ⚠⚠ **DELIBERATELY SHORTER THAN THE 135 LINES IT REPLACES — open item 16 is live and prose volume is the one lever a seat controls. MEASURED AFTER THE FACT: 135 → 66 lines, a real saving of 69.** ⚠⚠⚠ **THE FIRST DRAFT OF THIS SENTENCE SAID "135 → 46", WRITTEN FROM INTENT BEFORE THE COUNT, AND IT WAS FALSE. It is REPLACED here rather than left beside its correction. That is the SAME defect the 10-20 close seat recorded (`171 → 48` claimed, `171 → 98` actual) arriving a FIFTH time, in the one line that reports on itself — by a seat that had JUST READ the 10-20 warning. ⚠ The lesson demonstrably does not survive contact with a seat writing its own collapse figure, and the only thing that has ever worked is counting after the write.**)
 
 **Zero satellite positions, at all four seats.** Ledger reconciled three-sided and **re-derived at
