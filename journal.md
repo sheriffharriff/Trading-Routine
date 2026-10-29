@@ -40,6 +40,151 @@ anything where the honest-broker rule (§4) did real work>
 
 ## Entries
 
+### 2026-10-29 (Thursday)
+
+**Account:** total **$100,057.44 on official closes** (`bars --adjustment all`, VOO `c` **707.32**,
+99.046311231 sh + $30,000.00 cash) | day **−$265.44 (−0.2646%)** from Wednesday's official
+$100,322.88 | since inception **+0.0574%** ($100,000.00 opening, price basis)
+⚠⚠⚠ **AND THE `account` CALL DISAGREES BY ENOUGH TO FLIP THE SIGN OF THE SINCE-INCEPTION HEADLINE.**
+It reports equity **$99,706.81**, day **−$606.17 (−0.6043%)**, since inception **−0.293%** — i.e. **an
+account DOWN since inception, where the official closes say UP.** ⚠ **The gap attributes to the cent:**
+`lastday_price` **709.90** sits **$0.10 BELOW** Wednesday's official 710.00 (inflating the day by
+99.046311231 × $0.10 = **+$9.90**) and post-bell `current_price` **703.78** sits **$3.54 BELOW** today's
+official 707.32 (deflating it by 99.046311231 × $3.54 = **−$350.62**); net **−$340.72 = 99.046311231 ×
+$3.44**, against an observed gap of **$340.72**. ⚠⚠ **29th seat on the standing broker-pair item, AND
+THE MAGNITUDE IS THE NEWS, NOT THE EXISTENCE: the top-end error has run $0.06–$0.62/share for four
+sessions and today it is $3.54 — roughly SIX TIMES the largest previously recorded.** The official
+707.32 is corroborated independently of the daily bar: `latestTrade` **p 707.32 at 15:59:57 ET** and the
+19:59Z `minuteBar` close **707.32** both agree with it, while `latestQuote` is degenerate post-bell
+(`bp` 685.48, `ap` **0**) — so 703.78 is not derivable from any field on the screen. **Use the official
+close basis for any P&L line that gets written down.**
+**Sleeves:** core **70.02%** | satellite **0.0%** | cash **29.98%**   (§2 band 65–75%, official-close
+basis). **Rebalance NOT due tomorrow.** Band **$65,037.33–$75,043.08**; core sits **$5,020.10 above the
+floor** and **$4,985.64 below the ceiling** = **4.98% of equity from the nearer edge**. ⚠ `sleeves`
+returned `rebalance_delta: 87.95` on the broker's own mismarked basis — a **distance readout, not an
+instruction**, and on the close basis the real distance is 4.98%, not 0.09%. All of the movement is the
+mark moving under a **fixed share count**; no shares have changed since 2026-09-03.
+**Breaker:** INACTIVE
+**Week:** 0/3 new positions (ISO 2026-W44, anchor 2026-10-26 — re-derived with `isocalendar()`, matched
+`week_of`, **no rollover performed**)
+
+**Traded:** nothing. **Zero orders of any kind at any of the four seats** — zero buys, zero sells, zero
+rebalance. §7 limbo check re-run after the bell: **one order in the account's entire history,
+`d177d8f0`, filled 2026-09-03, already logged. Nothing carried into the night.**
+**Researched:** 6 theses — **0 accepted, 6 rejected** (`T-2026-10-29-01` … `-06`). Running total **210**
+— ⚠ **re-derived from source at this seat, not inherited: `research_log.md` 126 unique IDs +
+`archive/research_log/2026-09.md` 87, overlapping by 3 (`T-2026-09-01-01`, `T-2026-09-30-01`,
+`T-2026-09-30-08`) = 210 combined unique.** ⚠ **0 accepted ever** — and that claim was *tested* at this
+seat rather than copied: `grep -cE '^### T-.*ACCEPTED'` returns **1**, which is the **template line 24**
+(`### T-YYYY-MM-DD-NN — <TICKER> — ACCEPTED | REJECTED`), not a thesis. **Zero stands.**
+**Positions near a sell rule:** **none — and that is ABSENT, not FAR AWAY.** Zero satellite rows, so
+§5.1 and §5.2 have no operand and §5.3/§5.4 are **not computable**, which is a different state from
+"no stop breached." Core VOO is §5-exempt and was **struck from the working list, not stamped.**
+
+**What happened:**
+
+A full Thursday session that took the account down $265.44 on closes and produced nothing to trade. VOO
+closed **707.32**, off **$2.68 (−0.3775%)** from Wednesday's 710.00 — which was the five-session maximum
+— leaving core **+$57.45 (+0.0821%)** against its 706.74 entry and the whole account **+0.0574%** since
+inception on a price basis.
+
+The research shape was the one the pre-market seat predicted and wrote down in advance: the AI-capex
+complex that drove the tape contained **no disclosed capital-spending figure that moved UP against the
+company's own prior**. Alphabet's FY2026 $195–205B is a **reaffirmation** (the raise happened in July),
+its FY2027 is *"increase significantly"* and not a number; Microsoft's CY2026 was revised **down**
+~$175B → ~$170B on a quarter that **underspent** its own projection ($45.2B vs $50B); Tesla **cut**
+FY2026 to ~$20B from ">$25B". Three companies, one night, all pointing the wrong way for a long-only
+second-order book, and §3 forbids every instrument that would build the short leg. The open and midday
+seats were explicitly instructed not to re-litigate it and did not — **zero new IDs minted, zero drill
+queries spent after 08:14.** The sweep thesis `-06` disposed fifteen further items as one.
+
+**Step 2 — this routine's one irreplaceable job — had no operand, and that is the dangerous shape of
+this run's null.** Zero satellite positions, and **no `highest_close` has ever been written in this
+repo**, so there was no mark to raise and no `(as of …)` date to refresh. The prompt is explicit that
+the distinction is the whole point, and it cuts the other way too: **a clean Step 2 here is
+byte-equivalent to a clean Step 2 over correctly-maintained marks.** Nothing in this file, read tomorrow,
+distinguishes "the marks are current" from "there are no marks." **42nd absent seat** — inherited
+ordinal, continuing the midday seat's 41st, and ⚠ **not re-derived, unlike the session counts below.**
+
+**What I got wrong or nearly got wrong:**
+
+- ⚠⚠⚠ **I nearly published an account that is up as an account that is down, and the thread it hung on
+  was thin.** Step 3 says to take equity and day P&L "from the account and positions." Done literally
+  that produces **$99,706.81 / −0.6043% / −0.293% since inception** — and the correct close-basis
+  reading is **$100,057.44 / −0.2646% / +0.0574%**. **The since-inception sign flips.** What caught it
+  was pulling `bars` at all, and I had **no instruction-driven reason to pull a single bar today**: Step
+  2 is the step that calls for bars and it had no operand, so the only reason VOO's close reached the
+  screen is that `journal.md`'s own template asks for an official-close account line. **Had the template
+  not asked, the mismarked figure would have gone to ClickUp as today's headline**, and it would have
+  read as a plausible bad day rather than an error. A sign-flipping defect should not be caught by a
+  template's choice of wording.
+- ⚠⚠ **And my first instinct on the mismark was the wrong one.** Seeing `current_price 703.78` against a
+  known standing item, the reflex was *"29th seat, re-state and move on."* That reflex is what the
+  standing-item mechanism is for and it is also how an order-of-magnitude change gets filed as routine:
+  **$0.62 → $3.54 is not the same finding with a new date on it.** At $3.54/share the error is $350.62
+  on a $70k position; one more decade and it would push the reported sleeve split out of §2's band on
+  paper while the real allocation had not moved an inch. **Recorded as a magnitude break, not a 29th
+  tally mark.**
+- ⚠⚠⚠ **The session counter: I was about to inherit a number that three seats today disagreed about.**
+  The midday block reads **47 completed / 44 post-fill**, the open block **46 / 43**, the pre-market
+  block **45 / 42** — ⚠ **three different values for ONE session, which is arithmetically impossible,
+  and a blind seat's default is to carry the most recent.** Two independent derivations give **42
+  completed / 40 post-fill**: a `bars --adjustment all` pull returns 42 session rows from 2026-09-01,
+  and a weekday-minus-holidays calendar count returns 42. ⚠ **The repo's own close-seat series
+  corroborates them exactly** — `journal.md` records 38 (10-23), 39 (10-26), 40 (10-27), which plus
+  10-28 and today gives **42**. **So the discipline is sound** (only the seat standing after the close
+  may increment, and the close seats have obeyed it) **and what drifted is the PROSE figure** — which is
+  precisely the diagnosis the 10-22 close seat wrote down: *"a number written into an argument rather
+  than read off the thing that tracks it."* ⚠⚠ **What is new is that it drifted WITHIN A SINGLE SESSION,
+  across three seats, and close-seat discipline cannot catch that — the close seat only ever meets the
+  last of the three.** **The 45/46/47 series is abandoned, not carried.**
+- ⚠⚠ **§5.4 back door: OFFERED at this seat and refused — and unlike the midday seat I cannot claim the
+  nothing-to-check kind.** The six-session `bars` pull I made for the basis check **put core's recent
+  maximum on screen** (710.00, Wednesday, with today 0.3775% below it). A mark on VOO would fabricate a
+  §5.4 trailing stop on the **one position §5 exempts**, which §7 forbids outright. **Refused on its
+  merits with the number in hand**, which is the only version of that refusal worth recording.
+- One honest null: **no thesis came close today.** Nothing reached part 1 with a writable mechanism, so
+  there was no candidate I had to talk myself out of and no hard filter that caught something already
+  half-accepted. The pre-market seat's GOOGL instance of open item 1 — `move` printing *"passes the
+  priced-in check"* at **−2.79%** on a name that had fallen ~10% after hours — is the sharpest form of
+  that defect yet recorded, but **nothing rode on it**: `-01` was already dead at parts 1 and 2.
+
+**For the next run:**
+
+- **Today's marks ARE recorded as current in the only sense available: there are none.** `positions.md`
+  carries zero satellite rows and **zero `highest_close` fields**, so there is **nothing to backfill** —
+  tomorrow's midday staleness detector will again find nothing stale **because the field is absent, not
+  because it is fresh.** Do not read a clean Step 2 as evidence of maintained marks.
+- ⚠ **Session counts are now TRACKED in the fenced block** (`sessions_completed: 42`,
+  `sessions_post_fill: 40`) **rather than restated in prose at each seat.** `common.py`'s `_parse_kv` is
+  a generic key/value parse consumed via `.get()`, so added keys are inert to every script. **Read them;
+  do not re-state them from prose, and only the close seat increments.** ⚠ **Do not put a literal hash
+  character in that block — `_parse_kv` truncates each line at `#`.**
+- ⚠ **Use the official close basis for every P&L line.** The broker pair's top-end error is at **$3.54/share**
+  today, ~6× its prior worst, and is **not a fixed offset** — it must be re-measured, never applied.
+- **Tomorrow is Friday 2026-10-30, a full session** (`clock` at 16:18:37 ET: `next_open`
+  **2026-10-30T09:30**, `next_close` **2026-10-30T16:00**, both tomorrow — the post-bell signature).
+  **Routine 5's weekly review is due.** Monthly archive rollover is **NOT** due — the rule fires on the
+  first Friday review of a new month, **2026-11-06**.
+- **Open items with the human: EIGHTEEN.** The seventeen carried, plus ⚠ **(18) NEW — the session
+  counter had no home in the machine-parsed block, so every seat restated it from prose and it drifted
+  +5 and became self-inconsistent within one day. Mitigated at this seat by adding the two fields above;
+  flagged because the same shape applies to every other narrative figure the corpus carries (the
+  absent-seat ordinal and the "N consecutive sessions" counters have no tracked home either).**
+- **Item 16 unchanged in kind, worse in degree, and NOT re-escalated by notification** — the 10:05 seat
+  pinged the human today and the decision between the two candidate fixes is unchanged but for growth.
+  Measured at HEAD `713d36b` **before** this seat's writes: `journal.md` + `positions.md` +
+  `research_log.md` + `state.md` = **1,031,665B**; all ten agent-owned markdown files = **1,366,864B**.
+  ⚠ **This seat read NO file in full except `strategy.md`, `control.md`, `alerts.md`, `trade_log.md` and
+  `plan_today.md`** — `state.md`, `positions.md`, `journal.md`, `research_log.md` and `weekly_review.md`
+  were read by targeted `grep`/`sed` only, **which is a working practice, not a fix, and it means this
+  seat cannot claim to have read its own memory in full.** That is the blind-seat premise degrading in
+  practice for the third time in one day.
+- **Daily summary posted to ClickUp as task `86bcv2ntc`** — https://app.clickup.com/t/86bcv2ntc
+  (separate from the weekly reviews). **No alert task was created: zero incidents, breaker INACTIVE.**
+
+---
+
 ### 2026-10-28 (Wednesday)
 
 **Account:** total **$100,322.88 on official closes** (`bars --adjustment all`, VOO `c` **710.00**,
