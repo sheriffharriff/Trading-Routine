@@ -142,6 +142,22 @@ seat deliberately did NOT close or collapse it: appropriating the close seat's r
 inside a tidy-looking artifact, which is the opposite of what item (11) needs.** **It is left open, and
 labelled, so the hole is visible in the file rather than inferred from a commit log.**
 
+**09:37 `2-market-open-execution` — ALL FOUR RULES RE-EVALUATED AT THIS SEAT, STILL ABSENT NOT
+PASSING, 43rd absent seat, the no-operand kind.** Re-derived here, not inherited: `positions` ONE ROW
+core VOO only (`cost_basis` 69,999.989999 unchanged since 2026-09-03, only the mark moving) · this
+file's `grep -cE '^### [A-Z]{1,5} '` = **0** · `sleeves` `satellite.count: 0`. **No `invalidation`
+string, no `timing_window` date, no `entry_price` and no `highest_close` exists in this repo**, so
+5.1–5.4 had nothing to test — `highest_close` stays in its **third state, absent and carrying no
+date**. **Zero §5.1 news queries run, zero due; zero Perplexity calls at this seat.** Core VOO
+**struck from the working list as §5-exempt, not stamped.** No `move` and no `quote` call on any
+symbol — **no §5.4 back door offered, the nothing-to-check kind.** **Live open midpoints, NOT
+closes:** equity **$99,209.60** · core **$69,209.60 / 69.76%** · satellite **$0 / 0.0%** · cash
+**$30,000.00 / 30.24%** · `core_in_band: true`. ⚠ **The 08:17 gap-down warning HELD and
+UNDERSTATED: open `current_price` 698.65 against `lastday_price` 707.32 = −**1.23%** against the
+−1.10% forecast, the FIRST of three consecutive such warnings to come true. Core unrealised
+−$801.28 / −1.145%.** ⚠ **The 10-29 digest below remains ORPHANED and is again left open and
+unclosed — this seat is not the close seat either.**
+
 ---
 
 ### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-10-29, **DIGEST OPEN — `1-premarket` 08:14. The three later seats append below; the close seat closes and collapses it.** ⚠ **Absent-seat ordinal: 08:14 is the 39th.** ⚠ **DELIBERATELY WRITTEN SHORT. Open item 16 is live at 991,147B and prose volume is the one lever a seat controls; no collapse ratio is claimed here because there is nothing yet to collapse.**)
