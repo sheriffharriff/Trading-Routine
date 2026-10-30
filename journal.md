@@ -40,6 +40,172 @@ anything where the honest-broker rule (§4) did real work>
 
 ## Entries
 
+### 2026-10-30 (Friday)
+
+**Account:** total **$98,807.47 on official closes** (`bars --adjustment all`, VOO `c` **694.70**,
+99.046311231 sh + $30,000.00 cash) | day **−$1,249.96 (−1.2492%)** from Thursday's official
+$100,057.44 | since inception **−1.1925%** ($100,000.00 opening, price basis)
+⚠ **The `account` call's own day P&L reads −$1,164.79 (−1.1641%) and is INFLATED at the TOP ONLY — a
+FIFTH distinct sign pattern, and the first in which the two ends of the pair are different KINDS of
+number rather than two midpoints with different signs.** The **bottom is EXACT**: `last_equity`
+**100,057.43685991092** less the fixed $30,000 cash leg is **70,057.43685991092**, and
+**99.046311231 × 707.32 = 70,057.43685991092 — zero difference at eleven decimal places.** The **top
+is a live midpoint**: `account.equity` $98,892.65 implies VOO **695.56** against the official
+**694.70**, **+$0.86/sh**, and the gap attributes to the cent — **99.046311231 × $0.86 = $85.18**,
+exactly the amount by which the broker understates the day. ⚠ **31st seat on the standing broker-pair
+item. DO NOT promote this to "the bottom can be trusted": the 10-28 close seat recorded
+`lastday_price` $0.06 ABOVE that day's official close, so the bottom has been wrong before. Use the
+official close basis for any P&L line that gets written down.**
+**Sleeves:** core **69.6379%** | satellite **0.0%** | cash **30.3621%**   (§2 band 65–75%,
+official-close basis). **Rebalance NOT due Monday.** Band **$64,224.86–$74,105.60**; core sits
+**$4,582.62 above the floor** and **$5,298.13 below the ceiling** = **4.6379% of equity from the
+nearer edge, and the nearer edge is the FLOOR for a fourth consecutive seat.** ⚠ `rebalance_delta:
+357.76` is a **distance readout, not an instruction** — it is 4.64%, not 0.36%. All of the movement is
+the mark moving under a **fixed share count**; no share has changed since 2026-09-03.
+**Breaker:** INACTIVE (`consecutive_closed_losses` 0 — nothing has ever closed)
+**Week:** 0/3 new positions (ISO 2026-W44, anchor 2026-10-26 — re-derived with `isocalendar()`,
+matched `week_of`, **no rollover performed**)
+
+**Traded:** nothing. **Zero orders of any kind at any of the four seats** — zero buys, zero sells,
+zero rebalance. §7 limbo check re-run after the bell: **one order in the account's entire history,
+`d177d8f0`, filled 2026-09-03, already at `trade_log.md:70`. Nothing carried into the weekend.**
+**Researched:** 6 theses — **0 accepted, 6 rejected** (`T-2026-10-30-01` … `-06`).
+**Positions near a sell rule:** **none, and the honest form is that there was nothing to be near.**
+Satellite count **0**, so §5.1–§5.4 were **ABSENT — NO OPERAND**, not *passing*. Core VOO is
+§5-exempt and was struck from the working list rather than stamped.
+
+**What happened:**
+
+The market fell hard and the portfolio did exactly what its construction says it should, which is the
+whole of the day's trading narrative. VOO closed **694.70**, **−1.7842%** on Thursday's 707.32 — **the
+worst single session in the entire 90-bar window back to 2026-06-25** — on `n` 4200 / `v` 106,403,
+**4.5× the prior session's volume**. The account fell **−1.2492%**, less than the index, because 30% of
+it is cash that cannot fall. Equity closed at **$98,807.47**: the **second-lowest close on record and
+the lowest in 32 sessions**, beaten only by 2026-09-16's $98,660.39.
+
+Nothing was bought and nothing was sold, and for the second time this week neither zero was a near
+miss. The morning produced six theses and rejected all six; the day's one genuinely instructive
+disposal was **ASE Technology** (`T-2026-10-30-01`), which did the thing two sessions of this log had
+been implicitly waiting for — **a capex figure that moved UP**, FY2026 ~$10.5B → ~$11.5B, with the
+company's own prior figure present and dated in the source — and **died one rung later anyway at rule
+(v)**, because ASE names no vendor and no US-listed supplier above $10B names ASE in any filing. The
+correction that matters is to this log's own emphasis: **direction was never the binding constraint on
+the AI-capex complex; naming is**, and naming does not loosen when the number gets bigger. That is
+recorded so that no later seat re-runs the query hoping for a different answer.
+
+**Step 2 — the one job this routine owns that no other routine does — had no operand for the 45th
+time.** Marks written **0**, marks raised **0**, `(as of …)` dates advanced **0**, operands available
+**0**. The §5.4 trailing stop remains a rule with nothing to measure, and the §5 machinery (5.1–5.4,
+`alpaca.py sell`, the breaker increment, the breaker trip, the alert path) is **still untested code**
+after **43 completed sessions / 40 post-fill** — see the counter correction below, because that pair
+of numbers was wrong when this seat inherited it.
+
+One thing the missing 2026-10-29 close run cost is now **recovered AND confirmed** rather than merely
+recovered: the 08:17 seat pulled VOO's 10-29 official close as **707.32** from `bars`, and this seat
+reproduced it to **eleven decimal places** from `account.last_equity`, a completely different API
+object. Two independent endpoints, one figure, exact. ⚠ **That settles the mark and settles nothing
+about the skip:** the backfill instruction at the top of `positions.md` fired for the first time on a
+genuinely skipped close run and **discharged vacuously**, because there was nothing to backfill. With
+one satellite position open, that same clean-looking result is the silent trailing-stop failure the
+file's own header describes. **Today's close run DID execute, so open item (11) does not get a fourth
+instance — but a run that happens to fire is not evidence about a failure mode that is "a run never
+starts," in either direction.**
+
+**What I got wrong or nearly got wrong:**
+
+**1. I nearly published an archive-blind superlative, and caught it one step before writing it.** The
+draft of the paragraph above said today's $98,807.47 was the **lowest equity close on record**. It is
+not — **2026-09-16 closed at $98,660.39** — and the only reason the claim looked true is that I had
+read `journal.md`, whose October entries are all higher, and **not** `archive/journal/2026-09.md`.
+⚠ **That is the identical defect the 10-28, 10-29 and 10-30 seats flagged on the thesis total and that
+I caught today on the session counter: a count or an extremum built by reading the live file loses the
+archive every time.** Three different numbers, one mechanism, inside four sessions. It cost one `grep`
+to avoid and would have been invisible in the published summary.
+
+**2. The session counters I inherited were wrong by seven, and the correct method was already written
+down in the file I read.** This morning's seat claimed **48 completed / 45 post-fill** and the midday
+seat **50 / 47**. Re-derived from a 90-bar pull, the truth is **43 / 40**. The arithmetic of the error
+is exact and damning: the **10-27 close seat** wrote "40 completed / 37 post-fill" and said explicitly
+that it had **re-derived them from a 90-bar pull rather than incrementing** — and since then 10-28 ran
+four seats, 10-29 three, 10-30 three before this one, and **40 + 4 + 3 + 1 = 48** and **40 + 4 + 3 + 3
+= 50** reproduce the two claims to the unit. **The counter was incremented once per SEAT instead of
+once per SESSION**, which is catch (15)'s exact shape recurring.
+⚠⚠ **AND THE SHARPEST VERSION OF IT: `plan_today.md` CARRIES BOTH THE RIGHT NUMBER AND THE WRONG ONE,
+FIFTY-SEVEN LINES APART, WRITTEN BY THE SAME SEAT IN THE SAME FILE.** Line 101 says today is the
+**"40th post-fill session"** — correct, and independently reproduced by my 90-bar pull — and line 158
+says the §5 machinery is untested **"after 48 completed sessions and 45 post-fill"** — wrong by five.
+**The seat was not missing the figure. It had it, in the artifact it was writing, and reached for the
+carried one anyway when the sentence changed subject.** That is not a knowledge failure and no amount
+of care fixes it; it is what carrying a derived number instead of deriving it looks like from outside. ⚠ **It fails toward urgency:** the
+counter's only real use is the standing "§5 is untested code after N sessions" argument put to the
+human, so a +7 overstatement inflates that argument's apparent age by ~17%. ⚠⚠ **The uncomfortable
+part is not the arithmetic. It is that a seat wrote down the right method, three seats read that
+sentence, and all three incremented anyway — which is the argument for deriving the counter at read
+time rather than carrying it, and that is a prompt-level fix and not mine to make.**
+
+**3. The collapse I performed saved exactly nothing, and I would have claimed a saving if I had
+written the figure before counting.** The `positions.md` 10-30 digest went in at **125 lines** and came
+out at **125 lines** — **a measured net of zero.** The collapse was real at the seat level (four
+per-seat narrations of one null, four re-derivations of one reconciliation, four "core struck as
+§5-exempt", three tellings of the gap-down, all folded to one each) and **two new findings plus a new
+broker-pair pattern spent every line it freed.** ⚠ **Six prior seats have written a collapse ratio from
+intent and had it come out false; counting after the write is the only thing that has ever worked, and
+the first time I did it the honest answer was zero.** That is item (9)'s mechanism measured to the
+line, in the file that measures it, and it is a better argument for the structural fix than any of the
+qualitative assertions above it.
+
+**4. The pull I actually had to resist today was writing the cash drag up as if it had been
+vindicated.** The account beat VOO by **0.535pp** (−1.2492% vs −1.7842%) for one reason: **$30,000 has
+been sitting idle since inception**, which is **open item (3)** — the structurally undeployed sleeve,
+**216 theses, zero accepted.** It is genuinely tempting to call that a cushion that worked. ⚠ **It is
+not a cushion and nothing worked. It is unlevered beta reduction with no thesis behind it, it will cost
+exactly as much on the next up day, and §1 is a twelve-month total-return test the 10-23 weekly review
+already priced at −14.36pp against VOO's TTM.** A defect whose sign flips with the market's direction
+is still a defect, and **one good day on the wrong side of a rolling-12-month objective is noise I
+would be reporting as a result.**
+
+**5. A smaller one, recorded because declining a thing you computed is not the same act as declining a
+thing you never had.** The three earlier seats all wrote that core's since-entry maximum "never reached
+the screen — absence of opportunity, not discipline." **I cannot claim that:** I pulled 90 bars (for the
+counter re-derivation, not for §5), so **VOO's highest `--adjustment all` close since the 2026-09-03
+entry — 716.29 on 2026-10-06, with today 3.0141% below it — was in front of me.** Core is §5-exempt, so
+not stamping it is correct rather than an omission; but the figure is written into the digest as a tape
+fact, because a seat that had the number and declined to use it should leave evidence of the choice
+rather than reuse the earlier seats' stronger-sounding sentence.
+
+**6. And the one I am leaving unresolved rather than resolving, with the reason stated.** The 10-29
+`positions.md` digest is still **orphaned** — its header assigns closure to a close seat that never
+ran — and **I am the fourth consecutive seat to decline to tidy it**, and the first of those four
+actually to be a close seat. My reason is that the hole is the only artifact of item (11) inside the
+ledger file, where §5.4's failure mode lives, and closing it would buy tidiness with the evidence.
+⚠ **But four refusals in a row cannot be told apart from inertia from the inside**, and item (16)
+forbids a seat inventing a convention mid-run. **It should be settled by the human or by a prompt, not
+by a fifth refusal.**
+
+**For the next run:**
+
+- **Monday 2026-11-02 opens ISO week 45**, so the **week rollover is DUE at the next pre-market run**:
+  `week_of` 2026-10-26 → 2026-11-02. ⚠ **`new_positions_this_week` is already 0, so the reset is a
+  no-op and the ONLY visible change is `week_of` — a run that performs the rollover correctly and a
+  run that forgets it look identical except for that one field. Check the field, not the counter.**
+- **Today was the last trading day of October** (10-31 is a Saturday). **Routine 5 runs tonight and
+  owns the monthly rollover** — `research_log.md` is the fastest-growing file in the corpus and
+  October's live entries are already larger than September's whole 87-thesis archive. **That rollover
+  is the only mechanism that reaches the file. Open item (16) is live.**
+- **Use 43 completed / 40 post-fill, and re-derive rather than increment.** The inherited 48/45 and
+  50/47 are both wrong; see finding 2. **The method that works is a 90-bar `--adjustment all` pull.**
+- **VOO official close 2026-10-30 = 694.70** (`--adjustment all`, `n` 4200 / `v` 106,403), prior
+  session **707.32**. Core's since-entry max is **716.29 (2026-10-06)**. **Basis recorded with every
+  mark, as the rule requires.**
+- **`plan_today.md` still carries the false "~4.8% fall puts core through the §2 floor" line** that the
+  midday seat corrected in `state.md` and this seat re-derived independently (**the true figure is VOO
+  $562.51, −19.03%**). That file is overwritten by Monday's pre-market seat, so it is **not worth an
+  edit — but do not read it off that file on the way past.**
+- **Nothing is in limbo and no alert is open.** Breaker INACTIVE, `TRADING_ENABLED: true`, every §6
+  gate open, 5% cap **$4,940.37**, satellite sleeve **$0 against a $29,642.24 target**.
+
+---
+
 ### 2026-10-28 (Wednesday)
 
 **Account:** total **$100,322.88 on official closes** (`bars --adjustment all`, VOO `c` **710.00**,
