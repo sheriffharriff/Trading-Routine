@@ -52,6 +52,244 @@ single most common way a plausible-sounding connection gets mistaken for an oppo
 
 ## Entries
 
+### 2026-10-30 (08:17 ET) — event survey (funnel, pre-thesis)
+
+Selftest **5/5**, exit 0 (`trading_enabled: true`, LIVE paper, equity **$99,299.73** at pre-flight).
+`clock` at 08:17:22 reads `is_open: false` with `next_open` **2026-10-30T09:30:00-04:00** and
+`next_close` **2026-10-30T16:00:00-04:00** — both carry today's date, the pre-market full-session
+signature. Not a holiday. Window surveyed: Thursday 2026-10-29 after the close through this morning.
+
+**Ledger reconciled, three sides, agreeing, re-derived not inherited.** Alpaca `positions` = one row,
+core VOO only (99.046311231 sh @ 706.74, `cost_basis` $69,999.989999, unchanged since 2026-09-03) ·
+`positions.md` satellite header count (`grep -cE '^### [A-Z]{1,5} '`) **0** · `sleeves`
+`satellite.count: 0`, `value: 0`, `pct: 0.0`. **No discrepancy.** §7 limbo check: `orders --status all`
+returns **exactly one order in the account's entire history** (`d177d8f0`, 2026-09-03, filled,
+terminal, already in `trade_log.md`). **Nothing held is unverified and no order is in limbo.**
+
+**Every §6 gate open.** Breaker INACTIVE, `halt_triggered_at: none`; `new_positions_this_week` **0 of
+3** (week anchor re-derived with `isocalendar`: 2026-10-30 is ISO 2026-W44, weekday 5, Monday anchor
+**2026-10-26**, matches `week_of`, **no rollover**); satellite 0.0% deployed, **$30,000 idle**;
+`control.md` Notes empty; zero open alerts. 5% cap **$4,964.29**.
+
+**Four broad scans, one drill, zero survivors.** Scan 1 (two named companies + a disclosed dollar
+amount, M&A/earnings/macro excluded in the prompt, announcement date demanded in the prompt) returned
+**zero qualifying items** with **five self-exclusions and reasons attached**. Scan 2 (who WON it and
+what did the winner say it was worth to its OWN segment) returned **zero**, with four self-exclusions —
+⚠ **and it re-served this log's own disposed 10-13 RTX award, the THIRD consecutive session the funnel
+has done this, volunteering the kill in its own sentence.** Scan 4 (regulatory enable/block with a
+named US-listed supplier) returned **zero**: *"No qualifying two-party action is identified."*
+
+**Scan 3 is the one that mattered, and the answer inverts the last two sessions' emphasis.** The scan
+asked the only question §4 cares about on an earnings-season tape driven by AI capital spending: **did
+any overnight capex figure move UP against the company's OWN prior figure?** For two sessions the
+answer has been *no, every one moved the wrong way*, recorded as though direction were the thing
+standing between this log and a trade.
+
+| Company | New capex figure | Its own prior figure | Direction |
+|---|---|---|---|
+| **ASE Technology** FY2026 | **~$11.5B** | **~$10.5B** (stated **2026-07-30**, itself a raise from ~$8.5B) | ⚠⚠ **RAISED +$1.0B — a clean rule (iii) PASS** |
+| Amazon CY2026 | ~$220B | ~$220B | **reaffirmed** — rule (iii) costume #1 |
+| ATI FY2026 | $280–300M | none in source | unestablishable |
+| RPC FY2026 | $155–175M | none in source; deliveries **shifted 2026 → 2027** | down / deferred |
+| Shell FY2026 | $23–25B | none in source | unestablishable |
+| Sterling Infrastructure | not stated | ~$140M referenced | unestablishable |
+
+⚠⚠⚠ **THE DAY'S FINDING: ASE PASSED RULE (iii) ON EXACTLY THE RIGHT FIGURE AND THE THESIS STILL DIED
+ONE RUNG LATER, AT RULE (v).** The 10-15 lesson says to apply rule (iii) to *the figure the mechanism
+runs on* rather than to the release — and capex is precisely the figure with a supplier chain hanging
+off it. **ASE satisfied that test completely: the prior figure is present in the source, dated, and the
+move is up by $1.0B.** Then the drill asked who supplies the equipment, and the answer was that **ASE
+names no vendor** (it discloses only *"60% to LEAP and 40% to mainstream operations"*) and **no
+US-listed supplier above $10B names ASE or quantifies ASE revenue in any filing.** The source applied
+the kill itself: *"That would be an inference, not a reported customer relationship, and the available
+evidence is insufficient to make that attribution."*
+⚠ **SO THE INHERITED FRAMING WAS WRONG IN AN INSTRUCTIVE WAY. A capex raise was never the binding
+constraint — it is a necessary condition that was never close to sufficient. The binding constraint is
+NAMING, and it does not loosen when the number gets bigger or moves the right way.** ⚠ **Recorded as a
+correction to this log's own emphasis, not as a new rule: it is rule (v) behaving exactly as written.
+What is new is the demonstration that clearing rule (iii) buys nothing on its own.**
+
+⚠ **ONE FUNNEL SELF-EXCLUSION WAS WRONG AND IS CORRECTED HERE — SECOND INSTANCE OF THE 10-13 BLOOM
+LESSON.** Scan 1 excluded the GC Biopharma / Hanmi / BioMarin licence on the grounds that *"the two
+Korean companies are not shown as U.S.-listed"* — true, and beside the point, because **BioMarin
+(BMRN) is the US-listed leg.** It is logged as `T-2026-10-30-03` and disposed on its own merits.
+**A self-exclusion is a HINT, NOT A RULING.**
+
+---
+
+### T-2026-10-30-01 — ASX (ASE Technology Holding) FY2026 capex raised ~$10.5B → ~$11.5B → the unnamed semiconductor assembly / advanced-packaging / test equipment supply tier — REJECTED
+**Company A / the news:** ASE Technology Holding's Q3 2026 earnings call, **2026-10-29**, raised FY2026
+capex to **~$11.5B** from its own **~$10.5B** given **2026-07-30** (which was itself a raise from
+~$8.5B). Q3 was a record on revenue and margin, driven by advanced packaging. Incremental equipment
+spend is disclosed as **60% to LEAP, 40% to mainstream operations**.
+**Company B / the candidate:** any US-listed assembly, advanced-packaging or test equipment maker above
+$10B — the drill asked for one **by name, from a filing**.
+
+**1. Mechanism (one sentence):** **COULD NOT BE WRITTEN.** The sentence *"ASE's $1.0B capex raise lifts
+[X]'s equipment revenue"* has no value for X that any source supplies. ⚠ **The candidates that arrive
+instantly — AMAT, Teradyne, KLA — arrive from my own familiarity with the industry, which is precisely
+the §4 limitation and not evidence.** ⚠ **The drill asked the question directly and got a direct
+negative: no US-listed company above $10B both supplies ASE and has disclosed ASE as a named customer
+or quantified ASE revenue in a filing.** ASE's own disclosure names a **component category and a
+percentage split** and no vendor — **rule (v)'s most fillable-looking blank, in its exact canonical
+form: a precise figure plus named component categories.**
+
+**2. Dollar path:** **NOT WRITABLE, and it fails twice over even if a name is supplied.** The $1.0B is
+ASE's **outgoing capex**, split between **facilities and equipment** with no further allocation, spread
+across an unknown vendor set. Against AMAT's or Teradyne's revenue base an unallocated share of <$1.0B
+is immaterial, and §4's 10%-of-revenue floor is unreachable. ⚠ **The figure is also money paid OUT by
+the only leg whose figure is disclosed — rule (viii).**
+**3. Timing window:** not reached. Part 1 failed.
+**4. Invalidation:** not reached. Part 1 failed.
+
+**Hard filters:**
+- Priced-in (§4): **NOT RUN, AND NOT DUE — no `move` call was made on any symbol at this seat.** ⚠ **No
+  candidate reached the filter, so the filter did not pass. Absent, not passing.**
+- Correlation (§4): **no operand** — zero open satellite positions, so no `driver` field exists to
+  collide with.
+- Universe (§3): **not reached at Company B** (there is no Company B). Company A, ASE, is Taiwan-listed
+  with a US ADR (ASX) and is in any case the first-order name.
+
+**Outcome:** **REJECTED at part 1 / rule (v).** ⚠⚠ **This is the day's one genuine rule (iii) pass and
+it is the entry the human should read, because it corrects an emphasis this log has been building for
+two sessions.** 10-29 recorded that no AI-capex figure moved up and wrote that up as the whole of the
+day's disposal, which invites the reading that an upward move was the missing ingredient. **It was not.
+ASE delivered the upward move on the right figure with the prior figure present and dated, and the
+thesis died at the very next rung for a reason that had nothing to do with direction.** ⚠ **Cost: one
+drill query, which also returned the disclosure-history answer for free.**
+
+---
+
+### T-2026-10-30-02 — AMZN (Amazon) FY2026 capex ~$220B → the unnamed AI-infrastructure supply base — REJECTED
+**Company A / the news:** Amazon's Q3 2026 results, reported after the close **2026-10-29**,
+**maintained** CY2026 cash capex at **~$220B**.
+**Company B / the candidate:** the datacenter, power, networking and optical supply base.
+
+**1. Mechanism (one sentence):** **FAILS ON RULE (iii) BEFORE IT IS WRITTEN.** The figure was
+**reaffirmed, not raised** — costume #1 on the standing list, and the fourth large AI-capex disclosure
+in two sessions (after Alphabet's reaffirmation, Microsoft's downward revision and Tesla's cut) that
+did not move up against the company's own prior. **A reaffirmation changes nobody's economics.**
+**2. Dollar path:** **the increment is $0.** There is no magnitude to allocate. Rule (v) kills it
+independently: *"the AI-infrastructure supply base"* names nobody, and $220B is the largest number this
+funnel has met this week, which makes the unnamed blank look more fillable rather than less.
+**3. Timing window / 4. Invalidation:** not reached.
+
+**Hard filters:** priced-in **not run and not due**; correlation **no operand**; universe not reached.
+
+**Outcome:** **REJECTED — rule (iii) costume #1, with rule (v) and part 2 as independent kills.** ⚠ **Of
+five AI-capex disclosures across two sessions, exactly one moved up (ASE) and that one died at rule (v)
+— see `-01`. The complex is now disposed on BOTH axes and neither needs a further query.**
+
+---
+
+### T-2026-10-30-03 — BMRN (BioMarin) ← GC Biopharma / Hanmi licence "up to $475M" — REJECTED
+**Company A / the news:** reported **2026-10-30**: a licensing arrangement among **GC Biopharma**,
+**Hanmi Pharmaceutical** and **BioMarin Pharmaceutical (BMRN)** valued at up to **$475M** — **$70M
+upfront** plus up to **$405M in milestones**, plus royalties.
+**Company B / the candidate:** none exists. See below.
+
+**1. Mechanism (one sentence):** **CANNOT BE WRITTEN, because BMRN is a NAMED PARTY.** §4 asks for a
+Company B whose economics change because of news about Company A; a party to the transaction is
+**first-order**. A genuine second-order drill would have to reach a **third** company, and none is
+named at any leg.
+**2. Dollar path:** **fails on scale before the direction of payment is even established.** The only
+near-term figure is the **$70M upfront** — the $405M is milestone-contingent and undated, which is rule
+(v)'s ceiling sub-shape. $70M against BioMarin's revenue base is ~2%, against §4's **10%** floor. ⚠ **And
+the direction is not established in the source: if BMRN is the licensee, the $70M is money paid OUT —
+rule (viii). I did NOT spend a query to settle that, because part 1 had already killed it and the answer
+could not change the outcome in either direction. Recorded so the omission is visible rather than
+implied.**
+**3. Timing window / 4. Invalidation:** not reached.
+
+**Hard filters:** priced-in **not run, not due**; correlation **no operand**; universe — BMRN is
+US-listed and above the §3 floor, **the one filter this item would have passed**, which is not progress
+toward a trade.
+
+**Outcome:** **REJECTED at part 1 (named party, no Company B), with part 2 as an independent kill.**
+⚠ **Logged chiefly because the funnel's own self-exclusion was wrong — it dismissed the item as "two
+Korean companies, not US-listed" and missed that BioMarin is the US-listed leg. That is the second
+instance of the 10-13 Bloom lesson: A SELF-EXCLUSION IS A HINT, NOT A RULING. The correction cost one
+sentence and the item still died, which is the honest outcome both times.**
+
+---
+
+### T-2026-10-30-04 — Orion Group Holdings $250M October awards · AEVEX $41.6M Maritime Systems — REJECTED (§3, two numbers, zero queries spent)
+**Company A / the news:** **Orion Group Holdings**, 2026-10-29, announced **$250M** of October contract
+awards and change orders including a **$115M** mission-critical project in its **Concrete** segment.
+**AEVEX Corp.**, 2026-10-30, announced its **Maritime Systems** division won **$41.6M** across two
+contracts ($15.6M SightGlass, $26.0M Fisher).
+**Company B / the candidate:** none sought.
+
+**1. Mechanism:** **not attempted.** Both are **own-award announcements** — the company announcing is
+the company winning, so there is no second party and no Company B (part 1, structural).
+**2–4:** not attempted.
+
+**Hard filters:** **Universe (§3) kills both on a single number each — both are far below the $10B
+market-cap floor.** ⚠ **§3-FIRST, applied as the discipline requires: the cap was checked before any
+mechanism was elaborated, so no effort went into a story a single number was always going to end.**
+
+**Outcome:** **REJECTED — §3 cap floor, plus part 1 independently.** ⚠ **These were the only two items
+scan 2 returned with a winner's own segment named and a figure attached — the exact part-2 evidence that
+is usually missing — and both are ineligible. §3 does not weigh outcomes and does not care that the
+disclosure quality was, for once, good.**
+
+---
+
+### T-2026-10-30-05 — RTX — the 2026-10-13 award RE-SERVED — REJECTED (rule (iv), EIGHTH APPEARANCE, ZERO QUERIES SPENT)
+**Company A / the news:** none that is new. Scan 2 surfaced an RTX item and **volunteered the kill in
+its own sentence**: *"The cited item refers to an RTX contract announced on October 13, not October 29
+or 30, and its annual-revenue percentage is an outside calculation rather than RTX's own
+quantification."*
+
+**1–4:** **not attempted. Disposed on the log, not on the tape.**
+
+**Outcome:** **REJECTED — rule (iv), and the disposal needed no query because reading the log first
+answered it.** ⚠⚠ **THIRD CONSECUTIVE SESSION the funnel has re-served this log's own disposed rejects
+(10-09 three, 10-12 three, today one). The standing lesson holds and paid again: reading the log costs
+one grep and saves a drill.**
+⚠⚠ **AUDIT CATCH — THE INHERITED APPEARANCE COUNT IS WRONG BY ONE, AND IT IS WRONG IN THE DIRECTION
+THAT UNDERSTATES THE PROBLEM.** `state.md` carries *"RTX IS NOW AT SIX APPEARANCES IN NINE SESSIONS"*,
+built from a list beginning **09-29 (AMRAAM)**. Re-derived at this seat from thesis headers across
+`research_log.md` **and** `archive/research_log/2026-09.md`: **T-2026-09-01-03 (RTX, died at part 1 on
+an unsourced PAC-3 inference) · T-2026-09-29-01 (AMRAAM, RTX in the body) · T-2026-10-02-01 ·
+T-2026-10-09-02 · T-2026-10-12-02 · T-2026-10-14-04 · T-2026-10-20-04 = SEVEN prior appearances.
+Today is the EIGHTH.** ⚠ **The omitted entry sits in the September archive, which is exactly where a
+count built by reading the live file will lose it — the same archive-inclusive arithmetic defect the
+10-28 and 10-29 seats flagged on the thesis total.** *(Thesis total re-derived at this seat and it
+MATCHES: 126 unique IDs live + 87 archived, combined unique **210**, and 123 + 87 header-defined IDs
+= 210 with no header overlap.)*
+
+---
+
+### T-2026-10-30-06 — sweep: non-US-listed parties, unnamed counterparties, no-figure agreements, own-results prints — REJECTED (thirteen items, disposed as one, ZERO drill queries spent)
+
+Every item the four scans returned that is not disposed above. **Each dies on a single named test, and
+none was elaborated into a mechanism.**
+
+| Item | Test that killed it |
+|---|---|
+| **T1 Energy (TE)** — >1.58 GW of solar-module offtake, 2026-10-30 | **No dollar amount disclosed, and the counterparties are not named.** GW is **not money** — the 10-12 UNIT failure recurring. |
+| **Samsung Electro-Mechanics** — ~**$659.3M** MLCC supply contract, 2026-10-30 | **§3** (KRX-listed) **and** the customer is *"a global company"*, unnamed. ⚠ **Third appearance of this issuer in this log and the third identical death.** |
+| **Critical One Energy / Solar International Core Canada** — C$25M + up to C$400M | **§3** — Canadian-listed; a third party (Northlink) is not listed at all. |
+| **Woodside Energy / QatarEnergy** — 20-year LNG SPA | **§3** and **part 3** — rule (vi)'s standing shape; **no figure disclosed.** |
+| **ABP Food Group / Dovecote Park** — UK CMA phase-one inquiry, 2026-10-29 | **§3** (neither party US-listed) **and** merger arbitrage is not in §4. |
+| **ATI** FY2026 capex $280–300M | **Rule (iii) unestablishable** — no prior company figure in the source, so the direction cannot be read in either direction. |
+| **RPC** FY2026 capex $155–175M | **Rule (viii) sign** — deliveries **shifted out of 2026 into 2027**; spending deferred, not added. |
+| **Shell** FY2026 capex $23–25B | **Rule (iii) unestablishable** (no prior figure in source) **and §3** (not US-listed). |
+| **Sterling Infrastructure** | **Rule (iii) unestablishable** — a prior ~$140M reference with no new figure stated. |
+| **Huntington Ingalls (HII)** — $32.4B Q3 awards, raised shipbuilding forecast | **Part 1 — own results**, no transaction, no named second party. |
+| **General Dynamics (GD)** Q3 2026 | **Part 1 — own results.** |
+| **Exelon (EXC)** Q3 2026 | **Part 1 — own results.** |
+| **Regeneron (REGN)** Q3 2026 | **Part 1 — own results.** |
+
+⚠ **Five of the thirteen are own-results prints and that is the shape of a late-October tape: the
+earnings wall is the one disclosure class that structurally names a single party.** ⚠ **A competitor
+read-across is the only Company B any of them offers, and that is the shared-cause object — a market,
+not a transaction. Killed on part 1 each time, as the standing rule says to expect every earnings
+season.**
+
+---
+
 ### 2026-10-29 (08:14 ET) — event survey (funnel, pre-thesis)
 
 Selftest **5/5**, exit 0 (`trading_enabled: true`, LIVE paper, equity **$99,992.07** at pre-flight).
