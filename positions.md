@@ -158,6 +158,56 @@ UNDERSTATED: open `current_price` 698.65 against `lastday_price` 707.32 = −**1
 −$801.28 / −1.145%.** ⚠ **The 10-29 digest below remains ORPHANED and is again left open and
 unclosed — this seat is not the close seat either.**
 
+**12:48 `3-midday-management` — ALL FOUR RULES RE-EVALUATED, STILL ABSENT NOT PASSING, 44th absent
+seat, the no-operand kind. EXITS-ONLY SEAT: ZERO EXITS TAKEN, ZERO DUE — and the honest form is that
+THE JOB HAD NO SUBJECT.** Re-derived here, not inherited: `positions` **ONE ROW core VOO only**
+(`cost_basis` 69,999.989999 unchanged since 2026-09-03, only the mark moving) · this file's
+`grep -cE '^### [A-Z]{1,5} '` = **0** · `sleeves` `satellite.count: 0`. §7 limbo re-checked: **one
+order ever** (`d177d8f0`, filled, terminal), logged.
+
+⚠⚠ **STEP 2 — THE HIGH-WATER STALENESS REPAIR, THIS ROUTINE'S ONE DISTINCTIVE JOB — HAD NO OPERAND
+FOR THE 44TH TIME.** The only `highest_close:` **FIELD** line in this file is still **53, inside
+`## Template`** — ⚠ **and note the grep that checks this NO LONGER RETURNS ONE LINE, because prose
+quoting `'highest_close:'` now matches its own detector (lines 169 and 427 are text about the check,
+not marks); the earlier "exactly one line, 53" phrasing is accurate about FIELDS and false about grep
+hits, so it is restated rather than repeated.** There is **no satellite mark to compare an `(as of …)` date against**, so the
+staleness detector had **nothing to call stale**, and the field stays in its **THIRD STATE — ABSENT,
+CARRYING NO DATE**, which is neither current nor stale. **Zero `bars` backfills performed and zero
+due.** ⚠ **This is the rule the 10-29 missing close run would have broken first, and it is still only
+safe because the ledger is empty — not because the repair works.**
+
+**Zero §5.1 news queries run and zero due; ZERO Perplexity calls at this seat** — with no
+`invalidation` string in the repo there is no condition to ask about. **Core VOO STRUCK from the §5
+working list as §5-exempt — not stamped, and not given a `highest_close`.** No `move` and no `quote`
+call on any symbol: **no §5.4 back door was offered, the nothing-to-check kind.**
+⚠ **`TRADING_ENABLED: true`, so no `dry_run` intent exists and NO STOP THAT SHOULD HAVE FIRED FAILED
+TO FIRE.** Breaker **INACTIVE**, `consecutive_closed_losses` **0 untouched** — nothing closed, so
+neither the increment nor the reset branch was reachable.
+
+**Live midday midpoints, NOT closes:** equity **$98,837.19** · core **$68,837.19 / 69.65%** ·
+satellite **$0 / 0.0%**, count **0** · cash **$30,000.00 / 30.35%** · `core_in_band: true` ·
+`rebalance_delta: 348.85` (**a distance readout; this seat may not rebalance in any case**). Core is
+**$4,593.02 above the §2 floor (4.65% of equity)** and **$5,290.70 below the ceiling** — **nearer
+edge is the FLOOR.**
+
+⚠⚠⚠ **AND AN AUDIT CATCH ON `state.md`'s OWN TEXT, REPLACED THERE RATHER THAN LEFT BESIDE ITS
+CORRECTION:** the 09:37 seat wrote that **"a further ~4.8% fall in VOO puts core through the §2
+floor."** **That is false and understates the required fall by about 4×** — it confuses a *distance in
+equity* with a *move in price*. A fall in VOO shrinks **numerator and denominator together**; only the
+$30,000 cash leg is fixed. **core/(core+30,000) = 0.65 needs core $55,714.29, i.e. VOO at $562.51 — a
+−19.1% fall from 695.00.** A 4.8% fall leaves core at **68.60%**, inside the band. ⚠ **The error
+points the unsafe way: it makes the floor look 4× nearer than it is, which is the direction that
+invites an unnecessary rebalance.** **Audit-catch tally 28.**
+
+⚠ **GAP-DOWN UPDATE — THE 08:17 WARNING IS NOW UNDERSTATED BY 0.64pp, NOT 0.13pp:** forecast
+−1.10%, open −1.23%, **midday 695.00 vs `lastday_price` 707.32 = −1.74%.** Core unrealised
+**−$1,162.80 / −1.661%** (intraday −$1,220.25 / −1.742%). **One held warning out of three is not a
+calibrated warning.**
+
+⚠ **The 10-29 digest below is left ORPHANED, OPEN AND LABELLED for the third time — this seat is not
+the close seat either, and tidying it would hide the hole inside a well-formed artifact.**
+
+
 ---
 
 ### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-10-29, **DIGEST OPEN — `1-premarket` 08:14. The three later seats append below; the close seat closes and collapses it.** ⚠ **Absent-seat ordinal: 08:14 is the 39th.** ⚠ **DELIBERATELY WRITTEN SHORT. Open item 16 is live at 991,147B and prose volume is the one lever a seat controls; no collapse ratio is claimed here because there is nothing yet to collapse.**)
