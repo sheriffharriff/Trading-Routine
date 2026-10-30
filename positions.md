@@ -85,6 +85,65 @@ check that the pull returned the right session. A stored baseline is a *label*, 
 
 *(none — no **satellite** positions have been opened yet. Core VOO exists and is deliberately not tracked here, per the top-of-file rules and the fill note further down.)*
 
+### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-10-30, **DIGEST OPEN — `1-premarket` 08:17.** ⚠⚠ **AND READ THE NOTE ON THE 10-29 DIGEST BELOW BEFORE ASSUMING THE SAME SHAPE: ITS CLOSE SEAT NEVER RAN.** ⚠ **Absent-seat ordinal: 08:17 is the 42nd.** ⚠ **DELIBERATELY SHORT — item 16 is live and prose volume is the one lever a seat controls. No collapse ratio is claimed: this seat appended and collapsed nothing.**)
+
+**Zero satellite positions.** Ledger reconciled three-sided at 08:17, re-derived not inherited, no
+discrepancy: Alpaca `positions` = **ONE row, core VOO only** (99.046311231 sh @ `avg_entry_price`
+**706.74**, `cost_basis` **$69,999.989999** — unchanged since 2026-09-03, **only the mark moving**) ·
+this file's satellite header count (`grep -cE '^### [A-Z]{1,5} '`) = **0** · `sleeves`
+`satellite.count: 0, value: 0, pct: 0.0`. §7 limbo: **one order ever**, filled, logged.
+
+| Rule | Status | Why |
+|---|---|---|
+| **§5.1** thesis invalidation | **ABSENT — no operand** | No `invalidation` field on any satellite row. **ZERO §5.1 news queries run, ZERO DUE.** ⚠ All **five** Perplexity calls at this seat were **§4 research**. **Do not read the day's call count as a §5 exercise.** |
+| **§5.2** time stop | **ABSENT — no operand** | No `timing_window` deadline to compare a date against. |
+| **§5.3** hard stop −7% | **ABSENT — no operand** | No satellite `entry_price` exists to measure from. |
+| **§5.4** trailing stop −10% | **ABSENT — no operand** | **No `highest_close` has ever been written in this repo.** |
+
+⚠⚠⚠ **THE HIGH-WATER BACKFILL INSTRUCTION AT THE TOP OF THIS FILE FIRED FOR THE FIRST TIME ON A
+GENUINELY SKIPPED CLOSE RUN — AND IT WAS SATISFIED VACUOUSLY, WHICH IS THE WHOLE WARNING.**
+This file says: *"If a close run was skipped, the next run must backfill from `bars` before evaluating
+§5.4."* **The 2026-10-29 close run (routine 4) did not run — no commit, no `journal.md` entry, and
+`state.md`'s `last_run` is the 12:41 midday seat.** So the condition the instruction was written for
+occurred, for the first time since it was written. ⚠ **It had NOTHING TO BACKFILL, because the
+satellite ledger is empty — so the instruction discharged itself on a technicality and produced a clean
+result that is byte-identical to the result it would produce over correctly-maintained marks.** ⚠⚠ **HAD
+ONE SATELLITE POSITION BEEN OPEN, THIS IS EXACTLY THE SILENT-TRAILING-STOP FAILURE THE TOP OF THIS FILE
+DESCRIBES: a missing close run leaves a gap in `highest_close`, §5.4 measures from a stale mark or from
+nothing, and nothing in the field, the bar or the date tells you.** The backfill was done anyway, to the
+extent it could be: **VOO official close 2026-10-29 = 707.32** (`bars --days 6 --adjustment all`, bar
+`t: 2026-10-29T04:00:00Z`, `n` 1182 / `v` 23394 — a **complete** session bar; prior session 10-28 =
+**710.00**, so 10-29 was **−0.377%**). ⚠ **BASIS RECORDED WITH THE MARK, as the rule requires:
+`--adjustment all`, pulled in one call at 08:19 on 2026-10-30.** **Core VOO is still never stamped with
+a `highest_close` — it is §5-exempt — so this figure is recorded as a tape fact, not as a mark.**
+
+⚠ **BROKER-PAIR ITEM, 30TH SEAT, AND TODAY THE GAP IS ZERO:** `positions.lastday_price` reads **707.32**
+against the official `--adjustment all` close **707.32** — **exact agreement, first time recorded.**
+That does **not** retire the item: the gap is a *moving midpoint*, and a midpoint that happens to land on
+the close is still a midpoint. **Continue using the official close basis for anything written down.**
+
+**Core VOO was STRUCK from the §5 working list as §5-exempt, not stamped against any rule.** No `move`
+call and no `quote` call was made on any symbol at this seat, so **core's since-entry maximum never
+reached the screen** — ⚠ **absence of opportunity, not discipline. No §5.4 back door was offered, the
+nothing-to-check kind.**
+
+**Pre-market live midpoints, NOT closes:** equity **$99,285.87** · core **$69,285.87 / 69.78%** ·
+satellite **$0 / 0.0%**, count **0** · cash **$30,000.00 / 30.22%** · `core_in_band: true` ·
+`rebalance_needed: false` · `rebalance_delta: 214.24` — ⚠ **a DISTANCE READOUT, NOT AN INSTRUCTION:
+core is 4.78% of equity from the nearer §2 edge, which is now the **floor** rather than the ceiling for
+the first time in several sessions.** ⚠ **The gap-down is real today — `lastday_price` 707.32 →
+`current_price` 699.53 = **−1.10%**, ~2.4× either of the two pre-market gap warnings that failed on
+10-28 and 10-29 — and core's unrealised P&L moved from −$7.92 to **−$714.12 / −1.02%** in one session.**
+
+⚠⚠ **AND A CONSEQUENCE OF THE MISSING CLOSE RUN THAT NOBODY HAS NAMED: THE 2026-10-29 DIGEST BELOW IS
+ORPHANED — PERMANENTLY OPEN.** Its header says *"the close seat closes and collapses it"* and **the
+close seat never ran**, so the only seat entitled to close it does not exist and never will. ⚠ **This
+seat deliberately did NOT close or collapse it: appropriating the close seat's role would hide the gap
+inside a tidy-looking artifact, which is the opposite of what item (11) needs.** **It is left open, and
+labelled, so the hole is visible in the file rather than inferred from a commit log.**
+
+---
+
 ### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-10-29, **DIGEST OPEN — `1-premarket` 08:14. The three later seats append below; the close seat closes and collapses it.** ⚠ **Absent-seat ordinal: 08:14 is the 39th.** ⚠ **DELIBERATELY WRITTEN SHORT. Open item 16 is live at 991,147B and prose volume is the one lever a seat controls; no collapse ratio is claimed here because there is nothing yet to collapse.**)
 
 **Zero satellite positions.** Ledger reconciled three-sided at 08:14, re-derived not inherited, no
