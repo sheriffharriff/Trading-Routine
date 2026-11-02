@@ -85,7 +85,7 @@ check that the pull returned the right session. A stored baseline is a *label*, 
 
 *(none — no **satellite** positions have been opened yet. Core VOO exists and is deliberately not tracked here, per the top-of-file rules and the fill note further down.)*
 
-### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-11-02, **DIGEST OPEN — `1-premarket` 07:01 · `2-market-open` 08:47 ⚠ **PRE-OPEN, SCHEDULE FAULT — see that seat’s append**. The two later seats append below; the close seat closes and collapses it.** ⚠ **Absent-seat ordinals: 07:01 **46th** · 08:47 **47th**.** ⚠ **DELIBERATELY WRITTEN SHORT — open item 16 is live and prose volume is the one lever a seat controls; no collapse ratio is claimed here because there is nothing yet to collapse.**)
+### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-11-02, **DIGEST OPEN — `1-premarket` 07:01 · `2-market-open` 08:47 ⚠ **PRE-OPEN, SCHEDULE FAULT — see that seat’s append** · `3-midday` 12:18 **(market OPEN, zero exits)**. The close seat closes and collapses it.** ⚠ **Absent-seat ordinals: 07:01 **46th** · 08:47 **47th** · 12:18 **48th**.** ⚠ **DELIBERATELY WRITTEN SHORT — open item 16 is live and prose volume is the one lever a seat controls; no collapse ratio is claimed here because there is nothing yet to collapse.**)
 
 **Zero satellite positions, re-derived at this seat, three sides, no discrepancy:** Alpaca `positions`
 = **ONE row, core VOO only** (99.046311231 sh @ `avg_entry_price` **706.74**, `cost_basis`
@@ -197,6 +197,44 @@ close seat). **`lastday_price` 694.81 is a broker field 0.11 above it — 32nd s
 item, and the fourth distinct gap size in four readings, which is the moving-midpoint mechanism and
 not a discrepancy.**
 
+
+**— `3-midday-management` 12:18 ET appends (absent-seat ordinal **48th**). ZERO EXITS, AND NOTHING
+SHOULD HAVE FIRED THAT DID NOT.** ⚠ **FIRST SEAT TODAY TO READ AN OPEN MARKET:** `is_open: true` at
+**12:19:02 ET**, `next_close` **2026-11-02T16:00:00-05:00**. The 08:47 seat's pre-open fault is
+**not** repeated here.
+
+**Zero satellite positions, re-derived at this seat, three sides, no discrepancy:** Alpaca `positions`
+= **ONE row, core VOO only** (99.046311231 sh @ **706.74**, `cost_basis` **$69,999.989999** — unchanged
+since 2026-09-03, only the mark moving; `current_price` **698.46** is an **INTRADAY MIDPOINT**, **NOT**
+stamped anywhere) · this file's satellite block count (`grep -cE '^### [A-Z]'`) = **0** · `sleeves`
+`satellite.count: 0`. **All four §5 rules ABSENT, NOT PASSING — no operand at any of them.** No
+Perplexity query was spent, because there is no invalidation condition to test.
+
+⚠ **STEP 2 (high-water repair) DISCHARGED VACUOUSLY — 3rd seat today.** No `highest_close` exists to
+compare against a last trading day, so **no `bars` window was pulled and no backfill was performed.**
+Per the standing item: a vacuous pass and a correct pass are indistinguishable in this file's artifacts.
+
+⚠ **§7 LIMBO CHECK RUN AND CLEAN:** `orders --status all` = **one order in this account's entire
+history**, `d177d8f0…`, 2026-09-03 VOO, `filled`, terminal, already in `trade_log.md`. **Verified
+negative, not an absence of checking.**
+
+⚠ **§2 SLEEVE RE-READ, NOT INHERITED, AND NOT ACTED ON (exits-only run):** equity **$99,179.89** ·
+core **$69,179.89 / 69.75%** · satellite **$0 / 0.0%** · cash **$30,000.00 / 30.25%** ·
+`core_in_band: true` · `rebalance_needed: false` · `rebalance_delta` **246.04** (a distance readout).
+Core unrealised **−$820.10 / −1.172%** from 706.74, intraday **+$361.52 / +0.525%**. The 10-31 audit
+stands: the §2 floor needs a VOO fall of about **−19%**, not the ~4.8%-of-equity gap a naive read gives.
+
+⚠ **CORE VOO STRUCK FROM THE §5 WORKING LIST, NOT STAMPED — 110TH RUN.** No window pulled, so again
+the weaker act, labelled as the weaker one.
+
+⚠⚠ **THIRD STORED SCHEDULE READ, AND IT AGREES WITH THE OTHER TWO.** This routine's stored schedule is
+**16:40:00 UTC = 11:40 ET** against a nominal **12:30 ET** — **~50 min early, the EDT-anchored time
+unshifted by the 2026-11-01 fall-back.** Routines 1, 2 and 3 now all read this way, which **upgrades
+the 08:47 seat's "very probably" on routines 4 and 5 but does not verify them.** ⚠ **This is the
+STORED-SCHEDULE evidence class `control.md` permits, not a firing-time diagnosis — and dispatch
+happened to land this run at 17:18 UTC = 12:18 ET, inside the session, so the fault had no effect
+here.** ⚠⚠ **IT IS NOT HARMLESS AT ROUTINE 4: 15:05 ET would stamp a PARTIAL BAR as an official
+close, silently disabling §5.4 for every position then open. On today's empty ledger, no operand.**
 
 ### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-10-30, **ONE DIGEST FOR THE DATE, ALL FOUR SEATS:** `1-premarket` 08:17 · `2-market-open` 09:37 · `3-midday` 12:48 · `4-market-close` 16:17. ⚠ **CLOSED AND COLLAPSED BY THE CLOSE SEAT, THE ONLY SEAT ENTITLED TO TOUCH WHAT THREE EARLIER SEATS WROTE.** ⚠ **RE-EVALUATED AT EACH SEAT, NOT INHERITED.** Absent-seat ordinals: 08:17 **42nd** · 09:37 **43rd** · 12:48 **44th** · this close **45th**. ⚠ **COLLAPSE RATIO MEASURED AFTER THE WRITE, NOT CLAIMED FROM INTENT — the figure is at the foot of this digest, because six recorded instances say this is the one line the file keeps getting wrong.**)
 
