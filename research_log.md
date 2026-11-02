@@ -52,6 +52,297 @@ single most common way a plausible-sounding connection gets mistaken for an oppo
 
 ## Entries
 
+### 2026-11-02 (07:01 ET) — event survey (funnel, pre-thesis)
+
+Selftest **5/5**, exit 0 (`trading_enabled: true`, LIVE paper, equity **$99,142.25** at pre-flight).
+`clock` at 07:01:56 reads `is_open: false` with `next_open` **2026-11-02T09:30:00-05:00** and
+`next_close` **2026-11-02T16:00:00-05:00** — both carry today's date, the pre-market full-session
+signature. **Not a holiday.** ⚠ **NOTE THE `-05:00` OFFSET: DST ended Sunday 2026-11-01, so this is
+the first EST seat of the season — and this run fired ~59 MINUTES EARLY against its nominal 08:00 ET
+schedule, which is the signature of a UTC-anchored trigger that did not follow the fall-back. Logged
+in `plan_today.md` as a conditional instruction to the open seat, NOT diagnosed as a confirmed fault
+from a timestamp this file is warned not to diagnose from.**
+
+**Window surveyed:** Friday 2026-10-30 after the close through this morning, **plus the Thursday
+2026-10-29 after-close disclosures that drove Friday's session**. ⚠⚠ **THAT EXTENSION IS DELIBERATE
+AND IT RECOVERED THE WEEK'S LARGEST EVENT: Intel printed Q3 after the close on 2026-10-29 and the
+10-30 08:17 pre-market seat did not log it** — that seat's four scans returned a capex table, a
+licence, two §3 kills and an RTX re-serve, and **the largest single-name disclosure of the week was
+not among them.** It is minted here as `T-2026-11-02-01`, two sessions late. ⚠ **This is not an
+indictment of that seat's queries; it is evidence that a 24-hour recency window on a pre-market seat
+can miss an after-close print from the PREVIOUS evening, because the print is ~11 hours old at the
+seat and ~35 hours old by the time its consequences are legible.**
+
+**Ledger reconciled, three sides, agreeing, re-derived not inherited.** Alpaca `positions` = one row,
+core VOO only (99.046311231 sh @ 706.74, `cost_basis` $69,999.989999, **unchanged since 2026-09-03 —
+only the mark moving**) · `positions.md` satellite block count (`grep -cE '^### [A-Z]'`) **0** ·
+`sleeves` `satellite.count: 0`, `value: 0`, `pct: 0.0`. **No discrepancy.**
+
+**Every §6 gate open.** Breaker INACTIVE, `halt_triggered_at: none`; `new_positions_this_week` **0 of
+3**; satellite 0.0% deployed, **$30,000 idle**; `control.md` Notes empty; zero open alerts. 5% cap
+**$4,957.11**. **Week anchor re-derived with `isocalendar`: 2026-11-02 is ISO 2026-W45, weekday 1,
+Monday anchor 2026-11-02 — MATCHES `week_of`. ALREADY ROLLED by the 10-30 16:46 routine-5 seat; read
+as already-rolled, NOT as a skipped step, and NOT rolled a second time.**
+
+**Six queries, five candidates, zero survivors.** The shape of the morning is worth stating before
+the entries, because it is not the shape the last two weeks produced.
+
+⚠⚠⚠ **THE DAY'S FINDING: THIS MORNING PRODUCED THE BEST-SHAPED CANDIDATE THIS LOG HAS SEEN —
+A NAMED TWO-PARTY CHAIN WITH THE BUYABLE LEG ON THE RECEIVING END — AND IT DIED ON PART 2 WITH
+NOTHING TO MEASURE.** `T-2026-11-02-04`, Charles River / Ipsen. Nearly every prior entry in this log
+fails at **rule (v)** (no Company B exists at all) or at **rule (viii)** (the dollar figure belongs to
+the wrong party or moves the wrong way). **CRL fails at neither.** Ipsen is Company A, Charles River
+is a **named external supplier** — not an inferred one, not a "supply base", not a redaction — and the
+money flows **toward** the leg that can be bought. **§3 passes cleanly at $17.31B.** ⚠ **It dies
+because the announcement discloses NO dollar value, NO term and NO revenue-commencement date.
+Part 2 has nothing to be estimated FROM.** ⚠⚠ **THE LESSON IS THE MIRROR OF 10-30's: that seat found
+a capex figure that moved the right way and no name to hang it on; this seat found the name and no
+figure. The two failures are complementary halves of the SAME requirement, and the funnel has now
+produced each half separately on consecutive sessions without once producing both together.**
+
+⚠⚠ **AND THE PRICED-IN FILTER FIRED — TWICE — WHICH IS NEW, AND IT IS REPORTED WITH ITS CAVEAT
+ATTACHED RATHER THAN AS A VINDICATION.** Open item 1 and the 10-30 weekly review record that the §4
+priced-in filter **fired zero times last week** — *"not passed, never reached"*. This morning it was
+reached by two live candidates and killed on both: **INTC −24.36%** and **CRL +4.18%** against a
+**4.00%** threshold. ⚠ **NEITHER IS A CLEAN TEST.** INTC is **first-order and the wrong sign** — a
+−24% collapse is not a §4 second-order long, and the filter is not what disqualifies it. **CRL fails
+part 2 independently.** ⚠⚠ **AND ON CRL THIS SEAT MAY NOT CLAIM THE FILTER WAS THE BINDING KILL: the
+§3/part-2 query and the `move` call were issued IN THE SAME TOOL CALL.** §4's ordering ("apply these
+before writing the thesis") was satisfied **against the thesis** but **not between the two checks**,
+so which fired first is not establishable from this run's own record. ⚠ **CRL at +4.18% is
+nonetheless the first MARGINAL reading the filter has ever produced — 18bp over — where every prior
+firing in this log's history has been far from the line.**
+
+---
+
+### T-2026-11-02-01 — the Intel Q4 guide-down and the Fab 28 shutdown → the unnamed advanced-packaging substrate tier — REJECTED
+**Company A / the news:** **Intel (INTC)** printed Q3 2026 after the close on **2026-10-29**: revenue
+**$16.51B** (+21% y/y), EPS **$0.52**, Q3 non-GAAP gross margin **44.1%**, ~200bp **above Intel's own
+prior guidance** (a clean rule (iii) PASS on that figure). It then guided **Q4 revenue to $15.0–16.0B**
+against consensus near **$17.1B**, with non-GAAP gross margin **38.0%** at the $15.5B midpoint — **−6.1pp
+sequentially**. Three causes were given: weak client demand, **supply constraints in advanced organic
+packaging substrates** (Intel said it is constrained on **both wafer and substrate** and must ramp
+substrate capacity), and **an extended shutdown of Fab 28, Kiryat Gat, Israel** following an accident
+that killed two workers, halting production ~two weeks and affecting **10nm server processor**
+shipments. Management put the Fab 28 impact at **~$300M of Q4 revenue and ~200bp of gross margin**,
+with a similar figure possible in Q1 2027. **INTC fell ~29% on Friday 2026-10-30, its steepest
+one-day decline since 1974.**
+**Company B / the candidate:** the **substrate and semiconductor-equipment tier** Intel must buy from
+to relieve the constraint.
+
+**1. Mechanism (one sentence):**
+> Intel's disclosed substrate capacity constraint causes <substrate supplier>'s packaging-substrate
+> revenue line to rise because Intel must place incremental orders to ramp that capacity.
+
+⚠ **The sentence is well-formed. THERE IS NO COMPANY B TO PUT IN THE BLANK.**
+
+**2. Dollar path:** **NOT WRITABLE.** Intel disclosed no substrate procurement figure. The only dollar
+figures in the story are **Intel's own losses** — ~$300M of Q4 revenue and ~$1.1–2.1B of guidance
+shortfall — which is **rule (viii)** in its plainest form: money moving the wrong way at the wrong
+party.
+**3. Timing window:** not reached.
+**4. Invalidation:** not reached.
+
+**Hard filters:**
+- Priced-in (§4): **INTC −24.36% over 5 sessions (86.96 → 65.78) → FAIL, "LATE - skip"**. Applies to
+  the headline name only; no Company B reached the filter.
+- Correlation (§4): **zero open satellite positions, so the check has NO OPERAND — absent, not passing.**
+- Universe (§3): the substrate tier that actually exists is **Ibiden and Shinko (Japan-listed), AT&S
+  (Austria), Unimicron and Nan Ya PCB (Taiwan)** → **FAIL, none US-listed.**
+
+**Outcome:** **REJECTED — rule (v), with §3 closing the back door and rule (viii) closing a third.**
+⚠⚠ **The source applied the kill itself, twice and unprompted:** *"No equipment or materials vendor
+was named in the available Intel-related results… Intel was placing purchase orders with equipment
+vendors, but the available report does not identify those vendors by name"* and *"Assertions that
+particular companies — such as semiconductor-equipment or substrate vendors — are exposed to Intel
+would be INFERENCES, not direct disclosures."* ⚠ **A supply problem that is specific, dated,
+quantified in its VICTIM's accounts and attributed to a named COMPONENT CATEGORY is rule (v)'s most
+fillable-looking blank — the 10-05 "$1.7B of memory components" shape, scaled up. THE SOURCE LEFT THE
+BLANK; FILLING IT IN IS NOT RESEARCH.**
+⚠⚠ **AND THE SECOND DOOR WAS REFUSED EXPLICITLY, BECAUSE IT IS THE ONE THAT READS BEST:** Fab 28
+halted **10nm server processor** output and Intel guided client shipments sharply lower, which invites
+*"therefore AMD gains share"*. **That is the competitor's-earnings-print shared-cause object on the
+recognise-on-sight list, in its purest form — a competitor's disappointment improves nobody's
+economics in any disclosed, dateable way, and the share-shift story is supplied entirely by the
+reader.** AMD passes the priced-in filter at **−2.25%**, which is exactly why the kill has to be
+structural rather than numerical. **No ID was minted for AMD; it is disposed here.**
+⚠ **Rule (iii) is a genuine PASS on the gross-margin figure (44.1% vs Intel's own prior guide) and a
+FAIL on the revenue figure (quoted only against consensus ~$17.1B, never against Intel's own prior
+range). THE 10-15 LESSON APPLIES: apply rule (iii) to the figure the mechanism runs on. The mechanism
+here runs on neither — it runs on SUBSTRATE CAPACITY, for which no prior figure and no current figure
+was disclosed at all.**
+
+---
+
+### T-2026-11-02-02 — SYM (Symbotic) / WMT (Walmart) ~$6B automation commitment → the unnamed automation component tier — REJECTED
+**Company A / the news:** **Walmart and Symbotic** announced an **expanded Enterprise Master
+Automation Agreement** on **2026-10-30** (8-K filed): an **initial Walmart commitment of ~$6B** over
+several years covering **25 US regional distribution centres** plus global opportunities, a **$125M
+Walmart-funded development programme for next-generation racking technology**, and a stated
+**potential future backlog increase of up to $6.92B** against Symbotic's **~$22.5B total backlog at
+2026-06-27**.
+**Company B / the candidate:** the component tier beneath Symbotic — motors, drives, controls,
+sensors, vision, steel racking.
+
+**1. Mechanism (one sentence):**
+> Walmart's $6B automation commitment causes <component supplier>'s industrial-automation revenue line
+> to rise because Symbotic must buy that content to build 25 distribution-centre systems.
+
+**2. Dollar path:** **NOT WRITABLE.** No component supplier is named anywhere, so there is no segment
+to size and no denominator to divide by.
+**3. Timing window:** **independently fatal.** The commitment runs *"over several years"* with **no
+first-revenue date disclosed**; 25 DCs is a multi-year build. **Beyond §4's two-quarter ceiling.**
+**4. Invalidation:** not reached.
+
+**Hard filters:**
+- Priced-in (§4): **SYM −3.34%** (39.25 → 37.94) and **WMT +3.04%** (119.87 → 123.51) over 5 sessions
+  — **both PASS.** ⚠ **Recorded because it is counter-intuitive and therefore worth having on the
+  board: SYM is DOWN over the window in which it announced a $6B commitment, which is the
+  AI-complex drawdown swamping the single-name news. A filter pass is not a signal.**
+- Correlation (§4): **no operand.**
+- Universe (§3): both US-listed and above the floor — **PASS**, and irrelevant.
+
+**Outcome:** **REJECTED — part 1, with rule (v) and part 3 each independently fatal.** ⚠⚠ **THE
+PRIMARY KILL IS STRUCTURAL AND IT IS THE ONE §4 EXISTS TO MAKE: BOTH NAMED PARTIES ARE FIRST-ORDER.**
+Walmart is Company A paying the money out (**rule (viii)** — capital paid OUT by the buyable leg) and
+**Symbotic is the headline name** — §4 opens by saying *"You are not chasing the headline name."*
+Buying SYM here is buying the press release. ⚠ **The only genuinely second-order seat is the
+component tier, and the source applied the kill itself:** *"the available results do not name a
+specific US-listed supplier of motors, drives, controls, sensors, or steel racking… Any assertion
+that a particular public company supplies Symbotic would be an inference or unsupported speculation."*
+⚠ **Rule (iii) is a SPLIT and the split is instructive: the $6B and $6.92B figures are genuinely NEW
+and genuinely Symbotic's own, but the RELATIONSHIP is an amendment — reporting states "the prior
+agreements remain effective except where the new agreement modifies them". That is the Boeing/PAC-3
+costume (a new dollar figure pricing an existing framework) in commercial dress. It is NOT the kill
+here and is recorded so the costume list gains an instance rather than so the thesis gains a reason.**
+⚠ **And a fourth door, closed before it opened: Symbotic's $22.5B backlog means a $6.92B increment is
+~31% of backlog, a real number — but BACKLOG IS NOT SEGMENT REVENUE AT COMPANY B, and Company B does
+not exist.**
+
+---
+
+### T-2026-11-02-03 — MU (Micron) ← Intel's memory-shortage demand commentary — REJECTED (part 1, zero drill queries spent)
+**Company A / the news:** on the same 2026-10-29 call, Intel attributed part of the client weakness to
+**memory shortages and higher system prices weighing on PC demand**, alongside an inventory correction
+extending through at least Q1.
+**Company B / the candidate:** **Micron (MU)**, the US-listed DRAM maker.
+
+**1. Mechanism (one sentence):**
+> Intel's disclosure that memory shortages are raising PC system prices causes Micron's DRAM revenue
+> line to rise because tight supply lifts DRAM ASPs — **and also** Micron captures that pricing rather
+> than conceding it to customers.
+
+⚠ **THE SENTENCE NEEDS THE "AND ALSO" AND THAT IS THE ANSWER. §4: "If the sentence needs a second
+clause to make sense, the link is too weak. Reject it."**
+
+**2. Dollar path:** not reached.
+**3. Timing window:** not reached.
+**4. Invalidation:** not reached.
+
+**Hard filters:**
+- Priced-in (§4): **MU +0.82%** over 5 sessions (877.385 → 884.57) — **PASS.** ⚠ **Recorded because a
+  clean pass on a name in the middle of a historic memory up-cycle is precisely the datapoint that
+  makes a dead mechanism look alive. A FILTER PASS IS NOT A THESIS.**
+- Correlation (§4): no operand.
+- Universe (§3): US-listed, far above the floor — **PASS**, and irrelevant.
+
+**Outcome:** **REJECTED — part 1, the shared-cause object.** ⚠⚠ **DRAM tightness is a MARKET
+VARIABLE, not a TRANSACTION. Intel and Micron are both exposed to it with opposite signs, which is
+exactly the DIVERGENCE face of the shared-cause shape on the recognise-on-sight list — and §4 asks
+whose economics change BECAUSE OF the event.** ⚠⚠⚠ **THE DECISIVE POINT, AND IT IS THE ONE THIS LOG
+HAS NOT WRITTEN DOWN BEFORE IN THIS FORM: INTEL'S DISCLOSURE IS *EVIDENCE OF* A PRE-EXISTING
+CONDITION, NOT A *CAUSE* OF ANYTHING. Nothing about Micron's economics changed on 2026-10-29. A
+third party REMARKING on a condition is not an event — it is a reading of the tape with a filing date
+attached, which is the most respectable disguise a non-event can wear.** ⚠ **Rule (iii) fails on top:
+"memory shortage" carries no figure, no prior figure and no date from Intel or from Micron.**
+**Zero drill queries were spent — the mechanism sentence killed it at the first rung.**
+
+---
+
+### T-2026-11-02-04 — CRL (Charles River Laboratories) ← Ipsen Virtual Control Group expansion — REJECTED (part 2: no dollar value exists)
+**Company A / the news:** **Ipsen** (Euronext Paris) agreed, announced **~2026-10-30**, to deploy
+**Charles River's Virtual Control Group database across its toxicology studies** — reported as an
+**expansion of existing Virtual Control Group use**.
+**Company B / the candidate:** **Charles River Laboratories (NYSE: CRL)**, the **named** external
+supplier and the US-listed leg.
+
+**1. Mechanism (one sentence):**
+> Ipsen's adoption of Virtual Control Group across its toxicology programme causes Charles River's
+> Discovery and Safety Assessment (DSA) revenue line to rise because Ipsen contracts those studies to
+> Charles River.
+
+⚠ **THE SENTENCE STANDS WITHOUT AN "AND ALSO". That is rare in this log and it is the reason this
+entry is written out in full rather than swept.**
+
+**2. Dollar path:** ⚠⚠ **CANNOT BE WRITTEN. THIS IS THE KILL.** The announcement discloses **no
+contract value, no term and no revenue-commencement date.** CRL's DSA segment is comfortably above
+§4's 10%-of-revenue floor, so the *denominator* is fine — **there is no NUMERATOR.** ⚠ **Note what
+this is NOT: it is not the rule (viii) failure of a figure belonging to the wrong party, and not the
+rule (v) failure of a missing party. The party is named and the direction is right. THE NUMBER SIMPLY
+DOES NOT EXIST, and §4 says an unmeasurable tailwind is not a tailwind.** ⚠ **Estimating it from
+Ipsen's R&D budget and a guessed outsourcing share would be the exact move §4's honest-broker
+paragraph forbids — constructing the magnitude the source declined to provide.**
+**3. Timing window:** **NOT ESTABLISHABLE** — no revenue-commencement date is reported. A toxicology
+database deployment plausibly recognises over years, which would fail §4's two-quarter ceiling, but
+that is an inference and is **not** claimed as the kill.
+**4. Invalidation:** would have been *"CRL's Q4 2026 or Q1 2027 filing shows DSA segment revenue flat
+or declining sequentially"* — **well-formed, and never reached, because part 2 is unwritable.**
+
+**Hard filters:**
+- Priced-in (§4): **CRL +4.18% over 5 sessions (345.09 → 359.505) → FAIL, "LATE - skip"**, 18bp over
+  the 4.00% threshold. ⚠⚠ **ORDERING DISCLOSED: this `move` call and the §3/part-2 query were issued
+  in the SAME tool call. §4's "apply before writing the thesis" was satisfied, but which of the two
+  checks fired first is NOT establishable from this run's record, so the filter is NOT claimed as the
+  binding kill.**
+- Correlation (§4): **no operand** — zero open positions.
+- Universe (§3): US-listed common stock, **market cap $17.31B** → **PASS**.
+  **market_cap_src: Yahoo Finance comparison page as of 2026-11-02, via Perplexity; corroborated at
+  ~$17.15–17.16B by two further sources dated 2026-10-30/31. Recorded because §3's floor is only
+  auditable if the provenance is written down.**
+
+**Outcome:** **REJECTED — part 2, with the priced-in filter independently failing.** ⚠⚠⚠ **THIS IS
+THE ENTRY THE WEEK SHOULD BE JUDGED ON. It cleared the rung that kills almost everything else —
+a named, US-listed, above-floor Company B receiving money from a named Company A — and died for want
+of a single number the counterparties chose not to publish.** ⚠ **It belongs beside `T-2026-10-09-01`
+(GFS/TSMC) as a candidate that cleared every filter and died on the thesis parts, and it is the
+cleaner of the two, because GFS died on a mechanism this one does not need.**
+
+---
+
+### T-2026-11-02-05 — sweep: unnamed-counterparty 8-Ks, non-US regulators, own-results prints, the forward calendar — REJECTED (nine items, disposed as one, ZERO drill queries spent)
+Disposed in one entry because each fails at the first rung on evidence already in hand. Minting nine
+IDs would inflate the thesis count without recording anything. **Each item names the rung.**
+
+| # | Item | Rung |
+|---|---|---|
+| 1 | **Meta Platforms** 8-K, Item 1.01 "Entry into a Material Definitive Agreement", filed 2026-10-29 | **Rule (v), purest form.** The filing discloses **no counterparty, no financial terms and no description**. A blank with a filing date is still a blank — compare "Party A" (10-05). |
+| 2 | **Chevron** 8-K, Item 2.02, 2026-10-30 | **First-order** — Item 2.02 IS "results of operations and financial condition", i.e. the company's own results. No second party exists in the filing type. |
+| 3 | **Loews (L)** Q3: net income $306M / $1.50 vs $504M / $2.43; $67M buyback | **First-order own-results print**, and dated **2026-11-02**, outside the surveyed window. A buyback is capital paid OUT (**rule (viii)**). |
+| 4 | **Broadcom (AVGO)** — South Korea Supreme Court decision, 2026-11-02 | **Not a US regulator**, and AVGO is the first-order party. No named supplier. |
+| 5 | **Hashdex** 8-K, "Authorized Participant Agreement", 2026-10-30 | **§3 — crypto-tracking product. Ineligible at any price and any level of disclosure.** |
+| 6 | **Precision Optics (POCI)** — lease, $13,316.33/mo | **§3 — microcap**, and a lease is a cost, not revenue. |
+| 7 | **Gigabyte** — $526M GDR to fund AI-server supply chain | **§3 — Taiwan-listed.** |
+| 8 | **MNI Chicago-area business activity slowed, released 2026-10-30** | **Macro object — one party, no transaction, and the result carried no index value.** |
+| 9 | **The "$5 trillion AI wipeout" and a sell-side call for a further 9% S&P decline** | **A market move is not a Company A.** No named recipient, no transaction. ⚠ **SCALE MAKES IT MORE CONVINCING, NOT LESS.** |
+
+⚠⚠ **AND THE TENTH ITEM, WHICH GETS NO ROW BECAUSE IT IS ALREADY DISPOSED: THE FORWARD CALENDAR, FOR
+THE EIGHTH MONDAY PRE-MARKET SEAT.** The weekend window contains no trading, so the funnel filled the
+space with the week ahead — **Apple and Palantir reporting TODAY 11-02, AMD Tuesday, Qualcomm / Arm /
+Arista later, the October employment report 11-06, ISM manufacturing and services this week.** ⚠ **The
+source named the exclusion itself again this morning** (*"These are forward calendar items and are
+excluded"*), as it did on 10-12. **Already disposed at `T-2026-10-12-05` and `T-2026-10-13-08`. NOTE
+THE DATES AND DO NOTHING.** ⚠ **The 10-12 lesson is holding without re-derivation and the expectation
+written there — "expect this shape on EVERY Monday pre-market seat" — has now been met on every Monday
+seat since.**
+
+⚠ **STANDING DISPOSALS NOT RE-LITIGATED, AT ZERO QUERY COST: RTX (eight appearances), GNRC (42
+consecutive refusals), Venture Global (three), GE Vernova (three).** None appeared this morning. ⚠
+**GE Vernova's Q3 release DID surface in a citation list on the supply-agreement scan and was NOT
+opened — it is an own-results print by a ticker already disposed three times, and the recognise-on-
+sight list exists precisely so that costs nothing.**
+
+---
+
 ### 2026-10-30 (08:17 ET) — event survey (funnel, pre-thesis)
 
 Selftest **5/5**, exit 0 (`trading_enabled: true`, LIVE paper, equity **$99,299.73** at pre-flight).
