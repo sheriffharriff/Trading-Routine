@@ -40,6 +40,131 @@ anything where the honest-broker rule (§4) did real work>
 
 ## Entries
 
+### 2026-11-02 (Monday)
+
+**Account:** total **$98,731.21 — INTRADAY, NOT A CLOSE** (99.046311231 sh VOO at a live
+**693.95** + $30,000.00 cash, read at **15:15 ET with 45 min of the session left**) | day
+**−$87.16 (−0.0882%)** from `last_equity` $98,818.37 | since inception **−1.2688%** ($100,000.00
+opening, price basis)
+⚠⚠⚠ **EVERY FIGURE IN THIS ENTRY IS AN INTRADAY MARK. THERE IS NO OFFICIAL CLOSE FOR 2026-11-02
+ANYWHERE IN THIS REPO, AND THAT IS A REFUSAL, NOT AN OVERSIGHT — see below.** ⚠ **The broker-pair
+cross-check that the last 31 close seats ran is UNAVAILABLE for the first time: it tests `account`'s
+day P&L against an official-close basis, and today there is no such basis. `lastday_price` 694.81 vs
+the 10-30 `--adjustment all` bar `c` 694.70 is a $0.11 disagreement on the PRIOR day with nothing
+available to adjudicate it. NEITHER NUMBER IS AUTHORITATIVE.**
+**Sleeves:** core **69.6151%** | satellite **0.0%** | cash **30.3849%**   (§2 band 65–75%, intraday
+basis). **REBALANCE NOT DUE TOMORROW.** Band **$64,176.57–$74,049.89**; core **$4,556.62 above the
+floor** and **$5,316.70 below the ceiling** = **4.6151% of equity from the nearer edge, and the
+nearer edge is the FLOOR for a sixth consecutive seat.** ⚠ `rebalance_delta: 380.05` is a **distance
+readout, not an instruction.** Re-derived here, not inherited: the §2 floor needs **VOO at $562.51,
+−18.94%** from 693.95 — not the ~4.6%-of-equity gap a naive read gives.
+**Breaker:** INACTIVE (`consecutive_closed_losses` 0 — nothing has ever closed)
+**Week:** 0/3 new positions (ISO **2026-W45**, weekday 1, Monday anchor **2026-11-02** — re-derived
+with `isocalendar()`, matched `week_of`, **no rollover performed**)
+
+**Traded:** nothing. **Zero orders of any kind at any of today's four seats** — zero buys, zero
+sells, zero rebalance. §7 limbo check clean: **one order in this account's entire history**
+(`d177d8f0…`, 2026-09-03 VOO core, filled, terminal, already logged). **Nothing from today to
+resolve or carry forward.**
+**Researched:** **5 theses — 0 accepted, 5 rejected** (`T-2026-11-02-01` … `-05`, all from the 07:01
+pre-market seat; the midday and close seats spent **zero** Perplexity queries, correctly, because
+there is no position to test an invalidation condition against).
+**Positions near a sell rule:** **none — and the honest form is that §5 HAD NO SUBJECT, NOT THAT IT
+PASSED.** All four rules **ABSENT, NOT PASSING**; satellite block count **0**; 49th consecutive
+absent seat.
+
+**What happened:**
+
+Two things, and the invisible one is the whole entry.
+
+The visible one is a quiet Monday. VOO drifted **−0.0882%** on the day against Friday's mark, which
+leaves the account **−1.2688%** since inception and core at **69.62%**, comfortably mid-band. Five
+candidates were worked up this morning and all five died — INTC on rule (v) with a **−24.36%**
+priced-in reading on top, SYM/WMT on part 1 with both named parties first-order, MU on the
+shared-cause object, CRL on part 2 with **no dollar value disclosed at all**, and a nine-item sweep
+disposed as one. Nothing was close. **That is a successful day under §4 and it is recorded as one.**
+
+The invisible one: **this close seat ran at 15:15 ET, 45 minutes before the 16:00 bell, and the
+single job that makes this routine load-bearing — writing today's official close into
+`highest_close` so §5.4 has an operand — could not be done, because today's official close did not
+yet exist.** `clock` returned `is_open: true`, `next_close` 16:00:00−05:00. That is
+broker-authoritative and owes nothing to any theory about why the seat landed there.
+
+**So I did not write a close. I wrote the refusal instead, and then I went and measured what the
+alternative would have cost**, because this log has been carrying the harm at routine 4 as an
+*inference* since Friday and an inference does not get fixed.
+
+I pulled `bars --days 1 --adjustment all` on **core VOO only** — a ticker §5 exempts, so there was
+never any question of stamping it — purely to see what the API hands a seat that asks for "today's
+close" while the market is open. It returns a bar dated **2026-11-02** with **`c` 693.91**. The
+field is called `c`. **There is no partial-bar flag, no session-state bit, nothing anywhere in the
+response that distinguishes it from Friday's finished bar.** A seat that follows Step 2 as written —
+"get today's official close" via `bars --days 1` — gets that number, writes it into `highest_close`,
+stamps `(as of 2026-11-02)`, and the mark then reads **current rather than stale**, so the midday
+staleness detector that exists to catch precisely this will never backfill it. §5.4 would measure
+every subsequent drawdown from a mid-afternoon last trade for the life of the position.
+
+**Today that cost nothing, because the satellite ledger is empty and Step 2 had no operand.** The
+refusal and the vacuous pass coincided, which means **the refusal was never actually tested** — and
+I have written that down rather than claiming credit for it. It acquires an operand the moment one
+satellite position exists.
+
+I could not diagnose the schedule, and I did not try to. `control.md` forbids reading a schedule
+fault off run timestamps, because manual "Run now" invocations look identical to scheduled ones. The
+evidence class it does permit — the **stored schedule** — was unavailable to me: `CronList` returns
+"No scheduled jobs" (it lists only in-session jobs) and my envelope states only the nominal 16:15
+ET. So the −60 min offset is logged as an **observation consistent with** the UTC-anchor hypothesis
+that routines 1, 2 and 3 each confirmed on their stored schedules, and **routine 4 remains formally
+UNVERIFIED.** ⚠ **The point I want the next reader to take: the refusal did not need the diagnosis.
+The broker clock was sufficient. Those two questions are separable and keeping them separate is what
+let this seat act correctly on an open question.**
+
+**What I got wrong or nearly got wrong:**
+
+**1. I reached for a volume test to detect the partial bar, and the test is unsound — the log's own
+note is what invited it.** The 10-30 close seat recorded VOO's bar as *"a complete bar on 4.5× the
+prior session's volume,"* which reads as though completeness is legible from `v`/`n`. I started down
+exactly that path. Then I computed the distribution across the seven complete sessions in the same
+pull (`v` 62,938 · 34,733 · 55,208 · 30,515 · 40,205 · 23,394 · 106,403 — mean 50,485, median
+40,205) and **today's partial bar, three-quarters of the way through the session, carries `v` 44,840
+on `n` 1,834: it out-volumes four of the seven and out-trades five of the seven.** ⚠ **A partial bar
+is statistically indistinguishable from a complete one here. 10-30 read as complete because it was a
+4.5× outlier day, not because the method works — and the converse the method invites, "normal volume
+⇒ complete bar," is exactly what would burn a 15:15 seat.** The only reliable detector is the clock.
+**This REPLACES the volume-as-completeness reading rather than sitting beside it.**
+
+**2. The honest version of why I did not corrupt a high-water mark today: luck, plus somebody else's
+vigilance — not a working safeguard.** Step 2 contains no clock precondition. It says to get today's
+official close and update the date "whether or not the value moves." Followed literally at 15:15 with
+one position open, it produces a corrupted mark and a current-looking date. **Two things stopped it:
+the ledger happens to be empty, and the carry-forward happened to warn me before I read Step 2.**
+Neither is a control. **If the ledger had held one name, I think the warning alone would probably
+have saved it — but I am genuinely not confident of that, and "probably" is not a safeguard either.**
+
+**3. I considered waiting out the 45 minutes to do the job properly, and I want the reasoning on
+record because it is a judgment call I could have made differently.** Waiting would have bought
+close-basis equity figures. It would **not** have bought any high-water mark, because there is
+nothing to mark. Against that: a ~60-minute hold (the routine is set to 16:15, not 16:00, precisely
+because closes need time to settle) on an ephemeral container risks losing the finding and the commit
+entirely. **I chose to commit the finding and label every number INTRADAY rather than hold the
+session for a cosmetic improvement to figures nobody trades on.** Tomorrow's pre-market seat can
+backfill 11-02's close-basis equity from a `bars` pull in one call — noted in carry-forward.
+
+**4. Nothing else was close.** No thesis was talked into existence today; the five rejects each died
+at the first rung they met, and none of them was argued with.
+
+**For the next run:**
+- ⚠⚠⚠ **11-02 HAS NO OFFICIAL CLOSE RECORDED. BACKFILL IT** — `bars --symbol VOO --days 2
+  --adjustment all` gives the real `c` for 11-02 in one call. The intraday **$98,731.21 / −0.0882%**
+  in this entry is **NOT** a close-basis figure and must not be quoted as one.
+- ⚠⚠⚠ **ROUTINE 4 FIRED AT 15:15 ET AGAINST A NOMINAL 16:15. Routine 4's STORED SCHEDULE IS STILL
+  UNREAD — `CronList` cannot see it from inside a run. A seat whose envelope states its stored
+  schedule MUST record it.** Routines 1, 2, 3 confirmed UTC-anchored on stored schedules; 4 is
+  observed-consistent only; 5 untouched.
+- ⚠⚠ **ANY FUTURE STEP 2 MUST GATE ON `clock` (`is_open` / `next_close`), NOT ON THE BAR.** There is
+  no partial-bar flag in the API response and **no volume heuristic works** (measured above).
+- ⚠ **Zero orders today, §7 limbo clean, breaker INACTIVE 0/3, week 0/3, no rebalance due.**
+
 ### 2026-10-30 (Friday)
 
 **Account:** total **$98,807.47 on official closes** (`bars --adjustment all`, VOO `c` **694.70**,

@@ -85,7 +85,7 @@ check that the pull returned the right session. A stored baseline is a *label*, 
 
 *(none — no **satellite** positions have been opened yet. Core VOO exists and is deliberately not tracked here, per the top-of-file rules and the fill note further down.)*
 
-### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-11-02, **DIGEST OPEN — `1-premarket` 07:01 · `2-market-open` 08:47 ⚠ **PRE-OPEN, SCHEDULE FAULT — see that seat’s append** · `3-midday` 12:18 **(market OPEN, zero exits)**. The close seat closes and collapses it.** ⚠ **Absent-seat ordinals: 07:01 **46th** · 08:47 **47th** · 12:18 **48th**.** ⚠ **DELIBERATELY WRITTEN SHORT — open item 16 is live and prose volume is the one lever a seat controls; no collapse ratio is claimed here because there is nothing yet to collapse.**)
+### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-11-02, **ONE DIGEST FOR THE DATE, ALL FOUR SEATS:** `1-premarket` 07:01 ⚠ **~59 min EARLY** · `2-market-open` 08:47 ⚠⚠ **PRE-OPEN, COULD NOT EXECUTE** · `3-midday` 12:18 **(market OPEN, zero exits, benign)** · `4-market-close` **15:15** ⚠⚠⚠ **PRE-CLOSE — 45 MIN BEFORE THE BELL, SO NO OFFICIAL CLOSE EXISTED AND NONE WAS WRITTEN.** ⚠ **CLOSED BY THE CLOSE SEAT, THE ONLY SEAT ENTITLED TO TOUCH WHAT THREE EARLIER SEATS WROTE.** ⚠ **RE-EVALUATED AT EACH SEAT, NOT INHERITED.** Absent-seat ordinals: 07:01 **46th** · 08:47 **47th** · 12:18 **48th** · this close **49th**. ⚠⚠ **NO COLLAPSE RATIO IS CLAIMED AND NOTHING WAS COLLAPSED: three of today's four seats are each carrying a DISTINCT schedule finding at a DIFFERENT rung of the harm scale, and folding them to one line would destroy the only evidence that the fault's severity VARIES BY ROUTINE. Counted after the write, not from intent: this digest GREW.**)
 
 **Zero satellite positions, re-derived at this seat, three sides, no discrepancy:** Alpaca `positions`
 = **ONE row, core VOO only** (99.046311231 sh @ `avg_entry_price` **706.74**, `cost_basis`
@@ -235,6 +235,90 @@ STORED-SCHEDULE evidence class `control.md` permits, not a firing-time diagnosis
 happened to land this run at 17:18 UTC = 12:18 ET, inside the session, so the fault had no effect
 here.** ⚠⚠ **IT IS NOT HARMLESS AT ROUTINE 4: 15:05 ET would stamp a PARTIAL BAR as an official
 close, silently disabling §5.4 for every position then open. On today's empty ledger, no operand.**
+
+⚠⚠⚠ **CLOSE SEAT, 15:15 ET — AND IT RAN *BEFORE* THE CLOSE. THERE IS NO OFFICIAL CLOSE FOR 2026-11-02
+IN THIS FILE, BY DELIBERATE REFUSAL RATHER THAN BY OMISSION.** `4-market-close-journal`, selftest
+**5-of-5 EXIT 0**, `selftest` ET stamp **2026-11-02 15:15 ET** against this routine's nominal
+**16:15 ET**. ⚠ **THE DECISIVE FACT IS BROKER-AUTHORITATIVE AND OWES NOTHING TO ANY SCHEDULE
+DIAGNOSIS:** `clock` returned **`is_open: true`** with **`next_close` 2026-11-02T16:00:00−05:00** at
+timestamp **15:15:56 ET** — **45 minutes of the session still to run.** A routine whose Step 2 writes
+*today's official close* into `highest_close` reached its seat while no such close existed.
+⚠ **Step 2 was therefore NOT performed, and this is the 49th absent seat: it had NO OPERAND ANYWAY —
+satellite block count 0 — so the refusal and the vacuous pass coincide today and MUST NOT be read as
+the refusal having been tested.**
+
+⚠⚠ **THE PARTIAL BAR WAS PULLED ON PURPOSE, ON CORE VOO ONLY, AS A DIAGNOSTIC — AND IT CONVERTS THE
+10-30/11-02 *INFERENCE* INTO A *MEASUREMENT*.** `bars --symbol VOO --days 1 --adjustment all` at
+15:15 ET returns, for `t` **2026-11-02T05:00:00Z**: `c` **693.91** · `o` 698.07 · `h` 702.05 ·
+`l` 692.355 · `n` **1834** · `v` **44,840** · `vw` 697.47037. ⚠⚠⚠ **THE FIELD IS NAMED `c` AND
+CARRIES NO FLAG, NO PARTIAL MARKER AND NO SESSION-STATE BIT. A SEAT THAT TRUSTS THE FIELD NAME WRITES
+A MID-AFTERNOON LAST TRADE INTO `highest_close` AND STAMPS IT `(as of 2026-11-02)`.** The mark would
+then read **current, not stale**, so the midday staleness detector would never backfill it, and §5.4
+would measure every future drawdown from a number that was never a close. **Nothing in the bar, the
+field or the date would say so — exactly the silent failure this file's own header describes.**
+
+⚠⚠⚠ **AND IT CORRECTS THIS FILE'S OWN DETECTION ASSUMPTION — A VOLUME TEST DOES NOT CATCH IT.** The
+10-30 close seat recorded VOO's bar as *"a complete bar on 4.5× the prior session's volume"*, which
+invites the reading that completeness is legible from `v`/`n`. ⚠ **MEASURED AGAINST THE SEVEN
+COMPLETE SESSIONS IN THE SAME `--adjustment all` PULL (10-22 … 10-30: `v` 62,938 · 34,733 · 55,208 ·
+30,515 · 40,205 · 23,394 · 106,403; mean 50,485, median 40,205), TODAY'S *PARTIAL* BAR AT 45 MINUTES
+TO THE BELL OUT-VOLUMES FOUR OF THE SEVEN AND OUT-TRADES FIVE OF THE SEVEN (`n` 1834 vs 2597 · 1082 ·
+1192 · 1261 · 1066 · 1182 · 4200).** ⚠⚠ **A PARTIAL BAR IS STATISTICALLY INDISTINGUISHABLE FROM A
+COMPLETE ONE IN THIS TICKER'S VOLUME DISTRIBUTION. 10-30 read as complete because it was a 4.5×
+OUTLIER day, not because the test works — and the converse the test invites ("normal volume ⇒
+complete bar") is precisely what would burn a 15:15 close seat.** ⚠ **THE ONLY RELIABLE DETECTOR IS
+THE CLOCK: `is_open` and `next_close`. Any future Step 2 must gate on those, not on the bar.**
+
+⚠⚠ **THE SCHEDULE IS *NOT* DIAGNOSED HERE, AND THAT RESTRICTION IS HONOURED DELIBERATELY.**
+`control.md` forbids diagnosing a schedule fault from run timestamps, because manual "Run now"
+invocations are indistinguishable from scheduled ones. ⚠ **This seat could NOT read routine 4's
+STORED SCHEDULE — the evidence class `control.md` permits and the one the 08:47 and 12:18 seats used.
+`CronList` returns "No scheduled jobs" because it lists only jobs created in-session, and this seat's
+envelope states only the NOMINAL 16:15 ET.** ⚠⚠ **SO: the −60 min offset between a 15:15 firing and a
+nominal 16:15 is RECORDED AS AN OBSERVATION, is CONSISTENT with the UTC-anchor hypothesis that
+routines 1, 2 and 3 confirmed on stored schedules, and DOES NOT SETTLE ROUTINE 4. What would settle
+it is one reading of routine 4's stored schedule, which remains UNVERIFIED.**
+⚠⚠⚠ **BUT THE OPERATIONAL CONSEQUENCE IS INDEPENDENT OF THE DIAGNOSIS AND IS NOT DEFERRED: whatever
+put this seat at 15:15, the market was open, no official close existed, and none was written. THE
+REFUSAL NEEDED NO DIAGNOSIS — ONLY THE BROKER CLOCK.**
+
+**Zero satellite positions, re-derived at this seat, three sides, no discrepancy:** Alpaca `positions`
+= **ONE row, core VOO only** (99.046311231 sh @ `avg_entry_price` **706.74**, `cost_basis`
+**$69,999.989999** — unchanged since 2026-09-03, only the mark moving; `current_price` **693.95** is a
+**LIVE INTRADAY MIDPOINT 45 MIN BEFORE THE BELL** and is **NOT** stamped anywhere in this file) ·
+this file's satellite block count (`grep -cE '^### [A-Z]'`) = **0** · `sleeves` `satellite.count: 0`,
+`value: 0`, `pct: 0.0`. **All four §5 rules ABSENT, NOT PASSING — no operand at any of them.** No
+Perplexity query was spent, because there is no invalidation condition to test.
+
+⚠ **§7 LIMBO CHECK RUN AFTER THE FACT AND CLEAN:** `orders --status all` = **one order in this
+account's entire history**, `d177d8f0…`, 2026-09-03 VOO, `filled`, terminal, already in
+`trade_log.md`. **Verified negative, not an absence of checking.** ⚠ **Nothing from today to resolve
+or carry: zero orders were placed at any of today's four seats.**
+
+⚠ **CORE VOO STRUCK FROM THE §5 WORKING LIST, NOT STAMPED — 111TH RUN.** §5 exempts it and §2 forbids
+trading it on news. ⚠⚠ **A WINDOW *WAS* PULLED THIS TIME (8 bars) — so unlike the three earlier seats
+today, core's since-entry maximum was on screen and was STILL NOT WRITTEN. That is the STRONGER form
+of the refusal and it is labelled as the stronger one.** The 693.91 figure above exists in this file
+as a *diagnostic of the bar*, not as a mark on any position.
+
+⚠⚠ **THE BROKER-PAIR CROSS-CHECK IS UNAVAILABLE TODAY, AND THAT IS ITSELF A CONSEQUENCE OF THE SEAT'S
+TIME — 32ND SEAT ON THE STANDING ITEM.** Every prior close seat tested `account`'s day P&L against an
+official-close basis. **There is no official close to test against**, so today's figures are
+**INTRADAY ONLY** and are labelled as such everywhere they appear: `equity` **$98,731.21**,
+`last_equity` **$98,818.37** → day **−$87.16 / −0.0882%**. ⚠ **`lastday_price` 694.81 vs the 10-30
+`--adjustment all` bar `c` 694.70 is a $0.11 basis disagreement on the PRIOR day that no close-basis
+figure is available to adjudicate.** **DO NOT PROMOTE EITHER NUMBER TO AUTHORITATIVE.**
+
+⚠ **§2 SLEEVE RE-READ, NOT INHERITED, NOT ACTED ON (this routine does not trade):** equity
+**$98,733.19** · core **$68,733.19 / 69.6151%** · satellite **$0 / 0.0%** · cash **$30,000.00 /
+30.3849%** · `core_in_band: true` · `rebalance_needed: false` · `rebalance_delta` **380.05** (a
+distance readout, **not** an instruction). Band **$64,176.57–$74,049.89**; core **$4,556.62 above the
+floor (4.6151% of equity)** and **$5,316.70 below the ceiling** — **nearer edge is the FLOOR, sixth
+consecutive seat.** Core unrealised **−$1,266.80 / −1.8097%** from 706.74. ⚠ **The 10-31 audit stands
+and was RE-DERIVED here, not inherited: `core/(core+30,000) = 0.65` needs core $55,714.29, i.e. VOO
+at **$562.51 — −18.94%** from 693.95. NOT the ~4.6%-of-equity gap a naive read gives. NO REBALANCE
+DUE TOMORROW.**
+
 
 ### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-10-30, **ONE DIGEST FOR THE DATE, ALL FOUR SEATS:** `1-premarket` 08:17 · `2-market-open` 09:37 · `3-midday` 12:48 · `4-market-close` 16:17. ⚠ **CLOSED AND COLLAPSED BY THE CLOSE SEAT, THE ONLY SEAT ENTITLED TO TOUCH WHAT THREE EARLIER SEATS WROTE.** ⚠ **RE-EVALUATED AT EACH SEAT, NOT INHERITED.** Absent-seat ordinals: 08:17 **42nd** · 09:37 **43rd** · 12:48 **44th** · this close **45th**. ⚠ **COLLAPSE RATIO MEASURED AFTER THE WRITE, NOT CLAIMED FROM INTENT — the figure is at the foot of this digest, because six recorded instances say this is the one line the file keeps getting wrong.**)
 
