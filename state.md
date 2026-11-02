@@ -10,8 +10,8 @@ The block below is parsed by `scripts/common.py` and gates real behavior
 `key: value` format exactly. Prose goes underneath.
 
 ```
-last_run: 2026-11-02 12:18 ET 3-midday-management SELFTEST 5-of-5 EXIT 0. MARKET OPEN AT THIS SEAT - is_open true at 12:19:02 ET, next_close 16:00, so the 08:47 pre-open fault IS NOT REPEATED HERE. ZERO EXITS AND NOTHING SHOULD HAVE FIRED THAT DID NOT - there are NO SATELLITE POSITIONS, so all four section 5 rules are ABSENT rather than passing and every one of them has NO OPERAND. This is an EXITS-ONLY routine and it correctly opened nothing. Three-sided ledger reconciliation clean: Alpaca positions ONE ROW core VOO only (99.046311231 sh at 706.74, cost_basis 69999.989999, unchanged since 2026-09-03 with only the mark moving), positions.md satellite block count 0, sleeves satellite.count 0. STEP 2 HIGH-WATER REPAIR DISCHARGED VACUOUSLY, third seat today - no highest_close exists, so no bars window was pulled and no backfill performed, and a vacuous pass is indistinguishable from a correct one in every artifact this run leaves. Section 7 limbo check run and CLEAN - orders --status all returns exactly one order in this account's entire history, d177d8f0, 2026-09-03 VOO, filled, terminal, already in trade_log.md; stated as a VERIFIED NEGATIVE not as an absence of checking. No Perplexity query was spent, because there is no invalidation condition to test. Section 2 sleeve re-read not inherited and NOT ACTED ON because this routine may not trade: equity 99179.89, core 69179.89 at 69.75 pct, satellite 0, cash 30000.00 at 30.25 pct, core_in_band true, rebalance_needed false, rebalance_delta 246.04 which is a DISTANCE READOUT NOT AN INSTRUCTION. Core unrealised MINUS 820.10 or minus 1.172 pct from 706.74, intraday PLUS 361.52 or plus 0.525 pct. WEEK ROLLOVER CHECKED AND NOT NEEDED - today is Monday 2026-11-02 and week_of already reads 2026-11-02, new_positions_this_week stays 0. BREAKER INACTIVE, 0 of 3. THIRD STORED SCHEDULE READ AND IT AGREES WITH THE OTHER TWO: this routine is stored at 16:40:00 UTC which at minus 05:00 is 11:40 ET against a nominal 12:30 ET, about 50 MINUTES EARLY, the EDT-anchored time unshifted by the fall-back. Routines 1, 2 and 3 now all read this way, which UPGRADES the 08:47 seat's very-probably on routines 4 and 5 WITHOUT VERIFYING THEM. That is the STORED-SCHEDULE evidence class control.md permits and NOT a firing-time diagnosis; dispatch happened to land this run at 17:18 UTC equals 12:18 ET, inside the session, so the fault had NO EFFECT HERE. NO NOTIFICATION WAS SENT FROM THIS SEAT - the 08:47 seat already notified the human about the same fault this morning and this seat adds one confirming datapoint, not a new condition; a second lunchtime ping on an unchanged item is noise. HASH RULE HONOURED: this line contains no literal hash character.
-prior_run: 2026-11-02 08:47 ET 2-market-open-execution SELFTEST 5-of-5 EXIT 0. COLLAPSED BY THIS 12:18 SEAT RATHER THAN CARRIED VERBATIM - full text in git at commit 9190de0 and the seat's own append is in positions.md under today's digest. NOTHING LIVE WAS DISCARDED. NO ORDERS PLACED AND THE ORDER COUNT IS NOT WHY: THE MARKET WAS SHUT WHEN THAT SEAT READ THE CLOCK, is_open false at 08:47:52 ET with next_open 09:30, so the 09:35 seat FIRED PRE-OPEN. It discharged the 07:01 seat's conditional instruction as a NAMED SCHEDULE FAULT WITH A NOTIFICATION rather than as market-closed-nothing-to-do, and it settled the fault on the STORED SCHEDULE, 13:35 UTC equals 08:35 ET against a nominal 09:35, which is the evidence class control.md permits. THE FAULT COST NOTHING THAT DAY AND THAT IS THE DANGEROUS PART - the 07:01 plan carried zero buy, zero sell and zero rebalance intents, so a correctly-firing seat would ALSO have placed zero orders and the two are BYTE-IDENTICAL IN THE ORDER COUNT. Ledger reconciled three-sided, section 7 limbo clean at one order ever, no rebalance due, breaker INACTIVE, 0 of 3.
+last_run: 2026-11-02 15:15 ET 4-market-close-journal SELFTEST 5-of-5 EXIT 0. THIS CLOSE SEAT RAN BEFORE THE CLOSE AND WROTE NO CLOSE - clock is_open TRUE at 15:15:56 ET with next_close 16:00:00 minus 05:00, so 45 MINUTES OF THE SESSION REMAINED and NO OFFICIAL CLOSE FOR 2026-11-02 EXISTED. STEP 2 WAS REFUSED, NOT SKIPPED, and the refusal owes nothing to any schedule diagnosis - the broker clock alone settles it. CRITICALLY IT HAD NO OPERAND EITHER: satellite block count 0, so the refusal and the vacuous pass COINCIDE TODAY and the refusal WAS NEVER TESTED. NO highest_close WAS WRITTEN AND NONE HAS EVER BEEN WRITTEN IN THIS REPO. THE 10-30 INFERENCE IS NOW A MEASUREMENT: a diagnostic bars --days 1 --adjustment all on CORE VOO ONLY (section 5 exempt, never stampable) returns t 2026-11-02 with c 693.91, n 1834, v 44840 AND NO PARTIAL-BAR FLAG OF ANY KIND - the field is just named c, so a seat following Step 2 literally writes a mid-afternoon last trade into highest_close, stamps it as of 2026-11-02, the mark then reads CURRENT NOT STALE, the midday staleness detector never backfills it, and section 5.4 measures every later drawdown from a non-close for the life of the position. AND A VOLUME TEST DOES NOT CATCH IT - measured against the seven complete sessions in the same pull (v 62938, 34733, 55208, 30515, 40205, 23394, 106403; mean 50485, median 40205) TODAY S PARTIAL BAR OUT-VOLUMES FOUR OF SEVEN AND OUT-TRADES FIVE OF SEVEN, so the 10-30 close seat s complete bar on 4.5x volume reading is UNSOUND AND IS REPLACED: completeness is NOT legible from v or n and the ONLY reliable detector is the clock. SCHEDULE NOT DIAGNOSED AND DELIBERATELY SO - control.md forbids diagnosing from run timestamps and the STORED SCHEDULE was UNREADABLE from this seat (CronList returns No scheduled jobs, listing only in-session jobs; envelope states only the nominal 16:15 ET), so the minus 60 min offset is AN OBSERVATION CONSISTENT WITH the UTC-anchor hypothesis and ROUTINE 4 REMAINS FORMALLY UNVERIFIED. ALL FIGURES TODAY ARE INTRADAY: equity 98731.21, last_equity 98818.37, day minus 87.16 or minus 0.0882 pct, since inception minus 1.2688 pct; core 68733.19 at 69.6151 pct, satellite 0, cash 30000.00 at 30.3849 pct, core_in_band true, rebalance_needed false, NO REBALANCE DUE TOMORROW, floor needs VOO at 562.51 or minus 18.94 pct re-derived not inherited. THE BROKER-PAIR CROSS-CHECK IS UNAVAILABLE FOR THE FIRST TIME IN 32 SEATS because it requires an official-close basis - lastday_price 694.81 vs the 10-30 bar c 694.70 is a 0.11 disagreement on the PRIOR day with nothing to adjudicate it, NEITHER IS AUTHORITATIVE. Core unrealised minus 1266.80 or minus 1.8097 pct from 706.74. ZERO ORDERS AT ALL FOUR SEATS TODAY, section 7 limbo CLEAN at one order ever (d177d8f0, 2026-09-03 VOO, filled, terminal, logged), nothing from today to resolve or carry. WEEK ROLLOVER CHECKED NOT NEEDED - ISO 2026-W45 weekday 1 Monday anchor 2026-11-02 matches week_of, new_positions_this_week stays 0. BREAKER INACTIVE 0 of 3. FIVE THESES TODAY ALL FROM THE 07:01 SEAT, 0 ACCEPTED 5 REJECTED, zero Perplexity queries spent at the midday and close seats. ClickUp daily summary posted, task 86bcwub64. HUMAN NOTIFIED - this is a NEW CONDITION not a repeat datapoint: it is the FIRST close seat to actually fire pre-close (previously an inference) AND it REMOVES an assumed mitigation (the volume test). HASH RULE HONOURED: this line contains no literal hash character.
+prior_run: 2026-11-02 12:18 ET 3-midday-management SELFTEST 5-of-5 EXIT 0. COLLAPSED BY THIS CLOSE SEAT - full text in git at commit 607ffa1. NOTHING LIVE WAS DISCARDED. Market OPEN at that seat (is_open true 12:19:02 ET) so the 08:47 pre-open fault was NOT repeated there; ZERO EXITS and nothing should have fired that did not - no satellite positions, so all four section 5 rules ABSENT rather than passing with NO OPERAND. Step 2 high-water repair discharged VACUOUSLY, no bars pulled. Ledger reconciled three-sided, section 7 limbo clean, breaker INACTIVE. ITS KEY CONTRIBUTION: the THIRD stored-schedule reading, routine 3 at 16:40 UTC = 11:40 ET vs nominal 12:30 ET, agreeing with routines 1 and 2 and upgrading the UTC-anchor hypothesis to very probable on routines 4 and 5 WITHOUT verifying them. It predicted a 15:05 ET routine 4 would stamp a partial bar as a close; THIS SEAT FIRED AT 15:15 AND CONFIRMS THE MECHANISM WHILE LEAVING THE SCHEDULE ITSELF UNVERIFIED.
 week_of: 2026-11-02
 new_positions_this_week: 0
 consecutive_closed_losses: 0
@@ -19,9 +19,9 @@ circuit_breaker: INACTIVE
 halt_triggered_at: none
 core_established: true
 core_ticker: VOO
-core_pct: 69.75
+core_pct: 69.62
 satellite_pct: 0.0
-cash_pct: 30.25
+cash_pct: 30.38
 open_thesis_ids: none
 ```
 
@@ -50,9 +50,12 @@ the two candidate fixes, NEITHER of which a seat may invent mid-run.**
 
 ### Live — act on these
 
-- **⚠⚠⚠ CONFIRMED 2026-11-02 — THE SCHEDULE DID NOT FOLLOW THE DST FALL-BACK. ROUTINE 2 NOW FIRES
-  BEFORE THE OPEN AND CANNOT EXECUTE. THIS IS THE RUN-BLOCKING ITEM; EVERYTHING ELSE IN THIS FILE IS
-  BOOKKEEPING BESIDE IT.**
+- **⚠⚠⚠ CONFIRMED 2026-11-02 — THE SCHEDULE DID NOT FOLLOW THE DST FALL-BACK. ROUTINE 2 FIRES
+  BEFORE THE OPEN AND CANNOT EXECUTE; ROUTINE 4 FIRES BEFORE THE CLOSE AND HAS NO CLOSE TO RECORD.
+  THIS IS THE RUN-BLOCKING ITEM; EVERYTHING ELSE IN THIS FILE IS BOOKKEEPING BESIDE IT.**
+  ⚠⚠ **BOTH ENDS OF THE TRADING DAY ARE NOW BROKEN, AND THE TWO FAILURES HAVE OPPOSITE SIGNATURES:
+  ROUTINE 2 FAILS LOUDLY (it finds `is_open: false` and can do nothing), ROUTINE 4 FAILS SILENTLY (it
+  finds a bar that LOOKS like a close and would write it). THE SILENT ONE IS THE EXPENSIVE ONE.**
   ⚠⚠ **THIRD STORED SCHEDULE READ, 12:18 MIDDAY SEAT, AND IT AGREES: routine 3 is stored at
   `16:40:00 UTC` = **11:40 ET** against a nominal **12:30 ET**, ~50 min early — the EDT-anchored time
   unshifted. **Routines 1, 2 and 3 now all read this way, so the 08:47 seat's "very probably" on
@@ -82,22 +85,52 @@ the two candidate fixes, NEITHER of which a seat may invent mid-run.**
   seat over an empty plan are byte-identical in output.** ⚠ **THE ONLY REASON TODAY'S FAULT WAS SEEN
   IS THAT THE 07:01 SEAT DEMANDED THE CLOCK BE READ AND NAMED IN ADVANCE. KEEP DOING THAT: EVERY SEAT
   RECORDS ITS FIRING TIME AND `clock` `is_open` AS THE FIRST LINE OF ITS RUN.**
-  ⚠⚠⚠ **THE WORSE CASE IS ROUTINE 4, AND IT IS AN INFERENCE, LABELLED AS ONE.** Two routines are now
-  an hour early on the same morning (routine 1 **observed** at 07:01 vs nominal 08:00; routine 2
-  **stored** at 08:35 vs nominal 09:35), so **all five triggers are very probably UTC-anchored.**
-  **A 16:05 ET close routine shifted the same way fires at 15:05 ET, BEFORE THE 16:00 CLOSE — and
-  that is WORSE THAN A SKIPPED RUN, because the close seat would stamp a PARTIAL BAR as an official
-  close,** compounding the two partial-bar defects the 10-30 review filed (routine 3 Step 2's max,
-  which fails toward **SELLING**, and routine 2 Step 6's `voo_close_at_entry`). ⚠ **No operand on
-  today's empty ledger. It acquires one the moment a satellite position exists.** ⚠ **The 08:47 seat
-  did NOT verify routines 3, 4 or 5's stored schedules — only its own, plus routine 1's observation.
-  A seat that can read its own stored schedule should record it, and three such readings close the
-  inference.**
+  ⚠⚠⚠ **ROUTINE 4 IS NO LONGER AN INFERENCE — A CLOSE SEAT FIRED PRE-CLOSE ON 2026-11-02 AT 15:15 ET
+  AGAINST A NOMINAL 16:15, AND THE MECHANISM IS NOW MEASURED. THIS REPLACES THE INFERENCE RATHER THAN
+  SITTING BESIDE IT.** `clock` returned **`is_open: true`, `next_close` 16:00:00−05:00** — **45 minutes
+  of session left, broker-authoritative.** ⚠ **STEP 2 WAS REFUSED, NOT SKIPPED, AND NO `highest_close`
+  WAS WRITTEN.**
+  ⚠⚠ **THE MEASUREMENT, FROM A DIAGNOSTIC PULL ON CORE VOO ONLY (§5-exempt, never stampable):**
+  `bars --days 1 --adjustment all` at 15:15 returns `t` **2026-11-02**, **`c` 693.91**, `n` 1834,
+  `v` 44,840 — **AND NO PARTIAL-BAR FLAG, NO SESSION-STATE BIT, NOTHING. THE FIELD IS SIMPLY NAMED
+  `c`.** A seat following Step 2 literally writes that mid-afternoon last trade into `highest_close`,
+  stamps **`(as of 2026-11-02)`**, and the mark then reads **CURRENT, NOT STALE** — so **the midday
+  staleness detector, which exists for exactly this, never backfills it**, and §5.4 measures every
+  later drawdown from a non-close **for the life of the position.**
+  ⚠⚠⚠ **AND IT KILLS THE ONLY MITIGATION ANYONE HAD ASSUMED: A VOLUME TEST DOES NOT CATCH IT.** The
+  10-30 close seat's *"a complete bar on 4.5× the prior session's volume"* invites the reading that
+  completeness is legible from `v`/`n`. **Measured against the seven complete sessions in the same
+  pull (`v` 62,938 · 34,733 · 55,208 · 30,515 · 40,205 · 23,394 · 106,403; mean 50,485, median 40,205),
+  TODAY'S PARTIAL BAR OUT-VOLUMES FOUR OF THE SEVEN AND OUT-TRADES FIVE OF THE SEVEN (`n` 1,834 vs
+  2,597 · 1,082 · 1,192 · 1,261 · 1,066 · 1,182 · 4,200).** ⚠ **10-30 read as complete because it was a
+  4.5× OUTLIER, not because the method works. THE VOLUME-AS-COMPLETENESS READING IS UNSOUND AND IS
+  REPLACED.** ⚠⚠ **THE ONLY RELIABLE DETECTOR IS THE CLOCK: ANY FUTURE STEP 2 MUST GATE ON `is_open` /
+  `next_close`, NOT ON THE BAR.**
+  ⚠ **IT COST NOTHING TODAY AND THAT IS THE DANGEROUS PART, AGAIN: the satellite ledger is EMPTY, so
+  Step 2 had NO OPERAND and the refusal COINCIDED with a vacuous pass — THE REFUSAL WAS NEVER TESTED.
+  It acquires an operand the moment one satellite position exists.**
+  ⚠⚠ **THE SCHEDULE ITSELF REMAINS FORMALLY UNVERIFIED AT ROUTINE 4, AND THE RESTRICTION WAS
+  HONOURED.** `control.md` forbids diagnosing a fault from run timestamps. **The permitted evidence
+  class — the STORED SCHEDULE — WAS UNREADABLE FROM THIS SEAT: `CronList` returns "No scheduled jobs"
+  because it lists only jobs created in-session, and the close envelope states only the NOMINAL 16:15
+  ET.** So the −60 min offset is **an OBSERVATION CONSISTENT WITH** the UTC-anchor hypothesis
+  (confirmed on stored schedules for routines 1, 2 and 3), **not a confirmation.** ⚠⚠⚠ **BUT THE
+  OPERATIONAL CONSEQUENCE IS INDEPENDENT OF THE DIAGNOSIS: the refusal needed only the broker clock.
+  KEEP THOSE TWO QUESTIONS SEPARATE — that separation is what let this seat act correctly on an open
+  question.** ⚠ **ROUTINE 5'S STORED SCHEDULE IS STILL UNREAD. A SEAT WHOSE ENVELOPE STATES ITS
+  STORED SCHEDULE MUST RECORD IT.**
+  ⚠⚠ **NEW AND UNRESOLVED: 2026-11-02 HAS NO OFFICIAL CLOSE RECORDED ANYWHERE IN THIS REPO.** Backfill
+  with `bars --symbol VOO --days 2 --adjustment all` — one call. **The intraday $98,731.21 / −0.0882%
+  in today's journal and state is NOT a close-basis figure and must not be quoted as one.**
   ⚠⚠ **THE FIX IS THE HUMAN'S AND IS NOT A SEAT'S TO INSTALL: shift all five triggers +1h in UTC, or
   re-anchor them to `America/New_York` so the next transition (2027-03-14) is handled too.** ⚠ **A
   +1h UTC shift is correct for EST and WRONG AGAIN FROM 2027-03-14; only the timezone anchor fixes
-  both.** **The human was notified on 11-02 twice — by the 07:01 seat as a risk and by the 08:47 seat
-  as a confirmed fault.**
+  both.** **The human was notified on 11-02 THREE TIMES — by the 07:01 seat as a risk, by the 08:47 seat
+  as a confirmed fault at routine 2, and by the 15:15 CLOSE seat as a NEW CONDITION: the first close
+  seat to actually fire pre-close, plus the removal of the assumed volume mitigation.** ⚠ **The 12:18
+  midday seat deliberately sent NO notification — it added a confirming datapoint on an unchanged
+  item, and that was the right call. THE TEST IS WHETHER THE ITEM'S STATUS CHANGED, NOT WHETHER A
+  SEAT HAS SOMETHING TO SAY.**
   ⚠⚠ **AND NO CLICKUP ALERT CARRIES THIS, BY CONSTRUCTION: the four incident keys are
   `push-failure`, `guard-violation`, `selftest-abort` and `circuit-breaker`. A MIS-SCHEDULED OR
   MISSED RUN MATCHES NONE OF THEM.** Open item 11 says this about the vanished 10-05 and 10-29 close
