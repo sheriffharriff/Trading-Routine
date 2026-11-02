@@ -85,6 +85,46 @@ check that the pull returned the right session. A stored baseline is a *label*, 
 
 *(none — no **satellite** positions have been opened yet. Core VOO exists and is deliberately not tracked here, per the top-of-file rules and the fill note further down.)*
 
+### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-11-02, **DIGEST OPEN — `1-premarket` 07:01. The three later seats append below; the close seat closes and collapses it.** ⚠ **Absent-seat ordinal: 07:01 is the 46th.** ⚠ **DELIBERATELY WRITTEN SHORT — open item 16 is live and prose volume is the one lever a seat controls; no collapse ratio is claimed here because there is nothing yet to collapse.**)
+
+**Zero satellite positions, re-derived at this seat, three sides, no discrepancy:** Alpaca `positions`
+= **ONE row, core VOO only** (99.046311231 sh @ `avg_entry_price` **706.74**, `cost_basis`
+**$69,999.989999** — unchanged since 2026-09-03, **only the mark moving**; `current_price` **698.08**
+is a **LIVE PRE-MARKET MIDPOINT** and is **NOT** stamped anywhere in this file) · this file's satellite
+block count (`grep -cE '^### [A-Z]'`) = **0** · `sleeves` `satellite.count: 0`, `value: 0`, `pct: 0.0`.
+
+| Rule | Status at this seat | Distance to trigger |
+|---|---|---|
+| **§5.1** thesis invalidation | **ABSENT** — no thesis held, so no invalidation condition exists to test | **No operand.** ⚠ **No Perplexity news query was spent on a position, because there is no position.** |
+| **§5.2** time stop | **ABSENT** — no timing window is running | **No operand.** |
+| **§5.3** hard stop (−7% from entry) | **ABSENT** — no satellite entry price exists | **No operand.** |
+| **§5.4** trailing stop (−10% from `highest_close`) | **ABSENT** | **No operand**, and `highest_close` remains in its **THIRD STATE: ABSENT CARRYING NO DATE** — neither current nor stale. |
+
+⚠⚠ **THE BACKFILL INSTRUCTION IN THIS FILE'S HEADER DISCHARGED VACUOUSLY AGAIN.** Nothing to backfill
+on an empty ledger — and **a clean result here is byte-identical to a clean result over
+correctly-maintained marks.** With one position open this is the silent trailing-stop failure the
+header itself describes. **Recorded, not resolved; it is a prompt-level item, not a seat's.**
+
+⚠ **CORE VOO WAS STRUCK FROM THE §5 WORKING LIST, NOT STAMPED — 108TH RUN.** §5 exempts it and §2
+forbids trading it on news. **No `highest_close` was written for it, and this seat did not pull a
+window that would have put core's since-entry maximum on screen**, so unlike the 10-30 close seat
+there is no tape fact to record here. **Declining to stamp a number you never had is a weaker act
+than declining one you computed, and it is labelled as the weaker one.**
+
+⚠ **§2 SLEEVE, READ AT 07:01 AND NOT ACTED ON:** equity **$99,142.25** · core **$69,142.25 / 69.74%**
+· cash **$30,000.00 / 30.26%** · `core_in_band: true` · `rebalance_needed: false`. Band
+**$64,442.46–$74,356.69**; core **$4,699.79 above the floor (4.74% of equity)** and **$5,214.44 below
+the ceiling** — **nearer edge is the FLOOR, fifth consecutive seat.** `rebalance_delta` **257.33** is a
+**distance readout, not an instruction.** Core unrealised **−$857.74 / −1.225%** from 706.74, on a live
+midpoint basis.
+
+⚠ **FIRST EST SEAT OF THE SEASON** — `clock` returns `-05:00`, DST ended 2026-11-01. ⚠⚠ **AND THIS RUN
+FIRED AT 07:01 ET AGAINST A NOMINAL 08:00 ET SCHEDULE, ~59 MINUTES EARLY — the signature of a
+UTC-anchored trigger that did not follow the fall-back. Harmless for a routine that places no orders;
+NOT harmless if routine 2 shifts the same way and fires at 08:35, before the 09:30 open.** Full note
+and the conditional instruction to the open seat are in `plan_today.md`.
+
+
 ### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-10-30, **ONE DIGEST FOR THE DATE, ALL FOUR SEATS:** `1-premarket` 08:17 · `2-market-open` 09:37 · `3-midday` 12:48 · `4-market-close` 16:17. ⚠ **CLOSED AND COLLAPSED BY THE CLOSE SEAT, THE ONLY SEAT ENTITLED TO TOUCH WHAT THREE EARLIER SEATS WROTE.** ⚠ **RE-EVALUATED AT EACH SEAT, NOT INHERITED.** Absent-seat ordinals: 08:17 **42nd** · 09:37 **43rd** · 12:48 **44th** · this close **45th**. ⚠ **COLLAPSE RATIO MEASURED AFTER THE WRITE, NOT CLAIMED FROM INTENT — the figure is at the foot of this digest, because six recorded instances say this is the one line the file keeps getting wrong.**)
 
 **Zero satellite positions, re-derived at all four seats and identical at each, no discrepancy:**
