@@ -85,7 +85,7 @@ check that the pull returned the right session. A stored baseline is a *label*, 
 
 *(none — no **satellite** positions have been opened yet. Core VOO exists and is deliberately not tracked here, per the top-of-file rules and the fill note further down.)*
 
-### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-11-02, **DIGEST OPEN — `1-premarket` 07:01. The three later seats append below; the close seat closes and collapses it.** ⚠ **Absent-seat ordinal: 07:01 is the 46th.** ⚠ **DELIBERATELY WRITTEN SHORT — open item 16 is live and prose volume is the one lever a seat controls; no collapse ratio is claimed here because there is nothing yet to collapse.**)
+### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-11-02, **DIGEST OPEN — `1-premarket` 07:01 · `2-market-open` 08:47 ⚠ **PRE-OPEN, SCHEDULE FAULT — see that seat’s append**. The two later seats append below; the close seat closes and collapses it.** ⚠ **Absent-seat ordinals: 07:01 **46th** · 08:47 **47th**.** ⚠ **DELIBERATELY WRITTEN SHORT — open item 16 is live and prose volume is the one lever a seat controls; no collapse ratio is claimed here because there is nothing yet to collapse.**)
 
 **Zero satellite positions, re-derived at this seat, three sides, no discrepancy:** Alpaca `positions`
 = **ONE row, core VOO only** (99.046311231 sh @ `avg_entry_price` **706.74**, `cost_basis`
@@ -123,6 +123,79 @@ FIRED AT 07:01 ET AGAINST A NOMINAL 08:00 ET SCHEDULE, ~59 MINUTES EARLY — the
 UTC-anchored trigger that did not follow the fall-back. Harmless for a routine that places no orders;
 NOT harmless if routine 2 shifts the same way and fires at 08:35, before the 09:30 open.** Full note
 and the conditional instruction to the open seat are in `plan_today.md`.
+
+
+**— `2-market-open` 08:47 ET appends (absent-seat ordinal 47th). NO ORDERS PLACED, AND THE REASON IS
+NOT THE ONE THE ORDER COUNT IMPLIES.** ⚠⚠⚠ **THE MARKET WAS SHUT WHEN THIS SEAT READ THE CLOCK —
+`is_open: false` at **08:47:52 ET**, `next_open` **2026-11-02T09:30:00-05:00**, 42 minutes away. THE
+09:35 SEAT FIRED PRE-OPEN. The conditional instruction the 07:01 seat left in `plan_today.md` and in
+`state.md` carry-forward item 1 HAS FIRED, and it is discharged here as a NAMED SCHEDULE FAULT, not
+as "market closed, nothing to do".**
+
+⚠⚠ **AND IT IS NOW CONFIRMED RATHER THAN OBSERVED, ON EVIDENCE THAT IS NOT A RUN TIMESTAMP.**
+`control.md` forbids diagnosing a schedule fault from a seat's own firing time, because manual
+"Run now" invocations are indistinguishable from scheduled ones in run logs — **that restriction is
+honoured and it is not what settles this.** The scheduler stated **this routine's STORED SCHEDULE:
+13:35:00 UTC**, which on an ET offset of **−05:00** is **08:35 ET**. The routine's nominal time is
+**09:35 ET**. **The schedule is anchored in UTC and did not follow the 2026-11-01 fall-back, so as
+configured this routine fires 55 minutes BEFORE the 09:30 open on every EST session.** ⚠ **The
+stored schedule is a property of the trigger, not of this invocation — which is exactly why it
+clears `control.md`'s bar where a firing time would not.** Dispatch jitter does not rescue it: this
+run dispatched ~12 min late, at 13:46:55 UTC = **08:46:55 ET**, still 43 minutes pre-open.
+
+⚠⚠⚠ **TODAY THE FAULT COST NOTHING, AND THAT IS THE DANGEROUS PART.** The 07:01 plan carried **ZERO
+BUY, ZERO SELL, ZERO REBALANCE** intents, so a seat that had fired correctly at 09:35 would also
+have placed **zero orders**. **A pre-open seat over an empty plan and a working seat over an empty
+plan produce a BYTE-IDENTICAL order count** — the silent-failure shape the 07:01 seat predicted in
+advance and the reason it demanded the clock be read explicitly. **Nothing was lost today. Nothing
+would be visible if something had been.**
+
+⚠⚠ **THE INFERENCE THE HUMAN NEEDS, LABELLED AS AN INFERENCE:** two routines are now observed an
+hour early on the same morning — routine 1 at 07:01 against a nominal 08:00, and routine 2 stored at
+08:35 against a nominal 09:35 — so **all five triggers are very probably UTC-anchored.** ⚠⚠⚠ **IF
+ROUTINE 4 SHIFTED THE SAME WAY IT FIRES AT 15:05 ET, BEFORE THE 16:00 CLOSE, AND THAT IS WORSE THAN
+A SKIPPED RUN: the close seat would stamp a PARTIAL BAR as an official close.** That compounds two
+prompt defects the 10-30 review already filed — routine 3 Step 2's partial-bar max (which fails
+toward SELLING) and routine 2 Step 6's partial-bar `voo_close_at_entry`. **On today's empty ledger it
+has no operand. It acquires one the moment a satellite position exists.** ⚠ **This seat did NOT
+verify routines 3, 4 or 5's stored schedules — it has only its own and routine 1's observation. The
+fix is a schedule change and is NOT a seat's to install.**
+
+**Zero satellite positions, re-derived at this seat, three sides, no discrepancy:** Alpaca `positions`
+= **ONE row, core VOO only** (99.046311231 sh @ `avg_entry_price` **706.74**, `cost_basis`
+**$69,999.989999** — **unchanged since 2026-09-03, only the mark moving**; `current_price` **698.87**
+is a **LIVE PRE-MARKET MIDPOINT** and is **NOT** stamped anywhere in this file) · this file's satellite
+block count (`grep -cE '^### [A-Z]'`) = **0** · `sleeves` `satellite.count: 0`, `value: 0`, `pct: 0.0`.
+**All four §5 rules ABSENT, NOT PASSING — unchanged from the 07:01 reading, re-derived not inherited.**
+**No Perplexity news query was spent on a position, because there is no position.**
+
+⚠ **§7 LIMBO CHECK RUN AND CLEAN:** `orders --status all` returns **exactly one order in this
+account's entire history** — `d177d8f0-cd0c-41bf-95c1-4772318265fd`, 2026-09-03, VOO, `status:
+filled`, terminal, **already in `trade_log.md`**. **Nothing new, nothing unresolved, nothing in
+limbo.** ⚠ **An order that did not reach a terminal state is what this routine's Output section calls
+the most important thing in a run; there is no such order, and that is stated as a verified negative.**
+
+⚠ **§2 SLEEVE RE-READ AT THIS SEAT AND NOT ACTED ON** — the 07:01 figure was NOT inherited, as
+`plan_today.md` step 4 required: equity **$99,220.50** · core **$69,220.50 / 69.76%** · satellite
+**$0 / 0.0%** · cash **$30,000.00 / 30.24%** · `core_in_band: true` · `rebalance_needed: false` ·
+`rebalance_delta` **233.85**. Band **$64,493.33–$74,415.38**; core **$4,727.17 above the floor
+(4.77% of equity)** and **$5,194.88 below the ceiling** — **nearer edge is the FLOOR, sixth
+consecutive seat.** ⚠ **`rebalance_delta` 233.85 IS A DISTANCE READOUT, NOT AN INSTRUCTION, and 0.24%
+is NOT the distance to the band: 4.77% of equity is.** ⚠⚠ **AND THE REBALANCE WAS NOT SKIPPED FOR
+WANT OF AN OPEN MARKET — it was not due. The 10-31 midday audit stands: a VOO fall shrinks numerator
+and denominator together and only the $30,000 cash leg is fixed, so the §2 floor needs a fall of
+about MINUS 19%, not the ~4.8% a naive reading gives.** Core unrealised **−$779.49 / −1.114%** from
+706.74, on a live midpoint basis.
+
+⚠ **CORE VOO STRUCK FROM THE §5 WORKING LIST, NOT STAMPED — 109TH RUN.** No `highest_close` written
+for it. **This seat pulled no window either, so like the 07:01 seat and unlike the 10-30 close seat it
+had no tape fact to decline; the weaker act, labelled as the weaker one.**
+
+⚠ **NO PRE-MARKET MIDPOINT FROM THIS SEAT OR FROM `plan_today.md` WAS STAMPED INTO THIS FILE.**
+Friday 2026-10-30's official close basis remains **694.70** (`bars --adjustment all`, 10-30 16:17
+close seat). **`lastday_price` 694.81 is a broker field 0.11 above it — 32nd seat on the broker-pair
+item, and the fourth distinct gap size in four readings, which is the moving-midpoint mechanism and
+not a discrepancy.**
 
 
 ### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-10-30, **ONE DIGEST FOR THE DATE, ALL FOUR SEATS:** `1-premarket` 08:17 · `2-market-open` 09:37 · `3-midday` 12:48 · `4-market-close` 16:17. ⚠ **CLOSED AND COLLAPSED BY THE CLOSE SEAT, THE ONLY SEAT ENTITLED TO TOUCH WHAT THREE EARLIER SEATS WROTE.** ⚠ **RE-EVALUATED AT EACH SEAT, NOT INHERITED.** Absent-seat ordinals: 08:17 **42nd** · 09:37 **43rd** · 12:48 **44th** · this close **45th**. ⚠ **COLLAPSE RATIO MEASURED AFTER THE WRITE, NOT CLAIMED FROM INTENT — the figure is at the foot of this digest, because six recorded instances say this is the one line the file keeps getting wrong.**)
