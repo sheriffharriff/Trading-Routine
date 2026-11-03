@@ -85,7 +85,7 @@ check that the pull returned the right session. A stored baseline is a *label*, 
 
 *(none — no **satellite** positions have been opened yet. Core VOO exists and is deliberately not tracked here, per the top-of-file rules and the fill note further down.)*
 
-### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-11-03, **DIGEST OPEN — `1-premarket` 07:02** ⚠ **~58 min early, recorded not diagnosed.** The three later seats append below; the close seat closes and collapses it. ⚠ **Absent-seat ordinal: 07:02 is the 50th.** ⚠⚠ **DELIBERATELY SHORT. The corpus item is live past 1MB and prose volume is the one lever a seat controls; no collapse ratio is claimed because there is nothing yet to collapse.** ⚠ **`2-market-open` 08:36 APPENDED BELOW — PRE-OPEN, COULD NOT EXECUTE, ZERO ORDERS; absent-seat ordinal 51st. Nothing in the table changed and nothing was collapsed: the two remaining seats append, the close seat closes and collapses.**)
+### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-11-03, **DIGEST OPEN — `1-premarket` 07:02** ⚠ **~58 min early, recorded not diagnosed.** The three later seats append below; the close seat closes and collapses it. ⚠ **Absent-seat ordinal: 07:02 is the 50th.** ⚠⚠ **DELIBERATELY SHORT. The corpus item is live past 1MB and prose volume is the one lever a seat controls; no collapse ratio is claimed because there is nothing yet to collapse.** ⚠ **`2-market-open` 08:36 APPENDED BELOW — PRE-OPEN, COULD NOT EXECUTE, ZERO ORDERS; absent-seat ordinal 51st. Nothing in the table changed and nothing was collapsed: the two remaining seats append, the close seat closes and collapses.** ⚠ **`3-midday` 11:42 APPENDED BELOW — MARKET **OPEN**, ZERO EXITS, NO OPERAND AT ANY STEP; absent-seat ordinal 52nd. Nothing in the table changed and nothing was collapsed: the close seat closes and collapses.**)
 
 **Zero satellite positions, re-derived at this seat, three sides, no discrepancy:** Alpaca `positions`
 = **ONE row, core VOO only** (99.046311231 sh @ `avg_entry_price` **706.74**, `cost_basis`
@@ -129,6 +129,29 @@ ABSENT, NOT PASSING — no operand, and the table above stands unaltered.**
 ✅ **Broker-pair cross-check re-run and unchanged:** `lastday_price` **691.32** vs the 11-02 official
 close **691.185** = **0.135 / 0.0195%**. ⚠ **`current_price` 692.76 is a LIVE PRE-MARKET MIDPOINT and
 is NOT stamped here** — the rule has no operand today, but it holds the moment one exists.
+
+**`3-midday-management` 11:42 — MARKET OPEN, ZERO EXITS, AND EVERY STEP HAD NO OPERAND.** Absent-seat
+ordinal **52nd**. ⚠ `clock` `is_open: **true**` at **11:42:32 ET**, `next_close` **16:00 same date** —
+**the first seat today that COULD have acted on a position, had one existed.**
+**Re-derived at this seat, three sides, no discrepancy:** Alpaca `positions` = **ONE row, core VOO
+only** · `grep -cE '^### [A-Z]'` = **0** · `sleeves` `satellite.count: 0`, `value: 0`, `pct: 0.0`.
+⚠⚠ **STEP 2 WAS NOT RUN AND WAS NOT SKIPPED — IT HAS NOTHING TO ACT ON, AND THIS SEAT CHECKED RATHER
+THAN ASSUMED:** `grep -n 'highest_close: *[0-9]'` over this whole file returns **exactly one line —
+the template placeholder `0.00` on line 53.** **No `highest_close` has ever been stamped in this repo**,
+so there is no stale mark to detect and no window to re-pull. ⚠ **The stale-mark detector that Step 2
+exists to be therefore remains UNTESTED, not passing.** **Zero Perplexity calls were spent on §5.1,
+because §5.1 has no thesis to test.** **All four §5 rules stand ABSENT, NOT PASSING — the table above
+is unaltered.**
+⚠ **DISPATCH LANDED 11:41:43 ET AGAINST A NOMINAL 12:30 — A ~1-MINUTE MATCH TO THE STORED
+`16:40:00 UTC` = **11:40 ET** READ ON 11-02.** **Recorded as an OBSERVATION, not diagnosed from the
+firing time** (`control.md`); the confirmed finding rests on the **stored schedule**, which is a
+property of the trigger. ⚠⚠ **WHAT TODAY ADDS IS ONE THING: 11-02's midday landed at 12:18 ET, which
+was readable as jitter around a nominal 12:30 trigger. Today's landing says that was jitter on top of
+an 11:40 trigger instead** — the dispatch side now agrees with the stored side. **Benign at this
+routine** (inside the session, exits-only). ⚠ **NO NOTIFICATION SENT, DELIBERATELY — unchanged item,
+the human has been told five times, and the harm sits at routines 2 and 4, not here.**
+✅ Core **69.62%**, `core_in_band: true`, `rebalance_delta` 378.86 — and **rebalancing is not this
+seat's job in any case.** ⚠ **`current_price` 694.01 is a LIVE INTRADAY MIDPOINT and is NOT stamped.**
 
 ---
 
