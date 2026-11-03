@@ -52,6 +52,185 @@ single most common way a plausible-sounding connection gets mistaken for an oppo
 
 ## Entries
 
+### 2026-11-03 (07:02 ET) — event survey (funnel, pre-thesis)
+
+Selftest **5/5**, exit 0 (`trading_enabled: true`, LIVE paper, equity **$98,318.99** at pre-flight).
+`clock` at 07:02:16 reads `is_open: false`, `next_open` **2026-11-03T09:30:00-05:00**, `next_close`
+**2026-11-03T16:00:00-05:00** — both carry today's date, the pre-market full-session signature.
+**Not a holiday.** ⚠ **Fired ~58 min early against a nominal 08:00 ET, the second EST session running.
+RECORDED AS AN OBSERVATION, NOT DIAGNOSED** — `control.md` forbids diagnosing a schedule fault from a
+run timestamp, and routine 1's stored schedule was already read on 11-02, so this adds nothing to a
+confirmed finding. Harmless at this seat either way: no orders are placed here.
+
+**Window surveyed:** Monday 2026-11-02 after the close through this morning. ⚠ **The 11-02 seat's
+lesson was applied: the window was opened deliberately to catch the PREVIOUS EVENING's after-close
+print, and it recovered the day's only real event (Apple, reported after the 11-02 close).**
+
+**Ledger reconciled, three sides, re-derived not inherited.** Alpaca `positions` = **one row, core VOO
+only** (99.046311231 sh @ 706.74, `cost_basis` $69,999.989999, **unchanged since 2026-09-03 — only the
+mark moving**; `current_price` 689.76 is a LIVE PRE-MARKET MIDPOINT, stamped nowhere) · `positions.md`
+satellite block count **0** · `sleeves` `satellite.count: 0`, `value: 0`, `pct: 0.0`. **No discrepancy.**
+
+**Every §6 gate open.** Breaker INACTIVE, `halt_triggered_at: none`; `new_positions_this_week` **0 of
+3**; satellite **0.0%** deployed, **$30,000 idle**; `control.md` Notes empty; zero open alerts. 5% cap
+**$4,915.91**. **Week anchor re-derived with `isocalendar`: 2026-11-03 is ISO 2026-W45, weekday 2,
+Monday anchor 2026-11-02 — MATCHES `week_of`. No rollover; not rolled a second time.**
+
+**Three queries, five candidates, zero survivors.**
+
+⚠⚠⚠ **THE DAY'S FINDING — THE SAME NON-EVENT ARRIVED FROM A SECOND REPORTER ON CONSECUTIVE SESSIONS,
+AND THE ANSWER WAS ALREADY WRITTEN VERBATIM.** On 10-29 **Intel** remarked that memory shortages were
+raising PC prices; `T-2026-11-02-03` killed it with *"a third party REMARKING on a condition is not an
+event — it is a reading of the tape with a filing date attached."* On 11-02 **Apple** called memory
+pricing **"unprecedented"** and guided gross margin down to **45–46%** from a reported **47.9%**.
+⚠ **DIFFERENT COMPANY, DIFFERENT SECTOR, LARGER NAME, SAME OBJECT.** Nothing about any memory maker's
+economics changed on 2026-11-02. ⚠⚠ **THIS IS RULE (iv) PROMOTED FROM THE TICKER TO THE *OBJECT*: a
+recurring NON-EVENT wearing a new reporter's name. The warning the log has been writing about tickers
+applies to shapes, and a bigger, more credible reporter is NOT fresh evidence when the kill is
+structural.**
+
+⚠⚠ **AND A NEW COSTUME, LOGGED AT `T-2026-11-03-02`, WHICH IS THE MOST FILLABLE-LOOKING BLANK THIS
+FUNNEL HAS PRODUCED: TWO TRUE STATEMENTS IN ONE DISCLOSURE THAT THE READER JOINS INTO A THIRD THAT
+NEITHER MAKES.** Apple disclosed (a) manufacturing purchase obligations **+$33B** June→September, *"as
+we work to improve supply"*, and (b) separately, that memory costs are rising. **Neither statement
+mentions the other.** ⚠ **Rule (v)'s worst prior shape was a precise figure plus a named component
+category in ONE sentence; this is a precise figure in one paragraph and the component category in
+ANOTHER, which reads as better-sourced because the reader supplies only the JOIN.** ⚠ **The source
+volunteered the refusal: *"attributing the $33 billion — or any portion of it — to memory or to a
+particular supplier would go beyond what Apple stated."***
+
+⚠⚠ **AND A DEFECT IN THE §4 PRICED-IN FILTER ITSELF, SECOND CONSECUTIVE SESSION: `alpaca.py move` IS
+DIRECTION-BLIND.** It thresholds **absolute** 5-session magnitude, so it returned `priced_in: true`,
+*"LATE — skip"* on **MU −7.77%**, **SNDK −14.40%**, **STX −7.87%**, **WDC −4.96%** — four names that
+**FELL**. §4's words are *"already moved more than 4% **on this news**, you are late"*; a 14% DECLINE
+is the opposite of late for a long, and none of these moves is attributable to last night's news.
+⚠ **Yesterday's INTC −24.36% was the same reading and that seat said so (*"the filter is not what
+disqualifies it"*); today it fired four more times in one call, so this is a PROPERTY OF THE SCRIPT,
+not an instance.** ⚠⚠ **IT FAILS SAFE — it over-blocks and can never wrongly PERMIT — but a
+`priced_in: true` reading MUST NOT be quoted as "the market has already captured this upside," and on
+a book that has made exactly ONE trade in ~44 sessions an over-blocking hard filter is a plausible
+contributor worth the human's attention.** **Prompt/script-level; not a seat's to change.**
+
+---
+
+### T-2026-11-03-01 — the memory-cost tier (MU · SNDK · STX · WDC) ← Apple's "unprecedented" memory pricing — REJECTED (part 1, zero drill queries spent)
+**Company A / the news:** Apple's FQ4 2026 print (after the 2026-11-02 close) guided FQ1 gross margin
+to **45–46%** vs **47.9%** reported, said **memory costs were higher** than the June quarter and
+expected to **keep rising**, and called memory pricing **"unprecedented."**
+**Company B / the candidate:** the US-listed memory tier — **Micron (MU)**, **SanDisk (SNDK)**,
+**Seagate (STX)**, **Western Digital (WDC)**.
+
+**1. Mechanism (one sentence):**
+> Apple's disclosure that memory pricing is unprecedented causes Micron's DRAM revenue line to rise
+> because tight supply lifts ASPs — **and also** Micron captures that pricing rather than conceding it.
+
+⚠ **THE "AND ALSO" IS BACK, IN THE SAME PLACE, ONE SESSION LATER. §4: reject it.**
+
+**2–4.** Not reached.
+
+**Hard filters:**
+- Priced-in (§4): **MU −7.77%** · **SNDK −14.40%** · **STX −7.87%** · **WDC −4.96%** over 5 sessions —
+  all four return `priced_in: true`. ⚠⚠ **NOT CLAIMED AS THE KILL AND NOT A CLEAN TEST: every move is
+  NEGATIVE and the script is direction-blind (see the survey note). The mechanism was already dead.**
+- Correlation (§4): no operand — zero open satellite positions.
+- Universe (§3): all four US-listed, above the floor — **PASS, and irrelevant.** ⚠ **SK Hynix, Samsung
+  and Kioxia are Korea- and Japan-listed: §3 kills the three largest actual beneficiaries outright.**
+  ⚠ **Rule (ii) honoured: WDC post-spin is HDD; the NAND leg is SNDK. Both screened, both dead.**
+
+**Outcome:** **REJECTED — part 1, the third-party-remarking non-event.** ⚠⚠ **A DRAM up-cycle is a
+MARKET VARIABLE. Apple is EVIDENCE OF it, not a CAUSE of it — the identical disposition
+`T-2026-11-02-03` gave Intel, and the identical disposition `T-2026-10-29-04` gave SK Hynix.** ⚠ **MU
+is now at FOUR appearances in five sessions (10-02 declined · 10-29 SK Hynix · 11-02 Intel · 11-03
+Apple) and has died at part 1 every time it was screened. Rule (iv): expect it again, the answer is
+written.** ⚠ **Rule (iii) fails independently: "unprecedented" carries no figure and no prior figure
+from any memory maker.** **Zero drill queries spent.**
+
+---
+
+### T-2026-11-03-02 — the unnamed Apple supply base ← $33B increase in manufacturing purchase obligations — REJECTED (rule (v) + part 2)
+**Company A / the news:** on the FQ4 call Apple said *"as we work to improve supply, our manufacturing
+purchase obligations have increased by **$33 billion** from June to the September quarter."*
+**Company B / the candidate:** **none reached** — the recipients are not named.
+
+**1. Mechanism (one sentence):** not writable without naming a recipient Apple did not name.
+**2. Dollar path:** **$33B exists and has the RIGHT SIGN** — money Apple has contractually committed
+to pay suppliers, i.e. flowing TOWARD the buyable leg, which is the rarest property on rule (viii)'s
+list. ⚠ **AND IT IS STILL UNUSABLE: NOT ALLOCATED to any supplier, NOT broken down by component, NOT
+stated to concern memory at all.** A segment share of total revenue cannot be computed for a company
+that has not been identified. **FAIL.**
+**3. Timing window:** not reached. **4. Invalidation:** not reached.
+
+**Hard filters:** not reached — no candidate exists to filter. ⚠ **§3 would kill the largest probable
+recipients anyway: Hon Hai/Foxconn and Pegatron are Taiwan-listed, Samsung and SK Hynix Korea-listed,
+Kioxia Japan-listed.**
+
+**Outcome:** **REJECTED — rule (v), the unnamed supply base, in its most persuasive costume yet.**
+⚠⚠ **THE NEW COSTUME IS THE JOIN: a precise, dated, purposive figure in one paragraph and a named
+component category ("memory") in ANOTHER paragraph of the SAME call. The reader supplies only the
+connection between two true statements, which feels like sourcing rather than invention.** ⚠ **The
+source refused the join explicitly, unprompted — quoted in the survey note above.** ⚠ **A PURCHASE
+OBLIGATION IS NOT A NAMED ORDER: "to improve supply" is a purpose, not a counterparty.**
+
+---
+
+### T-2026-11-03-03 — the optical-component tier (COHR · FN) ← Marvell / Lumentum ~$115B all-stock merger — REJECTED (merger arbitrage, not in §4; zero drill queries spent)
+**Company A / the news:** Marvell (MRVL) announced an all-stock acquisition of Lumentum (LITE),
+**4.5 MRVL shares per LITE share**, reported at ~**$115B**; MRVL fell **~12–13%** on the announcement.
+**Company B / the candidate:** optical competitors — **Coherent (COHR)**, **Fabrinet (FN)**.
+
+**1. Mechanism (one sentence):** requires *"and also the merger disrupts the combined entity's
+customers enough to shift share"* — **a story the reader supplies.** **FAIL.**
+**2–4.** Not reached.
+
+**Hard filters:** not reached.
+
+**Outcome:** **REJECTED on the standing rule, no query spent — MERGER ARBITRAGE IS NOT IN §4.** Both
+legs are first-order. ⚠ **The all-stock structure means LITE is NOT price-pinned the way onsemi/
+Synaptics and Schneider/PTC were, so the usual phrasing ("a target whose price is contractually
+pinned has no economics left to change") does not apply as written — IT DIES ONE RUNG EARLIER INSTEAD:
+§4 asks for a second-order party whose ECONOMICS change, and a change in who OWNS Lumentum changes
+nobody's revenue or cost line.** ⚠ **The competitor read-across it invites is the shared-cause object.**
+⚠ **The ~$115B figure is quoted from a market recap and looks implausible against Lumentum's standing
+size; NOT relied on, because the disposition does not turn on the number.**
+
+---
+
+### T-2026-11-03-04 — refiners / airlines ← Brent −8.01% to ~$104.33 on US–Iran de-escalation — REJECTED (part 1, no Company A; zero drill queries spent)
+**Company A / the news:** oil fell **~7–8%** (Brent ~**$104.33**, WTI ~**$96.25**) on expectations that
+the US–Iran conflict might ease. **There is no Company A.**
+**Company B / the candidate:** the usual fuel-cost beneficiaries. **Not elaborated.**
+
+**1. Mechanism (one sentence):** a commodity price is a market variable; the sentence has no
+transaction and no second party. **FAIL.**
+
+**Outcome:** **REJECTED — the shared-cause / geopolitical object, recognise-on-sight.** ⚠ **An
+8% one-day move in a benchmark commodity on a war headline is the FOMC object with a bigger number:
+sector-wide, dated, moves the tape, and **one party — none of them a company.** ⚠ **SCALE MAKES IT
+MORE CONVINCING, NOT LESS** — the fifth consecutive macro/geopolitical complex logged in this shape.
+
+---
+
+### T-2026-11-03-05 — sweep: a re-serve, two non-US parties, a government counterparty, three macro objects — REJECTED (seven items, disposed as one, ZERO drill queries spent)
+Disposed without elaboration because each matches a written answer:
+
+1. **Orion Group Holdings (ORN)** ~**$250M** October awards incl. a **$115M** concrete project —
+   ⚠ **ALREADY DISPOSED at `T-2026-10-30-04` on §3 (microcap).** Rule (iv), second appearance in three
+   sessions, **same kill**. Customer not a listed company either.
+2. **Advanced Acoustic Concepts / US Navy** $53.9M, ceiling ~$196.2M — **§3** (parent Thales is
+   Paris-listed) **+** government counterparty **+** rule (v)'s CEILING sub-shape. **Three kills.**
+3. **Bavarian Nordic** four-year UKHSA vaccine supply — **§3** (Copenhagen-listed) and **no dollar
+   value disclosed**.
+4. **October ISM manufacturing PMI 55.5 from 54.5** (production 59.0, new orders 55.5) — macro, one
+   party, no named recipient.
+5. **US Treasury Q4 borrowing estimate cut $10B to $618B** — government action, not a Company A.
+6. **US midterm elections** — ⚠ **an UNRESOLVED future event with no outcome and no enacted policy;
+   not even a non-event yet.**
+7. **Apple (AAPL) itself** — revenue **$114.5B** +12%, EPS **$2.10** vs **$1.99** consensus, iPhone
+   +17%, Mac +24% — **first-order, the headline name §4 explicitly declines to chase.** ⚠ **Rule (iii)
+   also fails on the beat: the comparison is to CONSENSUS, not to Apple's own prior figure.**
+
+---
+
 ### 2026-11-02 (07:01 ET) — event survey (funnel, pre-thesis)
 
 Selftest **5/5**, exit 0 (`trading_enabled: true`, LIVE paper, equity **$99,142.25** at pre-flight).

@@ -10,8 +10,8 @@ The block below is parsed by `scripts/common.py` and gates real behavior
 `key: value` format exactly. Prose goes underneath.
 
 ```
-last_run: 2026-11-02 15:15 ET 4-market-close-journal SELFTEST 5-of-5 EXIT 0. THIS CLOSE SEAT RAN BEFORE THE CLOSE AND WROTE NO CLOSE - clock is_open TRUE at 15:15:56 ET with next_close 16:00:00 minus 05:00, so 45 MINUTES OF THE SESSION REMAINED and NO OFFICIAL CLOSE FOR 2026-11-02 EXISTED. STEP 2 WAS REFUSED, NOT SKIPPED, and the refusal owes nothing to any schedule diagnosis - the broker clock alone settles it. CRITICALLY IT HAD NO OPERAND EITHER: satellite block count 0, so the refusal and the vacuous pass COINCIDE TODAY and the refusal WAS NEVER TESTED. NO highest_close WAS WRITTEN AND NONE HAS EVER BEEN WRITTEN IN THIS REPO. THE 10-30 INFERENCE IS NOW A MEASUREMENT: a diagnostic bars --days 1 --adjustment all on CORE VOO ONLY (section 5 exempt, never stampable) returns t 2026-11-02 with c 693.91, n 1834, v 44840 AND NO PARTIAL-BAR FLAG OF ANY KIND - the field is just named c, so a seat following Step 2 literally writes a mid-afternoon last trade into highest_close, stamps it as of 2026-11-02, the mark then reads CURRENT NOT STALE, the midday staleness detector never backfills it, and section 5.4 measures every later drawdown from a non-close for the life of the position. AND A VOLUME TEST DOES NOT CATCH IT - measured against the seven complete sessions in the same pull (v 62938, 34733, 55208, 30515, 40205, 23394, 106403; mean 50485, median 40205) TODAY S PARTIAL BAR OUT-VOLUMES FOUR OF SEVEN AND OUT-TRADES FIVE OF SEVEN, so the 10-30 close seat s complete bar on 4.5x volume reading is UNSOUND AND IS REPLACED: completeness is NOT legible from v or n and the ONLY reliable detector is the clock. SCHEDULE NOT DIAGNOSED AND DELIBERATELY SO - control.md forbids diagnosing from run timestamps and the STORED SCHEDULE was UNREADABLE from this seat (CronList returns No scheduled jobs, listing only in-session jobs; envelope states only the nominal 16:15 ET), so the minus 60 min offset is AN OBSERVATION CONSISTENT WITH the UTC-anchor hypothesis and ROUTINE 4 REMAINS FORMALLY UNVERIFIED. ALL FIGURES TODAY ARE INTRADAY: equity 98731.21, last_equity 98818.37, day minus 87.16 or minus 0.0882 pct, since inception minus 1.2688 pct; core 68733.19 at 69.6151 pct, satellite 0, cash 30000.00 at 30.3849 pct, core_in_band true, rebalance_needed false, NO REBALANCE DUE TOMORROW, floor needs VOO at 562.51 or minus 18.94 pct re-derived not inherited. THE BROKER-PAIR CROSS-CHECK IS UNAVAILABLE FOR THE FIRST TIME IN 32 SEATS because it requires an official-close basis - lastday_price 694.81 vs the 10-30 bar c 694.70 is a 0.11 disagreement on the PRIOR day with nothing to adjudicate it, NEITHER IS AUTHORITATIVE. Core unrealised minus 1266.80 or minus 1.8097 pct from 706.74. ZERO ORDERS AT ALL FOUR SEATS TODAY, section 7 limbo CLEAN at one order ever (d177d8f0, 2026-09-03 VOO, filled, terminal, logged), nothing from today to resolve or carry. WEEK ROLLOVER CHECKED NOT NEEDED - ISO 2026-W45 weekday 1 Monday anchor 2026-11-02 matches week_of, new_positions_this_week stays 0. BREAKER INACTIVE 0 of 3. FIVE THESES TODAY ALL FROM THE 07:01 SEAT, 0 ACCEPTED 5 REJECTED, zero Perplexity queries spent at the midday and close seats. ClickUp daily summary posted, task 86bcwub64. HUMAN NOTIFIED - this is a NEW CONDITION not a repeat datapoint: it is the FIRST close seat to actually fire pre-close (previously an inference) AND it REMOVES an assumed mitigation (the volume test). HASH RULE HONOURED: this line contains no literal hash character.
-prior_run: 2026-11-02 12:18 ET 3-midday-management SELFTEST 5-of-5 EXIT 0. COLLAPSED BY THIS CLOSE SEAT - full text in git at commit 607ffa1. NOTHING LIVE WAS DISCARDED. Market OPEN at that seat (is_open true 12:19:02 ET) so the 08:47 pre-open fault was NOT repeated there; ZERO EXITS and nothing should have fired that did not - no satellite positions, so all four section 5 rules ABSENT rather than passing with NO OPERAND. Step 2 high-water repair discharged VACUOUSLY, no bars pulled. Ledger reconciled three-sided, section 7 limbo clean, breaker INACTIVE. ITS KEY CONTRIBUTION: the THIRD stored-schedule reading, routine 3 at 16:40 UTC = 11:40 ET vs nominal 12:30 ET, agreeing with routines 1 and 2 and upgrading the UTC-anchor hypothesis to very probable on routines 4 and 5 WITHOUT verifying them. It predicted a 15:05 ET routine 4 would stamp a partial bar as a close; THIS SEAT FIRED AT 15:15 AND CONFIRMS THE MECHANISM WHILE LEAVING THE SCHEDULE ITSELF UNVERIFIED.
+last_run: 2026-11-03 07:02 ET 1-premarket-research SELFTEST 5-of-5 EXIT 0. Fired ~58 min early against a nominal 08:00 ET for the SECOND EST session - RECORDED AS AN OBSERVATION, NOT DIAGNOSED, because control.md forbids diagnosing a schedule fault from a run timestamp AND routine 1's stored schedule was already read on 11-02, so this adds NOTHING to a confirmed finding. Harmless at this seat, which places no orders. clock is_open FALSE at 07:02:16 with next_open AND next_close both 2026-11-03, the pre-market full-session signature - NOT a holiday. TWO CARRY-FORWARD ITEMS DISCHARGED AND REMOVED, NOT ANNOTATED. ONE, the 2026-11-02 OFFICIAL CLOSE IS BACKFILLED: VOO c 691.185, v 58546, n 2239. TWO, AND IT IS THE DAY'S BEST ARTEFACT - THE PARTIAL-BAR ERROR IS NOW MEASURED RATHER THAN MECHANISED: the 11-02 15:15 ET seat's bar read c 693.91 against a true close of 691.185, AN ERROR OF 2.725 OR 0.394 pct, so a literal Step 2 would have stamped a highest_close 39 BASIS POINTS TOO HIGH, marked it current-not-stale, and displaced every later section 5.4 trigger for the life of the position. THAT SEAT REFUSED AND THE REFUSAL IS NOW QUANTIFIED - though still NEVER TESTED, since at zero satellite positions it had no operand. Broker-pair cross-check RESTORED after one session unavailable: lastday_price 691.32 vs bar c 691.185 = 0.135 or 0.0195 pct, normal noise, neither stamped. THREE PERPLEXITY QUERIES, FIVE CANDIDATES, ZERO ACCEPTED, FIVE REJECTED. The day's research finding: THE SAME NON-EVENT ARRIVED FROM A SECOND REPORTER ON CONSECUTIVE SESSIONS - Intel remarked on memory shortages 10-29 and died at part 1 as a third party REMARKING on a condition rather than CAUSING anything; Apple called memory pricing unprecedented on 11-02 and dies at the SAME rung for the SAME reason, which promotes rule iv from the TICKER to the OBJECT: a recurring NON-EVENT in a new reporter's name, and a bigger more credible reporter is NOT fresh evidence when the kill is structural. MU is now at four appearances in five sessions. NEW COSTUME LOGGED at T-2026-11-03-02, the most fillable blank this funnel has produced: TWO TRUE STATEMENTS IN ONE DISCLOSURE JOINED BY THE READER INTO A THIRD NEITHER MAKES - Apple's 33B manufacturing-purchase-obligation increase in one paragraph and rising memory costs in another, with the source volunteering that attributing any of the 33B to memory would go beyond what Apple stated. NEW SYSTEM DEFECT AND THE HUMAN WAS NOTIFIED: alpaca.py move IS DIRECTION-BLIND - it thresholds ABSOLUTE 5-session magnitude, so it returned priced_in true LATE-skip on four names that FELL (MU -7.77, SNDK -14.40, STX -7.87, WDC -4.96) while section 4's words are moved more than 4 pct ON THIS NEWS. Second consecutive session after yesterday's INTC -24.36, so it is a PROPERTY OF THE SCRIPT not an instance. IT FAILS SAFE - over-blocks, can NEVER wrongly permit - so keep obeying it, but a priced_in true reading MUST NOT be quoted as the market has already captured this upside, and on a book with ONE trade in roughly 44 sessions an over-blocking hard filter is a plausible contributor. Prompt-level, not a seat's to change. Equity 98318.18 LIVE PRE-MARKET MIDPOINT not close-basis; core 68318.183635 at 69.49 pct, satellite 0 at 0.0 pct count 0, cash 30000.00 at 30.51 pct, core_in_band true, rebalance_needed false, delta 504.54 = 0.51 pct of equity. BOTH BANDS RE-DERIVED NOT INHERITED: 65 pct floor needs VOO 562.51 or -18.45 pct, 75 pct ceiling needs 908.67 or +31.74 pct. Core unrealised -1681.81 or -2.403 pct from 706.74. Ledger reconciled three sides, no discrepancy. Section 7 limbo CLEAN at one order ever (d177d8f0, 2026-09-03 VOO, filled, terminal, logged); ZERO orders placed or intended today. WEEK ROLLOVER CHECKED NOT NEEDED - ISO 2026-W45 weekday 2, Monday anchor 2026-11-02 matches week_of, new_positions_this_week stays 0 of 3. BREAKER INACTIVE 0 of 3. plan_today.md dated 2026-11-03 with ZERO intents and an explicit warning that the open seat probably cannot execute. HASH RULE HONOURED: this line contains no literal hash character.
+prior_run: 2026-11-02 15:15 ET 4-market-close-journal SELFTEST 5-of-5 EXIT 0. COLLAPSED BY THIS PRE-MARKET SEAT - full text in git at commit c626013. NOTHING LIVE WAS DISCARDED AND ITS TWO OPEN ITEMS ARE NOW CLOSED BY THIS SEAT, NOT CARRIED. It fired 45 min BEFORE the bell with clock is_open true and next_close 16:00, so no official close for 2026-11-02 existed and NONE WAS WRITTEN; Step 2 was REFUSED not skipped, on the broker clock alone, and had NO OPERAND anyway at zero satellite blocks so the refusal COINCIDED with a vacuous pass and WAS NEVER TESTED. It established that a bars pull carries NO partial-bar flag and DISPROVED the assumed volume mitigation (its partial bar out-volumed 4 of 7 complete sessions and out-traded 5 of 7), concluding that only the clock detects completeness. BOTH of its open items are discharged today: the 11-02 close is backfilled at 691.185 and the partial-bar error is MEASURED at 0.394 pct. Routine 4's schedule stays FORMALLY UNVERIFIED - its stored schedule was unreadable from that seat and control.md forbids timestamp diagnosis.
 week_of: 2026-11-02
 new_positions_this_week: 0
 consecutive_closed_losses: 0
@@ -19,9 +19,9 @@ circuit_breaker: INACTIVE
 halt_triggered_at: none
 core_established: true
 core_ticker: VOO
-core_pct: 69.62
+core_pct: 69.49
 satellite_pct: 0.0
-cash_pct: 30.38
+cash_pct: 30.51
 open_thesis_ids: none
 ```
 
@@ -49,6 +49,30 @@ the two candidate fixes, NEITHER of which a seat may invent mid-run.**
 ---
 
 ### Live — act on these
+
+- **⚠⚠⚠ NEW 2026-11-03 — `alpaca.py move` IS DIRECTION-BLIND, AND IT IS A DEFECT IN A §4 HARD FILTER,
+  NOT IN A THESIS.** It thresholds **ABSOLUTE** 5-session magnitude, so it returns `priced_in: true` /
+  *"LATE — skip per strategy.md section 4"* on names that **FELL**. **Measured in one call: MU −7.77%,
+  SNDK −14.40%, STX −7.87%, WDC −4.96% — four "LATE" verdicts on four declines.** §4's words are
+  *"already moved more than 4% **ON THIS NEWS**, you are late"*, and a 14% DECLINE is the opposite of
+  late for a long. ⚠⚠ **SECOND CONSECUTIVE SESSION: 11-02 read INTC at −24.36% and that seat already
+  said "the filter is not what disqualifies it". Today it fired FOUR MORE TIMES, which makes it a
+  PROPERTY OF THE SCRIPT rather than an instance — and that promotion is the whole finding.**
+  ⚠ **IT FAILS SAFE. It over-blocks and can NEVER wrongly PERMIT, so KEEP OBEYING IT — a seat must not
+  reason past a `priced_in: true` on the grounds that the move was negative.** ⚠⚠ **BUT TWO THINGS
+  FOLLOW: (1) a `priced_in: true` reading MUST NOT be quoted as "the market has already captured this
+  upside" — it does not mean that and twice now it has meant the reverse; (2) on a book that has made
+  **exactly ONE trade in ~44 sessions**, an over-blocking hard filter is a **plausible contributor to
+  the zero-trade rate** and the human should weigh it as such.** ⚠ **The fix is a direction check (or a
+  signed threshold) in `scripts/alpaca.py`, which is SCRIPT-LEVEL AND NOT A SEAT'S TO INSTALL. Reported
+  to the human 2026-11-03.**
+- **⚠⚠ NEW 2026-11-03 — RULE (iv) IS PROMOTED FROM THE TICKER TO THE *OBJECT*, AND IT IS IN
+  `recognise-on-sight` BELOW AS WELL.** The 10-29 Intel memory remark and the 11-02 Apple memory remark
+  are **the same non-event from two different reporters on consecutive sessions**, and the second one is
+  **bigger, more credible and more quotable.** ⚠ **A recurring NON-EVENT in a new reporter's name is not
+  fresh evidence when the kill is structural — exactly as a recurring TICKER on a genuinely new
+  transaction is not (RTX ×8, Venture Global ×3).** **MU is at four appearances in five sessions and has
+  died at part 1 every time it was screened.**
 
 - **⚠⚠⚠ CONFIRMED 2026-11-02 — THE SCHEDULE DID NOT FOLLOW THE DST FALL-BACK. ROUTINE 2 FIRES
   BEFORE THE OPEN AND CANNOT EXECUTE; ROUTINE 4 FIRES BEFORE THE CLOSE AND HAS NO CLOSE TO RECORD.
@@ -119,13 +143,26 @@ the two candidate fixes, NEITHER of which a seat may invent mid-run.**
   KEEP THOSE TWO QUESTIONS SEPARATE — that separation is what let this seat act correctly on an open
   question.** ⚠ **ROUTINE 5'S STORED SCHEDULE IS STILL UNREAD. A SEAT WHOSE ENVELOPE STATES ITS
   STORED SCHEDULE MUST RECORD IT.**
-  ⚠⚠ **NEW AND UNRESOLVED: 2026-11-02 HAS NO OFFICIAL CLOSE RECORDED ANYWHERE IN THIS REPO.** Backfill
-  with `bars --symbol VOO --days 2 --adjustment all` — one call. **The intraday $98,731.21 / −0.0882%
-  in today's journal and state is NOT a close-basis figure and must not be quoted as one.**
+  ✅ **DISCHARGED 2026-11-03 07:02 — 2026-11-02's OFFICIAL CLOSE IS BACKFILLED AND THIS ITEM IS
+  REMOVED, NOT ANNOTATED: VOO `c` **691.185** (`bars --days 3 --adjustment all`, `v` 58,546, `n` 2,239).
+  The intraday $98,731.21 / −0.0882% in the 11-02 journal and state is NOT close-basis and must not be
+  quoted as one.** ⚠⚠⚠ **AND THE BACKFILL PAID FOR ITSELF BY TURNING THE HARM FROM A MECHANISM INTO A
+  MEASUREMENT: the 15:15 seat's partial bar read `c` **693.91** against the true close **691.185** — an
+  error of **$2.725 = 0.394%**. A `highest_close` stamped from it would have sat **39 BASIS POINTS TOO
+  HIGH**, read current-not-stale, never been backfilled by the midday detector, and displaced every
+  later §5.4 trigger for the life of the position.** ✅ **THE REFUSAL WAS RIGHT AND IS NOW QUANTIFIED —
+  but it is still NEVER TESTED, because at zero satellite positions it had no operand.**
+  ✅ **BROKER-PAIR CROSS-CHECK RESTORED after one session unavailable: `lastday_price` 691.32 vs bar `c`
+  691.185 = 0.135 / 0.0195%, normal noise, neither stamped.**
   ⚠⚠ **THE FIX IS THE HUMAN'S AND IS NOT A SEAT'S TO INSTALL: shift all five triggers +1h in UTC, or
   re-anchor them to `America/New_York` so the next transition (2027-03-14) is handled too.** ⚠ **A
   +1h UTC shift is correct for EST and WRONG AGAIN FROM 2027-03-14; only the timezone anchor fixes
-  both.** **The human was notified on 11-02 THREE TIMES — by the 07:01 seat as a risk, by the 08:47 seat
+  both.** ⚠⚠ **STILL UNFIXED AS OF 2026-11-03 07:02 — THIS PRE-MARKET SEAT FIRED ~58 MIN EARLY AGAIN, SO
+  NO SCHEDULE CHANGE HAS LANDED AND ROUTINE 2 WILL FIRE PRE-OPEN AGAIN TODAY. The 11-03 plan carries
+  ZERO BUY intents, so it costs nothing again — the invisibility, not the loss, is the finding.**
+  ⚠ **The human was notified a FOURTH time on 11-03, but NOT on this item's status, which has not
+  changed: the notification carried the NEW direction-blind-filter defect and named this as unfixed
+  context. DO NOT RE-NOTIFY ON AN UNCHANGED ITEM.** **The human was notified on 11-02 THREE TIMES — by the 07:01 seat as a risk, by the 08:47 seat
   as a confirmed fault at routine 2, and by the 15:15 CLOSE seat as a NEW CONDITION: the first close
   seat to actually fire pre-close, plus the removal of the assumed volume mitigation.** ⚠ **The 12:18
   midday seat deliberately sent NO notification — it added a confirming datapoint on an unchanged
@@ -2236,6 +2273,35 @@ purchase order either.** ⚠ **Part 3 kills it independently and needed no query
 2026"*, reservation POs *"early 2027"*, power available **late 2028/early 2029**, delivery schedule
 **through 2034** — ~8 to ~32 quarters against §4's TWO.**
 
+
+**⚠⚠⚠ A THIRD PARTY REMARKING ON A CONDITION IS NOT AN EVENT — AND THE REPORTER'S SIZE IS NOT
+EVIDENCE.** *(Minted 11-02 on Intel, PROMOTED 11-03 on Apple. This is the shared-cause object's
+sharpest face and it earns its own heading because it arrived twice in four days.)* **A disclosure that
+merely NOTICES a market condition is EVIDENCE OF a pre-existing state, not a CAUSE of anything** — it
+is a reading of the tape with a filing date attached, **the most respectable disguise a non-event can
+wear.** ⚠ **THE WORKED PAIR: Intel (10-29) said memory shortages were raising PC prices;
+`T-2026-11-02-03` killed it. Apple (11-02) called memory pricing "unprecedented" and guided GM down to
+45–46% from 47.9%; `T-2026-11-03-01` killed it at the SAME rung for the SAME reason. NOTHING ABOUT ANY
+MEMORY MAKER'S ECONOMICS CHANGED ON EITHER DATE.** ⚠⚠ **THE TEST: ask whether Company B's economics
+changed ON THE DATE OF THE DISCLOSURE. If the condition pre-dates the remark, there is no event — and
+a LARGER, more credible reporter makes the non-event MORE persuasive, not more real.** ⚠ **The tell is
+the same "and also" every time: *tight supply lifts ASPs — and also Company B captures that pricing
+rather than conceding it.***
+
+**⚠⚠⚠ THE JOIN — TWO TRUE STATEMENTS IN ONE DISCLOSURE THAT THE READER WELDS INTO A THIRD NEITHER
+MAKES.** *(New 11-03, `T-2026-11-03-02`. This is rule (v)'s most fillable blank yet and it is a
+DISTINCT shape, because the reader supplies no FACT — only a CONNECTION.)* Apple's FQ4 call disclosed
+**(a)** manufacturing purchase obligations **+$33B** June→September, *"as we work to improve supply"*,
+and **(b)** in a different paragraph, that memory costs were rising and would keep rising.
+⚠⚠ **NEITHER STATEMENT MENTIONS THE OTHER, AND THE JOIN — "so the $33B is memory, so Micron is getting
+$33B" — IS ENTIRELY THE READER'S.** ⚠ **IT IS WORSE-SHAPED THAN THE $1.7B "MEMORY COMPONENTS" ENTRY
+UNDER RULE (v): there, one sentence carried a figure and a category together, so the invention was
+visible. Here the two halves are separately TRUE, separately SOURCED and separately QUOTABLE, so the
+fabrication hides in the WHITESPACE BETWEEN THEM and the result reads as better-sourced than the
+single-sentence version.** ⚠ **The source refused the join unprompted: *"attributing the $33 billion —
+or any portion of it — to memory or to a particular supplier would go beyond what Apple stated."***
+⚠ **ASK WHICH SENTENCE CONTAINS BOTH THE FIGURE AND THE RECIPIENT. If no single sentence does, the
+dollar path does not exist.**
 
 **⚠ A SHARED CAUSE IS NOT A MECHANISM — AND IT WORKS IN BOTH SIGNS.** Two companies moving on the same
 macro input is a **market**, not a **transaction**, and the giveaway is that part 1 needs an *"and
