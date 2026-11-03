@@ -85,7 +85,7 @@ check that the pull returned the right session. A stored baseline is a *label*, 
 
 *(none — no **satellite** positions have been opened yet. Core VOO exists and is deliberately not tracked here, per the top-of-file rules and the fill note further down.)*
 
-### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-11-03, **DIGEST OPEN — `1-premarket` 07:02** ⚠ **~58 min early, recorded not diagnosed.** The three later seats append below; the close seat closes and collapses it. ⚠ **Absent-seat ordinal: 07:02 is the 50th.** ⚠⚠ **DELIBERATELY SHORT. The corpus item is live past 1MB and prose volume is the one lever a seat controls; no collapse ratio is claimed because there is nothing yet to collapse.**)
+### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-11-03, **DIGEST OPEN — `1-premarket` 07:02** ⚠ **~58 min early, recorded not diagnosed.** The three later seats append below; the close seat closes and collapses it. ⚠ **Absent-seat ordinal: 07:02 is the 50th.** ⚠⚠ **DELIBERATELY SHORT. The corpus item is live past 1MB and prose volume is the one lever a seat controls; no collapse ratio is claimed because there is nothing yet to collapse.** ⚠ **`2-market-open` 08:36 APPENDED BELOW — PRE-OPEN, COULD NOT EXECUTE, ZERO ORDERS; absent-seat ordinal 51st. Nothing in the table changed and nothing was collapsed: the two remaining seats append, the close seat closes and collapses.**)
 
 **Zero satellite positions, re-derived at this seat, three sides, no discrepancy:** Alpaca `positions`
 = **ONE row, core VOO only** (99.046311231 sh @ `avg_entry_price` **706.74**, `cost_basis`
@@ -116,6 +116,19 @@ either.**
 ✅ **BROKER-PAIR CROSS-CHECK RESTORED** (unavailable on 11-02 for want of a close basis):
 `lastday_price` **691.32** vs bar `c` **691.185** = **0.135 / 0.0195%** on the same session. Normal
 venue/consolidation noise. **No action, and neither figure is stamped.**
+
+**`2-market-open` 08:36 — ZERO ORDERS PLACED, ZERO INTENDED, AND NOTHING IN THIS FILE CHANGED.**
+⚠ **`clock` `is_open: false`** at 08:36:25, `next_open` **09:30 same date** — pre-market, not a
+holiday. **§7 forbids trading a closed market, so placing nothing is correct.** ⚠ **The firing time is
+an OBSERVATION, not a diagnosis** (`control.md`), and the staleness gate **PASSED** — `plan_date`
+**2026-11-03 = today**, the handoff was **fresh**, and the plan carried **zero BUY and zero SELL
+intents.** **A good plan at a shut market is not a stale plan at an open one.**
+**Re-derived at this seat, three sides, no discrepancy:** Alpaca `positions` = **ONE row, core VOO
+only** · `grep -cE '^### [A-Z]'` = **0** · `sleeves` `satellite.count: 0`. **All four §5 rules remain
+ABSENT, NOT PASSING — no operand, and the table above stands unaltered.**
+✅ **Broker-pair cross-check re-run and unchanged:** `lastday_price` **691.32** vs the 11-02 official
+close **691.185** = **0.135 / 0.0195%**. ⚠ **`current_price` 692.76 is a LIVE PRE-MARKET MIDPOINT and
+is NOT stamped here** — the rule has no operand today, but it holds the moment one exists.
 
 ---
 
