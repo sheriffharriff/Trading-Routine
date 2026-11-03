@@ -85,6 +85,40 @@ check that the pull returned the right session. A stored baseline is a *label*, 
 
 *(none — no **satellite** positions have been opened yet. Core VOO exists and is deliberately not tracked here, per the top-of-file rules and the fill note further down.)*
 
+### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-11-03, **DIGEST OPEN — `1-premarket` 07:02** ⚠ **~58 min early, recorded not diagnosed.** The three later seats append below; the close seat closes and collapses it. ⚠ **Absent-seat ordinal: 07:02 is the 50th.** ⚠⚠ **DELIBERATELY SHORT. The corpus item is live past 1MB and prose volume is the one lever a seat controls; no collapse ratio is claimed because there is nothing yet to collapse.**)
+
+**Zero satellite positions, re-derived at this seat, three sides, no discrepancy:** Alpaca `positions`
+= **ONE row, core VOO only** (99.046311231 sh @ `avg_entry_price` **706.74**, `cost_basis`
+**$69,999.989999** — unchanged since 2026-09-03, **only the mark moving**; `current_price` **689.76**
+is a **LIVE PRE-MARKET MIDPOINT** and is **NOT** stamped anywhere in this file) · this file's
+satellite block count (`grep -cE '^### [A-Z]'`) = **0** · `sleeves` `satellite.count: 0`, `value: 0`,
+`pct: 0.0`.
+
+| Rule | Status at this seat | Distance to trigger |
+|---|---|---|
+| **§5.1** thesis invalidation | **ABSENT** — no thesis held, so no invalidation condition exists to test | **No operand.** ⚠ **No Perplexity news query was spent on a position, because there is no position.** |
+| **§5.2** time stop | **ABSENT** — no timing window is running | **No operand.** |
+| **§5.3** hard stop (−7% from entry) | **ABSENT** — no satellite entry price exists | **No operand.** |
+| **§5.4** trailing stop (−10% from `highest_close`) | **ABSENT** — and ⚠ **NO `highest_close` HAS EVER BEEN WRITTEN IN THIS REPO** | **No operand.** |
+
+⚠⚠ **AND THE REASON THAT LAST CELL MATTERS TODAY: THE 11-02 PARTIAL-BAR ERROR IS NOW MEASURED.** The
+11-02 15:15 ET close seat fired 45 minutes before the bell and its bar read `c` **693.91**; this seat
+backfilled the **official** 2026-11-02 close at **691.185** (`bars --days 3 --adjustment all`,
+`v` 58,546, `n` 2,239). ⚠ **The error is $2.725 = 0.394%.** **Had that seat followed Step 2 literally,
+a `highest_close` 39bp too high would have been stamped, marked current-not-stale, never backfilled by
+the midday detector, and §5.4 would have measured every later drawdown from a non-close for the life
+of the position.** ✅ **IT REFUSED. The refusal was right and is now QUANTIFIED rather than inferred —
+but note it was never TESTED, because at zero satellite positions it had no operand.** ⚠ **The
+standing conclusion is unchanged and is reinforced: gate Step 2 on `is_open`/`next_close`, NEVER on the
+bar — the bar carries no partial-bar flag and, as 11-02 measured, volume does not reveal completeness
+either.**
+
+✅ **BROKER-PAIR CROSS-CHECK RESTORED** (unavailable on 11-02 for want of a close basis):
+`lastday_price` **691.32** vs bar `c` **691.185** = **0.135 / 0.0195%** on the same session. Normal
+venue/consolidation noise. **No action, and neither figure is stamped.**
+
+---
+
 ### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-11-02, **ONE DIGEST FOR THE DATE, ALL FOUR SEATS:** `1-premarket` 07:01 ⚠ **~59 min EARLY** · `2-market-open` 08:47 ⚠⚠ **PRE-OPEN, COULD NOT EXECUTE** · `3-midday` 12:18 **(market OPEN, zero exits, benign)** · `4-market-close` **15:15** ⚠⚠⚠ **PRE-CLOSE — 45 MIN BEFORE THE BELL, SO NO OFFICIAL CLOSE EXISTED AND NONE WAS WRITTEN.** ⚠ **CLOSED BY THE CLOSE SEAT, THE ONLY SEAT ENTITLED TO TOUCH WHAT THREE EARLIER SEATS WROTE.** ⚠ **RE-EVALUATED AT EACH SEAT, NOT INHERITED.** Absent-seat ordinals: 07:01 **46th** · 08:47 **47th** · 12:18 **48th** · this close **49th**. ⚠⚠ **NO COLLAPSE RATIO IS CLAIMED AND NOTHING WAS COLLAPSED: three of today's four seats are each carrying a DISTINCT schedule finding at a DIFFERENT rung of the harm scale, and folding them to one line would destroy the only evidence that the fault's severity VARIES BY ROUTINE. Counted after the write, not from intent: this digest GREW.**)
 
 **Zero satellite positions, re-derived at this seat, three sides, no discrepancy:** Alpaca `positions`
