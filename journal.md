@@ -40,6 +40,179 @@ anything where the honest-broker rule (§4) did real work>
 
 ## Entries
 
+### 2026-11-03 (Tuesday)
+
+**Account:** total **$98,641.08 — INTRADAY, NOT A CLOSE** (99.046311231 sh VOO at a live **693.0201**
++ $30,000.00 cash, read at **15:16 ET with 44 min of the session left**) | day **+$168.39 (+0.1710%)**
+against the broker's `last_equity` $98,472.696 | since inception **−1.3589%** ($100,000.00 opening)
+⚠⚠⚠ **SECOND CONSECUTIVE SESSION WITH NO OFFICIAL CLOSE IN THIS REPO, AND AGAIN THAT IS A REFUSAL,
+NOT AN OVERSIGHT.** `clock` at **15:16:13 ET** returned **`is_open: true`, `next_close`
+2026-11-03T16:00:00−05:00** — broker-authoritative, 44 minutes of session left. **2026-11-03 HAS NO
+OFFICIAL CLOSE RECORDED AND MUST BE BACKFILLED TOMORROW**, exactly as 11-02 was backfilled this
+morning.
+✅ **The broker-pair cross-check is available today** (it was not on 11-02, for want of a close basis):
+for **2026-11-02**, `lastday_price` **691.32** vs the `--adjustment all` bar `c` **691.185** =
+**$0.135 / 0.0195%**. Normal venue/consolidation noise; **neither number is stamped anywhere.** On the
+bars basis the day reads **+$181.76 / +0.1846%** instead — the two bases disagree by 1.4bp of day P&L,
+which is the size of the noise and not of a finding.
+
+**Sleeves:** core **69.5867%** | satellite **0.0%** | cash **30.4133%**   (§2 band 65–75%, intraday
+basis). **REBALANCE IS NOT DUE TOMORROW.** Band **$64,116.70–$73,980.81**; core **$4,524.38 above the
+floor** and **$5,339.73 below the ceiling** = **4.5867% of equity from the nearer edge, and the nearer
+edge is the FLOOR for a seventh consecutive seat.** ⚠ `rebalance_delta: 407.67` is a **distance
+readout, not an instruction — rebalance on the band, never on the delta.** Re-derived here from the
+live share count rather than inherited: the §2 floor needs **VOO at $562.51, −18.83%** from 693.0201;
+the ceiling needs **$908.67, +31.12%**. ⚠ **The naive read — "core is 4.59% of equity from the floor"
+— makes the floor look ~4× nearer than it is.** A fall in VOO shrinks numerator and denominator
+together; only the $30,000 cash leg is fixed. (Audit catch 28, holding on its fourth re-derivation.)
+**Breaker:** INACTIVE (`consecutive_closed_losses` 0 — **nothing has ever closed in this account**)
+**Week:** 0/3 new positions (ISO **2026-W45**, weekday **2**, Monday anchor **2026-11-02** —
+re-derived with `isocalendar()`, **matched** `week_of`, **no rollover performed and none due**)
+
+**Traded:** nothing. **Zero orders of any kind at any of today's four seats** — zero buys, zero sells,
+zero rebalance. §7 limbo check clean and re-run at this seat, not inherited: `orders --status all`
+returns **one order in this account's entire history** (`d177d8f0…`, 2026-09-03 VOO core, `status`
+**filled**, `filled_at` set, already in `trade_log.md`). **Nothing from today to resolve or carry
+forward. Nothing closed, so there is no realised P&L to record.**
+**Researched:** **5 theses — 0 accepted, 5 rejected** (`T-2026-11-03-01` … `-05`, all written by the
+07:02 pre-market seat; the open, midday and close seats spent **zero** Perplexity queries, correctly,
+because there is no position whose invalidation condition needs checking and this seat does not
+research). **Thesis total 226, re-derived two independent ways and not inherited:** unique IDs anywhere
+= live 144 + archive 87, combined unique **226**; `'^### T-20'` headings = live 139 + archive 87 =
+**226**. Both routes agree and both include the archive. **Accepted, ever: zero.**
+**Positions near a sell rule:** **none — and that is ABSENT, not PASSING.** Zero satellite positions,
+so all four §5 rules have **no operand.** Core VOO is **§5-exempt** and was struck from the working
+list, not evaluated and not stamped.
+
+**What happened:**
+
+A quiet, slightly green Tuesday in which the only thing of substance was a measurement, and the
+measurement was of this system's own plumbing rather than of the market.
+
+VOO traded in a narrow range — today's bar reads `o` 691.79 / `h` 695.90 / `l` 691.64 against
+yesterday's official 691.185 — and the book sat where it has sat since 2026-09-03: one core holding,
+$30,000 idle, nothing to manage. Live equity $98,641.08, up $168.39 on the broker's basis. Core is
+−1.9413% from its 706.74 entry and the account is −1.3589% from inception; those two numbers are the
+same dollar figure (−$1,358.91) because the cash leg has never moved, which is worth noticing only
+because it means **every dollar of this account's drawdown is the core sleeve's mark, and none of it is
+anything the strategy decided.**
+
+The $30,000 has now been idle for **41 completed post-fill sessions**. §4's honest-broker rule says
+most research runs should end in no trade and a day with nothing to do is a successful day — and 226
+theses with zero acceptances is, at some point, a fact about the funnel rather than a run of
+successful days. That is the human's judgment to make and I am not entitled to loosen a filter to
+reach it; I am recording the denominator so it can be made.
+
+**Session counters re-derived from a 90-bar `--adjustment all` pull, not incremented: 44 COMPLETED
+sessions since 2026-09-01 / 41 COMPLETED post-fill**, counting today as **in progress, not complete**.
+The 10-30 close seat's 43/40 plus 11-02 reproduces both to the unit. ⚠ **Audit catch 29's shape — one
+increment per *seat* instead of per *session* — does not recur, because the count was taken from the
+bars rather than from the previous number.**
+
+**The day's real work was Step 2, and it was refused for the second session running.** `clock` said
+`is_open: true` with `next_close` 16:00 and 44 minutes left, so **no official close for 2026-11-03
+existed to record, and none was written.** The diagnostic pull on core VOO — §5-exempt and therefore
+never stampable — returns `t` **2026-11-03**, **`c` 692.93**, `v` **27,361**, `n` **1,330**, and
+**nothing else: the bar's keys are `c h l n o t v vw` and there is no partial-bar flag, no session-state
+bit, no indication of any kind that the session is still running.** The field is simply named `c`. A
+seat following Step 2 literally would write 692.93 into `highest_close`, stamp it `(as of 2026-11-03)`,
+and the mark would then read **current, not stale** — so the midday staleness detector, which exists
+for precisely this, would never backfill it, and §5.4 would measure every later drawdown from a
+non-close for the life of the position.
+
+⚠ **And for the second session running it cost nothing, which is the dangerous part: the satellite
+ledger is EMPTY, so Step 2 had no operand and the refusal coincided with a vacuous pass. THE REFUSAL
+HAS STILL NEVER BEEN TESTED.** Two consecutive seats have now "refused" against nothing. It acquires an
+operand the moment one satellite position exists, and not before.
+
+**No notification was sent, and that was a decision rather than an omission** — see the next section.
+
+**What I got wrong or nearly got wrong:**
+
+**1. I inherited a true lesson wrapped around an instance that would have pointed me the wrong way
+today, and the instance nearly did.** The 11-02 close seat measured its partial bar at `v` 44,840 /
+`n` 1,834 and recorded that it **out-volumed four of seven** complete sessions and out-traded five —
+the point being that a partial bar can look busy, so volume cannot certify completeness. I arrived
+holding that shape. **Today's partial bar out-volumes exactly ONE of the seven** (27,361 against
+34,733 · 55,208 · 30,515 · 40,205 · 23,394 · 106,403 · 58,546; mean 49,858) **while still out-trading
+five of seven** (`n` 1,330 against 1,082 · 1,192 · 1,261 · 1,066 · 1,182 · 4,200 · 2,239).
+⚠⚠ **So the two partial bars on consecutive sessions carry OPPOSITE volume signatures — one high, one
+low — and if I had carried 11-02's instance forward as "a partial bar looks high-volume," today's thin
+27,361 would have read as EVIDENCE OF COMPLETENESS and I would have stamped it.** The general lesson
+survives and is now much stronger than it was: **no threshold on `v` can separate partial from
+complete, because the same fault produces readings on both sides of the distribution within two
+sessions.** The specific instance was a trap. ⚠ **This REPLACES the 11-02 framing rather than sitting
+beside it: do not carry "partial bars out-volume complete ones." Carry "volume is uninformative." The
+only reliable detector is the clock.**
+
+**2. I nearly presented the day's P&L as a result.** `account` hands you `last_equity` 98,472.696 and
+the subtraction works cleanly to +$168.39 / +0.1710%; nothing in the payload says the current side of
+that subtraction is a live mid-afternoon mark. It reads as a settled daily number and it is not one —
+it is an intraday mark measured against a close, and on the bars basis the same day reads +0.1846%.
+⚠ **The labelling is a discipline I had to impose; the data did not force it, and the clean arithmetic
+is exactly what makes the unlabelled version attractive.** Same defect as the bar's missing
+partial-flag, one endpoint over.
+
+**3. I came close to claiming credit for a refusal that has never been tested.** The honest statement
+is narrow: a seat declined to stamp a number into a field that **has never once been written in this
+repo**, on a book with **zero satellite positions**. That is the correct behaviour and it is also
+nearly free. ⚠ **Two consecutive clean Step 2 records are not evidence that the gate works, and the
+next seat must not read a third as a track record.**
+
+**4. On the notification, the pressure ran the other way and I want the reasoning on the record.** The
+schedule fault is the run-blocking item in this repo and it has now broken routine 4 on two
+consecutive sessions, which makes a ping feel warranted. **It is not, and I did not send one.** The
+human was notified about this item **this morning** by the 07:02 pre-market seat, and five times
+before that; **its status has not changed** — same fault, same fix, same owner — and **nothing was lost
+today**, because zero satellite positions means Step 2 had no operand and zero intents means no trade
+was missed. The volume-signature inversion above is a sharpening of an internal diagnostic, not a new
+action item. ⚠ **The test is whether the item's STATUS changed, not whether this seat has something to
+say about it. Re-pinging an unchanged condition spends the attention that the first real missed BUY
+will need.** ⚠⚠ **And the next seat must not read today's silence as the fault being fixed.**
+
+**5. I DID NOT NEARLY GET THE COLLAPSE RATIO WRONG — I GOT IT WRONG, SHIPPED IT, AND CAUGHT IT ON
+RE-READ. SIXTH RECORDED INSTANCE OF THE SAME DEFECT.** I wrote `positions.md`'s digest footer as
+*"68 lines → 74, grew by 6"* **before running `wc -l`**, in a sentence whose own text said *"counted
+after the write rather than claimed from intent."* **The measured figure was 95, and after the
+correction paragraph was added, 103 — the claim was false by 29 lines.** It is now the measured number
+and the false claim is **replaced, not annotated**. ⚠⚠ **The aggravating detail is the one worth
+keeping: I had just written the digest heading that says this is the one line the corpus keeps getting
+wrong, and I had read the 10-20 (`171 → 48` claimed / `171 → 98` actual) and 10-28 (`135 → 46` /
+`135 → 66`) instances in this very file minutes earlier. Reading the warning did not help. Writing
+"counted after the write" into the sentence did not help.** ⚠⚠⚠ **The instruction does not survive
+contact with a seat writing its own collapse figure, and the only mechanism that has ever worked is
+procedural: WRITE, THEN `wc -l`, THEN WRITE THE RATIO — two passes, never one.** ⚠ **There is also a
+recursion here that earlier instances did not name: the ratio sentence sits inside the thing it
+measures, so correcting it changes the number. I resolved it by making the final edit digits-only so
+the line count could not move again, and verified the file against the claim. Note that for the next
+seat.**
+
+**6. Beyond that, nothing was close to wrong, and I am not going to manufacture a seventh item.** This
+seat does no research, so there was no thesis to talk myself into, no mechanism sentence to force and
+no correlation check to run honestly — the §4 pressure this section usually exists to catch simply was
+not present. Items 1–5 are the whole of it.
+
+**For the next run:**
+
+1. ⚠⚠⚠ **BACKFILL 2026-11-03's OFFICIAL CLOSE FIRST.** No close for today exists anywhere in this
+   repo. `bars --symbol VOO --days 3 --adjustment all` tomorrow morning; the partial bar seen at this
+   seat was **692.93** and the error against the true close is **unknown until it is pulled** —
+   11-02's equivalent was **$2.725 / 0.394% too high.** ⚠ **Every figure in this entry is an intraday
+   mark and none of them may be quoted as close-basis.**
+2. ⚠ **Do NOT carry "a partial bar out-volumes complete sessions."** It was true on 11-02 and false
+   today. Carry **"volume is uninformative about completeness; gate Step 2 on `is_open`/`next_close`,
+   never on the bar."**
+3. **Step 2's gate remains UNTESTED after two refusals** — zero satellite positions, no operand both
+   times. Do not read the clean records as a working detector.
+4. **Session counters: 44 completed / 41 post-fill. Re-derive from a 90-bar pull; never increment.**
+5. **No rebalance due.** Core 69.5867%, floor needs VOO −18.83%. Rebalance on the band, not the delta.
+6. **Schedule fault unchanged and unfixed — do NOT re-notify, and do not read that silence as a fix.**
+7. ⚠ **COLLAPSE RATIOS: write the digest, THEN `wc -l`, THEN write the ratio. Never in one pass** —
+   six instances say a seat cannot do it from intent. **And make the final edit digits-only, because
+   the sentence sits inside what it measures.**
+
+---
+
 ### 2026-11-02 (Monday)
 
 **Account:** total **$98,731.21 — INTRADAY, NOT A CLOSE** (99.046311231 sh VOO at a live

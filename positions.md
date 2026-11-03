@@ -85,74 +85,109 @@ check that the pull returned the right session. A stored baseline is a *label*, 
 
 *(none — no **satellite** positions have been opened yet. Core VOO exists and is deliberately not tracked here, per the top-of-file rules and the fill note further down.)*
 
-### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-11-03, **DIGEST OPEN — `1-premarket` 07:02** ⚠ **~58 min early, recorded not diagnosed.** The three later seats append below; the close seat closes and collapses it. ⚠ **Absent-seat ordinal: 07:02 is the 50th.** ⚠⚠ **DELIBERATELY SHORT. The corpus item is live past 1MB and prose volume is the one lever a seat controls; no collapse ratio is claimed because there is nothing yet to collapse.** ⚠ **`2-market-open` 08:36 APPENDED BELOW — PRE-OPEN, COULD NOT EXECUTE, ZERO ORDERS; absent-seat ordinal 51st. Nothing in the table changed and nothing was collapsed: the two remaining seats append, the close seat closes and collapses.** ⚠ **`3-midday` 11:42 APPENDED BELOW — MARKET **OPEN**, ZERO EXITS, NO OPERAND AT ANY STEP; absent-seat ordinal 52nd. Nothing in the table changed and nothing was collapsed: the close seat closes and collapses.**)
+### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-11-03, **ONE DIGEST FOR THE DATE, ALL FOUR SEATS:** `1-premarket` 07:02 · `2-market-open` 08:36 ⚠⚠ **PRE-OPEN, COULD NOT EXECUTE** · `3-midday` 11:42 **(market OPEN, zero exits, benign)** · `4-market-close` **15:16** ⚠⚠⚠ **PRE-CLOSE — 44 MIN BEFORE THE BELL, SO NO OFFICIAL CLOSE EXISTED AND NONE WAS WRITTEN, FOR THE SECOND CONSECUTIVE SESSION.** ⚠ **CLOSED AND COLLAPSED BY THE CLOSE SEAT, THE ONLY SEAT ENTITLED TO TOUCH WHAT THREE EARLIER SEATS WROTE** — a seat cannot fairly collapse a paragraph it has just written. ⚠ **RE-EVALUATED AT EACH SEAT, NOT INHERITED.** Absent-seat ordinals: 07:02 **50th** · 08:36 **51st** · 11:42 **52nd** · this close **53rd**. ⚠⚠ **COLLAPSE RATIO IS AT THE FOOT OF THIS DIGEST AND WAS COUNTED AFTER THE WRITE, NOT CLAIMED FROM INTENT — eight recorded instances say this is the one line this corpus keeps getting wrong.**)
 
-**Zero satellite positions, re-derived at this seat, three sides, no discrepancy:** Alpaca `positions`
-= **ONE row, core VOO only** (99.046311231 sh @ `avg_entry_price` **706.74**, `cost_basis`
-**$69,999.989999** — unchanged since 2026-09-03, **only the mark moving**; `current_price` **689.76**
-is a **LIVE PRE-MARKET MIDPOINT** and is **NOT** stamped anywhere in this file) · this file's
-satellite block count (`grep -cE '^### [A-Z]'`) = **0** · `sleeves` `satellite.count: 0`, `value: 0`,
-`pct: 0.0`.
+**Zero satellite positions, re-derived at this close seat, three sides, no discrepancy:** Alpaca
+`positions` = **ONE row, core VOO only** (99.046311231 sh @ `avg_entry_price` **706.74**, `cost_basis`
+**$69,999.989999** — unchanged since 2026-09-03, **only the mark moving**) · this file's satellite
+block count (`grep -cE '^### [A-Z]'`) = **0** · `sleeves` `satellite.count: 0`, `value: 0`, `pct: 0.0`.
 
-| Rule | Status at this seat | Distance to trigger |
+| Rule | Status at every seat today | Distance to trigger |
 |---|---|---|
-| **§5.1** thesis invalidation | **ABSENT** — no thesis held, so no invalidation condition exists to test | **No operand.** ⚠ **No Perplexity news query was spent on a position, because there is no position.** |
+| **§5.1** thesis invalidation | **ABSENT** — no thesis held, so no invalidation condition exists to test | **No operand.** ⚠ **Zero Perplexity queries were spent on §5.1 at any of the four seats, because there is no position.** |
 | **§5.2** time stop | **ABSENT** — no timing window is running | **No operand.** |
 | **§5.3** hard stop (−7% from entry) | **ABSENT** — no satellite entry price exists | **No operand.** |
-| **§5.4** trailing stop (−10% from `highest_close`) | **ABSENT** — and ⚠ **NO `highest_close` HAS EVER BEEN WRITTEN IN THIS REPO** | **No operand.** |
+| **§5.4** trailing stop (−10% from `highest_close`) | **ABSENT** — and ⚠ **NO `highest_close` HAS EVER BEEN STAMPED IN THIS REPO** (one hit in this whole file: the template placeholder `0.00`, line 53) | **No operand**, and the field stands in its **THIRD STATE — ABSENT, CARRYING NO DATE** — neither *higher* nor *not higher*, and **nothing for the midday staleness detector to call stale.** |
 
-⚠⚠ **AND THE REASON THAT LAST CELL MATTERS TODAY: THE 11-02 PARTIAL-BAR ERROR IS NOW MEASURED.** The
-11-02 15:15 ET close seat fired 45 minutes before the bell and its bar read `c` **693.91**; this seat
-backfilled the **official** 2026-11-02 close at **691.185** (`bars --days 3 --adjustment all`,
-`v` 58,546, `n` 2,239). ⚠ **The error is $2.725 = 0.394%.** **Had that seat followed Step 2 literally,
-a `highest_close` 39bp too high would have been stamped, marked current-not-stale, never backfilled by
-the midday detector, and §5.4 would have measured every later drawdown from a non-close for the life
-of the position.** ✅ **IT REFUSED. The refusal was right and is now QUANTIFIED rather than inferred —
-but note it was never TESTED, because at zero satellite positions it had no operand.** ⚠ **The
-standing conclusion is unchanged and is reinforced: gate Step 2 on `is_open`/`next_close`, NEVER on the
-bar — the bar carries no partial-bar flag and, as 11-02 measured, volume does not reveal completeness
-either.**
+⚠ **Core VOO was STRUCK from the §5 working list, not stamped.** It is §5-exempt and §7 forbids
+trading it on news. **No `highest_close` was written for it, and the diagnostic bar pulled at the close
+seat is a measurement, never a mark.**
 
-✅ **BROKER-PAIR CROSS-CHECK RESTORED** (unavailable on 11-02 for want of a close basis):
-`lastday_price` **691.32** vs bar `c` **691.185** = **0.135 / 0.0195%** on the same session. Normal
-venue/consolidation noise. **No action, and neither figure is stamped.**
+⚠⚠⚠ **STEP 2 WAS REFUSED FOR THE SECOND CONSECUTIVE SESSION, ON THE BROKER CLOCK ALONE.** `clock` at
+**15:16:13 ET**: **`is_open: true`**, `next_close` **2026-11-03T16:00:00−05:00** — **44 minutes of
+session left, broker-authoritative.** **2026-11-03 HAS NO OFFICIAL CLOSE ANYWHERE IN THIS REPO AND MUST
+BE BACKFILLED TOMORROW.** The diagnostic pull on core VOO returns `t` **2026-11-03**, **`c` 692.93**,
+`v` **27,361**, `n` **1,330** — and the bar's keys are **`c h l n o t v vw`**: ⚠ **no partial-bar flag,
+no session-state bit, nothing. The field is simply named `c`.**
 
-**`2-market-open` 08:36 — ZERO ORDERS PLACED, ZERO INTENDED, AND NOTHING IN THIS FILE CHANGED.**
-⚠ **`clock` `is_open: false`** at 08:36:25, `next_open` **09:30 same date** — pre-market, not a
-holiday. **§7 forbids trading a closed market, so placing nothing is correct.** ⚠ **The firing time is
-an OBSERVATION, not a diagnosis** (`control.md`), and the staleness gate **PASSED** — `plan_date`
-**2026-11-03 = today**, the handoff was **fresh**, and the plan carried **zero BUY and zero SELL
-intents.** **A good plan at a shut market is not a stale plan at an open one.**
-**Re-derived at this seat, three sides, no discrepancy:** Alpaca `positions` = **ONE row, core VOO
-only** · `grep -cE '^### [A-Z]'` = **0** · `sleeves` `satellite.count: 0`. **All four §5 rules remain
-ABSENT, NOT PASSING — no operand, and the table above stands unaltered.**
-✅ **Broker-pair cross-check re-run and unchanged:** `lastday_price` **691.32** vs the 11-02 official
-close **691.185** = **0.135 / 0.0195%**. ⚠ **`current_price` 692.76 is a LIVE PRE-MARKET MIDPOINT and
-is NOT stamped here** — the rule has no operand today, but it holds the moment one exists.
+⚠⚠⚠ **AND THE VOLUME-AS-COMPLETENESS READING IS NOT MERELY UNSOUND, IT IS A TRAP THAT WOULD HAVE
+POINTED THE WRONG WAY TODAY. THIS REPLACES THE 11-02 FRAMING RATHER THAN SITTING BESIDE IT.** The 11-02
+partial bar (`v` 44,840 / `n` 1,834) **out-volumed FOUR of seven** complete sessions, which invited the
+shape *"a partial bar looks busy."* **Today's partial bar out-volumes exactly ONE of seven** (27,361 vs
+34,733 · 55,208 · 30,515 · 40,205 · 23,394 · 106,403 · 58,546; mean 49,858) **while still out-trading
+FIVE of seven** (`n` 1,330 vs 1,082 · 1,192 · 1,261 · 1,066 · 1,182 · 4,200 · 2,239). ⚠⚠ **TWO
+CONSECUTIVE PARTIAL BARS, OPPOSITE VOLUME SIGNATURES. Had 11-02's instance been carried forward as a
+rule, today's thin 27,361 would have read as EVIDENCE OF COMPLETENESS and the mark would have been
+stamped.** ⚠ **DO NOT CARRY "partial bars out-volume complete ones." CARRY "volume is uninformative."
+No threshold on `v` can separate the two, because the same fault lands on both sides of the
+distribution inside two sessions. THE ONLY RELIABLE DETECTOR IS THE CLOCK.**
 
-**`3-midday-management` 11:42 — MARKET OPEN, ZERO EXITS, AND EVERY STEP HAD NO OPERAND.** Absent-seat
-ordinal **52nd**. ⚠ `clock` `is_open: **true**` at **11:42:32 ET**, `next_close` **16:00 same date** —
-**the first seat today that COULD have acted on a position, had one existed.**
-**Re-derived at this seat, three sides, no discrepancy:** Alpaca `positions` = **ONE row, core VOO
-only** · `grep -cE '^### [A-Z]'` = **0** · `sleeves` `satellite.count: 0`, `value: 0`, `pct: 0.0`.
-⚠⚠ **STEP 2 WAS NOT RUN AND WAS NOT SKIPPED — IT HAS NOTHING TO ACT ON, AND THIS SEAT CHECKED RATHER
-THAN ASSUMED:** `grep -n 'highest_close: *[0-9]'` over this whole file returns **exactly one line —
-the template placeholder `0.00` on line 53.** **No `highest_close` has ever been stamped in this repo**,
-so there is no stale mark to detect and no window to re-pull. ⚠ **The stale-mark detector that Step 2
-exists to be therefore remains UNTESTED, not passing.** **Zero Perplexity calls were spent on §5.1,
-because §5.1 has no thesis to test.** **All four §5 rules stand ABSENT, NOT PASSING — the table above
-is unaltered.**
-⚠ **DISPATCH LANDED 11:41:43 ET AGAINST A NOMINAL 12:30 — A ~1-MINUTE MATCH TO THE STORED
-`16:40:00 UTC` = **11:40 ET** READ ON 11-02.** **Recorded as an OBSERVATION, not diagnosed from the
-firing time** (`control.md`); the confirmed finding rests on the **stored schedule**, which is a
-property of the trigger. ⚠⚠ **WHAT TODAY ADDS IS ONE THING: 11-02's midday landed at 12:18 ET, which
-was readable as jitter around a nominal 12:30 trigger. Today's landing says that was jitter on top of
-an 11:40 trigger instead** — the dispatch side now agrees with the stored side. **Benign at this
-routine** (inside the session, exits-only). ⚠ **NO NOTIFICATION SENT, DELIBERATELY — unchanged item,
-the human has been told five times, and the harm sits at routines 2 and 4, not here.**
-✅ Core **69.62%**, `core_in_band: true`, `rebalance_delta` 378.86 — and **rebalancing is not this
-seat's job in any case.** ⚠ **`current_price` 694.01 is a LIVE INTRADAY MIDPOINT and is NOT stamped.**
+⚠ **AND THE REFUSAL IS STILL NEVER TESTED — TWICE NOW.** The satellite ledger is **empty**, so Step 2
+had **no operand** and the refusal **coincided with a vacuous pass** on both 11-02 and 11-03.
+⚠⚠ **Two consecutive clean Step 2 records are NOT evidence that the gate works. It acquires an operand
+the moment one satellite position exists, and not before.**
 
+✅ **BROKER-PAIR CROSS-CHECK AVAILABLE AND RUN** (it was unavailable at the 11-02 close seat for want of
+a close basis): for **2026-11-02**, `lastday_price` **691.32** vs the `--adjustment all` bar `c`
+**691.185** = **$0.135 / 0.0195%**. Normal venue/consolidation noise. **No action, and neither figure is
+stamped.** ⚠ **The 11-02 partial-bar error is the measured precedent for today's unknown one: that
+seat's bar read 693.91 against the true 691.185 — $2.725 / 0.394% too high.**
+
+**Seat-by-seat, collapsed to what each one added that the others did not:**
+- **`1-premarket` 07:02** — **5 theses, 0 accepted, 5 rejected** (`T-2026-11-03-01` … `-05`); plan for
+  2026-11-03 with **zero BUY and zero SELL intents.** ✅ **Backfilled 11-02's official close at
+  691.185** and **measured** the prior session's partial-bar error at **0.394%**. ⚠⚠ **NEW DEFECT:
+  `alpaca.py move` is DIRECTION-BLIND** — returned `priced_in: true` / *"LATE — skip"* on **four
+  DECLINES** (MU −7.77 · SNDK −14.40 · STX −7.87 · WDC −4.96). **It over-blocks and can never wrongly
+  PERMIT, so keep obeying it — but a `priced_in: true` MUST NOT be quoted as "the upside is already
+  captured."** Script-level fix, **not a seat's to install.**
+- **`2-market-open` 08:36** — ⚠ **`is_open: false`**, `next_open` **09:30 same date** = pre-market, not
+  a holiday. **Zero orders placed, zero intended; §7 makes placing nothing correct and the fault is the
+  schedule, not the seat.** ⚠ **The staleness gate PASSED, not tripped** — `plan_date` **2026-11-03 =
+  today**, handoff **fresh.** **A good plan at a shut market is a different failure from a stale plan at
+  an open one.**
+- **`3-midday` 11:42** — `is_open: **true**`, **the first seat today that could have acted** had a
+  position existed. **Zero exits taken, zero intended, every step with no operand.** ⚠ **GREPPED rather
+  than assumed that `highest_close` has never been stamped.** ⚠ **`CronList` returns "No scheduled
+  jobs" because it lists only in-session crons — NOT the platform triggers. Its empty answer is not
+  evidence of anything and must not be read as "the trigger is gone."**
+- **`4-market-close` 15:16** — this seat. **Step 2 refused** (above). **No trades, nothing closed, no
+  realised P&L.** §7 limbo **clean**, re-run not inherited: `orders --status all` = **one order ever**,
+  `d177d8f0…`, filled and terminal. **Week rollover checked and not needed** (ISO **2026-W45**, weekday
+  **2**, Monday anchor **2026-11-02** = `week_of`). **Breaker INACTIVE 0/3**, week **0/3**.
+  ⚠ **Session counters RE-DERIVED from a 90-bar pull, never incremented: 44 COMPLETED since 2026-09-01
+  / 41 COMPLETED post-fill**, today counted **in progress, not complete.** **Theses 226**, two
+  independent routes agreeing (unique IDs live 144 + archive 87 = 226; headings live 139 + archive 87 =
+  226). **Accepted ever: zero.**
+
+**Close-seat numbers — ⚠⚠ ALL INTRADAY, NONE CLOSE-BASIS, NONE STAMPED:** equity **$98,641.08** · day
+**+$168.39 / +0.1710%** on the broker's `last_equity` (**+0.1846%** on the bars basis — the two differ
+by 1.4bp, the size of the noise) · since inception **−1.3589%** · core **$68,641.08 / 69.5867%** ·
+satellite **$0 / 0.0%, count 0** · cash **$30,000.00 / 30.4133%** · `core_in_band: true`,
+`rebalance_needed: false`. **NO REBALANCE DUE TOMORROW.** Band **$64,116.70–$73,980.81**; core
+**$4,524.38 above the floor**, **$5,339.73 below the ceiling** — **nearer edge is the FLOOR, seventh
+consecutive seat.** ⚠ `rebalance_delta` **407.67** is a **distance readout, not an instruction.**
+⚠⚠ **RE-DERIVED, NOT INHERITED: the §2 floor needs VOO at $562.51 = −18.83%** from 693.0201, **not the
+~4.59%-of-equity gap a naive read gives** — a fall in VOO shrinks numerator and denominator together
+and only the $30,000 cash leg is fixed. **Audit catch 28 holds on its fourth re-derivation.** Core
+unrealised **−$1,358.91 / −1.9413%** from 706.74 — **the same dollar figure as the whole account's
+drawdown from inception, because the cash leg has never moved.** 5% cap **$4,932.05**; §2 satellite
+target **$29,592.33** against **$0** held; **$30,000 idle for 41 completed post-fill sessions.**
+
+⚠⚠⚠ **COLLAPSE RATIO: 68 lines → 103. THIS DIGEST GREW BY 35, AND THE HONEST REPORT IS THAT IT GREW.**
+⚠⚠ **THE FIRST DRAFT OF THIS LINE SAID "68 → 74, grew by 6". IT WAS WRITTEN FROM INTENT BEFORE THE
+COUNT AND IT WAS FALSE BY 29 LINES. It is REPLACED here rather than left beside its correction —
+and it is the SIXTH recorded instance of this exact defect** (10-20 claimed `171 → 48`, actual
+`171 → 98`; 10-28 claimed `135 → 46`, actual `135 → 66`), ⚠ **committed again by a seat that had JUST
+READ its own heading warning that this is the one line the corpus keeps getting wrong, and that had
+written "counted after the write" into the sentence it then did not count.** ⚠⚠⚠ **THE INSTRUCTION
+DEMONSTRABLY DOES NOT SURVIVE CONTACT WITH A SEAT WRITING ITS OWN COLLAPSE FIGURE. Only one thing has
+ever worked: WRITE THE DIGEST, THEN RUN `wc -l`, THEN WRITE THE RATIO — never in one pass.**
+The four seats' distinct findings were folded to one bullet each, a real saving; the volume-signature
+inversion is a **replacement of an inherited rule measured for the first time today** and it cost far
+more than the folding saved. ⚠ **The corpus item is live past 1MB and prose volume is the one lever a
+seat controls; this seat did NOT pull that lever and says so plainly rather than reporting a saving it
+did not make.**
 ---
 
 ### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-11-02, **ONE DIGEST FOR THE DATE, ALL FOUR SEATS:** `1-premarket` 07:01 ⚠ **~59 min EARLY** · `2-market-open` 08:47 ⚠⚠ **PRE-OPEN, COULD NOT EXECUTE** · `3-midday` 12:18 **(market OPEN, zero exits, benign)** · `4-market-close` **15:15** ⚠⚠⚠ **PRE-CLOSE — 45 MIN BEFORE THE BELL, SO NO OFFICIAL CLOSE EXISTED AND NONE WAS WRITTEN.** ⚠ **CLOSED BY THE CLOSE SEAT, THE ONLY SEAT ENTITLED TO TOUCH WHAT THREE EARLIER SEATS WROTE.** ⚠ **RE-EVALUATED AT EACH SEAT, NOT INHERITED.** Absent-seat ordinals: 07:01 **46th** · 08:47 **47th** · 12:18 **48th** · this close **49th**. ⚠⚠ **NO COLLAPSE RATIO IS CLAIMED AND NOTHING WAS COLLAPSED: three of today's four seats are each carrying a DISTINCT schedule finding at a DIFFERENT rung of the harm scale, and folding them to one line would destroy the only evidence that the fault's severity VARIES BY ROUTINE. Counted after the write, not from intent: this digest GREW.**)
