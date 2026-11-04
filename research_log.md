@@ -52,6 +52,252 @@ single most common way a plausible-sounding connection gets mistaken for an oppo
 
 ## Entries
 
+### 2026-11-04 (07:02 ET) — event survey (funnel, pre-thesis)
+
+Selftest **5/5**, exit 0 (`trading_enabled: true`, LIVE paper, equity **$99,441.37** at pre-flight).
+`clock` at 07:02:42 reads `is_open: false`, `next_open` **2026-11-04T09:30:00-05:00**, `next_close`
+**2026-11-04T16:00:00-05:00** — both carry today's date: the pre-market full-session signature.
+**Not a holiday.** ⚠ **Fired ~58 min early against a nominal 08:00 ET, the THIRD EST session running.
+RECORDED AS AN OBSERVATION, NOT DIAGNOSED** — `control.md` forbids diagnosing a schedule fault from a
+run timestamp, routine 1's stored schedule was read on 11-02, and this adds nothing to a confirmed
+finding. Harmless at this seat: no orders are placed here.
+
+⚠⚠⚠ **FIRST THING, AND IT DISCHARGES THE CARRY-FORWARD ITEM: 2026-11-03's OFFICIAL CLOSE IS
+BACKFILLED. VOO `c` **693.57** (`bars --days 4 --adjustment all`, `v` 34,539, `n` 1,628).** The close
+seat fired at 15:16 ET, 44 min before the bell, and wrote nothing — correctly. **Close-basis 11-03:
+equity $98,695.55 · day +$236.23 / +0.2399% on 11-02's official $98,459.32 · since inception
+−1.3044%.** ⚠ **The intraday $98,641.08 / +0.1710% carried in the 11-03 journal and state is NOT
+close-basis and must not be quoted as one.**
+
+⚠⚠⚠ **AND THE BACKFILL PRODUCED A FINDING THAT REPLACES THE INHERITED ONE RATHER THAN SITTING BESIDE
+IT — THE PARTIAL-BAR ERROR INVERTED SIGN BETWEEN TWO CONSECUTIVE SESSIONS, SO IT IS NOT A BIAS AND
+CANNOT BE CORRECTED FOR.** 11-02: partial **693.91** vs true **691.185** = **+$2.725 / +0.3943%, too
+HIGH.** 11-03: partial **692.93** vs true **693.57** = **−$0.64 / −0.0923%, too LOW.** ⚠⚠ **The 11-03
+close seat recorded that the partial-bar VOLUME signature inverted across the same two sessions; the
+ERROR ITSELF inverts too. Two inversions in the same pair of sessions, on the two different quantities
+a seat might have used to rescue the stamp.** ⚠ **DO NOT CARRY "a partial bar reads high" — it is the
+companion of the volume error and fails the same way. The magnitude is bounded by this sample at ~0.4%,
+which is enough to displace a §5.4 trigger, and the SIGN is unknowable in advance.** ⚠⚠⚠ **THE ONLY
+RELIABLE DETECTOR REMAINS THE CLOCK. The refusal is still NEVER TESTED — zero satellite positions means
+Step 2 had no operand on both sessions, and two vacuous passes are not a track record.**
+✅ **Broker-pair cross-check run: `lastday_price` 693.54 vs bar `c` 693.57 = $0.03 / 0.004%, the
+tightest pair on record and normal venue noise. Neither stamped.**
+
+**Window surveyed:** Tuesday 2026-11-03 after the close through this morning. The 11-02 lesson was
+applied again — the window was opened to catch the previous evening's after-close prints, and it
+recovered the day's genuine events (onsemi and Pinnacle West both reported after the 11-03 close).
+⚠ **2026-11-03 was US MIDTERM ELECTION DAY. It produced a tape and no Company A; disposed in the sweep
+at `T-2026-11-04-05`, zero queries spent — scale is not a substitute for a named counterparty.**
+
+**Ledger reconciled, three sides, re-derived not inherited.** Alpaca `positions` = **one row, core VOO
+only** (99.046311231 sh @ 706.74, `cost_basis` $69,999.989999, **unchanged since 2026-09-03 — only the
+mark moving**; `current_price` **701.00** is a LIVE PRE-MARKET PRINT at **+1.0713% over the official
+11-03 close**, stamped nowhere and quoted nowhere as a close) · `positions.md` satellite block count
+**0** · `sleeves` `satellite.count: 0`, `value: 0`, `pct: 0.0`. **No discrepancy.**
+
+**Every §6 gate open.** Breaker INACTIVE, `halt_triggered_at: none`; `new_positions_this_week` **0 of
+3**; satellite **0.0%** deployed, **$30,000 idle**; `control.md` Notes empty; zero open alerts. 5% cap
+**$4,971.57**. **Week anchor re-derived with `isocalendar`: 2026-11-04 is ISO 2026-W45, weekday 3,
+Monday anchor 2026-11-02 — MATCHES `week_of`. No rollover; not rolled a second time.**
+
+**Three queries, five theses, zero survivors.** ⚠ **TWO of the three broad queries returned the KILL
+VOLUNTEERED BY THE SOURCE** — *"no US-listed company meeting both conditions"* on the named-counterparty
+sweep, and *"no publicly documented peer has named onsemi or quantified incremental revenue"* on the one
+drill query spent. **That is the cheapest possible form of rule (v), and asking for the named
+counterparty and the dollar figure IN THE SAME STATEMENT is what produced it. Keep framing it that way.**
+
+⚠⚠⚠ **THE DAY'S FINDING, AND IT IS A CLEAN SEPARATION THE LOG HAS NOT HAD BEFORE: A CANDIDATE PASSED
+THE PRICED-IN FILTER AND DIED ANYWAY, WHILE THE ONE THAT FAILED THE FILTER WAS ALREADY DEAD FOR A
+STRUCTURAL REASON.** **PNW passed** — `move` **+2.25%** over five sessions, `priced_in: false`,
+*"passes the priced-in check"* — and then **died at part 3**, because a **25-year** contract **subject to
+regulatory approval** serving **1.88 GW at full build-out** is ~40+ quarters against §4's two.
+**ON failed** — `move` **−7.69%**, `priced_in: true`, *"LATE"* — and was **independently dead at rule
+(v)** before the filter was ever run. ⚠⚠ **SO TODAY DEMONSTRATES BOTH HALVES OF THE SAME POINT IN ONE
+RUN: a hard-filter PASS is not progress toward a trade (the ELMT/Antofagasta lesson), and a hard-filter
+FAIL was not what disqualified the only candidate it touched.**
+
+⚠⚠ **AND THE DIRECTION-BLIND `move` DEFECT FIRED AGAIN, THIRD CONSECUTIVE SESSION, SIXTH NAME: ON at
+**−7.69%** returned `priced_in: true` / *"LATE — skip per strategy.md section 4"*.** The tally is now
+**INTC −24.36% (11-02) · MU −7.77% · SNDK −14.40% · STX −7.87% · WDC −4.96% (11-03) · ON −7.69%
+(11-04)** — **six "LATE" verdicts on six DECLINES across three sessions.** ⚠ **STATUS UNCHANGED, AND
+IT WAS OBEYED ANYWAY: the filter fails safe, it over-blocks and can never wrongly PERMIT, so a seat
+must not reason past a `priced_in: true` on the grounds that the move was negative.** ⚠ **The fix is a
+signed threshold in `scripts/alpaca.py`, which is SCRIPT-LEVEL AND NOT A SEAT'S TO INSTALL. Reported to
+the human 2026-11-03; NOT re-notified today, because the item's status has not changed.**
+
+---
+
+### T-2026-11-04-01 — the alternative automotive power/analog supplier tier ← onsemi diverting constrained capacity from automotive to AI — REJECTED (rule (v) + part 2; ONE drill query spent, source applied the kill)
+**Company A / the news:** **onsemi (ON)** Q3 2026 print, after the 2026-11-03 close: revenue
+**$1.722B** (+11% y/y), adj EPS **$0.90** vs **$0.63**; AI data-center revenue **$180M**, **+39%
+sequentially / +175% y/y**, with management guiding **~$620M for 2026** and projecting that figure to
+**double in 2027**. ⚠ **The operative disclosure is an ALLOCATION decision, not a number:** onsemi said
+it was **supporting automotive end-demand shipments but NOT automotive inventory-replenishment
+backlog**, directing constrained capacity to **AI data-center and industrial** customers, with
+additional capacity expected in **Q1 2027**.
+**Company B / the candidate:** the US-listed suppliers of the same automotive power/analog content that
+an automaker deprived of onsemi parts would have to buy from instead — **TXN**, **ADI**, **MCHP**,
+**NXPI**.
+
+**1. Mechanism (one sentence):** ❌ **CANNOT BE WRITTEN IN ONE CLAUSE.** The honest version is
+*"onsemi withholding automotive replenishment parts causes TXN's automotive analog revenue to improve
+because deprived automakers reroute those orders — **and also** the automakers choose to reroute rather
+than wait one quarter for onsemi's Q1 2027 capacity, **and also** the rerouted volume lands at a
+US-listed supplier rather than at Infineon or STMicro."* ⚠ **Two "and also"s. §4 says one clause or
+reject, and this is the shape the strategy file names explicitly.**
+**2. Dollar path:** ❌ **DOES NOT EXIST.** The drill query asked for the segment, the segment revenue
+and the share of total revenue at each candidate, and returned a table whose every cell reads *"Not
+available"* / *"None reported"*. ⚠⚠ **onsemi NEVER QUANTIFIED THE DEFERRED AUTOMOTIVE REVENUE** — its
+automotive line was **$777M, DOWN 1% sequentially and DOWN 1% y/y**, which management attributed to the
+reallocation. **A 1% decline is the entire measured size of the hole, on a $777M line, split across an
+unnamed number of automakers and an unnamed number of alternative suppliers. There is no figure to
+allocate and therefore no segment share to compute.**
+**3. Timing window:** n/a — not reached.
+**4. Invalidation:** n/a — not reached.
+
+**Hard filters:**
+- Priced-in (§4): **ON −7.69%** over 5 sessions → `priced_in: true`, *"LATE"*. ⚠ **A SIXTH direction-blind
+  reading, and it is NOT what disqualifies this thesis — the candidates are TXN/ADI/MCHP/NXPI, not ON.**
+- Correlation (§4): **no open satellite positions, so no driver to collide with.** Vacuous pass, 54th.
+- Universe (§3): not reached — no candidate survived to be screened.
+
+**Outcome:** **REJECTED at rule (v), before part 1 could be written.** ⚠⚠⚠ **THE SOURCE APPLIED THE KILL
+ITSELF AND IT IS WORTH QUOTING, BECAUSE IT ALSO NAMES THE TEMPTATION:** *"The available evidence does
+**not** identify any other US-listed company that has, in its own filing or release, named onsemi's
+capacity constraints as a source of incremental revenue or share gains… The absence of such disclosure
+is not evidence that no competitor benefited; it means only that no such benefit is reported in the
+available evidence."* ⚠⚠ **THAT SECOND SENTENCE IS THE TRAP, STATED PLAINLY BY THE SOURCE: "somebody
+must be getting those orders" is TRUE and UNACTIONABLE. §4 needs a NAMED recipient with a DISCLOSED
+figure, and a reallocation of capacity names neither — it names only the party GIVING UP the revenue.**
+⚠ **THIS IS A NEW AND SHARPER FACE OF RULE (v), LOGGED AS SUCH: a DIVERSION has a certain beneficiary
+and no nameable one. It is strictly worse than the "unnamed supply base" costume, because there the
+blank at least had a dollar figure beside it; here the beneficiary set is not even enumerable — it
+includes foreign-listed suppliers (§3-dead) and inventory the automakers already hold.** ⚠ **ASK WHO
+IS NAMED AS RECEIVING, NOT WHO MUST ARITHMETICALLY BE RECEIVING.**
+
+---
+
+### T-2026-11-04-02 — PNW (Pinnacle West Capital) ← TSMC's first direct-pricing power contract for the Arizona campus — REJECTED (part 3 / rule (vi); part 2 independently; ZERO drill queries spent)
+**Company A / the news:** **TSMC**'s Arizona campus expansion. **Pinnacle West (PNW)**, reporting
+2026-11-04, disclosed it had **executed its first direct pricing contract with TSMC in October** — a
+**25-year agreement**, **subject to regulatory approval**, serving approximately **1.88 GW** of demand
+**at full build-out** across the Arizona campus. Its **committed-demand forecast rose to 5.8 GW, about
+1.3 GW above its prior level.** Alongside: 2026 EPS guidance **$5.05–$5.25**, full-year retail-sales
+growth outlook **8–10%**, Q3 EPS **$3.49**.
+**Company B / the candidate:** **PNW itself** — the regulated utility whose load grows because a
+semiconductor fab complex expands.
+
+⚠⚠ **THIS IS THE BEST-SHAPED CANDIDATE THE FUNNEL HAS MET IN SEVERAL SESSIONS AND IT IS WORTH SAYING SO
+BEFORE THE KILL: Company A is NAMED (TSMC), Company B is NAMED AND BUYABLE (PNW), the commitment is
+QUANTIFIED (1.88 GW; +1.3 GW to the committed-demand forecast), the counterparty appears IN THE SAME
+SENTENCE AS THE FIGURE — which is exactly the test `T-2026-11-03-02` was minted to impose — and the
+mechanism needs no "and also."** ⚠ **It fails on timing alone, and that is the honest reason.**
+
+**1. Mechanism (one sentence):** ✅ *"TSMC's Arizona campus expansion causes Pinnacle West's regulated
+retail electricity revenue to improve because TSMC has contracted directly for ~1.88 GW of load on
+PNW's system."* **One clause, no "and also." PART 1 PASSES — the first clean part-1 pass since 10-30.**
+**2. Dollar path:** ❌ **FAILS — NO DOLLAR FIGURE EXISTS.** The commitment is denominated in
+**GIGAWATTS, not dollars**, and no contract value was disclosed by either party. ⚠ **The segment is
+trivially material — regulated electric is substantially all of PNW's revenue, so the §4 10% test would
+pass if there were a number — but "the segment is big enough" is not a dollar path. Converting 1.88 GW
+to revenue would require inventing a tariff rate, a load factor and a ramp schedule; that is three
+assumptions, not an estimate.** ⚠ **AND THE 1.3 GW INCREMENT IS A *FORECAST OF COMMITTED DEMAND*, NOT
+BOOKED REVENUE — a figure about what PNW expects to be asked to serve.**
+**3. Timing window:** ❌ **FAILS, AND THIS IS THE DECISIVE KILL. ~40+ QUARTERS AGAINST §4'S TWO.** The
+1.88 GW is **"at full build-out"** of a campus whose construction runs into the 2030s; the contract term
+is **25 years**; and it is **"subject to regulatory approval"** that has not been granted. ⚠⚠ **RULE
+(vi) IN ITS TEXTBOOK FORM — long-dated infrastructure offtake PLUS a pending regulatory gate, the two
+shapes the rule was written for, stacked. Part 3 kills it in ONE step and NO drill query was spent.**
+**4. Invalidation:** n/a — not reached.
+
+**Hard filters:**
+- Priced-in (§4): **PNW +2.25%** over 5 sessions → `priced_in: false`, *"passes the priced-in check"*.
+  ⚠⚠ **A CLEAN PASS, AND IT BOUGHT NOTHING. Recorded deliberately: this is the ELMT/Antofagasta lesson
+  arriving on a GOOD candidate rather than an ineligible one, which makes it the stronger instance.**
+- Correlation (§4): no open satellite positions → vacuous pass.
+- Universe (§3): **not reached, and deliberately not researched.** Part 3 is decisive, and §4 says filters
+  come before the thesis precisely so that no effort goes into a story a single test was always going to
+  end. ⚠ **PNW's market cap was NOT pulled — recording that, because the §3-first discipline would have
+  had it pulled first, and the honest reason it was not is that rule (vi) got there in one step.**
+
+**Outcome:** **REJECTED on part 3 (rule (vi)), with part 2 failing independently for want of any dollar
+figure.** ⚠⚠⚠ **AND A SEPARATE LEG DISPOSED IN THE SAME ENTRY, BECAUSE IT IS THE ONE A READER WOULD
+REACH FOR NEXT: THE EPS GUIDANCE RAISE IS NOT A SECOND-ORDER CATALYST AND FAILS RULE (iii) AS WELL.**
+The **$5.05–$5.25** range is PNW's **own first-order disclosure about its own current year**, and
+⚠ **THE SOURCE DOES NOT CARRY PNW'S OWN PRIOR RANGE** — *"the prior range was not provided."* **That is
+the AAR shape from 09-29 exactly: not establishable in either direction, so the rule (iii) test cannot
+be passed OR failed, which means it has not been passed.** ⚠ **A third leg — PNW needing +1.3 GW of
+committed capacity implies turbine/grid-equipment orders — dies at rule (v) (no vendor named, no figure)
+and at rule (vi) (generation build is multi-year), and GEV is at THREE prior appearances dead on part 2
+or 3 each time. NO QUERY SPENT ON IT.**
+
+---
+
+### T-2026-11-04-03 — ON (onsemi) / Ferric — $600M cash + up to $175M contingent — REJECTED (rule (viii), ZERO queries spent)
+**Company A / the news:** onsemi agreed on **2026-11-02** to acquire **Ferric** for **$600M in cash**
+plus up to **$175M** in contingent payments tied to future revenue milestones.
+**Company B / the candidate:** none reached.
+
+**1. Mechanism:** ❌ not written. **2–4:** not reached.
+
+**Outcome:** **REJECTED at rule (viii) on sight.** ⚠ **ACQUISITION CONSIDERATION PAID OUT BY THE BUYABLE
+LEG TO A PRIVATE SELLER — the money leaves the only listed party, and the receiving leg cannot be bought
+at any price. This is the GEHC/Sofie ($945M, 10-06) shape arriving unchanged.** ⚠ **The contingent
+$175M is a liability on onsemi's future, not revenue at any Company B.** **Also merger-shaped, and
+merger arbitrage is not in §4. Disposed in one line because the answer is already written.**
+
+---
+
+### T-2026-11-04-04 — the own-prior-figure sweep (Spartan Delta · SM Energy · Mowi · Ferroglobe) — REJECTED (§3 + rule (iii) + rule (v); ZERO drill queries)
+**The query:** which US-listed companies changed a **previously-issued figure of their own** — capex,
+unit volume, production target, capacity plan, explicitly **not** EPS/revenue vs consensus — in the
+window, and did any name a US-listed supplier, vendor or customer affected? ⚠ **Framed this way to
+attack rule (iii) at its source rather than testing it after the fact. It worked: three qualifying
+changes came back WITH both figures, and the question of a named counterparty was answered in the same
+table.**
+
+| Item | Own prior → new | Kill |
+|---|---|---|
+| **Spartan Delta (SDE)** 2026 capital program | **$525–575M → $575–625M** (11-03) | ⚠ **A CLEAN RULE (iii) PASS — own prior figure present, raised, dated.** Dies at **rule (v)**: *"no specific affected counterparty reported."* Dies again at **§3** — TSX-listed, ~C$0.7B, far under the $10B floor; **and the company said the higher capex would NOT change 2026 production guidance (54,000 BOE/d midpoint), so even the first-order economics are unchanged.** |
+| **Spartan Delta (SDE)** Duvernay plateau | **50,000 → 75,000 BOE/d by 2030** (11-03) | **Rule (vi)** — *by 2030*, ~16+ quarters. **§3** independently. |
+| **SM Energy (SM)** 2026 oil production | prior **not identifiable** → **220–222 kb/d**, ~1% LOWER | **Rule (iii) fails in the AAR shape** — not establishable in either direction. ⚠ **And the sign is wrong for a long: production guidance CUT.** No counterparty named. |
+| **Mowi ASA** 2026 harvest volume | **600,000 → 620,000 GWT** | **§3** — not US-listed. Another clean rule (iii) pass on an ineligible issuer. |
+| **Ferroglobe (GSM)** five plant closures, ~80% utilisation target | **no prior company figure** | **Rule (iii)** — no prior number to compare. ⚠ **Capacity being CLOSED is the wrong sign; also ~$0.6B cap, §3.** |
+
+**Outcome:** **REJECTED, five items, zero survivors, zero drill queries spent.** ⚠⚠⚠ **THE FINDING IS
+THE DISTRIBUTION, NOT ANY ITEM: THIS QUERY PRODUCED THREE CLEAN RULE (iii) PASSES IN ONE CALL — more
+than the last four sessions combined — AND EVERY ONE OF THEM DIED SOMEWHERE ELSE.** Two on **§3**
+(TSX, Oslo), one on **rule (v)** (no counterparty), one on **rule (vi)** (2030). ⚠⚠ **Rule (iii) is
+recorded in this log as "the most prolific rule," and that is still true of what it KILLS — but it is
+now measured that passing it predicts nothing, because the binding constraints are §3 ELIGIBILITY and
+rule (v) NAMING. Asking the rule (iii) question FIRST finds eligible-looking news; it does not find
+trades.** ⚠ **Companion to the 10-30 ASE finding (*"a capex raise is a NECESSARY condition that was
+never close to sufficient"*) — three more instances, from a query designed to hunt for them.**
+
+---
+
+### T-2026-11-04-05 — sweep: own-results prints, one acquisition, unnamed counterparties, and the macro/political complex — REJECTED (eleven items, disposed as one, ZERO drill queries spent)
+
+| Item | Shape | Kill |
+|---|---|---|
+| **Talen Energy (TLN)** Q3 adj FCF **$433M** vs **$216M** y/y, EBITDA $669M | own-results print; drivers given as *"higher power prices"* | **Part 1** — own print, first-order; **and higher power prices is the SHARED-CAUSE object**, a market variable, not a transaction. |
+| **Metallus (MTUS)** adj EPS $0.35 vs $0.30 cons; revenue **$337.2M vs $345.25M cons**, Q4 profitability to decline | own-results print, **revenue MISS** | **Rule (iv)** — MTUS was disposed at `T-2026-10-01-05`; **second appearance.** ⚠ **And an earnings MISS is not a second-order catalyst (the 10-02 Nike sub-shape) — a company's disappointment improves nobody's economics in any dateable way, and the sign is wrong for a long.** Consensus comparison, not its own prior figure → **rule (iii)** too. |
+| **Atlas Energy Solutions (AESI)** revenue **$267.8M** vs $265.3M cons, weaker EBITDA | own-results print vs consensus | **Rule (iii)** + part 1. §3 fails independently (~$2B). |
+| **Cabot (CBT)** **$125M** battery-materials capacity plan + **$50M DOE grant** + a multiyear supply agreement | capacity plan with an **unnamed** agreement counterparty | **Rule (v)** — the supply-agreement counterparty is not named and the equipment tier is unnamed. ⚠ **The $50M DOE grant is a GOVERNMENT ACTION: one party, no named recipient of the second-order money.** **Rule (iii)** — source could not establish whether either figure was previously disclosed. §3 fails (~$4–5B). |
+| **CVR Energy (CVI) / Marathon Petroleum (MPC)** — **$4.2B** for two refineries | **acquisition** | **Not in §4.** ⚠ **Both legs dead on rule (viii) in opposite directions: capital paid OUT by CVI, capital paid IN to MPC.** CVI ~$2.5B, §3. |
+| **Energy Transfer (ET)** **$1.6B** South Mississippi Pipeline, *"supported by long-term transportation agreements"* | big figure, **unnamed** shippers | **Rule (v)** — *"did not name a specific counterparty."* ⚠ **Rule (vi)** — a sanctioned pipeline is multi-year construction. ET is the SPENDER: first-order, and the figure is capex paid out. |
+| **Solvay** long-term rare-earth feedstock supply agreement with **Viridis**, from **2028** | named counterparty, **no figure** | **Part 2** — no dollar value. **§3** — Euronext-listed; Viridis not US-listed. **Rule (vi)** — *begins 2028*. |
+| **ASTA Energy Solutions AG** / **Virginia Transformer Corporation** long-term agreement | named counterparty, **no figure** | **§3** — German-listed; VTC is private. **Part 2** — no figure. |
+| **JOLTS, September:** openings **7.52M** from **7.19M**, ~370k above expectations; quits 3.36M; layoffs 1.64M; payrolls **+29k** | macro data | **No Company A.** The standing macro object — ⚠ **and a sizeable surprise, which per the standing rule makes it MORE convincing, not more real.** |
+| **Fed held 3.75–4.00% (reported 10–2)**; Q3 GDP **3.4%** vs 3.1%; core PCE **3.1%** | macro | **No Company A.** ⚠ **AND THE SOURCE FLAGGED ITS OWN EVIDENCE AS INTERNALLY INCONSISTENT** on the meeting date and warned the material should not be treated as verified. **Recorded as unverified and NOT used.** |
+| **US midterm elections, 2026-11-03** | political event | **No Company A, no named counterparty, no figure.** ⚠ **The largest-tape item in the window and the emptiest: it is the government-action object with no recipient at all. Zero queries spent.** |
+
+**Outcome:** **REJECTED, eleven items, zero survivors, zero drill queries spent.** ⚠ **Six of the eleven
+are own-results prints or consensus comparisons — the ordinary earnings-season background the log says to
+expect and kill on part 1 each time. The sweep exists so they cost one table row each instead of a query.**
+
+---
+
 ### 2026-11-03 (07:02 ET) — event survey (funnel, pre-thesis)
 
 Selftest **5/5**, exit 0 (`trading_enabled: true`, LIVE paper, equity **$98,318.99** at pre-flight).
