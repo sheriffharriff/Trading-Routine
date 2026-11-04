@@ -85,6 +85,50 @@ check that the pull returned the right session. A stored baseline is a *label*, 
 
 *(none — no **satellite** positions have been opened yet. Core VOO exists and is deliberately not tracked here, per the top-of-file rules and the fill note further down.)*
 
+### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-11-04, **DIGEST OPEN — `1-premarket` 07:02. The three later seats append below; the close seat closes and collapses it.** ⚠ **Absent-seat ordinal: 07:02 is the 54th.** ⚠ **DELIBERATELY WRITTEN SHORT, and NO COLLAPSE RATIO IS CLAIMED because nothing has been collapsed — there is nothing yet to collapse. Open item 16 is live and prose volume is the one lever a seat controls.**)
+
+**Zero satellite positions, re-derived at this seat, three sides, no discrepancy:** Alpaca `positions` =
+**ONE row, core VOO only** (99.046311231 sh @ `avg_entry_price` **706.74**, `cost_basis`
+**$69,999.989999** — unchanged since 2026-09-03, **only the mark moving**) · this file's satellite block
+count (`grep -cE '^### [A-Z]'`) = **0** · `sleeves` `satellite.count: 0`, `value: 0`, `pct: 0.0`.
+
+| Rule | Status at this seat | Distance to trigger |
+|---|---|---|
+| **§5.1** thesis invalidation | **ABSENT** — no thesis held, so no invalidation condition exists to test | **No operand.** ⚠ **Zero Perplexity queries spent on §5.1, because there is no position.** |
+| **§5.2** time stop | **ABSENT** — no timing window is running | **No operand.** |
+| **§5.3** hard stop (−7% from entry) | **ABSENT** — no satellite entry price exists | **No operand.** |
+| **§5.4** trailing stop (−10% from `highest_close`) | **ABSENT** — and ⚠ **NO `highest_close` HAS EVER BEEN STAMPED IN THIS REPO**, re-grepped at this seat rather than inherited, **and the inherited phrasing is CORRECTED here rather than repeated: the test is `grep -nE '^\s*-\s*highest_close:'`, which returns EXACTLY ONE line — the template placeholder `0.00` on line 53. ⚠ A BARE `grep -c highest_close` RETURNS 90, because the corpus has written ABOUT the field 89 times; a seat running the bare grep would read 90 and conclude the opposite. State the FIELD-FORM test, not "one hit in this file."** | **No operand**, and the field stands in its **THIRD STATE — ABSENT, CARRYING NO DATE** — neither *higher* nor *not higher*, and **nothing for the midday staleness detector to call stale.** |
+
+⚠ **Core VOO STRUCK from the §5 working list, not stamped — 110th run.** It is §5-exempt and §7 forbids
+trading it on news. **No `highest_close` written for it.** The 11-03 backfill below is a MEASUREMENT of a
+past session, never a mark.
+
+✅ **2026-11-03's OFFICIAL CLOSE IS BACKFILLED AND THE CARRY-FORWARD ITEM IS DISCHARGED, NOT ANNOTATED:
+VOO `c` **693.57** (`bars --days 4 --adjustment all`, `t` 2026-11-03, `v` 34,539, `n` 1,628).**
+**Close-basis 11-03: equity $98,695.55 · day +$236.23 / +0.2399% on 11-02's official $98,459.32 · since
+inception −1.3044%.** ⚠ **The intraday $98,641.08 / +0.1710% in the 11-03 journal and state is NOT
+close-basis.**
+
+⚠⚠⚠ **AND THE BACKFILL REPLACES AN INHERITED READING RATHER THAN CONFIRMING IT — THE PARTIAL-BAR ERROR
+INVERTED SIGN BETWEEN THE TWO SESSIONS, SO IT IS NOT A BIAS AND CANNOT BE CORRECTED FOR.**
+**11-02: partial 693.91 vs true 691.185 = +$2.725 / +0.3943%, TOO HIGH.**
+**11-03: partial 692.93 vs true 693.57 = −$0.64 / −0.0923%, TOO LOW.**
+⚠⚠ **The 11-03 close seat recorded that the partial-bar VOLUME signature inverted across these same two
+sessions. The ERROR ITSELF inverts too — two inversions in one pair of sessions, on BOTH of the
+quantities a seat might have reached for to rescue a stamp.** ⚠ **DO NOT CARRY "a partial bar reads
+high." The magnitude is bounded by this sample at ~0.4% — enough to displace a §5.4 trigger for the life
+of a position — and the SIGN is unknowable in advance.** ⚠⚠⚠ **THE ONLY RELIABLE DETECTOR IS THE CLOCK.
+And the refusal is STILL NEVER TESTED: at zero satellite positions Step 2 had no operand on both
+sessions, and two vacuous passes are not a track record.**
+
+✅ **Broker-pair cross-check run:** `lastday_price` **693.54** vs bar `c` **693.57** = **$0.03 /
+0.004%** — the tightest pair on record, normal venue noise. **Neither stamped.**
+
+⚠ **Today's `current_price` 701.00 is a PRE-MARKET PRINT at +1.0713% over the 11-03 close. It is not a
+mark and is stamped nowhere.**
+
+---
+
 ### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-11-03, **ONE DIGEST FOR THE DATE, ALL FOUR SEATS:** `1-premarket` 07:02 · `2-market-open` 08:36 ⚠⚠ **PRE-OPEN, COULD NOT EXECUTE** · `3-midday` 11:42 **(market OPEN, zero exits, benign)** · `4-market-close` **15:16** ⚠⚠⚠ **PRE-CLOSE — 44 MIN BEFORE THE BELL, SO NO OFFICIAL CLOSE EXISTED AND NONE WAS WRITTEN, FOR THE SECOND CONSECUTIVE SESSION.** ⚠ **CLOSED AND COLLAPSED BY THE CLOSE SEAT, THE ONLY SEAT ENTITLED TO TOUCH WHAT THREE EARLIER SEATS WROTE** — a seat cannot fairly collapse a paragraph it has just written. ⚠ **RE-EVALUATED AT EACH SEAT, NOT INHERITED.** Absent-seat ordinals: 07:02 **50th** · 08:36 **51st** · 11:42 **52nd** · this close **53rd**. ⚠⚠ **COLLAPSE RATIO IS AT THE FOOT OF THIS DIGEST AND WAS COUNTED AFTER THE WRITE, NOT CLAIMED FROM INTENT — eight recorded instances say this is the one line this corpus keeps getting wrong.**)
 
 **Zero satellite positions, re-derived at this close seat, three sides, no discrepancy:** Alpaca
