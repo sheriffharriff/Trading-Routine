@@ -85,7 +85,7 @@ check that the pull returned the right session. A stored baseline is a *label*, 
 
 *(none — no **satellite** positions have been opened yet. Core VOO exists and is deliberately not tracked here, per the top-of-file rules and the fill note further down.)*
 
-### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-11-04, **DIGEST OPEN — `1-premarket` 07:02 · `2-market-open` **08:35** ⚠⚠ **PRE-OPEN, COULD NOT EXECUTE.** The two later seats append below; the close seat closes and collapses it.** ⚠ **Absent-seat ordinals: 07:02 **54th** · 08:35 **55th**.** ⚠ **RE-EVALUATED AT THE 08:35 SEAT, NOT INHERITED — a table left alone and a table re-evaluated to the same answer are indistinguishable to the next reader.** ⚠ **DELIBERATELY WRITTEN SHORT, and NO COLLAPSE RATIO IS CLAIMED AT EITHER SEAT because nothing has been collapsed — a pre-close seat is not entitled to collapse the date it is still writing. Open item 16 is live and prose volume is the one lever a seat controls.**)
+### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-11-04, **DIGEST OPEN — `1-premarket` 07:02 · `2-market-open` **08:35** ⚠⚠ **PRE-OPEN, COULD NOT EXECUTE** · `3-midday` **11:41** **(market OPEN — the first seat today that COULD have executed; zero exits, benign).** The close seat closes and collapses it.** ⚠ **Absent-seat ordinals: 07:02 **54th** · 08:35 **55th** · 11:41 **56th**.** ⚠ **RE-EVALUATED AT THE 08:35 SEAT, NOT INHERITED — a table left alone and a table re-evaluated to the same answer are indistinguishable to the next reader.** ⚠ **DELIBERATELY WRITTEN SHORT, and NO COLLAPSE RATIO IS CLAIMED AT EITHER SEAT because nothing has been collapsed — a pre-close seat is not entitled to collapse the date it is still writing. Open item 16 is live and prose volume is the one lever a seat controls.**)
 
 **Zero satellite positions, re-derived at this seat, three sides, no discrepancy:** Alpaca `positions` =
 **ONE row, core VOO only** (99.046311231 sh @ `avg_entry_price` **706.74**, `cost_basis`
@@ -154,6 +154,53 @@ error had nothing to corrupt. ⚠ **It acquires an operand the moment one satell
 55 minutes before the open. Quoted as context, stamped nowhere.** `lastday_price` **693.54** against the
 **693.57** bar close is the same $0.03 / 0.004% venue noise the 07:02 seat measured — **unchanged, and
 neither figure stamped.**
+
+**`3-midday-management` 11:41 ET — 56th consecutive absent seat. MARKET OPEN, ZERO EXITS, BENIGN —
+and this is the first seat today that *could* have executed.** `clock` **`is_open: true`** at
+**11:41:38**, `next_close` **2026-11-04T16:00:00−05:00**, `next_open` **11-05T09:30:00−05:00**.
+⚠ **The 07:02 and 08:35 seats were both pre-open; this one was not. §7's closed-market bar did not
+apply here — the reason nothing was sold is that there was nothing to sell.** Fired ~49 min ahead of
+a nominal 12:30; **recorded as an observation only**, per `control.md`'s Notes — a manual *Run now*
+and a scheduled firing are indistinguishable in the log, so nothing is diagnosed from the stamp.
+
+**Zero satellite positions, RE-DERIVED AT THIS SEAT, three sides, no discrepancy:** Alpaca
+`positions` = **ONE row, core VOO only** (99.046311231 sh @ `avg_entry_price` **706.74**,
+`cost_basis` **$69,999.989999**, unchanged since 2026-09-03 — **only the mark moving**, now
+`current_price` **704.47**) · this file's satellite block count (`grep -cE '^### [A-Z]'`) = **0** ·
+`sleeves` `satellite.count: 0`, `value: 0`, `pct: 0.0`. **Per the routine's own instruction at this
+condition — "there is nothing to manage; do not go looking for something to do" — Steps 2, 3, 4 and 5
+had NO OPERAND and were not performed.** All four §5 rules remain **ABSENT, NOT PASSING**.
+
+⚠ **Step 2 (high-water repair) HAD NO OPERAND FOR THE 56th TIME, AND THAT IS THE ONE THING THIS SEAT
+EXISTS TO DO.** The §5.4 field-form test re-run here still returns **EXACTLY ONE** line —
+`grep -nE '^\s*-\s*highest_close:'` → the template placeholder `0.00` on line 53 — so **no
+`highest_close` has ever been stamped in this repo.** ⚠ **The bare `grep -c` returns 90 and inverts
+the finding, which is why the grep travels with the claim.** **The backfill path, the staleness
+comparison against the last trading day, and the refusal to evaluate §5.4 against a stale mark are
+all still UNTESTED: four vacuous passes are not a track record.** ⚠ **The 11-02/11-03 partial-bar
+finding above is not re-derived here — no bar was pulled at this seat and none was needed, there
+being no satellite mark to corrupt. It acquires an operand the moment one satellite position exists.**
+
+⚠ **Core VOO STRUCK from the §5 working list, not stamped — 112th run.** §5-exempt, never sold on
+news; no `highest_close` written for it.
+
+**Live intraday context, stamped nowhere:** `current_price` **704.47** = **+1.5715%** over the
+official 11-03 close of **693.57**; equity **$99,775.15**; core **69.93%** (§2 band 65–75%,
+`core_in_band: true`, `rebalance_needed: false`, `rebalance_delta` **67.45** = 0.0676% of equity —
+a distance readout, not an instruction, **and a rebalance is an exits-only seat's to report, never to
+place**). `unrealized_pl` **−$224.84 / −0.321%** on the core lot; `unrealized_intraday_pl`
+**+$1,082.58 / +1.576%**. ⚠ **Intraday, not close-basis — the 11-04 official close is the close
+seat's to write.**
+
+**§7 limbo clean, re-run not inherited:** `orders --status open` = **empty array**; full history is
+still **ONE** order in all account history (`d177d8f0-cd0c-41bf-95c1-4772318265fd`, VOO, `filled`,
+`filled_at` 2026-09-03T13:36:21Z) — terminal and already in `trade_log.md`. **No order exists that
+this seat could not verify.** Week rollover checked with `isocalendar` and **not needed**: 2026-11-04
+is ISO 2026-W45 weekday 3, Monday anchor **2026-11-02** matches `week_of` — `new_positions_this_week`
+**stays** 0 of 3, not reset. Breaker **INACTIVE** at **0 of 3**, `halt_triggered_at` none,
+`HALT_CLEARED_AT` none, `open_thesis_ids` none. `TRADING_ENABLED` **true**, so **this was NOT a dry
+run and the absence of fills is an empty ledger, not a suppressed order** — nothing should have
+executed and did not.
 
 ---
 
