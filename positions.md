@@ -85,7 +85,7 @@ check that the pull returned the right session. A stored baseline is a *label*, 
 
 *(none — no **satellite** positions have been opened yet. Core VOO exists and is deliberately not tracked here, per the top-of-file rules and the fill note further down.)*
 
-### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-11-04, **DIGEST OPEN — `1-premarket` 07:02. The three later seats append below; the close seat closes and collapses it.** ⚠ **Absent-seat ordinal: 07:02 is the 54th.** ⚠ **DELIBERATELY WRITTEN SHORT, and NO COLLAPSE RATIO IS CLAIMED because nothing has been collapsed — there is nothing yet to collapse. Open item 16 is live and prose volume is the one lever a seat controls.**)
+### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-11-04, **DIGEST OPEN — `1-premarket` 07:02 · `2-market-open` **08:35** ⚠⚠ **PRE-OPEN, COULD NOT EXECUTE.** The two later seats append below; the close seat closes and collapses it.** ⚠ **Absent-seat ordinals: 07:02 **54th** · 08:35 **55th**.** ⚠ **RE-EVALUATED AT THE 08:35 SEAT, NOT INHERITED — a table left alone and a table re-evaluated to the same answer are indistinguishable to the next reader.** ⚠ **DELIBERATELY WRITTEN SHORT, and NO COLLAPSE RATIO IS CLAIMED AT EITHER SEAT because nothing has been collapsed — a pre-close seat is not entitled to collapse the date it is still writing. Open item 16 is live and prose volume is the one lever a seat controls.**)
 
 **Zero satellite positions, re-derived at this seat, three sides, no discrepancy:** Alpaca `positions` =
 **ONE row, core VOO only** (99.046311231 sh @ `avg_entry_price` **706.74**, `cost_basis`
@@ -126,6 +126,34 @@ sessions, and two vacuous passes are not a track record.**
 
 ⚠ **Today's `current_price` 701.00 is a PRE-MARKET PRINT at +1.0713% over the 11-03 close. It is not a
 mark and is stamped nowhere.**
+
+**`2-market-open` 08:35 ET — 55th consecutive absent seat, and the §4 operand set is unchanged.**
+`clock` **`is_open: false`** at **08:35:55**, `next_open` **2026-11-04T09:30:00−05:00**, `next_close`
+**16:00:00−05:00** — ⚠ **both carry TODAY'S date, the pre-market full-session signature, NOT a holiday.
+Read off the DATES, not the boolean.** §7 forbids trading a closed market, so **zero orders were placed
+and placing none was the correct action, not a failure to act.**
+
+**Zero satellite positions, RE-DERIVED AT THIS SEAT and not inherited from the 07:02 paragraph above,
+three sides, no discrepancy:** Alpaca `positions` = **ONE row, core VOO only** (99.046311231 sh @
+`avg_entry_price` **706.74**, `cost_basis` **$69,999.989999**, unchanged since 2026-09-03 — **only the
+mark moving**, now `current_price` **700.46**) · this file's satellite block count
+(`grep -cE '^### [A-Z]'`) = **0** · `sleeves` `satellite.count: 0`, `value: 0`, `pct: 0.0`.
+**All four §5 rules therefore remain ABSENT, NOT PASSING — no operand exists for any of them**, and
+⚠ **the §5.4 field-form test re-run at this seat still returns EXACTLY ONE line** — the template
+placeholder on line 53 — **so `highest_close` has still never been stamped in this repo.** ⚠ **The
+test carried here is `grep -nE '^\s*-\s*highest_close:'`; the bare `grep -c` returns 90 and inverts the
+finding, which is why the grep travels with the claim.** ⚠ **Core VOO STRUCK from the §5 working
+list, not stamped — 111th run.**
+
+⚠⚠ **THE REFUSAL IS STILL NEVER TESTED, AND THIS SEAT ADDS A THIRD VACUOUS PASS RATHER THAN A
+TRACK RECORD.** The partial-bar finding directly above is not re-derived here because **no bar was
+pulled at this seat and none was needed** — there is no satellite mark to stamp, so the inverted-sign
+error had nothing to corrupt. ⚠ **It acquires an operand the moment one satellite position exists.**
+
+⚠ **`current_price` 700.46 is a PRE-MARKET PRINT at +0.9934% over the official 11-03 close of 693.57,
+55 minutes before the open. Quoted as context, stamped nowhere.** `lastday_price` **693.54** against the
+**693.57** bar close is the same $0.03 / 0.004% venue noise the 07:02 seat measured — **unchanged, and
+neither figure stamped.**
 
 ---
 
