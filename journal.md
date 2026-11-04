@@ -40,6 +40,132 @@ anything where the honest-broker rule (§4) did real work>
 
 ## Entries
 
+### 2026-11-04 (Wednesday)
+
+**Account:** total **$99,880.14 — INTRADAY, NOT A CLOSE** (99.046311231 sh VOO at a live **705.53** +
+$30,000.00 cash, read at **15:16 ET with 44 min of the session left**) | day **+$1,187.56 (+1.2033%)**
+against the broker's `last_equity` $98,692.58, or **+$1,184.59 (+1.2002%)** against the close-basis
+11-03 equity of $98,695.55 — ⚠ **the two bases agree to 3bp today, the tightest they have ever been,
+because `last_equity` and the close-basis figure differ by only $2.97** | since inception
+**−$119.86 (−0.1199%)** ($100,000.00 opening) — **the shallowest drawdown since the core was
+bootstrapped on 2026-09-03.**
+⚠⚠⚠ **THIRD CONSECUTIVE SESSION WITH NO OFFICIAL CLOSE IN THIS REPO, AND AGAIN THAT IS A REFUSAL, NOT
+AN OVERSIGHT.** `clock` at **15:15:59 ET** returned **`is_open: true`, `next_close`
+2026-11-04T16:00:00−05:00** — broker-authoritative. **2026-11-04 MUST BE BACKFILLED BY THE 11-05
+PRE-MARKET SEAT**, exactly as 11-02 and 11-03 were.
+✅ **Broker-pair cross-check, on the 11-03 basis:** `lastday_price` **693.54** vs the `--adjustment all`
+bar `c` **693.57** = **$0.03 / 0.004%**, still the tightest pair on record. **Neither stamped.**
+
+**Sleeves:** core **69.9640%** | satellite **0.0%** | cash **30.0360%**   (§2 band 65–75%, intraday
+basis). **REBALANCE IS NOT DUE TOMORROW.** `core_in_band: true`, `rebalance_needed: false`. Band
+**$64,922.09–$74,910.11**; core **$4,958.05 above the floor**, **$5,029.96 below the ceiling**.
+⚠ `rebalance_delta: 35.96` = **0.0360% of equity** — the smallest drift on record, and still a
+**distance readout, not an instruction. Rebalance on the band, never on the delta.** Bounds re-derived
+from the live share count, not inherited: the §2 floor needs **VOO at $562.51 (−20.27%** from 705.53,
+**−18.90%** from the 11-03 close); the ceiling needs **$908.67 (+28.79% / +31.01%)**.
+**Breaker:** INACTIVE (`consecutive_closed_losses` **0** — **nothing has ever closed in this account**)
+**Week:** 0/3 new positions (ISO **2026-W45**, weekday **3**, Monday anchor **2026-11-02** —
+re-derived with `isocalendar()`, **matched** `week_of`, **no rollover performed and none due**)
+
+**Traded:** nothing. **Zero orders of any kind at any of today's four seats** — zero buys, zero sells,
+zero rebalance. §7 limbo check clean: `orders --status open` empty, and **one order in this account's
+entire history** (`d177d8f0…`, 2026-09-03 VOO core, filled, terminal, already logged). **Nothing from
+today to resolve or carry forward.** `TRADING_ENABLED` was **true** all day, so the absence of fills is
+an **empty ledger, not a suppressed order** — nothing was due.
+**Researched:** **5 theses — 0 accepted, 5 rejected** (`T-2026-11-04-01` … `-05`), all written at the
+07:02 pre-market seat. Three Perplexity queries, one of them a drill. **Cumulative: 231 theses, ZERO
+ever accepted.**
+**Positions near a sell rule:** **none — all four §5 rules are ABSENT, NOT PASSING.** There is no
+operand. 57th consecutive absent seat.
+
+**What happened:**
+
+A quiet, strong tape and a structurally empty run. VOO closed 11-03 at 693.57 and traded **+1.73%** to
+705.53 by mid-afternoon, which lifted equity to $99,880.14 and pulled the account to within **$119.86**
+of its $100,000 inception mark — the shallowest drawdown since the core was bought. None of that is
+tradeable under this strategy: the core is §5-exempt and is never sold on news, and the satellite sleeve
+has nothing in it to manage. The whole move is an unrealised mark on a position bought in September.
+
+The pre-market seat spent three Perplexity queries and wrote five theses, all rejected. The best-shaped
+candidate in several sessions was **PNW** against TSMC's Arizona power contract: Company A named,
+Company B named and buyable, counterparty and figure in the same sentence — **part 1 passed cleanly** —
+and it died at part 3 on a 25-year, "at full build-out", "subject to regulatory approval" horizon that
+is roughly forty quarters against §4's two, with part 2 failing independently because the commitment is
+denominated in gigawatts and no dollar figure exists. **T-2026-11-04-01** (the onsemi automotive
+diversion) died on the sharper face of the naming rule: a diversion names only the party *giving up* the
+revenue, onsemi never quantified the deferred volume, and the beneficiary set is not even enumerable.
+The source volunteered that kill itself.
+
+This close seat did its three mechanical jobs — Step 2 (high-water marks), Step 4 (housekeeping) and the
+§7 limbo check — and found no operand for the first and nothing outstanding for the other two. Week
+anchor matched, breaker stayed at 0/3, no orders in limbo, no open incidents in `alerts.md`, no ClickUp
+alert due and none posted.
+
+**What I got wrong or nearly got wrong:**
+
+⚠⚠⚠ **I wrote the collapse ratio from intent before counting, for the tenth recorded time in this
+corpus, having read both prior warnings minutes earlier.** The first draft of the `positions.md` digest
+footer claimed **"116 → 59, a saving of 57"**. `wc -l` said **84**, and once the correction paragraph
+was itself added the file settled at **90 — a real saving of 26, not 57.** I overstated the saving by
+**31 lines.** That is the same defect as 10-20 (`171 → 48` claimed, `171 → 98` actual) and 10-28
+(`135 → 46` claimed, `135 → 66` actual), in the one line that reports on itself. **The committed text
+carries the measured number and replaces the draft rather than sitting beside it.** I have no theory
+left that the warning works; the only thing that has ever worked is running `wc -l` and typing whatever
+it says. **There is a second-order trap I walked into on the way out: correcting the number changed the
+line count again, so the honest figure is the FINAL committed length, and the fix has to be
+line-count-neutral or it falsifies itself as you type it.**
+
+⚠⚠ **And I retired one of this file's own recurring claims as vacuous rather than incrementing it to
+nine.** Every seat since 10-27 has reported *"the nearer edge is the FLOOR, Nth consecutive seat"* as
+though it were a measurement. In percent-of-equity terms the floor gap is `core_pct − 65` and the
+ceiling gap is `75 − core_pct`, so **the floor is nearer if and only if `core_pct < 70`** — the §2
+target itself. Eight seats have been solemnly reporting the sign of `(core_pct − 70)`. Today core sat
+at **69.9640%**, the closest to target on record, and the two gaps came out **$71.91** apart, which is
+what finally made it obvious. The corpus was already half-aware — it had recorded that *"the naive read
+makes the floor look ~4× nearer than it is"* — but it diagnosed that as a magnitude error when the
+percent framing in fact carries **no information at all** beyond a sign. ✅ **The informative form, and
+the one now carried, is the price-move pair (−18.90% to the floor vs +31.01% to the ceiling), which is
+genuinely asymmetric because the $30,000 cash leg is fixed while both legs of the ratio move with VOO.**
+
+⚠⚠ **A cross-check this corpus has been reporting as "re-derived two agreeing ways" does not agree, and
+I nearly inherited it.** `state.md` carried *"unique IDs live 149 + archive 87 = 231; headings live 144
++ 87 = 231."* **149 + 87 = 236.** The two methods differ by **5**, and the inherited line asserted both
+reached 231. Measured: the five IDs are `T-2026-09-01-01`, `-03`, `T-2026-09-29-01`, `T-2026-09-30-01`
+and `-08` — all **September theses that live in the archive and are merely *referenced* by prose in the
+live file**, each confirmed to have its heading in `archive/research_log/2026-09.md`. **So 231 is right
+and the heading method is the sound one; the unique-ID method double-counts every archived thesis the
+live file cites, and the error grows every time a seat quotes an old ID.** ⚠ **The general shape is
+worth more than the instance, and it is the same one as the `grep -c` correction yesterday: a
+cross-check that has never been carried through to the addition is not a cross-check. Two numbers
+printed side by side are not two agreeing methods until something adds them up.**
+
+⚠ **Nothing was close to wrong on the trading side, and I am not going to manufacture introspection
+about it.** There was no position to want to hold past its invalidation, no mechanism sentence that
+needed forcing, no correlation nearly missed — the satellite ledger is empty, so none of those pressures
+had anything to act on. The honest observation is that **every near-miss this corpus has produced for
+fifty-seven consecutive seats has been a bookkeeping defect, not a trading one, because bookkeeping is
+the only thing it has actually been doing.**
+
+**For the next run:**
+
+1. ⚠⚠⚠ **BACKFILL 2026-11-04's OFFICIAL CLOSE.** `bars --symbol VOO --days 4 --adjustment all`. The
+   partial bar read at 15:16 was **`c` 705.57, `v` 49,796, `n` 1,752** — **do not use it**, and when the
+   true close arrives, **record the signed error**, because that series is the only measurement of the
+   partial-bar defect anyone has.
+2. ⚠⚠ **Today's partial bar discredits the trade count as a completeness detector, alongside the volume.**
+   `v` 49,796 and `n` 1,752 with 44 minutes left **both exceeded 11-03's full session** (34,539 / 1,628)
+   **simultaneously.** With the sign of the error already known to invert, **the clock is the only
+   reliable detector. There is no field inside a bar that tells you the bar is finished.**
+3. **The close seat fired at 15:16 ET for the third consecutive session** — before the bell it exists to
+   follow. **The human has been told; do not re-notify an unchanged item, and do not read today's
+   silence as the fault having been fixed.** ⚠ **Two independent failures would both have to be fixed
+   for Step 2 to work: the empty ledger (nothing to stamp) and the pre-close firing (nothing valid to
+   stamp with). Today the empty ledger is the only reason the schedule fault was free.**
+4. **Thesis count is 231, by the heading method only** (144 live + 87 archive). **Do not use
+   `grep -ohE 'T-....' | sort -u` on the live file — it returns 149 and double-counts archived theses
+   the live prose cites.**
+5. **Drop the "nearer edge is the floor, Nth consecutive seat" ordinal.** Carry the price-move pair.
+
 ### 2026-11-03 (Tuesday)
 
 **Account:** total **$98,641.08 — INTRADAY, NOT A CLOSE** (99.046311231 sh VOO at a live **693.0201**
