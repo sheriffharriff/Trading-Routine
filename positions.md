@@ -85,6 +85,25 @@ check that the pull returned the right session. A stored baseline is a *label*, 
 
 *(none — no **satellite** positions have been opened yet. Core VOO exists and is deliberately not tracked here, per the top-of-file rules and the fill note further down.)*
 
+### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-11-05, **DIGEST OPEN — `1-premarket` 07:02. The three later seats append below; the close seat closes and collapses it.** ⚠ **Absent-seat ordinal: 07:02 is the 58th.** ⚠⚠ **DELIBERATELY WRITTEN SHORT AND NO COLLAPSE RATIO IS CLAIMED, because there is nothing yet to collapse and the corpus item is live past 1MB. Prose volume is the one lever a seat controls.**)
+
+**Zero satellite positions, re-derived at this seat, three sides, no discrepancy.** `positions.md` satellite block count (`grep -cE '^### [A-Z]'`) = **0** · `alpaca.py sleeves` → `satellite.count: 0`, `value: 0`, `pct: 0.0` · `alpaca.py positions` → **one row, core VOO only**, 99.046311231 sh @ `avg_entry_price` **706.74**, `cost_basis` **$69,999.989999**, **unchanged since the 2026-09-03 fill — only the mark moves** (`current_price` **706.20**, `unrealized_pl` **−$53.49 / −0.076%**).
+
+| §5 rule | Status | Distance to trigger |
+|---|---|---|
+| 5.1 thesis invalidation | **ABSENT — no operand** | No thesis is held. `open_thesis_ids: none`. Evaluated against an empty set, **not passed**. |
+| 5.2 time stop | **ABSENT — no operand** | No timing window is running, because no position has one. |
+| 5.3 hard stop (−7% from entry) | **ABSENT — no operand** | No entry price exists to measure from. |
+| 5.4 trailing stop (−10% from `highest_close`) | **ABSENT — no operand** | **No `highest_close` has ever been stamped in this file.** |
+
+⚠ **ABSENT IS NOT PASSING, AND THE DISTINCTION IS THE WHOLE POINT OF THIS TABLE: four rules with no operand produce the same output as four rules comfortably satisfied, and only this wording separates them.** ⚠ **Core VOO is STRUCK FROM THE WORKING LIST, not stamped as passing — §5 exempts core from all four rules, so it is not a position these rules have anything to say about.** *(For the record and not as a rule check: VOO sits **−0.2802%** against its 706.74 cost basis on the official 11-04 close of **704.76**.)*
+
+⚠⚠ **THE 58th CONSECUTIVE ABSENT SEAT, AND THE ONE NUMBER THIS TABLE CANNOT REPORT ABOUT ITSELF: the §5 machinery has NEVER been executed against a real operand. 58 vacuous passes are not a track record, and the first satellite position will be the first live test of all four rules simultaneously.**
+
+⚠⚠⚠ **2026-11-04'S OFFICIAL CLOSE WAS BACKFILLED BY THIS SEAT AND THE BACKFILL WAS SUBSTANTIVELY EMPTY — WHICH IS THE FINDING.** VOO `c` **704.76** (`bars --days 4 --adjustment all`). **With zero satellite positions there was no `highest_close` to stamp and §5.4 had NO OPERAND, so the 11-04 pre-close firing cost nothing.** ⚠ **THE EMPTY SLEEVE IS THE ONLY REASON THAT IS TRUE. Two independent blockers were live on 11-04 — an empty ledger and a pre-close firing — and BOTH would have to be fixed; fixing the timing alone changes nothing while the sleeve is empty, and the day the sleeve is non-empty a mid-session mark stamped as a close mis-sets that position's 5.4 trailing stop FOR ITS WHOLE LIFE.** ✅ **Broker-pair cross-check: `lastday_price` 704.78 vs bar `c` 704.76 = **$0.02 / 0.0028%**, the tightest pair on record. Neither stamped as a close.**
+
+---
+
 ### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-11-04, **ONE DIGEST FOR THE DATE, ALL FOUR SEATS:** `1-premarket` 07:02 · `2-market-open` **08:35** ⚠⚠ **PRE-OPEN, COULD NOT EXECUTE** · `3-midday` 11:41 **(market OPEN, zero exits, benign)** · `4-market-close` **15:16** ⚠⚠⚠ **PRE-CLOSE — 44 MIN BEFORE THE BELL, SO NO OFFICIAL CLOSE EXISTED AND NONE WAS WRITTEN, FOR THE THIRD CONSECUTIVE SESSION.** ⚠ **CLOSED AND COLLAPSED BY THE CLOSE SEAT, THE ONLY SEAT ENTITLED TO TOUCH WHAT THREE EARLIER SEATS WROTE** — a seat cannot fairly collapse a paragraph it has just written. ⚠ **RE-EVALUATED AT EACH SEAT, NOT INHERITED.** Absent-seat ordinals: 07:02 **54th** · 08:35 **55th** · 11:41 **56th** · this close **57th**. ⚠⚠ **COLLAPSE RATIO AT THE FOOT, COUNTED AFTER THE WRITE — nine recorded instances say this is the one line this corpus keeps getting wrong.**)
 
 **Zero satellite positions, re-derived at all four seats independently, three sides each, no discrepancy

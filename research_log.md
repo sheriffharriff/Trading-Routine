@@ -52,6 +52,254 @@ single most common way a plausible-sounding connection gets mistaken for an oppo
 
 ## Entries
 
+### 2026-11-05 (07:02 ET) — event survey (funnel, pre-thesis)
+
+Selftest **5/5**, exit 0 (`trading_enabled: true`, LIVE paper, equity **$99,923.72** at pre-flight).
+`clock` at 07:02:39 reads `is_open: false`, `next_open` **2026-11-05T09:30:00-05:00**, `next_close`
+**2026-11-05T16:00:00-05:00** — both carry today's date: the pre-market full-session signature.
+**Not a holiday.** ⚠ **Fired ~58 min early against a nominal 08:00 ET, the FOURTH EST session running.
+RECORDED AS AN OBSERVATION, NOT DIAGNOSED** — `control.md` forbids diagnosing a schedule fault from a
+run timestamp. ⚠⚠ **AND THIS SEAT ADDS ONE GENUINELY NEW FACT TO THAT ITEM, WHICH IS A FAILED ATTEMPT
+TO RE-VERIFY IT: `CronList` returns *"No scheduled jobs"*, so these routines are NOT CronCreate jobs
+and the stored schedule is NOT readable from inside a session. The `13:35:00 UTC` figure for routine 2
+is the 11-02 seat's reading and CANNOT be independently confirmed by any later seat. It is carried as
+INHERITED, and no seat should write it again as though it had checked.**
+
+⚠⚠⚠ **FIRST THING, AND IT DISCHARGES THE CARRY-FORWARD ITEM — BUT THE DISCHARGE IS THE FINDING, NOT
+THE NUMBER: 2026-11-04's OFFICIAL CLOSE IS BACKFILLED AND IT WAS SUBSTANTIVELY EMPTY.** VOO `c`
+**704.76** (`bars --days 4 --adjustment all`, `v` 67,294, `n` 2,245). The close seat fired at 15:16 ET,
+44 min before the bell, and wrote nothing — **correctly.** **Close-basis 11-04: equity $99,803.88 · day
++$1,108.33 / +1.1230% on 11-03's official $98,695.55 · since inception −0.1961% · VOO −0.2802% against
+its 706.74 cost basis.**
+✅ **METHOD VALIDATED RATHER THAN ASSERTED, AND THIS IS THE REASON TO TRUST THE FIGURE ABOVE: the same
+arithmetic (`99.046311231 × c + $30,000`) reproduces 11-03's inherited close-basis equity to the CENT
+($98,695.55). A backfill method that reproduces the previous backfill is worth more than a backfill
+that merely looks plausible.**
+⚠⚠ **AND THE REASON THE BACKFILL COST NOTHING IS THE EMPTY SLEEVE, NOT THE METHOD: with ZERO satellite
+positions there was no `highest_close` to stamp and §5.4 had NO OPERAND. Core VOO is §5-exempt.** ⚠
+**TWO INDEPENDENT BLOCKERS WERE LIVE ON 11-04 AND ONLY ONE HAS EVER BEEN TESTED. The day the sleeve is
+non-empty, a pre-close mark stamped as a close mis-sets that position's trailing stop FOR ITS WHOLE
+LIFE, and fixing the timing alone fixes nothing while the sleeve is empty.**
+✅ **Broker-pair cross-check run: `lastday_price` **704.78** vs bar `c` **704.76** = **$0.02 / 0.0028%**,
+the tightest pair on record, displacing 11-03's $0.03. Normal venue noise. Neither stamped.**
+
+**Window surveyed:** Wednesday 2026-11-04 after the close through this morning. **Six queries, five
+theses, ZERO survivors.** ⚠ **FIVE of the six broad queries returned the KILL VOLUNTEERED BY THE
+SOURCE**, in the source's own words — *"no qualifying announcements can be confirmed"* · *"no verified
+report … established a major US regulatory approval, supply agreement, capacity announcement, or
+guidance change involving two clearly identified corporate parties and a disclosed transaction value"* ·
+*"no available result reports a capacity expansion or new plant with a disclosed dollar figure"* · *"the
+available results do not support a complete ranking"* · *"no announcement … meets the requested
+categories involving a named company and a separate publicly traded US supplier, partner, or
+counterparty."* ⚠⚠ **ASKING FOR THE NAMED COUNTERPARTY AND THE DOLLAR FIGURE IN THE SAME SENTENCE IS
+STILL WHAT PRODUCES THE VOLUNTEERED KILL, and it is now the cheapest line in this funnel.**
+
+⚠⚠⚠ **THE DAY'S STRUCTURAL FINDING: THE TAPE MOVED A LOT AND CONTAINED NO EVENT.** MSFT **+6.68%**,
+AMZN **+6.12%**, AAPL **+5.31%** (AAPL passing NVDA on market cap at **$5.08T**) — and **every source
+attributed the session to a broad mega-cap rally on a divided-government election read, naming NO
+company-specific catalyst for any of the three.** ⚠ **A ~6% day in three of the five largest companies
+on earth is the largest tape this funnel has ever surveyed, and §4 got NOTHING from it, because §4 asks
+for a TRANSACTION and a rally is a MARKET.** ⚠⚠ **SCALE MAKES IT MORE CONVINCING, NOT MORE REAL — the
+standing macro/government object, arriving at the largest size it can arrive at.**
+
+**Ledger reconciled, three sides, re-derived not inherited.** Alpaca `positions` = **one row, core VOO
+only** (99.046311231 sh @ 706.74, `cost_basis` $69,999.989999, **unchanged since 2026-09-03 — only the
+mark moving**; `current_price` **706.20** is a LIVE PRE-MARKET PRINT at **+0.2043% over the official
+11-04 close**, stamped nowhere and quoted nowhere as a close) · `positions.md` satellite block count
+**0** · `sleeves` `satellite.count: 0`, `value: 0`, `pct: 0.0`. **No discrepancy.**
+
+**Every §6 gate open.** Breaker INACTIVE, `halt_triggered_at: none`; `new_positions_this_week` **0 of
+3**; satellite **0.0%** deployed, **$30,000 idle**; `control.md` Notes empty; zero open alerts. 5% cap
+**$4,996.19**. **Week anchor re-derived with `isocalendar`: 2026-11-05 is ISO 2026-W45, weekday 4,
+Monday anchor 2026-11-02 — MATCHES `week_of`. No rollover; not rolled a second time.**
+⚠ **NOTHING BLOCKED A BUY TODAY EXCEPT THE CANDIDATES. That distinction is the whole value of this
+entry: a gated no-trade day and a researched no-trade day are indistinguishable in the sleeve
+percentages, and only this line separates them.**
+
+⚠⚠ **THE DIRECTION-BLIND `move` DEFECT FIRED AGAIN — FOURTH CONSECUTIVE SESSION, SEVENTH AND EIGHTH
+NAMES. NOT A NEW FINDING, and this seat's first draft of the plan wrongly called it one; the claim is
+REPLACED rather than left beside its correction.** **IREN −24.70%** and **NVDA −7.04%** both returned
+`priced_in: true` / *"LATE — skip per strategy.md section 4"*. Tally: **INTC −24.36% (11-02) · MU
+−7.77% · SNDK −14.40% · STX −7.87% · WDC −4.96% (11-03) · ON −7.69% (11-04) · IREN −24.70% · NVDA
+−7.04% (11-05)** — **eight "LATE" verdicts on eight DECLINES across four sessions, and not one "LATE"
+on a RISE in the whole series.** ⚠ **OBEYED ANYWAY: the filter FAILS SAFE — it over-blocks and can
+never wrongly PERMIT — so a seat must not reason past a `priced_in: true` because the move was
+negative.** ⚠ **Both names died independently on part 2 and on §3, so nothing turned on it.** ⚠ **The
+fix is a signed threshold in `scripts/alpaca.py`: SCRIPT-LEVEL, NOT A SEAT'S TO INSTALL.** Reported
+2026-11-03; **re-notified 11-05 because the tally has DOUBLED since, not because the status changed.**
+
+---
+
+### T-2026-11-05-01 — the unnamed AI-datacenter build tier ← IREN's $2.8B of multiyear AI-cloud contracts — REJECTED (rule (v) + part 2; §3 kills the headline leg independently; ONE drill query spent, source applied the kill)
+**Company A / the news:** **IREN Limited (IREN)**, 2026-11-05, announced **$2.8 billion of new
+multiyear AI-cloud-services contracts** and **raised its 2026 revenue target** for that business.
+Shares rose **as much as 16%** on the day. ⚠ **THE ANNOUNCEMENT NAMES ITS COUNTERPARTIES, WHICH IS WHY
+IT WAS WORTH A QUERY AT ALL:** Microsoft, Nvidia, Perplexity, Figure AI, Together AI, Fluidstack,
+Fireworks AI, Fal AI and Hume AI, plus one unnamed AI developer.
+
+**Why this looked like a §4 setup:** a dated disclosure, a hard dollar figure, named counterparties on
+both sides, and a 16% move that says the market agrees something happened. **It is the best-formed
+event the funnel has met in four sessions.**
+
+**Door 1 — the named parties (the CUSTOMERS). DEAD, two ways at once.**
+⚠ **THE SIGN IS WRONG: every named party is SPENDING, not earning.** This is rule (viii) in its
+plainest form — money paid OUT by the buyable leg. ⚠ **AND PART 2 FAILS BY ORDERS OF MAGNITUDE EVEN IF
+THE SIGN WERE RIGHT: $2.8B spread across TEN counterparties, over MULTIPLE years, against Microsoft's
+and Nvidia's revenue, is a rounding error — nowhere near §4's 10%-of-revenue floor.** ⚠ **AAPL/MSFT/NVDA
+are also priced-in on the day (see the mega-cap rally finding above).**
+
+**Door 2 — the suppliers who must build the capacity. DEAD at rule (v): the source LEFT THE BLANK.**
+One drill query asked explicitly whether the announcement or any accompanying filing names equipment
+suppliers, GPU vendors, power providers, cooling or electrical contractors, or discloses a capex figure
+attached to delivering these contracts, **and asked for the exact wording.** The answer: *"the available
+results do not identify specific equipment suppliers … GPU vendors in the announcement or a filing …
+power providers … cooling contractors … electrical contractors … or capital expenditure specifically
+allocated to delivering the reported $2.8 billion contracts"*, and *"no primary announcement or filing
+text is present … so an exact quotation about capacity construction and equipment cannot be responsibly
+supplied."*
+⚠⚠ **THE TWO NEAR-MISSES ARE INSTRUCTIVE AND BOTH FAIL: (a)** a **$363M equipment-financing facility**
+described by a SECONDARY source as backed by *"fully paid, revenue-generating Nvidia GPU assets"* — **a
+FINANCING facility secured on GPUs ALREADY BOUGHT AND PAID FOR, which is the opposite of a new order,
+and it is a secondary description rather than filing text**; **(b)** a commentary reference to a
+*"$3 billion capex bet"* that the source expressly **does not** tie to the $2.8B contracts.
+⚠ **A FINANCING SECURED ON ASSETS ALREADY PURCHASED IS NOT A PURCHASE. New on this list, and it is a
+close cousin of the JBL consignment entry: the dollar figure is real, named and allocated, and it
+describes money that bought nothing new.**
+
+**Part 1 attempt, written out so the "and also" is visible:** *"IREN's $2.8B of AI-cloud contracts
+causes [supplier]'s revenue to rise because IREN must buy GPUs, power and cooling to serve them — **and
+also** [supplier] is the one that gets the order, **and also** the order lands within two quarters."*
+**Two "and also"s. REJECTED at part 1.**
+
+**§3 kills the headline leg independently, and this is the cheapest kill available:** IREN's market cap
+is reported at **$8.73B (Morningstar, 2026-11-03)**, with other sources on 11-03/11-04 at **$8.74B,
+$8.91B, and ~$9.4–9.5B** — **ALL BELOW the $10B floor**, and the source warned the figures are
+inconsistent and not live. ⚠ **A +16% day could carry it across the floor, and that is EXACTLY the
+"but now there is a number / but it went up" pull the ELMT entry names. §3 does not weigh outcomes.**
+**Priced-in, for the record:** `move --sessions 5` → **−24.7%**, `priced_in: true`, *"LATE"* — the
+direction-blind defect, obeyed, and not what killed this.
+- **verdict:** **REJECTED.** Part 1 needs two "and also"s; part 2 has no dollar path on either door;
+  rule (v) blank left by the source; §3 floor on the headline leg.
+- **cost:** one drill query. **The named-counterparty door needed none — the sign is readable off the
+  announcement.**
+
+---
+
+### T-2026-11-05-02 — SMMT (Summit Therapeutics) ← AstraZeneca's completed $2.0B strategic equity investment — REJECTED (rule (viii), capital paid IN; ZERO queries spent, answer already written)
+**The news:** Summit's 2026-11-04 Q3 report disclosed a **GAAP loss of $208.4M**, that **AstraZeneca
+completed a $2.0 billion strategic equity investment in October**, and that shareholders approved
+**doubling authorized shares to 2 billion**.
+⚠⚠ **THIS IS THE STANDING RULE (viii) ENTRY ARRIVING AS A COMPLETED FACT RATHER THAN AN ANNOUNCEMENT —
+AND THE ANSWER IS UNCHANGED.** The log already carries *"AstraZeneca's $2.0B convertible preferred,
+which DILUTES rather than earns"*. **Capital paid IN is not segment revenue at any Company B**, and the
+authorized-share doubling is **the dilution in writing.**
+⚠ **COMPLETION IS NOT A NEW ECONOMIC EVENT. A transaction moving from announced to closed changes its
+STATUS, not its SIGN** — and the §4 answer runs on the sign.
+⚠ **Rule (iii) fails independently:** the investment was announced earlier and merely **re-reported** in
+an own-results print. ⚠ **Part 3 fails independently too:** the ivonescimab **FDA action date is
+2026-11-14 — a FUTURE date, not an approval**, and the source said so explicitly.
+- **verdict:** **REJECTED.** Rule (viii) + rule (iii) + part 3, any one sufficient.
+- **cost:** **zero queries.** ⚠ **This is the right outcome for a settled shape, and the entry exists
+  only so the next seat recognises the COMPLETED-TRANSACTION costume without spending a query on it.**
+
+---
+
+### T-2026-11-05-03 — the mega-cap tech rally (MSFT · AMZN · AAPL) ← a divided-government election read — REJECTED (part 1, no Company A; a market is not a transaction; ZERO drill queries spent)
+**The "news":** MSFT **+6.68%** to $555.80 · AMZN **+6.12%** to $266.03 · AAPL **+5.31%** to $349.51,
+AAPL overtaking NVDA at a **$5.08T** market cap. **Sources attribute the session to a broad mega-cap
+rally on a divided-government read of the 2026 midterms, and explicitly identify NO company-specific
+disclosure for any of the three.**
+⚠⚠ **SHARED CAUSE, NOT A MECHANISM — AND IN ITS CONVERGENT FORM, WHICH THE STANDING RULE NAMES AS THE
+MORE DANGEROUS ONE: three of the five largest companies on earth moving ~6% TOGETHER on the same input
+looks like corroboration and is the clearest possible statement that the input is a MARKET VARIABLE.**
+⚠ **The political leg is the government-action object: ONE party, no named recipient, no transaction —
+and the dollar index falling to monthly lows near 101.00 is a price, not an event.**
+⚠ **There is no Company A here, so there is no Company B to look for. Part 1 cannot be written at all.**
+**Priced-in independently:** all three moved >4% in a single session.
+- **verdict:** **REJECTED** at part 1. ⚠ **Logged rather than skipped BECAUSE of its size: the
+  temptation scales with the move, and "the biggest tape of the quarter produced no trade" is the line
+  a future seat will need.**
+- **cost:** **zero drill queries.**
+
+---
+
+### T-2026-11-05-04 — the macro complex (midterm result · ADP · ISM services · trade deficit · PCE nowcast · the October FOMC hold) — REJECTED (no Company A; rule (iii) on the FOMC leg; ZERO queries spent)
+**Items, with figures, so the next seat need not re-fetch them:** **ADP** private payrolls **+86,000**
+in October vs a **69,000–75,000** consensus, with September **revised DOWN to 86,000 from 90,000** ·
+**ISM services PMI 54.5**, down from **54.9**, vs **54.8** consensus · **September trade deficit $105B**,
+**−0.7%** from August · **Cleveland Fed PCE nowcast** headline **3.77%** (Oct) / **4.03%** (Nov) vs
+**3.6%** September, core **3.2%** / **3.31%** vs **3.1%** · **FOMC held at 3.75–4.00% on a 10–2 vote**,
+Cook and Hammack dissenting **for a quarter-point INCREASE**.
+⚠ **EVERY ITEM IS THE STANDING GOVERNMENT/MACRO OBJECT: sector-agnostic, carries a number, moves the
+tape, ONE party, no named recipient.** A long-only book cannot trade an aggregate.
+⚠⚠ **THE FOMC LEG FAILS RULE (iii) ON TOP AND IT IS THE SAME TRAP AS 10-02: the hold was decided on
+2026-10-28 and is merely RE-REPORTED in this window. An eight-day-old decision re-covered inside a
+24-hour recency filter reads as fresh news to the filter and is not new to the issuer.**
+⚠ **The dissents are the most interesting detail and change nothing: a 10–2 vote with two dissents FOR
+A HIKE is a fact about the committee, not about any company's revenue line.**
+- **verdict:** **REJECTED.** No Company A exists.
+- **cost:** **zero queries.** ⚠ **Fifth consecutive session logging a macro complex in exactly this
+  shape. THE FINDING IS THE PATTERN, NOT THE INSTANCE — and the pattern is that an election week
+  produces the largest, most quotable, least actionable tape of the year.**
+
+---
+
+### T-2026-11-05-05 — sweep: own-results prints, §3-dead counterparties, a merger, a share sale, a commissioning milestone — REJECTED (eighteen items, ZERO queries spent beyond the broad sweeps)
+Disposed as a block. **Each line names the rung it dies on, so none of these needs re-screening.**
+
+**Own-results prints — FIRST-ORDER, the candidate IS Company A, part 1 cannot be written (and most are
+§3-dead on cap):** **L.B. Foster (FSTR)** Q3 EPS $0.64 vs $0.60, revenue $168.0M vs $152.2M, FY sales
+guide RAISED from its OWN **~$540–580M to $570–590M** (a clean rule (iii) PASS — ⚠ **and a rule (iii)
+pass is NOT progress toward a trade, the standing Antofagasta/ELMT lesson, arriving again**), capex
+guide LOWERED from ~2.7% to ~2.0–2.2% of sales, plus a **$52.2M** acquisition of a residential
+wastewater precast business and the Aeris platform (~$18M annual revenue, $6.5–7.5M EBITDA after
+synergies) ⚠ **whose seller the source could not even spell consistently — "Dulworth" in one place,
+"Dalworth" in another — so the counterparty is not reliably identifiable** · **Maravai (MRVI)** revenue
+guide raised from its OWN **$205–215M to $212–216M**, adj EBITDA **$33–35M → $40–42M** · **Paycom
+(PAYC)** revenue **$2.213–2.218B** · **TaskUs (TASK)** **$1.249–1.251B** · **Vertex Inc (VERX)**
+**$828.9–830.9M** and a ~30% 2027 adj EBITDA margin against a prior *"high 20s"* ⚠ **a QUALITATIVE
+prior, so rule (iii) is not establishable in either direction — the standing AAR shape** · **Sight
+Sciences (SGHT)** $92–93M, ⚠ **against a START-OF-YEAR range, not the immediately previous one, which
+the source flagged itself** · **Schrödinger (SDGR)** ACV $222–232M, drug-discovery revenue $75–85M on a
+**named** Structure Therapeutics milestone ⚠ **NAMED COUNTERPARTY AND STILL DEAD: SDGR is §3-dead on
+cap, GPCR is smaller, and a milestone payment is a one-off receipt, not a segment.**
+
+**§3-dead on market cap, at any price and any level of disclosure:** FSTR · MRVI · VERX · TASK · SGHT ·
+SDGR · **Emergent BioSolutions (EBS)** — ⚠ **EBS is the cleanest named-counterparty kill of the day:
+a $22.3M option-period modification to supply BioThrax to the US Department of War, first delivery
+~$7.4M, remainder in 2027. The counterparty is NAMED and GOVERNMENTAL, the figure is DISCLOSED — and
+$22.3M at a sub-$1B issuer is both §3-dead and immaterial, with the 2027 remainder outside §4's two
+quarters.** ⚠ **Also an OPTION-PERIOD MODIFICATION under an EXISTING contract — rule (iii)'s
+undefinitized/amendment costume.**
+
+**No dollar figure disclosed, or no named counterparty, or both — rule (v), all §3-dead microcaps:**
+**Sidney Resources / Ocean Partners** (25,000-tonne offtake, **PREVIOUSLY ANNOUNCED** — rule (iii) —
+and no value or term) · **Galantas Gold / Ocean Partners** (doré purchase agreement, 3-year initial
+term, **priced by reference to metal content and market prices, so NO total value exists**) · **Boron
+One** (buyer not identified, no value) · **Alchemy** (partner not identified, no value).
+
+**Not US-listed — §3, no mechanism needed:** **Viridis / Solvay** · **ArcelorMittal** (and it
+**MAINTAINED** 2026 capex at **$4.5–5.0B** — ⚠ **reaffirmation, rule (iii) costume #1**) · **Leonardo**
+(2026 order guidance raised **€28.2B → ~€29.5B** — ⚠ **ORDERS are not revenue, capex or margin:
+rule (viii) read broadly**) · **SOCAR / Comstock** definitive purchase and sale agreement ⚠ **the
+PENDING-DEFINITIVE deal from the 11-03 sweep now SIGNED — and signing changes its STATUS, not its
+shape: a state-owned counterparty, and §4 asks whose economics change.**
+
+**Wrong shape, settled rules:** **ANI Pharmaceuticals / Egetis Therapeutics** offer — ⚠ **merger
+arbitrage, NOT IN §4; the target's price is contractually pinned and the acquirer is first-order** ·
+**CVR Energy** **$500M** share sale — ⚠ **capital paid IN, rule (viii)** · **Revolution Wind fully
+commissioned, supplying Rhode Island and Connecticut** — ⚠ **a DELIVERY MILESTONE recycled as news,
+the standing GM/Lockheed costume, and Ørsted is Danish-listed** · **HSBC** tender offer — non-US,
+a financing action · **"AI wobbles continue"** — ⚠ **a MARKET CONDITION remarked upon, which the
+standing rule names as the most respectable disguise a non-event can wear.**
+
+- **verdict:** **ALL REJECTED.**
+- **cost:** **zero queries beyond the broad sweeps.** ⚠ **Eighteen items and not one of them needed a
+  drill query, because every one of them matches a shape already written down. THAT is what the
+  standing-rules section is for, and this is the clearest return it has produced.**
+
+---
+
 ### 2026-11-04 (07:02 ET) — event survey (funnel, pre-thesis)
 
 Selftest **5/5**, exit 0 (`trading_enabled: true`, LIVE paper, equity **$99,441.37** at pre-flight).
