@@ -40,6 +40,116 @@ anything where the honest-broker rule (§4) did real work>
 
 ## Entries
 
+### 2026-11-05 (Thursday)
+
+**Account:** total **$96,994.92 — INTRADAY, NOT A CLOSE** (99.046311231 sh VOO at a live **676.40**
++ $30,000.00 cash, read at **15:16 ET with 44 min of the session left**) | day **−$2,808.96
+(−2.8145%)** against 11-04's close-basis equity of **$99,803.88**, or **−$2,819.85 (−2.8253%)**
+against the broker's `last_equity` **$99,805.86** | since inception **−$3,005.08 (−3.0051%)**
+($100,000.00 opening).
+⚠⚠⚠ **FOURTH CONSECUTIVE SESSION WITH NO OFFICIAL CLOSE IN THIS REPO, AND AGAIN IT IS A REFUSAL
+RATHER THAN AN OVERSIGHT.** `clock` at **15:16:14 ET** returned **`is_open: true`**, `next_close`
+**2026-11-05T16:00:00−05:00** — broker-authoritative. Today's `--adjustment all` bar reads
+`c` **676.075**, `h` 703.90, `l` 674.77 on **130,521** prints, but it is a **PARTIAL BAR**: that
+`c` is the last trade so far, not a close, and **it was not stamped anywhere.** **2026-11-05 must
+be backfilled by the 11-06 pre-market seat**, as 11-02, 11-03 and 11-04 were.
+
+**Sleeves:** core **69.0705%** | satellite **0.0%** | cash **30.9295%**   (§2 band 65–75%, intraday
+basis). **REBALANCE IS NOT DUE TOMORROW.** `core_in_band: true`, `rebalance_needed: false`,
+`rebalance_delta: 901.52` — the largest delta on record and still a **distance readout, not an
+instruction. Rebalance on the band, never on the delta.** Bounds re-derived from the live share
+count: the §2 floor needs **VOO at $562.51 (−16.84%** from 676.40), the ceiling **$908.67
+(+34.34%)**.
+**Breaker:** INACTIVE (`consecutive_closed_losses` **0** — nothing has ever closed in this account)
+**Week:** 0/3 new positions (ISO **2026-W45**, weekday **4**, Monday anchor **2026-11-02** —
+re-derived with `isocalendar()`, **matched** `week_of`, no rollover performed and none due)
+
+**Traded:** nothing — zero orders at all four of today's seats. §7 limbo **clean**: `orders
+--status all` returns **one order in the account's entire history**, `d177d8f0…`, `filled` and
+terminal since 2026-09-03.
+**Researched:** 5 theses — **0 accepted, 5 rejected** (`T-2026-11-05-01` … `-05`).
+**Positions near a sell rule:** **none, and not because they are far away — there are none.**
+Satellite block count **0**, `sleeves.satellite.count` **0**, `positions` one row (core VOO).
+§5.1–5.4 are **ABSENT WITH NO OPERAND**, not passing. Core VOO **struck** from the §5 working
+list per §5's exemption, not stamped as passing.
+
+**What happened:**
+
+One number moved and the strategy has no lever over it. VOO fell **−4.04%** (676.075 against
+11-04's official 704.76), carrying the core sleeve to **−$3,005.07 / −4.2930%** on its 706.74
+entry and the account to its deepest drawdown since the 2026-09-03 bootstrap. **Checked rather
+than asserted: that is the largest single-session move, in either direction, in the whole
+70-session bar window — 2.3× the next-worst (−1.78%, 2026-10-30), against a prior extreme set
+only yesterday at +1.61%.** Two consecutive record sessions in opposite directions.
+
+Nothing was done about it, and that is the rule rather than a judgment call: §2 holds core
+permanently, §5 exempts it from all four sell rules, §7 forbids selling core at all, and this
+routine may not open a position in any case. A −4% session in a hold-forever index sleeve is the
+one thing the design expects to sit through. **Every dollar of the account's drawdown from
+inception is still the core mark — the $30,000 cash leg has never moved, so none of it is a
+decision the strategy made.**
+
+Step 2 — the invisible job, recording closes into `highest_close` — was **vacuous for the fourth
+consecutive session, and for two independent reasons that must not be conflated.** (1) There are
+no satellite positions, so there is no `highest_close` to stamp; the field has **never** been
+stamped in this repo (field-form `grep -nE '^\s*-\s*highest_close:'` returns exactly one line,
+the template placeholder on `positions.md:53`). (2) The run fired **before** the close, so no
+official close existed to stamp even if there had been. **Fixing either one alone changes
+nothing.** The day the sleeve is non-empty and the firing is still early, a mid-afternoon last
+trade gets written into `highest_close` and mis-sets that position's §5.4 trailing stop **for its
+whole life** — silently, because nothing in the field, the date or the bar records the basis.
+
+Research found nothing, on the largest tape this funnel has surveyed. The day was
+macro-dominated: a midterm result read as divided government, ADP +86k, ISM services 54.5, a
+$105B September trade deficit, the Oct 28 FOMC hold re-reported. The best-formed event in four
+sessions still died — IREN's $2.8B of multiyear AI-cloud contracts with **named** counterparties,
++16% on the day, killed on **both** doors (the named parties are *spending*, wrong sign; and
+$2.8B across ten counterparties is a rounding error against MSFT/NVDA revenue) and independently
+on §3, with IREN at **$8.73B** against the $10B floor.
+
+**What I got wrong or nearly got wrong:**
+
+**A number I inherited was wrong, and I only caught it because I re-derived instead of quoting
+it.** The 11:41 midday seat wrote into `state.md` that "a further ≈−6% in core alone walks
+`core_pct` to the 65% edge and turns this into a §2 REBALANCE question for the 09:35 seat."
+**That is false. The true figure is −16.84%** — the floor needs core value at
+$30,000 × 0.65/0.35 = **$55,714.29** against today's $66,994.92, i.e. **VOO at $562.51.** ⚠ **And
+the 11-04 close seat had already computed $562.51 correctly in this very file, so this was not a
+hard number — it was a seat doing the arithmetic in its head on a scary-looking day and landing
+an order of magnitude inside the real distance.** The claim is **REPLACED here, not left beside
+its correction.** The direction of the error is the part worth keeping: it made the band look
+close to breaching on exactly the day the core fell 4%, which is when a rebalance question would
+be most tempting to answer early. **Rebalancing is not even this routine's door.**
+
+**The pull I had to refuse twice.** First: a −4% day with **$30,000 of idle cash** reads as an
+opportunity, and the thought "the core is cheap today" formed before I checked whether it was
+mine to act on. It is not — §4 requires a written second-order *transaction* thesis that
+pre-dates the order, a dip is not a catalyst, and a close-journal seat has no buy door at all.
+Second: `rebalance_delta: 901.52` is the largest this repo has recorded and it **looks** like an
+instruction. It is not; §2 triggers on the 65–75% **band**, and 69.07% is **4.07pp above the
+floor.** Both temptations arrived dressed as arithmetic rather than as impulses, which is the
+form worth recognising next time.
+
+**And the honest residue:** nothing else was close. With an empty sleeve, zero orders and five
+theses that died on filters already written down, there was very little surface on which to be
+wrong today. **I am not going to manufacture a third item to make this section look worked.**
+
+**For the next run:**
+- **2026-11-05 HAS NO OFFICIAL CLOSE IN THIS REPO. Backfill it** with `bars --symbol VOO --days 2
+  --adjustment all` at the 11-06 pre-market seat. Expect it near **676**; today's partial read was
+  `c` 676.075 with the broker's live mark 676.40. **Substantively empty again — zero satellite
+  positions means no `highest_close` to stamp — but confirm that rather than assume it.**
+- **The pre-close firing is now a FOUR-SESSION OUTCOME TALLY** (11-02 15:15 · 11-03 15:16 ·
+  11-04 15:16 · 11-05 15:16). Recorded as an **observation, not a timestamp diagnosis** per
+  `control.md`'s Note. **Escalated to the human at this seat with the record-drawdown day
+  attached.** Not a seat's to fix.
+- **The −6% band claim is corrected to −16.84% / VOO $562.51.** If you read −6% anywhere
+  downstream, it is stale.
+- Breaker **INACTIVE 0/3**, week **0/3** (`week_of` 2026-11-02), `open_thesis_ids` **none**, open
+  alerts **none**, `TRADING_ENABLED` **true**, 5% cap **$4,849.75**. **Nothing gated a buy today —
+  the candidates did.**
+
+
 ### 2026-11-04 (Wednesday)
 
 **Account:** total **$99,880.14 — INTRADAY, NOT A CLOSE** (99.046311231 sh VOO at a live **705.53** +
