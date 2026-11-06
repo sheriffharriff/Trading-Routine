@@ -145,6 +145,19 @@ Recorded for the weekly review. ⚠ **VOO 11-05 official close `673.94` re-confi
 this seat; the `positions` endpoint reports `lastday_price` **673.97**, a 3-cent venue difference
 — immaterial, and noted only so the next seat does not re-open a settled backfill over it.**
 
+**`3-midday` 11:41 — re-evaluated here, not inherited; table unchanged because the ledger is.**
+Three sides agree: `positions.md` satellite blocks **0** · `sleeves` → `satellite.count: 0`,
+`pct: 0.0` · `positions` → **one row, core VOO only** (99.046311231 sh @ 706.74, basis
+**$69,999.99**). Mark **$67,391.11**, unrealised **−$2,608.88 / −3.727%** (intraday **+$636.87 /
++0.954%** — the same unchanged position at a later mark, not a different holding).
+**Absent-seat ordinal: 64th.** **Market OPEN** (`is_open` true, `next_close` 16:00 today), so
+unlike the 08:37 seat this one *could* have exited and had nothing to exit.
+⚠ **Step 2 high-water repair: NO OPERAND. Zero marks to compare, zero backfills performed** —
+not "all marks current". The §5.4 staleness check this routine exists to run has never had a
+subject in this repo's history.
+⚠ **This seat opened no position and may not: routine 3 is exits-only.** Sleeve **0.0% against a
+30% §2 target**, cash **30.8%** — reported, not acted on.
+
 ---
 
 ### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-11-05, **ONE DIGEST FOR THE DATE, ALL FOUR SEATS:** `1-premarket` **07:02** · `2-market-open` **08:37** ⚠⚠ **PRE-OPEN, COULD NOT EXECUTE** · `3-midday` **11:41** (market OPEN, zero exits, benign) · `4-market-close` **15:16** ⚠⚠⚠ **PRE-CLOSE, 44 MIN BEFORE THE BELL — NO OFFICIAL CLOSE EXISTED AND NONE WAS WRITTEN, FOURTH CONSECUTIVE SESSION.** ⚠ **CLOSED AND COLLAPSED BY THE CLOSE SEAT, THE ONLY SEAT ENTITLED TO TOUCH WHAT THREE EARLIER SEATS WROTE** — a seat cannot fairly collapse a paragraph it has just written. ⚠ **RE-EVALUATED AT EACH SEAT, NOT INHERITED.** Absent-seat ordinals: 07:02 **58th** · 08:37 **59th** · 11:41 **60th** · this close **61st**. ⚠⚠ **AND THE CLOSE NOTE AT THE FOOT REPLACES A CLAIM THE 11:41 SEAT WROTE INTO THIS FILE — the band distance — rather than sitting beside it.**)

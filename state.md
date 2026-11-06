@@ -10,8 +10,8 @@ The block below is parsed by `scripts/common.py` and gates real behavior
 `key: value` format exactly. Prose goes underneath.
 
 ```
-last_run: 2026-11-06 08:37 ET 2-market-open-execution SELFTEST 5-of-5 EXIT 0. ⚠⚠ FIRED PRE-OPEN AT 08:37, 53 MIN BEFORE THE 09:30 BELL, clock is_open FALSE — FIFTH CONSECUTIVE EST SESSION THE ONLY ORDER-PLACING SEAT COULD NOT PLACE (08:47 11-02 · 08:36 11-03 · 08:35 11-04 · 08:37 11-05 · 08:37 today). §7 forbids trading a closed market, so ZERO ORDERS IS CORRECT AND NOT THIS SEAT'S FAULT; the stored schedule is outside this repo and no seat can fix it. STALENESS GATE PASSED — plan_date 2026-11-06 = today, plan FRESH, NO stale-plan alert posted. Plan carried ZERO BUY / ZERO SELL / ZERO REBALANCE, so the fault COST NOTHING TODAY, the fifth identical day, and that is exactly why it stays invisible: a pre-open seat and a correctly-timed seat over an empty plan are byte-identical. Step 3 core bootstrap SKIPPED (core_established true). Step 7 rebalance NOT DUE: core 69.04% in band, core_in_band true, rebalance_delta 934.12. Breaker INACTIVE 0/3, week 0/3, ISO 2026-W45 weekday 5, Monday anchor 2026-11-02 = week_of, NO ROLLOVER. Ledger reconciliation CLEAN, three sides. Equity 96,886.27 pre-open, core VOO 66,886.27 at 69.04%, satellite 0 / count 0, cash 30,000 at 30.96%, core unrealised -3,113.72 / -4.448% on 99.046311231 sh @ 706.74 (basis 69,999.99, unchanged since the 2026-09-03 fill; only the mark moves). VOO 11-05 official close 673.94 RE-CONFIRMED from bars — the positions endpoint's lastday_price reads 673.97, a 3-cent venue difference, immaterial and NOT a reopened backfill question. Human notified: routine 2 has now been pre-open for a FULL TRADING WEEK.
-prior_run: 2026-11-06 07:03 ET 1-premarket-research SELFTEST 5-of-5 EXIT 0. COLLAPSED TO ONE LINE BY THIS OPEN SEAT — full text in git at the preceding commit, nothing live discarded; its findings are in the 11-06 date block below and its carry items are re-stated there, not here. Fired 07:03 against a nominal 08:00. 5 theses, 0 accepted, 5 rejected (T-2026-11-06-01 to -05); the day's event was the tape itself (S&P -4.4, Nasdaq -5.5, SOX -12) and a repricing has no Company A, so it produced no §4 object. ZERO ORDERS. Wrote the plan this seat consumed. Backfilled VOO 11-05 close 673.94 and showed the 15:16 partial bar had understated the record decline by 2.135 dollars. Promoted the direction-blind `move` defect from names to the whole semiconductor complex (twelve LATE verdicts on twelve DECLINES).
+last_run: 2026-11-06 11:41 ET 3-midday-management SELFTEST 5-of-5 EXIT 0. MARKET OPEN (is_open true, next_close 16:00 today) — this seat COULD have exited and had NOTHING TO EXIT. ZERO OPEN SATELLITE POSITIONS, three sides agree (positions.md blocks 0 · sleeves satellite.count 0 / pct 0.0 · positions one row, core VOO only). Steps 2-5 ALL NO-OPERAND: zero high-water marks to repair, zero backfills, zero §5.1-5.4 evaluations, zero sell_rule_status rewrites. Step 2's staleness check — the reason this routine exists — HAS NEVER HAD A SUBJECT in this repo. EXITS-ONLY SEAT: opened nothing and may not; satellite 0.0% against a 30% §2 target is REPORTED, NOT ACTED ON. Breaker INACTIVE 0/3, week 0/3, ISO 2026-W45 weekday 5, Monday anchor 2026-11-02 = week_of, NO ROLLOVER. Equity 97,391.11 intraday, core VOO 67,391.11 at 69.2% (core_in_band true, rebalance_delta 782.67, NOT DUE), satellite 0 / count 0, cash 30,000 at 30.8%, core unrealised -2,608.88 / -3.727% on 99.046311231 sh @ 706.74 (basis 69,999.99, unchanged since the 2026-09-03 fill; only the mark moves; intraday +636.87 / +0.954%). Absent-seat ordinal 64th. PUSH-NOTIFIED THE HUMAN — see the 11-06 date block; the fourth seat's pre-close firing would be the sixth consecutive session and the ONLY schedule rung with a live consequence left.
+prior_run: 2026-11-06 08:37 ET 2-market-open-execution SELFTEST 5-of-5 EXIT 0. COLLAPSED TO ONE LINE BY THIS MIDDAY SEAT — full text in git at the preceding commit, nothing live discarded; its findings are in the 11-06 date block below. ⚠⚠ FIRED PRE-OPEN AT 08:37, 53 MIN BEFORE THE BELL, is_open FALSE — FIFTH CONSECUTIVE EST SESSION THE ONLY ORDER-PLACING SEAT COULD NOT PLACE (08:47 11-02 · 08:36 11-03 · 08:35 11-04 · 08:37 11-05 · 08:37 today). §7 forbids trading a closed market, so ZERO ORDERS IS CORRECT AND NOT THAT SEAT'S FAULT; the stored schedule is outside this repo and no seat can fix it. Staleness gate PASSED (plan_date 2026-11-06 = today, plan FRESH, no stale-plan alert). Plan carried ZERO BUY / ZERO SELL / ZERO REBALANCE, so the fault COST NOTHING, the fifth identical day — and that is why it stays invisible: a pre-open seat and a correctly-timed seat over an empty plan are byte-identical. Step 3 core bootstrap SKIPPED (core_established true). Step 7 NOT DUE: core 69.04% in band. Ledger reconciliation CLEAN, three sides. VOO 11-05 official close 673.94 re-confirmed from bars; positions endpoint lastday_price 673.97, a 3-cent venue difference, immaterial and NOT a reopened backfill question.
 week_of: 2026-11-02
 new_positions_this_week: 0
 consecutive_closed_losses: 0
@@ -19,9 +19,9 @@ circuit_breaker: INACTIVE
 halt_triggered_at: none
 core_established: true
 core_ticker: VOO
-core_pct: 69.04
+core_pct: 69.2
 satellite_pct: 0.0
-cash_pct: 30.96
+cash_pct: 30.8
 open_thesis_ids: none
 ```
 
@@ -166,6 +166,45 @@ fix must be LENGTH-PRESERVING.**
   worked is counting AFTER the write — is now evidenced rather than merely repeated: it failed at the
   draft and worked at the check, in the same run, which is the cleanest demonstration of it on
   record.**
+
+
+- **⚠⚠ 2026-11-06 11:41 — `3-midday-management`, THE FOURTH SEAT OF THE DATE BLOCK ABOVE AND THE
+  BENIGN RUNG OF THE SCHEDULE FAULT. Market OPEN** (`is_open` true, `next_close` **16:00−05:00**
+  today), ~49 min early against a nominal 12:30 — **inside the session, so this seat lost nothing,
+  exactly as the 11-02 midday seat predicted for routine 3.** **Absent-seat ordinal: 64th.**
+  **ZERO OPEN SATELLITE POSITIONS**, three sides agreeing (blocks **0** · `satellite.count: 0` ·
+  `positions` one row, core VOO only). **Steps 2–5 had NO OPERAND:** zero marks repaired, zero
+  `bars` backfills, zero §5.1–5.4 evaluations, zero §5.1 Perplexity calls (**no `invalidation`
+  string exists to check**). Equity **$97,391.11** · core **$67,391.11 / 69.2%** · satellite **$0 /
+  0.0%** · cash **$30,000 / 30.8%** · `core_in_band` true, `rebalance_delta` **782.67**, not due and
+  not this seat's step anyway. Core unrealised **−$2,608.88 / −3.727%**, intraday **+$636.87 /
+  +0.954%** — the 11-05 record decline partially retraced; **a mark, not a rule state, and core is
+  §5-exempt.**
+  ⚠ **THIS SEAT IS EXITS-ONLY AND OPENED NOTHING, WHICH IS THE RULE AND NOT A JUDGEMENT:** the
+  satellite sleeve sits at **0.0% against §2's 30% target** with **$30,000 idle and zero satellite
+  trades in this account's entire history** (one fill ever, the 2026-09-03 core bootstrap).
+  **REPORTED, NOT ACTED ON** — §4 entries route through routine 1's written thesis and routine 2's
+  order door, and routing around that is precisely what this routine's prompt forbids.
+  ⚠⚠⚠ **PUSH-NOTIFIED THE HUMAN FROM THIS SEAT — THE FIRST TIME THIS ITEM HAS LEFT THE REPO BY A
+  CHANNEL OTHER THAN THE ClickUp DAILY SUMMARY, AND THAT IS THE WHOLE REASON IT WAS SENT.** The
+  schedule item above has been notified in-repo **five sessions running (11-02 … 11-06) and NO
+  SCHEDULE CHANGE HAS LANDED**; a channel that has failed five times is evidence about the channel,
+  not about the severity. **Nothing new was diagnosed and nothing was re-derived from a firing
+  time** — the notification carried the ALREADY-CONFIRMED stored-schedule reading (routines 1, 2, 3
+  read as EDT-anchored UTC, unshifted by the 2026-11-01 fall-back) and the ALREADY-RECORDED fix
+  (**re-anchor all five triggers to `America/New_York`; a flat +1h UTC shift is right for EST and
+  wrong again from 2027-03-14**). ⚠ **`control.md`'s Note was honoured: the push states the firing
+  times as OBSERVATIONS and rests the claim on the stored schedules, which are a property of the
+  TRIGGER rather than of an invocation.**
+  ⚠⚠ **AND IT NAMED THE ASYMMETRY RATHER THAN THE TALLY, because the tally is what has failed to
+  move anyone:** the fault has been **FREE FOR FIVE SESSIONS ONLY BECAUSE 25 CONSECUTIVE THESES
+  WERE REJECTED AND THE LEDGER IS EMPTY** — routine 2 has had nothing to place and routine 4 nothing
+  to stamp. **One accepted thesis makes routine 2's pre-open firing a missed entry; one open
+  position makes routine 4's pre-close firing a `highest_close` stamped from a partial bar that
+  reads CURRENT-NOT-STALE, is therefore never backfilled by THIS routine's Step 2 detector, and
+  displaces every §5.4 trigger for the life of the position** (measured 11-02: **$2.725 / 0.394% /
+  39bp too high**). **The §5.4 refusal and this seat's staleness check are both STILL UNTESTED CODE
+  after 109 runs, and neither can be tested without an operand.**
 
 - **⚠⚠⚠ 2026-11-05 — DATE BLOCK, CLOSED AND COLLAPSED BY THE 15:16 CLOSE SEAT** (the only seat entitled to touch what three earlier seats wrote — a seat cannot fairly collapse a paragraph it has just written). `1-premarket` **07:02** · `2-market-open` **08:37** ⚠⚠ **PRE-OPEN, COULD NOT EXECUTE** · `3-midday` **11:41** (market OPEN, zero exits, benign) · `4-market-close` **15:16** ⚠⚠⚠ **PRE-CLOSE, 44 MIN BEFORE THE BELL — NO OFFICIAL CLOSE EXISTED AND NONE WAS WRITTEN, FOURTH CONSECUTIVE SESSION.** **Thursday, a full session, NOT a holiday** (both `next_open` and `next_close` carried today's date at the pre-market seat — read off the DATES, not the boolean). **Breaker INACTIVE 0/3**, week **0/3** (ISO **2026-W45**, weekday 4, Monday anchor **2026-11-02** = `week_of`, re-derived with `isocalendar` at every seat, **no rollover**). **ZERO ORDERS AT ALL FOUR SEATS.** **5 theses, 5 rejected, 0 accepted** (`T-2026-11-05-01` … `-05`). **Absent-seat ordinals: 58th · 59th · 60th · 61st.** **ClickUp daily summary: task `86bcz4anu`.** ⚠ **Firing times are OBSERVATIONS; nothing diagnosed from a timestamp, per `control.md`'s Note.**
 
