@@ -10,8 +10,8 @@ The block below is parsed by `scripts/common.py` and gates real behavior
 `key: value` format exactly. Prose goes underneath.
 
 ```
-last_run: 2026-11-06 07:03 ET 1-premarket-research SELFTEST 5-of-5 EXIT 0. Market OPEN today 09:30 ET, NOT a holiday (both next_open and next_close carry 2026-11-06). Breaker INACTIVE 0/3, week 0/3, ISO 2026-W45 weekday 5, Monday anchor 2026-11-02 equals week_of, NO ROLLOVER. ZERO ORDERS (this seat has no order door). 5 theses, 0 accepted, 5 rejected (T-2026-11-06-01 to -05). Plan dated 2026-11-06 with ZERO BUY, ZERO SELL, ZERO REBALANCE intents. ✅ DISCHARGED: 2026-11-05's OFFICIAL VOO CLOSE IS BACKFILLED AND THE PARTIAL BAR WAS WRONG BY 2.135 DOLLARS — official c 673.94 (n 4,331, v 170,486, about 2.5x the participation norm) against the 15:16 seat's partial read of 676.075, so the true session was -4.3731 percent from 704.76, NOT the -4.04 percent that seat computed. It remains the largest single-session move in either direction in the window, 2.5x the next-worst. THAT IS OPEN ITEMS (12) AND (15) PRICED IN DOLLARS FOR THE FIRST TIME RATHER THAN DESCRIBED: a partial bar standing in for a close understated the record decline by 8 percent of its own magnitude, and it cost nothing ONLY because the satellite ledger is empty. THE DAY'S EVENT WAS THE TAPE ITSELF AND IT PRODUCED NO §4 OBJECT: S&P -4.4, Nasdaq -5.5, SOX -12 (second-largest on record), all 11 sectors lower, on the Democratic midterm sweep read as data-center policy risk plus an AI-capex reassessment; no source establishes a triggering announcement, and a query asking specifically for §4's structure (named A, named US-listed B, disclosed dollar value) returned ZERO confirmed matches. ⚠⚠⚠ THE ONE NEW FINDING, AND IT IS A PROMOTION FROM NAMES TO A SECTOR: the direction-blind `move` defect now blocks THE ENTIRE SEMICONDUCTOR COMPLEX BECAUSE IT CRASHED — NVDA -15.03, MU -29.51, AMD -28.79, QCOM -15.38, all four returning priced_in true and LATE-skip, bringing the tally to TWELVE LATE verdicts on TWELVE DECLINES across five sessions. Until about 11-12 any genuine §4 candidate in semis dies at the hard filter before its thesis is read. OBEYED ANYWAY, it fails safe. Equity 96,954.32 INTRADAY, core 66,954.32 at 69.06 percent (4.06pp inside the 65 percent edge, -16.84 percent in VOO terms or about 562.51, NOT the -6 percent the 11-05 midday seat wrote), satellite 0, cash 30,000 at 30.94 percent, core unrealised -3,045.67 or -4.351 percent. Ledger reconciliation CLEAN, three sides. ONE SOURCE CONFLICT RECORDED UNRESOLVED: one sweep reported traders pricing over 80 percent odds of a DECEMBER FED HIKE to 4.00-4.25, a second query asked directly said the reporting does not support a hike expectation at all and declined to give a figure; same model, same morning, nothing turns on it, but the first number must not be quoted as fact. Human notified: pre-open routine 2 (fifth EST session) plus the `move` defect's promotion to sector scope.
-prior_run: 2026-11-05 15:16 ET 4-market-close-journal SELFTEST 5-of-5 EXIT 0. COLLAPSED TO ONE LINE BY THIS PRE-MARKET SEAT — full text in git at the preceding commit, nothing live discarded; its findings are in the 11-05 date block below and its ONE open task is DISCHARGED above. FIRED PRE-CLOSE at 15:16 with is_open TRUE, so no official close existed and none was written, FOURTH CONSECUTIVE SESSION; 2026-11-05 is now backfilled. Step 2 was vacuous for two independent reasons, zero satellite positions and a pre-close firing. Equity 96,994.92 INTRADAY. ZERO ORDERS, 5 theses 0 accepted 5 rejected, §7 limbo CLEAN (one order ever, terminal). ClickUp daily summary task 86bcz4anu.
+last_run: 2026-11-06 08:37 ET 2-market-open-execution SELFTEST 5-of-5 EXIT 0. ⚠⚠ FIRED PRE-OPEN AT 08:37, 53 MIN BEFORE THE 09:30 BELL, clock is_open FALSE — FIFTH CONSECUTIVE EST SESSION THE ONLY ORDER-PLACING SEAT COULD NOT PLACE (08:47 11-02 · 08:36 11-03 · 08:35 11-04 · 08:37 11-05 · 08:37 today). §7 forbids trading a closed market, so ZERO ORDERS IS CORRECT AND NOT THIS SEAT'S FAULT; the stored schedule is outside this repo and no seat can fix it. STALENESS GATE PASSED — plan_date 2026-11-06 = today, plan FRESH, NO stale-plan alert posted. Plan carried ZERO BUY / ZERO SELL / ZERO REBALANCE, so the fault COST NOTHING TODAY, the fifth identical day, and that is exactly why it stays invisible: a pre-open seat and a correctly-timed seat over an empty plan are byte-identical. Step 3 core bootstrap SKIPPED (core_established true). Step 7 rebalance NOT DUE: core 69.04% in band, core_in_band true, rebalance_delta 934.12. Breaker INACTIVE 0/3, week 0/3, ISO 2026-W45 weekday 5, Monday anchor 2026-11-02 = week_of, NO ROLLOVER. Ledger reconciliation CLEAN, three sides. Equity 96,886.27 pre-open, core VOO 66,886.27 at 69.04%, satellite 0 / count 0, cash 30,000 at 30.96%, core unrealised -3,113.72 / -4.448% on 99.046311231 sh @ 706.74 (basis 69,999.99, unchanged since the 2026-09-03 fill; only the mark moves). VOO 11-05 official close 673.94 RE-CONFIRMED from bars — the positions endpoint's lastday_price reads 673.97, a 3-cent venue difference, immaterial and NOT a reopened backfill question. Human notified: routine 2 has now been pre-open for a FULL TRADING WEEK.
+prior_run: 2026-11-06 07:03 ET 1-premarket-research SELFTEST 5-of-5 EXIT 0. COLLAPSED TO ONE LINE BY THIS OPEN SEAT — full text in git at the preceding commit, nothing live discarded; its findings are in the 11-06 date block below and its carry items are re-stated there, not here. Fired 07:03 against a nominal 08:00. 5 theses, 0 accepted, 5 rejected (T-2026-11-06-01 to -05); the day's event was the tape itself (S&P -4.4, Nasdaq -5.5, SOX -12) and a repricing has no Company A, so it produced no §4 object. ZERO ORDERS. Wrote the plan this seat consumed. Backfilled VOO 11-05 close 673.94 and showed the 15:16 partial bar had understated the record decline by 2.135 dollars. Promoted the direction-blind `move` defect from names to the whole semiconductor complex (twelve LATE verdicts on twelve DECLINES).
 week_of: 2026-11-02
 new_positions_this_week: 0
 consecutive_closed_losses: 0
@@ -19,9 +19,9 @@ circuit_breaker: INACTIVE
 halt_triggered_at: none
 core_established: true
 core_ticker: VOO
-core_pct: 69.06
+core_pct: 69.04
 satellite_pct: 0.0
-cash_pct: 30.94
+cash_pct: 30.96
 open_thesis_ids: none
 ```
 
@@ -64,6 +64,34 @@ fix must be LENGTH-PRESERVING.**
   rejected, 0 accepted** (`T-2026-11-06-01` … `-05`). **Absent-seat ordinal: 62nd.** Plan dated
   **2026-11-06**, **zero BUY / zero SELL / zero REBALANCE**. Equity **$96,954.32** intraday · core
   **69.06%** · satellite **0.0%** · cash **30.94%** · core unrealised **−$3,045.67 / −4.351%**.
+
+  `2-market-open` **08:37** ⚠⚠ **PRE-OPEN, 53 MIN BEFORE THE BELL, `is_open` FALSE — PLACED
+  NOTHING, AND THAT IS §7 BEING OBEYED RATHER THAN A SEAT FAILING.** **Absent-seat ordinal: 63rd.**
+  **STALENESS GATE PASSED** — `plan_date` **2026-11-06** = today, so the plan was FRESH and **no
+  stale-plan alert was posted**; the gate is not what stopped this seat. Steps 4, 5 and 6 had **no
+  operand** (zero SELL intents, zero BUY intents, empty sleeve) and Step 3 was **skipped**
+  (`core_established` true). **Step 7 NOT DUE:** core **69.04%**, `core_in_band` true,
+  `rebalance_delta` **934.12** — and had it been due, a closed market would have blocked it too.
+  Equity **$96,886.27** pre-open · core **$66,886.27 / 69.04%** · satellite **$0 / count 0** · cash
+  **$30,000 / 30.96%** · core unrealised **−$3,113.72 / −4.448%**. Ledger CLEAN, three sides,
+  re-derived here. ⚠ **VOO 11-05 close 673.94 re-confirmed from `bars`; the `positions` endpoint
+  reports `lastday_price` 673.97, a 3-cent venue difference — immaterial, recorded so the next seat
+  does not re-open a settled backfill over it.**
+
+- **⚠⚠⚠ 2026-11-06 — THE ROUTINE-2 SCHEDULE FAULT HAS NOW RUN A FULL TRADING WEEK. THIS ITEM
+  REPLACES THE FIVE SEPARATE DAILY OBSERVATIONS; THE ROOT CAUSE AND THE STORED-SCHEDULE EVIDENCE ARE
+  IN THE 2026-11-02 ITEM BELOW AND ARE NOT RESTATED HERE.** What is new is the DURATION and the TALLY.
+  Routine 2 is the **only** seat with an order door, and it has dispatched **pre-open on every EST
+  session since DST ended**: **08:47** (11-02) · **08:36** (11-03) · **08:35** (11-04) · **08:37**
+  (11-05) · **08:37** (11-06, this seat) — **five for five, every one `is_open: false`, every one
+  placing nothing.** ⚠⚠ **ALL FIVE DAYS CARRIED EMPTY PLANS, SO THE REALISED COST IS EXACTLY ZERO
+  — and that is the danger rather than the reassurance: the system has now produced five consecutive
+  days of output BYTE-INDISTINGUISHABLE from five correctly-timed days. The first day a plan carries a
+  BUY, the trade silently will not happen, and no order count, no alert and no log line will say why.**
+  ⚠ **THE ASK IS ONE LINE AND IT IS THE HUMAN'S ALONE: move routine 2's stored trigger from
+  `13:35 UTC` to `14:35 UTC`.** Not fixable from inside this repo — the trigger lives outside it, a
+  seat must not change a schedule, and no amount of correct behaviour here will restore the seat.
+  **Escalated today because the duration crossed a full trading week, not because the status changed.**
 
 - **✅ DISCHARGED AND REMOVED, NOT ANNOTATED — THE 2026-11-05 OFFICIAL CLOSE IS IN THE REPO, AND THE
   PARTIAL BAR WAS WRONG BY $2.135 IN THE DIRECTION THAT MATTERS.** `bars --symbol VOO --days 4
