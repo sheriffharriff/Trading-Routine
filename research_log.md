@@ -52,6 +52,191 @@ single most common way a plausible-sounding connection gets mistaken for an oppo
 
 ## Entries
 
+### 2026-11-06 (07:03 ET) — event survey (funnel, pre-thesis)
+
+Selftest **5/5**, exit 0 (`trading_enabled: true`, LIVE paper, equity **$96,930.54** at pre-flight).
+`clock` 07:03:02 — `is_open: false`, `next_open` **2026-11-06T09:30:00-05:00**, `next_close`
+**2026-11-06T16:00:00-05:00**: both carry today's date, the pre-market full-session signature.
+**Not a holiday.** Fired ~57 min early against a nominal 08:00, the **fifth** EST session running
+(observation only — `control.md` forbids diagnosing a schedule from a firing time).
+
+**✅ THE 2026-11-05 OFFICIAL CLOSE IS BACKFILLED, AND THE PREDICTION WAS WRONG BY $2.14 IN THE
+DIRECTION THAT MATTERS.** `bars --symbol VOO --days 4 --adjustment all` gives **VOO 2026-11-05
+`c` 673.94** (o 703.73 · h 703.90 · l 673.58 · n 4,331 · v 170,486 — *2.5x the 70-session
+participation norm*). The 15:16 close seat read **676.075** off a partial bar and flagged it as
+partial and unstamped; the official print is **$2.135 LOWER**, so the true session was
+**−4.3731%** (704.76 → 673.94), not the −4.04% that seat computed. ⚠ **The partial bar was not
+merely imprecise — it understated the largest single-session decline in this repo's history by
+8% of its own magnitude. That is the §5.4 exposure in item (12)/(15) priced in dollars, and it
+only cost nothing because the satellite ledger is empty.** Nothing beyond the mark was lost.
+
+**Ledger reconciliation CLEAN, re-derived three ways:** `positions.md` satellite block count **0** ·
+`sleeves` `satellite.count 0` · `positions` returns **core VOO only** (99.046311231 sh @ 706.74,
+cost basis $69,999.99, unchanged since the 2026-09-03 fill — only the mark moves). **No disagreement.**
+
+**The day's tape is a VALUATION UNWIND, not a transaction.** S&P −4.4% / Nasdaq −5.5% / **SOX −12%,
+its second-largest decline on record**; all 11 sectors lower; tech sector −7.3%. Named moves: NVDA
+−9.3% (largest single S&P drag) · AMD −17.3% · MU >−17% · SNDK ~−22% · MRVL ~−17% · INTC −10% ·
+CoreWeave −9.8% · GEV −7.5% · MSFT/META/AMZN/GOOGL each −2% to −4%. Reported drivers: the Democratic
+midterm sweep read as a policy risk to the AI data-center buildout, plus a broad reassessment of AI
+capex sustainability. ⚠ **No source establishes a single triggering announcement** — which is
+precisely why this is not a §4 object. Three broad queries spent; a fourth asked for §4's *structure*
+(named Company A, named US-listed Company B, disclosed dollar value) and returned **zero confirmed
+matches**.
+
+⚠ **ONE SOURCE CONFLICT, RECORDED UNRESOLVED RATHER THAN PICKED.** The first sweep reported traders
+pricing **">80% probability of a December Fed rate INCREASE to 4.00–4.25%"** (Reuters Take Five).
+The second query, asked directly, said the available reporting **does not support a December hike
+expectation at all** and declined to state a figure. **Both answers are from the same model on the
+same morning.** Nothing turns on it — macro has no Company A — but a seat that quoted the first
+number as fact would have published an unverified claim about the direction of Fed policy.
+
+---
+
+### T-2026-11-06-01 — the AI-infrastructure / semiconductor complex (NVDA · AMD · MU · MRVL · INTC · SNDK) ← the 11-05 valuation unwind — REJECTED (part 1, no Company A; a repricing is not a transaction)
+**Company A / the news:** None exists. The 11-05 selloff is a market-wide reassessment of AI capex
+and of post-midterm data-center policy risk. No source identifies a triggering announcement.
+**Company B / the candidate:** The whole crashed complex, considered as a "buy the dislocation" idea.
+
+**1. Mechanism:** *Unwritable.* The closest honest sentence is "a broad repricing causes these names
+to be cheaper", which names no revenue or cost line and no causal path to one. **Part 1 fails on the
+first clause.**
+**2. Dollar path:** No segment, because no event touched a segment. Not reached.
+**3. Timing window:** Not reached.
+**4. Invalidation:** Not reached.
+
+**Hard filters:** not reached on the thesis parts — but run anyway, because the *reading* is the
+finding: **NVDA −15.03% · MU −29.51% · AMD −28.79% · QCOM −15.38% over five sessions, and all four
+return `priced_in: true` / "LATE — skip per strategy.md section 4".**
+
+**Outcome:** REJECTED at part 1. §4's buy rule is *"news breaks about Company A; you look for Company
+B whose economics improve because of it"* — a sleeve-wide drawdown has no Company A, and treating
+"it fell a lot" as a catalyst is the honest-broker failure in its purest form. ⚠⚠ **AND THE FILTER
+CONSEQUENCE IS NEW, FORWARD-LOOKING, AND BIGGER THAN THE PREVIOUS EIGHT INSTANCES COMBINED: the
+direction-blind `move` defect now blocks the ENTIRE semiconductor complex for the next five sessions
+BECAUSE IT CRASHED. Twelve "LATE" verdicts on twelve declines across five sessions. Until ~11-12,
+any genuine §4 candidate anywhere in semis dies at the hard filter before its thesis is read —
+regardless of merit.** ⚠ **Obeyed anyway: the filter fails safe, over-blocking and never wrongly
+permitting, and a seat must not reason past `priced_in: true` on the grounds that the move was
+negative. The fix is a signed threshold in `scripts/alpaca.py` and is NOT a seat's to install.**
+
+---
+
+### T-2026-11-06-02 — the AI build tier / NVDA ← IREN's delayed Microsoft deliveries, $15B further spend, $18.95B capital commitments — REJECTED (rule (v) on the tier; part 2 on NVDA; rule (iv), second consecutive session)
+**Company A / the news:** IREN disclosed delayed infrastructure deliveries **for Microsoft**, an
+additional **$15B** spending push, a slip of its >$4B annualised revenue run rate from year-end to
+January/February, **$18.95B** of capital commitments at Sept 30 (from $13.81B), and **$5.82B** of
+GPU hardware on balance sheet (nearly 3x the prior quarter). Counterparties: "Nvidia, Microsoft and
+13 others."
+**Company B / the candidate:** (a) whoever supplies the $15B of build; (b) NVDA as the one named
+hardware counterparty; (c) Microsoft's alternative capacity providers, as the delay's beneficiaries.
+
+**1. Mechanism:** Leg (a) is **rule (v)** — the $15B names no recipient; 13 of 15 counterparties are
+explicitly unnamed. Leg (c) needs a second clause to stand up ("the delay frees Microsoft demand
+*and* someone else can absorb it *and* that is disclosed somewhere"), which §4 says is the test it
+fails. Leg (b) is writable: *IREN's purchase of $5.82B of GPUs causes NVDA's data-center revenue to
+rise because IREN is a named direct customer.*
+**2. Dollar path:** **Leg (b) fails here.** $5.82B is a *cumulative balance-sheet* figure, not a
+period sale, against an NVDA data-center line running far above $100B/yr — **well under §4's 10%
+materiality floor**, and the incremental quarter is smaller still. No source quantifies the delay,
+so leg (c) has no dollar path at all.
+**3. Timing window:** Not reached.
+**4. Invalidation:** Not reached.
+
+**Hard filters:** NVDA **−15.03% / `priced_in: true`** — independently LATE. Universe: IREN itself is
+the headline leg and §3-dead on the cap floor as established 11-05.
+
+**Outcome:** REJECTED. Three legs, three independent kills: unnamed recipient (v), sub-10% materiality
+(part 2), and a mechanism needing an "and also" (part 1). ⚠ **Second consecutive session on this
+ticker and the second consecutive rejection — rule (iv): a recurring non-event in a fresh costume is
+not fresh evidence when the kill is structural. Yesterday it was $2.8B of AI-cloud contracts; today
+it is $15B and a delay. The blank where the recipient's name goes is identical.**
+
+---
+
+### T-2026-11-06-03 — the smartphone-silicon tier ← QCOM −9.5% on weak handset chip sales — REJECTED (part 1, an own-results miss is not a transaction; §3 on the only named beneficiary)
+**Company A / the news:** Qualcomm fell ~9.5% after quarterly results showed weaker-than-expected
+smartphone-chip sales.
+**Company B / the candidate:** share gainers in handset application processors / modems.
+
+**1. Mechanism:** The only writable version is *QCOM's handset share loss causes <rival>'s SoC revenue
+to rise because the sockets moved* — **but no source names a rival taking the share, or a socket that
+moved.** The weakness is reported as end-demand, not displacement, so there is no transfer to trace.
+**Part 1 fails for want of a Company B, not for want of a sentence.**
+**2. Dollar path:** The structurally obvious candidates are **MediaTek (Taiwan-listed) and Apple's
+in-house modem**. MediaTek is **§3-dead** (not US-listed). The Apple leg fails part 2 — a modem
+BOM saving is immaterial against ~$400B of revenue — and part 3, since that transition has run for
+years and is nowhere near a two-quarter window.
+**3. Timing window:** Not reached.
+**4. Invalidation:** Not reached.
+
+**Hard filters:** QCOM **−15.38% / `priced_in: true`**; §3 kills the only named beneficiary.
+
+**Outcome:** REJECTED at part 1. **Rule (iii)'s shape:** a company's own results print is not a
+transaction with a counterparty, and a *miss* does not become a §4 event by being large. The share
+that left QCOM has no disclosed destination, and inventing one is exactly what the honest-broker rule
+is for.
+
+---
+
+### T-2026-11-06-04 — the US aerospace rare-earth buyer ← MP Materials' $31.6M SEG+ supply to an unnamed customer — REJECTED (rule (v), counterparty unnamed; part 2 independently)
+**Company A / the news:** MP Materials began supplying **SEG+** to an **unnamed US aerospace
+customer**, generating **$31.6M** of quarterly revenue; Q3 net loss $20.7M (from $41.8M), adjusted
+profit beat.
+**Company B / the candidate:** the aerospace buyer — a first domestic rare-earth supply relationship.
+
+**1. Mechanism:** *Unwritable for want of a subject.* ⚠ **This is rule (v)'s most fillable blank of
+the week and it was recognised as such before any drill query was spent: there are perhaps four
+US-listed aerospace primes it could plausibly be, the temptation to name one is strong, and a
+REDACTION IS NOT A LEAD. Zero drill queries spent.**
+**2. Dollar path:** **Fails independently even if the name arrived.** $31.6M is MP's *revenue*; the
+buyer's *cost* line is at most that, against primes with $40–80B of revenue — **four orders of
+magnitude below §4's 10% floor.** A supply relationship can be strategically important and
+financially immaterial, and §4 tests the second.
+**3. Timing window:** Not reached.
+**4. Invalidation:** Not reached.
+
+**Hard filters:** not reached. MP itself is the headline leg, not a second-order candidate.
+
+**Outcome:** REJECTED on rule (v) and part 2, either sufficient. **The part-2 kill is the useful one**
+— it means this item would still be dead on the session the counterparty is named, so a future seat
+meeting the named version should not re-open it.
+
+---
+
+### T-2026-11-06-05 — sweep: a guidance raise, two defence awards, an unnamed-utility offtake, two financings, three non-qualifying telecom items, and the macro complex — REJECTED (nine items, disposed as one, ZERO drill queries spent)
+**Disposed together because each dies on a standing rule at sight:**
+
+- **IonQ** — FY26 revenue guide raised to **$505–515M**, RPO >2x to **$1.2B**. **Rule (iii)**, an
+  own-results print. Second-order suppliers are **unnamed** (v); and against a $0.5B revenue base no
+  supplier's exposure can clear part 2.
+- **Pegasystems** — **$419M ceiling**, 10-year US Army IDIQ. **US defence program award: fifteenth
+  instance, and the standing finding is that this shape cannot produce a §4 candidate.** Independently:
+  **an IDIQ ceiling is not revenue** (no obligated dollars), and PEGA is the headline leg, not a
+  Company B.
+- **Arcfield** — **$156.5M** Navy follow-on. Defence award **and privately held — §3-dead.**
+- **Uranium Energy (UEC)** — long-term sales, **1.1M lb through 2032**, to **"two US nuclear
+  utilities"**: **(v)** unnamed, **no dollar value**, **§3** on the cap floor, and **2032 is ~24
+  quarters past §4's two** (rule (vi)). Four independent kills.
+- **Sinochem** — **>$12.8B** of procurement agreements. **Non-US party, no named US-listed recipient,
+  no allocation of the figure.** The largest number in the sweep and the emptiest.
+- **Cameco** — **$1B** equity distribution arrangement. **Rule (viii)** shape: capital raised, not
+  revenue committed.
+- **Evertec** — **$300M** revolver. Financing, not a transaction with a counterparty's revenue line.
+- **FirstLight / Comm1 / Ribbon** — a fiber deal for an unnamed hyperscaler; a technology selection
+  with no value and no evidence the buyer is US-listed. **(v) + no dollar figure.**
+- **The macro complex** — October payrolls (consensus +65k after +29k; UR 4.2%, wages 2.9% — *released
+  today, not yet out at this seat*), Williams on inflation, and the disputed December Fed pricing.
+  **No Company A. Rule (iii) on the Fed leg.** ⚠ **Today's payroll print lands at 08:30 ET, between
+  this seat and the next: a genuine event this seat cannot see, and no reason to pre-position.**
+
+**Outcome:** REJECTED, all nine. ⚠ **The honest summary of the whole morning: the one largest market
+event in this repo's 71-session history produced NOT ONE §4-shaped object, and that is not a paradox
+— a −4.4% tape is a repricing of expectations, and §4 only buys a change in somebody's disclosed
+revenue or cost line. The absence is the measurement.**
+
+---
+
 ### 2026-11-05 (07:02 ET) — event survey (funnel, pre-thesis)
 
 Selftest **5/5**, exit 0 (`trading_enabled: true`, LIVE paper, equity **$99,923.72** at pre-flight).

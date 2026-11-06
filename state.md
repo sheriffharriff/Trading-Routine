@@ -10,8 +10,8 @@ The block below is parsed by `scripts/common.py` and gates real behavior
 `key: value` format exactly. Prose goes underneath.
 
 ```
-last_run: 2026-11-05 15:16 ET 4-market-close-journal SELFTEST 5-of-5 EXIT 0. ⚠⚠⚠ FIRED PRE-CLOSE — `clock` 15:16:14 ET, is_open TRUE, next_close 16:00-05:00 — SO NO OFFICIAL CLOSE EXISTED AND NONE WAS WRITTEN, FOURTH CONSECUTIVE SESSION. 2026-11-05 MUST BE BACKFILLED BY THE 11-06 PRE-MARKET SEAT (bars --symbol VOO --days 2 --adjustment all, expect near 676); today's read c 676.075 is a PARTIAL BAR and was NOT stamped anywhere. STEP 2 VACUOUS FOR TWO INDEPENDENT REASONS — zero satellite positions (no highest_close has EVER been stamped in this repo) AND a pre-close firing; FIXING EITHER ALONE CHANGES NOTHING. THE DAY'S ONE FACT IS A RECORD: VOO -4.04% (676.075 vs 11-04 official 704.76), the LARGEST single-session move in EITHER direction in the 70-session window, 2.3x the next-worst (-1.78%, 10-30), one day after the prior record UP session (+1.61%). Equity $96,994.92 INTRADAY, day -$2,808.96 / -2.8145% on 11-04 close-basis $99,803.88, since inception -3.0051%, core unrealized -$3,005.07 / -4.2930% — deepest drawdown since the 2026-09-03 bootstrap. RECORDED NOT ACTED ON: S2 holds core permanently, S5 exempts it, S7 forbids selling it, and this seat has no buy door. ZERO ORDERS, 5 theses 0 accepted 5 rejected, S7 limbo CLEAN (one order ever, terminal). CORRECTION CARRIED: the midday seat's "-6% to the 65% edge" is FALSE — the true distance is -16.84% / VOO $562.51. ClickUp daily summary task 86bcz4anu. Human re-notified: pre-close firing (4-session tally) + direction-blind `move` (8 of 8 on declines) + corpus past 1MB.
-prior_run: 2026-11-05 11:41 ET 3-midday-management SELFTEST 5-of-5 EXIT 0. COLLAPSED TO ONE LINE BY THIS CLOSE SEAT — full text in git at the preceding commit, nothing live discarded; the findings are in the date block below. Market OPEN, ZERO SATELLITE POSITIONS re-derived three sides, so S5.1-5.4 were ABSENT WITH NO OPERAND and the zero exits were MANDATED not judged; Step 2 high-water repair discharged vacuously. ⚠ ONE CLAIM FROM THAT SEAT IS FALSE AND IS REPLACED, NOT CARRIED: it wrote that a further ~-6% in core walks core_pct to the 65% edge. The true distance is -16.84% (VOO $562.51), which the 11-04 close seat had already computed correctly.
+last_run: 2026-11-06 07:03 ET 1-premarket-research SELFTEST 5-of-5 EXIT 0. Market OPEN today 09:30 ET, NOT a holiday (both next_open and next_close carry 2026-11-06). Breaker INACTIVE 0/3, week 0/3, ISO 2026-W45 weekday 5, Monday anchor 2026-11-02 equals week_of, NO ROLLOVER. ZERO ORDERS (this seat has no order door). 5 theses, 0 accepted, 5 rejected (T-2026-11-06-01 to -05). Plan dated 2026-11-06 with ZERO BUY, ZERO SELL, ZERO REBALANCE intents. ✅ DISCHARGED: 2026-11-05's OFFICIAL VOO CLOSE IS BACKFILLED AND THE PARTIAL BAR WAS WRONG BY 2.135 DOLLARS — official c 673.94 (n 4,331, v 170,486, about 2.5x the participation norm) against the 15:16 seat's partial read of 676.075, so the true session was -4.3731 percent from 704.76, NOT the -4.04 percent that seat computed. It remains the largest single-session move in either direction in the window, 2.5x the next-worst. THAT IS OPEN ITEMS (12) AND (15) PRICED IN DOLLARS FOR THE FIRST TIME RATHER THAN DESCRIBED: a partial bar standing in for a close understated the record decline by 8 percent of its own magnitude, and it cost nothing ONLY because the satellite ledger is empty. THE DAY'S EVENT WAS THE TAPE ITSELF AND IT PRODUCED NO §4 OBJECT: S&P -4.4, Nasdaq -5.5, SOX -12 (second-largest on record), all 11 sectors lower, on the Democratic midterm sweep read as data-center policy risk plus an AI-capex reassessment; no source establishes a triggering announcement, and a query asking specifically for §4's structure (named A, named US-listed B, disclosed dollar value) returned ZERO confirmed matches. ⚠⚠⚠ THE ONE NEW FINDING, AND IT IS A PROMOTION FROM NAMES TO A SECTOR: the direction-blind `move` defect now blocks THE ENTIRE SEMICONDUCTOR COMPLEX BECAUSE IT CRASHED — NVDA -15.03, MU -29.51, AMD -28.79, QCOM -15.38, all four returning priced_in true and LATE-skip, bringing the tally to TWELVE LATE verdicts on TWELVE DECLINES across five sessions. Until about 11-12 any genuine §4 candidate in semis dies at the hard filter before its thesis is read. OBEYED ANYWAY, it fails safe. Equity 96,954.32 INTRADAY, core 66,954.32 at 69.06 percent (4.06pp inside the 65 percent edge, -16.84 percent in VOO terms or about 562.51, NOT the -6 percent the 11-05 midday seat wrote), satellite 0, cash 30,000 at 30.94 percent, core unrealised -3,045.67 or -4.351 percent. Ledger reconciliation CLEAN, three sides. ONE SOURCE CONFLICT RECORDED UNRESOLVED: one sweep reported traders pricing over 80 percent odds of a DECEMBER FED HIKE to 4.00-4.25, a second query asked directly said the reporting does not support a hike expectation at all and declined to give a figure; same model, same morning, nothing turns on it, but the first number must not be quoted as fact. Human notified: pre-open routine 2 (fifth EST session) plus the `move` defect's promotion to sector scope.
+prior_run: 2026-11-05 15:16 ET 4-market-close-journal SELFTEST 5-of-5 EXIT 0. COLLAPSED TO ONE LINE BY THIS PRE-MARKET SEAT — full text in git at the preceding commit, nothing live discarded; its findings are in the 11-05 date block below and its ONE open task is DISCHARGED above. FIRED PRE-CLOSE at 15:16 with is_open TRUE, so no official close existed and none was written, FOURTH CONSECUTIVE SESSION; 2026-11-05 is now backfilled. Step 2 was vacuous for two independent reasons, zero satellite positions and a pre-close firing. Equity 96,994.92 INTRADAY. ZERO ORDERS, 5 theses 0 accepted 5 rejected, §7 limbo CLEAN (one order ever, terminal). ClickUp daily summary task 86bcz4anu.
 week_of: 2026-11-02
 new_positions_this_week: 0
 consecutive_closed_losses: 0
@@ -19,9 +19,9 @@ circuit_breaker: INACTIVE
 halt_triggered_at: none
 core_established: true
 core_ticker: VOO
-core_pct: 69.07
+core_pct: 69.06
 satellite_pct: 0.0
-cash_pct: 30.93
+cash_pct: 30.94
 open_thesis_ids: none
 ```
 
@@ -54,6 +54,90 @@ fix must be LENGTH-PRESERVING.**
 ---
 
 ### Live — act on these
+
+- **⚠⚠ 2026-11-06 — DATE BLOCK, OPEN.** `1-premarket` **07:03** (≈57 min early against a nominal
+  08:00, the **fifth** EST session; an OBSERVATION only — `control.md` forbids diagnosing a schedule
+  from a firing time). **Friday, a full session, NOT a holiday** (both `next_open` and `next_close`
+  carry today's date — read off the DATES, not the boolean). **Breaker INACTIVE 0/3**, week **0/3**
+  (ISO **2026-W45**, weekday 5, Monday anchor **2026-11-02** = `week_of`, re-derived with
+  `isocalendar`, **no rollover**). **ZERO ORDERS** (this seat has no order door). **5 theses, 5
+  rejected, 0 accepted** (`T-2026-11-06-01` … `-05`). **Absent-seat ordinal: 62nd.** Plan dated
+  **2026-11-06**, **zero BUY / zero SELL / zero REBALANCE**. Equity **$96,954.32** intraday · core
+  **69.06%** · satellite **0.0%** · cash **30.94%** · core unrealised **−$3,045.67 / −4.351%**.
+
+- **✅ DISCHARGED AND REMOVED, NOT ANNOTATED — THE 2026-11-05 OFFICIAL CLOSE IS IN THE REPO, AND THE
+  PARTIAL BAR WAS WRONG BY $2.135 IN THE DIRECTION THAT MATTERS.** `bars --symbol VOO --days 4
+  --adjustment all` → **2026-11-05 `c` 673.94** (o 703.73 · h 703.90 · l 673.58 · **n 4,331 · v
+  170,486, ≈2.5x the 70-session participation norm**). The 15:16 close seat's **676.075** was a
+  partial read, correctly flagged and stamped nowhere; it also **predicted "near 676", so the
+  prediction was right and the number was still wrong.** True session **−4.3731%** (704.76 → 673.94),
+  not the **−4.04%** that seat computed. Still the largest single-session move in either direction in
+  the window, now **2.5x** the next-worst (−1.78%, 10-30), one day after the record UP session
+  (+1.61%). ⚠⚠ **THIS IS THE FIRST TIME OPEN ITEMS (12) AND (15) HAVE BEEN PRICED RATHER THAN
+  DESCRIBED: a partial bar standing in for a close understated the largest decline in this repo's
+  history BY 8% OF ITS OWN MAGNITUDE, and §5.4 is the rule that would have eaten the error. It cost
+  nothing ONLY because the satellite ledger is empty — which is the same sentence those items have
+  carried for weeks, now with a dollar figure behind it.**
+
+- **⚠⚠⚠ UPDATED 2026-11-06 — THE DIRECTION-BLIND `move` DEFECT IS PROMOTED FROM A LIST OF NAMES TO A
+  WHOLE SECTOR, AND THAT PROMOTION IS THE ONE NEW FINDING OF THIS RUN.** This REPLACES the running
+  tally in the 11-03 item above rather than sitting beside it. After an **SOX −12%** session,
+  `alpaca.py move` — which thresholds **ABSOLUTE** 5-session magnitude — returns `priced_in: true` /
+  *"LATE — skip per strategy.md section 4"* on **NVDA −15.03% · MU −29.51% · AMD −28.79% · QCOM
+  −15.38%**, measured this run. **Tally: TWELVE "LATE" verdicts on TWELVE DECLINES across five
+  sessions** (prior eight: INTC −24.36 · MU −7.77 · SNDK −14.40 · STX −7.87 · WDC −4.96 · ON −7.69 ·
+  IREN −24.70 · NVDA −7.04). ⚠⚠ **THE CONSEQUENCE IS FORWARD-LOOKING AND IS WHAT MAKES THIS WORTH A
+  THIRD NOTIFICATION: until roughly 11-12, ANY genuine §4 candidate anywhere in semiconductors dies
+  at the hard filter before its thesis is read, on a merit it never gets to show. The largest
+  dislocation in this repo's history is therefore the one week the filter is MOST blind.** ⚠ **OBEY
+  IT ANYWAY — it fails safe: it over-blocks and can NEVER wrongly permit, so a seat must not reason
+  past `priced_in: true` on the grounds that the move was negative.** ⚠ **AND NEVER quote such a
+  reading as "the market has already captured this upside" — it has now meant the exact reverse
+  twelve times.** The fix is a signed threshold in `scripts/alpaca.py`: **script-level, NOT a seat's
+  to install.** Reported 11-03, 11-05, and **again 11-06 because the SCOPE changed, not the status.**
+
+- **⚠⚠ NEW 2026-11-06 — TWO PERPLEXITY ANSWERS FROM THE SAME MODEL ON THE SAME MORNING CONTRADICT
+  EACH OTHER ON FED DIRECTION, AND THE CONFLICT IS RECORDED UNRESOLVED RATHER THAN PICKED.** The
+  broad sweep reported traders pricing **">80% probability of a December RATE INCREASE to
+  4.00–4.25%"** (Reuters *Take Five*). A second query, asked the question directly, said the
+  available reporting **does not support a December hike expectation at all**, declined to state any
+  figure, and explicitly named the premise as unsupported. ⚠ **Nothing turns on it — macro has no
+  Company A and produces no §4 candidate either way — but a seat that had quoted the first number as
+  fact would have published an unverified claim about the DIRECTION of US monetary policy, which is
+  the most consequential thing in this corpus that nobody would have checked.** ⚠⚠ **THE GENERAL
+  RULE, which is the part worth keeping: a figure that appears in a BROAD sweep and is contradicted
+  by a TARGETED query is not a disagreement to average — the targeted query saw the question. Audit
+  inherited claims; this is the twenty-seventh catch, and the first where both sides were the agent's
+  own calls minutes apart.**
+
+- **⚠⚠ MEASURED 2026-11-06, AND THE NUMBER IS WORSE THAN THE SEAT THAT RAISED THE ALARM — ITEM 16
+  TAKES ITS SECOND REAL MEASUREMENT AND IT POINTS THE WRONG WAY.** The 11-04 close seat measured
+  **+8,852B in one run** and concluded that collapsing works at the seat level and loses at the
+  corpus level. **This run, counted with `wc -c` against `HEAD` AFTER the write and not claimed from
+  intent: `research_log.md` +13,473B · `positions.md` +3,916B · `plan_today.md` −66B = +17,323B
+  across the three, before `state.md`'s own delta, which is in `git diff --stat` for the reason the
+  banner gives.** ⚠⚠ **SO A SEAT THAT DELIBERATELY WROTE SHORT IN TWO FILES AND SHRANK A THIRD STILL
+  GREW THE CORPUS BY ROUGHLY TWICE WHAT THE SEAT THAT FLAGGED THE PROBLEM DID. The bulk is the
+  `research_log.md` entry, and §8's instruction that rejected theses are the most valuable output of
+  this system is the direct cause: the five rejections this run cost 13.5KB to write honestly.**
+  ⚠⚠⚠ **THE HONEST CONCLUSION, AND IT IS NOT A NEW FIX BUT A CLOSING-OFF OF ONE: THE CONFLICT IS
+  BETWEEN §8 AND ITEM 16, NOT BETWEEN A SEAT AND ITS OWN DISCIPLINE. A seat cannot write §4's four
+  parts, name the test that failed, and shrink the file — the second measurement now says so with a
+  number instead of asserting it. ONLY THE HUMAN CAN CHOOSE: either the monthly rollover extends to
+  `positions.md` and `state.md` (neither has one; `archive/positions/` and `archive/state/` do not
+  exist, while `research_log.md`, `journal.md` and `trade_log.md` all do), or §8's write-everything
+  instruction is scoped. NEITHER IS A SEAT'S TO INVENT, which is why this run reported it and did
+  not do it.** **Related and separately reported in `positions.md`: that file alone carries EIGHTEEN
+  dated `sell_rule_status` digests (2026-10-14 → 2026-11-06, every session in the window), each the
+  identical four-row null on an empty ledger, at ~257KB.**
+
+- **⚠ 2026-11-06 — THE NINETEENTH INSTANCE OF THE SELF-COUNT DEFECT, AND THE FIRST CAUGHT INSIDE THE
+  RUN THAT COMMITTED IT.** This seat drafted "twenty dated digests" into `positions.md` **twice**,
+  from intent, before running `grep -c`. The answer is **eighteen**. Both figures were REPLACED, not
+  left beside their correction. ⚠ **The file's standing lesson — that the only thing which has ever
+  worked is counting AFTER the write — is now evidenced rather than merely repeated: it failed at the
+  draft and worked at the check, in the same run, which is the cleanest demonstration of it on
+  record.**
 
 - **⚠⚠⚠ 2026-11-05 — DATE BLOCK, CLOSED AND COLLAPSED BY THE 15:16 CLOSE SEAT** (the only seat entitled to touch what three earlier seats wrote — a seat cannot fairly collapse a paragraph it has just written). `1-premarket` **07:02** · `2-market-open` **08:37** ⚠⚠ **PRE-OPEN, COULD NOT EXECUTE** · `3-midday` **11:41** (market OPEN, zero exits, benign) · `4-market-close` **15:16** ⚠⚠⚠ **PRE-CLOSE, 44 MIN BEFORE THE BELL — NO OFFICIAL CLOSE EXISTED AND NONE WAS WRITTEN, FOURTH CONSECUTIVE SESSION.** **Thursday, a full session, NOT a holiday** (both `next_open` and `next_close` carried today's date at the pre-market seat — read off the DATES, not the boolean). **Breaker INACTIVE 0/3**, week **0/3** (ISO **2026-W45**, weekday 4, Monday anchor **2026-11-02** = `week_of`, re-derived with `isocalendar` at every seat, **no rollover**). **ZERO ORDERS AT ALL FOUR SEATS.** **5 theses, 5 rejected, 0 accepted** (`T-2026-11-05-01` … `-05`). **Absent-seat ordinals: 58th · 59th · 60th · 61st.** **ClickUp daily summary: task `86bcz4anu`.** ⚠ **Firing times are OBSERVATIONS; nothing diagnosed from a timestamp, per `control.md`'s Note.**
 
