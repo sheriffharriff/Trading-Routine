@@ -40,6 +40,119 @@ anything where the honest-broker rule (§4) did real work>
 
 ## Entries
 
+### 2026-11-06 (Friday)
+
+**Account:** total **$97,199.95 — INTRADAY, NOT A CLOSE** (99.046311231 sh VOO at a live
+**678.39** + $30,000.00 cash, read at **15:16 ET with 44 min of the session left**) | day
+**+$448.68 / +0.4637%** against 11-05's official close-basis equity of **$96,751.27**
+(the broker's `last_equity` **$96,754.24** gives **+$445.71 / +0.4607%** — it marks yesterday
+on 673.97, the bar on 673.94; **$2.97 apart, and the basis is named because a performance
+figure without its convention is not a figure**) | since inception **−$2,800.05 / −2.8000%**
+($100,000.00 opening, 2026-08-06).
+⚠⚠⚠ **SIXTH CONSECUTIVE SESSION THE CLOSE SEAT FIRED ~59 MIN EARLY — AND THE FIRST ON WHICH IT
+DID SOMETHING ABOUT IT.** `clock` at **15:16:25 ET** returned **`is_open: true`**, `next_close`
+**2026-11-06T16:00:00−05:00**, broker-authoritative. Today's `--adjustment all` bar reads
+`c` **678.45** on 2,204 prints — a **PARTIAL BAR**, the last trade so far wearing a close's
+clothes, and **it was not stamped anywhere.** ⚠ **This run then HELD FOR THE BELL and recorded
+the official close in a second commit, rather than leaving 2026-11-06 to be backfilled on
+Monday as 11-02 … 11-05 all were.** See *What I got wrong* — the fix was available for five
+sessions and no seat reached for it.
+
+**Sleeves:** core **69.1276%** | satellite **0.0%** | cash **30.8642%**   (§2 band 65–75%,
+intraday basis). **REBALANCE IS NOT DUE MONDAY.** `core_in_band: true`,
+`rebalance_needed: false`, `rebalance_delta: 840.01` — **a distance readout, not an
+instruction. §2 triggers on the band, never on the delta.** Bounds re-derived from the live
+share count against static $30,000 cash: the floor needs **VOO at $562.51 (−17.08%** from
+678.39), the ceiling **$908.67 (+33.94%)**.
+**Breaker:** INACTIVE (`consecutive_closed_losses` **0** — nothing has ever closed in this
+account, so the streak is untested rather than clean)
+**Week:** 0/3 new positions (ISO **2026-W45**, weekday **5**, Monday anchor **2026-11-02** —
+re-derived with `isocalendar()`, **matched** `week_of`, no rollover performed and none due)
+
+**Traded:** nothing — zero orders at all four of today's seats. §7 limbo **clean**: `orders
+--status all` returns **one order in the account's entire history**, `d177d8f0…`, `filled` and
+terminal since 2026-09-03. Nothing carried overnight.
+**Researched:** 5 theses — **0 accepted, 5 rejected** (`T-2026-11-06-01` … `-05`): the semis
+complex on **part 1** (a repricing is not a transaction, no Company A), the AI build tier on
+**rule (v)** plus **part 2**, the smartphone-silicon tier on **part 1** plus **§3**, the
+rare-earth buyer on **rule (v)** (counterparty unnamed) plus **part 2**, and a nine-item sweep
+disposed as one for producing none of §4's structure.
+**Positions near a sell rule:** **none — no operand.** All four §5 rules are **ABSENT, NOT
+PASSING**; core VOO is §5-exempt and struck from the working list rather than stamped as
+passing. **65th consecutive absent seat.**
+
+**What happened:**
+A quiet recovery session on top of a violent one. VOO ran **+0.66%** (673.94 → 678.39 live)
+against yesterday's **−4.3731%**, clawing back about a seventh of it. The account made
+**+$448.68** doing nothing, because the only thing it holds is the core sleeve and the core
+sleeve is not traded on news.
+
+Every one of the day's four seats produced zero orders, and for four *different* reasons that
+are worth keeping separate: the 07:03 pre-market seat found no candidate that survived §4
+(five theses, five rejects); the 08:37 open seat **could not** have executed because it fired
+53 min before the bell with `is_open: false`; the 11:41 midday seat was the only one that
+*could* have exited and had nothing to exit; and this seat has no order door at all. Only the
+first of those is a research outcome. The other three are structural, and on an empty ledger
+they are invisible in the order count — which is the whole reason this file exists.
+
+This routine's quiet job — stamping the official close into every satellite position's
+`highest_close` so §5.4 has something to trail — had **no operand for the sixth straight
+session**, and for the sixth straight session the honest statement is *"zero marks, nothing to
+record"* rather than *"marks updated"*. Three sides agree on zero satellites (`positions.md`
+block count 0 · `sleeves satellite.count 0` · `positions` one row, core only). But there were
+**two independent reasons** it was vacuous, not one: no position to stamp, **and** no official
+close existing yet to stamp. Fixing either alone changes nothing — and this run fixed the
+second one, which is the half a seat actually controls.
+
+The satellite sleeve sits **0.0% against a 30% target** with $30,000 idle, and nothing blocked
+a buy except the candidates: breaker INACTIVE, week 0 of 3, `control.md` Notes empty. §4 is
+explicit that this is a successful outcome, not a backlog.
+
+**What I got wrong or nearly got wrong:**
+**The big one: I inherited a claim that excused me, and it was wrong.** Five close seats and
+today's plan all record the pre-close firing as *"not fixable from inside this repo — the
+trigger lives outside it and a seat must not change a schedule."* Every clause of that is true
+about the **schedule** and false about **this run's output**. The market closed at 16:00; the
+run had 44 minutes of wall clock and nothing left to do with them. Waiting was always
+available, it was never tried, and the reason it was never tried is that the inherited
+sentence reads like a complete account of the problem. ⚠ **A correct statement about a cause I
+cannot fix is not permission to ship the consequence.** It cost a measured $2.135 yesterday —
+the 11-05 seat stamped nowhere but *computed* −4.04% from a partial bar when the true session
+was −4.3731%, understating the largest decline in this repo's history by 8% of its own
+magnitude. I nearly made the seventh copy of that.
+
+**Second: the band nearly fooled me the same way it fooled the 11-05 midday seat.** Core at
+**69.13%** one day after a −4.37% session *reads* like a sleeve walking toward the 65% edge,
+and that seat wrote "another −6% in core" when the true distance was −16.84%. I felt the same
+pull and did the arithmetic in a script instead of my head: 4.13pp of band is **−17.08% in VOO
+terms, $562.51**. The error has a direction worth naming — it makes a rebalance look near on
+exactly the day a scary tape makes one most tempting to answer early.
+
+**Third, smaller but the same family:** I drafted the day's P&L off the broker's `last_equity`
+without naming the basis. It differs from the bar-close basis by **$2.97** because the broker
+marks 11-05 at 673.97 and the bar at 673.94. Immaterial today; the habit is not, and this
+corpus has a standing item that a performance figure must carry its convention.
+
+**And one I did not resolve, stated rather than dressed up:** item 16 says prose volume is the
+one lever a seat controls, and this run's ClickUp summary is **9.4 KB**. I chose to write
+`positions.md` and `state.md` short rather than add a twentieth long null digest, which is a
+trade, not a solution. The corpus grew again today.
+
+**For the next run:**
+- **2026-11-06's official VOO close IS in the repo** — recorded by this seat after the bell, in
+  the second commit of this run. **Monday's pre-market seat does NOT need to backfill it**, and
+  that breaks a four-session chain. Confirm it rather than assume it.
+- **Week rollover IS due at the next run.** Today is Friday of ISO 2026-W45; the next session
+  is **Monday 2026-11-09**, anchor **2026-11-09**, which differs from `week_of` 2026-11-02.
+  Reset `new_positions_this_week` to 0 and set `week_of: 2026-11-09`. It is already 0, so the
+  reset is a no-op in value and must still be performed in the field.
+- **Routine 5 (weekly review) is the remaining seat of this week** and has not run at the time
+  of writing.
+- The three standing asks for the human are unchanged in substance and are in ClickUp task
+  **`86bczt2fg`**: the DST schedule fix (**one line, now covering both routine 2 and routine
+  4**), the direction-blind `move` filter, and the corpus-size/rollover gap. All three are
+  mirrored in `state.md` carry-forward.
+
 ### 2026-11-05 (Thursday)
 
 **Account:** total **$96,994.92 — INTRADAY, NOT A CLOSE** (99.046311231 sh VOO at a live **676.40**

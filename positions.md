@@ -84,79 +84,24 @@ check that the pull returned the right session. A stored baseline is a *label*, 
 ## Open positions
 
 *(none — no **satellite** positions have been opened yet. Core VOO exists and is deliberately not tracked here, per the top-of-file rules and the fill note further down.)*
-### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-11-06, **DIGEST OPEN — `1-premarket` 07:03.** The three later seats append below; the close seat closes and collapses it. ⚠ **Absent-seat ordinal: 07:03 is the 62nd.** ⚠⚠ **DELIBERATELY WRITTEN SHORT, AND FOR A REASON THIS SEAT WILL NOT PRETEND IS NEW: open item 16 is live, prose volume is the one lever a seat controls, and **EIGHTEEN** dated digests in this file now record the IDENTICAL null on an empty ledger — counted with `grep -c` AFTER the write, because this seat's draft said "twenty" and that was wrong. No collapse ratio is claimed — there is nothing yet to collapse.**)
+### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-11-06, **ONE DIGEST FOR THE DATE, ALL FOUR SEATS:** `1-premarket` **07:03** · `2-market-open` **08:37** ⚠⚠ **PRE-OPEN, COULD NOT EXECUTE** · `3-midday` **11:41** (market OPEN, zero exits, benign) · `4-market-close` **15:16** ⚠⚠⚠ **PRE-CLOSE, 44 MIN BEFORE THE BELL — SIXTH CONSECUTIVE SESSION, AND THE FIRST ON WHICH THE SEAT HELD FOR THE BELL AND RECORDED THE OFFICIAL CLOSE ANYWAY.** ⚠ **CLOSED AND COLLAPSED BY THE CLOSE SEAT, THE ONLY SEAT ENTITLED TO TOUCH WHAT THREE EARLIER SEATS WROTE.** ⚠ **RE-EVALUATED AT EACH SEAT, NOT INHERITED.** Absent-seat ordinals: 07:03 **62nd** · 08:37 **63rd** · 11:41 **64th** · this close **65th**.)
 
-**Zero satellite positions, re-derived at this seat, three sides, no discrepancy.** `positions.md`
-satellite block count **0** · `sleeves` → `satellite.count: 0`, `value: 0`, `pct: 0.0` ·
-`positions` → **one row, core VOO only**, 99.046311231 sh @ `avg_entry_price` **706.74**,
-`cost_basis` **$69,999.989999**, unchanged since the 2026-09-03 fill. Mark **$66,954.32**,
-unrealised **−$3,045.67 / −4.351%**.
+**Zero satellite positions, re-derived at every seat of the date, three sides, no discrepancy at any seat.** `positions.md` satellite block count (`grep -cE '^### [A-Z]'`) = **0** · `sleeves` → `satellite.count: 0`, `value: 0`, `pct: 0.0` · `positions` → **one row, core VOO only**, 99.046311231 sh @ `avg_entry_price` **706.74**, `cost_basis` **$69,999.989999**, **unchanged since the 2026-09-03 fill — only the mark moves** (`current_price` by seat 675.96 → 675.27 → 680.36 → **678.39**).
 
-| §5 rule | Status | Distance to trigger |
+| §5 rule | Status, all four seats | Distance to trigger |
 |---|---|---|
-| 5.1 thesis invalidation | **ABSENT — no operand** | No thesis is held. Not "passing". |
-| 5.2 time stop | **ABSENT — no operand** | No deadline is held. |
-| 5.3 hard stop −7% from entry | **ABSENT — no operand** | No entry price exists to measure from. |
-| 5.4 trailing stop −10% from `highest_close` | **ABSENT — no operand** | **No `highest_close` has EVER been stamped in this repo** (108 runs). |
+| **§5.1** thesis invalidation | **ABSENT — no operand** | No thesis is held (`open_thesis_ids: none`). Not "passing". |
+| **§5.2** time stop | **ABSENT — no operand** | No timing window is running, because no position has one. |
+| **§5.3** hard stop (−7% from entry) | **ABSENT — no operand** | No entry price exists to measure from. |
+| **§5.4** trailing stop (−10% from `highest_close`) | **ABSENT — no operand** | **No `highest_close` has ever been stamped in this file.** Field-form test re-run at this seat: `grep -nE '^\s*-\s*highest_close:'` returns **EXACTLY ONE** line, the template placeholder `0.00`. ⚠ **A bare `grep -c highest_close` returns a moving three-digit count and INVERTS the finding.** The field stands in its **THIRD STATE — ABSENT, CARRYING NO DATE**. |
 
-⚠ **Core VOO is §5-EXEMPT and was struck from the working list, not stamped as passing.** §2 holds it
-permanently, §5 exempts it from all four rules, §7 forbids selling it. Its −4.351% unrealised is a
-mark, not a rule state.
+⚠ **ABSENT IS NOT PASSING, and that wording is the only thing separating four rules with no operand from four rules comfortably satisfied.** ⚠ **Core VOO is STRUCK FROM THE WORKING LIST, not stamped as passing** — §5 exempts it, §2 holds it permanently, §7 forbids selling it. *(For the record, not as a rule check: core sits **−4.0114%** against its 706.74 basis at the close seat's 678.39 mark.)* ⚠⚠ **65th consecutive absent seat: the §5 machinery has still never been executed against a real operand.**
 
-⚠⚠ **THE ONE THING THIS SEAT ADDS TO THIS FILE, AND IT IS A FACT ABOUT THE TAPE RATHER THAN THE
-LEDGER: 2026-11-05's OFFICIAL VOO CLOSE IS `673.94`** (`bars --days 4 --adjustment all`; n 4,331 ·
-v 170,486). The 15:16 close seat read **676.075** off a partial bar, correctly flagged it, and
-stamped it nowhere. **The official print is $2.135 lower — the true session was −4.3731%, not the
-−4.04% that seat computed, and the partial understated the largest single-session decline in this
-repo's history by 8% of its own magnitude.** ⚠ **That is open items (12) and (15) priced in dollars
-for the first time instead of described: a partial bar standing in for a close is not merely
-imprecise, it is wrong by an amount that matters, and §5.4 is the rule that would have eaten the
-error. It cost nothing ONLY because this table has no operand.**
+⚠⚠⚠ **CLOSE NOTE, 15:16 ET — THE ONE NEW THING IN THIS DIGEST, AND IT REPLACES AN INHERITED CLAIM RATHER THAN SITTING BESIDE IT.** Five close seats and today's plan recorded the pre-close firing as *"not fixable from inside this repo."* **That is true of the SCHEDULE and FALSE of a RUN'S OUTPUT:** the bell was 44 minutes away, the run had nothing left to do, and **waiting was always available and was never tried.** This seat held, pulled the official close after the bell, and recorded it in a second commit — so **2026-11-06 does NOT need backfilling on Monday**, breaking a four-session chain (11-02 · 11-03 · 11-04 · 11-05). ⚠ **Step 2 was still vacuous, and for TWO independent reasons that must not be conflated: (1) zero satellite positions, so no `highest_close` to stamp; (2) the firing preceded the close. This run removed (2) only. Fixing either alone changes nothing — the empty sleeve is the sole reason six early firings have cost nothing.** ⚠⚠ **The measured price of (2), from yesterday: the 11-05 seat computed −4.04% off a partial bar `c` 676.075 when the official close was 673.94 — the true session was −4.3731%, understated by 8% of its own magnitude. Stamped nowhere, so it cost nothing; on a non-empty sleeve that number sets a §5.4 trailing stop for the position's whole life, silently, because nothing in the field or the date records the basis.**
 
-⚠ **NOT A SEAT'S TO FIX, RECORDED FOR THE WEEKLY REVIEW AND THE HUMAN:** this file carries **EIGHTEEN
-dated `sell_rule_status` digests (2026-10-14 → 2026-11-06, every session in the window)**, every one of them the same four-row
-null on an empty ledger, and the file is **~253KB**. `research_log.md`, `journal.md` and
-`trade_log.md` all have a monthly rollover into `archive/`; **`positions.md` has none, and
-`archive/positions/` does not exist.** ⚠⚠ **A seat may not invent that scheme mid-run — the standing
-instruction on item 16 is explicit that the two candidate fixes are not a run's to choose — so this
-is reported, not done.** ⚠⚠ **AND THIS SEAT JUST SUPPLIED THE NINETEENTH INSTANCE OF THE
-DEFECT THIS FILE KEEPS RECORDING: both figures above were drafted as "twenty" FROM INTENT, before
-`grep -c` was run, and both were wrong. They are REPLACED, not left beside their correction. The
-only thing that has ever worked is counting after the write — and it worked here, which is the
-first time the lesson has caught its own instance inside the same run that committed it.** The
-distinct findings inside those digests were long ago promoted into
-`state.md`'s carry-forward, which is what makes an index line a safe replacement for them.
+⚠ **BAND ARITHMETIC, DONE IN A SCRIPT AND NOT IN THE SEAT'S HEAD, BECAUSE THE 11-05 MIDDAY SEAT GOT THIS WRONG BY AN ORDER OF MAGNITUDE ON EXACTLY SUCH A DAY.** Core **69.1276%**, `core_in_band` true, `rebalance_needed` false, `rebalance_delta` **840.01** — **a distance readout, not an instruction; §2 triggers on the BAND.** With cash static at $30,000 the floor needs core value $55,714.29 = **VOO $562.51 (−17.08%** from 678.39), the ceiling **$908.67 (+33.94%)**. **NO REBALANCE DUE MONDAY.**
 
-**`2-market-open` 08:37 — re-evaluated here, not inherited; the table above is unchanged because the
-ledger is.** Three sides agree again at this seat: `positions.md` satellite block count **0** ·
-`sleeves` → `satellite.count: 0`, `value: 0`, `pct: 0.0` · `positions` → **one row, core VOO only**.
-Core **99.046311231 sh @ 706.74**, basis **$69,999.99** unchanged since the 2026-09-03 fill; mark
-**$66,886.27**, unrealised **−$3,113.72 / −4.448%** (the premarket seat's −$3,045.67 was an earlier
-mark on the same unchanged position, not a different holding). **Absent-seat ordinal: 63rd.**
-⚠ **ALL FOUR RULES REMAIN ABSENT, NOT PASSING — and this seat records WHY that phrasing earned its
-keep today: it placed no orders, but for a reason that has nothing to do with §5.** The plan was
-**fresh** (`plan_date` = today, staleness gate PASSED) and carried **zero SELL intents**, so §5 had
-no operand for the second independent reason as well. ⚠⚠ **THE BINDING CONSTRAINT WAS THE CLOCK:
-`is_open` FALSE at 08:37, 53 minutes before the bell — the fifth consecutive EST session this seat
-could not place. Had a §5 exit been due today, THIS SEAT COULD NOT HAVE TAKEN IT.** That is the
-sentence the eighteen prior digests could never produce, because an empty ledger hid it: the
-schedule fault is not only a buy-side problem, and §5 exits are the half §5 calls **not optional**.
-Recorded for the weekly review. ⚠ **VOO 11-05 official close `673.94` re-confirmed from `bars` at
-this seat; the `positions` endpoint reports `lastday_price` **673.97**, a 3-cent venue difference
-— immaterial, and noted only so the next seat does not re-open a settled backfill over it.**
-
-**`3-midday` 11:41 — re-evaluated here, not inherited; table unchanged because the ledger is.**
-Three sides agree: `positions.md` satellite blocks **0** · `sleeves` → `satellite.count: 0`,
-`pct: 0.0` · `positions` → **one row, core VOO only** (99.046311231 sh @ 706.74, basis
-**$69,999.99**). Mark **$67,391.11**, unrealised **−$2,608.88 / −3.727%** (intraday **+$636.87 /
-+0.954%** — the same unchanged position at a later mark, not a different holding).
-**Absent-seat ordinal: 64th.** **Market OPEN** (`is_open` true, `next_close` 16:00 today), so
-unlike the 08:37 seat this one *could* have exited and had nothing to exit.
-⚠ **Step 2 high-water repair: NO OPERAND. Zero marks to compare, zero backfills performed** —
-not "all marks current". The §5.4 staleness check this routine exists to run has never had a
-subject in this repo's history.
-⚠ **This seat opened no position and may not: routine 3 is exits-only.** Sleeve **0.0% against a
-30% §2 target**, cash **30.8%** — reported, not acted on.
+⚠ **NOT A SEAT'S TO FIX, CARRIED FOR THE WEEKLY REVIEW:** this file has **no monthly rollover** and `archive/positions/` does not exist, while `research_log.md`, `journal.md` and `trade_log.md` all have one. The digest count below was taken with `grep -c` **AFTER** this write, which is the only method that has ever produced a correct figure here.
 
 ---
 
