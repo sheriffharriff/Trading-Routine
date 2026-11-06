@@ -127,6 +127,24 @@ first time the lesson has caught its own instance inside the same run that commi
 distinct findings inside those digests were long ago promoted into
 `state.md`'s carry-forward, which is what makes an index line a safe replacement for them.
 
+**`2-market-open` 08:37 — re-evaluated here, not inherited; the table above is unchanged because the
+ledger is.** Three sides agree again at this seat: `positions.md` satellite block count **0** ·
+`sleeves` → `satellite.count: 0`, `value: 0`, `pct: 0.0` · `positions` → **one row, core VOO only**.
+Core **99.046311231 sh @ 706.74**, basis **$69,999.99** unchanged since the 2026-09-03 fill; mark
+**$66,886.27**, unrealised **−$3,113.72 / −4.448%** (the premarket seat's −$3,045.67 was an earlier
+mark on the same unchanged position, not a different holding). **Absent-seat ordinal: 63rd.**
+⚠ **ALL FOUR RULES REMAIN ABSENT, NOT PASSING — and this seat records WHY that phrasing earned its
+keep today: it placed no orders, but for a reason that has nothing to do with §5.** The plan was
+**fresh** (`plan_date` = today, staleness gate PASSED) and carried **zero SELL intents**, so §5 had
+no operand for the second independent reason as well. ⚠⚠ **THE BINDING CONSTRAINT WAS THE CLOCK:
+`is_open` FALSE at 08:37, 53 minutes before the bell — the fifth consecutive EST session this seat
+could not place. Had a §5 exit been due today, THIS SEAT COULD NOT HAVE TAKEN IT.** That is the
+sentence the eighteen prior digests could never produce, because an empty ledger hid it: the
+schedule fault is not only a buy-side problem, and §5 exits are the half §5 calls **not optional**.
+Recorded for the weekly review. ⚠ **VOO 11-05 official close `673.94` re-confirmed from `bars` at
+this seat; the `positions` endpoint reports `lastday_price` **673.97**, a 3-cent venue difference
+— immaterial, and noted only so the next seat does not re-open a settled backfill over it.**
+
 ---
 
 ### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-11-05, **ONE DIGEST FOR THE DATE, ALL FOUR SEATS:** `1-premarket` **07:02** · `2-market-open` **08:37** ⚠⚠ **PRE-OPEN, COULD NOT EXECUTE** · `3-midday` **11:41** (market OPEN, zero exits, benign) · `4-market-close` **15:16** ⚠⚠⚠ **PRE-CLOSE, 44 MIN BEFORE THE BELL — NO OFFICIAL CLOSE EXISTED AND NONE WAS WRITTEN, FOURTH CONSECUTIVE SESSION.** ⚠ **CLOSED AND COLLAPSED BY THE CLOSE SEAT, THE ONLY SEAT ENTITLED TO TOUCH WHAT THREE EARLIER SEATS WROTE** — a seat cannot fairly collapse a paragraph it has just written. ⚠ **RE-EVALUATED AT EACH SEAT, NOT INHERITED.** Absent-seat ordinals: 07:02 **58th** · 08:37 **59th** · 11:41 **60th** · this close **61st**. ⚠⚠ **AND THE CLOSE NOTE AT THE FOOT REPLACES A CLAIM THE 11:41 SEAT WROTE INTO THIS FILE — the band distance — rather than sitting beside it.**)
