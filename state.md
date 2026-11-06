@@ -10,7 +10,7 @@ The block below is parsed by `scripts/common.py` and gates real behavior
 `key: value` format exactly. Prose goes underneath.
 
 ```
-last_run: 2026-11-06 15:16 ET 4-market-close-journal SELFTEST 5-of-5 EXIT 0. ⚠⚠⚠ FIRED 44 MIN BEFORE THE BELL (clock is_open TRUE, next_close 16:00 today) — SIXTH CONSECUTIVE PRE-CLOSE FIRING, AND THE FIRST THAT HELD FOR THE BELL INSTEAD OF SHIPPING THE CONSEQUENCE. Finished every close-independent step, COMMITTED AS INSURANCE, then waited past 16:00 and recorded the OFFICIAL 2026-11-06 VOO CLOSE in a second commit — so MONDAY'S PRE-MARKET SEAT NEEDS NO BACKFILL, breaking the 11-02/03/04/05 chain. THE ONE NEW FINDING: five close seats inherited "not fixable from inside this repo", which is TRUE OF THE SCHEDULE AND FALSE OF A RUN'S OUTPUT; a correct statement about a cause a seat cannot fix is NOT permission to ship the consequence. Routine 2 CANNOT self-mitigate the same way (it fires 53 min BEFORE the open; §7 bars a closed market), so the human's ask is UNCHANGED: re-anchor all five triggers to America/New_York. STEP 2 STILL VACUOUS AND FOR TWO INDEPENDENT REASONS — zero satellite positions AND a pre-close firing; this run removed only the second. ZERO OPEN SATELLITE POSITIONS, three sides agree (positions.md blocks 0 · sleeves satellite.count 0 / pct 0.0 · positions one row, core VOO only). Zero high-water marks recorded, zero (as of ...) dates written: NO OPERAND, not "marks updated". §5.1-5.4 ALL ABSENT NOT PASSING, 65th consecutive absent seat. ZERO ORDERS at all four of today's seats; §7 limbo CLEAN, one order in account history (d177d8f0, filled, terminal 2026-09-03). 5 theses 5 rejected 0 accepted (T-2026-11-06-01..05). Breaker INACTIVE 0/3, week 0/3, ISO 2026-W45 weekday 5, Monday anchor 2026-11-02 = week_of, NO ROLLOVER — ⚠ ROLLOVER IS DUE AT THE NEXT RUN (Monday 2026-11-09 anchors W46). ⚠ ALL FIGURES BELOW ARE THE 15:16 INTRADAY MARK AND ARE SUPERSEDED BY THE CLOSE-BASIS LINE THIS RUN'S SECOND COMMIT WRITES IN THEIR PLACE — they are NOT a close. Equity 97,199.95, day +448.68 / +0.4637% against 11-05's official close-basis equity 96,751.27 (broker last_equity 96,754.24 gives +445.71 / +0.4607%; it marks 11-05 at 673.97, the bar at 673.94, 2.97 apart, and the basis is NAMED because a performance figure without its convention is not a figure), since inception -2,800.05 / -2.8000%. Core VOO mark 678.39, 67,192.03 at 69.1276%, core_in_band true, rebalance_delta 840.01, NOT DUE; satellite 0 / count 0; cash 30,000 at 30.8642%. Band floor needs VOO 562.51 (-17.08%), ceiling 908.67 (+33.94%) — computed in a script, NOT in the seat's head, because the 11-05 midday seat got this wrong by an order of magnitude on exactly such a day. Core unrealised -2,807.96 / -4.0114% on 99.046311231 sh @ 706.74 (basis 69,999.99, unchanged since the 2026-09-03 fill; only the mark moves). ClickUp daily summary task 86bczt2fg, official close appended as a comment. Absent-seat ordinal 65th. DID NOT PUSH-NOTIFY: the midday seat already notified today on the same schedule item, and this run's news makes the ask SMALLER rather than more urgent.
+last_run: 2026-11-06 15:16 ET 4-market-close-journal SELFTEST 5-of-5 EXIT 0. ⚠⚠⚠ FIRED 44 MIN BEFORE THE BELL (clock is_open TRUE, next_close 16:00 today) — SIXTH CONSECUTIVE PRE-CLOSE FIRING, AND THE FIRST THAT HELD FOR THE BELL INSTEAD OF SHIPPING THE CONSEQUENCE. Finished every close-independent step, COMMITTED AS INSURANCE, then waited past 16:00 and recorded the OFFICIAL 2026-11-06 VOO CLOSE in a second commit — so MONDAY'S PRE-MARKET SEAT NEEDS NO BACKFILL, breaking the 11-02/03/04/05 chain. THE ONE NEW FINDING: five close seats inherited "not fixable from inside this repo", which is TRUE OF THE SCHEDULE AND FALSE OF A RUN'S OUTPUT; a correct statement about a cause a seat cannot fix is NOT permission to ship the consequence. Routine 2 CANNOT self-mitigate the same way (it fires 53 min BEFORE the open; §7 bars a closed market), so the human's ask is UNCHANGED: re-anchor all five triggers to America/New_York. STEP 2 STILL VACUOUS AND FOR TWO INDEPENDENT REASONS — zero satellite positions AND a pre-close firing; this run removed only the second. ZERO OPEN SATELLITE POSITIONS, three sides agree (positions.md blocks 0 · sleeves satellite.count 0 / pct 0.0 · positions one row, core VOO only). Zero high-water marks recorded, zero (as of ...) dates written: NO OPERAND, not "marks updated". §5.1-5.4 ALL ABSENT NOT PASSING, 65th consecutive absent seat. ZERO ORDERS at all four of today's seats; §7 limbo CLEAN, one order in account history (d177d8f0, filled, terminal 2026-09-03). 5 theses 5 rejected 0 accepted (T-2026-11-06-01..05). Breaker INACTIVE 0/3, week 0/3, ISO 2026-W45 weekday 5, Monday anchor 2026-11-02 = week_of, NO ROLLOVER — ⚠ ROLLOVER IS DUE AT THE NEXT RUN (Monday 2026-11-09 anchors W46). ⚠⚠ ALL FIGURES BELOW ARE CLOSE-BASIS, THE FIRST IN SIX SESSIONS, AND THE BASIS IS NAMED BECAUSE A PERFORMANCE FIGURE WITHOUT ITS CONVENTION IS NOT A FIGURE. OFFICIAL VOO CLOSE 2026-11-06 = 676.02 (bars --days 3 --adjustment all; n 2,855 v 109,274). Equity 96,957.29, day +206.02 / +0.2129% against 11-05's official close-basis equity 96,751.27, since inception -3,042.71 / -3.0427%. Core VOO 66,957.29 at 69.0585%, core_in_band true, rebalance_delta 899.44, NOT DUE; satellite 0 / count 0; cash 30,000 at 30.9415%. Band floor needs VOO 562.51 (-16.79%), ceiling 908.67 (+34.41%) — computed in a SCRIPT, not in the seat's head, because the 11-05 midday seat got this wrong by an order of magnitude on exactly such a day. Core unrealised -3,042.70 / -4.3467% on 99.046311231 sh @ 706.74. ⚠ Broker marks 676.47 post-bell and reports equity 97,001.86, 44.57 ABOVE the official-close computation; the BAR CLOSE is the official print and is what these figures use. Broker/bar gap is a MOVING MIDPOINT, not an offset: 0.02 (11-04), 0.03 (11-05), 0.45 (11-06). ⚠⚠⚠ THE HOLD'S MEASURED PAYOFF: the 15:16 partial bar read 678.45, the close printed 676.02, so the partial was HIGH by 2.430 / +0.3595% and would have reported the session as +0.6692% against a true +0.3086% and the day's P&L at 2.17x its real value. YESTERDAY'S PARTIAL ERRED 2.135 LOW, TODAY'S 2.430 HIGH — OPPOSITE SIGNS, SAME MAGNITUDE, SO THE PARTIAL-BAR ERROR IS NOISE OF ABOUT ±0.35% WITH NO DIRECTION AND CANNOT BE CORRECTED BY AN OFFSET (basis 69,999.99, unchanged since the 2026-09-03 fill; only the mark moves). ClickUp daily summary task 86bczt2fg, official close appended as a comment. Absent-seat ordinal 65th. DID NOT PUSH-NOTIFY, AND THE REASON IS NOT THAT THE NEWS IS SMALL — it is that the MIDDAY SEAT ALREADY PUSHED TODAY on this exact item and nothing is newly broken: this run did its job better than the five before it, the human's ask is UNCHANGED, and it is already in the ClickUp summary. A second banner the same day on an item pushed hours earlier spends attention without adding a decision. ⚠ THE 2.17x MEASUREMENT DOES NOT MAKE THE ASK SMALLER — it makes the pre-close reading WORSE than previously documented, and the next seat should weigh a push if no schedule change has landed by Monday's close.
 prior_run: 2026-11-06 11:41 ET 3-midday-management SELFTEST 5-of-5 EXIT 0. COLLAPSED TO ONE LINE BY THIS CLOSE SEAT — full text in git at the preceding commit, nothing live discarded; its findings are in the 11-06 date block below. MARKET OPEN, so unlike the 08:37 seat it COULD have exited and had NOTHING TO EXIT. Steps 2-5 ALL NO-OPERAND on an empty sleeve: zero marks repaired, zero backfills, zero §5 evaluations, zero §5.1 Perplexity calls. Exits-only seat: opened nothing and may not; satellite 0.0% against a 30% §2 target REPORTED, NOT ACTED ON. PUSH-NOTIFIED THE HUMAN on the DST schedule item — the first time it left the repo by a channel other than the ClickUp summary, sent because five in-repo sessions had moved nothing. Absent-seat ordinal 64th.
 week_of: 2026-11-02
 new_positions_this_week: 0
@@ -19,9 +19,9 @@ circuit_breaker: INACTIVE
 halt_triggered_at: none
 core_established: true
 core_ticker: VOO
-core_pct: 69.13
+core_pct: 69.06
 satellite_pct: 0.0
-cash_pct: 30.86
+cash_pct: 30.94
 open_thesis_ids: none
 ```
 
@@ -89,8 +89,22 @@ fix must be LENGTH-PRESERVING.**
   DOES NOT SHRINK THE ASK FOR ROUTINE 2 — that seat fires 53 min BEFORE the open, so waiting would
   park it for 53 minutes and §7 still forbids trading a closed market; it cannot self-mitigate.**
   ⚠⚠ **A LATER CLOSE SEAT MUST DO THE SAME UNTIL THE TRIGGER MOVES: finish every close-independent
-  step, commit as insurance, then wait for `is_open: false` with `next_open` carrying the NEXT
-  session's date before stamping any mark.**
+  step, commit as insurance, then poll `clock` until `is_open: false` AND `next_open` carries the
+  NEXT session's date** (the only reading that separates post-bell from pre-market — `is_open:
+  false` has three meanings), **settle ~15 min, then pull `bars` and write the close-basis figures
+  in a second commit. Cost: ~60 minutes of wall clock and nothing else.**
+  ⚠⚠⚠ **AND THE HOLD PAID A MEASURED PRICE TODAY, WHICH IS WHAT PROMOTES THIS FROM A TIDINESS
+  ARGUMENT TO A CORRECTNESS ONE. The 15:16 partial bar read `c` 678.45; the official close printed
+  676.02 — the partial was HIGH by $2.430 / +0.3595%, and the figures this seat had ALREADY DRAFTED
+  AND COMMITTED off it reported the session as +0.6692% against a true +0.3086% and the day's P&L
+  at 2.17x its real value.**
+  ⚠⚠⚠ **THE GENERALISABLE PART, AND IT KILLS THE ONLY CONSOLING THEORY: 11-05's PARTIAL ERRED
+  $2.135 LOW AND 11-06's ERRED $2.430 HIGH — TWO MEASUREMENTS, OPPOSITE SIGNS, NEARLY IDENTICAL
+  MAGNITUDE. A partial `c` is therefore NOT a biased estimate of the close that could be corrected
+  by an offset; it is noise of roughly ±0.35% with NO DIRECTION.** ⚠ **For §5.4 that means a
+  `highest_close` stamped from a partial can fire the trailing stop EITHER PREMATURELY OR TOO LATE,
+  and nothing in the field, the date or the bar records which — so there is no safe way to use one
+  and no way to detect that one was used.**
 
 - **⚠⚠⚠ 2026-11-06 — THE SCHEDULE DID NOT FOLLOW THE 2026-11-01 DST FALL-BACK, AND THE FAULT HAS
   NOW RUN A FULL TRADING WEEK ON BOTH CONSEQUENTIAL ROUTINES. THIS ITEM REPLACES THE PER-DAY
@@ -168,7 +182,25 @@ fix must be LENGTH-PRESERVING.**
   instruction is scoped. NEITHER IS A SEAT'S TO INVENT, which is why this run reported it and did
   not do it.** **Related and separately reported in `positions.md`: that file alone carries EIGHTEEN
   dated `sell_rule_status` digests (2026-10-14 → 2026-11-06, every session in the window), each the
-  identical four-row null on an empty ledger, at ~257KB.**
+  identical four-row null on an empty ledger, at ~253KB.**
+  ⚠⚠⚠ **THIRD MEASUREMENT, TAKEN AT THE 2026-11-06 CLOSE SEAT WITH `wc -c` AGAINST THE RUN'S OWN
+  BASE COMMIT AFTER THE WRITE, AND IT IS THE WORST OF THE THREE: `journal.md` +11,101B ·
+  `state.md` +1,135B · `positions.md` −479B · the other three unchanged = +11,757B IN ONE RUN**,
+  against the 11-04 close seat's +8,852B and the 11-06 pre-market seat's +17,323B. ⚠ **THAT SEAT
+  ALSO DECLARED IT WOULD "WRITE SHORT", COLLAPSED A `positions.md` DIGEST FROM 74 LINES TO 19 AND
+  A `state.md` LIVE REGION FROM 150 LINES TO 123 — AND STILL GREW THE CORPUS BY MORE THAN THE SEAT
+  THAT RAISED THE ALARM. The collapse recovered 479B; the journal entry spent 11,101B. The claim
+  "this run wrote short" is FALSE AT CORPUS LEVEL and is withdrawn rather than defended.**
+  ⚠⚠ **BUT THE DISTRIBUTION IS THE NEW AND GENUINELY MITIGATING FACT, AND IT HAS NOT BEEN MEASURED
+  BEFORE: the four files every run must READ IN FULL (`strategy.md` · `control.md` · `state.md` ·
+  `positions.md`) went 537,092B → 537,748B = +656B, because 94% of this run's growth landed in
+  `journal.md` — which is NOT read in full by any routine AND is the one file with a working
+  monthly rollover (`archive/journal/`, current month only).** ⚠ **SO THE BANNER'S HEADLINE METRIC
+  AND THE PER-RUN DELTA MEASURE DIFFERENT THINGS, and a run can be the worst offender on one while
+  being nearly neutral on the other. The per-run figure is the honest cost; the read-in-full figure
+  is the one that lands on every future run's context. BOTH SHOULD BE QUOTED, AND UNTIL NOW ONLY
+  THE FIRST WAS.** ⚠ **This does NOT dissolve the §8-vs-item-16 conflict — `positions.md` and
+  `state.md` still have no rollover and still have nowhere to put growth — it localises it.**
 
 - **⚠ 2026-11-06 — THE NINETEENTH INSTANCE OF THE SELF-COUNT DEFECT, AND THE FIRST CAUGHT INSIDE THE
   RUN THAT COMMITTED IT.** This seat drafted "twenty dated digests" into `positions.md` **twice**,
