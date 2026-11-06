@@ -84,6 +84,50 @@ check that the pull returned the right session. A stored baseline is a *label*, 
 ## Open positions
 
 *(none — no **satellite** positions have been opened yet. Core VOO exists and is deliberately not tracked here, per the top-of-file rules and the fill note further down.)*
+### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-11-06, **DIGEST OPEN — `1-premarket` 07:03.** The three later seats append below; the close seat closes and collapses it. ⚠ **Absent-seat ordinal: 07:03 is the 62nd.** ⚠⚠ **DELIBERATELY WRITTEN SHORT, AND FOR A REASON THIS SEAT WILL NOT PRETEND IS NEW: open item 16 is live, prose volume is the one lever a seat controls, and **EIGHTEEN** dated digests in this file now record the IDENTICAL null on an empty ledger — counted with `grep -c` AFTER the write, because this seat's draft said "twenty" and that was wrong. No collapse ratio is claimed — there is nothing yet to collapse.**)
+
+**Zero satellite positions, re-derived at this seat, three sides, no discrepancy.** `positions.md`
+satellite block count **0** · `sleeves` → `satellite.count: 0`, `value: 0`, `pct: 0.0` ·
+`positions` → **one row, core VOO only**, 99.046311231 sh @ `avg_entry_price` **706.74**,
+`cost_basis` **$69,999.989999**, unchanged since the 2026-09-03 fill. Mark **$66,954.32**,
+unrealised **−$3,045.67 / −4.351%**.
+
+| §5 rule | Status | Distance to trigger |
+|---|---|---|
+| 5.1 thesis invalidation | **ABSENT — no operand** | No thesis is held. Not "passing". |
+| 5.2 time stop | **ABSENT — no operand** | No deadline is held. |
+| 5.3 hard stop −7% from entry | **ABSENT — no operand** | No entry price exists to measure from. |
+| 5.4 trailing stop −10% from `highest_close` | **ABSENT — no operand** | **No `highest_close` has EVER been stamped in this repo** (108 runs). |
+
+⚠ **Core VOO is §5-EXEMPT and was struck from the working list, not stamped as passing.** §2 holds it
+permanently, §5 exempts it from all four rules, §7 forbids selling it. Its −4.351% unrealised is a
+mark, not a rule state.
+
+⚠⚠ **THE ONE THING THIS SEAT ADDS TO THIS FILE, AND IT IS A FACT ABOUT THE TAPE RATHER THAN THE
+LEDGER: 2026-11-05's OFFICIAL VOO CLOSE IS `673.94`** (`bars --days 4 --adjustment all`; n 4,331 ·
+v 170,486). The 15:16 close seat read **676.075** off a partial bar, correctly flagged it, and
+stamped it nowhere. **The official print is $2.135 lower — the true session was −4.3731%, not the
+−4.04% that seat computed, and the partial understated the largest single-session decline in this
+repo's history by 8% of its own magnitude.** ⚠ **That is open items (12) and (15) priced in dollars
+for the first time instead of described: a partial bar standing in for a close is not merely
+imprecise, it is wrong by an amount that matters, and §5.4 is the rule that would have eaten the
+error. It cost nothing ONLY because this table has no operand.**
+
+⚠ **NOT A SEAT'S TO FIX, RECORDED FOR THE WEEKLY REVIEW AND THE HUMAN:** this file carries **EIGHTEEN
+dated `sell_rule_status` digests (2026-10-14 → 2026-11-06, every session in the window)**, every one of them the same four-row
+null on an empty ledger, and the file is **~253KB**. `research_log.md`, `journal.md` and
+`trade_log.md` all have a monthly rollover into `archive/`; **`positions.md` has none, and
+`archive/positions/` does not exist.** ⚠⚠ **A seat may not invent that scheme mid-run — the standing
+instruction on item 16 is explicit that the two candidate fixes are not a run's to choose — so this
+is reported, not done.** ⚠⚠ **AND THIS SEAT JUST SUPPLIED THE NINETEENTH INSTANCE OF THE
+DEFECT THIS FILE KEEPS RECORDING: both figures above were drafted as "twenty" FROM INTENT, before
+`grep -c` was run, and both were wrong. They are REPLACED, not left beside their correction. The
+only thing that has ever worked is counting after the write — and it worked here, which is the
+first time the lesson has caught its own instance inside the same run that committed it.** The
+distinct findings inside those digests were long ago promoted into
+`state.md`'s carry-forward, which is what makes an index line a safe replacement for them.
+
+---
 
 ### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-11-05, **ONE DIGEST FOR THE DATE, ALL FOUR SEATS:** `1-premarket` **07:02** · `2-market-open` **08:37** ⚠⚠ **PRE-OPEN, COULD NOT EXECUTE** · `3-midday` **11:41** (market OPEN, zero exits, benign) · `4-market-close` **15:16** ⚠⚠⚠ **PRE-CLOSE, 44 MIN BEFORE THE BELL — NO OFFICIAL CLOSE EXISTED AND NONE WAS WRITTEN, FOURTH CONSECUTIVE SESSION.** ⚠ **CLOSED AND COLLAPSED BY THE CLOSE SEAT, THE ONLY SEAT ENTITLED TO TOUCH WHAT THREE EARLIER SEATS WROTE** — a seat cannot fairly collapse a paragraph it has just written. ⚠ **RE-EVALUATED AT EACH SEAT, NOT INHERITED.** Absent-seat ordinals: 07:02 **58th** · 08:37 **59th** · 11:41 **60th** · this close **61st**. ⚠⚠ **AND THE CLOSE NOTE AT THE FOOT REPLACES A CLAIM THE 11:41 SEAT WROTE INTO THIS FILE — the band distance — rather than sitting beside it.**)
 
