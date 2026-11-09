@@ -40,6 +40,44 @@ anything where the honest-broker rule (§4) did real work>
 
 ## Entries
 
+### 2026-11-09 (Monday)
+
+**Account:** total **$98,533.11 — close-basis** (99.046311231 sh VOO at the official close **691.93** + $30,000.00 cash) | day **+$1,575.83 / +1.6253%** against 11-06's close-basis **$96,957.29** | since inception **−$1,466.89 / -1.4669%** ($100,000.00 opening, 2026-08-06)
+**Sleeves:** core **69.55%** | satellite **0.0%** | cash **30.45%**   (§2 band 65–75% — **in band**, 4.55pp of headroom to the floor; **no rebalance due tomorrow**)
+**Breaker:** INACTIVE (0/3)
+**Week:** 0/3 new positions
+
+**Traded:** nothing — zero orders at all four seats today
+**Researched:** 5 theses — 0 accepted, 5 rejected (`T-2026-11-09-01` … `-05`)
+**Positions near a sell rule:** none — **no operand.** All four §5 rules are **absent, not passing.** Core VOO is §5-exempt and was struck from the working list, not stamped as passing.
+
+**What happened:**
+
+The best session this account has had, and a losing one. VOO closed **+2.3535%**; the account closed **+1.6253%**. More than half the inception-to-date drawdown came back in one day — **-1.4669%** from −3.0427% on Friday — and none of that was a decision the strategy made. It was the core mark, which is also why the core's unrealised loss and the whole-account drawdown are still the same dollar figure to the cent: the cash leg has never moved, so every dollar this account is down is VOO's price.
+
+The **0.728pp** the account gave away to the benchmark today is the part worth keeping. It is not a mistake, a slippage or a fee — it is arithmetic. Core is 69.55% of the account, so the account captures 69.55% of any index move and the remaining 30.45% sits in cash earning nothing. §1 asks this account to **beat** the S&P over a rolling twelve months. With the satellite sleeve at 0.0% and $30,000 idle, it cannot beat the index on *any* up session — it is structurally short the benchmark by its cash weight, every green day, automatically. Sixty-nine consecutive seats have found nothing worth buying, each one correctly by §4's own standard, and today put a number on what that costs.
+
+This run fired at **15:16 ET against a nominal 16:15** — the seventh consecutive EST session of the UTC-anchored schedule fault, which lands routine 4 **before the bell**. It held: finished every close-independent step, committed as insurance (`a3fa068`), polled `clock` to `is_open: false` with `next_open` carrying **2026-11-10** (the only reading that separates post-bell from pre-market), settled 15 minutes, then recorded the close. Second session running that the hold was used. **2026-11-09 needs no backfill tomorrow.**
+
+**Step 2 — the whole reason this routine exists — had no operand.** There are no satellite positions, so there was no `highest_close` to stamp; the field-form grep returns exactly one line, the template placeholder, carrying no date. Zero `bars` repair calls were spent and the staleness detector was **again** not exercised. After 69 absent seats, the system's only defence against a stale mark silently disabling §5.4 is still untested rather than proven.
+
+**What I got wrong or nearly got wrong:**
+
+**The hold was nearly not worth making, by an argument that was wrong but not stupid.** With zero open positions there was no high-water mark to stamp, so the hold bought nothing *operational* — its entire value was the accuracy of a number in a report. The pull toward "nothing depends on this, ship the partial and go" was real, and it is the argument that will come back on a day when waiting 44 minutes is inconvenient. What defeated it was not discipline but the fact that the 11-06 seat left a **measured** figure instead of an exhortation. Measured, today's partial was **high by $2.170**, and shipping it would have reported the day at **+1.8470%** against a true **+1.6253%**.
+
+**And I nearly filed that measurement as the mild one.** 1.136× the real number looks harmless beside 11-06's 2.17×, and the first version of that line said so. It is the same ~$2.2 error both times — the ratio only shrank because today's move was large. **A big denominator hides this fault rather than shrinking it**, and writing it up as "milder" would have quietly argued for skipping the hold on exactly the volatile days when the close matters most. Three readings now: 11-05 low $2.135, 11-06 high $2.430, today high $2.170. **The sign is a coin flip; the magnitude is stable at ~0.32% of the mark.** So "not a correctable bias" survives, with a corollary — the error's *size* is predictable even though its direction is not.
+
+**The flattering write-up of today was available and I started on it.** Biggest single-day gain in the account's history, drawdown more than halved — all true, all in absolute terms, and §1 is a *relative* objective. An entry that led with the equity recovery and left the benchmark comparison out would not have contained a false sentence. That is what makes it the version to watch for.
+
+**For the next run:**
+
+- ✅ **No backfill due.** The official **VOO close 691.93** (2,880 prints, `--adjustment all`) is committed. Broker `current_price` read **692.14**, **$+0.21** above it — the fourth reading of the broker/bar gap ($0.02 · $0.03 · $0.45 · $0.21), a moving midpoint, not an offset. **Do not "correct" 691.93 toward the broker figure; the bar close is the official print.**
+- **No rebalance due.** Core 69.55%, 4.55pp inside the floor. Band edges remain **VOO 562.51 / 908.67** — a function of the inert cash leg alone, so **do not re-derive them per session**; that is where the 07:02 seat's error came from.
+- **October CPI prints 11-10** and PPI 11-13. Neither is a reason to pre-position, and a macro print has no Company A.
+- The schedule fault will put routine 1 at ~07:0x and routine 2 ~54 min before the bell. **Routine 2 is self-mitigable the same way this seat just was**: if the plan carries any intent, commit as insurance, poll `clock`, then execute.
+
+---
+
 ### 2026-11-06 (Friday)
 
 **Account:** total **$96,957.29 — CLOSE-BASIS, AND THE FIRST CLOSE-BASIS FIGURE IN THIS FILE
