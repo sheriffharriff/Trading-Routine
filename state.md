@@ -10,18 +10,18 @@ The block below is parsed by `scripts/common.py` and gates real behavior
 `key: value` format exactly. Prose goes underneath.
 
 ```
-last_run: 2026-11-06 15:16 ET 4-market-close-journal SELFTEST 5-of-5 EXIT 0. ⚠⚠⚠ FIRED 44 MIN BEFORE THE BELL (clock is_open TRUE, next_close 16:00 today) — SIXTH CONSECUTIVE PRE-CLOSE FIRING, AND THE FIRST THAT HELD FOR THE BELL INSTEAD OF SHIPPING THE CONSEQUENCE. Finished every close-independent step, COMMITTED AS INSURANCE, then waited past 16:00 and recorded the OFFICIAL 2026-11-06 VOO CLOSE in a second commit — so MONDAY'S PRE-MARKET SEAT NEEDS NO BACKFILL, breaking the 11-02/03/04/05 chain. THE ONE NEW FINDING: five close seats inherited "not fixable from inside this repo", which is TRUE OF THE SCHEDULE AND FALSE OF A RUN'S OUTPUT; a correct statement about a cause a seat cannot fix is NOT permission to ship the consequence. Routine 2 CANNOT self-mitigate the same way (it fires 53 min BEFORE the open; §7 bars a closed market), so the human's ask is UNCHANGED: re-anchor all five triggers to America/New_York. STEP 2 STILL VACUOUS AND FOR TWO INDEPENDENT REASONS — zero satellite positions AND a pre-close firing; this run removed only the second. ZERO OPEN SATELLITE POSITIONS, three sides agree (positions.md blocks 0 · sleeves satellite.count 0 / pct 0.0 · positions one row, core VOO only). Zero high-water marks recorded, zero (as of ...) dates written: NO OPERAND, not "marks updated". §5.1-5.4 ALL ABSENT NOT PASSING, 65th consecutive absent seat. ZERO ORDERS at all four of today's seats; §7 limbo CLEAN, one order in account history (d177d8f0, filled, terminal 2026-09-03). 5 theses 5 rejected 0 accepted (T-2026-11-06-01..05). Breaker INACTIVE 0/3, week 0/3, ISO 2026-W45 weekday 5, Monday anchor 2026-11-02 = week_of, NO ROLLOVER — ⚠ ROLLOVER IS DUE AT THE NEXT RUN (Monday 2026-11-09 anchors W46). ⚠⚠ ALL FIGURES BELOW ARE CLOSE-BASIS, THE FIRST IN SIX SESSIONS, AND THE BASIS IS NAMED BECAUSE A PERFORMANCE FIGURE WITHOUT ITS CONVENTION IS NOT A FIGURE. OFFICIAL VOO CLOSE 2026-11-06 = 676.02 (bars --days 3 --adjustment all; n 2,855 v 109,274). Equity 96,957.29, day +206.02 / +0.2129% against 11-05's official close-basis equity 96,751.27, since inception -3,042.71 / -3.0427%. Core VOO 66,957.29 at 69.0585%, core_in_band true, rebalance_delta 899.44, NOT DUE; satellite 0 / count 0; cash 30,000 at 30.9415%. Band floor needs VOO 562.51 (-16.79%), ceiling 908.67 (+34.41%) — computed in a SCRIPT, not in the seat's head, because the 11-05 midday seat got this wrong by an order of magnitude on exactly such a day. Core unrealised -3,042.70 / -4.3467% on 99.046311231 sh @ 706.74. ⚠ Broker marks 676.47 post-bell and reports equity 97,001.86, 44.57 ABOVE the official-close computation; the BAR CLOSE is the official print and is what these figures use. Broker/bar gap is a MOVING MIDPOINT, not an offset: 0.02 (11-04), 0.03 (11-05), 0.45 (11-06). ⚠⚠⚠ THE HOLD'S MEASURED PAYOFF: the 15:16 partial bar read 678.45, the close printed 676.02, so the partial was HIGH by 2.430 / +0.3595% and would have reported the session as +0.6692% against a true +0.3086% and the day's P&L at 2.17x its real value. YESTERDAY'S PARTIAL ERRED 2.135 LOW, TODAY'S 2.430 HIGH — OPPOSITE SIGNS, SAME MAGNITUDE, SO THE PARTIAL-BAR ERROR IS NOISE OF ABOUT ±0.35% WITH NO DIRECTION AND CANNOT BE CORRECTED BY AN OFFSET (basis 69,999.99, unchanged since the 2026-09-03 fill; only the mark moves). ClickUp daily summary task 86bczt2fg, official close appended as a comment. Absent-seat ordinal 65th. DID NOT PUSH-NOTIFY, AND THE REASON IS NOT THAT THE NEWS IS SMALL — it is that the MIDDAY SEAT ALREADY PUSHED TODAY on this exact item and nothing is newly broken: this run did its job better than the five before it, the human's ask is UNCHANGED, and it is already in the ClickUp summary. A second banner the same day on an item pushed hours earlier spends attention without adding a decision. ⚠ THE 2.17x MEASUREMENT DOES NOT MAKE THE ASK SMALLER — it makes the pre-close reading WORSE than previously documented, and the next seat should weigh a push if no schedule change has landed by Monday's close.
-prior_run: 2026-11-06 11:41 ET 3-midday-management SELFTEST 5-of-5 EXIT 0. COLLAPSED TO ONE LINE BY THIS CLOSE SEAT — full text in git at the preceding commit, nothing live discarded; its findings are in the 11-06 date block below. MARKET OPEN, so unlike the 08:37 seat it COULD have exited and had NOTHING TO EXIT. Steps 2-5 ALL NO-OPERAND on an empty sleeve: zero marks repaired, zero backfills, zero §5 evaluations, zero §5.1 Perplexity calls. Exits-only seat: opened nothing and may not; satellite 0.0% against a 30% §2 target REPORTED, NOT ACTED ON. PUSH-NOTIFIED THE HUMAN on the DST schedule item — the first time it left the repo by a channel other than the ClickUp summary, sent because five in-repo sessions had moved nothing. Absent-seat ordinal 64th.
-week_of: 2026-11-02
+last_run: 2026-11-09 07:02 ET 1-premarket-research SELFTEST 5-of-5 EXIT 0. MARKET OPEN TODAY, Monday, a FULL SESSION, NOT A HOLIDAY — both next_open and next_close carry 2026-11-09 (09:30 and 16:00 ET); read off the DATES, not the boolean. FIRED 07:02 ET AGAINST A NOMINAL 08:00, ~58 MIN EARLY, THE SIXTH CONSECUTIVE EST SESSION — AN OBSERVATION, NOT A DIAGNOSIS (control.md's Note). HARMLESS AT THIS SEAT: routine 1 places no orders, so an early firing costs it nothing; the ask is unchanged and remains the human's alone, RE-ANCHOR ALL FIVE TRIGGERS TO America/New_York. ⚠⚠⚠ WEEK ROLLOVER PERFORMED AT THIS SEAT AND THAT IS THE ONE STATE CHANGE OF THE RUN: isocalendar gives ISO 2026-W46 weekday 1, Monday anchor 2026-11-09, which DIFFERS from the inherited week_of 2026-11-02 — so week_of ADVANCES to 2026-11-09 and new_positions_this_week RESETS to 0. RECORDED AS PERFORMED, NOT AS UNNECESSARY: the counter was already 0, but section 6's cap must not depend on the Friday seat having run, and a reset that is skipped because it looks redundant is how a cap stays stuck at its limit. ✅✅ NO BACKFILL WAS DUE, THE FIRST MONDAY IN THIS FAULT'S HISTORY — the 11-06 close seat held past the bell and committed the official VOO close 676.02, so this seat inherited a complete Friday and spent ZERO bars repair calls. Broker lastday_price reads 675.99, 3 cents below it, inside the known MOVING broker/bar midpoint (0.02 on 11-04, 0.03 on 11-05, 0.45 on 11-06); neither number is stamped anywhere. DO NOT correct the committed 676.02 toward the broker figure. LEDGER RECONCILIATION CLEAN, re-derived at this seat and not inherited, three sides agreeing: positions.md satellite block count 0 (grep -cE) · sleeves satellite.count 0 / value 0 / pct 0.0 · positions returns ONE ROW, CORE VOO ONLY. ZERO OPEN SATELLITE POSITIONS. Core VOO 99.046311231 sh at avg_entry 706.74, cost_basis 69,999.99 — UNCHANGED SINCE THE 2026-09-03 FILL; ONLY THE MARK MOVES. ⚠ ALL FIGURES BELOW ARE INTRADAY PRE-MARKET MARKS, NOT CLOSE-BASIS, AND THE BASIS IS NAMED BECAUSE A PERFORMANCE FIGURE WITHOUT ITS CONVENTION IS NOT A FIGURE. Equity 97,368.33 at 07:02 · core VOO 67,368.33 at 69.1892 pct, core_in_band TRUE, rebalance_delta 789.50, NOT DUE · satellite 0 / count 0 · cash 30,000.00 at 30.81 pct. VOO mark 680.17 (lastday 675.99). Core unrealised -2,631.66 / -3.76 pct. BAND THRESHOLDS COMPUTED IN A SCRIPT: 65 pct floor needs VOO 562.51 (-17.30 pct), 75 pct ceiling 908.67 (+33.59 pct). ⚠ THE THRESHOLD IS A FUNCTION OF THE INERT CASH LEG ALONE, t*cash/(1-t) then divided by qty, SO IT DOES NOT MOVE WITH THE MARK AND IS IDENTICAL TO 11-06'S FIGURES — this seat's own first draft re-derived it wrongly as 563.42 / 910.14 from intent before running the script, and those figures were REPLACED, not annotated. There was nothing to re-derive and re-deriving it is what created the error. SECTION 5.1-5.4 ALL ABSENT NOT PASSING, 66th CONSECUTIVE ABSENT SEAT — no operand, not 'rules passing'. Zero section 5.1 Perplexity calls spent because there is no name to check. Zero high-water marks written (highest_close field-form test returns EXACTLY ONE line, positions.md:53, the template placeholder; a bare grep -c returns a moving three-digit count and INVERTS the finding). RESEARCH: FOUR BROAD SWEEPS AND ONE DRILL QUERY. 5 theses, 5 REJECTED, 0 ACCEPTED (T-2026-11-09-01..05). PLAN FOR 2026-11-09 WRITTEN WITH ZERO BUY, ZERO SELL, ZERO REBALANCE INTENTS. NEW POSITIONS WERE PERMITTED AND NOTHING BLOCKED A BUY EXCEPT THE CANDIDATES: breaker INACTIVE 0/3, week 0/3 freshly rolled, satellite 0.0 pct deployed with 30,000 cash, control.md Notes none. ⚠⚠ THREE OF THE FOUR SWEEPS RETURNED AN EXPLICIT NIL — no qualifying named supply agreement, offtake, capacity expansion or purchase commitment by any US-listed company 11-06 to 11-09; an explicit nil on FDA, FTC/DOJ/FCC/EPA, plant closures, strikes and recalls; and the structural sweep, which required ONE SOURCE SENTENCE CARRYING BOTH THE DOLLAR FIGURE AND THE NAME OF THE RECEIVING COMPANY, answered 'No qualifying disclosure was identified.' THE DAY'S BEST CANDIDATE WAS T-2026-11-09-01, COHR, AND IT DIED FOUR WAYS: Coherent's ~20B five-year PhotonLink agreement (disclosed 11-04) is large, dated, genuinely new, carries an exact figure and names a US-listed company — and the named company is the one RECEIVING, the customer withheld. Rule (v) customer unnamed · rule (vii) Coherent expanded its OWN internal indium-phosphide capacity and names no external supplier · PART 3, THE CLEANEST, revenue 'begins ramping in EARLY CALENDAR 2028', ~5 quarters before the ramp STARTS against section 4's two-quarter ceiling · and the only real dollar path is COHR's OWN revenue line, the first-order leg section 4 exists to avoid. ⚠⚠ THIRTEENTH INSTANCE OF THE DIRECTION-BLIND move DEFECT AND THE FIRST ON A NON-SEMICONDUCTOR NAME: move --symbol COHR --sessions 5 returns -8.32 pct (210.28 to 192.79) and verdicts priced_in true / 'LATE - skip'. COHR FELL. THE NEW PART IS THE SCOPE — the twelve prior instances were all semis inside an -12 pct SOX week, so an optical-components name four sessions later says the defect belongs to the SCRIPT, not to that week's tape. THIS SEAT DID NOT LEAN ON THE VERDICT: the thesis was already dead at part 3 and rule (v), so the filter answered the wrong question harmlessly, and a seat with nothing else would have taken the free skip and never noticed. OBEY IT ANYWAY, IT FAILS SAFE. Fix is a SIGNED threshold in scripts/alpaca.py, script-level, NOT a seat's to install. NVDA at THREE appearances in four sessions (11-05 unwind, 11-06 IREN, 11-09 SK Telecom / Rebellions sovereign AI), dead at part 1 then part 2 twice — rule (iv): NVIDIA announces COLLABORATIONS, frameworks without figures. ZERO ORDERS AT THIS SEAT AND NONE WERE PERMITTED TO BE PLACED BY IT (routine 1 never trades). ALERTS: open incidents NONE; alerts.md Open section empty. DID NOT PUSH-NOTIFY, AND THE REASON IS THE OPPOSITE OF 'THE NEWS IS SMALL': nothing is newly broken, the one schedule item is UNCHANGED and already pushed on 11-06, the move defect's thirteenth instance is a widening of a known ask rather than a new one, and a banner on a quiet no-trade Monday spends attention without carrying a decision. ⚠ THE NEXT SEAT TO WEIGH A PUSH SHOULD DO SO IF A BUY INTENT EVER REACHES A PLAN WHILE ROUTINE 2 IS STILL FIRING PRE-OPEN — that is the day the fault stops being free.
+prior_run: 2026-11-06 15:16 ET 4-market-close-journal SELFTEST 5-of-5 EXIT 0. COLLAPSED TO ONE LINE BY THIS PRE-MARKET SEAT — full text in git at the preceding commit, nothing live discarded; its findings are in the 11-06 date block and the pre-close item below. FIRED 44 MIN BEFORE THE BELL, SIXTH CONSECUTIVE PRE-CLOSE FIRING, AND THE FIRST THAT HELD FOR THE BELL INSTEAD OF SHIPPING THE CONSEQUENCE: finished every close-independent step, committed as insurance, then waited past 16:00 and recorded the OFFICIAL 2026-11-06 VOO CLOSE 676.02 in a second commit — WHICH IS WHY THIS MONDAY SEAT NEEDED NO BACKFILL. Its measured finding, inherited and not re-derived: the 15:16 partial bar read 678.45 against a 676.02 close, HIGH by 2.430, and the figures drafted off it reported the day's P&L at 2.17x its real value; 11-05's partial erred 2.135 LOW — opposite signs, near-identical magnitude, so a partial close is noise of about plus or minus 0.35 pct with NO DIRECTION and cannot be corrected by an offset. Equity 96,957.29 close-basis, day +0.2129 pct, 1 position (core only), 0 trades, 5 theses 5 rejected. Absent-seat ordinal 65th.
+week_of: 2026-11-09
 new_positions_this_week: 0
 consecutive_closed_losses: 0
 circuit_breaker: INACTIVE
 halt_triggered_at: none
 core_established: true
 core_ticker: VOO
-core_pct: 69.06
+core_pct: 69.19
 satellite_pct: 0.0
-cash_pct: 30.94
+cash_pct: 30.81
 open_thesis_ids: none
 ```
 
@@ -55,56 +55,107 @@ fix must be LENGTH-PRESERVING.**
 
 ### Live — act on these
 
-- **⚠⚠⚠ 2026-11-06 — DATE BLOCK, CLOSED AND COLLAPSED BY THE 15:16 CLOSE SEAT** (the only seat
-  entitled to touch what three earlier seats wrote). `1-premarket` **07:03** · `2-market-open`
-  **08:37** ⚠⚠ **PRE-OPEN, COULD NOT EXECUTE** · `3-midday` **11:41** (market OPEN, zero exits,
-  benign) · `4-market-close` **15:16** ⚠⚠⚠ **PRE-CLOSE, 44 MIN BEFORE THE BELL — SIXTH CONSECUTIVE
-  SESSION, AND THE FIRST THAT HELD FOR THE BELL AND RECORDED THE OFFICIAL CLOSE ANYWAY.**
-  **Friday, a full session, NOT a holiday** (both `next_open` and `next_close` carried today's date
-  at the pre-market seat — read off the DATES, not the boolean). **Breaker INACTIVE 0/3**, week
-  **0/3** (ISO **2026-W45**, weekday 5, Monday anchor **2026-11-02** = `week_of`, re-derived with
-  `isocalendar` at every seat, **no rollover**). **ZERO ORDERS AT ALL FOUR SEATS.** **5 theses, 5
-  rejected, 0 accepted** (`T-2026-11-06-01` … `-05`). **Absent-seat ordinals: 62nd · 63rd · 64th ·
-  65th.** **ClickUp daily summary: task `86bczt2fg`** (posted preliminary at 15:16 with intraday
-  marks, **official close appended as a comment after the bell**). §7 limbo **CLEAN** — `orders
-  --status all` returns **one order in the account's entire history**, `d177d8f0…`, filled and
-  terminal since 2026-09-03. ⚠ **Firing times are OBSERVATIONS; nothing diagnosed from a timestamp,
-  per `control.md`'s Note.** ✅ **2026-11-05's backfill is DISCHARGED AND REMOVED FROM THIS LIST,
-  NOT ANNOTATED: official VOO close `673.94`** (n 4,331 · v 170,486, ≈2.5x the norm); the 11-05
-  close seat's **676.075** was a partial read, flagged and stamped nowhere, and was **low by
-  $2.135** — true session **−4.3731%**, not the −4.04% that seat computed, i.e. the largest decline
-  in this repo's history understated by **8% of its own magnitude**.
+- **⚠⚠ 2026-11-09 — DATE BLOCK, OPEN. `1-premarket` 07:02** (~58 min early against a nominal 08:00,
+  the sixth EST session; an OBSERVATION, per `control.md`'s Note). **Monday, a full session, NOT a
+  holiday** — both `next_open` and `next_close` carry **2026-11-09**; read off the DATES, not the
+  boolean. ✅ **WEEK ROLLOVER PERFORMED: ISO 2026-W46 weekday 1, Monday anchor 2026-11-09 ≠ inherited
+  `week_of` 2026-11-02 → `week_of` advanced, `new_positions_this_week` reset to 0.** ⚠ **Recorded as
+  PERFORMED, not as unnecessary: it was already 0, but §6's cap must not depend on the Friday seat
+  having run.** **Breaker INACTIVE 0/3**, week **0/3**. **ZERO ORDERS; zero `bars` repair calls.**
+  **5 theses, 5 rejected, 0 accepted** (`T-2026-11-09-01` … `-05`). **Absent-seat ordinal 66th.**
+  ✅ **NO BACKFILL WAS DUE — THE FIRST MONDAY IN THIS FAULT'S HISTORY.** Ledger reconciliation
+  **CLEAN**, three sides, re-derived at this seat rather than inherited.
 
-- **⚠⚠⚠ 2026-11-06 — THE PRE-CLOSE HALF OF THE SCHEDULE FAULT IS SELF-MITIGABLE, AND SIX SEATS
-  INHERITED A SENTENCE THAT SAID OTHERWISE. THIS IS THE ONE NEW FINDING OF THIS RUN.** Five close
-  seats and today's `plan_today.md` recorded the early firing as *"not fixable from inside this
-  repo — the trigger lives outside it and a seat must not change a schedule."* ⚠⚠ **EVERY CLAUSE IS
-  TRUE OF THE SCHEDULE AND FALSE OF A RUN'S OUTPUT.** The bell was 44 minutes away, the run had
-  finished everything that did not depend on a close, and **waiting was always available. It was
-  never tried, because the inherited sentence reads like a complete account of the problem.**
-  ⚠ **THE GENERAL RULE, which is the part worth keeping: a correct statement about a cause a seat
-  cannot fix is NOT permission to ship the consequence.** This seat held, pulled the close after
-  16:00, and committed it — so **2026-11-06 needs NO backfill on Monday**, breaking a four-session
-  chain (11-02 · 11-03 · 11-04 · 11-05). ⚠ **IT IS A WORKAROUND INSIDE ONE RUN, NOT A FIX, AND IT
-  DOES NOT SHRINK THE ASK FOR ROUTINE 2 — that seat fires 53 min BEFORE the open, so waiting would
-  park it for 53 minutes and §7 still forbids trading a closed market; it cannot self-mitigate.**
-  ⚠⚠ **A LATER CLOSE SEAT MUST DO THE SAME UNTIL THE TRIGGER MOVES: finish every close-independent
-  step, commit as insurance, then poll `clock` until `is_open: false` AND `next_open` carries the
-  NEXT session's date** (the only reading that separates post-bell from pre-market — `is_open:
-  false` has three meanings), **settle ~15 min, then pull `bars` and write the close-basis figures
-  in a second commit. Cost: ~60 minutes of wall clock and nothing else.**
-  ⚠⚠⚠ **AND THE HOLD PAID A MEASURED PRICE TODAY, WHICH IS WHAT PROMOTES THIS FROM A TIDINESS
-  ARGUMENT TO A CORRECTNESS ONE. The 15:16 partial bar read `c` 678.45; the official close printed
-  676.02 — the partial was HIGH by $2.430 / +0.3595%, and the figures this seat had ALREADY DRAFTED
-  AND COMMITTED off it reported the session as +0.6692% against a true +0.3086% and the day's P&L
-  at 2.17x its real value.**
-  ⚠⚠⚠ **THE GENERALISABLE PART, AND IT KILLS THE ONLY CONSOLING THEORY: 11-05's PARTIAL ERRED
-  $2.135 LOW AND 11-06's ERRED $2.430 HIGH — TWO MEASUREMENTS, OPPOSITE SIGNS, NEARLY IDENTICAL
-  MAGNITUDE. A partial `c` is therefore NOT a biased estimate of the close that could be corrected
-  by an offset; it is noise of roughly ±0.35% with NO DIRECTION.** ⚠ **For §5.4 that means a
-  `highest_close` stamped from a partial can fire the trailing stop EITHER PREMATURELY OR TOO LATE,
-  and nothing in the field, the date or the bar records which — so there is no safe way to use one
-  and no way to detect that one was used.**
+- **⚠⚠ NEW 2026-11-09 — THE DIRECTION-BLIND `move` DEFECT LEFT SEMICONDUCTORS. THIRTEENTH INSTANCE,
+  AND THE FIRST ON A NON-SEMI NAME.** `move --symbol COHR --sessions 5` → **−8.32%** (210.28 →
+  192.79), `priced_in: true`, *"LATE — skip per strategy.md section 4"*. **COHR FELL**; a source
+  headline reads *"Coherent sinks 16% despite $20B"*. ⚠ **THE NEW PART IS THE SCOPE: the twelve prior
+  instances were all semiconductors inside an −12% SOX week, which could be read as one sector in one
+  unusual week. An optical-components name four sessions later says the defect is a property of the
+  SCRIPT, not of that week's tape.** ⚠⚠ **THIS SEAT DID NOT LEAN ON THE VERDICT AND SAYS SO: the
+  thesis was already dead at part 3 and rule (v), so the filter answered the wrong question
+  harmlessly. A seat with nothing else would have taken the free "skip" and never noticed.**
+  ⚠ **OBEY IT ANYWAY — it fails safe, over-blocking and never wrongly permitting. And NEVER quote
+  such a reading as "the market has captured this upside"; it has now meant the reverse thirteen
+  times.** Fix is a **signed** threshold in `scripts/alpaca.py` — **script-level, NOT a seat's to
+  install.** Human notified 11-03, 11-05, 11-06 and today.
+
+- **⚠⚠ NEW 2026-11-09 — THE FUNNEL'S CLEANEST KILL SHAPE YET: A NAMED COMPANY B WEARING THE HEADLINE,
+  WITH THE PAYER WITHHELD.** `T-2026-11-09-01` — Coherent's **~$20B five-year PhotonLink agreement**
+  (disclosed 11-04 with FQ1-2027 results) is **large, dated, genuinely new, carries an exact dollar
+  figure and names a US-listed company** — and the company it names is **the one RECEIVING**, the
+  customer being disclosed only as *"a major AI/data-center customer."* ⚠ **So there is no Company A
+  to pivot from, only a Company B wearing the headline — and §4 exists to avoid buying the headline.**
+  **It dies four ways, each independent:** rule **(v)**, customer unnamed · rule **(vii)**, Coherent
+  **expanded its OWN internal indium-phosphide capacity** and names no external supplier with or
+  without a figure · **part 3, the cleanest: revenue "begins ramping in EARLY CALENDAR 2028"**, ~5
+  quarters before the ramp *starts*, against §4's two-quarter ceiling · and the only real dollar path
+  is **COHR's own revenue line.** ⚠ **Rule (iii) is a genuine PASS on the agreement and a FAIL on the
+  programme: PhotonLink was announced September 2026 and a PhotonLink LTA with NVIDIA in March 2026;
+  THIS agreement is a new, second anchor customer.** ⚠⚠ **The >$100M March-2027 and $250M/quarter
+  CY2027 figures are TOTAL PhotonLink run-rate "apparently including the previously announced NVIDIA
+  business" — they are NOT this agreement, and quoting them as its near-term revenue is the mistake
+  the disclosure makes available.**
+
+- **⚠ NEW 2026-11-09 — NVDA IS AT THREE APPEARANCES IN FOUR SESSIONS AND RULE (iv) NAMES THE REASON.**
+  11-05 the valuation unwind (part 1) · 11-06 IREN (part 2) · 11-09 the **SK Telecom / Rebellions**
+  sovereign-AI collaboration (part 2 again). ⚠ **The source applied today's kill and volunteered it:
+  the announcement *"does not state contract value, unit volumes, delivery timing, or revenue
+  guidance."*** §3 kills both counterparties independently (**SK Telecom is Korea-listed; Rebellions
+  is a private Korean company**). ⚠⚠ **THE INDUSTRY FACT, which is what rule (iv) is for: NVIDIA
+  announces COLLABORATIONS — frameworks without figures — so expect this issuer again and do NOT
+  spend a drill query asking who supplies an unnamed NVLink-Fusion tier. That is rule (v). ZERO
+  spent today.**
+
+- **⚠ NEW 2026-11-09 — AN INSTANCE, DELIBERATELY NOT PROMOTED TO A RULE.** `T-2026-11-09-03`, The
+  Children's Place Chapter 11 and §363 sale, names its three liquidation consultants — **GA Group,
+  Tiger Group, SB360 Capital — ALL PRIVATE.** ⚠ **That is rule (viii)'s existing private-recipient
+  shape (GEHC/Sofie: the receiving leg cannot be bought at any price), arriving with three named
+  recipients in one disclosure.** ⚠⚠ **AN *ANSWERED* BLANK WITH NO LISTED OCCUPANT IS A CLEANER KILL
+  THAN AN UNNAMED TIER — ask who is NAMED as receiving (11-04), and here the question HAS an answer;
+  it is just unbuyable.** ⚠ **A seat must not promote this to a new standing rule: the list is long
+  enough that a duplicate entry costs more than it teaches.** *(The competitor-share-shift version
+  died at part 1 on an "and also", and the landlord version has the wrong sign.)*
+
+- **⚠ NEW 2026-11-09 — THE COMPUTE-FROM-INTENT DEFECT AGAIN, CAUGHT INSIDE THIS SEAT'S OWN DRAFT.**
+  The §2 band distance was first written as *"≈563.42 / ≈910.14"* from intent, then computed in a
+  script as **562.51 / 908.67**. Both drafted figures were wrong; they were REPLACED in
+  `plan_today.md` and `positions.md`, not left beside their correction. ⚠⚠ **AND THE STRUCTURAL POINT
+  THAT SHOULD STOP THE NEXT SEAT RE-DERIVING IT AT ALL: the threshold is a function of the INERT CASH
+  LEG ALONE — `core_value = t·cash/(1−t)`, then `÷ qty` — so it does NOT move with the mark and is
+  IDENTICAL to 11-06's figures. There was nothing to re-derive, and re-deriving it is what created
+  the error.**
+
+- **⚠⚠ 2026-11-06 — DATE BLOCK, COLLAPSED TO ONE PARAGRAPH BY THE 11-09 PRE-MARKET SEAT** (full
+  text in git at the preceding commit; nothing live discarded). Friday, full session. Seats `07:03` ·
+  `08:37` ⚠ **pre-open** · `11:41` · `15:16` ⚠ **pre-close, and the first that HELD FOR THE BELL and
+  recorded the official close anyway.** Breaker **INACTIVE 0/3**, week **0/3** (ISO 2026-W45,
+  `week_of` 2026-11-02, no rollover). **ZERO ORDERS at all four seats.** **5 theses, 5 rejected**
+  (`T-2026-11-06-01` … `-05`). Absent-seat ordinals **62nd–65th**. ClickUp **`86bczt2fg`**. §7 limbo
+  **CLEAN** (one order in the account's entire history, `d177d8f0…`, terminal 2026-09-03).
+  ✅ **Official VOO close 676.02 committed post-bell, so 2026-11-09 needed NO backfill — the
+  11-02·03·04·05 chain is BROKEN and that item is DISCHARGED.** ✅ **11-05's own backfill stays
+  discharged: official close 673.94, true session −4.3731%, the 15:16 partial having been low by
+  $2.135 — the largest decline in this repo's history understated by 8% of its own magnitude.**
+
+- **⚠⚠ 2026-11-06 — THE PRE-CLOSE HALF OF THE SCHEDULE FAULT IS SELF-MITIGABLE, AND IT WORKED
+  ONCE.** ⚠ **THE GENERAL RULE, which is the part worth keeping: a correct statement about a cause a
+  seat cannot fix is NOT permission to ship the consequence.** Five close seats had inherited *"not
+  fixable from inside this repo"* — true of the SCHEDULE, false of a RUN'S OUTPUT.
+  ⚠⚠ **PROCEDURE A LATER CLOSE SEAT MUST REPEAT UNTIL THE TRIGGER MOVES: finish every
+  close-independent step, COMMIT AS INSURANCE, then poll `clock` until `is_open: false` AND
+  `next_open` carries the NEXT session's date** (the only reading that separates post-bell from
+  pre-market — `is_open: false` has three meanings), **settle ~15 min, pull `bars`, write the
+  close-basis figures in a second commit. Cost: ~60 minutes of wall clock.** ⚠ **It does NOT shrink
+  the ask for routine 2: that seat fires 53 min BEFORE the open and §7 bars a closed market, so it
+  cannot self-mitigate.**
+  ⚠⚠⚠ **WHY THIS IS A CORRECTNESS ARGUMENT AND NOT A TIDINESS ONE — TWO MEASUREMENTS, OPPOSITE
+  SIGNS, NEAR-IDENTICAL MAGNITUDE: 11-05's partial erred $2.135 LOW, 11-06's $2.430 HIGH (678.45
+  partial vs 676.02 official; the figures drafted off it gave the day's P&L at 2.17x its real value).
+  A partial `c` is NOT a biased estimate correctable by an offset; it is noise of ~±0.35% with NO
+  DIRECTION.** ⚠ **For §5.4: a `highest_close` stamped from a partial can fire the trailing stop
+  EITHER PREMATURELY OR TOO LATE, and nothing in the field, the date or the bar records which — so
+  there is no safe way to use one and no way to detect that one was used.**
 
 - **⚠⚠⚠ 2026-11-06 — THE SCHEDULE DID NOT FOLLOW THE 2026-11-01 DST FALL-BACK, AND THE FAULT HAS
   NOW RUN A FULL TRADING WEEK ON BOTH CONSEQUENTIAL ROUTINES. THIS ITEM REPLACES THE PER-DAY

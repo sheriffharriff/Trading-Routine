@@ -52,6 +52,208 @@ single most common way a plausible-sounding connection gets mistaken for an oppo
 
 ## Entries
 
+### 2026-11-09 (07:02 ET) — event survey (funnel, pre-thesis)
+
+Selftest **5/5**, exit 0 (`trading_enabled: true`, LIVE paper, equity **$97,368.33** at pre-flight).
+`clock` 07:02:15 — `is_open: false`, `next_open` **2026-11-09T09:30:00-05:00**, `next_close`
+**2026-11-09T16:00:00-05:00**: both carry today's date, the pre-market full-session signature.
+**NOT a holiday** — read off the DATES, not the boolean. Fired ~58 min early against a nominal
+08:00, the **sixth** EST session running (observation only — `control.md` forbids diagnosing a
+schedule from a firing time).
+
+**✅ WEEK ROLLOVER EXECUTED.** `isocalendar` gives **2026-W46, weekday 1**; Monday anchor
+**2026-11-09** ≠ `week_of` **2026-11-02**, so `week_of` advances and `new_positions_this_week`
+resets to **0** (it was already 0 — the reset is recorded as *performed*, not as *unnecessary*,
+because §6's cap must not depend on the Friday seat having run).
+
+**✅ NO BACKFILL WAS DUE, FOR THE FIRST MONDAY IN THIS FAULT'S HISTORY.** The 11-06 close seat
+held past the bell and committed the official **VOO close 676.02**, so this seat inherited a
+complete Friday. Broker `lastday_price` reads **675.99** — 3¢ below the bar close, inside the
+known moving broker/bar midpoint and requiring nothing.
+
+**Ledger reconciliation CLEAN, re-derived three ways:** `positions.md` satellite block count **0** ·
+`sleeves` `satellite.count 0` / `pct 0.0` · `positions` returns **core VOO only** (99.046311231 sh
+@ 706.74, cost basis $69,999.99 — unchanged since the 2026-09-03 fill; only the mark moves).
+**No disagreement, so no reconciliation work.** Core **$67,368.33 / 69.19%**, `core_in_band: true`,
+`rebalance_delta` **789.50**, **NOT DUE**. Cash **$30,000.00 / 30.81%**.
+
+**FOUR BROAD SWEEPS, AND THREE OF THEM ANSWERED §4's QUESTION IN THE NEGATIVE OUT LOUD.** The
+weekend sweep returned four items (below). The transaction sweep stated there were **"no qualifying
+named supply agreement, offtake contract, capacity expansion, or long-term purchase commitment"** by
+a US-listed company 11-06→11-09. The regulatory/8-K sweep found **one** item (FTAI, a refinancing)
+and an explicit nil return on FDA, FTC/DOJ/FCC/EPA, plant closures, strikes and recalls. The
+structural sweep — which asked for §4's shape directly, requiring **one sentence containing both the
+dollar figure and the name of the receiving company** — returned **"No qualifying disclosure was
+identified."** ⚠ **A Monday after a thin weekend is the funnel's most common shape, and the explicit
+nil returns are worth more than the four items they came with.**
+
+⚠ **ONE DRILL QUERY SPENT ALL RUN, on COHR, and it was spent because that item was the only one in
+four sweeps carrying a real dollar figure beside a named US-listed leg.** It came back with four
+independent kills.
+
+---
+
+### T-2026-11-09-01 — COHR (Coherent) — PhotonLink ~$20B five-year agreement — REJECTED (part 3 ramps in CY2028; rule (v) customer unnamed; rule (vii) internal capacity; and it is the FIRST-ORDER leg)
+**Company A / the news:** Coherent disclosed on **2026-11-04**, with its FQ1-2027 results, an
+approximately **$20 billion, five-year PhotonLink agreement** with a second anchor AI-datacenter
+customer. Management guided total PhotonLink revenue to **>$100M in the March 2027 quarter** and
+**$250M per quarter before the end of CY2027**.
+**Company B / the candidate:** attempted two ways — (a) COHR itself, (b) COHR's external
+indium-phosphide / substrate / laser-component suppliers.
+
+**1. Mechanism (one sentence):** *(b)* "Coherent's $20B PhotonLink award causes [supplier]'s
+compound-semiconductor revenue to rise because Coherent must buy more indium phosphide to fill it."
+⚠ **The source refuses the subject of that sentence: Coherent said it had EXPANDED ITS OWN INTERNAL
+indium-phosphide capacity and secured substrates and critical materials, and NO external supplier,
+foundry or component partner is named, with or without a figure.** Rule **(vii)** — vertical
+integration leaves no external supplier to find — and rule **(v)**, an unnamed supply base.
+**2. Dollar path:** *(b)* does not exist: no segment, no name, no figure. *(a)* is a real dollar
+path and it is **COHR's own revenue line**, i.e. the first-order leg §4 exists to avoid.
+**3. Timing window:** ⚠ **KILLS IT INDEPENDENTLY AND NEEDED NO SECOND THOUGHT. Revenue from this
+agreement "is expected to begin ramping in EARLY CALENDAR 2028"** — ~5 quarters before the ramp
+*starts*, against §4's **two-quarter** ceiling. The >$100M March-2027 and $250M/quarter CY2027
+figures are **total PhotonLink run-rate, apparently including the previously announced NVIDIA
+business**, not this agreement.
+**4. Invalidation:** not written — three parts failed first.
+
+**Hard filters:**
+- **Priced-in (§4): `move --sessions 5` returns `move_pct` −8.32% (210.28 → 192.79), `priced_in:
+  true`, "LATE — skip".** ⚠⚠ **THIRTEENTH INSTANCE OF THE DIRECTION-BLIND `move` DEFECT, and the
+  first on a non-semiconductor name: COHR FELL 8.32% and one source headline reads "Coherent sinks
+  16% despite $20B". The script thresholds ABSOLUTE five-session magnitude, so it calls a decline
+  "LATE".** ⚠ **THIS VERDICT IS NOT LOAD-BEARING HERE AND IS NOT BEING LEANED ON — the thesis was
+  already dead at part 3 and rule (v). Recorded because the defect's instance count is the evidence
+  the human needs, and because a seat that had nothing else would have taken the free "skip" and
+  never noticed the filter had answered the wrong question.**
+- Rule (iii): **a genuine PASS on the agreement, a FAIL on the programme.** PhotonLink itself was
+  announced **September 2026** and a PhotonLink long-term agreement with **NVIDIA** in **March
+  2026**; this agreement is a *new, second* anchor customer as of 11-04 and is not a re-announcement.
+  ⚠ **Applied to the figure the mechanism runs on, per the 10-15 rule, and the figure is new.**
+- Correlation (§4): **no operand** — zero open satellite positions, so no `driver` to collide with.
+- Universe (§3): COHR is US-listed, market cap well above $10B. **Not reached** — not the binding test.
+
+**Outcome:** REJECTED. ⚠ **The best-evidenced candidate in four sweeps and it dies four times over.
+The instructive part is the shape: a disclosure that is large, dated, genuinely new, carries an exact
+dollar figure, and names a US-listed company — and the named company is the one RECEIVING, with the
+payer withheld. There is no Company A to pivot from, only a Company B wearing the headline.**
+
+---
+
+### T-2026-11-09-02 — the sovereign-AI infrastructure tier ← NVIDIA / SK Telecom / Rebellions collaboration — REJECTED (part 2, the source states no value, volume or timing exists; §3 on both counterparties; rule (iv) on NVDA)
+**Company A / the news:** NVIDIA announced on **2026-11-09** a sovereign-AI collaboration with
+**SK Telecom** and **Rebellions**, supported by South Korea's Ministry of Science and ICT, to build
+Korean-model AI infrastructure using **NVLink Fusion**.
+**Company B / the candidate:** sought among US-listed suppliers of NVLink-Fusion-adjacent
+interconnect, networking and rack infrastructure.
+
+**1. Mechanism (one sentence):** would require naming a US-listed company that receives an order
+because of this collaboration. **No such company is named anywhere in the announcement.**
+**2. Dollar path:** ⚠ **THE SOURCE APPLIED THE KILL AND VOLUNTEERED IT: "does not state contract
+value, unit volumes, delivery timing, or revenue guidance, so commercial impact cannot be quantified
+from the available evidence."** No figure of any kind exists, so there is nothing to allocate even to
+a guessed recipient.
+**3. Timing window:** not reachable — sovereign-AI buildouts are rule **(vi)** shaped (multi-year,
+government-supported, undated), but part 2 ended it first.
+**4. Invalidation:** not written.
+
+**Hard filters:** not run — §3 kills both counterparties before a filter is needed (**SK Telecom is
+Korea-listed; Rebellions is a private Korean company**), and the only buyable leg, NVDA, is the
+**first-order** announcer. ⚠ **Rule (iv): NVDA's THIRD arrival in this funnel in four sessions
+(11-05 unwind · 11-06 IREN · today) and it has died at a different rung each time — part 1, then
+part 2, now part 2 again. A ticker that keeps arriving and keeps dying is telling you about its
+industry's disclosure practice: NVIDIA announces COLLABORATIONS, which are frameworks without
+figures.** ⚠ **The tempting move was a drill query asking who supplies NVLink Fusion racks. That is
+asking the funnel to fill in an unnamed tier — rule (v) — and it was declined. ZERO drill queries
+spent.**
+
+**Outcome:** REJECTED on part 2, by the source's own sentence.
+
+---
+
+### T-2026-11-09-03 — the children's-apparel and liquidation complex ← The Children's Place Chapter 11 and §363 sale — REJECTED (every named recipient is PRIVATE; the only other story is a reader-supplied share shift; §3 kills PLCE)
+**Company A / the news:** The Children's Place filed **Chapter 11** in New Jersey on **2026-11-09**
+and said it intends to sell substantially all assets under **§363**, bids due **December 9**,
+court-supervised sale expected by end-December. It entered an inventory-sales consulting agreement
+with **GA Group, Tiger Group and SB360 Capital Partners**.
+**Company B / the candidate:** attempted three ways — the named consultants, competing
+children's-apparel retailers, and the landlords.
+
+**1. Mechanism (one sentence):** the consultants' version is the only one with a *named* recipient,
+and it fails on §3 rather than on logic. The competitor version needs *"a liquidating competitor
+frees shelf space — and also [retailer] captures it rather than the off-price channel or the
+private-label aisle"*: an **"and also"**, so part 1 refuses it. The landlord version has the **wrong
+sign** — a REIT losing a tenant is a cost, not a tailwind.
+**2. Dollar path:** ⚠ **GA Group, Tiger Group and SB360 Capital Partners are ALL PRIVATE. The money
+in this transaction moves to parties that cannot be bought at any price** — rule (viii)'s
+GEHC/Sofie shape (consideration paid out to a private seller), arriving here as *three* named
+private recipients at once. No competitor is named as receiving anything, and no figure is attached
+to any of them.
+**3. Timing window:** the sale completes end-December, inside two quarters — ⚠ **the one part this
+candidate passes, which is exactly why it is worth an entry rather than a line in the sweep.**
+**4. Invalidation:** not written — parts 1 and 2 failed.
+
+**Hard filters:** §3 kills **PLCE** itself (microcap, far below the $10B floor) and kills all three
+consultants (unlisted). **ZERO drill queries spent.**
+
+**Outcome:** REJECTED. ⚠ **ASK WHO IS NAMED AS RECEIVING, NOT WHO MUST ARITHMETICALLY BE RECEIVING
+(11-04). Here the question has an answer — three firms, named in the filing — and the answer is
+unbuyable. An ANSWERED blank with no listed occupant is a cleaner kill than an unnamed tier, and it
+is NOT a new shape: it is the private-recipient entry under rule (viii), with the novelty only that
+a bankruptcy produces three of them in one disclosure.**
+
+---
+
+### T-2026-11-09-04 — the macro / policy complex (October payrolls · the December hike repricing · the midterm read-across) — REJECTED (no Company A; the standing government-action object; rule (iii) on the revisions)
+**Company A / the news:** October payrolls **+165,000** against expectations of ~**65,000**;
+unemployment **4.1%**; wages **+0.4% m/m, +3.1% y/y**; August–September revised up a combined
+**+84,000**; CME pricing implying roughly a **75% probability of a December Fed rate hike**; October
+CPI due **11-10** and PPI **11-13**. A commentary source added that Democratic control of Congress
+raised expectations of regulatory scrutiny of AI and data-center development.
+**Company B / the candidate:** none nameable.
+
+**1. Mechanism:** refused. ⚠ **A GOVERNMENT ACTION IS NOT A COMPANY A, and a market-implied
+probability that MOVED is its most seductive costume — it reads like an event with a date. One
+party, no transaction, no named recipient.** The AI-scrutiny leg is weaker still: the source itself
+marks it as **the article's interpretation, not a reported agency action** — a third party remarking
+on a condition.
+**2–4:** not written.
+**Rule (iii):** the **+84,000 revision is to AUGUST AND SEPTEMBER data** — a restatement of months
+already reported, not new economic news, which fails rule (iii) independently of everything above.
+⚠ **The ~75% December-hike figure is recorded as a REPORTED MARKET PRICE and is NOT being treated as
+established** — the 11-06 seat logged two contradictory answers from this same model on this same
+question four days ago, so a single uncorroborated probability is quoted with its provenance or not
+at all.
+
+**Outcome:** REJECTED. **ZERO drill queries spent — the answer was already written in the standing
+rules and re-deriving it would have been the expense, not the discipline.**
+
+---
+
+### T-2026-11-09-05 — sweep: six own-results guidance prints, one refinancing, one Canadian merger — REJECTED (eight items, disposed as one, ZERO drill queries spent)
+**Guidance raises, all dated 2026-11-09, all FIRST-ORDER prints naming no second party — part 1 ends
+every one of them before rule (iii) matters:** **PCTY** FY revenue to a $1.92B midpoint from its own
+$1.89B · **CNH** FY2026 adj. EPS to $0.44–0.48 from its own $0.41–0.46 · **PFE** 2026 revenue +$1.5B
+to $62–64B · **INSM** BRINSUPRI to $1.35–1.40B and ARIKAYCE to $460–470M · **CTEV** a preliminary
+2027 revenue expectation of $1.1B · **CL** 2026 net-sales growth of 4–5%.
+⚠⚠ **THE INSTRUCTIVE PAIR, AND IT IS THE 09-29 IOVA/AAR PAIR ARRIVING AGAIN FROM ONE QUERY: PCTY and
+CNH are CLEAN rule (iii) PASSES — the source carries each company's OWN prior figure — and PFE, INSM,
+CTEV and CL are rule (iii) FAILS, with the new range present and the prior one absent. All six die
+anyway, at part 1, for want of a Company B. A clean pass on one filter is not progress toward a
+trade, and the six-way split is the cheapest available demonstration of it.**
+**FTAI Aviation** — $1.0B of 7.125% senior notes due 2034 issued 11-06 (8-K filed 11-09), proceeds
+to repay the revolver and redeem $500.0M of 5.50% notes due 2028. ⚠ **Rule (viii): money paid IN as
+financing and OUT as debt redemption, on the filer's own balance sheet. The opposite sign from
+revenue, twice, and no second party.**
+**Strathcona Resources / Greenfire Resources** — definitive agreement, Alberta plan of arrangement,
+disclosed 11-08; Greenfire Q3 production 27,166 bbl/d, roughly double the prior quarter. ⚠ **§3:
+both are Canadian-listed, so neither is buyable at any price. Merger arbitrage is not in §4
+independently, and the production jump is attributed to the Connacher acquisition and an
+operatorship assumption — i.e. to prior transactions, which is rule (iii).**
+
+**Outcome:** all REJECTED. **ZERO drill queries spent beyond the four broad sweeps.**
+
+---
+
 ### 2026-11-06 (07:03 ET) — event survey (funnel, pre-thesis)
 
 Selftest **5/5**, exit 0 (`trading_enabled: true`, LIVE paper, equity **$96,930.54** at pre-flight).
