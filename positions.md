@@ -84,6 +84,29 @@ check that the pull returned the right session. A stored baseline is a *label*, 
 ## Open positions
 
 *(none — no **satellite** positions have been opened yet. Core VOO exists and is deliberately not tracked here, per the top-of-file rules and the fill note further down.)*
+### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-11-09, **DIGEST OPEN — `1-premarket` 07:02.** The three later seats append below; the close seat closes and collapses it. ⚠ **Absent-seat ordinal: 07:02 is the 66th.** ⚠ **DELIBERATELY SHORT. The corpus item is live and prose volume is the one lever a seat controls; no collapse ratio is claimed because there is nothing yet to collapse.**)
+
+**Zero satellite positions, re-derived at this seat, three sides, no discrepancy.** `grep -cE '^### [A-Z]'` = **0** · `sleeves` → `satellite.count: 0`, `value: 0`, `pct: 0.0` · `positions` → **one row, core VOO only**, 99.046311231 sh @ `avg_entry_price` **706.74**, `cost_basis` **$69,999.989999** — unchanged since the 2026-09-03 fill; only the mark moves (`current_price` **680.17**, `lastday_price` **675.99**).
+
+| §5 rule | Status | Distance to trigger |
+|---|---|---|
+| **§5.1** thesis invalidation | **ABSENT — no operand** | No thesis is held (`open_thesis_ids: none`). Not "passing". **Zero §5.1 Perplexity calls spent — there is no name to check.** |
+| **§5.2** time stop | **ABSENT — no operand** | No timing window is running, because no position has one. |
+| **§5.3** hard stop (−7% from entry) | **ABSENT — no operand** | No entry price exists to measure from. |
+| **§5.4** trailing stop (−10% from `highest_close`) | **ABSENT — no operand** | Field-form test re-run at this seat: `grep -nE '^\s*-\s*highest_close:'` returns **EXACTLY ONE** line — `positions.md:53`, the template placeholder `0.00`. ⚠ **A bare `grep -c highest_close` returns a moving three-digit count and INVERTS the finding.** Third state: **ABSENT, CARRYING NO DATE.** |
+
+⚠ **ABSENT IS NOT PASSING** — that wording is the only thing separating four rules with no operand from four rules comfortably satisfied. ⚠ **Core VOO is STRUCK FROM THE WORKING LIST, not stamped as passing** (§5 exempts it, §2 holds it permanently, §7 forbids selling it). *For the record, not as a rule check: core sits **−3.76% / −$2,631.66** against its 706.74 basis at 680.17.* ⚠⚠ **66th consecutive absent seat; the §5 machinery has still never run against a real operand.**
+
+✅ **NO BACKFILL WAS DUE, THE FIRST MONDAY IN THIS FAULT'S HISTORY.** The 11-06 close seat held past the bell and committed the official **VOO close 676.02**, so this seat inherited a complete Friday and spent **zero** `bars` calls repairing one. Broker `lastday_price` **675.99** sits 3¢ below it — inside the known **moving** broker/bar midpoint ($0.02 · $0.03 · $0.45 on 11-04/05/06), and **neither number is stamped anywhere.**
+
+⚠ **BAND ARITHMETIC, COMPUTED IN A SCRIPT.** Core **69.1892%**, `core_in_band` true, `rebalance_needed` false, `rebalance_delta` **789.50** — a distance readout, not an instruction; §2 triggers on the **BAND**. With cash static at $30,000 the floor needs core value $55,714.29 = **VOO 562.51 (−17.30%** from 680.17), the ceiling **908.67 (+33.59%)**. ⚠⚠ **THE THRESHOLD IS A FUNCTION OF THE INERT CASH LEG ALONE (`t·cash/(1−t) ÷ qty`) AND THEREFORE DOES NOT MOVE WITH THE MARK — identical to 11-06's figures. This seat's own first draft of the line re-derived them wrongly (563.42 / 910.14) before running the script; the figures above REPLACE them.** **NO REBALANCE DUE.**
+
+✅ **WEEK ROLLOVER PERFORMED AT THIS SEAT:** ISO **2026-W46** weekday 1, Monday anchor **2026-11-09** ≠ inherited `week_of` **2026-11-02** → `week_of` advanced, `new_positions_this_week` reset to **0**. ⚠ **Recorded as performed, not as unnecessary.**
+
+⚠ **NOT A SEAT'S TO FIX, CARRIED FOR THE WEEKLY REVIEW:** this file still has **no monthly rollover** and `archive/positions/` does not exist, while `research_log.md`, `journal.md` and `trade_log.md` all have one.
+
+---
+
 ### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-11-06, **ONE DIGEST FOR THE DATE, ALL FOUR SEATS:** `1-premarket` **07:03** · `2-market-open` **08:37** ⚠⚠ **PRE-OPEN, COULD NOT EXECUTE** · `3-midday` **11:41** (market OPEN, zero exits, benign) · `4-market-close` **15:16** ⚠⚠⚠ **PRE-CLOSE, 44 MIN BEFORE THE BELL — SIXTH CONSECUTIVE SESSION, AND THE FIRST ON WHICH THE SEAT HELD FOR THE BELL AND RECORDED THE OFFICIAL CLOSE ANYWAY.** ⚠ **CLOSED AND COLLAPSED BY THE CLOSE SEAT, THE ONLY SEAT ENTITLED TO TOUCH WHAT THREE EARLIER SEATS WROTE.** ⚠ **RE-EVALUATED AT EACH SEAT, NOT INHERITED.** Absent-seat ordinals: 07:03 **62nd** · 08:37 **63rd** · 11:41 **64th** · this close **65th**.)
 
 **Zero satellite positions, re-derived at every seat of the date, three sides, no discrepancy at any seat.** `positions.md` satellite block count (`grep -cE '^### [A-Z]'`) = **0** · `sleeves` → `satellite.count: 0`, `value: 0`, `pct: 0.0` · `positions` → **one row, core VOO only**, 99.046311231 sh @ `avg_entry_price` **706.74**, `cost_basis` **$69,999.989999**, **unchanged since the 2026-09-03 fill — only the mark moves** (`current_price` by seat 675.96 → 675.27 → 680.36 → **676.47 at the post-bell read**; official close **676.02**).
