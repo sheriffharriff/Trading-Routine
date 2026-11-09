@@ -10,8 +10,8 @@ The block below is parsed by `scripts/common.py` and gates real behavior
 `key: value` format exactly. Prose goes underneath.
 
 ```
-last_run: 2026-11-09 08:36 ET 2-market-open-execution SELFTEST 5-of-5 EXIT 0. ⚠⚠⚠ ZERO ORDERS AND NONE COULD HAVE BEEN PLACED: clock at 08:36:26 ET returns is_open FALSE with next_open 2026-11-09T09:30:00-05:00 — THE ONLY SEAT WITH AN ORDER DOOR FIRED 54 MINUTES BEFORE THE BELL. Section 7 forbids trading a closed market, so PLACING NOTHING IS CORRECT AND IS NOT A FAILURE OF THIS SEAT. NOT A HOLIDAY AND NOT A NEW FAULT: both next_open and next_close carry 2026-11-09 (09:30 / 16:00 ET), the full-session signature — read off the DATES, not the boolean, because FALSE has three meanings. SIXTH CONSECUTIVE EST SESSION IN THIS CONDITION FOR ROUTINE 2 (08:47 11-02 · 08:36 11-03 · 08:35 11-04 · 08:37 11-05 · 08:37 11-06 · 08:36 today) — six for six is_open false, six for six placing nothing. Firing times are OBSERVATIONS per control.md's Note; the diagnosis rests on the stored 13:35:00 UTC schedule plus the 2026-11-01 DST fall-back, which are properties of the TRIGGER. The ask is unchanged and the human's alone: RE-ANCHOR ALL FIVE TRIGGERS TO America/New_York. ✅ STALENESS GATE PASSED, NOT BYPASSED: plan_today.md plan_date 2026-11-09 EQUALS today's ET date, so the plan was FRESH and its intents were executable in principle — what blocked execution was the closed market, a different gate, and the two must not be conflated in the record. WEEK ROLLOVER: NO ACTION DUE, RE-DERIVED AT THIS SEAT AND NOT INHERITED — isocalendar gives ISO 2026-W46 weekday 1, Monday anchor 2026-11-09, which MATCHES the inherited week_of 2026-11-09 (the 07:02 seat rolled it); new_positions_this_week stays 0. STEP 3 SKIPPED, core_established TRUE since the 2026-09-03 bootstrap; that path never runs again. STEP 4 ZERO SELLS — NO OPERAND, NOT 'RULES PASSING': section 5.1-5.4 are ABSENT, 67th consecutive absent seat, and zero section 5.1 news calls were spent because there is no name to check. STEP 5 ZERO BUY INTENTS TO REVALIDATE, so ZERO move calls were spent and the direction-blind move defect was not exercised at this seat. STEP 6 ZERO BUYS. STEP 7 NO REBALANCE: core 69.25 pct, core_in_band TRUE, rebalance_needed FALSE. LEDGER RECONCILIATION CLEAN, re-derived here, three sides agreeing: positions.md satellite heading count 0 (grep -cE on the '### TICKER — T-' field form) · sleeves satellite.count 0 / value 0 / pct 0.0 · positions returns ONE ROW, CORE VOO ONLY. Core VOO 99.046311231 sh at avg_entry 706.74, cost_basis 69,999.99 — UNCHANGED SINCE THE FILL; ONLY THE MARK MOVES. ⚠ ALL FIGURES HERE ARE 08:36 PRE-MARKET MARKS, NOT CLOSE-BASIS, AND THE BASIS IS NAMED BECAUSE A PERFORMANCE FIGURE WITHOUT ITS CONVENTION IS NOT A FIGURE. Equity 97,565.43 · core VOO 67,565.43 at 69.25 pct, rebalance_delta 730.37, NOT DUE · satellite 0 / count 0 · cash 30,000.00 at 30.75 pct. VOO mark 682.16 (lastday 675.99). Core unrealised -2,434.56 / -3.478 pct. BAND THRESHOLDS NOT RE-DERIVED AT THIS SEAT, DELIBERATELY: they are a function of the INERT CASH LEG ALONE and are unchanged at VOO 562.51 / 908.67; the 07:02 seat's own error came from re-deriving them. ⚠⚠ ONE NEW FINDING, AND IT CORRECTS AN INHERITED CLAIM RATHER THAN SITTING BESIDE IT: plan_today.md states the schedule fault 'does not help routine 2 … holding does not change is_open.' THE SECOND HALF IS FALSE — holding past 09:30 is EXACTLY what changes is_open, and the 11-06 close seat already PROVED a seat can hold ~60 minutes of wall clock and commit twice. SO ROUTINE 2 IS SELF-MITIGABLE BY THE SAME PROCEDURE: finish every closed-market-safe step, COMMIT AS INSURANCE, poll clock until is_open TRUE, then execute the plan's intents and commit again. ⚠ NOT EXERCISED TODAY AND THAT IS WHY IT IS RECORDED RATHER THAN DEMONSTRATED: the plan carried zero buy, zero sell and zero rebalance intents, so holding 54 minutes would have produced byte-identical output at a real cost in wall clock. THE NEXT OPEN SEAT THAT INHERITS A PLAN WITH ANY INTENT MUST HOLD FOR THE BELL INSTEAD OF LOGGING A SKIP. ALERTS: open incidents NONE; alerts.md Open section empty; no alert posted by this seat — a fresh plan plus a closed market is neither a stale plan nor a selftest abort, and inventing a key for it would break the four-key dedupe contract. DID NOT PUSH-NOTIFY: nothing is newly broken, the schedule item is UNCHANGED and was pushed on 11-06, the plan was empty so the fault's realised cost today is again EXACTLY ZERO, and the one new finding REDUCES rather than raises the urgency of the human's ask by removing the silent-miss risk from the next seat. ⚠ THE TRIGGER FOR A PUSH IS STILL THE ONE THE 07:02 SEAT NAMED AND IT IS NOW NARROWER: push on the day an intent reaches a plan AND the open seat fails to hold for the bell.
-prior_run: 2026-11-09 07:02 ET 1-premarket-research SELFTEST 5-of-5 EXIT 0. COLLAPSED TO ONE LINE BY THIS OPEN SEAT — full text in git at the preceding commit, nothing live discarded; its findings are in the 11-09 date block above. Fired ~58 min early against a nominal 08:00. ITS ONE STATE CHANGE WAS THE WEEK ROLLOVER: week_of 2026-11-02 → 2026-11-09, new_positions_this_week reset to 0, recorded as PERFORMED rather than unnecessary. Four broad Perplexity sweeps and one drill query; 5 theses, 5 REJECTED, 0 accepted (T-2026-11-09-01..05), three of four sweeps returning an EXPLICIT NIL; plan for 2026-11-09 written with ZERO buy, ZERO sell, ZERO rebalance intents, and new positions were PERMITTED throughout — nothing blocked a buy except the candidates. Best candidate T-2026-11-09-01 COHR died four independent ways. Thirteenth instance of the direction-blind move defect and the first on a non-semiconductor name. No backfill was due, the first Monday in the fault's history. Absent-seat ordinal 66th. (The 2026-11-06 15:16 close seat previously held this slot; its text is in git and its findings in the 11-06 date block.)
+last_run: 2026-11-09 11:40 ET 3-midday-management SELFTEST 5-of-5 EXIT 0. MARKET OPEN - clock 11:40:57 ET returns is_open TRUE, next_close 2026-11-09T16:00:00-05:00, so for once a seat in this record had a live session to work in. ⚠⚠ NOTHING TO MANAGE, AND THAT IS THE WHOLE RUN: ZERO OPEN SATELLITE POSITIONS, so sections 5.1-5.4 have NO OPERAND - 68th consecutive absent seat. ABSENT IS NOT PASSING; that wording is the only thing separating four rules with nothing to measure from four rules comfortably satisfied. ROUTINE 3 IS EXITS-ONLY AND MAY NOT OPEN A POSITION, so an empty ledger leaves it with NO LEGAL ACTION AT ALL - per the routine's own Step 1 it notes, commits and exits WITHOUT going looking for something to do. Nothing was manufactured to fill the run. STEP 2 HIGH-WATER REPAIR NOT DUE, AND NOT-DUE IS NOT PASSED: field-form test re-run, grep -nE on '^\s*-\s*highest_close:' returns EXACTLY ONE line (positions.md:53, the template placeholder 0.00, carrying NO date), so ZERO bars calls were spent and THE STALENESS DETECTOR WAS NEVER EXERCISED. ⚠ TODAY IS THEREFORE NOT EVIDENCE THAT THE DETECTOR WORKS - this routine is the system's only defence against a stale mark silently disabling 5.4, and that defence remains UNTESTED rather than proven. STEP 3 ZERO sell-rule evaluations and ZERO section 5.1 Perplexity news calls - there is no name to check. STEP 4 ZERO exits, ZERO orders of any kind, so no streak field moved. STEP 5 NO positions to re-status. CORE VOO IS EXEMPT (section 5) AND WAS STRUCK FROM THE WORKING LIST BEFORE EVALUATION, NOT AFTER AND NOT STAMPED AS PASSING. ⚠⚠ SCHEDULE FAULT OBSERVED AT THIS SEAT AND HARMLESS HERE, WHICH IS A FINDING RATHER THAN A REASSURANCE: fired 11:40 ET against a nominal 12:30, ~50 min early - the same UTC-anchored DST signature as routines 1 and 2 (nominal minus 60, plus dispatch latency). THE DIFFERENCE THAT MATTERS: routine 3's ENTIRE displacement window, 11:30-12:30 ET, lies INSIDE the 09:30-16:00 session, so unlike routine 2 (fires before the bell, cannot execute) and routine 4 (fires before the close, writes partial bars) THIS ROUTINE LOSES NOTHING TO THE FAULT. It does NOT shrink the human's ask - RE-ANCHOR ALL FIVE TRIGGERS TO America/New_York - it narrows which routines the ask is URGENT for, namely 2 and 4. Firing times are OBSERVATIONS per control.md's Note. WEEK ROLLOVER NO ACTION DUE, re-derived here and NOT inherited: isocalendar gives ISO 2026-W46 weekday 1, Monday anchor 2026-11-09, MATCHING the inherited week_of 2026-11-09; new_positions_this_week stays 0. LEDGER RECONCILIATION CLEAN, three sides re-derived at this seat: positions.md satellite heading count 0 (grep -cE on the '### TICKER - T-' field form) · sleeves satellite.count 0 / value 0 / pct 0.0 · positions returns ONE ROW, CORE VOO ONLY. ⚠ ALL FIGURES HERE ARE 11:40 INTRADAY MARKS, NOT CLOSE-BASIS, AND THE BASIS IS NAMED BECAUSE A PERFORMANCE FIGURE WITHOUT ITS CONVENTION IS NOT A FIGURE. Equity 98,280.55 · core VOO 68,280.55 at 69.48 pct, core_in_band TRUE, rebalance_delta 515.84 - NOT DUE, and NOT THIS SEAT'S DOOR IN ANY CASE since section 2 rebalances at the market-open run · satellite 0 / count 0 · cash 30,000.00 at 30.52 pct. VOO mark 689.38 (lastday 675.99, +1.981 pct on the day). Core unrealised -1,719.44 / -2.456 pct, improved from -2,434.56 / -3.478 pct at the 08:36 seat ON THE MARK ALONE - qty 99.046311231 and cost_basis 69,999.99 UNCHANGED SINCE THE 2026-09-03 FILL. BAND THRESHOLDS NOT RE-DERIVED, DELIBERATELY, per the standing item: they are a function of the INERT CASH LEG ALONE and remain VOO 562.51 / 908.67. BREAKER INACTIVE 0/3, week 0/3, open_thesis_ids none, section 7 limbo CLEAN (one order in the account's entire history, d177d8f0..., terminal 2026-09-03). ALERTS: open incidents NONE, alerts.md Open section empty, NO alert posted by this seat - an empty ledger is not one of the four dedupe keys and inventing one would break the contract. DID NOT PUSH-NOTIFY: nothing executed, nothing FAILED to execute, and nothing is newly broken. The schedule item is UNCHANGED and already with the human since 11-03, and today's finding REDUCES its scope rather than raising it. ⚠ THE TRIGGER FOR A PUSH FROM THIS SEAT, STATED SO THE NEXT MIDDAY SEAT DOES NOT HAVE TO DECIDE IT COLD: a stop that SHOULD have fired and did not (including any dry_run exit intent), an order left non-terminal, a high-water mark found stale, or a selftest abort.
+prior_run: 2026-11-09 08:36 ET 2-market-open-execution SELFTEST 5-of-5 EXIT 0. COLLAPSED TO ONE LINE BY THIS MIDDAY SEAT - full text in git at the preceding commit, nothing live discarded; its findings are in the 11-09 date block below. Fired 54 MINUTES BEFORE THE BELL (clock 08:36:26 ET is_open FALSE, next_open 2026-11-09T09:30:00-05:00) - the SIXTH consecutive EST session in that condition for routine 2, six for six placing nothing, and PLACING NOTHING WAS CORRECT per section 7. Not a holiday: both next_open and next_close carried 2026-11-09, the full-session signature. Staleness gate PASSED not bypassed (plan_date 2026-11-09 = today ET), and the plan carried ZERO buy / sell / rebalance intents, so the fault's realised cost was AGAIN EXACTLY ZERO. Its one new finding, which CORRECTED an inherited claim rather than sitting beside it: ROUTINE 2 IS SELF-MITIGABLE - holding past 09:30 is exactly what changes is_open, so the next open seat inheriting a plan with ANY intent must commit as insurance, poll clock, then execute. Absent-seat ordinal 67th. (The 07:02 1-premarket seat previously held this slot: week rollover 2026-11-02 -> 2026-11-09 PERFORMED, 5 theses 5 rejected (T-2026-11-09-01..05), 13th instance of the direction-blind move defect and the first on a non-semi name, no backfill due; its text is in git and its findings are in the 11-09 date block.)
 week_of: 2026-11-09
 new_positions_this_week: 0
 consecutive_closed_losses: 0
@@ -19,9 +19,9 @@ circuit_breaker: INACTIVE
 halt_triggered_at: none
 core_established: true
 core_ticker: VOO
-core_pct: 69.25
+core_pct: 69.48
 satellite_pct: 0.0
-cash_pct: 30.75
+cash_pct: 30.52
 open_thesis_ids: none
 ```
 
@@ -55,29 +55,56 @@ fix must be LENGTH-PRESERVING.**
 
 ### Live — act on these
 
-- **⚠⚠ 2026-11-09 — DATE BLOCK, OPEN. `1-premarket` 07:02** (~58 min early against a nominal 08:00,
-  the sixth EST session; an OBSERVATION, per `control.md`'s Note). **Monday, a full session, NOT a
-  holiday** — both `next_open` and `next_close` carry **2026-11-09**; read off the DATES, not the
-  boolean. ✅ **WEEK ROLLOVER PERFORMED: ISO 2026-W46 weekday 1, Monday anchor 2026-11-09 ≠ inherited
-  `week_of` 2026-11-02 → `week_of` advanced, `new_positions_this_week` reset to 0.** ⚠ **Recorded as
-  PERFORMED, not as unnecessary: it was already 0, but §6's cap must not depend on the Friday seat
-  having run.** **Breaker INACTIVE 0/3**, week **0/3**. **ZERO ORDERS; zero `bars` repair calls.**
-  **5 theses, 5 rejected, 0 accepted** (`T-2026-11-09-01` … `-05`). **Absent-seat ordinal 66th.**
-  ✅ **NO BACKFILL WAS DUE — THE FIRST MONDAY IN THIS FAULT'S HISTORY.** Ledger reconciliation
-  **CLEAN**, three sides, re-derived at this seat rather than inherited.
-- **⚠⚠⚠ 2026-11-09 — DATE BLOCK CONTINUES. `2-market-open-execution` 08:36, AND IT FIRED 54
-  MINUTES BEFORE THE BELL.** `clock` 08:36:26 ET: `is_open: false`, `next_open` **2026-11-09T09:30:00-05:00**.
-  ⚠ **§7 forbids trading a closed market, so PLACING NOTHING IS CORRECT — not a failure of this
-  seat.** **Sixth consecutive EST session in that condition for routine 2** (08:47 · 08:36 · 08:35 ·
-  08:37 · 08:37 · 08:36) — **six for six `is_open: false`, six for six placing nothing.**
-  ✅ **STALENESS GATE PASSED, NOT BYPASSED: `plan_date` 2026-11-09 = today ET, so the plan was FRESH and its
-  intents were executable in principle.** ⚠⚠ **The two gates must not be conflated in the record: a
-  FRESH plan blocked by a CLOSED MARKET is a different failure from a STALE plan, and only the stale one carries
-  an alert key.** Week rollover **NO ACTION DUE**, re-derived here (ISO 2026-W46 wd 1, anchor 2026-11-09 =
-  inherited `week_of`). **Breaker INACTIVE 0/3**, week **0/3**. Step 3 skipped (`core_established: true`).
-  **ZERO sells (no operand) · ZERO buy intents to revalidate, so ZERO `move` calls · ZERO buys · NO
-  rebalance** (core **69.25%**, in band, `rebalance_delta` 730.37). Ledger reconciliation **CLEAN**, three sides,
-  re-derived. Equity **$97,565.43** at an 08:36 **pre-market mark, not close-basis**. **Absent-seat ordinal 67th.**
+- **⚠⚠ 2026-11-09 — DATE BLOCK, OPEN. COLLAPSED TO ONE BULLET BY THE `3-midday` 11:40 SEAT**
+  (two bullets for the 07:02 and 08:36 seats folded here; full text in git at the preceding commit,
+  nothing live discarded). **Monday, a FULL SESSION, NOT a holiday** — `next_open` and `next_close` both
+  carried **2026-11-09**; read off the DATES, not the boolean, because `is_open: false` has three meanings.
+  **Breaker INACTIVE 0/3**, week **0/3** throughout. ✅ **WEEK ROLLOVER PERFORMED AT 07:02** (`week_of`
+  2026-11-02 → **2026-11-09**, ISO 2026-W46 wd 1, `new_positions_this_week` reset to 0) and **re-derived
+  as NO-ACTION at both later seats** — recorded as performed, not as unnecessary, because §6's cap must
+  not depend on the Friday seat having run. • **`1-premarket` 07:02** (~58 min early vs a nominal 08:00):
+  four broad Perplexity sweeps + one drill, **5 theses, 5 REJECTED** (`T-2026-11-09-01` … `-05`), three
+  sweeps returning an EXPLICIT NIL; plan for 2026-11-09 written with **ZERO intents**, and new positions
+  were **PERMITTED throughout — nothing blocked a buy except the candidates.** ✅ **No backfill was due,
+  the first Monday in that fault's history**, because the 11-06 close seat held for the bell and committed
+  the official **VOO close 676.02**. • **`2-market-open` 08:36, 54 MIN BEFORE THE BELL** — `is_open: false`,
+  **sixth consecutive EST session in that condition, six for six placing nothing.** ⚠ **§7 forbids trading
+  a closed market, so PLACING NOTHING IS CORRECT and is not a failure of that seat.** ✅ **Staleness gate
+  PASSED, not bypassed** (`plan_date` = today ET): **a FRESH plan blocked by a CLOSED MARKET is a different
+  failure from a STALE plan, and only the stale one carries an alert key.** • **Ledger reconciliation CLEAN
+  at all three seats, three sides, re-derived at each rather than inherited.** **Absent-seat ordinals 66th ·
+  67th · 68th.** **ZERO ORDERS at every seat; zero `bars` repair calls all day.**
+
+- **⚠⚠ NEW 2026-11-09 — DATE BLOCK CONTINUES. `3-midday-management` 11:40, AND IT IS THE FIRST SEAT TODAY
+  THAT FOUND THE MARKET OPEN.** `clock` 11:40:57 ET: **`is_open: true`**, `next_close` 2026-11-09T16:00.
+  **ZERO EXITS — §5.1–5.4 have NO OPERAND, 68th consecutive absent seat.** ⚠ **Routine 3 is EXITS-ONLY and
+  may not open a position, so an empty ledger leaves it with NO LEGAL ACTION AT ALL; the note-and-commit is
+  the correct output and nothing was manufactured to fill the run.** Equity **$98,280.55** at an 11:40
+  **intraday mark, not close-basis**; core **69.48%** in band, `rebalance_delta` 515.84 — **not due, and not
+  this seat's door in any case: §2 rebalances at the market-open run.** Core unrealised **−$1,719.44 /
+  −2.456%**, improved from −$2,434.56 / −3.478% at 08:36 **on the mark alone.** **Zero §5.1 Perplexity
+  calls, zero `bars` calls, zero orders.**
+
+- **⚠⚠ NEW 2026-11-09 — THE HIGH-WATER STALENESS DETECTOR WAS *NOT DUE*, AND *NOT-DUE* IS NOT *PASSED*.**
+  Field-form test re-run at the midday seat: `grep -nE '^\s*-\s*highest_close:'` returns **EXACTLY ONE**
+  line — `positions.md:53`, the template placeholder `0.00`, **carrying no date.** So **zero `bars` calls
+  were spent and the detector was never exercised.** ⚠⚠ **THE POINT, WHICH IS WORTH MORE THAN THE CLEAN
+  RESULT: routine 3 is the system's ONLY defence against a stale `highest_close` silently disabling §5.4 —
+  the failure mode where every check passes, every number is present, and the trailing stop simply never
+  fires — and after 68 absent seats that defence has STILL never run against a real operand. It is
+  UNTESTED, not proven.** ⚠ **The first midday seat to inherit a real position must treat its own
+  detector as unproven code and check the `(as of ...)` date by hand against the last trading day.**
+
+- **⚠⚠ NEW 2026-11-09 — THE SCHEDULE FAULT IS BENIGN FOR ROUTINE 3 *BY CONSTRUCTION*, NOT BY LUCK, AND
+  THAT NARROWS THE HUMAN'S ASK RATHER THAN SHRINKING IT.** The midday seat fired **11:40 ET against a
+  nominal 12:30**, ~50 min early — the same UTC-anchored DST signature as routines 1 and 2 (**nominal
+  − 60 min, plus dispatch latency**). ⚠⚠ **The whole displacement window, 11:30–12:30 ET, lies INSIDE the
+  09:30–16:00 session**, so routine 3 cannot be pushed outside market hours by this fault at all — whereas
+  **routine 2 lands before the bell (cannot execute) and routine 4 before the close (writes partial bars).**
+  ⚠ **CONSEQUENCE FOR TRIAGE: the ask — RE-ANCHOR ALL FIVE TRIGGERS TO `America/New_York` — is UNCHANGED,
+  but its urgency is concentrated in routines 2 and 4. Do not let routine 3's six benign observations
+  (11-02 12:18 · 11-03 11:42 · 11-04 11:41 · 11-05 11:41 · 11-06 11:41 · today 11:40) be quoted as evidence
+  that the fault is mild.**
 
 - **⚠⚠ NEW 2026-11-09 — ROUTINE 2 IS SELF-MITIGABLE AFTER ALL. THIS CORRECTS AN INHERITED CLAIM
   RATHER THAN SITTING BESIDE IT.** `plan_today.md` says the fault *"does not help routine 2 … holding does
