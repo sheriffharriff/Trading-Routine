@@ -84,7 +84,7 @@ check that the pull returned the right session. A stored baseline is a *label*, 
 ## Open positions
 
 *(none — no **satellite** positions have been opened yet. Core VOO exists and is deliberately not tracked here, per the top-of-file rules and the fill note further down.)*
-### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-11-09, **DIGEST OPEN — `1-premarket` 07:02.** The three later seats append below; the close seat closes and collapses it. ⚠ **Absent-seat ordinal: 07:02 is the 66th.** ⚠ **DELIBERATELY SHORT. The corpus item is live and prose volume is the one lever a seat controls; no collapse ratio is claimed because there is nothing yet to collapse.**)
+### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-11-09, **DIGEST OPEN — `1-premarket` 07:02 · `3-midday` 11:40 (market OPEN, zero exits, benign).** ⚠ **`2-market-open` 08:36 LEFT NO LINE IN THIS DIGEST** — stated as a fact, not a fault: it fired pre-open, had no order door and recorded its clean reconciliation in `state.md` only, so the per-seat chain in THIS file skips from 07:02 to 11:40. The close seat closes and collapses the date. ⚠ **Absent-seat ordinals: 07:02 **66th** · 08:36 **67th** (in `state.md`) · 11:40 **68th**.** ⚠ **DELIBERATELY SHORT. The corpus item is live and prose volume is the one lever a seat controls; no collapse ratio is claimed because the 11:40 seat ADDED to this digest rather than folding it.**)
 
 **Zero satellite positions, re-derived at this seat, three sides, no discrepancy.** `grep -cE '^### [A-Z]'` = **0** · `sleeves` → `satellite.count: 0`, `value: 0`, `pct: 0.0` · `positions` → **one row, core VOO only**, 99.046311231 sh @ `avg_entry_price` **706.74**, `cost_basis` **$69,999.989999** — unchanged since the 2026-09-03 fill; only the mark moves (`current_price` **680.17**, `lastday_price` **675.99**).
 
@@ -104,6 +104,22 @@ check that the pull returned the right session. A stored baseline is a *label*, 
 ✅ **WEEK ROLLOVER PERFORMED AT THIS SEAT:** ISO **2026-W46** weekday 1, Monday anchor **2026-11-09** ≠ inherited `week_of` **2026-11-02** → `week_of` advanced, `new_positions_this_week` reset to **0**. ⚠ **Recorded as performed, not as unnecessary.**
 
 ⚠ **NOT A SEAT'S TO FIX, CARRIED FOR THE WEEKLY REVIEW:** this file still has **no monthly rollover** and `archive/positions/` does not exist, while `research_log.md`, `journal.md` and `trade_log.md` all have one.
+
+**—— `3-midday-management` 11:40 ET, APPENDED AT THIS SEAT. MARKET OPEN. ——**
+
+✅ **ZERO EXITS, AND NO EXIT WAS POSSIBLE: the §5 machinery has NO OPERAND for the 68th consecutive seat.** Re-derived here rather than inherited from the 07:02 line above, three sides agreeing: `grep -cE '^### [A-Z]+ — T-'` = **0** · `sleeves` → `satellite.count: 0`, `value: 0`, `pct: 0.0` · `positions` → **one row, core VOO only**, 99.046311231 sh @ **706.74**, `cost_basis` **$69,999.989999**, mark **689.38** (`lastday_price` **675.99**, **+1.981%** on the day). ⚠ **Only the mark moved since 07:02** (680.17 → 689.38); qty and basis are unchanged since the 2026-09-03 fill.
+
+⚠ **STEP 2 HIGH-WATER REPAIR — NOT DUE, AND *NOT-DUE* IS NOT *PASSED*.** The field-form test was re-run: `grep -nE '^\s*-\s*highest_close:'` returns **EXACTLY ONE** line, `positions.md:53`, the template placeholder `0.00` carrying **no date**. There is nothing to compare against the last trading day, so **zero `bars` calls were spent** and **the staleness detector was never exercised.** ⚠⚠ **Today is therefore NOT evidence that the detector works** — which matters because this routine is the system's only defence against a stale mark silently disabling §5.4, and a defence that has never fired against a real operand is untested, not proven.
+
+⚠ **CORE VOO STRUCK FROM THE WORKING LIST BEFORE EVALUATION, NOT STAMPED AS PASSING** (§5 exempts it, §2 holds it permanently, §7 forbids selling it). *For the record, not as a rule check: core sits* **−2.456% / −$1,719.44** *against its 706.74 basis at 689.38 — improved from −$2,434.56 / −3.478% at the 08:36 seat* **on the mark alone.**
+
+⚠ **BAND THRESHOLDS NOT RE-DERIVED AT THIS SEAT, DELIBERATELY.** Core **69.48%**, `core_in_band` **true**, `rebalance_needed` **false**, `rebalance_delta` **515.84** — a distance readout, not an instruction, and **not this seat's door in any case: §2 rebalances at the market-open run.** The floor/ceiling remain **VOO 562.51 / 908.67**, unchanged because they are a function of the **inert cash leg alone**; the 07:02 seat's own error came from re-deriving them.
+
+⚠ **SCHEDULE FAULT, OBSERVED AT THIS SEAT AND HARMLESS HERE — WHICH IS A FINDING, NOT A REASSURANCE.** Fired **11:40 ET against a nominal 12:30**, ~50 min early: the same UTC-anchored DST signature as routines 1 and 2 (nominal − 60 min, plus dispatch latency). ⚠⚠ **THE DIFFERENCE THAT MATTERS: routine 3's entire displacement window, 11:30–12:30 ET, lies INSIDE the 09:30–16:00 session**, so unlike routine 2 (fires before the bell, cannot execute) and routine 4 (fires before the close, writes partial bars) **this routine loses nothing to the fault.** ⚠ **It does not shrink the human's ask — RE-ANCHOR ALL FIVE TRIGGERS TO `America/New_York` — it narrows which routines the ask is URGENT for: 2 and 4.**
+
+✅ **WEEK ROLLOVER: NO ACTION DUE, re-derived here and not inherited.** `isocalendar()` gives ISO **2026-W46** weekday **1**, Monday anchor **2026-11-09**, which **matches** the inherited `week_of` **2026-11-09**; `new_positions_this_week` stays **0**. Breaker **INACTIVE 0/3**, week **0/3**.
+
+⚠ **AND THE ONE THING THIS SEAT COULD NOT DO, SAID PLAINLY: routine 3 is exits-only and may not open a position.** With an empty ledger it has **no legal action available at all** — so the correct output is this note and a commit, per the routine's own Step 1. **No research was run, no §5.1 Perplexity call was spent, and nothing was manufactured to fill the run.**
 
 ---
 
