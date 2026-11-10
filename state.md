@@ -10,8 +10,8 @@ The block below is parsed by `scripts/common.py` and gates real behavior
 `key: value` format exactly. Prose goes underneath.
 
 ```
-last_run: 2026-11-10 07:02 ET 1-premarket-research SELFTEST 5-of-5 EXIT 0. FIRED ~58 MIN EARLY against a nominal 08:00 - SEVENTH CONSECUTIVE EST SESSION of the UTC-anchored fault, OBSERVATION ONLY per control.md. MARKET OPEN TODAY, NOT A HOLIDAY: clock 07:01:59 is_open FALSE with BOTH next_open AND next_close carrying 2026-11-10 - the pre-market full-session signature, READ OFF THE DATES NOT THE BOOLEAN. WEEK ROLLOVER NO ACTION DUE, re-derived with isocalendar NOT inherited: ISO 2026-W46 weekday 2, Monday anchor 2026-11-09 MATCHING week_of; new_positions_this_week stays 0 of 3. LEDGER RECONCILIATION CLEAN, three independent sides, re-derived at this seat: positions.md satellite count 0 / sleeves satellite.count 0 / positions one row core VOO only. Equity 98,589.57 - core VOO 68,589.57 at 69.5708 pct, core_in_band TRUE, rebalance_delta 423.13, NO REBALANCE DUE and not this seat's door in any case. Satellite 0 / count 0 / 0.0 pct - cash 30,000.00 at 30.4292 pct. Mark 692.50, core unrealised minus 1,410.42 / -2.0149 pct against the 706.74 basis - SAME DOLLAR FIGURE AS THE WHOLE-ACCOUNT DRAWDOWN TO THE CENT for the FIFTH session running, because the cash leg has never moved. NO BACKFILL DUE - SECOND SESSION RUNNING AND THE FIRST BACK-TO-BACK PAIR IN THE FAULT'S HISTORY, because the 11-09 close seat held for the bell and committed the official VOO close 691.93 on 2,880 prints adjustment=all. BROKER/BAR GAP FIFTH READING AND THE FIRST NEGATIVE ONE: lastday_price 691.87 is 6 CENTS BELOW the bar close, series 0.02 / 0.03 / 0.45 / 0.21 / MINUS 0.06 - THE SIGN HAS FLIPPED, WHICH SETTLES IT AS A MOVING MIDPOINT RATHER THAN AN OFFSET. THE BAR CLOSE IS THE OFFICIAL PRINT; do not correct 691.93 toward the broker figure. SELL RULES 5.1-5.4 ALL ABSENT NOT PASSING - NO OPERAND, 70th consecutive absent seat; ZERO 5.1 Perplexity calls spent because there is no name to check. STEP-2 HIGH-WATER DETECTOR NOT DUE FOR THE 70TH TIME AND NOT-DUE IS NOT PASSED: field-form grep -nE on highest_close returns EXACTLY ONE line, positions.md:53, the template placeholder 0.00 with no date - a bare grep -c returns 98 and INVERTS the finding. ZERO bars repair calls spent; the detector remains UNTESTED. RESEARCH: 4 BROAD SWEEPS, 1 DRILL QUERY, 6 THESES, 6 REJECTED T-2026-11-10-01..06, ZERO ACCEPTED. THREE OF THE FOUR SWEEPS RETURNED AN EXPLICIT NIL, the structural one answering "No qualifying disclosure was identified." NEW POSITIONS WERE PERMITTED THROUGHOUT - breaker INACTIVE 0/3, week 0 of 3, satellite 0.0 pct deployed with 30,000 cash, control.md Notes none - NOTHING STOPPED A BUY EXCEPT THE CANDIDATES. BEST CANDIDATE T-2026-11-10-01, NASA CLPS 2: EIGHT NAMED COMPANIES, TWO SECTION-3-ELIGIBLE MEGA-CAPS (LMT, NOC), A 10 BILLION DOLLAR FIGURE, A DATED GOVERNMENT AWARD - AND NOBODY HAS BEEN PROMISED ANY MONEY. NASA's own words: "a 10-year, multiple-award IDIQ master contract with a COMBINED maximum value of 10 billion dollars", and ispace-U.S. said the selection "does not itself constitute a funded mission." Even 10B/8/10yr is ~0.17 pct of LMT revenue, ~60x BELOW section 4's materiality floor, and that division is invented because the ceiling is not divisible. RULE (iii) RIDES ON TOP: announced 2026-11-07, NASA release merely UPDATED 11-10 - a government press-release refresh is a NEW COSTUME for the re-covered-deal shape. THE DRILL QUERY WAS SPENT TO VERIFY A KILL RULE (v) ALREADY PREDICTED, AND THE VERIFICATION MATTERED - had NASA allocated per-winner values the predicted kill would have been WRONG. T-2026-11-10-02 AAON IS THE ENTRY MOST WORTH READING: it RAISED ITS OWN FY sales-growth guidance to 72-75 pct from its own prior 55-60 pct, THE CLEANEST RULE (iii) PASS IN WEEKS, and still died at PART 1 - a company disclosing its own order book is REMARKING ON A CONDITION THAT PRE-DATES THE REMARK, and the source states NO named customer, NO named supplier and NO capex figure appears. ZERO move CALLS SPENT ALL RUN because every candidate died at part 1, 2 or 3 before a hard filter was due - so NO new instance of the direction-blind move defect, which stands at THIRTEEN. PLAN WRITTEN, plan_date 2026-11-10, ZERO BUY / ZERO SELL / ZERO REBALANCE INTENTS. BAND EDGES COMPUTED IN A SCRIPT: 562.51 / 908.67, IDENTICAL to 11-06 and 11-09 BY CONSTRUCTION because the threshold is a function of the inert cash leg alone - there was nothing to re-derive. STREAK 0/3 UNCHANGED, nothing closed. BREAKER INACTIVE, no section 6 alert due and none posted. ALERTS: open incidents NONE, alerts.md Open section empty, nothing SYSTEMIC - an empty sleeve is not one of the four dedupe keys.
-prior_run: 2026-11-09 15:16 ET 4-market-close-journal SELFTEST 5-of-5 EXIT 0. COLLAPSED TO ONE LINE BY THIS PRE-MARKET SEAT - full text in git at the preceding commit, nothing live discarded; its findings are in the 11-09 date block below and in the Live items. Fired 44 min pre-close, SEVENTH consecutive EST session, AND HELD FOR THE BELL (second session running the hold was used), committing insurance a3fa068 then the official VOO close 691.93 on 2,880 prints. Equity 98,533.11, day plus 1.6253 pct. ITS HEADLINE FINDING, WHICH IS LIVE AND IS THE HUMAN'S CALL: VOO plus 2.3535 pct vs the account's plus 1.6253 pct is a 0.728pp SECTION 1 SHORTFALL IN ONE SESSION, ARITHMETIC NOT JUDGMENT - with satellite at 0.0 pct this account CANNOT BEAT THE INDEX ON ANY UP SESSION, structurally short the benchmark by its cash weight. Also: partial-bar error THIRD measurement (15:20 partial 694.10 vs official 691.93, HIGH by 2.170 / plus 0.3136 pct; series LOW 2.135 / HIGH 2.430 / HIGH 2.170 - SIGN A COIN FLIP, MAGNITUDE STABLE at ~0.32 pct of the mark, and the relative distortion is INVERSELY PROPORTIONAL to the day's move, so A BIG DENOMINATOR HIDES THIS FAULT RATHER THAN SHRINKING IT). (The 07:02 1-premarket, 08:36 2-market-open and 11:40 3-midday seats previously held this slot: week rollover 2026-11-02 to 2026-11-09 PERFORMED; 5 theses 5 REJECTED; plan with ZERO intents; the open seat fired 54 min pre-bell and placing nothing was CORRECT per section 7; the midday seat found the market OPEN, had NO LEGAL ACTION AT ALL on an empty ledger, and established that the fault is benign for routine 3 BY CONSTRUCTION because its whole 11:30-12:30 window lies INSIDE the session - which NARROWS the human's ask to routines 2 and 4.)
+last_run: 2026-11-10 08:36 ET 2-market-open-execution SELFTEST 5-of-5 EXIT 0. MARKET CLOSED, ZERO ORDERS PLACED, AND THAT WAS THE CORRECT OUTCOME NOT A FAILURE - clock 08:36:20 is_open FALSE, next_open 2026-11-10T09:30:00-05:00, i.e. 54 MIN PRE-BELL; section 7 forbids trading while the market is closed. MARKET OPEN TODAY, NOT A HOLIDAY: both next_open AND next_close carry 2026-11-10, the pre-market full-session signature - READ OFF THE DATES NOT THE BOOLEAN. EIGHTH CONSECUTIVE EST SESSION this seat has dispatched pre-open (08:47 11-02 / 08:36 11-03 / 08:35 11-04 / 08:37 11-05 / 08:37 11-06 / 08:36 11-09 / 08:36 11-10), SEVEN-FOR-SEVEN is_open FALSE and nothing placed at any of them - OBSERVATION ONLY, because control.md forbids diagnosing a schedule fault FROM A FIRING TIME; the stored-schedule reading plus the DST calendar carried in plan_today.md is separate evidence and is INHERITED, NOT RE-VERIFIED AT THIS SEAT. STALENESS GATE NOT TRIGGERED, CHECKED NOT ASSUMED: plan_date 2026-11-10 EQUALS today in ET, so the plan was FRESH - no intent was skipped on staleness, no stale-plan alert was due and none was posted. THE PLAN CARRIED ZERO BUY, ZERO SELL AND ZERO REBALANCE INTENTS, so its own hold-for-the-bell procedure WAS NOT DUE and no hold was taken: with no intent, a 54-minute wait had nothing to execute. WEEK ROLLOVER NO ACTION DUE, re-derived with isocalendar NOT inherited: ISO 2026-W46 weekday 2, Monday anchor 2026-11-09 MATCHING week_of; new_positions_this_week stays 0 of 3. LEDGER RECONCILIATION CLEAN, three independent sides re-derived at this seat: positions.md satellite count 0 (counted with a field-form grep on the satellite block header, not a bare one) / sleeves satellite.count 0 / positions ONE ROW, core VOO only, 99.046311231 sh @ 706.74 basis 69,999.99. CORE BOOTSTRAP SKIPPED, core_established ALREADY TRUE - that path ran once, 2026-09-03, and never runs again. REBALANCE NOT DUE: equity 98,339.97, core VOO 68,339.97 at 69.49 pct, core_in_band TRUE, rebalance_needed FALSE, rebalance_delta 498.01 - 4.49pp inside the 65 pct edge. Satellite 0 / count 0 / 0.0 pct; cash 30,000.00 at 30.51 pct. Core unrealised minus 1,660.02 / -2.3710 pct. THE 69.49 IS A PRE-MARKET MARK (689.98), NOT A CLOSE - it is 0.08pp below the 07:02 reading of 69.57 purely because the mark moved, and a pre-market mark is the WEAKEST basis in the day for a band call; it did not matter here only because 4.49pp of room makes the call insensitive to it. BAND EDGES NOT RE-DERIVED AND DELIBERATELY SO: 562.51 / 908.67 are carried from the 07:02 script computation, which is correct BY CONSTRUCTION because cv = t*cash/(1-t) / qty is a function of the INERT CASH LEG ALONE and does not move with the mark - the 11-09 seat's wrong draft came from re-deriving it. ZERO move CALLS, ZERO buy CALLS, ZERO sell CALLS, ZERO Perplexity CALLS, ZERO bars CALLS SPENT - there was no intent to revalidate and no position to check. SO NO NEW INSTANCE of the direction-blind move defect, which stands at THIRTEEN. SELL RULES 5.1-5.4 ALL ABSENT NOT PASSING - NO OPERAND, 71st consecutive absent seat. STREAK 0/3 UNCHANGED, nothing closed. BREAKER INACTIVE, no section 6 alert due and none posted. ALERTS: open incidents NONE, alerts.md Open section empty, nothing posted this run. NEW SCRIPT-LEVEL DEFECT FOUND AT THIS SEAT, AND IT WAS FOUND BY TRIPPING IT RATHER THAN BY READING THE SCRIPT: common.py _parse_kv splits every line on a HASH and keeps only what is left of it, so A HASH ANYWHERE IN A FENCED-BLOCK VALUE SILENTLY TRUNCATES THAT VALUE. This seat's first draft of this very line quoted a grep pattern containing three hashes, and read_state returned last_run CUT OFF MID-SENTENCE while THE FILE ON DISK WAS INTACT - the file and the parse disagreed and nothing anywhere reported it. REWORDED HERE RATHER THAN PATCHED: the split is in scripts/common.py and is NOT A SEAT'S TO CHANGE MID-RUN. NO GATE FIELD IS AFFECTED TODAY - circuit_breaker, week_of, halt_triggered_at and the counts carry no hash - but the two narrative fields are exactly where a hash is likely, and a truncated last_run is precisely how the next blind seat loses the handoff while every check still reads green. KEEP HASHES OUT OF THE FENCED BLOCK ENTIRELY.
+prior_run: 2026-11-10 07:02 ET 1-premarket-research SELFTEST 5-of-5 EXIT 0. COLLAPSED TO ONE LINE BY THIS OPEN SEAT - full text in git at the preceding commit (48b3896), nothing live discarded; its findings are in the 11-10 date block below and in the Live items. Fired ~58 min early against a nominal 08:00. Week rollover no-action, re-derived. Ledger clean, three sides. 4 broad Perplexity sweeps + 1 drill query, 6 theses T-2026-11-10-01..06, SIX REJECTED ZERO ACCEPTED, three of the four sweeps an explicit NIL; NEW POSITIONS WERE PERMITTED THROUGHOUT - nothing stopped a buy except the candidates. Best candidate T-2026-11-10-01 NASA CLPS 2: a 10B COMBINED-MAXIMUM IDIQ ceiling with NO DOLLAR ALLOCATED TO ANYONE, ~60x below section 4's materiality floor even on an invented division. Plan written, plan_date 2026-11-10, ZERO intents. ITS OWN BYTE MEASUREMENT IS THE WORST IN THE SERIES BY MORE THAN TWICE - +37,056B in one run - and that finding is LIVE in the carry-forward, not collapsed here. (The 11-09 15:16 close seat previously held this slot: it HELD FOR THE BELL and committed the official VOO close 691.93 on 2,880 prints; its headline finding, VOO +2.3535 pct vs the account's +1.6253 pct = a 0.728pp SECTION 1 SHORTFALL IN ONE SESSION, is LIVE below and is the human's call.)
 week_of: 2026-11-09
 new_positions_this_week: 0
 consecutive_closed_losses: 0
@@ -19,9 +19,9 @@ circuit_breaker: INACTIVE
 halt_triggered_at: none
 core_established: true
 core_ticker: VOO
-core_pct: 69.57
+core_pct: 69.49
 satellite_pct: 0.0
-cash_pct: 30.43
+cash_pct: 30.51
 open_thesis_ids: none
 ```
 
@@ -67,6 +67,75 @@ fix must be LENGTH-PRESERVING.**
   (`T-2026-11-10-01` … `-06`), **zero accepted**; plan dated **2026-11-10** with **ZERO intents**;
   **new positions PERMITTED throughout — nothing blocked a buy except the candidates.**
   **Absent-seat ordinal 70th.** **ZERO `move` calls and ZERO orders at this seat.**
+
+- **⚠ 2026-11-10 08:36 — `2-market-open-execution`, APPENDED TO THE DATE BLOCK ABOVE. MARKET
+  CLOSED, ZERO ORDERS, AND THAT IS §7 COMPLIANCE RATHER THAN A MISSED RUN.** `clock` 08:36:20
+  `is_open: false`, `next_open` **09:30 ET** — **54 min pre-bell, eighth consecutive EST session,
+  seven-for-seven nothing placed** (observation only; `control.md` forbids diagnosing a schedule
+  fault *from a firing time*). ✅ **STALENESS GATE CHECKED AND NOT TRIGGERED:** `plan_date`
+  **2026-11-10 = today ET**, so the plan was **FRESH** — nothing was skipped on staleness and **no
+  `stale-plan` alert was due or posted.** ⚠⚠ **THE HOLD-FOR-THE-BELL PROCEDURE WAS NOT DUE AND WAS
+  NOT TAKEN, AND THE REASON MATTERS: the plan carried ZERO buy, ZERO sell and ZERO rebalance
+  intents, so a 54-minute wait had nothing to execute.** ⚠ **The day this seat inherits a
+  non-empty plan, the hold becomes mandatory — `plan_today.md` carries the procedure, and it is
+  the only reason the fault has cost nothing eight times.** Core **69.49%** `core_in_band: true`,
+  `rebalance_delta` **498.01** — not due; **71st absent seat**; breaker **INACTIVE 0/3**, week
+  **0 of 3**. **ZERO `move`/`buy`/`sell`/`bars`/Perplexity calls spent.**
+
+- **⚠⚠⚠ NEW 2026-11-10 08:36 — SCRIPT-LEVEL DEFECT, FOUND BY TRIPPING IT RATHER THAN BY READING
+  THE SCRIPT, AND IT IS THE HUMAN'S TO FIX BECAUSE IT LIVES IN `scripts/common.py`.**
+  `_parse_kv` does `line.split("#", 1)[0]` (`scripts/common.py:299`), so **A `#` ANYWHERE IN A
+  FENCED-BLOCK VALUE SILENTLY TRUNCATES THAT VALUE AT THE `#`.** ⚠⚠ **DEMONSTRATED, NOT
+  THEORISED: this seat's first draft of its own `last_run` quoted a grep pattern containing
+  `###`, and `read_state()` returned the line CUT OFF MID-SENTENCE — 1,615 chars of 4,231 —
+  while **THE FILE ON DISK WAS COMPLETELY INTACT.** The file and the parse disagreed and
+  **nothing in the system reported it**: `selftest` passes, the commit guard passes, the fenced
+  block still looks right to a human reading `state.md`. ⚠ **Worked around here BY REWORDING the
+  value; the `split` itself is not a seat's to change mid-run.** **NO GATE FIELD IS AFFECTED
+  TODAY** — `circuit_breaker`, `week_of`, `halt_triggered_at`, `core_established` and the counts
+  carry no `#`, and all re-parse in full (verified at this seat: `halt_active() == (False, "")`,
+  `trading_enabled: true`). ⚠⚠⚠ **BUT `last_run` AND `prior_run` ARE THE WHOLE RUN-TO-RUN
+  HANDOFF, AND A `#` IS EXACTLY WHAT A SEAT QUOTING A GREP PATTERN, A MARKDOWN HEADING OR A
+  ClickUp/issue number WILL TYPE. A truncated handoff is how the next blind seat loses what this
+  one learned while every check still reads green.** **STANDING INSTRUCTION UNTIL FIXED: KEEP
+  `#` OUT OF THE FENCED BLOCK ENTIRELY.** Candidate fix, named so no seat has to invent it:
+  strip only a `#` that **begins** a line, or require `\s#` before treating it as a comment.
+  **Second script-level defect now open alongside the direction-blind `move` threshold (13
+  instances, human notified 11-03/05/06/09).**
+
+- **⚠⚠⚠ MEASURED 2026-11-10 AT 08:36 WITH `wc -c` AGAINST THIS RUN'S BASE COMMIT `54198d3`
+  **AFTER** THE WRITE, AND IT IS THE BEST PER-RUN FIGURE IN THE SERIES BY A FACTOR OF TWENTY-FIVE
+  — WHICH IS A FACT ABOUT THE WORKLOAD, NOT ABOUT THIS SEAT'S DISCIPLINE, AND MUST NOT BE
+  RECORDED AS A WIN.** `positions.md` **+1,448B** · `state.md` **≈+5.2KB** ·
+  `research_log.md`, `plan_today.md`, `journal.md`, `trade_log.md` **ALL UNCHANGED — 0B** =
+  **≈+6.7KB IN ONE RUN**, against **+37,056B** at the 07:02 seat six hours earlier and prior
+  bests of **+8,852B** (11-04 close) — still the **best figure in the series**, but by **six times,
+  not twenty-five.**
+  ⚠⚠⚠ **THAT SENTENCE REPLACES, RATHER THAN SITS BESIDE, THIS SEAT'S OWN FIRST DRAFT, WHICH
+  CLAIMED “−2B on `state.md`, ≈+1,446B total, best by a factor of twenty-five.” THAT WAS TRUE WHEN
+  MEASURED AND WAS FALSIFIED BY THE TWO BULLETS WRITTEN AFTER IT** — the corrected figure and the
+  `_parse_kv` finding — **WHICH THE MEASUREMENT COULD NOT HAVE INCLUDED BECAUSE THEY DID NOT EXIST
+  YET.** ⚠⚠ **This is the ELEVENTH-PLUS recorded instance of the self-measurement defect in this
+  corpus, and it arrives in a NEW SHAPE worth naming: the previous ten were figures written FROM
+  INTENT BEFORE THE COUNT. This one was COUNTED CORRECTLY AFTER THE WRITE and then invalidated by
+  LATER WRITING IN THE SAME RUN. ⚠ "Count after the write" is therefore NOT SUFFICIENT — the only
+  safe figure is the one in `git diff --stat` ON THE COMMIT, and a seat that still has bullets to
+  write has not finished writing.** ⚠⚠ **THE CAUSE IS THAT THIS SEAT HAD NO RESEARCH TO LOG
+  AND NO TRADE TO BOOK: six rejected theses cost `research_log.md` 23,105B this morning and a
+  closed market costs it nothing. A seat with nothing to say is cheap; that is not a method.**
+  ⚠ **`state.md`'s own count is quoted here only as a DELTA, because an absolute count written
+  inside the file it measures falsifies itself as it is typed — and this addendum moves it again,
+  so the committed figure is in `git diff --stat` on this commit, not in this sentence.**
+  ⚠⚠⚠ **THE STRUCTURAL FINDING IS UNCHANGED AND IS STILL THE HUMAN'S: the corpus is past 1.4MB,
+  the collapse lever works at the seat level and loses at the corpus level, and NO SEAT MAY INVENT
+  THE FIX MID-RUN.**
+
+- **⚠ 2026-11-10 — THE BAND CALL AT THIS SEAT RESTED ON A PRE-MARKET MARK, WHICH IS THE WEAKEST
+  BASIS IN THE DAY, AND IT ONLY DID NOT MATTER BECAUSE OF THE MARGIN.** Core read **69.49%** on
+  VOO **689.98** (pre-market), against **69.57%** on 692.50 at 07:02 — the 0.08pp is the mark
+  moving, not the account. ⚠ **With 4.49pp of room to the 65% edge the call is insensitive to the
+  basis; a core sleeve sitting NEAR an edge and read off a pre-market mark could be called wrong
+  in either direction, and nothing in `sleeves` output records which basis it used.**
 
 - **⚠⚠⚠ MEASURED 2026-11-10 WITH `wc -c` AGAINST THIS RUN'S OWN BASE COMMIT **AFTER** THE WRITE,
   AND IT IS THE WORST PER-RUN FIGURE IN THE SERIES BY MORE THAN TWICE — REPORTED AS IT CAME OUT,
