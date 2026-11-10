@@ -52,6 +52,313 @@ single most common way a plausible-sounding connection gets mistaken for an oppo
 
 ## Entries
 
+### 2026-11-10 (07:02 ET) — event survey (funnel, pre-thesis)
+
+Selftest **5/5**, exit 0 (`trading_enabled: true`, LIVE paper, equity **$98,608.39** at pre-flight).
+`clock` 07:01:59 — `is_open: false`, `next_open` **2026-11-10T09:30:00-05:00**, `next_close`
+**2026-11-10T16:00:00-05:00**: **both fields carry today's date — the pre-market full-session
+signature. NOT a holiday.** ⚠ **Read off the DATES, not the boolean: FALSE has three meanings,
+TRUE has one.** Fired ~58 min early against a nominal 08:00, the **seventh** EST session running
+in that condition (observation only — `control.md` forbids diagnosing a schedule from a firing
+time).
+
+**WEEK ROLLOVER — NO ACTION DUE, re-derived with `isocalendar` rather than inherited.** ISO
+**2026-W46, weekday 2**; Monday anchor **2026-11-09** = `week_of` **2026-11-09**.
+`new_positions_this_week` stays **0 of 3**. ⚠ Recorded as *re-derived*, not as *skipped* — §6's
+cap must not depend on any earlier seat having run.
+
+**✅ NO BACKFILL DUE — SECOND SESSION RUNNING, AND THE FIRST BACK-TO-BACK PAIR IN THIS FAULT'S
+HISTORY.** The 11-09 close seat held past the bell and committed the official **VOO close
+691.93** on 2,880 prints, `adjustment=all`. Broker `lastday_price` reads **691.87** — **6¢
+below** the committed bar close, inside the known moving broker/bar midpoint and requiring
+nothing. ⚠ **Do not "correct" the committed 691.93 toward the broker figure; the bar close is
+the official print.**
+
+**Ledger reconciliation CLEAN, re-derived three independent ways at this seat, not inherited:**
+`positions.md` satellite block count **0** (`grep -cE '^### [A-Z]+ — T-'`) · `sleeves`
+`satellite.count 0` / `value 0` / `pct 0.0` · `positions` returns **one row, core VOO only**
+(99.046311231 sh @ `avg_entry_price` **706.74**, `cost_basis` **$69,999.99** — unchanged since
+the 2026-09-03 fill; **only the mark moves**). **No disagreement, so no reconciliation work.**
+Core **$68,589.57 / 69.57%**, `core_in_band: true`, `rebalance_delta` **423.13**, **NOT DUE**.
+Cash **$30,000.00 / 30.43%**. Mark **692.50**; core unrealised **−$1,410.42 / −2.0149%**.
+
+**FOUR BROAD SWEEPS AND ONE DRILL QUERY. THREE OF THE FOUR SWEEPS ANSWERED §4's QUESTION IN THE
+NEGATIVE OUT LOUD.** The overnight-events sweep said the reporting *"does not support a reliable,
+comprehensive list of major US corporate events for November 9–10, 2026"* and returned macro
+plus an earnings calendar with no results attached. The transaction sweep — both parties named
+**and** a dollar figure — returned ***"no qualifying announcement was identified"***, having
+itself disqualified AEVEX's ~$400M and AeroVironment's $940M for unnamed customers. The
+regulatory sweep returned **four pharma/device items and an explicit nil** on FTC/DOJ, FCC, EPA,
+US plant closures, US recalls and US strikes. The structural sweep — which required **one source
+sentence carrying both the dollar figure and the name of the company RECEIVING it** — answered
+***"No qualifying disclosure was identified."***
+
+⚠ **ONE DRILL QUERY SPENT ALL RUN, on the NASA CLPS 2 award, and it was spent deliberately to
+TEST a kill this seat could already name rather than to assume it.** Standing rule (v)'s CEILING
+sub-shape predicted an unallocated multiple-award vehicle; the query returned NASA's own
+structure language and the prediction held exactly. ⚠ **That is the right reason to spend a
+query: a named kill that has not been verified on this instance is still a guess.**
+
+---
+
+### T-2026-11-10-01 — LMT · NOC (and the Redwire / Honeybee / Yank supplier tier) ← NASA's $10B CLPS 2 lunar award — REJECTED (rule (v) CEILING, verified not assumed; part 2 by three orders of magnitude; rule (iii) re-covered; §3 kills six of eight legs)
+**Company A / the news:** NASA selected **eight** companies for **CLPS 2** — Blue Origin, Firefly
+Aerospace, Intuitive Machines, ispace-U.S., **Lockheed Martin Space**, **Northrop Grumman Space
+Systems**, SpaceX, Voyager Technologies. NASA's own structure language, quoted from the drill
+query: *"The CLPS 2 framework is a 10-year, multiple-award, indefinite-delivery/
+indefinite-quantity master contract with a combined maximum value of $10 billion"* — rising to
+$15B if a five-year option is exercised. Announced **2026-11-07**, NASA release **updated
+11-10**.
+**Company B / the candidate:** attempted two ways — (a) the two §3-eligible primes, **LMT** and
+**NOC**; (b) the named Moon Base technology tier, **Redwire (RDW)**, Honeybee Robotics, Yank
+Technologies, Quantum Space.
+
+**1. Mechanism (one sentence):** *not writable without an "and also".* The honest attempt —
+*"NASA's CLPS 2 award causes Lockheed Martin's Space segment revenue to improve because it can
+now bid task orders"* — **states a right to compete, not a sale.**
+**2. Dollar path: FAILS, AND BY THREE ORDERS OF MAGNITUDE.** ⚠⚠ **NO DOLLAR WAS ALLOCATED TO ANY
+WINNER.** The drill query returned an awardee's own disclosure: *"a multiple-award, IDIQ contract
+with a **combined ceiling** of $10 billion **across all awardees**"*, and ispace-U.S. stated the
+selection ***"does not itself constitute a funded mission."*** Even the maximally generous
+arithmetic — $10B ÷ 8 ÷ 10 years ≈ **$125M/yr against LMT's ~$74B revenue = ~0.17%** — is
+**~60× below §4's 10% materiality floor**, and that figure is itself invented, because the
+ceiling is not divisible.
+**3. Timing window: FAILS INDEPENDENTLY.** A **10-year** vehicle with a five-year option, funded
+only when NASA elects to issue task orders. Against §4's **two-quarter** ceiling.
+**4. Invalidation:** *not reached.*
+
+**Hard filters:**
+- Priced-in (§4): **NOT REACHED** — the thesis was dead at parts 1, 2 and 3. No `move` call spent.
+- Correlation (§4): **vacuous — zero open satellite positions**, so no `driver` field exists to
+  collide with. ⚠ Recorded as *vacuous*, not as *passed*.
+- Universe (§3): **KILLS SIX OF THE EIGHT LEGS BEFORE A MECHANISM IS NEEDED.** Blue Origin and
+  SpaceX are **private**; Firefly, Intuitive Machines, ispace-U.S. and Voyager are all **well
+  below the $10B floor**. Only **LMT** and **NOC** clear §3 — and they are the **first-order**
+  recipients §4 exists to avoid. The supplier tier is worse: **Honeybee Robotics** (Blue
+  Origin-owned), **Yank Technologies** and **Quantum Space** are all **private**, and **RDW** is
+  a ~$1–2B cap, **§3-dead** — ⚠ **and RDW is already the named instance of rule (v)'s CEILING
+  sub-shape in this log (its own "$980M" multiple-award ceiling). It arrived back inside the
+  exact shape it was first used to illustrate.**
+
+**Outcome: REJECTED — and this is the day's best candidate and the cleanest verified kill in
+the log.** ⚠⚠ **IT IS WORTH KEEPING BECAUSE OF WHAT IT HAD: eight named companies, two of them
+§3-eligible mega-caps, a $10 BILLION figure, a dated government award, and an exact structure
+quote. That is more disclosed material than almost any candidate here has carried — and there is
+still no second-order company in it, because NOBODY HAS BEEN PROMISED ANY MONEY.** ⚠ **RULE (iii)
+RIDES ON TOP AND IS THE SUBTLER KILL: the announcement is dated 2026-11-07 and NASA merely
+UPDATED its release on 11-10. A sweep run on 11-10 surfaces it as fresh. "Re-covered deal" is
+costume #3 on rule (iii)'s list, and a government press-release refresh is a new costume for it.**
+⚠⚠ **THE PROCEDURAL FINDING, WHICH IS THE PART WORTH CARRYING FORWARD: the drill query was spent
+to VERIFY a kill rule (v) already predicted, and the verification mattered — had NASA allocated
+per-winner task-order values, the predicted kill would have been WRONG. A named standing rule
+tells you which question to ask; it does not answer it for a new instance.**
+
+---
+
+### T-2026-11-10-02 — the data-center cooling supply tier ← AAON's raise of its OWN FY sales-growth guidance from 55–60% to 72–75% — REJECTED (part 1: a company's own order book is a CONDITION, not an event; no named recipient anywhere in the second-order leg)
+**Company A / the news:** **AAON** (NASDAQ: AAON), 2026-11-10, **raised its own full-year
+sales-growth guidance to 72–75% from its own prior 55–60%.** ⚠⚠ **THIS IS THE CLEANEST RULE (iii)
+PASS IN THIS LOG IN WEEKS — the prior COMPANY-ISSUED range is present in the source, the new range
+is present, and the move is ENORMOUS (a ~15pp mid-point raise on an already-extraordinary growth
+rate).**
+**Company B / the candidate:** attempted two ways — (a) AAON's **component suppliers**
+(compressors, coils, controls, motors); (b) the **read-across** to other data-center thermal names
+(Vertiv, Trane, Johnson Controls, Lennox, Comfort Systems).
+
+**1. Mechanism (one sentence): FAILS, AND IT IS THE STANDING "REMARKING ON A CONDITION" OBJECT IN
+ITS MOST CREDIBLE COSTUME YET.** ⚠⚠ **NOTHING ABOUT ANY SUPPLIER'S OR COMPETITOR'S ECONOMICS
+CHANGED ON 2026-11-10.** AAON's guidance raise is a **disclosure that its own order book is
+larger than it previously said** — evidence of a data-center cooling demand condition that
+**pre-dates the remark**. The attempted sentence needs the tell-tale second clause: *"AAON's raise
+shows cooling demand is stronger than thought — **and also** Company B captures that demand."*
+⚠ **The read-across leg (b) is the COMPETITOR'S EARNINGS PRINT face of the shared-cause object,
+already killed on AutoZone→GPC/ORLY/LKQ, Carnival, Vail, CarMax and CALM.**
+**2. Dollar path: FAILS — NO RECIPIENT IS NAMED.** The source states explicitly that **no named
+customer, no named supplier and no capex figure** appears in the release. There is no sentence
+anywhere containing both a figure and the name of a company receiving it. ⚠ **AAON's own revenue
+line is the only quantified path, and that is the FIRST-ORDER leg.** The largest compressor
+supplier to this market, **Copeland, is privately held** (Blackstone) — rule (viii)'s
+private-recipient shape.
+**3. Timing window:** *not reached.*
+**4. Invalidation:** *not reached.*
+
+**Hard filters:**
+- Priced-in (§4): **NOT REACHED** — dead at part 1. No `move` call spent.
+- Correlation (§4): **vacuous — zero open satellite positions.**
+- Universe (§3): **not reached** for the second-order leg, because no second-order company was
+  ever nameable. *(AAON itself is the headline name, not a candidate.)*
+
+**Outcome: REJECTED at part 1.** ⚠⚠ **THIS IS THE ENTRY MOST WORTH READING TODAY, BECAUSE IT IS
+THE ONE WITH A GENUINE PASS IN IT. A clean rule (iii) pass is a statement that the NEWS IS REAL —
+it is not progress toward a trade, and this log already holds the proof (Antofagasta 10-15 passed
+rule (iii) cleanly and died on §3 one line later; IOVA's pass was killed by rule (vii)).** ⚠ **The
+pull here was strong and is recorded rather than omitted: a 15pp own-guidance raise on data-center
+cooling is exactly the kind of number that invites a seat to go looking for someone to buy. There
+was nobody to buy — every candidate on the second-order leg is private, unnamed, or a
+shared-cause read-across.**
+
+---
+
+### T-2026-11-10-03 — the brain-metastases radiation-oncology complex ← the FDA's rejection of Novocure's Optune Mya — REJECTED (part 1: a REJECTION preserves the status quo and changes nobody's economics; §3 kills NVCR; the only other story is a reader-supplied share shift)
+**Company A / the news:** **2026-11-09** — the FDA **declined to approve** Novocure's **Optune
+Mya** for adults with brain metastases from NSCLC following stereotactic radiation, citing
+uncertainty about the degree of clinical benefit and **raising no safety concerns.** **No
+financial impact was quantified** in any cited source.
+**Company B / the candidate:** attempted as the incumbent radiation-oncology and
+radiosurgery-equipment complex.
+
+**1. Mechanism (one sentence): FAILS, AND IT IS A SHAPE THIS LOG HAS NOT PREVIOUSLY WRITTEN
+DOWN — THE NON-ARRIVAL OF A COMPETITOR.** A rejection means **the market Novocure wanted to enter
+continues exactly as it was.** ⚠⚠ **An incumbent that was never displaced has not GAINED anything;
+it has merely not LOST something it never lost. No segment revenue, no cost line and no order
+book moves on 11-09 at any company.** The only available sentence is the reader-supplied share
+shift this log kills every earnings season.
+**2. Dollar path: FAILS — THERE IS NO FIGURE OF ANY KIND.** Not at Novocure (no quantified
+impact disclosed) and not at any incumbent (no incumbent was named by any source).
+**3. Timing window:** *not reached.*
+**4. Invalidation:** *not reached.*
+
+**Hard filters:**
+- Priced-in (§4): **NOT REACHED.** No `move` call spent.
+- Correlation (§4): **vacuous — zero open satellite positions.**
+- Universe (§3): **NVCR is a ~$2–3B cap — below the $10B floor**, so the headline leg is
+  ineligible independently. No second-order leg was ever named, so §3 had nothing to test there.
+
+**Outcome: REJECTED at part 1.** ⚠ **Kept because of the sign: this funnel meets FDA
+APPROVALS often and has a worked range for them (EW's own-valve integration at the strong end,
+BMY's paediatric label extension at the weak end). A REJECTION is a different object and weaker
+than either — an approval at least creates a product and a supply chain that must be stood up,
+while a rejection creates NOTHING, by construction.** ⚠ **Do not re-derive this; it is the
+status-quo-preservation shape and it has no long side.**
+
+---
+
+### T-2026-11-10-04 — the oral-anticoagulant complex ← the FDA's approval of Bayer's Sunharbo (asundexian) — REJECTED (§3 kills the headline leg; rule (vii) Bayer makes its own; the only second-order read has the WRONG SIGN for a long)
+**Company A / the news:** **2026-11-09** — the FDA approved Bayer's **Sunharbo (asundexian)**, a
+**Factor XIa inhibitor**, to reduce stroke risk in adults with recent non-cardioembolic ischemic
+stroke or high-risk TIA, in combination with antiplatelet therapy. **No financial impact was
+quantified.**
+**Company B / the candidate:** attempted three ways — (a) a contract manufacturer or API supplier
+to Bayer; (b) the incumbent DOAC franchises (Eliquis — **BMY**/**PFE**); (c) US drug distribution
+(**MCK**, **COR**, **CAH**).
+
+**1. Mechanism (one sentence): FAILS ON EVERY LEG, AND LEG (b) FAILS WITH THE WRONG SIGN.**
+⚠⚠ **A NEW FACTOR XIa COMPETITOR ENTERING THE ANTICOAGULANT MARKET IS BAD NEWS FOR THE INCUMBENT
+FRANCHISES, NOT GOOD — THE ONLY DATEABLE ECONOMIC EFFECT POINTS DOWN, AND THIS IS A LONG-ONLY
+BOOK (§3: no inverse, no derivatives).** Leg (a) dies on **rule (vii)**: Bayer manufactures its
+own pharmaceuticals and **no external supplier is named by any source.**
+**2. Dollar path: FAILS on leg (c) BY MAGNITUDE, independently of everything else.** A single
+drug launch routed through distributors with **~$300B+ of annual revenue each** cannot move a
+segment that is a double-digit share of their revenue; the contribution is immaterial by three
+or more orders of magnitude. ⚠ **No figure was disclosed for the launch at all, so even this
+arithmetic is bounded above by nothing.**
+**3. Timing window:** *not reached.*
+**4. Invalidation:** *not reached.*
+
+**Hard filters:**
+- Priced-in (§4): **NOT REACHED.** No `move` call spent.
+- Correlation (§4): **vacuous — zero open satellite positions.**
+- Universe (§3): **BAYER IS GERMAN-LISTED (XETRA: BAYN) — §3-DEAD AS A CANDIDATE AT ANY PRICE.**
+  ⚠ **This is the GEHC/IBA/Siemens Healthineers shape again under rule (vii): the integrated
+  beneficiary names no external supplier, and the non-integrated alternatives are
+  foreign-listed.** The ADR fails too — §3 bars ADRs of companies below the cap floor and does
+  not create an eligibility route for a non-US primary listing.
+
+**Outcome: REJECTED.** ⚠ **The useful half: this is the first time this log has met an approval
+whose only second-order read is NEGATIVE. The funnel's FDA range now has three points — a first
+approval (creates a chain), an expanded indication (creates nothing), and a COMPETITIVE ENTRANT
+(destroys incumbent economics and is unplayable long).**
+
+---
+
+### T-2026-11-10-05 — the macro / policy complex (October payrolls +165k vs 59k consensus · October CPI landing today · Brent below $92 on Iran de-escalation · a $42B 10-year auction) — REJECTED (no Company A; the standing government-action object; the Brent leg is the 11-03 object at a new level)
+**Company A / the news:** four items, one object. **(1)** October nonfarm payrolls **+165,000**
+against a **59,000** consensus; unemployment **4.1%** from 4.2%; average hourly earnings **+0.4%
+m/m, +3.1% y/y**. **(2)** October **CPI released today, after this seat** — consensus headline
+**+0.3% m/m** (from 0.6%) and core **+0.2%** (from 0.3%); ⚠ **these are ESTIMATES and the source
+said so explicitly, so NOTHING may be written as though the print were known.** **(3)** Brent
+**below $92**, one source saying *"approaching $90"*, on reports that the Iran conflict is
+*"effectively over."* **(4)** A **$42B** 10-year note auction; 2-year **4.552%**, 10-year
+**4.869%**.
+**Company B / the candidate:** none. There is no Company B because there is no Company A.
+
+**1. Mechanism (one sentence): FAILS — NO TRANSACTION AND NO SECOND PARTY, FOUR TIMES OVER.**
+**2. Dollar path:** the figures are real, large and belong to **nobody** — a payroll count, a
+price index, a commodity quote and a Treasury auction size. ⚠ **§4 requires a disclosed figure
+accruing to a NAMED company's segment revenue.**
+**3 & 4.** *not reached.*
+
+**Hard filters:** not reached on any leg.
+
+**Outcome: REJECTED — and ZERO drill queries were spent, because the answer was already written.**
+⚠⚠ **THE BRENT LEG IS THE ONE THAT NEEDED DISCIPLINE, AND IT IS A STRICTER TEST THAN ON 11-03:
+that seat killed refiners/airlines on Brent at ~$104.33 after an 8.01% fall; Brent is now below
+$92, so the move is roughly 12% LARGER and the direction unchanged.** ⚠ **A BIGGER MOVE IN THE
+SAME OBJECT IS NOT A NEW EVENT. The standing finding is that SCALE MAKES THE
+GOVERNMENT-ACTION/MACRO OBJECT MORE CONVINCING, NOT MORE REAL — and a commodity price falling
+further is the purest instance of it.** ⚠ **The payrolls surprise is a ~2.8× beat against
+consensus and is still CONSENSUS, not any company's own prior figure — rule (iii) fails on it
+independently.**
+
+---
+
+### T-2026-11-10-06 — sweep: the defence IDIQ cluster, AAOI's unnamed hyperscaler, six own-results guidance prints, two private-counterparty deals, a filing, a lobbying story, and a Canadian curtailment — REJECTED (fourteen items, disposed as one, ZERO drill queries spent)
+**Company A / the news:** everything else the four sweeps returned. Grouped because each dies on a
+rule already named, and spending a query on any of them would be paying to re-derive a written
+answer.
+
+- **The defence/space IDIQ cluster — rule (v) CEILING, three instances in one morning.** **AEVEX
+  (AVEX)** ~**$400M** ceiling, customer described only as *"a U.S. customer"* — the sweep itself
+  disqualified it. **AeroVironment** **$940M** IDIQ, unnamed US customer, plus a **$315M** award.
+  **Leidos** **$672M** TSA checkpoint-modernisation contract — ⚠ **the one with a NAMED
+  counterparty, and it fails anyway: TSA is a GOVERNMENT payer, LDOS is the FIRST-ORDER recipient,
+  and a multi-year contract value against ~$17B of annual revenue is not a segment dollar path.**
+- **AAOI — rule (v), the unnamed hyperscaler.** Applied Optoelectronics disclosed (11-05) that a
+  new hyperscale customer agreement *"could generate $1 billion–$1.5 billion of revenue for
+  Applied Optoelectronics over three years."* ⚠ **The receiving company IS named — but it is
+  AAOI's OWN revenue, i.e. first-order; the CUSTOMER is unnamed; "could generate" is a ceiling;
+  and AAOI is a ~$2–4B cap, §3-dead.** Dated 11-05, so it also sits behind two seats that already
+  swept that window.
+- **Six own-results guidance prints, all RAISES, none with a named counterparty: Telos (TLS)**
+  revenue $187–200M → **$198.2–200.7M**; **NGS** EBITDA $103–108M → **$105–108M**; **Elanco
+  (ELAN)** revenue to **$5.155–5.18B**; **Solventum (SOLV)** EPS to **$7.20–7.30**; **P3 Health
+  (PIII)** EBITDA midpoint to **$100M**; **PubMatic (PUBM)** — ⚠ **direction not establishable,
+  no prior company range in the source, which is rule (iii)'s AAR shape (fail in BOTH
+  directions, not a pass).** ⚠ **All first-order; the source states no named customer, supplier
+  or capex figure appears in any of them.** *(AAON's raise is the strongest of the set and was
+  given its own entry at `T-2026-11-10-02` rather than buried here.)*
+- **Two deals whose recipient is PRIVATE — rule (viii).** **Stellantis / Roshel**, a Brampton
+  plant agreement (Roshel is privately held, Canadian). **Neo Performance Materials** raised FY
+  EBITDA to **$180–185M** — **TSX-listed / OTCQX**, §3-dead.
+- **Compass Pathways (CMPS)** completed its **COMP360 NDA submission** — ⚠ **a FILING is not a
+  DECISION; the source notes the FDA had not confirmed acceptance for review.** Rule (vi).
+- **Hims & Hers (HIMS)** will offer compounded peptides after regulators eased enforcement — ⚠
+  **enforcement discretion, not an approval; HIMS is the first-order beneficiary; the peptide API
+  tier is unnamed (rule (v)); no figure disclosed.**
+- **Microsoft lobbying the administration to scuttle an EXPECTED ban on Chinese data-center
+  technology** — ⚠⚠ **the most tempting item in the sweep and it is a non-event twice over: the
+  ban HAS NOT HAPPENED (rule (vi), pending), and lobbying AGAINST it is the opposite sign from
+  the US-alternative-supplier story a reader wants to build. No named recipient, no figure.**
+- **Goodyear** expects a **$15–20M** annual operating-income benefit — **from its OWN plant
+  closures**; rule (viii), the company's own cost line, no second company named as receiving
+  redirected volume. **Quesnel River Pulp / Millar Western** indefinite curtailment — not
+  establishably US-listed, §3.
+- **NVIDIA** reportedly investigating CEO Jensen Huang over an alleged relationship with an
+  executive at a Singaporean company suspected of smuggling chips into China — ⚠ **a governance
+  story: no regulatory finding, no penalty, no contract cancellation, no figure. And NVDA is at
+  rule (iv) FOUR appearances in five sessions.**
+
+**Hard filters:** not reached on any item — every one dies at part 1 or part 2, or on §3, before
+a filter is due. **Zero `move` calls and zero drill queries were spent on this entire group.**
+
+**Outcome: REJECTED.** ⚠ **The honest summary of the sweep: the morning's four largest dollar
+figures were $10B (an unallocated ceiling), $1.5B (a "could generate" to an unnamed customer),
+$940M (an IDIQ ceiling, unnamed customer) and $672M (a government payment to the first-order
+recipient). NOT ONE OF THEM IS A SECOND-ORDER SEGMENT DOLLAR PATH, and the aggregate size of
+that list is precisely why §4 puts the hard filters BEFORE the thesis.**
+
+---
+
 ### 2026-11-09 (07:02 ET) — event survey (funnel, pre-thesis)
 
 Selftest **5/5**, exit 0 (`trading_enabled: true`, LIVE paper, equity **$97,368.33** at pre-flight).

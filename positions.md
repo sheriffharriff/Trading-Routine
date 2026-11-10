@@ -84,6 +84,23 @@ check that the pull returned the right session. A stored baseline is a *label*, 
 ## Open positions
 
 *(none — no **satellite** positions have been opened yet. Core VOO exists and is deliberately not tracked here, per the top-of-file rules and the fill note further down.)*
+### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-11-10, **opened by `1-premarket` 07:02** ⚠ **PRE-MARKET, which is this seat's correct condition, not a fault.** Later seats append to this block; the close seat closes and collapses it. ⚠ **RE-EVALUATED HERE, NOT INHERITED.** Absent-seat ordinal **70th**. ⚠⚠ **DELIBERATELY WRITTEN SHORT — 253KB of this file is eighteen-plus identical nulls on an empty ledger, and prose volume is the one lever a seat actually controls.**)
+
+**Zero satellite positions — re-derived three sides, no discrepancy.** `grep -cE '^### [A-Z]+ — T-'` = **0** · `sleeves` → `satellite.count 0`, `value 0`, `pct 0.0` · `positions` → **one row, core VOO only**, 99.046311231 sh @ 706.74, `cost_basis` $69,999.99 — unchanged since the 2026-09-03 fill; **only the mark moves** (692.50, unrealised **−$1,410.42 / −2.0149%**).
+
+| §5 rule | Status | Distance to trigger |
+|---|---|---|
+| **§5.1** thesis invalidation | **ABSENT — no operand** | No thesis held (`open_thesis_ids: none`). **Zero §5.1 Perplexity calls spent — there is no name to check news on.** |
+| **§5.2** time stop | **ABSENT — no operand** | No timing window is running, because no position has one. |
+| **§5.3** hard stop (−7% from entry) | **ABSENT — no operand** | No entry price exists to measure from. |
+| **§5.4** trailing stop (−10% from `highest_close`) | **ABSENT — no operand** | Field-form test re-run here: `grep -nE '^\s*-\s*highest_close:'` returns **EXACTLY ONE** line — `positions.md:53`, the **template placeholder `0.00`, carrying no date.** ⚠ **A bare `grep -c highest_close` returns 98 and INVERTS the finding.** |
+
+⚠ **ABSENT IS NOT PASSING.** The high-water staleness detector was **NOT DUE for the 70th consecutive seat, and not-due is not passed.** Zero `bars` repair calls spent; the only defence against a stale mark silently disabling §5.4 remains **UNTESTED, not proven.** ⚠ **The first seat to inherit a real position must treat its own detector as UNPROVEN CODE and check the `(as of …)` date by hand against the last trading day.**
+
+✅ **NO BACKFILL DUE — second session running, the first back-to-back pair in the schedule fault's history.** The 11-09 close seat held past the bell and committed the official **VOO close 691.93** (2,880 prints, `adjustment=all`). Broker `lastday_price` **691.87** is **6¢ BELOW** it. ⚠⚠ **BROKER/BAR GAP, FIFTH READING, AND IT IS THE FIRST NEGATIVE ONE: series $0.02 · $0.03 · $0.45 · $0.21 · **−$0.06** (11-04/05/06/09/10). THE SIGN HAS NOW FLIPPED, WHICH SETTLES THE QUESTION — a moving midpoint, not an offset, correctable in neither direction. Do not "correct" the committed 691.93 toward the broker figure; the bar close is the official print.**
+
+⚠ **Band distance, COMPUTED IN A SCRIPT: 65% floor needs VOO **562.51**, 75% ceiling **908.67** — IDENTICAL to 11-06 and 11-09 by construction, because the threshold is a function of the inert cash leg alone (`cv = t·cash/(1−t)`, `÷ qty`) and does not move with the mark. There was nothing to re-derive. `core_in_band: true`, `rebalance_delta` 423.13, **NOT DUE.**
+
 ### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-11-09, **ONE DIGEST FOR THE DATE, ALL FOUR SEATS, CLOSED AND COLLAPSED BY THE CLOSE SEAT** — the only seat entitled to touch what three earlier seats wrote. `1-premarket` **07:02** · `2-market-open` **08:36** ⚠ **PRE-OPEN, COULD NOT EXECUTE** · `3-midday` **11:40** (market OPEN, zero exits, benign) · `4-market-close` **15:16** ⚠⚠⚠ **FIRED PRE-CLOSE, 44 MIN BEFORE THE BELL — SEVENTH CONSECUTIVE SESSION — AND HELD FOR THE BELL, SO THE OFFICIAL CLOSE *IS* RECORDED. SECOND SESSION RUNNING THAT THE HOLD WAS USED.** ⚠ **RE-EVALUATED AT EACH SEAT, NOT INHERITED.** Absent-seat ordinals: 07:02 **66th** · 08:36 **67th** · 11:40 **68th** · this close **69th**.)
 
 **Zero satellite positions — re-derived at the close seat, three sides, no discrepancy.** `grep -cE '^### [A-Z]+ — T-'` = **0** · `sleeves` → `satellite.count: 0`, `value: 0`, `pct: 0.0` · `positions` → **one row, core VOO only**, 99.046311231 sh @ `avg_entry_price` **706.74**, `cost_basis` **$69,999.989999** — unchanged since the 2026-09-03 fill; **only the mark moves.**
