@@ -10,8 +10,8 @@ The block below is parsed by `scripts/common.py` and gates real behavior
 `key: value` format exactly. Prose goes underneath.
 
 ```
-last_run: 2026-11-10 15:16 ET 4-market-close-journal INSURANCE COMMIT, PRE-BELL, RUN NOT FINISHED. SELFTEST 5-of-5 EXIT 0. Fired 15:16 against a nominal 16:15, approx 59 min early and 44 MIN BEFORE THE BELL - EIGHTH consecutive EST session, observation only per control.md which forbids diagnosing a schedule fault FROM A FIRING TIME. MARKET OPEN at this seat, is_open TRUE, next_close 16:00 ET, so NO OFFICIAL CLOSE EXISTED WHEN THIS COMMIT WAS MADE. THIS SEAT IS HOLDING FOR THE BELL - third session running - and a SECOND commit carrying the official close, the journal entry and the ClickUp summary follows. If that second commit is absent from the history, THIS RUN DIED DURING THE HOLD and 2026-11-10 needs the close backfilled. STEP 2 CARRIED NO OPERAND and that is settled independently of the bell: ZERO satellite positions, re-derived THREE SIDES at this seat not inherited - field-form grep on the satellite block header = 0 / sleeves satellite.count 0 value 0 pct 0.0 / positions ONE ROW core VOO only 99.046311231 sh at 706.74 basis 69,999.99 unchanged since the 2026-09-03 fill, only the mark moves. So there was no satellite highest_close to stamp and the date-every-day discipline the routine exists to enforce had nothing to write to. 73rd consecutive absent seat, sell rules 5.1-5.4 ALL ABSENT NOT PASSING. NO BACKFILL DUE FOR 11-09 either - official VOO close 691.93 committed by that seat and re-confirmed by the 11:41 seat. WEEK ROLLOVER NO ACTION DUE, re-derived with isocalendar not inherited: ISO 2026-W46 weekday 2, Monday anchor 2026-11-09 MATCHING week_of, new_positions_this_week stays 0 of 3. STREAK 0/3, nothing closed today, BREAKER INACTIVE and no section 6 alert due. UNRESOLVED ORDERS NONE - orders --status all returns exactly ONE order in the whole account history, the 2026-09-03 core VOO buy, status filled, so nothing is in limbo overnight and section 7 has no exposure here. ALERTS: alerts.md Open section EMPTY, zero ClickUp alerts posted. control.md Notes carried no instruction, TRADING_ENABLED true, HALT_CLEARED_AT none. CORE REBALANCE NOT DUE: equity 98,167.63 on a LIVE INTRADAY mark 688.24, core 68,167.63 at 69.44 pct, core_in_band TRUE, rebalance_delta 549.71, 4.44pp inside the 65 pct floor. COLLAPSE MEASURED AFTER THE WRITE: positions.md 11-10 digest 35 lines to 18, state.md 11-10 date block 215 lines to 137 a saving of 78. BOTH FIGURES WILL MOVE when the post-bell bullets are appended, which is exactly the defect the 08:36 seat recorded today, so the honest number is git diff --stat ON THE FINAL COMMIT. NO HASH CHARACTER ANYWHERE IN THIS BLOCK, asserted before the commit, because common.py _parse_kv truncates any fenced value at the first one and the 08:36 seat lost 2,616 chars of its own handoff that way while every check still read green.
-prior_run: 2026-11-10 11:41 ET 3-midday-management SELFTEST 5-of-5 EXIT 0. MARKET OPEN, first seat today that could actually have sold, and it sold nothing because THERE WAS NO OPERAND, not because it was shut out - the 07:02 and 08:36 seats were blocked by a closed market, this one was not. ROUTINE 3 IS EXITS ONLY, nothing opened. Fired approx 49 min early against a nominal 12:30. ZERO open satellite positions, re-derived three sides. Step 2 high-water repair NOT DUE, checked not assumed: ONE bars call spent (VOO, 4 days, adjustment all) returning 11-09 close 691.93 on 2,882 prints, MATCHING the figure the 11-09 close seat committed, so it CONFIRMED a number rather than repairing one. 72nd absent seat. Week rollover no action, re-derived. Breaker INACTIVE. Core 69.39 pct, rebalance_delta 593.24, in band. Zero sell/buy/move/Perplexity calls, zero alerts. Its one finding: the 5.4 staleness detector is UNPROVEN CODE after 72 not-due seats, and the template placeholder plus the inverting bare grep are two traps already visible without a position. (The 11-10 08:36 market-open seat previously held this slot: market CLOSED 54 min pre-bell, zero orders as section 7 compliance, and it TRIPPED THE KNOWN HASH-TRUNCATION RULE in its own draft - the honest finding being about the CORPUS not the parser, since the live warning sat 435 lines into a 2,580-line Live section and arrived AFTER the write it was meant to prevent.)
+last_run: 2026-11-10 16:16 ET 4-market-close-journal SELFTEST 5-of-5 EXIT 0. RUN COMPLETE - this REPLACES the 15:16 insurance commit 95be9c4, which was pre-bell and said so. Fired 15:16 against a nominal 16:15, approx 59 min early and 44 MIN BEFORE THE BELL, EIGHTH consecutive EST session - observation only, control.md forbids diagnosing a schedule fault FROM A FIRING TIME. HELD FOR THE BELL, THIRD SESSION RUNNING: committed insurance, polled clock to is_open FALSE at 16:00:38 with BOTH next_open AND next_close carrying 2026-11-11, which is the ONLY reading that separates post-bell from pre-market, settled to 16:16, then pulled the bar. OFFICIAL VOO CLOSE 2026-11-10 IS 689.415 on 1,671 prints and 51,433 shares, adjustment all. 2026-11-10 NEEDS NO BACKFILL. STEP 2 CARRIED NO OPERAND, not a skip and not a deferral: ZERO satellite positions re-derived THREE SIDES at this seat not inherited, so there was no satellite highest_close to stamp and the date-every-day discipline had nothing to write to. 73rd consecutive absent seat, sell rules 5.1-5.4 ALL ABSENT NOT PASSING, and the staleness detector remains UNPROVEN CODE never once exercised against a real position. CLOSE-BASIS NUMBERS, every one derived in a script not by hand: equity 98,284.01 equals 99.046311231 sh at 689.415 plus 30,000 cash. Day minus 249.10 or minus 0.2528 pct against 11-09 close-basis 98,533.11. Since inception minus 1,715.99 or minus 1.7160 pct from 100,000 opening 2026-08-06. Core 68,284.01 at 69.4762 pct, satellite 0.0, cash 30.5238 pct, core_in_band TRUE, delta to the 70 pct target plus 514.80, 4.48pp inside the 65 pct floor, NO REBALANCE DUE TOMORROW, band edges unchanged at 562.51 and 908.67 by construction. Core unrealised minus 1,715.98 or minus 2.4514 pct. THE BENCHMARK LINE IS THE ONE THAT MATTERS AND IT MUST NOT BE READ AS GOOD NEWS: VOO closed minus 0.3635 pct, the account minus 0.2528 pct, so the account finished PLUS 0.1107pp AHEAD of the index - and the WHOLE of that is cash drag with the sign flipped. Core weight at yesterday's close was 69.5534 pct and weight times VOO move predicts minus 0.2528 pct against an actual minus 0.2528 pct, AGREEMENT TO FOUR DECIMAL PLACES, so the account is mechanically 69.55 pct VOO plus 30.45 pct inert cash and NOTHING else. Yesterday the identical structure COST 0.728pp on an up day. Lower beta is not alpha. The section 1 shortfall is UNCHANGED, STILL LIVE AND STILL THE HUMAN'S. TRADES ZERO, zero buy/sell/move calls, nothing closed so no realised P and L. RESEARCH 6 theses 6 REJECTED zero accepted, none of them this seat's. BREAKER INACTIVE 0/3, no section 6 alert due or posted. WEEK ROLLOVER NO ACTION, re-derived with isocalendar: ISO 2026-W46 weekday 2, Monday anchor 2026-11-09 MATCHING week_of, 0 of 3. UNRESOLVED ORDERS NONE - orders --status all returns EXACTLY ONE order in the account's whole history, the 2026-09-03 core buy, filled, so section 7 overnight-limbo exposure is STRUCTURALLY ZERO not merely clear. ALERTS: alerts.md Open EMPTY, zero ClickUp alerts all day. ClickUp daily summary CREATED, task 86bd1e1y5. THIS SEAT CORRECTED ITS OWN PRE-BELL WRITING: the broker/bar bullet it committed at 15:16 called a sign flip DEFINITIVE proof of a moving midpoint, and post-bell the same day gave the OPPOSITE sign, plus 0.4427 broker 689.8577 vs bar 689.415, against minus 0.06 for lastday_price vs the prior bar. TWO READINGS ONE DAY OPPOSITE SIGNS because they are NOT THE SAME QUANTITY - the five-point series was assembled out of two different comparison forms and is RETIRED as constructed, to be re-opened as TWO labelled series. Only the part 5.4 needs survives: THE BAR CLOSE IS THE OFFICIAL PRINT, never corrected toward a broker figure. NEW AND CHEAP: volume-per-print is a bar COMPLETENESS test - today's 1,671 prints is 58.0 pct of yesterday's but volume is 57.7 pct, so v/n is 30.8 against 30.9 and the bar is COMPLETE on a quiet session; a low print count ALONE is evidence of nothing. NO HASH CHARACTER ANYWHERE IN THIS BLOCK, asserted before the commit, because common.py _parse_kv truncates any fenced value at the first one and the 08:36 seat lost 2,616 chars of its own handoff that way while every check still read green.
+prior_run: 2026-11-10 11:41 ET 3-midday-management SELFTEST 5-of-5 EXIT 0. MARKET OPEN, first seat today that COULD actually have sold, and it sold nothing because THERE WAS NO OPERAND, not because it was shut out - the 07:02 and 08:36 seats were blocked by a closed market, this one was not. ROUTINE 3 IS EXITS ONLY, nothing opened. Fired approx 49 min early against a nominal 12:30. Zero open satellite positions, re-derived three sides. Step 2 repair NOT DUE, checked not assumed: ONE bars call returning 11-09 close 691.93 on 2,882 prints, MATCHING the figure the 11-09 close seat committed, so it CONFIRMED a number rather than repairing one. 72nd absent seat. Week rollover no action. Breaker INACTIVE. Core 69.39 pct, rebalance_delta 593.24, in band. Zero sell/buy/move/Perplexity calls, zero alerts. Its one finding: the 5.4 staleness detector is UNPROVEN CODE after 72 not-due seats, with the template placeholder and the inverting bare grep as two traps already visible without a position. (The 11-10 08:36 market-open seat previously held this slot: market CLOSED 54 min pre-bell, zero orders as section 7 compliance, and it TRIPPED THE KNOWN HASH-TRUNCATION RULE in its own draft - the honest finding being about the CORPUS not the parser, since the live warning sat 435 lines into a 2,580-line Live section and arrived AFTER the write it was meant to prevent.)
 week_of: 2026-11-09
 new_positions_this_week: 0
 consecutive_closed_losses: 0
@@ -19,9 +19,9 @@ circuit_breaker: INACTIVE
 halt_triggered_at: none
 core_established: true
 core_ticker: VOO
-core_pct: 69.44
+core_pct: 69.4762
 satellite_pct: 0.0
-cash_pct: 30.56
+cash_pct: 30.5238
 open_thesis_ids: none
 ```
 
@@ -180,18 +180,78 @@ fix must be LENGTH-PRESERVING.**
   §3 kills Bayer independently (**German-listed**); rule (vii) kills the supplier leg (Bayer makes
   its own).
 
-- **⚠ NEW 2026-11-10 — THE BROKER/BAR GAP TOOK ITS FIFTH READING AND ITS FIRST NEGATIVE ONE,
-  WHICH SETTLES THE QUESTION RATHER THAN EXTENDING THE SERIES.** `lastday_price` **691.87** vs the
-  committed bar close **691.93** = **−$0.06**; series **$0.02 · $0.03 · $0.45 · $0.21 · −$0.06**
-  (11-04/05/06/09/10). ⚠⚠ **THE SIGN HAS FLIPPED, SO IT IS DEFINITIVELY A MOVING MIDPOINT AND NOT
-  AN OFFSET — CORRECTABLE IN NEITHER DIRECTION. THE BAR CLOSE IS THE OFFICIAL PRINT.** This
-  **REPLACES** the four-reading item below rather than sitting beside it.
+- **⚠⚠⚠ CORRECTED 2026-11-10 AT THE CLOSE SEAT — THE BROKER/BAR "SERIES" WAS MIXING TWO
+  DIFFERENT COMPARISONS, SO ITS HEADLINE CONCLUSION DOES NOT FOLLOW. THIS REPLACES BOTH THE
+  FOUR-READING ITEM BELOW *AND* THIS SEAT'S OWN PRE-BELL FIVE-READING BULLET.** The pre-bell
+  bullet read `lastday_price` **691.87** against the committed **11-09** bar **691.93** =
+  **−$0.06**, called it "the first negative reading" of the series **$0.02 · $0.03 · $0.45 ·
+  $0.21 · −$0.06**, and concluded the sign flip proved **"definitively a moving midpoint, not an
+  offset."** ⚠⚠ **POST-BELL THE SAME DAY GAVE THE OPPOSITE SIGN: `sleeves` implies a broker mark
+  of **689.8577** (68,327.860459 ÷ 99.046311231) against today's official bar **689.415** =
+  **+$0.4427**.** ⚠⚠⚠ **TWO READINGS, ONE DAY, OPPOSITE SIGNS — BECAUSE THEY ARE NOT THE SAME
+  QUANTITY. `lastday_price`-vs-the-PRIOR-day's-bar and `current_price`-vs-the-SAME-day's-bar are
+  different objects, and the five-reading series was assembled out of both.** A sign flip inside
+  a series that changes instrument mid-way is evidence of the instrument changing, not of the
+  quantity moving. ⚠ **THE SERIES MUST BE RE-OPENED AS TWO SERIES, EACH LABELLED WITH ITS
+  COMPARISON FORM, BEFORE ANY FURTHER READING IS ADDED.** ⚠⚠ **WHAT SURVIVES UNCHANGED, AND IS
+  THE ONLY PART §5.4 ACTUALLY NEEDS: THE BAR CLOSE IS THE OFFICIAL PRINT, AND A COMMITTED
+  `highest_close` IS NEVER "CORRECTED" TOWARD A BROKER FIGURE IN EITHER DIRECTION.**
 
 - **⚠ NEW 2026-11-10 — NO NEW INSTANCE OF THE DIRECTION-BLIND `move` DEFECT, AND THE REASON IS
   WORTH STATING SO THE SILENCE IS NOT MISREAD AS A FIX: ZERO `move` CALLS WERE SPENT ALL DAY,
   because every candidate died at part 1, 2 or 3 before a hard filter was due.** The defect stands
   unchanged at **thirteen** instances and remains unreported-as-fixed. ⚠ **A quiet session is not
   evidence the filter works.**
+
+- **⚠⚠⚠ NEW 2026-11-10 CLOSE SEAT — THE ACCOUNT BEAT THE BENCHMARK TODAY AND IT IS NOT A SUCCESS.
+  IT IS YESTERDAY'S MEASURED DEFECT WITH THE SIGN FLIPPED, AND IT IS THE ITEM MOST LIKELY TO BE
+  MISREAD AS VINDICATION.** VOO closed **−0.3635%**; the account closed **−0.2528%**; the account
+  finished **+0.1107pp AHEAD of the index.** ⚠⚠ **THE WHOLE OF THAT OUTPERFORMANCE IS CASH DRAG
+  RUNNING IN THE HELPFUL DIRECTION, AND THE ARITHMETIC IS NOW EXACT RATHER THAN ARGUED: core
+  weight at yesterday's close was 69.5534%, and `weight × VOO move` predicts **−0.2528%** against
+  an actual **−0.2528% — AGREEMENT TO FOUR DECIMAL PLACES.** The account is mechanically
+  69.55% VOO plus 30.45% inert cash and NOTHING ELSE; there is no satellite contribution, no
+  selection, no skill in that number.** ⚠⚠⚠ **YESTERDAY THE IDENTICAL STRUCTURE COST 0.728pp ON AN
+  UP DAY. A 30% CASH SLEEVE IS LOWER BETA, NOT ALPHA: IT WINS EVERY DOWN SESSION AND LOSES EVERY
+  UP SESSION BY CONSTRUCTION, AND §1 IS A *ROLLING TWELVE-MONTH* RELATIVE OBJECTIVE, WHICH IS A
+  BET THAT THE INDEX RISES OVER THAT WINDOW.** ⚠ **So the two readings are ONE finding with two
+  signs, not a cost and a benefit that offset. The §1 shortfall the 11-09 seat raised is
+  UNCHANGED, STILL LIVE, AND STILL THE HUMAN'S CALL — and a close seat on a red day must not
+  file it as resolved.**
+
+- **⚠⚠ NEW 2026-11-10 CLOSE SEAT — A LOW PRINT COUNT IS EVIDENCE OF NOTHING, AND `v/n` IS THE
+  CHEAP COMPLETENESS TEST THE STANDING BAR ITEM HAS BEEN MISSING.** Today's official bar carries
+  **1,671 prints — 58.0% of yesterday's 2,882** — which reads as a partial bar at first glance.
+  It is complete: **volume is 57.7% of yesterday's**, so **volume-per-print is 30.8 against
+  yesterday's 30.9.** ⚠ **A PARTIAL BAR LOSES PRINTS AND VOLUME TOGETHER, SO A STEADY `v/n`
+  DISTINGUISHES A QUIET COMPLETE SESSION FROM AN UNSETTLED ONE WHILE THE PRINT COUNT ALONE
+  CANNOT.** Series: 39.4 (11-05) · 38.3 (11-06) · 30.9 (11-09) · **30.8 (11-10)**. ⚠ **Pairs with
+  the standing *"a 'complete' bar is not a 'final' bar"* item, which named the hazard and gave no
+  test.**
+
+- **⚠⚠ NEW 2026-11-10 CLOSE SEAT — THE HOLD'S VALUE IS MEASURED AGAIN, AND THE MEASUREMENT IS
+  NOT THE ONE THE PARTIAL-BAR SERIES WANTED.** Shipping at 15:16 would have reported equity
+  **$98,167.63** against a true close-basis **$98,284.01** — **low by $116.38** — and the day as
+  **−0.3709%** against a true **−0.2528%**, i.e. **1.47× worse than it was.** ⚠⚠ **BUT THIS IS
+  NOT A FOURTH READING OF THE $2.135 / $2.430 / $2.170 PARTIAL-BAR SERIES, AND THE PULL TO FILE
+  IT AS ONE WAS REAL. THIS SEAT NEVER PULLED A 15:16 BAR** — it held the broker's intraday
+  `current_price` **688.24**, which today's own correction establishes is a **different instrument
+  from a partial bar close.** ⚠ **$689.415 − $688.24 = $1.175 is therefore a broker-mark-to-close
+  distance, NOT a partial-bar error, and adding it to that series would have corrupted the one
+  measurement that justifies the hold.** ⚠⚠ **A future close seat that wants to extend the
+  partial-bar series must pull `bars` BEFORE the bell as well as after; the broker price is not a
+  substitute.**
+
+- **⚠ 2026-11-10 CLOSE SEAT — HOUSEKEEPING, ALL FOUR NULL AND EACH CHECKED RATHER THAN ASSUMED.**
+  **Breaker INACTIVE 0/3** — nothing closed today, nothing closed since inception, so
+  `consecutive_closed_losses` matches reality trivially and **no §6 alert was due or posted.**
+  **Week rollover no-action**, re-derived with `isocalendar`: ISO **2026-W46 wd 2**, anchor
+  **2026-11-09** = `week_of`, **0 of 3**. **UNRESOLVED ORDERS: NONE** — `orders --status all`
+  returns **exactly one order in the account's entire history**, the 2026-09-03 core buy,
+  `status: filled`, so §7's overnight-limbo exposure is **structurally zero, not merely clear.**
+  **`alerts.md` Open section EMPTY; zero ClickUp alerts posted all day.** ⚠ **`trade_log.md` and
+  `research_log.md` were NOT WRITTEN BY THIS SEAT: no fill to book and no thesis of its own, and a
+  close seat appending to either without an event is the growth mechanism, not a report.**
 
 
 - **⚠⚠ 2026-11-09 — DATE BLOCK, CLOSED AND COLLAPSED BY THE 15:16 CLOSE SEAT** (the only seat

@@ -40,6 +40,51 @@ anything where the honest-broker rule (§4) did real work>
 
 ## Entries
 
+### 2026-11-10 (Tuesday)
+
+**Account:** total **$98,284.01 — close-basis** (99.046311231 sh VOO at the official close **689.415** + $30,000.00 cash) | day **−$249.10 / −0.2528%** against 11-09's close-basis **$98,533.11** | since inception **−$1,715.99 / −1.7160%** ($100,000.00 opening, 2026-08-06)
+**Sleeves:** core **69.4762%** | satellite **0.0%** | cash **30.5238%**   (§2 band 65–75% — **in band**, 4.48pp of headroom to the floor; **no rebalance due tomorrow**, delta to target +$514.80)
+**Breaker:** INACTIVE (0/3)
+**Week:** 0/3 new positions
+
+**Traded:** nothing — zero orders at all four seats, and zero `buy`/`sell`/`move` calls all day
+**Researched:** 6 theses — 0 accepted, 6 rejected (`T-2026-11-10-01` … `-06`)
+**Positions near a sell rule:** none — **no operand.** All four §5 rules are **absent, not passing.** Core VOO is §5-exempt and was struck from the working list, not stamped as passing.
+
+**What happened:**
+
+A quiet red session. VOO closed **689.415** (−0.3635%), the account **−0.2528%**, and **Step 2 — the invisible job this routine exists for — had no operand at all.** There are no satellite positions, so there was no `highest_close` to stamp and no date to advance. That is worth stating precisely, because "no marks were updated" and "no marks exist to update" look identical in a commit diff and only one of them is a problem. The field-form grep returns exactly one `highest_close` line in `positions.md` — line 53, the template placeholder, carrying a literal `YYYY-MM-DD`. **73 consecutive seats have now recorded the staleness detector as "not due," and it has still never run against a real position.**
+
+The seat fired at **15:16 against a nominal 16:15** — 44 minutes before the bell, the eighth consecutive EST session of the schedule fault. It held: finished every close-independent step, committed as insurance (`95be9c4`), polled `clock` to `is_open: false` at **16:00:38** with both `next_open` and `next_close` carrying **2026-11-11** (the only reading that separates post-bell from pre-market), settled to 16:16, then pulled the bar. **Third session running that the hold was used, and 2026-11-10 needs no backfill.**
+
+**The account beat the index today, and that is the least trustworthy sentence in this entry.** The outperformance is **+0.1107pp**, and it is cash drag running in the helpful direction — nothing else. The arithmetic is now exact rather than argued: core weight at yesterday's close was **69.5534%**, and `weight × VOO move` predicts **−0.2528%** against an actual **−0.2528%**. Agreement to four decimal places. The account is mechanically 69.55% VOO plus 30.45% inert cash and nothing else. Yesterday the identical structure **cost** 0.728pp on an up day; today it paid 0.111pp on a down day. **Those are not a cost and an offsetting benefit — they are one structural fact with two signs.** A 30% cash sleeve is lower beta, not alpha: it wins every down session and loses every up session by construction, and §1 asks this account to beat the index over a *rolling twelve months*, which is a bet that the index rises across that window. The §1 shortfall the 11-09 seat raised is unchanged, still live, and still the human's call.
+
+Research: six theses, six rejections, zero accepted — and the richest candidate this log has ever produced died anyway. NASA's **CLPS 2** award (`T-2026-11-10-01`) brought eight named companies, two §3-eligible mega-caps, a $10B figure, a dated government award and an exact structure quote, and it dies because **nobody has been promised any money**: the $10B is a *combined* ten-year IDIQ ceiling, and even the invented $10B ÷ 8 ÷ 10yr ≈ $125M/yr is ~0.17% of LMT's revenue, roughly 60× below §4's 10% materiality floor. §3 killed six of the eight legs before a mechanism was needed. **AAON** (`-02`) was the cleanest rule (iii) pass in weeks — a ~15pp raise to its own FY sales-growth guidance, 55–60% → 72–75% — and died at part 1, because a company disclosing that its own order book is larger than it previously said is evidence of a condition that *pre-dates the remark*; nobody's economics changed on 2026-11-10. Two FDA items (`-03`, `-04`) bracketed the approvals range from the unproductive side: a rejection creates nothing by construction, and a competitive entrant has the wrong sign for a long-only book.
+
+Housekeeping was four nulls, each checked rather than assumed. Nothing closed today or ever, so the loss streak matches reality trivially and no §6 alert was due. Week rollover re-derived: ISO 2026-W46 wd 2, anchor 2026-11-09, 0 of 3. **Unresolved orders: none — `orders --status all` returns exactly one order in the account's entire history**, the 2026-09-03 core buy, filled, so §7's overnight-limbo exposure is structurally zero rather than merely clear. `alerts.md` Open is empty; zero ClickUp alerts posted all day.
+
+**What I got wrong or nearly got wrong:**
+
+**I wrote a confident conclusion into `state.md` six hours before the same day's data contradicted it, and I had to replace it in this run's own second commit.** The pre-bell bullet took `lastday_price` 691.87 against the committed 11-09 bar 691.93, called −$0.06 "the first negative reading," and concluded the sign flip proved the broker/bar gap was **"definitively a moving midpoint, not an offset."** Post-bell the same day gave **+$0.4427** (broker mark 689.8577 vs the official 689.415). Two readings, one day, opposite signs — **because they were never the same quantity.** `lastday_price`-vs-the-*prior*-day's-bar and `current_price`-vs-the-*same*-day's-bar are different objects, and the five-reading series was assembled out of both. A sign flip inside a series that changes instrument mid-way is evidence of the instrument changing, not of the quantity moving. The word that should have stopped me was **"definitively"** — written about a four-point series whose construction I had not checked. What survives is only the part §5.4 needs: the bar close is the official print, and a committed `highest_close` is never corrected toward a broker figure.
+
+**And having found that, I immediately nearly committed the same error in the other direction.** The hold's value measured out at **$116.38** on the equity line (−0.3709% reported vs −0.2528% true, 1.47× worse than it was), and the per-share figure $689.415 − $688.24 = **$1.175** was sitting right there, ready to be filed as a fourth reading of the partial-bar series ($2.135 / $2.430 / $2.170). **It is not one.** This seat never pulled a 15:16 bar — it held the broker's intraday `current_price`, which is exactly the instrument I had just finished establishing is *not* a partial bar close. Adding it would have corrupted the one measurement that justifies the hold in the first place, using the correction I had just written. A future close seat wanting to extend that series has to pull `bars` before the bell as well as after.
+
+**The print count nearly sent me the other way too.** 1,671 prints is 58% of yesterday's 2,882 and reads as an unsettled bar. Checking instead of assuming turned a scare into the cheapest useful thing this run produced: volume is 57.7% of yesterday's, so volume-per-print is **30.8 against 30.9** — a partial bar loses prints and volume together, so a steady `v/n` separates a quiet complete session from an unsettled one, where the print count alone cannot. The standing *"a 'complete' bar is not a 'final' bar"* item named that hazard and never gave a test; now it has one.
+
+**The flattering frame was available and it was better camouflaged than yesterday's.** Yesterday's temptation was to lead with a big equity gain on a day the account lost to the index — easy to spot. Today's is that the account genuinely *did* beat the index, so the vindication reading is not even factually wrong, just causally empty. "Defensive cash position cushions the drawdown" would have contained no false sentence. What makes it dishonest is that the same sentence, with the sign flipped, was yesterday's defect — and a system that reports the up-day version as a cost and the down-day version as a win is not measuring anything.
+
+**For the next run:**
+
+- ✅ **No backfill due.** Official **VOO close 689.415** (1,671 prints, 51,433 sh, `--adjustment all`) is committed. ⚠ **Do not "correct" it toward the post-bell broker mark 689.8577; the bar close is the official print.**
+- ⚠ **The broker/bar gap series is RETIRED as constructed and must be re-opened as TWO series, each labelled with its comparison form** (`lastday_price` vs prior bar; `current_price` vs same-day bar), before any reading is added. The old five-point series mixed both.
+- **No rebalance due.** Core 69.4762%, 4.48pp inside the floor. Band edges remain **VOO 562.51 / 908.67** — a function of the inert cash leg alone, so **do not re-derive them per session.**
+- **§5.4's staleness detector is UNPROVEN CODE at 73 absent seats.** The first seat to inherit a real position must check the `(as of …)` date **by hand** and must not trust a bare `grep -c highest_close`, which returns 98–99 where the field-form pattern returns 1.
+- **October CPI printed today; PPI prints 11-13.** Neither is a reason to pre-position — a macro print has no Company A.
+- The schedule fault will put routine 1 at ~07:0x and routine 2 ~54 min before the bell. **Routine 2 is self-mitigable the same way this seat was**: if the plan carries any intent, commit as insurance, poll `clock`, then execute.
+- ⚠ **The §1 benchmark shortfall is STILL LIVE and still the human's.** Today's +0.111pp outperformance does not touch it — it is the same cash-drag arithmetic that cost 0.728pp yesterday, and a close seat on a red day must not file it as resolved.
+
+---
+
 ### 2026-11-09 (Monday)
 
 **Account:** total **$98,533.11 — close-basis** (99.046311231 sh VOO at the official close **691.93** + $30,000.00 cash) | day **+$1,575.83 / +1.6253%** against 11-06's close-basis **$96,957.29** | since inception **−$1,466.89 / -1.4669%** ($100,000.00 opening, 2026-08-06)
