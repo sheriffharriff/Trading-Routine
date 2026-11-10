@@ -10,8 +10,8 @@ The block below is parsed by `scripts/common.py` and gates real behavior
 `key: value` format exactly. Prose goes underneath.
 
 ```
-last_run: 2026-11-10 11:41 ET 3-midday-management SELFTEST 5-of-5 EXIT 0. MARKET OPEN, is_open TRUE, next_close 16:00 ET - SO THIS IS THE FIRST SEAT TODAY THAT COULD ACTUALLY HAVE SOLD, and it sold nothing because THERE WAS NO OPERAND, not because it was shut out. That distinction is the whole content of this run: the 07:02 and 08:36 seats were blocked by a closed market, this one was not. ROUTINE 3 IS EXITS ONLY and no position may be opened in it - nothing was. Fired approx 49 min early against a nominal 12:30, fourth consecutive midday seat in the 11:40-11:42 band - OBSERVATION ONLY, control.md forbids diagnosing a schedule fault FROM A FIRING TIME. ZERO OPEN SATELLITE POSITIONS, re-derived THREE SIDES at this seat not inherited: field-form grep on the satellite block header = 0 / sleeves satellite.count 0 value 0 pct 0.0 / positions ONE ROW core VOO only 99.046311231 sh at 706.74 basis 69,999.99 unchanged since the 2026-09-03 fill, only the mark moves. So the routine's own no-positions branch applied: NOTHING TO MANAGE, noted and committed, and NO SEARCH FOR SOMETHING TO DO. STEP 2 HIGH-WATER REPAIR NOT DUE, CHECKED NOT ASSUMED: the only highest_close in positions.md is line 53, the TEMPLATE PLACEHOLDER 0.00 carrying no date - a bare grep returns 99 and INVERTS the finding, so the field-form pattern is the only safe test. ONE bars call spent (VOO, 4 days, adjustment all): last completed session 2026-11-09 close 691.93 on 2,882 prints, which MATCHES the figure the 11-09 close seat committed, so that call CONFIRMED an existing number rather than repairing anything. Today's 11-10 bar 686.44 is in-progress, 681 prints. SELL RULES 5.1-5.4 ALL ABSENT NOT PASSING - NO OPERAND, 72nd consecutive absent seat, and the staleness detector that is the only defence against a stale mark silently disabling 5.4 remains UNPROVEN CODE, never once exercised against a real position. ZERO sell calls, ZERO buy calls, ZERO move calls, ZERO Perplexity calls, ZERO ClickUp alerts - there was no name to check news on and no order to place. WEEK ROLLOVER NO ACTION DUE, re-derived with isocalendar not inherited: ISO 2026-W46 weekday 2, Monday anchor 2026-11-09 MATCHING week_of, new_positions_this_week stays 0 of 3. STREAK 0/3 UNCHANGED, nothing closed. BREAKER INACTIVE, no section 6 alert due and none posted. ALERTS: open incidents NONE, alerts.md Open section empty, nothing posted. control.md Notes carried no instruction, TRADING_ENABLED true. CORE REBALANCE NOT DUE AND NOT THIS SEAT'S BUSINESS: equity 98,022.53, core VOO 68,022.53 at 69.39 pct, core_in_band TRUE, rebalance_delta 593.24 - 4.39pp inside the 65 pct edge, read off a LIVE INTRADAY MARK (686.775) which is a stronger basis than the pre-market marks the two earlier seats used. Core unrealised minus 1,977.46 / -2.8250 pct, and the section 1 benchmark shortfall the 11-09 close seat raised is STILL LIVE AND STILL THE HUMAN'S CALL. NO HASH CHARACTER ANYWHERE IN THIS BLOCK, asserted before the commit, because common.py _parse_kv truncates any fenced value at the first one and the 08:36 seat lost 2,616 chars of its own handoff that way while every check still read green.
-prior_run: 2026-11-10 08:36 ET 2-market-open-execution SELFTEST 5-of-5 EXIT 0. COLLAPSED TO ONE LINE BY THIS MIDDAY SEAT - full text in git at the preceding commit (f865d7f), nothing live discarded; its findings are in the 11-10 date block below and in the Live items. MARKET CLOSED 54 MIN PRE-BELL, is_open FALSE, ZERO ORDERS AND THAT WAS SECTION 7 COMPLIANCE NOT A MISSED RUN - eighth consecutive EST session dispatched pre-open, seven-for-seven nothing placed, observation only. Staleness gate checked and not triggered, plan_date 2026-11-10 EQUALS today. Plan carried ZERO buy, ZERO sell, ZERO rebalance intents so the hold-for-the-bell was NOT DUE and was not taken. Week rollover no-action re-derived. Ledger clean three sides, satellite 0. Core 69.49 pct in band, rebalance_delta 498.01, not due. 71st absent seat. It TRIPPED THE KNOWN HASH-TRUNCATION RULE in its own draft and the honest finding was about the CORPUS not the parser: the warning sat 435 lines into a 2,580-line Live section and arrived AFTER the write it was meant to prevent. Byte growth plus 7.2KB in one run, best in the series by six times not twenty-five. (The 11-10 07:02 pre-market seat previously held this slot: 6 theses, SIX REJECTED ZERO ACCEPTED, plan with zero intents, and the worst byte measurement in the series at plus 37,056B in one run.)
+last_run: 2026-11-10 15:16 ET 4-market-close-journal INSURANCE COMMIT, PRE-BELL, RUN NOT FINISHED. SELFTEST 5-of-5 EXIT 0. Fired 15:16 against a nominal 16:15, approx 59 min early and 44 MIN BEFORE THE BELL - EIGHTH consecutive EST session, observation only per control.md which forbids diagnosing a schedule fault FROM A FIRING TIME. MARKET OPEN at this seat, is_open TRUE, next_close 16:00 ET, so NO OFFICIAL CLOSE EXISTED WHEN THIS COMMIT WAS MADE. THIS SEAT IS HOLDING FOR THE BELL - third session running - and a SECOND commit carrying the official close, the journal entry and the ClickUp summary follows. If that second commit is absent from the history, THIS RUN DIED DURING THE HOLD and 2026-11-10 needs the close backfilled. STEP 2 CARRIED NO OPERAND and that is settled independently of the bell: ZERO satellite positions, re-derived THREE SIDES at this seat not inherited - field-form grep on the satellite block header = 0 / sleeves satellite.count 0 value 0 pct 0.0 / positions ONE ROW core VOO only 99.046311231 sh at 706.74 basis 69,999.99 unchanged since the 2026-09-03 fill, only the mark moves. So there was no satellite highest_close to stamp and the date-every-day discipline the routine exists to enforce had nothing to write to. 73rd consecutive absent seat, sell rules 5.1-5.4 ALL ABSENT NOT PASSING. NO BACKFILL DUE FOR 11-09 either - official VOO close 691.93 committed by that seat and re-confirmed by the 11:41 seat. WEEK ROLLOVER NO ACTION DUE, re-derived with isocalendar not inherited: ISO 2026-W46 weekday 2, Monday anchor 2026-11-09 MATCHING week_of, new_positions_this_week stays 0 of 3. STREAK 0/3, nothing closed today, BREAKER INACTIVE and no section 6 alert due. UNRESOLVED ORDERS NONE - orders --status all returns exactly ONE order in the whole account history, the 2026-09-03 core VOO buy, status filled, so nothing is in limbo overnight and section 7 has no exposure here. ALERTS: alerts.md Open section EMPTY, zero ClickUp alerts posted. control.md Notes carried no instruction, TRADING_ENABLED true, HALT_CLEARED_AT none. CORE REBALANCE NOT DUE: equity 98,167.63 on a LIVE INTRADAY mark 688.24, core 68,167.63 at 69.44 pct, core_in_band TRUE, rebalance_delta 549.71, 4.44pp inside the 65 pct floor. COLLAPSE MEASURED AFTER THE WRITE: positions.md 11-10 digest 35 lines to 18, state.md 11-10 date block 215 lines to 137 a saving of 78. BOTH FIGURES WILL MOVE when the post-bell bullets are appended, which is exactly the defect the 08:36 seat recorded today, so the honest number is git diff --stat ON THE FINAL COMMIT. NO HASH CHARACTER ANYWHERE IN THIS BLOCK, asserted before the commit, because common.py _parse_kv truncates any fenced value at the first one and the 08:36 seat lost 2,616 chars of its own handoff that way while every check still read green.
+prior_run: 2026-11-10 11:41 ET 3-midday-management SELFTEST 5-of-5 EXIT 0. MARKET OPEN, first seat today that could actually have sold, and it sold nothing because THERE WAS NO OPERAND, not because it was shut out - the 07:02 and 08:36 seats were blocked by a closed market, this one was not. ROUTINE 3 IS EXITS ONLY, nothing opened. Fired approx 49 min early against a nominal 12:30. ZERO open satellite positions, re-derived three sides. Step 2 high-water repair NOT DUE, checked not assumed: ONE bars call spent (VOO, 4 days, adjustment all) returning 11-09 close 691.93 on 2,882 prints, MATCHING the figure the 11-09 close seat committed, so it CONFIRMED a number rather than repairing one. 72nd absent seat. Week rollover no action, re-derived. Breaker INACTIVE. Core 69.39 pct, rebalance_delta 593.24, in band. Zero sell/buy/move/Perplexity calls, zero alerts. Its one finding: the 5.4 staleness detector is UNPROVEN CODE after 72 not-due seats, and the template placeholder plus the inverting bare grep are two traps already visible without a position. (The 11-10 08:36 market-open seat previously held this slot: market CLOSED 54 min pre-bell, zero orders as section 7 compliance, and it TRIPPED THE KNOWN HASH-TRUNCATION RULE in its own draft - the honest finding being about the CORPUS not the parser, since the live warning sat 435 lines into a 2,580-line Live section and arrived AFTER the write it was meant to prevent.)
 week_of: 2026-11-09
 new_positions_this_week: 0
 consecutive_closed_losses: 0
@@ -19,9 +19,9 @@ circuit_breaker: INACTIVE
 halt_triggered_at: none
 core_established: true
 core_ticker: VOO
-core_pct: 69.39
+core_pct: 69.44
 satellite_pct: 0.0
-cash_pct: 30.61
+cash_pct: 30.56
 open_thesis_ids: none
 ```
 
@@ -55,218 +55,140 @@ fix must be LENGTH-PRESERVING.**
 
 ### Live — act on these
 
-- **⚠⚠ 2026-11-10 — DATE BLOCK, OPENED BY THE 07:02 PRE-MARKET SEAT.** Later seats append; the
-  close seat closes and collapses it. **Tuesday, a FULL SESSION, NOT a holiday** — `clock`
-  07:01:59 `is_open: false` with **both** `next_open` and `next_close` carrying **2026-11-10**;
-  ⚠ **read off the DATES, not the boolean.** Fired ~58 min early against a nominal 08:00,
-  **seventh consecutive EST session** (observation only per `control.md`). ✅ **WEEK ROLLOVER
-  NO-ACTION, re-derived with `isocalendar` not inherited:** ISO **2026-W46 wd 2**, Monday anchor
-  **2026-11-09** = `week_of`; **0 of 3** stands. ✅ **NO BACKFILL DUE — second session running and
-  the first back-to-back pair in the fault's history** (11-09 close held for the bell, official
-  **VOO 691.93**). **Ledger CLEAN, three sides, re-derived.** **6 theses, 6 REJECTED**
+- **⚠⚠ 2026-11-10 — DATE BLOCK, CLOSED AND COLLAPSED BY THE 15:16 CLOSE SEAT** (the only seat
+  entitled to touch what three earlier seats wrote — a seat cannot fairly collapse a paragraph it
+  has just written). **Tuesday, a FULL SESSION, NOT a holiday.** `1-premarket` **07:02** ·
+  `2-market-open` **08:36** ⚠ **PRE-OPEN, `is_open: false` 54 min before the bell, ZERO ORDERS —
+  §7 compliance, not a missed run; eighth consecutive EST session, seven-for-seven nothing
+  placed** · `3-midday` **11:41** (market **OPEN** — so its zero exits are a REAL zero, not the
+  §7 zero the two earlier seats were forced into) · `4-market-close` **15:16** ⚠⚠⚠ **PRE-CLOSE, 44
+  MIN BEFORE THE BELL, EIGHTH CONSECUTIVE SESSION — AND IT HELD FOR THE BELL, THIRD SESSION
+  RUNNING.** ✅ **WEEK ROLLOVER NO-ACTION, re-derived with `isocalendar` at each seat, not
+  inherited:** ISO **2026-W46 wd 2**, Monday anchor **2026-11-09** = `week_of`; **0 of 3** stands.
+  ✅ **Ledger CLEAN, three sides, re-derived at every seat.** **6 theses, 6 REJECTED**
   (`T-2026-11-10-01` … `-06`), **zero accepted**; plan dated **2026-11-10** with **ZERO intents**;
-  **new positions PERMITTED throughout — nothing blocked a buy except the candidates.**
-  **Absent-seat ordinal 70th.** **ZERO `move` calls and ZERO orders at this seat.**
+  **new positions PERMITTED throughout — nothing blocked a buy except the candidates.** Core
+  **in band at all four seats** (69.57 → 69.49 → 69.39 → 69.44%), `rebalance_delta` 423.13 →
+  498.01 → 593.24 → 549.71, **not due.** Absent-seat ordinals **70th · 71st · 72nd · 73rd**.
+  **ZERO `move`, `buy`, `sell` and ClickUp-alert calls across the whole day; ZERO Perplexity
+  calls after the 07:02 seat.**
 
-- **⚠ 2026-11-10 08:36 — `2-market-open-execution`, APPENDED TO THE DATE BLOCK ABOVE. MARKET
-  CLOSED, ZERO ORDERS, AND THAT IS §7 COMPLIANCE RATHER THAN A MISSED RUN.** `clock` 08:36:20
-  `is_open: false`, `next_open` **09:30 ET** — **54 min pre-bell, eighth consecutive EST session,
-  seven-for-seven nothing placed** (observation only; `control.md` forbids diagnosing a schedule
-  fault *from a firing time*). ✅ **STALENESS GATE CHECKED AND NOT TRIGGERED:** `plan_date`
-  **2026-11-10 = today ET**, so the plan was **FRESH** — nothing was skipped on staleness and **no
-  `stale-plan` alert was due or posted.** ⚠⚠ **THE HOLD-FOR-THE-BELL PROCEDURE WAS NOT DUE AND WAS
-  NOT TAKEN, AND THE REASON MATTERS: the plan carried ZERO buy, ZERO sell and ZERO rebalance
-  intents, so a 54-minute wait had nothing to execute.** ⚠ **The day this seat inherits a
-  non-empty plan, the hold becomes mandatory — `plan_today.md` carries the procedure, and it is
-  the only reason the fault has cost nothing eight times.** Core **69.49%** `core_in_band: true`,
-  `rebalance_delta` **498.01** — not due; **71st absent seat**; breaker **INACTIVE 0/3**, week
-  **0 of 3**. **ZERO `move`/`buy`/`sell`/`bars`/Perplexity calls spent.**
+- **⚠⚠⚠ 2026-11-10 08:36 — THE HASH RULE WAS TRIPPED, AND THE FINDING IS ABOUT THE CORPUS, NOT
+  THE PARSER.** That seat's first draft of its own `last_run` quoted a grep pattern containing
+  `###`; `read_state()` returned the value **CUT OFF MID-SENTENCE — 1,615 chars of 4,231 — while
+  THE FILE ON DISK WAS COMPLETELY INTACT.** Caught only because the seat happened to print the
+  parse back; `selftest`, the commit guard and a human reading `state.md` all show green on a
+  truncated handoff. Reworded, re-parsed whole, asserted hash-free before the commit.
+  ⚠⚠ **THE DEFECT WAS ALREADY DOCUMENTED IN THIS VERY FILE SINCE 2026-11-03** — the bullet naming
+  `_parse_kv`'s `line.split("#", 1)[0]` even prescribes the fix, **"assert first, then write"** —
+  **AND THE SEAT WALKED INTO IT ANYWAY, because it read the fenced block and the top of the Live
+  list, wrote its files, and only then read far enough down a 2,580-line Live section to find the
+  warning. A warning sitting 435 lines into a list every run is told to read "in full" is a
+  warning that arrives AFTER the write it was meant to prevent.** ⚠ **Same mechanism as the
+  corpus-growth item — unread memory is indistinguishable from absent memory — now DEMONSTRATED
+  by the seat that failed it.** ⚠ **Still the human's to fix at script level; candidate unchanged:
+  strip only a `#` that BEGINS a line, or require `\s#`. Second script-level defect open alongside
+  the direction-blind `move` threshold (13 instances, human notified 11-03/05/06/09).**
 
-- **⚠⚠⚠ 2026-11-10 08:36 — THIS SEAT TRIPPED THE HASH RULE, AND THE HONEST ENTRY IS NOT THE
-  PARSER BUT THE READ.** This seat's first draft of its own `last_run` quoted a grep pattern
-  containing `###`; `read_state()` returned the value **CUT OFF MID-SENTENCE — 1,615 chars of
-  4,231 — while THE FILE ON DISK WAS COMPLETELY INTACT.** Caught only because this seat happened
-  to print the parse back; `selftest`, the commit guard and a human reading `state.md` all show
-  green on a truncated handoff. **Reworded, then re-parsed whole (4,231 chars) and the block
-  asserted hash-free before the commit.**
-  ⚠⚠⚠ **THE FIRST DRAFT OF THIS BULLET CALLED IT A "NEW SCRIPT-LEVEL DEFECT FOUND AT THIS SEAT."
-  THAT WAS FALSE AND IS REPLACED HERE RATHER THAN LEFT BESIDE ITS CORRECTION. IT WAS ALREADY
-  DOCUMENTED IN THIS VERY FILE** — the **2026-11-03** Live bullet names `_parse_kv`'s
-  `line.split("#", 1)[0]`, calls it "the most expensive possible failure in the one field that
-  carries the run-to-run narrative," and prescribes the exact procedure: **"Assert first, then
-  write."** It is also in `archive/journal/2026-09.md`. ⚠⚠ **SO THE DEFECT IS OLD, THE WARNING WAS
-  LIVE, THE FIX WAS WRITTEN DOWN, AND THIS SEAT WALKED INTO IT ANYWAY — because it read the
-  fenced block and the top of the Live list, wrote its files, and only then read far enough down
-  a 2,580-line Live section to find the warning. THAT IS THE FINDING, AND IT IS A FINDING ABOUT
-  THE CORPUS, NOT ABOUT THE PARSER: a warning sitting 435 lines into a list that every run is
-  told to read "in full" is a warning that arrives AFTER the write it was meant to prevent.**
-  ⚠ **It is the same mechanism as the 1.4MB growth item — unread memory is indistinguishable
-  from absent memory — and it is now DEMONSTRATED rather than argued, by the seat that failed
-  it.** ⚠ **Still the human's to fix at script level, and the candidate is unchanged: strip only
-  a `#` that BEGINS a line, or require `\s#`. Second script-level defect open alongside the
-  direction-blind `move` threshold (13 instances, human notified 11-03/05/06/09).**
+- **⚠⚠ 2026-11-10 — THE §5.4 STALENESS DETECTOR IS UNPROVEN CODE, AND "NOT DUE" HAS NOW BEEN
+  RECORDED AS A GREEN CHECK 73 TIMES.** Step 2 — the comparison of `highest_close`'s `(as of …)`
+  date against the last trading day — **has never once been exercised against a real position.**
+  Two concrete traps are visible **without** a position: the only `highest_close` in
+  `positions.md` is the **template placeholder `0.00` with a literal `YYYY-MM-DD`**, so a detector
+  parsing its first match reads a **null date on a null mark**; and a bare `grep -c highest_close`
+  returns **98–99** where the field-form pattern returns **1**, so the naive count **inverts the
+  finding.** ⚠⚠ **The first seat to inherit a real position must treat the detector as untested
+  and check the date BY HAND. This is the failure mode where every check passes, every field is
+  present, and §5.4 simply never fires.**
 
-- **⚠⚠ 2026-11-10 11:41 — `3-midday-management`, APPENDED TO THE DATE BLOCK ABOVE. THE MARKET WAS
-  OPEN AND THERE WAS STILL NOTHING TO MANAGE — AND THOSE ARE TWO DIFFERENT FACTS.** `clock`
-  11:41:46 `is_open: **true**`, `next_close` **16:00 ET**. ⚠ **This is the first seat today that
-  could actually have placed a sell, so its zero is a REAL zero, not the §7 zero the 07:02 and
-  08:36 seats were forced into by a closed market.** Routine 3 is **exits only**; no position
-  could be opened here and none was. Fired ~49 min early against a nominal **12:30**, fourth
-  consecutive midday seat in the 11:40–11:42 band (observation only per `control.md`).
-  ✅ **Ledger CLEAN, three sides re-derived at this seat**, satellite **0**; core **69.39%**,
-  `rebalance_delta` **593.24**, in band — and **not routine 3's business.** ✅ **Week rollover
-  no-action, re-derived**: ISO **2026-W46 wd 2**, anchor **2026-11-09** = `week_of`, **0 of 3**.
-  ✅ **Step 2 repair NOT DUE, checked not assumed**: last completed session **2026-11-09**, bar
-  close **691.93** — **identical to the figure the 11-09 close seat committed**, so the single
-  `bars` call spent here **confirmed a number rather than repairing one**. **72nd absent seat.**
-  **ZERO `sell`/`buy`/`move`/Perplexity calls and ZERO alerts.**
+- **⚠⚠⚠ MEASURED 2026-11-10 — THE SERIES TOOK BOTH ITS WORST AND ITS BEST READING ON THE SAME DAY,
+  AND THE SELF-MEASUREMENT DEFECT ARRIVED IN A NEW SHAPE THAT RETIRES THE PRESCRIBED FIX.**
+  07:02 seat: `research_log.md` **+23,105B** · `state.md` **+7,993B** · `positions.md` **+3,175B**
+  · `plan_today.md` **+2,783B** = **+37,056B IN ONE RUN**, the **worst in the series by more than
+  twice** (prior worst +17,323B). 08:36 seat: **≈+7.2KB**, the **best in the series — by six
+  times, not the twenty-five its own first draft claimed.**
+  ⚠⚠⚠ **THE NEW SHAPE: that 08:36 figure was COUNTED CORRECTLY AFTER THE WRITE and then
+  FALSIFIED BY TWO BULLETS THE SAME SEAT WROTE AFTERWARDS. The previous ten-plus instances were
+  figures written FROM INTENT BEFORE THE COUNT. So "count after the write" is NOT SUFFICIENT —
+  the only honest figure is `git diff --stat` ON THE COMMIT, and a seat that still has bullets to
+  write has not finished writing.** ⚠ **THE CAUSE OF THE GOOD FIGURE WAS NO RESEARCH TO LOG AND
+  NO TRADE TO BOOK, NOT DISCIPLINE: six rejections written to §4's four-part standard cost 23KB
+  and a closed market costs nothing. A seat with nothing to say is cheap; that is not a method.**
+  ⚠⚠ **AND THE READ-IN-FULL HALF MOVED WITH IT — 558,510B → 569,678B — because the 07:02 seat put
+  NOTHING in `journal.md`, the only file with a working rollover, and 62% of its growth went to
+  `research_log.md`, which has a rollover but not for the current month.**
+  ⚠⚠⚠ **STRUCTURAL FINDING, UNCHANGED AND STILL THE HUMAN'S: the corpus is past 1.4MB, the
+  collapse lever works at the seat level and loses at the corpus level, and the two candidate
+  fixes are (a) extend the monthly rollover to `research_log.md`'s current month, `positions.md`
+  and `state.md` — the latter two have none, and `archive/positions/` and `archive/state/` do not
+  exist — or (b) scope §8's write-everything instruction. NO SEAT MAY INVENT EITHER MID-RUN,
+  which is why every seat today measured it and none acted on it.**
 
-- **⚠⚠⚠ 2026-11-10 11:41 — THE ONE FINDING THIS SEAT ADDS, AND IT IS ABOUT WHAT THE EMPTY LEDGER
-  IS HIDING RATHER THAN ABOUT TODAY.** §5.4's staleness detector — the Step 2 comparison of
-  `highest_close`'s `(as of …)` date against the last trading day — has now been **NOT DUE for 72
-  consecutive seats and has therefore never once been exercised against a real position.**
-  ⚠ **It is UNPROVEN CODE, and "not due" has been recorded as a green check seventy-two times.**
-  Two concrete traps are already visible **without** a position: the only `highest_close` in
-  `positions.md` is **line 53, the template placeholder `0.00` with a literal `YYYY-MM-DD`**, so a
-  detector that parses the first match it finds reads a **null date on a null mark**; and a bare
-  `grep -c highest_close` returns **99** where the field-form pattern returns **1**, so the naive
-  count **inverts the finding.** ⚠⚠ **The first seat to inherit a real position must treat the
-  detector as untested and check the date BY HAND — this is the failure mode where every check
-  passes, every field is present, and §5.4 simply never fires.**
-
-- **⚠ 2026-11-10 11:41 — BYTE DISCIPLINE, AND THIS SEAT DELIBERATELY DID NOT MEASURE ITS OWN
-  TOTAL.** The 08:36 seat's figure was falsified twice by bullets written *after* the measurement,
-  which is the self-reference already recorded in the banner; quoting a third intra-run number
-  would repeat the defect, not report it. What this seat can say instead is **what it chose not to
-  write**: the four §5 rows in `positions.md` are the same null recorded **seventy-two** times, and
-  the digest note was kept to a few lines rather than re-narrating the ledger reconciliation, the
-  week anchor and the absent rules at the length the three earlier seats today each used.
-  ⚠ **`git diff --stat` on this commit is the honest figure, and it is the human's to read.**
-
-- **⚠⚠⚠ MEASURED 2026-11-10 AT 08:36 WITH `wc -c` AGAINST THIS RUN'S BASE COMMIT `54198d3`
-  **AFTER** THE WRITE, AND IT IS THE BEST PER-RUN FIGURE IN THE SERIES BY A FACTOR OF TWENTY-FIVE
-  — WHICH IS A FACT ABOUT THE WORKLOAD, NOT ABOUT THIS SEAT'S DISCIPLINE, AND MUST NOT BE
-  RECORDED AS A WIN.** `positions.md` **+1,448B** · `state.md` **≈+5.8KB** ·
-  `research_log.md`, `plan_today.md`, `journal.md`, `trade_log.md` **ALL UNCHANGED — 0B** =
-  **≈+7.2KB IN ONE RUN**, against **+37,056B** at the 07:02 seat six hours earlier and prior
-  bests of **+8,852B** (11-04 close) — still the **best figure in the series**, but by **six times,
-  not twenty-five.**
-  ⚠⚠⚠ **THAT SENTENCE REPLACES, RATHER THAN SITS BESIDE, THIS SEAT'S OWN FIRST DRAFT, WHICH
-  CLAIMED “−2B on `state.md`, ≈+1,446B total, best by a factor of twenty-five.” THAT WAS TRUE WHEN
-  MEASURED AND WAS FALSIFIED BY THE TWO BULLETS WRITTEN AFTER IT** — the corrected figure and the
-  `_parse_kv` finding — **WHICH THE MEASUREMENT COULD NOT HAVE INCLUDED BECAUSE THEY DID NOT EXIST
-  YET.** ⚠⚠ **This is the ELEVENTH-PLUS recorded instance of the self-measurement defect in this
-  corpus, and it arrives in a NEW SHAPE worth naming: the previous ten were figures written FROM
-  INTENT BEFORE THE COUNT. This one was COUNTED CORRECTLY AFTER THE WRITE and then invalidated by
-  LATER WRITING IN THE SAME RUN. ⚠ "Count after the write" is therefore NOT SUFFICIENT — the only
-  safe figure is the one in `git diff --stat` ON THE COMMIT, and a seat that still has bullets to
-  write has not finished writing.** ⚠⚠ **THE CAUSE IS THAT THIS SEAT HAD NO RESEARCH TO LOG
-  AND NO TRADE TO BOOK: six rejected theses cost `research_log.md` 23,105B this morning and a
-  closed market costs it nothing. A seat with nothing to say is cheap; that is not a method.**
-  ⚠ **`state.md`'s own count is quoted here only as a DELTA, because an absolute count written
-  inside the file it measures falsifies itself as it is typed — and this addendum moves it again,
-  so the committed figure is in `git diff --stat` on this commit, not in this sentence.**
-  ⚠⚠⚠ **THE STRUCTURAL FINDING IS UNCHANGED AND IS STILL THE HUMAN'S: the corpus is past 1.4MB,
-  the collapse lever works at the seat level and loses at the corpus level, and NO SEAT MAY INVENT
-  THE FIX MID-RUN.**
-
-- **⚠ 2026-11-10 — THE BAND CALL AT THIS SEAT RESTED ON A PRE-MARKET MARK, WHICH IS THE WEAKEST
-  BASIS IN THE DAY, AND IT ONLY DID NOT MATTER BECAUSE OF THE MARGIN.** Core read **69.49%** on
-  VOO **689.98** (pre-market), against **69.57%** on 692.50 at 07:02 — the 0.08pp is the mark
-  moving, not the account. ⚠ **With 4.49pp of room to the 65% edge the call is insensitive to the
-  basis; a core sleeve sitting NEAR an edge and read off a pre-market mark could be called wrong
-  in either direction, and nothing in `sleeves` output records which basis it used.**
-
-- **⚠⚠⚠ MEASURED 2026-11-10 WITH `wc -c` AGAINST THIS RUN'S OWN BASE COMMIT **AFTER** THE WRITE,
-  AND IT IS THE WORST PER-RUN FIGURE IN THE SERIES BY MORE THAN TWICE — REPORTED AS IT CAME OUT,
-  NOT AS INTENDED.** `research_log.md` **+23,105B** · `state.md` **+7,993B** · `positions.md`
-  **+3,175B** · `plan_today.md` **+2,783B** = **+37,056B IN ONE RUN**, against the prior worst of
-  **+17,323B** (11-06 pre-market), **+11,757B** (11-06 close) and **+8,852B** (11-04 close).
-  ⚠⚠ **AND THE READ-IN-FULL FIGURE MOVED TOO, WHICH THE 11-06 MEASUREMENT FOUND WAS THE MITIGATING
-  HALF AND IS NOT MITIGATING HERE: the four files every run must read in full went 558,510B →
-  569,678B = **+11,168B**, because this run put NOTHING in `journal.md` — the only file with a
-  working rollover — and 62% of the growth in `research_log.md`, which has one but not for the
-  current month.** ⚠⚠⚠ **THE CAUSE IS NOT INDISCIPLINE AND SHOULD NOT BE RECORDED AS SUCH: SIX
-  REJECTIONS WRITTEN TO §4's FOUR-PART STANDARD, EACH NAMING THE TEST THAT FAILED, COST 23KB. THIS
-  IS THE §8-vs-ITEM-16 CONFLICT TAKING ITS FOURTH MEASUREMENT AND ITS LARGEST.** ⚠ **THE
-  `positions.md` DIGEST DID WHAT IT CLAIMED — it is the shortest dated digest in the file — and it
-  made no difference at corpus level, which is the same finding arriving for the fourth time.**
-  ⚠ **ONLY THE HUMAN CAN RESOLVE IT: either extend the monthly rollover to `research_log.md`'s
-  current month, `positions.md` and `state.md` (the latter two have none; `archive/positions/` and
-  `archive/state/` do not exist), or scope §8's write-everything instruction. NEITHER IS A SEAT'S
-  TO INVENT, which is why this run measured it and did not act on it.**
-
-- **⚠⚠⚠ NEW 2026-11-10 — THE SINGLE MOST USEFUL THING THIS RUN PRODUCED IS A PROCEDURAL ONE, AND
-  IT CORRECTS HOW THIS CORPUS HAS BEEN USING ITS OWN STANDING RULES.** The one drill query of the
-  run was spent on NASA's CLPS 2 award **to TEST a kill rule (v) had already predicted** — an
-  unallocated multiple-award ceiling — rather than to discover a new one. The prediction held
-  exactly: NASA's own language is *"a 10-year, multiple-award IDIQ master contract with a
-  **combined** maximum value of $10 billion"*, and ispace-U.S. volunteered that the selection
-  *"does not itself constitute a funded mission."* ⚠⚠ **THE FINDING: HAD NASA ALLOCATED PER-WINNER
-  TASK-ORDER VALUES, THE PREDICTED KILL WOULD HAVE BEEN WRONG, AND A SEAT THAT SKIPPED THE QUERY
-  ON THE STRENGTH OF A NAMED RULE WOULD HAVE DISCARDED A LIVE CANDIDATE WITHOUT READING IT.**
-  ⚠ **A standing rule tells you WHICH QUESTION TO ASK; it does not answer it for a new instance.
-  "ZERO drill queries spent, the answer was already written" is the right economy on a shape with
-  no new facts in it — and the WRONG economy on a shape where the structure is the whole question.
-  Both appear in today's log and the distinction is deliberate.**
+- **⚠⚠⚠ NEW 2026-11-10 — A STANDING RULE TELLS YOU WHICH QUESTION TO ASK; IT DOES NOT ANSWER IT
+  FOR A NEW INSTANCE. THIS CORRECTS HOW THIS CORPUS HAS BEEN USING ITS OWN RULES.** The one drill
+  query of the day was spent on NASA's CLPS 2 award **to TEST a kill rule (v) had already
+  predicted** — an unallocated multiple-award ceiling. The prediction held exactly: NASA's own
+  language is *"a 10-year, multiple-award IDIQ master contract with a **combined** maximum value
+  of $10 billion"*, and ispace-U.S. volunteered that the selection *"does not itself constitute a
+  funded mission."* ⚠⚠ **HAD NASA ALLOCATED PER-WINNER TASK-ORDER VALUES, THE PREDICTED KILL WOULD
+  HAVE BEEN WRONG, AND A SEAT THAT SKIPPED THE QUERY ON THE STRENGTH OF A NAMED RULE WOULD HAVE
+  DISCARDED A LIVE CANDIDATE WITHOUT READING IT.** ⚠ **"Zero drill queries spent, the answer was
+  already written" is the right economy on a shape with no new facts in it — and the WRONG economy
+  on a shape where the structure is the whole question. Both appear in today's log; the
+  distinction is deliberate.**
 
 - **⚠⚠⚠ NEW 2026-11-10 — `T-2026-11-10-01` IS THE RICHEST CANDIDATE IN THIS LOG'S HISTORY AND IT
   STILL CONTAINS NO SECOND-ORDER COMPANY.** NASA **CLPS 2**: **eight named companies**, **two
-  §3-eligible mega-caps (LMT, NOC)**, a **$10 BILLION** figure, a **dated government award**, and
-  an **exact structure quote** — more disclosed material than COHR's $20B PhotonLink agreement
-  (11-09's best) carried. ⚠ **It dies because NOBODY HAS BEEN PROMISED ANY MONEY.** Even the
-  maximally generous $10B ÷ 8 ÷ 10yr ≈ **$125M/yr = ~0.17% of LMT's revenue, ~60× below §4's 10%
-  floor** — and that division is **invented**, because a combined ceiling is not divisible.
-  ⚠⚠ **§3 KILLS SIX OF THE EIGHT LEGS BEFORE A MECHANISM IS NEEDED** (Blue Origin and SpaceX
-  **private**; Firefly, Intuitive Machines, ispace-U.S., Voyager **all sub-$10B**), and the named
-  supplier tier is worse — **Honeybee Robotics, Yank Technologies and Quantum Space are private,
-  and RDW is §3-dead.** ⚠ **RDW RETURNED INSIDE THE EXACT SHAPE ITS OWN "$980M" CEILING WAS FIRST
-  USED TO ILLUSTRATE — rule (iv) and rule (v) arriving in the same ticker.**
-  ⚠⚠ **AND A NEW COSTUME FOR RULE (iii), WHICH IS THE SUBTLER KILL AND THE ONE WORTH CARRYING:
-  THE AWARD IS DATED 2026-11-07 AND NASA MERELY *UPDATED* ITS RELEASE ON 11-10. A GOVERNMENT
-  PRESS-RELEASE REFRESH READS AS A FRESH AWARD TO EVERY SWEEP.** Add it to rule (iii)'s
+  §3-eligible mega-caps (LMT, NOC)**, a **$10 BILLION** figure, a **dated government award** and an
+  **exact structure quote** — more disclosed material than COHR's $20B PhotonLink agreement
+  (11-09's best). ⚠ **It dies because NOBODY HAS BEEN PROMISED ANY MONEY.** Even the maximally
+  generous $10B ÷ 8 ÷ 10yr ≈ **$125M/yr = ~0.17% of LMT's revenue, ~60× below §4's 10% floor** —
+  and that division is **invented**, because a combined ceiling is not divisible. ⚠⚠ **§3 KILLS SIX
+  OF THE EIGHT LEGS BEFORE A MECHANISM IS NEEDED** (Blue Origin and SpaceX **private**; Firefly,
+  Intuitive Machines, ispace-U.S., Voyager **all sub-$10B**), and the supplier tier is worse —
+  **Honeybee Robotics, Yank Technologies and Quantum Space private, RDW §3-dead.** ⚠ **RDW
+  returned inside the exact shape its own "$980M" ceiling first illustrated — rules (iv) and (v)
+  in the same ticker.** ⚠⚠ **NEW COSTUME FOR RULE (iii), THE SUBTLER KILL AND THE ONE WORTH
+  CARRYING: THE AWARD IS DATED 2026-11-07 AND NASA MERELY *UPDATED* ITS RELEASE ON 11-10. A
+  GOVERNMENT PRESS-RELEASE REFRESH READS AS A FRESH AWARD TO EVERY SWEEP.** Added to rule (iii)'s
   re-covered-deal list.
 
-- **⚠⚠⚠ NEW 2026-11-10 — THE CLEANEST RULE (iii) PASS IN WEEKS DIED AT PART 1, AND THIS IS THE
-  ENTRY THE HUMAN SHOULD READ IF THEY READ ONLY ONE.** `T-2026-11-10-02`, **AAON** raised its
-  **own** FY sales-growth guidance to **72–75% from its own prior 55–60%** — the prior
-  company-issued range present in the source, the new range present, a **~15pp mid-point raise on
-  an already-extraordinary growth rate.** ⚠⚠ **IT IS THE "REMARKING ON A CONDITION" OBJECT IN ITS
-  MOST CREDIBLE COSTUME YET: a company disclosing that its OWN order book is larger than it
-  previously said is evidence of a demand condition that PRE-DATES THE REMARK, and nothing about
-  any supplier's or competitor's economics changed on 2026-11-10.** The source states **no named
-  customer, no named supplier and no capex figure** appears in the release; the largest compressor
-  supplier to that market (**Copeland**) is **private**; and the read-across leg is the
-  competitor's-earnings-print face of the shared-cause object. ⚠ **THE STANDING LESSON, NOW WITH
-  ITS THIRD INSTANCE: A CLEAN RULE (iii) PASS SAYS THE NEWS IS REAL. IT IS NOT PROGRESS TOWARD A
-  TRADE.** (Antofagasta passed rule (iii) and died on §3 one line later; IOVA's pass was killed by
-  rule (vii); AAON's pass died at part 1.) ⚠ **The pull is recorded rather than omitted: a 15pp
-  own-guidance raise on data-centre cooling is exactly the number that invites a seat to go looking
-  for someone to buy. There was nobody to buy.**
+- **⚠⚠⚠ NEW 2026-11-10 — THE CLEANEST RULE (iii) PASS IN WEEKS DIED AT PART 1, AND IT IS THE ENTRY
+  TO READ IF ONLY ONE IS READ.** `T-2026-11-10-02`, **AAON** raised its **own** FY sales-growth
+  guidance to **72–75% from its own prior 55–60%** — both ranges present in the source, a **~15pp
+  mid-point raise on an already-extraordinary growth rate.** ⚠⚠ **IT IS THE "REMARKING ON A
+  CONDITION" OBJECT IN ITS MOST CREDIBLE COSTUME YET: a company disclosing that its OWN order book
+  is larger than it previously said is evidence of a demand condition that PRE-DATES THE REMARK,
+  and nothing about any supplier's or competitor's economics changed on 2026-11-10.** No named
+  customer, no named supplier, no capex figure in the release; the largest compressor supplier to
+  that market (**Copeland**) is **private**; the read-across leg is the competitor's-earnings-print
+  face of the shared-cause object. ⚠ **THIRD INSTANCE OF THE STANDING LESSON: A CLEAN RULE (iii)
+  PASS SAYS THE NEWS IS REAL. IT IS NOT PROGRESS TOWARD A TRADE.** (Antofagasta passed and died on
+  §3 one line later; IOVA's pass was killed by rule (vii); AAON's died at part 1.) ⚠ **The pull is
+  recorded rather than omitted: a 15pp own-guidance raise on data-centre cooling is exactly the
+  number that invites a seat to go looking for someone to buy. There was nobody to buy.**
 
-- **⚠⚠ NEW 2026-11-10 — THE FUNNEL'S FDA RANGE NOW HAS THREE POINTS AND ONLY ONE OF THEM CAN
-  PRODUCE A CANDIDATE.** Two approvals-complex items arrived the same morning and bracket the
-  range from the far side. **`T-2026-11-10-03` — A REJECTION CREATES NOTHING.** The FDA declined
-  Novocure's Optune Mya (11-09); ⚠ **an incumbent that was never displaced has not GAINED
-  anything, it has merely not LOST something it never lost — no segment revenue, no cost line and
-  no order book moves at any company on that date.** **`T-2026-11-10-04` — A COMPETITIVE ENTRANT
-  HAS THE WRONG SIGN.** Bayer's **asundexian** (Factor XIa) was approved; ⚠ **the only dateable
+- **⚠⚠ NEW 2026-11-10 — THE FUNNEL'S FDA RANGE NOW HAS FOUR POINTS AND ONLY ONE CAN PRODUCE A
+  CANDIDATE. DO NOT RE-DERIVE THESE.** **A FIRST approval** creates a product and a supply chain
+  that must be stood up — **the only productive case.** **An EXPANDED INDICATION** creates nothing
+  (BMY/Camzyos). **A REJECTION creates nothing, by construction** — `T-2026-11-10-03`, the FDA
+  declining Novocure's Optune Mya: ⚠ **an incumbent that was never displaced has not GAINED
+  anything, it has merely not LOST something it never lost; no segment revenue, cost line or order
+  book moves at any company on that date.** **A COMPETITIVE ENTRANT has the WRONG SIGN** —
+  `T-2026-11-10-04`, Bayer's **asundexian** (Factor XIa) approved: ⚠ **the only dateable
   second-order effect is DOWN, at the incumbent DOAC franchises, and this is a long-only book.**
-  §3 kills Bayer independently (**German-listed**) and rule (vii) kills the supplier leg (Bayer
-  makes its own). ⚠ **THE RANGE: a FIRST approval creates a product and a supply chain that must
-  be stood up (the only productive case) · an EXPANDED INDICATION creates nothing (BMY/Camzyos) ·
-  a REJECTION creates nothing, by construction · a COMPETITIVE ENTRANT destroys incumbent
-  economics and is unplayable long. Do not re-derive these.**
+  §3 kills Bayer independently (**German-listed**); rule (vii) kills the supplier leg (Bayer makes
+  its own).
 
 - **⚠ NEW 2026-11-10 — THE BROKER/BAR GAP TOOK ITS FIFTH READING AND ITS FIRST NEGATIVE ONE,
   WHICH SETTLES THE QUESTION RATHER THAN EXTENDING THE SERIES.** `lastday_price` **691.87** vs the
   committed bar close **691.93** = **−$0.06**; series **$0.02 · $0.03 · $0.45 · $0.21 · −$0.06**
-  (11-04/05/06/09/10). ⚠⚠ **THE SIGN HAS NOW FLIPPED, SO IT IS DEFINITIVELY A MOVING MIDPOINT AND
-  NOT AN OFFSET — CORRECTABLE IN NEITHER DIRECTION. THE BAR CLOSE IS THE OFFICIAL PRINT.** This
+  (11-04/05/06/09/10). ⚠⚠ **THE SIGN HAS FLIPPED, SO IT IS DEFINITIVELY A MOVING MIDPOINT AND NOT
+  AN OFFSET — CORRECTABLE IN NEITHER DIRECTION. THE BAR CLOSE IS THE OFFICIAL PRINT.** This
   **REPLACES** the four-reading item below rather than sitting beside it.
 
 - **⚠ NEW 2026-11-10 — NO NEW INSTANCE OF THE DIRECTION-BLIND `move` DEFECT, AND THE REASON IS
-  WORTH STATING SO THE SILENCE IS NOT MISREAD AS A FIX: ZERO `move` CALLS WERE SPENT THIS RUN,
+  WORTH STATING SO THE SILENCE IS NOT MISREAD AS A FIX: ZERO `move` CALLS WERE SPENT ALL DAY,
   because every candidate died at part 1, 2 or 3 before a hard filter was due.** The defect stands
   unchanged at **thirteen** instances and remains unreported-as-fixed. ⚠ **A quiet session is not
   evidence the filter works.**
