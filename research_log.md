@@ -52,6 +52,257 @@ single most common way a plausible-sounding connection gets mistaken for an oppo
 
 ## Entries
 
+### 2026-11-11 (07:02 ET) — event survey (funnel, pre-thesis)
+
+Selftest **5/5**, exit 0 (`trading_enabled: true`, LIVE paper, equity **$98,910.48** at pre-flight).
+`clock` 07:02:17 — `is_open: false`, `next_open` **2026-11-11T09:30:00-05:00**, `next_close`
+**2026-11-11T16:00:00-05:00**: **both fields carry today's date — the pre-market full-session
+signature. NOT a holiday.** ⚠ **AND TODAY IS THE ONE DATE IN THE YEAR WHERE THAT MATTERS MOST:
+2026-11-11 IS VETERANS DAY. THE BOND MARKET IS CLOSED AND THE EQUITY MARKET IS OPEN.** A seat that
+reasons from "federal holiday" instead of from `next_open` would skip a full trading session.
+Fired ~58 min early against a nominal 08:00, the **eighth** EST session running in that condition
+(observation only — `control.md` forbids diagnosing a schedule from a firing time).
+
+**WEEK ROLLOVER — NO ACTION DUE, re-derived with `isocalendar`, not inherited.** ISO **2026-W46,
+weekday 3**; Monday anchor **2026-11-09** = `week_of` **2026-11-09**. `new_positions_this_week`
+stays **0 of 3**.
+
+**Ledger reconciliation CLEAN, re-derived three independent ways:** `positions.md` satellite block
+count **0** (`grep -cE '^### [A-Z]+ — T-'`) · `sleeves` `satellite.count 0` / `value 0` / `pct 0.0`
+· `positions` returns **one row, core VOO only** (99.046311231 sh @ `avg_entry_price` **706.74**,
+`cost_basis` **$69,999.99** — unchanged since the 2026-09-03 fill; **only the mark moves**).
+**No disagreement, so no reconciliation work.** Core **$68,901.57 / 69.67%**, `core_in_band: true`,
+`rebalance_delta` **329.53**, **NOT DUE**. Cash **$30,000.00 / 30.33%**. Mark **695.65**
+(pre-market, not a close); core unrealised **−$1,098.42 / −1.5690%**.
+
+**✅ NO BACKFILL DUE — THIRD SESSION RUNNING.** The 11-10 close seat held past the bell and
+committed the official **VOO close 689.415** (1,671 prints, `adjustment=all`).
+⚠ **BROKER/BAR GAP — AND THIS READING IS FILED UNDER A LABEL, WHICH IS THE WHOLE POINT.** The
+11-10 close seat **retired the five-point series as constructed**, because it had been assembled
+out of two different comparison forms, and directed that it be re-opened as **two labelled
+series**. This is the first entry in **SERIES A — `lastday_price` vs the PRIOR session's committed
+bar close**: broker **689.50** vs committed **689.415** = **+$0.085**. ⚠ **ONE POINT IS NOT A
+SERIES AND NO TREND IS CLAIMED. Series B — `current_price` vs the SAME session's bar — cannot be
+read pre-market and is left empty.** ⚠ **The committed 689.415 is NOT corrected toward the broker
+figure; the bar close is the official print.**
+
+**FOUR BROAD SWEEPS AND ONE DRILL QUERY.** The transaction sweep — both parties named **and** a
+dollar figure in one sentence — returned ***"no qualifying announcement was identified"***, having
+itself disqualified four near-misses. The regulatory/operational sweep returned **four food recalls
+and two job-cut announcements at private or §3-dead names, and an explicit nil** on FDA approvals
+and rejections, FTC, DOJ, FCC, EPA, plant openings, strikes and capacity curtailments. The
+overnight sweep returned **macro plus two pre-dated capacity items.** The guidance sweep was the
+only productive one: **four own-prior-figure guidance changes, a clean rule (iii) pass on every
+one — and not one of them names a counterparty.**
+
+⚠ **ONE DRILL QUERY SPENT ALL RUN, on Curtiss-Wright, and it was spent to TEST a kill this seat
+could already name rather than to assume it.** The predicted kills — long performance period,
+immaterial annual magnitude, no named supplier — all held, and the query returned a **harder** part
+3 than predicted (**through 2030**). ⚠ **It also produced a result worth keeping: the source could
+NOT establish CW's TTM revenue, segment split or market cap, so §3 was never reached as a gate and
+no §3 pass is claimed below.**
+
+---
+
+### T-2026-11-11-01 — CW (Curtiss-Wright) ← contracts >$140M from General Dynamics Electric Boat — REJECTED (part 3 verified at ~16 quarters; part 2 at ~1% of revenue; and it is the FIRST-ORDER leg)
+**Company A / the news:** Curtiss-Wright announced **2026-11-10** contracts **valued in excess of
+$140 million** from **General Dynamics Electric Boat** for propulsion equipment supporting the US
+Navy's **Virginia-class and Columbia-class** submarine programmes (Businesswire, 2026-11-10).
+**Company B / the candidate:** none reached. **CW itself is the recipient**, and the drill query
+confirms **no supplier TO Curtiss-Wright is named anywhere in the release** — only CW's own
+propulsion valves and pumps.
+
+**1. Mechanism:** not written. ⚠ **This is the shape the funnel keeps mistaking for a §4
+candidate: a genuinely two-party, both-named, dollar-figured COMMERCIAL transaction — the exact
+object the transaction sweep asks for — in which the buyable leg is the one that issued the press
+release about its own revenue.** §4's first line is that you are not chasing the headline name.
+Same rung as `T-2026-11-09-01` (COHR).
+**2. Dollar path: FAILS, and the magnitude was verified rather than estimated.** Performance runs
+**through 2030**, so ~$140M over ~4 years ≈ **$35M/yr** against Q3-2026 net sales **alone** of
+**$952.6M** (annualised ~$3.8B) = **~0.9% of revenue** — **more than ten times below §4's 10%
+floor.** ⚠ **And it is not even allocable: the source states the figure is split between the
+Naval & Power segment AND the Defense Electronics division and is NOT broken out between them, so
+no segment share is computable in either direction.**
+**3. Timing window: FAILS OUTRIGHT — and harder than predicted.** "Engineering, manufacturing and
+testing had begun and would continue **through 2030**" ≈ **16 quarters against §4's ceiling of
+two.** ⚠ **This is rule (vi) arriving in defence rather than energy clothing: the standing rule
+names long-dated energy offtake, and a submarine hull programme is the same shape with a longer
+tail.**
+**4. Invalidation:** not written — there is no thesis to invalidate.
+
+**Hard filters:**
+- Priced-in (§4): **−3.93%** over 5 sessions (497.55 → 477.975) → script verdict `priced_in: false`,
+  "passes". ⚠ **Recorded, NOT leaned on: the move is a DECLINE and the filter thresholds absolute
+  magnitude, so "passes" here means "has not fallen 4% yet", not "the upside is still available".
+  Instance 14 of the direction-blind defect — see the standing item.**
+- Correlation (§4): **not reached** — zero open positions, so `driver` fields are empty.
+- Universe (§3): **NOT REACHED AS A GATE.** The drill query could not establish CW's market cap or
+  TTM revenue from the available sources. ⚠ **No §3 pass is claimed, and a later seat revisiting CW
+  must pull the figure itself rather than inherit an absence.**
+
+**Outcome:** **REJECTED** on **part 3** (through 2030) and **part 2** (~0.9% of revenue,
+unallocated) independently, with **part 1** structurally dead because this is the first-order leg.
+⚠ **The one genuinely new finding: this is the best-formed transaction the sweep has surfaced in
+weeks, and the thing that killed it is the thing that made it findable — a company announcing its
+own award is, by construction, Company A.**
+
+---
+
+### T-2026-11-11-02 — the AI-datacenter supply tier ← CoreWeave's raise of its OWN FY2026 revenue guidance — REJECTED (rule (iii) PASSES on the WRONG FIGURE; no counterparty named; rule (iv), fifth appearance of this complex in five sessions)
+**Company A / the news:** **CoreWeave (CRWV)** reported **2026-11-10** and **raised its own
+FY2026 guidance**: revenue **$12.4–13.2B → $13.0–13.3B**, adjusted operating income
+**$960M–1.15B → $1.275–1.375B**, citing continued AI-infrastructure demand (CNBC, 2026-11-10).
+**Company B / the candidate:** none reached — the GPU, power, cooling and networking tier. ⚠ **The
+source states plainly that NO specific customer, supplier or counterparty is named.**
+
+**1. Mechanism:** not written without an "and also". ⚠⚠ **THIS IS THE 10-15 TSMC DEFECT ARRIVING
+IN A NEW SECTOR, AND IT IS WHY RULE (iii) PASSING IS NOT PROGRESS: the figure that MOVED is
+REVENUE, and revenue has no supplier chain hanging off it. The figure a supplier thesis would run
+on is CAPEX, and the source discloses no change to it — so the mechanism needs "and also CoreWeave
+will have to spend more to deliver that revenue", which is the second clause §4 forbids.**
+⚠ **Apply rule (iii) to the figure the mechanism runs on, not to the release.**
+**2. Dollar path: FAILS.** The disclosed increment is **+$0.6B at the revenue-range midpoint** at
+**Company A**, not segment revenue at any Company B. Allocating any part of it to a supplier
+requires inventing a capex ratio, a vendor split and a delivery schedule — three assumptions, the
+`T-2026-11-04-02` shape.
+**3. Timing window:** not reached.
+**4. Invalidation:** not reached.
+
+**Hard filters:**
+- Priced-in (§4): **−9.29%** over 5 sessions (53.73 → 48.74) → `priced_in: true`, "LATE — skip".
+  ⚠ **Instance 15 of the direction-blind defect, and the clearest one yet: CRWV FELL 9.3% and the
+  script calls it LATE. The verdict is OBEYED — it fails safe — but it must NEVER be quoted as "the
+  market has captured this upside", because here it means precisely the reverse.**
+- Correlation (§4): not reached — zero open positions.
+- Universe (§3): not reached; the thesis dies at part 1.
+
+**Outcome:** **REJECTED** at **part 1** — rule (v) (no named recipient anywhere in the second-order
+leg) and the wrong-figure defect, both independently. ⚠ **Rule (iv): this complex has now arrived
+in five consecutive sessions (11-05 the valuation unwind · 11-06 IREN and QCOM · 11-09 the
+sovereign-AI tier · 11-10 AAON and AAOI · 11-11 CRWV) and died at part 1 or part 2 every time. The
+disclosures keep changing shape — a repricing, a delayed delivery, a collaboration, a guidance
+raise — and the kill does not move. That is a fact about how AI-infrastructure demand is
+DISCLOSED, not about a candidate maturing.**
+
+---
+
+### T-2026-11-11-03 — VG (Venture Global) ← FY2026 adjusted EBITDA raised from its OWN $8.7–9.1B to $10.0–10.3B on Plaquemines Phase 1 commercial operations — REJECTED (FOURTH appearance; first-order leg, no named recipient; its two suppliers were disposed at T-2026-10-15-02)
+**Company A / the news:** Venture Global reported **2026-11-10** and raised FY2026 adjusted EBITDA
+guidance to **$10.0–10.3B from its own prior $8.7–9.1B**, alongside **commencement of commercial
+operations at Phase 1 of Plaquemines**. **Company B / the candidate:** none reached.
+
+**1. Mechanism:** not written. **The EBITDA raise is VG's own economics — first-order.** The only
+second-order legs are the equipment suppliers, and **the announcement names no recipient of
+anything.**
+**2. Dollar path: FAILS.** ⚠ **The suppliers are already disposed and the answer was written four
+weeks ago: `T-2026-10-15-02` killed the GE Vernova / Baker Hughes power-island frame agreements
+because the ~$17.2B in circulation was conditional, aggregated across two agreements, UNALLOCATED
+between the two buyable legs, and paid OUT by Venture Global. Nothing in an EBITDA raise allocates
+a dollar to either of them.**
+**3. Timing window:** not reached. ⚠ **Noted because it is the one genuinely NEW thing here: the
+three prior appearances all died at part 3 / rule (vi) on long-dated contracting, and this event —
+a plant actually entering commercial operation — is NOT long-dated. The kill has MOVED UP a rung,
+to part 1. That is a real change and it still does not produce a candidate.**
+**4. Invalidation:** not reached.
+
+**Hard filters:**
+- Priced-in (§4): **−7.77%** over 5 sessions (13.00 → 11.99) → `priced_in: true`, "LATE — skip".
+  **Instance 16 of the direction-blind defect.** ⚠ **Also §3-relevant: at **$11.99** VG is a
+  candidate whose cap must be checked, not assumed, if it is ever reached — it was not reached.**
+- Correlation (§4): not reached — zero open positions.
+- Universe (§3): not reached.
+
+**Outcome:** **REJECTED** at **part 1** (first-order leg, no named recipient) with **part 2**
+pre-disposed. ⚠ **Rule (iv), FOURTH appearance, and the standing roll-call predicted this issuer's
+return explicitly — "expect this issuer again; the answer is already written." It was. Zero drill
+queries were spent on it, which is what the roll-call is FOR.**
+
+---
+
+### T-2026-11-11-04 — the macro / policy complex (October CPI · the December hike repricing · a 17bp two-year move · a $42B 10-year auction · the USTR Section 301 extension) — REJECTED (no Company A; the standing government-action object; the tariff leg is rule (v)'s most fillable blank)
+**Company A / the news:** October **CPI +0.4% m/m headline and +0.3% core**, both **above the
++0.3% / +0.2% consensus** — ⚠ **the figures the 11-10 plan carried as ESTIMATES, now printed;
+quoting them as outcomes is correct today and was not yesterday.** Futures priced a **December
+25bp hike as near-certain with ~15% on 50bp**; Governor Waller said 50bp should be considered.
+**2-year +17bp to 4.73%**, 5-year +14bp to 4.81%, **10-year +10bp to 4.98%**, 30-year +9bp to
+5.35%; a **$42B 10-year auction** cleared at **5.02%**. USTR extended **178 Section 301 exclusions**
+plus maritime-service fees and port-cargo-handling-equipment tariffs **through 2027-01-09**.
+**Company B / the candidate:** none exists.
+
+**1. Mechanism:** not written. **Every leg has ONE party.** ⚠ **The standing rule is explicit and
+this is a textbook instance: a government action is sector-specific, carries a number, names an
+industry and moves the tape — and a long-only book cannot trade money being withheld from, or
+returned to, a sector unless some NAMED party receives it. Nobody does.**
+⚠ **Rule (iii) independently on the CPI leg: the comparison in the source is to CONSENSUS, not to
+the BLS's own prior figure — the single most prolific costume in the standing rules.**
+⚠⚠ **THE USTR LEG IS THE ONE WORTH NAMING, BECAUSE IT WEARS RULE (v)'s BEST-FITTING COSTUME: it
+pairs an EXACT COUNT (178 exclusions), a DATED deadline (2027-01-09) and a NAMED COMPONENT
+CATEGORY ("port cargo-handling equipment") — and the source's own list of beneficiaries is
+"importers, shipping companies, and port-equipment projects", i.e. three CATEGORIES and zero
+names. A precise figure beside a named component category is the most fillable-looking blank this
+funnel produces, and filling it in is not research.**
+**2–4:** not reached.
+
+**Hard filters:** not reached — no candidate.
+**Outcome:** **REJECTED**, **zero drill queries spent.** ⚠ **Five consecutive sessions have now
+logged a macro/policy complex in exactly this shape (11-05, 11-06, 11-09, 11-10, 11-11). THE
+FINDING IS THE PATTERN, NOT THE INSTANCE — and the correct cost of recognising it is one paragraph
+and no query.**
+
+---
+
+### T-2026-11-11-05 — sweep: two pre-dated capacity announcements, three own-results prints with no counterparty, a $26B private placement, a foreign aircraft order, two sub-scale defence POs, four recalls and three workforce actions — REJECTED (eighteen items, disposed as one, ZERO drill queries spent)
+
+- **FCX (Freeport-McMoRan) — Bagdad $4.5B expansion, +225Mlb/yr copper. RULE (iii), and the
+  source volunteered the kill: ANNOUNCED 2026-11-04**, surfaced by a `--recency day` sweep seven
+  days later. ⚠ **A sweep window is not a disclosure date. This is the cheapest rule (iii) failure
+  there is and it arrives every few sessions.** No customer contract or affected company is
+  identified — rule (v) on top.
+- **Lydian Energy / Faraday (Utah), 150MW / 600MWh to PacifiCorp. RULE (iii) AGAIN, VOLUNTEERED:
+  the source states the facility actually began operating 2026-09-18**, so the 11-10 item is the
+  commercial-operation ANNOUNCEMENT, not the event. **Lydian is private; PacifiCorp is a Berkshire
+  subsidiary, not separately buyable.** ⚠ **A DELIVERY MILESTONE RECYCLED AS NEWS — the GM/Lockheed
+  costume, in batteries.**
+- **Anthropic private placement, ~$26B, Google / NVIDIA / Microsoft among seven committing. RULE
+  (viii): capital paid IN**, and paid in BY the §3-eligible legs TO a private recipient that cannot
+  be bought at any price. The AZN/SMMT and GEHC/Sofie shapes combined.
+- **Cathay Pacific / Airbus, 11 × A330-900, $5.114B.** ⚠ **Two kills: the buyer is HONG
+  KONG-LISTED and Airbus is PARIS-LISTED (§3 kills both legs), and the figure is an aggregate
+  CATALOG price, which is not a transaction value in commercial aviation.** Rule (v)'s ceiling in
+  a new costume — a LIST PRICE.
+- **Summit Midstream (SMC)** EBITDA $235–255M → **$250–260M** · **Grove Collaborative (GROV)**
+  revenue $142.5–152.5M → **$144–146M**, EBITDA breakeven-to-low-single-digits → **$1–2M** ·
+  **StubHub (STUB)** GMS outlook raised, **no old or new range in the source.** ⚠ **All three are
+  clean rule (iii) passes on their own prior figures and ALL THREE NAME NO COUNTERPARTY. The first
+  two are also §3-dead on market cap by inspection. A clean pass on one filter is not progress
+  toward a trade.**
+- **Vestas (VWDRY)** FY revenue €20–22B → **€20.5–21.5B** — **§3: Copenhagen-listed, US exposure
+  via an OTC ADR.** Dead before the mechanism.
+- **Senseonics (SENS)** $62–66M → **$68–70M** · **Zeta Global (ZETA)** +$37M to a $1.855B midpoint
+  · **MNTN** $347–357M → **$311–314M**: all three **reported 11-04 or 11-09 — behind seats that
+  have already run.** Rule (iii) on the window.
+- **VEEM / Huntington Ingalls Newport News, ~$800,000 PO.** ⚠ **Recorded only to name the floor:
+  it is **four orders of magnitude** below §4's materiality, and VEEM is AUSTRALIAN-LISTED. Two
+  independent §3/part-2 kills on one line.**
+- **Stabilis Solutions — three-year LNG take-or-pay.** Customer **unnamed**, **no dollar value
+  disclosed.** Rule (v) plus a missing part 2.
+- **Four FDA recalls and three workforce actions:** Family Farmstead Dairy cheddar (*Listeria*,
+  company notice dated **10-15**, FDA published 11-10 — rule (iii)) · Laub's Feeding & Cubing
+  89 tons of hay cubes (*C. botulinum*) · **Nexteer Automotive** Saginaw reductions, **count
+  undisclosed** · **Ferrara** Little Village closure, 154 jobs, ⚠ **production moves to Ferrara's
+  OWN other facilities — rule (vii), vertical integration leaves no external beneficiary** ·
+  **PepsiCo** ~1,000 North American job cuts plus two 2026 bottling-plant closures. ⚠ **A COST
+  ACTION AT COMPANY A IS NOT A SECOND-ORDER CATALYST: nobody is disclosed as receiving the saved
+  money, and the only read available is a reader-supplied share shift. Every recalling or closing
+  entity here is private or §3-dead.**
+
+**Outcome:** **REJECTED, all eighteen, zero drill queries spent.** ⚠ **Two of the three cheapest
+kills today were VOLUNTEERED BY THE SOURCES THEMSELVES (Freeport's 11-04 date, Lydian's 09-18
+start). Asking the sweep for the disclosure date rather than the publication date costs one clause
+and killed two items before a mechanism was attempted.**
+
+---
+
 ### 2026-11-10 (07:02 ET) — event survey (funnel, pre-thesis)
 
 Selftest **5/5**, exit 0 (`trading_enabled: true`, LIVE paper, equity **$98,608.39** at pre-flight).
