@@ -22,21 +22,26 @@ ET date and **refuses to execute any intent from a plan not dated today** — it
 stale plan, posts an alert, and proceeds to the core/rebalance section only.
 
 ```
-plan_date: 2026-11-10
+plan_date: 2026-11-11
 generated_by: 1-premarket-research
 market_open_today: yes
 ```
 
-Market opens **2026-11-10 at 09:30 ET** (`clock` 07:01:59 ET: `is_open: false`, `next_open`
-`2026-11-10T09:30:00-05:00`, `next_close` `2026-11-10T16:00:00-05:00`). **NOT a holiday** —
+Market opens **2026-11-11 at 09:30 ET** (`clock` 07:02:17 ET: `is_open: false`, `next_open`
+`2026-11-11T09:30:00-05:00`, `next_close` `2026-11-11T16:00:00-05:00`). **NOT a holiday** —
 closed because it is pre-market, and **both** fields carry **today's** date, the full-session
 signature. ⚠ **Read off the DATES, not the boolean: FALSE has three meanings, TRUE has one.**
 
-The plan this seat replaced was dated **2026-11-09** — the previous trading day, the ordinary
+⚠⚠ **AND TODAY IS THE DATE THAT RULE WAS WRITTEN FOR: 2026-11-11 IS VETERANS DAY. THE BOND
+MARKET IS CLOSED AND THE EQUITY MARKET IS OPEN.** A seat reasoning from "federal holiday"
+instead of from `next_open` would log a holiday skip over a full trading session — the one
+failure in this routine that looks exactly like success. **`market_open_today: yes`.**
+
+The plan this seat replaced was dated **2026-11-10** — the previous trading day, the ordinary
 shape. It was fresh when consumed and carried **zero intents**.
 
 **WEEK ROLLOVER — NO ACTION DUE, RE-DERIVED AT THIS SEAT WITH `isocalendar`, NOT INHERITED.**
-ISO **2026-W46**, weekday **2**; Monday anchor **2026-11-09** = the inherited `week_of`
+ISO **2026-W46**, weekday **3**; Monday anchor **2026-11-09** = the inherited `week_of`
 **2026-11-09**. `new_positions_this_week` stays **0 of 3**. ⚠ **Recorded as re-derived rather
 than skipped: §6's cap must not depend on any earlier seat having run.**
 
@@ -48,25 +53,23 @@ than skipped: §6's cap must not depend on any earlier seat having run.**
 in-session `CronCreate` jobs, and its empty answer is evidence of nothing): the 11-02 seat read
 routine 2's **stored schedule** as `13:35:00 UTC`. That was `09:35 ET` under EDT and is
 `08:35 ET` under EST. **US ET left DST on 2026-11-01.** Dispatches since: `08:47` (11-02) ·
-`08:36` (11-03) · `08:35` (11-04) · `08:37` (11-05) · `08:37` (11-06) · `08:36` (11-09) —
-**six for six, each read `is_open: false` and placed nothing.** This seat dispatched at `07:02`
-against a nominal `08:00`: the same −1h, **seventh consecutive EST session.**
+`08:36` (11-03) · `08:35` (11-04) · `08:37` (11-05) · `08:37` (11-06) · `08:36` (11-09) ·
+`08:36` (11-10) — **seven for seven, each read `is_open: false` and placed nothing.** This seat
+dispatched at `07:02` against a nominal `08:00`: the same −1h, **eighth consecutive EST session.**
 
 ⚠ **IF YOU ARE THE OPEN SEAT AND `clock` SAYS `is_open: false`: THAT IS THE EXPECTED, CONFIRMED
 CONDITION — NOT A NEW FAULT AND NOT A HOLIDAY.** Record the firing time and `is_open` as your
 first line. `control.md` forbids diagnosing a schedule fault **from a firing time**; the
 stored-schedule reading plus the DST calendar is different evidence.
 
-⚠⚠⚠ **CORRECTED 2026-11-09 AND THIS COPY NOW CARRIES THE CORRECTION RATHER THAN THE ERROR:
-the previous version of this file said *"holding does not change `is_open`."* **THAT IS FALSE.**
-Holding past 09:30 is exactly what changes it, and routine 4 has now proved the hold **twice**
-(11-06 and 11-09), recording the official close both times.
-⚠⚠ **PROCEDURE IF YOU ARE THE OPEN SEAT AND THIS PLAN CARRIES ANY INTENT: finish every
+**PROCEDURE IF YOU ARE THE OPEN SEAT AND THIS PLAN CARRIES ANY INTENT:** finish every
 closed-market-safe step, **COMMIT AS INSURANCE** (say in the message that a hold is in progress
 and what to backfill if the second commit never lands), poll `clock` until `is_open: true`,
-then execute and commit again. DO NOT log a skip over a non-empty plan.** ⚠ **This plan carries
-no intents, so the procedure is not due today — it is written here because the day it IS due,
-the seat will be reading this file and nothing else.**
+then execute and commit again. **DO NOT log a skip over a non-empty plan.** Holding past the
+bell is exactly what changes `is_open`, and routine 4 has now proved the hold **three times**
+(11-06, 11-09, 11-10), recording the official close each time. ⚠ **This plan carries no
+intents, so the procedure is not due today — it is written here because the day it IS due, the
+seat will be reading this file and nothing else.**
 
 ⚠⚠ **THIS PLAN CARRIES ZERO BUY INTENTS, SO THE FAULT COSTS NOTHING TODAY — AND THAT IS WHAT
 MAKES IT DANGEROUS. A pre-open seat over an empty plan and a correctly-timed seat over an empty
@@ -80,7 +83,7 @@ and **wrong again from 2027-03-14**, so it is a stopgap, not the fix.
 
 ### BUY
 
-**NONE.** Four broad Perplexity sweeps and one drill query spent; **six theses logged; zero
+**NONE.** Four broad Perplexity sweeps and one drill query spent; **five theses logged; zero
 survived.**
 
 New positions were **permitted throughout, and the absence of intents is a research outcome,
@@ -88,30 +91,27 @@ not a block**: breaker **INACTIVE 0/3** · `new_positions_this_week` **0 of 3** 
 sleeve **0.0% deployed** with **$30,000 cash** · `control.md` **Notes: (none)**. ⚠ **Nothing
 stopped a buy except the candidates.**
 
-⚠⚠ **THREE OF THE FOUR SWEEPS RETURNED AN EXPLICIT NIL.** The transaction sweep — both parties
-named **and** a figure — returned *"no qualifying announcement was identified."* The structural
-sweep, which required **one source sentence carrying both the dollar figure and the name of the
-company RECEIVING it**, returned *"No qualifying disclosure was identified."* The
-overnight-events sweep said the reporting *"does not support a reliable, comprehensive list of
-major US corporate events for November 9–10, 2026."*
+**The day's best candidate was `T-2026-11-11-01` — Curtiss-Wright's >$140M of contracts from
+General Dynamics Electric Boat — and it is the best-FORMED transaction this funnel has
+surfaced in weeks: both parties NAMED, a dollar figure, a dated 8-K-grade press release, a
+§3-eligible buyer and a §3-eligible seller.** ⚠⚠ **IT DIED BECAUSE THE THING THAT MADE IT
+FINDABLE IS THE THING THAT DISQUALIFIES IT: a company announcing its own award is, by
+construction, Company A.** The drill query then produced a **harder** kill than predicted —
+performance runs **through 2030** (~16 quarters against §4's two), and ~$140M over that period
+is **~$35M/yr against ~$3.8B of annualised revenue, ~0.9%**, more than ten times below §4's
+materiality floor — and the figure is **not even allocable**, being split between Naval & Power
+and Defense Electronics with no breakout. **No supplier TO Curtiss-Wright is named**, so the
+second-order door is a blank.
 
-**The day's best candidate was `T-2026-11-10-01` — NASA's $10B CLPS 2 lunar award — and it had
-more disclosed material than almost anything in this log: eight named companies, two §3-eligible
-mega-caps (LMT, NOC), a ten-billion-dollar figure and a dated government award.** It died
-because **no dollar was allocated to anyone**: NASA's own language is *"a 10-year, multiple-award
-IDIQ master contract with a **combined maximum value** of $10 billion"*, and ispace-U.S. stated
-the selection *"does not itself constitute a funded mission."* Even $10B ÷ 8 ÷ 10yr ≈ $125M/yr
-is **~0.17% of LMT's revenue, ~60× below §4's materiality floor** — and that division is
-invented, because the ceiling is not divisible. Rule (iii) rides on top: **announced 2026-11-07,
-NASA release merely UPDATED 11-10**, so a sweep run today surfaces a three-day-old award as
-fresh.
+**The entry most worth reading is `T-2026-11-11-02`, CoreWeave** — it raised its **own** FY2026
+revenue guidance to **$13.0–13.3B from its own prior $12.4–13.2B**, a clean rule (iii) pass.
+⚠⚠ **It died at part 1 on the 10-15 TSMC defect arriving in a new sector: THE FIGURE THAT MOVED
+IS REVENUE, AND REVENUE HAS NO SUPPLIER CHAIN HANGING OFF IT. The figure a supplier thesis runs
+on is capex, and no change to it was disclosed — so the mechanism needs "and also CoreWeave will
+have to spend more", the second clause §4 forbids.** Apply rule (iii) to the figure the
+mechanism runs on, not to the release.
 
-**The entry most worth reading is `T-2026-11-10-02`, AAON** — it raised its **own** FY
-sales-growth guidance to **72–75% from its own prior 55–60%**, the cleanest rule (iii) pass in
-weeks. It still died at **part 1**: a company disclosing that its own order book is bigger than
-it said is **evidence of a condition that pre-dates the remark**, not an event, and the source
-states **no named customer, no named supplier and no capex figure** appears in the release.
-See `research_log.md` `T-2026-11-10-01` … `-06`.
+See `research_log.md` `T-2026-11-11-01` … `-05`.
 
 ### SELL
 
@@ -119,20 +119,19 @@ See `research_log.md` `T-2026-11-10-01` … `-06`.
 **one row, core VOO only**. §5.1 and §5.2 were evaluated and have nothing to evaluate against:
 all four sell rules are **ABSENT, NOT PASSING.** Core VOO is §5-exempt and was struck from the
 working list rather than stamped as passing. **Zero §5.1 Perplexity calls were spent, because
-there is no position to check news on.** **70th consecutive seat with an empty ledger.**
+there is no position to check news on.** **74th consecutive seat with an empty ledger.**
 
 ### REBALANCE
 
-**NONE.** `sleeves` 07:02 ET: equity **$98,589.57** · core **VOO $68,589.57 = 69.57%** ·
-satellite **$0 / 0.0% / count 0** · cash **$30,000.00 = 30.43%** · `core_in_band: true` ·
-`rebalance_needed: false` · `rebalance_delta: 423.13`. **69.57% sits 4.57pp inside the 65%
+**NONE.** `sleeves` 07:02 ET: equity **$98,901.57** · core **VOO $68,901.57 = 69.67%** ·
+satellite **$0 / 0.0% / count 0** · cash **$30,000.00 = 30.33%** · `core_in_band: true` ·
+`rebalance_needed: false` · `rebalance_delta: 329.53`. **69.67% sits 4.67pp inside the 65%
 edge.**
-⚠ **Band distance in VOO terms, COMPUTED IN A SCRIPT AND NOT RE-DERIVED FROM THE MARK: the 65%
-floor needs VOO **562.51** and the 75% ceiling **908.67**.** ⚠⚠ **These are IDENTICAL to the
-11-06 and 11-09 figures by construction, not by coincidence — the threshold is a function of the
-INERT CASH LEG ALONE (`cv = t·cash/(1−t)`, then `÷ qty`), so it does NOT move with the mark.
-There is nothing here to re-derive, and the 11-09 seat's wrong first draft (563.42 / 910.14) came
-from re-deriving it.** **NO REBALANCE DUE.**
+⚠ **Band distance in VOO terms, CARRIED NOT RE-DERIVED: the 65% floor needs VOO **562.51** and
+the 75% ceiling **908.67** — identical to 11-06, 11-09 and 11-10 **by construction**, because
+the threshold is a function of the INERT CASH LEG ALONE (`cv = t·cash/(1−t)`, then `÷ qty`) and
+does not move with the mark. The 11-09 seat's wrong first draft (563.42 / 910.14) came from
+re-deriving it.** **NO REBALANCE DUE.**
 
 ---
 
@@ -146,60 +145,69 @@ correct and expected on this plan. Do **not** read an empty intent list as licen
 a trade at the point of execution — §4 requires the written thesis to pre-date the order, and
 **no thesis dated today survived.**
 
-⚠⚠ **ONE SCHEDULED PRINT LANDS BETWEEN THIS SEAT AND THE OPEN, AND IT IS NOT A REASON TO
-PRE-POSITION OR TO SKIP ANYTHING: October CPI is released TODAY.** Consensus was headline
-**+0.3% m/m** (from 0.6%) and core **+0.2%** (from 0.3%) — ⚠ **those are ESTIMATES, the source
-said so explicitly, and this seat has NOT seen the print. Do not quote them as outcomes.** PPI
-follows **11-13**. A reported ~75% implied probability of a December Fed hike is carried **with
-its provenance and is NOT treated as established** — the 11-06 seat logged two contradictory
-answers from this same model on this same question minutes apart.
+⚠ **NO SCHEDULED PRINT LANDS BETWEEN THIS SEAT AND THE OPEN.** October CPI **printed overnight**
+and is now an outcome rather than an estimate: headline **+0.4% m/m**, core **+0.3%**, both
+**above** the +0.3% / +0.2% consensus the 11-10 plan carried as estimates. Futures moved to a
+**near-certain December 25bp hike with ~15% on 50bp**; the **2-year rose 17bp to 4.73%** and the
+**10-year 10bp to 4.98%**. PPI follows **11-13**. ⚠ **All of it is logged at
+`T-2026-11-11-04` as the standing government-action object — NO Company A, no named recipient,
+and NOT a reason to pre-position or to skip anything.**
 
 ---
 
 ## Carry to the open seat
 
-- **✅ NO BACKFILL IS DUE — SECOND SESSION RUNNING, THE FIRST BACK-TO-BACK PAIR IN THIS FAULT'S
-  HISTORY.** The 11-09 close seat held past the bell and committed the official **VOO close
-  691.93** (2,880 prints, `adjustment=all`). Broker `lastday_price` reads **691.87**, **6¢ below
-  it** — inside the known moving broker/bar midpoint, requiring nothing. ⚠ **Do not "correct" the
-  committed 691.93 toward the broker figure; the bar close is the official print.** Broker/bar gap
-  series now **$0.02 · $0.03 · $0.45 · $0.21 · −$0.06** (11-04/05/06/09/10) — ⚠ **the fifth
-  reading is the FIRST NEGATIVE ONE, which settles it: a moving midpoint, not an offset, and not
-  correctable in either direction.**
+- **✅ NO BACKFILL IS DUE — THIRD SESSION RUNNING.** The 11-10 close seat held past the bell and
+  committed the official **VOO close 689.415** (1,671 prints, `adjustment=all`).
+  ⚠⚠ **THE BROKER/BAR SERIES IS NOW LABELLED, WHICH WAS THE 11-10 CLOSE SEAT'S OWN DIRECTION
+  AFTER IT RETIRED THE OLD ONE AS MIXED. SERIES A — `lastday_price` vs the PRIOR session's
+  committed bar — opens today at broker **689.50** vs committed **689.415** = **+$0.085**. ONE
+  POINT IS NOT A SERIES AND NO TREND IS CLAIMED. SERIES B — `current_price` vs the SAME
+  session's bar — cannot be read pre-market and is empty.** ⚠ **Do not "correct" the committed
+  689.415 toward the broker figure; the bar close is the official print.**
 - **Ledger reconciliation CLEAN, re-derived at this seat three independent ways, not inherited:**
   `positions.md` satellite count **0** · `sleeves satellite.count 0` · `positions` core-only.
   Core VOO **99.046311231 sh @ 706.74**, cost basis **$69,999.99**, unchanged since the
-  2026-09-03 fill; only the mark moves. Mark **692.50**; unrealised **−$1,410.42 / −2.0149%**.
-  ⚠ **That dollar figure equals the whole-account drawdown to the cent (−$1,410.43) for the fifth
-  session running, because the cash leg has never moved.**
+  2026-09-03 fill; only the mark moves. Mark **695.65** (pre-market, not a close); unrealised
+  **−$1,098.42 / −1.5690%**. ⚠ **That figure equals the whole-account drawdown from $100,000 to
+  the cent (−$1,098.43) for the sixth session running, because the cash leg has never moved.**
 - **⚠⚠ THE §1 SHORTFALL IS A STANDING, MEASURED STRUCTURAL FINDING AND IT IS THE HUMAN'S CALL,
   NOT A SEAT'S.** With satellite at **0.0%** and $30,000 inert, the account captures only
-  **69.57%** of any index move and **cannot beat the benchmark on any up session.** The 11-09
-  close measured the cost at **0.728pp in one session** (VOO +2.3535% vs account +1.6253%).
-  ⚠ **Recorded as the measured price of 70 honest no-trade seats, EXPLICITLY NOT as an argument
-  for lowering §4's bar — manufacturing a thesis to close this gap is the one response that makes
-  it worse.**
-- **⚠⚠ THE DIRECTION-BLIND `move` DEFECT — NO NEW INSTANCE TODAY, AND THE REASON IS WORTH
-  STATING: ZERO `move` CALLS WERE SPENT THIS RUN, because every candidate died at part 1, 2 or 3
-  before a hard filter was due.** The defect stands at **thirteen** instances. ⚠ **If you reach
-  the priced-in check on anything: the script thresholds ABSOLUTE 5-session magnitude, so a
-  DECLINE reads as `priced_in: true` / "LATE — skip". OBEY IT ANYWAY — it fails safe, over-blocking
-  and never wrongly permitting — but NEVER quote such a reading as "the market has captured this
-  upside"; it has meant the reverse thirteen times.** Fix is a **signed** threshold in
-  `scripts/alpaca.py`: script-level, **not a seat's to install.** Human notified 11-03, 11-05,
-  11-06, 11-09.
+  **69.67%** of any index move and **cannot beat the benchmark on any up session.** ⚠⚠ **THE
+  11-10 CLOSE SEAT MEASURED BOTH SIGNS OF THE SAME STRUCTURE WITHIN 24 HOURS AND THE PAIR IS THE
+  WHOLE ARGUMENT: on 11-09 the structure COST 0.728pp on an up day (VOO +2.3535% vs account
+  +1.6253%); on 11-10 it APPEARED to EARN +0.1107pp on a down day (VOO −0.3635% vs account
+  −0.2528%) — and weight × VOO move predicted the account's move TO FOUR DECIMAL PLACES, so the
+  "outperformance" was cash drag with the sign flipped and nothing else. LOWER BETA IS NOT
+  ALPHA.** ⚠ **Recorded as the measured price of 74 honest no-trade seats, EXPLICITLY NOT as an
+  argument for lowering §4's bar — manufacturing a thesis to close this gap is the one response
+  that makes it worse.**
+- **⚠⚠ THE DIRECTION-BLIND `move` DEFECT — THREE NEW INSTANCES TODAY, TAKING IT TO SIXTEEN, AND
+  TODAY IS THE FIRST TIME ALL THREE READINGS WERE DECLINES.** `CW` **−3.93%** → `priced_in:
+  false` "passes" · `CRWV` **−9.29%** → `priced_in: true` "LATE — skip" · `VG` **−7.77%** →
+  "LATE — skip". ⚠ **The script thresholds ABSOLUTE 5-session magnitude, so a FALLING stock reads
+  as "the market has already moved on this news". OBEY IT ANYWAY — it fails safe, over-blocking
+  and never wrongly permitting — but NEVER quote such a reading as "the upside is captured";
+  it has meant the reverse sixteen times.** ⚠ **IMMATERIAL TODAY, AND SAY SO RATHER THAN IMPLY
+  IT: all three names died at part 1, 2 or 3 before the filter could decide anything.** Fix is a
+  **signed** threshold in `scripts/alpaca.py`: script-level, **not a seat's to install.** Human
+  notified 11-03, 11-05, 11-06, 11-09, 11-11.
 - **⚠ RULE (iv) ROLL-CALL FOR THE NEXT SEAT, so no drill query is wasted re-deriving a written
-  answer:** **NVDA** is at **four appearances in five sessions** (11-05 unwind · 11-06 IREN ·
-  11-09 SK Telecom/Rebellions · 11-10 the Huang governance story) — dead at part 1 or part 2 every
-  time. **RDW** returned today inside rule (v)'s CEILING sub-shape, **the very shape its own
-  "$980M" ceiling was first used to illustrate.** **Venture Global** reported earnings today and
-  is at **three prior appearances**, dead on part 3 / rule (vi) all three times. ⚠ **A ticker that
-  keeps arriving and keeps dying the same death is telling you about its industry's disclosure
-  practice, not about a candidate maturing.**
-- **⚠ NEW TODAY, FOR THE FUNNEL'S FDA RANGE — the first REJECTION and the first COMPETITIVE
-  ENTRANT.** `T-2026-11-10-03`: Novocure's Optune Mya was **declined**, and a rejection creates
-  **nothing** — it preserves the status quo, so no incumbent's economics changed on any date.
-  `T-2026-11-10-04`: Bayer's asundexian was **approved**, and its only second-order read
-  (incumbent DOAC franchises) has the **WRONG SIGN for a long-only book.** ⚠ **The range now has
-  three points: a first approval creates a chain, an expanded indication creates nothing, and a
-  competitive entrant destroys incumbent economics. Only the first can produce a §4 candidate.**
+  answer:** **Venture Global** returned for its **FOURTH** appearance today (`T-2026-11-11-03`)
+  and **the standing roll-call predicted it by name — "expect this issuer again; the answer is
+  already written." It was, and zero queries were spent on it, which is what the roll-call is
+  FOR.** ⚠ **One thing DID change and it is worth carrying: the three prior VG deaths were all
+  part 3 / rule (vi) on long-dated contracting, and this one — a plant entering commercial
+  operation — is NOT long-dated. The kill moved UP a rung to part 1. A kill moving is real news
+  about the issuer; it still produced no candidate.** **The AI-infrastructure complex is at
+  FIVE consecutive sessions** (11-05 the unwind · 11-06 IREN/QCOM · 11-09 sovereign-AI · 11-10
+  AAON/AAOI · 11-11 CRWV), dead at part 1 or 2 every time, **through four different disclosure
+  types.** ⚠ **A ticker or complex that keeps arriving and keeps dying the same death is telling
+  you about its industry's DISCLOSURE PRACTICE, not about a candidate maturing.**
+- **⚠ NEW TODAY, AND IT IS A ONE-CLAUSE CHANGE TO THE SWEEP THAT PAID FOR ITSELF TWICE:** two of
+  the three cheapest kills were **VOLUNTEERED BY THE SOURCES** once the query asked for the
+  **disclosure** date rather than accepting the publication date — **Freeport's $4.5B Bagdad
+  expansion was announced 11-04** and **Lydian's Faraday battery plant has been operating since
+  09-18**, both surfaced as fresh by a `--recency day` sweep. ⚠ **A SWEEP WINDOW IS NOT A
+  DISCLOSURE DATE. Ask for the disclosure history in the sweep itself; it costs one clause and
+  it killed two items before a mechanism was attempted.**
