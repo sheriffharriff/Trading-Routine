@@ -52,6 +52,250 @@ single most common way a plausible-sounding connection gets mistaken for an oppo
 
 ## Entries
 
+### 2026-11-12 (07:01 ET) — event survey (funnel, pre-thesis)
+
+Selftest **5/5**, exit 0 (`trading_enabled: true`, LIVE paper, equity **$98,849.07** at pre-flight).
+`clock` 07:01:49 — `is_open: false`, `next_open` **2026-11-12T09:30:00-05:00**, `next_close`
+**2026-11-12T16:00:00-05:00**: **both fields carry today's date — the pre-market full-session
+signature. NOT a holiday.** Thursday, ordinary session. ⚠ **Read off the DATES, not the boolean.**
+
+**WEEK ROLLOVER — NO ACTION DUE, RE-DERIVED AT THIS SEAT WITH `isocalendar`, NOT INHERITED.**
+ISO **2026-W46, weekday 4**; Monday anchor **2026-11-09** = inherited `week_of` **2026-11-09**.
+`new_positions_this_week` stays **0 of 3**.
+
+**NEW POSITIONS PERMITTED THROUGHOUT.** Breaker **INACTIVE 0/3** · cap **0 of 3** · satellite
+**0.0% deployed, $30,000 cash** · `control.md` **Notes: (none)**. ⚠ **Nothing blocked a buy except
+the candidates, and that is the whole of today's result.**
+
+**FUNNEL SPEND: four broad sweeps + two drill queries = six Perplexity calls; one `move` call.**
+**Sweeps:** (1) corporate disclosures with the **disclosure date** and the **named-counterparty**
+clause both demanded up front — the 11-11 one-clause change, retained because it paid for itself
+twice; (2) regulatory / FDA / tariff / procurement decisions; (3) ⚠⚠ **A NEW SWEEP ANGLE, BUILT
+DIRECTLY FROM THE 11-11 FINDING THAT THE TRANSACTION SWEEP IS STRUCTURALLY BIASED TOWARD COMPANY A:
+it asked only for disclosures where the ISSUER IS THE BUYER AND THE NAMED COUNTERPARTY IS THE
+SELLER** — i.e. it inverted the leg the press release comes from. **It returned ZERO US-listed
+buyers, which is a clean and informative null rather than a failed query: the bias is not that the
+sweep is worded badly, it is that BUYERS DO NOT ISSUE THE RELEASE.** ⚠ **Keep the angle; expect
+thin returns from it and do not read thinness as a reason to go back to Company-A-shaped sweeps.**
+(4) companies raising their **OWN PRIOR CAPEX** figure, excluding revenue raises and
+reaffirmations by construction — **the sweep that produced the day's one real piece of work.**
+
+⚠ **THE SWEEP-WINDOW / DISCLOSURE-DATE GAP APPEARED TWICE MORE TODAY, FOR THE THIRD AND FOURTH
+TIME IN TWO SESSIONS:** a `--recency day` sweep run on **11-12** surfaced CoreWeave's **11-10**
+release and Anthropic's **late-September** generator purchase as though both were fresh. **A SWEEP
+WINDOW IS NOT A DISCLOSURE DATE**, and the only defence that has ever worked is demanding the
+disclosure date **inside the query**.
+
+---
+
+### T-2026-11-12-02 — the AI-datacenter supply tier ← CoreWeave's raise of its OWN FY2026 CAPEX guidance — REJECTED (part 1 / rule (v); part 2; and a NEW rule (iii) costume) — ⚠⚠ **AND IT CORRECTS A FACTUAL CLAIM IN `T-2026-11-11-02`**
+**Company A / the news:** **CoreWeave (CRWV)**, Q3 2026 release dated **2026-11-10**, stated
+verbatim: *"We now expect full year 2026 capital expenditures of **$37 billion to $39 billion**,
+raising the low end of our prior guidance range of **$35 billion to $39 billion**."* Prior range
+issued with **Q2 2026 results, August 2026.** Stated reason: expectation to *"deploy infrastructure
+and deliver it to customers sooner than planned."*
+**Company B / the candidate:** **none reached** — the GPU, power, cooling, networking and EPC tier.
+⚠ **The source states plainly that NO sentence anywhere in the release or the call names a supplier,
+vendor, OEM or contractor with a dollar amount attached.**
+
+⚠⚠⚠ **FIRST, THE CORRECTION, BECAUSE IT CHANGES WHAT THE PRIOR ENTRY ASSERTED AND IS NOT LEFT
+BESIDE IT.** `T-2026-11-11-02` reads: *"The figure a supplier thesis would run on is CAPEX, and the
+source discloses no change to it."* **THAT IS WRONG. THE CAPEX FIGURE DID MOVE, AND IT MOVED IN THE
+SAME 11-10 RELEASE THE 11-11 SEAT WAS ALREADY READING.** That seat applied the right rule — *apply
+rule (iii) to the figure the mechanism runs on* — to a **mis-stated fact**, and reached the right
+verdict for a reason that was not true. ⚠ **A right answer from a false premise is the most
+expensive kind of correct, because nothing downstream flags it.** The entry is amended in place.
+
+**1. Mechanism: STILL NOT WRITABLE WITHOUT AN "AND ALSO", AND THE REASON IS NOW RULE (v), NOT THE
+WRONG-FIGURE DEFECT.** With the capex correction applied, the 10-15 TSMC shape **no longer
+describes this entry** — the figure with a supplier chain hanging off it is precisely the figure
+that moved. ⚠⚠ **AND THE THESIS DIES ANYWAY, ONE RUNG LOWER AND HARDER: THERE IS NO NAMED
+RECIPIENT. $37–39B of capex with no vendor named anywhere is the "unnamed supply base" costume at
+the largest scale this funnel has ever met — and the obvious fill-ins (NVDA, VRT, DELL, SMCI, AAON)
+arrive instantly and are entirely the reader's. THE SOURCE LEFT THE BLANK; FILLING IT IS NOT
+RESEARCH.**
+**2. Dollar path: FAILS TWICE, AND BOTH FAILURES ARE NEW SHAPES WORTH THE SPACE.**
+  ⚠⚠⚠ **(a) ONLY THE LOW END MOVED. THE CEILING IS UNCHANGED AT $39B — NOT ONE DOLLAR WAS ADDED TO
+  THE MAXIMUM CoreWeave HAS EVER TOLD ANYONE IT MIGHT SPEND IN 2026.** A supplier thesis needs
+  **incremental** dollars; what was removed was the possibility of CoreWeave spending **less**.
+  ⚠ **"RAISED CAPEX GUIDANCE" IS TRUE OF THE RANGE AND FALSE OF THE CEILING, and the headline
+  phrasing carries the first meaning while a supplier thesis runs on the second.**
+  ⚠⚠ **(b) THE STATED REASON IS TIMING, NOT VOLUME:** *"deliver it to customers sooner than
+  planned."* **A PULL-FORWARD INSIDE AN UNCHANGED CEILING MOVES WHEN SUPPLIERS ARE PAID, NOT HOW
+  MUCH.** A schedule change is not a dollar path.
+**3. Timing window:** not reached.
+**4. Invalidation:** not reached.
+
+**Hard filters:**
+- Priced-in (§4): **not reached — no candidate to measure.** CRWV is Company A and unbuyable under §4.
+- Correlation (§4): not reached — zero open positions, no `driver` fields to collide with.
+- Universe (§3): not reached; the thesis dies at part 1.
+
+**Outcome:** **REJECTED** at **part 1 (rule (v), no named recipient)** and at **part 2 (ceiling
+unchanged; timing not volume)**, independently.
+⚠⚠ **AND THE GENERALISABLE FINDING, WHICH IS A NEW COSTUME FOR RULE (iii)'s LIST — A ONE-SIDED
+RANGE NARROWING WEARING A GUIDANCE RAISE'S CLOTHES.** It passes the rule (iii) test as written
+(the company's own prior figure is present in the source, and the new range differs), so a reader
+who tests the release and stops at the first "yes" proceeds on a number that **did not increase the
+total available to anybody.** ⚠ **It is the MIRROR IMAGE of costume #1 (reaffirmation): there, old
+range and new range are identical; here, the FLOOR rose and the CEILING was reaffirmed in the same
+breath — and only the floor gets quoted.** ⚠⚠ **THE TEST, AND IT IS ONE CLAUSE: ASK WHICH END OF
+THE RANGE MOVED. For a supplier thesis, only the top end is a dollar path.**
+⚠ **Rule (iv): this complex is now in its SIXTH consecutive session** (11-05 valuation unwind ·
+11-06 IREN/QCOM · 11-09 sovereign-AI tier · 11-10 AAON/AAOI · 11-11 CRWV revenue · **11-12 CRWV
+capex**) **and CRWV itself is at a THIRD appearance** (10-19 bond distress, 11-11, 11-12). **Every
+one died at part 1 or part 2.** ⚠⚠ **AND TODAY IS THE STRONGEST FORM OF THAT WARNING YET, STRONGER
+THAN THE 10-20 RTX INSTANCE: the 11-11 seat named the exact figure whose absence killed its thesis,
+that figure turned out to have moved, THE FUNNEL CAME BACK WITH IT — AND THE THESIS STILL DIED, one
+rung lower. THE FUNNEL DELIVERED THE MISSING EVIDENCE AND THE KILL DID NOT MOVE. That is the
+clearest statement this log has produced that the AI-infrastructure complex is structurally
+unactionable under §4, not merely under-documented.**
+
+---
+
+### T-2026-11-12-01 — Caterpillar (CAT) ← Anthropic's ~$3.4B / 1.7 GW generator commitment taken over from OnePWR Solutions — REJECTED (rule (iii), the news is six weeks old; THE JOIN, the candidate is named only in secondary reporting; and a NEW rule (viii) shape)
+**Company A / the news:** **Anthropic** (private, pre-IPO) bought commitments for **1.7 GW of
+heavy-duty gas-fired generators** for **~$3.4B**. ⚠⚠ **THE TRANSACTION WAS STRUCK IN LATE SEPTEMBER
+2026**; it was first **reported by the Financial Times on 2026-11-08** and republished by Reuters the
+same day. **There is no Anthropic disclosure dated 11-11 or 11-12 at all** — the item reached this
+seat only because a `--recency day` sweep re-served two-to-six-week-old reporting as fresh.
+**Company B / the candidate:** **Caterpillar (CAT)** — named as the generator manufacturer **only in
+secondary reporting** (Yahoo Finance 11-12, citing CNBC), on the basis that OnePWR had previously
+ordered the units from CAT and Anthropic assumed the order book.
+
+⚠ **DISCLOSED CONFLICT, STATED RATHER THAN LEFT IMPLICIT: Company A here is the company that makes
+the model running this routine.** It changes nothing — Anthropic is private and unbuyable under §3,
+the candidate leg is CAT, and all three kills below are structural — **but a seat researching its
+own maker's news should say so on the record rather than let a later reader discover it.**
+
+**1. Mechanism: NOT WRITABLE, AND IT IS THE JOIN IN ITS PUREST FORM YET.** The **primary** source
+(Reuters/FT) names **OnePWR Solutions**, a private San Antonio equipment supplier — **and the source
+volunteered that the $3.4B figure and the OnePWR name are NOT IN THE SAME SENTENCE.** The **CAT**
+name appears nowhere in the primary report; it arrives one layer further out, in an aggregator
+citing a broadcaster. ⚠⚠ **SO THE CHAIN IS: a figure in one sentence → a private counterparty in
+another → a US-listed name supplied by a third party reporting on the first two. ASK WHICH SENTENCE
+CONTAINS BOTH THE FIGURE AND THE RECIPIENT — here no sentence contains either pairing.**
+**2. Dollar path: FAILS, AND THIS IS A SHAPE RULE (viii) HAS NOT MET — A SECONDARY-MARKET TRANSFER
+OF AN EXISTING ORDER BOOK.** ⚠⚠⚠ **The $3.4B did not buy new generators from Caterpillar. It bought
+OnePWR's ALREADY-PLACED ORDERS. Those units were ordered BEFORE this transaction; CAT's backlog
+already contains them; what changed is WHOSE NAME IS ON THEM.** A change of counterparty on an
+existing order is **not incremental segment revenue at Company B** — and if it shows up at CAT at
+all it shows up as a novation, not a sale. ⚠ **The nearest prior entry is FMC/Tessenderlo's
+secondary-market SHARE purchase; this is worse-shaped, because there the money at least bought an
+asset at a disclosed price from a party you could identify — here the money bought a QUEUE POSITION
+and the manufacturer is a bystander to its own backlog.**
+  ⚠ **And no segment figure exists even if the novation were granted: no source attributes any
+  portion of $3.4B to CAT, the spend is spread across an undisclosed multi-year install, and CAT's
+  Energy & Transportation segment turns over multiples of it per quarter. §4's 10%-of-revenue floor
+  cannot even be tested.**
+**3. Timing window:** not reached. *(Directionally hostile anyway: a 1.7 GW generator installation
+programme is multi-year, and the package reportedly included the engineering and construction work.)*
+**4. Invalidation:** not reached.
+
+**Hard filters:**
+- Priced-in (§4): **CAT +1.77%** over 5 sessions (591.16 → 601.63) → `priced_in: false`,
+  *"passes the priced-in check"*. ⚠ **PULLED AND RECORDED DELIBERATELY EVEN THOUGH THE THESIS WAS
+  ALREADY DEAD, because it is the auditable number and because this is the FIRST reading in the
+  direction-blind series that is a genuine, modest RISE — instance 17, and the only one of the last
+  four where "passes" and "has not already moved" actually agree.** ⚠⚠ **IT IS ALSO EXACTLY WHY THE
+  FILTER IS NOT A SUBSTITUTE FOR PART 1: the filter said "go" on a thesis with no named recipient,
+  no primary-source candidate and no incremental dollar. A hard filter passing is not progress.**
+- Correlation (§4): pass by construction — zero open positions.
+- Universe (§3): **CAT passes trivially** (US-listed common stock, Dow component, market cap far
+  above the $10B floor). ⚠ **Recorded as a pass that bought nothing, per the standing note that a
+  clean pass on one filter is not progress toward a trade. OnePWR Solutions is PRIVATE and §3-dead;
+  Anthropic is PRIVATE and §3-dead.**
+
+**Outcome:** **REJECTED** on **three independent grounds**: **rule (iii)** — the economic event is
+six weeks old and the reporting four days old, in a sweep that presented it as 24-hour news;
+**the JOIN / rule (v)** — the only §3-eligible name in the story is supplied by secondary reporting,
+not by the disclosure; and **part 2** — the money bought an existing order book, which is the
+wrong-direction, wrong-party shape in a costume rule (viii) had not yet seen.
+
+---
+
+### T-2026-11-12-03 — Standard Nuclear ← HALEU TRISO fuel supply agreement with Antares; backlog $241.5M → $577.2M — REJECTED (rule (iii): the agreement was EXECUTED IN AUGUST; §3 kills both named legs)
+**Company A / the news:** Standard Nuclear's **2026-11-12** results release disclosed an executed
+fuel-supply agreement for **one metric ton of HALEU TRISO fuel** with options for up to **seven
+more**, converting a previously nonbinding arrangement into a contract, and **total backlog rising
+from its OWN prior $241.5M at 2026-06-30 to $577.2M at 2026-09-30.** Named counterparties:
+**Antares** (the supply agreement) and **Radiant** (a completed full core load for its Kaleidos
+microreactor).
+**Company B / the candidate:** **none reachable.**
+
+**1. Mechanism:** not reached. **2. Dollar path:** not reached. **3./4.:** not reached.
+
+**Hard filters:**
+- Universe (§3): **BOTH NAMED LEGS ARE PRIVATE.** Antares and Radiant are advanced-reactor
+  developers; the source does not state that either is publicly traded, and neither is US-listed.
+  **The door is closed before a mechanism is needed** — §3-first discipline, pull the eligibility
+  before elaborating the story.
+- Priced-in / correlation: not reached.
+
+**Outcome:** **REJECTED.** ⚠⚠ **AND IT IS WORTH THE SPACE FOR TWO REASONS, NEITHER OF WHICH IS THE
+VERDICT.** ⚠ **ONE — IT IS A CLEAN RULE (iii) PASS ON THE BACKLOG AND A CLEAN RULE (iii) FAIL ON THE
+AGREEMENT, FROM THE SAME RELEASE.** The backlog move is the company's **own** prior figure, dated,
+quoted, and more than doubled — the single best-formed rule (iii) pass in this run. **The supply
+agreement it is attributed to was EXECUTED IN AUGUST 2026 and merely aggregated into a November
+backlog number.** ⚠ **That is the 10-15 "one release, one genuine pass and one genuine fail on two
+different figures" defect in a new sector — and here the PASS and the FAIL point at the same
+economic event, which is new. A BACKLOG FIGURE IS A RESTATEMENT OF CONTRACTS ALREADY SIGNED; its
+freshness is a property of the ACCOUNTING DATE, not of the deal.** ⚠ **TWO — it is the fourth clean
+rule (iii) pass in two sessions to yield no Company B.**
+
+---
+
+### T-2026-11-12-04 — National Vision Holdings (EYE) ← FY2026 guidance CUT — REJECTED (rule (viii) wrong direction; rule (v) no named recipient)
+**Company A / the news:** **2026-11-12** Q3 release cut FY2026 comp-sales growth from its **own**
+**3.0–5.0% → 2.0–3.0%**, revenue **$2.037–2.076B → $2.019–2.038B**, adjusted operating income
+**$119–139M → $119–131M**, and planned new stores **30–35 → ~30**.
+**Company B / the candidate:** **none named.** The source states explicitly that no affected
+public-company counterparty is identified, and that any supplier, landlord or competitor linkage
+*"would be an inference, not a reported fact."*
+
+**1. Mechanism:** not writable. ⚠ **The disclosed figures all move DOWN at Company A, so the only
+available long story is a competitor share-shift read-across — the standing shared-cause object,
+and the 10-02 sub-shape specifically: an earnings MISS IS NOT A SECOND-ORDER CATALYST, because a
+competitor's disappointment improves nobody's economics in any disclosed, dateable way.**
+⚠⚠ **AND THE STORE-COUNT CUT IS THE SAME TRAP WITH A HARDER EDGE: ~5 fewer stores means somebody
+builds, fits out and supplies five fewer stores — ARITHMETICALLY CERTAIN, NEGATIVE IN SIGN, AND
+NAMING NOBODY. It is the 11-04 onsemi DIVERSION shape with the sign reversed, which makes it
+unusable for a long-only book twice over.**
+**2.–4.:** not reached. **Hard filters:** not reached; §3 not tested on any leg.
+**Outcome:** **REJECTED** at **part 1.**
+
+---
+
+### T-2026-11-12-05 — FDA Commissioner's National Priority Voucher programme shelved — REJECTED (government action, no named recipient — the standing object, unchanged)
+**Company A / the news:** Reuters, **2026-11-12**: the FDA stopped advancing new applications to the
+National Priority Voucher programme, applications still open; HHS said the pilot remained under
+review. Names **Merck KGaA** (a prior voucher, Pergoveris) and **Revolution Medicines** (a pending
+application, Rasonque) — ⚠ **but the report does not state that a decision issued on 11-12 changed
+anything for either.**
+**Company B / the candidate:** **none.**
+**1.–4.:** not reached. **Hard filters:** not reached.
+**Outcome:** **REJECTED.** ⚠ **The standing government-action object, and it needed no query beyond
+the sweep that surfaced it: ONE PARTY, NO TRANSACTION, NO NAMED RECIPIENT OF ANYTHING.** ⚠ **The
+counter-case is explicitly not over-applied against: an FDA *approval* enabling a named product
+with a named supplier is a real two-party chain. THIS IS A PROGRAMME BEING PAUSED — the opposite
+shape, and it removes an option rather than conferring one. §4 asks whose economics CHANGE, and a
+withdrawn accelerator names no beneficiary.**
+
+---
+
+### T-2026-11-12-06 — FreeCast / Kind Wireless — REJECTED (§3 on both legs; no value, no commitment, no timing)
+**Company A / the news:** **2026-11-12** — FreeCast agreed to supply Kind Wireless, a newly launched
+MVNO, with a branded media/streaming platform on FreeCast's PaaS technology.
+**Company B / the candidate:** **none §3-eligible.**
+**Hard filters:** Universe (§3): **FreeCast is a microcap far below the $10B floor and Kind Wireless
+is not identified as publicly traded.** The source discloses **no contract value, no minimum
+commitment and no timing** beyond an expected rollout. **Door closed before a mechanism is needed.**
+**Outcome:** **REJECTED** at **§3**, logged rather than dropped so the funnel's full output is
+visible. ⚠ **This is the ELMT discipline applied cheaply: pull eligibility first, so no effort goes
+into a story a single number was always going to end.**
+
+---
+
 ### 2026-11-11 (07:02 ET) — event survey (funnel, pre-thesis)
 
 Selftest **5/5**, exit 0 (`trading_enabled: true`, LIVE paper, equity **$98,910.48** at pre-flight).
@@ -148,7 +392,7 @@ own award is, by construction, Company A.**
 
 ---
 
-### T-2026-11-11-02 — the AI-datacenter supply tier ← CoreWeave's raise of its OWN FY2026 revenue guidance — REJECTED (rule (iii) PASSES on the WRONG FIGURE; no counterparty named; rule (iv), fifth appearance of this complex in five sessions)
+### T-2026-11-11-02 — the AI-datacenter supply tier ← CoreWeave's raise of its OWN FY2026 revenue guidance — REJECTED (no counterparty named; rule (iv), fifth appearance of this complex in five sessions) — ⚠⚠⚠ **AMENDED 2026-11-12: THE "CAPEX UNCHANGED" PREMISE BELOW WAS FALSE. The verdict stands; the stated reason does not. See `T-2026-11-12-02`.**
 **Company A / the news:** **CoreWeave (CRWV)** reported **2026-11-10** and **raised its own
 FY2026 guidance**: revenue **$12.4–13.2B → $13.0–13.3B**, adjusted operating income
 **$960M–1.15B → $1.275–1.375B**, citing continued AI-infrastructure demand (CNBC, 2026-11-10).
@@ -158,8 +402,15 @@ source states plainly that NO specific customer, supplier or counterparty is nam
 **1. Mechanism:** not written without an "and also". ⚠⚠ **THIS IS THE 10-15 TSMC DEFECT ARRIVING
 IN A NEW SECTOR, AND IT IS WHY RULE (iii) PASSING IS NOT PROGRESS: the figure that MOVED is
 REVENUE, and revenue has no supplier chain hanging off it. The figure a supplier thesis would run
-on is CAPEX, and the source discloses no change to it — so the mechanism needs "and also CoreWeave
-will have to spend more to deliver that revenue", which is the second clause §4 forbids.**
+on is CAPEX. ⚠⚠⚠ **CORRECTION, 2026-11-12 — THIS CLAUSE ORIGINALLY READ "and the source
+discloses no change to it [capex]", AND THAT WAS FALSE. THE SAME 2026-11-10 RELEASE THIS SEAT WAS
+READING RAISED FY2026 CAPEX GUIDANCE TO $37–39B FROM ITS OWN PRIOR $35–39B, QUOTED VERBATIM.**
+⚠ **So the right rule — *apply rule (iii) to the figure the mechanism runs on* — was applied here to a
+MIS-STATED FACT, and this entry reached the right verdict for a reason that was not true.**
+✅ **THE REJECTION STANDS AND IS STRENGTHENED, ONE RUNG LOWER: the capex move was a LOW-END-ONLY
+NARROWING with the $39B CEILING UNCHANGED, attributed to pulling deployment FORWARD rather than to
+spending MORE — and NO SUPPLIER IS NAMED ANYWHERE IN THE RELEASE OR THE CALL.** See
+`T-2026-11-12-02` for the full working and for the new rule (iii) costume it mints.
 ⚠ **Apply rule (iii) to the figure the mechanism runs on, not to the release.**
 **2. Dollar path: FAILS.** The disclosed increment is **+$0.6B at the revenue-range midpoint** at
 **Company A**, not segment revenue at any Company B. Allocating any part of it to a supplier
