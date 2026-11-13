@@ -52,6 +52,222 @@ single most common way a plausible-sounding connection gets mistaken for an oppo
 
 ## Entries
 
+### 2026-11-13 (07:01 ET) — event survey (funnel, pre-thesis)
+
+Selftest **5/5**, exit 0 (`trading_enabled: true`, LIVE paper, equity **$99,141.26**).
+`clock` 07:01:40 — `is_open: false`, `next_open` **2026-11-13T09:30:00-05:00**, `next_close`
+**2026-11-13T16:00:00-05:00**. **Both fields carry today's date: the pre-market full-session
+signature, NOT a holiday.** Friday, ordinary session.
+
+**WEEK ROLLOVER — NO ACTION, RE-DERIVED WITH `isocalendar`, NOT INHERITED.** ISO **2026-W46
+weekday 5**, Monday anchor **2026-11-09** = inherited `week_of`. `new_positions_this_week`
+stays **0 of 3**.
+
+**NEW POSITIONS PERMITTED THROUGHOUT.** Breaker **INACTIVE 0/3** · cap **0 of 3** · satellite
+**0.0% deployed, $30,000 cash** · `control.md` Notes **(none)**. Nothing blocked a buy except
+the candidates.
+
+**FUNNEL SPEND: three broad sweeps, ZERO drill queries, three `move` calls, one `asset` call.**
+Sweep 1 asked for disclosure dates and named counterparties up front (the retained 11-11
+clause). Sweep 2 **excluded AI/data-centre/semis/macro by construction** — built from the
+11-12 standing finding that the AI-datacentre supply tier is structurally unactionable, so the
+sweep should stop paying to re-discover that. It returned **three items, all failing on their
+face**. Sweep 3 inverted the leg again and demanded a **named US-listed RECIPIENT above $10B
+with a quantified transaction** — it produced the day's only well-formed candidate.
+
+⚠⚠ **THE DAY'S FINDING, AND IT IS MECHANICAL RATHER THAN A JUDGEMENT CALL: BOTH OF THE ONLY TWO
+CANDIDATES THAT WERE FRESH, NAMED AND QUANTIFIED ENOUGH TO REACH THE HARD FILTERS WERE KILLED BY
+THE PRICED-IN CHECK, BY ENORMOUS MARGINS — LEU +17.11% AND AMAT +19.34% OVER FIVE SESSIONS
+AGAINST A 4% THRESHOLD.** That is 4× and 5× the limit, not a near miss.
+⚠ **This is the first session on record where the §4 hard filter, not parts 1–3, did the killing
+on every candidate that got that far.** The usual shape is a thesis dying at part 2 or 3 on
+judgement. Today the arithmetic closed both doors before judgement was needed — which is
+exactly the order §4 prescribes ("apply these before writing the thesis, not after"), and the
+cheapest possible run: **zero drill queries spent.**
+⚠⚠⚠ **THE HYPOTHESIS THIS RAISES, OFFERED AS A HYPOTHESIS AND NOT PROMOTED TO A RULE — a seat
+may not invent a standing rule mid-run:** the properties that let a candidate survive parts 1–4
+(fresh disclosure, named counterparty, quantified value, clear causal path) may be **the same
+properties that cause the market to price it within hours**. If that holds, the sweep is not
+merely unlucky — it is **structurally late on precisely the events that are well-formed enough
+to be actionable**, and the well-formed/already-moved correlation is causal rather than
+coincidental. **Two instances is not evidence.** What would test it: record `move_pct` for
+every candidate reaching the hard filters and see whether well-formed candidates carry
+systematically higher five-session moves than the malformed ones. **Only the human may turn
+that into a prompt or `strategy.md` change.**
+
+---
+
+### T-2026-11-13-01 — LEU (Centrus Energy) ← Oklo's multi-year HALEU fuel contracts — REJECTED (priced-in +17.11%, FOUR TIMES the threshold; part 3 at ~12 quarters; part 2 unquantifiable; and it is the FIRST-ORDER leg)
+
+**Company A / the news:** Oklo Inc. (NYSE: OKLO) announced multi-year HALEU fuel contracts with
+Centrus Energy (NYSE: LEU), first disclosed **2026-11-12**. Oklo prepays for future deliveries;
+contracted fuel supports **up to five Aurora powerhouses for multiple years**; **deliveries
+begin in 2029**. **No dollar value disclosed.** (Perplexity, sweep 3, citing businesswire
+2026-11-12.)
+**Company B / the candidate:** Centrus Energy (LEU) — the named supplier and the recipient of
+the prepayments.
+
+**1. Mechanism (one sentence):**
+> Oklo's prepaid multi-year HALEU purchase causes Centrus Energy's enrichment-segment contracted
+> backlog to rise because Oklo is paying cash in advance of 2029 deliveries.
+
+**2. Dollar path:** **CANNOT BE WRITTEN.** The announcement discloses **no dollar value** — only
+"fuel for up to five Aurora powerhouses." Without a value there is no magnitude and therefore no
+segment share, so the §4 10%-of-revenue materiality test **cannot be evaluated at all**, let
+alone passed. ⚠ **Recorded as unquantifiable rather than small: those are different results and
+collapsing them would overstate what this run established.**
+**3. Timing window:** **FAILS.** Deliveries **begin 2029** — roughly **twelve quarters** out
+against §4's two-quarter ceiling. Revenue recognition cannot precede delivery; only the
+prepayment lands sooner, and a prepayment is a balance-sheet item, not a reported-results event.
+**4. Invalidation:** not written — the thesis was already dead three ways.
+
+**Hard filters:**
+- Priced-in (§4): **+17.11%** over 5 sessions (88.90 → 104.115), `priced_in: true`,
+  verdict *"LATE - skip"* → **FAIL**. ⚠ **This alone ends it, and it was run before the thesis
+  was written.**
+- Correlation (§4): **vacuously passes** — zero open satellite positions, so no shared driver
+  exists to collide with. ⚠ **Recorded as vacuous, not as a pass: with an empty book this test
+  has no discriminating power and must not be cited as though it confirmed anything.**
+- Universe (§3): `asset` returns **us_equity / NYSE / active / tradable**. Market cap **NOT
+  ESTABLISHED** — no drill query was spent, because the priced-in filter and part 3 had already
+  closed the trade and §4 orders the cheap mechanical checks first. ⚠ **Not claimed as a pass.**
+
+**Outcome:** **REJECTED, four independent ways.** (i) Priced-in by 4× the threshold. (ii) Part 3
+fails by ~12 quarters. (iii) Part 2 is unquantifiable on the disclosed facts. (iv) ⚠ **AND THE
+STRUCTURAL OBJECTION THAT WOULD HAVE KILLED IT EVEN AT AN UNCHANGED PRICE: LEU IS THE FIRST-ORDER
+LEG.** The strategy is "news breaks about Company A; find Company B whose economics improve
+because of it." Centrus is the company **named in the release as receiving the money** — buying
+it is buying the headline, which §4 opens by forbidding. ⚠ **Also rule (iv): this is the SECOND
+appearance of the HALEU fuel complex in TWO sessions** (`T-2026-11-12-03`, Standard Nuclear /
+Antares TRISO, killed on rule (iii) + §3). The complex keeps resurfacing and keeps dying.
+
+---
+
+### T-2026-11-13-02 — AMAT (Applied Materials) ← Q4 results and ">30% WFE growth in 2027" commentary — REJECTED (priced-in +19.34%; part 1 — a CONDITION is not an event; part 3 outside the horizon)
+
+**Company A / the news:** Applied Materials reported quarterly results described as better than
+expected, first disclosed **2026-11-12**. CEO Gary Dickerson said advanced-semiconductor demand
+**remains above supply** and that multiyear investment in new fab capacity is needed;
+wafer-fab-equipment demand is projected to rise **more than 30% year over year in 2027**.
+⚠ **The source explicitly frames the 30% figure as company commentary, NOT a committed capacity
+announcement, and discloses no revenue, EPS surprise or capex dollar figure.**
+**Company B / the candidate:** none reached — AMAT itself was screened as the only quantified leg.
+
+**1. Mechanism (one sentence):** **CANNOT BE WRITTEN AS AN EVENT.** ⚠⚠ **"Demand remains above
+supply" and "WFE will grow 30% in 2027" are descriptions of a STANDING CONDITION, not something
+that happened in the last 24 hours.** This is the 11-10 AAON shape exactly — *a company's own
+order book is a CONDITION, not an event* — arriving in a new sector. Part 1 requires "[Event]
+causes [Company B]'s [line] to [improve]", and there is no event in the first slot: nothing
+changed on 11-12 except that a company described a market it was already in.
+**2. Dollar path:** no dollar figure disclosed for the capacity investment; the 30% is an
+industry-wide WFE projection, not a Company-B revenue line.
+**3. Timing window:** **FAILS.** A **full-year 2027** industry projection spans roughly quarters
+two through five from here, and its early reported effect is a forecast rather than a result.
+**4. Invalidation:** not written — dead at part 1.
+
+**Hard filters:**
+- Priced-in (§4): **+19.34%** over 5 sessions (319.335 → 381.095), `priced_in: true`,
+  verdict *"LATE - skip"* → **FAIL**. ⚠ **Nearly 5× the threshold — the market absorbed this
+  print immediately.**
+- Correlation (§4): vacuously passes (empty book) — again, no discriminating power.
+- Universe (§3): not evaluated; the trade was closed before it was worth a query.
+
+**Outcome:** **REJECTED.** Priced-in by ~5×; part 1 fails because the "news" is a condition, not
+an event; part 3 is outside the two-quarter horizon; and AMAT is the **first-order leg** of its
+own earnings print. ⚠ **The second-order door was also already shut: `T-2026-10-01-01`
+(AMAT/LRCX/KLA) reached no candidate, and the semicap tier has produced no Company B in six
+weeks of trying.** No drill query was spent re-testing that.
+
+---
+
+### T-2026-11-13-03 — the data-centre onsite-power tier ← NTT DATA / Bloom Energy 900 MW deployment — REJECTED (rule (iii): disclosed 2026-11-05, EIGHT DAYS old; no value; and the standing structurally-unactionable tier)
+
+**Company A / the news:** NTT DATA agreed with **Bloom Energy** to deploy **900 MW** of onsite
+power across multiple global data-centre projects. ⚠ **First disclosed 2026-11-05** — surfaced by
+a `--recency day` sweep run on 11-13. **No dollar value; no additional counterparties.**
+**Company B / the candidate:** none reached.
+
+**Hard filters / disposal:** **rule (iii) — the news is eight days old**, so whatever repricing
+it justified happened last week. ⚠⚠ **THE SWEEP-WINDOW / DISCLOSURE-DATE GAP, FIFTH INSTANCE IN
+THREE SESSIONS.** The 11-11 and 11-12 seats both recorded it; demanding the disclosure date
+*inside the query* is again the only reason it was caught, and it caught this one immediately.
+**Keep the clause.** Independently: **no dollar value** (part 2 unquantifiable), and both named
+legs are the **spenders/first-order parties**. ⚠ **AND IT IS THE AI-DATACENTRE POWER TIER — the
+object the 11-12 seat established as STRUCTURALLY UNACTIONABLE under §4 after the funnel returned
+the exact missing figure a prior seat had named and the thesis died anyway.** Sweep 2 was
+deliberately built to exclude this tier; it arrived through sweep 1 regardless.
+**Outcome:** **REJECTED. Zero drill queries spent** — correctly, since no new evidence could move
+a verdict that is structural rather than evidentiary.
+
+---
+
+### T-2026-11-13-04 — FRMI (Fermi) ← a reported 600 MW power-supply contract with an unnamed data-centre operator — REJECTED (rule (v): counterparty unnamed; no value; first-disclosure date not established)
+
+**Company A / the news:** Fermi reportedly signed a **600 MW** power-supply contract with "a
+large-scale data-centre operator," timing reported **2026-11-13**. ⚠ **The source itself flags
+this as incompletely verified: the operator is NOT named, no dollar value is reported, and the
+original disclosure date is unclear.**
+**Company B / the candidate:** none reachable.
+
+**Hard filters / disposal:** **rule (v) — the counterparty is an unnamed blank**, so there is no
+second leg to screen and no way to identify whose economics change. **No dollar value** → part 2
+unquantifiable. **No established first-disclosure date** → rule (iii) cannot even be tested.
+⚠ **Three unknowns is not a thin thesis, it is an absent one.** Same structurally-unactionable
+tier as `-03`.
+**Outcome:** **REJECTED. Zero drill queries spent.** ⚠ **Explicitly NOT sent to a drill query to
+name the operator:** the 11-12 rule (iv) finding is that supplying the exact missing figure in
+this tier did not move the verdict, so paying to fill this blank is buying a kill already owned.
+
+---
+
+### T-2026-11-13-05 — the macro / policy complex (October core CPI +0.3% m/m, a third consecutive upside print · Williams "inflation far too high" · Daly tightening bias · December hike repricing · PPI pending) — REJECTED (no Company A — the standing object, unchanged)
+
+**The news:** October core CPI **+0.3% m/m**, reportedly above expectations for a third
+consecutive month (first disclosed **2026-11-10**). NY Fed's Williams said inflation was "far too
+high" and the Fed "still has work to do"; Daly reportedly expressed a bias toward further
+tightening (**11-12/11-13**). Dow futures lower on December-hike fears; PPI awaited.
+**Disposal:** **no Company A.** §4 requires news *about a company* whose knock-on effect reaches a
+different company; an index-level rate path has no issuer and reaches every holding at once, which
+is the definition of an undiversifiable factor rather than a second-order catalyst. ⚠ **This is
+the standing macro object — rejected at essentially every seat since early October
+(`-11-11-04`, `-11-10-05`, `-11-09-04`, `-10-06-07`, `-10-05-06`).** Recorded for completeness
+and for the §5 read-across; **zero drill queries spent.** ⚠ **Also rule (iii) on the CPI leg: the
+print is three days old.**
+⚠ **ONE THING WORTH CARRYING, AND IT IS A CORE-SLEEVE OBSERVATION, NOT A TRADE:** a hawkish
+repricing is the macro state most likely to move the §2 core sleeve out of its 65–75% band. Core
+sits at **69.74%** with **4.74pp** of room to the floor, so there is nothing to act on; the
+midday and close seats should keep reading `rebalance_delta` rather than the narrative.
+**Outcome:** **REJECTED.** No Company A, no second-order leg, no trade.
+
+---
+
+### T-2026-11-13-06 — sweep: twelve items disposed as one — REJECTED (ZERO drill queries spent)
+
+Every item returned by the three sweeps that failed on its face. Named here so a later seat can
+see what was looked at and not re-litigate it.
+
+| Item | Kill |
+|---|---|
+| Global Ordnance Holdings / ARQUIMEA USA teaming agreement (11-12, US DoW prime, +129,000 sq ft) | **§3 both legs private**; no contract value, no unit volume |
+| Safeway Richmond CA bakery closure (WARN filed **10-20**, effective 12-20, 92 workers) | **rule (iii), 24 days old**; **no replacement supplier named**, so no Company B; 92 workers is immaterial to any $10B+ issuer |
+| Capricor Therapeutics ~10% workforce cut (11-10, FDA decision due 11-22) | own workforce only, **no external party**; §3 market cap; rule (iii) |
+| Aurobindo / Aurolife FDA inspection closed "Voluntary Action Indicated" | **no first-disclosure date, no value, no named affected party**; foreign-listed |
+| York Space Systems / Tomorrow.io — customer named behind a **$187M** contract (11-12) | **both legs private** (§3) |
+| Star Equity / KBS Builders **$2M**, 12 modules (11-12) | **customer unnamed** (rule (v)); §3 micro-cap; $2M immaterial |
+| Stellantis global supplier conference, 61 suppliers honoured (11-12) | **no value, no volume, no percentage** attached to any named supplier; foreign-listed |
+| Net Power — up to **~$180M** contingent reimbursement (11-12) | **customer unnamed**; **contingent on no ESA being executed** — a conditional non-event |
+| SBC Medical / NeuroBrain Dynamics (11-13) | counterparty **Taipei-based** (§3); no transaction value |
+| Syncron / TEMOT International service-provider agreement (11-12) | §3 both legs; no value |
+| Intermountain Electronics selects ISNetworld (11-12) | §3 both legs; no value |
+| Liberty Defense — investor-relations engagement (11-13) | **not an operating event at all**; §3 |
+
+⚠ **The distribution is the point and it is unchanged from 11-12: of twelve items, FIVE die on §3
+alone (private or foreign counterparties), THREE on an unnamed counterparty, TWO on a stale
+disclosure date, and ONE is not an operating event.** Nothing here reached a mechanism sentence.
+**Outcome:** **ALL REJECTED, disposed as one entry, zero queries spent.**
+
+---
+
 ### 2026-11-12 (07:01 ET) — event survey (funnel, pre-thesis)
 
 Selftest **5/5**, exit 0 (`trading_enabled: true`, LIVE paper, equity **$98,849.07** at pre-flight).

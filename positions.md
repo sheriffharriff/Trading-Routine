@@ -84,6 +84,48 @@ check that the pull returned the right session. A stored baseline is a *label*, 
 ## Open positions
 
 *(none — no **satellite** positions have been opened yet. Core VOO exists and is deliberately not tracked here, per the top-of-file rules and the fill note further down.)*
+### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-11-13, **DIGEST OPEN — `1-premarket` 07:01. The three later seats append below; the close seat closes and collapses it.**)
+
+**Friday, an ordinary full session.** `clock` **07:01:40** — `is_open: false` with **both**
+`next_open` and `next_close` carrying **2026-11-13**: the pre-market full-session signature,
+**NOT a holiday.** ⚠ **Read off the DATES, not the boolean.**
+
+**LEDGER CLEAN, RECONCILED THREE SIDES, RE-DERIVED NOT INHERITED:** `positions.md` satellite
+grep **0** · `sleeves` satellite **count 0, value 0, pct 0.0** · `positions` **one row, core VOO
+only** (99.046311231 sh, `avg_entry_price` 706.74, `cost_basis` 69,999.99, `market_value`
+69,141.26, `unrealized_plpc` −1.227%) — unchanged since the **2026-09-03** fill. ⚠ **Alpaca and
+the ledger do not disagree. Nothing to reconcile, nothing flagged.**
+
+**SELL RULES 5.1 / 5.2 / 5.3 / 5.4 — ABSENT, NOT PASSING.** There is no operand. A run holding
+nothing cannot exercise a sell rule, and recording "all four pass" would file a false clean bill
+of health. **No distance-to-stop can be written** — rules 5.3 (−7% from entry) and 5.4 (−10% from
+`highest_close`) both require an entry price and a high-water mark, and neither exists. **No
+`highest_close` to stamp, no deadline to advance, no Perplexity invalidation check run on any
+holding** (Step 4 had no operand; zero queries spent on position review).
+
+**Core VOO is STRUCK from the §5 working list, not stamped as passing it.** §5 exempts core from
+all four rules and says core is not sold on news. Its −1.227% unrealised loss is **not** a 5.3
+reading and must never be logged as one.
+
+⚠ **§5.4 STALENESS DETECTOR UNEXERCISED FOR THE 80th ABSENT-SEAT ORDINAL — STILL UNPROVEN CODE.**
+It has never run against a real `highest_close`. **A standing risk to flag, not a defect to fix
+mid-run:** the first real satellite position will be the first live test of that path, and the
+seat that opens it should expect to be exercising untested code on day one.
+
+**Account at this seat:** equity **$99,141.26** · cash **$30,000.00** · core **69.74%** ·
+satellite **0.00%** · cash **30.26%** · `core_in_band` **true** · `rebalance_needed` **false** ·
+`rebalance_delta` **+$257.62** (**4.74pp inside the §2 65% floor**) · breaker **INACTIVE 0/3** ·
+weekly cap **0 of 3**.
+
+**Research this seat: 6 theses, 6 REJECTED, 0 accepted.** Plan dated **2026-11-13** with **ZERO
+intents** (no BUY, no SELL, no REBALANCE). **New positions were PERMITTED THROUGHOUT** — nothing
+structural blocked a buy; the candidates did. ⚠ **Funnel spend: 3 sweeps, ZERO drill queries,
+3 `move` calls, 1 `asset` call — the cheapest research session on record, because the mechanical
+filters killed both finalists before judgement was needed (LEU +17.11%, AMAT +19.34% over five
+sessions against a 4% threshold).**
+
+---
+
 ### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-11-12, **ONE DIGEST FOR THE DATE, ALL FOUR SEATS, CLOSED AND COLLAPSED BY THE CLOSE SEAT** — the only seat entitled to touch what three earlier seats wrote. `1-premarket` **07:01** · `2-market-open` **08:37** ⚠ **PRE-OPEN, `is_open: false` 53 min before the bell — §7 compliance, not a missed run** · `3-midday` **11:42** (market OPEN, zero exits, no operand) · `4-market-close` **15:16** ⚠⚠⚠ **FIRED WITH THE MARKET OPEN, 44 MIN BEFORE THE BELL — AND HELD FOR THE BELL, SO THE OFFICIAL CLOSE *IS* RECORDED. FIFTH SESSION RUNNING THAT THE HOLD WAS USED.** ⚠ **RE-EVALUATED AT EACH SEAT, NOT INHERITED.** Absent-seat ordinals: 07:01 **78th** · 08:37 **79th**… and the ordinal is now counted per DATE not per seat, because four seats of one empty day is one fact about the ledger, not four — **79 absent seats, 78 absent dates.** ⚠⚠ **COLLAPSED 17 → 14 non-empty lines — AND THE FIRST DRAFT OF THIS LINE CLAIMED "17 → 11" FROM INTENT BEFORE THE COUNT AND WAS FALSE. It is REPLACED, not left beside its correction, which is the defect this corpus logs most often — and it is the SECOND consecutive close seat to catch it in its own draft.** ⚠⚠⚠ **AND THE HONEST MEASURE IS BYTES, NOT LINES, BECAUSE THEY DISAGREE IN SIGN: this block went 6,579B → 7,691B = **+1,112B WHILE SHEDDING THREE LINES.** Fewer, longer lines is not a collapse; it is the same prose with the newlines removed. **THE LINE COUNT IS THE WRONG INSTRUMENT AND EVERY "COLLAPSED N → M" FIGURE IN THIS FILE IS MEASURED WITH IT.**)
 
 **Thursday, an ordinary full session, and the ONE SEAT THAT SAW THE MARKET OPEN AT DISPATCH WAS THIS ONE.** `clock` by seat: **07:01:49** `is_open: false` with **both** `next_open` and `next_close` carrying **2026-11-12** (pre-market full-session signature) · **08:37:09** same · **11:42:07** `is_open: true` · **15:16:13** `is_open: true`, `next_close` **16:00:00-05:00 today** · **16:14:07** `is_open: false` with **both** fields carrying **2026-11-13** — ⚠ **the only reading that separates POST-BELL from PRE-MARKET.** **NOT a holiday at any seat.** ⚠ **Read off the DATES, not the boolean: FALSE has three meanings, TRUE has one.**
