@@ -188,6 +188,49 @@ Week anchor re-derived with `isocalendar` — ISO **2026-W46** wd 5, Monday **20
 `week_of`, **no rollover**; cap **0 of 3**. Breaker **INACTIVE**, streak **0**.
 `alerts.md` open incidents **none**.
 
+**`4-market-close` 15:15 — ⚠⚠ MARKET OPEN, 45 MIN BEFORE THE BELL. TWELFTH CONSECUTIVE EST
+SESSION. HOLDING FOR THE BELL — SIXTH SESSION RUNNING THE HOLD HAS BEEN USED.** `clock`
+**15:15:45** — `is_open` **true**, `next_close` **2026-11-13T16:00**, `next_open`
+**2026-11-16T09:30**. ⚠ **No schedule fault is diagnosed from this firing time** (`control.md`
+forbids it); the inherited stored-schedule reading plus the DST calendar is separate evidence
+and is unchanged. **This block is the insurance write; the close-basis figures land in the
+second commit.**
+
+**Step 2 — NO OPERAND, FOR THE 83rd ABSENT SEAT, AND THAT IS NOT STEP 2 HAVING WORKED.** Zero
+satellite positions, so there is no `highest_close` to stamp and no `(as of …)` date to advance.
+Field-form test re-run at this seat: `grep -cE '^\s*-\s*highest_close:'` = **1**, the
+`positions.md:53` template placeholder `0.00` on a literal `YYYY-MM-DD`. ⚠ **A bare
+`grep -c highest_close` returns a moving three-digit count and INVERTS the finding.**
+⚠⚠ **The date-every-day discipline this routine exists to enforce had nothing to write to, and
+both the backfill branch and the §5.4 staleness detector remain UNPROVEN CODE.**
+
+**§5.1 / 5.2 / 5.3 / 5.4 — ABSENT, NOT PASSING.** No entry price and no high-water mark exist, so
+**no distance-to-stop is writable.** **Core VOO is STRUCK from the working list, not stamped as
+passing** — its **−2.018%** unrealised loss is **NOT** a 5.3 reading.
+
+**⚠ PRE-CLOSE PARTIAL BAR, PULLED DELIBERATELY AND LABELLED, AND IT IS NOT STAMPED ANYWHERE —
+THIS DISCHARGES THE INSTRUCTION THE 11-12 SEAT LEFT FOR THIS SEAT.** At **15:17 ET** the
+in-progress 2026-11-13 bar read **`c` 692.64** (`n` **2,120**, `v` **28,104**,
+`adjustment=all`). Whatever the official close turns out to be, **the gap is the measurement**
+and it extends the partial-bar series to a fifth point. ⚠ **The pull is safe because the stamp
+decision is gated on `clock`, never on the shape of the bar.**
+**Inherited marks re-confirmed in the same call and NEITHER corrected: 11-11 `c` 698.25 · 11-12
+`c` 696.04** — both equal to the committed figures to the cent.
+
+**Account at this seat (PRE-CLOSE, NOT A CLOSE BASIS):** equity **$98,587.44** · cash
+**$30,000.00** · VOO live **692.4785**, **−0.506%** on the day · core **69.57%** · satellite
+**0.00%** · cash **30.43%** · `core_in_band` **true** · `rebalance_needed` **false** ·
+`rebalance_delta` **+$423.76** = **4.57pp inside the §2 65% floor**. ⚠ **Rebalancing is not this
+seat's job** — §2 puts it at the next market-open run, **2026-11-16**.
+
+**Ledger re-reconciled three sides at this seat, still clean** (satellite grep **0** · `sleeves`
+count **0** / value **0** / pct **0.0** · `positions` **one row, core VOO only**,
+99.046311231 sh, `cost_basis` 69,999.99). Week anchor re-derived with `isocalendar` — ISO
+**2026-W46 wd 5**, Monday **2026-11-09** = `week_of`, **no rollover**; cap **0 of 3**. Breaker
+**INACTIVE**, streak **0**. **§7 limbo CLEAN** — `orders --status all` returns **one order in the
+account's entire history**, the 2026-09-03 core buy, filled and terminal. `alerts.md` Open
+**none**.
+
 ---
 
 ### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-11-12, **ONE DIGEST FOR THE DATE, ALL FOUR SEATS, CLOSED AND COLLAPSED BY THE CLOSE SEAT** — the only seat entitled to touch what three earlier seats wrote. `1-premarket` **07:01** · `2-market-open` **08:37** ⚠ **PRE-OPEN, `is_open: false` 53 min before the bell — §7 compliance, not a missed run** · `3-midday` **11:42** (market OPEN, zero exits, no operand) · `4-market-close` **15:16** ⚠⚠⚠ **FIRED WITH THE MARKET OPEN, 44 MIN BEFORE THE BELL — AND HELD FOR THE BELL, SO THE OFFICIAL CLOSE *IS* RECORDED. FIFTH SESSION RUNNING THAT THE HOLD WAS USED.** ⚠ **RE-EVALUATED AT EACH SEAT, NOT INHERITED.** Absent-seat ordinals: 07:01 **78th** · 08:37 **79th**… and the ordinal is now counted per DATE not per seat, because four seats of one empty day is one fact about the ledger, not four — **79 absent seats, 78 absent dates.** ⚠⚠ **COLLAPSED 17 → 14 non-empty lines — AND THE FIRST DRAFT OF THIS LINE CLAIMED "17 → 11" FROM INTENT BEFORE THE COUNT AND WAS FALSE. It is REPLACED, not left beside its correction, which is the defect this corpus logs most often — and it is the SECOND consecutive close seat to catch it in its own draft.** ⚠⚠⚠ **AND THE HONEST MEASURE IS BYTES, NOT LINES, BECAUSE THEY DISAGREE IN SIGN: this block went 6,579B → 7,691B = **+1,112B WHILE SHEDDING THREE LINES.** Fewer, longer lines is not a collapse; it is the same prose with the newlines removed. **THE LINE COUNT IS THE WRONG INSTRUMENT AND EVERY "COLLAPSED N → M" FIGURE IN THIS FILE IS MEASURED WITH IT.**)
