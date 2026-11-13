@@ -153,6 +153,41 @@ with `isocalendar` — ISO **2026-W46** wd 5, Monday **2026-11-09** = `week_of`,
 cap **0 of 3**. Breaker **INACTIVE**, streak **0**. **§5.4 staleness detector unexercised, 81st
 absent seat.**
 
+**`3-midday` 11:48 — MARKET OPEN (`clock` 11:48:36, `is_open: true`, `next_close`
+**2026-11-13T16:00**), AND NO OPERAND. ⚠ THIS IS AN EXITS-ONLY SEAT BY CONSTRUCTION** — it may
+not open a position, and it did not go looking for one.
+
+**Step 2 — HIGH-WATER REPAIR: NOTHING TO REPAIR, AND THAT IS NOT THE SAME AS NOTHING WRONG.**
+There is no `highest_close` field anywhere in this file, so there was no `(as of ...)` date to
+compare against the last trading day and no `bars --adjustment all` backfill to run. ⚠⚠ **The
+backfill branch is the single piece of logic this routine exists for, and it has still never
+executed.** The 09-28 ex-dividend finding at the top of this file — that a mark and the close it
+is compared against must come from the **same adjustment basis, pulled in the same call** — is
+therefore also still untested in anger.
+
+**Step 3 — §5.1 / §5.2 / §5.3 / §5.4 ABSENT, NOT PASSING.** No operand. **No distance-to-stop is
+writable**: 5.3 needs an `entry_price` and 5.4 needs a `highest_close`, and neither exists. No
+`invalidation` string existed to read verbatim, so **zero Perplexity queries** were spent — the
+§5.1 news check has no subject. §5.2 has no `timing_window` deadline to have passed.
+**Core VOO struck from the working list, not stamped as passing**; its **−2.513%** unrealised
+loss is **NOT** a 5.3 reading. **§5.4 staleness detector unexercised — 82nd absent seat.**
+
+**Steps 4 and 5 — zero exits, zero orders, nothing held to re-status.** `trade_log.md` and
+`research_log.md` **UNCHANGED** by this seat.
+
+**Account at this seat:** equity **$98,240.93** · cash **$30,000.00** · VOO **688.98**,
+**−1.009%** on the day · core **69.46%** · satellite **0.00%** · cash **30.54%** ·
+`core_in_band` **true** · `rebalance_needed` **false** · `rebalance_delta` **+$527.72** =
+**4.46pp inside the §2 65% floor**. ⚠ **The delta has widened at each of today's three seats
+(+257.62 → +519.40 → +527.72) on a falling mark, and rebalancing is NOT this seat's job** — §2
+puts it at the next *market-open* run, i.e. **2026-11-16**, not here.
+
+**Ledger re-reconciled three sides at this seat, still clean** (satellite grep 0 · `sleeves`
+count 0 / value 0 / pct 0.0 · `positions` one row, core VOO only, `market_value` **68,240.93**).
+Week anchor re-derived with `isocalendar` — ISO **2026-W46** wd 5, Monday **2026-11-09** =
+`week_of`, **no rollover**; cap **0 of 3**. Breaker **INACTIVE**, streak **0**.
+`alerts.md` open incidents **none**.
+
 ---
 
 ### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-11-12, **ONE DIGEST FOR THE DATE, ALL FOUR SEATS, CLOSED AND COLLAPSED BY THE CLOSE SEAT** — the only seat entitled to touch what three earlier seats wrote. `1-premarket` **07:01** · `2-market-open` **08:37** ⚠ **PRE-OPEN, `is_open: false` 53 min before the bell — §7 compliance, not a missed run** · `3-midday` **11:42** (market OPEN, zero exits, no operand) · `4-market-close` **15:16** ⚠⚠⚠ **FIRED WITH THE MARKET OPEN, 44 MIN BEFORE THE BELL — AND HELD FOR THE BELL, SO THE OFFICIAL CLOSE *IS* RECORDED. FIFTH SESSION RUNNING THAT THE HOLD WAS USED.** ⚠ **RE-EVALUATED AT EACH SEAT, NOT INHERITED.** Absent-seat ordinals: 07:01 **78th** · 08:37 **79th**… and the ordinal is now counted per DATE not per seat, because four seats of one empty day is one fact about the ledger, not four — **79 absent seats, 78 absent dates.** ⚠⚠ **COLLAPSED 17 → 14 non-empty lines — AND THE FIRST DRAFT OF THIS LINE CLAIMED "17 → 11" FROM INTENT BEFORE THE COUNT AND WAS FALSE. It is REPLACED, not left beside its correction, which is the defect this corpus logs most often — and it is the SECOND consecutive close seat to catch it in its own draft.** ⚠⚠⚠ **AND THE HONEST MEASURE IS BYTES, NOT LINES, BECAUSE THEY DISAGREE IN SIGN: this block went 6,579B → 7,691B = **+1,112B WHILE SHEDDING THREE LINES.** Fewer, longer lines is not a collapse; it is the same prose with the newlines removed. **THE LINE COUNT IS THE WRONG INSTRUMENT AND EVERY "COLLAPSED N → M" FIGURE IN THIS FILE IS MEASURED WITH IT.**)
