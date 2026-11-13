@@ -124,6 +124,35 @@ structural blocked a buy; the candidates did. ⚠ **Funnel spend: 3 sweeps, ZERO
 filters killed both finalists before judgement was needed (LEU +17.11%, AMAT +19.34% over five
 sessions against a 4% threshold).**
 
+**`2-market-open` 10:43 — ⚠⚠⚠ FIRED WITH THE MARKET OPEN, `is_open: true`, FOR THE FIRST TIME IN
+TEN SESSIONS.** `clock` **10:44:14**, `next_close` **2026-11-13T16:00**, `next_open`
+**2026-11-16** — mid-session, not pre-open. **THE EXECUTION GAP DID NOT BIND TODAY: this seat was
+capable of placing orders and placed none because the plan carried no intents, not because it
+could not.** ⚠ **This is recorded, NOT diagnosed as a fix.** The harness reported this run's
+*scheduled* time as **14:17:39 UTC = 09:17 ET**, still 13 min pre-bell, and the dispatch landed
+**86 min later**. The stored schedule was **NOT re-read** — `control.md` forbids diagnosing a
+schedule fault from a firing time, so what is written here is the `clock` reading and nothing
+inferred from the clock on the wall.
+
+**STALENESS GATE PASSED:** `plan_date` **2026-11-13** = today ET. Plan **fresh**, consumed as
+written, **no stale-plan alert due.** **Step 3 skipped** (`core_established: true`). **Steps 4, 5
+and 6 had NO OPERAND** — zero SELL intents against zero positions, zero BUY intents to
+re-validate. **Zero orders placed, zero fills, nothing to verify; `trade_log.md` and
+`research_log.md` are UNCHANGED by this seat.** Zero Perplexity spend: §4 research belongs to the
+pre-market seat and this run does not generate ideas.
+
+**Step 7 — NO REBALANCE DUE, RE-DERIVED NOT INHERITED** (the plan said to re-read rather than
+trust its 69.74%): equity **$98,268.66** · VOO **689.26**, **−0.968%** on the day · core
+**69.47%** · satellite **0.00%** · cash **30.53%** · `core_in_band` **true** ·
+`rebalance_needed` **false** · `rebalance_delta` **+$519.40** = **4.47pp inside the §2 65%
+floor**. Drift is residual fractional-share noise against a falling mark, not a trigger.
+
+**Ledger re-reconciled three sides at this seat, still clean** (satellite grep 0 · `sleeves`
+count 0 · `positions` one row, core VOO only, `market_value` 68,268.66). Week anchor re-derived
+with `isocalendar` — ISO **2026-W46** wd 5, Monday **2026-11-09** = `week_of`, **no rollover**,
+cap **0 of 3**. Breaker **INACTIVE**, streak **0**. **§5.4 staleness detector unexercised, 81st
+absent seat.**
+
 ---
 
 ### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-11-12, **ONE DIGEST FOR THE DATE, ALL FOUR SEATS, CLOSED AND COLLAPSED BY THE CLOSE SEAT** — the only seat entitled to touch what three earlier seats wrote. `1-premarket` **07:01** · `2-market-open` **08:37** ⚠ **PRE-OPEN, `is_open: false` 53 min before the bell — §7 compliance, not a missed run** · `3-midday` **11:42** (market OPEN, zero exits, no operand) · `4-market-close` **15:16** ⚠⚠⚠ **FIRED WITH THE MARKET OPEN, 44 MIN BEFORE THE BELL — AND HELD FOR THE BELL, SO THE OFFICIAL CLOSE *IS* RECORDED. FIFTH SESSION RUNNING THAT THE HOLD WAS USED.** ⚠ **RE-EVALUATED AT EACH SEAT, NOT INHERITED.** Absent-seat ordinals: 07:01 **78th** · 08:37 **79th**… and the ordinal is now counted per DATE not per seat, because four seats of one empty day is one fact about the ledger, not four — **79 absent seats, 78 absent dates.** ⚠⚠ **COLLAPSED 17 → 14 non-empty lines — AND THE FIRST DRAFT OF THIS LINE CLAIMED "17 → 11" FROM INTENT BEFORE THE COUNT AND WAS FALSE. It is REPLACED, not left beside its correction, which is the defect this corpus logs most often — and it is the SECOND consecutive close seat to catch it in its own draft.** ⚠⚠⚠ **AND THE HONEST MEASURE IS BYTES, NOT LINES, BECAUSE THEY DISAGREE IN SIGN: this block went 6,579B → 7,691B = **+1,112B WHILE SHEDDING THREE LINES.** Fewer, longer lines is not a collapse; it is the same prose with the newlines removed. **THE LINE COUNT IS THE WRONG INSTRUMENT AND EVERY "COLLAPSED N → M" FIGURE IN THIS FILE IS MEASURED WITH IT.**)
