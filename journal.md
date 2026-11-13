@@ -40,6 +40,44 @@ anything where the honest-broker rule (§4) did real work>
 
 ## Entries
 
+### 2026-11-13 (Friday)
+
+**Account:** total **$98,644.05 — close-basis** (99.046311231 sh VOO at the official close **693.05** + $30,000.00 cash) | day **−$296.15 / −0.2993%** against 11-12's close-basis **$98,940.19** | since inception **−$1,355.95 / −1.3560%** ($100,000.00 opening, 2026-08-06)
+**Sleeves:** core **69.5876%** | satellite **0.0%** | cash **30.4124%**   (§2 band 65–75% — **in band**, 4.5876pp of headroom to the floor; **no rebalance due Monday**, delta to target +$406.79)
+**Breaker:** INACTIVE (0/3)
+**Week:** 0/3 new positions
+
+**Traded:** nothing — zero orders at all four seats; zero `buy`/`sell` calls all day
+**Researched:** 6 theses — 0 accepted, 6 rejected (`T-2026-11-13-01` … `-06`)
+**Positions near a sell rule:** none — **no operand.** All four §5 rules are **absent, not passing.** Core VOO is §5-exempt and was struck from the working list, not stamped as passing.
+
+**What happened:**
+
+VOO closed **693.05** (−0.4296%, 2,490 prints, `adjustment=all`), the account **−0.2993%** — the cash sleeve damping a red tape, as it has all month. **Step 2, the invisible job this routine exists for, again had no operand: the 83rd consecutive absent seat.** Zero satellite positions, verified three sides rather than inherited (satellite grep **0** · `sleeves.satellite.count 0` · `positions` one row, core-only). The field-form grep returns exactly one `highest_close` — `positions.md:53`, the template placeholder on a literal `YYYY-MM-DD`. **Neither the backfill branch nor the §5.4 staleness detector has ever executed against a real mark.**
+
+The seat fired at **15:15 with the market open**, 45 minutes before the bell — **twelfth consecutive EST session** — and **held for the bell, the sixth session running.** Insurance commit `a405701`, then `clock` polled to `is_open: false` at **16:00:55** with both `next_open` and `next_close` carrying **2026-11-16**, settled 15 minutes, pulled the bar at 16:16. **2026-11-13 needs no backfill.** Inherited marks re-confirmed in the same call and neither corrected: 11-11 `698.25`, 11-12 `696.04`, both exact to the cent. Per `control.md`, no schedule fault is diagnosed from a firing time.
+
+**I discharged the instruction the 11-12 seat left for this seat: pull the pre-close bar, label it, never stamp it.** At 15:17 the in-progress bar read `c` **692.64** (n 2,120) against the official **693.05** (n 2,490) — **the partial erred $0.41 LOW, −0.0592%.** Fifth point in the series: **2.135 low · 2.430 high · 2.170 high · 0.630 high · 0.410 low.** Two low, three high, magnitudes spanning 0.059%–0.35%. **The "no direction" reading holds and today is the smallest magnitude on record.**
+
+Housekeeping, four nulls, each checked. Week rollover re-derived with `isocalendar`: ISO **2026-W46 wd 5**, anchor **2026-11-09** = `week_of`, **0 of 3** — Friday, so Monday's seat will roll to **2026-11-16**. Nothing has ever closed in this account, so `consecutive_closed_losses: 0` matches reality trivially and no §6 alert was due. **§7 limbo: `orders --status all` returns one order in the account's entire history**, the 2026-09-03 core buy, filled and terminal — overnight exposure is structurally zero, not merely clear. `alerts.md` Open is empty; zero ClickUp alerts.
+
+Research was the pre-market seat's, and its result is the day's one substantive finding: **for the first time on record the mechanical priced-in filter killed every candidate that reached it.** LEU **+17.11%** and AMAT **+19.34%** over five sessions against a 4% threshold — 4× and 5× the limit, arithmetic rather than judgement. Both were independently dead anyway (LEU part 3 at ~12 quarters, deliveries 2029; AMAT part 1 on a *condition* rather than an event, part 3 a full-year-2027 industry projection) and **both were first-order legs** — the companies named in their own releases, which is what §4 opens by forbidding. The hypothesis it raises is recorded in `research_log.md` and is **not** promoted: that the properties letting a candidate pass parts 1–4 may be the same properties that get it priced within hours. Two instances is not evidence, and only the human may turn it into a rule.
+
+**What I got wrong or nearly got wrong:**
+
+**The hold bought nothing by itself, and I came close to proving that the wrong way round.** With zero positions there is an easy argument for skipping the 60-minute wait: Step 2 has no operand, so what is the close *for*? I held anyway, and then nearly undid the whole point by reading the day's P&L off the broker. **Alpaca post-bell gives −$412.03 / −0.4165%; the close-basis truth is −$296.15 / −0.2993%. The broker overstates the day's loss by $115.88 — 39%.** Both legs are non-official and both sit below the bar: the numerator is a live mark **691.84** against the official **693.05** (−$1.21 × 99.046 sh = −$119.85) and the denominator is `lastday_price` **696.00** against the official **696.04** (+$3.96 back). **They compounded rather than cancelled, and the numerator leg was thirty times the denominator leg.**
+
+⚠ **And the counterintuitive half, which is the finding: holding and then trusting the broker is WORSE than not holding at all.** The pre-close broker figure at 15:15 was **−$348.79 / −0.3525%**, off the truth by **$52.64**. The post-bell broker figure is off by **$115.88 — 2.2× further.** VOO's live mark drifted *further below* the official close after the bell, so the extra 60 minutes made the broker's number worse while making the bar's number available. **The hold is only worth its wall clock if the figures are then taken from the bar; a seat that waits and then reads the dashboard has paid an hour to report a worse number.** That belongs with the standing rule rather than beside it: *build the journal's P&L from official closes only* is not a tidiness preference, it is the only thing that makes the hold pay.
+
+**Second, smaller: I briefly treated `last_equity` as yesterday's close-basis equity.** It is not — `last_equity` **98,936.23** is built on `lastday_price` 696.00, while the committed 11-12 close-basis equity is **98,940.19** off the official 696.04. Using it as the denominator would have reported **−$292.19** instead of −$296.15. A $3.96 error, immaterial to any decision, and I caught it only because I had written a helper that forced me to name both legs explicitly instead of subtracting two numbers the API handed me. **The helper was the control, not my attention** — it also reproduced the committed 11-12 figures to the cent before I trusted it on today's, which is the only reason I know the arithmetic is right rather than merely consistent.
+
+**Third, and it is an observation I am deliberately not turning into a diagnosis: `2-market-open` fired at 10:43 with the market OPEN, for the first time in ten sessions.** Nine prior EST sessions had it pre-open at 08:35–08:47. `control.md` forbids diagnosing a schedule fault from a firing time, and a manual "Run now" is indistinguishable from a scheduled dispatch, so **I cannot tell whether a trigger changed, the human intervened, or this was invoked by hand.** What I can say without inferring: that seat was *capable* of executing today and placed nothing because the plan carried no intents — **the execution gap did not bind.** It cost nothing, as it has every day the ledger has been empty. ⚠ **This seat's own trigger has not moved: twelfth consecutive session pre-close.** The fault has therefore changed *shape* rather than being fixed, and the plan's own standing criterion for re-contacting the human — "re-send only if it changes shape" — is met, so it goes out.
+
+**For the next run:**
+
+Monday **2026-11-16** rolls the ISO week: anchor becomes **2026-11-16**, reset `new_positions_this_week` to 0 and update `week_of`. **A rebalance is NOT due** — core 69.5876%, 4.5876pp inside the floor, `rebalance_delta` +$406.79, residual fractional-share drift against a falling mark. ⚠ **Re-derive it from `sleeves` anyway; §2 checks the band at the open run and does not inherit this line.** **Do not revisit LEU or AMAT on a favourable gap** — a gap down repairs neither a ~12-quarter part-3 failure nor a first-order leg, and re-screening them is looking for permission for a trade already declined twice over. The first seat to inherit a real satellite position is running **unproven code** on day one: check the `(as of …)` date by hand rather than trusting the §5.4 staleness detector.
+
+
 ### 2026-11-12 (Thursday)
 
 **Account:** total **$98,940.19 — close-basis** (99.046311231 sh VOO at the official close **696.04** + $30,000.00 cash) | day **−$218.89 / −0.2207%** against 11-11's close-basis **$99,159.09** | since inception **−$1,059.81 / −1.0598%** ($100,000.00 opening, 2026-08-06)
