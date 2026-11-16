@@ -216,20 +216,38 @@ positions, so no `highest_close` to stamp and no `(as of ...)` date to advance. 
 three sides, not inherited: `positions` one row core-only · `sleeves` satellite count **0** ·
 zero satellite blocks here.
 
-**Account at this seat (⚠ PRE-CLOSE MARK, NOT A CLOSE):** equity **$97,243.53** · cash
-**$30,000.00** · VOO **678.91** · core **69.1496%** · satellite **0.00%** · cash **30.8504%** ·
-`core_in_band` **true** · `rebalance_needed` **false** · `rebalance_delta` **+$826.94**
-(**4.1496pp inside the §2 65% floor**) — a distance readout, not an order. Day **−1.4198%** off
-Friday's official close-basis 98,644.05. **The 15:15 partial bar reads c 678.93 / n 1,629 /
-v 34,215 — LABELLED AND NOT STAMPED ANYWHERE** (carry-forward 4, the in-progress-session bar
-defect, confirmed live again today).
+**✅ HELD FOR THE BELL AND THE SECOND COMMIT LANDED. OFFICIAL CLOSE BASIS, NO BACKFILL OWED.**
+`clock` reached the post-bell signature at **16:00:15** — `is_open: false` with **both**
+`next_open` and `next_close` carrying **2026-11-17**, the only reading that separates post-bell
+from pre-market — and the bar was pulled after a 5-minute settle.
+
+**Account at the official close:** equity **$97,387.15** · cash **$30,000.00** · VOO close
+**680.36** · core **69.1951%** · satellite **0.00%** · cash **30.8049%** · `core_in_band`
+**true** · `rebalance_needed` **false** · `rebalance_delta` **+$783.86** (**4.1951pp inside the
+§2 65% floor**) — a distance readout, not an order. Day **−1.2742%** off Friday's close-basis
+98,644.05; VOO **−1.8310%**. **Second-worst session of the holding period, NOT the worst** —
+11-05 was −4.3731% / −3.0586%.
+
+⚠⚠ **PARTIAL-BAR MEASUREMENT, 7th POINT — AND IT FALSIFIES THE PREDICTION THIS SEAT WROTE
+BEFORE THE DATA ARRIVED.** The 15:15 partial bar read **c 678.93** (n 1,629 / v 34,215) against
+an official close of **680.36**: the partial read **LOW by 1.43 / 0.2106%**. Series:
+2.135 · 2.430 · 2.170 · **1.430** · 0.630 · 0.410 · 0.030 — **mid-range, on the most volatile
+tape yet sampled.** Recorded as a null, not as support. ⚠ **DIRECTION MATTERS MORE THAN
+MAGNITUDE AND NO SEAT HAD SAID SO: a partial reading LOW under-stamps `highest_close` and makes
+§5.4 LESS likely to fire; a partial reading HIGH over-stamps and fires the trailing stop on a
+position that never fell. FOUR OF THE SEVEN READ HIGH.** The rule is unchanged and does not
+depend on the magnitude: **gate Step 2 on `clock`, never on the shape of the bar.**
+
+⚠ **ENDPOINT DISAGREEMENT, WIDER TODAY AND POST-BELL:** at 16:05 `positions.current_price` read
+**680.09** against the official bar close **680.36** — gap **0.27**. Three mutually inconsistent
+figures exist for this one session; the ledger takes the official close.
 
 ⚠⚠ **CORRECTION — A FALSE ARITHMETIC CLAIM FROM THE 11:41 SEAT, REPLACED NOT ANNOTATED.** That
 seat wrote that core's **−2.983%** *"is now past the magnitude at which §5.3 would fire on a
 satellite name."* **It is not.** §5.3 fires at **−7% from entry**; −2.983% is less than half of
-it, and today's **−3.938%** does not reach it either. §5.4 is further still: VOO's highest
-completed close since the 2026-09-03 entry is **716.29** (2026-10-06), putting the mark
-**−5.219%** below its own high against a **−10%** trigger. **The sentence's CONCLUSION is right
+it, and today's close at **−3.7326%** does not reach it either. §5.4 is further still: VOO's highest
+completed close since the 2026-09-03 entry is **716.29** (2026-10-06), putting today's close
+**−4.9%** below its own high against a **−10%** trigger. **The sentence's CONCLUSION is right
 and its REASONING is false** — core is exempt, and the exemption is correctly applied before the
 arithmetic rather than after. That combination is the dangerous one: a correct conclusion is what
 stops the next reader from checking the number.
