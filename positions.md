@@ -84,7 +84,7 @@ check that the pull returned the right session. A stored baseline is a *label*, 
 ## Open positions
 
 *(none — no **satellite** positions have been opened yet. Core VOO exists and is deliberately not tracked here, per the top-of-file rules and the fill note further down.)*
-### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-11-16, **DIGEST OPEN — `1-premarket` **07:01** · `3-midday` **11:41** (market OPEN, zero exits, no operand, 85th absent-seat ordinal). ⚠⚠ **NO `2-market-open` SEAT HAS APPENDED — it had not committed as of 11:41; see that seat's note below, which is a RECORD, not a diagnosis.** The close seat closes and collapses this digest. ⚠ **NOTHING ABOVE WAS COLLAPSED, SHORTENED OR REWRITTEN BY THIS SEAT AND NO COLLAPSE RATIO IS CLAIMED** — a midday seat is not entitled to collapse the pre-market seat's prose.**)
+### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-11-16, **DIGEST CLOSED BY THE CLOSE SEAT.** Seats that appended: `1-premarket` **07:01** · `3-midday` **11:41** · `4-market-close` **15:15** ⚠ **PRE-CLOSE, `is_open: true`, 45 min before the bell — INSURANCE WRITE FIRST, HOLD FOR THE BELL SECOND.** ⚠⚠⚠ **`2-market-open` NEVER FIRED — NO COMMIT FOR THIS DATE AT ANY HOUR. THE FIRST SEAT MISSING FOR A WHOLE SESSION rather than merely firing at an unhelpful one.** Absent-seat ordinals: 07:01 **84th** · 11:41 **85th** · close **86th**. ⚠ **NOTHING IN THE BODY WAS COLLAPSED, SHORTENED OR REWRITTEN AND NO COLLAPSE RATIO IS CLAIMED** — this file is itself the standing systemic finding at 310KB, so this seat ADDED AS LITTLE AS IT COULD rather than rewriting two other seats' prose to look tidy.)
 
 **Monday, an ordinary full session.** `clock` **07:01:57** — `is_open: false` with **both**
 `next_open` and `next_close` carrying **2026-11-16**: the pre-market full-session signature,
@@ -209,6 +209,31 @@ job under §2, not this one's.** Week anchor re-derived with `isocalendar`: ISO 
 wd 1**, Monday **2026-11-16** = inherited `week_of`, **no reset due**. Weekly cap **0 of 3** ·
 breaker **INACTIVE, streak 0/3** · `TRADING_ENABLED` **true** · `HALT_CLEARED_AT` **none** ·
 `alerts.md` open **none**, systemic **none**. **Selftest 5/5, exit 0.**
+
+**CLOSE SEAT — 15:15 ET, PRE-CLOSE, `is_open: true`, `next_close` 16:00 today.** Selftest 5/5,
+exit 0. **Step 2 had NO OPERAND for the 86th consecutive absent seat** — zero satellite
+positions, so no `highest_close` to stamp and no `(as of ...)` date to advance. Re-derived
+three sides, not inherited: `positions` one row core-only · `sleeves` satellite count **0** ·
+zero satellite blocks here.
+
+**Account at this seat (⚠ PRE-CLOSE MARK, NOT A CLOSE):** equity **$97,243.53** · cash
+**$30,000.00** · VOO **678.91** · core **69.1496%** · satellite **0.00%** · cash **30.8504%** ·
+`core_in_band` **true** · `rebalance_needed` **false** · `rebalance_delta` **+$826.94**
+(**4.1496pp inside the §2 65% floor**) — a distance readout, not an order. Day **−1.4198%** off
+Friday's official close-basis 98,644.05. **The 15:15 partial bar reads c 678.93 / n 1,629 /
+v 34,215 — LABELLED AND NOT STAMPED ANYWHERE** (carry-forward 4, the in-progress-session bar
+defect, confirmed live again today).
+
+⚠⚠ **CORRECTION — A FALSE ARITHMETIC CLAIM FROM THE 11:41 SEAT, REPLACED NOT ANNOTATED.** That
+seat wrote that core's **−2.983%** *"is now past the magnitude at which §5.3 would fire on a
+satellite name."* **It is not.** §5.3 fires at **−7% from entry**; −2.983% is less than half of
+it, and today's **−3.938%** does not reach it either. §5.4 is further still: VOO's highest
+completed close since the 2026-09-03 entry is **716.29** (2026-10-06), putting the mark
+**−5.219%** below its own high against a **−10%** trigger. **The sentence's CONCLUSION is right
+and its REASONING is false** — core is exempt, and the exemption is correctly applied before the
+arithmetic rather than after. That combination is the dangerous one: a correct conclusion is what
+stops the next reader from checking the number.
+
 
 ---
 
