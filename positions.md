@@ -84,7 +84,67 @@ check that the pull returned the right session. A stored baseline is a *label*, 
 ## Open positions
 
 *(none — no **satellite** positions have been opened yet. Core VOO exists and is deliberately not tracked here, per the top-of-file rules and the fill note further down.)*
-### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-11-13, **DIGEST OPEN — `1-premarket` 07:01. The three later seats append below; the close seat closes and collapses it.**)
+### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-11-16, **DIGEST OPEN — `1-premarket` 07:01. The three later seats append below; the close seat closes and collapses it.**)
+
+**Monday, an ordinary full session.** `clock` **07:01:57** — `is_open: false` with **both**
+`next_open` and `next_close` carrying **2026-11-16**: the pre-market full-session signature,
+**NOT a holiday.** ⚠ **Read off the DATES, not the boolean.**
+
+**LEDGER CLEAN, RECONCILED THREE SIDES, RE-DERIVED NOT INHERITED:** `positions.md` satellite
+**0** (the one `### <TICKER>` heading in this file is the template at line 42) · `sleeves`
+satellite **count 0, value 0, pct 0.0** · `positions` **one row, core VOO only**
+(99.046311231 sh, `avg_entry_price` 706.74, `cost_basis` 69,999.99, `market_value` 68,345.92,
+`unrealized_plpc` **−2.363%**) — unchanged since the **2026-09-03** fill. ⚠ **Alpaca and the
+ledger do not disagree. Nothing to reconcile, nothing flagged.**
+
+**SELL RULES 5.1 / 5.2 / 5.3 / 5.4 — ABSENT, NOT PASSING.** There is no operand. **No
+distance-to-stop is writable** — 5.3 needs an entry price and 5.4 needs a `highest_close`, and
+neither exists. **No `highest_close` to stamp, no deadline to advance, no Perplexity
+invalidation check run on any holding** (Step 4 had no operand; zero queries spent on position
+review).
+
+**Core VOO is STRUCK from the §5 working list, not stamped as passing it.** §5 exempts core from
+all four rules. Its **−2.363%** unrealised loss is **NOT** a 5.3 reading and must never be logged
+as one.
+
+⚠ **§5.4 STALENESS DETECTOR UNEXERCISED FOR THE 84th ABSENT-SEAT ORDINAL — STILL UNPROVEN CODE.**
+Derivation rather than assertion: the 11-13 close seat recorded the **83rd**, and this is the
+next. ⚠ **The per-DATE count is NOT re-derived here** — the 11-12 digest asserts "79 absent seats,
+78 absent dates" at a point where that date's own four seats were only half written, so the date
+counter cannot be advanced from this file without a full recount. **An ordinal that cannot be
+derived is not reported.**
+
+**✅ BACKFILL OWED TO THIS SEAT — PRICE LEG DISCHARGED.** `bars --symbol VOO --days 6
+--adjustment all`: the **official 2026-11-13 close is 693.05** (`n` 2,492, `v` 42,853).
+Close-basis equity **$98,644.05** · core **69.59%** · satellite **0.00%** · cash **30.41%** ·
+unrealised **−$1,355.94 / −1.937%** · day **−$296.15 / −0.430%** vs the 11-12 close of 696.04.
+⚠ **The 11-13 close seat's partial bar read 692.64 at 15:17 and it said the gap would be the
+measurement: the gap is +0.41, +0.0592%.** ⚠⚠ **NOT recovered and NOT recoverable here: the
+`journal.md` entry for 2026-11-13 and that day's ClickUp summary. This seat did NOT write a
+backdated journal entry — `journal.md` belongs to the close routine, and a pre-market seat
+inventing a close-day narrative three days later would file something no seat observed.**
+
+**Account at this seat:** equity **$98,345.92** · cash **$30,000.00** · VOO **690.04**,
+**−0.482%** on the day · core **69.50%** · satellite **0.00%** · cash **30.50%** ·
+`core_in_band` **true** · `rebalance_needed` **false** · `rebalance_delta` **+$496.23**
+(**4.50pp inside the §2 65% floor**) · breaker **INACTIVE 0/3** · weekly cap **0 of 3**.
+⚠ **Rebalancing is not this seat's job** — §2 puts it at the market-open run.
+
+**Week anchor re-derived with `isocalendar`** — ISO **2026-W47 wd 1**, Monday **2026-11-16** =
+inherited `week_of`, **no reset due**; cap **0 of 3**. Breaker **INACTIVE**, streak **0**.
+`alerts.md` open incidents **none**, systemic **none**.
+
+**Research this seat: 4 theses, 4 REJECTED, 0 accepted.** Plan dated **2026-11-16** with **ZERO
+intents** (no BUY, no SELL, no REBALANCE). **New positions were PERMITTED THROUGHOUT** — nothing
+structural blocked a buy; the candidates did. **Funnel spend: 3 sweeps, 1 drill query, ZERO
+`move` calls, ZERO `asset` calls.**
+⚠⚠ **ZERO CANDIDATES REACHED THE HARD FILTERS — the priced-in check was not run once, so it is
+ABSENT today, not passed.** The 11-13 hypothesis (well-formed ⇒ already-priced) gained **zero
+data points**; recorded as a null, not as support.
+
+---
+
+### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-11-13, **DIGEST CLOSED BY THE 11-16 PRE-MARKET SEAT, NOT BY THE CLOSE SEAT — AND THE HEADER IS THE ONLY LINE TOUCHED.** All four seats appended: `1-premarket` **07:01** · `2-market-open` **10:43** ⚠⚠ **MARKET OPEN, `is_open: true`, FIRST TIME IN TEN SESSIONS** · `3-midday` **11:48** (market OPEN, zero exits, no operand) · `4-market-close` **15:15** ⚠ **PRE-CLOSE, INSURANCE WRITE ONLY — ITS SECOND, POST-BELL COMMIT NEVER LANDED, WHICH IS WHY THIS HEADER STILL READ "DIGEST OPEN" THREE DAYS LATER.** Absent-seat ordinals: 07:01 **80th** · 10:43 **81st** · 11:48 **82nd** · close **83rd**. ⚠ **NOTHING IN THE BODY WAS COLLAPSED, SHORTENED OR REWRITTEN, AND NO COLLAPSE RATIO IS CLAIMED.** A pre-market seat is not entitled to collapse four other seats' prose; it is entitled to correct a header that asserts something false about its own completeness. ⚠⚠ **THE OFFICIAL 2026-11-13 CLOSE THAT THIS DIGEST SAYS LANDS "IN THE SECOND COMMIT" IS NOW RECORDED — in `plan_today.md` under BACKFILL, and here: VOO **693.05**, equity **98,644.05**, core **69.59%**, day **−0.430%**. The 15:17 partial bar read 692.64; **the gap is +0.41 / +0.0592%**, which discharges the measurement that seat left open.**)
 
 **Friday, an ordinary full session.** `clock` **07:01:40** — `is_open: false` with **both**
 `next_open` and `next_close` carrying **2026-11-13**: the pre-market full-session signature,

@@ -52,6 +52,193 @@ single most common way a plausible-sounding connection gets mistaken for an oppo
 
 ## Entries
 
+### 2026-11-16 (07:01 ET) — event survey (funnel, pre-thesis)
+
+Selftest **5/5**, exit 0 (`trading_enabled: true`, LIVE paper, equity **$98,345.92**).
+`clock` **07:01:57** — `is_open: false`, `next_open` **2026-11-16T09:30:00-05:00**, `next_close`
+**2026-11-16T16:00:00-05:00**. **Both fields carry today's date: the pre-market full-session
+signature, NOT a holiday.** Monday, ordinary session.
+
+**WEEK ROLLOVER — NO RESET DUE, RE-DERIVED WITH `isocalendar`, NOT INHERITED.** ISO **2026-W47
+weekday 1**, Monday anchor **2026-11-16** = inherited `week_of` **2026-11-16**. They match.
+⚠ **The 11-13 review set `week_of` FORWARD to next Monday and warned that a weekend run would
+reset it backward to 2026-11-09. No seat ran between Friday's close and this one, so the
+forward-set value is simply correct today and the warning never bound.**
+`new_positions_this_week` **0 of 3**.
+
+**NEW POSITIONS PERMITTED THROUGHOUT.** Breaker **INACTIVE 0/3** · cap **0 of 3** · satellite
+**0.0% deployed, $30,000 cash** · `control.md` Notes **(none)**. Nothing structural blocked a
+buy. The candidates did.
+
+**FUNNEL SPEND: three broad sweeps, ONE drill query, ZERO `move` calls, ZERO `asset` calls.**
+Sweep 1 asked the weekend window (Fri close → Mon morning) for first-disclosure dates, named
+counterparties and disclosed values up front; it returned **one** item. Sweep 2 inverted the leg
+to demand a **named US-listed RECIPIENT above $10B with a disclosed dollar value**, and excluded
+AI/data-centre/semis/power by construction per the 11-12 standing finding; it returned
+**zero qualifying rows and said so explicitly**. Sweep 3 went after regulatory and supply-shock
+events — approvals, rejections, rulings, tariffs, recalls, shutdowns — and produced the day's
+only candidate with a real second-order shape.
+
+⚠⚠ **THE DAY'S FINDING, AND IT IS A NULL RATHER THAN A KILL: NOT ONE CANDIDATE REACHED THE HARD
+FILTERS. The priced-in check was not run a single time today.** Everything died at part 1 or
+part 2. **The 11-13 hypothesis — that being well-formed enough to pass parts 1–4 and being
+already-priced may be the same property — therefore gained ZERO new data points today, and this
+is recorded as a null rather than as support.** The proposed test needs `move_pct` for candidates
+*reaching* the filters; a session that sends none through adds nothing to either side of it.
+⚠ **This is the ordinary shape (last week: priced-in fired 0 times in 22 non-sweep entries), and
+11-13 was the exception, not the new normal.**
+
+⚠ **Weekend windows are structurally thin and that is a property of the calendar, not a research
+failure.** Two of three sweeps returned nothing qualifying *by their own stated reasoning* —
+the source applied the filter before this seat did, twice.
+
+---
+
+### T-2026-11-16-01 — the 2L EGFR-mutant NSCLC incumbent tier ← the FDA's Complete Response Letter to Summit Therapeutics for ivonescimab — REJECTED (part 1: a CRL preserves the status quo; part 2: the drill query established there IS no approved equivalent, so there is no incumbent revenue line to improve — ONE drill query spent, the source applied the kill)
+
+**Company A / the news:** 2026-11-15 — Summit Therapeutics (SMMT) disclosed an FDA **Complete
+Response Letter** for ivonescimab plus platinum chemotherapy in previously-treated EGFR-mutated
+locally advanced / metastatic non-squamous NSCLC. The FDA held the BLA lacked substantial
+evidence of effectiveness: the Phase III HARMONi study met PFS but **did not** show a
+statistically significant overall-survival benefit. (Source: Summit press release 2026-11-15,
+corroborated by BioSpace, RTTNews, pharmaphorum.)
+
+**Company B / the candidate:** *intended* — whichever US-listed company sells the incumbent
+standard of care in that indication and would have lost share to ivonescimab had it been
+approved. **No such company could be named.**
+
+**1. Mechanism (one sentence):** *attempted* — "The FDA's rejection of ivonescimab causes
+[incumbent]'s US oncology product revenue to improve because a share-taking competitor is kept
+off the market."
+⚠ **FAILS ON ITS FACE.** A rejection **preserves the status quo**; it does not improve any
+revenue line that exists today. The honest sentence is "causes [incumbent]'s revenue to *not
+decline later than it otherwise would have*", which is a change to a **forecast**, not to a
+reported line — and §4 part 1 asks what happens to a revenue or cost line. ⚠ **This is the
+identical shape killed at `T-2026-11-10-03` (Novocure / Optune Mya, 2026-11-10), and the
+precedent alone would have been sufficient.**
+
+**2. Dollar path:** **NO NUMERATOR AND NO NAMED COMPANY.** The drill query returned, in terms,
+that no source identifies the product-level standard of care for this exact setting, which
+US-listed companies sell it, its US revenue, or any share-capture forecast. ⚠⚠ **And it returned
+something stronger than an absence of data: one source describes ivonescimab as having "no
+approved equivalent" in this setting. If that is right, there is no incumbent to protect — the
+CRL does not preserve anyone's share, because nobody's share was at risk.** The only figure the
+sources carry is the eligible population: Summit's **>14,000 US patients/year** (a second source
+says ~15,000–20,000). **A TAM is not a segment and not a share of anyone's revenue.** REJECTED
+here independently of part 1.
+
+**3. Timing window:** not reached.
+**4. Invalidation:** not reached.
+
+**Hard filters:** **NOT REACHED — no `move` call was made on any ticker.** ⚠ **Recorded
+explicitly: the priced-in filter is ABSENT here, not passed.**
+
+**Outcome:** **REJECTED, two independent ways, with the drill query doing the work.** (i) Part 1 —
+a regulatory rejection changes a forecast, not a revenue line. (ii) Part 2 — there is no named
+incumbent, no segment and no numerator, and the best available evidence says no approved
+equivalent exists at all.
+⚠ **The one drill query of the day was worth its $0.005 precisely because it killed the thesis on
+evidence rather than on analogy to `T-2026-11-10-03`.** A precedent and a verified fact are not
+the same object, and the log should be able to tell them apart.
+⚠ **Noted and NOT pursued:** the first-order legs are §3-dead or wrong-signed — Akeso (the
+licensor) is HK-listed; AstraZeneca took a $2.0B equity stake in Summit (`T-2026-11-05-02`) and
+so carries a mark-to-market **loss**, which is the wrong direction for a long.
+
+---
+
+### T-2026-11-16-02 — JNJ (Johnson & Johnson) ← a reported up-to-$3.4B acquisition of Ollin Biosciences — REJECTED (capital paid OUT, wrong direction; the transaction is UNCONFIRMED; the target is not established as US-listed; and $3.4B is immaterial against JNJ under part 2)
+
+**Company A / the news:** 2026-11-16 — reporting citing the *Financial Times* said J&J was close
+to acquiring **Ollin Biosciences**, an eye-disease drug developer, for up to **$3.4B** (~$2.2B
+cash upfront + up to $1.2B milestones). ⚠ **Explicitly reported as discussions that "could be
+announced as early as Monday" and "could still fail" — a proposal, not a signed transaction.**
+
+**Company B / the candidate:** JNJ itself, which is the **payer**.
+
+**1. Mechanism (one sentence):** *cannot be written in the required direction.* Money leaves
+J&J's balance sheet. The acquirer's revenue line does not improve on announcement; it improves,
+if ever, when an acquired asset is approved and sold. ⚠ **Same wrong-direction shape as
+`T-2026-11-05-02` (AstraZeneca's $2.0B into Summit) and `T-2026-11-04-03` (onsemi / Ferric).**
+
+**2. Dollar path:** **IMMATERIAL BY TWO ORDERS.** $2.2B of upfront cash against J&J's revenue
+base is far under the §4 10%-of-revenue materiality floor, and an eye-disease pipeline asset
+contributes **$0** of revenue in the §4 two-quarter horizon. REJECTED.
+
+**3. Timing window:** **OUTSIDE THE HORIZON.** A preclinical/clinical ophthalmology asset does not
+reach reported results inside two quarters. REJECTED independently.
+
+**4. Invalidation:** not reached.
+
+**Hard filters:** **NOT REACHED.** ⚠ **Universe note for completeness: Ollin's listing status is
+not established by any source — and if it is private, §3 kills the only other leg outright.**
+
+**Outcome:** **REJECTED four ways** — wrong direction (payer), unconfirmed deal, immaterial under
+part 2, outside the horizon under part 3. ⚠ **ZERO drill queries spent: every kill was readable
+off the sweep text.**
+
+---
+
+### T-2026-11-16-03 — the tariff-exposed domestic producer complex ← the Federal Circuit allowing the IEEPA "Liberation Day" and Canada/China/Mexico tariffs to remain in effect pending appeal — REJECTED (part 1: a ruling that PRESERVES an existing regime changes nobody's revenue line; no Company A and no named recipient — the standing government-action object, unchanged)
+
+**Company A / the news:** reported **2026-11-16** (⚠ the source's publication metadata and
+procedural history are internally inconsistent and the sweep itself flagged the date as needing
+verification): the Federal Circuit allowed tariffs imposed under IEEPA to remain in effect while
+appeals proceed. Steel, aluminium and auto tariffs under other authority are unaffected.
+
+**Company B / the candidate:** none nameable — nominally "US domestic producers competing with
+tariffed imports."
+
+**1. Mechanism (one sentence):** *fails twice over.* **(a) There is no Company A** — a court is
+not a company and a ruling is not a transaction, which is the standing disposal applied to every
+macro/policy object in this log (`T-2026-11-13-05`, `-11-11-04`, `-11-10-05`, `-11-05-04`).
+**(b) The ruling PRESERVES a regime that has been in force for months.** Nothing changes on the
+day; an expected removal simply does not happen. Same forecast-not-a-line defect as `-01` above,
+arriving from the opposite direction. ⚠ **Two of today's three non-sweep candidates died on the
+same "status quo preserved" shape, from a drug regulator and a court respectively. That is worth
+naming, because the shape is easy to mistake for news when the headline is large.**
+
+**2. Dollar path:** **NO FIGURE OF ANY KIND.** The source carries no tariff rate, no dollar
+amount, no import volume and no company-level number. REJECTED.
+
+**3. Timing window / 4. Invalidation:** not reached.
+
+**Hard filters:** **NOT REACHED.**
+
+**Outcome:** **REJECTED.** No Company A, no named recipient, no quantum, and the event is the
+*absence* of a change. ⚠ **The date is also unverified and this seat did not spend a query to
+verify it, because the thesis is dead on three other counts and confirming the date would not
+revive it.**
+
+---
+
+### T-2026-11-16-04 — sweep: thirteen items disposed as one — REJECTED (ZERO drill queries spent)
+
+Each died on the face of the sweep text. Listed so the next seat does not pay to re-discover
+them.
+
+| Item | Why it is not a thesis |
+|---|---|
+| **Cisco Q1 results + raised FY guidance** | Own-results print — Company A is itself. A company's own guidance is a **condition, not a transaction** (standing: `T-2026-11-10-02`, `T-2026-11-12-02`). The second-order leg is its **unnamed** supplier tier. |
+| **US October PPI** | Macro aggregate. No Company A. |
+| **AMD −8.8% / Broadcom −4.8% on "AI investment uncertainty"** | A **repricing is not a transaction** (part 1). Standing object since `T-2026-11-06-01`. |
+| **Medline orthopedic mattress recall / production halt (7 deaths, 35 serious injuries)** | **Privately held**; production stopped in **October**, which pre-dates the window; and a casualty count is not a dollar path. |
+| **Oklo / Centrus multi-year HALEU contracts (11-12)** | **No contract value disclosed** — and this is `T-2026-11-13-01` re-served, already killed on priced-in **+17.11%** (4× the threshold) and part 3 (~12 quarters, deliveries from 2029). ⚠ **Not re-screened. A weekend does not repair a part-3 failure.** |
+| **Standard Lithium / Trafigura amended offtake (11-12)** | No value, no duration, no payer established; SLI is below the §3 $10B floor. |
+| **Noble Supply & Logistics federal awards** | Not US-listed; and the award values are **$678.46 and $15.65** — dollars, not millions. Sub-scale by six orders. |
+| **Lyrasis sole-source licence** | A **notice of intent**, not an award; no amount. |
+| **Thomson Reuters Special Services (~$1.2M, 4-month base)** | Sub-scale; recipient is not separately US-listed. |
+| **Jereh — $392M Bu Hasa award** | **Shenzhen-listed.** §3. |
+| **NVRO Metals offtake** | Disclosed **2026-11-10**, pre-dates the window; market cap not established. |
+| **Aurobindo / Lannett FDA facility classifications** | Based on inspections conducted **August and September 2026**; no first disclosure in the window. |
+| **FDA GLP-1 labelling warning** | Issued **2026-11-09**, outside the window. |
+
+**Outcome:** **REJECTED, thirteen items, zero drill queries.** ⚠ **Five of the thirteen are dead
+purely on a DATE** (Medline, Oklo/Centrus, NVRO, Aurobindo/Lannett, GLP-1) — the single most
+common disposal in this log, and the reason sweep 1 now demands a first-disclosure date in the
+prompt rather than in the reading.
+
+---
+
 ### 2026-11-13 (07:01 ET) — event survey (funnel, pre-thesis)
 
 Selftest **5/5**, exit 0 (`trading_enabled: true`, LIVE paper, equity **$99,141.26**).
