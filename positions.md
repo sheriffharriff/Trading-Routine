@@ -142,6 +142,48 @@ structural blocked a buy; the candidates did. **Funnel spend: 3 sweeps, 1 drill 
 ABSENT today, not passed.** The 11-13 hypothesis (well-formed ⇒ already-priced) gained **zero
 data points**; recorded as a null, not as support.
 
+
+**`2-market-open` 08:36 ET — PRE-BELL, `is_open: false`, 54 min before the open. Nothing placed,
+and nothing was due.** §7 forbids trading while the market is closed, so no order *could* be
+placed; the plan also carried **zero intents**, so none was *owed*. ⚠ **Both facts must be stated
+because they are independent** — a seat that could not trade and a seat with nothing to trade
+look identical in the record, and only one of them is a fault. **Today it is the second.**
+
+**Staleness gate PASSED, not skipped.** `plan_date` **2026-11-16** = today in ET. The plan is
+this morning's own, not a carry-over; **no stale-plan alert was posted and none was due.**
+
+**Steps 3–7, every one with no operand:** §2 bootstrap — `core_established: true`, path retired.
+Exits — **zero positions**. Buys — **zero intents**, so no `move` re-validation, no correlation
+re-check, no thesis lookup was performed; **the §4 priced-in re-check is ABSENT today, not
+passed.** Rebalance — core **69.46%**, `core_in_band: true`, **4.46pp inside the §2 65% floor**.
+
+**Account at this seat, re-pulled live:** equity **$98,217.06** · cash **$30,000.00** · VOO
+**688.739**, **−0.669%** on the day · core **69.46%** / satellite **0.00%** / cash **30.54%** ·
+`rebalance_delta` **+$534.88** · unrealised **−$1,782.93 / −2.547%** · breaker **INACTIVE 0/3** ·
+weekly cap **0 of 3** · `open_thesis_ids` none. ⚠ **Equity fell $128.86 from the 07:01 seat on
+VOO's mark alone. No shares moved.** §5.4 detector unexercised — **85th absent-seat ordinal**,
+derived forward from the 84th at the 07:01 seat.
+
+⚠⚠ **NEW, AND IT BEARS ON A FIGURE THIS CORPUS HAS NOW BOLDED IN THREE FILES: the "OFFICIAL
+2026-11-13 CLOSE" OF 693.05 LOOKS LIKE AN IEX PRINT, NOT THE CONSOLIDATED CLOSE.** `v` **42,853**
+shares for a full VOO session is on the order of 1% of its true consolidated volume — the
+signature of the IEX-only feed. **The `positions` endpoint disagrees with the `bars` endpoint:
+`lastday_price` reads 693.38, which is +0.33 above.** ⚠ **Recorded as an observation, not a
+correction.** This seat did not establish which print is authoritative, only that two endpoints
+disagree and that the word "official" is doing work the data does not support. **It compounds
+carry-forward 4** — both findings say the benchmark series is less authoritative than the prose
+around it claims.
+
+⚠⚠ **AND A SECOND ONE, WHICH WOULD VOID A MEASUREMENT SERIES IF IT HOLDS: the 11-13 "15:17
+partial bar close" of 692.64 equals that session's `vw` field, 692.64139, to five significant
+figures.** The **+0.41 / +0.0592%** "gap" that the last two seats recorded as a sixth data point
+may therefore be **a close measured against a VWAP, not against an earlier close.** ⚠ **This seat
+cannot confirm what the 11-13 close seat actually read, and does NOT strike the series.** It
+flags the coincidence for a seat that can, because an undetected unit mismatch would quietly
+corrupt every later point in it.
+
+**Deliberately short.** The corpus-size finding is live at ~1.25MB and prose volume is the one
+lever a seat controls. **No collapse ratio is claimed and no other seat's text was touched.**
 ---
 
 ### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-11-13, **DIGEST CLOSED BY THE 11-16 PRE-MARKET SEAT, NOT BY THE CLOSE SEAT — AND THE HEADER IS THE ONLY LINE TOUCHED.** All four seats appended: `1-premarket` **07:01** · `2-market-open` **10:43** ⚠⚠ **MARKET OPEN, `is_open: true`, FIRST TIME IN TEN SESSIONS** · `3-midday` **11:48** (market OPEN, zero exits, no operand) · `4-market-close` **15:15** ⚠ **PRE-CLOSE, INSURANCE WRITE ONLY — ITS SECOND, POST-BELL COMMIT NEVER LANDED, WHICH IS WHY THIS HEADER STILL READ "DIGEST OPEN" THREE DAYS LATER.** Absent-seat ordinals: 07:01 **80th** · 10:43 **81st** · 11:48 **82nd** · close **83rd**. ⚠ **NOTHING IN THE BODY WAS COLLAPSED, SHORTENED OR REWRITTEN, AND NO COLLAPSE RATIO IS CLAIMED.** A pre-market seat is not entitled to collapse four other seats' prose; it is entitled to correct a header that asserts something false about its own completeness. ⚠⚠ **THE OFFICIAL 2026-11-13 CLOSE THAT THIS DIGEST SAYS LANDS "IN THE SECOND COMMIT" IS NOW RECORDED — in `plan_today.md` under BACKFILL, and here: VOO **693.05**, equity **98,644.05**, core **69.59%**, day **−0.430%**. The 15:17 partial bar read 692.64; **the gap is +0.41 / +0.0592%**, which discharges the measurement that seat left open.**)
