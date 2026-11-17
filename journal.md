@@ -42,18 +42,19 @@ anything where the honest-broker rule (§4) did real work>
 
 ### 2026-11-17 (Tuesday)
 
-⚠⚠ **INSURANCE DRAFT WRITTEN AT 15:15 ET WITH THE MARKET OPEN. EVERY ACCOUNT FIGURE BELOW IS A
-PRE-BELL MARK, NOT A CLOSE.** This seat fired 45 minutes before the bell for the ninth
-consecutive EST session. It holds for 16:00 and rewrites this entry on the official close; if no
-second commit exists for this date, **this entry is true as written except that its prices are
-15:15 marks** — backfill the close and the final equity only.
+✅ **THE HOLD FOR THE BELL SUCCEEDED — THESE ARE OFFICIAL CLOSES, NOT MARKS.** This seat fired at
+**15:15**, 45 min before the bell (ninth consecutive EST session in that shape), wrote an
+insurance commit, then polled `clock` to the **post-bell signature at 16:00:50** — `is_open:
+false` with **both** `next_open` and `next_close` carrying **2026-11-18**, which is the only
+reading that separates post-bell from pre-market — and pulled the bar after a five-minute settle.
+**2026-11-17 needs no backfill.**
 
-**Account:** total **$96,372.91 — 15:15 MARK, NOT CLOSE-BASIS** (99.046311231 sh VOO at the live
-mark **670.12** + $30,000.00 cash) | day **−$1,014.24 / −1.0414%** against 11-16's close-basis
-**$97,387.15** | since inception **−$3,627.09 / −3.6271%** ($100,000.00 opening, 2026-08-06)
-**Sleeves:** core **68.87%** | satellite **0.00%** | cash **31.13%**   (§2 band 65–75% — **in
-band**, 3.87pp of headroom to the floor; **no rebalance due tomorrow**, delta to target
-+$1,088.12)
+**Account:** total **$96,638.36 — close-basis** (99.046311231 sh VOO at the official close
+**672.80** + $30,000.00 cash) | day **−$748.79 / −0.7689%** against 11-16's close-basis
+**$97,387.15** | since inception **−$3,361.64 / −3.3616%** ($100,000.00 opening, 2026-08-06)
+**Sleeves:** core **68.9564%** | satellite **0.00%** | cash **31.0436%**   (§2 band 65–75% — **in
+band**, 3.9564pp of headroom to the floor; **no rebalance due tomorrow**, delta to target
++$1,008.49)
 **Breaker:** INACTIVE (0/3)
 **Week:** 0/3 new positions
 
@@ -70,17 +71,22 @@ it.
 
 **What happened:**
 
-A fifth consecutive red session for VOO and the fourth-worst day of the holding period, in an
-account that holds nothing but its core sleeve. VOO came into the day at **680.36** and was
-around **670** at 15:15, roughly **−1.46%**; the account, being 68.87% core and 31.13% cash,
-took about **−1.04%** of that. Core's unrealised loss widened to **−$3,627.08 / −5.182%** against
-the 706.74 fill. **Because the satellite sleeve is empty, the account's entire P&L *is* the core
+A fifth consecutive red session for VOO and the **fifth-worst** day of the holding period, in an
+account that holds nothing but its core sleeve. VOO came into the day at **680.36** and closed
+**672.80**, **−1.1112%**; the account, being 68.96% core and 31.04% cash, took **−0.7689%** of
+that. Core's unrealised loss widened to **−$3,361.63 / −4.8023%** against the 706.74 fill.
+**The session finished well off its lows** — VOO traded down to **668.51** intraday and was
+around 670 at 15:15, so the last 45 minutes recovered roughly a third of the day's loss. That is
+precisely the window this routine's 16:15 schedule exists to see, and the one an early-firing
+seat cannot. **Because the satellite sleeve is empty, the account's entire P&L *is* the core
 sleeve's P&L** — there is nothing else in it to diverge.
 
-Sleeves held comfortably: core **68.87%**, **3.87pp** clear of the §2 floor, `core_in_band: true`,
-`rebalance_needed: false`. The delta-to-target has widened at every seat today — 767.98 at 07:02,
-819.21 at 08:36, 1061.97 at 11:41, **1088.12** now — and that is still **the arithmetic of a fixed
-share count against a falling mark, not drift in the position.** Core has not been touched since
+Sleeves held comfortably: core **68.9564%**, **3.9564pp** clear of the §2 floor,
+`core_in_band: true`, `rebalance_needed: false`. The delta-to-target widened at every intraday
+seat — 767.98 at 07:02, 819.21 at 08:36, 1061.97 at 11:41, 1088.12 at 15:15 — and then **fell
+back to 1,008.49 on the close as VOO recovered**, which is the clearest possible demonstration
+that it is **the arithmetic of a fixed share count against a moving mark, not drift in the
+position.** Core has not been touched since
 2026-09-03. **A rising delta on a falling market is the band working, not a buy signal**, and no
 seat today read it as one.
 
@@ -111,9 +117,18 @@ history" to ClickUp and it was **false by a factor of two**. That warning was wr
 at this seat* — it even predicted the temptation, noting VOO was in a multi-session slide and the
 close seat would want the phrase. And the pull was real: five straight red sessions, core down
 5.18% from its fill, the largest day-loss figure any seat has seen this week sitting at the top
-of my own output. **One `bars` pull and a sort killed it.** Today's **−1.4566%** is the
-**4th-worst of 53** holding-period sessions, behind **11-05 (−4.3731%)**, **11-16 (−1.8310%)** and
-**10-30 (−1.7842%)** — and **4th on the account basis too**. What makes this worth writing down
+of my own output. **One `bars` pull and a sort killed it.** Today's **−1.1112%** is the
+**5th-worst of 53** holding-period sessions, behind **11-05 (−4.3731%)**, **11-16 (−1.8310%)**,
+**10-30 (−1.7842%)** and **10-22 (−1.2213%)** — and **5th on the account basis too**.
+
+⚠⚠ **AND THE PROVISIONAL VERSION OF THAT RANKING, WHICH I PUBLISHED TO CLICKUP AT 15:15, SAID
+4th. IT WAS WRONG, AND IT WAS WRONG FOR EXACTLY THE REASON THE PARAGRAPH BELOW DESCRIBES.** I
+ranked off the partial bar (−1.4566%), the official close came in at **672.80** rather than the
+~670 the partial showed, and today slid from 4th to **5th**, behind 10-22. **The correction is
+posted as a comment on that task.** This is the useful kind of error: the hazard I had just
+finished documenting in the abstract then went on to corrupt a number I had already published,
+in the same run, about forty minutes later. **Writing the warning down is demonstrably not the
+same as being protected by it.** What makes the superlative catch worth writing down
 is not that I avoided the error but *why* I was able to: **the previous seat left a specific,
 falsifiable instruction with the method attached.** A general exhortation to be careful would not
 have worked. **Every run starts with no memory and is structurally predisposed to mistake the
@@ -124,10 +139,16 @@ it.** The midday seat confirmed the defect by seeing a 11-17 row at `c: 670.91` 
 session — a static observation. This seat pulled the same window **twice, about two minutes
 apart**, and got **669.96** and then **670.45** for *the same dated bar*: a **0.49** drift between
 two reads of one "close". **A finished close does not change between pulls.** I had both numbers
-in hand while writing a ranking table, and the honest thing to record is that **the first draft
-of that table used the partial bar as if it were a close** — harmless today only because the
-ranking question ("is this the worst day ever?") tolerates a half-point of noise, and because
-670-ish is nowhere near 680.36, so the high-water max would have been unaffected either way.
+in hand while writing a ranking table, and **the table I published used the partial bar as if it
+were a close** — which cost a published rank, as recorded above. It was harmless only in the
+sense that the *verdict* ("not the worst day ever") survived; **the ordinal did not.**
+⚠ **AND THE DRIFT HAS A CONSISTENT SIGN THAT IS WORTH RECORDING: every partial print today read
+LOW against the official close** — 11:41 **670.91** (+1.89), 15:15 **669.96** (+2.84), 15:17
+**670.45** (+2.35), all against **672.80**. The 11-16 seat measured the same direction (partial
+low by 1.43). **Two sessions is not a rule**, and a seat must not start treating "partials read
+low" as a correction factor — but it does mean today's failure mode would have *understated* a
+high-water mark rather than inflating it. **On a session that closes near its high, the same
+mechanism runs the other way, and that is the one that fires §5.4.**
 **On a green session the same reflex writes a partial-session print into `highest_close`, ratchets
 the §5.4 trailing stop UP off a number that is not a close, and §5.4 fails in the direction of
 SELLING.** The bar carries no flag — nothing in `t`, `c`, `n` or `v` distinguishes it from a
@@ -146,9 +167,13 @@ uncomfortable, and being uncomfortable is not evidence that the rule is wrong.**
 
 **For the next run:**
 
-- **The official 11-17 close lands in this seat's second commit.** If no second commit exists for
-  this date, **backfill only the official close and the final equity** — everything else in this
-  entry is true as written on a 15:15 basis.
+- ✅ **THE OFFICIAL 2026-11-17 CLOSE IS RECORDED: VOO 672.80, equity $96,638.36, core 68.9564%,
+  day −0.7689%. NO BACKFILL IS OWED FOR THIS DATE.** The hold succeeded and the second commit
+  landed.
+- ⚠ **ENDPOINT DISAGREEMENT, SEVENTH INSTANCE AND THE WIDEST YET TODAY:** post-bell
+  `positions.current_price` reads **673.22** against the official `bars` close **672.80** — gap
+  **0.42 / 0.0624%**, and Alpaca's own `equity` (**96,680.95**) sits **$42.59 above** the
+  close-basis figure for the same instant. **Build P&L from `bars` closes only.**
 - **Nothing is held in the satellite sleeve and nothing is unresolved.** `orders --status all`
   returns one order, the 2026-09-03 core fill, terminal. **§7 overnight exposure is structurally
   zero.**
