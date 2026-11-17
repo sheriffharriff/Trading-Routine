@@ -158,7 +158,20 @@ protect the ordinal, because the ordinal was built on a partial bar.**
 8. **STILL MISSING AND NOT RECOVERABLE:** the `journal.md` entry for **2026-11-13** and that day's
    ClickUp daily summary. The price leg was discharged (VOO 693.05, equity 98,644.05, core 69.59%,
    day −0.430%); **no seat has written, or should write, a backdated close-day narrative.**
-9. ⚠ **PATH LABEL — affects anyone re-running the thesis grep.** The research archives live at
+9. ⚠⚠ **DO NOT MISREAD `delete-on-merge` AS A PUSH FAILURE — THIS SEAT DID, AND WAS WRONG.**
+   After both commits, `git ls-remote --heads origin` showed **no `claude/admiring-cerf-7wdi9n`
+   branch**, and `git fetch origin <branch>` failed with `couldn't find remote ref`, while
+   `commit.py` had reported `"pushed": true` both times. **This seat briefly concluded that
+   `commit.py` was reporting false success. IT IS NOT.** An automation merges each session branch
+   into `main` and **deletes the branch on merge** — `git log origin/main` shows the chain
+   (`Merge claude/admiring-cerf-7wdi9n into main`, and the same shape for
+   `affectionate-sagan-ug3und`, `tender-feynman-kfxytn`, `jolly-allen-s75i2m`). **Both commits
+   were verified present in `origin/main` with `git merge-base --is-ancestor`.**
+   ⚠ **THE CORRECT CHECK IS `git merge-base --is-ancestor <sha> origin/main`, NOT whether your
+   branch still exists on the remote.** A seat that checks for its own branch will see it gone on
+   every successful run and may re-push needlessly (harmless) or raise a false push-failure
+   incident (not harmless — it would put a bogus SYSTEMIC alert in front of the human).
+10. ⚠ **PATH LABEL — affects anyone re-running the thesis grep.** The research archives live at
    **`archive/research_log/2026-09.md`** and **`archive/research_log/2026-10.md`**. Earlier states
    abbreviated these as `archive/2026-09` / `archive/2026-10`, which **does not resolve as a
    path** — a seat pasting it will silently get zero and under-count by 216.
