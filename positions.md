@@ -84,7 +84,7 @@ check that the pull returned the right session. A stored baseline is a *label*, 
 ## Open positions
 
 *(none — no **satellite** positions have been opened yet. Core VOO exists and is deliberately not tracked here, per the top-of-file rules and the fill note further down.)*
-### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-11-17, **DIGEST OPEN — seats appended: `1-premarket` 07:02 · `2-market-open` 08:36** ⚠ **PRE-OPEN, `is_open: false` 54 min before the bell — and it cost nothing: the plan carried ZERO intents, so no order was prevented.** The two later seats append below; the close seat closes it. ⚠ Absent-seat ordinal: 07:02 is the **87th**; absent dates **79**. ⚠⚠ **DELIBERATELY WRITTEN SHORT AND NO COLLAPSE RATIO IS CLAIMED.** This file is itself the standing systemic finding at ~317KB describing an empty ledger, so this seat ADDED THE LEAST IT COULD rather than restating what four prior seats already wrote. **A pre-market seat is not entitled to collapse other seats' prose.**)
+### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-11-17, **DIGEST OPEN — seats appended: `1-premarket` 07:02 · `2-market-open` 08:36 · `3-midday` 11:41** ⚠ **MARKET OPEN, `is_open: true` — the first seat today that COULD have exited, and none was due** ⚠ **PRE-OPEN, `is_open: false` 54 min before the bell — and it cost nothing: the plan carried ZERO intents, so no order was prevented.** The two later seats append below; the close seat closes it. ⚠ Absent-seat ordinal: 07:02 is the **87th**; absent dates **79**. ⚠⚠ **DELIBERATELY WRITTEN SHORT AND NO COLLAPSE RATIO IS CLAIMED.** This file is itself the standing systemic finding at ~317KB describing an empty ledger, so this seat ADDED THE LEAST IT COULD rather than restating what four prior seats already wrote. **A pre-market seat is not entitled to collapse other seats' prose.**)
 
 **Tuesday, an ordinary full session.** `clock` **07:02:09** — `is_open: false` with **both**
 `next_open` and `next_close` carrying **2026-11-17**: the pre-market full-session signature,
@@ -161,6 +161,60 @@ firing consistently *after* the bell in a way that changes what the human must f
 *before*, the known shape, on a day it cost nothing. **A quiet, healthy run is not worth
 interrupting anyone for.**
 
+
+**`3-midday` 11:41 — MARKET OPEN (`is_open: true`, `next_close` 16:00), and this run is
+EXITS ONLY: §7 of its own prompt forbids opening anything here.** ⚠ Absent-seat ordinal **89th**;
+absent dates still **79** (same date, already counted). Fired against a nominal 12:30, ~49 min
+early — the same −1h EST shape as every midday seat since 11-03 (11:40–11:48). **Recorded, not
+diagnosed**, per `control.md`.
+
+**ZERO satellite positions, so Steps 2–4 of this routine had NO OPERAND.** No `highest_close` to
+test for staleness and **no backfill was due** — the Step 2 repair branch has still never run
+against a real mark. §5.1–§5.4 **ABSENT, NOT PASSING**: no entry price, no high-water mark, no
+deadline, no invalidation string. **Zero exits taken; zero exits were due; nothing should have
+executed and failed to.** ⚠ The $30,000 idle cash is **not actionable at this seat** regardless
+of the open gates — a midday entry is exactly the path this routine exists to refuse.
+
+**Ledger re-reconciled at THIS seat — STILL AGREES.** `positions` returns exactly one row: **VOO
+99.046311231 sh @ 706.74, market value $66,460.07, unrealized −$3,539.92 / −5.057%** — **core,
+exempt from §5.** Equity **$96,460.07**, down **$809.21** on the 08:36 mark. Sleeves: core
+**68.90%** · satellite **0.00%** · cash **$30,000.00 / 31.10%**; `core_in_band: true`,
+**3.90pp** to the §2 floor. ⚠ `rebalance_delta: 1061.97`, up from **819.21** at 08:36 and
+**767.98** at 07:02 — **a DISTANCE READOUT, NOT AN ORDER**, and it is rising only because VOO
+keeps falling.
+
+⚠⚠⚠ **THE IN-PROGRESS-SESSION BAR DEFECT IS NOW CONFIRMED LIVE — FIRST OBSERVATION, NOT A
+HYPOTHESIS.** Carry-forward item 5 has been carried as a predicted failure for weeks; this seat
+saw it. `bars --symbol VOO --days 7 --adjustment all` pulled at **11:41 with `clock.is_open:
+true`** returned a **2026-11-17 row, `c: 670.91`** — an unfinished session priced as a bar.
+**Both of today's pre-bell pulls returned no such row**, which is why neither earlier seat could
+see it. **A seat taking `max(c)` from this pull would have stamped a partial-session print into
+`highest_close`.** Today it fails harmless (670.91 < 680.36, so the max is unaffected) **but on a
+green session it would ratchet the §5.4 stop UP off a number that is not a close, and §5.4 fails
+in the direction of SELLING.** ⚠ **THE RULE HOLDS AND IS NOW EVIDENCED: gate every high-water
+write on `clock`, never on the shape or presence of the bar.** The bar carries no flag — nothing
+in `t`, `c` or `n` says the session is unfinished.
+
+**Latest OFFICIAL close remains VOO 680.36 (2026-11-16).** Recent: 11-11 **698.25** · 11-12
+**696.04** · 11-13 **693.05** · 11-16 **680.36**. The 670.91 print is **−1.388% on the session so
+far and is NOT a close.** ⚠ **Endpoint disagreement re-measured, FIFTH instance, identical to
+both earlier readings today:** `positions.lastday_price` **680.26** vs `bars` **680.36** =
+**0.10 / 0.0147%**.
+
+**Thesis count RE-DERIVED AT THIS SEAT, NOT CARRIED: 61 live + 87 + 129 = 277, zero ever
+accepted** — third matching derivation today. Paths that actually resolve:
+`archive/research_log/2026-09.md`, `archive/research_log/2026-10.md`.
+
+**Breaker INACTIVE 0/3** · weekly cap **0/3** · week anchor re-derived (`isocalendar` → 2026-W47
+wd 2, Monday **2026-11-16**) **matches `week_of`, no reset due** · `alerts.md` clean ·
+`TRADING_ENABLED: true`.
+
+**No notification sent, and that is a decision.** Nothing was owed and nothing was missed: no
+position existed to stop out, no exit was suppressed, no incident is open. The bar-defect
+confirmation above is **a note for the next seat, not an action for the human** — the standing
+items that DO need them (a retention rule for this file; the agent-authored rejection taxonomy)
+are already written up in `weekly_review.md` and re-pinging them daily would train them to
+ignore the channel.
 
 ### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-11-16, **DIGEST CLOSED BY THE CLOSE SEAT.** Seats that appended: `1-premarket` **07:01** · `3-midday` **11:41** · `4-market-close` **15:15** ⚠ **PRE-CLOSE, `is_open: true`, 45 min before the bell — INSURANCE WRITE FIRST, HOLD FOR THE BELL SECOND.** ⚠⚠⚠ **`2-market-open` NEVER FIRED — NO COMMIT FOR THIS DATE AT ANY HOUR. THE FIRST SEAT MISSING FOR A WHOLE SESSION rather than merely firing at an unhelpful one.** Absent-seat ordinals: 07:01 **84th** · 11:41 **85th** · close **86th**. ⚠ **NOTHING IN THE BODY WAS COLLAPSED, SHORTENED OR REWRITTEN AND NO COLLAPSE RATIO IS CLAIMED** — this file is itself the standing systemic finding at 310KB, so this seat ADDED AS LITTLE AS IT COULD rather than rewriting two other seats' prose to look tidy.)
 
