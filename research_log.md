@@ -52,6 +52,216 @@ single most common way a plausible-sounding connection gets mistaken for an oppo
 
 ## Entries
 
+### 2026-11-17 (07:02 ET) — event survey (funnel, pre-thesis)
+
+Selftest **5/5**, exit 0 (`trading_enabled: true`, LIVE paper, equity **$97,440.08**).
+`clock` **07:02:09** — `is_open: false`, `next_open` **2026-11-17T09:30:00-05:00**, `next_close`
+**2026-11-17T16:00:00-05:00**. **Both fields carry today's date: the pre-market full-session
+signature, NOT a holiday.** Tuesday, ordinary session.
+
+**WEEK ROLLOVER — NO RESET DUE, RE-DERIVED WITH `isocalendar`, NOT INHERITED.** ISO **2026-W47
+weekday 2**, Monday anchor **2026-11-16** = inherited `week_of` **2026-11-16**. They match.
+`new_positions_this_week` **0 of 3**.
+
+**NEW POSITIONS PERMITTED THROUGHOUT.** Breaker **INACTIVE 0/3** · cap **0 of 3** · satellite
+**0.0% deployed, $30,000 cash** · `control.md` Notes **(none)**. Nothing structural blocked a
+buy. The candidates did.
+
+**FUNNEL SPEND: four broad sweeps, TWO drill queries, ZERO `move` calls, ZERO `asset` calls.**
+Sweep 1 asked the overnight window for first-disclosure dates, named counterparties and
+disclosed values up front. Sweep 2 inverted the leg — a **named US-listed recipient above $10B
+with a disclosed dollar value**, AI/data-centre/semis/power excluded by construction per the
+11-12 standing finding — and returned **zero qualifying rows, with the source applying the
+filter itself and naming why each candidate failed**. Sweep 3 went after regulatory and
+supply-shock events and returned **one** item (a single-lot generic recall). Sweep 4 was a cut
+this corpus had not tried: it asked whether any 11-16/11-17 earnings release or 8-K **named and
+quantified** a customer, supplier or partner. **It returned nothing** — the filing index
+confirmed Home Depot's 8-K exists but no sourced disclosure text was reachable, so the guidance
+direction could not be established at all, let alone a named vendor.
+
+⚠⚠ **THE DAY'S FINDING, AND IT IS A DIFFERENT SHAPE FROM 11-16's NULL — THE WINDOW WAS NOT
+EVENTLESS.** Both drill queries **confirmed a real, dated, well-sourced, quantified event
+existed**, which is the opposite of yesterday, where nothing was well-formed enough to reach the
+filters. Today two concrete events were in hand and **both still died — one at §3, one at
+part 1:**
+- **The BIS interim final rule (first disclosed 11-16)** is a genuine government action with
+  named jurisdictions, a named issuing authority and a 90-day compliance clock. It died at
+  **part 1 on DIRECTION**, not on absence.
+- **ExxonMobil's Longtail FID (11-17, $12.5B project)** is a genuine quantified capex
+  transaction with two named contractors. It died at **§3 — both named contractors are
+  foreign-listed**, and the source stated explicitly that **zero equipment suppliers are named**.
+
+⚠ **So the binding constraint today was UNIVERSE ELIGIBILITY AND SIGN, NOT the part-1 absence
+the last three reviews have named as the standing bottleneck.** Recorded as one data point, not
+promoted to a pattern. **The priced-in check still ran ZERO times — second consecutive session**
+— so the 11-13 hypothesis (that well-formed and already-priced may be the same property) gained
+**no new data points today either.** It needs `move_pct` on candidates that *reach* the filters,
+and a session that sends none through adds nothing to either side of it.
+
+---
+
+### T-2026-11-17-01 — the US-domiciled AI-compute tier ← the BIS interim final rule on AI-chip shipments to third-country data centres — REJECTED (part 1: direction is AMBIGUOUS for every §3-eligible candidate, because the same names carry the encumbered books; no named recipient anywhere; and the standing AI/data-centre finding + rule (iv))
+
+**Company A / the news:** The US Commerce Department's **Bureau of Industry and Security**
+issued an **interim final rule**, first disclosed **2026-11-16**, requiring an export licence
+for advanced AI chips shipped to data centres in **Singapore, Thailand, Malaysia, Indonesia and
+Brazil**, and requiring overseas data centres that supply significant compute to China- or
+Macau-headquartered companies to obtain a US licence **within 90 days** to continue. Separately
+and **not** a government act, NVIDIA told customers it would not sell to data-centre operators
+renting more than 50% of their GPUs to Chinese companies. ⚠ **The sourcing establishes NO new
+Entity List addition, NO Chinese counter-measure, NO NVIDIA-specific licence action and NO
+quantified dollar revenue impact.**
+
+**Company B / the candidate:** the reader-supplied tier of **US-domiciled colocation and
+compute capacity** (EQIX, DLR and the US neocloud names) on the story that licence-encumbered
+Southeast Asian capacity pushes AI deployments onshore.
+
+**1. Mechanism:**
+> The BIS licensing requirement on AI-chip shipments to Southeast Asian data centres causes a US
+> colocation operator's domestic revenue to improve because customers relocate AI deployments to
+> unencumbered US facilities.
+
+⚠ **THAT SENTENCE PASSES THE ONE-CLAUSE TEST ON THE PAGE AND FAILS IT IN SUBSTANCE, WHICH IS THE
+MORE DANGEROUS WAY TO FAIL IT.** It is only true if customers relocate rather than wait out a
+90-day licence, **and also** choose this operator, **and also** do it inside two quarters. Three
+suppressed conjunctions is the "and also" defect §4 names, wearing a single clause.
+
+**2. Dollar path:** **UNWRITABLE, AND THE SIGN IS NOT EVEN ESTABLISHED.** The §3-eligible
+candidates are the global colocation operators, and they are the same companies whose
+**Asia-Pacific books the rule encumbers** — Equinix's APAC segment is roughly a quarter of
+revenue. A rule that burdens a quarter of the book and *may* redirect demand into the rest of it
+has **no determinable net direction**, and no source quantifies either leg. A thesis whose sign
+is unknown is not a thesis with a small dollar path; it is not a thesis.
+
+**3. Timing window:** the 90-day clock lands inside two quarters, so part 3 is the **only** part
+that would have passed. Immaterial — parts 1 and 2 already failed.
+
+**4. Invalidation:** not written. Parts 1 and 2 failed first.
+
+**Hard filters:** **NOT REACHED — no `move` call spent.** There is no candidate ticker to
+filter: the beneficiary is reader-supplied and appears in none of the sourcing.
+
+**Outcome:** **REJECTED** on **part 1 (direction)** and **part 2 (sign undetermined)**. Also
+**rule (iv)** — the AI/data-centre complex in its *n*th consecutive session — and the standing
+11-12 finding that this tier is structurally unactionable. ⚠ **Worth separating from the usual
+disposal: this complex normally dies because a repricing is not a transaction (`T-2026-11-06-01`,
+standing). TODAY IT GENUINELY WAS A TRANSACTION — a dated rule from a named authority — and it
+died anyway, on sign.** The honest-broker paragraph is the operative text: the onshoring story is
+exactly the plausible-sounding connection §4 warns is a property of how this agent reasons rather
+than evidence of an opportunity, and the thing that killed it was asking which direction it
+points for the only names actually eligible to buy.
+
+---
+
+### T-2026-11-17-02 — ExxonMobil's Longtail FPSO award (Guyana) ← SBM Offshore + Saipem contracts — REJECTED (§3: BOTH named contractors are foreign-listed; the source states explicitly that ZERO equipment suppliers are named; the only US-listed name in the story is the PAYER; part 3 ~16 quarters)
+
+**Company A / the news:** **2026-11-17** — **ExxonMobil Guyana Limited** (Stabroek Block
+operator) awarded **SBM Offshore** the contracts to construct, install and then operate the
+**Longtail FPSO** for an initial **10 years**; **Saipem** was authorised for the Longtail
+**SURF** scope at **up to $1.5B**. Vessel specs: ~**1.2 Bscf/d** gas processing, **250,000 b/d**
+condensate, ~**2M bbl** storage. Overall project reported at **$12.5B**. ⚠ **SBM's own contract
+value is NOT disclosed.**
+
+**Company B / the candidate:** the **topsides equipment tier** — turbomachinery, gas
+compression, power generation — on the story that a $12.5B FPSO award converts into package
+orders for US-listed suppliers (Baker Hughes being the obvious §3-eligible name).
+
+**1. Mechanism:** not written, because there is no Company B to write it about. **The drill query
+asked directly for named turbomachinery, gas-compression, power-generation, topsides and subsea
+suppliers and the source answered that NONE are named, category by category, and that there is
+therefore no source-supported scope value for any of them.**
+
+**2. Dollar path:** **UNWRITABLE WITHOUT INVENTING THE SUPPLIER AND THEN INVENTING ITS SCOPE.**
+Even granting a guess, a single vessel's turbine package against Baker Hughes' ~$27B revenue base
+is ~1% — under the §4 10% floor by an order of magnitude.
+
+**3. Timing window:** **FAILS INDEPENDENTLY.** Longtail is Guyana's eighth project with first
+production around 2030; equipment orders, let alone reported segment revenue, sit **~16 quarters
+out** against §4's two-quarter ceiling.
+
+**4. Invalidation:** not written. Parts 1–3 failed.
+
+**Hard filters:** **§3 KILLS EVERY NAMED PARTY.** SBM Offshore is **Amsterdam-listed**; Saipem is
+**Milan-listed**. Neither is US-listed common stock. The one US-listed name in the story,
+**ExxonMobil**, is the party **paying out $12.5B of capex** — the wrong direction, and the
+first-order leg besides. Priced-in check **not reached**, no `move` call spent.
+
+**Outcome:** **REJECTED.** ⚠ **This is the best-formed event the window produced and it is worth
+saying why it still bought nothing:** it is fresh, dated, operator-named, contractor-named and
+quantified at the project level — it clears every evidentiary bar the last six sessions of sweep
+prompts were rewritten to demand — **and §3 disposes of it in one line because the economics
+accrue to a Dutch and an Italian issuer.** The universe constraint is not a near miss here; it is
+structural. **No amount of better searching converts a foreign-listed contractor into an
+eligible position**, and a seat that wanted this trade would have to reach the US supplier tier
+the source says is not named, which is the manufacture §4 forbids.
+
+---
+
+### T-2026-11-17-03 — INTC (Intel) ← the EU General Court annulling the €1.1B antitrust fine — REJECTED (part 1: an annulled fine is a one-time balance-sheet item, not a revenue or cost line; part 2 immaterial; FIRST-ORDER leg; and the first-disclosure date is NOT established by the sourcing)
+
+**Company A / the news:** Reporting dated **2026-11-17** says Intel **won its legal fight over
+the EU's €1.1B antitrust fine**. ⚠ **The source explicitly declines to verify the first-disclosure
+date, the ruling date, or the precise change affecting Intel** — this item is carried here on a
+single secondary citation, which is itself grounds not to act.
+
+**Company B / the candidate:** **none identified.** Intel is the first-order recipient; §4 opens
+by forbidding buying the headline name.
+
+**1. Mechanism:** **FAILS.** An annulled fine is a **one-time item against a provision** — it
+changes a balance sheet, not a revenue or a cost line going forward. §4 part 1 requires a
+*specific revenue or cost line* to improve. There is no recurring line here, and therefore no
+mechanism sentence to write.
+
+**2. Dollar path:** €1.1B one-time against Intel's ~$53B revenue base. **Immaterial under part 2
+even if it recurred, which by its nature it cannot.**
+
+**3. / 4.:** not written. Part 1 failed.
+
+**Hard filters:** not reached. No `move` call spent. ⚠ Intel is also a semiconductor name inside
+the complex excluded by construction in sweep 2 per the 11-12 standing finding.
+
+**Outcome:** **REJECTED** on **part 1**, with **part 2** failing independently and the
+**first-disclosure date unestablished**. **This is rule (viii)'s mirror image and the log should
+name the shape: capital NOT paid out is not the same as capital coming in**, and a litigation
+win that reverses a provision is the purest form of a fact that moves a share price without
+changing an operating economics line.
+
+---
+
+### T-2026-11-17-04 — sweep: fifteen items disposed as one — REJECTED (ZERO drill queries spent)
+
+Each died on the face of the sweep text. Listed so the next seat does not pay to re-discover them.
+
+| Item | Why it is not a thesis |
+|---|---|
+| **Home Depot Q3 ($43.4B sales) + FY2026 guidance update (11-17)** | Own-results print — Company A is itself; a company's own guidance is a **condition, not a transaction** (standing: `T-2026-11-10-02`, `T-2026-11-12-02`). ⚠ **And sweep 4 could not even establish the guidance DIRECTION from sourced disclosure text**, so there is nothing here to reason from. The second-order leg is its **unnamed** vendor base. |
+| **Amer Sports Q3 ($2.169B) + FY guidance RAISE (11-17)** | Own-results print, same standing object. Revised figures **not disclosed** in the available sourcing. No named counterparty. |
+| **NY Fed Empire State survey (11-16): +7.8 vs +18.0 consensus, down from +25.5** | Macro aggregate. **No Company A.** The standing government/macro object, unchanged. |
+| **US October PPI · the December hike repricing · Warsh's conference appearance (11-16)** | Macro and a **non-decision** — the source states Warsh did not comment on policy steps. No Company A. Standing object. |
+| **NVIDIA creates a National Security and Export Control Oversight Committee (11-17)** | **Governance action.** No counterparty, no dollar value, no product, no customer. Not a transaction. |
+| **NVIDIA's own >50% GPU-rental customer policy (11-17)** | Explicitly the **company's own customer communication, not a government order** (see `T-2026-11-17-01`). No named recipient, no value. |
+| **Ionis TRYNGOLZA EU approval, severe hypertriglyceridemia (11-17)** | A **genuine approval event** — but the source identifies **no commercial partner, no licensing terms, no market-access arrangement and no sales guidance**, so the second-order leg has no named party. An EU rare-indication launch is immaterial under part 2 to any $10B+ third party. |
+| **Breckenridge propranolol ER 60mg recall, ONE lot, metal contamination (11-16)** | Recalling firm is a **Towa subsidiary, not US-listed**; manufacturer **Adare Pharma Solutions is private**. One lot of a generic beta-blocker is immaterial by orders of magnitude, and **a contamination count is not a dollar path**. No replacement supplier named → no Company B. |
+| **~$985M space-launch awards (11-17)** | Source states **no qualifying single US-listed named recipient** is established. The LMT/NOC launch-and-lunar read was already disposed at `T-2026-11-10-01` on **part 2 by three orders of magnitude**; a new award at this scale does not disturb that. |
+| **Elroy Air / BARQ Group, up to $70M aircraft PO (11-16)** | **Elroy Air is privately held.** §3. |
+| **Ainos $9M order (11-16)** | Below the §3 **$10B** floor, and inside the AI/semis complex excluded by construction. |
+| **SriLankan Airlines aviation fuel contracts, ~$12.97M (11-17)** | Named recipients are SriLankan Airlines, World Fuel Services Trading DMCC and Aviation Service Management FZE — **no US-listed recipient above $10B**. Sub-scale regardless. |
+| **Samsung SDI 1.6GWh LFP ESS battery order** | **Not US-listed**; and the figure is an **estimate, not a disclosed announcement value**. |
+| **Once Upon a Farm (OFRM) FDA warning / Tractor Wheels recall** | **Disclosed 2026-10-30 — pre-dates the window** by 17 days. rule (iii). ⚠ Surfaced only via plaintiff-firm solicitations, not a company disclosure. |
+| **Radnostix recalls + cobalt hot-cell shutdown · Francisco Family Foods and Mmm! Meals food recalls** | Radnostix's operational events occurred in **Q1 2026**; the 11-16 item is a quarterly-results print. The two food recalls: the recalling firms are **not established as US-listed**. |
+
+**Outcome:** **REJECTED, fifteen items, zero drill queries.** ⚠ **Four of the fifteen are dead
+purely on a DATE** (Once Upon a Farm, Radnostix, and the pre-window legs of the Medline/GLP-1
+family carried over from 11-16's table) — still the most common disposal in this log. ⚠⚠ **And a
+new disposal shape is worth naming because sweep 4 produced it twice: an 8-K whose EXISTENCE is
+confirmed in the SEC index while its CONTENT is unreachable.** Home Depot and Amer Sports both
+landed that way. **A filing the agent cannot read is not evidence of anything in either
+direction, and a seat under pressure to produce a candidate could easily treat "HD reported" as
+though it knew what HD said.** It did not, and this entry says so rather than reasoning from a
+headline number.
+
+---
+
 ### 2026-11-16 (07:01 ET) — event survey (funnel, pre-thesis)
 
 Selftest **5/5**, exit 0 (`trading_enabled: true`, LIVE paper, equity **$98,345.92**).
