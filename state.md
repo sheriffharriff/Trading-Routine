@@ -14,7 +14,7 @@ of it a `last_run:` *value* that had grown into a multi-thousand-byte paragraph.
 needs a paragraph belongs in `journal.md`. The compaction has now held across seven runs.
 
 ```
-last_run: 2026-11-17 15:15 ET 4-market-close-journal — INSURANCE WRITE, market OPEN (is_open TRUE, bell 16:00), holding for the bell; official close lands in the second commit. selftest 5/5 exit 0. Zero satellite positions so Step 2 had no operand for the 90th seat: no high-water mark raised, no date advanced, none was due. 0 trades, 0 unresolved orders. Pre-bell equity 96,372.91, day -1.0414%.
+last_run: 2026-11-17 16:06 ET 4-market-close-journal — HOLD FOR THE BELL SUCCEEDED (post-bell signature 16:00:50, 5-min settle). OFFICIAL CLOSE VOO 672.80, equity 96,638.36 close-basis, day -748.79 / -0.7689%, no backfill owed. selftest 5/5 exit 0. Zero satellite positions so Step 2 had no operand for the 90th seat: no high-water mark raised, no date advanced, none was due. 0 trades, 0 unresolved orders, breaker INACTIVE 0/3, no week reset due.
 prior_run: 2026-11-17 11:41 ET 3-midday-management — 0 exits, no operand (satellite sleeve empty); in-progress-bar defect confirmed live at 11:41.
 week_of: 2026-11-16
 new_positions_this_week: 0
@@ -31,24 +31,23 @@ open_thesis_ids: none
 
 ---
 
-## Where things stand (2026-11-17, ⚠ **PRE-BELL BASIS — these are 15:15 MARKS, NOT CLOSES**)
+## Where things stand (2026-11-17, ✅ **OFFICIAL CLOSE BASIS — the hold for the bell succeeded**)
 
-⚠⚠ **THIS STATE WAS WRITTEN BY AN INSURANCE COMMIT WITH THE MARKET STILL OPEN.** The close seat
-fired at **15:15**, 45 min before the bell, and holds for 16:00. **If a second commit for
-2026-11-17 exists, it supersedes the prices below. If it does not, backfill ONLY the official
-11-17 close and the final equity — every other fact here is true as written.**
+**Post-bell signature confirmed at 16:00:50** — `is_open: false` with **both** `next_open` and
+`next_close` carrying **2026-11-18**, the only reading that separates post-bell from pre-market —
+then the bar was pulled after a five-minute settle. **2026-11-17 NEEDS NO BACKFILL.**
 
-- **Equity $96,372.91** (15:15 mark) · core VOO 99.046311231 sh @ 706.74, live mark **670.12**,
-  unrealised **−$3,627.08 / −5.182%** · **cash exactly $30,000.00**. Day **−$1,014.24 /
-  −1.0414%** against 11-16's close-basis 97,387.15. Since inception **−3.6271%**.
-- **Sleeves: core 68.87% / satellite 0.00% / cash 31.13%.** `core_in_band: true`,
-  `rebalance_needed: false`. **3.87pp of room to the §2 65% floor — no rebalance due tomorrow.**
-  ⚠ `rebalance_delta: 1088.12` is **a distance readout, not an order**; it grew 767.98 → 819.21 →
-  1061.97 → 1088.12 across today's four seats purely because VOO fell. **A rising delta on a
-  falling market is the band working, not a buy signal.**
-- **Latest OFFICIAL close is still VOO 680.36 (2026-11-16) at this hour.** Recent: 11-11
-  **698.25** · 11-12 **696.04** · 11-13 **693.05** · 11-16 **680.36**. ⚠ **Today's `bars` row is a
-  PARTIAL SESSION and was written nowhere as a close** — see the defect section below.
+- **Equity $96,638.36 close-basis** · core VOO 99.046311231 sh @ 706.74, **official close
+  672.80**, unrealised **−$3,361.63 / −4.8023%** · **cash exactly $30,000.00**. Day **−$748.79 /
+  −0.7689%** against 11-16's close-basis 97,387.15. Since inception **−$3,361.64 / −3.3616%**.
+- **Sleeves: core 68.9564% / satellite 0.00% / cash 31.0436%.** `core_in_band: true`,
+  `rebalance_needed: false`. **3.9564pp of room to the §2 65% floor — NO REBALANCE DUE TOMORROW.**
+  ⚠ `rebalance_delta: 1008.49` is **a distance readout, not an order**; it grew 767.98 → 819.21 →
+  1061.97 → 1088.12 across today's intraday seats and then **FELL BACK to 1008.49 on the close as
+  VOO recovered.** That round trip is the cleanest available proof it tracks **the mark, not the
+  position** — the share count has not changed since 2026-09-03.
+- **OFFICIAL CLOSES: 11-11 698.25 · 11-12 696.04 · 11-13 693.05 · 11-16 680.36 · 11-17 672.80.**
+  VOO **−1.1112%** on the session; it traded as low as **668.51** and recovered into the bell.
 - **Satellite sleeve is empty and always has been.** Live Alpaca and `positions.md` AGREE —
   re-reconciled at this seat on three sides (`positions` one row; `sleeves` satellite count 0;
   zero satellite blocks in the ledger). **§7 overnight exposure is structurally zero.**
@@ -85,9 +84,23 @@ nothing in `t`, `c`, `n` or `v` distinguishes it from a finished session.
 ⚠ **RULE, NOW DOUBLY EVIDENCED: gate every `highest_close` write on `clock`, never on the shape,
 presence, or apparent stability of the bar. Re-pull the whole window and take the max from that
 one call, on one adjustment basis, and drop today's row whenever `is_open` is true.** Today it
-would have failed harmless (both prints are far below 680.36, so the max is unaffected) — **but
-on a green session it ratchets the §5.4 stop UP off a number that is not a close, and §5.4 fails
-in the direction of SELLING.**
+would have failed harmless for the high-water mark (every partial print is far below 680.36, so
+the max is unaffected) — **but on a green session it ratchets the §5.4 stop UP off a number that
+is not a close, and §5.4 fails in the direction of SELLING.**
+
+⚠⚠ **AND IT DID NOT FAIL HARMLESS EVERYWHERE — IT CORRUPTED A PUBLISHED NUMBER IN THIS VERY
+RUN.** The 15:15 insurance summary ranked today's session off the partial bar (−1.4566%) and
+published **"4th-worst of 53"** to ClickUp. The official close **672.80** makes it **5th**,
+behind 10-22. **Corrected by comment on task `86bd4hbb1`.** The lesson is not the ordinal: it is
+that the seat which had *just written the warning* then published a figure built on the exact
+defect the warning describes, forty minutes later. **Documenting the hazard is not the same as
+being protected from it; only gating on `clock` is.**
+
+**Measured drift, all partial prints vs the official 672.80: 11:41 `670.91` (+1.89) · 15:15
+`669.96` (+2.84) · 15:17 `670.45` (+2.35) — ALL READ LOW.** 11-16 measured the same direction
+(low by 1.43). ⚠⚠ **TWO SESSIONS IS NOT A RULE. DO NOT TREAT "PARTIALS READ LOW" AS A CORRECTION
+FACTOR** — it happens to be the safe direction for a high-water mark, and a seat that starts
+relying on it will be wrong on the first session that closes near its high.
 
 ## ⚠ Carry-forward item 3 DISCHARGED — the superlative was ranked, not asserted
 
@@ -95,11 +108,14 @@ The 11-16 close seat published "the worst session in this account's history" and
 by a factor of two.** That warning was aimed directly at this seat, and the pull was real: five
 straight red sessions, core −5.18% from its fill. **One `bars` pull and a sort settled it.**
 
-**Today's partial −1.4566% is the 4th-worst of 53 holding-period sessions on the VOO basis, and
-4th on the account basis** — behind **11-05 (−4.3731% VOO / −3.0586% account)**, **11-16
-(−1.8310% / −1.2742%)**, **10-30 (−1.7842% / −1.2492%)**. ⚠ **The method, not the verdict, is the
-reusable part: rank before you reach for a superlative. A general instruction to be careful would
-not have caught this; a specific falsifiable one did.**
+**On the OFFICIAL close, today's −1.1112% is the 5th-worst of 53 holding-period sessions on the
+VOO basis and 5th on the account basis** — behind **11-05 (−4.3731% VOO / −3.0586% account)**,
+**11-16 (−1.8310% / −1.2742%)**, **10-30 (−1.7842% / −1.2492%)** and **10-22 (−1.2213% /
+−0.8564%)**. ⚠ **The 15:15 insurance summary said 4th, off the partial bar; corrected by comment
+on ClickUp task `86bd4hbb1`.** ⚠⚠ **The method, not the verdict, is the reusable part: rank
+before you reach for a superlative, and rank off a CLOSE. A general instruction to be careful
+would not have caught the superlative; a specific falsifiable one did — and it still did not
+protect the ordinal, because the ordinal was built on a partial bar.**
 
 ## Carry forward
 
@@ -120,10 +136,13 @@ not have caught this; a specific falsifiable one did.**
 3. ⚠ **DO NOT WRITE A SUPERLATIVE ABOUT THIS ACCOUNT'S HISTORY WITHOUT RANKING IT FIRST.** See the
    discharge section above — **second consecutive close seat to face it, first to get it right
    before publishing.** The ranking table is in `journal.md` 2026-11-17 and is cheap to re-derive.
-4. **THE TWO ENDPOINTS DISAGREE ON A SESSION CLOSE AND §5.4 READS FROM ONE OF THEM — SIXTH
-   distinct instance, re-measured at this seat.** `positions.lastday_price` **680.26** vs `bars`
-   close **680.36** for 2026-11-16: gap **0.10 / 0.0147%**, identical at all four seats today.
-   Prior: 11-13 **+0.33**; 11-16 post-bell live mark 680.09 vs official 680.36, gap **0.27**.
+4. **THE TWO ENDPOINTS DISAGREE ON A SESSION CLOSE AND §5.4 READS FROM ONE OF THEM — SEVENTH
+   distinct instance, and today's post-bell reading is the WIDEST of the series.** Post-bell
+   `positions.current_price` **673.22** vs the official `bars` close **672.80** = **0.42 /
+   0.0624%**, and Alpaca's own `equity` (**96,680.95**) sits **$42.59 ABOVE** the close-basis
+   figure for the same instant. Intraday today: `lastday_price` **680.26** vs `bars` **680.36**
+   for 11-16 = **0.10 / 0.0147%** at all four seats. Prior: 11-13 **+0.33**; 11-16 post-bell live
+   mark 680.09 vs official 680.36, gap **0.27**.
    **Not a dividend-basis artifact** — adjusted and unadjusted agree to the cent. **Build P&L and
    stamp `highest_close` from official `bars` closes only, on one adjustment basis, one call.**
 5. **The §5.4 staleness detector and the `highest_close` backfill branch are UNPROVEN CODE** at

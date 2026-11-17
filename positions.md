@@ -273,13 +273,44 @@ today by any seat, so nothing can be left hanging overnight.**
 `alerts.md` clean, nothing OPEN or SYSTEMIC · `TRADING_ENABLED: true` · `HALT_CLEARED_AT:
 none` · `control.md` Notes **(none)**.
 
-⚠ **THE OFFICIAL CLOSE LANDS IN THIS SEAT'S SECOND COMMIT.** Per carry-forward item 2, this
-insurance commit deliberately carries **`journal.md` and the ClickUp summary as well as
-`state.md` and `positions.md`** — the 11-13 seat scoped its insurance commit to the latter
-two, its second commit never landed, and **the two artifacts lost were exactly the two it
-omitted.** A price is recoverable from the broker days later; a narrative nobody wrote is
-not. **If no second commit from this date exists, backfill ONLY the official 11-17 close and
-the final equity; everything else in this digest is already true as written.**
+**— SAME SEAT, 16:06 ET, POST-BELL: THE HOLD SUCCEEDED AND THIS DIGEST IS NOW ON A CLOSE
+BASIS. —**
+
+✅ **OFFICIAL CLOSE VOO 672.80 (2026-11-17). NO BACKFILL IS OWED FOR THIS DATE.** `clock`
+polled to the **post-bell signature at 16:00:50** — `is_open: false` with **both**
+`next_open` and `next_close` carrying **2026-11-18** — then the bar was pulled after a
+five-minute settle. **Final figures: equity $96,638.36 close-basis** (99.046311231 sh ×
+672.80 + $30,000.00) · core unrealised **−$3,361.63 / −4.8023%** · day **−$748.79 /
+−0.7689%** · since inception **−$3,361.64 / −3.3616%** · sleeves **core 68.9564% /
+satellite 0.00% / cash 31.0436%**, **3.9564pp to the §2 floor, no rebalance due tomorrow**.
+⚠ `rebalance_delta` **fell back to 1008.49** from the 1088.12 recorded above, as VOO
+recovered into the bell — **the round trip proves the field tracks the mark, not the
+position.**
+
+**STEP 2 STILL HAD NO OPERAND ON THE CLOSE BASIS, AND THIS IS THE LINE THAT MATTERS: no
+`highest_close` was written, and none was due.** Zero satellite positions. **672.80 was
+written nowhere as a high-water mark**, because there is no mark to write it into.
+
+⚠⚠ **THE PARTIAL-BAR DEFECT DID NOT FAIL HARMLESS — IT CORRUPTED A PUBLISHED NUMBER IN THIS
+RUN.** The 15:15 insurance summary ranked the session off the partial bar (−1.4566%) and
+published **"4th-worst of 53"** to ClickUp. **The official close makes it 5th**, behind
+10-22 (−1.2213%). **Corrected by comment on task `86bd4hbb1`.** The seat that wrote the
+warning above then published a figure built on the exact defect it describes, forty minutes
+later. **Documenting the hazard is not protection; gating on `clock` is.** Measured drift,
+all partials vs 672.80: 11:41 **670.91** (+1.89) · 15:15 **669.96** (+2.84) · 15:17
+**670.45** (+2.35) — **all LOW**; 11-16 was low by 1.43. ⚠ **Two sessions is not a rule — do
+NOT adopt "partials read low" as a correction factor.**
+
+⚠ **ENDPOINT DISAGREEMENT, SEVENTH INSTANCE AND THE WIDEST OF THE SERIES:** post-bell
+`positions.current_price` **673.22** vs official `bars` close **672.80** = **0.42 /
+0.0624%**; Alpaca's own `equity` **96,680.95** sits **$42.59 above** the close-basis figure
+for the same instant. **Build P&L from `bars` closes only.**
+
+⚠ **Carry-forward item 2 was honoured and then discharged:** the insurance commit carried
+**`journal.md` and the ClickUp summary** alongside `state.md` and `positions.md` — the
+11-13 seat scoped its insurance commit to the latter two, its second commit never landed,
+and **the two artifacts lost were exactly the two it omitted.** **This seat's second commit
+landed, so nothing was riding on it.**
 ⚠ **NOTHING IN THE BODY ABOVE WAS COLLAPSED, SHORTENED OR REWRITTEN, AND NO COLLAPSE RATIO
 IS CLAIMED** — this file is itself the standing systemic finding at ~327KB describing an
 empty ledger, so this seat added what the date genuinely needed and left three other seats'
