@@ -84,7 +84,7 @@ check that the pull returned the right session. A stored baseline is a *label*, 
 ## Open positions
 
 *(none — no **satellite** positions have been opened yet. Core VOO exists and is deliberately not tracked here, per the top-of-file rules and the fill note further down.)*
-### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-11-17, **DIGEST OPEN — `1-premarket` 07:02.** The three later seats append below; the close seat closes it. ⚠ Absent-seat ordinal: 07:02 is the **87th**; absent dates **79**. ⚠⚠ **DELIBERATELY WRITTEN SHORT AND NO COLLAPSE RATIO IS CLAIMED.** This file is itself the standing systemic finding at ~317KB describing an empty ledger, so this seat ADDED THE LEAST IT COULD rather than restating what four prior seats already wrote. **A pre-market seat is not entitled to collapse other seats' prose.**)
+### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-11-17, **DIGEST OPEN — seats appended: `1-premarket` 07:02 · `2-market-open` 08:36** ⚠ **PRE-OPEN, `is_open: false` 54 min before the bell — and it cost nothing: the plan carried ZERO intents, so no order was prevented.** The two later seats append below; the close seat closes it. ⚠ Absent-seat ordinal: 07:02 is the **87th**; absent dates **79**. ⚠⚠ **DELIBERATELY WRITTEN SHORT AND NO COLLAPSE RATIO IS CLAIMED.** This file is itself the standing systemic finding at ~317KB describing an empty ledger, so this seat ADDED THE LEAST IT COULD rather than restating what four prior seats already wrote. **A pre-market seat is not entitled to collapse other seats' prose.**)
 
 **Tuesday, an ordinary full session.** `clock` **07:02:09** — `is_open: false` with **both**
 `next_open` and `next_close` carrying **2026-11-17**: the pre-market full-session signature,
@@ -111,6 +111,56 @@ third distinct instance:** `positions.lastday_price` **680.26** vs the bar close
 **0.10 / 0.0147%** — narrower than 11-13 (+0.33) and 11-16 post-bell (0.27), **but not gone.**
 **Any future `highest_close` must be stamped from `bars`, on one adjustment basis, pulled in one
 call.**
+
+**`2-market-open` 08:36 — `is_open: false`, 54 min BEFORE the bell**, `next_open`/`next_close`
+both **2026-11-17**. Same −1h EST shape as 11-02 → 11-12; **not** the 11-16 whole-session absence.
+⚠ Per `control.md` this is **recorded, not diagnosed.** Absent-seat ordinal **88th**; absent
+dates still **79** (same date, already counted).
+
+**NOTHING TO EXECUTE, AND THE STALENESS GATE PASSED — TWO SEPARATE FACTS THAT MUST NOT BE
+CONFLATED.** `plan_date` **2026-11-17 = today**, so the plan was fresh and its intents would have
+been *consumable*; there simply were none. **No stale-plan alert was due and none was posted.**
+⚠ **The closed market blocked nothing today** — with zero BUY, zero SELL and zero REBALANCE
+intents there was no order for it to block, so this seat is NOT an instance of the §7
+closed-market constraint biting. **Do not file it as one.**
+
+**§2 core bootstrap SKIPPED** — `core_established: true`, and that path never runs again.
+**§7 rebalance NOT NEEDED** — core **69.16%**, inside the 65–75% band with **4.16pp** of room to
+the floor; `core_in_band: true`, `rebalance_needed: false`. ⚠ **`rebalance_delta: 819.21` IS A
+DISTANCE READOUT, NOT AN ORDER.** It grew from **767.98** at 07:02 purely because VOO fell
+further — a rising delta on a falling market is the band working, not a signal to buy.
+
+**Ledger re-reconciled at THIS seat — STILL AGREES.** `positions` returns exactly one row: **VOO
+99.046311231 sh @ 706.74, market value $67,269.28, unrealized −$2,730.71 / −3.901%** — the
+**core** holding, **exempt from §5 entirely**. Equity **$97,269.28**, down **$170.80** on the
+07:02 mark. Sleeves: core **69.16%** · satellite **0.00%** · cash **$30,000.00 / 30.84%**.
+
+**§5.1–§5.4 ABSENT, NOT PASSING — unchanged, no operand.** Zero satellite positions, so no entry
+price, no high-water mark, no deadline and no invalidation string exists. **No `highest_close`
+stamped and none was due.** ⚠ **The priced-in check ran ZERO times at this seat too — third
+consecutive session** — because no BUY intent existed to re-check. The 11-13 hypothesis (that
+well-formed and already-priced may be the same property) gains **no data in either direction.**
+
+⚠ **Endpoint disagreement RE-MEASURED here, fourth distinct instance, IDENTICAL to 07:02:**
+`positions.lastday_price` **680.26** vs official `bars` close **680.36** = **0.10 / 0.0147%**.
+`bars --days 4 --adjustment all` returned **no 2026-11-17 row**, so the in-progress-bar defect
+is **not in play at this hour**. Official recent closes: 11-11 **698.25** · 11-12 **696.04** ·
+11-13 **693.05** · 11-16 **680.36**.
+
+**Thesis count RE-DERIVED AT THIS SEAT, NOT CARRIED: 61 live + 87 + 129 = 277, zero ever
+accepted.** Matches 07:02 exactly — **the 11-16 over-count by four is not propagating.**
+⚠ Correction of a path label, not of the figure: the archives are
+**`archive/research_log/2026-09.md`** and **`archive/research_log/2026-10.md`**, which `state.md`
+abbreviates as `archive/2026-09` / `archive/2026-10`. The abbreviation does not resolve as a
+path and a future seat re-running the grep will miss both files.
+
+**No notification was sent, and that is a decision.** Selftest 5/5, plan fresh, breaker
+INACTIVE, no open incidents, nothing executed and nothing owed. The routine-2 schedule ask is
+**already with the human**, and the carry-forward permits a re-send **only** if routine 2 begins
+firing consistently *after* the bell in a way that changes what the human must fix — it fired
+*before*, the known shape, on a day it cost nothing. **A quiet, healthy run is not worth
+interrupting anyone for.**
+
 
 ### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-11-16, **DIGEST CLOSED BY THE CLOSE SEAT.** Seats that appended: `1-premarket` **07:01** · `3-midday` **11:41** · `4-market-close` **15:15** ⚠ **PRE-CLOSE, `is_open: true`, 45 min before the bell — INSURANCE WRITE FIRST, HOLD FOR THE BELL SECOND.** ⚠⚠⚠ **`2-market-open` NEVER FIRED — NO COMMIT FOR THIS DATE AT ANY HOUR. THE FIRST SEAT MISSING FOR A WHOLE SESSION rather than merely firing at an unhelpful one.** Absent-seat ordinals: 07:01 **84th** · 11:41 **85th** · close **86th**. ⚠ **NOTHING IN THE BODY WAS COLLAPSED, SHORTENED OR REWRITTEN AND NO COLLAPSE RATIO IS CLAIMED** — this file is itself the standing systemic finding at 310KB, so this seat ADDED AS LITTLE AS IT COULD rather than rewriting two other seats' prose to look tidy.)
 
