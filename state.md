@@ -14,8 +14,8 @@ of it a `last_run:` *value* that had grown into a multi-thousand-byte paragraph.
 needs a paragraph belongs in `journal.md`. The compaction has now held across eight runs.
 
 ```
-last_run: 2026-11-18 11:41 ET 3-midday-management — selftest 5/5 exit 0. MARKET OPEN (`clock` 11:41:19 `is_open: true`) — first seat today that COULD have exited; ZERO open satellite positions, so §5.1–§5.4 had NO OPERAND (ABSENT, not passing), zero exits, zero `highest_close` backfills owed, no §5.1 Perplexity check owed. Exits-only run: opened nothing and did not look. Ledger reconciled four sides today, AGREES (positions 1 row VOO core · sleeves satellite count 0 · positions.md zero blocks). Core 68.83% in band (3.83pp to the 65% floor). Breaker INACTIVE 0/3, cap 0/3, week anchor 2026-11-16 matches, no reset. 93rd absent seat, 80th absent date. ⚠ Item 12's post-catalyst re-test STILL UNDISCHARGED — routine 3 cannot discharge it.
-prior_run: 2026-11-18 08:35 ET 2-market-open-execution — ⚠ FIRED PRE-BELL (`is_open: false`), §7 skip, ZERO orders placed; plan dated today passed the staleness gate but carried ZERO intents, so it cost nothing.
+last_run: 2026-11-18 15:16 ET 4-market-close-journal — selftest 5/5 exit 0. 🔶 INSURANCE WRITE, HOLD FOR THE BELL IN PROGRESS. ⚠ FIRED 44 MIN PRE-BELL (`clock` 15:16:00 `is_open: true`, `next_close` 16:00 today) against a nominal 16:15 — 13th consecutive EST session on the −1h shape, same UTC/DST root cause as routine 2. ✅ COST NOTHING TODAY AND THE REASON IS LUCK, NOT PROCEDURE: ZERO open satellite positions, so Step 2 had NO OPERAND — no `highest_close` to raise, no `(as of ...)` date to advance, no mark for an early seat to corrupt. §5.1–§5.4 ABSENT, not passing. In-progress-bar defect re-demonstrated DYNAMICALLY: same 11-18 bar one minute apart = c 671.795 → 671.76, vol 67,974 → 68,224. Ledger reconciled three sides, AGREES. Core 68.92% in band (3.92pp to floor). Breaker INACTIVE 0/3, cap 0/3, week anchor 2026-11-16 matches. 94th absent seat, 80th absent date. 🔶 OFFICIAL 11-18 CLOSE PENDING — backfill if the 2nd commit is missing.
+prior_run: 2026-11-18 11:41 ET 3-midday-management — market OPEN, zero exits, §5 no operand, ledger agreed four sides, core 68.83%.
 week_of: 2026-11-16
 new_positions_this_week: 0
 consecutive_closed_losses: 0
@@ -23,77 +23,91 @@ circuit_breaker: INACTIVE
 halt_triggered_at: none
 core_established: true
 core_ticker: VOO
-core_pct: 68.83
+core_pct: 68.92
 satellite_pct: 0.0
-cash_pct: 31.17
+cash_pct: 31.08
 open_thesis_ids: none
 ```
 
 ---
 
-## Where things stand (2026-11-18 11:41 ET, **3-midday-management — MARKET OPEN, ZERO EXITS**)
+## Where things stand (2026-11-18 15:16 ET, **4-market-close-journal — 🔶 INSURANCE WRITE, HOLDING FOR THE BELL**)
 
-**THE ONE THING THAT MATTERS ABOUT THIS RUN: nothing should have executed and nothing did.**
-There is no exit that was owed and skipped, no stop that should have fired and didn't, and no
-order left in a non-terminal state. `TRADING_ENABLED: true`, so this was **not** a dry run — a
-`sell` would have been submitted for real. There was simply nothing to sell.
+**THE ONE THING THAT MATTERS ABOUT THIS RUN: the invisible job had no operand, and the reason it
+cost nothing is the emptiness of the ledger rather than the correctness of the procedure.** This
+seat fired **44 minutes before the bell** with a plausible-looking "today's close" in hand
+(`bars` 2026-11-18 `c: 671.795`). Writing that into `highest_close` would have cost **exactly
+nothing — because there is no `highest_close` to write.** ⚠ **That is luck, not compliance.** On
+the first session with a satellite position, a 15:16 seat holding that number is one keystroke
+from writing a non-close into the single field §5.4 reads, and on a green session the error
+ratchets the trailing stop **UP** off a price that never traded — §5.4 then fails in the
+direction of **SELLING**.
 
-**Market OPEN, and that is the one thing this seat had that the two before it did not.** `clock`
-**11:41:19** — `is_open: true`, `next_close` **2026-11-18T16:00:00-05:00**, `next_open`
-**2026-11-19T09:30:00-05:00**. This is the **first seat today on a live market** and therefore the
-first that *could* have placed an exit. ⚠ **Routine 3 is exits-only by its own prompt and may not
-open a position. It did not, and it did not go looking for one** — the §4 path runs through
-pre-market research and the 09:35 seat, always.
+**Schedule: 13th consecutive EST session at 15:15–15:16 against a nominal 16:15.** `clock`
+**15:16:00** — `is_open: true`, `next_close` **2026-11-18T16:00:00-05:00**, `next_open`
+**2026-11-19T09:30:00-05:00**. Same UTC/DST root cause as routine 2's 09:35→08:35 (ET left DST
+2026-11-01). **The hold has absorbed it on every session since 11-06, so realised damage is still
+zero** — but this is the **second routine** on the same fault. ⚠ Per `control.md`: **recorded,
+not diagnosed.**
 
 **§5 re-evaluated here, not inherited — ALL FOUR RULES ABSENT, NOT PASSING.** Zero open satellite
 positions means **no entry price, no `highest_close`, no `timing_window` deadline and no
-invalidation string exists**, so §5.1 invalidation, §5.2 time stop, §5.3 hard stop and §5.4
-trailing stop each had **no operand**. That is not the same as passing, and it is written down the
-long way because the two readings are indistinguishable in a summary.
-- **Step 2 (high-water repair) had nothing to repair.** No `bars` backfill was owed and none was
-  spent. The staleness comparison that this step exists to perform has still never run against a
-  real mark.
-- **No §5.1 Perplexity call was owed or made.** An invalidation condition that does not exist
-  cannot be checked, and a news query with no thesis behind it is activity for its own sake.
-- ⚠ **Core VOO is EXEMPT from §5** (§5, last line) and was removed from the working list rather
-  than evaluated and passed.
+invalidation string exists**, so §5.1–§5.4 each had **no operand**. That is not the same as
+passing. **Core VOO is EXEMPT from §5** (§5, last line) and was struck from the working list
+rather than evaluated and cleared. **No §5.1 Perplexity call was owed or made.** **94th absent
+seat, 80th absent date.**
+
+⚠⚠ **IN-PROGRESS-BAR DEFECT RE-DEMONSTRATED DYNAMICALLY AT THIS SEAT:** the 2026-11-18 row pulled
+twice ~one minute apart returned **c 671.795 → 671.76**, volume **67,974 → 68,224**, `n`
+**2,112 → 2,120**. **A finished close does not change between pulls and the bar carries NO FLAG.**
+**Gate every `highest_close` write on `clock`, never on the bar.**
 
 **Ledger reconciled on three sides AT THIS SEAT and it AGREES** — `positions` exactly one row
-(VOO core) · `sleeves` satellite **`count: 0`, value 0** · `positions.md` **zero** satellite
-blocks under **Open positions**. **Fourth consecutive agreement today.** No discrepancy, so no
-repair was owed and nothing was traded on top of a wrong ledger. **93rd absent seat, 80th absent
-date** (today counted once).
+(VOO core, qty 99.046311231, avg entry 706.74) · `sleeves` satellite **`count: 0`, value 0** ·
+`positions.md` **zero** satellite blocks. **Fifth consecutive agreement today.** `orders --status
+all` returns **one order in the account's entire history** (2026-09-03 core fill, terminal
+`filled`) — **nothing in a non-terminal state, so §7 overnight exposure is structurally zero.**
 
-**Account, INTRADAY BASIS:**
-- **Equity $96,251.88** · core VOO **99.046311231 sh** @ 706.74, mark **668.898**, unrealised
-  **−$3,748.11 / −5.354%**, intraday **−$425.11 / −0.638%** · cash exactly **$30,000.00** ·
-  `trading_blocked: false`.
-- **Sleeves: core 68.83% / satellite 0.00% / cash 31.17%.** `core_in_band: true`,
-  `rebalance_needed: false` — **3.83pp of room to the §2 65% floor.** ⚠ `rebalance_delta: 1124.44`
-  against `core_target_value: 67,376.32` is **a distance readout, not an order**, and a midday
-  seat has no rebalance mandate in any case. Share count unchanged since the 2026-09-03 fill.
-- ⚠⚠ **668.898 IS A LIVE INTRADAY MARK, NOT A CLOSE. Do not record it as one.** Its value is
-  evidential: it is **not** the 675.00 that both pre-bell seats read bit-identically 92 minutes
-  apart, which **confirms retroactively that 675.00 was a pre-market indication** and not a stale
-  feed. **No `highest_close` was stamped and none was owed.**
+**Account, 🔶 INTRADAY BASIS — NOT CLOSES:**
+- **Equity $96,539.31** · core VOO **99.046311231 sh** @ 706.74, mark **671.80**, unrealised
+  **−$3,460.68 / −4.9438%** · cash exactly **$30,000.00** · `trading_blocked: false`.
+- **Sleeves: core 68.9246% / satellite 0.00% / cash 31.0754%.** `core_in_band: true`,
+  `rebalance_needed: false` — **3.92pp of room to the §2 65% floor. No rebalance due tomorrow.**
+  ⚠ `rebalance_delta: 1038.21` against `core_target_value: 67,577.52` is **a distance readout, not
+  an order.** Share count unchanged since the 2026-09-03 fill.
+- Day 🔶 **−$99.05 / −0.1025%** against 11-17's close-basis **$96,638.36**; since inception
+  🔶 **−$3,460.69 / −3.4607%**. VOO 🔶 **−0.1486%** on the day, intraday range **668.16–675.555**.
 - **OFFICIAL CLOSES: 11-11 698.25 · 11-12 696.04 · 11-13 693.05 · 11-16 680.36 · 11-17 672.80.**
-- **Endpoint disagreement read a third time today, unchanged:** `lastday_price` **673.19** vs
-  official `bars` **672.80** for 11-17 = **0.39 / 0.0580%**. **Ninth distinct instance.**
+- **Endpoint disagreement, TENTH distinct instance:** `lastday_price` **673.19** vs official
+  `bars` **672.80** for 11-17 = **0.39 / 0.0580%**.
+- ⚠ **NO SESSION RANKING IS PUBLISHED IN THIS COMMIT.** Carry-forward item 3 requires ranking off
+  a **close**; 11-17 published a corrupted ordinal off a partial. **The rank lands after the bell
+  or not at all.**
+
+**Research: 5 theses today, ALL REJECTED** (`T-2026-11-18-01` … `-05`). Running total **282
+thesis IDs, 0 ever accepted** — re-derived here with `grep -c '^### T-2026'`: **66** live +
+**87** (`archive/research_log/2026-09.md`) + **129** (`archive/research_log/2026-10.md`), and
+`grep -c '^### T-2026.*ACCEPTED'` returns **0** in all three. **Nvidia's post-close FQ4 guide to
+~$130B — the best-formed catalyst in this corpus — produced no trade.** The two best theses died
+on **structure**: MU on part 4 (an invalidation condition that cannot fail), the infra tier on
+part 3 (order→backlog→revenue lag beyond two quarters). **The candidates failed, not the gates:**
+breaker INACTIVE, cap 0 of 3, $30,000 idle, `TRADING_ENABLED: true`, Notes (none).
 
 **Week rollover — re-derived here with `isocalendar`, not inherited.** 2026-11-18 → ISO
-**2026-W47 wd 3**, Monday anchor **2026-11-16** = inherited `week_of`. They match, **no reset
-due**, `new_positions_this_week` **0 of 3**.
+**2026-W47 wd 3**, Monday anchor **2026-11-16** = inherited `week_of`. **Match, no reset due**,
+`new_positions_this_week` **0 of 3**.
 
 Breaker **INACTIVE 0/3** · `halt_triggered_at: none` · `TRADING_ENABLED: true` ·
 `HALT_CLEARED_AT: none` · `control.md` Notes **(none)** · `alerts.md` **no open incidents, none
-systemic**. `trade_log.md` carries **one fill in this account's entire history** (2026-09-03 VOO
-core) and **nothing unresolved**.
+systemic**. **No circuit-breaker alert owed and none posted.**
 
 **NO NOTIFICATION WAS SENT BY THIS SEAT, AND THAT IS A DECISION.** The run found what it was set
-up to catch — **nothing**. No stop breached, no exit owed, no order unverified, no incident open,
-no alert owed. The one notification-shaped fact, routine 2's firing time, is the standing ask that
-carry-forward item 1 says is **already with the human and must not be re-sent on a repeat**.
-⚠ Re-pinging a standing item daily is how a human learns to ignore the channel.
+up to catch — **nothing actionable**: no stop breached, no exit owed, no order unverified, no
+incident open, no alert owed, breaker inactive, core in band. The two notification-shaped facts
+are both **standing items already with the human** (routine 2's schedule; the corpus-size and
+taxonomy asks in `weekly_review.md`), and routine 4's own early firing is **the same DST fault,
+absorbed by the hold, at zero realised cost**. ⚠ **Re-pinging a standing item daily is how a
+human learns to ignore the channel.**
 
 ## Carry forward
 

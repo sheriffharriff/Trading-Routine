@@ -40,6 +40,145 @@ anything where the honest-broker rule (§4) did real work>
 
 ## Entries
 
+### 2026-11-18 (Wednesday)
+
+🔶 **INSURANCE WRITE AT 15:16 ET — THESE ARE INTRADAY MARKS, NOT CLOSES.** This seat fired **44
+minutes before the bell** (`clock` 15:16:00, `is_open: true`, `next_close`
+2026-11-18T16:00:00-05:00) against a nominal **16:15** schedule — the **thirteenth consecutive
+EST session** on that −1h shape. The procedure the 11-06 → 11-17 close seats established is
+**insurance write first, hold for the bell second**; this is the insurance write. **Every figure
+below marked 🔶 is REPLACED, not annotated, once the official close exists.** ⚠⚠ **IF THE
+SECOND COMMIT NEVER LANDS, THIS DATE NEEDS A CLOSE BACKFILL — exactly what happened to
+2026-11-13, whose journal entry and ClickUp summary are permanently gone.**
+
+**Account:** 🔶 intraday **$96,539.31** (99.046311231 sh VOO at the **live mark 671.80** +
+$30,000.00 cash) | day 🔶 **−$99.05 / −0.1025%** against 11-17's close-basis **$96,638.36** |
+since inception 🔶 **−$3,460.69 / −3.4607%** ($100,000.00 opening, 2026-08-06)
+**Sleeves:** core 🔶 **68.9246%** | satellite **0.00%** | cash 🔶 **31.0754%**   (§2 band 65–75%
+— **in band**, **3.92pp of headroom to the floor**; **no rebalance due tomorrow**, delta to
+target +$1,038.21)
+**Breaker:** INACTIVE (0/3)
+**Week:** 0/3 new positions — ISO **2026-W47 wd 3**, Monday anchor **2026-11-16** = inherited
+`week_of`, re-derived here with `isocalendar`. **Match, no reset.**
+
+**Traded:** nothing — zero orders, zero `buy`/`sell` calls at any of today's four seats.
+`orders --status all` returns exactly one order in the account's entire history, the 2026-09-03
+VOO core fill, terminal `filled`. **Nothing in a non-terminal state, so §7 overnight exposure is
+structurally zero.**
+**Researched:** 5 theses — **0 accepted, 5 rejected** (`T-2026-11-18-01` … `-05`, the last a
+six-item sweep).
+**Positions near a sell rule:** none — **NO OPERAND.** All four §5 rules are **ABSENT, not
+passing.** Core VOO is §5-exempt (§5, last line) and was **struck from the working list, not
+evaluated and cleared.**
+
+**What happened:**
+
+**The best-formed catalyst this corpus has ever seen produced no trade, and that is the whole
+story of the day.** Nvidia reported after the 11-17 close: FQ4 revenue guided to **~$130B ±3%**
+against ~$124.89B consensus, next-FY growth raised to **~75% from ~70%**, +4% in extended
+trading, NDX futures +1.3%. Dated, quantified, first-disclosure, straight from the demand source
+— everything §4 asks a Company A event to be. The pre-market seat wrote five theses on it and
+**rejected all five**, and the two best-formed died on **structure, not thinness**:
+`T-2026-11-18-01` (**MU**) passed part 1 cleanly and was killed on **part 4** — Micron's
+calendar-2026 HBM book is sold out on price and volume, so no observable in the next two quarters
+can distinguish "Nvidia's raise flowed through" from "the memory cycle did what it was already
+doing," and **an invalidation condition that cannot fail is not one**. `T-2026-11-18-02` (the
+power/cooling/networking tier) was killed on **part 3** — an FY28 demand revision reaches
+*revenue* through orders → backlog → recognition, two-to-four quarters out, and **backlog is not
+a reported result.** Nothing structural caused the no-trade: breaker INACTIVE, weekly cap 0 of 3,
+**$30,000 idle**, `TRADING_ENABLED: true`, `control.md` Notes (none). **The candidates failed,
+not the gates.**
+
+**The tape itself was the quietest session in a week.** VOO came into the day at the official
+close **672.80** and sat at **671.80** at 15:16 — 🔶 **−0.1486%**, against five consecutive red
+sessions that ran −1.1112% (11-17), −1.8310% (11-16), −0.4300% (11-13). Intraday range
+**668.16–675.555**: it opened at 674.165, traded down through the morning and recovered. Core's
+unrealised loss stands at 🔶 **−$3,460.68 / −4.9438%** against the 706.74 fill. **Because the
+satellite sleeve is empty, the account's entire P&L *is* the core sleeve's P&L** — there is
+nothing else in it to diverge, which is why a −0.1486% day in VOO shows up as −0.1025% in the
+account: the 31% cash drag works in both directions.
+
+**Step 2 — the invisible job this routine exists for — had NO OPERAND for the 94th consecutive
+seat.** Zero satellite positions means no `highest_close` to raise and no `(as of ...)` date to
+advance. Verified on three sides rather than inherited: `positions` returns one row, `sleeves`
+reports satellite `count: 0`, `positions.md` carries zero satellite blocks. ⚠ **The §5.4
+staleness detector and the `highest_close` backfill branch are still UNPROVEN CODE.** They arm on
+the first satellite fill, which has never happened in 77 days.
+
+**What I got wrong or nearly got wrong:**
+
+**The honest finding of this seat is that today the emptiness of the ledger did the work my
+procedure is supposed to do, and the two are indistinguishable from the outside.** I fired 44
+minutes early with a plausible-looking "today's close" in hand — the 2026-11-18 bar reads
+`c: 671.795` — and writing that into `highest_close` would have cost **exactly nothing**, because
+there is no `highest_close` to write. **That is luck, not compliance.** The procedure is a
+`clock` gate; what actually protected the file today was that §5.4 has no operand. On the first
+session with a satellite position, a 15:16 seat holding that number is one keystroke from writing
+a non-close into the single field §5.4 reads — and because the account is long-only, on a green
+session the error ratchets the trailing stop **up** off a number that never traded, and §5.4 then
+fails in the direction of **selling**. ⚠ **I re-demonstrated the defect dynamically rather than
+asserting it: the same dated bar, pulled roughly one minute apart, returned 671.795 then 671.76,
+with volume 67,974 → 68,224 and `n` 2,112 → 2,120.** A finished close does not change between
+pulls, and **the bar carries no flag** — nothing in `t`, `c`, `n` or `v` distinguishes it from a
+finished session. 11-17 measured the same thing at 669.96 → 670.45.
+
+**The superlative trap arrived today in its inverted form, and I nearly took it.** Carry-forward
+item 3 warns about publishing a "worst day ever" off a partial bar — 11-16 did it and was wrong
+by a factor of two, and 11-17 published a corrupted ordinal (4th-worst, actually 5th) forty
+minutes after writing the warning. Today VOO is down **0.15%** after five red sessions, and the
+sentence that wanted to be written was **"the slide has stopped."** That is the *same* error
+wearing the opposite costume: a trend claim asserted off a partial bar with **44 minutes of
+session left** and an intraday range of 7.4 points still in play. **A quiet reading at 15:16 is
+not a quiet close.** I have left the narrative at "quietest session in a week **as of 15:16**"
+and will state the trend only against the official close, if at all. ⚠ **And I will not rank
+this session until I have that close** — the ranking table must be re-derived off closes, which
+is cheap.
+
+**The third thing, and it is the sixth day running I have had to write it down: the idle cash is
+a fact, not an opportunity.** $30,000 has sat uninvested through a six-session drawdown, and
+today the strongest catalyst in the corpus's history went past and **282 thesis IDs now carry
+zero acceptances.** The pull to read that as "the filters are too tight" is real and it arrives
+dressed as diligence. **This routine places no orders at all**, so the only way that pressure
+could express itself here is as a line in the summary nudging tomorrow's seat toward a buy no
+thesis supports. §4's honest-broker rule says the correct output of most research runs is no
+trade; **77 days of them is uncomfortable, and being uncomfortable is not evidence the rule is
+wrong.** The five rejections today were each killed by a *named part* of the four-part test, not
+by vague caution — that is the filter working, not seizing.
+
+**What I did NOT do, and should say plainly: I could not discharge carry-forward item 12's
+post-catalyst re-test as a trading decision, and I did not pretend to.** Routine 4 places no
+orders, so a `priced_in` verdict at this seat licenses nothing. **But the measurement half is
+within reach and is being taken after the bell** — once today completes, `move --sessions 5`
+finally has a post-Nvidia session in its window, and that is the exact number tomorrow's
+pre-market seat will read. It is recorded below as data for that seat, **not as a clearance**,
+and emphatically **not** as a licence to override a `true` verdict: §7 forbids averaging down,
+and "the filter is direction-blind, therefore buy the one that fell 13%" is averaging into
+weakness in a costume.
+
+**For the next run:**
+
+- 🔶 **THE OFFICIAL 2026-11-18 CLOSE IS NOT IN THIS COMMIT.** The hold is in progress. If the
+  second commit never landed, **backfill VOO's 2026-11-18 close, the close-basis equity, the day
+  %, the sleeve split and the session ranking** here and in `positions.md`. **No `highest_close`
+  is owed for this date regardless** (zero satellite positions), so the debt is bookkeeping, not
+  a §5.4 exposure.
+- ⚠ **ROUTINE 4 NOW FIRES AT 15:15–15:16, THIRTEEN CONSECUTIVE EST SESSIONS**, same UTC/DST root
+  cause as routine 2's 08:35. **The hold has absorbed it on every session since 11-06, so the
+  realised damage is still zero** — but it is the second routine on the same fault. ⚠ Per
+  `control.md`, **recorded, not diagnosed.** **Do not re-send the routine-2 schedule ask: it is
+  with the human and nothing has changed.**
+- **Nothing is held in the satellite sleeve and nothing is unresolved.** One order in account
+  history, terminal. **No rebalance due tomorrow** — core 🔶 68.92%, in band, 3.92pp to the floor.
+- ⚠ **ENDPOINT DISAGREEMENT, TENTH DISTINCT INSTANCE:** `positions.lastday_price` **673.19** vs
+  official `bars` **672.80** for 11-17 = **0.39 / 0.0580%**. **Build P&L and stamp `highest_close`
+  from official `bars` closes only, one adjustment basis, one call.**
+- **The two standing items for the human are unchanged and already written up in
+  `weekly_review.md`:** `positions.md` needs a retention rule (**~343KB describing an empty
+  ledger**, unreachable by the monthly rollover), and the agent-authored rejection taxonomy
+  ("rule (iii)" … "rule (viii)") exists nowhere in `strategy.md`. **Re-pinging them daily would
+  train the human to ignore the channel.**
+
+
 ### 2026-11-17 (Tuesday)
 
 ✅ **THE HOLD FOR THE BELL SUCCEEDED — THESE ARE OFFICIAL CLOSES, NOT MARKS.** This seat fired at
