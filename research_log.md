@@ -146,6 +146,77 @@ session where it matters.
 
 ---
 
+### ADDENDUM 2026-11-18 16:05 ET (`4-market-close-journal`) — **CARRY-FORWARD ITEM 12 DISCHARGED: the post-catalyst priced-in re-test, run on a window that finally contains a completed post-Nvidia session**
+
+⚠ **THIS IS NOT A THESIS AND CARRIES NO THESIS ID.** It is the measurement the 07:03 seat asked
+for and that three seats in a row could not take. **It licenses no trade** — routine 4 places no
+orders — and it is **not** a clearance for any name below.
+
+**The question item 12 posed.** `move --sessions 5` reads the trailing five **completed**
+sessions. Nvidia reported **after** the 2026-11-17 close, so every `priced_in` verdict computed
+at the 07:03 seat sat on a window containing **zero post-catalyst sessions**. A `false` there
+meant *"no session has traded since this news"* — **not** *"the market has not repriced it."*
+**Today's session is the first post-catalyst one. It is now complete, so the test can be run.**
+
+**All thirteen names re-run post-bell, same command, same five-session window, now ending
+2026-11-18:**
+
+| Ticker | Morning (window → 11-17) | Official (window → 11-18) | Verdict |
+|---|---:|---:|---|
+| MU | −1.64% `false` | **−13.18% `true`** | **FLIP → LATE** |
+| VRT | −2.06% `false` | **−5.84% `true`** | **FLIP → LATE** |
+| MRVL | −3.60% `false` | **−13.78% `true`** | **FLIP → LATE** |
+| COHR | −1.80% `false` | **−9.19% `true`** | **FLIP → LATE** |
+| GEV | −2.11% `false` | **−4.56% `true`** | **FLIP → LATE** |
+| APH | −4.50% `true` | **−3.78% `false`** | **FLIP → eligible** |
+| CLS | +5.59% `true` | **+0.23% `false`** | **FLIP → eligible** |
+| NVDA | −7.88% `true` | −13.22% `true` | unchanged |
+| ETN | −4.86% `true` | −6.14% `true` | unchanged |
+| SMCI | −13.10% `true` | −19.92% `true` | unchanged |
+| ANET | +0.75% `false` | −1.34% `false` | unchanged |
+| AVGO | +2.91% `false` | +2.48% `false` | unchanged |
+| PWR | +2.63% `false` | −0.97% `false` | unchanged |
+
+**Result: 7 of 13 verdicts flip. The eligible set goes from EIGHT names to FIVE**, and its
+membership changes substantially — MU, VRT, MRVL, COHR and GEV drop out; APH and CLS come in.
+
+⚠⚠ **THE FINDING STATED PLAINLY: five of the eight names that "passed" the priced-in filter
+yesterday morning were already 4.5–14% LATE.** The morning verdicts were artifacts of a pre-event
+window, exactly as the 07:03 seat predicted — **but the magnitude was not predicted and is
+larger than the item implied.** ⚠ **This includes MU, the only name in the whole sweep that
+cleared part 1 of the four-part test.** Had MU survived **part 4** (it did not — its invalidation
+condition could not be made capable of failing), the morning's `priced_in: false` would have
+waved through a candidate **13.18% late**. **No trade was lost, because all five theses were
+rejected on other grounds — but this stops being a theoretical exposure and becomes a measured
+one.**
+
+**The operational rule the 07:03 seat wrote survives this test and should be kept verbatim:**
+**when the plan's catalyst broke after the prior close, the open seat is the first that can
+actually perform the priced-in test — re-run `move --sessions 5` after the open and treat the
+pre-market reading as UNPERFORMED, not passed.**
+
+⚠ **AND A SEPARATE DEFECT FOUND WHILE TAKING THIS MEASUREMENT, NOT PREVIOUSLY RECORDED ANYWHERE:
+`move` READS THE IN-PROGRESS BAR.** Run during the open session at ~15:25, `move --symbol NVDA`
+returned `to_close` **150.87**; the 07:03 seat had read **155.49**, the 11-17 close. **The window
+had silently rolled onto today's unfinished bar.** The in-progress hazard is logged throughout
+this corpus as a `highest_close` problem — **it is also a §4 gate problem, and §4 decides whether
+a position is opened at all.**
+✅ **Being accurate about today's harm: re-running all thirteen after the bell flipped ZERO
+verdicts against the mid-session reading.** Magnitudes moved (GEV −4.21 → −4.56, APH −3.83 →
+−3.78, MU −14.07 → −13.18) but **no name crossed the 4% threshold**, so the mid-session table
+above and the official one agree on every verdict. ⚠ **But APH sat 0.22pp from the threshold and
+GEV 0.21pp from it.** On the day a candidate sits that close, a mid-session priced-in check
+decides a trade on a bar that has not finished. **Fix: gate the priced-in check on `clock`,
+exactly as `highest_close` is gated. This is for the human to fix in code.**
+
+⚠⚠ **WHAT THIS IS NOT: a licence to override a `true` verdict.** The filter remains
+magnitude-based and direction-blind (`abs(move) > 4`; **SMCI reads `true` after falling
+19.92%**). "The filter is direction-blind, therefore buy the one that fell 19%" is averaging into
+weakness in a costume, and **§7 forbids averaging down.** Five names moved *into* `true` today by
+**falling**; none of them became more attractive by doing so.
+
+---
+
 ### T-2026-11-18-01 — MU (Micron) ← Nvidia's FQ4 guide to ~$130B and next-FY growth raised to ~75% — REJECTED (part 4: NO INVALIDATION CONDITION CAN BE WRITTEN THAT IS CAPABLE OF FAILING; part 2 unsourceable to a filing)
 
 **Company A / the news:** **Nvidia**, reported after the **2026-11-17** close: FQ4 revenue

@@ -14,7 +14,7 @@ of it a `last_run:` *value* that had grown into a multi-thousand-byte paragraph.
 needs a paragraph belongs in `journal.md`. The compaction has now held across eight runs.
 
 ```
-last_run: 2026-11-18 15:16 ET 4-market-close-journal — selftest 5/5 exit 0. 🔶 INSURANCE WRITE, HOLD FOR THE BELL IN PROGRESS. ⚠ FIRED 44 MIN PRE-BELL (`clock` 15:16:00 `is_open: true`, `next_close` 16:00 today) against a nominal 16:15 — 13th consecutive EST session on the −1h shape, same UTC/DST root cause as routine 2. ✅ COST NOTHING TODAY AND THE REASON IS LUCK, NOT PROCEDURE: ZERO open satellite positions, so Step 2 had NO OPERAND — no `highest_close` to raise, no `(as of ...)` date to advance, no mark for an early seat to corrupt. §5.1–§5.4 ABSENT, not passing. In-progress-bar defect re-demonstrated DYNAMICALLY: same 11-18 bar one minute apart = c 671.795 → 671.76, vol 67,974 → 68,224. Ledger reconciled three sides, AGREES. Core 68.92% in band (3.92pp to floor). Breaker INACTIVE 0/3, cap 0/3, week anchor 2026-11-16 matches. 94th absent seat, 80th absent date. 🔶 OFFICIAL 11-18 CLOSE PENDING — backfill if the 2nd commit is missing.
+last_run: 2026-11-18 16:05 ET 4-market-close-journal — selftest 5/5 exit 0. ✅ HOLD FOR THE BELL SUCCEEDED; OFFICIAL CLOSE RECORDED, NO BACKFILL OWED. Fired 15:16 (44 min pre-bell, 13th consecutive EST session), insurance-committed, polled to the post-bell signature 16:00:24 (`is_open: false`, BOTH next_open/next_close on 11-19), settled 5 min, pulled the bar TWICE — identical. VOO close 671.26, equity 96,485.83, day -0.1578%, since inception -3.5142%, core 68.9074% in band (3.9074pp to floor), 25th-worst of 54 sessions (mid-pack; NO superlative available). 0 trades, 0 orders non-terminal, 5 theses all rejected. §5.1-§5.4 ABSENT (zero satellite positions) — Step 2 had NO OPERAND, 94th absent seat. ✅ ITEM 12 DISCHARGED: post-catalyst priced-in re-test run, 7 of 13 verdicts flipped, eligible set 8 -> 5. ⚠ NEW DEFECT: `move` also reads the in-progress bar. ⚠ "partials read low" is DEAD — today's read HIGH. ClickUp daily summary POSTED.
 prior_run: 2026-11-18 11:41 ET 3-midday-management — market OPEN, zero exits, §5 no operand, ledger agreed four sides, core 68.83%.
 week_of: 2026-11-16
 new_positions_this_week: 0
@@ -23,91 +23,59 @@ circuit_breaker: INACTIVE
 halt_triggered_at: none
 core_established: true
 core_ticker: VOO
-core_pct: 68.92
+core_pct: 68.91
 satellite_pct: 0.0
-cash_pct: 31.08
+cash_pct: 31.09
 open_thesis_ids: none
 ```
 
 ---
 
-## Where things stand (2026-11-18 15:16 ET, **4-market-close-journal — 🔶 INSURANCE WRITE, HOLDING FOR THE BELL**)
+## Where things stand (2026-11-18 16:05 ET, **4-market-close-journal — HOLD SUCCEEDED, OFFICIAL CLOSE RECORDED**)
 
-**THE ONE THING THAT MATTERS ABOUT THIS RUN: the invisible job had no operand, and the reason it
-cost nothing is the emptiness of the ledger rather than the correctness of the procedure.** This
-seat fired **44 minutes before the bell** with a plausible-looking "today's close" in hand
-(`bars` 2026-11-18 `c: 671.795`). Writing that into `highest_close` would have cost **exactly
-nothing — because there is no `highest_close` to write.** ⚠ **That is luck, not compliance.** On
-the first session with a satellite position, a 15:16 seat holding that number is one keystroke
-from writing a non-close into the single field §5.4 reads, and on a green session the error
-ratchets the trailing stop **UP** off a price that never traded — §5.4 then fails in the
-direction of **SELLING**.
+✅ **2026-11-18 NEEDS NO BACKFILL.** Post-bell signature confirmed at **16:00:24** — `is_open:
+false` with **both** `next_open` and `next_close` carrying **2026-11-19**, the only reading that
+separates post-bell from pre-market — then a five-minute settle. **The bar was pulled twice and
+was identical both times** (`c` 671.26, `n` 2,671, `v` 88,905), which is how a finished bar
+behaves and is the contrast that makes the in-progress evidence below real.
 
-**Schedule: 13th consecutive EST session at 15:15–15:16 against a nominal 16:15.** `clock`
-**15:16:00** — `is_open: true`, `next_close` **2026-11-18T16:00:00-05:00**, `next_open`
-**2026-11-19T09:30:00-05:00**. Same UTC/DST root cause as routine 2's 09:35→08:35 (ET left DST
-2026-11-01). **The hold has absorbed it on every session since 11-06, so realised damage is still
-zero** — but this is the **second routine** on the same fault. ⚠ Per `control.md`: **recorded,
-not diagnosed.**
+**Account, CLOSE BASIS:** **OFFICIAL CLOSE VOO 671.26** · equity **$96,485.83** (99.046311231 sh
++ $30,000.00 cash) · day **−$152.53 / −0.1578%** vs 11-17's close-basis $96,638.36 · since
+inception **−$3,514.17 / −3.5142%** · core unrealised **−$3,514.16 / −5.0202%** vs the 706.74
+fill · `trading_blocked: false`.
+- **Sleeves: core 68.9074% / satellite 0.00% / cash 31.0926%.** `core_in_band: true`,
+  `rebalance_needed: false`, **3.9074pp to the §2 65% floor. NO REBALANCE DUE TOMORROW.**
+  ⚠ `rebalance_delta: ~1054` is **a distance readout, not an order.** Share count unchanged since
+  the 2026-09-03 fill.
+- **RANKED OFF THE CLOSE, NOT A PARTIAL: VOO −0.2289% is the 25th-WORST of 54 holding-period
+  sessions and the 30th-best; median −0.0370%. Account basis −0.1578%, 26th of 54.** **A mid-pack
+  day. NO SUPERLATIVE IS AVAILABLE AND NONE WAS WRITTEN.**
+- **OFFICIAL CLOSES: 11-12 696.04 · 11-13 693.05 · 11-16 680.36 · 11-17 672.80 · 11-18 671.26.**
+- ⚠ **Endpoint disagreement, ELEVENTH instance, post-bell:** `positions.current_price` **670.99**
+  vs official `bars` **671.26** = **0.27 / 0.0402%**; Alpaca `equity` **96,467.01** sits **$18.82
+  BELOW** close-basis **96,485.83**. **Build P&L from `bars` closes only.**
 
-**§5 re-evaluated here, not inherited — ALL FOUR RULES ABSENT, NOT PASSING.** Zero open satellite
-positions means **no entry price, no `highest_close`, no `timing_window` deadline and no
-invalidation string exists**, so §5.1–§5.4 each had **no operand**. That is not the same as
-passing. **Core VOO is EXEMPT from §5** (§5, last line) and was struck from the working list
-rather than evaluated and cleared. **No §5.1 Perplexity call was owed or made.** **94th absent
-seat, 80th absent date.**
+**§5 re-evaluated, not inherited — ALL FOUR RULES ABSENT, NOT PASSING.** Zero satellite positions
+means no entry price, no `highest_close`, no deadline and no invalidation string exists. **Step 2
+had NO OPERAND: no mark to raise, no `(as of ...)` date to advance. 94th absent seat, 80th absent
+date.** Core VOO is §5-exempt and was struck from the working list, not cleared. **Ledger
+reconciled three sides, AGREES. `orders --status all` returns one order in the account's entire
+history (2026-09-03 core fill, terminal) — nothing non-terminal, §7 overnight exposure is
+structurally zero.** Breaker **INACTIVE 0/3**, no alert owed or posted. Week anchor **2026-11-16**
+re-derived with `isocalendar`, **matches, no reset**, cap **0 of 3**.
 
-⚠⚠ **IN-PROGRESS-BAR DEFECT RE-DEMONSTRATED DYNAMICALLY AT THIS SEAT:** the 2026-11-18 row pulled
-twice ~one minute apart returned **c 671.795 → 671.76**, volume **67,974 → 68,224**, `n`
-**2,112 → 2,120**. **A finished close does not change between pulls and the bar carries NO FLAG.**
-**Gate every `highest_close` write on `clock`, never on the bar.**
+**Research: 5 theses, ALL REJECTED** (`T-2026-11-18-01` … `-05`). Running total **282 thesis IDs,
+0 ever accepted** (66 live + 87 + 129; `grep -c '^### T-2026.*ACCEPTED'` = 0 in all three).
+**Nvidia's post-close FQ4 guide to ~$130B — the best-formed catalyst in this corpus — produced no
+trade.** MU died on part 4, the infra tier on part 3. **The candidates failed, not the gates.**
 
-**Ledger reconciled on three sides AT THIS SEAT and it AGREES** — `positions` exactly one row
-(VOO core, qty 99.046311231, avg entry 706.74) · `sleeves` satellite **`count: 0`, value 0** ·
-`positions.md` **zero** satellite blocks. **Fifth consecutive agreement today.** `orders --status
-all` returns **one order in the account's entire history** (2026-09-03 core fill, terminal
-`filled`) — **nothing in a non-terminal state, so §7 overnight exposure is structurally zero.**
-
-**Account, 🔶 INTRADAY BASIS — NOT CLOSES:**
-- **Equity $96,539.31** · core VOO **99.046311231 sh** @ 706.74, mark **671.80**, unrealised
-  **−$3,460.68 / −4.9438%** · cash exactly **$30,000.00** · `trading_blocked: false`.
-- **Sleeves: core 68.9246% / satellite 0.00% / cash 31.0754%.** `core_in_band: true`,
-  `rebalance_needed: false` — **3.92pp of room to the §2 65% floor. No rebalance due tomorrow.**
-  ⚠ `rebalance_delta: 1038.21` against `core_target_value: 67,577.52` is **a distance readout, not
-  an order.** Share count unchanged since the 2026-09-03 fill.
-- Day 🔶 **−$99.05 / −0.1025%** against 11-17's close-basis **$96,638.36**; since inception
-  🔶 **−$3,460.69 / −3.4607%**. VOO 🔶 **−0.1486%** on the day, intraday range **668.16–675.555**.
-- **OFFICIAL CLOSES: 11-11 698.25 · 11-12 696.04 · 11-13 693.05 · 11-16 680.36 · 11-17 672.80.**
-- **Endpoint disagreement, TENTH distinct instance:** `lastday_price` **673.19** vs official
-  `bars` **672.80** for 11-17 = **0.39 / 0.0580%**.
-- ⚠ **NO SESSION RANKING IS PUBLISHED IN THIS COMMIT.** Carry-forward item 3 requires ranking off
-  a **close**; 11-17 published a corrupted ordinal off a partial. **The rank lands after the bell
-  or not at all.**
-
-**Research: 5 theses today, ALL REJECTED** (`T-2026-11-18-01` … `-05`). Running total **282
-thesis IDs, 0 ever accepted** — re-derived here with `grep -c '^### T-2026'`: **66** live +
-**87** (`archive/research_log/2026-09.md`) + **129** (`archive/research_log/2026-10.md`), and
-`grep -c '^### T-2026.*ACCEPTED'` returns **0** in all three. **Nvidia's post-close FQ4 guide to
-~$130B — the best-formed catalyst in this corpus — produced no trade.** The two best theses died
-on **structure**: MU on part 4 (an invalidation condition that cannot fail), the infra tier on
-part 3 (order→backlog→revenue lag beyond two quarters). **The candidates failed, not the gates:**
-breaker INACTIVE, cap 0 of 3, $30,000 idle, `TRADING_ENABLED: true`, Notes (none).
-
-**Week rollover — re-derived here with `isocalendar`, not inherited.** 2026-11-18 → ISO
-**2026-W47 wd 3**, Monday anchor **2026-11-16** = inherited `week_of`. **Match, no reset due**,
-`new_positions_this_week` **0 of 3**.
-
-Breaker **INACTIVE 0/3** · `halt_triggered_at: none` · `TRADING_ENABLED: true` ·
-`HALT_CLEARED_AT: none` · `control.md` Notes **(none)** · `alerts.md` **no open incidents, none
-systemic**. **No circuit-breaker alert owed and none posted.**
-
-**NO NOTIFICATION WAS SENT BY THIS SEAT, AND THAT IS A DECISION.** The run found what it was set
-up to catch — **nothing actionable**: no stop breached, no exit owed, no order unverified, no
-incident open, no alert owed, breaker inactive, core in band. The two notification-shaped facts
-are both **standing items already with the human** (routine 2's schedule; the corpus-size and
-taxonomy asks in `weekly_review.md`), and routine 4's own early firing is **the same DST fault,
-absorbed by the hold, at zero realised cost**. ⚠ **Re-pinging a standing item daily is how a
-human learns to ignore the channel.**
+**NO NOTIFICATION WAS SENT, AND THAT IS A DELIBERATE DECISION — including for today's new
+finding.** No stop breached, no exit owed, no order unverified, no incident open, no alert owed,
+breaker inactive, core in band, **zero positions at risk overnight**. The two findings below
+**are** worth the human's attention but **are code fixes with zero overnight exposure**, and they
+are carried in the ClickUp summary, which is the right channel for them. ⚠ **Re-pinging a
+standing item daily is how a human learns to ignore the channel** — and the routine-2 schedule
+ask is explicitly **already with the human and must not be re-sent.**
 
 ## Carry forward
 
@@ -138,13 +106,21 @@ human learns to ignore the channel.**
    **0.42 / 0.0624%** (widest), 11-17 intraday 0.10, 11-16 post-bell 0.27, 11-13 +0.33. **Not a
    dividend-basis artifact.** **Build P&L and stamp `highest_close` from official `bars` closes
    only, on one adjustment basis, one call.**
-5. ⚠ **THE IN-PROGRESS-BAR DEFECT: gate every `highest_close` write on `clock`, never on the
-   shape, presence or apparent stability of the bar.** 11-17 pulled the same dated bar twice two
-   minutes apart with the market open and got **669.96 then 670.45**. The bar carries **no flag**.
-   ⚠⚠ **That same run then published a corrupted ordinal off a partial bar forty minutes after
-   writing the warning. Documenting the hazard is not the same as being protected from it.**
-   ⚠ 11-17's and 11-16's partials all read LOW against the official close — **TWO SESSIONS IS NOT A
-   RULE. Do not treat "partials read low" as a correction factor.**
+5. ⚠⚠ **THE IN-PROGRESS-BAR DEFECT — GATE EVERY `highest_close` WRITE ON `clock`, never on the
+   shape, presence or apparent stability of the bar.** Re-demonstrated **dynamically** on 11-18:
+   the same dated bar pulled ~1 min apart gave **671.795 → 671.76** (vol 67,974 → 68,224); after
+   the bell it was pulled twice and was **identical both times** (671.26, n 2,671, v 88,905).
+   **A finished bar does not move; an unfinished one carries NO FLAG saying so.**
+   ⚠⚠⚠ **"PARTIALS READ LOW" IS NOW DEAD — DO NOT RESURRECT IT AS A CORRECTION FACTOR.** 11-16
+   and 11-17 both read LOW; **11-18's partials read HIGH (+0.535 / +0.0797% over the official
+   671.26).** **Three sessions, two directions.** The hazard is **variance, not bias**, and the
+   only remedy is the `clock` gate. ⚠ **The HIGH direction is the dangerous one for §5.4:** it
+   ratchets `highest_close` UP off a price that never traded, so the trailing stop fires early —
+   **the SELLING direction.**
+   ⚠ **And the ordinal moved AGAIN: ranked off the partial, 11-18 was 26th-worst of 54; off the
+   close it is 25th.** 11-17's equivalent error reached ClickUp and needed a correction comment;
+   **11-18's never left the repo, because the summary was held until the close existed.** **The
+   hold does not make a seat careful — it makes its carelessness unpublishable.**
 6. **The §5.4 staleness detector and the `highest_close` backfill branch are UNPROVEN CODE** at the
    **93rd** absent-seat ordinal. The first satellite position will be their first live test.
 7. **`--adjustment all` IS NOT A TOTAL-RETURN SERIES ON THIS FEED** (verified 2026-11-13: adjusted
@@ -169,36 +145,46 @@ human learns to ignore the channel.**
    **`archive/research_log/2026-09.md`** and **`archive/research_log/2026-10.md`**. Earlier states
    abbreviated these as `archive/2026-09` / `archive/2026-10`, which **does not resolve as a
    path** — a seat pasting it will silently get zero and under-count by 216.
-12. ⚠⚠ **THE §4 PRICED-IN WINDOW IS BLIND TO A POST-CLOSE CATALYST — mechanically verified by the
-   07:03 seat (thirteen `move` calls), full write-up in `research_log.md`
-   `T-2026-11-18-01`/`-02`.** `move --sessions 5` reads the trailing five **completed** sessions;
-   Nvidia reported **after** the 11-17 close, so every `priced_in` verdict that morning was computed
-   on a window with **zero post-catalyst sessions**. **A `false` there means "no session has traded
-   since this news," which is not a clearance.** Nine of thirteen names passed a test that could not
-   fail. **OPERATIONAL RULE: when the plan's catalyst broke after the prior close, the open seat is
-   the first that can actually perform the test — re-run `move --sessions 5` after the open and
-   treat the pre-market reading as UNPERFORMED, not passed.**
-   ⚠ **11:41 MIDDAY UPDATE: STILL UNDISCHARGED, AND BY A SEAT THAT COULD HAVE RUN THE TEST.** The
-   first post-Nvidia session is trading now, so `move --sessions 5` would finally have a
-   post-catalyst session in its window — but **routine 3 may not open a position, so a priced-in
-   verdict at this seat decides nothing and was not spent.** The seat that owns the re-test is
-   still the one that keeps firing before the bell. Zero BUY intents again today, so **zero
-   realised cost; the exposure stays forward-looking.**
-   ⚠⚠ **THIS SEAT COULD NOT DISCHARGE THAT HANDOFF AND DID NOT PRETEND TO.** It fired at 08:35,
-   **before** the open, so `bars` still has **no 11-18 row** and the first post-catalyst session has
-   still not traded. **With zero BUY intents it was moot anyway — nothing to revalidate.** But note
-   the structural trap plainly, because it is the real content of items 1 and 12 together: **the
-   seat that owns the post-catalyst re-test is the same seat that keeps firing before the bell.**
-   ⚠ **SEPARATELY, AND DO NOT CONFLATE: the filter is magnitude-based and direction-blind**
-   (`abs(move) > 4`; **SMCI read `priced_in: true` after FALLING 13.10%**). That is **for the human
-   to fix in code, NOT a licence any run may grant itself to override a `true` verdict** — "the
-   filter is direction-blind, therefore buy the one that fell 13%" is averaging into weakness in a
-   costume, and §7 forbids averaging down.
+12. ✅✅ **DISCHARGED 2026-11-18 16:05 — THE POST-CATALYST PRICED-IN RE-TEST WAS RUN. DO NOT
+   CARRY THIS FORWARD AS OPEN.** Full table in `research_log.md` under **ADDENDUM 2026-11-18**
+   and in `journal.md` 2026-11-18. Once today completed, `move --sessions 5` finally had a
+   post-Nvidia session in its window. **7 of 13 verdicts FLIPPED; the eligible set went from
+   EIGHT names to FIVE.** MU **−1.64% `false` → −13.18% `true`**, VRT −2.06 → −5.84, MRVL −3.60 →
+   −13.78, COHR −1.80 → −9.19, GEV −2.11 → −4.56 (all **false → true**); APH −4.50 → −3.78 and
+   CLS +5.59 → +0.23 (**true → false**). ⚠⚠ **Five of the eight names that "passed" that morning
+   were already 4.5–14% LATE — including MU, the only name that cleared part 1 of the four-part
+   test.** No trade was lost (all five theses died on other parts), **but the exposure is now
+   measured rather than theoretical.**
+   ✅ **KEEP THE OPERATIONAL RULE VERBATIM — it survived the test:** *when the plan's catalyst
+   broke after the prior close, the open seat is the first that can actually perform the
+   priced-in test; re-run `move --sessions 5` after the open and treat the pre-market reading as
+   UNPERFORMED, not passed.*
+   ⚠ **STILL UNFIXED AND STILL NOT A LICENCE: the filter is magnitude-based and direction-blind**
+   (`abs(move) > 4`; **SMCI reads `true` after falling 19.92%**). **Five names moved INTO `true`
+   today by FALLING, and none became more attractive by doing so.** "The filter is
+   direction-blind, therefore buy the one that fell 19%" is averaging into weakness in a costume,
+   and **§7 forbids averaging down.** For the human to fix in code; **no run may grant itself
+   this override.**
+
+13. ⚠⚠ **NEW ON 2026-11-18, NOT PREVIOUSLY RECORDED ANYWHERE: `move` ALSO READS THE IN-PROGRESS
+   BAR — so the defect in item 5 reaches a §4 GATE, not just `highest_close`.** Run mid-session
+   at ~15:25, `move --symbol NVDA --sessions 5` returned `to_close` **150.87**; the 07:03 seat had
+   read **155.49**, the 11-17 close. **The window had silently rolled onto today's unfinished
+   bar.** **§4 decides whether a position is opened at all**, so this is the more expensive half
+   of the same bug.
+   ✅ **Accurate about today's harm: re-running all thirteen after the bell flipped ZERO verdicts
+   against the mid-session reading** — magnitudes moved but **no name crossed the 4% threshold**.
+   ⚠ **But APH sat 0.22pp from it and GEV 0.21pp from it.** On the day a candidate sits that
+   close, a mid-session priced-in check decides a trade on a bar that has not finished.
+   **Fix: gate the priced-in check on `clock`, exactly as `highest_close` is gated.**
 
 ## ⚠⚠⚠ Corpus size — the standing systemic finding, for the human
 
-Live memory corpus ~**1.32MB**, read by every run. **`positions.md` is ~337KB describing an empty
-ledger** and `weekly_review.md` is 379KB. **Neither is reachable by the monthly rollover** —
+Live memory corpus **1,158,846 B = 1.11 MiB**, read by every run — ⚠ **re-measured at this seat
+with `os.path.getsize` over the eleven live files, NOT inherited: the figure carried in this slot
+said ~1.32MB and was wrong.** **`positions.md` is 348,696 B / 340.5 KiB describing an empty
+ledger** and `weekly_review.md` is **379,023 B / 370.1 KiB** — **the two of them are 63% of the
+whole corpus.** **Neither is reachable by the monthly rollover** —
 `positions.md` is excluded on the premise that it "only ever holds open positions", which has been
 false for 77 days. **`positions.md` needs a retention rule from the human; no run has standing to
 truncate it.** Full write-up: `weekly_review.md`, week ending 2026-11-13, Recurring Error 1.
