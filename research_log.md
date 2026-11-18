@@ -52,6 +52,357 @@ single most common way a plausible-sounding connection gets mistaken for an oppo
 
 ## Entries
 
+### 2026-11-18 (07:03 ET) — event survey (funnel, pre-thesis)
+
+Selftest **5/5**, exit 0 (`trading_enabled: true`, LIVE paper, equity **$96,856.26**).
+`clock` **07:03:10** — `is_open: false`, `next_open` **2026-11-18T09:30:00-05:00**, `next_close`
+**2026-11-18T16:00:00-05:00**. **Both fields carry today's date: the pre-market full-session
+signature, NOT a holiday.** Wednesday, ordinary session.
+
+**WEEK ROLLOVER — NO RESET DUE, RE-DERIVED WITH `isocalendar`, NOT INHERITED.** ISO **2026-W47
+weekday 3**, Monday anchor **2026-11-16** = inherited `week_of` **2026-11-16**. They match.
+`new_positions_this_week` **0 of 3**.
+
+**NEW POSITIONS PERMITTED THROUGHOUT.** Breaker **INACTIVE 0/3** · cap **0 of 3** · satellite
+**0.0% deployed, $30,000 cash** · `TRADING_ENABLED: true` · `control.md` Notes **(none)**.
+Nothing structural blocked a buy. The candidates did.
+
+**FUNNEL SPEND: two broad sweeps, three drill queries, THIRTEEN `move` calls** — the first
+session in this corpus to spend the priced-in check at scale, and it is the spend that produced
+the run's main finding (below). Sweep 1 took the overnight window. Sweep 2 inverted it: non-AI
+events only, >$10B issuers, with dates and disclosed dollar figures demanded up front.
+
+⚠ **TERMINOLOGY: this entry deliberately does NOT use the agent-authored "rule (iii)…(viii)"
+shorthand.** `state.md` carries a standing finding, twice sent to the human and unaddressed,
+that the taxonomy now carries the majority of the rejection load while existing nowhere in
+`strategy.md`, so a reader cannot tell which rejections rest on the strategy and which rest on
+rules the system wrote for itself. This seat writes its rejections in §3/§4's own language
+(part 1/2/3/4, priced-in, correlation, universe) and names prior findings **by date and
+content** instead of by number. **That is a response to the standing ask, not a new rule.**
+
+---
+
+## ⚠⚠⚠ THE MAIN FINDING OF THIS RUN — THE PRICED-IN CHECK IS STRUCTURALLY BLIND TO TODAY'S CATALYST
+
+This is the most important thing in this entry and it is **mechanically verified, not argued.**
+
+Nvidia reported **after the 2026-11-17 close** (FQ4 revenue guided to **~$130B ±3%**, next-FY
+growth raised to **~75% from ~70%**; +4% in extended trading, NDX futures +1.3%). The §4
+priced-in filter reads the trailing five **completed** sessions. `bars` returns **no 2026-11-18
+row** at this hour, and `move --sessions 5` reports `to_close` **155.49 for NVDA** and **712.975
+for MU** — both of which `bars` confirms are the **2026-11-17** closes.
+
+**So the window on which every `priced_in` verdict below was computed contains ZERO
+post-catalyst sessions.** The filter is not saying "the market has not repriced this news." It
+is saying "no session has traded since this news," which is a different statement and carries
+no information about lateness at all.
+
+The thirteen calls spent, all windows ending 11-17:
+
+| Ticker | 5-session move | `priced_in` |
+|---|---:|---|
+| NVDA | **−7.88%** | true |
+| MU | −1.64% | false |
+| VRT | −2.06% | false |
+| ANET | +0.75% | false |
+| AVGO | +2.91% | false |
+| MRVL | −3.60% | false |
+| COHR | −1.80% | false |
+| GEV | −2.11% | false |
+| PWR | +2.63% | false |
+| APH | **−4.50%** | true |
+| ETN | **−4.86%** | true |
+| CLS | **+5.59%** | true |
+| SMCI | **−13.10%** | true |
+
+⚠ **TWO SEPARATE DEFECTS ARE VISIBLE IN THAT TABLE AND THEY MUST NOT BE CONFLATED.**
+
+**(a) The window is pre-event** — described above. Nine names "pass" a test that could not have
+failed, because the complex *sold off into the print* (NVDA itself −7.88% over the window).
+**A pass here is an artifact of timing, not a clearance.**
+
+**(b) The filter is MAGNITUDE-BASED AND DIRECTION-BLIND.** §4's text is *"if the candidate has
+already moved more than 4% over the last five sessions on this news, you are late."* The script
+implements `abs(move) > 4`. So **SMCI reads `priced_in: true` after falling 13.10%**, as do APH
+(−4.50%) and ETN (−4.86%). For a long thesis a −13% five-session move is not lateness; it is the
+opposite shape entirely.
+
+⚠⚠ **AND THIS SEAT IS NOT USING OBSERVATION (b) TO BUY ANYTHING, WHICH IS THE WHOLE POINT OF
+WRITING IT DOWN HERE.** The argument "the filter is direction-blind, therefore let me buy the
+name that fell 13%" is **averaging into weakness wearing a filter-critique costume**, and §7
+forbids averaging down. The script's verdict is the auditable floor and this seat treats
+`priced_in: true` as **skip, full stop** — for APH, ETN, CLS and SMCI it did exactly that
+without further thought. **(b) is reported for the human to fix in code if they want it fixed;
+it is not a permission a run may grant itself.** ⚠ Note the asymmetry deliberately: defect (a)
+makes the filter **too permissive** and is therefore the dangerous one, and this seat's response
+to it is to **reject the whole family anyway**, which is the only move that does not rely on the
+broken filter in either direction.
+
+**CONSEQUENCE IF A FUTURE SEAT EVER DOES WANT A POST-CLOSE-CATALYST NAME:** a `priced_in: false`
+read taken before the first post-catalyst session is worthless, and the `revalidate` handoff to
+the 09:35 seat is the **only** place the test can actually be performed. **With zero BUY intents
+today there is nothing to revalidate** — but the mechanism should be understood before the
+session where it matters.
+
+---
+
+### T-2026-11-18-01 — MU (Micron) ← Nvidia's FQ4 guide to ~$130B and next-FY growth raised to ~75% — REJECTED (part 4: NO INVALIDATION CONDITION CAN BE WRITTEN THAT IS CAPABLE OF FAILING; part 2 unsourceable to a filing)
+
+**Company A / the news:** **Nvidia**, reported after the **2026-11-17** close: FQ4 revenue
+guided to **~$130B ±3%** against ~$124.89B consensus, next-fiscal-year revenue growth raised to
+**~75% from ~70%**; FQ3 data-center revenue **$107.6B** ($60.1B hyperscalers / $47.5B AI-cloud,
+industrial and enterprise), networking **>$21B**. +4% extended trading.
+Sources: CNBC 2026-11-18; Business Times; Markets Insider; filing-level call summary.
+
+**Company B / the candidate:** **Micron Technology (MU)** — HBM / data-center memory into
+Nvidia's accelerator modules. This is the candidate in the family where part 2's materiality
+test most plausibly clears, which is **precisely why it was the one drilled**: a rejection is
+only worth logging if it lands on a part that actually binds.
+
+**1. Mechanism (one sentence):**
+> Nvidia's raised data-center outlook causes Micron's HBM revenue line to rise because Micron
+> supplies HBM into the accelerator modules Nvidia is guiding to ship more of.
+
+**One clause, genuinely causal, and it PASSES.** Saying so plainly matters: the part that
+usually kills this family is not the part that killed it today.
+
+**2. Dollar path: FAILS — the denominator cannot be sourced.** The drill query returned
+**conflicting totals for the latest quarter, $41.5B and $54.2B** — a ~30% disagreement on the
+denominator — and **neither is the earnings release or the 10-Q.** "Core data center" revenue of
+**$11.5B** appears in one secondary source, which does not establish that it equals HBM. The
+implied **~27.7%** share is arithmetic on unverified non-primary data. §4 requires the segment's
+share of total revenue; **a figure this seat cannot trace to a filing is a guess with a decimal
+point on it.** ⚠ Even the market cap came back with a **~9% spread across sources ($806.1B to
+$880.6B, headline $813.5B, 2026-11-18)** — far above the §3 $10B floor either way, so §3 is not
+the binding constraint, but the spread is a data-quality note in its own right.
+
+**3. Timing window: materially compromised.** Micron's fiscal year ends ~August; FQ1 FY27
+(Sep–Nov) reports late December 2026 and FQ2 late March 2027, so the *calendar* lands inside two
+quarters. But management stated on **2025-12-17** that **HBM for all of calendar 2026 was sold
+out "on price and volume."** Volume committed and price struck means **the near-term revenue is
+already in the contracted book and cannot respond to a demand-side guidance revision.** Whatever
+Nvidia's FY28 outlook does flows through **2027 contract negotiations**, i.e. the quarters after
+the horizon. ⚠ **Stated against this seat's own first draft:** the sold-out fact initially read
+as the *strongest* link in the thesis (scarcity = pricing power) and is in fact what **severs**
+it for this strategy's horizon. Capacity-bound suppliers do not re-rate their next two quarters
+on a customer's demand guidance; their next two quarters were sold last year. ⚠ **And the
+caveat on the caveat: that statement covers a period now ENDING,** so the sold-out argument is
+weaker in November 2026 than it would have been in March. It is reported at its real strength,
+not its rhetorically convenient one.
+
+**4. Invalidation: FAILS, AND THIS IS THE CLEAN KILL.** The only observables available are
+Micron's reported data-center/HBM revenue lines. **Every one of them will be satisfied by the
+pre-existing sold-out book whether or not the 2026-11-18 news had any effect whatsoever.** There
+is no observable in the next two quarters that discriminates "Nvidia's guidance raise flowed
+through" from "the memory cycle did what it was already going to do." §4 demands a specific
+observable event that would **prove the thesis wrong**; what is available here is a number that
+**cannot come out against the thesis** regardless of the thesis's truth.
+**An invalidation condition that cannot fail is not an invalidation condition — it is a
+restatement of the thesis in the future tense.**
+
+**Hard filters:**
+- **Priced-in (§4):** `move --sessions 5` → **−1.64%** (724.86 → 712.975), `priced_in: false`.
+  ⚠ **THIS PASS IS WORTHLESS — see the main finding above.** `to_close` **712.975** is the
+  **2026-11-17** close; the catalyst broke after it. The window contains **zero** post-event
+  sessions. **Recorded as computed and explicitly NOT relied upon.**
+- **Correlation (§4):** **NO OPERAND — passes vacuously, which is not the same as passing.** The
+  satellite sleeve holds zero positions, so there is no `driver` field anywhere in
+  `positions.md` to collide with. ⚠ **A correlation check with nothing to correlate against must
+  not be written up as a clearance.**
+- **Universe (§3):** US-listed common stock (NASDAQ), market cap **~$813.5B** (source:
+  aggregator consensus 2026-11-18, **spread $806.1B–$880.6B, NOT a filing**) → **passes the $10B
+  floor** on any figure in the range. Not leveraged/inverse/crypto/OTC. **§3 is not what killed
+  this.**
+
+**Outcome:** **REJECTED on part 4 (no falsifiable invalidation exists) and part 2 (segment share
+not sourceable to a filing; 30% disagreement on the denominator).** Part 1 passed cleanly and
+part 3 is compromised rather than clearly failed. ⚠⚠ **The structural objection is independent
+of all four parts and would stand alone:** §4 opens *"news breaks about Company A; you look for
+Company B... You are not chasing the headline name."* **Micron is in the first paragraph of the
+headline this morning.** There is no company on earth less overlooked than Nvidia's memory
+supplier the morning after Nvidia's print. The mechanism is real and the *edge* is zero — those
+are different questions and §4 asks the second one. **This is the standing 11-12 finding that
+the AI/data-centre complex is structurally unactionable, arriving again — but it is worth
+separating from the usual disposal, because today the event was NOT a repricing or a stale
+agreement: it was a dated, quantified, first-disclosure guidance raise from the actual demand
+source, the best-formed version of this catalyst the corpus has seen. It still died.**
+
+---
+
+### T-2026-11-18-02 — the data-center power / cooling / networking tier (VRT, ANET, AVGO, MRVL, COHR, GEV, PWR; APH, ETN, CLS, SMCI filtered out) ← the same Nvidia guidance raise — REJECTED (part 3: order-to-revenue lag puts the effect beyond two quarters; part 2 unsourceable; and §4's second-order structure does not reach the market's most-watched trade)
+
+**Company A / the news:** as `T-2026-11-18-01`.
+
+**Company B / the candidates:** the infrastructure tier — Vertiv (power/cooling), Arista and
+Marvell and Broadcom (networking/custom silicon), Coherent (optics), GE Vernova and Quanta
+(generation and electrical build-out). **Super Micro, Amphenol, Eaton and Celestica were removed
+by the priced-in filter before a thesis was written** (`priced_in: true` at −13.10%, −4.50%,
+−4.86% and +5.59% respectively) — §4 says apply the hard filters **before** constructing the
+story, and that is what happened. ⚠ **Three of those four were removed for having FALLEN. See
+defect (b) in the main finding; the verdict was honored anyway and no override was attempted.**
+
+**1. Mechanism (one sentence):**
+> Nvidia's raised data-center outlook causes Vertiv's thermal-management and power revenue to
+> rise because every incremental accelerator rack shipped requires proportional power delivery
+> and heat rejection.
+
+One clause, causal, **passes** — as it does for the networking leg.
+
+**2. Dollar path: FAILS on sourcing, for the whole tier.** The drill query returned a table in
+which **every single cell of "segment share of total revenue" and "is Nvidia a disclosed
+customer" read "not established from the available results"** — for Super Micro, Vertiv,
+Broadcom, Marvell, Amphenol and Micron alike. The source **refused to present inferred
+beneficiaries as filing-disclosed exposure**, which is the correct refusal and leaves part 2
+unwritten for all seven candidates. ⚠ **Materiality is very probably fine for several of these
+names** (data-center is the majority of Vertiv's revenue). **That is exactly the problem: this
+seat believes it without being able to source it, which is what §4's "if you cannot write one of
+them honestly" is pointing at.**
+
+**3. Timing window: FAILS, and this is the binding part for the tier.** The guidance that moved
+is Nvidia's **next fiscal year** (growth 70% → 75%). Infrastructure vendors convert demand to
+revenue through **orders → backlog → recognition**, a two-to-four-quarter path; Vertiv's Q4
+reports February 2027. So the effect of an **FY28** demand revision shows up in **orders and
+backlog commentary** within two quarters and in **revenue** after it. §4's horizon is reported
+results within two quarters. **The revenue does not arrive inside the window; only the narrative
+does.** ⚠ **A backlog or order-intake number is not a reported result for §4's purposes — and
+reaching for one would be the "second clause" the mechanism test forbids.**
+
+**4. Invalidation: not written.** Parts 2 and 3 failed first. ⚠ **And it would have hit the same
+wall as `T-2026-11-18-01`:** any segment-revenue observable in this tier is driven by backlog
+booked long before 2026-11-18, so nothing available discriminates the marginal effect of the
+news from the build-out already underway.
+
+**Hard filters:**
+- **Priced-in (§4):** all thirteen calls tabulated in the main finding. **Nine `false`, four
+  `true`. The four `true` were dropped. The nine `false` are artifacts of a pre-event window and
+  are NOT treated as clearances.**
+- **Correlation (§4):** **NO OPERAND** (empty sleeve) — and ⚠ **worth stating for the day a seat
+  does buy one of these: all seven candidates share ONE driver, "AI data-centre capex." Opening
+  two of them would be one bet in two tickers, which §4 names explicitly.** Today that costs
+  nothing because none is being opened.
+- **Universe (§3):** not reached for the tier; parts 2 and 3 failed first. No `asset` calls spent.
+
+**Outcome:** **REJECTED on part 3 (order-to-revenue lag exceeds the horizon) and part 2 (segment
+share not sourceable for any of the seven).** ⚠ **Plus the same structural objection as -01, and
+it is the one that would hold even if every part had been writable:** the AI infrastructure
+complex on the morning after Nvidia's print is **the single most crowded trade in the market.**
+§4 asks for the company *"the market is not looking at."* Every name in that table is on the
+front page this morning. **The honest-broker paragraph is the operative text: the ease with
+which a sound-sounding mechanism was written for seven different tickers in one sitting is a
+property of how this agent reasons, not evidence of seven opportunities.**
+
+---
+
+### T-2026-11-18-03 — PFE (Pfizer) and the ALK-inhibitor read-across ← FDA accelerated approval of GSK/Nuvalent's neladalkib in ALK-positive NSCLC (2026-11-17) — REJECTED (part 2: ~0.6–2.5% of revenue, far under the 10% floor; and the only identifiable read-across is NEGATIVE-direction in a long-only strategy)
+
+**Company A / the news:** **FDA granted accelerated approval** to **neladalkib** for advanced
+**ALK-positive NSCLC**, reported **2026-11-17**. The asset came to **GSK** via its **~$10.6B
+acquisition of Nuvalent**; the $10.6B figure is the deal value, **not** anything disclosed with
+the approval. Sources: Reuters/WHBL 2026-11-17; MarketScreener; FiercePharma.
+
+**Company B / the candidate:** the incumbent ALK franchise — **Pfizer**, which markets
+**lorlatinib (Lorbrena)**. Roche's alectinib and Takeda's brigatinib are the other class
+incumbents and **both are foreign-listed (§3)**, leaving Pfizer as the only US-listed leg.
+
+**1. Mechanism:** written, and it points the **wrong way**: a new approved competitor in the
+same indication causes Pfizer's Lorbrena revenue line to **deteriorate**. ⚠ **A correctly-formed
+negative mechanism is not a buy thesis.** This strategy is long-only — §3 forbids derivatives
+and leverage, and nothing in §4 contemplates a short. **There is no instrument through which
+this insight could be expressed, so it is not actionable regardless of whether it is true.**
+
+**2. Dollar path: FAILS DECISIVELY.** **ALK rearrangements are ~2.6% of advanced NSCLC in a
+real-world US analysis, with published estimates spanning 3–11% and a practical range of ~3–5%.**
+Lorbrena did **$387M in Q3 2026** against Pfizer FY2025 revenue of **$62.6B** — ~**0.62%** on
+those mismatched periods, **~2.5%** annualising the quarter. **Either figure is a fraction of
+§4's 10%-of-revenue materiality floor.** Sources: Nature 2026 review; PubMed; sec-api.io Pfizer
+Q3 2026 filing analysis. ⚠ **No class-wide ALK-inhibitor revenue figure is reported anywhere in
+the source set**, so the market the approval addresses cannot even be sized.
+
+**3. Timing window:** not reached. **4. Invalidation:** not written. Part 2 failed first.
+
+**Hard filters: NOT REACHED — no `move` or `asset` call spent on this leg.** Part 2 and the
+direction problem disposed of it before a ticker needed filtering.
+
+**Outcome:** **REJECTED on part 2 (immaterial by an order of magnitude) and on DIRECTION (the
+only US-listed read-across is negative and this strategy cannot express it).** ⚠ **GSK itself is
+the first-order name — its own drug, its own approval — and §4's opening sentence forbids
+chasing it;** it is also a UK issuer trading here as an ADR, which §3 admits only above the cap
+floor and which this seat did not need to adjudicate because the first-order objection already
+settles it. **This is the cleanest rejection of the run: a real, dated, named-authority
+regulatory event, disposed of in one drill query on a materiality figure that was never close.**
+
+---
+
+### T-2026-11-18-04 — the rate-sensitive complex (banks, insurers) ← October retail sales ex-autos-and-gas +0.6% vs +0.4% expected; December hike priced at 95–98%; Musalem on "multiple increases before spring 2027" — REJECTED (NOT A SECOND-ORDER CATALYST AT ALL: no Company A, no Company B, no segment, no dollar path)
+
+**The news:** October headline retail sales **+0.2% m/m** (from +0.8% in September, in line);
+**ex-autos-and-gas +0.6% vs +0.4% expected**. Fed-funds markets moved to **~95–98% probability
+of a 25bp INCREASE** in December. The **October 27–28 FOMC minutes** were due 2026-11-18; that
+meeting **held at 3.75–4.00% on a 10–2 vote**. St. Louis Fed's **Musalem** reportedly said the
+US may need **multiple increases before spring 2027**. Dollar near a 19-month high.
+Sources: CNBC 2026-11-18 (×2); Morningstar; SeDaily; Pakistan Times.
+
+**Why it is in this log at all:** a Fed **hiking** path into 2027 is a genuine regime statement,
+not noise, and a seat that silently ignored the largest macro item in the window would be hiding
+a decision rather than making one. ⚠ **It is logged in order to be rejected on structure.**
+
+**1. Mechanism: FAILS — there is no Company A.** §4's buy rule is *"news breaks about Company A;
+you look for Company B, whose economics improve because of it."* A macro data print has **no
+Company A**. The honest sentence is *"higher policy rates lift bank net interest income,"* which
+is **a factor exposure, not a second-order catalyst** — it names no event, no counterparty and
+no causal path between two firms. ⚠ **Any version of this with a named bank in it needs the
+second clause the mechanism test forbids** ("rates rise AND ALSO this bank's deposit beta
+behaves"), and the deposit-beta leg is the entire question.
+
+**2. Dollar path: FAILS — nothing to compute.** No segment is identified by any source because
+no company-specific event occurred. A one-hike NII delta is small against a large bank's revenue
+base and **none of the sourcing quantifies it for any named issuer.**
+
+**3. Timing window:** a December hike would touch Q1 2027 NII — nominally inside the horizon —
+but **immaterial, since parts 1 and 2 already failed.**
+
+**4. Invalidation:** not written.
+
+**Hard filters: NOT REACHED, deliberately, and NO `move` CALL WAS SPENT on this leg.** ⚠ **The
+priced-in objection is nonetheless the decisive practical one and belongs on the record: a macro
+print reprices rate-sensitive equities WITHIN MINUTES of release, and the release has already
+happened.** A pre-market seat reading about a 95–98% market-implied probability is reading
+**the output of the repricing, not a signal ahead of it.** The retail sales print and the hike
+odds are **already in the price of every bank in the index** by 07:03.
+
+**Outcome:** **REJECTED on part 1 (no Company A, no second-order structure) and part 2 (no
+segment, no quantification).** ⚠ **The category lesson, which is the reusable part: macro prints
+are the most TEMPTING non-trades in this corpus, because they are the loudest items in the
+overnight window and always support a fluent-sounding sentence about rate sensitivity.
+§4's buy rule is a two-firm structure and a one-firm macro factor cannot be forced into it.**
+
+---
+
+### T-2026-11-18-05 — sweep: six remaining disclosed events disposed as one — REJECTED (ZERO drill queries spent)
+
+Every other item either sweep surfaced, with the **specific** failing test. **No drill query was
+spent on any of them**; each is disposed on a fact already in the sweep output.
+
+| Item | Why there is no trade |
+|---|---|
+| **Viatris completes Pacira BioSciences acquisition** (closed 2026-11-17, **$36.50/share** cash, tender offer settled) | **Not new information.** A **completion** of a previously-announced deal is the scheduled discharge of a repricing the market performed at announcement. No segment changes on the closing date. Viatris is also at/near the **§3 $10B floor** and the source **does not state a total transaction value**, so part 2 has no magnitude. |
+| **Shionogi completes IntraBio acquisition** (closed 2026-11-17, **$2.0B** lump sum; announced 2026-10-05) | **§3 — Shionogi is Japan-listed.** Same completion-not-news defect. **No US-listed party in the story at all**, so there is no Company B to look for. |
+| **Medline secondary offering priced** (2026-11-17; **60M shares at $35.50**, sponsors Blackstone / Carlyle / Hellman & Friedman / GIC / ADIA; separate **$200M** repurchase) | **A capital-markets event, not an operating one.** A sponsor sell-down changes the share register, not a revenue or cost line. §4 part 1 requires a **revenue or cost line** to move; nothing here touches either. ⚠ Same shape as the 11-17 rejection of an annulled EU fine as *"a one-time balance-sheet item, not a revenue or cost line."* |
+| **Everforth ECS wins DARPA Multi-X Office task order** (~**$163M**, program-support services) | **§3 unverifiable — the source expressly cannot establish a market cap above $10B.** Beyond that the sweep **names no displaced bidder, no subcontractor and no contract duration**, so there is no Company B and no way to size one. A $163M services task order is immaterial to any $10B+ federal contractor. |
+| **Red Cat withdraws FY2026 revenue guidance** (2026-11-17, no replacement; cites defense-award delays, funding uncertainty, Pentagon **Drone Dominance II** outcome; stock −32.7%) | **Part 1 needs a second clause and therefore fails.** The stated cause is **award delays and funding uncertainty**, which **impair the whole category** rather than transferring revenue to a named rival. To make a buy thesis one must assert "awards are delayed **and also** a specific competitor captures them" — and the source **identifies no counterparty and quantifies no contract exposure.** §3 also fails: Red Cat is far below $10B. |
+| **FTC / Pfizer–Seagen ($43B)** | **No event in the window.** The sweep states the FTC **request for additional information** appears to concern **an earlier procedural step**, and does **not** establish that any decision was announced 2026-11-17/18. **There is nothing dated to trade on.** |
+
+**Outcome:** all six **REJECTED**. ⚠ **Pattern worth naming across the table: three of the six
+fail because a DATE does not land in the window (two completions of previously-announced deals
+plus a procedural step mis-dated by secondary coverage), and two fail because the sourcing names
+no counterparty.** Those two failure modes together have now disposed of the clear majority of
+candidates in this corpus. ⚠⚠ **The second one is the more instructive: an event can be real,
+dated, large and correctly reported and still yield no trade, because "who is on the other side
+of this" is a fact that press coverage routinely omits and an agent must never supply from its
+own knowledge.** Supplying it is how a plausible connection gets mistaken for an opportunity.
+
+---
+
 ### 2026-11-17 (07:02 ET) — event survey (funnel, pre-thesis)
 
 Selftest **5/5**, exit 0 (`trading_enabled: true`, LIVE paper, equity **$97,440.08**).
