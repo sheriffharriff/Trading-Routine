@@ -84,7 +84,7 @@ check that the pull returned the right session. A stored baseline is a *label*, 
 ## Open positions
 
 *(none — no **satellite** positions have been opened yet. Core VOO exists and is deliberately not tracked here, per the top-of-file rules and the fill note further down.)*
-### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-11-18, **DIGEST CLOSED BY THE CLOSE SEAT.** Seats that appended: `1-premarket` 07:03 · `2-market-open` **08:35** · `3-midday` **11:41** · `4-market-close` **15:16** ⚠ **PRE-CLOSE, `is_open: true`, 44 min before the bell — INSURANCE WRITE FIRST, HOLD FOR THE BELL SECOND.** ⚠ **The two morning seats were PRE-OPEN, `is_open: false` — 07:03 was 147 min before the bell, 08:35 was 55 min before it, and NEITHER COST ANYTHING: the pre-market seat places no orders by design and the open seat had ZERO intents to place.** ⚠ Absent-seat ordinals: 07:03 **91st** · 08:35 **92nd** · 11:41 **93rd** · this close **94th**; absent dates **80** (today counted once — four seats of one empty day is one fact about the ledger, not four). ⚠⚠ **NOTHING WAS COLLAPSED AND NO COLLAPSE RATIO IS CLAIMED.** This file is itself the standing systemic finding at **~343KB describing an empty ledger**, so this seat added the least it could and left the three seats above it untouched.)
+### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-11-18, **DIGEST CLOSED BY THE CLOSE SEAT.** Seats that appended: `1-premarket` 07:03 · `2-market-open` **08:35** · `3-midday` **11:41** · `4-market-close` **15:16** ⚠ **PRE-CLOSE, `is_open: true`, 44 min before the bell — INSURANCE WRITE FIRST, HOLD FOR THE BELL SECOND.** ⚠ **The two morning seats were PRE-OPEN, `is_open: false` — 07:03 was 147 min before the bell, 08:35 was 55 min before it, and NEITHER COST ANYTHING: the pre-market seat places no orders by design and the open seat had ZERO intents to place.** ⚠ Absent-seat ordinals: 07:03 **91st** · 08:35 **92nd** · 11:41 **93rd** · this close **94th**; absent dates **80** (today counted once — four seats of one empty day is one fact about the ledger, not four). ⚠⚠ **NOTHING WAS COLLAPSED AND NO COLLAPSE RATIO IS CLAIMED.** This file is itself the standing systemic finding at **~341KB describing an empty ledger**, so this seat added the least it could and left the three seats above it untouched.)
 
 **Wednesday, an ordinary full session.** `clock` **07:03:10** — `is_open: false` with **both**
 `next_open` and `next_close` carrying **2026-11-18**: the pre-market full-session signature,
@@ -224,12 +224,41 @@ readout, not an order.** Share count unchanged since the 2026-09-03 fill.
 disagreement read again — TENTH distinct instance:** `positions.lastday_price` **673.19** vs
 official `bars` **672.80** for 11-17 = **0.39 / 0.0580%**.
 
-🔶 **PLACEHOLDER — THE OFFICIAL 2026-11-18 CLOSE IS NOT IN THIS COMMIT.** This seat is holding
-for the bell and will pull it after **16:00 ET**, then **REPLACE this paragraph** with the real
-figure. ⚠⚠ **IF THE SECOND COMMIT NEVER LANDS, THE NEXT RUN MUST BACKFILL 2026-11-18's CLOSE
-HERE AND IN `journal.md` — that is exactly what was lost on 2026-11-13.** No `highest_close` is
-owed for this date regardless (zero satellite positions), so **the backfill is a bookkeeping
-debt, not a §5.4 exposure.**
+✅ **THE HOLD SUCCEEDED — THE OFFICIAL 2026-11-18 CLOSE IS RECORDED. NO BACKFILL IS OWED FOR
+THIS DATE.** Post-bell signature confirmed at **16:00:24** — `is_open: false` with **both**
+`next_open` **and** `next_close` carrying **2026-11-19**, which is the only reading that
+separates post-bell from pre-market — then a **five-minute settle** before the pull.
+
+**OFFICIAL CLOSE: VOO 671.26.** Pulled **twice** and **identical on both** (`c` 671.26, `n`
+2,671, `v` 88,905, `vw` 671.790758) — **which is exactly how a finished bar behaves and is the
+contrast that makes the in-progress reading above evidence rather than assertion.**
+**Close-basis equity $96,485.83** · core **$66,485.83 = 68.9074%** · cash **$30,000.00 =
+31.0926%** · day **−$152.53 / −0.1578%** · since inception **−$3,514.17 / −3.5142%** · core
+unrealised **−$3,514.16 / −5.0202%** against the 706.74 fill. **In band, 3.9074pp of headroom to
+the §2 floor; no rebalance due tomorrow** (delta to target $1,054.25).
+
+⚠⚠ **AND THE PARTIAL READ *HIGH* TODAY — WHICH BREAKS THE PATTERN THE LAST TWO SESSIONS
+SUGGESTED.** The 15:16 partial was **671.795** and the 15:17 partial **671.76**, against the
+official close **671.26**: the partials overstated by **+0.535** and **+0.500** (**+0.0797%** /
+**+0.0745%**). **11-16 and 11-17 both read LOW; 11-18 reads HIGH.** ⚠ **This retires the
+"partials read low" idea empirically — carry-forward item 5 warned that two sessions is not a
+rule, and the third session went the other way.** **There is no correction factor. There is only
+the `clock` gate.** ⚠ **Note the direction that matters for §5.4: a partial reading HIGH is the
+one that would have ratcheted a `highest_close` UP off a price that never traded, making the
+trailing stop fire early — the selling direction.** Today that cost nothing **only** because the
+satellite sleeve is empty.
+
+⚠ **THE PROVISIONAL RANK WAS WRONG AGAIN, AND THIS TIME IT WAS NOT PUBLISHED.** Ranked off the
+partial, 2026-11-18 came out **26th-worst of 54**; off the official close it is
+**25th-worst of 54** (VOO **−0.2289%**; account basis **−0.1578%**, 26th of 54). **The ordinal
+moved by one, exactly as it did on 11-17 — but the hold meant the wrong number never reached
+ClickUp.** **Today is an unremarkable mid-pack session: 25th of 54 worst, 30th of 54 best,
+against a median of −0.0370%.** **No superlative is available and none was written.**
+
+⚠ **Endpoint disagreement, ELEVENTH distinct instance, measured post-bell:**
+`positions.current_price` **670.99** vs official `bars` close **671.26** = **0.27 / 0.0402%**;
+Alpaca's own `equity` **96,467.01** sits **$18.82 BELOW** the close-basis **96,485.83** for the
+same instant. **Build P&L and stamp `highest_close` from official `bars` closes only.**
 
 ### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-11-17, **DIGEST CLOSED BY THE CLOSE SEAT.** Seats that appended: `1-premarket` 07:02 · `2-market-open` 08:36 · `3-midday` 11:41 · `4-market-close` **15:15** ⚠ **PRE-CLOSE, `is_open: true`, 45 min before the bell — INSURANCE WRITE FIRST, HOLD FOR THE BELL SECOND.** ⚠ **MARKET OPEN, `is_open: true` — the first seat today that COULD have exited, and none was due** ⚠ **PRE-OPEN, `is_open: false` 54 min before the bell — and it cost nothing: the plan carried ZERO intents, so no order was prevented.** ⚠ Absent-seat ordinals: 07:02 **87th** · 08:36 **88th** · 11:41 **89th** · this close **90th**; absent dates **79** (today already counted — four seats of one empty day is one fact about the ledger, not four). ⚠⚠ **DELIBERATELY WRITTEN SHORT AND NO COLLAPSE RATIO IS CLAIMED.** This file is itself the standing systemic finding at ~317KB describing an empty ledger, so this seat ADDED THE LEAST IT COULD rather than restating what four prior seats already wrote. **A pre-market seat is not entitled to collapse other seats' prose.**)
 
