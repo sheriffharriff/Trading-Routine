@@ -84,7 +84,7 @@ check that the pull returned the right session. A stored baseline is a *label*, 
 ## Open positions
 
 *(none — no **satellite** positions have been opened yet. Core VOO exists and is deliberately not tracked here, per the top-of-file rules and the fill note further down.)*
-### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-11-18, **DIGEST OPEN — seats appended: `1-premarket` 07:03 · `2-market-open` **08:35**. The two later seats append below; the close seat closes and collapses it.** ⚠ **BOTH SEATS SO FAR PRE-OPEN, `is_open: false` — 07:03 was 147 min before the bell, 08:35 is 55 min before it. ⚠⚠ NEITHER COST ANYTHING: the pre-market seat places no orders by design, and the open seat had ZERO intents to place.** ⚠ Absent-seat ordinals: 07:03 **91st** · 08:35 **92nd**; absent dates **80** (today counted once — four seats of one empty day is one fact about the ledger, not four). ⚠⚠ **DELIBERATELY WRITTEN SHORT AND NO COLLAPSE RATIO IS CLAIMED.** This file is itself the standing systemic finding at ~334KB describing an empty ledger, so this seat **ADDED THE LEAST IT COULD**. A pre-market seat is not entitled to collapse other seats' prose.)
+### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-11-18, **DIGEST OPEN — seats appended: `1-premarket` 07:03 · `2-market-open` **08:35** · `3-midday` **11:41** ⚠ **MARKET OPEN, `is_open: true` — the first seat today that COULD have exited, and none was due.** The close seat closes and collapses it.** ⚠ **BOTH SEATS SO FAR PRE-OPEN, `is_open: false` — 07:03 was 147 min before the bell, 08:35 is 55 min before it. ⚠⚠ NEITHER COST ANYTHING: the pre-market seat places no orders by design, and the open seat had ZERO intents to place.** ⚠ Absent-seat ordinals: 07:03 **91st** · 08:35 **92nd** · 11:41 **93rd**; absent dates **80** (today counted once — four seats of one empty day is one fact about the ledger, not four). ⚠⚠ **DELIBERATELY WRITTEN SHORT AND NO COLLAPSE RATIO IS CLAIMED.** This file is itself the standing systemic finding at ~334KB describing an empty ledger, so this seat **ADDED THE LEAST IT COULD**. A pre-market seat is not entitled to collapse other seats' prose.)
 
 **Wednesday, an ordinary full session.** `clock` **07:03:10** — `is_open: false` with **both**
 `next_open` and `next_close` carrying **2026-11-18**: the pre-market full-session signature,
@@ -132,6 +132,54 @@ blocks. **Third consecutive side-by-side-side agreement today; no repair owed, n
 unchanged from 07:03, which is itself the tell: a traded price would have moved in 92 minutes.
 **No `highest_close` was stamped and none was owed** — no operand exists and `clock` says closed.
 
+**`3-midday-management` 11:41 ET — MARKET OPEN, ZERO EXITS, NO OPERAND.** selftest 5/5, exit 0.
+`clock` **11:41:19** `is_open: true`, `next_close` 2026-11-18T16:00, `next_open` 11-19 09:30 —
+**the first seat today on a live market, and the first that COULD have placed an exit.** None was
+due. ⚠ **This run is exits-only by its own prompt and may not open a position; it did not, and it
+did not look for one.**
+
+**§5 re-evaluated here, not inherited: all four rules remain ABSENT, NOT PASSING.** There is no
+entry price, no `highest_close`, no `timing_window` deadline and no invalidation string in
+existence, so §5.1 (invalidation), §5.2 (time stop), §5.3 (hard stop) and §5.4 (trailing stop)
+each had **no operand** — not a pass. **Step 2's high-water repair had nothing to repair and no
+`bars` backfill was owed or spent; no Perplexity §5.1 check was owed, because an invalidation
+condition that does not exist cannot be checked.** ⚠ Core **VOO is EXEMPT from §5** and was taken
+out of the working list, not evaluated and passed.
+
+**Ledger reconciled on three sides AT THIS SEAT and it AGREES:** `positions` exactly one row
+(**VOO** core, qty **99.046311231**, avg entry **706.74**, mv **$66,251.88**, unrealised
+**−$3,748.11 / −5.354%**) · `sleeves` satellite **`count: 0`, value 0** · this file **zero**
+satellite blocks under **Open positions**. **Fourth consecutive side-by-side agreement today. No
+discrepancy, so no repair was owed and none was performed.** **93rd absent seat, 80th absent date**
+(today already counted — four seats of one empty day is one fact about the ledger, not four).
+
+**Account, INTRADAY BASIS:** equity **$96,251.88** · cash exactly **$30,000.00** · sleeves core
+**68.83%** / satellite **0.00%** / cash **31.17%**, `core_in_band: true`, `rebalance_needed: false`
+— **3.83pp of room to the §2 65% floor.** ⚠⚠ **`current_price` 668.898 IS A LIVE INTRADAY MARK,
+NOT A CLOSE.** It is **not** the frozen 675.00 the two pre-bell seats read, which is the
+confirmation that *that* figure was a pre-market indication. **No `highest_close` was stamped and
+none was owed** (carry-forward 5: gate on `clock`, and there is no operand regardless).
+`lastday_price` **673.19** vs official `bars` **672.80** for 11-17 — **the endpoint disagreement is
+unchanged at 0.39 / 0.0580%, read a third time today.**
+
+⚠ **ITEM 12's POST-CATALYST RE-TEST IS STILL UNDISCHARGED, AND THIS SEAT IS NOT THE ONE THAT CAN
+DISCHARGE IT.** The first post-Nvidia session is trading right now, so `move --sessions 5` would
+*finally* mean something — but routine 3 may not open a position, so a priced-in verdict here
+would decide nothing. **It is recorded, not acted on: no seat licensed to buy has performed that
+test today, because routine 2 fired at 08:35 before the bell.** It cost nothing again today
+(zero BUY intents), and it remains forward-looking exposure, not realised damage.
+
+**Week rollover re-derived here with `isocalendar`, not inherited:** 2026-11-18 → ISO **2026-W47
+wd 3**, Monday anchor **2026-11-16** = `week_of`. **Match, no reset**, cap **0 of 3**. Breaker
+**INACTIVE 0/3**, `halt_triggered_at: none`, `TRADING_ENABLED: true`, `HALT_CLEARED_AT: none`,
+`control.md` Notes **(none)**, `alerts.md` **no open incidents**. `trade_log.md` carries **one
+fill in this account's history** (2026-09-03 VOO core) and **nothing unresolved** — no order in a
+non-terminal state anywhere in the ledger.
+
+⚠ **NOTHING WAS COLLAPSED AND NO COLLAPSE RATIO IS CLAIMED.** This file is itself the standing
+systemic finding at **~339KB describing an empty ledger**; a midday seat is not entitled to
+collapse other seats' prose, so this one **added the least it could** and left the two seats above
+it untouched.
 ### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-11-17, **DIGEST CLOSED BY THE CLOSE SEAT.** Seats that appended: `1-premarket` 07:02 · `2-market-open` 08:36 · `3-midday` 11:41 · `4-market-close` **15:15** ⚠ **PRE-CLOSE, `is_open: true`, 45 min before the bell — INSURANCE WRITE FIRST, HOLD FOR THE BELL SECOND.** ⚠ **MARKET OPEN, `is_open: true` — the first seat today that COULD have exited, and none was due** ⚠ **PRE-OPEN, `is_open: false` 54 min before the bell — and it cost nothing: the plan carried ZERO intents, so no order was prevented.** ⚠ Absent-seat ordinals: 07:02 **87th** · 08:36 **88th** · 11:41 **89th** · this close **90th**; absent dates **79** (today already counted — four seats of one empty day is one fact about the ledger, not four). ⚠⚠ **DELIBERATELY WRITTEN SHORT AND NO COLLAPSE RATIO IS CLAIMED.** This file is itself the standing systemic finding at ~317KB describing an empty ledger, so this seat ADDED THE LEAST IT COULD rather than restating what four prior seats already wrote. **A pre-market seat is not entitled to collapse other seats' prose.**)
 
 **Tuesday, an ordinary full session.** `clock` **07:02:09** — `is_open: false` with **both**
