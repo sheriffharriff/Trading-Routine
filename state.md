@@ -14,8 +14,8 @@ of it a `last_run:` *value* that had grown into a multi-thousand-byte paragraph.
 needs a paragraph belongs in `journal.md`. The compaction has now held across eight runs.
 
 ```
-last_run: 2026-11-18 08:35 ET 2-market-open-execution — selftest 5/5 exit 0. ⚠ FIRED PRE-BELL, `clock` 08:35:44 `is_open: false`, next_open 09:30 TODAY — §7 SKIP, ZERO ORDERS PLACED. Cost nothing: plan dated 2026-11-18 (staleness gate PASSED, no alert owed) carried ZERO buy/sell/rebalance intents, so no order was prevented and no hold-for-the-bell was due. Core 69.03% in band, core_established already true. Breaker INACTIVE 0/3, cap 0/3, week anchor 2026-11-16 matches, no reset. Ledger reconciled three sides, AGREES. 92nd absent seat.
-prior_run: 2026-11-18 07:03 ET 1-premarket-research — 5 theses, 0 accepted, 5 rejected; plan dated today with ZERO intents; FINDING: §4 priced-in window is structurally blind to a post-close catalyst.
+last_run: 2026-11-18 11:41 ET 3-midday-management — selftest 5/5 exit 0. MARKET OPEN (`clock` 11:41:19 `is_open: true`) — first seat today that COULD have exited; ZERO open satellite positions, so §5.1–§5.4 had NO OPERAND (ABSENT, not passing), zero exits, zero `highest_close` backfills owed, no §5.1 Perplexity check owed. Exits-only run: opened nothing and did not look. Ledger reconciled four sides today, AGREES (positions 1 row VOO core · sleeves satellite count 0 · positions.md zero blocks). Core 68.83% in band (3.83pp to the 65% floor). Breaker INACTIVE 0/3, cap 0/3, week anchor 2026-11-16 matches, no reset. 93rd absent seat, 80th absent date. ⚠ Item 12's post-catalyst re-test STILL UNDISCHARGED — routine 3 cannot discharge it.
+prior_run: 2026-11-18 08:35 ET 2-market-open-execution — ⚠ FIRED PRE-BELL (`is_open: false`), §7 skip, ZERO orders placed; plan dated today passed the staleness gate but carried ZERO intents, so it cost nothing.
 week_of: 2026-11-16
 new_positions_this_week: 0
 consecutive_closed_losses: 0
@@ -23,78 +23,77 @@ circuit_breaker: INACTIVE
 halt_triggered_at: none
 core_established: true
 core_ticker: VOO
-core_pct: 69.03
+core_pct: 68.83
 satellite_pct: 0.0
-cash_pct: 30.97
+cash_pct: 31.17
 open_thesis_ids: none
 ```
 
 ---
 
-## Where things stand (2026-11-18 08:35 ET, **2-market-open-execution — MARKET CLOSED, NOTHING PLACED**)
+## Where things stand (2026-11-18 11:41 ET, **3-midday-management — MARKET OPEN, ZERO EXITS**)
 
-⚠⚠ **FIRST LINE, AS THE PLAN ASKED FOR IT: fired 08:35, `is_open: false`.** `clock`
-**08:35:44** — `next_open` **2026-11-18T09:30:00-05:00**, `next_close`
-**2026-11-18T16:00:00-05:00**. **Both carry TODAY** = the pre-market full-session signature,
-**NOT a holiday**. Wednesday, ordinary session. **55 minutes before the real bell.**
+**THE ONE THING THAT MATTERS ABOUT THIS RUN: nothing should have executed and nothing did.**
+There is no exit that was owed and skipped, no stop that should have fired and didn't, and no
+order left in a non-terminal state. `TRADING_ENABLED: true`, so this was **not** a dry run — a
+`sell` would have been submitted for real. There was simply nothing to sell.
 
-**THE ONE THING THAT MATTERS ABOUT THIS RUN: it placed no orders, and it had none to place.**
-§7 forbids trading while the market is closed, so a closed-market run is a **skip by rule, not a
-missed run**. ⚠ **And unlike a day with live intents, this one cost nothing:**
+**Market OPEN, and that is the one thing this seat had that the two before it did not.** `clock`
+**11:41:19** — `is_open: true`, `next_close` **2026-11-18T16:00:00-05:00**, `next_open`
+**2026-11-19T09:30:00-05:00**. This is the **first seat today on a live market** and therefore the
+first that *could* have placed an exit. ⚠ **Routine 3 is exits-only by its own prompt and may not
+open a position. It did not, and it did not go looking for one** — the §4 path runs through
+pre-market research and the 09:35 seat, always.
 
-- `plan_today.md` `plan_date` **2026-11-18 = today ET** → **the Step 2 staleness gate PASSED.**
-  **No stale-plan alert was owed and none was posted.** ⚠ Worth being precise about, because the
-  *outcome* (no buys) matches a stale-plan run and the *reason* does not: the plan was fresh and
-  deliberately empty. **A `clickup.py alert --key stale-plan` here would have been a false alarm.**
-- **ZERO BUY intents, ZERO SELL intents, ZERO REBALANCE intents.** Step 4 (exits) had no operand,
-  Step 5 (re-validate) had no number to re-check — **no `move` call was owed or spent** — Step 6
-  (execute) had nothing to execute.
-- **Step 3 core bootstrap: `core_established: true` → skipped, as designed. This path never runs
-  again.** Step 7 rebalance: core **69.03%**, `core_in_band: true`, **4.03pp of room to the §2 65%
-  floor → no rebalance due.** ⚠ Both steps are exempt from the staleness gate, and **both were
-  genuinely evaluated and genuinely had nothing to do** — not skipped for want of a market.
-- ⚠ **THE PLAN'S HOLD-FOR-THE-BELL PROCEDURE WAS NOT DUE AND WAS NOT PERFORMED.** It is explicitly
-  conditional on the plan carrying an intent ("DO NOT log a skip over a non-empty plan"). With
-  zero intents there is nothing to hold for, so this seat logged the skip and committed rather
-  than polling `clock` for 55 minutes. **The day the plan is non-empty, that branch is live.**
+**§5 re-evaluated here, not inherited — ALL FOUR RULES ABSENT, NOT PASSING.** Zero open satellite
+positions means **no entry price, no `highest_close`, no `timing_window` deadline and no
+invalidation string exists**, so §5.1 invalidation, §5.2 time stop, §5.3 hard stop and §5.4
+trailing stop each had **no operand**. That is not the same as passing, and it is written down the
+long way because the two readings are indistinguishable in a summary.
+- **Step 2 (high-water repair) had nothing to repair.** No `bars` backfill was owed and none was
+  spent. The staleness comparison that this step exists to perform has still never run against a
+  real mark.
+- **No §5.1 Perplexity call was owed or made.** An invalidation condition that does not exist
+  cannot be checked, and a news query with no thesis behind it is activity for its own sake.
+- ⚠ **Core VOO is EXEMPT from §5** (§5, last line) and was removed from the working list rather
+  than evaluated and passed.
 
-**Account, PRE-MARKET BASIS:**
-- **Equity $96,856.26** · core VOO **99.046311231 sh** @ 706.74, mark **675.00**, unrealised
-  **−$3,143.73 / −4.491%** · cash exactly **$30,000.00** · `trading_blocked: false`.
-- **Sleeves: core 69.03% / satellite 0.00% / cash 30.97%.** `rebalance_needed: false`.
-  ⚠ `rebalance_delta: 943.12` against `core_target_value: 67,799.38` is **a distance readout, not
-  an order.** Share count unchanged since the 2026-09-03 fill.
-- ⚠⚠ **675.00 IS STILL A PRE-MARKET INDICATION, NOT A TRADED CLOSE** — and it is **bit-identical
-  to the 07:03 reading 92 minutes earlier, which is itself the tell**: a traded price does not sit
-  still for an hour and a half. It is why equity sits **$217.90 above** 11-17's close-basis
-  **$96,638.36**. **Do not record it as a close or build a day-change off it.**
+**Ledger reconciled on three sides AT THIS SEAT and it AGREES** — `positions` exactly one row
+(VOO core) · `sleeves` satellite **`count: 0`, value 0** · `positions.md` **zero** satellite
+blocks under **Open positions**. **Fourth consecutive agreement today.** No discrepancy, so no
+repair was owed and nothing was traded on top of a wrong ledger. **93rd absent seat, 80th absent
+date** (today counted once).
+
+**Account, INTRADAY BASIS:**
+- **Equity $96,251.88** · core VOO **99.046311231 sh** @ 706.74, mark **668.898**, unrealised
+  **−$3,748.11 / −5.354%**, intraday **−$425.11 / −0.638%** · cash exactly **$30,000.00** ·
+  `trading_blocked: false`.
+- **Sleeves: core 68.83% / satellite 0.00% / cash 31.17%.** `core_in_band: true`,
+  `rebalance_needed: false` — **3.83pp of room to the §2 65% floor.** ⚠ `rebalance_delta: 1124.44`
+  against `core_target_value: 67,376.32` is **a distance readout, not an order**, and a midday
+  seat has no rebalance mandate in any case. Share count unchanged since the 2026-09-03 fill.
+- ⚠⚠ **668.898 IS A LIVE INTRADAY MARK, NOT A CLOSE. Do not record it as one.** Its value is
+  evidential: it is **not** the 675.00 that both pre-bell seats read bit-identically 92 minutes
+  apart, which **confirms retroactively that 675.00 was a pre-market indication** and not a stale
+  feed. **No `highest_close` was stamped and none was owed.**
 - **OFFICIAL CLOSES: 11-11 698.25 · 11-12 696.04 · 11-13 693.05 · 11-16 680.36 · 11-17 672.80.**
-- **Endpoint disagreement live again:** `lastday_price` **673.19** vs official `bars` **672.80**
-  for 11-17 = **0.39 / 0.0580%**. **Ninth distinct instance.** Build P&L and stamp `highest_close`
-  from official `bars` closes only, one adjustment basis, one call.
-
-**Ledger: reconciled on three sides at THIS seat and it AGREES.** `positions` exactly one row
-(VOO core) · `sleeves` satellite **`count: 0`** · `positions.md` **zero** satellite blocks under
-**Open positions**. **No discrepancy, so nothing was traded on top of a wrong ledger and no repair
-was owed.** **92nd absent seat, 80th absent date** (today counted once).
-**§5.1–§5.4 are ABSENT, NOT PASSING** — no entry price, no high-water mark, no deadline, no
-invalidation string exists. ⚠ **Core VOO is EXEMPT from §5.**
+- **Endpoint disagreement read a third time today, unchanged:** `lastday_price` **673.19** vs
+  official `bars` **672.80** for 11-17 = **0.39 / 0.0580%**. **Ninth distinct instance.**
 
 **Week rollover — re-derived here with `isocalendar`, not inherited.** 2026-11-18 → ISO
 **2026-W47 wd 3**, Monday anchor **2026-11-16** = inherited `week_of`. They match, **no reset
 due**, `new_positions_this_week` **0 of 3**.
 
-Breaker **INACTIVE 0/3** · `TRADING_ENABLED: true` · `HALT_CLEARED_AT: none` · `control.md` Notes
-**(none)** · `alerts.md` **no open, no systemic incidents**. **Nothing structural blocked a buy
-today; there was simply nothing to buy.**
+Breaker **INACTIVE 0/3** · `halt_triggered_at: none` · `TRADING_ENABLED: true` ·
+`HALT_CLEARED_AT: none` · `control.md` Notes **(none)** · `alerts.md` **no open incidents, none
+systemic**. `trade_log.md` carries **one fill in this account's entire history** (2026-09-03 VOO
+core) and **nothing unresolved**.
 
-**NO NOTIFICATION WAS SENT BY THIS SEAT, AND THAT IS A DECISION.** Nothing is unresolved: no order
-reached a non-terminal state (none was placed), no incident is open, no alert was owed. The one
-notification-shaped fact — **routine 2 firing pre-bell** — is the ask that carry-forward item 1
-says is **already with the human, delivered 11-12 and re-sent 11-16, and explicitly must not be
-re-sent on a repeat.** ⚠ Per `control.md`, a firing time is **recorded, not diagnosed**, and a
-manual "Run now" is indistinguishable from a scheduled dispatch. **Re-pinging a standing item
-daily trains the human to ignore the channel.**
+**NO NOTIFICATION WAS SENT BY THIS SEAT, AND THAT IS A DECISION.** The run found what it was set
+up to catch — **nothing**. No stop breached, no exit owed, no order unverified, no incident open,
+no alert owed. The one notification-shaped fact, routine 2's firing time, is the standing ask that
+carry-forward item 1 says is **already with the human and must not be re-sent on a repeat**.
+⚠ Re-pinging a standing item daily is how a human learns to ignore the channel.
 
 ## Carry forward
 
@@ -133,7 +132,7 @@ daily trains the human to ignore the channel.**
    ⚠ 11-17's and 11-16's partials all read LOW against the official close — **TWO SESSIONS IS NOT A
    RULE. Do not treat "partials read low" as a correction factor.**
 6. **The §5.4 staleness detector and the `highest_close` backfill branch are UNPROVEN CODE** at the
-   **92nd** absent-seat ordinal. The first satellite position will be their first live test.
+   **93rd** absent-seat ordinal. The first satellite position will be their first live test.
 7. **`--adjustment all` IS NOT A TOTAL-RETURN SERIES ON THIS FEED** (verified 2026-11-13: adjusted
    and unadjusted closes identical to the cent on 259 of 260 sessions, across all four VOO
    ex-dividend dates). **Any review using the flag's output understates the benchmark and flatters
@@ -165,6 +164,12 @@ daily trains the human to ignore the channel.**
    fail. **OPERATIONAL RULE: when the plan's catalyst broke after the prior close, the open seat is
    the first that can actually perform the test — re-run `move --sessions 5` after the open and
    treat the pre-market reading as UNPERFORMED, not passed.**
+   ⚠ **11:41 MIDDAY UPDATE: STILL UNDISCHARGED, AND BY A SEAT THAT COULD HAVE RUN THE TEST.** The
+   first post-Nvidia session is trading now, so `move --sessions 5` would finally have a
+   post-catalyst session in its window — but **routine 3 may not open a position, so a priced-in
+   verdict at this seat decides nothing and was not spent.** The seat that owns the re-test is
+   still the one that keeps firing before the bell. Zero BUY intents again today, so **zero
+   realised cost; the exposure stays forward-looking.**
    ⚠⚠ **THIS SEAT COULD NOT DISCHARGE THAT HANDOFF AND DID NOT PRETEND TO.** It fired at 08:35,
    **before** the open, so `bars` still has **no 11-18 row** and the first post-catalyst session has
    still not traded. **With zero BUY intents it was moot anyway — nothing to revalidate.** But note
