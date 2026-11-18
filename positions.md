@@ -84,6 +84,36 @@ check that the pull returned the right session. A stored baseline is a *label*, 
 ## Open positions
 
 *(none — no **satellite** positions have been opened yet. Core VOO exists and is deliberately not tracked here, per the top-of-file rules and the fill note further down.)*
+### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-11-18, **DIGEST OPEN — `1-premarket` 07:03. The three later seats append below; the close seat closes and collapses it.** ⚠ **PRE-OPEN, `is_open: false` 27 min before the nominal bell and 147 min before the real one — and it cost nothing: this seat places no orders by design.** ⚠ Absent-seat ordinal: 07:03 is the **91st**; absent dates **80** (today counted once — four seats of one empty day is one fact about the ledger, not four). ⚠⚠ **DELIBERATELY WRITTEN SHORT AND NO COLLAPSE RATIO IS CLAIMED.** This file is itself the standing systemic finding at ~334KB describing an empty ledger, so this seat **ADDED THE LEAST IT COULD**. A pre-market seat is not entitled to collapse other seats' prose.)
+
+**Wednesday, an ordinary full session.** `clock` **07:03:10** — `is_open: false` with **both**
+`next_open` and `next_close` carrying **2026-11-18**: the pre-market full-session signature,
+**not a holiday**.
+
+| §5 rule | Status | Why |
+|---|---|---|
+| **5.1 thesis invalidation** | **ABSENT** | No thesis is held. No invalidation string exists to evaluate. **No Perplexity news check was run or owed** — there is no company to check. |
+| **5.2 time stop** | **ABSENT** | No timing window and no deadline exist. |
+| **5.3 hard stop (−7% from entry)** | **ABSENT** | No satellite entry price exists. |
+| **5.4 trailing stop (−10% from `highest_close`)** | **ABSENT** | No `highest_close` has ever been stamped. The staleness detector and the backfill branch remain **UNPROVEN CODE** at the 91st absent seat. |
+
+⚠ **ABSENT IS NOT PASSING.** A rule that cannot fire for want of an operand has not been checked
+and cleared, and the two must not look alike to the next reader.
+
+**Reconciled on three sides, and it AGREES:** `positions` returns exactly one row (**VOO**, qty
+**99.046311231**, avg entry **706.74**, market value **$66,856.26**, unrealised **−$3,143.73 /
+−4.491%**); `sleeves` reports satellite **`count: 0`**; this file carries **zero** satellite
+blocks under **Open positions**. **No discrepancy, so no repair was owed and none was performed.**
+⚠ **Core VOO is EXEMPT from §5 entirely** (§2: core is not sold on news) and is deliberately not
+tracked as a position here.
+
+⚠ **Endpoint disagreement, EIGHTH distinct instance:** `lastday_price` **673.19** vs the official
+`bars` close **672.80** for 2026-11-17 = **0.39 / 0.0580%**. ⚠⚠ **And `current_price` reads
+675.00, which is a PRE-MARKET INDICATION, NOT A TRADED CLOSE** — it is why live equity
+(**$96,856.26**) sits **$217.90 above** 11-17's close-basis **$96,638.36**. `bars` returned **no
+2026-11-18 row**, the correct pre-market shape. **Stamp `highest_close` from official `bars`
+closes only, and gate the write on `clock` — never on the shape of the bar.**
+
 ### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-11-17, **DIGEST CLOSED BY THE CLOSE SEAT.** Seats that appended: `1-premarket` 07:02 · `2-market-open` 08:36 · `3-midday` 11:41 · `4-market-close` **15:15** ⚠ **PRE-CLOSE, `is_open: true`, 45 min before the bell — INSURANCE WRITE FIRST, HOLD FOR THE BELL SECOND.** ⚠ **MARKET OPEN, `is_open: true` — the first seat today that COULD have exited, and none was due** ⚠ **PRE-OPEN, `is_open: false` 54 min before the bell — and it cost nothing: the plan carried ZERO intents, so no order was prevented.** ⚠ Absent-seat ordinals: 07:02 **87th** · 08:36 **88th** · 11:41 **89th** · this close **90th**; absent dates **79** (today already counted — four seats of one empty day is one fact about the ledger, not four). ⚠⚠ **DELIBERATELY WRITTEN SHORT AND NO COLLAPSE RATIO IS CLAIMED.** This file is itself the standing systemic finding at ~317KB describing an empty ledger, so this seat ADDED THE LEAST IT COULD rather than restating what four prior seats already wrote. **A pre-market seat is not entitled to collapse other seats' prose.**)
 
 **Tuesday, an ordinary full session.** `clock` **07:02:09** — `is_open: false` with **both**
