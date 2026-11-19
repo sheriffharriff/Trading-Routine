@@ -40,6 +40,114 @@ anything where the honest-broker rule (§4) did real work>
 
 ## Entries
 
+### 2026-11-19 (Thursday)
+
+⚠⚠ **PROVISIONAL — PRE-CLOSE BASIS. THIS SEAT FIRED AT 15:15 ET, 45 MINUTES BEFORE THE BELL,
+AND EVERY NUMBER BELOW IS STAMPED OFF AN IN-PROGRESS BAR.** `clock` 15:15:51 — `is_open: true`,
+`next_close` **2026-11-19T16:00:00-05:00**, `next_open` **2026-11-20T09:30:00-05:00**. The
+**14th consecutive EST session** on the −1h shape. The hold for the bell is **IN PROGRESS**; this
+entry is corrected in place once the official close lands. ⚠ Per `control.md` the firing time is
+**recorded, not diagnosed**.
+
+**Account:** total **$95,232.89 — PARTIAL basis** (99.046311231 sh VOO at the in-progress
+**658.61** + $30,000.00 cash) | day **−$1,252.94 / −1.2986%** against 11-18's close-basis
+**$96,485.83** | since inception **−$4,767.11 / −4.7671%** ($100,000.00 opening, 2026-09-03 fill)
+**Sleeves:** core **68.4983%** | satellite **0.00%** | cash **31.5017%**   (§2 band 65–75% — **in
+band**, **3.4983pp of headroom to the floor**; **no rebalance due tomorrow**, delta to target
++$1,430.13)
+**Breaker:** INACTIVE (0/3)
+**Week:** 0/3 new positions — ISO **2026-W47 wd 4**, Monday anchor **2026-11-16** = inherited
+`week_of`, re-derived here with `isocalendar`. **Match, no reset.**
+
+**Traded:** nothing — zero orders, zero `buy`/`sell` calls at any of today's four seats.
+`orders --status all` returns **exactly one order in the account's entire history**, the
+2026-09-03 VOO core fill, terminal `filled`. `orders --status open` → `[]`. **Nothing
+non-terminal, so §7 overnight exposure is structurally zero.**
+**Researched:** 6 theses — **0 accepted, 6 rejected** (`T-2026-11-19-01` … `-06`). Running total
+**288 thesis IDs, 0 ever accepted.**
+**Positions near a sell rule:** **none, and not because they are safe — there is no subject.**
+Zero satellite positions (`grep -ci 'status: *open' positions.md` → **0**) against one Alpaca row
+(VOO core, §5-exempt, **struck from the working list, not cleared**). All four §5 rules
+**ABSENT, NOT PASSING**: no invalidation string, no timing window, no entry price, no
+`highest_close`. **98th absent seat, 81st absent date.**
+
+**What happened:**
+
+A gap-up that gave everything back and then some. VOO opened **678.15**, **+1.0264%** above the
+11-18 close of 671.26, printed a session high of **679.99** (**+1.3005%**), and has since fallen
+**−3.1442%** off that high to **658.61**, leaving the day at **−1.8845%** on the index and
+**−1.2986%** on the account (cash at 31.5% damps the index move by roughly a third). On the
+partial that is the **2nd-worst account session of 55** since inception and the **lowest equity
+print in the account's history** — ⚠ **both of those are rankings off an unfinished bar and
+neither is published anywhere; see below.**
+
+**What I did: nothing, and nothing was due.** This run is a journaling seat by its own prompt —
+no trading. The research seat had already rejected all six of today's theses, so the plan carried
+zero intents; the open seat fired pre-bell into a closed market with nothing to execute; the
+midday seat found §5 with no operand. Core VOO at **68.4983%** is inside §2's 65–75% band with
+**3.4983pp** of floor headroom, so **no rebalance is due tomorrow**, and `rebalance_delta`
+**1,430.13** is a distance readout to the 70% target, not an order. The share count is unchanged
+since the 2026-09-03 fill and cash is exactly $30,000.00 — **the whole of today's move is mark,
+not flow.**
+
+⚠ **Step 2 — the one job this routine exists for — HAD NO OPERAND.** There are zero satellite
+positions, so there is no `highest_close` to raise and no `(as of …)` date to advance. **No mark
+was stamped and none was owed.** The next run has **nothing to backfill for 2026-11-19.**
+
+**What I got wrong or nearly got wrong:**
+
+**1. I had two publishable superlatives drafted off a partial bar before I caught it — the exact
+failure carry-forward item 3 exists to prevent, and today it is not a theoretical risk.** The
+draft said "2nd-worst session of 55" and "lowest equity print in this account's history." The
+second is probably safe (it would take a +1.3% rally in 45 minutes to flip). **The first is live:
+today's partial −1.2986% sits 0.0244pp from 11-16's close-basis −1.2742%.** Rank 2 and rank 3 are
+separated by less than a quarter of a basis point on an account that has already swung 3.14%
+within this session. **11-16's seat published "the worst session in this account's history" and
+was wrong by a factor of two; 11-17's published a ranking off a partial and needed a correction
+comment on ClickUp `86bd4hbb1`.** This would have been the third instance of one mistake. Neither
+superlative appears in the ClickUp summary, and both are ranked off the official close below.
+
+**2. The pre-market mark hazard showed up today in the sharpest form it has yet taken, and it
+points the dangerous way.** The 07:01 seat read VOO at **679.67**. The session high was
+**679.99**. That morning mark was **within 0.047% of the top of the day**, and price is now
+**3.14% below it**. Carry-forward item 5 says the hazard is *variance, not bias*, and that the
+**HIGH** direction is the one that hurts §5.4 because it ratchets `highest_close` up off a price
+that never closed. **Today is the cleanest demonstration of that yet available: a satellite
+position marked from that seat would be carrying a trailing stop anchored to within half a basis
+point of the session high, and the §5.4 trigger would now sit 3.1% closer than the position's
+actual history justifies — in the selling direction.** Nothing was mismarked, because nothing was
+held. **The mechanism was not protected by anything other than the empty ledger.**
+
+**3. The honest version of "Step 2 had no operand."** The prompt frames the high-water update as
+the invisible job that matters more than the summary, and warns that skipping it breaks §5.4 with
+nothing anywhere showing it. I did not skip it — there was nothing to stamp. But I nearly wrote
+that up as a clean pass, and it is not one: **at 15:15 the `clock` gate is CLOSED, so this seat
+could not have stamped a valid closing mark even if a position had existed.** Routine 4's firing
+time makes routine 4's defining job impossible without a manual hold for the bell, and **that hold
+is a convention carried in these files, not code.** Today the cost is zero because the ledger is
+empty. **The first satellite position turns that convention into the only thing standing between
+the firing time and a silently wrong trailing stop.** That is a different statement from "no
+marks were due," and the second one on its own would have been misleading.
+
+**4. One thing I checked rather than assumed.** `positions.lastday_price` **671.31** against the
+official `bars` close **671.26** for 11-18 is the same **0.05** the three earlier seats saw. ⚠ I
+nearly logged it as a new instance; it is a **fourth observation of the twelfth distinct
+instance**, and counting observations as instances inflates the very trend the human is being
+asked to act on. Still twelve.
+
+**For the next run:**
+
+- **Nothing to backfill for 2026-11-19.** Step 2 had no operand — zero satellite positions, no
+  `highest_close` exists to raise or date-stamp. The debt is nil, not deferred.
+- **Core is in band at the close; no rebalance is due 2026-11-20.** Headroom to the §2 floor has
+  narrowed three sessions running — 3.9074pp (11-18 close) → 3.9300pp (11-19 midday) → the figure
+  recorded below. **The band is wide, but it is not getting wider.**
+- **The pre-bell firing of routine 2 is still with the human and must not be re-sent** (item 1).
+  **Routine 4's own −45-min firing is the same shape and is NOT the same severity** — a close seat
+  can hold for the bell, which is what this seat did; an open seat cannot hold for an open that
+  has already happened.
+- **Week anchor 2026-11-16, cap 0/3, breaker INACTIVE 0/3** going into 2026-11-20.
+
 ### 2026-11-18 (Wednesday)
 
 ✅ **THE HOLD FOR THE BELL SUCCEEDED — THESE ARE OFFICIAL CLOSES, NOT MARKS. 2026-11-18 NEEDS NO
