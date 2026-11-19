@@ -14,7 +14,7 @@ of it a `last_run:` *value* that had grown into a multi-thousand-byte paragraph.
 needs a paragraph belongs in `journal.md`. The compaction has now held across twelve runs.
 
 ```
-last_run: 2026-11-19 15:15 ET 4-market-close-journal — PROVISIONAL / PRE-CLOSE WRITE, hold for the bell IN PROGRESS. selftest 5/5 exit 0. ⚠ Fired 15:15:51 with clock is_open TRUE, next_close 16:00 today, next_open 2026-11-20 — 45 min PRE-BELL, 14th consecutive EST session on the −1h shape; recorded not diagnosed per control.md. STEP 2 HAD NO OPERAND: zero satellite blocks, no highest_close on any name, none raised, no (as of ...) date advanced — NOTHING OWED OR DEFERRED for 2026-11-19. ⚠ AND IT COULD NOT HAVE BEEN DONE IF OWED: the clock gate was CLOSED all through this seat's pre-bell window and the 11-19 VOO bar was in progress (c 658.61, n 2,302, v 98,567, session high 679.99); the hold-for-the-bell remedy is a CONVENTION IN THESE FILES, NOT CODE. Ledger reconciled 4th time today, AGREES (0 satellite blocks vs 1 Alpaca row = core VOO, §5-exempt, struck not cleared). §5 ABSENT ON ALL FOUR RULES, NOT PASSING — 98th absent seat, 81st absent date. ZERO trades at all four of today's seats; §7 CLEAN — orders --status open = [], all = 1 order in account history (09-03 core fill d177d8f0, filled 99.046311231 @ 706.74), nothing non-terminal. PARTIAL-basis equity 95,232.89 (VOO 658.61 in-progress + 30,000 cash), day −1,252.94 / −1.2986% vs 11-18 close-basis 96,485.83, since inception −4.7671%; core 68.4983% IN BAND (3.4983pp to floor), satellite 0.00%, cash 31.5017%, rebalance_needed false, NO REBALANCE DUE 11-20. ⚠⚠ A GAP-UP THAT FULLY REVERSED: VOO opened 678.15 (+1.0264%), high 679.99 (+1.3005%), now 658.61 — −3.1442% off the high, −1.8845% on the day; all mark, no flow (share count unchanged since 09-03, cash exactly 30,000.00). ⚠⚠ TWO SUPERLATIVES WERE DRAFTED OFF THE PARTIAL AND NEITHER WAS PUBLISHED (item 3): "2nd-worst of 55 sessions" sits 0.0244pp from 11-16's −1.2742% and can flip in 45 min; "lowest equity print in account history" needs a +1.3% rally to flip. Ranked off the official close in journal.md. ⚠⚠ THE MARK HAZARD'S SHARPEST DEMONSTRATION YET: the 07:01 seat read VOO 679.67, within 0.047% of the session HIGH, now 3.14% below — a §5.4 mark from that seat would sit a hair under the day's top, moving the stop closer in the SELLING direction. Week anchor 2026-11-16 re-derived with isocalendar (2026-W47 wd 4), matches, no reset, cap 0 of 3. Breaker INACTIVE 0/3, no alert owed or posted. TRADING_ENABLED true, HALT_CLEARED_AT none, Notes empty. Research: 6 theses 11-19, 0 accepted, 6 rejected; 288 lifetime IDs, 0 ever accepted.
+last_run: 2026-11-19 16:06 ET 4-market-close-journal — OFFICIAL CLOSE RECORDED, hold for the bell SUCCEEDED. selftest 5/5 exit 0. ⚠ Fired 15:15:51 with clock is_open TRUE (45 min PRE-BELL, 14th consecutive EST session on the −1h shape; recorded not diagnosed per control.md); insurance commit e3a6c3a carried journal.md + positions.md + state.md and --summary-file; polled to the POST-BELL SIGNATURE at 16:00:29 (is_open false, BOTH dates on 2026-11-20), reconfirmed 16:06:00, 5-min settle, bar pulled TWICE and IDENTICAL — VOO 2026-11-19 close 658.05, n 2,902, v 132,178. STEP 2 HAD NO OPERAND: zero satellite blocks, no highest_close on any name, none raised, no (as of ...) date advanced — NOTHING OWED OR DEFERRED for 2026-11-19. ⚠ AND IT COULD NOT HAVE BEEN DONE AT 15:15 IF OWED: the clock gate was CLOSED all through the pre-bell window; the hold-for-the-bell remedy is a CONVENTION IN THESE FILES, NOT CODE. Ledger reconciled 5th time today, AGREES (0 satellite blocks vs 1 Alpaca row = core VOO, §5-exempt, struck not cleared). §5 ABSENT ON ALL FOUR RULES, NOT PASSING — 98th absent seat, 81st absent date. ZERO trades at all four seats; §7 CLEAN — orders --status open = [] (rechecked post-bell), all = 1 order in account history (09-03 core fill d177d8f0, filled 99.046311231 @ 706.74), nothing non-terminal. CLOSE-BASIS equity 95,177.43 (VOO 658.05 + 30,000 cash), day −1,308.40 / −1.3561% vs 11-18 close-basis 96,485.83, since inception −4,822.57 / −4.8226%; core 68.4799% IN BAND (3.4799pp to floor), satellite 0.00%, cash 31.5201%, rebalance_needed false, NO REBALANCE DUE 11-20. ⚠⚠ A GAP-UP THAT FULLY REVERSED: VOO opened 678.15 (+1.0264%), high 679.99 (+1.3005%), closed 658.05 — −3.2265% off its own high, −1.9679% on the day; all mark, no flow (share count unchanged since 09-03, cash exactly 30,000.00). ✅ RANKED OFF THE CLOSE, NOT A PARTIAL (item 3): 2nd-worst account session of 55 since inception (behind 11-05 −3.0586%) and the LOWEST close-basis equity print in account history ($1,308.40 below 11-18). ⚠ Both held — but the rank-2 margin vs 11-16 moved 0.0244pp (partial) to 0.0819pp (close), i.e. IN MY FAVOUR; 9bp the other way and the claim would have been false. The hold is what made it safe, not the answer. ⚠⚠ THE PARTIAL MOVED, MEASURED — 15:15 bar c 658.61 / n 2,302 / v 98,567 vs finished 658.05 / 2,902 / 132,178: HIGH by +0.5600 / +0.0851% with a quarter of the session trades unprinted. 4th dynamic demonstration, 2nd consecutive day reading HIGH. ⚠⚠ SHARPEST MARK HAZARD ON RECORD: the 07:01 seat read VOO 679.67 — within 0.047% of the session HIGH and +3.2855% ABOVE the official close. A §5.4 mark stamped there would sit a hair under the day top, moving the stop 3.3% closer in the SELLING direction. Week anchor 2026-11-16 re-derived with isocalendar (2026-W47 wd 4), matches, no reset, cap 0 of 3. Breaker INACTIVE 0/3, no alert owed or posted. TRADING_ENABLED true, HALT_CLEARED_AT none, Notes empty. Research: 6 theses 11-19, 0 accepted, 6 rejected; 288 lifetime IDs, 0 ever accepted. ClickUp daily summary posted: task 86bd5cb9c (close-basis figures only; no correction comment owed).
 prior_run: 2026-11-19 11:41 ET 3-midday-management — selftest 5/5 exit 0, first seat today with the market open, EXITS-ONLY, zero exits because §5 had no operand; ledger agreed 3rd time; first real session print gave core 68.93% in band and showed the two pre-market seats had overstated core by ~0.2pp and equity by ~$570, all mark.
 week_of: 2026-11-16
 new_positions_this_week: 0
@@ -23,15 +23,15 @@ circuit_breaker: INACTIVE
 halt_triggered_at: none
 core_established: true
 core_ticker: VOO
-core_pct: 68.4983
+core_pct: 68.4799
 satellite_pct: 0.0
-cash_pct: 31.5017
+cash_pct: 31.5201
 open_thesis_ids: none
 ```
 
 ---
 
-## Where things stand (2026-11-19 15:15 ET, **4-market-close-journal — PRE-CLOSE, hold in progress**)
+## Where things stand (2026-11-19 16:06 ET, **4-market-close-journal — OFFICIAL CLOSE, hold succeeded**)
 
 **THIS RUN DOES NOT TRADE.** It journals and it stamps the §5.4 high-water marks. Today it had
 **no mark to stamp**: zero satellite positions, so no `highest_close` exists to raise and no
@@ -43,7 +43,8 @@ before the bell**, the **14th consecutive EST session** on the −1h shape. The 
 run *after* the close so the marks have settled; **at 15:15 the `clock` gate is CLOSED and no
 valid closing mark can be written at all.** The remedy — hold for the bell, confirm the post-bell
 `clock` signature (`is_open: false` with **both** dates on the *next* session), pull the finished
-bar after a settle — is the 11-18 procedure and it worked. ⚠ **It is a convention carried in these
+bar after a settle — is the 11-18 procedure and ✅ **it worked again today: post-bell at 16:00:29,
+reconfirmed 16:06:00, two identical bar pulls, VOO close 658.05.** ⚠ **It is a convention carried in these
 files, not code.** **Today it costs nothing because the ledger is empty. The first satellite
 position makes that convention the only thing between this firing time and a silently wrong
 trailing stop.** ⚠ Per `control.md` the timing is **recorded, not diagnosed**.
@@ -61,16 +62,25 @@ one order in this account's entire history (the 2026-09-03 core fill, `filled`, 
 **Nothing non-terminal overnight; nothing placed by any of today's four seats.**
 
 **THE DAY, IN ONE LINE: a gap-up that fully reversed.** VOO **678.15** open (+1.0264% on 11-18's
-671.26) → **679.99** high (+1.3005%) → **658.61** (−3.1442% off the high, −1.8845% on the day).
-Account **−1.2986%** — cash at 31.5% damps the index move by about a third. **Share count
-unchanged since 2026-09-03, cash exactly $30,000.00: all mark, no flow.**
+671.26) → **679.99** high (+1.3005%) → **658.05** close (−3.2265% off its own high, **−1.9679%**
+on the day). Account **−1.3561%** — cash at 31.5% damps the index move by about a third. **Share
+count unchanged since 2026-09-03, cash exactly $30,000.00: all mark, no flow.**
+✅ **RANKED OFF THE CLOSE:** **2nd-worst account session of 55** since inception (behind 11-05's
+−3.0586%) and **the lowest close-basis equity print in this account's history**, $1,308.40 below
+11-18's $96,485.83. ⚠ **Both held — but the rank-2 margin against 11-16 moved 0.0244pp on the
+partial to 0.0819pp on the close. It moved in my favour; nine basis points the other way and the
+published claim would have been false. The hold is what made it safe, not the answer.**
 
-**SLEEVES, PARTIAL BASIS:** equity **$95,232.89**; core **$65,232.89 = 68.4983%** / satellite
-**0.00%** / cash **$30,000.00 = 31.5017%**. `core_in_band: true`, `rebalance_needed: false` —
-**3.4983pp above the §2 65% floor. NO REBALANCE DUE 2026-11-20.** ⚠ `rebalance_delta` **1,430.13**
-is a distance readout to the 70% target, **not an order**. ⚠ **Floor headroom has narrowed three
-reads running: 3.9074pp (11-18 close) → 3.9300pp (11-19 midday) → 3.4983pp. The band is wide; it
-is not getting wider.**
+**SLEEVES, CLOSE BASIS:** equity **$95,177.43**; core **$65,177.43 = 68.4799%** / satellite
+**0.00%** / cash **$30,000.00 = 31.5201%**. `core_in_band: true`, `rebalance_needed: false` —
+**3.4799pp above the §2 65% floor, 6.5201pp below the ceiling. NO REBALANCE DUE 2026-11-20.**
+⚠ `rebalance_delta` **1,446.77** is a distance readout to the 70% target, **not an order**.
+⚠ **Floor headroom has narrowed four reads running: 3.9074pp (11-18 close) → 3.9300pp (11-19
+midday) → 3.4983pp (15:15) → 3.4799pp (close). The band is wide; it is not getting wider, and
+item 5's variance hazard becomes load-bearing the first day core sits within a point of 65%.**
+⚠⚠ **DO NOT TAKE THESE FROM `sleeves`.** Post-bell, `sleeves` returned equity **95,093.24** and
+core **68.45%** — it is built on `positions.current_price` **657.20**, an after-hours midpoint
+**0.85 below** the official close. **Every figure here is computed from the official `bars` close.**
 
 **Week anchor 2026-11-16 re-derived here with `isocalendar`** (2026-W47, weekday 4) — matches
 `week_of`, **no reset**, cap **0 of 3**. Breaker **INACTIVE 0/3**, no alert owed or posted.
@@ -95,18 +105,21 @@ is not getting wider.**
    2026-11-13.** That seat's insurance commit carried `positions.md` and `state.md` only; when its
    second commit never landed, the two artifacts lost were **exactly the two it omitted**
    (`journal.md` and the ClickUp summary). 11-16/17/18 did it correctly. ✅ **Exercised correctly
-   at this seat: journal entry written and committed PROVISIONALLY before the hold, `--summary-file`
-   passed so a push failure rescues the summary into a ClickUp alert.**
+   at this seat and it worked: insurance commit `e3a6c3a` carried `journal.md` + `positions.md` +
+   `state.md` with `--summary-file`, PROVISIONALLY before the hold; all three were then corrected
+   in place to the official close.**
 3. ⚠⚠ **DO NOT WRITE A SUPERLATIVE WITHOUT RANKING IT FIRST, AND RANK OFF A CLOSE, NOT A PARTIAL.**
    11-16 published "the worst session in this account's history" — false by a factor of two;
    11-17's 15:15 summary ranked off a partial and needed a correction comment on ClickUp
-   `86bd4hbb1`. Ranking table in `journal.md` 2026-11-17. ⚠⚠ **THIS SEAT HAD TWO DRAFTED AND
-   PUBLISHED NEITHER** — "2nd-worst of 55" sat **0.0244pp** from 11-16's −1.2742% and was live to
-   flip; "lowest equity print in account history" needed a +1.3% rally to flip. **Third instance of
-   one mistake, caught before it shipped.** Both ranked off the official close in `journal.md`.
+   `86bd4hbb1`. Ranking table in `journal.md` 2026-11-17. ⚠⚠ **THIS SEAT HAD TWO DRAFTED AT 15:15 AND HELD BOTH BACK;
+   ranked off the close, BOTH TURNED OUT TRUE** — 2nd-worst of 55, and the lowest close-basis equity
+   print in account history. ⚠ **That is NOT a vindication of drafting off a partial: the rank-2
+   margin against 11-16 moved 0.0244pp → 0.0819pp while I held, i.e. IN MY FAVOUR, and nine basis
+   points the other way would have made the claim false.** **Third instance of one mistake,
+   prevented by the hold rather than by the answer.**
 4. **THE TWO ENDPOINTS DISAGREE ON A SESSION CLOSE AND §5.4 READS FROM ONE OF THEM — STILL THE
    TWELFTH distinct instance.** `lastday_price` **671.31** vs official `bars` **671.26** for 11-18
-   = **0.05 / 0.0074%**, identical at all four of today's seats. ⚠⚠ **A FOURTH OBSERVATION OF ONE
+   = **0.05 / 0.0074%**, identical across all five of today's readings. ⚠⚠ **A FIFTH OBSERVATION OF ONE
    INSTANCE IS NOT A NEW INSTANCE** — counting observations as instances inflates the very trend
    the human is asked to act on. Prior distinct instances ran **0.10–0.42**. ⚠ **A narrow instance
    is not a fixed instance**; the spread has narrowed and widened repeatedly and is **not** a
@@ -120,10 +133,14 @@ is not getting wider.**
    11-17 read LOW; 11-18's read HIGH; **11-19's pre-market marks read HIGH by +0.845pp to
    +1.103pp.** The hazard is **variance, not bias**, and the only remedy is the `clock` gate.
    ⚠⚠ **THE SHARPEST DEMONSTRATION YET IS 2026-11-19, AND IT POINTS THE DANGEROUS WAY: the 07:01
-   seat read VOO 679.67; the session HIGH was 679.99 — within 0.047% — and price closed ~3% below
-   it.** A satellite `highest_close` stamped there would sit a hair under the top of the day and
-   would move the §5.4 trigger ~3% closer **in the SELLING direction.** **Nothing protected the
-   mechanism today except the empty ledger.**
+   seat read VOO 679.67; the session HIGH was 679.99 — within 0.047% — and the official close was
+   658.05, 3.2855% BELOW that morning mark.** A satellite `highest_close` stamped there would sit a
+   hair under the top of the day and would move the §5.4 trigger **3.3% closer in the SELLING
+   direction.** **Nothing protected the mechanism today except the empty ledger.**
+   ⚠⚠ **AND THE 4th DYNAMIC DEMONSTRATION LANDED THE SAME DAY, 45 MINUTES OUT:** the 15:15 bar
+   gave `c` **658.61**, `n` 2,302, `v` 98,567; the finished bar gave **658.05**, 2,902, 132,178 —
+   **HIGH by +0.5600 / +0.0851% with a quarter of the session's trades unprinted. A stamp at 15:15
+   would have been 56 cents too high.**
 6. **The §5.4 staleness detector and the `highest_close` backfill branch are UNPROVEN CODE** at the
    **98th** absent-seat ordinal. The first satellite position is their first live test. **All four
    §5 sell rules remain untested code paths** — nothing has ever closed, so every "no exits" entry
@@ -185,9 +202,12 @@ is not getting wider.**
    research-gate statistic; it is not evidence about execution.**
 15. ⚠ **THE TWO-PRICE DEFECT IS SOLVED AND IT IS A LIVE QUOTE MIDPOINT, NOT A FIXED OFFSET** —
    which is why the broker/official gap never had a stable size. A `positions.current_price` is an
-   **intraday midpoint, not a close** (today: **658.635** against the bar's **658.61**). **Always
-   `bars` for a close, a fresh `quote` for execution, NEVER a `positions` field for either.**
-   Cosmetic on core; **load-bearing the moment a satellite position exists.**
+   **intraday midpoint, not a close** — and **AFTER THE BELL IT IS AN AFTER-HOURS MIDPOINT**: today
+   it read **657.20** against the official close **658.05**, **−0.85**. ⚠⚠ **`alpaca.py sleeves`
+   IS BUILT ON THAT FIELD**, so its post-bell output (equity **95,093.24**, core **68.45%**) was
+   **$84.19 and 0.03pp** off the close basis (**95,177.43**, **68.4799%**). **Always `bars` for a
+   close, a fresh `quote` for execution, NEVER a `positions` field or `sleeves` for a close-basis
+   figure.** Cosmetic on core; **load-bearing the moment a satellite position exists.**
 
 ## ⚠⚠⚠ Corpus size — the standing systemic finding, for the human
 
@@ -197,13 +217,19 @@ and `weekly_review.md` are the majority of the whole live corpus, and `positions
 the premise that it "only ever holds open positions", which has been false for 78 days. Full
 write-up: `weekly_review.md`, week ending 2026-11-13, Recurring Error 1.
 ⚠⚠ **THIS SEAT MEASURED ITS OWN CONTRIBUTION RATHER THAN CLAIMING TO HAVE BEEN BRIEF:** its
-`positions.md` digest added **1,717 B** — against 4,281 B (07:01), 4,183 B (08:36) and 3,299 B
-(11:41), so **four seats of one empty day have cost 13,480 B of ledger describing nothing held.**
+`positions.md` digest added **3,120 B** in its final close-basis form — against 4,281 B (07:01),
+4,183 B (08:36) and 3,299 B (11:41), so **four seats of one empty day have cost 14,883 B of ledger
+describing nothing held.** ⚠ **The pre-close draft of this digest was 1,717 B and correcting it to
+the official close nearly doubled it — "I was brief" was true of the draft and false of what
+shipped.**
 **Writing "deliberately short" does not make an addition free.** This seat **collapsed nothing in
 `positions.md` and claims no collapse ratio** — a seat is not entitled to collapse prose other
 seats wrote — and **the line count is the wrong instrument; every "collapsed N → M" figure in that
-file is measured with it and at least one changed sign when measured in bytes.** Sizes for this
-run are re-measured with `os.path.getsize` **after** its writes, below the final commit.
+file is measured with it and at least one changed sign when measured in bytes.** Sizes for this run are
+re-measured with `os.path.getsize` **after** its writes: `positions.md` **364,009 B**,
+`journal.md` **139,790 B**, `state.md` **~22.4 KB** (inherited 19,971 B — ⚠ **this seat ADDED
+2,237 B to `state.md`; it did not reduce it, and the provisional draft that claimed a reduction was
+measured before the official-close corrections were written in**).
 
 ⚠ **Second standing item, same reviewer:** the agent-authored rejection taxonomy ("rule (iii)" …
 "rule (viii)") carries the majority of the historical rejection load and **exists nowhere in

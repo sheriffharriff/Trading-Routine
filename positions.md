@@ -3808,27 +3808,47 @@ those blocks carried are preserved here:
 
 ---
 
-### 2026-11-19 15:15 ET — 4-market-close-journal — reconciliation (PROVISIONAL, pre-close)
+### 2026-11-19 16:06 ET — 4-market-close-journal — reconciliation (OFFICIAL CLOSE)
+
+✅ **HOLD FOR THE BELL SUCCEEDED.** Fired **15:15** (`clock is_open: true`), insurance commit,
+polled to the **post-bell signature at 16:00:29** (`is_open: false`, **both** dates on
+**2026-11-20**), reconfirmed **16:06:00**, five-minute settle, **bar pulled twice and IDENTICAL**:
+**VOO 2026-11-19 close `c` 658.05**, `n` 2,902, `v` 132,178, `o` 678.15, `h` 679.99, `l` 657.905.
 
 **Zero satellite blocks** (`grep -ci 'status: *open'` → 0) vs **one** Alpaca row (VOO
 99.046311231 sh @ 706.74 entry, §2 core, §5-exempt and deliberately untracked here). **They
-agree — 4th reconciliation of 2026-11-19, 4th agreement.**
+agree — 5th reconciliation of 2026-11-19, 5th agreement.**
 
 **STEP 2 HAD NO OPERAND.** No `highest_close` exists on any name, so none was raised and no
 `(as of …)` date was advanced. ⚠ **Nothing is owed for 2026-11-19 and nothing is deferred** —
-the next run has no backfill to perform for this date.
+the next run has **no backfill** to perform for this date.
 
-⚠ **AND IT COULD NOT HAVE BEEN DONE IF IT HAD BEEN OWED.** This seat fired **15:15 ET with
-`clock is_open: true`**; the 11-19 VOO bar was in progress (`c` 658.61, `n` 2,302, `v` 98,567,
-against a session high of 679.99). **The `clock` gate was CLOSED to any `highest_close` write
-for the whole of this seat's pre-bell window.** The remedy used is the 11-18 procedure — hold
-for the bell, confirm the post-bell `clock` signature, pull the finished bar — and that remedy
-is **a convention in these files, not code.**
+⚠ **AND IT COULD NOT HAVE BEEN DONE AT THE FIRING TIME IF IT HAD BEEN OWED.** At **15:15** with
+`clock is_open: true`, the 11-19 bar was in progress and the **`clock` gate was CLOSED to any
+`highest_close` write** for the whole of this seat's pre-bell window. The remedy used is the 11-18
+procedure, and it is **a convention in these files, not code.**
 
-⚠ **Today's demonstration of the mark hazard, for whoever arms §5.4 first:** the 07:01 pre-market
-seat read VOO **679.67**, within **0.047%** of the session high **679.99**, and price is now
-**3.14%** below it. A satellite `highest_close` stamped from that seat would sit a hair under the
-day's top and would have moved the §5.4 trigger 3.1% closer **in the selling direction**.
+⚠⚠ **THE PARTIAL MOVED, MEASURED — 4th dynamic demonstration, 2nd consecutive day reading HIGH.**
+15:15 bar: `c` **658.61**, `n` 2,302, `v` 98,567. Finished bar: `c` **658.05**, `n` 2,902,
+`v` 132,178. **The partial was HIGH by +0.5600 / +0.0851% with a quarter of the session's trades
+unprinted.** A `highest_close` stamped at 15:15 would have been 56 cents too high.
+
+⚠⚠ **TODAY'S MARK HAZARD, FOR WHOEVER ARMS §5.4 FIRST — THE SHARPEST CASE ON RECORD.** The 07:01
+pre-market seat read VOO **679.67**: within **0.047%** of the session high **679.99**, and
+**+3.2855% above the official close of 658.05**. A satellite `highest_close` stamped there would
+sit a hair under the top of the day and would move the §5.4 trigger **3.3% closer in the SELLING
+direction.**
+
+⚠ **AND THE POST-BELL BROKER FIELDS DISAGREE WITH THE CLOSE — NEITHER WAS USED.**
+`positions.current_price` **657.20** vs official **658.05** = **−0.85** (after-hours quote
+midpoint, item 15); `sleeves` is built on that field and returned equity **95,093.24** / core
+**68.45%** against close-basis **95,177.43** / **68.4799%** — **$84.19 and 0.03pp out.**
+`lastday_price` **671.31** vs official **671.26** for 11-18 = **0.05**, the **fifth observation of
+the twelfth distinct instance, not a thirteenth.**
+
+**CLOSE-BASIS SLEEVES:** equity **$95,177.43** = core **$65,177.43 (68.4799%)** + cash
+**$30,000.00 (31.5201%)**; satellite **0.00%**. **In band, 3.4799pp above the §2 65% floor. NO
+REBALANCE DUE 2026-11-20.** Core unrealized **−$4,822.56 / −6.8894%** from the 706.74 entry.
 
 **§5 status: ABSENT ON ALL FOUR RULES, NOT PASSING** — no invalidation string, no timing window,
 no entry price, no `highest_close`. **98th absent seat, 81st absent date.** All four remain
