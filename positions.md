@@ -84,6 +84,56 @@ check that the pull returned the right session. A stored baseline is a *label*, 
 ## Open positions
 
 *(none — no **satellite** positions have been opened yet. Core VOO exists and is deliberately not tracked here, per the top-of-file rules and the fill note further down.)*
+### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-11-19, **DIGEST OPEN — `1-premarket` 07:01.** The three later seats append below; the close seat closes it. ⚠ Absent-seat ordinal: 07:01 is the **95th**; absent dates **81**. ⚠ **PRE-OPEN, `is_open: false` 149 min before the bell — and it cost nothing: the pre-market seat places no orders by design.** ⚠⚠ **DELIBERATELY WRITTEN AS SHORT AS THIS SEAT CAN MAKE IT, AND NO COLLAPSE RATIO IS CLAIMED BECAUSE NOTHING WAS COLLAPSED.** This file is itself the standing systemic finding — **it was 348,696 B / 340.5 KiB describing an empty ledger when this seat read it, re-measured here with `wc -c`, not inherited** — so this seat **added the least it could and touched no prior seat's prose.** A pre-market seat is not entitled to collapse other seats' writing. ⚠⚠ **AND THE COST OF THIS BLOCK IS COUNTED AFTER THE WRITE, NOT CLAIMED FROM INTENT, BECAUSE THAT IS THE ONE LINE THIS CORPUS KEEPS GETTING WRONG: the file is now 352,977 B. THIS DIGEST ADDED 4,281 B TO A FILE THAT IS ALREADY THE PROBLEM.** Writing "deliberately short" does not make an addition free, and a seat that says so without measuring is doing the same thing nine prior seats were caught doing.)
+
+**Thursday, an ordinary full session.** `clock` **07:01:46** — `is_open: false` with **both**
+`next_open` and `next_close` carrying **2026-11-19**: the pre-market full-session signature, not
+a holiday. Re-read at **07:04:37**, same signature.
+
+**LEDGER RECONCILED, AGREES, RE-EVALUATED AT THIS SEAT AND NOT INHERITED.** This file lists
+**zero satellite positions**; `alpaca.py positions` returns **one row — VOO 99.046311231 sh @
+706.74**, the designated §2 core, §5-exempt and deliberately untracked here. **Nothing to
+reconcile.**
+
+| Rule | Status | Why it is ABSENT rather than passing |
+|---|---|---|
+| §5.1 thesis invalidation | **ABSENT** | No invalidation string exists — no thesis has ever been accepted (288 IDs, 0 accepted). **No per-name news check was run or owed: there is no name.** |
+| §5.2 time stop | **ABSENT** | No timing window, no deadline. |
+| §5.3 hard stop (−7% from entry) | **ABSENT** | No entry price. |
+| §5.4 trailing stop (−10% from `highest_close`) | **ABSENT** | No `highest_close` exists. **Step 2 had NO OPERAND — no mark to raise, no `(as of …)` date to advance.** |
+
+⚠ **The §5.4 staleness detector and the `highest_close` backfill branch remain UNPROVEN CODE** at
+the 95th absent ordinal. The first satellite position will be their first live test.
+
+**Core, for context only (NOT a §5 subject):** official 11-18 close **VOO 671.26** (`bars`,
+confirmed `n` 2,671 / `v` 88,905 — identical to the close seat's stamp). Sleeves at 07:01 —
+core **69.17%** / satellite **0.00%** / cash **30.83%**, `core_in_band: true`,
+`rebalance_needed: false`, **4.17pp to the §2 floor. NO REBALANCE DUE.**
+⚠ **That read is on a PRE-MARKET mark** (`current_price` **679.67**, a **+1.253%** gap on thin
+volume) — equity **$97,318.81** vs the 11-18 close basis **$96,485.83**, and **the entire
+$832.98 is the mark, not a flow**: cash is exactly $30,000.00 and the share count is unchanged
+since the 2026-09-03 fill. **The open seat must re-read `sleeves` on a real session print.**
+⚠ **`rebalance_delta: 804.36` is a DISTANCE READOUT, NOT AN ORDER.**
+
+⚠ **ENDPOINT DISAGREEMENT, TWELFTH INSTANCE — AND THE NARROWEST YET, WHICH IS NOT A FIX.**
+`lastday_price` **671.31** vs official `bars` **671.26** = **0.05 / 0.0074%**; prior instances ran
+**0.10–0.42**. The spread has narrowed and widened before, and **§5.4 still reads from the
+endpoint that is wrong.** **Stamp `highest_close` from official `bars` closes only, one
+adjustment basis, one call.**
+
+⚠ **ITEM 13 CONFIRMED STILL LIVE, AND THE GATE WORKS WHEN APPLIED.** `move` reads the in-progress
+bar, so the `clock` gate was applied **before** this seat's single call: `move --symbol NVDA
+--sessions 5` → **173.85 → 150.86, −13.22%, `priced_in: true`**, matching the 11-18 post-bell
+reading (**150.87 / −13.22%**) **to a cent**. A finished bar does not move; an unfinished one
+carries no flag saying so.
+
+**Research: 6 theses, ALL REJECTED** (`T-2026-11-19-01` … `-06`). **Four of the six died because
+no second-order recipient was ever named by anybody** — part 1 and part 2, not the priced-in
+filter and not §3's thresholds. **Both drill queries returned a kill stated by the source rather
+than argued by the agent.** Breaker **INACTIVE 0/3**; week anchor **2026-11-16** re-derived with
+`isocalendar`, matches, **no reset**; cap **0 of 3**. **Every §6/§7 gate was open — the candidates
+blocked the trade, not the system.**
+
 ### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-11-18, **DIGEST CLOSED BY THE CLOSE SEAT.** Seats that appended: `1-premarket` 07:03 · `2-market-open` **08:35** · `3-midday` **11:41** · `4-market-close` **15:16** ⚠ **PRE-CLOSE, `is_open: true`, 44 min before the bell — INSURANCE WRITE FIRST, HOLD FOR THE BELL SECOND.** ⚠ **The two morning seats were PRE-OPEN, `is_open: false` — 07:03 was 147 min before the bell, 08:35 was 55 min before it, and NEITHER COST ANYTHING: the pre-market seat places no orders by design and the open seat had ZERO intents to place.** ⚠ Absent-seat ordinals: 07:03 **91st** · 08:35 **92nd** · 11:41 **93rd** · this close **94th**; absent dates **80** (today counted once — four seats of one empty day is one fact about the ledger, not four). ⚠⚠ **NOTHING WAS COLLAPSED AND NO COLLAPSE RATIO IS CLAIMED.** This file is itself the standing systemic finding at **~341KB describing an empty ledger**, so this seat added the least it could and left the three seats above it untouched.)
 
 **Wednesday, an ordinary full session.** `clock` **07:03:10** — `is_open: false` with **both**

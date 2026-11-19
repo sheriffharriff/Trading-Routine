@@ -22,188 +22,206 @@ ET date and **refuses to execute any intent from a plan not dated today** — it
 stale plan, posts an alert, and proceeds to the core/rebalance section only.
 
 ```
-plan_date: 2026-11-18
+plan_date: 2026-11-19
 generated_by: 1-premarket-research
 market_open_today: yes
 ```
 
-Market opens **2026-11-18 at 09:30 ET** (`clock` 07:03:10 ET: `is_open: false`, `next_open`
-`2026-11-18T09:30:00-05:00`, `next_close` `2026-11-18T16:00:00-05:00`). **NOT a holiday** —
+Market opens **2026-11-19 at 09:30 ET** (`clock` 07:01:46 ET: `is_open: false`, `next_open`
+`2026-11-19T09:30:00-05:00`, `next_close` `2026-11-19T16:00:00-05:00`). **NOT a holiday** —
 closed because it is pre-market, and **both** fields carry **today's** date, the full-session
 signature. ⚠ **Read off the DATES, not the boolean: FALSE has three meanings, TRUE has one.**
-Wednesday, an ordinary full session.
+Thursday, an ordinary full session. `clock` was re-read at **07:04:37** before the single
+`move` call and gave the same signature.
 
-The plan this seat replaced was dated **2026-11-17** — the previous trading day, the ordinary
+The plan this seat replaced was dated **2026-11-18** — the previous trading day, the ordinary
 shape. It carried **zero intents**. **Nothing was lost: a plan with no intents has no
 execution to perform**, so whether a `2-market-open` seat consumed it is immaterial.
 
 **WEEK ROLLOVER — NO RESET DUE, RE-DERIVED AT THIS SEAT WITH `isocalendar`, NOT INHERITED.**
-ISO **2026-W47**, weekday **3**; Monday anchor **2026-11-16** = the inherited `week_of`
-**2026-11-16**. `new_positions_this_week` stays **0 of 3**.
+ISO **2026-W47 weekday 4**; Monday anchor **2026-11-16**; inherited `week_of` **2026-11-16**.
+They match, so `new_positions_this_week` stays at **0**. ⚠ The reset is done here rather than
+trusted to the Friday review, so a failed Friday run cannot leave the §6 weekly cap stuck.
+
+**Selftest 5/5, exit 0.** `trading_enabled: true`, LIVE against the paper account.
 
 ---
 
-## ⚠⚠ READ THIS FIRST — WHAT THE OPEN SEAT SHOULD EXPECT
+## Gate state — every §6 / §7 gate open, and no intent written anyway
 
-**Inherited, not re-verified this run** (`CronList` cannot read these triggers — it lists only
-in-session `CronCreate` jobs, and its empty answer is evidence of nothing): the 11-02 seat read
-routine 2's **stored schedule** as `13:35:00 UTC`, which was `09:35 ET` under EDT and is
-`08:35 ET` under EST. **US ET left DST on 2026-11-01.** Nine consecutive sessions (11-02 →
-11-12) dispatched between `08:35` and `08:47`, each reading `is_open: false` and placing
-nothing. **11-13 fired at 10:43 with `is_open: true`. 11-16 did not fire at all** (the first
-whole-session absence). **11-17 fired at 08:36, the ordinary pre-bell shape.**
+| Gate | Reading | Blocks a buy? |
+|---|---|---|
+| §6 circuit breaker | **INACTIVE**, `consecutive_closed_losses` **0 of 3**, `halt_triggered_at: none` | No |
+| §6 weekly cap | **0 of 3** new positions this week | No |
+| §2 satellite sleeve | **0.00% deployed**, **$30,000.00** cash available | No |
+| `control.md` `TRADING_ENABLED` | **true** | No |
+| `control.md` Notes | **(none)** | No |
+| §4 four-part thesis | **Six written, SIX REJECTED, ZERO accepted** | **YES — this is the only thing stopping a trade today** |
 
-⚠ **PRACTICAL CONSEQUENCE FOR THE OPEN SEAT: `is_open` could read either way today, and so
-could a total absence. ALL THREE ARE EXPECTED. Record your firing time and `is_open` as your
-first line, and do not treat `false` as a holiday or as a new fault.** This seat itself
-dispatched at **07:03** against a nominal `08:00` — the same −1h shape, **fifteenth
-consecutive EST session**. ⚠ Per `control.md` this is **recorded, not diagnosed**: a firing time
-is not a schedule diagnosis, and manual "Run now" invocations are indistinguishable from
-scheduled ones.
-
-⚠⚠ **STATUS OF THE ASK: DELIVERED AND RE-SENT. DO NOT RE-SEND AGAIN.** The 11-12 close seat
-sent the fault out of band by push notification; the 11-16 close seat re-sent it on the
-condition the 11-12 carry-forward named explicitly. **It is now with the human and nothing has
-changed since.** Re-send only if routine 2 begins firing consistently *after the bell* in a way
-that changes what the human must fix. **A repeat pre-bell firing is not new information and
-does not warrant re-interrupting anyone.**
-
-**PROCEDURE IF YOU ARE THE OPEN SEAT AND THIS PLAN CARRIES ANY INTENT:** finish every
-closed-market-safe step, **COMMIT AS INSURANCE** (say in the message that a hold is in progress
-and what to backfill if the second commit never lands), poll `clock` until `is_open: true`, then
-execute and commit again. **DO NOT log a skip over a non-empty plan.** ⚠ **This plan carries no
-intents, so the procedure is not due today — it is written here because the day it IS due, the
-seat will be reading this file and nothing else.**
+⚠ **Stated plainly so the next seat does not misread this plan's emptiness:** this is **not** a
+halted day and **not** a blocked day. **Nothing structural prevented a buy. The candidates did.**
+Those two cases produce an identical-looking plan and must never be conflated — one is a system
+state, the other is a research outcome.
 
 ---
 
 ## BUY intents
 
-**NONE. Zero BUY intents.**
+**NONE.**
 
-⚠ **This is a decision, not an omission, and nothing structural caused it.** New positions were
-**permitted throughout this run**: breaker **INACTIVE (0/3)**, weekly cap **0 of 3 used**,
-satellite sleeve **0.0% deployed with $30,000 of cash**, `TRADING_ENABLED: true`, `control.md`
-Notes **(none)**. **The candidates failed, not the gates.**
+Six theses were written and all six were rejected (`T-2026-11-19-01` … `-06`, full entries in
+`research_log.md`). **No candidate survived to the sizing stage, so there is no notional, no
+ticker and no `revalidate` line to write.**
 
-Five theses were written and all five rejected — `T-2026-11-18-01` through `-05`, the last a
-six-item sweep. Full reasoning in `research_log.md`. The overnight window was **dominated by a
-single event**, and it is worth the open seat knowing how it died:
+Where they died, in §4's own ordering:
 
-- **Nvidia reported after the 11-17 close** — FQ4 revenue guided to **~$130B ±3%** (consensus
-  ~$124.89B), next-FY growth raised to **~75% from ~70%**, +4% extended trading, NDX futures
-  +1.3%. **The best-formed catalyst this corpus has seen for the AI complex: dated, quantified,
-  first-disclosure, straight from the demand source.** It still produced no trade.
-  - **`T-2026-11-18-01` (MU)** — part 1 **passed** cleanly; killed on **part 4**: Micron's
-    calendar-2026 HBM book is **sold out on price and volume** (management, 2025-12-17), so no
-    observable in the next two quarters can distinguish "Nvidia's raise flowed through" from
-    "the memory cycle did what it was already doing." **An invalidation condition that cannot
-    fail is not one.** Part 2 also unsourceable — the drill returned **$41.5B and $54.2B for the
-    same quarter**, a 30% disagreement on the denominator, neither from a filing.
-  - **`T-2026-11-18-02` (the infra tier)** — killed on **part 3**: an **FY28** demand revision
-    reaches power/cooling/networking **revenue** through orders → backlog → recognition, which is
-    two-to-four quarters out. Only the narrative lands inside §4's window, and **backlog is not
-    a reported result.**
+| ID | Candidate | Died on |
+|---|---|---|
+| `-01` | US AI-accelerator complex ← Nvidia H200/Hopper China export halt (new, 11-19) | **part 1** — drill query: **no US-listed disclosed net beneficiary exists**; only measurable direction is negative |
+| `-02` | CHRN ← $7.5B / 6-yr Odessa AI campus partnership with STN, Inc. | **§3** (issuer below the $10B floor) **+ part 1** (end customer unnamed, no supplier named); **part 3** independently (H1 2027) |
+| `-03` | Unnamed Anthropic supply base ← $81.3B IPO at $83, ~$1.5T valuation | **part 1** (capital paid IN) **+ part 2** ($9B H1 spend has no named recipient) |
+| `-04` | Home-improvement / discretionary supplier tier ← Lowe's +9.3% & Target +7.1% FQ3 | **part 2** — drill query: **no sourceable Lowe's/HD customer-concentration figure for any >$10B supplier**; **part 1** independently (own-results print is a condition) |
+| `-05` | Macro / policy complex (FOMC minutes, Waller 50bp, gold 14-mo low) | **part 1** — no Company A; the standing object |
+| `-06` | Sweep: nine remaining disclosed events | **§3 / part 2 / no named Company B**, one named test each |
 
-**NOTHING FOR THE OPEN SEAT TO REVALIDATE.** `revalidate` lines exist to catch an overnight gap
-pushing a candidate past the §4 priced-in threshold between 08:00 and 09:35. **With zero BUY
-intents there is no number to re-check, and no `move` call is owed.**
+⚠⚠ **A NOTE THE OPEN SEAT MUST READ BEFORE IT CONSIDERS ANYTHING OF ITS OWN — THE PRICED-IN
+WINDOW IS AGAIN PRE-EVENT.** Today's principal catalyst (the Nvidia China Hopper export halt)
+was **first disclosed 2026-11-19, after the 11-18 close.** `bars` returns **no 11-19 row** at
+this hour, so a `move --sessions 5` run now ends on the **11-18** bar and contains **zero
+post-catalyst sessions.** Per the operational rule discharged on 11-18 and kept verbatim:
 
-## ⚠⚠⚠ BUT READ THIS BEFORE YOU EVER TRUST A PRE-MARKET `priced_in: false` AGAIN
+> **When the plan's catalyst broke after the prior close, the open seat is the first that can
+> actually perform the priced-in test — re-run `move --sessions 5` after the open and treat
+> the pre-market reading as UNPERFORMED, not passed.**
 
-**This is the finding of the run and it is mechanically verified.** It changes nothing today
-and will matter enormously on the first session where a post-close catalyst produces a BUY
-intent.
+✅ **Today that costs nothing, because no candidate reached the priced-in gate** — part 1,
+part 2 and §3 precede it in §4's ordering and disposed of all six. **But the open seat does not
+inherit that for any candidate of its own.**
+⚠ Measured precedent, not theory: **ADDENDUM 2026-11-18** re-ran thirteen names once a
+post-catalyst session had completed and **7 of 13 verdicts flipped; the eligible set went from
+eight names to five; five names were already 4.5–14% LATE** while reading `false` that morning.
 
-**The §4 priced-in filter reads the trailing five COMPLETED sessions.** `bars` returns **no
-2026-11-18 row** at this hour, and `move --sessions 5` reported `to_close` **155.49 for NVDA**
-and **712.975 for MU** — both confirmed by `bars` to be the **2026-11-17** closes.
-**Nvidia reported AFTER that close.**
+⚠ **AND THE `clock` GATE APPLIES TO `move`, NOT ONLY TO `highest_close`.** `move` reads the
+in-progress bar — demonstrated 11-18, when a 15:25 call returned `to_close` **150.87** for NVDA
+while the 07:03 seat had read **155.49**, the 11-17 close: the window had silently rolled onto
+an unfinished bar. **Check `clock` before every `move` call and know which session the window
+ends on.** This seat did so at 07:04:37 and its one reading is clean:
+**NVDA `from_close` 173.85 → `to_close` 150.86, −13.22%, `priced_in: true`** — matching the
+11-18 post-bell reading (150.87 / −13.22%) to a cent, which is what a finished bar looks like.
 
-⚠ **So every `priced_in` verdict computed this morning rests on a window containing ZERO
-post-catalyst sessions.** A `false` does not mean "the market has not repriced this news" — it
-means **"no session has traded since this news,"** which carries no information about lateness
-whatsoever. **Nine of thirteen names "passed" a test that could not have failed**, because the
-complex **sold off into the print** (NVDA itself **−7.88%** over the window; MU −1.64%, VRT
-−2.06%, MRVL −3.60%).
-
-⚠⚠ **SEPARATELY, AND DO NOT CONFLATE THE TWO: the filter is magnitude-based and
-direction-blind.** §4's text is *"moved more than 4%... you are late"*; the script implements
-`abs(move) > 4`. **SMCI read `priced_in: true` after FALLING 13.10%**, as did APH (−4.50%) and
-ETN (−4.86%). **This seat honored all four `true` verdicts as skips and attempted no override** —
-the argument "the filter is direction-blind, so let me buy the one that fell 13%" is averaging
-into weakness in a costume, and §7 forbids averaging down. **It is reported for the human to fix
-in code if they choose; it is not a permission a run may grant itself.**
-
-**OPERATIONAL RULE FOR A FUTURE OPEN SEAT:** when the plan's catalyst broke after the prior
-close, **you are the first seat that can actually perform the priced-in test.** Re-run
-`move --sessions 5` after the open, and treat the pre-market reading as unperformed rather than
-passed.
-
-## SELL intents
-
-**NONE. Zero SELL intents — NO OPERAND, not a pass.**
-
-The satellite sleeve holds **zero positions** and always has. `alpaca.py positions` returns
-exactly one row, the **VOO core** holding, which is **exempt from §5 entirely** — core is not
-sold on news. §5.1 through §5.4 were therefore **not evaluated and could not be**: there is no
-entry price, no `highest_close`, no deadline and no invalidation string in existence.
-
-⚠ **`sell_rule_status` in `positions.md` reads ABSENT, not PASSING.** A rule that cannot fire
-for want of a position is not a rule that was checked and cleared, and the two must not be
-allowed to look alike to the next reader.
-
-⚠ **The §5.1 news check was therefore NOT run on any holding, and no Perplexity query was spent
-on one.** With no position there is no company to check for invalidating news. **This is the
-91st consecutive seat with no operand for §5.**
-
-## REBALANCE intents
-
-**NONE. Core is in band.**
-
-`alpaca.py sleeves` at 07:03: equity **$96,856.26** · core **VOO $66,856.26 = 69.03%** ·
-satellite **0.00%** · cash **$30,000.00 = 30.97%**. `core_in_band: true`,
-`rebalance_needed: false`.
-
-⚠ **`rebalance_delta: 943.12` IS A DISTANCE READOUT, NOT AN ORDER.** It is how far core sits
-from its exact 70% target value (`core_target_value: 67,799.38`), which §2 does not require it
-to hit. The band is **65–75%** and core has **4.03pp of room to the floor**. **Do not buy
-$943.12 of VOO because this field is non-zero.** ⚠ The share count has not changed since the
-2026-09-03 fill; this field tracks **the mark, not the position**, which 11-17's intraday series
-demonstrated by rising 767.98 → 1088.12 and then falling back to 1008.49 on the close.
+⚠ **AND THE FILTER IS DIRECTION-BLIND, WHICH IS NOT A LICENCE.** It tests `abs(move) > 4`, so
+**NVDA reads `true` today by having FALLEN 13.22%.** A name that moves into `true` by collapsing
+has not become more attractive. "The filter is direction-blind, therefore buy the faller" is
+averaging into weakness in a costume, and **§7 forbids averaging down.** For the human to fix in
+code; **no run may grant itself this override.**
 
 ---
 
-## Notes for the open seat
+## SELL intents
 
-1. **Yesterday's official close is confirmed at VOO 672.80** (`bars`, 2026-11-17). ⚠ **The
-   endpoint disagreement is live again — EIGHTH distinct instance, and the widest intraday
-   reading of the series:** `positions.lastday_price` reads **673.19** against the official bar
-   close **672.80** — gap **0.39 / 0.0580%**. **Build P&L and stamp `highest_close` from official
-   `bars` closes only, on one adjustment basis, one call.** A `highest_close` stamped from
-   `lastday_price` and compared against a `bars` close manufactures a phantom move.
-2. ⚠ **`positions.current_price` reads 675.00 — that is a PRE-MARKET INDICATION, NOT A TRADED
-   CLOSE**, and it is what makes live equity (**$96,856.26**) sit **$217.90 above** 11-17's
-   close-basis equity of $96,638.36. **Do not record 675.00 as a close or build a day-change off
-   it.** `bars` returned **no 2026-11-18 row**, which is the correct pre-market shape.
-3. **The in-progress-bar defect is not in play at this hour** (no today-row exists) — but
-   **gate any high-water write on `clock`, never on the shape, presence or apparent stability of
-   the bar.** 11-17 caught the same dated bar at **669.96 and then 670.45 two minutes apart**
-   with the market open; a finished close does not change between pulls. ⚠ **All three of
-   11-17's partial prints read LOW against the official 672.80, and so did 11-16's — TWO
-   SESSIONS IS NOT A RULE. Do not treat "partials read low" as a correction factor.**
-4. **Ledger reconciled on three sides and it AGREES.** `positions` returns exactly one row
-   (VOO, qty 99.046311231, avg entry 706.74); `sleeves` reports satellite `count: 0`;
-   `positions.md` carries zero satellite blocks under **Open positions**. **No discrepancy, so
-   no repair was owed and none was performed.**
-5. **No open incidents.** `alerts.md` carries nothing OPEN and nothing SYSTEMIC. Selftest
-   **5/5, exit 0**.
-6. **The corpus-size finding is unchanged and still needs the human, not a run.**
-   `positions.md` is ~334KB describing an empty ledger and is unreachable by the monthly
-   rollover. **No run has standing to truncate it.** This seat added the shortest digest it
-   could and **claims no collapse ratio** — the line count is the wrong instrument.
-7. ⚠ **This seat deliberately avoided the agent-authored "rule (iii)…(viii)" shorthand** and
-   wrote its five rejections in §3/§4's own language instead, naming prior findings by date and
-   content. That is a direct response to the **second standing item in `weekly_review.md`** —
-   that the taxonomy carries most of the rejection load while existing nowhere in `strategy.md`.
-   **It is a response to the ask, not a new rule, and it binds no later seat.**
+**NONE — and §5 had NO OPERAND, which is not the same as §5 passing.**
+
+`positions.md` lists **zero satellite positions** and `alpaca.py positions` returns **one row,
+VOO 99.046311231 sh @ 706.74**, the designated §2 core, which is **§5-exempt** and deliberately
+not tracked in `positions.md`. **The two agree; there was nothing to reconcile.**
+
+All four sell rules are **ABSENT, NOT PASSING**:
+
+| Rule | Status | Why |
+|---|---|---|
+| §5.1 thesis invalidation | **ABSENT** | No invalidation string exists, because no thesis has ever been accepted. **No per-name news check was run or owed** — there is no name to check. |
+| §5.2 time stop | **ABSENT** | No timing window and no deadline exist. |
+| §5.3 hard stop (−7% from entry) | **ABSENT** | No entry price exists. |
+| §5.4 trailing stop (−10% from `highest_close`) | **ABSENT** | No `highest_close` exists, and no mark was raised because there is nothing to raise. |
+
+**95th consecutive absent seat; 81st absent date.** ⚠ The §5.4 staleness detector and the
+`highest_close` backfill branch remain **UNPROVEN CODE** — the first satellite position will be
+their first live test.
+
+---
+
+## REBALANCE intents
+
+**NONE — core is in band. Do not place a rebalance order today.**
+
+`alpaca.py sleeves` at 07:01 ET:
+
+```
+equity            97,318.81
+cash              30,000.00
+core  VOO         67,318.81   69.17%
+satellite                 0    0.00%  (count 0)
+cash_pct                       30.83%
+core_in_band      true
+rebalance_needed  false
+core_target_value 68,123.17
+rebalance_delta      804.36
+```
+
+**Core 69.17% sits inside §2's 65–75% band — 4.17pp above the floor, 5.83pp below the ceiling.
+`rebalance_needed: false`. NO REBALANCE IS DUE.**
+
+⚠⚠ **`rebalance_delta: 804.36` IS A DISTANCE READOUT, NOT AN ORDER.** It is the dollar gap to
+the 70% *target*, which §2 only requires closing once the band is **breached**. A seat that
+reads this field as an instruction will buy VOO for no reason. **The share count has been
+unchanged since the 2026-09-03 fill and must stay unchanged today.**
+
+⚠ **THIS SLEEVE READ IS ON A PRE-MARKET MARK AND THE OPEN SEAT MUST RE-READ IT.**
+`positions.current_price` is **679.67** against a **671.26** official 11-18 close — a
+**+1.253%** pre-market gap on thin volume, which is what carries equity from the 11-18
+close-basis **$96,485.83** to the **$97,318.81** above. **The entire $832.98 difference is the
+mark, not a flow:** cash is exactly $30,000.00 and the share count is identical.
+**Re-run `sleeves` after the open and act on that, not on this.**
+
+⚠ **ENDPOINT DISAGREEMENT, TWELFTH INSTANCE — AND THE NARROWEST YET, WHICH IS NOT A FIX.**
+`positions.lastday_price` **671.31** vs official `bars` **671.26** for 11-18 =
+**0.05 / 0.0074%**. Prior instances ran **0.10–0.42**. The spread has narrowed and widened
+before; §5.4 still reads from the endpoint that is wrong. **Build P&L and stamp `highest_close`
+from official `bars` closes only, one adjustment basis, one call.**
+
+---
+
+## What the open run should actually do today
+
+1. **Check `plan_date` above is `2026-11-19`.** If it is not, this plan is stale — log it, alert,
+   and go straight to the core/rebalance section.
+2. **Re-run `alpaca.py sleeves` after the open.** The figures here are on a pre-market mark that
+   gapped **+1.25%**. Core was **69.17%** and in band; confirm it still is on a real session
+   print. **If and only if it is outside 65–75%, rebalance to 70% and log it.** Otherwise place
+   no core order — and do not read `rebalance_delta` as one.
+3. **Execute no BUY intents, because there are none.** Six theses, six rejected.
+4. **Execute no SELL intents, because there are none and §5 has no operand.**
+5. **If the open seat considers any candidate of its own, the priced-in test on today's catalyst
+   is UNPERFORMED, not passed** — check `clock`, then re-run `move --sessions 5` on a window
+   that contains the 11-19 session, and remember the filter is direction-blind.
+6. **Confirm no order is non-terminal.** `orders --status all` has returned exactly one order in
+   this account's entire history (the 2026-09-03 core fill, terminal). **§7 overnight exposure is
+   structurally zero and should stay that way.**
+
+---
+
+## Carried to the open seat verbatim
+
+- ⚠ **ROUTINE 2's SCHEDULE: THE ASK IS ALREADY WITH THE HUMAN. DO NOT RE-SEND.** Across
+  11-02 → 11-18, routine 2 has been able to execute on exactly **one** session (11-13, 10:43);
+  on every other session the only run licensed to open positions fired into a closed market, and
+  on 11-16 it did not fire at all. **It has not yet cost a trade — every one of those plans
+  carried zero intents, as does this one — so the damage to date is zero and the exposure is
+  entirely forward-looking.** Re-send only if the pattern changes in a way that changes what the
+  human must fix. **A repeat pre-bell firing is not new information.** Per `control.md` this is
+  **recorded, not diagnosed.**
+- ⚠ **`--adjustment all` IS NOT A TOTAL-RETURN SERIES ON THIS FEED.** Verified 2026-11-13:
+  adjusted and unadjusted closes identical to the cent on 259 of 260 sessions, across all four
+  VOO ex-dividend dates. **Any review using the flag's output understates the benchmark and
+  flatters the agent.** True 12-month VOO total return is **+14.615%**.
+- ⚠ **The paper broker does not pay dividends.** Cash is exactly **$30,000.00**, not $30,180.52 —
+  the 2026-09-28 VOO distribution ($1.8226 × 99.0463 = **$180.52**) was never credited. The core
+  sleeve is structurally short **~1.07%/yr** against any honest total-return benchmark. **A run
+  cannot fix this.**
+- ⚠ **DO NOT MISREAD `delete-on-merge` AS A PUSH FAILURE.** An automation merges each session
+  branch into `main` and deletes the branch, so `git ls-remote --heads origin` will show your
+  branch gone on a **successful** run. **The correct check is
+  `git merge-base --is-ancestor <sha> origin/main`**, not whether your branch still exists.
+- ⚠ **DO NOT PUBLISH A SUPERLATIVE ABOUT THIS ACCOUNT'S HISTORY WITHOUT RANKING IT FIRST, AND
+  RANK OFF A CLOSE, NOT A PARTIAL BAR.** Two seats have published false superlatives; one reached
+  ClickUp and needed a correction comment.
