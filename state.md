@@ -86,6 +86,22 @@ core **68.45%** — it is built on `positions.current_price` **657.20**, an afte
 `week_of`, **no reset**, cap **0 of 3**. Breaker **INACTIVE 0/3**, no alert owed or posted.
 `control.md`: **`TRADING_ENABLED: true`, `HALT_CLEARED_AT: none`**, Notes empty.
 
+**NO NOTIFICATION WAS SENT, AND THAT IS DELIBERATE.** No stop breached, no exit owed, nothing
+unverified, no order non-terminal, no incident open in `alerts.md`, breaker inactive, core in band,
+**zero positions at risk**, and the daily summary landed in ClickUp (`86bd5cb9c`) — which is the
+channel the human reads for the daily, not the pager.
+⚠ **The two candidates were weighed and both declined.** (a) **The day's superlatives** —
+2nd-worst of 55 and the lowest equity print on record — are real and close-verified, but they are
+an index drawdown in a sleeve §2 holds permanently and does not trade on news; **core is in band,
+so not even a rebalance is owed. There is no decision for the human to make.** (b) **Routine 4's
+−45-min firing** is this routine's own defining-job hazard and is **human-fixable** — but it is the
+**14th consecutive session** on this shape, `control.md` says timestamps are **recorded, not
+diagnosed**, this seat **handled it correctly by holding for the bell**, and the exposure is **zero
+while the ledger is empty.** Item 1's precedent governs: **re-send only if the behaviour changes in
+a way that changes what the human must fix.** It has not.
+⚠ **Re-pinging a standing item daily is how a human learns to ignore the channel.** All of it is
+in the ClickUp summary under *Needs a human* and in `weekly_review.md`.
+
 ## Carry forward
 
 1. ⚠⚠ **ROUTINE 2's SCHEDULE: THE ASK IS WITH THE HUMAN. DO NOT RE-SEND.** 11-19 was the **14th
