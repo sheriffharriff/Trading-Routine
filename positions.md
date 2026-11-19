@@ -188,6 +188,49 @@ THE WRITE — the one line this corpus keeps getting wrong.** File was **353,407
 seat read it; the measured delta is stamped in `state.md`. **A seat is not entitled to collapse
 prose three other seats wrote, and "deliberately short" does not make an addition free.**
 
+**— `3-midday-management` seat appended 11:41 ET. Absent-seat ordinal 97th; absent dates still 81 (today already counted). —**
+⚠⚠ **FIRST SEAT TODAY WITH THE MARKET ACTUALLY OPEN.** `clock` **11:41:21** — `is_open: true`,
+`next_close` **2026-11-19T16:00**, `next_open` **2026-11-20T09:30** (tomorrow): the unambiguous
+mid-session signature. **This run is EXITS-ONLY by its own prompt and may not open a position.**
+
+**§5 RE-EVALUATED HERE, NOT INHERITED — ALL FOUR RULES ABSENT, NOT PASSING. ZERO EXITS, and
+that is the absence of a subject, not four clean bills of health.** No entry price, no
+`highest_close`, no deadline, no invalidation string. **Step 2 (high-water repair) and Step 3
+(§5.1–5.4) both had NO OPERAND: no mark to backfill, no `(as of …)` date to compare, no
+per-name news check run or owed — there is no name. No `perplexity` call was made.**
+**Ledger reconciled a THIRD time today and AGREES:** `grep -ci 'status: *open'` → **0**;
+`positions` → **one row, VOO 99.046311231 sh @ 706.74**, §5-exempt core, struck from the
+working list rather than cleared.
+
+⚠⚠ **SLEEVES ON THE FIRST REAL SESSION PRINT OF THE DAY — AND THIS IS THE USEFUL NUMBER THE
+TWO MORNING SEATS COULD NOT PRODUCE.** Equity **$96,577.94**, core **$66,572.99 = 68.93%** /
+satellite **0.00%** / cash **$30,000.00 = 31.06%**. `core_in_band: true`,
+`rebalance_needed: false` — **3.93pp above the §2 65% floor, 6.07pp below the ceiling.**
+**No rebalance due, and the midday run could not place one in any case.** ⚠
+`rebalance_delta: 1031.57` is **a distance readout to the 70% target, not an order.**
+⚠⚠ **THE PRE-MARKET MARKS WERE HIGH, AND BY MOST OF A POINT: VOO reads 672.27 against the
+official 11-18 close 671.26 = **+0.150%**, where 07:01 read +1.253% and 08:36 read +0.995%.
+So the morning seats' 69.17% / 69.12% core figures OVERSTATED the live 68.93% by ~0.2pp and
+their equity by ~$570.** **Cash is exactly $30,000.00 and the share count is unchanged since
+the 2026-09-03 fill — every bit of that movement was the mark, never a flow.** This is item
+5's variance hazard arriving on the *sleeve* read instead of on `highest_close`; harmless
+while the band is this wide, **load-bearing on the day core sits inside a point of 65%.**
+
+**§7 ORDER VERIFICATION, CHECKED AT THIS SEAT:** `orders --status open` → **`[]`**;
+`orders --status all` → **exactly one order in this account's history**, the 2026-09-03 core
+fill (`d177d8f0`, filled 99.046311231 @ 706.74, `filled`). **Nothing non-terminal.**
+
+⚠ **SCHEDULE, RECORDED AND NOT DIAGNOSED (`control.md`): this seat fired 11:41 ET against a
+12:30 ET schedule — ~49 min early, mid-session, and it COST NOTHING.** 11:41 is also the exact
+firing time logged on 11-18, 11-17, 11-16, 11-11, 11-10, 11-06, 11-05 and 11-04, so **this is
+the established pattern, not a new fault, and nothing is owed to the human for it.** ⚠ Unlike
+routine 2's pre-bell problem, an early midday firing lands **inside** the session, which is the
+only window this run needs.
+
+⚠ **NOTHING COLLAPSED, NO COLLAPSE RATIO CLAIMED, OWN COST COUNTED AFTER THE WRITE.** File was
+**357,590 B** when this seat read it — **the third seat today to add to the file that IS the
+standing finding**; the measured delta is stamped in `state.md`.
+
 ### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-11-18, **DIGEST CLOSED BY THE CLOSE SEAT.** Seats that appended: `1-premarket` 07:03 · `2-market-open` **08:35** · `3-midday` **11:41** · `4-market-close` **15:16** ⚠ **PRE-CLOSE, `is_open: true`, 44 min before the bell — INSURANCE WRITE FIRST, HOLD FOR THE BELL SECOND.** ⚠ **The two morning seats were PRE-OPEN, `is_open: false` — 07:03 was 147 min before the bell, 08:35 was 55 min before it, and NEITHER COST ANYTHING: the pre-market seat places no orders by design and the open seat had ZERO intents to place.** ⚠ Absent-seat ordinals: 07:03 **91st** · 08:35 **92nd** · 11:41 **93rd** · this close **94th**; absent dates **80** (today counted once — four seats of one empty day is one fact about the ledger, not four). ⚠⚠ **NOTHING WAS COLLAPSED AND NO COLLAPSE RATIO IS CLAIMED.** This file is itself the standing systemic finding at **~341KB describing an empty ledger**, so this seat added the least it could and left the three seats above it untouched.)
 
 **Wednesday, an ordinary full session.** `clock` **07:03:10** — `is_open: false` with **both**
