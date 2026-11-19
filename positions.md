@@ -3805,3 +3805,31 @@ those blocks carried are preserved here:
 - **The 09-11 Alpaca data-plane outage is resolved** (every endpoint 200 at the 09-11 close, probed
   by hand), **but `selftest.py` still does not probe `clock` or market data** — a green pre-flight
   certifies nothing about the data plane. Probe by hand before relying on a price.
+
+---
+
+### 2026-11-19 15:15 ET — 4-market-close-journal — reconciliation (PROVISIONAL, pre-close)
+
+**Zero satellite blocks** (`grep -ci 'status: *open'` → 0) vs **one** Alpaca row (VOO
+99.046311231 sh @ 706.74 entry, §2 core, §5-exempt and deliberately untracked here). **They
+agree — 4th reconciliation of 2026-11-19, 4th agreement.**
+
+**STEP 2 HAD NO OPERAND.** No `highest_close` exists on any name, so none was raised and no
+`(as of …)` date was advanced. ⚠ **Nothing is owed for 2026-11-19 and nothing is deferred** —
+the next run has no backfill to perform for this date.
+
+⚠ **AND IT COULD NOT HAVE BEEN DONE IF IT HAD BEEN OWED.** This seat fired **15:15 ET with
+`clock is_open: true`**; the 11-19 VOO bar was in progress (`c` 658.61, `n` 2,302, `v` 98,567,
+against a session high of 679.99). **The `clock` gate was CLOSED to any `highest_close` write
+for the whole of this seat's pre-bell window.** The remedy used is the 11-18 procedure — hold
+for the bell, confirm the post-bell `clock` signature, pull the finished bar — and that remedy
+is **a convention in these files, not code.**
+
+⚠ **Today's demonstration of the mark hazard, for whoever arms §5.4 first:** the 07:01 pre-market
+seat read VOO **679.67**, within **0.047%** of the session high **679.99**, and price is now
+**3.14%** below it. A satellite `highest_close` stamped from that seat would sit a hair under the
+day's top and would have moved the §5.4 trigger 3.1% closer **in the selling direction**.
+
+**§5 status: ABSENT ON ALL FOUR RULES, NOT PASSING** — no invalidation string, no timing window,
+no entry price, no `highest_close`. **98th absent seat, 81st absent date.** All four remain
+**untested code paths.**
