@@ -134,6 +134,60 @@ than argued by the agent.** Breaker **INACTIVE 0/3**; week anchor **2026-11-16**
 `isocalendar`, matches, **no reset**; cap **0 of 3**. **Every §6/§7 gate was open — the candidates
 blocked the trade, not the system.**
 
+**— `2-market-open-execution` seat appended 08:36 ET. Absent-seat ordinal 96th; absent dates still 81 (today already counted). —**
+`clock` **08:36:05** — `is_open: false`, `next_open` **2026-11-19T09:30:00-05:00**, `next_close`
+**2026-11-19T16:00:00-05:00**: **both carry TODAY, the pre-market full-session signature, NOT a
+holiday.** 54 min before the bell. ⚠ **§7 forbids trading while the market is closed, so this
+seat placed NOTHING — compliance, not a missed run.** ⚠⚠ **AND IT COST NOTHING: `plan_today.md`
+is dated **2026-11-19**, the staleness gate PASSED (no stale-plan alert owed, none posted), and
+it carries ZERO BUY, ZERO SELL and ZERO REBALANCE intents. There was no order for the closed
+market to prevent.** The hold-for-the-bell procedure is conditional on an intent existing; with
+none, **the hold was NOT due and no insurance/poll cycle was performed.**
+
+**§5 RE-EVALUATED AT THIS SEAT, NOT INHERITED — ALL FOUR RULES STILL ABSENT, NOT PASSING.** No
+operand: no entry price, no `highest_close`, no deadline, no invalidation string. **No mark
+raised, no `(as of …)` date advanced, no per-name news check run or owed.** **Ledger reconciled
+a second time today and AGREES:** this file lists zero satellite blocks (`grep -ci 'status:
+*open'` = **0**); `positions` returns **one row, VOO 99.046311231 sh @ 706.74**, §5-exempt core.
+
+**SLEEVES RE-READ AS THE PLAN INSTRUCTED — STILL IN BAND, NO ORDER PLACED.** Equity
+**$97,147.46**, core **$67,147.46 = 69.12%** / satellite **0.00%** / cash **$30,000.00 =
+30.88%**. `core_in_band: true`, `rebalance_needed: false` — **4.12pp to the §2 65% floor, 5.88pp
+to the ceiling. NO REBALANCE DUE.** ⚠ `rebalance_delta: 855.77` is **a distance readout to the
+70% target, not an order.** ⚠ **STILL A PRE-MARKET MARK, just a smaller one:** `current_price`
+**677.94** vs the official 11-18 close **671.26** = **+0.995%** (the 07:01 seat read 679.67 /
++1.253%). The whole **$661.63** gap to the 11-18 close basis **$96,485.83** is the mark —
+**cash is exactly $30,000.00 and the share count is unchanged since the 2026-09-03 fill.**
+
+**§7 ORDER VERIFICATION, CHECKED AT THIS SEAT:** `orders --status open` → **`[]`**;
+`orders --status all` → **exactly one order in this account's entire history**, the 2026-09-03
+core fill (`d177d8f0`, filled 99.046311231 @ 706.74, status `filled`). **Nothing non-terminal.
+Overnight exposure is structurally zero.**
+
+⚠ **ENDPOINT DISAGREEMENT — SAME INSTANCE AS THE 07:01 SEAT'S, NOT A THIRTEENTH.**
+`lastday_price` **671.31** vs official `bars` **671.26** for 11-18 = **0.05 / 0.0074%**,
+identical at both seats. **A second observation of one instance is not a new instance, and
+counting it as one would inflate a trend the human is being asked to act on.**
+✅ **And the 11-18 bar is byte-identical a third time: `c` 671.26, `n` 2,671, `v` 88,905.** **A
+finished bar does not move.** `bars` returns **no 11-19 row** — the pre-market shape, confirmed
+from the data side as well as from `clock`.
+
+⚠ **THE PRICED-IN WINDOW IS STILL PRE-EVENT AND THIS SEAT DID NOT PERFORM THE TEST — because
+it had nothing to test.** No `move` call was made: **zero intents and zero candidates of this
+seat's own.** Item 12's rule is **undischarged, not failed** — it never became due. ⚠ **A seat
+with a live intent on a post-close catalyst still owes the post-open re-run.**
+
+⚠⚠ **ROUTINE 2's SCHEDULE — 14th pre-bell firing across 11-02 → 11-19; routine 2 could execute
+on exactly ONE session in that stretch (11-13, 10:43). STILL ZERO COST TO DATE: every one of
+those plans carried zero intents, today's included.** ⚠ **THE ASK IS ALREADY WITH THE HUMAN —
+NOT RE-SENT, and a repeat pre-bell firing is not new information.** Per `control.md`, **recorded,
+not diagnosed.**
+
+⚠⚠ **NOTHING COLLAPSED, NO COLLAPSE RATIO CLAIMED, AND THIS SEAT'S OWN COST IS COUNTED AFTER
+THE WRITE — the one line this corpus keeps getting wrong.** File was **353,407 B** when this
+seat read it; the measured delta is stamped in `state.md`. **A seat is not entitled to collapse
+prose three other seats wrote, and "deliberately short" does not make an addition free.**
+
 ### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-11-18, **DIGEST CLOSED BY THE CLOSE SEAT.** Seats that appended: `1-premarket` 07:03 · `2-market-open` **08:35** · `3-midday` **11:41** · `4-market-close` **15:16** ⚠ **PRE-CLOSE, `is_open: true`, 44 min before the bell — INSURANCE WRITE FIRST, HOLD FOR THE BELL SECOND.** ⚠ **The two morning seats were PRE-OPEN, `is_open: false` — 07:03 was 147 min before the bell, 08:35 was 55 min before it, and NEITHER COST ANYTHING: the pre-market seat places no orders by design and the open seat had ZERO intents to place.** ⚠ Absent-seat ordinals: 07:03 **91st** · 08:35 **92nd** · 11:41 **93rd** · this close **94th**; absent dates **80** (today counted once — four seats of one empty day is one fact about the ledger, not four). ⚠⚠ **NOTHING WAS COLLAPSED AND NO COLLAPSE RATIO IS CLAIMED.** This file is itself the standing systemic finding at **~341KB describing an empty ledger**, so this seat added the least it could and left the three seats above it untouched.)
 
 **Wednesday, an ordinary full session.** `clock` **07:03:10** — `is_open: false` with **both**
