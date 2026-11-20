@@ -84,6 +84,34 @@ check that the pull returned the right session. A stored baseline is a *label*, 
 ## Open positions
 
 *(none — no **satellite** positions have been opened yet. Core VOO exists and is deliberately not tracked here, per the top-of-file rules and the fill note further down.)*
+
+### `sell_rule_status` — 2026-11-20 07:01 ET `1-premarket-research` — ALL FOUR RULES **ABSENT, NOT PASSING**
+
+**Ledger reconciled, AGREES.** Zero satellite blocks here (`grep -ci 'status: *open'` → 0) vs **one**
+Alpaca row — VOO 99.046311231 sh @ 706.74, the §2 core, §5-exempt, **struck from the working list,
+not cleared**. `clock` 07:02:16 `is_open: false`, **both** dates **2026-11-20** — pre-market full
+session, not a holiday; re-read 07:04:48, unchanged. **Pre-open, 148 min before the bell; it costs
+nothing — this seat places no orders by design.**
+
+| Rule | Status | Distance to trigger |
+|---|---|---|
+| §5.1 invalidation | **ABSENT** | No invalidation string exists (293 IDs, 0 accepted). **No per-name news check run or owed — there is no name.** |
+| §5.2 time stop | **ABSENT** | No timing window, no deadline. |
+| §5.3 hard stop −7% | **ABSENT** | No satellite entry price. |
+| §5.4 trailing −10% | **ABSENT** | No `highest_close` exists; nothing to raise, no `(as of …)` to advance. |
+
+**99th absent seat, 82nd absent date.** ⚠ §5.4's staleness detector and the `highest_close` backfill
+branch remain **UNPROVEN CODE**; all four rules are **untested paths**.
+
+**Core, context only (NOT a §5 subject):** official 11-19 close **VOO 658.05** (`bars`, `n` 2,902,
+`v` 132,178). Close basis: equity 95,177.43, core **68.4799%** IN BAND. ⚠ 07:02 `sleeves` read
+68.35% off a **654.05 midpoint — not a close**; in band on both. ⚠ Endpoint gap, **13th distinct
+instance and narrowest on record**: `lastday_price` 658.01 vs `bars` 658.05 = **0.04 / 0.0061%**.
+
+⚠ **Cost of this block, measured with `stat -c%s` AFTER the write, not claimed from intent:**
+**this digest added 1,943 B** (vs 4,281 / 4,183 / 3,299 / 3,120 B for the four seats of 11-19 — the smallest addition of the recent run, and still not free). This seat **collapsed nothing and claims no collapse ratio** — a
+pre-market seat is not entitled to rewrite other seats' prose. This file remains the standing
+systemic finding: it describes an **empty ledger**.
 ### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-11-19, **DIGEST OPEN — `1-premarket` 07:01.** The three later seats append below; the close seat closes it. ⚠ Absent-seat ordinal: 07:01 is the **95th**; absent dates **81**. ⚠ **PRE-OPEN, `is_open: false` 149 min before the bell — and it cost nothing: the pre-market seat places no orders by design.** ⚠⚠ **DELIBERATELY WRITTEN AS SHORT AS THIS SEAT CAN MAKE IT, AND NO COLLAPSE RATIO IS CLAIMED BECAUSE NOTHING WAS COLLAPSED.** This file is itself the standing systemic finding — **it was 348,696 B / 340.5 KiB describing an empty ledger when this seat read it, re-measured here with `wc -c`, not inherited** — so this seat **added the least it could and touched no prior seat's prose.** A pre-market seat is not entitled to collapse other seats' writing. ⚠⚠ **AND THE COST OF THIS BLOCK IS COUNTED AFTER THE WRITE, NOT CLAIMED FROM INTENT, BECAUSE THAT IS THE ONE LINE THIS CORPUS KEEPS GETTING WRONG: the file is now 352,977 B. THIS DIGEST ADDED 4,281 B TO A FILE THAT IS ALREADY THE PROBLEM.** Writing "deliberately short" does not make an addition free, and a seat that says so without measuring is doing the same thing nine prior seats were caught doing.)
 
 **Thursday, an ordinary full session.** `clock` **07:01:46** — `is_open: false` with **both**
