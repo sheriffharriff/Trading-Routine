@@ -13,8 +13,8 @@ The block below is parsed by `scripts/common.py` and gates real behavior
 of it a `last_run:` *value* that had grown into a multi-thousand-byte paragraph. A value that
 
 ```
-last_run: 2026-11-20 11:41 ET 3-midday-management — selftest 5/5 exit 0. ✅ MARKET OPEN: clock 11:41:44 is_open true, next_close 2026-11-20T16:00, next_open 2026-11-23T09:30 (Monday) — 131 min into the session, 259 min to the bell. Fired ~49 min early against a stated 12:30; HARMLESS and materially unlike routine 2's fault — an early midday seat still lands INSIDE the session, so it loses no capability. Recorded, NOT diagnosed (control.md forbids diagnosing schedule faults from run timestamps). ⚠⚠ THIS SEAT IS EXITS-ONLY AND HAD NO OPERAND: ZERO satellite positions, so Steps 2 (high-water repair), 3 (§5 evaluation), 4 (execute exits) and 5 (update holds) were each a no-op for the SAME reason — there is no name. NOT ONE §5 RULE WAS EVALUATED, because all four are ABSENT, not passing: no invalidation string, no timing deadline, no satellite entry price, no highest_close. §5.1 news check NOT RUN AND NOT OWED — no company to query. NO BACKFILL PERFORMED OR OWED: no highest_close exists, so there was no stale (as of …) date to detect and nothing to re-pull. 101st absent seat, 82nd absent date (today already counted). ⚠ And §5.4's staleness detector plus the backfill branch remain UNPROVEN CODE for a 101st seat. ZERO ORDERS PLACED — not a halt, not a block, not a refusal; this run is forbidden to open a position by its own prompt and had nothing to close. §7 CLEAN: orders --status open → [], account history still the single 2026-09-03 core fill. Ledger reconciled, AGREES (grep -c '^symbol:' / 'status: *open' → 0 satellite blocks vs 1 Alpaca row = core VOO 99.046311231 @ 706.74, unrealized −5,933.62 / −8.477%, §2 core, §5-EXEMPT, STRUCK from the working list not cleared — and NOT a 5.3 candidate at −8.5% precisely because §5 does not reach it). Week anchor 2026-11-16 re-derived with isocalendar (2026-W47 wd 5), MATCHES, no reset; cap 0 of 3, breaker INACTIVE 0/3, halt none. Core 68.1076% IN BAND on the 11:41 midpoint basis (646.8325) — ⚠ a MIDPOINT, NOT A CLOSE (item 15), and today's bar is IN PROGRESS (c 646.85, n 1,559, v 67,720), so the item-5 clock gate FAILS and no mark could have been stamped even had one been owed. Floor headroom 3.1076pp, NARROWED AN 8TH READ RUNNING (3.2223pp at 08:36); band PROVABLY UNREACHABLE TODAY, computed not assumed — 65% floor breaks at VOO 562.51 (−13.04%), 75% ceiling at 908.67 (+40.48%). Rebalance is routine 2's to place in any case, not this seat's. Endpoint gap on the 11-19 session re-read (lastday_price 658.01 vs bars 658.05) — SAME 13th instance, NOT a 14th: the counter advances on sessions, not on reads. state.md is the ONLY file written; positions.md 0 B added for the SECOND CONSECUTIVE SEAT. No notification sent and no ClickUp alert posted — both deliberate and both explained below.
-prior_run: 2026-11-20 08:36 ET 2-market-open-execution — MARKET CLOSED at the seat (is_open false, both clock dates today = pre-market full session, not a holiday), 15TH CONSECUTIVE PRE-BELL FIRING of the only run licensed to open positions, −54 min against a stated 09:35. ZERO ORDERS; the skip cost nothing because plan_date 2026-11-20 passed the staleness gate carrying ZERO BUY / ZERO SELL / ZERO REBALANCE intents. Core in band on all three bases; 100th absent seat.
+last_run: 2026-11-20 15:15 ET 4-market-close-journal — ⚠⚠ INSURANCE PASS, PARTIAL BASIS, HOLD FOR THE BELL PENDING WHEN THIS WAS WRITTEN. If this line still says PARTIAL, the second commit did not land (the 2026-11-13 failure shape) and the 2026-11-20 price leg must be backfilled from `bars`. Selftest 5/5 exit 0. ✅ MARKET OPEN at the seat: clock 15:15:31 is_open true, next_close 2026-11-20T16:00, next_open 2026-11-23T09:30 (Monday) — 45 min BEFORE THE BELL, the 15th consecutive EST session on the −1h shape. Recorded, NOT diagnosed (control.md forbids diagnosing schedule faults from run timestamps). ⚠⚠⚠ THIS RUN'S HEADLINE JOB — Step 2, stamping today's closes into highest_close so the §5.4 trailing stop keeps working — HAD NO OPERAND: ZERO satellite positions. positions.md holds 0 open blocks (grep -ci 'status: *open' → 0, grep -c '^symbol:' → 0) and the 151 highest_close strings in it are ALL template/narrative text with NO '(as of …)' date anywhere (grep -o "highest_close:[^(]*(as of [0-9-]*)" → empty). NO MARK TO RAISE, NO DATE TO ADVANCE, AND NO BACKFILL OWED. 102nd absent seat, 83rd absent date. ⚠⚠ AND NOTE WHICH THING PROTECTED THE MECHANISM: firing 45 min early put this seat MID-BAR BY CONSTRUCTION, exactly where item 5 makes a highest_close write UNLAWFUL — so had a position existed, the clock gate would have FORBIDDEN the stamp and the hold would have been REQUIRED to do the primary job at all. It was the EMPTY LEDGER, for a 4th consecutive seat, that made a mis-stamp impossible, NOT the gate. ⚠ ITEM 5 DEMONSTRATED ITSELF LIVE THIS RUN: the same dated VOO bar read c 637.855 then 638.340 minutes apart (+0.0761% drift), and the account line was already being composed off the first reading. ZERO TRADES: no orders placed, no fills, no exits, nothing closed — not a halt and not a block. §7 CLEAN: orders --status all returns EXACTLY ONE order in the account's whole history, the 2026-09-03 VOO core fill, status filled, terminal — so NOTHING IS IN LIMBO OVERNIGHT. Ledger reconciled, AGREES (0 satellite blocks vs 1 Alpaca row = core VOO 99.046311231 @ 706.74, unrealized −9.68% on the partial — §2 core, §5-EXEMPT, STRUCK from the §5 working list not cleared, and NOT a §5.3 candidate at −9.7% precisely because §5 does not reach it). Research: 5 theses T-2026-11-20-01…-05, ZERO accepted, FIVE rejected, 4 of 5 dying in §4 part 1/part 2 (mechanism/materiality), not at the priced-in filter or §3 — corpus now 293 IDs, 0 ever accepted. Week anchor 2026-11-16 re-derived with isocalendar (2026-W47 wd 5), MATCHES, no reset; cap 0 of 3, breaker INACTIVE 0/3, halt none. 7TH CONSECUTIVE DOWN SESSION on the index and today is the largest of the streak: VOO 658.05 → 638.34 partial, −2.9952% (streak: −0.3165 · −0.4296 · −1.8310 · −1.1112 · −0.2289 · −1.9679 · −2.9952p). Core 67.7922% IN BAND on the 15:15 PARTIAL basis — ⚠ a MIDPOINT/UNFINISHED BAR, NOT A CLOSE (item 15). Floor headroom 2.7922pp, NARROWED A 9TH READ RUNNING (3.9074 → 3.9300 → 3.4983 → 3.4799 → 3.3500 → 3.2223 → 3.1076 → 2.7922); band PROVABLY UNREACHABLE TODAY, computed not assumed — 65% floor breaks at VOO 562.51 (a further −11.77%), 75% ceiling at 908.67 (+42.5%). NO REBALANCE DUE MONDAY, and a rebalance is routine 2's order to place in any case. PROVISIONAL RANK, NOT PUBLISHED AS FINAL: 2nd-worst of 55 close-to-close sessions behind 2026-11-05's −3.0586%, margin 1.0075pp — ranked from bars across all 55 sessions (the account is a pure VOO+$30,000 function, so the ranking is exact), NOT scavenged from journal prose, and explicitly held back from the published summary until the official close exists per item 3. Files written this pass: journal.md +8,744 B (MANDATORY in the insurance commit per item 2 — that scoping error is what cost 2026-11-13), positions.md +1,447 B HEADER-ONLY measured with stat -c%s (today's digest closed; 11-19's false "DIGEST OPEN" header corrected — its own close seat never closed it), state.md rewritten. No ClickUp task posted at this pass and no notification sent — the summary is deliberately held for the official close so it is published once, on a close basis, rather than published partial and corrected by comment as 11-17 had to be.
+prior_run: 2026-11-20 11:41 ET 3-midday-management — MARKET OPEN (is_open true, 131 min in, 259 min to the bell), fired ~49 min early against a stated 12:30 — the HARMLESS rung of the schedule fault, an early midday seat still lands INSIDE the session. EXITS-ONLY RUN WITH NO OPERAND: zero satellite positions, Steps 2/3/4/5 each a no-op for the SAME reason. All four §5 rules ABSENT, not passing. 101st absent seat. §7 clean, ledger agreed, core 68.1076% in band on an 11:41 midpoint. state.md the only file written; positions.md 0 B.
 week_of: 2026-11-16
 new_positions_this_week: 0
 consecutive_closed_losses: 0
@@ -22,9 +22,9 @@ circuit_breaker: INACTIVE
 halt_triggered_at: none
 core_established: true
 core_ticker: VOO
-core_pct: 68.1076
+core_pct: 67.7922
 satellite_pct: 0.0
-cash_pct: 31.8924
+cash_pct: 32.2078
 open_thesis_ids: none
 ```
 
@@ -307,6 +307,56 @@ entirely.**
   divergence here is smaller than the 07:02 pre-market case (0.13pp off a thinner book) in pp terms
   but rests on a mark that will keep moving for another 259 minutes.** **Still cosmetic on core;
   still load-bearing the moment a satellite position exists.**
+
+### ⚠ Updates to the items above, from the 2026-11-20 15:15 ET close seat (INSURANCE PASS)
+
+- **Item 1 (schedule).** **STILL WITH THE HUMAN. NOT RE-SENT — no new evidence and this seat has no
+  standing.** ✅ **Routine 4's own case re-confirmed as the THIRD, DISTINCT rung and it must not be
+  folded into routine 2's:** a close seat firing −45 min **can** hold for the bell, so its cost is a
+  hold plus the risk of a partial-basis publication, **not a missed window.** ⚠⚠ **But this run adds
+  the sharpest version of that cost yet recorded, and it is worse than "cosmetic": had a satellite
+  position existed, item 5's `clock` gate would have made the 15:15 `highest_close` stamp UNLAWFUL,
+  so the −45 min firing would have left this routine's PRIMARY function undeliverable without the
+  hold.** The hold stops being a nicety and becomes **load-bearing** the day the ledger is non-empty.
+  **That is new and belongs in front of the human with the routine-2 ask.**
+- **Item 2 (insurance commit must carry `journal.md`).** ✅ **HONORED — `journal.md` is in this
+  insurance commit, +8,744 B**, alongside `state.md` and the `positions.md` header repair. **6th
+  consecutive close seat to scope it correctly** (11-16/17/18/19/20).
+- **Item 3 (no superlative without a ranking, ranked off a close not a partial).** ✅ **The rule did
+  real work this run rather than being quoted.** My first framing was "the worst session this account
+  has seen"; ranking all **55** close-to-close sessions **directly from `bars`** — exact, because the
+  account is a pure VOO+$30,000 function — returned **2nd-worst, behind 2026-11-05's −3.0586%,
+  margin 1.0075pp.** ⚠ **It is a PARTIAL rank and is NOT in any published artifact at this pass**;
+  the summary is held for the close precisely so it is published once rather than corrected by
+  comment as 11-17's was. **Confirm off the official close before publishing.**
+- **Item 4 (endpoint disagreement).** **Not advanced — stays at 13 distinct instances.** The
+  `lastday_price` 658.01 vs `bars` 658.05 pair for 2026-11-19 was re-read at this seat and is the
+  **SAME instance, not a 14th**: the counter advances on sessions, not on reads. **Today's own
+  endpoint pair cannot be formed yet — there is no official 2026-11-20 close while the bar is open.**
+- **Item 5 (in-progress-bar defect).** ⚠⚠ **DEMONSTRATED LIVE AT THIS SEAT, not quoted: the same
+  dated VOO bar returned `c` 637.855 and then 638.340 minutes apart — +0.0761% of drift in the single
+  figure every account number depends on — and the account line was ALREADY being composed off the
+  first reading.** Caught only because the bar was pulled twice for an unrelated reason. ⚠ **And the
+  honest reading of "the gate held" for a 4th consecutive seat: it has never once been the binding
+  constraint. The empty ledger was.** A seat reporting the gate as working is reporting a coincidence.
+  ✅ **"Partials read low" stays dead** — today's partial read HIGH relative to nothing yet, and the
+  two intra-run readings moved **upward**; the hazard remains variance, not bias.
+- **Item 6 (unproven §5 code).** **Ordinal advanced to the 102nd seat, 83rd absent date.** Step 2's
+  backfill branch: **reached operand-free 102 times, executed 0.** All four §5 rules untested.
+- **Item 9 (the missing 2026-11-13 journal entry).** **Unchanged and still not recoverable.** ⚠ This
+  run is deliberately structured so it cannot become a second instance: the journal entry is written
+  and committed **before** the hold, not after it.
+- **Item 14 (293–0).** **Advanced to 293 IDs, 0 accepted** — five theses written today, five rejected.
+  ✅ **Useful shape for the human, unchanged from 11-19 and now twice-confirmed: 4 of 5 died in §4
+  part 1 (mechanism) or part 2 (materiality), NOT at the priced-in filter and NOT at §3's
+  thresholds.** If §4 is to be tuned, **that is where to look.** ⚠ **The execution-side confound
+  widened again:** a 15th pre-bell routine-2 firing, so the executing seat could act on roughly one
+  session in sixteen. **293–0 is a research-gate statistic and is not evidence about execution.**
+- **Item 15 (two-price defect).** **Re-demonstrated, and this is the widest same-run spread yet seen
+  on the three simultaneous readings:** `account.equity` **93,167.78** vs `sleeves` **93,144.99** vs
+  the partial-bar basis **93,225.22** — **$80.23 apart across three calls minutes apart**, all three
+  claiming to be today's equity. **Still cosmetic on core; load-bearing the moment a satellite
+  position exists.**
 
 ## ⚠⚠⚠ Corpus size — the standing systemic finding, for the human
 
