@@ -52,6 +52,343 @@ single most common way a plausible-sounding connection gets mistaken for an oppo
 
 ## Entries
 
+### 2026-11-20 (07:01 ET) — event survey (funnel, pre-thesis)
+
+Selftest **5/5**, exit 0 (`trading_enabled: true`, LIVE paper, equity **$94,792.13** at the
+selftest's read). `clock` **07:02:16** — `is_open: false`, `next_open` **2026-11-20T09:30:00-05:00**,
+`next_close` **2026-11-20T16:00:00-05:00**. **Both fields carry today's date: the pre-market
+full-session signature, NOT a holiday.** Friday, ordinary session. Re-read **07:04:48**, same
+signature.
+
+**WEEK ROLLOVER — NO RESET DUE, RE-DERIVED WITH `isocalendar`, NOT INHERITED.** ISO **2026-W47
+weekday 5**, Monday anchor **2026-11-16** = inherited `week_of` **2026-11-16**. They match.
+`new_positions_this_week` **0 of 3**. ⚠ Done here rather than trusted to the Friday review, which
+has not yet run today.
+
+**NEW POSITIONS PERMITTED THROUGHOUT.** Breaker **INACTIVE 0/3** · cap **0 of 3** · satellite
+**0.0% deployed, $30,000 cash** · `TRADING_ENABLED: true` · `control.md` Notes **(none)**.
+**Nothing structural blocked a buy. The candidates did** — the only honest way to end a run at
+zero, and distinct from the halted case.
+
+**LEDGER RECONCILED, AGREES.** `positions.md` lists **zero satellite positions**
+(`grep -ci 'status: *open'` → 0); `alpaca.py positions` returns **one row, VOO 99.046311231 sh @
+706.74**, the designated §2 core, deliberately untracked there. **No disagreement to resolve.**
+§5.1–§5.4 are therefore **ABSENT, NOT PASSING** — no entry price, no `highest_close`, no deadline,
+no invalidation string exists. **Step 4 had NO OPERAND: the 99th absent seat, the 82nd absent date.**
+
+**FUNNEL SPEND: four broad sweeps, two drill queries, one market-cap query, two clock-gated `move`
+calls, one `asset` status check, two `clock` reads.** Sweep 1 took the overnight window. Sweep 2
+inverted it — named-both-parties transactions with disclosed dollar values, own-results prints
+explicitly excluded. Sweep 3 inverted it again — regulatory decisions, court rulings, production
+halts, recalls, export restrictions. **Sweep 4 attacked the standing failure point directly**, asking
+only for cases where a source *explicitly names a second-order beneficiary and its segment* — the
+part-1 blank that killed four of six candidates on 11-19. **It returned "no qualifying case."**
+**All three substantive kills today were stated by sources, not constructed by the agent.**
+
+⚠ **TERMINOLOGY, continuing the 11-18 and 11-19 seats' response to the standing ask:** this entry
+does **not** use the agent-authored "rule (iii)…(viii)" shorthand. `state.md` carries a finding,
+three times sent to the human and still unaddressed, that the taxonomy carries the majority of the
+rejection load while existing nowhere in `strategy.md`. Rejections below are written in §3/§4's own
+language (part 1/2/3/4, priced-in, correlation, universe) and prior findings are named **by date and
+content**. **That is a third seat's response to the ask, not a decision the human has made, and it
+binds no later seat.**
+
+---
+
+#### THE PRICED-IN GATE WAS ACTUALLY REACHED TODAY — FIRST TIME IN THIS STRETCH — AND BOTH READINGS WERE `true` BY FALLING
+
+Two candidates cleared "is there a named, US-listed Company B at all", so for the first time since
+11-18 the hard filters ran on live numbers rather than being skipped as moot.
+
+⚠ **Item 13's `clock` gate was applied BEFORE both `move` calls, not assumed.** `clock` re-read at
+**07:04:48** — `is_open: false`, both dates **2026-11-20** — so the five-session window provably
+ends on the **finished 2026-11-19 bar** (official `bars` close **VOO 658.05**, `n` 2,902, `v`
+132,178, identical to the close seat's stamp).
+
+| Candidate | `from_close` → `to_close` | `move_pct` | `priced_in` |
+|---|---|---:|---|
+| **BKR** (Baker Hughes) | 48.85 → 46.67 | **−4.46%** | **true — LATE** |
+| **AMKR** (Amkor) | 37.12 → 34.135 | **−8.04%** | **true — LATE** |
+
+⚠⚠ **BOTH READ `true` BY HAVING FALLEN, WHICH IS CARRY-FORWARD ITEM 12 ARRIVING TWICE IN ONE RUN.**
+The filter is `abs(move) > 4` — magnitude-based and **direction-blind** — exactly as it was when
+NVDA read `true` on 11-19 by falling 13.22%. **"The filter is direction-blind, therefore buy the
+faller" is averaging into weakness in a costume, and §7 forbids averaging down. No override was
+taken and none may be.** For the human to fix in code.
+⚠ **AND THE READINGS ARE SUPPORTING, NOT LOAD-BEARING:** both names die on **part 2** and **part 3**,
+which precede the priced-in filter in §4's ordering. Had the filter read `false` on either, the
+verdict would be unchanged. **That matters for the 288–0 question: today is not a case of the
+priced-in threshold doing the killing.**
+⚠ **Item 12's pre-event-window rule is MOOT for these two, not discharged.** Today's catalysts broke
+on 2026-11-19, so the window does contain a post-catalyst session — but a `true` reading is the
+conservative direction anyway, so no re-test after the open could make either name eligible. **The
+rule stays live for the first seat that holds an intent on a post-close catalyst.**
+
+⚠ **ENDPOINT DISAGREEMENT — THIRTEENTH DISTINCT INSTANCE, AND THE NARROWEST ON RECORD.**
+`positions.lastday_price` **658.01** vs official `bars` **658.05** for 2026-11-19 = **0.04 /
+0.0061%**, beating 11-18's 0.05 / 0.0074%. Prior distinct instances ran 0.10–0.42. ⚠ **This is a new
+session, hence a new instance — not a re-observation of the twelfth.** **A narrow instance is not a
+fixed instance:** the spread has narrowed and widened repeatedly, it is not a dividend-basis
+artifact, and §5.4 still reads from the endpoint that is wrong. **Build P&L and stamp `highest_close`
+from official `bars` closes only.**
+
+---
+
+### T-2026-11-20-01 — BKR (Baker Hughes) ← FERC's unanimous approval of Cheniere's Sabine Pass Stage V expansion, ~20 mtpa of added liquefaction capacity (first disclosed 2026-11-19) — REJECTED (part 2: the drill query established NO disclosed scope value, NO identified segment and NO derivable revenue share — the source applied the kill; part 3 independently at many quarters; and priced-in `true` at −4.46%)
+
+**The event.** FERC voted unanimously on **2026-11-19** to authorise the Sabine Pass Stage V
+expansion — three additional liquefaction trains, roughly **20 million tonnes per year** of added
+capacity including debottlenecking, plus an expansion of the Creole Trail Pipeline and construction
+of the Sabine Crossing Pipeline. **No project dollar value was disclosed.** Cheniere (LNG) is the
+**first-order** leg and §4 does not buy the headline name.
+
+**The second-order question, asked properly.** *Whose revenue line changes because three trains got
+permitted?* The drill query asked for every publicly traded US company **named** in the approval, in
+Cheniere's filings or in reporting as a contractor, equipment supplier, pipeline operator or gas
+supplier to **this specific** expansion, with the dollar value of its scope and that segment's share
+of revenue.
+
+**What came back — two names, one of them investable:**
+
+| Named | Role | Scope value | Segment | Segment share of revenue |
+|---|---|---|---|---|
+| **Bechtel Energy** | lump-sum turnkey EPC, first phase | **not disclosed** | n/a | **§3 — privately held** |
+| **BKR** (Baker Hughes) | *"reportedly began early engineering and procurement work"* | **not disclosed** | **not identified** | **not determinable** |
+
+**§3 — PASSES, and this is the part worth recording.** BKR is `us_equity`, NASDAQ, `status: active`,
+`tradable: true`, no leverage/inverse/crypto attribute. Market cap **~$47.1 billion** — *source:
+Perplexity citing Stockrow, figure dated 2026-11-18* — comfortably above the **$10B** floor. **This
+is the first candidate in several sessions to clear §3 on a named-recipient basis, which is why it
+got the drill and the `move` call rather than a sweep line.**
+
+**Part 1 — mechanism, one sentence, and it very nearly writes.** *"FERC's authorisation of Sabine
+Pass Stage V causes Baker Hughes' Industrial & Energy Technology revenue to improve because Cheniere
+procures liquefaction equipment from it for the new trains."* ⚠ **That sentence is single-clause and
+it is the strongest part-1 this run produced.** But it rests on *"reportedly began early engineering
+and procurement work"* — **not a signed contract, no announced award, no value.** §4's own warning is
+the operative one here: a plausible single-clause sentence is not evidence of an opportunity.
+
+**Part 2 — DOLLAR PATH: FAILS, AND THE SOURCE APPLIED THE KILL.** There is **no disclosed value for
+BKR's scope on this expansion**, the reporting **does not identify which BKR segment** is affected,
+and **no revenue share is derivable**. §4 requires the segment to be **over 10% of total revenue**.
+Against ~$47B of market cap and a revenue base in the high-$20Bs, an unquantified early-stage
+procurement engagement on three trains **cannot be shown to clear 10%, and "cannot be shown" is a
+rejection, not a pending item.** ⚠ **This is where the thesis dies and it dies on an absence I did
+not manufacture: I asked for the number and the source said it does not exist.**
+
+**Part 3 — TIMING WINDOW: FAILS INDEPENDENTLY, and would kill it even if part 2 passed.** A
+liquefaction train **authorised** in November 2026 has not reached FID-to-notice-to-proceed, let
+alone equipment delivery. Turbomachinery revenue on LNG trains is recognised across **multi-year**
+construction programmes. §4 caps the horizon at **two quarters**. Nothing in Cheniere's Q4'26 or
+Q1'27 reported results, or BKR's, will show this. **Same disposal as COHR on 2026-11-09 (ramps
+CY2028) and the ExxonMobil Longtail FPSO award on 2026-11-17 (~16 quarters).**
+
+**Part 4 — invalidation.** Not reached. Had parts 2 and 3 passed, the honest condition would have
+been *"BKR's next two IET segment reports show order intake flat or declining with no Sabine Pass
+Stage V award disclosed"* — ⚠ which is itself a warning sign, because on a multi-year programme that
+condition **could not resolve inside the holding window either**. That is the 11-18 MU failure
+(part 4 incapable of failing) arriving from the other direction.
+
+**Hard filters, applied and recorded.** §3 **passes** (above). Priced-in **`true`, −4.46% over five
+clock-gated sessions — LATE, skip per §4**. Correlation: **no open satellite positions exist, so the
+check is vacuous** — zero `driver` strings to compare against.
+
+**Verdict: REJECTED** on **part 2** (source-applied), **part 3** independently, and **priced-in**
+independently. ⚠ **Three independent kills, and I want the part-2 one on the record as the real
+reason** — the priced-in reading is the one a later seat would be most tempted to quote, and it is
+the least load-bearing of the three.
+
+---
+
+### T-2026-11-20-02 — the NVIDIA memory and advanced-packaging supply base (AMKR named; MU named only by an opinion piece) ← NVIDIA's total supply commitments rising from $279B to $390B, +$111B, "primarily multi-year memory procurement", as of 2026-10-25 (first disclosed with the FQ3 filing, 2026-11-19/20) — REJECTED (part 1: NVIDIA NAMES NO MEMORY SUPPLIER and Micron has NOT confirmed NVIDIA as a customer — the drill query established this explicitly; §3 kills AMKR at ~$8.9B; part 2: no amount is attributable to anyone; priced-in `true` at −8.04%)
+
+**The event, and it is a real disclosed number.** NVIDIA's filing discloses total supply commitments
+of **$390 billion** as of **2026-10-25**, up from **$279 billion** — an increase of **~$111 billion**
+— and states the increase relates **primarily to multi-year memory procurement**. Reporting
+separately notes **$203B** of it falls due in FY2028. ⚠ **This is the single largest second-order
+*shape* available in this window: a named, US-listed Company A has committed a specific, enormous,
+multi-year sum to buying physical components. If §4 can ever pass, this is the shape it passes on.**
+**It does not pass, and the reason is instructive rather than marginal.**
+
+**The second-order question.** *Who receives the $111 billion?* The drill query asked for every
+publicly traded US company **named in NVIDIA's filing or in reporting** as a recipient, with the
+amount attributable to it, the segment, and the segment's revenue share.
+
+**What came back — and the source applied the kill in two separate places:**
+
+1. **"NVIDIA's filing/reporting does not identify recipients or allocate the $390 billion among
+   suppliers."** **Part 1 has no Company B.** The named supply-chain companies — **TSMC, Samsung, SK
+   hynix, Samsung Electro-Mechanics, Kinsus, SPIL, Ibiden, KYEC, Unimicron, Foxconn** — are
+   **every one of them foreign-listed (§3)**, and **no commitment amount is attributed to any of
+   them** regardless.
+2. ⚠⚠ **MICRON IS NAMED, AND THE SOURCE EXPLICITLY REFUSES THE JOIN:** reporting "names Micron
+   Technology in connection with the memory discussion, but **explicitly says NVIDIA does not
+   identify its memory suppliers and Micron has not said NVIDIA is one of its customers.**"
+   **There is no sourced customer relationship to build a mechanism on.**
+
+**⚠⚠ THE HONEST-BROKER EXHIBIT OF THIS RUN, AND IT WAS HANDED TO ME IN A HEADLINE.** One of the
+drill's own citations is titled *"Nvidia Just Raised Its Supply Commitments to $390 Billion, Mostly
+for Memory. **Micron Is the Memory Stock I'd Buy**."* **That is precisely the construct §4's
+honest-broker rule describes**: a real, large, correctly-reported Company A number, joined to a
+plausible Company B by an inference **the primary sources decline to make**. §4 says the ability to
+construct that connection "is a limitation of how you reason, not evidence of an opportunity."
+⚠ **Finding the argument pre-written by a third party makes it feel sourced. It is not sourced — it
+is the same inference with a byline.** And MU is a **standing object**: rejected 2026-11-03-01
+(part 1), 2026-11-02-03 (part 1), and 2026-11-18-01 (**part 4: no invalidation condition capable of
+failing**; part 2 unsourceable to a filing). **Its own ADDENDUM 2026-11-18 re-test found MU already
+4.5–14% LATE on the priced-in filter.** **Nothing in today's disclosure repairs any of that.**
+
+**AMKR — the one genuinely new name, and §3 kills it on a sourced figure.** Reporting names **Amkor
+Technology** among NVIDIA's **packaging-related** agreements. It is `us_equity`, NASDAQ, `active`,
+`tradable`. **But market cap is ~$8.9 billion** — *source: Perplexity citing Trefis, $8.9B at a
+$35.95 share price, figure dated 2026-11-19* — **BELOW §3's $10B floor. Not eligible, and
+`alpaca.py buy` would refuse the order in code.** ⚠ **Independently, part 2 fails anyway:** the
+drill established **no portion of the $390B is assigned to Amkor**, the agreement's value is **not
+stated**, and **no revenue-share calculation can be made from the reported facts.** And Amkor's
+scope is **packaging, not memory** — so it is not even a recipient of the $111B increase the
+headline is about.
+
+**Part 3 — not reached, and it would have been hostile too.** The commitment is explicitly
+**multi-year**, with **$203B due in FY2028**. §4's two-quarter horizon does not reach FY2028.
+
+**Hard filters, applied and recorded.** §3: **AMKR FAILS** (~$8.9B < $10B, sourced); the ten
+other named suppliers **FAIL** (foreign-listed); MU would pass §3 but has no sourced mechanism.
+Priced-in: **AMKR `true`, −8.04%** over five clock-gated sessions — **LATE**, and ⚠ **again `true`
+by falling**, the second direction-blind reading of this run. Correlation: vacuous, no open
+positions.
+
+**Verdict: REJECTED** on **part 1** (no named Company B anywhere — source-applied), **§3**
+(AMKR below floor, sourced), **part 2** (nothing attributable), and **part 3**. ⚠ **This is the
+clearest case in the corpus of a correct rejection that looks exactly like a missed opportunity, and
+I am recording both halves:** $111 billion of new committed spend is real and somebody is receiving
+it. **§4 forbids guessing who, and every entity actually named is either foreign-listed or
+sub-scale.** **The gate is not being too tight here; the disclosure is too thin.**
+
+---
+
+### T-2026-11-20-03 — the own-results print cluster (Keysight FQ4 · Intuit FQ2 guide-down · Ross Stores Q3), all reported after the 2026-11-19 close — REJECTED (part 1: an own-results print is a CONDITION, not a transaction with a named counterparty; and the drill-free test is that no second-order recipient is named in any of the three)
+
+Three companies reported after yesterday's close. All three carry real, specific numbers, and
+**none of them is a §4 event.**
+
+| Company | Disclosed (2026-11-19, post-close) | Why it is not a §4 event |
+|---|---|---|
+| **KEYS** (Keysight) | FQ4 revenue **~$1.994B** vs ~$1.93–1.95B expected; adj. EPS **~$3.61** vs **$3.37**; targets **~20% revenue growth for FY2027** | **Own-results print + own guidance.** The sweep states explicitly it **"does not identify specific customer or competitor impacts."** The electronic-test / semi-equipment read-across is **reader-supplied**. |
+| **INTU** (Intuit) | FQ2 revenue guided **$4.93–4.95B** vs **$5.11B** consensus; FY revenue cut to **$23.08–23.37B**; adj. EPS **$2.91** vs a $2.44–2.48 range | **Own guidance, and the WRONG DIRECTION** — a cut. The only second-order read is a **competitor share-shift no source makes**. |
+| **ROST** (Ross Stores) | EPS **$1.91** vs $1.75–1.83; revenue **$6.26B**; comps **+8%**; Q4 EPS guide **$2.16–2.25** vs $2.27; FY EPS raised to **$8.75–8.84** | **Own-results print.** The off-price read-through is explicitly **unquantified** — "no source supplied a quantified impact on competitors or suppliers." |
+
+**Part 1 fails on the structure, not the magnitude.** §4's mechanism sentence requires *"[Event]
+causes [Company B]'s [line] to [improve]"* — an **event with a named counterparty**. A company
+reporting its own quarter is a **condition of that company**: there is no transaction, no
+counterparty, and therefore no Company B to put in the sentence. **Same disposal as AAON on
+2026-11-10 (own order book), QCOM on 2026-11-06, PANW/PLTR/MMS in the 2026-11-19 sweep, and AMAT on
+2026-11-13.**
+
+⚠ **Stated plainly because a cluster of three beats is where the pressure to manufacture lives:**
+Keysight beating and guiding to ~20% growth *reads* like a semiconductor-capex tell, and I could
+write a fluent paragraph joining it to WFE suppliers. **The sources name nobody, so that paragraph
+would be mine, not theirs.** **ZERO drill queries were spent here** — the sweep already stated the
+absence, and buying confirmation of a kill the source has given is funnel waste.
+
+**Verdict: REJECTED**, part 1, all three legs. Priced-in, correlation and §3 **not reached** — §4
+orders the thesis parts before the hard filters, and part 1 is the first gate.
+
+---
+
+### T-2026-11-20-04 — the macro / policy complex (final University of Michigan sentiment and inflation expectations · Waller and Cook appearances · Baker Hughes rig count · a sixth consecutive Wall Street decline · the dollar near a 19-month high on AI-valuation fears and the Fed path) — REJECTED (no Company A — the standing government-action object, unchanged)
+
+Today's calendar is final UMich consumer sentiment and inflation expectations, remarks from Waller
+and Cook, and the rig count; one market calendar reports **no S&P 500 components scheduled to report
+on 2026-11-20**. The background is a **sixth straight decline** on Wall Street and a dollar near a
+**19-month high**.
+
+**There is no Company A.** §4's structure requires a *company* whose disclosed action changes a
+*second* company's revenue or cost line. A sentiment print, a central banker's remarks, an index
+drawdown and a currency level are **not transactions and have no counterparty**. The macro complex
+has been disposed on exactly this ground on **11-19, 11-16, 11-13, 11-11, 11-10, 11-06 and 11-05**,
+and nothing in today's calendar changes the shape. ⚠ **It is logged rather than silently dropped so
+the record shows the macro tape was read and consciously declined, not overlooked.**
+
+**⚠ AND THE ONE PIECE THAT TOUCHES THIS ACCOUNT IS A §2 MATTER, NOT A §4 ONE.** The sixth
+consecutive decline is why core sat at **68.35%** at this seat's read. **That is a rebalance
+question governed by the 65–75% band — it is in band — and §2 holds core permanently and does not
+trade it on news.** **There is no satellite thesis in it.**
+
+**Verdict: REJECTED.** ZERO drill queries spent.
+
+---
+
+### T-2026-11-20-05 — sweep: thirteen remaining disclosed events disposed as one — REJECTED (ZERO additional drill queries spent; ONE `asset` status check, which produced a code-verified §3 kill)
+
+Each item below was surfaced by the four broad sweeps, carries a disclosed date, and is disposed on a
+**single named test**. **No drill queries were spent on any of them.**
+
+| Item (date first disclosed) | Disposed on |
+|---|---|
+| **DOJ closes its antitrust probe into the NextEra Energy / Dominion Energy merger, $66.8B** (2026-11-19) | **Not a §4 event.** A closed investigation is a **permission**, not a revenue or cost line; §4's structure does not reach **merger arbitrage** — same disposal as the Marvell/Lumentum ~$115B merger on 2026-11-03. Both legs are **first-order**, and the source names **no other publicly traded beneficiary**. |
+| **Intel announces its FIRST EXTERNAL 18A CUSTOMER** (2026-11-19) | **Part 2 — the customer's identity AND the order volume are both reported as UNDISCLOSED.** Microsoft is separately named as an **EMIB** customer for Azure custom silicon, but with **no amount and no affected segment**, so no dollar path exists for either leg. INTC is the **first-order** name. Same shape as the unnamed-counterparty 8-Ks disposed 2026-11-02-01 and 2026-11-13-04. |
+| **Hallador Energy — Indiana regulatory approval of a 12-year, >$1B capacity agreement** (2026-11-19) | **§3 — HNRG is far below the $10B floor.** It is also the **first-order** leg (it disclosed its own approval), and the sweep names **no counterparty** to build a second-order leg on. |
+| **US Navy SEWIP electronic-warfare award — LMT, NOC, GD, LDOS among awardees** (2026-11-19/20) | **First-order awardees, not second-order recipients.** The source gives **no per-company value and identifies no affected segment**. **Part 2** on precedent: every prior defence cluster (11-10 CLPS 2, 11-06, 11-11 Curtiss-Wright at ~1% of revenue, 11-19 GD Stryker and LMT C-5) failed the **10%** floor by one to three orders of magnitude. |
+| **Fifth Circuit invalidates the federal record of decision for Sentinel Midstream's Texas GulfLink crude-export project, ~$2.1B** (reported 2026-11-19) | **§3 — Sentinel Midstream's public listing status is not established and it is not identifiable as a US-listed issuer.** Also **stale**: the ruling took effect **2026-10-30** and the court action issued in **August**. **No named beneficiary**, and Sentinel says work continues. |
+| **Dole Packaged Foods closes an Atwater, CA frozen-food plant and a Livingston, CA laboratory, 404 workers** (WARN notice, reported 2026-11-20) | **§3** — DOLE is below the $10B floor — **and part 3**: the layoffs are scheduled for **January 2027**. **No other publicly traded company is named** as beneficiary or newly disadvantaged. |
+| **FAA nationwide ground stop traced to equipment instability; installation of the associated Juniper routers SUSPENDED pending investigation** (2026-11-20) | ⚠ **§3, CODE-VERIFIED NOT ASSUMED.** Juniper is the one **named** supplier in the item, so I checked rather than asserted: `asset --symbol JNPR` returns **`status: inactive`, `tradable: false`, `borrow_status: hard_to_borrow`** — **it cannot be bought outright with settled cash**, which §3's final clause forbids outright. Direction is **negative** for the named party anyway, and the beneficiary would be a **competing router vendor no source names** — the reader-supplied share shift disposed on 11-19 (PLTR, MMS), 11-10 (Novocure) and 11-09 (PLCE). |
+| **FDA rejects Summit Therapeutics' ivonescimab (with Akeso) in EGFR-mutated NSCLC** (2026-11-19/20) | ⚠ **THIRD SERVE OF AN ALREADY-DISPOSED EVENT. NOT RE-LITIGATED.** Disposed at **T-2026-11-16-01**, whose drill query established there **is no approved equivalent** — hence **no incumbent revenue line to improve** — and re-dated once already in the 2026-11-19 sweep. One secondary report mentions GSK's separate approval but **does not establish GSK as a beneficiary of Summit's rejection**. |
+| **"Anthropic power-equipment orders" linked to ERock and Caterpillar** in a 2026-11-19 promotional article (2026-11-19) | ⚠⚠ **RE-SERVE OF TWO DISPOSED EVENTS, NOT RE-LITIGATED.** **T-2026-11-12-01** disposed the CAT / Anthropic ~$3.4B, 1.7 GW generator commitment — the news was six weeks old and **CAT was named only in secondary reporting, never by a primary party**. **T-2026-11-19-03** disposed the Anthropic IPO (capital paid **IN** to a private issuer; the $9B of infrastructure spend has **no named recipient**). ⚠ **The new element is only the packaging: an article headlined "these 3 industrial stocks ... you can buy them right now."** **A promotional re-serve of a disposed event is not new information, and recognising it as one is the whole job of keeping this log.** |
+| **Pro Medicus / NYC Health + Hospitals — 10-year, $128M licensing agreement** (2026-11-20) | **§3 — Pro Medicus is Australian-listed**; the buyer is a **municipal hospital system**. No US-listed leg. |
+| **Glencore subsidiary / Tees Valley Lithium — amended offtake, up to 25,000 t/yr** (2026-11-19) | **§3** (both parties foreign) and **part 2** — the source states **pricing and commercial terms are confidential**, so **no value exists**. |
+| **ADF Group — record $602M contract and backlog growth** (2026-11-20) | **§3 — Canadian-listed (DRX)**; and it is the **first-order** leg discussing its own backlog. |
+| **Hanul Materials Science / KEPCO Nuclear Fuel — ₩1.9145B gadolinium supply through 2027-06-30**, and **Intekplus / an unnamed Chinese customer — ~$10.965M through 2028-05-30** (both 2026-11-19) | **§3 — all parties Korean/Chinese, none US-listed.** The Intekplus counterparty is additionally **unnamed**, and both values are **immaterial** to any >$10B issuer under **part 2**. |
+
+**Outcome: ALL REJECTED.** ⚠ **What the sweep shows this week, stated for the human:** thirteen items,
+most with a real date and a real dollar figure, and **the two largest numbers in the table — $66.8B
+and >$1B — belong to a merger clearance and a sub-floor issuer.** **Not one item names a second-order
+recipient.** ⚠ **Two of the thirteen are re-serves of events this log already disposed**, one of them
+inside a promotional "buy them right now" frame — **which is an argument for keeping the rejection log
+readable, since recognising the re-serve cost nothing and re-researching it would have cost two drills.**
+
+---
+
+#### RUN TOTAL — 2026-11-20
+
+**Five theses, ZERO accepted, FIVE rejected.** Funnel spend: **four broad sweeps, two drill queries,
+one market-cap query, two clock-gated `move` calls, one `asset` check, two `clock` reads.**
+**Both drill queries returned a kill stated by the source rather than argued by the agent** —
+`-01` (no disclosed value, segment or share for BKR's Sabine Pass scope) and `-02` (NVIDIA names no
+memory supplier; Micron has not confirmed NVIDIA as a customer). **Sweep 4, which asked only for
+explicitly-named second-order beneficiaries, returned "no qualifying case" across the whole window.**
+
+**Where the five died:** **part 2** ×1 (`-01`, source-killed, with part 3 and priced-in
+independently) · **part 1 + §3** ×1 (`-02`, source-killed on part 1; AMKR below the floor on a
+sourced cap) · **part 1** ×2 (`-03` own-results prints, `-04` no Company A) · **sweep** ×1 (`-05`,
+thirteen items, one of them a code-verified §3 kill).
+
+⚠⚠ **TODAY DIFFERS FROM THE LAST FOUR SESSIONS IN ONE RESPECT WORTH RECORDING: THE PRICED-IN GATE WAS
+ACTUALLY REACHED.** Four prior runs ended with "not one candidate reached the priced-in gate." Today
+two did — **BKR and AMKR** — and ⚠ **both read `true` by having FALLEN** (−4.46%, −8.04%), the
+direction-blind defect of carry-forward item 12 appearing **twice in one run**, one session after
+NVDA read `true` by falling 13.22%. **No override was taken.** ✅ **And the readings were not
+load-bearing: both names die on part 2 / part 3, which precede the filter in §4's ordering.**
+
+**Running total: 293 thesis IDs, 0 ever accepted** (77 live + 87 + 129 — archives at
+**`archive/research_log/2026-09.md`** and **`archive/research_log/2026-10.md`**; ⚠ the abbreviated
+form `archive/2026-09` does not resolve as a path and under-counts by 216).
+
+⚠⚠ **THE 288–0 AMBIGUITY IS NOW 293–0, AND TODAY SHARPENS IT RATHER THAN SETTLING IT.** "The gates
+are correctly rejecting weak candidates" and "these gates can never pass" still produce identical
+evidence from inside the system, and **a run must not loosen a gate to test it.** ✅ **But today adds
+one genuinely new data point the human can use:** `T-2026-11-20-02` is the **largest and
+best-shaped** second-order setup this corpus has seen — a named, US-listed Company A disclosing
+**$111 billion** of new multi-year component commitments — and it fails **not on a threshold** but
+because **every entity actually named as a recipient is either foreign-listed or below the $10B
+floor, and the primary sources explicitly refuse to name the memory suppliers at all.**
+**That is a property of US disclosure practice, not of §4's numbers.** ⚠ **Where the human should
+look if §4 is to be tuned is still part 1 and part 2 — mechanism and materiality — exactly as the
+11-19 seat found. Four of five died there again today.** ⚠ **And the schedule fault still confounds
+the count: the acceptance rate was measured over a stretch in which the only seat licensed to open a
+position could act on one session in fifteen. 293–0 is a research-gate statistic and is not evidence
+about execution.**
+
+
 ### 2026-11-19 (07:01 ET) — event survey (funnel, pre-thesis)
 
 Selftest **5/5**, exit 0 (`trading_enabled: true`, LIVE paper, equity **$97,322.77** at the
