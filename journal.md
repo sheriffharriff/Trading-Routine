@@ -40,6 +40,123 @@ anything where the honest-broker rule (§4) did real work>
 
 ## Entries
 
+### 2026-11-20 (Friday)
+
+⚠⚠ **INSURANCE WRITE — PARTIAL BASIS, NOT A CLOSE. THE HOLD FOR THE BELL IS STILL PENDING AS THIS
+IS COMMITTED.** This seat fired at **15:15:31 ET**, **45 minutes before the bell** (`clock`
+`is_open: true`, `next_close` 2026-11-20T16:00, `next_open` 2026-11-23T09:30 — Monday), the **15th
+consecutive EST session** on the −1h shape. Per `control.md` the firing time is **recorded, not
+diagnosed**. Every figure below carrying "partial" is read off an **in-progress bar** and **will be
+replaced, not annotated, once the official close exists.** If this entry is still marked partial when
+you read it, **the second commit did not land** — that is the 2026-11-13 failure shape, and the
+price leg is recoverable from `bars` for 2026-11-20.
+
+**Account (PARTIAL, 15:15 basis):** total **$93,144.99** (`sleeves`, built on a **637.53 midpoint —
+NOT a close**) | day **−$2,032.44 / −2.1354%** against 11-19's close-basis **$95,177.43** | since
+inception **−$6,855.01 / −6.8550%** ($100,000.00 opening, 2026-09-03 fill)
+**Sleeves (PARTIAL):** core **67.7922%** | satellite **0.00%** | cash **32.2078%**   (§2 band 65–75%
+— **IN BAND**, **2.7922pp of headroom to the floor**, 7.2078pp to the ceiling; **no rebalance due
+Monday**)
+**Breaker:** INACTIVE (0/3)
+**Week:** 0/3 new positions (ISO 2026-W47, anchor **2026-11-16**, re-derived with `isocalendar` —
+matches `week_of`, **no reset**)
+
+**Traded:** nothing. Zero orders placed, zero fills, zero exits.
+**Researched:** 5 theses — **0 accepted, 5 rejected** (`T-2026-11-20-01` … `-05`)
+**Positions near a sell rule:** **none — and that is the ABSENCE OF A SUBJECT, not four clean bills
+of health.** Zero satellite positions.
+
+**What happened:**
+
+**The job this run exists for had no operand, and I want that stated precisely rather than
+comfortably.** Step 2 — recording today's closes into `highest_close` so the §5.4 trailing stop keeps
+working — **was a no-op because there are zero satellite positions**, not because it was skipped and
+not because it failed. `positions.md` holds **0 open blocks** (`grep -ci 'status: *open'` → 0,
+`grep -c '^symbol:'` → 0); the 151 `highest_close` strings in that file are **template and narrative
+text, every one of them**, with **no `(as of …)` date anywhere** (`grep -o 'highest_close:[^(]*(as of
+[0-9-]*)'` → empty). There was no mark to raise and no date to advance. **102nd absent seat, 83rd
+absent date.**
+
+⚠ **And note which thing protected the mechanism today, because it was not the gate.** Firing 45 min
+early put this seat **mid-bar by construction** — exactly where item 5 says a `highest_close` write is
+unlawful. Had a satellite position existed, the `clock` gate would have **forbidden** the stamp and
+this run would have had to hold for the bell to do its primary job at all. **It was the empty ledger,
+for a 4th consecutive seat, that made a mis-stamp impossible.** The gate has now been "held" four
+seats running without once being the binding constraint, and a seat that reports that as the gate
+working is reporting a coincidence.
+
+**The index fell for a 7th consecutive session and today is the largest drop of the streak.** VOO
+**658.05 → 638.34** on the partial, **−2.9952%**, against the streak's prior worst of −1.9679%
+(11-19). Streak in full: −0.3165 · −0.4296 · −1.8310 · −1.1112 · −0.2289 · −1.9679 · **−2.9952
+(partial)**. Core unrealized is **−9.68%** from the 706.74 entry. ⚠ **§2 and §5 exempt the core and
+§7 forbids selling it to fund a satellite trade, so −9.7% is not a §5.3 candidate** — the coincidence
+with §5.3's −7% threshold is written down so no later seat reads the exemption as an oversight.
+
+**The §2 band holds, and I computed that rather than assuming it.** Core **67.7922%**, floor headroom
+**2.7922pp** — **narrowed a 9th read running** (3.9074 → 3.9300 → 3.4983 → 3.4799 → 3.3500 → 3.2223 →
+3.1076 → **2.7922**). The band is **provably unreachable today**: the 65% floor breaks at VOO
+**562.51** (a further **−11.77%** from 637.53) and the 75% ceiling at **908.67** (+42.5%). **No
+rebalance is due Monday**, and a rebalance would be routine 2's order to place in any case, not this
+seat's.
+
+**§7 is clean.** `orders --status all` returns **exactly one order in this account's entire history** —
+the 2026-09-03 VOO core fill, `status: filled`, terminal. **No order from today exists, so nothing is
+in limbo overnight.** Ledger reconciled against Alpaca and it **agrees**: 0 satellite blocks vs 1
+Alpaca row (VOO 99.046311231 @ 706.74).
+
+**Research produced nothing and the plan said why in advance.** Five theses, five rejected, **four of
+five dying in §4 part 1 (mechanism) or part 2 (materiality)** — not at the priced-in filter and not at
+§3's thresholds, which matches 11-19's finding and is where the human should look if §4 is to be
+tuned. The best-shaped candidate in the whole corpus (`-02`, NVIDIA's +$111B of new supply
+commitments) failed because **every named recipient is foreign-listed or under the $10B floor and the
+primary sources decline to name the memory suppliers at all** — a property of US disclosure practice,
+not of §4's arithmetic.
+
+**What I got wrong or nearly got wrong:**
+
+**1. I had the rank-2 claim drafted before I had any right to it, and the only reason it is not an
+error is that I ranked it instead of asserting it.** My first framing of today was "the worst session
+this account has seen" — which is precisely the error carry-forward item 3 records from 11-16 (false
+by a factor of two) and 11-17 (ranked off a partial, corrected by comment on ClickUp `86bd4hbb1`).
+**I ranked it.** Computing all 55 close-to-close sessions since the core entry directly from `bars` —
+the account is a pure function of VOO plus $30,000 cash, so the ranking is exact rather than
+scavenged from journal prose — puts today **2nd-worst of 55 on the partial**, behind **2026-11-05's
+−3.0586%**, with **1.0075pp of margin**. ⚠ **That is still a partial-basis rank and it is NOT
+published as final here.** The margin is wide enough that it is unlikely to move, but 11-19 recorded
+its rank-2 margin shifting 0.0244pp → 0.0819pp during the hold, **in its favour** — nine basis points
+the other way and that claim would have been false. **The hold is what makes a rank safe, not the
+answer it produces.** The confirmed rank goes in the post-bell revision.
+
+**2. The in-progress-bar defect demonstrated itself to me mid-run, and I nearly used the first
+reading.** I pulled VOO's bar twice minutes apart and got **637.855** then **638.340** for the same
+dated session — **+0.0761% of drift in the figure every number in this entry depends on.** I had
+already begun composing the account line off 637.855. **A finished bar does not move; an unfinished
+one carries no flag saying so**, and the only thing that caught it was pulling twice for an unrelated
+reason. This is item 5 arriving live rather than quoted, and it is the strongest argument available
+for the hold.
+
+**3. The uncomfortable one: I cannot tell you this run's primary function works.** Steps 2–5 were each
+a no-op, and I have now written a fluent account of a run whose headline job never executed. **§5.4's
+staleness detector and the `highest_close` backfill branch have been reached operand-free 102 times
+and executed zero times.** All four §5 sell rules are **untested code paths**. Every "no exits" line in
+this corpus — including mine — records **the absence of a subject**, and the pressure to let that read
+as a clean bill of health is exactly what carry-forward item 6 exists to resist. **The first satellite
+position is the first live test of all of it, under a live trailing stop.**
+
+**For the next run:**
+
+- **The hold for the bell is pending as of this commit.** If this entry still says PARTIAL, the
+  official 2026-11-20 close was never recorded here — pull it from `bars` and backfill the price leg.
+  **Do not write a backdated narrative** (item 9's standing rule).
+- **Monday 2026-11-23 is the next session** (`next_open` 2026-11-23T09:30). Weekend gap: three
+  calendar days of news against an index down 7 sessions running.
+- **`week_of` stays 2026-11-16 until Monday**, which **is** a new ISO week (2026-W48, anchor
+  2026-11-23) — **the Monday seat must reset `new_positions_this_week` to 0 and roll the anchor.** It
+  is already 0, so the reset is cosmetic this time; the anchor roll is not.
+- **Floor headroom is at 2.7922pp and has narrowed 9 reads running.** The §5.4/§2 variance hazard
+  (item 15) becomes load-bearing the first day core sits within a point of 65%. At today's close basis
+  that needs roughly another −11.8% on VOO.
+
 ### 2026-11-19 (Thursday)
 
 ✅ **THE HOLD FOR THE BELL SUCCEEDED — THESE ARE OFFICIAL CLOSES, NOT MARKS. 2026-11-19 NEEDS NO
