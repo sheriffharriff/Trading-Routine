@@ -22,27 +22,27 @@ ET date and **refuses to execute any intent from a plan not dated today** — it
 stale plan, posts an alert, and proceeds to the core/rebalance section only.
 
 ```
-plan_date: 2026-11-20
+plan_date: 2026-11-23
 generated_by: 1-premarket-research
 market_open_today: yes
 ```
 
-Market opens **2026-11-20 at 09:30 ET** (`clock` 07:02:16 ET: `is_open: false`, `next_open`
-`2026-11-20T09:30:00-05:00`, `next_close` `2026-11-20T16:00:00-05:00`). **NOT a holiday** —
+Market opens **2026-11-23 at 09:30 ET** (`clock` 07:01:19 ET: `is_open: false`, `next_open`
+`2026-11-23T09:30:00-05:00`, `next_close` `2026-11-23T16:00:00-05:00`). **NOT a holiday** —
 closed because it is pre-market, and **both** fields carry **today's** date, the full-session
 signature. ⚠ **Read off the DATES, not the boolean: FALSE has three meanings, TRUE has one.**
-Friday, an ordinary full session. `clock` was re-read at **07:04:48** before the two `move`
-calls and gave the same signature.
+Monday, an ordinary full session.
 
-The plan this seat replaced was dated **2026-11-19** — the previous trading day, the ordinary
+The plan this seat replaced was dated **2026-11-20** — the previous trading day, the ordinary
 shape. It carried **zero intents**. **Nothing was lost: a plan with no intents has no
 execution to perform.**
 
-**WEEK ROLLOVER — NO RESET DUE, RE-DERIVED AT THIS SEAT WITH `isocalendar`, NOT INHERITED.**
-ISO **2026-W47 weekday 5**; Monday anchor **2026-11-16**; inherited `week_of` **2026-11-16**.
-They match, so `new_positions_this_week` stays at **0**. ⚠ The reset is done here rather than
-trusted to the Friday review, **which has not yet run today** — so a failed Friday run cannot
-leave the §6 weekly cap stuck at its limit.
+**WEEK ROLLOVER — NO RESET DUE, RE-DERIVED AT THIS SEAT, NOT INHERITED.** `week_anchor(2026-11-23)`
+→ **2026-11-23**; inherited `week_of` **2026-11-23**. They match, so `new_positions_this_week`
+stays at **0**. ⚠ The reset is done here rather than trusted to the Friday review, so a failed
+Friday run cannot leave the §6 weekly cap stuck at its limit. ⚠ The 11-20 review warned that a
+weekend run would see the anchor return **2026-11-16** and reset `week_of` backwards; **no run
+fired over the weekend, so it did not happen**, and from today anchor and value agree.
 
 **Selftest 5/5, exit 0.** `trading_enabled: true`, LIVE against the paper account.
 
@@ -58,131 +58,89 @@ leave the §6 weekly cap stuck at its limit.
 | `control.md` `TRADING_ENABLED` | **true** | No |
 | `control.md` Notes | **(none)** | No |
 | `alerts.md` open incidents | **(none)** — nothing SYSTEMIC to flag | No |
-| §4 four-part thesis | **Five written, FIVE REJECTED, ZERO accepted** | **YES — this is the only thing stopping a trade today** |
 
-⚠ **Stated plainly so the next seat does not misread this plan's emptiness:** this is **not** a
-halted day and **not** a blocked day. **Nothing structural prevented a buy. The candidates did.**
-Those two cases produce an identical-looking plan and must never be conflated — one is a system
-state, the other is a research outcome.
+⚠⚠ **THIS IS THE UNHALTED ZERO, AND THE DISTINCTION IS THE WHOLE POINT.** Nothing structural
+prevented a position today. **Six candidates were researched and six were rejected on §3 and §4's
+own tests.** A plan that is empty because the breaker is active and a plan that is empty because
+nothing qualified are different facts about the system, and only one of them is a successful run.
+**This is the second kind.**
+
+---
+
+## Account snapshot (pre-market mark — said once, not repeated per section)
+
+- Equity **$94,598.00** · core **VOO** 99.046311231 sh @ 706.74 · market value **$64,598.00** ·
+  unrealized **−$5,401.99 / −7.717%** · cash **$30,000.00**.
+- Sleeves: **core 68.29% · satellite 0.00% · cash 31.71%** · `core_in_band: true` ·
+  `rebalance_needed: false` · `rebalance_delta: 1620.60`.
+- ⚠ **These are read off `current_price` 652.20 at 07:01 — a PRE-MARKET PRINT, not a close**
+  (+2.70% on Friday's official `bars` close of **635.01**). They will move before the bell.
+  **The §2 band verdict is robust to that:** core reads **68.29%** pre-market and **67.71%** on
+  Friday's close, both well inside 65–75%. The 65% floor breaks at VOO **562.51** — solved, not
+  assumed (19500 = 0.35 × 99.046311231 × P), a further **−13.7%** from the pre-market mark.
+- ⚠ **Endpoint disagreement, 14th distinct instance:** `positions.lastday_price` **635.54** vs
+  official `bars` **635.01** for 2026-11-20 = **0.53 / 0.0835%**. Build P&L and stamp
+  `highest_close` from official `bars` closes only.
 
 ---
 
 ## BUY intents
 
-**NONE.**
+**NONE.** Six theses were written and all six were rejected — `T-2026-11-23-01` through `-06` in
+`research_log.md`. In §4's own ordering, **every one died on part 1 or part 3, both of which
+precede the hard filters**, so no candidate reached the priced-in check and **no `move` call was
+spent.** Recorded so the absent `move` readings are not mistaken for a skipped check.
 
-Five theses were written and all five were rejected (`T-2026-11-20-01` … `-05`, full entries in
-`research_log.md`). **No candidate survived to the sizing stage, so there is no notional, no
-ticker and no `revalidate` line to write.**
-
-Where they died, in §4's own ordering:
-
-| ID | Candidate | Died on |
+| Thesis | Object | The test that killed it |
 |---|---|---|
-| `-01` | **BKR** (Baker Hughes) ← FERC approval of Cheniere's Sabine Pass Stage V, ~20 mtpa (11-19) | **part 2** — drill query: **no disclosed scope value, no identified segment, no derivable revenue share**; **part 3** independently (multi-year LNG train programme vs the two-quarter horizon); **priced-in `true`, −4.46%** independently |
-| `-02` | **AMKR** / the NVIDIA memory & packaging supply base ← supply commitments $279B → **$390B**, +$111B, as of 10-25 | **part 1** — drill query: **NVIDIA names no memory supplier and Micron has not confirmed NVIDIA as a customer**; **§3** — AMKR market cap **~$8.9B**, below the floor (Trefis, 11-19); **part 2** (nothing attributable); **priced-in `true`, −8.04%** |
-| `-03` | Own-results cluster: **KEYS** FQ4 beat + ~20% FY27 target · **INTU** FQ2 guide-down · **ROST** Q3 beat, comps +8% | **part 1** — an own-results print is a **condition, not a transaction**; **no second-order recipient named in any of the three** |
-| `-04` | Macro / policy complex (final UMich sentiment & inflation expectations, Waller & Cook, rig count, 6th straight decline, dollar near a 19-month high) | **part 1** — **no Company A**; the standing government-action object, unchanged |
-| `-05` | Sweep: **thirteen** remaining disclosed events | **§3 / part 2 / no named Company B**, one named test each; **two are re-serves** of already-disposed events |
+| `T-2026-11-23-01` | CrowdStrike / Zscaler, ~$43.9B all-stock, announced today | **Part 3** — closes 2H CRWD FY2028, ~7+ quarters. Part 1 independently: no source names any affected third party. |
+| `T-2026-11-23-02` | BIS remote-access AI-chip rule; NVDA H200 halt; TSMC ≤16nm suspension | **Part 1** — no named beneficiary; the only measurable direction is **negative**, inexpressible long-only. Third appearance in five sessions. |
+| `T-2026-11-23-03` | Sila / Panasonic silicon-anode offtake, ">$1B over time" | **§3** — Sila private, Panasonic Japan-listed. **No US-listed party exists in the transaction.** |
+| `T-2026-11-23-04` | Venture Global / China Gas, +1.0 MTPA LNG, 20 yr | **Part 3** — deliveries begin **2030**, ~16 quarters. First-order leg. **Fifth appearance, fifth rejection.** |
+| `T-2026-11-23-05` | Macro complex — UMich 51.5, Nasdaq −5%, PCE/GDP/PMI ahead | **No Company A.** A market is not a transaction. |
+| `T-2026-11-23-06` | Sweep of nine: Intuit/Mailchimp, Textron Industrial, MasTec/Murphy, Capricor, Vanda, Beren, Apple re-serve, Moog, NVDA re-serve | §3, part 1 or wrong-direction on each. Two are **re-serves of already-disposed objects**. |
 
----
-
-## ⚠⚠ THINGS THE OPEN SEAT MUST READ BEFORE IT CONSIDERS ANYTHING OF ITS OWN
-
-**1. The priced-in gate was actually reached today, and BOTH readings were `true` BY FALLING.**
-`clock`-gated at 07:04:48 (`is_open: false`, both dates 2026-11-20, window ending on the finished
-2026-11-19 bar):
-
-| Symbol | `from_close` → `to_close` | `move_pct` | `priced_in` |
-|---|---|---:|---|
-| **BKR** | 48.85 → 46.67 | **−4.46%** | **true — LATE** |
-| **AMKR** | 37.12 → 34.135 | **−8.04%** | **true — LATE** |
-
-⚠⚠ **This is carry-forward item 12's direction-blind filter (`abs(move) > 4`) appearing TWICE in
-one run**, one session after NVDA read `true` by falling 13.22%. **"The filter is direction-blind,
-therefore buy the faller" is averaging into weakness in a costume, and §7 forbids averaging down.
-No override was taken at this seat and none may be taken at yours.** It is for the human to fix in
-code. ✅ **And neither reading was load-bearing: both names die on part 2 / part 3, which precede
-the filter in §4's ordering.**
-
-**2. The pre-event-window rule is MOOT for these two, NOT discharged — keep it verbatim.**
-*When the plan's catalyst broke after the prior close, the open seat is the first that can actually
-perform the priced-in test; re-run `move --sessions 5` after the open and treat the pre-market
-reading as UNPERFORMED, not passed.* Today's catalysts broke **during or after the 2026-11-19
-session**, so the five-session window **does** contain a post-catalyst finished bar — and a `true`
-reading is the conservative direction anyway, so no re-test could make either name eligible. ⚠ **The
-rule stays live for the first seat that holds an intent on a post-close catalyst.** Measured
-precedent: `research_log.md` ADDENDUM 2026-11-18 — re-running thirteen names after a completed
-post-catalyst session **flipped 7 of 13 verdicts**; the eligible set went from **eight names to
-five**; **five names reading `false` that morning were already 4.5–14% LATE.**
-
-**3. If you write an intent of your own, item 13's `clock` gate is a CONVENTION, NOT CODE.**
-`move` reads the in-progress bar. Run mid-session, the five-session window silently rolls onto
-today's unfinished bar (demonstrated 2026-11-18: NVDA `to_close` 150.87 at ~15:25 vs 155.49 at
-07:03). **Re-read `clock` immediately before any `move` call and say what it returned.**
-
-**4. `sleeves` and `positions.current_price` are MIDPOINTS, not closes.** At 07:02 this seat read
-equity **94,781.24** and core **68.35%** off a `current_price` of **654.05** — a pre-market
-midpoint. The last authoritative figures are **close-basis** (below). Use `bars` for a close, a
-fresh `quote` for execution, **never** a `positions` field or `sleeves` for a close-basis figure.
+**Nothing is to be bought today.** If the open run finds this plan dated **2026-11-23**, there is
+still no BUY to validate — the correct behaviour is to proceed to the §5 and §2 sections and place
+no order.
 
 ---
 
 ## SELL intents
 
-**NONE — and this is the ABSENCE OF A SUBJECT, not four clean bills of health.**
+**NONE — AND THERE IS NO OPERAND, WHICH IS NOT THE SAME AS "ALL RULES PASS."**
 
-`positions.md` lists **zero satellite positions** (`grep -ci 'status: *open'` → 0). `alpaca.py
-positions` returns **one row — VOO 99.046311231 sh @ 706.74**, the designated §2 core, which is
-**§5-exempt** and was **struck from the §5 working list, not cleared**. **Ledger reconciled, it
-agrees.**
+The satellite sleeve holds **zero positions** and always has. `positions.md` "Open positions" is
+`*(none)*`; `alpaca.py positions` returns **one row, VOO**, the designated §2 core, which §5
+exempts. §5.1 invalidation, §5.2 time stop, §5.3 hard stop and §5.4 trailing stop are therefore
+**ABSENT, NOT PASSING**: no entry price, no `highest_close`, no deadline and no invalidation string
+exists anywhere to evaluate.
 
-| Rule | Status | Why ABSENT rather than passing |
-|---|---|---|
-| §5.1 thesis invalidation | **ABSENT** | No invalidation string exists — 293 thesis IDs, 0 ever accepted. **No per-name Perplexity news check was run or owed: there is no name to check.** |
-| §5.2 time stop | **ABSENT** | No timing window, no deadline. |
-| §5.3 hard stop (−7% from entry) | **ABSENT** | No satellite entry price. |
-| §5.4 trailing stop (−10% from `highest_close`) | **ABSENT** | No `highest_close` exists. |
-
-**99th absent seat, 82nd absent date.** ⚠ **All four §5 sell rules remain UNTESTED CODE PATHS**, as
-do the §5.4 staleness detector and the `highest_close` backfill branch. The first satellite position
-is their first live test.
+⚠⚠ **Core VOO's −7.717% is NOT a §5.3 reading and its drawdown is NOT a §5.4 reading.** Core is
+exempt from all four rules and is not sold on news (§2, §5). That is a rule, not a judgment call,
+and it is restated here because the magnitude now sits past both thresholds and a fresh-clone seat
+reading only the P&L line could mistake it for a trigger. **The §5 machinery remains unproven code
+— 81 days old and never once executed against a real position.**
 
 ---
 
 ## REBALANCE intent
 
-**NONE — core is IN BAND on both bases available this morning.**
-
-| Basis | Equity | Core value | Core % | §2 verdict |
-|---|---|---|---|---|
-| **Official close 2026-11-19** (`bars` VOO **658.05**, `n` 2,902, `v` 132,178) | **95,177.43** | 65,177.43 | **68.4799%** | **IN BAND** — 3.4799pp above the 65% floor |
-| **07:02 pre-market `sleeves`** (midpoint 654.05 — ⚠ not a close) | 94,781.24 | 64,781.24 | **68.35%** | **IN BAND** — 3.35pp above the floor |
-
-`core_in_band: true`, `rebalance_needed: false`, satellite **0.00%**, cash **$30,000.00** (**31.65%**
-on the midpoint basis, 31.5201% on the close basis). ⚠ `rebalance_delta` **1,565.63** is a distance
-readout to the 70% target, **NOT an order** — §2 rebalances at the 65/75 band, not at the target.
-
-⚠ **FLOOR HEADROOM HAS NARROWED SIX READS RUNNING:** 3.9074pp (11-18 close) → 3.9300pp (11-19
-midday) → 3.4983pp (11-19 15:15) → 3.4799pp (11-19 close) → **3.35pp (11-20 07:02 midpoint)**. The
-band is wide; **it is not getting wider.** A sixth consecutive down session on the index is what is
-driving it, and §2 holds core permanently regardless. **The §5.4/§2 variance hazard becomes
-load-bearing the first day core sits within a point of 65%.**
+**NONE.** `sleeves` reports `core_in_band: true`, `rebalance_needed: false`, core **68.29%** against
+the §2 65–75% band. `rebalance_delta` is **$1,620.60** to the 70% target — inside the band, so §2
+requires no action and none is authorized. ⚠ Re-check after the open: the figures above are a
+pre-market mark, and the band test belongs to the open run on live numbers.
 
 ---
 
-## Core sleeve
+## For the open run, in order
 
-**No action.** Core is established (`core_established: true`, `core_ticker: VOO`, 99.046311231 sh
-from the 2026-09-03 fill at 706.74 — the only fill in this account's history). §2 says buy once and
-hold; §5 exempts it; §7 forbids selling it to fund a satellite trade. **It is not sold on news and
-today's six-session index drawdown is news.**
-
----
-
-## Not a holiday, and the dates say so
-
-`clock` at **07:02:16** returned `is_open: false` — but `next_open` **2026-11-20T09:30** and
-`next_close` **2026-11-20T16:00** both carry **today's** date. That is the pre-market signature of a
-**normal full session**. A holiday shows `next_open` on a **later** date. Re-read at 07:04:48,
-unchanged. **Market opens today at 09:30 ET and closes at 16:00 ET.**
+1. **Confirm `plan_date` reads 2026-11-23.** If it does not, this plan is stale — log it, alert,
+   and go straight to the §2 section.
+2. **Re-read `clock`.** Place nothing while `is_open` is false. ⚠⚠ **The standing schedule defect:
+   nine of ten recorded routine-2 seats fired ~50 minutes BEFORE the bell. The ask is already with
+   the human — do not re-send it.** There is nothing to execute today either way, so the defect
+   costs nothing again this session.
+3. **Re-derive the week anchor** rather than trusting `week_of`.
+4. **Nothing to execute.** Zero BUY intents, zero SELL intents, zero REBALANCE. Log the null and
+   commit.

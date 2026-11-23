@@ -52,6 +52,209 @@ single most common way a plausible-sounding connection gets mistaken for an oppo
 
 ## Entries
 
+### 2026-11-23 (07:01 ET) — event survey (funnel, pre-thesis)
+
+Selftest **5/5**, exit 0 (`trading_enabled: true`, LIVE paper, equity **$94,588.10** at the
+selftest's read). `clock` **07:01:19** — `is_open: false`, `next_open` **2026-11-23T09:30:00-05:00**,
+`next_close` **2026-11-23T16:00:00-05:00**. **Both fields carry today's date: the pre-market
+full-session signature, NOT a holiday.** Monday, ordinary session.
+
+**WEEK ROLLOVER — NO RESET DUE, RE-DERIVED AT THIS SEAT.** `week_anchor(2026-11-23)` → **2026-11-23**
+= inherited `week_of` **2026-11-23**. They match; `new_positions_this_week` stays **0 of 3**. ⚠ The
+weekend-anchor hazard the 11-20 review flagged (a Sat/Sun run resetting `week_of` to 11-16) **did not
+materialise** — no run fired over the weekend, and from today anchor and value agree.
+
+**NEW POSITIONS PERMITTED THROUGHOUT.** Breaker **INACTIVE 0/3** · cap **0 of 3** · satellite
+**0.00% deployed, $30,000 cash** · `TRADING_ENABLED: true` · `control.md` Notes **(none)** ·
+`alerts.md` **no open, no SYSTEMIC incidents**. **Nothing structural blocked a buy. The candidates
+did.**
+
+**LEDGER RECONCILED, AGREES.** `positions.md` "Open positions" is `*(none)*` and `grep -ci
+'status: *open'` → **0**; `alpaca.py positions` returns **one row, VOO 99.046311231 sh @ 706.74**,
+the designated §2 core, §5-exempt and deliberately untracked there. **No disagreement to resolve.**
+§5.1–§5.4 remain **ABSENT, NOT PASSING** — no entry price, no `highest_close`, no deadline, no
+invalidation string exists. **Step 4 had NO OPERAND.**
+
+**FUNNEL SPEND: four sweeps, one drill query, one `bars` call.** Sweep 1 took the Fri→Mon window.
+Sweep 2 inverted it — named-both-parties transactions with disclosed values, own-results prints and
+financings excluded. Sweep 3 inverted it again — regulatory decisions, court rulings, export
+restrictions, halts, recalls. Sweep 4 attacked the standing part-1 blank directly, asking only for
+cases where a **source explicitly names a second-order beneficiary and its segment**. It returned
+**"No qualifying case can be established"** — the fourth consecutive session that sweep has come
+back empty.
+
+⚠ **NO CANDIDATE REACHED THE PRICED-IN FILTER, AND NO `move` CALL WAS MADE.** §4 orders the four
+parts ahead of the hard filters; every candidate below died on part 1 or part 3. **Spending `move`
+calls on names already dead would be theatre, so none were spent** — recorded so the absence is not
+read as a skipped check.
+
+⚠ **ENDPOINT DISAGREEMENT — FOURTEENTH DISTINCT INSTANCE.** `positions.lastday_price` **635.54** vs
+official `bars` close **635.01** for 2026-11-20 = **0.53 / 0.0835%**. Mid-range against the recorded
+0.04–1.41 spread. **A new session is a new instance.** Figures here are built from official `bars`
+closes only.
+
+⚠⚠ **PRE-MARKET MARK, SAID ONCE: `positions.current_price` is 652.20 at 07:01, +2.70% on Friday's
+635.01 official close.** Equity **$94,598.00** and the sleeve percentages below are therefore read
+off a **pre-market print, not a close**, and will move before the bell. **The §2 band verdict is
+robust to that**: core reads **68.29%** on the pre-market mark and **67.71%** on Friday's close —
+both comfortably inside 65–75%. The 65% floor still breaks at VOO **562.51** (solved, not assumed:
+19500 = 0.35 × 99.046311231 × P).
+
+---
+
+#### THE 293→0 RECORD, AND A SHARPER DIAGNOSIS THAN "THE BAR IS HIGH" — FOR THE HUMAN
+
+Six candidates below, all rejected; the running total is **299 theses written, 0 ever accepted**
+across **81 days**, the account's whole history. Prior seats sent the human a finding about the agent-authored "rule (iii)…(viii)"
+taxonomy. **This is a different and, this seat thinks, more serious point, and it is raised, not
+acted on.**
+
+**Sweep 4 — the query that has done most of the recent killing — demands that a NEWS SOURCE have
+already named the second-order company and its segment.** §4 demands no such thing. §4 asks the
+**agent** to write a mechanism, a dollar path, a timing window and an invalidation that are honest
+and sourceable. Requiring the *source* to have done the second-order reasoning restricts the funnel
+to links the market has already been told about — **which is precisely the set §4's own priced-in
+filter then kills.** The two gates in combination are close to unsatisfiable by construction, and
+that is a plausible mechanical explanation for a 0-of-299 record that "genuine second-order
+opportunities are rare" does not fully cover.
+
+⚠⚠ **THIS IS NOT A LICENCE AND THIS SEAT TOOK NONE.** Loosening the sourcing standard is exactly
+what §4's honest-broker rule exists to prevent — "you will always be able to construct a plausible
+connection" — and a run that diagnosed its own filter as too strict and then relaxed it would be
+the failure mode, not the fix. **The calibration is the human's to set.** The honest position is
+that both readings fit the evidence and this seat cannot distinguish them from inside the loop.
+
+---
+
+### T-2026-11-23-01 — the enterprise-security vendor tier ← CrowdStrike's definitive all-stock acquisition of Zscaler, ~$43.9B enterprise value, 1.135 CRWD per ZS share, ~34% premium (announced 2026-11-23) — REJECTED (part 3: closes **2H of CRWD's FY2028**, ~7+ quarters out, decisively outside the two-quarter horizon; part 1: the drill query established **no source names any other public company whose revenue or costs change** — the source applied the kill; and merger arbitrage is not a §4 structure)
+**Company A / the news:** CrowdStrike (CRWD) and Zscaler (ZS) announced a definitive agreement on
+2026-11-23 — all-stock, 1.135 CRWD per ZS share, ~$260.41/ZS implied, ~34% premium to ZS's 11-20
+close, ~$43.9B enterprise value on CRWD's 11-20 price. Boards approved; completion subject to
+shareholder and regulatory approval, expected **2H CRWD FY2028**. Confirmed against the CrowdStrike
+press release and CNBC, after one drill query; earlier November reports described talks only.
+**Company B / the candidate:** none established. The obvious reader-supplied story is a named rival
+(PANW, FTNT, S) taking share during integration, or a displaced vendor.
+
+**1. Mechanism (one sentence):** cannot be written in one clause. The best available is "the CRWD/ZS
+combination disrupts enterprise security procurement, **and also** some rival wins the displaced
+renewals, **and also** that shows in a named segment" — three clauses, which §4 says is the link
+being too weak, not a thesis that needs more words.
+**2. Dollar path:** no segment, no magnitude, no revenue share. Nothing is attributable to anyone.
+**3. Timing window:** **FAIL, and this is the load-bearing kill.** Nothing changes at any
+competitor's revenue line before the deal closes in 2H FY2028. ~7+ quarters > 2.
+**4. Invalidation:** unwritable, because no measurable claim exists to falsify.
+
+**Hard filters:** not reached — parts 1 and 3 precede them in §4's ordering. No `move` call spent.
+**Outcome:** REJECTED. **Part 3 alone is dispositive and part 1 is independent.** ⚠ This is the
+largest disclosed-value event in the window and the one this seat had most appetite for; the
+timing window kills it on arithmetic, not judgment. ⚠ **A share shift the reader supplies is the
+pattern 2026-11-09-03 and 2026-11-10-03 were rejected for. Third instance, named as such.**
+
+### T-2026-11-23-02 — the US AI-compute and foundry complex ← the BIS interim final rule on remote access to advanced AI chips taking effect 2026-11-19, NVIDIA halting H200 sales to China, and TSMC suspending previously approved ≤16nm orders from Chinese designers (2026-11-20) — REJECTED (**the standing government-action object, THIRD appearance in five sessions** — see 2026-11-17-01 and 2026-11-19-01; part 1: no source names any beneficiary; the only measurable direction is NEGATIVE in a long-only strategy)
+**Company A / the news:** BIS interim final rule (FR 2026-23529), effective on publication
+2026-11-19, imposing licensing on advanced AI chips including remote-access data centres serving
+China-linked entities. NVDA halted H200 China sales; TSMC suspended some approved ≤16nm Chinese
+orders 11-20; AMD stated compliance. Separately, reporting notes NVDA had billed ~$104B (~22% of
+revenue) to Singapore before changing its revenue-reporting criteria in October.
+**Company B / the candidate:** none. The constructible story is "freed TSMC advanced capacity
+reallocates to US fabless customers."
+
+**1. Mechanism (one sentence):** fails the one-clause test — "TSMC suspends Chinese orders, **and
+also** capacity frees up, **and also** an unnamed US customer gets earlier allocation, **and also**
+it reaches their revenue inside two quarters."
+**2. Dollar path:** no recipient is named by any source, so there is no segment to size.
+**3. Timing window:** unwritable without a recipient.
+**4. Invalidation:** unwritable for the same reason.
+
+**Hard filters:** not reached. ⚠ **Correlation note:** zero open positions, so the §4 correlation
+check has no operand — recorded, because "pass" and "no operand" are different facts.
+**Outcome:** REJECTED. ⚠ **Direction matters and is stated, not glossed:** every §3-eligible name in
+this complex carries the *encumbered* book. The measurable effect is a revenue loss at NVDA, AMD and
+TSMC. **A long-only strategy cannot express that, and "the filter is direction-blind, so buy the
+faller" is averaging into weakness, which §7 forbids.** NVDA closed 11-20 at $125.53, −23% on the
+week and −48% from its October record; that is the fall, not an entry.
+
+### T-2026-11-23-03 — Sila Nanotechnologies / Panasonic Energy North America — multiyear Titan Silicon silicon-carbon anode offtake from Moses Lake, WA, "potential value more than $1B over time" (first disclosed 2026-11-19) — REJECTED (**§3 kills BOTH legs and no US-listed party exists anywhere in the transaction**; part 2 independently: the headline figure is a potential value stated by the seller, with no guaranteed minimum, no tonnage and no schedule)
+**Company A / the news:** Sila Nanotechnologies agreed a multiyear offtake with Panasonic Energy
+Corporation of North America; Sila's CEO described "tens of thousands of tons."
+**Company B / the candidate:** none survives §3. **Sila is private. Panasonic Energy is a subsidiary
+of Japan-listed Panasonic Holdings.** Neither is US-listed common stock above $10B.
+
+**1. Mechanism:** not written — §3 is a universe gate and precedes the thesis.
+**2. Dollar path:** would fail anyway. ">$1B over time" is a *potential* value stated by Sila, not a
+disclosed contract value; no term, no guaranteed minimum, no complete tonnage, no pricing.
+**3/4.** not reached.
+
+**Hard filters:** **Universe (§3): FAIL on both legs.** Not reached: priced-in, correlation.
+**Outcome:** REJECTED. ⚠ This is the cleanest kill of the run and cost nothing to make — the
+eligibility gate, not a constructed story.
+
+### T-2026-11-23-04 — VG (Venture Global) / China Gas Holdings — increased 20-year LNG SPA, +1.0 MTPA to 3.0 MTPA total, deliveries **beginning 2030** (first disclosed ~2026-11-19/23) — REJECTED (**part 3: first delivery is ~16 quarters out**; VG is the **first-order seller**, not a Company B; **FIFTH appearance of this name** — 2026-11-11-03 and three priors; and the counterparty is HK-listed)
+**Company A / the news:** Venture Global and China Gas Holdings announced an increased long-term
+LNG sales and purchase agreement — 1.0 MTPA added, 3.0 MTPA total, 20-year term, starting 2030. A
+volume and term are disclosed; **no dollar value is.**
+**Company B / the candidate:** none. VG is the party *selling*, which is the first-order leg §4
+explicitly is not about. Its supplier tier was disposed at T-2026-10-15-02.
+
+**1. Mechanism:** not written — there is no second-order party to write it about.
+**2. Dollar path:** no price disclosed, so no revenue figure is derivable even for VG.
+**3. Timing window:** **FAIL, dispositive.** Deliveries begin **2030** — ~16 quarters, eight times
+the §4 horizon.
+**4. Invalidation:** unwritable.
+
+**Hard filters:** not reached. §3 kills the counterparty independently (HK-listed).
+**Outcome:** REJECTED. ⚠ **Named as a repeat so a future seat does not re-litigate it:** this is the
+fifth time Venture Global has entered this funnel and the fifth rejection. The shape is always the
+same — a real, large, well-disclosed LNG agreement whose economics land far outside two quarters.
+**The horizon, not the quality of the deal, is what disqualifies it every time.**
+
+### T-2026-11-23-05 — the macro / policy complex (final November UMich sentiment 51.5 vs 48.0 October and 51.6 expected, one-year inflation expectations 3.7% from 4.7% · an AI-led selloff with the Nasdaq off >5% and the S&P 500 −8.1% from the start of earnings season · October PCE, the second Q3 GDP estimate and November flash PMIs due this week) — REJECTED (**no Company A — the standing government-action and market-outcome object, unchanged**)
+**Company A / the news:** macro prints and a market repricing.
+**Company B / the candidate:** none. A market is not a transaction and has no counterparty.
+
+**1. Mechanism:** unwritable — §4's template requires an event with a named party, and a sentiment
+index, a scheduled data release and an index drawdown supply none.
+**2/3/4.** not reached.
+
+**Hard filters:** not reached.
+**Outcome:** REJECTED. ⚠ Logged rather than dropped because the volume of macro coverage in a
+selloff week is exactly the condition under which a seat starts reasoning from "the market is
+down, therefore something is cheap" — which is §4's honest-broker warning with a macro costume, and
+is **not** what this strategy buys.
+
+### T-2026-11-23-06 — sweep: nine remaining disclosed events disposed as one — REJECTED (ZERO additional drill queries spent)
+Disposed together because each dies on the same one or two tests, and spending a thesis entry each
+would grow a corpus that is already the standing systemic finding.
+
+- **Intuit / Bending Spoons — Mailchimp divestiture, $3.68B (11-20).** Buyer is private and
+  non-US; the seller's own portfolio action is a condition, not a second-order event. §3 + part 1.
+- **Textron — sale of its Industrial segment (Kautex, Specialized Vehicles) to Kingswood Capital
+  (11-20).** Buyer is a private-equity affiliate. No named public second-order party. §3 + part 1.
+- **MasTec / Murphy Corp — $1.25B acquisition.** MasTec is the acquirer: capital paid OUT, wrong
+  direction. Target not established as US-listed. Part 1 + §3.
+- **Capricor Therapeutics — FDA rejection of its DMD cell therapy (11-23).** ⚠ **A rejection
+  PRESERVES the status quo and therefore changes nobody's revenue line** — the 2026-11-10-03 and
+  2026-11-16-01 finding, third instance. No incumbent is named.
+- **Vanda Pharmaceuticals — court orders the FDA to revisit its jet-lag drug rejection (11-23).**
+  A remand is not an approval; no revenue line moves and no second party is named.
+- **Beren Therapeutics — FDA approval of Lembaz for Niemann-Pick type C (11-23).** Not established
+  as US-listed above $10B; ultra-rare indication; no named second-order party. §3 + part 2.
+- **Apple — $33B increase in manufacturing purchase obligations, re-served by sweep 4's citations.**
+  ⚠ **ALREADY DISPOSED at T-2026-11-03-01 and T-2026-11-03-02** (unnamed supply base; part 2). Sweep 4
+  explicitly found the Micron coverage to be commentary, not a sourced identification. **Not
+  re-litigated; recorded as a re-serve.**
+- **Moog — FY2026 own-results segment revenue (11-20).** An own-results print is a condition, not a
+  transaction with a counterparty. Part 1.
+- **NVIDIA's +$111B supply commitments, re-served.** ⚠ **ALREADY DISPOSED at T-2026-11-20-02**
+  (NVIDIA names no memory supplier; §3 kills AMKR at ~$8.9B). Re-serve, not a new object.
+
+**Outcome:** all REJECTED. ⚠ **Nine, counted after the list was written, not claimed before it.**
+The header's first draft said "eight" — written from intent before the NVIDIA re-serve was added —
+and it is **replaced, not left beside its correction.** That is the one line this corpus keeps
+getting wrong, per the 11-04, 11-11, 11-12 and 11-20 instances.
+
+---
+
 ### 2026-11-20 (07:01 ET) — event survey (funnel, pre-thesis)
 
 Selftest **5/5**, exit 0 (`trading_enabled: true`, LIVE paper, equity **$94,792.13** at the
