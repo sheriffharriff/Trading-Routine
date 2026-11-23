@@ -85,6 +85,16 @@ check that the pull returned the right session. A stored baseline is a *label*, 
 
 *(none — no **satellite** positions have been opened yet. Core VOO exists and is deliberately not tracked here, per the top-of-file rules and the fill note further down.)*
 
+### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-11-23, **DIGEST OPEN — `1-premarket` 07:01, body below. Later seats append; the close seat closes it.** ⚠ Absent-seat ordinal **103rd**; absent dates **84**. ⚠⚠ **NOTHING WAS COLLAPSED AND NO COLLAPSE RATIO IS CLAIMED.** Step 4 writes `sell_rule_status` per OPEN position and there are none, so the only lawful write is this header plus the reconciliation below. **This file was 367,528 B describing an EMPTY LEDGER when this seat read it — `wc -c`, not inherited — and that is the standing systemic finding, still awaiting a retention rule from the human.** This seat added the least it could and touched no prior seat's prose; a pre-market seat is not entitled to collapse other seats' writing.)
+
+**Ledger reconciled, AGREES.** Zero satellite blocks here (`grep -ci 'status: *open'` → 0) vs **one**
+Alpaca row — VOO 99.046311231 sh @ 706.74, the §2 core, **§5-EXEMPT, struck from the working list,
+not cleared**. `clock` 07:01:19 `is_open: false`, **both** dates **2026-11-23** — pre-market full
+session, not a holiday. **Pre-open, 149 min before the bell; it costs nothing — this seat places no
+orders by design.** ⚠⚠ Core unrealized **−7.717%** is **NOT** a §5.3 reading and its drawdown is
+**NOT** a §5.4 reading; §5 exempts core. **Said because the magnitude now sits past both thresholds
+and a fresh-clone seat reading only the P&L line could mistake it for a trigger.**
+
 ### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-11-20, **DIGEST CLOSED BY THE `4-market-close` SEAT AT 15:15 — HEADER ONLY.** Seats that appended: `1-premarket` **07:01** (body below, untouched) · `2-market-open` **08:36** 0 B · `3-midday` **11:41** 0 B · `4-market-close` **15:15** header only. ⚠ **PRE-CLOSE, `is_open: true`, 45 min before the bell — and the close seat's `highest_close` write would have been UNLAWFUL here per item 5, had one been owed. NONE WAS: zero satellite positions.** ⚠ Absent-seat ordinals: 07:01 **99th** · 08:36 **100th** · 11:41 **101st** · this close **102nd**; absent dates **83** (one empty day is one fact about the ledger, not four). ⚠⚠ **THE CLOSE SEAT ADDED NO DIGEST BODY AND CLAIMS NO COLLAPSE RATIO — NOTHING WAS COLLAPSED.** Step 5 writes `sell_rule_status` per OPEN position and there were none, so the only lawful write was this header. **This is the 3rd consecutive seat to add no body to a 366 KB file describing an EMPTY LEDGER** — the standing systemic finding, still awaiting a retention rule from the human.)
 
 **Ledger reconciled, AGREES.** Zero satellite blocks here (`grep -ci 'status: *open'` → 0) vs **one**
