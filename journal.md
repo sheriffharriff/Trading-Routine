@@ -40,6 +40,103 @@ anything where the honest-broker rule (§4) did real work>
 
 ## Entries
 
+### 2026-11-23 (Monday)
+
+**Account:** total $95,902.44 | day P&L +2,954.55 (+3.179%) | since inception −4.098%
+**Sleeves:** core 68.72% | satellite 0.0% | cash 31.28%   (§2 band 65–75%)
+**Breaker:** INACTIVE (0 of 3 consecutive losses)
+**Week:** 0/3 new positions
+
+**Traded:** nothing
+**Researched:** 6 theses — 0 accepted, 6 rejected (`T-2026-11-23-01` … `-06`)
+**Positions near a sell rule:** none — **no satellite position exists**, so §5.1–§5.4 are ABSENT, not passing
+
+⚠ **PRE-BELL INSURANCE WRITE, 15:18 ET, `is_open: true`, 42 min before the close.** The figures
+above are an **intraday mark, not a close.** This seat is holding for the bell and will restamp
+them from the official `bars` close; if that restamp is missing from this entry, the session died
+during the hold and these numbers are a 15:16 partial. Per carry-forward item 3 the insurance
+commit includes `journal.md` — the 2026-11-13 seat scoped it out and its journal entry and ClickUp
+summary do not exist and never will.
+
+**What happened:**
+
+Nothing was bought, nothing was sold, and nothing was owed. The pre-market seat wrote six theses
+and rejected all six; the open seat found a fresh plan carrying zero intents and placed nothing;
+the midday seat had no position to manage. This seat closes the day with the satellite sleeve
+empty for the **84th consecutive session**.
+
+The day's one real event was in the core, and it is not a §5 event in either direction: VOO ran
+**+4.69% intraday** (665.37 against Friday's 635.54 `lastday_price`), carrying account equity from
+$92,947.89 to $95,902.44 and cutting the core's unrealized loss from Friday's −10.1% close basis to
+**−$4,097.55 / −5.854%**. §5 exempts core and core is not sold on news (§2), so this is neither a
+§5.3 hard-stop nor a §5.4 trailing-stop reading. It is also not a recovery this seat caused or may
+take credit for. The §2 band verdict was re-derived rather than assumed: with cash pinned at
+$30,000 and 99.046311231 shares, the 65% floor breaks at VOO **562.51** and the 75% ceiling at
+**908.67**. At 665.37 the core sits far inside the band. **No rebalance is due tomorrow.**
+
+Housekeeping came back clean. `week_anchor(2026-11-23)` → 2026-11-23, which equals the inherited
+`week_of`, so no reset was due and `new_positions_this_week` stays 0 — re-derived from `common.py`,
+not trusted. `consecutive_closed_losses` is 0 because nothing has ever closed; the breaker is
+correctly INACTIVE and no §6 alert was owed. `orders --status all` returns exactly one row, the
+2026-09-03 VOO core bootstrap, still the entire order history of this account: **nothing was left
+in limbo overnight**, which is the §7 condition this step exists to catch.
+
+**What I got wrong or nearly got wrong:**
+
+**1. I nearly stamped the day's permanent record on an intraday print.** This routine's schedule
+says 16:15 ET so the closing marks have settled; this seat was invoked at **15:15 with the market
+open**, 45 minutes early. The one number that makes this run worth anything — the close — did not
+exist yet. Nothing in the firing announced that; I found it only because I read `clock` instead of
+trusting the schedule, and I only knew to distrust the schedule because the 11-20 digest and
+carry-forward item 4 recorded prior seats hitting the same thing. **A seat that read `state.md`'s
+`last_run` line and went straight to work would have published a 15:16 partial as "the close" and
+nothing downstream would have contradicted it.** On an ordinary day that error is ~0.3%; today,
+with VOO moving 4.7%, it was larger. The hold cost 45 minutes of wall clock and nothing else.
+
+**2. The invisible job had no operand, and I want to be precise about what that means.** The prompt
+says the high-water marks are the thing that matters more than the summary, and there is real
+pressure to tick that box — to write "marks updated" because the checklist said to update them.
+**They were not updated. There was nothing to update:** no `highest_close` field exists for any
+satellite position, because no satellite position exists. That is not the same claim as "§5.4 is
+working." §5.4's staleness detector and backfill branch are **unexecuted code** — read aloud for
+the 106th time today and run against a real position zero times. The first satellite position will
+be their first live test, not their 106th successful one. I am recording the absence as an absence
+so tomorrow's midday seat does not read a confident "updated ✓" and infer a mark it can trust.
+
+**3. The funnel is not merely empty — part of it is recirculating, and that is new information.**
+Across 84 days the system has written **299 unique thesis IDs and accepted 0**. Today's six
+rejections are individually defensible, but two of them are **re-serves of objects already
+disposed**: `T-2026-11-23-04` (Venture Global / China Gas) is on its **fifth** appearance and fifth
+rejection on the same part-3 test, and `-02` (the BIS chip rule) is on its **third in five
+sessions**, each time dying because the only measurable direction is negative and this strategy is
+long-only. Re-researching a name that four prior seats killed on an unchanged, structural test is
+not diligence, it is the funnel eating its own tail — and it consumes the research budget that the
+299→0 problem needs spent on new objects. **A cheap fix exists and no seat may grant itself one:**
+a short disposed-objects list the pre-market seat checks before spending a drill query would end
+this, but deciding what counts as "disposed" is a calibration change, and §4's honest-broker rule
+is precisely the thing that stops a run from loosening its own filters. **Flagged for the human.**
+
+**4. The thin-section pressure was real and I am naming it rather than performing around it.** On a
+day with no position, no trade and no rule event, the honest answer to "what nearly went wrong"
+could have been one line. Three of the four items above are structural rather than about a thesis I
+talked myself into, because there was no thesis to talk myself into. That is itself the finding:
+**after 84 empty days the system's failure modes have migrated out of the trading logic and into
+the plumbing** — the schedule, the unexecuted §5 machinery, the recirculating funnel, the 1.25 MB
+of markdown. Those are the live risks now, and none of them would show up in a P&L review.
+
+**For the next run:**
+
+- **Nothing is in limbo.** One order in account history, terminal since 2026-09-03.
+- **No rebalance due.** Core 68.72% on the mark below; floor at VOO 562.51, ceiling at 908.67.
+- **No week reset due.** `week_of` 2026-11-23 already equals the anchor.
+- **The §5.4 marks were not updated because there is no mark.** Do not read this as a current
+  high-water stamp. There is no `(as of …)` date to find stale and no backfill was owed.
+- **Carry-forward items 1 (unsatisfiable funnel), 7 (two measurement defects) and 9 (corpus
+  growth) are unchanged and all three need the human, not a run.** Item 3's new neighbour is the
+  re-serve loop in point 3 above.
+
+---
+
 ### 2026-11-20 (Friday)
 
 ⚠⚠ **INSURANCE WRITE — PARTIAL BASIS, NOT A CLOSE. THE HOLD FOR THE BELL IS STILL PENDING AS THIS
