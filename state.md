@@ -15,7 +15,7 @@ sessions later it had regrown ×7.8 and the 2026-11-20 review compacted it again
 needs a paragraph belongs in `journal.md`.** See `weekly_review.md` 2026-11-20, Recurring Error 8.
 
 ```
-last_run: 2026-11-23 15:18 ET 4-market-close-journal — INSURANCE WRITE, pre-bell (is_open true, 42 min early). Selftest 5/5 exit 0. Zero satellite positions: Step 2 high-water update had NO OPERAND, no mark updated because none exists. Holding for the bell to restamp on the official close. Core 68.72% in band, no rebalance. Breaker INACTIVE 0/3. 6 theses, 0 accepted.
+last_run: 2026-11-23 16:06 ET 4-market-close-journal — selftest 5/5 exit 0. Fired 15:15 pre-bell, HELD for the post-bell signature and restamped on the official bars close (VOO 664.01). Zero satellite positions: Step 2 high-water update had NO OPERAND — no mark updated because none exists, which is NOT the same as current. Equity 95767.74 close basis, day +3.092%. Core 68.67% in band, no rebalance. Breaker INACTIVE 0/3. 6 theses, 0 accepted. Journal + ClickUp summary both done.
 prior_run: 2026-11-23 11:41 ET 3-midday-management — market OPEN, zero satellite positions, §5.1-5.4 no operand, no exit owed, nothing placed.
 week_of: 2026-11-23
 new_positions_this_week: 0
@@ -24,14 +24,14 @@ circuit_breaker: INACTIVE
 halt_triggered_at: none
 core_established: true
 core_ticker: VOO
-core_pct: 68.72
+core_pct: 68.67
 satellite_pct: 0.0
-cash_pct: 31.28
+cash_pct: 31.33
 open_thesis_ids: none
 ```
 
 ---
-## Where things stand (2026-11-23, **PRE-BELL INSURANCE MARK — restamped on the official close below if the hold completed**)
+## Where things stand (2026-11-23, **OFFICIAL CLOSE BASIS — `bars` close VOO 664.01, post-bell signature confirmed 16:01:17**)
 
 - **Satellite sleeve is empty, 84th consecutive session.** `positions.md` `grep -ci 'status: *open'`
   → **0**; `alpaca.py positions` returns **one** row, VOO 99.046311231 sh @ 706.74 — the §2 core,
@@ -43,13 +43,23 @@ open_thesis_ids: none
   branch remain unexecuted code at 84 absent dates.**
 - **Nothing in limbo.** `orders --status all` → one row, the 2026-09-03 core bootstrap, terminal.
   `orders --status open` → `[]`. No §7 exposure overnight.
-- **§2 band: no rebalance due.** Core **68.72%** on the 15:16 mark (VOO 665.37), satellite 0.0%,
-  cash 31.28%, `core_in_band: true`. Thresholds solved, not assumed: with cash at $30,000 and
-  99.046311231 shares the **65% floor breaks at VOO 562.51**, the **75% ceiling at 908.67**.
-- ⚠⚠ **CORE VOO +4.69% INTRADAY IS NOT A §5 EVENT IN EITHER DIRECTION.** 665.37 vs Friday's
-  `lastday_price` 635.54; unrealized **−$4,097.55 / −5.854%** on the $69,999.99 basis, improved from
-  Friday's −10.1% close basis. §5 exempts core. Restated because the magnitude has recently sat past
-  both thresholds and a fresh-clone seat reading only the P&L line could mistake it for a trigger.
+- **§2 band: NO REBALANCE DUE TOMORROW.** Core **68.67%** on the official close, satellite 0.0%,
+  cash 31.33%, `core_in_band: true`, `rebalance_needed: false`. Thresholds solved, not assumed: with
+  cash at $30,000 and 99.046311231 shares the **65% floor breaks at VOO 562.51** (−15.3% from the
+  close), the **75% ceiling at 908.67** (+36.8%). The 70% target price is **706.74**, identically the
+  entry price — the core is below target only because it is down 6%, not from drift to chase.
+- **Equity $95,767.74 close basis · day P&L +$2,872.34 / +3.092% · since inception −4.232%.**
+  (Broker basis prints $95,823.21 / +3.093% / −4.177% — see the endpoint note below.)
+- ⚠⚠ **CORE VOO +4.567% ON THE DAY IS NOT A §5 EVENT IN EITHER DIRECTION.** Official closes 664.01
+  vs 635.01, on 280,106 shares — the heaviest volume of the five-session window. Unrealized
+  **−$4,232.25 / −6.046%** on the $69,999.99 basis, improved from Friday's −10.1%. §5 exempts core
+  and core is not sold on news (§2). Restated because the magnitude has recently sat past both
+  thresholds and a fresh-clone seat reading only the P&L line could mistake it for a trigger.
+- ⚠ **ENDPOINT DISAGREEMENT, 15th INSTANCE:** `bars` 664.01 vs `positions.current_price` 664.57 =
+  0.56 / **0.0843%** (Friday 0.0835%). Day P&L is nearly identical on both bases (+3.092% vs
+  +3.093%) **because the error applies to both endpoints and cancels in a close-to-close ratio.
+  That cancellation is a trap, not a reassurance** — §5.4 compares a *current* price to a *stored*
+  `highest_close`, where it does **not** cancel and lands on the stop distance at ~0.08% a side.
 - **Week rollover: none due, re-derived.** `week_anchor(2026-11-23)` → 2026-11-23 (imported from
   `common.py`) = inherited `week_of`. `new_positions_this_week` stays **0**.
 - **Breaker correctly INACTIVE 0/3** — nothing has ever closed, so there is no streak to confirm and
@@ -66,9 +76,12 @@ non-update as an absence rather than ticking it as done.** The one judgment that
 procedural: the seat fired at **15:15 with the market open**, so it wrote this insurance commit and
 **held for the bell** rather than publishing an intraday print as the close.
 
-⚠ **This seat shortened `state.md` instead of growing it** (14,123 B → this). Carry-forward item 9
-has recorded every seat since 11-13 writing "added the least it could" while the file grew anyway;
-the only way to stop reporting that is to not do it.
+⚠ **This seat shortened `state.md` instead of growing it: 14,055 B → ~10.5 KB, a ~25% cut**, by
+replacing the previous seat's prose rather than appending to it. Carry-forward item 9 has recorded
+every seat since 11-13 writing "added the least it could" while the file grew anyway; the only way
+to stop reporting that is to not do it. ⚠ It still *added* to `positions.md` (+1,714 B) and
+`journal.md` (+9,583 B), so the corpus net grew. **A seat cannot measure its way out of a growth
+problem it is actively contributing to.**
 
 ## Carry forward
 
@@ -119,7 +132,11 @@ the only way to stop reporting that is to not do it.
 8. ⚠ **THIS CLONE IS SHALLOW.** Any run citing git history beyond ~2 weeks is citing something it
    cannot see. Do not repeat inherited history claims as measured.
 9. ⚠⚠ **CORPUS GROWTH IS THE STANDING SYSTEMIC FINDING AND IT NEEDS A RETENTION RULE FROM THE
-   HUMAN.** `positions.md` **373,588 B** · `weekly_review.md` **415,188 B** · `research_log.md`
-   **324,382 B** · `journal.md` ~**154 KB** — **~1.27 MB of markdown documenting zero satellite
-   trades.** `positions.md` is excluded from rollover on the premise that it "only holds open
-   positions," which has been false for all 84 days, **so no run has standing to truncate it.**
+   HUMAN.** Measured with `wc -c` after this seat's last write, not inherited and not claimed from
+   intent: `positions.md` **375,302 B** · `weekly_review.md` **415,188 B** · `research_log.md`
+   **324,382 B** · `journal.md` **158,322 B** · `state.md` **10,452 B** — **1,283,646 B ≈ 1.28 MB
+   of markdown documenting ZERO satellite trades.** `positions.md` is excluded from monthly
+   rollover on the premise that it "only holds open positions," which has been false for all 84
+   days, **so no run has standing to truncate it.** ⚠ The `state.md` figure is the one number here
+   that cannot be exact: writing it changes it. It is stamped last and is correct to within the
+   length of this clause.
