@@ -42,36 +42,150 @@ anything where the honest-broker rule (§4) did real work>
 
 ### 2026-11-24 (Tuesday)
 
-⚠⚠ **INSURANCE WRITE — PARTIAL BASIS, NOT A CLOSE. THE HOLD FOR THE BELL IS PENDING AS THIS IS
-COMMITTED.** This seat fired at **15:15:34 ET**, **45 minutes before the bell** (`clock`
-`is_open: true`, `next_close` 2026-11-24T16:00, `next_open` 2026-11-25T09:30 — the mid-session
-signature). Per `control.md` the firing time is **recorded, not diagnosed**: manual "Run now"
-invocations are indistinguishable from scheduled ones in run logs. Every figure below is read off
-an **in-progress bar** and **will be replaced, not annotated,** once the official close exists. If
-this entry is still marked PARTIAL when you read it, **the second commit did not land** — that is
-the 2026-11-13 failure shape, and the price leg is recoverable from `bars` for 2026-11-24.
-
-**Account (PARTIAL, 15:20 basis):** total **$95,288.36** | day **−$479.38 (−0.5006%)** against
-11-23's close-basis $95,767.74 | since inception **−$4,711.64 (−4.7116%)**
-**Sleeves (PARTIAL):** core **68.5166%** | satellite **0.0000%** | cash **31.4834%**  (§2 band 65–75%)
+**Account:** total **$95,436.93** | day P&L **−$330.81 (−0.3454%)** | since inception **−4.5631%**
+**Sleeves:** core **68.5656%** | satellite **0.0000%** | cash **31.4344%**   (§2 band 65–75% — in band)
 **Breaker:** INACTIVE (0 of 3 consecutive losses)
 **Week:** 0/3 new positions (anchor 2026-11-23, re-derived from `common.py` — matches `week_of`, no reset)
 
-**Traded:** nothing — zero orders placed, zero fills, zero exits
+**Traded:** nothing — 0 orders, 0 fills, 0 exits, 0 rejections
 **Researched:** 5 theses — 0 accepted, 5 rejected (`T-2026-11-24-01` … `-05`)
 **Positions near a sell rule:** **none — the absence of a subject, not four clean bills of health.**
 Zero satellite positions; §5.1–§5.4 are ABSENT, not passing.
 
-**What happened:** pending the bell. Selftest 5/5 exit 0. Ledger agrees with the broker (0 open
-blocks in `positions.md`, one VOO row from `positions` — the §2 core, §5-exempt).
-**`orders --status all` returns exactly one row, the 2026-09-03 core bootstrap, terminal — nothing
-is in limbo overnight (§7).**
+✅ **RESTAMPED POST-BELL ON THE OFFICIAL CLOSE.** `clock` polled to the post-bell signature at
+**16:00:04** — `is_open: false` with **both** `next_open` and `next_close` on **2026-11-25**, the
+only reading that separates post-bell from pre-market — then a 5-minute settle, then one `bars`
+call. **Official close VOO 660.67.** Every figure here is built from official `bars` closes on a
+single adjustment basis, not from the broker's `current_price`.
 
-**What I got wrong or nearly got wrong:** pending the bell.
+**What happened:**
 
-**For the next run:** ⚠ **THE §5.4 HIGH-WATER MARKS WERE NOT UPDATED BECAUSE THERE IS NO MARK TO
-UPDATE** — zero satellite positions, so Step 2 had no operand. Do not read that as a current stamp,
-and do not backfill: there is no `(as of …)` date to find stale.
+Nothing was bought, nothing was sold, and nothing was owed. The pre-market seat wrote five theses
+and rejected all five; the open seat found a plan carrying zero intents and placed nothing; the
+midday seat had no position to manage. This seat closes the day with the satellite sleeve empty for
+the **85th consecutive session**.
+
+The core did the only moving. VOO closed **660.67** against yesterday's official **664.01** —
+**−0.5030%** on 203,969 shares, roughly a quarter below yesterday's heavy 280,106 and an unremarkable
+Thanksgiving-week Tuesday. That carried close-basis equity from $95,767.74 to **$95,436.93**
+(**−$330.81 / −0.3454%**) and widened the core's unrealized loss from Monday's −6.046% to
+**−$4,563.06 / −6.5187%**, 0.47pp worse. The session gave back a small slice of Monday's +4.567%
+rebound, and nothing about it is a signal.
+
+⚠ **The core is down 6.52% and that is not a §5 event in either direction.** §5 exempts core
+outright and §2 says core is not sold on news. Restated every run because the magnitude has
+recently sat past both the §5.3 and §5.4 thresholds, and a fresh-clone seat reading only the P&L
+line is exactly the failure mode the warning exists for.
+
+**§2 band: no rebalance due tomorrow.** Core **68.5656%**, `core_in_band: true`,
+`rebalance_needed: false`. Thresholds solved rather than assumed: with cash pinned at $30,000 and
+99.046311231 shares the **65% floor breaks at VOO 562.51** (−14.86% from here) and the **75%
+ceiling at 908.67** (+37.54%). `rebalance_delta` of **$1,368.92** is the distance to the 70%
+*target*, not a breach of the band, and §2 rebalances on the band. The core is below target because
+it is down 6.5% from entry, not from drift worth chasing — buying to target here would be adding to
+the core on weakness, which §2 does not ask for.
+
+🛠 **I FOUND A BROKEN PERMANENT RECORD WHILE READING THE JOURNAL, AND IT IS THE MOST IMPORTANT
+THING THIS RUN PRODUCED.** The **2026-11-20** entry is still marked `INSURANCE WRITE — PARTIAL
+BASIS`, which by its own instruction means its post-bell restamp never landed. `git log` confirms
+it: 11-20 carries `baf87a2` ("close (insurance, partial basis)") and then **no second close
+commit** — only the Friday review. So Friday's permanent record has been sitting on a **637.53
+"midpoint"** for two sessions: equity **$93,144.99** against the true official-close figure of
+**$92,895.40**, with the day's loss recorded as **−2.1354%** when it was **−2.3977%**. The record
+**understated a loss by 0.2623pp**, which is the direction that flatters the system. I recovered
+the price leg from `bars` for 2026-11-20 and **appended a correction table to that entry rather
+than replacing its figures** — replacing them would erase the only evidence that the restamp
+failed, and that evidence is the finding. **What is not recoverable: no ClickUp daily summary was
+ever posted for 2026-11-20.** That is the second instance of the 2026-11-13 failure shape, which
+carry-forward item 4 exists to prevent. ⚠ **Neither the 11-23 close seat nor the Friday review
+caught it**, and the review held for its own bell and got its own official close while leaving this
+entry partial — so "a later run will notice" is not a working safety net. **Escalated to the human
+by notification.**
+
+**Housekeeping clean.** `week_anchor(2026-11-24)` → 2026-11-23 = inherited `week_of`, so no reset
+was due and the §6 weekly cap stays 0 of 3 — re-derived from `common.py`, not trusted.
+`consecutive_closed_losses` is 0 because nothing has ever closed; the breaker is correctly INACTIVE
+and **no §6 alert was owed.** `orders --status all` returns exactly one row post-bell, the
+2026-09-03 VOO core bootstrap, terminal — **nothing was left in limbo overnight**, which is the §7
+condition this step exists to catch.
+
+**What I got wrong or nearly got wrong:**
+
+**1. I nearly stamped the day's permanent record on an intraday print, and today — unlike yesterday
+— it would have cost something real.** This routine's slot is 16:15 so the marks have settled; this
+seat fired at **15:15 with the market open**, 45 minutes early, for the ~14th consecutive session.
+Nothing in the firing announced that. I found it only by reading `clock` instead of trusting the
+schedule, and I only knew to distrust the schedule because prior seats recorded the same thing.
+**The measured cost of publishing the partial: equity $95,288.36 vs $95,436.93, day P&L −0.5006%
+vs −0.3454% — low by $148.57, 0.1552pp, which would have overstated the day's loss by about 45%.**
+
+⚠ **And the lesson I inherited was slightly wrong, so I am correcting it rather than repeating it.**
+Yesterday's seat measured a 0.087pp error and concluded the hold "bought 0.087pp of accuracy" —
+true, but it then reasoned that a volatile *session* does not imply a bad partial, only the final 45
+minutes matter. That is right as far as it goes, and today's reading is **nearly double** yesterday's
+on a much quieter session. Two data points now say the partial error is **unpredictable in size,
+not reliably small**: VOO drifted +$1.50/share after 15:20 today on no news at all. **The case for
+the hold is the variance, not any day's payoff** — and a seat that reads yesterday's 0.087pp as "the
+error is tiny, skip the hold" would be drawing the wrong conclusion from an honest number.
+
+**2. The invisible job had no operand, and I will not tick the box.** The prompt says the high-water
+marks matter more than the summary, and there is real pressure to report "marks updated" because the
+checklist said to update them. **They were not updated. There was nothing to update:** no
+`highest_close` field exists for any satellite position, because no satellite position exists. That
+is **not** the claim "§5.4 is working." §5.4's staleness detector and `bars` backfill branch are
+**unexecuted code** — read aloud for the 107th time today, run against a real position zero times.
+The first satellite position will be their first live test, not their 107th successful one. No
+backfill is owed tomorrow because there is no `(as of …)` date to find stale. **This is the one
+instruction in the prompt I could have satisfied on paper while delivering nothing.**
+
+**3. I wrote an invented fact into the summary draft and caught it on re-read.** Drafting the
+calendar section I typed "Friday 2026-11-27 is an early close **(13:00 ET)**". The 13:00 is
+correct by the standard NYSE calendar and I did not get it from anywhere — `state.md` says only
+"early close", and **I never queried the broker's calendar for it.** I removed the time and marked
+the whole Thursday/Friday calendar as inherited and unverified. It would have read as measured,
+sitting in a table of figures that genuinely were measured, which is precisely what makes a
+confabulated detail expensive. The near-miss is not the time being wrong — it probably isn't — it
+is that **a plausible number from training was about to be published in the same voice as a number
+from an endpoint.**
+
+**4. I sized a watcher shorter than the wait it was watching.** I armed a 30-minute monitor at
+15:19 to catch a 16:00 bell, so it expired 10 minutes before the event and returned silence.
+Silence from an expired watcher is **indistinguishable from silence from an uneventful one** — had I
+not also had a second, settle-aware poller running, I could have read "no events" as "the market
+has not closed" and either waited past the slot or given up. Low stakes today; the generalizable
+error is that **a watch must outlast the thing it is watching for**, and I also armed two watchers
+for one event, which was wasteful even though it is what saved it.
+
+**5. The thin-section pressure was real, and four of these five are plumbing, not trading.** On a
+day with no position, no trade and no rule event there is nothing to confess about a thesis,
+because no thesis of mine existed to talk myself into. I am not going to manufacture one. But the
+pattern is itself the finding, and it is now consistent across weeks: **after 85 empty sessions the
+system's failure modes live in the schedule, the unexecuted §5 machinery, the recirculating funnel
+and the 1.3 MB of markdown — not in the strategy.** None of those surface in a P&L review, and a
+P&L review is the only thing a human is likely to do unprompted.
+
+**For the next run:**
+
+- **Nothing is in limbo.** One order in account history, terminal since 2026-09-03.
+- **No rebalance due.** Core 68.5656% on the official close; floor at VOO 562.51, ceiling at 908.67.
+- **No week reset due.** `week_of` 2026-11-23 already equals the anchor.
+- ⚠ **The §5.4 marks were NOT updated because there is no mark.** Do not read this as a current
+  high-water stamp, and do not backfill — no `(as of …)` date exists to be found stale.
+- **Routine 4 fired ~60 min early again (~14th consecutive session).** Recorded, not diagnosed
+  (`control.md`: manual and scheduled runs are indistinguishable in run logs). The mitigation —
+  poll `clock` to the post-bell signature, settle 5 min, one `bars` call — worked again, and today
+  it was worth 0.1552pp.
+- ⚠⚠ **Thursday 2026-11-26 is Thanksgiving; Friday 2026-11-27 is an early close.** Tomorrow is an
+  ordinary full session (`next_open`/`next_close` both 2026-11-25, confirmed post-bell here). The
+  Thursday/Friday calendar is **inherited, not verified from this seat** — check it on the day, and
+  do not read Thursday's `is_open: false` as the pre-market signature.
+- 🛠 **THE 2026-11-20 JOURNAL ENTRY WAS CORRECTED TODAY, NOT REWRITTEN.** Its restamp never
+  landed; true close-basis figures are equity **$92,895.40**, day **−2.3977%**, inception
+  **−7.1046%**, core unrealized **−10.1494%**. **Any run or review quoting 11-20 from the journal
+  before today has the wrong numbers.** No daily summary exists for 11-20 and none can be made.
+- **Carry-forward items 1 (unsatisfiable funnel), 2 (recirculating objects), 7 (two measurement
+  defects) and 9 (corpus growth) are unchanged and all four need the human, not a run.**
+- **ClickUp daily summary posted:** task `86bd6nt1p` — https://app.clickup.com/t/86bd6nt1p
 
 ---
 
@@ -206,6 +320,35 @@ human is likely to do unprompted.
 ---
 
 ### 2026-11-20 (Friday)
+
+🛠 **CORRECTION APPENDED 2026-11-24 16:10 ET BY `4-market-close-journal`. THE FIGURES BELOW ARE
+WRONG AND ARE LEFT IN PLACE ON PURPOSE.** This entry is still marked PARTIAL, which by its own
+instruction below means **the second commit never landed** — and `git log` confirms it: 11-20 has
+`baf87a2` ("close (insurance, partial basis)") and then **no second close commit**, only the
+weekly review. **This is the 2026-11-13 failure shape arriving a second time** (carry-forward
+item 4). Two things were lost that day and only one is recoverable:
+
+| | As recorded (partial, "637.53 midpoint") | **Official close (VOO 635.01)** | Error |
+|---|---|---|---|
+| Equity | $93,144.99 | **$92,895.40** | overstated **$249.59** |
+| Day P&L | −$2,032.44 / −2.1354% | **−$2,282.03 / −2.3977%** | loss understated **0.2623pp** |
+| Since inception | −$6,855.01 / −6.8550% | **−$7,104.60 / −7.1046%** | understated **0.2496pp** |
+| Core unrealized | — | **−$7,104.59 / −10.1494%** | — |
+| Core / cash | 67.7922% / 32.2078% | **67.7056% / 32.2944%** | in band either way |
+
+The price leg is recovered, exactly as the marker said it would be. **What is not recoverable: no
+ClickUp daily summary was ever posted for 2026-11-20** — this entry carries no task link, and Step
+6 sits after the hold that never completed. That day has no summary and never will.
+
+⚠ **I annotated rather than replaced, against this entry's own "replaced, not annotated"
+instruction, and the disagreement is deliberate.** That instruction was written for the same seat
+returning post-bell the same day. Replacing the figures two sessions later would erase the only
+evidence that the restamp failed, and **that evidence is worth more than the tidiness** — it is how
+the human finds out this failure mode has now happened twice. The 11-23 seat read this entry and
+did not catch it; neither did the Friday review, which held for its own bell and got the official
+close while leaving this entry partial.
+
+---
 
 ⚠⚠ **INSURANCE WRITE — PARTIAL BASIS, NOT A CLOSE. THE HOLD FOR THE BELL IS STILL PENDING AS THIS
 IS COMMITTED.** This seat fired at **15:15:31 ET**, **45 minutes before the bell** (`clock`
