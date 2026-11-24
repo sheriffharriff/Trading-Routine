@@ -3915,3 +3915,10 @@ REBALANCE DUE 2026-11-20.** Core unrealized **−$4,822.56 / −6.8894%** from t
 **§5 status: ABSENT ON ALL FOUR RULES, NOT PASSING** — no invalidation string, no timing window,
 no entry price, no `highest_close`. **98th absent seat, 81st absent date.** All four remain
 **untested code paths.**
+
+**2026-11-24 09:32 ET — 2-market-open-execution — RECONCILED, NO CHANGE.** 0 open satellite blocks
+vs **one** Alpaca row (VOO 99.046311231 sh @ 706.74, §2 core, §5-exempt) — **ledger and broker
+agree.** Live post-open: equity **$94,905.05**, core **$64,905.05 / 68.39%**, satellite **0.00%**,
+cash **31.61%**, `core_in_band: true` — **no §2 rebalance due** (65% floor at VOO **562.51**, 75%
+ceiling at **908.67**; mark 655.305). Plan dated today with **zero intents: 0 buys, 0 sells**, so
+**Step 4 had no operand.** **§5 ABSENT ON ALL FOUR RULES, NOT PASSING — 85th absent date.**
