@@ -3922,3 +3922,14 @@ agree.** Live post-open: equity **$94,905.05**, core **$64,905.05 / 68.39%**, sa
 cash **31.61%**, `core_in_band: true` — **no §2 rebalance due** (65% floor at VOO **562.51**, 75%
 ceiling at **908.67**; mark 655.305). Plan dated today with **zero intents: 0 buys, 0 sells**, so
 **Step 4 had no operand.** **§5 ABSENT ON ALL FOUR RULES, NOT PASSING — 85th absent date.**
+
+**2026-11-24 11:41 ET — 3-midday-management — RECONCILED, NO CHANGE. One line, by design.**
+0 open satellite blocks (`grep -ci 'status: *open'` → **0**) vs **one** Alpaca row, VOO
+99.046311231 sh @ 706.74 — the §2 core, **§5-exempt, struck from the working list, not cleared.**
+`clock` `is_open: true`. **Steps 2–5 all had NO OPERAND:** no `highest_close` exists, so no
+staleness check and no `bars` backfill was owed; no `invalidation` string, `timing_window`,
+`entry_price` or high-water mark exists, so **§5.1–§5.4 are ABSENT, NOT PASSING** and no exit
+could trigger; and `sell_rule_status` had nothing to refresh. **No `perplexity` call was spent —
+§5.1 needs an invalidation condition to test, and none exists.** Core **68.40%**, in band, and
+§2 band is not this routine's business. **86th absent seat, 84th absent date.** Third seat today
+to record the same absence; nothing prior collapsed — **the retention rule is the human's to set.**

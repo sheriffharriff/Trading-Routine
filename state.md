@@ -15,8 +15,8 @@ regrew ×7.8 and was compacted again on 11-20. **A value that needs a paragraph 
 `journal.md`.** See `weekly_review.md` 2026-11-20, Recurring Error 8.
 
 ```
-last_run: 2026-11-24 09:32 ET 2-market-open-execution — selftest 5/5 exit 0. Fired 08:36 for a 09:35 slot; polled clock 28 min to is_open=true and executed AFTER the bell. Plan dated today, staleness gate PASSED, zero intents — 0 buys, 0 sells. Ledger AGREES (0 satellite blocks vs 1 Alpaca row, VOO core). Steps 3/4/5/6 had no operand. Core 68.39% live, in band, no rebalance. Breaker INACTIVE 0/3, cap 0/3.
-prior_run: 2026-11-24 07:02 ET 1-premarket-research — 5 theses, 0 accepted; plan_today.md dated 2026-11-24 with ZERO intents; core 68.51% in band.
+last_run: 2026-11-24 11:41 ET 3-midday-management — selftest 5/5 exit 0. Market OPEN. Zero satellite positions, so Steps 2-5 had NO OPERAND: no high-water backfill owed, no §5 rule evaluable, no perplexity call spent, no exit possible. Ledger AGREES (0 blocks vs 1 Alpaca row, VOO core, §5-exempt). Core 68.40% in band. Breaker INACTIVE 0/3, cap 0/3.
+prior_run: 2026-11-24 09:32 ET 2-market-open-execution — plan dated today, staleness gate PASSED, zero intents; 0 buys, 0 sells; waited 28 min for the bell before acting.
 week_of: 2026-11-23
 new_positions_this_week: 0
 consecutive_closed_losses: 0
@@ -24,78 +24,69 @@ circuit_breaker: INACTIVE
 halt_triggered_at: none
 core_established: true
 core_ticker: VOO
-core_pct: 68.39
+core_pct: 68.40
 satellite_pct: 0.0
-cash_pct: 31.61
+cash_pct: 31.60
 open_thesis_ids: none
 ```
 
 ---
-## Where things stand (2026-11-24, **LIVE POST-OPEN MARK — VOO 655.305 at 09:31, `is_open: true`**)
+## Where things stand (2026-11-24, **LIVE MIDDAY MARK — VOO 655.745, `is_open: true`**)
 
-- **Nothing was executed and nothing should have been.** `plan_today.md` carried `plan_date:
-  2026-11-24` — **today** — so the Step 2 staleness gate **passed**, and the instruction set it
-  guards was **empty**. ⚠ **An empty plan that passed the gate is not a stale plan that was
-  blocked**, and it is not licence to improvise: §4 routes every buy through the pre-market seat,
-  so a candidate found at the open belongs in tomorrow's plan.
-- **Satellite sleeve empty, 85th consecutive session** (same session as this morning's count — not
-  incremented). `positions.md` `grep -ci 'status: *open'` → **0**; `positions` returns **one** row,
-  VOO 99.046311231 sh @ 706.74, the §2 core, **§5-exempt, struck from the working list, not
-  cleared.** **Ledger and broker agree; there was no disagreement to reconcile.**
-- **§5.1–§5.4 are ABSENT, NOT PASSING.** No entry price, no `highest_close`, no deadline and no
-  invalidation string exists anywhere. **Step 4 had NO OPERAND.** The §5.4 staleness detector and
-  backfill branch remain **unexecuted code at 85 absent dates.**
-- **§2 band: NO REBALANCE DUE, read LIVE and not inherited.** Core **68.39%** (07:02 pre-market
-  read was 68.51%), satellite **0.00%**, cash **31.61%**, `core_in_band: true`,
+- **Nothing was managed because there was nothing to manage, and that is the whole run.**
+  **Satellite sleeve empty, 84th absent date** (`grep -ci 'status: *open'` → **0**); `positions`
+  returns **one** row, VOO 99.046311231 sh @ 706.74 — the §2 core, **§5-exempt, struck from the
+  working list, not cleared.** **Ledger and broker agree; no disagreement to reconcile.**
+- **§5.1–§5.4 are ABSENT, NOT PASSING.** No `entry_price`, no `highest_close`, no `(as of …)`
+  date, no deadline and no invalidation string exists anywhere. **Step 2's staleness detector and
+  `bars` backfill branch remain unexecuted code at 84 absent dates**, as do all four sell rules.
+  ⚠ **No `perplexity` call was spent:** §5.1 tests a written invalidation condition against the
+  news, and with no condition there is no query to ask. Spending one would have manufactured work.
+- **This routine opened nothing and could not have.** Exits only, by design — §4 routes every buy
+  through the pre-market seat and the 09:35 execution run. **No candidate was looked for.**
+- **§2 band: in band, read LIVE, not inherited** — and §2 rebalancing is **routine 2's job, not
+  this seat's.** Core **68.40%**, satellite **0.00%**, cash **31.60%**, `core_in_band: true`,
   `rebalance_needed: false`. Thresholds **re-solved here, not copied**: with cash $30,000 and
-  99.046311231 shares the **65% floor breaks at VOO 562.51** (19500 = 0.35 × 99.046311231 × P) and
-  the **75% ceiling at 908.67** — **−14.1% / +38.7%** from here. `rebalance_delta: 1528.49` is the
-  distance to the 70% *target*, **not a breach of the band**; §2 rebalances on the band.
-- **Equity $94,905.05 · core mv $64,905.05 · unrealized −$5,094.45 / −7.278% · cash $30,000.00.**
-  ⚠⚠ **CORE −7.278% IS NOT A §5 EVENT, AND IT HAS NOW CROSSED THE §5.3 MAGNITUDE.** §5 exempts
-  core outright and §2 says core is not sold on news. Emphasised because the number is now past
-  the 7% hard-stop *figure*, and a fresh-clone seat reading only the P&L line is exactly the
-  failure mode this warning exists for.
-- ⚠ **ENDPOINT DISAGREEMENT — RE-CONFIRMED, NOT A NEW INSTANCE.** `lastday_price` **663.91** vs
-  official `bars` close **664.01** for 11-23 = **0.10 / 0.0151%**, narrowest of the recorded
-  0.04–1.41 spread. **Still the 16th instance:** same session the 07:02 seat logged it in, and the
-  convention counts sessions, not reads. Figures built from official `bars` only.
+  99.046311231 shares the **65% floor breaks at VOO 562.51** and the **75% ceiling at 908.67** —
+  **−14.2% / +38.6%** from the 655.745 mark. `rebalance_delta: 1516.60` is the distance to the
+  70% *target*, **not a breach of the band**; §2 rebalances on the band.
+- **Equity $94,944.68 · core mv $64,944.68 · unrealized −$5,050.87 / −7.216% · cash $30,000.00.**
+  ⚠⚠ **CORE −7.216% IS NOT A §5 EVENT, AND IT SITS PAST THE §5.3 MAGNITUDE.** §5 exempts core
+  outright and §2 says core is not sold on news. Emphasised because the number is past the 7%
+  hard-stop *figure*, and a fresh-clone seat reading only the P&L line is exactly the failure mode
+  this warning exists for. **VOO −1.23% on the session; this is a market drawdown, not a signal.**
 - **Week rollover: none due, re-derived.** `week_anchor(2026-11-24)` → **2026-11-23** (imported
   from `common.py`) = inherited `week_of`. `new_positions_this_week` stays **0 of 3**.
 - **Breaker correctly INACTIVE 0/3** — nothing has ever closed, so there is no streak and no §6
   alert was owed. `TRADING_ENABLED: true` · `HALT_CLEARED_AT: none` · `control.md` Notes
-  **(none)** · `alerts.md` **no open and no SYSTEMIC incidents**. All five of today's thesis IDs
-  (`T-2026-11-24-01`…`-05`) are present in `research_log.md`, checked though no buy needed one.
+  **(none)** · `alerts.md` **no open and no SYSTEMIC incidents** · `open_thesis_ids: none`.
+- ⚠ **This seat fired 11:41 for a 12:30 slot (~49 min early) and it cost nothing: the market was
+  OPEN, so an exit was placeable had one been due.** Per `control.md` Notes, manual "Run now"
+  invocations are indistinguishable from scheduled ones in run logs, so **this is recorded, not
+  diagnosed as a schedule fault.** Contrast carry-forward item 3, where early firing lands
+  *before* the bell and does bite.
 - ⚠⚠ **THURSDAY 2026-11-26 IS THANKSGIVING; FRIDAY 2026-11-27 IS AN EARLY CLOSE.** Tomorrow is an
-  ordinary full session. Do not plan a Thursday execution, and do not read Thursday's
-  `is_open: false` as the pre-market signature — **check the `next_open` date.**
+  ordinary full session (`next_open` 2026-11-25 09:30). Do not plan a Thursday execution, and do
+  not read Thursday's `is_open: false` as the pre-market signature — **check the `next_open` date.**
 
 ## What this run did
 
-Executed an empty plan correctly, and **waited for the bell to do it.** The run fired at **08:36
-for a 09:35 slot**, so the first decision was what `is_open: false` meant: **both** `next_open`
-and `next_close` carried **today's** date — the pre-market signature, **not** the closed-market
-one — so Step 1's "market closed → log the skip and exit" branch **did not apply.** This seat
-polled `clock` every 2 min for **28 minutes** to `is_open: true` (`next_open` rolled to
-**2026-11-25**) and read the §2 band **after** the open.
-
-⚠ **That matters more than today's zero.** With no intents, waiting changed no action — the band
-verdict is robust across −14.1% in VOO. **On a day carrying intents it changes everything:**
-exiting on "market closed" at 08:36 would silently skip the day's whole execution while the gate
-reported a pass. Carry-forward item 3 held that waiting for the OPEN was **not cleared** at
-routine 2. **It is now demonstrated once** — one instance, logged as evidence, not a solved defect.
+Read the five memory files, confirmed the market open, confirmed the ledger empty against the
+broker, and **stopped.** The routine's own instruction for an empty ledger is "note it, commit,
+exit — do not go looking for something to do," and the temptation this seat had to resist was not
+trading (it may not) but **generating analysis to fill the run**: re-deriving the band it does not
+own, pulling `bars` for a position that does not exist, or querying news against an invalidation
+condition that was never written. **None of that was done.**
 
 ⚠ **Byte accounting, measured with `wc -c` after the write, not claimed from intent:**
-`state.md` **11,332 → 12,069 B (+737)** · `positions.md` **376,615 → 377,211 B (+596)**, a
-six-line reconciliation block, no digest. `research_log.md` and `trade_log.md` **untouched —
-correctly:** no intent was skipped, so no §4 skip was owed, and no order reached a terminal state,
-so no trade entry was owed. **An append to either would have been a fabrication.**
-⚠⚠ **TWO FALSE CLAIMS BY THIS SEAT, CAUGHT BY MEASURING AND CORRECTED BEFORE THE COMMIT, LOGGED
-BECAUSE THE CORRECTION IS THE DATA:** an earlier draft of this file claimed a **3.7 KB cut** and
-measured **12,165 B — it had GROWN**; and the first version of this paragraph said `positions.md`
-**“+1 line”** when the append was **six lines / +596 B**. Carry-forward item 9 has logged five
-consecutive seats claiming a cut while the corpus grew. **This seat did not beat that pattern — it
-only measured itself and published the real numbers.**
+`positions.md` **377,211 → 378,179 B (+968)**, one reconciliation note, no digest block.
+`state.md` rewritten from **12,069 B** — the compression came from the two per-run narration
+sections, not from carry-forward, which is left intact because it is the only continuity.
+`research_log.md`, `trade_log.md` and `journal.md` **untouched — correctly:** no order reached a
+terminal state, so no trade entry was owed, and **an append to any of them would have been a
+fabrication.** ⚠ **Three seats today have now each recorded the same absence** (07:02 ~1 KB,
+09:32 ~0.6 KB, 11:41 ~1 KB). That is the standing finding in item 9 arriving again, and **no seat
+has standing to truncate another's prose.**
 
 ## Carry forward
 
@@ -126,7 +117,8 @@ only measured itself and published the real numbers.**
    worked every time used: **poll `clock` to the right signature** — routine 4 waits for
    `is_open: false` with **both** `next_open` and `next_close` on the *next* session, then ~5 min,
    then `bars`; routine 2 waits for **`is_open: true`** (28 min on 11-24). ⚠ **Read the DATES, not
-   the boolean: FALSE has three meanings, TRUE has one.**
+   the boolean: FALSE has three meanings, TRUE has one.** ⚠ Routine 3 also fires early (11:41 for
+   12:30) but lands **inside** the session, so it is benign — do not fold it into this item.
 4. ⚠⚠ **THE INSURANCE COMMIT MUST INCLUDE `journal.md`.** That scoping error cost 2026-11-13,
    whose journal entry and ClickUp summary do not exist and never will.
 5. ⚠ **DO NOT WRITE A SUPERLATIVE WITHOUT RANKING IT FIRST, AND RANK OFF A CLOSE, NOT A PARTIAL.**
@@ -134,7 +126,8 @@ only measured itself and published the real numbers.**
 6. ⚠ **THE TWO ENDPOINTS DISAGREE ON A SESSION CLOSE AND §5.4 WOULD READ FROM ONE OF THEM.** 16
    distinct sessions, 0.04–1.41/share, narrowing and widening repeatedly; **not a dividend-basis
    artifact.** **Build P&L and stamp `highest_close` from official `bars` closes only, one
-   adjustment basis, one call.**
+   adjustment basis, one call.** ⚠ Not re-measured today: no `bars` call was owed and one must not
+   be spent merely to extend a tally.
 7. ⚠⚠ **TWO MEASUREMENT DEFECTS A RUN CANNOT FIX — FOR THE HUMAN.** (i) **`--adjustment all` is not
    a total-return series on this feed** — byte-identical to the unadjusted series on 259 of 260
    sessions across all four ex-dates. Reconstruct by reinvesting at the ex-date close: 2025-12-22
@@ -148,9 +141,9 @@ only measured itself and published the real numbers.**
    cannot see. Do not repeat inherited history claims as measured.
 9. ⚠⚠ **CORPUS GROWTH IS THE STANDING SYSTEMIC FINDING AND IT NEEDS A RETENTION RULE FROM THE
    HUMAN.** Measured with `wc -c` before this seat's writes: `weekly_review.md` **415,188 B** ·
-   `positions.md` **376,615 B** · `research_log.md` **345,256 B** · `journal.md` **158,415 B** —
+   `positions.md` **377,211 B** · `research_log.md` **345,256 B** · `journal.md` **158,415 B** —
    **~1.3 MB of markdown documenting ZERO satellite trades.** `positions.md` is excluded from
    monthly rollover on the premise that it "only holds open positions," which has been false for
-   all 85 days, **so no run has standing to truncate it.** The one lever a run *does* have is to
-   stop feeding it. ⚠ The `state.md` figure is the one number that cannot be exact, because
-   writing it changes it.
+   all 84 absent dates, **so no run has standing to truncate it.** The one lever a run *does* have
+   is to stop feeding it — this seat added **968 B** and compressed `state.md` rather than growing
+   it. ⚠ The `state.md` figure is the one number that cannot be exact, because writing it changes it.
