@@ -40,6 +40,41 @@ anything where the honest-broker rule (§4) did real work>
 
 ## Entries
 
+### 2026-11-24 (Tuesday)
+
+⚠⚠ **INSURANCE WRITE — PARTIAL BASIS, NOT A CLOSE. THE HOLD FOR THE BELL IS PENDING AS THIS IS
+COMMITTED.** This seat fired at **15:15:34 ET**, **45 minutes before the bell** (`clock`
+`is_open: true`, `next_close` 2026-11-24T16:00, `next_open` 2026-11-25T09:30 — the mid-session
+signature). Per `control.md` the firing time is **recorded, not diagnosed**: manual "Run now"
+invocations are indistinguishable from scheduled ones in run logs. Every figure below is read off
+an **in-progress bar** and **will be replaced, not annotated,** once the official close exists. If
+this entry is still marked PARTIAL when you read it, **the second commit did not land** — that is
+the 2026-11-13 failure shape, and the price leg is recoverable from `bars` for 2026-11-24.
+
+**Account (PARTIAL, 15:20 basis):** total **$95,288.36** | day **−$479.38 (−0.5006%)** against
+11-23's close-basis $95,767.74 | since inception **−$4,711.64 (−4.7116%)**
+**Sleeves (PARTIAL):** core **68.5166%** | satellite **0.0000%** | cash **31.4834%**  (§2 band 65–75%)
+**Breaker:** INACTIVE (0 of 3 consecutive losses)
+**Week:** 0/3 new positions (anchor 2026-11-23, re-derived from `common.py` — matches `week_of`, no reset)
+
+**Traded:** nothing — zero orders placed, zero fills, zero exits
+**Researched:** 5 theses — 0 accepted, 5 rejected (`T-2026-11-24-01` … `-05`)
+**Positions near a sell rule:** **none — the absence of a subject, not four clean bills of health.**
+Zero satellite positions; §5.1–§5.4 are ABSENT, not passing.
+
+**What happened:** pending the bell. Selftest 5/5 exit 0. Ledger agrees with the broker (0 open
+blocks in `positions.md`, one VOO row from `positions` — the §2 core, §5-exempt).
+**`orders --status all` returns exactly one row, the 2026-09-03 core bootstrap, terminal — nothing
+is in limbo overnight (§7).**
+
+**What I got wrong or nearly got wrong:** pending the bell.
+
+**For the next run:** ⚠ **THE §5.4 HIGH-WATER MARKS WERE NOT UPDATED BECAUSE THERE IS NO MARK TO
+UPDATE** — zero satellite positions, so Step 2 had no operand. Do not read that as a current stamp,
+and do not backfill: there is no `(as of …)` date to find stale.
+
+---
+
 ### 2026-11-23 (Monday)
 
 **Account:** total $95,767.74 | day P&L +2,872.34 (+3.092%) | since inception −4.232%
