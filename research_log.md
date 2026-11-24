@@ -52,6 +52,269 @@ single most common way a plausible-sounding connection gets mistaken for an oppo
 
 ## Entries
 
+### 2026-11-24 (07:02 ET) — event survey (funnel, pre-thesis)
+
+Selftest **5/5**, exit 0 (`trading_enabled: true`, LIVE paper, equity **$95,255.67** at the
+selftest's read). `clock` **07:02:02** — `is_open: false`, `next_open` **2026-11-24T09:30:00-05:00**,
+`next_close` **2026-11-24T16:00:00-05:00**. **Both fields carry today's date: the pre-market
+full-session signature, NOT a holiday.** Tuesday of Thanksgiving week; ⚠ Thu 11-26 is the holiday
+and Fri 11-27 an early close.
+
+**WEEK ROLLOVER — NO RESET DUE, RE-DERIVED AT THIS SEAT.** `week_anchor(2026-11-24)` → **2026-11-23**
+(imported from `common.py`) = inherited `week_of` **2026-11-23**. `new_positions_this_week` stays
+**0 of 3**.
+
+**NEW POSITIONS PERMITTED THROUGHOUT.** Breaker **INACTIVE 0/3** · cap **0 of 3** · satellite
+**0.00% deployed, $30,000 cash** · `TRADING_ENABLED: true` · `control.md` Notes **(none)** ·
+`alerts.md` **no open, no SYSTEMIC incidents**. **Nothing structural blocked a buy. The candidates
+did.**
+
+**LEDGER RECONCILED, AGREES.** `grep -ci 'status: *open'` on `positions.md` → **0**;
+`alpaca.py positions` returns **one row, VOO 99.046311231 sh @ 706.74**, the §2 core, §5-exempt and
+deliberately untracked there. **No disagreement to resolve.** §5.1–§5.4 remain **ABSENT, NOT
+PASSING** — no entry price, no `highest_close`, no deadline, no invalidation string exists.
+**Step 4 had NO OPERAND.**
+
+**FUNNEL SPEND: five sweeps, two drill queries, one `bars` call.** Sweep 1 took the overnight
+window. Sweep 2 took regulatory/court/FDA/export decisions. Sweep 3 inverted to named-both-parties
+transactions with disclosed values. Sweep 4 took the earnings slate. Sweep 5 took a funnel shape
+prior seats have not mined: **input, commodity and freight prices that moved on a named cause** —
+a cost-line mechanism rather than a revenue-line one.
+
+⚠⚠ **THIS SEAT DID NOT RUN THE DISPUTED SWEEP, AND THAT IS THE ONE EXPERIMENT IN TODAY'S RUN.**
+Carry-forward item 1 holds that the sweep doing most of the recent killing — demanding that **a news
+source have already named** the second-order company and segment — is a gate **§4 does not contain**,
+and that it is close to unsatisfiable in combination with §4's priced-in filter. **No sweep of that
+shape was run today.** Instead the second-order step was taken *by this seat* (`-04`: DRC bans cobalt
+exports → cobalt price → *which §3-eligible company books cobalt revenue?*) and the drill query was
+spent only to **source facts**, which is what §4 actually asks for.
+**Result: it still produced no trade, but it died on §4's own materiality test rather than on an
+agent-invented gate.** ⚠ **One session is not a test, and this is weak evidence, not a finding.**
+But it is the first clean observation on item 1, and it points slightly *against* the disputed gate
+being the whole explanation for the 0-of-N record. **Raised for the human; no calibration was
+changed, and no seat should change one.**
+
+⚠ **ENDPOINT DISAGREEMENT — SIXTEENTH DISTINCT INSTANCE, AND THE NARROWEST YET RECORDED.**
+`positions.lastday_price` **663.91** vs official `bars` close **664.01** for 2026-11-23 =
+**0.10 / 0.0151%**, against a recorded spread of 0.04–1.41. **A new session is a new instance.**
+Figures here are built from official `bars` closes only.
+
+⚠ **PRE-MARKET MARK, SAID ONCE:** `positions.current_price` **658.84** at 07:02, **−0.78%** on
+yesterday's official close of 664.01. Sleeve percentages are read off a **pre-market print, not a
+close**. The §2 band verdict is robust: core **68.51%** pre-market, **68.67%** on the official
+close, both well inside 65–75%.
+
+---
+
+### T-2026-11-24-01 — the AI-datacenter supply tier ← Oracle's statement that its OpenAI capacity agreement is "fully funded" — REJECTED (part 1: a confirmation that PREVIOUSLY OUTLINED financing is in place is not an event; and the single new fact has the WRONG SIGN for a supplier long)
+
+**Company A / the news:** Oracle said, reported 2026-11-20→24, that its OpenAI infrastructure
+agreement is fully funded following a final capital raise, and called contrary reports "incorrect
+and wrong". ORCL rose **12.3%** on 11-24. The funding plan is ~**$20B** of fiscal-2027–2030
+capital-markets issuance (~$10B equity / ~$10B debt), excluding refinancing. The underlying
+agreement is ~$300B of compute over five years from 2027 and an additional **4.5 GW** of US
+data-center capacity beyond the Abilene Stargate campus.
+*(Sources: Seeking Alpha, Investing.com, Barron's, tikr, Yahoo Finance — drill query, 1 spent.)*
+
+**Company B / the candidate:** the named power, cooling, electrical and networking suppliers who
+would be paid out of a 4.5 GW build.
+
+**1. Mechanism (one sentence):** *Could not be written.* The attempt — "Oracle confirming its
+financing is secured causes [supplier]'s orders to rise because the 4.5 GW build can now proceed" —
+**fails the one-clause test and fails it on the facts, not on style.** The drill query is explicit:
+*"The reports do not indicate a newly signed OpenAI capacity contract on November 24. They identify
+the underlying infrastructure agreement as previously announced and the November statement as
+confirmation that its funding plan … was in place."* The capacity agreement, the capex plan and the
+financing structure were **all already disclosed**. Nothing was newly ordered. **Part 1 FAILS.**
+
+**2. Dollar path:** not reached. No supplier is named anywhere in the disclosure, so no segment and
+no revenue share can be stated.
+
+**3. Timing window:** not reached. Capacity is stated to begin **2027** — at the far edge of or
+beyond §4's two-quarter horizon.
+
+**4. Invalidation:** not reached.
+
+**Hard filters:** **not reached, and deliberately not spent.** §4 orders the four parts ahead of the
+filters; a candidate dead on part 1 does not earn a `move` call. ⚠ Noted because ORCL +12.3% in one
+session is itself a loud priced-in signal on the *first-order* leg — but the first-order leg is not
+what §4 asks about, and recording the move is not the same as having run the check.
+
+**Outcome: REJECTED.** Two independent reasons, and the second is the more interesting:
+1. **Part 1.** A statement that previously-outlined financing is now secured is a **balance-sheet
+   and sentiment event**, not a transaction that moves a supplier's revenue line. ORCL's 12.3% was a
+   **rebound against bearish reporting** — the same shape as `T-2026-11-06-01` ("a repricing is not
+   a transaction") and `T-2026-11-10-02` / `T-2026-11-12-02` ("a company's own order book is a
+   CONDITION, not an event").
+2. ⚠⚠ **THE ONE GENUINELY NEW FACT POINTS THE WRONG WAY.** Oracle named **vendor financing** and
+   **customer-provided hardware and customer prepayments** as mechanisms reducing its upfront cash.
+   Vendor financing means **the supplier extends the credit** — a working-capital cost borne by the
+   very companies a long thesis here would want to own. On the only new information in the
+   announcement, the second-order sign is **negative**, and this is a long-only strategy. **A seat
+   that had stopped at the headline would have had the direction backwards.**
+3. The object also neighbours the repeatedly-disposed AI-datacenter supply tier (five+ prior
+   appearances). Logged, but the part-1 kill is sufficient on its own.
+
+---
+
+### T-2026-11-24-02 — the Duchenne muscular dystrophy incumbent tier ← the FDA's second Complete Response Letter to Capricor Therapeutics for deramiocel — REJECTED (part 1: a rejection preserves the status quo and changes nobody's revenue line — THIRD instance of this exact shape in three weeks, ZERO drill queries spent)
+
+**Company A / the news:** The FDA issued a second CRL on **2026-11-20**, publicly reported 11-23/24,
+declining to approve Capricor's resubmitted BLA for deramiocel, an investigational cell therapy for
+DMD cardiomyopathy. The agency said HOPE-3 Phase 3 data did not establish substantial evidence of
+effectiveness and cited **serious data-integrity violations**. CAPR fell ~70–76% on 11-23.
+*(Sources: BioPharm International, Contemporary Pediatrics, Pink Sheet, Muscular Dystrophy News.)*
+
+**Company B / the candidate:** a DMD incumbent whose competitive position improves.
+
+**1. Mechanism (one sentence):** *Could not be written.* **A CRL preserves the status quo.**
+Deramiocel was never approved and remains unapproved; no incumbent's revenue line changes, because
+no revenue was ever at risk from a product that cannot be marketed. The only available sentence
+requires a counterfactual second clause — "…because a competitor that did not yet exist now will not
+exist" — which is the "and also" failure §4 names explicitly. **Part 1 FAILS.**
+
+**2. Dollar path:** not reached. ⚠ And it would fail independently: there is **no approved therapy
+for DMD cardiomyopathy** for deramiocel to have taken share from, so there is no incumbent revenue
+line to improve. This is the identical structure the drill query established at `T-2026-11-16-01`.
+
+**3. Timing window:** not reached.
+**4. Invalidation:** not reached.
+**Hard filters:** not reached. ⚠ Noted separately: §3 independently kills the obvious reader-supplied
+candidate tier — the US-listed DMD names sit well below the **$10B** market-cap floor, and the
+headline name CAPR is now a sub-$1B shell of itself.
+
+**Outcome: REJECTED on part 1.**
+⚠⚠ **AND THIS IS THE RECIRCULATION CARRY-FORWARD ITEM 2 WARNED ABOUT, CAUGHT IN THE ACT.** This is
+the **third appearance of the "FDA rejection → incumbent benefits" shape in three weeks**:
+`T-2026-11-16-01` (Summit/ivonescimab CRL) and `T-2026-11-10-03` (Novocure Optune Mya rejection)
+both died on the same unchanged part-1 test. **Zero drill queries were spent here precisely because
+the answer was already written twice** — the prior entries were read, applied, and not re-litigated.
+**That is the disposed-objects discipline working without a disposed-objects list**, on an object
+whose kill is structural rather than fact-dependent. ⚠ It does **not** generalise: the reason it
+worked is that "a rejection preserves the status quo" is true independent of the drug, the company
+and the date. **An object whose kill depends on a figure that can change still needs re-checking.**
+
+---
+
+### T-2026-11-24-03 — the data-center build-and-equip tier ← Applied Digital's 150 MW / 18-year lease taking contracted base-term revenue above $41B — REJECTED (part 2: counterparty UNNAMED; APLD is the first-order leg §4 excludes; no second-order supplier is named with a disclosed contract)
+
+**Company A / the news:** Applied Digital (NASDAQ: APLD) announced **2026-11-23** a new **18-year
+lease for 150 MW** of critical IT capacity with a **"tier-one investment-grade hyperscaler"**,
+bringing contracted base-term revenue **above $41 billion**. *(Source: GlobeNewswire, 2026-11-23.)*
+
+**Company B / the candidate:** the contractors and equipment suppliers who build and fit out 150 MW.
+
+**1. Mechanism (one sentence):** writable in form — "a new 150 MW lease causes [supplier]'s data-center
+equipment revenue to rise because APLD must buy switchgear, chillers and transformers to deliver the
+capacity" — but it names no company, and that is the defect, not the wording.
+
+**2. Dollar path:** **FAILS.** The counterparty is **unnamed**, and more importantly **no supplier is
+named anywhere in the disclosure**. With no named Company B there is no segment to identify and no
+revenue share to compute. §4 part 2 requires the segment, the magnitude *and* the share of total
+revenue; **none of the three can be stated without inventing the company first**, which is the
+honest-broker failure in its purest form.
+
+**3. Timing window:** an 18-year base term with a build-out schedule that is not disclosed. ⚠ On the
+face of it this is **far outside** §4's two-quarter horizon; the entry does not rest on that, because
+part 2 already failed.
+
+**4. Invalidation:** not reached.
+
+**Hard filters:** not reached. ⚠ **APLD itself is not a candidate**: it is the company in the
+headline, and §4 opens by excluding it ("You are not chasing the headline name").
+
+**Outcome: REJECTED on part 2.** ⚠ Logged with the standing note that this is the
+**AI-datacenter/unnamed-hyperscaler shape** disposed at `T-2026-11-05-01`, `T-2026-11-06-02`,
+`T-2026-11-11-02`, `T-2026-11-12-02` and `T-2026-11-13-03`, among others. **It keeps arriving in a
+new costume** — this time with an unusually large and specific headline number ($41B contracted
+revenue), which is exactly what makes it tempting. **The number is APLD's, not a supplier's.**
+
+---
+
+### T-2026-11-24-04 — US-listed cobalt producers ← the DRC suspending all cobalt exports (ARECOMS, announced 2026-11-23, shipments halt 2026-11-30) — REJECTED (part 2: NO §3-eligible US-listed company has cobalt above 10% of revenue — ONE drill query spent, the source applied the kill)
+
+**Company A / the news:** The Democratic Republic of Congo announced on **2026-11-23**, through
+ARECOMS, that it will **suspend cobalt exports until further notice**, with shipments halting
+**2026-11-30**. The DRC is the dominant source of world cobalt supply. The stated purpose is to
+address **oversupply**; the same reporting notes cobalt prices **fell 24–49% during 2026**.
+*(Source: S&P Global Commodity Insights, 2026-11-23.)*
+
+**Company B / the candidate:** a US-listed cobalt producer outside the DRC, whose realised cobalt
+price rises as the dominant supplier withdraws volume.
+
+⚠⚠ **THIS WAS THE BEST-SHAPED OBJECT OF THE DAY AND THE ONLY ONE THIS SEAT WANTED TO BUY.** It has
+everything the funnel usually lacks: a **named actor** (ARECOMS), a **hard effective date**
+(11-30), a **real and large supply shock**, a **clean one-clause mechanism**, and a second-order
+step that is genuinely *second*-order — the DRC is not listed anywhere, so there is no first-order
+leg to be tempted by. **It is recorded that this seat had constructed the story before testing
+part 2.** That is the §4 honest-broker warning behaving exactly as advertised.
+
+**1. Mechanism (one sentence):** **PASSES, cleanly, in one clause.**
+> The DRC suspending cobalt exports causes [US-listed cobalt producer]'s cobalt revenue line to rise
+> because withdrawing the dominant supplier's volume lifts the price every other producer realises.
+
+**2. Dollar path:** ⚠⚠ **FAILS, AND DECISIVELY.** Drill query (1 spent) asked which US-listed
+companies above a **$10B** market cap produce cobalt and what share of revenue cobalt represents.
+The answer: *"The available evidence does not establish any US-listed cobalt producer with market
+capitalization above $10 billion for which cobalt revenue is separately disclosed."* Specifically —
+- **Electra Battery Materials (NASDAQ: ELBM)** is cobalt-focused but ~**$35.4M** market cap: **§3
+  kills it** by a factor of ~280.
+- **ATI Inc. (NYSE: ATI)** clears §3 at ~**$23.8B** but cobalt is an input to a diversified
+  specialty-alloy business with **no cobalt reporting segment and no disclosable cobalt revenue
+  share** — and ATI is a cobalt *consumer*, so the sign is wrong anyway.
+- The only explicit cobalt-revenue percentage the source could find (20% of revenue) is from a
+  **2018** filing for an issuer it could not establish as US-listed or above the floor.
+- Every large diversified miner carries cobalt as a **byproduct**, nowhere near 10% of revenue.
+
+**§4 part 2 is explicit: "A tailwind to a segment that is under 10% of revenue is not material.
+Reject it."** There is no §3-eligible vessel for this mechanism. **REJECTED.**
+
+**3. Timing window:** would have passed — shipments halt 11-30, inside the current quarter, so a
+realised-price effect would land in Q4/Q1 reporting, within two quarters.
+**4. Invalidation:** would have been writable — "the DRC lifts or materially waives the suspension
+before 2027-03-31, or the company's next filing shows realised cobalt price flat or lower."
+
+**Hard filters:** **the universe check (§3) is what killed it**, and it killed it *through* part 2:
+the only cobalt-levered name is 280× below the market-cap floor. Priced-in and correlation checks not
+reached — and correlation is trivially satisfied anyway, since there are no open positions to
+correlate against.
+
+**Outcome: REJECTED on part 2 / §3.** ⚠ **The direction trap is worth recording even though the
+thesis is dead:** the suspension exists to **correct a glut** after a 24–49% price fall, so it is
+supply discipline from a depressed base rather than a shock to a tight market; and the obvious
+*consumer*-side read — cobalt-using battery and EV makers — has a **worsening cost line**, which is
+no trade in a long-only strategy. **Two of the three available reads had the wrong sign and the
+third had no eligible vessel.** This is the clearest single illustration in the log of why a
+well-formed mechanism is not sufficient: **§4 asks four questions, and this object answered three.**
+
+---
+
+### T-2026-11-24-05 — sweep: eleven items disposed as one — REJECTED (ZERO drill queries spent)
+
+Every remaining item surfaced by sweeps 1–5, with the test that kills it. Recorded individually so
+a later seat can see the object was examined, not missed.
+
+| Item | Date | Kill |
+|---|---|---|
+| **PureCycle (PCT) / WM** — multi-year feedstock agreement, ~**25M lb/yr** of waste polypropylene | 11-19 | **Part 2.** WM clears §3 (~$90B) and is the *named supplier*, so the second-order read is WM's. But ~25M lb/yr of recycled PP feedstock against WM's ~$22B revenue is **immaterial by orders of magnitude**; no dollar value disclosed. PCT is far below the §3 floor. |
+| **Birchtech (BCHT)** — granular activated-carbon supply, 2,000 t/yr → 10,000 t/yr by ~2030 | 11-23 | **Counterparty unnamed** ("a preferred activated-carbon producer"); §3 kills BCHT; part 3 at ~2030 is ~16 quarters out. |
+| **NVRO Metals (OTCQB: ESGLF) / Hecla Mining** — up to ~750k wet t/yr tailings, 5-yr term | 11-10/18 | **§3** kills the OTCQB leg outright. **No dollar value disclosed** → part 2. And the agreement was **announced 11-10**, two weeks stale. |
+| **AtomVie Global Radiopharma / ITM** — lutetium-177 supply agreement | 11-23 | **Both legs private or foreign-listed** (§3). **No value, volume, duration or capacity disclosed** → part 2 unquantifiable. |
+| **Serco** — **$84.7M** US Navy engineering/programme-management contract | 11-23 | **§3** — Serco Group is **foreign-listed**. Immaterial at $84.7M regardless; source reports **no supplier implications**. |
+| **Karman Space & Defense** — 5-yr **$31M** Navy submarine propulsor tailcones | 11-23 | **Part 2** — $31M over five years is immaterial; the source states **no subcontractors are identified**, so there is no second-order leg to reason about. |
+| **Singular Health Group** — **US$1.6M** contract renewal with Provider Network Solutions | 11-23 | **§3** — Australian-listed. Immaterial. Counterparty private. |
+| **Quanome / XDT Infrastructure** — **$18.8M** NVIDIA-powered GPU-server purchase | 11-17 | **Rule-of-fact:** the source states **NVIDIA is not the contracting counterparty**. Immaterial to NVDA by ~four orders of magnitude → part 2. §3 kills Quanome. |
+| **Macro / policy complex** — US composite PMI **54.6** vs 55.6 consensus (4-month low); 11-25 slate of Q3 GDP (~3.4% exp.), core PCE (~3.2% y/y), personal income/spending, durable goods, new-home sales, 7-yr auction | 11-24/25 | **No Company A — the standing disposed object, unchanged.** A data print is not a transaction and names no recipient. ⚠ The 11-25 items are **forecasts, not results**: a pending event is not an event. |
+| **The 11-24 earnings slate** — Dell, HP, Analog Devices, Autodesk, Workday, Nutanix, Medtronic, Best Buy, Dollar Tree, DICK'S, Kohl's, Burlington, J.M. Smucker | 11-24 | **Part 1 — a pending event is not an event.** These report **today**, most after the close. Consensus figures are expectations, not results. ⚠ **Legitimate objects for tomorrow's seat, which will have actuals.** |
+| **CrowdStrike, HPE** — reported 11-23 | 11-23 | ⚠ **Recorded as UNESTABLISHED, not as absent.** Sweep 4 returned the earnings *calendar* only and did not establish actual results or drivers for either name. **This seat does not claim they did not report, nor that nothing material was in them** — it claims only that its sourcing did not establish it. **A candidate object for tomorrow's seat.** |
+
+**Outcome: REJECTED, eleven items, disposed as one, ZERO drill queries spent beyond the broad
+sweeps.** ⚠ Two items are explicitly handed forward rather than disposed: the **11-24 earnings
+actuals** and the **CrowdStrike/HPE results**, both of which fail today only because the event has
+not happened yet or was not established. **Those are not rejections of the object.**
+
+---
+
 ### 2026-11-23 (07:01 ET) — event survey (funnel, pre-thesis)
 
 Selftest **5/5**, exit 0 (`trading_enabled: true`, LIVE paper, equity **$94,588.10** at the

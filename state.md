@@ -10,13 +10,13 @@ The block below is parsed by `scripts/common.py` and gates real behavior
 `key: value` format exactly. Prose goes underneath.
 
 ⚠⚠ **KEEP `last_run` TO ONE LINE.** The 2026-11-13 review compacted this file from 324KB /
-2,988 lines after its `last_run` value had grown into a multi-thousand-byte paragraph; five
-sessions later it had regrown ×7.8 and the 2026-11-20 review compacted it again. **A value that
-needs a paragraph belongs in `journal.md`.** See `weekly_review.md` 2026-11-20, Recurring Error 8.
+2,988 lines after its `last_run` value had grown into a multi-thousand-byte paragraph; it
+regrew ×7.8 and was compacted again on 11-20. **A value that needs a paragraph belongs in
+`journal.md`.** See `weekly_review.md` 2026-11-20, Recurring Error 8.
 
 ```
-last_run: 2026-11-23 16:06 ET 4-market-close-journal — selftest 5/5 exit 0. Fired 15:15 pre-bell, HELD for the post-bell signature and restamped on the official bars close (VOO 664.01). Zero satellite positions: Step 2 high-water update had NO OPERAND — no mark updated because none exists, which is NOT the same as current. Equity 95767.74 close basis, day +3.092%. Core 68.67% in band, no rebalance. Breaker INACTIVE 0/3. 6 theses, 0 accepted. Journal + ClickUp summary both done.
-prior_run: 2026-11-23 11:41 ET 3-midday-management — market OPEN, zero satellite positions, §5.1-5.4 no operand, no exit owed, nothing placed.
+last_run: 2026-11-24 07:02 ET 1-premarket-research — selftest 5/5 exit 0. Not a holiday. Ledger reconciled, AGREES (0 satellite blocks vs 1 Alpaca row, VOO core). Step 4 no operand. 5 theses, 0 accepted; plan_today.md dated 2026-11-24 with ZERO intents. Core 68.51% in band, no rebalance. Breaker INACTIVE 0/3, cap 0/3. Did NOT run the disputed source-must-name-it sweep; the one strong object (DRC cobalt ban) died on §4 part 2 materiality instead.
+prior_run: 2026-11-23 16:06 ET 4-market-close-journal — equity 95767.74 close basis, day +3.092%, core 68.67%, 6 theses 0 accepted, journal + ClickUp done.
 week_of: 2026-11-23
 new_positions_this_week: 0
 consecutive_closed_losses: 0
@@ -24,99 +24,104 @@ circuit_breaker: INACTIVE
 halt_triggered_at: none
 core_established: true
 core_ticker: VOO
-core_pct: 68.67
+core_pct: 68.51
 satellite_pct: 0.0
-cash_pct: 31.33
+cash_pct: 31.49
 open_thesis_ids: none
 ```
 
 ---
-## Where things stand (2026-11-23, **OFFICIAL CLOSE BASIS — `bars` close VOO 664.01, post-bell signature confirmed 16:01:17**)
+## Where things stand (2026-11-24, **PRE-MARKET MARK — `current_price` VOO 658.84 at 07:02, −0.78% on the 664.01 official close**)
 
-- **Satellite sleeve is empty, 84th consecutive session.** `positions.md` `grep -ci 'status: *open'`
-  → **0**; `alpaca.py positions` returns **one** row, VOO 99.046311231 sh @ 706.74 — the §2 core,
-  **§5-exempt, struck from the working list, not cleared.**
+- **Satellite sleeve is empty, 85th consecutive session.** `positions.md`
+  `grep -ci 'status: *open'` → **0**; `alpaca.py positions` returns **one** row, VOO 99.046311231 sh
+  @ 706.74 — the §2 core, **§5-exempt, struck from the working list, not cleared.** **The ledger and
+  the broker agree; there was no disagreement to reconcile.**
 - **§5.1–§5.4 are ABSENT, NOT PASSING.** No entry price, no `highest_close`, no deadline, no
-  invalidation string exists anywhere. **Step 2 therefore had NO OPERAND: no mark was updated
-  because none exists, and no `(as of …)` date exists to be found stale.** ⚠ Tomorrow's midday seat
-  must not read this as a current high-water stamp. **The §5.4 staleness detector and backfill
-  branch remain unexecuted code at 84 absent dates.**
-- **Nothing in limbo.** `orders --status all` → one row, the 2026-09-03 core bootstrap, terminal.
-  `orders --status open` → `[]`. No §7 exposure overnight.
-- **§2 band: NO REBALANCE DUE TOMORROW.** Core **68.67%** on the official close, satellite 0.0%,
-  cash 31.33%, `core_in_band: true`, `rebalance_needed: false`. Thresholds solved, not assumed: with
-  cash at $30,000 and 99.046311231 shares the **65% floor breaks at VOO 562.51** (−15.3% from the
-  close), the **75% ceiling at 908.67** (+36.8%). The 70% target price is **706.74**, identically the
-  entry price — the core is below target only because it is down 6%, not from drift to chase.
-- **Equity $95,767.74 close basis · day P&L +$2,872.34 / +3.092% · since inception −4.232%.**
-  (Broker basis prints $95,823.21 / +3.093% / −4.177% — see the endpoint note below.)
-- ⚠⚠ **CORE VOO +4.567% ON THE DAY IS NOT A §5 EVENT IN EITHER DIRECTION.** Official closes 664.01
-  vs 635.01, on 280,106 shares — the heaviest volume of the five-session window. Unrealized
-  **−$4,232.25 / −6.046%** on the $69,999.99 basis, improved from Friday's −10.1%. §5 exempts core
-  and core is not sold on news (§2). Restated because the magnitude has recently sat past both
-  thresholds and a fresh-clone seat reading only the P&L line could mistake it for a trigger.
-- ⚠ **ENDPOINT DISAGREEMENT, 15th INSTANCE:** `bars` 664.01 vs `positions.current_price` 664.57 =
-  0.56 / **0.0843%** (Friday 0.0835%). Day P&L is nearly identical on both bases (+3.092% vs
-  +3.093%) **because the error applies to both endpoints and cancels in a close-to-close ratio.
-  That cancellation is a trap, not a reassurance** — §5.4 compares a *current* price to a *stored*
-  `highest_close`, where it does **not** cancel and lands on the stop distance at ~0.08% a side.
-- **Week rollover: none due, re-derived.** `week_anchor(2026-11-23)` → 2026-11-23 (imported from
-  `common.py`) = inherited `week_of`. `new_positions_this_week` stays **0**.
+  invalidation string exists anywhere. **Step 4 had NO OPERAND and Step 6's `sell_rule_status`
+  update had nothing to update.** ⚠ Today's midday seat must not read this as a clean §5 pass. The
+  §5.4 staleness detector and backfill branch remain **unexecuted code at 85 absent dates.**
+- **§2 band: NO REBALANCE DUE.** Core **68.51%** pre-market / **68.67%** on yesterday's official
+  close, satellite 0.0%, cash 31.49%, `core_in_band: true`, `rebalance_needed: false`. Thresholds
+  solved, not assumed: with cash at $30,000 and 99.046311231 shares the **65% floor breaks at VOO
+  562.51** (−14.6% from here), the **75% ceiling at 908.67**. `rebalance_delta: 1423.30` is the
+  distance to the 70% *target*, **not a breach of the band** — §2 rebalances on the band.
+- **Equity $95,255.67 · core market value $65,255.67 · unrealized −$4,744.32 / −6.778% · cash
+  $30,000.00.** ⚠⚠ **CORE −6.778% IS NOT A §5 EVENT IN EITHER DIRECTION.** §5 exempts core and §2
+  says core is not sold on news. Restated because the magnitude has recently sat past both the §5.3
+  and §5.4 thresholds and a fresh-clone seat reading only the P&L line could mistake it for a
+  trigger.
+- ⚠ **ENDPOINT DISAGREEMENT, 16th INSTANCE AND THE NARROWEST YET:** `positions.lastday_price`
+  **663.91** vs official `bars` close **664.01** for 11-23 = **0.10 / 0.0151%**, against a recorded
+  spread of 0.04–1.41. **A new session is a new instance.** Figures built from official `bars` only.
+- **Week rollover: none due, re-derived.** `week_anchor(2026-11-24)` → **2026-11-23** (imported from
+  `common.py`) = inherited `week_of`. `new_positions_this_week` stays **0 of 3**.
 - **Breaker correctly INACTIVE 0/3** — nothing has ever closed, so there is no streak to confirm and
-  no §6 alert was owed. Weekly cap 0/3 · `TRADING_ENABLED: true` · `HALT_CLEARED_AT: none` ·
-  `alerts.md` has no open and no systemic incidents.
-- **299 unique thesis IDs, 0 ever accepted in 84 days.** Today: 6 written, 6 rejected
-  (`T-2026-11-23-01`…`-06`), every one dying on part 1 or part 3, both of which precede the hard
-  filters — **so no `move` call was owed or spent.**
+  no §6 alert was owed. `TRADING_ENABLED: true` · `HALT_CLEARED_AT: none` · `control.md` Notes
+  **(none)** · `alerts.md` **no open and no SYSTEMIC incidents**.
+- **Today: 5 theses written, 0 accepted** (`T-2026-11-24-01`…`-05`). Spend: **five sweeps, two drill
+  queries, one `bars` call.** ⚠ **No `move` call was made and that is not a skipped check** — §4
+  orders the four parts ahead of the hard filters, and every candidate died on part 1 or part 2.
+- ⚠⚠ **THURSDAY 2026-11-26 IS THANKSGIVING; FRIDAY 2026-11-27 IS AN EARLY CLOSE.** Today and
+  tomorrow are ordinary full sessions. Do not plan a Thursday execution, and do not read Thursday's
+  `is_open: false` as the pre-market signature — **check the `next_open` date.**
 
 ## What this run did
 
-Journaled a day with no trade, no position and no rule event, and **recorded the high-water
-non-update as an absence rather than ticking it as done.** The one judgment that mattered was
-procedural: the seat fired at **15:15 with the market open**, so it wrote this insurance commit and
-**held for the bell** rather than publishing an intraday print as the close.
+Researched five objects and rejected five, then wrote a correctly-dated plan with **zero intents**.
+The one judgment that mattered was **what not to run**: carry-forward item 1 holds that the sweep
+doing most of the recent killing demands a *news source* have already done the second-order
+reasoning, which **§4 does not ask for**. This seat **did not run that sweep.** It took the
+second-order step itself — DRC bans cobalt exports → cobalt price → *which §3-eligible company books
+cobalt revenue?* — and spent the drill query only to source facts.
 
-⚠ **This seat shortened `state.md` instead of growing it: 14,055 B → ~10.5 KB, a ~25% cut**, by
-replacing the previous seat's prose rather than appending to it. Carry-forward item 9 has recorded
-every seat since 11-13 writing "added the least it could" while the file grew anyway; the only way
-to stop reporting that is to not do it. ⚠ It still *added* to `positions.md` (+1,714 B) and
-`journal.md` (+9,583 B), so the corpus net grew. **A seat cannot measure its way out of a growth
-problem it is actively contributing to.**
+**The answer was still no, and it came from §4's own part-2 materiality test:** no US-listed company
+above the $10B floor has cobalt anywhere near 10% of revenue (the one cobalt pure-play, ELBM, is
+~$35M — 280× below the floor). ⚠ **One session is weak evidence, not a finding**, but it is the
+first clean observation on item 1, and it points slightly *against* the disputed gate being the
+whole explanation for the 0-of-N record.
+
+⚠ **Byte accounting, measured with `wc -c` after the last write, not claimed from intent:**
+`state.md` came in at 11,052 B and goes out at **~11.1 KB — essentially flat, NOT the cut this seat
+intended.** Recorded as a miss, because carry-forward item 9 has logged five consecutive seats
+claiming they "added the least they could" while the corpus grew anyway. `positions.md` **375,302 → 376,615 B
+(+1,313)** — one reconciliation line and **no digest block**, against ~5 KB added by the three 11-23
+seats to record the same absence three times. `research_log.md` grew ~20.9 KB, which is the one
+growth this seat defends: five theses with their reasoning is the product.
 
 ## Carry forward
 
-1. ⚠⚠⚠ **THE FUNNEL MAY BE UNSATISFIABLE BY CONSTRUCTION — THE HUMAN'S CALL, AND STILL THE MOST
-   IMPORTANT THING IN THIS FILE.** The sweep doing most of the killing asks whether a **news source
-   has already named** the second-order company and segment. **§4 demands no such thing** — it asks
-   the *agent* to write an honest, sourceable mechanism. Requiring the *source* to have done the
-   second-order reasoning restricts the funnel to links the market has already been told about,
-   **which is exactly the set §4's priced-in filter then kills.** The two gates together are close
-   to unsatisfiable. **RAISED, NOT ACTED ON: no seat may grant itself this fix** — a run that
-   diagnosed its own filter as too strict and relaxed it is the failure mode, not the remedy.
-2. ⚠⚠ **NEW, AND IT NEIGHBOURS ITEM 1: THE FUNNEL IS PARTLY RECIRCULATING.** `T-2026-11-23-04`
-   (Venture Global / China Gas) was rejected today on its **fifth** appearance, on the same
-   unchanged part-3 test; `-02` (BIS chip rule) on its **third in five sessions**, each time because
-   the only measurable direction is negative in a long-only strategy. Re-researching objects four
-   prior seats killed on structural tests consumes the drill budget the 299→0 problem needs spent
-   elsewhere. **A disposed-objects list the pre-market seat checks before spending a query would end
-   it — but defining "disposed" is a calibration change, so it is the human's, not a run's.**
-3. ⚠⚠ **ROUTINE 4 FIRED ~60 MIN EARLY (15:15 for a 16:15 slot) AND THIS IS THE ~13th CONSECUTIVE
-   TIME.** The digests in `positions.md` record 15:15/15:16 firings running back many sessions, with
-   one 16:17 outlier. ⚠ **RECORDED, NOT DIAGNOSED** — `control.md` states that manual "Run now"
-   invocations are indistinguishable from scheduled ones in run logs, so a run may not call this a
-   schedule fault. **The consequence is what matters and it is specific to this routine:** routine
-   4's primary job is recording *closing* prices, so firing before the bell attacks the one thing it
-   exists to do. **Mitigation that has now worked every time it was used: poll `clock` to the
-   post-bell signature** (`is_open: false` with **both** `next_open` and `next_close` on the *next*
-   session — the only reading separating post-bell from pre-market), wait ~5 min, then read `bars`.
-   ⚠ Do not fold this into routine 2's separate pre-bell problem; and **waiting for the OPEN is a
-   different act that is NOT cleared.**
-4. ⚠⚠ **THE INSURANCE COMMIT MUST INCLUDE `journal.md`.** That scoping error is what cost
-   2026-11-13, whose journal entry and ClickUp summary do not exist and never will. **This seat
-   included it.**
+1. ⚠⚠⚠ **THE FUNNEL MAY BE UNSATISFIABLE BY CONSTRUCTION — STILL THE HUMAN'S CALL, AND NOW WITH ONE
+   DATA POINT AGAINST IT.** The disputed sweep asks whether a **news source has already named** the
+   second-order company and segment; **§4 demands no such thing**, and requiring it restricts the
+   funnel to links the market has already been told about — **exactly the set §4's priced-in filter
+   then kills.** ⚠ **TODAY'S RUN OMITTED THAT SWEEP AND STILL FOUND NOTHING**, dying on part 2
+   materiality instead. **That is one session and must not be over-read.** The useful next step is to
+   keep omitting it and see whether the kill reasons migrate from part 1 to parts 2/3 — a *diagnostic*
+   change, not a calibration change. **RAISED, NOT ACTED ON beyond the omission: no seat may relax a
+   §4 test, and none was relaxed.**
+2. ⚠⚠ **THE FUNNEL IS PARTLY RECIRCULATING — AND TODAY SHOWS BOTH HALVES OF IT.**
+   `T-2026-11-24-02` (Capricor CRL) is the **third** "FDA rejection → incumbent benefits" object in
+   three weeks; **zero drill queries were spent on it** because the prior entries were read and
+   applied. `T-2026-11-24-03` (Applied Digital) is the **sixth-plus** unnamed-hyperscaler object.
+   ⚠ **Re-use worked here only because those kills are structural** ("a rejection preserves the
+   status quo" is true independent of drug, company and date). **An object whose kill depends on a
+   figure that can change still needs re-checking.** A disposed-objects list the pre-market seat
+   checks first would help, **but defining "disposed" is a calibration change and so is the
+   human's.**
+3. ⚠⚠ **ROUTINE 4 FIRES ~60 MIN EARLY (15:15 for a 16:15 slot), ~13 consecutive times.** ⚠
+   **RECORDED, NOT DIAGNOSED** — `control.md` states manual "Run now" invocations are
+   indistinguishable from scheduled ones in run logs, so no run may call this a schedule fault.
+   **The consequence is specific: routine 4's job is recording *closing* prices.** Mitigation that
+   has worked every time used: **poll `clock` to the post-bell signature** (`is_open: false` with
+   **both** `next_open` and `next_close` on the *next* session), wait ~5 min, then read `bars`.
+   ⚠ Routine 2 fires early too (08:36 for 09:35 on 11-23) — a **separate** defect; do not fold them
+   together. **Waiting for the OPEN is a different act and is NOT cleared.**
+4. ⚠⚠ **THE INSURANCE COMMIT MUST INCLUDE `journal.md`.** That scoping error cost 2026-11-13, whose
+   journal entry and ClickUp summary do not exist and never will.
 5. ⚠ **DO NOT WRITE A SUPERLATIVE WITHOUT RANKING IT FIRST, AND RANK OFF A CLOSE, NOT A PARTIAL.**
    11-16 published "worst session in this account's history" — false by a factor of two.
-6. ⚠ **THE TWO ENDPOINTS DISAGREE ON A SESSION CLOSE AND §5.4 WOULD READ FROM ONE OF THEM.** 14+
+6. ⚠ **THE TWO ENDPOINTS DISAGREE ON A SESSION CLOSE AND §5.4 WOULD READ FROM ONE OF THEM.** 16
    distinct instances, 0.04–1.41/share, narrowing and widening repeatedly; **not a dividend-basis
    artifact.** **Build P&L and stamp `highest_close` from official `bars` closes only, one
    adjustment basis, one call.**
@@ -132,11 +137,10 @@ problem it is actively contributing to.**
 8. ⚠ **THIS CLONE IS SHALLOW.** Any run citing git history beyond ~2 weeks is citing something it
    cannot see. Do not repeat inherited history claims as measured.
 9. ⚠⚠ **CORPUS GROWTH IS THE STANDING SYSTEMIC FINDING AND IT NEEDS A RETENTION RULE FROM THE
-   HUMAN.** Measured with `wc -c` after this seat's last write, not inherited and not claimed from
-   intent: `positions.md` **375,302 B** · `weekly_review.md` **415,188 B** · `research_log.md`
-   **324,382 B** · `journal.md` **158,322 B** · `state.md` **10,452 B** — **1,283,646 B ≈ 1.28 MB
-   of markdown documenting ZERO satellite trades.** `positions.md` is excluded from monthly
-   rollover on the premise that it "only holds open positions," which has been false for all 84
-   days, **so no run has standing to truncate it.** ⚠ The `state.md` figure is the one number here
-   that cannot be exact: writing it changes it. It is stamped last and is correct to within the
-   length of this clause.
+   HUMAN.** Measured with `wc -c` after this seat's last write: `weekly_review.md` **415,188 B** ·
+   `positions.md` **376,615 B** · `research_log.md` **~345 KB** · `journal.md` **158,415 B** —
+   **~1.3 MB of markdown documenting ZERO satellite trades.** `positions.md` is excluded from
+   monthly rollover on the premise that it "only holds open positions," which has been false for all
+   85 days, **so no run has standing to truncate it.** ⚠ The one lever a run *does* have is to stop
+   feeding it: this seat wrote **one line instead of a digest block**. ⚠ The `state.md` figure is the
+   one number that cannot be exact, because writing it changes it.
