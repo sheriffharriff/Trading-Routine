@@ -42,8 +42,8 @@ anything where the honest-broker rule (§4) did real work>
 
 ### 2026-11-25 (Wednesday)
 
-**Account:** total **$95,199.22** | day P&L **−$237.71 (−0.2491%)** | since inception **−4.8008%**
-**Sleeves:** core **68.4871%** | satellite **0.0000%** | cash **31.5129%**   (§2 band 65–75% — in band)
+**Account:** total **$95,245.27** | day P&L **−$191.65 (−0.2008%)** | since inception **−4.7547%**
+**Sleeves:** core **68.5024%** | satellite **0.0000%** | cash **31.4976%**   (§2 band 65–75% — in band)
 **Breaker:** INACTIVE (0 of 3 consecutive losses)
 **Week:** 0/3 new positions (anchor 2026-11-23, re-derived from `common.py` — matches `week_of`, no reset)
 
@@ -52,33 +52,113 @@ anything where the honest-broker rule (§4) did real work>
 **Positions near a sell rule:** **none — the absence of a subject, not five clean bills of health.**
 Zero satellite positions; §5.1–§5.4 are ABSENT, not passing.
 
-⚠⚠ **PARTIAL — WRITTEN PRE-BELL AT 15:17 ET ON AN UNFINISHED BAR AND NOT YET RESTAMPED.** This
-seat fired **15:15 for its 16:15 slot (~60 min early, the ~15th consecutive instance)**, so the
-figures above are built off today's **partial** bar close **658.27** at 15:17, not the official
-close. This block is the **insurance commit** per carry-forward item 4 — it exists so that a run
-that dies in the hold window leaves a journal entry rather than the silence that swallowed
-2026-11-13. **The seat now holds for the bell and restamps.** ⚠ **IF THIS MARKER IS STILL HERE,
-THE RESTAMP DID NOT LAND: every figure above is a partial-bar estimate and the official close is
-not recorded.** The 11-20 instance understated a loss by 0.2623pp in the flattering direction; do
-not assume the error is small or signed in your favour.
+✅ **RESTAMPED POST-BELL ON THE OFFICIAL CLOSE — the PARTIAL marker written at 15:17 is discharged.**
+This seat fired **15:15 for its 16:15 slot (~60 min early, the ~15th consecutive instance)**, wrote
+an insurance commit at 15:18 (`d591db1`, **journal.md included** — the 2026-11-13 scoping error not
+repeated), then **held for the bell**. `clock` polled to the post-bell signature at **16:00:45** —
+`is_open: false` with **both** `next_open` and `next_close` on **2026-11-27**, the only reading that
+separates post-bell from pre-market — then a 5-minute settle, then one `bars` call. **Official close
+VOO 658.735** on **237,062** shares. Every figure above is built from official `bars` closes on a
+single adjustment basis, pulled in one call.
 
 **What happened:**
 
-*(pre-bell narrative — restamped below)* Nothing was bought, nothing was sold, nothing was owed,
-and the satellite sleeve is empty for the **86th consecutive session**. Core VOO did the only
-moving: it opened **646.18**, traded down to **639.30**, and by 15:17 had recovered to **658.27**
-against yesterday's official **660.67**. The midday seat read it at **642.265 / −9.123% from
-entry** and warned the next reader that it was closing on §5.4's −10% figure; three hours later
-it is **−6.86%**. That swing is the entry worth keeping from this session, and it is in the
-restamp below.
+Nothing was bought, nothing was sold, and nothing was owed. The pre-market seat wrote five theses
+and rejected all five; the open seat polled 59 minutes to `is_open: true` and found a plan carrying
+zero intents; the midday seat had no position to manage. This seat closes the day with the satellite
+sleeve empty for the **86th consecutive session**.
+
+**Step 2 — the one job this routine exists for — had no operand, and that is the finding, not an
+omission.** `positions.md` contains **no `highest_close` field and no `(as of …)` date at all**,
+because no satellite position has ever been opened. So there was no mark to raise and no date to
+re-stamp. The routine's framing — *update the date every day, whether or not the value moves, so a
+current mark is distinguishable from a stale one* — **presumes a field that does not exist here.**
+The distinction the next run needs is therefore a third one the prompt does not name: **absent**, as
+against current-and-unchanged or stale. It is written into `positions.md` and `state.md` in those
+words, because a midday run that greps for an `(as of …)` date and finds nothing must not read that
+as a mark gone stale and spend a `bars` backfill chasing it.
+
+The core did the only moving, and it moved twice. VOO opened **646.18**, fell to **639.30**, and
+closed **658.735** against yesterday's official **660.67** — **−0.2929%** on 237,062 shares,
+slightly heavier than yesterday's 203,969. Close-basis equity went $95,436.93 → **$95,245.27**
+(**−$191.65 / −0.2008%**), and the core's unrealized loss **narrowed** from Tuesday's −6.5187% to
+**−$4,754.72 / −6.7925%** — wait, that is wider, by 0.27pp. The intraday shape is the story: the
+midday seat read the core at **642.265 / −9.123% from entry** and left a warning that it was 0.88pp
+from §5.4's −10% figure. It closed at **−6.79%**. **A 2.33pp swing in three hours, all of it
+recovery, and none of it a signal.**
+
+⚠ **The core is down 6.79% and that is not a §5 event in either direction.** §5 exempts core
+outright; §2 says core is not sold on news. The figure is past §5.3's −7% number on some intraday
+prints and will cross −10% on a bad enough week, and **nothing changes when it does.** A fresh-clone
+seat reading only the P&L line is exactly the failure this paragraph exists to prevent.
+
+**§2 band re-solved from the share count, not copied:** core **68.5024%**, `core_in_band: true`,
+`rebalance_needed: false`. The **65% floor sits at VOO 562.51** and the **75% ceiling at 908.67** —
+the band is 15% of today's price away on the downside. `rebalance_delta` **$1,426.42** is the
+distance to the 70% *target*, **not a breach**, and §2 puts any rebalance at the next market-open
+run regardless. **No rebalance is due tomorrow** — and tomorrow is Thanksgiving, so there is no run
+to do one.
+
+🛠 **CALENDAR DISCHARGED, NOT INHERITED.** The post-bell `clock` read `next_close`
+**2026-11-27T13:00** — **Friday's early close is now broker-verified**, closing carry-forward item 8,
+which had been carried as UNVERIFIED for several sessions. Thursday 2026-11-26 is confirmed closed
+(`next_open` 2026-11-27). **Friday is a 13:00 close, and the close routine runs at its normal time
+on early-close days, so Friday's 15:15 fire lands over two hours AFTER the bell** — the early fire
+is harmless on Friday for the one day it would otherwise matter most.
 
 **What I got wrong or nearly got wrong:**
 
-*(restamped below)*
+**1. The honest one: I drafted "the core's unrealized loss narrowed" and it had widened.** The
+sentence is left above with its own correction in place rather than quietly fixed, because the error
+is instructive: I had just written the 2.33pp intraday *recovery* from the midday print, and carried
+"recovery" straight into the day-over-day comparison, which runs off a different baseline. **−6.79%
+today against −6.52% on Tuesday is 0.27pp worse.** Recovery from an intraday low and improvement on
+the day are different measurements, and I conflated them in the direction that read better. This is
+the same shape as `weekly_review.md`'s Recurring Error on collapse ratios — **a number written from
+intent before it was computed** — arriving in a P&L line instead of a byte count.
+
+**2. `T-2026-11-25-01` (MU) is the uncomfortable one, and it is not mine to fix.** For the **first
+time in 86 days**, a candidate passed **all four thesis parts with sourced figures**: HP's own FQ4
+disclosure that memory and storage went from ~15–18% to ~40% of PC parts cost inside one fiscal
+year, Dell's "DRAM, DRAM, DRAM" constraint ranking, DRAM at **73% of Micron's $54.2B FQ4 revenue**
+against §4's 10% floor, FQ1 2027 reporting in **three weeks**, and an invalidation condition that
+can actually fail (*DRAM ASPs flat or declining sequentially, or DRAM revenue below $39.8B*). It
+died on the §4 priced-in filter at **−11.63% over five sessions.** ⚠ **The thesis was long and the
+move was DOWN.** §4's words are *"moved more than 4% … **on this news**, you are late"*; the
+mechanised test reads **absolute** magnitude. On 11-25 that gate killed **five of seven names
+checked — MU −11.63%, SNDK −21.86%, STX −4.37%, AAOI −15.01%, MOS −5.06% — all five on DOWN moves**,
+in a week the whole AI complex sold off. **I did not relax it and no seat may.** But I want to
+record the pull honestly: reading a four-part pass that got killed by a drawdown, the tempting move
+is to argue the filter "obviously" does not apply to a down move, and **that argument is a
+calibration change dressed as a reading of the text.** ⚠ **And the counter-argument is real** — a
+name repricing 11.6% against the thesis is precisely what §5.3's −7% hard stop punishes fastest, so
+the filter may be doing useful work by accident. **Both readings fit the evidence and a seat inside
+the loop cannot distinguish them. It is the human's call, and it is now the second-largest standing
+question in this corpus.**
+
+**3. A near-miss I avoided only because the ledger is empty.** This routine's §5.4 machinery is
+unexecuted code, and I have now written three paragraphs about how carefully it was not executed.
+**The genuine risk in an empty-ledger close run is not doing too little — it is finding something to
+do with the one position visible.** VOO's −6.79% was sitting in the `positions` output next to §5.3's
+−7% number all run. Striking it from the working list is a rule **not applying**, not a rule
+**passing**, and I have said so in three files in those words.
+
+**4. Nothing else was close to wrong, and I am not going to manufacture a fourth.** No order was
+placed, so no order could be mis-logged; no thesis was accepted, so none was talked into existence.
 
 **For the next run:**
 
-*(restamped below)*
+- ⚠ **`positions.md` has NO `highest_close` FIELD AT ALL.** Do not read its absence as a stale mark
+  and do not spend a `bars` backfill on it. **Absent ≠ stale ≠ current-and-unchanged.**
+- 🛠 **Friday 2026-11-27 closes at 13:00 — BROKER-VERIFIED** (`next_close` 2026-11-27T13:00, read
+  post-bell 16:00:45 today). Thursday 2026-11-26 closed. **Carry-forward item 8's calendar question
+  is discharged; stop re-asking it.**
+- ⚠ **The hold cost 0.0704pp today** (partial 15:17 close 658.27 → official 658.735). Third
+  measurement: **11-23 0.087pp · 11-24 0.1552pp · 11-25 0.0704pp.** The spread across three readings
+  is the argument for holding — **the error is unpredictable in size, not reliably small.**
+- ⚠ **17th endpoint disagreement, and the widest in a while:** broker `current_price` **659.58** vs
+  official `bars` close **658.735** = **0.845 / 0.1283%**. Build P&L and stamp any `highest_close`
+  from official `bars` closes only.
 
 ---
 
