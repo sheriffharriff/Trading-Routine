@@ -15,8 +15,8 @@ regrew ×7.8 and was compacted again on 11-20. **A value that needs a paragraph 
 `journal.md`.** See `weekly_review.md` 2026-11-20, Recurring Error 8.
 
 ```
-last_run: 2026-11-25 11:41 ET 3-midday-management — selftest 5/5 exit 0. Market OPEN. ZERO satellite positions, so Steps 2-5 had NO OPERAND: no high-water repair, no §5.1 Perplexity call, no exits, no `sell_rule_status` to update. 0 sells. Core 67.95% in band. Breaker INACTIVE 0/3, cap 0/3. Thursday 2026-11-26 closed CONFIRMED again (next_open 2026-11-27); Friday's early close still UNVERIFIED.
-prior_run: 2026-11-25 09:35 ET 2-market-open-execution — selftest 5/5 exit 0. FIRED 08:36 FOR 09:35; POLLED clock 59 min TO is_open:true AND EXECUTED AT 09:35 — did NOT exit on the pre-market false. Plan 2026-11-25 DATED TODAY, staleness gate PASSED, ZERO intents. 0 buys, 0 sells, no §2 rebalance. Core 67.99% in band LIVE. Breaker INACTIVE 0/3, cap 0/3. BROKER CONFIRMED next_open 2026-11-27 — Thanksgiving VERIFIED at last.
+last_run: 2026-11-25 15:17 ET 4-market-close-journal — INSURANCE COMMIT, PARTIAL. Selftest 5/5 exit 0. Fired 15:15 for 16:15 (~15th). Market OPEN at write time; figures off the 15:17 PARTIAL bar 658.27, NOT the official close. ZERO satellite positions — Step 2 had NO OPERAND: no `highest_close` field exists, so no mark was updated and none was owed. Holding for the bell to restamp. IF THIS LINE STILL SAYS PARTIAL, THE RESTAMP DID NOT LAND.
+prior_run: 2026-11-25 11:41 ET 3-midday-management — selftest 5/5 exit 0. Market OPEN. ZERO satellite positions, Steps 2-5 NO OPERAND. 0 sells. Core 67.95% in band. Breaker INACTIVE 0/3, cap 0/3.
 week_of: 2026-11-23
 new_positions_this_week: 0
 consecutive_closed_losses: 0

@@ -40,6 +40,48 @@ anything where the honest-broker rule (§4) did real work>
 
 ## Entries
 
+### 2026-11-25 (Wednesday)
+
+**Account:** total **$95,199.22** | day P&L **−$237.71 (−0.2491%)** | since inception **−4.8008%**
+**Sleeves:** core **68.4871%** | satellite **0.0000%** | cash **31.5129%**   (§2 band 65–75% — in band)
+**Breaker:** INACTIVE (0 of 3 consecutive losses)
+**Week:** 0/3 new positions (anchor 2026-11-23, re-derived from `common.py` — matches `week_of`, no reset)
+
+**Traded:** nothing — 0 orders, 0 fills, 0 exits, 0 rejections
+**Researched:** 5 theses — 0 accepted, 5 rejected (`T-2026-11-25-01` … `-05`)
+**Positions near a sell rule:** **none — the absence of a subject, not five clean bills of health.**
+Zero satellite positions; §5.1–§5.4 are ABSENT, not passing.
+
+⚠⚠ **PARTIAL — WRITTEN PRE-BELL AT 15:17 ET ON AN UNFINISHED BAR AND NOT YET RESTAMPED.** This
+seat fired **15:15 for its 16:15 slot (~60 min early, the ~15th consecutive instance)**, so the
+figures above are built off today's **partial** bar close **658.27** at 15:17, not the official
+close. This block is the **insurance commit** per carry-forward item 4 — it exists so that a run
+that dies in the hold window leaves a journal entry rather than the silence that swallowed
+2026-11-13. **The seat now holds for the bell and restamps.** ⚠ **IF THIS MARKER IS STILL HERE,
+THE RESTAMP DID NOT LAND: every figure above is a partial-bar estimate and the official close is
+not recorded.** The 11-20 instance understated a loss by 0.2623pp in the flattering direction; do
+not assume the error is small or signed in your favour.
+
+**What happened:**
+
+*(pre-bell narrative — restamped below)* Nothing was bought, nothing was sold, nothing was owed,
+and the satellite sleeve is empty for the **86th consecutive session**. Core VOO did the only
+moving: it opened **646.18**, traded down to **639.30**, and by 15:17 had recovered to **658.27**
+against yesterday's official **660.67**. The midday seat read it at **642.265 / −9.123% from
+entry** and warned the next reader that it was closing on §5.4's −10% figure; three hours later
+it is **−6.86%**. That swing is the entry worth keeping from this session, and it is in the
+restamp below.
+
+**What I got wrong or nearly got wrong:**
+
+*(restamped below)*
+
+**For the next run:**
+
+*(restamped below)*
+
+---
+
 ### 2026-11-24 (Tuesday)
 
 **Account:** total **$95,436.93** | day P&L **−$330.81 (−0.3454%)** | since inception **−4.5631%**
