@@ -3933,3 +3933,27 @@ could trigger; and `sell_rule_status` had nothing to refresh. **No `perplexity` 
 §5.1 needs an invalidation condition to test, and none exists.** Core **68.40%**, in band, and
 §2 band is not this routine's business. **86th absent seat, 84th absent date.** Third seat today
 to record the same absence; nothing prior collapsed — **the retention rule is the human's to set.**
+
+**2026-11-25 07:02 ET — 1-premarket-research — RECONCILED, NO CHANGE.** 0 open satellite blocks
+(`grep -ci 'status: *open'` → **0**) vs **one** Alpaca row, VOO 99.046311231 sh @ 706.74 — the §2
+core, **§5-exempt, struck from the working list, not cleared.** **Ledger and broker agree; no
+disagreement to resolve.** `clock` `is_open: false` with **both** `next_open` and `next_close` on
+**2026-11-25** — the pre-market full-session signature, not a holiday.
+
+**§5 STATUS: ABSENT ON ALL FOUR RULES, NOT PASSING — and `sell_rule_status` HAS NO OPERAND.** The
+routine's Step 4 asks for the distance to the §5.3 hard stop and the §5.4 trailing stop to be
+recorded here per position. **There is no position, no `entry_date`, no `entry_price`, no
+`timing_window` deadline, no `invalidation` string and no `highest_close` field — so there is no
+field to update and no distance to compute.** Nothing was written to a `sell_rule_status` line
+because no such line exists to write to. ⚠ **This is NOT "the sell rules were checked and
+cleared."** §5.1–§5.4, the §5.4 staleness detector and the `bars` backfill branch all remain
+**unexecuted code**; the first satellite position will be their first live test. **No
+`perplexity` call was spent on §5.1** — it needs an invalidation condition to test against, and
+none exists. **87th absent seat, 86th absent date.**
+
+**CLOSE-BASIS CONTEXT (not re-pulled — no `bars` call was owed today):** core unrealized
+**−$5,814.93 / −8.307%** from the 706.74 entry on the **pre-market** mark of 648.0308. ⚠⚠ **CORE
+IS §5-EXEMPT; −8.307% IS NOT A §5.3 EVENT** even though the figure now sits past the −7% number,
+and §2 says core is not sold on news. Sleeves pre-market: core **68.148%** · satellite **0.0000%**
+· cash **31.852%** · `core_in_band: true` · `rebalance_needed: false`. **In band. No §2 rebalance
+due 2026-11-25** (65% floor at VOO **562.51**, 75% ceiling at **908.67**, both re-solved here).

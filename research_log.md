@@ -52,6 +52,243 @@ single most common way a plausible-sounding connection gets mistaken for an oppo
 
 ## Entries
 
+### 2026-11-25 (07:02 ET) — event survey (funnel, pre-thesis)
+
+Selftest **5/5**, exit 0 (`trading_enabled: true`, LIVE paper, equity **$94,185.06** at the
+selftest's read). `clock` **07:01:52** — `is_open: false`, `next_open`
+**2026-11-25T09:30:00-05:00**, `next_close` **2026-11-25T16:00:00-05:00**. **Both fields carry
+today's date: the pre-market full-session signature, NOT a holiday.** Wednesday of Thanksgiving
+week, an ordinary full session. ⚠ **Thu 11-26 is Thanksgiving and Fri 11-27 an early close** —
+inherited, and **still not verified against the broker from any seat.** Check it on the day.
+
+**WEEK ROLLOVER — NO RESET DUE, RE-DERIVED AT THIS SEAT.** `week_anchor(2026-11-25)` →
+**2026-11-23** (imported from `common.py`, not hand-computed) = inherited `week_of`
+**2026-11-23**. `new_positions_this_week` stays **0 of 3**.
+
+**NEW POSITIONS PERMITTED THROUGHOUT.** Breaker **INACTIVE 0/3** · cap **0 of 3** · satellite
+**0.00% deployed, $30,000 cash** · `TRADING_ENABLED: true` · `control.md` Notes **(none)** ·
+`alerts.md` **no open, no SYSTEMIC incidents**. **Nothing structural blocked a buy.**
+
+**LEDGER RECONCILED, AGREES.** `grep -ci 'status: *open'` on `positions.md` → **0**;
+`alpaca.py positions` returns **one row, VOO 99.046311231 sh @ 706.74**, the §2 core, §5-exempt
+and deliberately untracked there. **No disagreement to resolve.** §5.1–§5.4 remain **ABSENT, NOT
+PASSING** — no entry price, no `highest_close`, no deadline, no invalidation string exists.
+**Step 4 had NO OPERAND.**
+
+**FUNNEL SPEND: three sweeps, one drill query, one figures query, seven `move` calls, three
+`asset` calls, ZERO `bars` calls.** Sweep 1 took the overnight window. Sweep 2 inverted it to
+named-both-parties transactions carrying a disclosed value, volume or capacity figure. Sweep 3
+took regulatory decisions, court rulings, FDA actions, export controls and production halts.
+⚠ **The disputed sweep — the one demanding that a news source have already named the
+second-order company and segment — was again NOT RUN,** continuing the 11-24 experiment under
+carry-forward item 1. The second-order step was taken *by this seat* and the drill query was
+spent only to **source facts**.
+
+---
+
+#### ⚠⚠⚠ THE HEADLINE OF THIS RUN: FOR THE FIRST TIME IN THIS ACCOUNT'S HISTORY, A CANDIDATE PASSED ALL FOUR §4 THESIS PARTS AND WAS KILLED BY A HARD FILTER
+
+`T-2026-11-25-01` (**MU**) writes all four parts honestly and **with sourced figures** — a
+one-sentence mechanism needing no second clause, a dollar path at **73% of revenue** from a
+reported filing, a timing window **~3 weeks out**, and a specific observable invalidation. It
+dies on the **§4 priced-in filter**: `move --sessions 5` returns **−11.63%**, `priced_in: true`.
+
+**This is the diagnostic migration carry-forward item 1 asked the next seats to watch for.** The
+kill has moved off part 1 and off the agent-invented sourcing gate and onto one of §4's own hard
+filters. **Two sessions is not a trend**, but 11-24 died on part-2 materiality and 11-25 died on
+a hard filter, and neither died on the disputed gate. That is two consecutive observations
+pointing the same way.
+
+⚠⚠ **AND IT RAISES A SECOND, SHARPER CALIBRATION QUESTION — RAISED, NOT ACTED ON.** §4 reads:
+*"If the candidate has already moved more than 4% over the last five sessions **on this news**,
+you are late."* **MU moved −11.63%. The thesis is long.** A fall of that size is not the news
+being priced in; it is a drawdown *against* the thesis direction. `alpaca.py move` mechanises the
+test on **absolute** magnitude, which makes it a **volatility filter**, not a priced-in filter,
+and in a week where the whole AI complex sold off it disqualifies every name in the sector
+regardless of which way the news cut. Today it killed **MU −11.63%, SNDK −21.86%, STX −4.37%,
+AAOI −15.01%, MOS −5.06%** — five of seven names checked, **all five on down moves.**
+
+⚠⚠ **THIS SEAT SKIPPED THE TRADE AND CHANGED NOTHING.** §4 and the routine prompt both say
+`priced_in: true` → skip, the guardrail is in code, and a run that diagnosed a filter as
+miscalibrated and then reasoned past it would be the exact failure mode §4's honest-broker rule
+exists to prevent. **No calibration was changed and no seat may change one.**
+⚠ **The counter-argument, stated against this seat's own finding:** a name down 11.6% in five
+sessions is one the market is actively repricing *against* the thesis, and a long entry there is
+precisely what the §5.3 −7% hard stop punishes fastest. **The filter may be doing useful work by
+accident.** Both readings fit the evidence and this seat cannot distinguish them from inside the
+loop. **The calibration is the human's.**
+
+---
+
+### T-2026-11-25-01 — MU (Micron Technology) — REJECTED (priced-in hard filter, −11.63%; **all four thesis parts PASSED with sourced figures** — the first time this has happened in 86 days)
+**Company A / the news:** **HP Inc.** FQ4 2026 results and guidance, reported after the
+2026-11-24 close, disclosed that **memory and storage rose from ~15–18% of PC parts cost at the
+start of fiscal 2026 to nearly 40% by fiscal Q4**, and management called its guidance "prudent"
+explicitly because of elevated memory and storage costs (FQ4 profit $769M). **Dell** management
+ranked the constraint **"DRAM, DRAM, DRAM, followed by NAND, NAND, NAND."** Separately, a
+11-22/24 report said Dell, HPE, Lenovo and Supermicro **repriced already-signed AI-server
+contracts by as much as 45%**, citing memory costs. (Sources: HP investor release and press
+release 2026-11-24; CRN FQ4 takeaways; Swissquote morning note 2026-11-25; vlsi.kr AI-server
+repricing report.)
+**Company B / the candidate:** **Micron Technology (MU)** — the only §3-eligible US-listed
+merchant DRAM supplier. The other volume DRAM makers (Samsung, SK Hynix) are foreign-listed and
+dead on §3.
+
+**1. Mechanism (one sentence):**
+> Rising DRAM contract prices cause Micron's DRAM revenue and gross margin to improve because
+> Micron sells DRAM into the contract market whose prices are rising.
+
+✅ **PASSES.** One clause. No "and also". The buyer of the commodity has quantified its own cost
+increase on the record, which is the cleanest possible evidence that the seller's price line is
+moving, and the direction is unambiguous.
+
+**2. Dollar path:** DRAM was **$39.8B of $54.2B total revenue = 73%** in Micron's FQ4 2026
+(quarter ended 2026-09-03, reported figures, not estimates); NAND **$14.1B = 26%**. HP has put a
+number on the cost shift at its own end: memory+storage **15–18% → ~40% of PC bill of materials**
+inside one fiscal year. ✅ **PASSES, and not marginally** — 73% against a §4 floor of 10%.
+(Source: Micron FQ4 2026 results/transcript via opennash earnings archive.)
+**3. Timing window:** Micron reports **FQ1 2027 in December 2026**, ~3 weeks out, and FQ2 2027 in
+March 2027 — **both inside §4's two-quarter horizon.** ✅ **PASSES.** → deadline **2027-03-31**
+**4. Invalidation:** *Micron's FQ1 or FQ2 2027 filing shows DRAM average selling prices flat or
+declining sequentially, or DRAM revenue below $39.8B.* ✅ **PASSES** — specific, observable,
+filed, and not "the stock goes down".
+
+**Hard filters:**
+- Priced-in (§4): moved **−11.63%** over last 5 sessions (712.975 → 630.09), `priced_in: true` → **FAIL**
+- Correlation (§4): **pass by vacancy** — zero open satellite positions, so there is no `driver` field to collide with. ⚠ Recorded as *vacant*, not as *cleared*.
+- Universe (§3): `asset_class: us_equity`, NASDAQ, tradable. Market cap **NOT SOURCED** — the figures query returned no market cap for any of the seven names asked. Derived only: 630.09 × ~1.12B shares ≈ **$705B**, far above the $10B floor, but ⚠ **this is an unsourced derivation and would have to be sourced before any buy script call.** → **pass on asset class; cap UNSOURCED**
+
+**Outcome: REJECTED on the §4 priced-in hard filter.** Not on the thesis. See the block above —
+this is the run's headline and a calibration question for the human, and **this seat changed
+nothing.**
+
+---
+
+### T-2026-11-25-02 — SNDK (SanDisk) and STX (Seagate) — REJECTED (priced-in hard filter; and **same driver as `-01`**, so §4's correlation test would kill the pair even if it had not)
+**Company A / the news:** As `-01`. Dell ranked NAND second behind DRAM; HP named both.
+**Company B / the candidates:** **SanDisk (SNDK)** — the pure-play NAND leg, spun out of Western
+Digital. **Seagate (STX)** — storage, HDD-weighted.
+
+**1. Mechanism (one sentence):** For SNDK, the `-01` sentence holds with NAND substituted and is
+equally clean. ✅ For STX, see `-03` — the source denies the causal path.
+**2. Dollar path:** NAND is effectively all of SNDK's revenue, so materiality is not the issue.
+Figures **NOT SOURCED** — the figures query returned no revenue mix for either name.
+**3. Timing window:** Both report inside two quarters. Not reached.
+**4. Invalidation:** Not written — the filters killed both first, and §4 puts the filters ahead of
+the thesis for exactly this reason.
+
+**Hard filters:**
+- Priced-in (§4): **SNDK −21.86%** (99.70 → 77.905), `priced_in: true` → **FAIL**. **STX −4.37%** (504.33 → 482.28), `priced_in: true` → **FAIL** (marginal — 0.37pp past the threshold).
+- Correlation (§4): ⚠ **INDEPENDENT FAIL.** Both move on the **same underlying driver as `-01`** — the memory/storage price cycle. Buying MU *and* SNDK *and* STX would be one bet in three tickers, which §4 names explicitly as "diversification" that is not. **Even had the priced-in filter passed, at most one of these three could ever have been opened.**
+- Universe (§3): both `us_equity`, tradable. Caps **NOT SOURCED**.
+
+**Outcome: REJECTED — two independent kills each.** Recorded separately from `-01` so a later
+seat sees the whole sector was swept, not just the strongest name.
+
+---
+
+### T-2026-11-25-03 — WDC (Western Digital) — REJECTED (part 1: **the drill query established that the source explicitly denies the causal path** — HDDs are NOT the driver. The ONE name of seven that passed the priced-in filter, and it is the wrong name.)
+**Company A / the news:** As `-01` — HP/Dell flagging elevated **"memory and storage"** costs.
+**Company B / the candidate:** **Western Digital (WDC)**, post-SanDisk-separation HDD pure-play.
+⚠ **WDC was reached because it was the only name in the complex that PASSED the priced-in filter
+at −3.22%**, which is the wrong reason to reach a name and is recorded as such.
+
+**1. Mechanism (one sentence):** The honest attempt is *"HP and Dell's elevated storage costs
+cause Western Digital's HDD revenue to improve because WDC sells the drives whose prices are
+rising"* — and **the drill query killed it on the facts.** Asked which component categories drive
+HP's and Dell's cost pressure, the source answered: **"The available sources support DRAM as the
+clearest primary driver, with NAND flash also contributing. They do not identify hard-disk drives
+as a driver"** and **"the evidence does not establish that HDD costs are behind HP's or Dell's
+flagged pressure."** Dell's own ranking names DRAM then NAND and never HDDs. ❌ **FAILS.** To
+reach WDC the sentence needs a second clause — *"and also nearline HDD prices are rising for
+separate AI-datacenter reasons"* — which is **a different event this seat did not source**, and
+§4 says a mechanism needing a second clause is too weak. **Rejected.**
+**2. Dollar path:** Not written. ⚠ The source also refused the input: *"No source states what
+percentage of Western Digital's revenue came from hard disk drives after the SanDisk separation.
+That percentage should not be inferred from Western Digital's historical segment mix."* **Even
+the materiality step was unsourceable.**
+**3. Timing window:** Not reached.
+**4. Invalidation:** Not reached.
+
+**Hard filters:**
+- Priced-in (§4): moved **−3.22%** (283.20 → 274.07), `priced_in: **false**` → **PASS** — the only pass of the seven names checked.
+- Correlation (§4): pass by vacancy (no open positions).
+- Universe (§3): `us_equity`, NASDAQ, tradable. Cap **NOT SOURCED**.
+
+**Outcome: REJECTED on part 1, by the source, against this seat's interest.** ⚠⚠ **This is the
+entry worth re-reading.** The sector's only priced-in pass was the one name the event does not
+touch, and the temptation — explicitly felt and explicitly recorded — was to bridge HP's
+"memory **and storage**" wording to a storage company and call it a thesis. **The drill query was
+spent specifically to test that bridge rather than to support it, and it broke.** The correct
+read of today's complex is that the right names are disqualified by a filter and the available
+name is disqualified by the facts.
+
+---
+
+### T-2026-11-25-04 — CF Industries / Mosaic — Faustina ammonia acquisition — REJECTED (part 1: **no second-order leg exists** — both parties are named first-order principals, which §4 excludes; MOS independently dead on §3 and priced-in)
+**Company A / the news:** 2026-11-24 — **CF Industries (CF)** agreed to acquire **Mosaic's (MOS)**
+Faustina ammonia facility and related assets in Louisiana for a **total transaction value of
+$600M**, including a **20-year offtake valued at $240M** under which CF supplies Mosaic **up to
+200,000 tons of ammonia annually**; CF expects production to reach **480,000 t/yr within the first
+year after closing**. (Source: CF Industries announcement 2026-11-24 via Yahoo Finance /
+Credence Research.) **This was the only transaction all three sweeps surfaced with BOTH parties
+named AND a disclosed figure** — the shape sweep 2 exists to find.
+**Company B / the candidate:** **None could be identified, and that is the finding.**
+
+**1. Mechanism (one sentence):** ❌ **FAILS — there is no Company B.** CF and MOS are the two
+named principals, i.e. **the first-order legs §4 excludes.** The second-order candidates were
+enumerated and each dies on arithmetic, not on judgment:
+- **Natural-gas producers** (ammonia's feedstock): 480k t/yr of ammonia is roughly **16 Bcf/yr** of gas against a US market measured in the **tens of Tcf** — immaterial by ~three orders of magnitude.
+- **Other US-listed ammonia producers:** the merchant-ammonia names below CF are **LSB Industries (LXU, well under $1B)** and similar — **§3 kills them on the $10B floor.**
+- **Engineering/construction for the restart:** **no contractor is named** in the announcement.
+**2. Dollar path:** ❌ **Would FAIL independently even treating CF as Company B.** The offtake is **$240M over 20 years = ~$12M/yr** against CF revenue in the billions — **well under 1%**, versus §4's 10% floor. The $600M is a one-time asset purchase, not a recurring revenue or cost line. For MOS it is an asset sale and a secured input, again not a §4 revenue/cost improvement.
+**3. Timing window:** Not reached.
+**4. Invalidation:** Not reached.
+
+**Hard filters** (run anyway, so the kills are code-verified rather than asserted):
+- Priced-in (§4): **CF −2.08%** (119.27 → 116.795), `priced_in: false` → would pass. **MOS −5.06%** (20.74 → 19.69), `priced_in: true` → **FAIL**.
+- Correlation (§4): pass by vacancy.
+- Universe (§3): both `us_equity`, NYSE, tradable (`asset` checked for both). ⚠ **MOS cap NOT SOURCED and probably BELOW the §3 floor** — derived only, 19.69 × ~318M shares ≈ **$6.3B**, under $10B. **Marked derived, not sourced**; the figures query returned no cap for it. CF derived ≈ **$19B**, above the floor.
+
+**Outcome: REJECTED on part 1 — the best-shaped object of the day and it had no second-order
+leg at all.** Worth recording precisely because it is the transaction the sweeps are designed to
+surface: both parties named, dollar value, tonnage and duration all disclosed. **A
+well-documented first-order transaction is still not a §4 structure.**
+
+---
+
+### T-2026-11-25-05 — sweep: eleven items disposed as one — REJECTED (ZERO additional drill queries spent)
+
+Every remaining item surfaced by sweeps 1–3, with the test that kills it. Recorded individually so
+a later seat can see the object was examined, not missed.
+
+| Item | Date | Kill |
+|---|---|---|
+| **Sanofi / Insmed** — agreed acquisition, **$41B** | 11-24 | **Part 1 — no second-order leg, and merger arbitrage is not a §4 structure** (precedent: `T-2026-11-23-01`, CRWD/ZS). Sanofi is foreign-listed (§3); Insmed is the target, i.e. first-order. The source does not state terms, closing timing or rationale, and **names no competitor or supplier whose revenue changes.** "Validates the specialty-pharma space" is a sentiment read, not a revenue line. |
+| **Applied Optoelectronics (AAOI)** — **$2.2B / 4-year** supply agreement, 800G transceivers and laser diodes | 11-24 | **Three independent kills.** **Counterparty UNNAMED** ("a Tier-1 hyperscale data-center customer") — the **seventh-plus** instance of the unnamed-hyperscaler shape (carry-forward item 2). **§3** — cap derived ≈$1.7B (38.40 × ~45M sh), far below the floor. **Priced-in `true` at −15.01%** (45.18 → 38.40), code-verified. AAOI is also the *announcing* party, i.e. first-order. |
+| **FDA's second CRL to Capricor (CAPR) for deramiocel** — insufficient effectiveness evidence plus alleged HOPE-3 data-integrity issues | 11-24 | **Part 1 — a rejection preserves the status quo and changes nobody's revenue line.** ⚠ **FOURTH instance of this exact shape in three weeks** (`-02` on 11-24 was the third). Disposed with **zero drill queries** because the prior entries were read and applied, and sweep 3 independently confirmed **"no competitor or supplier whose revenue or costs change"** is named. **Structural kill — valid on re-use.** §3 also kills CAPR. |
+| **Fourth Circuit denies review of FDA flavored-e-cigarette denials** (E-Liquid Brands, successor to Grove) | 11-24 | **§3** — private/successor entity. Sweep 3: the opinion **identifies no competitor or supplier** whose economics change. Same structural shape as the CRL above. |
+| **FDA rescinds marketing denial orders on 280 Charlie's Holdings (OTCQB: CHUC) products** | 11-18, reported 11-24/25 | **§3** — OTCQB, dead outright. Restores review but **is not marketing authorization**, so even the first-order effect is procedural. No second-order name, no segment. |
+| **Peninsula Energy (ASX: PEN)** — cyber incident, **temporary shutdown** of the Lance Uranium Project, Wyoming | 11-25 | **§3** — ASX-listed. **No restart date, production volume or financial amount disclosed** → part 2 unquantifiable. ⚠ The *shape* is right (a named production halt → uranium supply → US-listed uranium names) but **no magnitude exists to size it**, and Lance is a small ISR operation. |
+| **Wanhua Chemical** — planned 12-01 shutdown of the 1 Mt/yr Ningbo MDI Phase II unit, ~30 days | 11-24/25 | **§3** — China-listed. ⚠ **The second-order shape here is genuinely live** (MDI supply out → Western MDI producers) **but every §3-eligible MDI name is foreign** (BASF, Covestro, Huntsman is the US leg at ~$2B, below the floor). **Part 2 also: a 30-day planned turnaround is a scheduled maintenance event, not a supply shock.** |
+| **Pharming (PHAR)** — possible US **RUCONEST** supply interruption; manufacturing paused at a third-party producer after a failed sterile-process simulation; supply expected to last through mid-December | 11-24 | **§3** — Pharming is Euronext/Nasdaq-ADR and small. **Part 2** independently: the HAE alternatives are **Takeda (foreign), CSL Behring (foreign), BioCryst (BCRX, under the $10B floor)**; and an interruption with supply covered **through mid-December** is a weeks-long gap in a niche orphan indication — **immaterial to any §3-eligible company's revenue line.** |
+| **J.M. Smucker (SJM)** — accelerated phase 2 of frozen-food capacity expansion at McCalla, AL; demand said to exceed current capacity; earnings helped by tariff refunds | 11-24 | **Part 2 — no counterparty, no dollar value, no volume disclosed.** SJM is the first-order announcing party and this is bundled with its own results print. No equipment supplier or contractor is named, so **there is no second-order leg to size.** |
+| **Deere (DE)** — Q4 net income **$1.051B**, FY net income **$4.860B**; **Abercrombie, Kohl's, DICK'S** retail results described as strong; **consumer confidence** above forecast | 11-24 | **Part 1 — an own-results print is a CONDITION, not a transaction with a named counterparty.** The source states it cannot establish revenue, EPS vs consensus, comps or guidance for the retail names, so **no second-order recipient is identified in any of them.** ✅ **This discharges the object the 11-24 sweep handed forward** ("the 11-24 earnings slate … legitimate objects for tomorrow's seat"): the actuals arrived and **named no second-order beneficiary.** |
+| **Macro / policy complex** — Oct PCE and revised Q3 GDP released 11-25 (forecasts: headline PCE 3.8% y/y, core 3.2%, GDP ~3.4–3.5% annualised); Fed Dec 8–9 meeting with a possible 25bp move priced; Nasdaq/S&P AI-led selloff; **Huawei convicted of fraud in a US criminal trial**; Micron/SK Hynix/Samsung long-term-contract *targets* (MU >35% of 2030 sales, SKH >50% of 2027–28 capacity, Samsung 60–70% of capacity) | 11-24/25 | **No Company A — the standing disposed object, unchanged.** A data print is not a transaction and names no recipient; the sweep returned **forecasts, not results**, and a pending release is not an event. The memory-contract figures are **company targets and plans, not realized contract volumes**, and the source explicitly declines to attribute a named-customer agreement to any US-listed supplier. Huawei: already excluded from the US market, so a conviction changes **no US-listed company's revenue line** — and no source names one. |
+
+⚠ **ONE OBJECT HANDED FORWARD RATHER THAN DISPOSED:** the 11-24 sweep flagged **CrowdStrike and
+HPE results as UNESTABLISHED**. **HPE is now discharged** — its FQ4 2026 earnings-call transcript
+surfaced in sweep 1's citations and the complex it sits in is `-01`'s memory-cost story, where HPE
+appears as a **cost-pressured server maker repricing contracts, i.e. the first-order leg.**
+⚠ **CrowdStrike remains UNESTABLISHED at this seat too** — no sweep returned its actuals, and
+this seat does not claim nothing material was in them. **Still a candidate object, now two
+sessions old and going stale.**
+
+**Outcome: REJECTED, eleven items, disposed as one, ZERO drill queries spent beyond the broad
+sweeps.**
+
+---
+
 ### 2026-11-24 (07:02 ET) — event survey (funnel, pre-thesis)
 
 Selftest **5/5**, exit 0 (`trading_enabled: true`, LIVE paper, equity **$95,255.67** at the
