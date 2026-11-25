@@ -99,6 +99,21 @@ exact committed figure is stamped once in `state.md` after writing stops, and wh
 deliberately an order of magnitude rather than a byte count. Nothing prior was collapsed — no seat has standing to truncate
 another's prose, and the retention rule is still the human's to set.
 
+**— 2026-11-25 11:41 ET · `3-midday-management` · RECONCILED, AGREES · EXITS-ONLY RUN, NOTHING TO EXIT · one line, by design. —**
+Zero satellite blocks (`grep -ci 'status: *open'` → **0**) vs **one** Alpaca row, VOO 99.046311231 sh
+@ 706.74 — the §2 core, **§5-exempt, struck from the working list, not cleared** (it printed
+**−9.123%** at 11:41, past §5.3's −7% figure and 0.88pp from §5.4's −10%; **core is exempt and §2
+forbids selling it — that is a rule not applying, NOT a rule passing**). ⚠⚠ **STEPS 2–5 HAD NO
+OPERAND:** no `highest_close` and no `(as of …)` date exists anywhere in this file, so nothing could
+be found stale and **no `bars` backfill was owed or spent**; no `invalidation` string and no company
+name exists, so **no `perplexity` §5.1 call was owed or spent**; no deadline (§5.2), no entry price
+(§5.3), no mark (§5.4). **All four ABSENT, NOT PASSING — still unexecuted code at 89 absent seats /
+86 absent dates.** `sell_rule_status` is written per OPEN position and there are none, so **this line
+is the lawful maximum write, not a skipped step.** ⚠ Fired 11:41 for a 12:30 slot but **inside** the
+session (`is_open: true`), so the run was never degraded. **This seat opened no digest block and
+collapsed nothing** — the file was **380,158 B** describing an empty ledger when it arrived, and no
+seat has standing to truncate another's prose.
+
 ### `sell_rule_status` — ALL FOUR RULES **ABSENT, NOT PASSING** (2026-11-23, **DIGEST OPEN — seats that appended: `1-premarket` **07:01** (body below, untouched) · `2-market-open` **08:36** 0 B, header line only · `3-midday` **11:41** 0 B, header line only. Later seats append; the close seat closes it.** ⚠ Absent-seat ordinals: 07:01 **103rd** · 08:36 **104th** · 11:41 **105th**; absent dates **84** (one empty day is one fact about the ledger, not three). ⚠⚠ **THE OPEN SEAT RECONCILED AND PLACED NOTHING, AND NOTHING WAS OWED:** `plan_date` read **2026-11-23** so the staleness gate PASSED, and the fresh plan carried **zero BUY, zero SELL, zero REBALANCE** intents — no §5 operand, no intent to re-validate, **no `move` call spent**. `clock` 08:36:02 `is_open: false`, **both** dates **2026-11-23**: pre-market, **54 min before the bell** — the standing routine-2 schedule defect, tenth of eleven seats, **ask already with the human, not re-sent**. It cost nothing again, but only because the funnel was empty: **today the plan handoff is exonerated and the shut door stands alone.** ⚠⚠ **NOTHING WAS COLLAPSED AND NO COLLAPSE RATIO IS CLAIMED.** Step 4 writes `sell_rule_status` per OPEN position and there are none, so the only lawful write is this header plus the reconciliation below. **This file was 367,528 B describing an EMPTY LEDGER when this seat read it — `wc -c`, not inherited — and that is the standing systemic finding, still awaiting a retention rule from the human.** This seat added the least it could and touched no prior seat's prose; a pre-market seat is not entitled to collapse other seats' writing.)
 
 **— `3-midday-management` seat appended 11:41 ET. Absent-seat ordinal 105th; absent dates still 84 (today already counted). —**
