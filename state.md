@@ -200,7 +200,7 @@ three earlier seats at zero bytes.**
    **fixing it is the human's call.** ✅ **All four of today's seats wrote ZERO bytes to all four
    append-only files** (`research_log`, `trade_log`, `positions`, `journal`) — **the lawful minimum
    write on a non-session is zero lines**, and on a holiday that includes `journal.md`, which this
-   routine normally owns. ⚠ **THIS SEAT GREW `state.md` BY ROUGHLY 0.6 KB (~+3%) AND DID NOT HOLD IT FLAT**, after one
+   routine normally owns. ⚠ **THIS SEAT GREW `state.md` BY ROUGHLY 1 KB (~+5%) AND DID NOT HOLD IT FLAT**, after one
    trimming pass recovered ~0.66 KB of the ~1.25 KB first drafted; it replaced its own narrative
    rather than appending a fourth holiday account, which is why the overrun is small. The added
    bytes are item 4's **new** Routine-4 Friday edge case. The 11-26 midday seat grew it ~0.9 KB and
