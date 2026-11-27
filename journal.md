@@ -40,6 +40,118 @@ anything where the honest-broker rule (§4) did real work>
 
 ## Entries
 
+### 2026-11-27 (Friday)
+
+**Account:** total $96,389.75 | day P&L +1,131.11 (+1.19%) | since inception −3.61%
+**Sleeves:** core 68.88% | satellite 0.00% | cash 31.12%   (§2 band 65–75%)
+**Breaker:** INACTIVE (0 consecutive losses)
+**Week:** 0/3 new positions — and the cap **expired unused** at today's 13:00 bell
+
+**Traded:** nothing — zero orders placed by any of today's four seats
+**Researched:** 5 theses — **0 accepted, 5 rejected** (`T-2026-11-27-01` … `-05`)
+**Positions near a sell rule:** **none, because there are none.** §5.1–§5.4 are **ABSENT, NOT
+PASSING** — 88th consecutive session with an empty satellite sleeve.
+
+**What happened:**
+
+A half session, 09:30–13:00 ET, the day after Thanksgiving. VOO closed at an official
+**670.00** (`bars --adjustment all`), **+11.265 / +1.7101%** on Wednesday's 658.735. That carried
+equity from 95,258.64 to **96,389.75**, **+1,131.11 / +1.1874%** — measured against the 11-25
+close, which is the correct prior-session baseline because 11-26 was a holiday (`balance_asof`
+reads 2026-11-25 for exactly that reason, and the broker's own `change_today: 0.01733` agrees).
+Volume confirms the short session: **53,677 shares on 1,486 prints**, against 203k–280k on
+4,066–5,857 prints for the four full sessions before it.
+
+Core is down **−5.157%** from the 706.74 entry (−$3,610.24). Differenced against three prior
+marks **before** any direction word was written, per the standing rule: it **narrowed** against
+all three — 0.436pp on the midday −5.593%, 0.247pp on the pre-market −5.404%, and 1.616pp on the
+−6.773% every 11-26 seat read. No mark it widened against, so the two-sided check comes out
+one-sided honestly this time. **§5 exempts core outright. A rule not applying is not a rule
+passing. Core was not sold and must not be.**
+
+The §2 band held at **core 68.88%**, satellite 0.00%, cash 31.12%, `core_in_band: true`.
+`rebalance_delta` of **$1,083.07** is the distance to the 70% *target*, not a breach of the band
+— **no rebalance is due Monday.** Core sits under target because it is down 5.2% from entry, not
+from drift worth chasing.
+
+Nothing was traded and nothing was owed. `orders --status all` returns **one order in this
+account's entire history** — the 2026-09-03 VOO core buy, `filled`, already in `trade_log.md`.
+**Nothing from today, nothing non-terminal: §7 is clean, checked rather than assumed.** No
+position closed, so `consecutive_closed_losses` stays at 0 and the breaker stays INACTIVE with no
+alert owed. `week_anchor(2026-11-27)` → **2026-11-23** (imported from `common.py`, not
+hand-computed) matches the inherited `week_of`, so no rollover. No unresolved `PARTIAL` marker
+survives in this file — grepped at this seat; the 11-20 instance stays discharged.
+
+**Step 2 — the job this routine exists for — had no operand, and that is the entry the next run
+needs.** There is **no `highest_close` field and no `(as of …)` date anywhere in
+`positions.md`**, so no mark could be raised and none could be re-dated. **An absent field is a
+third state, distinct from both "current and unchanged" and "stale"** — and the midday backfill
+branch keys on the date, so it will find no date rather than an old one. The 161 `highest_close`
+strings in that file are template text, the ex-dividend basis warning, and historical digest
+headers. **Not one of them is a live mark.** No `--adjustment all` basis hazard could arise
+either, because no stored mark exists to be compared across bases.
+
+**What I got wrong or nearly got wrong:**
+
+**I nearly threw away a whole session on a boolean.** `clock` at 15:16 read `is_open: false`
+with **both** `next_open` and `next_close` on **Monday 2026-11-30** — which is, character for
+character, the holiday signature. My own Step 1 says that on a holiday I should note the skip,
+commit, exit, and **not post a daily summary "for a day that did not happen."** Read literally,
+that branch fires today, and today happened: the index rose 1.71% and the account gained $1,131.
+Three things stopped it — the pre-market and midday seats' recorded `is_open: true` at 09:36:03
+and 11:42:43, `plan_today.md`'s explicit warning that this routine's edge case *inverts* today,
+and item 4 in the carry-forward. **The prompt's holiday test is a boolean and it is wrong on
+exactly this one day a year.** That is a prompt defect, not a judgment call, and it is the same
+shape as the one routine 2's prompt carries. I have not touched either prompt; reconciling them
+is the human's call.
+
+**The cheap fix I found while checking, which no prior seat has written down:** `bars` answers
+*"did today open?"* on its own. A session day returns a bar dated today with real volume; a
+holiday returns nothing for that date. **The close seat does not need the morning seats to have
+left it a note** — it can discriminate from the one call it is already making for the close.
+That closes the open question in item 4 about how this seat should decide, and it is strictly
+better than inheriting, because an inherited fact is only as good as the run that wrote it.
+
+**The near-miss that will actually bite someone:** the wrong number for a high-water mark was
+sitting in the output I already had open. `positions` reports `current_price` **670.29**; the
+official close is **670.00**. Had a satellite position existed, the mark I would have been
+reaching for at 15:16 — the price right there in the JSON I had just read — is **0.290 /
+0.0433% high**. Item 6 is explicit that §5.4 must trail official `bars` closes only, and today
+I can say why that warning survives: the convenient endpoint and the correct one are not the
+same endpoint, and the convenient one is the one in front of you. This is the **19th** distinct
+session on which the two disagree (range 0.04–1.41/share). It is a genuine 19th, not a re-read
+— today is a new close, where the morning seats correctly declined to count a 19th off a stale
+658.87.
+
+**And the pressure I should name rather than pretend I did not feel:** Step 2 is framed as the
+invisible job that matters more than the summary, which makes a run reporting "no operand" feel
+like a run that skipped its homework. It would have been easy to spend a `bars` call per
+imaginary position, or to describe the absent field as "verified current," and either would read
+as diligence. **The honest record is that the §5.4 trailing stop has still never been exercised
+against a live position, and 88 sessions of "no exits" in this corpus record the absence of a
+subject, not a clean bill of health.** I spent exactly one `bars` call today, for the day's
+official close, which Step 3 needs regardless.
+
+**For the next run:**
+
+- **Satellite sleeve empty; §5 has no operand.** No mark to backfill — the field does not exist,
+  so do not read the midday backfill branch as owing a call.
+- **Monday 2026-11-30 is a full session, 09:30–16:00** (`next_open`/`next_close` both read it).
+  **Routine 4's early fire reverts to harmful on Monday:** a ~15:15 fire lands **45 min before**
+  a 16:00 bell, where no official close exists yet — so the **hold for the bell** is required
+  again. Today's 15:16 fire was *post*-bell and therefore the one day the early fire helped.
+  Those two facts must not be folded together.
+- **Band is not near an edge.** The 65% floor breaks at VOO **562.51** and the 75% ceiling at
+  **908.67** — invariant while cash is exactly $30,000 and the share count is unchanged. No
+  rebalance due.
+- **Friday is weekly-review day (routine 5) and it had not fired when this seat committed.**
+  `weekly_review.md` is **415,188 B** and the monthly rollover is the review's job, not this
+  seat's. November entries stay — the rollover moves entries older than the current month.
+- **Corpus growth remains the standing systemic finding** and still needs a retention rule from
+  the human. `positions.md` is ~388 KB describing an empty ledger.
+
+---
+
 ### 2026-11-25 (Wednesday)
 
 **Account:** total **$95,245.27** | day P&L **−$191.65 (−0.2008%)** | since inception **−4.7547%**
