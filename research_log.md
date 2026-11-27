@@ -52,6 +52,291 @@ single most common way a plausible-sounding connection gets mistaken for an oppo
 
 ## Entries
 
+### 2026-11-27 (07:02 ET) — event survey (funnel, pre-thesis)
+
+Selftest **5/5**, exit 0 (`trading_enabled: true`, LIVE paper, equity **$96,217.41** at the
+selftest's read). `clock` **07:01:51** — `is_open: false`, `next_open`
+**2026-11-27T09:30:00-05:00**, `next_close` **2026-11-27T13:00:00-05:00**. ⚠⚠ **BOTH FIELDS CARRY
+TODAY'S DATE = the pre-market signature, NOT a holiday** — and the `next_close` of **13:00**
+**BROKER-CONFIRMS THE EARLY CLOSE AT LAST**, which five prior seats could only inherit. Carry-forward
+item 8 is discharged on its own terms: **today is a real 3.5-hour session, 09:30–13:00.**
+
+**WEEK ROLLOVER — NO RESET DUE, RE-DERIVED AT THIS SEAT.** `week_anchor(2026-11-27)` →
+**2026-11-23** (imported from `common.py`, not hand-computed) = inherited `week_of`
+**2026-11-23**. `new_positions_this_week` stays **0 of 3**.
+
+**NEW POSITIONS PERMITTED THROUGHOUT.** Breaker **INACTIVE 0/3** · cap **0 of 3** · satellite
+**0.00% deployed, $30,000 cash** · `TRADING_ENABLED: true` · `HALT_CLEARED_AT: none` ·
+`control.md` Notes **(none)** · `alerts.md` **no open, no SYSTEMIC incidents**. **Nothing
+structural blocked a buy. The candidates did.**
+
+**LEDGER RECONCILED, AGREES.** `grep -ci 'status: *open'` on `positions.md` → **0**;
+`alpaca.py positions` returns **one row, VOO 99.046311231 sh @ 706.74**, the §2 core, §5-exempt and
+deliberately untracked there. **No disagreement to resolve.** §5.1–§5.4 remain **ABSENT, NOT
+PASSING** — no entry price, no `highest_close`, no deadline, no invalidation string exists.
+**Step 4 had NO OPERAND.** `orders --status all` still returns **exactly one order in the account's
+entire history** (the 2026-09-03 VOO core buy, `filled`) — **nothing non-terminal overnight (§7).**
+
+**FUNNEL SPEND: three sweeps, three drill/figures queries, four `move` calls, three `asset` calls,
+ZERO `bars` calls.** Sweep 1 took the overnight window. Sweep 2 inverted it to named-both-parties
+transactions carrying a disclosed value, tonnage or capacity figure. Sweep 3 took regulatory
+decisions, court rulings, FDA actions, export controls, antitrust decisions and production halts.
+⚠ **The disputed sweep — the one demanding a news source have already NAMED the second-order company
+and segment — was again NOT RUN**, continuing the experiment under carry-forward item 2. The
+second-order step was taken *by this seat* (Budel smelter halt → zinc supply → *which §3-eligible
+company books zinc revenue?*) and the queries were spent only to **source facts.**
+
+⚠⚠ **THE WINDOW IS A HOLIDAY WINDOW AND THE FUNNEL REFLECTS IT HONESTLY.** Sweep 1 returned
+**"No disclosed transaction involving two named corporate parties and a dollar value was identified
+in the available results"** for the 24-hour window, and sweep 2 at `--recency week` surfaced exactly
+**one** qualifying transaction — **CF/Mosaic Faustina, already disposed in full at
+`T-2026-11-25-04`.** A thin funnel on the day after Thanksgiving is the expected shape, **not a
+tooling failure**: the selftest passed 5/5 and all three sweeps returned substantive, cited answers.
+
+---
+
+#### ⚠⚠⚠ THE HEADLINE OF THIS RUN: A SWEEP SHAPE PRIOR SEATS HAVE BEEN MINING CARRIES A HIDDEN SIGN ASSUMPTION, AND IT SURFACED HERE
+
+The 11-24 seat added a sweep for **"production halts and input-price moves on a named cause"** — a
+cost-line mechanism rather than a revenue-line one — and it has been the most productive new shape
+in the funnel. Today it surfaced the **Nyrstar Budel zinc smelter halt**, and working the object
+properly exposed a defect in the shape itself:
+
+> **"Production halt → producers of that commodity benefit" silently assumes the halt is at the
+> MINE. Budel is a SMELTER.** For a vertically integrated miner the two legs have **opposite
+> signs** — removing refined capacity supports the **refined metal price** while removing a
+> concentrate **buyer** moves treatment charges against the concentrate seller.
+
+This seat **initially reasoned the sign wrong in the harder direction** — that fewer concentrate
+buyers means higher TCs and therefore a *worse* net realization for miners — and spent a drill query
+to check it rather than writing it down. **The sourcing came back internally contradictory**, which
+is a more interesting result than either sign would have been. See `T-2026-11-27-01`.
+⚠ **Recorded as a funnel-shape finding for the human, not acted on**: the sweep is still worth
+running, it just needs the mine/smelter distinction drawn before the second-order step is taken.
+
+---
+
+### T-2026-11-27-01 — the US-listed zinc producer tier (SCCO · TECK · FCX · HL) ← Nyrstar's halt of the 315 kt/yr Budel zinc smelter — REJECTED (part 1: **the mechanism needs two opposing clauses AND the sourcing contradicts itself on the sign of the causal path's second leg**; part 2 independently: **no §3-eligible US-listed name has a SOURCED zinc revenue share above 10%** — SCCO **3.9%**, HL **9.3%** and sub-floor cap, TECK unsourceable, FCX priced-in `true`)
+
+**Company A / the news:** 2026-11-26 — **Nyrstar** (private; Trafigura-owned) announced it will
+**halt zinc production at its Budel refinery in the Netherlands from 2026-11-30**, citing sharply
+higher energy costs and challenging smelting-market conditions. **Nameplate capacity 315,000 t/yr
+of refined zinc**; SMM estimates **200,000–220,000 t** of refined supply lost if Budel stays offline
+through 2027, ≈**2% of global refined-zinc output** (secondary calculation, not a filing). LME zinc
+rose **>3%** on the announcement. (Sources: Reuters 2026-11-26; SMM/metal.com; The Oregon Group.)
+**Dated 11-26, inside the window — this is a genuinely NEW object, not a re-serve.**
+**Company B / the candidate:** the §3-eligible US-listed zinc producers — **SCCO, TECK, FCX, HL.**
+
+**1. Mechanism (one sentence):** ❌ **FAILS, two independent ways.**
+- **It cannot be written in one sentence for any integrated candidate.** The honest sentence is
+  *"Budel's closure removes refined zinc supply, raising the price Teck realizes at its Trail
+  smelter, **and also** removes a concentrate buyer, moving treatment charges against Red Dog's
+  concentrate sales"* — **two clauses with opposite signs.** §4: *"If the sentence needs a second
+  clause to make sense, the link is too weak. Reject it."* **This is that test firing exactly as
+  written**, and it is the first time in this log that §4's one-sentence rule has killed a
+  candidate on **sign ambiguity** rather than on vagueness.
+- ⚠⚠ **AND THE SOURCING IS INTERNALLY CONTRADICTORY ON THE TC LEG.** The drill query's own summary
+  asserts *"a smelter closure … tends to put **downward** pressure on concentrate TCs … lower TCs
+  generally positive for miners"* — while **the two sources it cites say the opposite**: SMM, that
+  the shutdown *"would reduce demand for zinc concentrates and could **ease** feedstock competition
+  and **treatment-charge pressure for other European smelters**"*, and The Oregon Group, that *"one
+  fewer smelter means one fewer concentrate buyer"* which *"could **ease pressure on treatment
+  charges** ahead of 2027 benchmark negotiations."* **Relief for smelters is TCs moving UP, which
+  deducts MORE from the miner.** **The direction of the mechanism's second leg is disputed by the
+  evidence, so there is no mechanism to write.** ⚠ The source further states it **"does not
+  establish a quantified change in miners' net realized prices resulting specifically from Budel's
+  closure"** — the wording is *"could ease"*, **a possibility, not a measured outcome.**
+
+**2. Dollar path:** ❌ **FAILS INDEPENDENTLY, and this is the cleaner kill because it is arithmetic
+rather than judgment.** Sourced zinc revenue shares against §4's **10% floor**:
+
+| Candidate | Zinc revenue | Total revenue | Zinc % | Source | §3 cap | Verdict |
+|---|---:|---:|---:|---|---:|---|
+| **SCCO** | **$529.9M** | **~$13.4B** | **3.9%** | FY2025 product revenue, year ended 2025-12-31 | ~$120.1B ✅ | ❌ **2.6× below the floor** |
+| **HL** | **$131.954M** | **$1.423019B** | **9.3%** | **2025 Form 10-K** (consolidated revenue $1.423019B, zinc sales $131.954M) | ~**$7.2B** derived (11.27 × ~640M sh) ❌ | ❌ **below the floor on BOTH tests** |
+| **TECK** | **not determinable** | C$10.756B (secondary source) | **UNSOURCEABLE** | **no eligible 10-K / 20-F / 40-F excerpt returned** — only a quarterly press release | ~$27.8B ✅ | ❌ **part 2 cannot be written honestly** |
+| **FCX** | no figures returned | — | **UNSOURCEABLE** | no eligible filing figures | — | ❌ **priced-in `true`, −5.62%** |
+
+⚠⚠ **TECK IS THE ONE WORTH NAMING, BECAUSE IT IS THE NAME THIS SEAT WANTED.** It is the only
+candidate that **passes §3 on cap (~$27.8B), passes the asset check (`us_equity`, NYSE, tradable,
+active) and passes the priced-in filter (−1.68%, `priced_in: false`)** — and its zinc share is
+plausibly the highest of the four post-coal-divestiture. **This seat could have written "~20–25% of
+revenue" from general knowledge and the trade would have cleared every mechanised guardrail in
+`alpaca.py buy`.** It did not, because **§4 part 2 requires the segment's revenue share and the
+`research_log.md` template requires its source**, and two queries failed to return an eligible
+filing figure. ⚠ **An estimate I construct myself is precisely what the honest-broker rule exists
+to stop**, and the script cannot tell a sourced figure from an invented one — the trading-ops note
+is explicit that it *"cannot tell whether a market cap figure is correct, only that it is present."*
+**Unsourceable is a real kill, and it is the honest one here.**
+
+**3. Timing window:** **Not reached** — parts 1 and 2 both fail. ⚠ Recorded anyway because it would
+likely have passed: the halt begins **2026-11-30**, inside the current quarter, so a realized-price
+effect would appear in Q4 2026 / Q1 2027 results, **within §4's two-quarter horizon.**
+**4. Invalidation:** **Not reached.**
+
+**Hard filters** (run anyway, so the kills are code-verified rather than asserted):
+- Priced-in (§4): **SCCO −3.61%** `false` ✅ · **TECK −1.68%** `false` ✅ · **HL −3.34%** `false` ✅ ·
+  **FCX −5.62%** `true` ❌. ⚠⚠ **NOTE FOR CARRY-FORWARD ITEM 1: three of four PASSED.** Unlike
+  11-25, where the filter killed five of seven names on down moves, **the filter did NOT do the
+  killing today** — §4's own thesis parts did. **That is a third observation pointing the same way
+  as 11-24 and 11-25, and it points AWAY from the filter being the binding constraint.**
+- Correlation (§4): **pass by vacancy** — zero open satellite positions, so no `driver` field exists
+  to collide with. Checked, not assumed.
+- Universe (§3): **all three checked in code** — SCCO, TECK, HL all `us_equity` / **NYSE** /
+  `tradable: true` / `status: active`. **Asset class and venue pass for all three; the cap floor
+  kills HL and the segment-share floor kills SCCO.**
+
+**Outcome: REJECTED on part 1 and part 2, independently.** ⚠ **The most useful line in this entry is
+the one there was most pressure to leave out:** this seat worked the object *because* the shape
+looked right — a named, dated, non-stale production halt with a disclosed capacity figure and a
+visible price reaction, which is the rarest thing the funnel surfaces — **and then had to kill it on
+a figure it could not source for the one name that passed everything else.** The temptation was to
+supply that figure from memory. **It was not supplied.**
+
+---
+
+### T-2026-11-27-02 — PTC Inc. (PTC) ← the FTC granting early termination of the Hart-Scott-Rodino waiting period for Schneider Electric's proposed acquisition — REJECTED (merger arbitrage is not a §4 structure; **PTC is the TARGET, i.e. the first-order leg §4 excludes**; Schneider is foreign-listed under §3; and **no source names any second-order party**)
+
+**Company A / the news:** 2026-11-26 (report updated 11-27) — the **FTC granted early termination
+of the HSR waiting period** for **Schneider Electric's** proposed acquisition of **PTC Inc.**
+⚠ **The source does NOT state the transaction has closed.** (Source: ad-hoc-news corporate-news
+report, 2026-11-26/27.)
+**Company B / the candidate:** **None could be identified, and that is the finding.**
+
+**1. Mechanism (one sentence):** ❌ **FAILS — there is no Company B.** **Schneider Electric is
+Euronext Paris-listed → §3 dead.** **PTC is the acquisition target → the first-order leg**, and §4
+is a second-order strategy: *"news breaks about Company A; you look for Company B."* A regulatory
+clearance of a deal is **a procedural step in that deal**, not an event that changes a third party's
+revenue or cost line. ⚠ **And merger arbitrage is explicitly not a §4 structure** — precedent
+`T-2026-11-23-01` (CRWD/ZS), `T-2026-11-03-03` (Marvell/Lumentum) and the Sanofi/Insmed row of the
+`T-2026-11-25-05` sweep. **Third consecutive session in which a large M&A clearance or agreement
+surfaced and had no second-order leg.**
+**2. Dollar path:** ❌ **No figure of any kind is disclosed in the source** — no consideration, no
+premium, no segment. Not reachable.
+**3. Timing window:** ❌ **Not reachable, and independently adverse** — early termination of an HSR
+waiting period says the deal *may* proceed, **not that it has**, so no first-disclosure-to-results
+path exists.
+**4. Invalidation:** **Not reached.**
+
+**Hard filters:** not run — **no candidate survived part 1 to filter.** ⚠ **Deliberate:** spending
+`move` calls on a name with no mechanism would dress a structural kill as a quantitative one.
+
+**Outcome: REJECTED on part 1.** ⚠ **The counter-argument, stated honestly:** PTC is US-listed
+(Nasdaq) and large enough to clear §3's cap floor, so the §3 gate did **not** do the killing — the
+**structure** did. A clearance for a foreign acquirer buying a US target leaves **no third party
+whose economics change**, and the source says so: *"No competitor, supplier, or customer is named in
+the available result as having a resulting revenue or cost change."* **The source applied the kill.**
+
+---
+
+### T-2026-11-27-03 — the US AI-accelerator and cloud complex ← BIS adding seven Malaysia / Singapore / Thailand entities to the Entity List (effective 2026-11-23, published 2026-11-25) and NVIDIA asking manufacturing partners to suspend server shipments to four Southeast Asian countries (2026-11-26) — REJECTED (**the standing government-action object, FOURTH appearance in nine sessions**; part 1: no source names a beneficiary; **the only measurable direction is NEGATIVE in a long-only strategy**)
+
+**Company A / the news:** The **BIS interim rule** adding seven entities in Malaysia, Singapore and
+Thailand to the **Entity List**, imposing additional licensing requirements and limiting license
+exceptions — **effective 2026-11-23**, Federal Register issue dated **2026-11-25**. A **2026-11-26**
+report says **NVIDIA asked manufacturing partners to suspend shipments of servers containing its
+chips to four Southeast Asian countries.** Named listed entities include **Megaspeed International**
+(Singapore-based cloud provider, described as a major NVIDIA customer), **Swiftdata** and
+**Speedmatrix**. (Sources: Federal Register 2026-11-25; l0g.fr analysis; The Reg Review 2026-11-27.)
+**Company B / the candidate:** **None exists. This is the fourth seat to reach that conclusion.**
+
+**1. Mechanism (one sentence):** ❌ **FAILS — no Company B.** ⚠⚠ **STRUCTURAL KILL, AND RE-USE IS
+LEGITIMATE BECAUSE IT DOES NOT DEPEND ON A FIGURE** (carry-forward item 3's test): *an export
+restriction removes a market from a US seller and names no US-listed recipient of the diverted
+demand.* Precedent **`T-2026-11-19-01`** (H200/Hopper halt — *"NO COMPANY B EXISTS"*),
+**`T-2026-11-23-02`** (BIS remote-access rule + TSMC order suspension — *"no source names any
+beneficiary; the only measurable direction is NEGATIVE"*), **`T-2026-11-17-01`**. **The facts are
+new; the shape and the kill are not.** The sources here again *"do not quantify the resulting
+revenue or cost change for NVIDIA or the named entities."*
+⚠⚠ **AND THE SIGN IS WRONG FOR THIS STRATEGY.** The one measurable effect is **NVIDIA losing
+shipments** — a loss to a US-listed company. §2/§3 permit **no shorts, no inverse products and no
+derivatives**, so a negative-direction read is **structurally unactionable here**, not merely
+unattractive. **The §3-eligible names are on the wrong side and the beneficiaries are unnamed.**
+**2. Dollar path:** ❌ **No amount is attributable to anyone** — the sources disclose no revenue
+figure, no unit volume and no license-denial count. **Megaspeed, Swiftdata and Speedmatrix are all
+private and foreign → §3 dead** independently.
+**3. Timing window:** **Not reached.** **4. Invalidation:** **Not reached.**
+
+**Hard filters:** not run — **no candidate survived part 1.** **ZERO drill queries spent**: the
+prior entries were read and applied, and sweep 3 independently confirmed no beneficiary is named.
+
+**Outcome: REJECTED on part 1.** ⚠ **Worth one line for the human:** this complex has now been
+disposed **four times in nine sessions** on the same structural ground. It is the clearest case in
+the log for carry-forward item 3's proposed **disposed-objects list** — four seats have each spent
+sweep budget re-surfacing an object whose kill has not changed. **Defining "disposed" is still a
+calibration change and so the human's call.**
+
+---
+
+### T-2026-11-27-04 — the macro / policy complex (Q3 GDP revised UP to 4.3% annualised from 3.4% · October PCE +0.3% m/m, 3.8% y/y, core 3.3% y/y · a proposed tariff schedule covering 14 economies at ~15–40% · the 2026-11-25 Beige Book · Q3 corporate profits $206B from $384B in Q2) — REJECTED (**no Company A — the standing government-action and market-outcome object, unchanged**)
+
+**Company A / the news:** Dominant items in the window. **GDP** revised to **4.3%** annualised from
+3.4%, attributed to stronger consumption, government spending and AI investment. **October PCE
++0.3% m/m / 3.8% y/y**, core **+0.3% m/m / ~3.3% y/y**, both above the 2% objective; market sources
+describe a December Fed increase as near-certain — **an expectation, not a decision.** The **US
+administration proposed new tariffs on 14 economies** (China, EU, Japan, India, South Korea, Taiwan,
+Switzerland among them) at roughly **15–40%**, with **20% on Chinese goods** and **25% on Indian
+imports** cited; **implementation reported as possibly February or March 2027**, and **not added on
+top of the July duties.** **Beige Book** (data through 11-16) described as less encouraging than the
+GDP print. **Q3 corporate profits $206B vs $384B in Q2**, Commerce Department, no company
+attribution. (Sources: worldmacronews, The Daily Upside, Reuters Take Five, Tickmill, invezz — all
+2026-11-27.)
+**Company B / the candidate:** **None. A data print is not a transaction.**
+
+**1. Mechanism (one sentence):** ❌ **FAILS — there is no Company A, so there can be no Company B.**
+§4 requires an **event** with a named party. A GDP revision, an inflation print, a Beige Book and an
+aggregate profits series are **measurements of a condition**, and the standing kill is unchanged
+(`T-2026-11-23-05`, `-11-19-05`, `-11-13-05`, `-11-11-04`, `-11-10-05`, `-11-05-04`).
+⚠⚠ **THE TARIFF LEG IS THE ONE THAT DESERVED A SECOND LOOK, AND IT STILL FAILS — ON THREE GROUNDS,
+ONE OF THEM NEW.** (i) **It is a PROPOSAL, not a decision** — the reporting is explicit that it *"was
+not reported as an implemented tariff decision."* **A proposal is not an event.** (ii) **No named
+recipient**: *"the available reporting does not quantify company-specific exposure."* This is the
+blank prior seats flagged as the most fillable in the whole funnel — *any* domestic producer can be
+written into it — and **filling it is exactly the honest-broker failure.** (iii) ⚠ **NEW, and the
+reason this leg is worth logging rather than sweeping: the stated implementation of February–March
+2027 is INSIDE §4's two-quarter horizon**, so the timing test that killed the tariff object in
+earlier months **would not kill it now.** **Parts 1 and 2 still do** — but the human should know
+that the object's *timing* defence has expired, and a future seat will have to kill it on structure
+alone. **A December–January re-serve of this object should be expected.**
+**2. Dollar path:** ❌ **Not reachable for any leg** — no company-level figure exists anywhere.
+**3. Timing window / 4. Invalidation:** **Not reached.**
+
+**Hard filters:** not run — **no candidate exists to filter. ZERO queries spent beyond the sweeps.**
+
+**Outcome: REJECTED on part 1.** ⚠ The GDP/PCE combination is the most market-moving pair in the
+window and **it is still not a §4 object.** Logged so the next seat does not re-derive it.
+
+---
+
+### T-2026-11-27-05 — sweep: nine remaining disclosed items disposed as one — REJECTED (ZERO additional drill queries spent)
+
+Every remaining item surfaced by sweeps 1–3, with the test that kills it. Recorded individually so a
+later seat can see the object was examined, not missed.
+
+| Item | Date | Kill |
+|---|---|---|
+| **Air Liquide / Airgas** — **>$100M** investment in a new air-separation unit, Saukville, Wisconsin | 11-26/27 | **§3** — Air Liquide is **Euronext Paris**-listed; Airgas is its wholly-owned US subsidiary, not separately listed. **Part 1 independently: no second-order leg** — the source discloses **no customer, no supply counterparty, no production volume and no completion date**, and **names no contractor or equipment supplier.** **Part 2 independently:** >$100M of capex against a company with revenue in the tens of billions is **immaterial**, and it is **capex paid OUT**, not a revenue or cost line. **Triple kill.** |
+| **CF Industries / Mosaic** — Faustina ammonia acquisition, **$600M** total, **$240M** 20-year offtake, **up to 200,000 t/yr** | 11-24 | ✅ **ALREADY DISPOSED IN FULL at `T-2026-11-25-04`** — part 1, no second-order leg, both parties are named first-order principals; the offtake is **~$12M/yr, well under 1%** of CF revenue; **MOS dead on §3 (~$6.3B derived) and priced-in `true`.** ⚠ **The 11-25 entry already carried the $240M and 200,000 t figures**, so sweep 2 returned **no new fact**. **Re-serve, not a new object — do not re-litigate.** |
+| **Givaudan** — settlements with the **European Commission** and the **UK CMA** over fragrance-industry antitrust investigations | 11-26 | **§3** — Givaudan is **SIX Swiss Exchange**-listed. **Part 1 independently: an antitrust fine or settlement is a one-time balance-sheet item, not a revenue or cost line** — the structural kill written at **`T-2026-11-17-03`** (the annulled Intel fine), **valid on re-use because it depends on no figure.** Sweep 3: *"No named competitor, supplier, or customer is reported as having a resulting revenue or cost change."* ⚠ **The second-order shape was considered and is adverse:** the obvious US-listed read is **IFF**, but the EC/CMA investigated the **fragrance industry**, so a peer's exposure is **its own potential liability — the WRONG SIGN for a long**, and no source names it. **The source applied the kill.** |
+| **Nyrstar Budel** zinc halt, 315 kt/yr, from 11-30 | 11-26 | **Worked in full at `T-2026-11-27-01`** — part 1 (two-clause mechanism, contradictory sourcing on the TC leg) and part 2 (no sourced ≥10% zinc share in a §3-eligible name). **Listed here only so the sweep table is complete.** |
+| **Stellantis** — further plant stoppages | 11-26/27 | **§3** — the stoppages are at **European** factories and Stellantis is **Euronext/Borsa Italiana**-primary. **Part 2 independently: no volume, duration or dollar figure disclosed**, and **no replacement supplier or beneficiary named.** Sweep 3 states it does not establish a qualifying action affecting a US-listed company. |
+| **USA Rare Earth (USAR)** — commencement of **Serra Verde** shipments | ~11-26 | **§3** — USAR market cap is **far below the $10B floor** (a development-stage rare-earth name). **Part 2:** the source discloses **no tonnage, no contract value and no customer.** USAR is also the **announcing first-order party.** |
+| **Megaspeed International · Swiftdata · Speedmatrix** — added to the BIS Entity List | 11-23/25 | **§3 — all private and foreign-domiciled (Singapore / Malaysia / Thailand), not US-listed.** Covered structurally by **`T-2026-11-27-03`**. |
+| **Xinde** — patent dispute over chip processes said to cloud expansion plans | ~11-26 | **§3** — Chinese entity, not US-listed. **Part 2:** a *"clouded expansion plan"* is **not a disclosed figure**, and **no US-listed competitor is named** as gaining. |
+| **Wanhua Chemical** — 12-01 shutdown of the 1 Mt/yr Ningbo MDI Phase II unit, ~30 days | 11-24/25 | ✅ **ALREADY DISPOSED at `T-2026-11-25-05`** — **§3** (China-listed; every §3-eligible MDI name is foreign, Huntsman ~$2B is under the floor) **and part 2** (a **30-day planned turnaround is scheduled maintenance, not a supply shock**). **Re-serve.** Sweep 2 independently confirmed it *"identified only Wanhua entities rather than two publicly named parties."* |
+
+⚠⚠ **THE ONE OBJECT HANDED FORWARD FOR TWO SESSIONS IS NOW DISPOSED ON STALENESS.** The 11-24 and
+11-25 sweeps both flagged **CrowdStrike's results as UNESTABLISHED** — no sweep had returned its
+actuals. **No sweep returned them today either**, and the print is now **three sessions old**, which
+puts it **outside the overnight window** any sweep in this funnel covers. **Disposed: whatever was
+in it, it is no longer news, and a repricing on it is complete.** ⚠ **Stated plainly rather than
+carried a fourth time: this seat does NOT claim nothing material was in those results** — only that
+the object has aged out of §4's event window. **It is off the carry-forward list.**
+
+**Outcome: REJECTED, nine items, disposed as one, ZERO drill queries spent beyond the broad sweeps.**
+
+---
+
 ### 2026-11-25 (07:02 ET) — event survey (funnel, pre-thesis)
 
 Selftest **5/5**, exit 0 (`trading_enabled: true`, LIVE paper, equity **$94,185.06** at the
