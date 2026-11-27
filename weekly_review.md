@@ -56,6 +56,413 @@ If the same failure appears three weeks running, say so plainly and name it.>
 
 ## Reviews
 
+### Week ending 2026-11-27
+
+**Twelfth review.** Thirteen Fridays have passed since the first; **2026-11-06 has no review and
+never will** — that is the one gap in the series and it is named again here because the October
+archive rollover it owed was carried by the 11-13 run instead.
+
+⚠ **Second review in the series written on a settled official close, and this week it was free.**
+Today was the day after Thanksgiving: a **13:00 ET early close**. The run fired **15:45 ET**
+against a 16:45 slot — 60 minutes early, as every routine has been — but that landed **2h45m
+*after* the bell**, so the bar was already final (`n`=1,486, `v`=53,677 — a half session against
+203k–280k on the four full sessions before it). **No hold was needed and no partial was read.
+Do not generalise: Monday 2026-11-30 is a full session 09:30–16:00, where a ~15:45 fire lands
+15 minutes before the bell and the hold is required again.** Per `control.md` no schedule cause
+is diagnosed from a timestamp.
+
+**All figures below are built from official `bars` closes, one adjustment basis, one call.**
+VOO official close **670.00**. `positions.current_price` read **671.8432** — **+1.8432/share,
++0.2751%**, the **20th** distinct session on which the two endpoints disagree and the widest
+reading yet, but it was taken 2h45m into post-close tape, so it is recorded **with that caveat**
+rather than as a clean 20th.
+
+---
+
+#### ⚠⚠⚠ THE FINDING: `--adjustment all` DOES deliver a total-return series. The defect this series has reported to the human for two weeks does not exist.
+
+The 2026-11-20 and 2026-11-13 reviews both state that the flag "does not do what the prompt says
+it does," on the evidence that `bars --adjustment all` and *"the same call **without** the flag"*
+return closes identical to the cent on 259 of 260 sessions. Both then **reconstructed** VOO total
+return by hand, reinvesting four distributions at their ex-date closes.
+
+**`scripts/alpaca.py:427` is `p.add_argument("--adjustment", default="all")`.** The call "without
+the flag" **is** the `all` call. The comparison was adjusted against adjusted, which is why it
+reproduced when it was re-derived.
+
+Measured this run against the only basis that tests anything — **`--adjustment raw`**:
+
+| Check | Result |
+|---|---|
+| `all` vs `raw`, 260 sessions | **216 sessions differ** (the 44 that match are all after the last ex-date) |
+| `adj/raw` ratio shape | **piecewise constant, stepping exactly 4 times** |
+| Step dates | **2025-12-22 · 2026-03-27 · 2026-06-26 · 2026-09-28** — the four declared ex-dates |
+| Last step size | ratio 0.9974391 → 1.0000000 vs `1 − 1.8226/710.705` = **0.9974355** |
+| Cumulative drag at the series start | **1.1385%** ≈ TTM $7.43 on a ~650 price |
+
+A price series cannot step at four ex-dates by exactly the four dividend amounts. **The flag works.
+The prompt is correct. The hand reconstruction added each distribution a second time.**
+
+⚠ **And the correct statement was sitting at the top of this very file the whole time** — its header
+reads *"Bars are pulled with `adjustment=all` so dividends are included"*. Two reviews contradicted
+the file they were being written into, and neither noticed.
+
+**Restating last week's VOO rows on the corrected basis** — its "price-only (what the flag returns)"
+column *was* the total-return column, to three decimals on all five windows:
+
+| Window | published as "true TR" | **actual TR** | overstatement |
+|---|---|---|---|
+| Rolling 12-month (the §1 window) | +8.340% | **+7.093%** | **+1.247pp** |
+| 3-month | −8.932% | **−9.168%** | +0.236pp |
+| Since inception | −9.673% | **−9.906%** | +0.233pp |
+| Week / 1-month | −8.375% / −10.097% | unchanged | 0.000pp |
+
+⚠ **Direction matters and is not flattering in one piece.** On the falling windows the error made
+the benchmark *easier-looking* than it was, so the sleeve's reported excess was **understated** by
+~0.23pp — conservative. On the **12-month row, the one §1 actually specifies**, it **overstated the
+index by 1.247pp**, i.e. the §1 gap this series has been reporting was **too large**, not too small.
+
+⚠⚠ **And it un-masks a real defect.** `state.md` carry-forward 7 concluded that two measurement
+defects "roughly cancel." Defect (i) does not exist, so **defect (ii) is uncancelled: the paper
+broker never credits distributions.** `cash` is exactly `30000`, `accrued_fees` `0`, and the
+**$180.52** owed on the 2026-09-28 ex-date (1.8226 × 99.046311231 sh) was never paid. Against a
+total-return benchmark the core sleeve is structurally short **~1.07%/yr**, and that drag is now
+visible in the core number below instead of hidden behind an offsetting error.
+
+---
+
+### The three numbers, reported separately
+
+#### 1. Core return — **−5.1985%** vs VOO TR **−5.4847%** = **+0.2862pp**
+
+Window 2026-09-03 → 2026-11-27 (85 days, 60 sessions). 99.046311231 sh, fill **706.74**, marked at
+**670.00**. The excess is **entirely mechanical and decomposes to the cent** — Step 2 says a core
+divergence is never skill, and here is the arithmetic that proves it:
+
+| Component | pp |
+|---|---|
+| Fill 706.74 vs the 2026-09-03 raw close 710.70 (a better-than-close open print) | **+0.5603** |
+| Less the uncredited 2026-09-28 distribution ($180.52 on $69,999.99 of notional) | **−0.2579** |
+| Compounding-base residual | −0.0162 |
+| **Total** | **+0.2862** |
+
+#### 2. Satellite return — **0.0000%**, on every window, as on every window of every prior review
+
+Capital allocated to the sleeve: **$30,000.00**, **100% idle cash**, **31.1329%** of equity against
+a §2 target of 30%. Realized P&L **$0.00** (nothing has ever been closed). Unrealized **$0.00**
+(nothing is open). Positions opened since inception: **zero**.
+
+#### 3. ⚠ Satellite vs the same capital in VOO — **the number that answers §1**
+
+There are no per-position holding windows to dollar-weight, because there are no positions — and
+therefore **not one live `voo_close_at_entry` in a 391 KB `positions.md`** (7 occurrences, 1 with a
+number, and that one is the `0.00` in the template; checked this run, not inherited). Per Step 2 the
+idle cash is carried at **0% return** at a weight of **1.00**, so the dollar-weighted excess is
+simply **0% minus VOO's total return over each window**:
+
+| Window | Satellite | Same capital in VOO (TR) | **Excess** | Dollar effect on $30,000 |
+|---|---|---|---|---|
+| **Week** | 0.000% | **+5.510%** | **−5.510pp** | **−$1,653.04** |
+| 1-month | 0.000% | −5.295% | +5.295pp | +$1,588.50 |
+| 3-month | 0.000% | −5.229% | +5.229pp | +$1,568.81 |
+| Sleeve inception (2026-09-03, 85 days) | 0.000% | −5.485% | +5.485pp | +$1,645.41 |
+| Account inception (2026-08-06, 113 days) | 0.000% | −4.942% | +4.942pp | +$1,482.49 |
+| **Rolling 12-month — the §1 window** | **—** | **+7.093%** *(see below)* | **no history: 113 days elapsed** | — |
+
+⚠ The 12-month VOO figure measured to **today's** close is **+8.397%** (2025-11-26 → 2026-11-27);
+the **+7.093%** above is last week's window restated so the two reviews are comparable. Either way
+the reading is the same.
+
+⚠⚠⚠ **THE HONEST READING, AND THIS WEEK IT WROTE ITSELF.** Last week all four measurable rows were
+positive, by as much as +10.1pp, and that review said in terms that the margin was *"one fact stated
+four ways: cash does not fall when the index falls"* and that the identical configuration would cost
+the same amount the moment the index rose. **The index rose 5.510% this week and the week row is
+−5.510pp / −$1,653.04.** The prediction was not merely correct — it was arithmetically forced,
+because the sleeve's excess **is** the negative of VOO's return by construction. **There is nothing
+in the week row to interpret.**
+
+**§1 asks whether the satellite sleeve beat the S&P 500 total return over a rolling 12-month window.
+The answer is that the window does not exist, the sleeve has held nothing for all 113 days of the
+account's life, and over the 12 months §1 names the index returned +7.1–8.4%.** The configuration
+has **no mechanism to beat the index** — only a mechanism to decline to lose during declines, with
+30% of capital. The blended account reads **+1.303pp** since inception (−3.639% vs −4.942%) and that
+is 68.9% beta in a 6.46% drawdown off VOO's 2026-10-06 peak of 716.29, not alpha.
+
+**Performance (blended, for the record only — §1 is answered above)**
+
+| | Week | 1M | 3M | 12M (rolling) | Since inception |
+|---|---|---|---|---|---|
+| Account | +3.731% | −3.708% | −3.639% | n/a | **−3.639%** |
+| VOO (total return) | +5.510% | −5.295% | −5.229% | **+8.397%** | −4.942% |
+| Excess | **−1.779pp** | +1.587pp | +1.590pp | n/a | **+1.303pp** |
+
+The account's 3-month and since-inception figures are identical because equity was exactly
+$100,000.00 in cash from 2026-08-06 until the 2026-09-03 fill, so the 2026-08-27 baseline *is* the
+inception baseline. Nothing is annualized.
+
+**Account at the official close:** equity **$96,361.03** (core mv $66,361.03 + cash $30,000.00).
+The broker reports **$96,543.59** off its 671.8432 mark — a **$182.56** difference that changes no
+verdict in this review.
+**Sleeves:** core **68.8671%** | satellite **0.0000%** | cash **31.1329%** — §2 band 65–75%,
+**in band**, floor headroom 3.8671pp. `rebalance_needed: false`; the $1,036.92 `rebalance_delta` is
+distance to the 70% *target*, not a breach. **No rebalance is due Monday.**
+**Breaker:** INACTIVE (0 of 3) · weekly cap **0 of 3, expired unused** · `open_thesis_ids: none` ·
+`halt_triggered_at: none`
+
+---
+
+**Trades closed this week**
+
+| Ticker | Thesis | Held | Exit rule | P&L | Excess vs VOO, same window |
+|---|---|---|---|---|---|
+| — | — | — | — | — | — |
+
+**Nothing closed. Nothing has ever closed.** `orders --status all` returns **one order in the
+account's entire history** (2026-09-03 VOO core, `filled`). The §5 question Step 3 asks — *which
+exit rules are actually firing* — has the same answer it has had for twelve reviews:
+
+- **§5.1 invalidation:** 0 fires. Never had a thesis to falsify.
+- **§5.2 time stop:** 0 fires. Never had a timing window to expire.
+- **§5.3 hard stop:** 0 fires. VOO's **−5.1985%** sat next to the −7% figure all week and is
+  **§5-exempt** — a rule *not applying*, not a rule *passing*.
+- **§5.4 trailing stop:** 0 fires, and it is **unexecuted code**. There is no `highest_close` and no
+  `(as of …)` date anywhere in `positions.md`. **196 strings match `highest_close` and exactly one
+  carries a number — the `0.00` in the template** (counted this run; `state.md` carries a stale 161). **ABSENT is a third state, distinct from current-and-unchanged and from stale.**
+
+⚠ **The distribution of exit rules cannot be read as healthy or unhealthy. 60 sessions of "no exits"
+record the absence of a subject.**
+
+---
+
+**Thesis scoreboard — including rejects**
+
+| | This week | November | Since inception |
+|---|---|---|---|
+| Theses written | **21** (6 · 5 · 5 · 5 over four sessions) | **98** | **314** (87 Sep + 129 Oct + 98 Nov) |
+| Accepted | **0** | **0** | **0** |
+| Rejected | **21** | **98** | **314** |
+| Became positions | 0 | 0 | 0 |
+
+**Of accepted theses now closed: a structural null.** None was ever accepted, so none reached a
+timing window, none was invalidated, and none stopped out. This row has been empty for 113 days and
+80 sessions, and it will stay empty until the funnel produces one acceptance.
+
+**Of rejected theses — what happened to them since?** 29 names from 18 rejection decisions,
+measured from each rejection date's close to today's official close, against VOO over the same
+window. Per last week's methodology lesson, **reported per decision as well as per name**, because
+one tier thesis (`T-2026-11-18-02`) supplies 7 of the 29 names:
+
+| Weighting | n | Mean excess | Median | Beat VOO |
+|---|---|---|---|---|
+| Per name | 29 | **−0.06pp** | +0.70pp | 17 of 29 |
+| **Per decision** | 18 | **+0.93pp** | +1.39pp | 12 of 18 |
+
+⚠⚠ **THE PATTERN IS NOT IN THE AVERAGE — IT IS IN THE HOLDING WINDOW, AND IT IS MONOTONIC:**
+
+| Sessions since rejection | n | Mean excess | Beat VOO | Range |
+|---|---|---|---|---|
+| **1–4** (shorter than this strategy's horizon) | 14 | **+3.15pp** | **12 of 14** | −4.78 … +13.84 |
+| 5–8 | 11 | **−2.09pp** | 4 of 11 | −11.68 … +6.09 |
+| **9–16** (closest to §1's weeks-to-months) | 4 | **−5.70pp** | 1 of 4 | −14.17 … +2.40 |
+
+**Every reject that has run long enough to be judged on the strategy's own horizon fell. Every
+"miss" is 1–4 sessions old.** The filters reject names that have just moved hard, and a name that
+has just fallen hard is exactly the thing that bounces — so the fresh cohort's +3.15pp is a
+mean-reversion bounce off a 5.5% index week, not a thesis playing out.
+
+**The two findings Step 4 asks to keep separate, kept separate:**
+
+**(a) Rejected correctly by the rule and unprofitably in hindsight — 1 session old, so not yet a
+finding.** `T-2026-11-25-01` (MU) is the only candidate in 113 days to pass **all four thesis parts
+with sourced figures**; it died on the §4 priced-in filter at **−11.63%**, a **DOWN** move, because
+the mechanised test reads **absolute** magnitude. Per the 11-25 journal the same gate killed five of
+seven names checked that day — MU −11.63%, SNDK −21.86%, STX −4.37%, AAOI −15.01%, MOS −5.06% —
+**all five on DOWN moves**, in a week the whole AI complex sold off. One session later, measured here:
+
+| Name | Killed on | Since rejection | Excess |
+|---|---|---|---|
+| MU | priced-in, −11.63% (all four parts passed) | **+7.36%** | **+5.65pp** |
+| SNDK | priced-in + §4 correlation (same driver as MU) | **+15.55%** | **+13.84pp** |
+| STX | priced-in + §4 correlation | **+7.96%** | **+6.25pp** |
+| MOS | part 1 (no second-order leg); also §3 and priced-in | +3.44% | +1.73pp |
+| WDC | **part 1 — the source denies the causal path.** The one name of seven that **passed** priced-in | +7.27% | +5.56pp |
+
+⚠ **Read carefully, this is ONE forgone trade, not five.** MU, SNDK and STX are three tickers on one
+driver and §4's correlation test would have permitted a single position. WDC's +5.56pp is **not** a
+priced-in miss at all — it passed that filter and was killed on part 1, which makes it evidence about
+the *drill query*, not about the gate. **And the whole table is one session old.**
+
+**(b) Rejected correctly by the rule and profitably — and the same shape supplies both.** The
+memory/storage complex is the single most-researched object in the funnel: found and rejected
+**five times** in November on five different grounds. Priced at today's close, the earlier
+rejections were **expensive losses avoided**:
+
+| Rejected | Thesis | Grounds | Return since | Excess |
+|---|---|---|---|---|
+| 11-02 | `-11-02-03` MU | part 1 | **−22.66%** | **−19.60pp** |
+| 11-03 | `-11-03-01` SNDK | part 1 | **−39.63%** | **−36.24pp** |
+| *(11-13 reference — no MU thesis that day)* | — | — | *−17.16%* | *−13.84pp* |
+| 11-18 | `-11-18-01` MU | part 4, no invalidation | **−8.55%** | **−8.37pp** — **past §5.3's stop** |
+| 11-20 | `-11-20-02` AMKR | rule (v), unnamed | +13.54% | +8.03pp |
+| 11-25 | `-11-25-01` MU | priced-in, down move | +7.36% | +5.65pp |
+
+**Had the 11-18 MU thesis been accepted it would have hit the −7% hard stop before the bounce.** The
+up-move priced-in kills are the filter's cleanest wins in the corpus: **LEU** (+17.11% at rejection)
+is **−17.50% / −14.17pp** nine sessions later, **AMAT** (+19.34%) is **−12.92% / −9.59pp**.
+
+⚠⚠ **So the standing question — is the absolute-magnitude priced-in filter wrong on down moves? —
+got its first real evidence this week and the evidence is two-sided and horizon-dependent. One
+session of bounce does not test a weeks-to-months thesis, and the same filter on up moves saved
+10–14pp over nine. The sign will be known in a month. It is recorded as a measurement and NOT
+promoted to a conclusion, and it remains a calibration change that only the human may make.**
+
+✅ **And the healthy reading Step 4 asks for explicitly: the filters are not never-wrong.** 17 of 29
+names and 12 of 18 decisions beat VOO after rejection. A board that was always right would mean the
+bars were too loose. **This board is not that.**
+
+---
+
+**Recurring errors**
+
+##### 1. The funnel has never produced an acceptance — **314 theses, 0 accepted, 113 days, 80 sessions. TWELFTH WEEK, and the denominator grew by 21 this week.**
+
+This is the finding. Everything else on this list is plumbing. ⚠ §4 is explicit that *"the correct
+output of most research runs is no trade"* — **but it says *most*, not *all*, and 314 consecutive
+rejections is now a fact about the funnel rather than about the market.** The individual rejections
+are defensible; this review re-read 21 of them and would not overturn one. **That is exactly what
+makes it a structural question and not a judgment question, and it is the human's to resolve. No
+review seat may settle it by lowering a bar.**
+
+##### 2. Part-1 / named-counterparty absence is the binding constraint — **SIXTH consecutive review**
+
+This week again: the BIS Entity List additions (no beneficiary named, and the only measurable
+direction is negative in a long-only strategy), PTC (the acquisition *target* — the first-order leg
+§4 excludes), the zinc smelter halt (no §3-eligible name with a sourced zinc revenue share above
+10%: SCCO 3.9%, HL 9.3% and sub-floor cap). ⚠ **A looser evidence bar would not help — part-1
+failures are absences, not near-misses.** Whether the *search* should change — screening disclosed
+supplier relationships first rather than news first — is a `strategy.md` question and **only the
+human may answer it. Sixth review to say so.**
+
+##### 3. An invented rule taxonomy still does much of the rejecting, and is still not in `strategy.md`
+
+This week's Outcome lines again dispose of candidates on **"rule (iii)", "rule (v)", "rule (viii)"**
+— stale news, no named recipient, wrong direction, capital paid out. **None exists in `strategy.md`,**
+which has four thesis parts and three hard filters and nothing else. Unchanged ask: **promote them
+into §4 or rename them,** so a reader of `research_log.md` can tell which rejections rest on the
+strategy and which rest on rules the system wrote for itself.
+
+##### 4. Inherited claims are not checked facts — **TWELFTH WEEK, and this week it produced the largest measurement error in the series**
+
+**The `--adjustment all` defect was wrong for two reviews, and last week's review states it was
+"re-derived from two fresh calls, not carried" — and it reproduced.** ⚠⚠ **That is the lesson, and
+it is new and generalizable: re-running the same comparison is not verification. The error was in the
+method, not in the carrying, and a method re-executed faithfully reproduces its own bug with full
+confidence.** The check that found it was **changing the basis** (`--adjustment raw`), which no prior
+run had tried. **A re-derivation that cannot fail differently from the original is a ritual.**
+
+Everything load-bearing in this review was re-measured rather than inherited: the empty ledger
+(`grep -ci 'status: *open'` → 0 against one live `positions` row), the uncredited $180.52 (against
+`account.cash`), the week anchor (imported from `common.py`, not hand-computed), the absent
+`highest_close`/`voo_close_at_entry` fields, the corpus sizes (from `git show 7475620:`), and every
+figure above, emitted by the computation that derived it rather than transcribed.
+
+##### 5. The reassuring framing — **TWELFTH WEEK, and this week there was nothing to resist**
+
+Last week's review had to work hard to refuse four large positive rows. **This week the index rose
+and the same configuration produced −5.510pp / −$1,653.04 in one week.** ⚠ The pull this week ran the
+other way and is named: it would have been easy to lead with the three still-positive windows
+(+5.3pp, +5.2pp, +4.9pp) and bury the week row. **They are all the same fact with the sign of the
+index attached, and none of them is a result.**
+
+##### 6. Measuring off an unfinished bar — **no instance this week, and the reason is luck, not fix**
+
+Five consecutive sessions produced instances last week. **This week the 13:00 early close put every
+routine's fire after the bell, so the error had no opportunity to occur.** ⚠⚠ **Nothing was fixed.
+Monday 2026-11-30 is a full session and the ~15:45 close-routine fire lands 15 minutes before a
+16:00 bell. The remedy — hold for the post-bell `clock` signature, or discriminate from `bars`,
+which returns a bar dated today only on a session day — is inside a run's own authority and is not
+in any prompt.**
+
+##### 7. Numbers describing the run's own work are the least reliable in the corpus — **TWELFTH WEEK**
+
+This week's instance is self-caught and left in place with its correction: the **11-25** close seat
+drafted *"the core's unrealized loss narrowed to −6.7925%"* when against Tuesday's −6.5187% it had
+**widened 0.27pp** — the slip ran in the flattering direction. ⚠ **This review's own instance is
+item 4 above: the series published a measurement defect that was its own measurement error, for two
+weeks, with a "re-derived, not inherited" stamp on it.**
+
+##### 8. Corpus growth — **third measurement, and it accelerated. Measured from `git show 7475620:`, not inherited.**
+
+| File | At the 11-20 review | Today | Change | Open positions it describes |
+|---|---|---|---|---|
+| `state.md` | 9,112 B | **21,708 B** | **+12,596 (×2.38)** | 0 |
+| `positions.md` | 367,528 B | **391,388 B** | +23,860 | **0** |
+| `research_log.md` | 308,066 B | **394,056 B** | **+85,990** | — |
+| `journal.md` | 148,739 B | **188,914 B** | +40,175 | — |
+| `plan_today.md` | 11,108 B | 14,962 B | +3,854 | 0 |
+| `weekly_review.md` | 415,188 B | 415,188 B | 0 *(this review is the first write since)* | — |
+| **TOTAL** | **1,266,946 B** | **1,433,421 B** | **+166,475 B over 4 sessions (~41.6 KB/session)** | |
+
+⚠ **`state.md` was compacted to 9,112 B at last week's review and is back to 21,708 B in four
+sessions — on track for 324 KB inside seven weeks for the third time.** ⚠ **`positions.md` added
+23,860 B this week describing an empty ledger,** and Step 6 names only `research_log`/`trade_log`/
+`journal` for rollover, so **no run has standing to truncate it.** The three asks are unchanged
+because none has been actioned: **(1)** `positions.md` needs a retention rule — it is excluded from
+rollover on the premise that it "only holds open positions," false for all 113 days; **(2)**
+`state.md`'s `last_run` must be capped at one line, a fix a run can make but cannot make stick;
+**(3)** `weekly_review.md` (415 KB) is explicitly never archived.
+
+⚠ **This review's own cost, counted after drafting rather than claimed from intent: ~25 KB appended
+to a 415 KB file.** It is
+deliberately about a third the length of the last three reviews, because naming corpus growth while
+adding 60 KB to the file that names it is the error it describes.
+
+##### 9. All routines still fire 45–60 min early — **recorded, not diagnosed**
+
+⚠ **Counts inherited from `state.md`, not measured — this is a shallow clone and the window before
+~11-09 is invisible to any git-based check a run can make (recurring error 4's own limit):** routine 4
+at 17, routine 2 at 5, routine 3 at 3, routine 1 at 4. **Measured here: this review seat is at its
+second** (11-20 fired 15:46, today 15:45, both against a 16:45 slot). ⚠ Per `control.md`, manual "Run now" invocations are indistinguishable from scheduled
+ones in run logs, so **no run may call this a schedule fault.** ⚠⚠ **The consequences differ by
+routine and must not be folded together:** routines 1 and 3 are benign; **routine 2's pre-market fire
+can skip a whole day's execution** on a literal reading of its own prompt (*"if the market is closed,
+log the skip, commit, and exit"*), which would have been wrong on four session days and exactly right
+on the 11-26 holiday; routine 4's is harmful on a full session and was helpful today. **Reconciling
+the prompts is the human's call.**
+
+##### 10. Nothing that stopped recurring
+
+Honest null, stated because the rule asks for it. **Items 1, 2, 3, 4, 5, 7, 8 and 9 all recurred.**
+✅ **Two things genuinely improved, both inside a single run's authority:** a two-week-old measurement
+error in this series' own method was found and corrected (item 4), and this review is materially
+shorter than its predecessors (item 8). ⚠ **Item 6 did not recur, and that is the calendar's doing,
+not a fix.**
+
+---
+
+**Housekeeping**
+
+- **Monthly archive rollover: NOT DUE.** Today is the **third** Friday review of November (11-13,
+  11-20, 11-27 — 11-06 never ran). `research_log.md` and `journal.md` hold **zero** pre-November
+  entries; `trade_log.md` holds one, the **2026-09-03 VOO core fill, deliberately retained because
+  the position is open** and flagged to the human on 2026-10-02. **Next rollover due at the first
+  Friday review of December, 2026-12-04**, for the 98 November theses and the November journal.
+- **Weekly counter reset: DONE.** `week_anchor(2026-11-27)` → **2026-11-23** (imported from
+  `common.py`) = the inherited `week_of`, so no mid-week reset was owed. Per Step 6:
+  `new_positions_this_week` **0 → 0** (the cap expired unused for the twelfth consecutive week) and
+  `week_of` **2026-11-23 → 2026-11-30**.
+- **Alert hygiene: `alerts.md` Open incidents — (none). Resolved — (none).** No `push-failure`, no
+  `guard-violation`, no `selftest-abort`, no `circuit-breaker`. **Nothing SYSTEMIC, so no prompt bug
+  is surfaced through that channel this week.** ⚠ The three prompt defects named above (routine 2's
+  and routine 4's closed-market branches, and Step 1's `--adjustment all` assertion — **now shown to
+  be correct, so it is a defect retracted, not raised**) are **not** guard violations: no routine has
+  been steered toward a protected file, and `strategy.md` and `control.md` are byte-identical to
+  their committed versions this run.
+- **Selftest:** 5/5, exit 0. `TRADING_ENABLED: true` · `HALT_CLEARED_AT: none` · `control.md` Notes
+  **(none)**. No trading in this run, per the routine.
+
+---
+
 ### Week ending 2026-11-20
 
 **Eleventh review.** ⚠ **FIRST REVIEW IN THE SERIES WRITTEN ON AN OFFICIAL CLOSE.** The run
